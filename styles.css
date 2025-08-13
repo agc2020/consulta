@@ -254,3 +254,48 @@ article pre {
   }
 }
 
+
+/* ===== FORMATAÇÃO PARA TEXTO REVOGADO ===== */
+/* CSS profissional para elementos revogados pela lei */
+
+.revogado { 
+  text-decoration: line-through; 
+  opacity: .8; 
+}
+
+/* CSS adicional para elementos <del> */
+del {
+  text-decoration: line-through;
+  color: #666;
+  background-color: #ffe6e6;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+del:hover, .revogado:hover {
+  background-color: #ffcccc;
+  cursor: help;
+  opacity: 1;
+}
+
+del::before {
+  content: "[REVOGADO] ";
+  font-size: 0.8em;
+  color: #999;
+  font-weight: bold;
+}
+
+/* Versão para impressão */
+@media print {
+  .revogado, del {
+    background-color: transparent !important;
+    border: 1px solid #ccc;
+  }
+  
+  del::before {
+    content: "[REV.] ";
+  }
+}
+
