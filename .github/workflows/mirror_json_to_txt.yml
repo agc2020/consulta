@@ -1,0 +1,44 @@
+name: Mirror JSON to TXT
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - '**/*.json'
+      - '.github/workflows/mirror-json-to-txt.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    if: github.ref == 'refs/heads/gh-pages' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Mirror *.json -> *.txt
+        run: |
+          python mirror_json_to_txt.py
+
+      - name: Commit changes (if any)
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: mirror JSON to TXT [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
