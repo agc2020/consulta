@@ -226,13 +226,13 @@ def resolve_index_path(user_arg: Optional[str]) -> Path:
 def resolve_tool(name: str) -> Path:
     """
     Localiza snapshot.py e html_para_json.py nesta ordem:
-      1) CWD
-      2) SCRIPT_DIR
-      3) SCRIPT_DIR.parent
+    1) SCRIPT_DIR
+    2) CWD
+    3) SCRIPT_DIR.parent
     """
     candidate = first_existing(
-        CWD / name,
         SCRIPT_DIR / name,
+        CWD / name,
         SCRIPT_DIR.parent / name,
     )
     if not candidate:
@@ -313,7 +313,7 @@ def _expected_domain_for_slug(slug: str) -> Optional[str]:
         return "atos.cnj.jus.br"
     if s.startswith("lei-"):
         return "planalto.gov.br"
-    if s.startswith(("decreto-", "in-", "instrucao-", "resolucao-")):
+    if s.startswith(("decreto-", "in-", "inc-", "instrucao-", "resolucao-")):
         return "tjpr.jus.br"
     return None
 
@@ -465,8 +465,8 @@ def main() -> None:
     index_path = resolve_index_path(args.index)
     snapshot_py = resolve_tool("snapshot.py")
     html2json_py = first_existing(
-        CWD / "html_para_json.py",
         SCRIPT_DIR / "html_para_json.py",
+        CWD / "html_para_json.py",
         SCRIPT_DIR.parent / "html_para_json.py",
     )
     out_dir = resolve_out_dir()
