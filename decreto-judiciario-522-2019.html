@@ -1,509 +1,509 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <title>Ato Normativo – Espelho</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex" />
-  <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+ <meta charset="utf-8" />
+ <title>Ato Normativo – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f8f9fa;
-    }
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: #333;
+ background-color: #f8f9fa;
+ }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      /* increase horizontal padding to give more breathing room on the left and right */
-      padding: 20px 40px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      min-height: 100vh;
-    }
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: white;
+ box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ min-height: 100vh;
+ }
 
-    header {
-      border-bottom: 3px solid #0066cc;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
-    }
+ header {
+ border-bottom: 3px solid #0066cc;
+ padding-bottom: 20px;
+ margin-bottom: 30px;
+ }
 
-    header h1 {
-      color: #0066cc;
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
+ header h1 {
+ color: #0066cc;
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ }
 
-    .subtitle {
-      color: #666;
-      font-size: 1.1em;
-      font-style: italic;
-    }
+ .subtitle {
+ color: #666;
+ font-size: 1.1em;
+ font-style: italic;
+ }
 
-    .meta {
-      background-color: #f8f9fa;
-      border: 1px solid #e9ecef;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 30px;
-      font-size: 0.9em;
-    }
+ .meta {
+ background-color: #f8f9fa;
+ border: 1px solid #e9ecef;
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ }
 
-    .meta div {
-      margin-bottom: 5px;
-      font-size: 1.2em;
-    }
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
 
-    .meta strong {
-      color: #495057;
-    }
+ .meta strong {
+ color: #495057;
+ }
 
-    .meta a {
-      color: #0066cc;
-      text-decoration: none;
-    }
+ .meta a {
+ color: #0066cc;
+ text-decoration: none;
+ }
 
-    .meta a:hover {
-      text-decoration: underline;
-    }
+ .meta a:hover {
+ text-decoration: underline;
+ }
 
-    article {
-      line-height: 1.8;
-    }
+ article {
+ line-height: 1.8;
+ }
 
-    article h1 {
-      color: #0066cc;
-      font-size: 1.4em;
-      margin: 20px 0 12px 0;
-      /* use a real font weight instead of the invalid 'justify' keyword */
-      font-weight: 600;
-      text-align: justify;
-    }
+ article h1 {
+ color: #0066cc;
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ }
 
-    article h2 {
-      /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h3 {
-      /* Estilo unificado para artigos e demais níveis normativos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h4 {
-      /* Aplicar mesmo estilo de h3 para parágrafos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h5 {
-      /* Aplicar mesmo estilo de h3 para incisos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h6 {
-      /* Aplicar mesmo estilo de h3 para alíneas */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article p {
-      /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    /* enlarge the very first paragraph inside the article, which typically contains the document's
-       title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
-    article p:first-of-type {
-      font-size: 1.6em;
-      line-height: 1.4;
-      font-weight: 700;
-      text-align: center;
-      color: #0066cc;
-      margin: 24px 0;
-    }
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: #0066cc;
+ margin: 24px 0;
+ }
 
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #e9ecef;
-    }
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid #e9ecef;
+ }
 
-    .disclaimer {
-      background-color: #fff3cd;
-      border: 1px solid #ffeaa7;
-      padding: 15px;
-      border-radius: 5px;
-      font-size: 1.2em;
-      color: #856404;
-      text-align: justify;
-    }
+ .disclaimer {
+ background-color: #fff3cd;
+ border: 1px solid #ffeaa7;
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: #856404;
+ text-align: justify;
+ }
 
-    .disclaimer strong {
-      color: #856404;
-    }
+ .disclaimer strong {
+ color: #856404;
+ }
 
-    .disclaimer a {
-      color: #856404;
-      text-decoration: underline;
-    }
+ .disclaimer a {
+ color: #856404;
+ text-decoration: underline;
+ }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 15px;
-        margin: 0;
-        box-shadow: none;
-      }
-      
-      header h1 {
-        font-size: 1.5em;
-      }
-      
-      article h1 {
-        font-size: 1.3em;
-      }
-    }
-  </style>
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ }
+ </style>
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1>Ato Normativo</h1>
-      <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-    </header>
+ <main class="container">
+ <header>
+ <h1>Ato Normativo</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
 
-    <div class="meta">
-      <div><strong>Última sincronização:</strong> 11/10/2025 07:07:08 (processado via snapshot.py)</div>
-      <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4686856" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-      <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-      <div><strong>Tamanho do conteúdo:</strong> origem: 88.200 caracteres | espelho: 36.655 caracteres</div>
-      <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-    </div>
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 12/10/2025 05:25:30 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4686856" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 51.112 caracteres | espelho: 36.655 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
 
-    <article>
-      <p>ANEXOS - atualizados até o Decreto Judiciário nº 54/2025-P-SEP.</p>
-      <p>Situação: VIGENTE</p>
-      <p>DECRETO JUDICIÁRIO N° 552, DE 17 DE SETEMBRO DE 2019</p>
-      <p>- atualizado até o Decreto Judiciário nº 383, de 24 de julho de 2025 - P - SEP</p>
-      <p>ANEXOS - atualizados até o Decreto Judiciário nº 383, de 24 de julho de 2025 - P - SEP</p>
-      <p>Regulamenta o Auxílio-Saúde no âmbito do Tribunal de Justiça do Estado do Paraná.</p>
-      <p>O PRESIDENTE DO TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ, no uso de suas atribuições legais,</p>
-      <h2>CONSIDERANDO o contido nas Leis Estaduais nº 16.954, de 29 de novembro de 2011, e nº 18.692, de 22 de dezembro de 2015;</h2>
-      <h2>CONSIDERANDO o disposto no inciso I do art. 5º da Resolução nº 207, de 15 de outubro de 2015, do Conselho Nacional de Justiça;</h2>
-      <h2>CONSIDERANDO o quanto deliberado pelo Conselho Nacional de Justiça nos autos de nº 0006317-77.2019.2.00.0000 na 296ª Sessão Ordinária de 10 de setembro de 2019;</h2>
-      <h2>CONSIDERANDO o contido nos expedientes digitais n.° 0009950-93.2019.8.16.6000 e 0015062-43.2019.8.16.6000,</h2>
-      <h3>D E C R E T A :</h3>
-      <h5>I - Do Auxílio-Saúde</h5>
-      <h3>Art. 1º O Auxílio-Saúde, previsto nas Leis Estaduais nos 16.954, de 29 de novembro de 2011, e 18.692, de 22 de dezembro de 2015, será concedido a requerimento dos magistrados e servidores efetivos, ativos e inativos, e ocupantes de cargos em comissão deste Poder Judiciário que comprovarem contratação particular de plano ou seguro de assistência à saúde, e dar-se-á mediante reembolso, nos termos do presente regulamento.</h3>
-      <h4>§ 1º Para efeito desta regulamentação, os magistrados e servidores de que trata o caput deste artigo, após a concessão e implantação do benefício do Auxílio-Saúde, passam a ser denominados beneficiários titulares.</h4>
-      <h4>§ 2º Os magistrados e servidores que não figurarem como titulares de plano ou seguro de assistência à saúde poderão requerer o reembolso, desde que apresentem declaração da entidade assistencial de saúde em que constem como dependentes.</h4>
-      <h4>§ 3º Não é possível a concessão do reembolso tão somente para dependentes do servidor.</h4>
-      <h3>Art. 2º O reembolso será mensal, por ocasião do pagamento do subsídio, salário ou provento, e corresponderá somente às despesas com mensalidades de planos ou seguros de assistência à saúde, de livre escolha do beneficiário, excluídos valores desembolsados com parcelas de coparticipação, benefícios extras, serviços opcionais ou a qualquer outro título.</h3>
-      <h3>Art. 2º O reembolso será mensal, por ocasião do pagamento do subsídio, salário ou provento, e corresponderá somente às despesas com mensalidades de planos ou seguros de assistência à saúde, de livre escolha do beneficiário, excluídos valores desembolsados com parcelas de coparticipação, benefícios extras, assistência odontológica, serviços opcionais ou a qualquer outro título. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h3>Art. 3º O valor do reembolso fica limitado ao total despendido pelo beneficiário titular, inclusive com seus dependentes, observados os valores máximos individuais para as respectivas faixas etárias, nos termos do Anexo I deste Decreto, e ocorrerá no mês subsequente ao do requerimento.</h3>
-      <h4>§ 1º O valor do reembolso será proporcional aos dias trabalhados, quando a solicitação de concessão ocorrer no mesmo mês de assunção, em caso de exoneração e faltas não justificadas.</h4>
-      <h4>§ 2º O beneficiário titular ou dependente do Auxílio-Saúde terá direito ao reembolso do valor despendido com apenas um plano ou seguro de assistência à saúde.</h4>
-      <h4>§ 3º O reembolso mensal ao beneficiário titular terá como base os valores comprovados e estará limitado ao máximo global de 10% do seu subsídio, vencimento ou provento, ou, ainda, àquele estabelecido na tabela constante do Anexo II deste Decreto, o que for maior.</h4>
-      <h4>§ 4º Observado o disposto no § 3º, o valor do reembolso não poderá exceder, no caso de servidores, o limite mensal de 10% do subsídio destinado ao juiz substituto.</h4>
-      <h4>§ 5º No caso de preenchimento de uma das seguintes hipóteses previstas neste parágrafo, o valor apurado de reembolso será acrescido em 50% (cinquenta por cento): (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h4>
-      <h5>I - o magistrado, a magistrada, o servidor, a servidora ou algum dependente deles, seja pessoa com deficiência ou portadora de doença grave; (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h5>
-      <h5>I - o magistrado, a magistrada, o servidor, a servidora ou algum dependente deles, seja pessoa com deficiência (PCD) ou portadora de doença grave que se enquadre no inciso XIV do art. 6º da Lei Federal nº 7.713/1988. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
-      <h5>II - o magistrado, magistrada, servidor ou servidora com 50 anos completos ou mais. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h5>
-      <h4>§ 6º O acréscimo previsto no §5º deste artigo não é cumulativo e não se sujeita ao limite de reembolso previsto nos §§ 3º e 4º do artigo 3º deste Decreto. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h4>
-      <h4>§ 7º O acréscimo de 50% previsto para as hipóteses do § 5º deste artigo incidirá sobre o valor de reembolso total referente às despesas com mensalidades devido ao beneficiário titular, que inclui os valores de mensalidade dos dependentes. (Incluído pelo Decreto Judiciário nº 337, de 25 de junho de 2024)</h4>
-      <h4>§ 8º O pagamento do acréscimo previsto no § 5º deste artigo fica condicionado ao benefício ativo do titular e à informação da deficiência ou doença grave no Sistema Hércules, com exceção de magistrados e servidores que ingressaram no quadro de pessoal deste Poder Judiciário em vaga destinada a pessoa com deficiência, para os quais não é necessário informar a deficiência. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 9º O cadastro da deficiência ou doença grave para titulares ou dependentes deverá ser realizado pelos magistrados, servidores ativos e ocupantes de cargos em comissão exclusivamente pelo Sistema Hércules, por procedimento informatizado próprio, e os magistrados e os servidores aposentados deverão encaminhar a solicitação à Assessoria Técnica da Secretaria de Finanças. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 10. O cadastro de que trata o § 9º deste artigo deverá ser instruído com laudo médico que ateste deficiência permanente, nos termos da Lei Estadual nº 21.575/2023 ou com laudo médico emitido até seis meses antes do requerimento, informando a condição clínica do paciente e a data de início da mesma (conforme modelo no ANEXO III), além de exames complementares, que serão homologados pelo Centro de Atenção à Saúde, o qual apontará se o quadro é definitivo ou temporário e, neste último caso, a periodicidade em que será necessária a reavaliação. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 11. Para cumprimento do disposto no § 10 deste artigo, os documentos apresentados deverão conter a data de sua emissão, CID da deficiência ou doença grave, desde que o servidor autorize a sua inclusão, nome legível e CRM do médico responsável/emissor, sendo que os documentos autenticados digitalmente apenas serão aceitos com identificação do código de controle e a respectiva página eletrônica para a verificação de sua autenticidade. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 12. Caso não autorizada a inclusão do CID da deficiência ou doença, o titular do benefício ou respectivo dependente poderá ser chamado a se submeter à perícia médica, a ser realizada pela Coordenadoria de Saúde e Bem-Estar deste Tribunal. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 13. O beneficiário titular é responsável pelas informações prestadas e pela documentação apresentada, sob as penas da lei. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h3>Art. 4º Não será devido o reembolso ao magistrado ou servidor em licença ou afastamento sem remuneração, ou, ainda, que receba verbas de espécie semelhante, tais como vantagens pessoais originárias de qualquer forma de auxílio ou benefício à saúde.</h3>
-      <h3>Art. 4º Não será devido o reembolso ao magistrado ou ao servidor em licença ou afastamento sem remuneração, ou, ainda, que receba verbas de espécie semelhante, tais como vantagens pessoais originárias de qualquer forma de auxílio ou benefício à saúde, incluindo o Sistema de Assistência à Saúde - SAS. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h3>Art. 5º O reembolso de que trata este Decreto tem natureza indenizatória e não se incorpora ao subsídio, vencimento, remuneração, provento ou pensão, não estando sujeito à tributação de Imposto de Renda e contribuição previdenciária.</h3>
-      <h5>II - Dos Dependentes</h5>
-      <h3>Art. 6º Serão admitidos como beneficiários, na qualidade de dependentes do titular, conforme previsto no art. 1º, parágrafo único, da Lei nº 16.954/2011:</h3>
-      <h5>I - Cônjuge, companheiro ou companheira, em união estável;</h5>
-      <h5>II - Filhos, enteados ou menor sob guarda ou tutela concedida por decisão judicial, até vinte e um (21) anos de idade, ou, se inválidos, enquanto perdurar a invalidez;</h5>
-      <h5>III - Filhos, enteados ou dependente sob guarda ou tutela anterior à maioridade, acima de vinte e um (21) anos de idade e até completar vinte e quatro (24) anos, se estudante regularmente matriculado em curso de ensino médio, curso técnico, superior ou de especialização, devidamente reconhecido pelo Ministério da Educação, que não aufira rendimento próprio.</h5>
-      <h5>III - Filhos, enteados ou dependente sob guarda ou tutela anterior à maioridade, acima de dezoito (18) anos de idade e até completar vinte e quatro (24) anos, se estudante regularmente matriculado em curso de ensino médio, curso técnico, superior, de especialização ou residência devidamente reconhecido pelo Ministério da Educação ou equivalente, em caso de curso no exterior, que não aufira rendimento próprio. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
-      <h5>IV - Pai, mãe, padrasto e madrasta, comprovadamente não dependentes entre si, que vivam sob dependência econômica do titular e não possuam renda própria superior ao limite de isenção para o fim de Imposto de Renda;</h5>
-      <h5>V - Portadores de necessidades especiais impossibilitados de exercer atividade laboral, enquanto perdurar a patologia e pelos quais o beneficiário titular seja legalmente responsável, desde que não possuam renda própria superior ao limite de isenção para o fim de Imposto de Renda.</h5>
-      <h5>V - pessoa com deficiência, pela qual o beneficiário titular seja legalmente responsável, desde que não possua renda própria superior ao limite de isenção para o fim de Imposto de Renda. (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h5>
-      <h4>§ 1º Não caracterizam rendimento próprio valores percebidos a título de pensão alimentícia ou bolsa auxílio paga em razão de estágio.</h4>
-      <h4>§ 2º A separação, o divórcio ou a dissolução da união estável do beneficiário titular faz cessar a condição de dependência para as pessoas indicadas no inciso I deste artigo, bem como aos respectivos enteados.</h4>
-      <h4>§ 3º Considera-se doença grave, para fins deste Decreto, aquela definida por lei para a concessão de isenção do imposto de renda. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h4>
-      <h5>III - Da Concessão do Benefício e inclusão de Dependentes</h5>
-      <h3>Art. 7º O benefício de que trata este Decreto deverá ser requerido pelos magistrados, servidores ativos e ocupantes de cargos em comissão exclusivamente pelo Sistema Hércules.</h3>
-      <h4>§ 1º Os servidores aposentados deverão requerer o benefício por meio do referido sistema ou mediante requerimento encaminhado à Divisão de Controle Financeiro do Pessoal do Departamento Econômico e Financeiro.</h4>
-      <h4>§ 1º Os magistrados e os servidores aposentados deverão requerer o benefício por meio do referido sistema ou mediante requerimento encaminhado à Assessoria Técnica da Secretaria de Finanças. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 2º O requerimento deverá ser instruído com os seguintes documentos:</h4>
-      <p>1 - Do beneficiário titular:</p>
-      <h6>a) comprovação de vinculação ao plano ou seguro de assistência à saúde;</h6>
-      <h6>b) recibo do sacado acompanhado de comprovante de pagamento ou nota fiscal, ou declaração emitida por entidade gestora do plano ou seguro de assistência à saúde, devidamente assinada ou carimbada, em que conste o nome do servidor e de seus dependentes, quando houver, e o valor da mensalidade individualizada do mês a partir do qual será solicitado o reembolso, devendo o vencimento corresponder ao mesmo mês do requerimento.</h6>
-      <p>2 - Do cônjuge ou companheiro (a):</p>
-      <h6>a) fotocópia de documento de identificação;</h6>
-      <h6>b) fotocópia do CPF, caso não conste do documento de identificação;</h6>
-      <h6>c) fotocópia da certidão de casamento civil, escritura pública de união estável ou declaração por instrumento particular, com assinaturas reconhecidas em cartório.</h6>
-      <p>3 - Do filho, enteado, menor tutelado ou sob guarda judicial:</p>
-      <h6>a) fotocópia da certidão de nascimento ou cédula de identidade;</h6>
-      <h6>b) fotocópia da decisão judicial que concedeu a guarda ou tutela, quando for o caso, ou ainda que comprove a responsabilidade pelo pagamento do plano ou seguro de assistência à saúde pelo beneficiário titular;</h6>
-      <h6>c) fotocópia da decisão judicial que concedeu a guarda ou tutela ao cônjuge ou companheiro, quando se tratar de enteados;</h6>
-      <h6>d) comprovante de matrícula em curso de ensino médio, técnico, superior ou de especialização, reconhecido pelo Ministério da Educação, se maior de vinte e um (21) e até completar vinte e quatro (24) anos de idade;</h6>
-      <p>4 - Do pai, mãe, padrasto e madrasta:</p>
-      <h6>a) fotocópia da cédula de identidade;</h6>
-      <h6>b) fotocópia do CPF, caso não conste do documento de identificação;</h6>
-      <h6>c) comprovante de rendimento de ambos, caso vivam em conjunto, ou de um só, se for viúvo, separado judicialmente ou divorciado.</h6>
-      <p>5 - Do portador de necessidades especiais:</p>
-      <p>5 - Da pessoa com deficiência ou portadora de doença grave: (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</p>
-      <h6>a) fotocópia da certidão de nascimento ou da cédula de identidade;</h6>
-      <h6>b) fotocópia do CPF, caso não conste do documento de identificação;</h6>
-      <h6>c) laudo médico informando qual a incapacidade e se esta é temporária ou permanente, devidamente homologado pelo Centro de Assistência Médica e Social do Tribunal de Justiça;</h6>
-      <h6>c - laudo médico informando a doença grave ou deficiência ou avaliação biopsicossocial da deficiência, homologados pelo Centro de Assistência Médica e Social do Tribunal de Justiça, do qual conste se o quadro é definitivo ou temporário e, neste último caso, aponte a periodicidade em que será necessária a reavaliação; (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h6>
-      <h6>d) decisão judicial que conferiu a tutela ou curatela, acompanhado do termo de compromisso firmado pelo beneficiário titular, ou, ainda, cópia da Declaração de Ajuste Anual de Imposto de Renda na qual figure como dependente do beneficiário titular.</h6>
-      <h6>d - decisão judicial que conferiu a tutela ou curatela, quando for o caso, acompanhada do termo de compromisso firmado pelo beneficiário titular, ou, cópia da Declaração de Ajuste Anual de Imposto de Renda na qual figure como dependente do beneficiário titular; (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h6>
-      <h6>e - decisão judicial transitada em julgado que reconheceu a doença grave. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h6>
-      <h4>§ 2º Para a concessão, manutenção e alteração do benefício somente serão aceitos documentos contendo: (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h6>a) o número de inscrição no CNPJ da entidade gestora do plano ou seguro de assistência à saúde, em papel timbrado; (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h6>b) a relação dos valores pagos a título de mensalidade do plano ou seguro de saúde, discriminado mensal e individualmente por beneficiário. (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h4>§ 3º O dependente a ser incluído no benefício deverá constar previamente no Cadastro de Dependentes do Sistema Hércules. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 4º Para a concessão, manutenção e alteração do benefício somente serão aceitos documentos em arquivo único, formato PDF, contendo: (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h6>a) o número de inscrição no CNPJ da entidade gestora do plano ou seguro de assistência à saúde, em papel timbrado; (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h6>b) a relação dos valores pagos a título de mensalidade do plano ou seguro de saúde, discriminado mensal e individualmente por beneficiário, excluídos aqueles valores não reembolsados, conforme art. 2º deste Decreto. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h4>§ 5º Os documentos que, porventura, estejam originalmente em língua estrangeira, devem ser acompanhados da respectiva tradução juramentada para que possam ter eficácia. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h5>IV - Das Alterações Intercorrentes</h5>
-      <h3>Art. 8º É de responsabilidade do magistrado ou do servidor a comunicação imediata de alterações que impliquem mudanças no valor do reembolso a ser pago, incluindo-se reajustes nos valores do plano ou seguro de assistência à saúde, troca de plano ou seguro de assistência à saúde, troca de acomodação, bem como inclusão e exclusão de dependentes.</h3>
-      <h3>Art. 8º É de responsabilidade do magistrado ou do servidor a comunicação imediata e exclusivamente por abertura de procedimento no sistema Hércules de alterações que impliquem mudanças no valor do reembolso a ser pago, incluindo-se reajustes nos valores do plano ou seguro de assistência à saúde, troca de plano ou seguro de assistência à saúde, troca de acomodação, inclusão e exclusão de dependentes ou alteração das condições previstas no art. 3º, § 5º, inciso I, deste Decreto. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h4>§ 1º Os efeitos financeiros dos pedidos de alteração ocorrerão sempre a partir do mês subsequente ao do requerimento, não cabendo ressarcimento retroativo.</h4>
-      <h4>§ 2º O Setor responsável excluirá o filho ou enteado que completar 21 anos, comunicando o servidor, e a este caberá solicitar a reinclusão do dependente, apresentando os documentos constantes do art. 7º, § 1º, item 3.</h4>
-      <h4>§ 2º Serão excluídos automaticamente os filhos ou enteados que completarem 21 anos, cabendo ao servidor solicitar sua reinclusão, após recadastramento do dependente com o comprovante de matrícula, conforme art. 6º, inciso III, deste Decreto. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 3º Serão excluídos automaticamente os filhos que completarem 24 anos, não cabendo, neste caso, pedido de reinclusão.</h4>
-      <h4>§ 3º Serão excluídos automaticamente os filhos ou enteados que completarem 24 anos, não cabendo, neste caso, pedido de reinclusão. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 4º O cancelamento do plano ou seguro de assistência à saúde deverá ser imediatamente comunicado pelos magistrados e servidores ativos, exclusivamente pelo Sistema Hércules, enquanto que pelos servidores aposentados pelo referido sistema ou mediante requerimento encaminhado à Divisão de Controle Financeiro do Pessoal do Departamento Econômico e Financeiro, sob pena de ressarcimento ao Erário dos valores recebidos indevidamente, conforme art. 12, § 1º.</h4>
-      <h4>§ 4º O cancelamento do plano ou seguro de assistência à saúde deverá ser imediatamente comunicado pelos magistrados e servidores ativos, exclusivamente pelo Sistema Hércules, enquanto, pelos magistrados e servidores aposentados, pelo referido sistema ou mediante requerimento encaminhado à Assessoria Técnica da Secretaria de Finanças, sob pena de ressarcimento ao Erário dos valores recebidos indevidamente, conforme art. 12, § 1º, deste Decreto. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 5º Os magistrados e servidores, ativos e aposentados, que possuem desconto direto em sua Folha de Pagamento da mensalidade do plano ou seguro de assistência à saúde ficam dispensados de solicitar o reajuste anual, cuja relação será apresentada pela entidade gestora do plano.</h4>
-      <h5>V - Da Manutenção do Benefício</h5>
-      <h3>Art. 9º Para a manutenção do reembolso de Auxílio-Saúde é obrigatória a comprovação pelo beneficiário titular das despesas realizadas com pagamento de mensalidade(s) de seu plano ou seguro de assistência à saúde e de seus dependentes.</h3>
-      <h3>Art. 9º Para a manutenção do auxílio saúde é obrigatória a comprovação pelo beneficiário titular das despesas realizadas com pagamento de mensalidade(s) de seu plano ou seguro de assistência à saúde e de seus dependentes. (Redação dada pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h3>
-      <h3>Art. 10. As comprovações deverão ser efetuadas por todos os beneficiários titulares, nos períodos abaixo relacionados, independentemente da data de adesão ao benefício, instruídas com os documentos constantes no artigo 7º:</h3>
-      <h3>Art. 10. As comprovações deverão ser efetuadas anualmente por todos os beneficiários titulares, no período de 1º de fevereiro a 30 de abril de cada ano, comprovando os pagamentos relativos ao ano anterior, independentemente da data de adesão ao benefício, instruídas com os documentos constantes no artigo anterior e no artigo 7º deste Decreto. (Redação dada pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h3>
-      <h3>Art. 10. As comprovações deverão ser efetuadas por todos os beneficiários titulares, no período de 1º de fevereiro a 30 de abril, independentemente da data de adesão ao benefício, instruídas com os documentos constantes no artigo 7º, § 4º, deste Decreto, referente aos pagamentos realizados no ano civil anterior. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h6>a) de 1º a 31 de março, comprovando os pagamentos relativos aos meses de setembro do ano anterior a fevereiro do ano em curso; (Revogado pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h6>
-      <h6>b) de 1º a 30 de setembro, comprovando os pagamentos relativos aos meses de março a agosto do mesmo ano. (Revogado pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h6>
-      <h4>Parágrafo único. A tarefa de manutenção será disponibilizada no sistema Hércules e permanecerá na mesa de trabalho do servidor para ser complementada e concluída com a documentação solicitada, exclusivamente nos meses e datas estabelecidos nas alíneas a e b deste artigo, sendo automaticamente fechada no primeiro dia útil após expirar prazo final estabelecido para manutenção.</h4>
-      <h4>Parágrafo único. A tarefa de manutenção será disponibilizada no sistema Hércules e permanecerá na mesa de trabalho do servidor para ser complementada e concluída com a documentação solicitada, exclusivamente no período indicado, sendo automaticamente fechada no primeiro dia útil após expirar prazo final estabelecido para manutenção. (Redação dada pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h4>
-      <h4>Parágrafo único. A tarefa de manutenção será disponibilizada no sistema Hércules e permanecerá na mesa de trabalho do servidor para ser complementada e concluída com a documentação solicitada, exclusivamente nos meses e datas estabelecidos neste artigo, sendo automaticamente fechada no primeiro dia útil após expirar prazo final estabelecido para manutenção. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h3>Art. 11. Ficam dispensados de realizar o procedimento de manutenção os beneficiários cujo plano ou seguro de assistência à saúde possuir código de desconto direto em sua Folha de Pagamento, exceto quando for necessária a complementação mediante a apresentação da declaração de matrícula quando se tratar de filhos maiores de vinte e um (21) anos, ou quando o plano de saúde dos dependentes for diverso do magistrado ou servidor.</h3>
-      <h4>Parágrafo único. Competirá à entidade gestora do plano ou seguro de assistência à saúde apresentar, em meio físico ou digital, declaração semestral, constando, expressamente, o valor da mensalidade por mês e individualizada por associado, acompanhada da relação mensal dos magistrados, servidores e seus dependentes, em conformidade com os ditames da Lei nº. 16.954/2011 e deste Decreto.</h4>
-      <h5>VI - Do Cancelamento do Benefício</h5>
-      <h3>Art. 12. Implicará cancelamento automático do benefício e/ou devolução dos valores recebidos em valor superior ao comprovado quando:</h3>
-      <h6>a) não for realizada a manutenção com a documentação comprobatória exigida, nos prazos definidos no artigo 10;</h6>
-      <h6>b) não for apresentada declaração de matrícula dos dependentes maiores de vinte e um (21) anos, com relação ao dependente do benefício;</h6>
-      <h6>c) não forem apresentados os comprovantes de pagamento do plano ou seguro de assistência à saúde juntamente com o pedido de exoneração;</h6>
-      <h6>d) o servidor requerer licença sem vencimentos e não apresentar comprovantes de pagamento do plano ou seguro de saúde;</h6>
-      <h6>e) não forem comunicadas, tempestivamente, as alterações ocorridas no plano ou seguro de saúde que possam gerar redução no valor a ser reembolsado;</h6>
-      <h4>§ 1º Os valores recebidos a maior deverão ser ressarcidos aos cofres deste Tribunal de Justiça, nos termos do art. 69 da Lei nº 16.024/2008, mediante desconto em Folha de Pagamento ou depósito em conta deste Tribunal, sob pena de inscrição do débito em dívida ativa.</h4>
-      <h4>§ 2º Os servidores aposentados poderão ter os valores devidos descontados do próprio benefício, quando houver.</h4>
-      <h4>§ 3º Ocorrido o cancelamento do benefício, o servidor não fará jus ao pagamento retroativo dos valores despendidos, sendo que nova concessão fica condicionada à regularização da manutenção pendente.</h4>
-      <h4>§ 4º Os valores restituídos ao Erário não serão, em nenhuma hipótese, devolvidos ao beneficiário, ainda que os comprovantes sejam apresentados em momento posterior ao reconhecimento do débito.</h4>
-      <h4>§ 5º O ressarcimento de valores ao erário ou ao servidor, relativos às irregularidades relacionadas ao benefício de auxílio-saúde, nas hipóteses em que não há o descumprimento culposo por parte do servidor ou da Administração, deve se dar sem aplicação de juros moratórios e com a incidência de correção monetária. (Incluído pelo Decreto Judiciário nº 527, de 9 de agosto de 2023)</h4>
-      <h4>§ 6º Será dispensado o ressarcimento, aos cofres deste Tribunal de Justiça, de valores considerados ínfimos, de até R$ 50,00 (cinquenta) reais por semestre, ou de valor estipulado em despacho normativo a ser editado pela autoridade competente. (Incluído pelo Decreto Judiciário nº 527, de 9 de agosto de 2023)</h4>
-      <h4>§ 6º Será dispensado o ressarcimento, aos cofres deste Tribunal de Justiça, de valores considerados ínfimos, de até R$ 120,00 (cento e vinte) reais por manutenção (anual), ou de valor estipulado em despacho normativo a ser editado pela autoridade competente, devendo a apuração do débito verificar a totalidade do montante devido, incluindo os valores pretéritos restituíveis no prazo prescricional. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h5>VII - Da análise e validação dos reembolsos.</h5>
-      <h3>Art. 13. A análise e validação dos reembolsos serão realizadas pela Seção de Benefícios do Departamento de Gestão de Recursos Humanos para os servidores ativos, pelo Departamento Econômico e Financeiro para os servidores inativos e Departamento da Magistratura para os magistrados.</h3>
-      <h3>Art. 13. A análise e validação dos reembolsos serão realizadas pela Secretaria de Gestão de Pessoas para os servidores ativos, pela Secretaria da Magistratura para os magistrados ativos, e pela Secretaria de Finanças para os magistrados e os servidores inativos. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h3>Art. 14. Quando da ocorrência de eventual irregularidade cadastral, serão consideradas validadas as indenizações recebidas quando os valores reembolsados a título de Auxílio-Saúde correspondam ao total que de qualquer forma seriam devidamente recebidos pelo servidor, em seu favor ou de seus dependentes.</h3>
-      <h4>Parágrafo único. Verificada a irregularidade cadastral, o servidor será notificado para, em 15 dias, promover as correções necessárias.</h4>
-      <h3>Art. 14. Quando da ocorrência de eventual irregularidade cadastral, serão consideradas validadas as indenizações recebidas quando os valores reembolsados a título de Auxílio Saúde correspondam ao total que de qualquer forma seriam devidamente recebidos pelo servidor, em seu favor ou de seus dependentes, desde que previamente cadastrados no benefício. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h5>VIII - Das Disposições Finais.</h5>
-      <h3>Art. 15. Os procedimentos referentes à concessão e à manutenção do benefício em questão deverão ser encaminhados e tramitarão:</h3>
-      <h6>a) no Departamento da Magistratura, para os magistrados; (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h6>b) no Departamento de Gestão de Recursos Humanos, para os servidores ativos; e; (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h6>c) no Departamento Econômico e Financeiro, para os servidores inativos. (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
-      <h5>I - na Secretaria da Magistratura, para os magistrados ativos; (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
-      <h5>II - na Secretaria de Gestão de Pessoas, para os servidores ativos; e; (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
-      <h5>III - na Secretaria de Finanças, para os magistrados e os servidores inativos. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
-      <h3>Art. 16. Os servidores inativos que não apresentarem seus requerimentos pelo Sistema Hércules deverão, obrigatoriamente, apresentar a documentação correspondente à manutenção ou alteração acompanhada do formulário correspondente.</h3>
-      <h3>Art. 17. O pedido de exoneração do servidor que percebe o benefício do Auxílio-Saúde deverá, obrigatoriamente, estar acompanhado dos comprovantes de pagamento do plano de saúde do período em aberto, cujos valores poderão ser cobrados nos termos do art. 12, § 1º, sob pena de inscrição em dívida ativa.</h3>
-      <h3>Art. 18. Não será devido o reembolso relativamente aos pagamentos efetuados em períodos anteriores ao mês do requerimento da concessão ou da alteração.</h3>
-      <h3>Art. 18. Não será devido o reembolso relativamente aos pagamentos efetuados em períodos anteriores ao mês do requerimento da concessão ou da alteração. (R edação original, ratificada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
-      <h4>Parágrafo único. Os requerimentos de concessão ou de alteração abertos no sistema Hércules que permanecerem por mais de 30 dias sem movimentação, por inércia do servidor ou magistrado, quando atendidos, terão sua data de efeito atribuída a partir do envio da documentação correta e conclusão do pedido pelos setores competentes.</h4>
-      <h4>§ 1º Os requerimentos de concessão ou de alteração abertos no sistema Hércules que permanecerem por mais de 30 dias sem movimentação, por inércia do servidor ou magistrado, serão cancelados pelo setor competente. (Parágrafo único transformado em § 1º e com redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 2º Excetuando-se a regra prevista no art. 2º deste Decreto, a concessão do primeiro acréscimo de que trata o art. 3º, § 7º, deste Decreto, poderá ter como início a data de publicação do Decreto Judiciário nº 220, de 06 de maio de 2024, em razão do trâmite interno de viabilização de implementação procedimento informatizado próprio no Sistema Hércules. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h4>§ 3º A exceção prevista no § 2º deste artigo será observada desde que atendidas as condições do cadastro previsto no art. 3º, §§ 8º e seguintes deste Decreto, dentro de 30 (trinta) dias da disponibilização da ferramenta no Sistema Hércules. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
-      <h3>Art. 19. A qualquer tempo, o Tribunal de Justiça poderá solicitar ao beneficiário titular a comprovação de quaisquer das condições exigidas para implantação ou manutenção do benefício de Auxílio-Saúde, bem como de qualquer documento exigido, no prazo de 15 (quinze) dias consecutivos, sob pena de cancelamento do benefício.</h3>
-      <h4>Parágrafo único. O Tribunal de Justiça poderá solicitar à entidade gestora do plano ou seguro de assistência à saúde que possui desconto em Folha de Pagamento a comprovação de quaisquer das condições exigidas para implantação ou manutenção do benefício do Auxílio-Saúde, bem como de qualquer documento no mesmo prazo estabelecido no art.15.</h4>
-      <h3>Art. 20. Os casos omissos serão decididos pela Presidência do Tribunal de Justiça.</h3>
-      <h3>Art. 21. A implementação e manutenção integral dos reembolsos estabelecidos neste Decreto fica condicionada à existência de prévia dotação orçamentária e disponibilidade financeira.</h3>
-      <h3>Art. 22. Este Decreto entra em vigor na data de sua publicação, revogadas as disposições do Decreto Judiciário nº 162/2016.</h3>
-      <p>Curitiba, 17 de setembro de 2019.</p>
-      <p>Des. ADALBERTO JORGE XISTO PEREIRA</p>
-      <p>Presidente do Tribunal de Justiça</p>
-      <h3>LIMITE INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO</h3>
-      <h3>FAIXA ETÁRIA</h3>
-      <h3>0 A 18 ANOS</h3>
-      <h3>19 A 23 ANOS</h3>
-      <h3>24 A 28 ANOS</h3>
-      <h3>29 A 33 ANOS</h3>
-      <h3>34 A 38 ANOS</h3>
-      <h3>39 A 43 ANOS</h3>
-      <h3>44 A 48 ANOS</h3>
-      <h3>49 A 53 ANOS</h3>
-      <h3>R$ 1.095,86</h3>
-      <h3>54 A 58 ANOS</h3>
-      <h3>R$ 1.189,48</h3>
-      <h3>59 ANOS OU MAIS</h3>
-      <h3>R$ 1.532,69</h3>
-      <p>(Redação dada pelo Decreto Judiciário nº 184, de 17 de março de 2023)</p>
-      <p>TABELA A - efeitos a partir da publicação do Decreto Judiciário nº 184, de 17 de março de 2023 TABELA INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO FAIXA ETÁRIA VALOR 0 A 18 ANOS R$ 379,08 19 A 23 ANOS R$ 620,60 24 A 28 ANOS R$ 847,95 29 A 33 ANOS R$ 914,69 34 A 38 ANOS R$ 1.061,32 39 A 43 ANOS R$ 1.157,96 44 A 48 ANOS R$ 1.391,59 49 A 53 ANOS R$ 1.626,14 54 A 58 ANOS R$ 1.765,06 59 ANOS OU MAIS R$ 2.274,33</p>
-      <p>(Redação dada pelo Decreto Judiciário nº 173, de 9 de abril de 2024)</p>
-      <p>TABELA A - efeitos a partir de 1º de fevereiro de 2024</p>
-      <h3>TABELA INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO</h3>
-      <h3>FAIXA ETÁRIA</h3>
-      <h3>0 A 18 ANOS</h3>
-      <h3>19 A 23 ANOS</h3>
-      <h3>24 A 28 ANOS</h3>
-      <h3>29 A 33 ANOS</h3>
-      <h3>R$ 1.002,74</h3>
-      <h3>34 A 38 ANOS</h3>
-      <h3>R$ 1.163,48</h3>
-      <h3>39 A 43 ANOS</h3>
-      <h3>R$ 1.269,47</h3>
-      <h3>44 A 48 ANOS</h3>
-      <h3>R$ 1.525,65</h3>
-      <h3>49 A 53 ANOS</h3>
-      <h3>R$ 1.782,72</h3>
-      <h3>54 A 58 ANOS</h3>
-      <h3>R$ 1.934,96</h3>
-      <h3>59 ANOS OU MAIS</h3>
-      <h3>R$ 2.493,20</h3>
-      <p>(Redação dada pelo Decreto Judiciário nº 54, de 31 de janeiro de 2025)</p>
-      <p>TABELA A - efeitos a partir de 1º de fevereiro de 2025</p>
-      <h3>TABELA INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO</h3>
-      <h3>FAIXA ETÁRIA</h3>
-      <h3>0 A 18 ANOS</h3>
-      <h3>R$ 486,12 19 A 23 ANOS</h3>
-      <h3>R$ 795,82 24 A 28 ANOS</h3>
-      <h3>R$ 1.087,33 29 A 33 ANOS</h3>
-      <h3>R$ 1.172,90 34 A 38 ANOS</h3>
-      <h3>R$ 1.360,92 39 A 43 ANOS</h3>
-      <h3>R$ 1.484,90 44 A 48 ANOS</h3>
-      <h3>R$ 1.784,55 49 A 53 ANOS</h3>
-      <h3>R$ 2.085,25 54 A 58 ANOS</h3>
-      <h3>R$ 2.263,33 59 ANOS OU MAIS</h3>
-      <h3>R$ 2.916,30</h3>
-      <h3>LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR</h3>
-      <h3>FAIXA ETÁRIA</h3>
-      <h3>0 A 18 ANOS</h3>
-      <h3>19 A 23 ANOS</h3>
-      <h3>24 A 28 ANOS</h3>
-      <h3>R$ 1.076,92</h3>
-      <h3>29 A 33 ANOS</h3>
-      <h3>R$ 1.161,67</h3>
-      <h3>34 A 38 ANOS</h3>
-      <h3>R$ 1.347,88</h3>
-      <h3>39 A 43 ANOS</h3>
-      <h3>R$ 1.470,60</h3>
-      <h3>44 A 48 ANOS</h3>
-      <h3>R$ 1.767,32</h3>
-      <h3>49 A 53 ANOS</h3>
-      <h3>R$ 2.065,20</h3>
-      <h3>54 A 58 ANOS</h3>
-      <h3>R$ 2.241,63</h3>
-      <h3>59 ANOS OU MAIS</h3>
-      <h3>R$ 2.888,42</h3>
-      <p>(Redação dada pelo Decreto Judiciário nº 184, de 17 de março de 2023)</p>
-      <p>TABELA B - efeitos a partir de 1º de abril de 2023</p>
-      <p>TABELA DO LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR FAIXA ETÁRIA VALOR 0 A 18 ANOS R$ 510,33 19 A 23 ANOS R$ 835,46 24 A 28 ANOS R$ 1.141,54 29 A 33 ANOS R$ 1.231,37 34 A 38 ANOS R$ 1.428,76 39 A 43 ANOS R$ 1.558,84 44 A 48 ANOS R$ 1.873,36 49 A 53 ANOS R$ 2.189,12 54 A 58 ANOS R$ 2.376,13 59 ANOS OU MAIS R$ 3.061,73</p>
-      <p>(Redação dada pelo Decreto Judiciário nº 173, de 9 de abril de 2024)</p>
-      <p>TABELA B - efeitos a partir de 1º de fevereiro de 2024</p>
-      <h3>TABELA DO LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR</h3>
-      <h3>FAIXA ETÁRIA</h3>
-      <h3>0 A 18 ANOS</h3>
-      <h3>19 A 23 ANOS</h3>
-      <h3>24 A 28 ANOS</h3>
-      <h3>R$ 1.206,16</h3>
-      <h3>29 A 33 ANOS</h3>
-      <h3>R$ 1.301,07</h3>
-      <h3>34 A 38 ANOS</h3>
-      <h3>R$ 1.509,63</h3>
-      <h3>39 A 43 ANOS</h3>
-      <h3>R$ 1.647,08</h3>
-      <h3>44 A 48 ANOS</h3>
-      <h3>R$ 1.979,40</h3>
-      <h3>49 A 53 ANOS</h3>
-      <h3>R$ 2.313,03</h3>
-      <h3>54 A 58 ANOS</h3>
-      <h3>R$ 2.510,63</h3>
-      <h3>59 ANOS OU MAIS</h3>
-      <h3>R$ 3.235,03</h3>
-      <p>(Redação dada pelo Decreto Judiciário nº 54, de 31 de janeiro de 2025)</p>
-      <p>TABELA B - efeitos a partir de 1º de fevereiro de 2025</p>
-      <h3>TABELA DO LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR</h3>
-      <h3>FAIXA ETÁRIA</h3>
-      <h3>0 A 18 ANOS</h3>
-      <h3>R$ 568,11 19 A 23 ANOS</h3>
-      <h3>R$ 930,04 24 A 28 ANOS</h3>
-      <h3>R$ 1.270,78 29 A 33 ANOS</h3>
-      <h3>R$ 1.370,77 34 A 38 ANOS</h3>
-      <h3>R$ 1.590,51 39 A 43 ANOS</h3>
-      <h3>R$ 1.735,32 44 A 48 ANOS</h3>
-      <h3>R$ 2.085,44 49 A 53 ANOS</h3>
-      <h3>R$ 2.436,95 54 A 58 ANOS</h3>
-      <h3>R$ 2.645,13 59 ANOS OU MAIS</h3>
-      <h3>R$ 3.408,34</h3>
-      <p>(Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</p>
-      <h3>(MODELO DE LAUDO MÉDICO)</h3>
-      <p>Declaro sob penas de lei que o(a) Sr(a)__________________________, que se encontra sob meus cuidados, é pessoa com deficiência, conforme Decreto nº 3.298, de 20 de dezembro de 1999 e suas atualizações, ou com doença grave, conforme Lei nº 7.713, de 22 de dezembro de 1988 e suas atualizações.</p>
-      <p>Informo ainda que a doença se encontra enquadrada no CID-10 sob número ________ e que o início da mesma pode ser comprovado de ___/___/____.</p>
-      <p>Declaro, por fim, que o registro do código da doença foi autorizado pelo interessado.</p>
-      <p>Por ser verdade firmo o presente.</p>
-    </article>
+ <article>
+ <p>ANEXOS - atualizados até o Decreto Judiciário nº 54/2025-P-SEP.</p>
+ <p>Situação: VIGENTE</p>
+ <p>DECRETO JUDICIÁRIO N° 552, DE 17 DE SETEMBRO DE 2019</p>
+ <p>- atualizado até o Decreto Judiciário nº 383, de 24 de julho de 2025 - P - SEP</p>
+ <p>ANEXOS - atualizados até o Decreto Judiciário nº 383, de 24 de julho de 2025 - P - SEP</p>
+ <p>Regulamenta o Auxílio-Saúde no âmbito do Tribunal de Justiça do Estado do Paraná.</p>
+ <p>O PRESIDENTE DO TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ, no uso de suas atribuições legais,</p>
+ <h2>CONSIDERANDO o contido nas Leis Estaduais nº 16.954, de 29 de novembro de 2011, e nº 18.692, de 22 de dezembro de 2015;</h2>
+ <h2>CONSIDERANDO o disposto no inciso I do art. 5º da Resolução nº 207, de 15 de outubro de 2015, do Conselho Nacional de Justiça;</h2>
+ <h2>CONSIDERANDO o quanto deliberado pelo Conselho Nacional de Justiça nos autos de nº 0006317-77.2019.2.00.0000 na 296ª Sessão Ordinária de 10 de setembro de 2019;</h2>
+ <h2>CONSIDERANDO o contido nos expedientes digitais n.° 0009950-93.2019.8.16.6000 e 0015062-43.2019.8.16.6000,</h2>
+ <h3>D E C R E T A :</h3>
+ <h5>I - Do Auxílio-Saúde</h5>
+ <h3>Art. 1º O Auxílio-Saúde, previsto nas Leis Estaduais nos 16.954, de 29 de novembro de 2011, e 18.692, de 22 de dezembro de 2015, será concedido a requerimento dos magistrados e servidores efetivos, ativos e inativos, e ocupantes de cargos em comissão deste Poder Judiciário que comprovarem contratação particular de plano ou seguro de assistência à saúde, e dar-se-á mediante reembolso, nos termos do presente regulamento.</h3>
+ <h4>§ 1º Para efeito desta regulamentação, os magistrados e servidores de que trata o caput deste artigo, após a concessão e implantação do benefício do Auxílio-Saúde, passam a ser denominados beneficiários titulares.</h4>
+ <h4>§ 2º Os magistrados e servidores que não figurarem como titulares de plano ou seguro de assistência à saúde poderão requerer o reembolso, desde que apresentem declaração da entidade assistencial de saúde em que constem como dependentes.</h4>
+ <h4>§ 3º Não é possível a concessão do reembolso tão somente para dependentes do servidor.</h4>
+ <h3>Art. 2º O reembolso será mensal, por ocasião do pagamento do subsídio, salário ou provento, e corresponderá somente às despesas com mensalidades de planos ou seguros de assistência à saúde, de livre escolha do beneficiário, excluídos valores desembolsados com parcelas de coparticipação, benefícios extras, serviços opcionais ou a qualquer outro título.</h3>
+ <h3>Art. 2º O reembolso será mensal, por ocasião do pagamento do subsídio, salário ou provento, e corresponderá somente às despesas com mensalidades de planos ou seguros de assistência à saúde, de livre escolha do beneficiário, excluídos valores desembolsados com parcelas de coparticipação, benefícios extras, assistência odontológica, serviços opcionais ou a qualquer outro título. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h3>Art. 3º O valor do reembolso fica limitado ao total despendido pelo beneficiário titular, inclusive com seus dependentes, observados os valores máximos individuais para as respectivas faixas etárias, nos termos do Anexo I deste Decreto, e ocorrerá no mês subsequente ao do requerimento.</h3>
+ <h4>§ 1º O valor do reembolso será proporcional aos dias trabalhados, quando a solicitação de concessão ocorrer no mesmo mês de assunção, em caso de exoneração e faltas não justificadas.</h4>
+ <h4>§ 2º O beneficiário titular ou dependente do Auxílio-Saúde terá direito ao reembolso do valor despendido com apenas um plano ou seguro de assistência à saúde.</h4>
+ <h4>§ 3º O reembolso mensal ao beneficiário titular terá como base os valores comprovados e estará limitado ao máximo global de 10% do seu subsídio, vencimento ou provento, ou, ainda, àquele estabelecido na tabela constante do Anexo II deste Decreto, o que for maior.</h4>
+ <h4>§ 4º Observado o disposto no § 3º, o valor do reembolso não poderá exceder, no caso de servidores, o limite mensal de 10% do subsídio destinado ao juiz substituto.</h4>
+ <h4>§ 5º No caso de preenchimento de uma das seguintes hipóteses previstas neste parágrafo, o valor apurado de reembolso será acrescido em 50% (cinquenta por cento): (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h4>
+ <h5>I - o magistrado, a magistrada, o servidor, a servidora ou algum dependente deles, seja pessoa com deficiência ou portadora de doença grave; (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h5>
+ <h5>I - o magistrado, a magistrada, o servidor, a servidora ou algum dependente deles, seja pessoa com deficiência (PCD) ou portadora de doença grave que se enquadre no inciso XIV do art. 6º da Lei Federal nº 7.713/1988. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
+ <h5>II - o magistrado, magistrada, servidor ou servidora com 50 anos completos ou mais. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h5>
+ <h4>§ 6º O acréscimo previsto no §5º deste artigo não é cumulativo e não se sujeita ao limite de reembolso previsto nos §§ 3º e 4º do artigo 3º deste Decreto. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h4>
+ <h4>§ 7º O acréscimo de 50% previsto para as hipóteses do § 5º deste artigo incidirá sobre o valor de reembolso total referente às despesas com mensalidades devido ao beneficiário titular, que inclui os valores de mensalidade dos dependentes. (Incluído pelo Decreto Judiciário nº 337, de 25 de junho de 2024)</h4>
+ <h4>§ 8º O pagamento do acréscimo previsto no § 5º deste artigo fica condicionado ao benefício ativo do titular e à informação da deficiência ou doença grave no Sistema Hércules, com exceção de magistrados e servidores que ingressaram no quadro de pessoal deste Poder Judiciário em vaga destinada a pessoa com deficiência, para os quais não é necessário informar a deficiência. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 9º O cadastro da deficiência ou doença grave para titulares ou dependentes deverá ser realizado pelos magistrados, servidores ativos e ocupantes de cargos em comissão exclusivamente pelo Sistema Hércules, por procedimento informatizado próprio, e os magistrados e os servidores aposentados deverão encaminhar a solicitação à Assessoria Técnica da Secretaria de Finanças. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 10. O cadastro de que trata o § 9º deste artigo deverá ser instruído com laudo médico que ateste deficiência permanente, nos termos da Lei Estadual nº 21.575/2023 ou com laudo médico emitido até seis meses antes do requerimento, informando a condição clínica do paciente e a data de início da mesma (conforme modelo no ANEXO III), além de exames complementares, que serão homologados pelo Centro de Atenção à Saúde, o qual apontará se o quadro é definitivo ou temporário e, neste último caso, a periodicidade em que será necessária a reavaliação. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 11. Para cumprimento do disposto no § 10 deste artigo, os documentos apresentados deverão conter a data de sua emissão, CID da deficiência ou doença grave, desde que o servidor autorize a sua inclusão, nome legível e CRM do médico responsável/emissor, sendo que os documentos autenticados digitalmente apenas serão aceitos com identificação do código de controle e a respectiva página eletrônica para a verificação de sua autenticidade. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 12. Caso não autorizada a inclusão do CID da deficiência ou doença, o titular do benefício ou respectivo dependente poderá ser chamado a se submeter à perícia médica, a ser realizada pela Coordenadoria de Saúde e Bem-Estar deste Tribunal. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 13. O beneficiário titular é responsável pelas informações prestadas e pela documentação apresentada, sob as penas da lei. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h3>Art. 4º Não será devido o reembolso ao magistrado ou servidor em licença ou afastamento sem remuneração, ou, ainda, que receba verbas de espécie semelhante, tais como vantagens pessoais originárias de qualquer forma de auxílio ou benefício à saúde.</h3>
+ <h3>Art. 4º Não será devido o reembolso ao magistrado ou ao servidor em licença ou afastamento sem remuneração, ou, ainda, que receba verbas de espécie semelhante, tais como vantagens pessoais originárias de qualquer forma de auxílio ou benefício à saúde, incluindo o Sistema de Assistência à Saúde - SAS. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h3>Art. 5º O reembolso de que trata este Decreto tem natureza indenizatória e não se incorpora ao subsídio, vencimento, remuneração, provento ou pensão, não estando sujeito à tributação de Imposto de Renda e contribuição previdenciária.</h3>
+ <h5>II - Dos Dependentes</h5>
+ <h3>Art. 6º Serão admitidos como beneficiários, na qualidade de dependentes do titular, conforme previsto no art. 1º, parágrafo único, da Lei nº 16.954/2011:</h3>
+ <h5>I - Cônjuge, companheiro ou companheira, em união estável;</h5>
+ <h5>II - Filhos, enteados ou menor sob guarda ou tutela concedida por decisão judicial, até vinte e um (21) anos de idade, ou, se inválidos, enquanto perdurar a invalidez;</h5>
+ <h5>III - Filhos, enteados ou dependente sob guarda ou tutela anterior à maioridade, acima de vinte e um (21) anos de idade e até completar vinte e quatro (24) anos, se estudante regularmente matriculado em curso de ensino médio, curso técnico, superior ou de especialização, devidamente reconhecido pelo Ministério da Educação, que não aufira rendimento próprio.</h5>
+ <h5>III - Filhos, enteados ou dependente sob guarda ou tutela anterior à maioridade, acima de dezoito (18) anos de idade e até completar vinte e quatro (24) anos, se estudante regularmente matriculado em curso de ensino médio, curso técnico, superior, de especialização ou residência devidamente reconhecido pelo Ministério da Educação ou equivalente, em caso de curso no exterior, que não aufira rendimento próprio. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
+ <h5>IV - Pai, mãe, padrasto e madrasta, comprovadamente não dependentes entre si, que vivam sob dependência econômica do titular e não possuam renda própria superior ao limite de isenção para o fim de Imposto de Renda;</h5>
+ <h5>V - Portadores de necessidades especiais impossibilitados de exercer atividade laboral, enquanto perdurar a patologia e pelos quais o beneficiário titular seja legalmente responsável, desde que não possuam renda própria superior ao limite de isenção para o fim de Imposto de Renda.</h5>
+ <h5>V - pessoa com deficiência, pela qual o beneficiário titular seja legalmente responsável, desde que não possua renda própria superior ao limite de isenção para o fim de Imposto de Renda. (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h5>
+ <h4>§ 1º Não caracterizam rendimento próprio valores percebidos a título de pensão alimentícia ou bolsa auxílio paga em razão de estágio.</h4>
+ <h4>§ 2º A separação, o divórcio ou a dissolução da união estável do beneficiário titular faz cessar a condição de dependência para as pessoas indicadas no inciso I deste artigo, bem como aos respectivos enteados.</h4>
+ <h4>§ 3º Considera-se doença grave, para fins deste Decreto, aquela definida por lei para a concessão de isenção do imposto de renda. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h4>
+ <h5>III - Da Concessão do Benefício e inclusão de Dependentes</h5>
+ <h3>Art. 7º O benefício de que trata este Decreto deverá ser requerido pelos magistrados, servidores ativos e ocupantes de cargos em comissão exclusivamente pelo Sistema Hércules.</h3>
+ <h4>§ 1º Os servidores aposentados deverão requerer o benefício por meio do referido sistema ou mediante requerimento encaminhado à Divisão de Controle Financeiro do Pessoal do Departamento Econômico e Financeiro.</h4>
+ <h4>§ 1º Os magistrados e os servidores aposentados deverão requerer o benefício por meio do referido sistema ou mediante requerimento encaminhado à Assessoria Técnica da Secretaria de Finanças. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 2º O requerimento deverá ser instruído com os seguintes documentos:</h4>
+ <p>1 - Do beneficiário titular:</p>
+ <h6>a) comprovação de vinculação ao plano ou seguro de assistência à saúde;</h6>
+ <h6>b) recibo do sacado acompanhado de comprovante de pagamento ou nota fiscal, ou declaração emitida por entidade gestora do plano ou seguro de assistência à saúde, devidamente assinada ou carimbada, em que conste o nome do servidor e de seus dependentes, quando houver, e o valor da mensalidade individualizada do mês a partir do qual será solicitado o reembolso, devendo o vencimento corresponder ao mesmo mês do requerimento.</h6>
+ <p>2 - Do cônjuge ou companheiro (a):</p>
+ <h6>a) fotocópia de documento de identificação;</h6>
+ <h6>b) fotocópia do CPF, caso não conste do documento de identificação;</h6>
+ <h6>c) fotocópia da certidão de casamento civil, escritura pública de união estável ou declaração por instrumento particular, com assinaturas reconhecidas em cartório.</h6>
+ <p>3 - Do filho, enteado, menor tutelado ou sob guarda judicial:</p>
+ <h6>a) fotocópia da certidão de nascimento ou cédula de identidade;</h6>
+ <h6>b) fotocópia da decisão judicial que concedeu a guarda ou tutela, quando for o caso, ou ainda que comprove a responsabilidade pelo pagamento do plano ou seguro de assistência à saúde pelo beneficiário titular;</h6>
+ <h6>c) fotocópia da decisão judicial que concedeu a guarda ou tutela ao cônjuge ou companheiro, quando se tratar de enteados;</h6>
+ <h6>d) comprovante de matrícula em curso de ensino médio, técnico, superior ou de especialização, reconhecido pelo Ministério da Educação, se maior de vinte e um (21) e até completar vinte e quatro (24) anos de idade;</h6>
+ <p>4 - Do pai, mãe, padrasto e madrasta:</p>
+ <h6>a) fotocópia da cédula de identidade;</h6>
+ <h6>b) fotocópia do CPF, caso não conste do documento de identificação;</h6>
+ <h6>c) comprovante de rendimento de ambos, caso vivam em conjunto, ou de um só, se for viúvo, separado judicialmente ou divorciado.</h6>
+ <p>5 - Do portador de necessidades especiais:</p>
+ <p>5 - Da pessoa com deficiência ou portadora de doença grave: (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</p>
+ <h6>a) fotocópia da certidão de nascimento ou da cédula de identidade;</h6>
+ <h6>b) fotocópia do CPF, caso não conste do documento de identificação;</h6>
+ <h6>c) laudo médico informando qual a incapacidade e se esta é temporária ou permanente, devidamente homologado pelo Centro de Assistência Médica e Social do Tribunal de Justiça;</h6>
+ <h6>c - laudo médico informando a doença grave ou deficiência ou avaliação biopsicossocial da deficiência, homologados pelo Centro de Assistência Médica e Social do Tribunal de Justiça, do qual conste se o quadro é definitivo ou temporário e, neste último caso, aponte a periodicidade em que será necessária a reavaliação; (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h6>
+ <h6>d) decisão judicial que conferiu a tutela ou curatela, acompanhado do termo de compromisso firmado pelo beneficiário titular, ou, ainda, cópia da Declaração de Ajuste Anual de Imposto de Renda na qual figure como dependente do beneficiário titular.</h6>
+ <h6>d - decisão judicial que conferiu a tutela ou curatela, quando for o caso, acompanhada do termo de compromisso firmado pelo beneficiário titular, ou, cópia da Declaração de Ajuste Anual de Imposto de Renda na qual figure como dependente do beneficiário titular; (Redação dada pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h6>
+ <h6>e - decisão judicial transitada em julgado que reconheceu a doença grave. (Incluído pelo Decreto Judiciário nº 220, de 2 de maio de 2024)</h6>
+ <h4>§ 2º Para a concessão, manutenção e alteração do benefício somente serão aceitos documentos contendo: (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h6>a) o número de inscrição no CNPJ da entidade gestora do plano ou seguro de assistência à saúde, em papel timbrado; (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h6>b) a relação dos valores pagos a título de mensalidade do plano ou seguro de saúde, discriminado mensal e individualmente por beneficiário. (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h4>§ 3º O dependente a ser incluído no benefício deverá constar previamente no Cadastro de Dependentes do Sistema Hércules. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 4º Para a concessão, manutenção e alteração do benefício somente serão aceitos documentos em arquivo único, formato PDF, contendo: (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h6>a) o número de inscrição no CNPJ da entidade gestora do plano ou seguro de assistência à saúde, em papel timbrado; (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h6>b) a relação dos valores pagos a título de mensalidade do plano ou seguro de saúde, discriminado mensal e individualmente por beneficiário, excluídos aqueles valores não reembolsados, conforme art. 2º deste Decreto. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h4>§ 5º Os documentos que, porventura, estejam originalmente em língua estrangeira, devem ser acompanhados da respectiva tradução juramentada para que possam ter eficácia. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h5>IV - Das Alterações Intercorrentes</h5>
+ <h3>Art. 8º É de responsabilidade do magistrado ou do servidor a comunicação imediata de alterações que impliquem mudanças no valor do reembolso a ser pago, incluindo-se reajustes nos valores do plano ou seguro de assistência à saúde, troca de plano ou seguro de assistência à saúde, troca de acomodação, bem como inclusão e exclusão de dependentes.</h3>
+ <h3>Art. 8º É de responsabilidade do magistrado ou do servidor a comunicação imediata e exclusivamente por abertura de procedimento no sistema Hércules de alterações que impliquem mudanças no valor do reembolso a ser pago, incluindo-se reajustes nos valores do plano ou seguro de assistência à saúde, troca de plano ou seguro de assistência à saúde, troca de acomodação, inclusão e exclusão de dependentes ou alteração das condições previstas no art. 3º, § 5º, inciso I, deste Decreto. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h4>§ 1º Os efeitos financeiros dos pedidos de alteração ocorrerão sempre a partir do mês subsequente ao do requerimento, não cabendo ressarcimento retroativo.</h4>
+ <h4>§ 2º O Setor responsável excluirá o filho ou enteado que completar 21 anos, comunicando o servidor, e a este caberá solicitar a reinclusão do dependente, apresentando os documentos constantes do art. 7º, § 1º, item 3.</h4>
+ <h4>§ 2º Serão excluídos automaticamente os filhos ou enteados que completarem 21 anos, cabendo ao servidor solicitar sua reinclusão, após recadastramento do dependente com o comprovante de matrícula, conforme art. 6º, inciso III, deste Decreto. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 3º Serão excluídos automaticamente os filhos que completarem 24 anos, não cabendo, neste caso, pedido de reinclusão.</h4>
+ <h4>§ 3º Serão excluídos automaticamente os filhos ou enteados que completarem 24 anos, não cabendo, neste caso, pedido de reinclusão. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 4º O cancelamento do plano ou seguro de assistência à saúde deverá ser imediatamente comunicado pelos magistrados e servidores ativos, exclusivamente pelo Sistema Hércules, enquanto que pelos servidores aposentados pelo referido sistema ou mediante requerimento encaminhado à Divisão de Controle Financeiro do Pessoal do Departamento Econômico e Financeiro, sob pena de ressarcimento ao Erário dos valores recebidos indevidamente, conforme art. 12, § 1º.</h4>
+ <h4>§ 4º O cancelamento do plano ou seguro de assistência à saúde deverá ser imediatamente comunicado pelos magistrados e servidores ativos, exclusivamente pelo Sistema Hércules, enquanto, pelos magistrados e servidores aposentados, pelo referido sistema ou mediante requerimento encaminhado à Assessoria Técnica da Secretaria de Finanças, sob pena de ressarcimento ao Erário dos valores recebidos indevidamente, conforme art. 12, § 1º, deste Decreto. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 5º Os magistrados e servidores, ativos e aposentados, que possuem desconto direto em sua Folha de Pagamento da mensalidade do plano ou seguro de assistência à saúde ficam dispensados de solicitar o reajuste anual, cuja relação será apresentada pela entidade gestora do plano.</h4>
+ <h5>V - Da Manutenção do Benefício</h5>
+ <h3>Art. 9º Para a manutenção do reembolso de Auxílio-Saúde é obrigatória a comprovação pelo beneficiário titular das despesas realizadas com pagamento de mensalidade(s) de seu plano ou seguro de assistência à saúde e de seus dependentes.</h3>
+ <h3>Art. 9º Para a manutenção do auxílio saúde é obrigatória a comprovação pelo beneficiário titular das despesas realizadas com pagamento de mensalidade(s) de seu plano ou seguro de assistência à saúde e de seus dependentes. (Redação dada pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h3>
+ <h3>Art. 10. As comprovações deverão ser efetuadas por todos os beneficiários titulares, nos períodos abaixo relacionados, independentemente da data de adesão ao benefício, instruídas com os documentos constantes no artigo 7º:</h3>
+ <h3>Art. 10. As comprovações deverão ser efetuadas anualmente por todos os beneficiários titulares, no período de 1º de fevereiro a 30 de abril de cada ano, comprovando os pagamentos relativos ao ano anterior, independentemente da data de adesão ao benefício, instruídas com os documentos constantes no artigo anterior e no artigo 7º deste Decreto. (Redação dada pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h3>
+ <h3>Art. 10. As comprovações deverão ser efetuadas por todos os beneficiários titulares, no período de 1º de fevereiro a 30 de abril, independentemente da data de adesão ao benefício, instruídas com os documentos constantes no artigo 7º, § 4º, deste Decreto, referente aos pagamentos realizados no ano civil anterior. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h6>a) de 1º a 31 de março, comprovando os pagamentos relativos aos meses de setembro do ano anterior a fevereiro do ano em curso; (Revogado pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h6>
+ <h6>b) de 1º a 30 de setembro, comprovando os pagamentos relativos aos meses de março a agosto do mesmo ano. (Revogado pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h6>
+ <h4>Parágrafo único. A tarefa de manutenção será disponibilizada no sistema Hércules e permanecerá na mesa de trabalho do servidor para ser complementada e concluída com a documentação solicitada, exclusivamente nos meses e datas estabelecidos nas alíneas a e b deste artigo, sendo automaticamente fechada no primeiro dia útil após expirar prazo final estabelecido para manutenção.</h4>
+ <h4>Parágrafo único. A tarefa de manutenção será disponibilizada no sistema Hércules e permanecerá na mesa de trabalho do servidor para ser complementada e concluída com a documentação solicitada, exclusivamente no período indicado, sendo automaticamente fechada no primeiro dia útil após expirar prazo final estabelecido para manutenção. (Redação dada pelo Decreto Judiciário nº 38, de 23 de janeiro de 2024) ( Vide vigência )</h4>
+ <h4>Parágrafo único. A tarefa de manutenção será disponibilizada no sistema Hércules e permanecerá na mesa de trabalho do servidor para ser complementada e concluída com a documentação solicitada, exclusivamente nos meses e datas estabelecidos neste artigo, sendo automaticamente fechada no primeiro dia útil após expirar prazo final estabelecido para manutenção. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h3>Art. 11. Ficam dispensados de realizar o procedimento de manutenção os beneficiários cujo plano ou seguro de assistência à saúde possuir código de desconto direto em sua Folha de Pagamento, exceto quando for necessária a complementação mediante a apresentação da declaração de matrícula quando se tratar de filhos maiores de vinte e um (21) anos, ou quando o plano de saúde dos dependentes for diverso do magistrado ou servidor.</h3>
+ <h4>Parágrafo único. Competirá à entidade gestora do plano ou seguro de assistência à saúde apresentar, em meio físico ou digital, declaração semestral, constando, expressamente, o valor da mensalidade por mês e individualizada por associado, acompanhada da relação mensal dos magistrados, servidores e seus dependentes, em conformidade com os ditames da Lei nº. 16.954/2011 e deste Decreto.</h4>
+ <h5>VI - Do Cancelamento do Benefício</h5>
+ <h3>Art. 12. Implicará cancelamento automático do benefício e/ou devolução dos valores recebidos em valor superior ao comprovado quando:</h3>
+ <h6>a) não for realizada a manutenção com a documentação comprobatória exigida, nos prazos definidos no artigo 10;</h6>
+ <h6>b) não for apresentada declaração de matrícula dos dependentes maiores de vinte e um (21) anos, com relação ao dependente do benefício;</h6>
+ <h6>c) não forem apresentados os comprovantes de pagamento do plano ou seguro de assistência à saúde juntamente com o pedido de exoneração;</h6>
+ <h6>d) o servidor requerer licença sem vencimentos e não apresentar comprovantes de pagamento do plano ou seguro de saúde;</h6>
+ <h6>e) não forem comunicadas, tempestivamente, as alterações ocorridas no plano ou seguro de saúde que possam gerar redução no valor a ser reembolsado;</h6>
+ <h4>§ 1º Os valores recebidos a maior deverão ser ressarcidos aos cofres deste Tribunal de Justiça, nos termos do art. 69 da Lei nº 16.024/2008, mediante desconto em Folha de Pagamento ou depósito em conta deste Tribunal, sob pena de inscrição do débito em dívida ativa.</h4>
+ <h4>§ 2º Os servidores aposentados poderão ter os valores devidos descontados do próprio benefício, quando houver.</h4>
+ <h4>§ 3º Ocorrido o cancelamento do benefício, o servidor não fará jus ao pagamento retroativo dos valores despendidos, sendo que nova concessão fica condicionada à regularização da manutenção pendente.</h4>
+ <h4>§ 4º Os valores restituídos ao Erário não serão, em nenhuma hipótese, devolvidos ao beneficiário, ainda que os comprovantes sejam apresentados em momento posterior ao reconhecimento do débito.</h4>
+ <h4>§ 5º O ressarcimento de valores ao erário ou ao servidor, relativos às irregularidades relacionadas ao benefício de auxílio-saúde, nas hipóteses em que não há o descumprimento culposo por parte do servidor ou da Administração, deve se dar sem aplicação de juros moratórios e com a incidência de correção monetária. (Incluído pelo Decreto Judiciário nº 527, de 9 de agosto de 2023)</h4>
+ <h4>§ 6º Será dispensado o ressarcimento, aos cofres deste Tribunal de Justiça, de valores considerados ínfimos, de até R$ 50,00 (cinquenta) reais por semestre, ou de valor estipulado em despacho normativo a ser editado pela autoridade competente. (Incluído pelo Decreto Judiciário nº 527, de 9 de agosto de 2023)</h4>
+ <h4>§ 6º Será dispensado o ressarcimento, aos cofres deste Tribunal de Justiça, de valores considerados ínfimos, de até R$ 120,00 (cento e vinte) reais por manutenção (anual), ou de valor estipulado em despacho normativo a ser editado pela autoridade competente, devendo a apuração do débito verificar a totalidade do montante devido, incluindo os valores pretéritos restituíveis no prazo prescricional. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h5>VII - Da análise e validação dos reembolsos.</h5>
+ <h3>Art. 13. A análise e validação dos reembolsos serão realizadas pela Seção de Benefícios do Departamento de Gestão de Recursos Humanos para os servidores ativos, pelo Departamento Econômico e Financeiro para os servidores inativos e Departamento da Magistratura para os magistrados.</h3>
+ <h3>Art. 13. A análise e validação dos reembolsos serão realizadas pela Secretaria de Gestão de Pessoas para os servidores ativos, pela Secretaria da Magistratura para os magistrados ativos, e pela Secretaria de Finanças para os magistrados e os servidores inativos. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h3>Art. 14. Quando da ocorrência de eventual irregularidade cadastral, serão consideradas validadas as indenizações recebidas quando os valores reembolsados a título de Auxílio-Saúde correspondam ao total que de qualquer forma seriam devidamente recebidos pelo servidor, em seu favor ou de seus dependentes.</h3>
+ <h4>Parágrafo único. Verificada a irregularidade cadastral, o servidor será notificado para, em 15 dias, promover as correções necessárias.</h4>
+ <h3>Art. 14. Quando da ocorrência de eventual irregularidade cadastral, serão consideradas validadas as indenizações recebidas quando os valores reembolsados a título de Auxílio Saúde correspondam ao total que de qualquer forma seriam devidamente recebidos pelo servidor, em seu favor ou de seus dependentes, desde que previamente cadastrados no benefício. (Redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h5>VIII - Das Disposições Finais.</h5>
+ <h3>Art. 15. Os procedimentos referentes à concessão e à manutenção do benefício em questão deverão ser encaminhados e tramitarão:</h3>
+ <h6>a) no Departamento da Magistratura, para os magistrados; (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h6>b) no Departamento de Gestão de Recursos Humanos, para os servidores ativos; e; (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h6>c) no Departamento Econômico e Financeiro, para os servidores inativos. (Revogado pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h6>
+ <h5>I - na Secretaria da Magistratura, para os magistrados ativos; (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
+ <h5>II - na Secretaria de Gestão de Pessoas, para os servidores ativos; e; (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
+ <h5>III - na Secretaria de Finanças, para os magistrados e os servidores inativos. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h5>
+ <h3>Art. 16. Os servidores inativos que não apresentarem seus requerimentos pelo Sistema Hércules deverão, obrigatoriamente, apresentar a documentação correspondente à manutenção ou alteração acompanhada do formulário correspondente.</h3>
+ <h3>Art. 17. O pedido de exoneração do servidor que percebe o benefício do Auxílio-Saúde deverá, obrigatoriamente, estar acompanhado dos comprovantes de pagamento do plano de saúde do período em aberto, cujos valores poderão ser cobrados nos termos do art. 12, § 1º, sob pena de inscrição em dívida ativa.</h3>
+ <h3>Art. 18. Não será devido o reembolso relativamente aos pagamentos efetuados em períodos anteriores ao mês do requerimento da concessão ou da alteração.</h3>
+ <h3>Art. 18. Não será devido o reembolso relativamente aos pagamentos efetuados em períodos anteriores ao mês do requerimento da concessão ou da alteração. (R edação original, ratificada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h3>
+ <h4>Parágrafo único. Os requerimentos de concessão ou de alteração abertos no sistema Hércules que permanecerem por mais de 30 dias sem movimentação, por inércia do servidor ou magistrado, quando atendidos, terão sua data de efeito atribuída a partir do envio da documentação correta e conclusão do pedido pelos setores competentes.</h4>
+ <h4>§ 1º Os requerimentos de concessão ou de alteração abertos no sistema Hércules que permanecerem por mais de 30 dias sem movimentação, por inércia do servidor ou magistrado, serão cancelados pelo setor competente. (Parágrafo único transformado em § 1º e com redação dada pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 2º Excetuando-se a regra prevista no art. 2º deste Decreto, a concessão do primeiro acréscimo de que trata o art. 3º, § 7º, deste Decreto, poderá ter como início a data de publicação do Decreto Judiciário nº 220, de 06 de maio de 2024, em razão do trâmite interno de viabilização de implementação procedimento informatizado próprio no Sistema Hércules. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h4>§ 3º A exceção prevista no § 2º deste artigo será observada desde que atendidas as condições do cadastro previsto no art. 3º, §§ 8º e seguintes deste Decreto, dentro de 30 (trinta) dias da disponibilização da ferramenta no Sistema Hércules. (Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</h4>
+ <h3>Art. 19. A qualquer tempo, o Tribunal de Justiça poderá solicitar ao beneficiário titular a comprovação de quaisquer das condições exigidas para implantação ou manutenção do benefício de Auxílio-Saúde, bem como de qualquer documento exigido, no prazo de 15 (quinze) dias consecutivos, sob pena de cancelamento do benefício.</h3>
+ <h4>Parágrafo único. O Tribunal de Justiça poderá solicitar à entidade gestora do plano ou seguro de assistência à saúde que possui desconto em Folha de Pagamento a comprovação de quaisquer das condições exigidas para implantação ou manutenção do benefício do Auxílio-Saúde, bem como de qualquer documento no mesmo prazo estabelecido no art.15.</h4>
+ <h3>Art. 20. Os casos omissos serão decididos pela Presidência do Tribunal de Justiça.</h3>
+ <h3>Art. 21. A implementação e manutenção integral dos reembolsos estabelecidos neste Decreto fica condicionada à existência de prévia dotação orçamentária e disponibilidade financeira.</h3>
+ <h3>Art. 22. Este Decreto entra em vigor na data de sua publicação, revogadas as disposições do Decreto Judiciário nº 162/2016.</h3>
+ <p>Curitiba, 17 de setembro de 2019.</p>
+ <p>Des. ADALBERTO JORGE XISTO PEREIRA</p>
+ <p>Presidente do Tribunal de Justiça</p>
+ <h3>LIMITE INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO</h3>
+ <h3>FAIXA ETÁRIA</h3>
+ <h3>0 A 18 ANOS</h3>
+ <h3>19 A 23 ANOS</h3>
+ <h3>24 A 28 ANOS</h3>
+ <h3>29 A 33 ANOS</h3>
+ <h3>34 A 38 ANOS</h3>
+ <h3>39 A 43 ANOS</h3>
+ <h3>44 A 48 ANOS</h3>
+ <h3>49 A 53 ANOS</h3>
+ <h3>R$ 1.095,86</h3>
+ <h3>54 A 58 ANOS</h3>
+ <h3>R$ 1.189,48</h3>
+ <h3>59 ANOS OU MAIS</h3>
+ <h3>R$ 1.532,69</h3>
+ <p>(Redação dada pelo Decreto Judiciário nº 184, de 17 de março de 2023)</p>
+ <p>TABELA A - efeitos a partir da publicação do Decreto Judiciário nº 184, de 17 de março de 2023 TABELA INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO FAIXA ETÁRIA VALOR 0 A 18 ANOS R$ 379,08 19 A 23 ANOS R$ 620,60 24 A 28 ANOS R$ 847,95 29 A 33 ANOS R$ 914,69 34 A 38 ANOS R$ 1.061,32 39 A 43 ANOS R$ 1.157,96 44 A 48 ANOS R$ 1.391,59 49 A 53 ANOS R$ 1.626,14 54 A 58 ANOS R$ 1.765,06 59 ANOS OU MAIS R$ 2.274,33</p>
+ <p>(Redação dada pelo Decreto Judiciário nº 173, de 9 de abril de 2024)</p>
+ <p>TABELA A - efeitos a partir de 1º de fevereiro de 2024</p>
+ <h3>TABELA INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO</h3>
+ <h3>FAIXA ETÁRIA</h3>
+ <h3>0 A 18 ANOS</h3>
+ <h3>19 A 23 ANOS</h3>
+ <h3>24 A 28 ANOS</h3>
+ <h3>29 A 33 ANOS</h3>
+ <h3>R$ 1.002,74</h3>
+ <h3>34 A 38 ANOS</h3>
+ <h3>R$ 1.163,48</h3>
+ <h3>39 A 43 ANOS</h3>
+ <h3>R$ 1.269,47</h3>
+ <h3>44 A 48 ANOS</h3>
+ <h3>R$ 1.525,65</h3>
+ <h3>49 A 53 ANOS</h3>
+ <h3>R$ 1.782,72</h3>
+ <h3>54 A 58 ANOS</h3>
+ <h3>R$ 1.934,96</h3>
+ <h3>59 ANOS OU MAIS</h3>
+ <h3>R$ 2.493,20</h3>
+ <p>(Redação dada pelo Decreto Judiciário nº 54, de 31 de janeiro de 2025)</p>
+ <p>TABELA A - efeitos a partir de 1º de fevereiro de 2025</p>
+ <h3>TABELA INDIVIDUAL POR FAIXA ETÁRIA DO BENEFICIÁRIO</h3>
+ <h3>FAIXA ETÁRIA</h3>
+ <h3>0 A 18 ANOS</h3>
+ <h3>R$ 486,12 19 A 23 ANOS</h3>
+ <h3>R$ 795,82 24 A 28 ANOS</h3>
+ <h3>R$ 1.087,33 29 A 33 ANOS</h3>
+ <h3>R$ 1.172,90 34 A 38 ANOS</h3>
+ <h3>R$ 1.360,92 39 A 43 ANOS</h3>
+ <h3>R$ 1.484,90 44 A 48 ANOS</h3>
+ <h3>R$ 1.784,55 49 A 53 ANOS</h3>
+ <h3>R$ 2.085,25 54 A 58 ANOS</h3>
+ <h3>R$ 2.263,33 59 ANOS OU MAIS</h3>
+ <h3>R$ 2.916,30</h3>
+ <h3>LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR</h3>
+ <h3>FAIXA ETÁRIA</h3>
+ <h3>0 A 18 ANOS</h3>
+ <h3>19 A 23 ANOS</h3>
+ <h3>24 A 28 ANOS</h3>
+ <h3>R$ 1.076,92</h3>
+ <h3>29 A 33 ANOS</h3>
+ <h3>R$ 1.161,67</h3>
+ <h3>34 A 38 ANOS</h3>
+ <h3>R$ 1.347,88</h3>
+ <h3>39 A 43 ANOS</h3>
+ <h3>R$ 1.470,60</h3>
+ <h3>44 A 48 ANOS</h3>
+ <h3>R$ 1.767,32</h3>
+ <h3>49 A 53 ANOS</h3>
+ <h3>R$ 2.065,20</h3>
+ <h3>54 A 58 ANOS</h3>
+ <h3>R$ 2.241,63</h3>
+ <h3>59 ANOS OU MAIS</h3>
+ <h3>R$ 2.888,42</h3>
+ <p>(Redação dada pelo Decreto Judiciário nº 184, de 17 de março de 2023)</p>
+ <p>TABELA B - efeitos a partir de 1º de abril de 2023</p>
+ <p>TABELA DO LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR FAIXA ETÁRIA VALOR 0 A 18 ANOS R$ 510,33 19 A 23 ANOS R$ 835,46 24 A 28 ANOS R$ 1.141,54 29 A 33 ANOS R$ 1.231,37 34 A 38 ANOS R$ 1.428,76 39 A 43 ANOS R$ 1.558,84 44 A 48 ANOS R$ 1.873,36 49 A 53 ANOS R$ 2.189,12 54 A 58 ANOS R$ 2.376,13 59 ANOS OU MAIS R$ 3.061,73</p>
+ <p>(Redação dada pelo Decreto Judiciário nº 173, de 9 de abril de 2024)</p>
+ <p>TABELA B - efeitos a partir de 1º de fevereiro de 2024</p>
+ <h3>TABELA DO LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR</h3>
+ <h3>FAIXA ETÁRIA</h3>
+ <h3>0 A 18 ANOS</h3>
+ <h3>19 A 23 ANOS</h3>
+ <h3>24 A 28 ANOS</h3>
+ <h3>R$ 1.206,16</h3>
+ <h3>29 A 33 ANOS</h3>
+ <h3>R$ 1.301,07</h3>
+ <h3>34 A 38 ANOS</h3>
+ <h3>R$ 1.509,63</h3>
+ <h3>39 A 43 ANOS</h3>
+ <h3>R$ 1.647,08</h3>
+ <h3>44 A 48 ANOS</h3>
+ <h3>R$ 1.979,40</h3>
+ <h3>49 A 53 ANOS</h3>
+ <h3>R$ 2.313,03</h3>
+ <h3>54 A 58 ANOS</h3>
+ <h3>R$ 2.510,63</h3>
+ <h3>59 ANOS OU MAIS</h3>
+ <h3>R$ 3.235,03</h3>
+ <p>(Redação dada pelo Decreto Judiciário nº 54, de 31 de janeiro de 2025)</p>
+ <p>TABELA B - efeitos a partir de 1º de fevereiro de 2025</p>
+ <h3>TABELA DO LIMITE GLOBAL POR FAIXA ETÁRIA DO TITULAR</h3>
+ <h3>FAIXA ETÁRIA</h3>
+ <h3>0 A 18 ANOS</h3>
+ <h3>R$ 568,11 19 A 23 ANOS</h3>
+ <h3>R$ 930,04 24 A 28 ANOS</h3>
+ <h3>R$ 1.270,78 29 A 33 ANOS</h3>
+ <h3>R$ 1.370,77 34 A 38 ANOS</h3>
+ <h3>R$ 1.590,51 39 A 43 ANOS</h3>
+ <h3>R$ 1.735,32 44 A 48 ANOS</h3>
+ <h3>R$ 2.085,44 49 A 53 ANOS</h3>
+ <h3>R$ 2.436,95 54 A 58 ANOS</h3>
+ <h3>R$ 2.645,13 59 ANOS OU MAIS</h3>
+ <h3>R$ 3.408,34</h3>
+ <p>(Incluído pelo Decreto Judiciário nº 383, de 24 de julho de 2025)</p>
+ <h3>(MODELO DE LAUDO MÉDICO)</h3>
+ <p>Declaro sob penas de lei que o(a) Sr(a)__________________________, que se encontra sob meus cuidados, é pessoa com deficiência, conforme Decreto nº 3.298, de 20 de dezembro de 1999 e suas atualizações, ou com doença grave, conforme Lei nº 7.713, de 22 de dezembro de 1988 e suas atualizações.</p>
+ <p>Informo ainda que a doença se encontra enquadrada no CID-10 sob número ________ e que o início da mesma pode ser comprovado de ___/___/____.</p>
+ <p>Declaro, por fim, que o registro do código da doença foi autorizado pelo interessado.</p>
+ <p>Por ser verdade firmo o presente.</p>
+ </article>
 
-    <footer>
-      <p class="disclaimer">
-        <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
-        O conteúdo oficial e juridicamente válido está disponível no 
-        <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4686856" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
-        e no Diário da Justiça Eletrônico.
-      </p>
-    </footer>
-  </main>
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4686856" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
 </body>
 </html>

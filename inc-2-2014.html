@@ -1,911 +1,911 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <title>Ato Normativo – Espelho</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex" />
-  <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+ <meta charset="utf-8" />
+ <title>Ato Normativo – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f8f9fa;
-    }
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: #333;
+ background-color: #f8f9fa;
+ }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      /* increase horizontal padding to give more breathing room on the left and right */
-      padding: 20px 40px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      min-height: 100vh;
-    }
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: white;
+ box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ min-height: 100vh;
+ }
 
-    header {
-      border-bottom: 3px solid #0066cc;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
-    }
+ header {
+ border-bottom: 3px solid #0066cc;
+ padding-bottom: 20px;
+ margin-bottom: 30px;
+ }
 
-    header h1 {
-      color: #0066cc;
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
+ header h1 {
+ color: #0066cc;
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ }
 
-    .subtitle {
-      color: #666;
-      font-size: 1.1em;
-      font-style: italic;
-    }
+ .subtitle {
+ color: #666;
+ font-size: 1.1em;
+ font-style: italic;
+ }
 
-    .meta {
-      background-color: #f8f9fa;
-      border: 1px solid #e9ecef;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 30px;
-      font-size: 0.9em;
-    }
+ .meta {
+ background-color: #f8f9fa;
+ border: 1px solid #e9ecef;
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ }
 
-    .meta div {
-      margin-bottom: 5px;
-      font-size: 1.2em;
-    }
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
 
-    .meta strong {
-      color: #495057;
-    }
+ .meta strong {
+ color: #495057;
+ }
 
-    .meta a {
-      color: #0066cc;
-      text-decoration: none;
-    }
+ .meta a {
+ color: #0066cc;
+ text-decoration: none;
+ }
 
-    .meta a:hover {
-      text-decoration: underline;
-    }
+ .meta a:hover {
+ text-decoration: underline;
+ }
 
-    article {
-      line-height: 1.8;
-    }
+ article {
+ line-height: 1.8;
+ }
 
-    article h1 {
-      color: #0066cc;
-      font-size: 1.4em;
-      margin: 20px 0 12px 0;
-      /* use a real font weight instead of the invalid 'justify' keyword */
-      font-weight: 600;
-      text-align: justify;
-    }
+ article h1 {
+ color: #0066cc;
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ }
 
-    article h2 {
-      /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h3 {
-      /* Estilo unificado para artigos e demais níveis normativos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h4 {
-      /* Aplicar mesmo estilo de h3 para parágrafos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h5 {
-      /* Aplicar mesmo estilo de h3 para incisos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article h6 {
-      /* Aplicar mesmo estilo de h3 para alíneas */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    article p {
-      /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
-      color: #333;
-      font-size: 1.4rem;
-      font-weight: normal;
-      text-align: justify;
-      line-height: 1.3;
-      margin: 20px 0 12px 0;
-    }
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: #333;
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
 
-    /* enlarge the very first paragraph inside the article, which typically contains the document's
-       title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
-    article p:first-of-type {
-      font-size: 1.6em;
-      line-height: 1.4;
-      font-weight: 700;
-      text-align: center;
-      color: #0066cc;
-      margin: 24px 0;
-    }
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: #0066cc;
+ margin: 24px 0;
+ }
 
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #e9ecef;
-    }
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid #e9ecef;
+ }
 
-    .disclaimer {
-      background-color: #fff3cd;
-      border: 1px solid #ffeaa7;
-      padding: 15px;
-      border-radius: 5px;
-      font-size: 1.2em;
-      color: #856404;
-      text-align: justify;
-    }
+ .disclaimer {
+ background-color: #fff3cd;
+ border: 1px solid #ffeaa7;
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: #856404;
+ text-align: justify;
+ }
 
-    .disclaimer strong {
-      color: #856404;
-    }
+ .disclaimer strong {
+ color: #856404;
+ }
 
-    .disclaimer a {
-      color: #856404;
-      text-decoration: underline;
-    }
+ .disclaimer a {
+ color: #856404;
+ text-decoration: underline;
+ }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 15px;
-        margin: 0;
-        box-shadow: none;
-      }
-      
-      header h1 {
-        font-size: 1.5em;
-      }
-      
-      article h1 {
-        font-size: 1.3em;
-      }
-    }
-  </style>
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ }
+ </style>
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1>Ato Normativo</h1>
-      <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-    </header>
+ <main class="container">
+ <header>
+ <h1>Ato Normativo</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
 
-    <div class="meta">
-      <div><strong>Última sincronização:</strong> 11/10/2025 07:11:19 (processado via snapshot.py)</div>
-      <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4661289" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-      <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-      <div><strong>Tamanho do conteúdo:</strong> origem: 132.975 caracteres | espelho: 83.502 caracteres</div>
-      <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-    </div>
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 12/10/2025 05:29:44 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4661289" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 132.975 caracteres | espelho: 83.502 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
 
-    <article>
-      <p>Instrução Normativa Conjunta nº 2/2014</p>
-      <p> CGJ/PR E MP/PR -</p>
-      <p>Assunto: 1.Regulamentação Conjunta 2.Corregedoria-Geral da Justiça 3.Ministério Público 4.Corregedoria da Justiça 5.Foro Judicial 6.Prestação Pecuniária 7.Recolhimento 8.Destinação 9.Prestação de Contas</p>
+ <article>
+ <p>Instrução Normativa Conjunta nº 2/2014</p>
+ <p> CGJ/PR E MP/PR -</p>
+ <p>Assunto: 1.Regulamentação Conjunta 2.Corregedoria-Geral da Justiça 3.Ministério Público 4.Corregedoria da Justiça 5.Foro Judicial 6.Prestação Pecuniária 7.Recolhimento 8.Destinação 9.Prestação de Contas</p>
 
-      <p>INSTRUÇÃO NORMATIVA CONJUNTA Nº 2, DE 2 DE DEZEMBRO DE 2014</p>
-      <p>- CGJ-PR E MP-PR - Atualizado até a Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022 - CGJ/MPPR/CGMP Institui normas para o recolhimento, a destinação, a liberação, a aplicação e a prestação de contas de recursos oriundos de prestações pecuniárias no âmbito do Poder Judiciário do Estado do Paraná. A CORREGEDORIA-GERAL DA JUSTIÇA DO ESTADO DO PARANÁ (CGJ/PR) e o MINISTÉRIO PÚBLICO DO ESTADO DO PARANÁ (MP/PR), neste ato representados, respectivamente, pelo CORREGEDOR-GERAL DA JUSTIÇA , DES. EUGÊNIO ACHILLE GRANDINETTI , pelo PROCURADOR-GERAL DA JUSTIÇA , DR. GILBERTO GIACÓIA , e pelo CORREGEDOR-GERAL DO MINISTÉRIO PÚBLICO , DR. ARION ROLIM PEREIRA , no uso de suas atribuições legais e</p>
-      <h2>CONSIDERANDO a Resolução nº 101, de 15 de dezembro de 2009, do Conselho Nacional de Justiça, que definiu a política institucional do Poder Judiciário na execução de penas e medidas alternativas à prisão;</h2>
-      <h2>CONSIDERANDO a Resolução nº 154, de 13 de julho de 2012, do Conselho Nacional de Justiça, que definiu a política institucional do Poder Judiciário na utilização dos recursos oriundos da aplicação da pena de prestação pecuniária;</h2>
-      <h2>CONSIDERANDO o Provimento nº 21, de 30 de agosto de 2012, da Corregedoria Nacional de Justiça, que definiu regras para destinação e fiscalização de medidas e penas alternativas;</h2>
-      <h2>CONSIDERANDO que os valores de prestação pecuniária decorrentes de penas ou medidas alternativas, quando possível, deverão ser prioritariamente destinadas diretamente à vítima ou aos seus dependentes;</h2>
-      <h2>CONSIDERANDO que, no Estado do Paraná, é notória a atuação e contribuição dos Conselhos da Comunidade para o alcance dos objetivos da lei de execução penal;</h2>
-      <h2>CONSIDERANDO a necessidade de adequar o Provimento nº 68/2005-CGJ, que versa sobre a destinação dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas aos Conselhos da Comunidade, ao disposto na Resolução nº 154/CNJ;</h2>
-      <h2>CONSIDERANDO a necessidade de regulamentar e uniformizar a forma de destinação, recolhimento, liberação, aplicação e prestação de contas pelas demais entidades beneficiárias dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas aplicadas no âmbito do Poder Judiciário do Estado do Paraná;</h2>
-      <h2>CONSIDERANDO que os valores de prestação pecuniária decorrentes de penas ou medidas alternativas possuem natureza extra orçamentaria, de acordo com a resposta à Consulta nº 368729/14 do Tribunal de Contas do Estado do Paraná, figurando o Tribunal de Justiça apenas como depositário dos montantes referidos;</h2>
-      <h2>CONSIDERANDO a adoção do sistema informatizado de guias para o recolhimento, bem como do processo eletrônico para liberação dos valores aos beneficiários e processamento das prestações de contas apresentadas por estes, que asseguram a publicidade e a transparência na destinação dos valores, bem como atendem ao disposto no artigo 37 da Constituição Federal;</h2>
-      <h2>CONSIDERANDO que, nos termos do artigo 5º da Resolução nº 154/CNJ, compete às Corregedorias a regulamentação da matéria quanto ao procedimento atinente à forma e apresentação dos projetos, à forma de prestação de contas e o estabelecimento de outras condições ou vedações além daquelas disciplinadas na Resolução referida, observadas as peculiaridades locais.</h2>
-      <h2>RESOLVEM :</h2>
-      <h3>TÍTULO I</h3>
-      <h3>DISPOSIÇÕES GERAIS</h3>
-      <h3>Art. 1º A presente Instrução Normativa Conjunta regulamenta o recolhimento, a destinação, a liberação, a aplicação e a prestação de contas pelas entidades beneficiárias de valores depositados a título de prestação pecuniária aplicada pelas Varas Criminais, Varas de Execução de Penas e Medidas Alternativas e Juizados Especiais Criminais do Estado, em cumprimento de pena restritiva de direitos decorrente de sentença condenatória ou de medida alternativa aplicada em função de transação penal ou de condição judicial da suspensão condicional do processo, nos termos dos artigos 43, inciso I, e 45 do Código Penal e dos artigos 76 e 89, § 2º, da Lei Federal nº 9.099/1995, sem prejuízo de outras hipóteses.</h3>
-      <h3>Art. 2º Os valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverão ser revertidos:</h3>
-      <h5>I - em favor da vítima ou seus dependentes, conforme estabelecido no Título II;</h5>
-      <h5>II - ao Conselho da Comunidade da Comarca ou Foro, segundo as regras dos Capítulos II e III do Título III;</h5>
-      <h5>III - segundo as regras do Capítulo III do Título III, à entidade pública ou privada com finalidade social e sem fim lucrativo, previamente cadastrada, preferencialmente aquela que:</h5>
-      <h6>a) promova atividade afeta ou correlata à área de execução penal;</h6>
-      <h6>b) auxilie na execução das penas restritivas ou medidas alternativas;</h6>
-      <h6>c) desenvolva programas de assistência às vítimas de infrações penais;</h6>
-      <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais.</h6>
-      <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas e demais crimes contra a saúde pública, à violência doméstica e familiar, à violência contra a criança e adolescente, à violência de trânsito, aos crimes ambientais e demais crimes que tenham por objetivo a proteção de bens jurídicos coletivos; e (Redação dada pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
-      <h6>e) atue em projetos voltados para a prevenção, reparação ou recuperação de infrações penais contra bens jurídicos coletivos, notadamente, o meio ambiente, a saúde pública, os direitos das crianças e adolescentes, as relações de consumo e o patrimônio público. (Incluído pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
-      <h4>§ 1º Para os fins desta Instrução, consideram-se entidades públicas as unidades de atuação dotadas de personalidade jurídica, de acordo com o artigo 1º, § 2º, inciso II, da Lei Federal nº 9.784/1999.</h4>
-      <h4>§ 2º É vedada a destinação dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas:</h4>
-      <h5>I - ao custeio do Poder Judiciário e do Ministério Público;</h5>
-      <h5>II - para a promoção pessoal de magistrados, promotores de justiça ou integrantes das entidades beneficiadas;</h5>
-      <h5>III - para pagamento de quaisquer espécies de remuneração aos membros da diretoria das entidades beneficiadas;</h5>
-      <h5>IV - para fins político-partidários;</h5>
-      <h5>V - a entidades que não estejam regularmente constituídas, obstando a responsabilização caso haja desvio de finalidade.</h5>
-      <p>- Ver artigo 3º da Resolução nº 154/2012 do Conselho Nacional de Justiça.</p>
-      <h5>VI - a entidades cujos sócios, associados ou dirigentes sejam cônjuges, companheiros ou parentes em linha reta, colateral ou por afinidade até o 2º grau, do Juiz ou do Promotor de Justiça vinculado à Vara Judicial que disponibilizar recursos.</h5>
-      <h3>TÍTULO II</h3>
-      <h3>DA DESTINAÇÃO À VÍTIMA</h3>
-      <h3>Art. 3º O valor da prestação pecuniária decorrente de pena ou medida alternativa aplicada como forma de reparação do dano causado será destinada prioritariamente à vítima ou aos seus dependentes, salvo se:</h3>
-      <h5>I - o dano causado à vítima tiver sido reparado;</h5>
-      <h5>II - não houver composição do dano, inclusive em razão da ausência da vítima ou de seu dependente em audiência, ficando ressalvado o direito destes em pleiteá-lo no juízo cível;</h5>
-      <h5>III - a vítima tiver renunciado ao direito à reparação respectiva;</h5>
-      <h5>IV - inexistir vítima determinada; ou</h5>
-      <h5>V - inexistir dependente, caso a vítima seja falecida.</h5>
-      <h3>Art. 4º Na hipótese de o beneficiário da prestação pecuniária ser a vítima ou seus dependentes, a destinação do valor respectivo constará do termo de audiência, que deverá conter:</h3>
-      <h5>I - o nome do(s) destinatário(s);</h5>
-      <h5>II - informação prestada pela vítima ou seu dependente quanto aos dados bancários (banco, agência, conta, espécie de conta, operação, número de CPF ou CNPJ) em que deverá ser depositado o valor devido;</h5>
-      <h5>III - o endereço atualizado do obrigado ao pagamento e da vítima ou dependente, com a advertência de que eventuais alterações deverão ser comunicadas ao Juízo;</h5>
-      <h5>IV - o e-mail da vítima ou dependente, caso o possua;</h5>
-      <h5>V - prazo para pagamento;</h5>
-      <h5>VI - número de prestações, caso haja parcelamento;</h5>
-      <h5>VII - prazo para comprovação de pagamento;</h5>
-      <h5>VIII - a informação de que, quando for o caso, a vítima ou algum dos seus dependentes é incapaz, bem como a assinatura do respectivo representante legal;</h5>
-      <h4>Parágrafo único. Quando a destinação sobrevier por força de sentença condenatória transitada em julgado, as condições referidas no caput serão estabelecidas em audiência admonitória realizada pelo Juízo competente para a execução da pena ou medida.</h4>
-      <h3>Art. 5º Os valores, quando destinados à vítima ou aos seus dependentes, serão depositados diretamente pelo obrigado na conta corrente informada pelo beneficiário em Juízo.</h3>
-      <h4>§ 1º Depois de efetuado o pagamento, o obrigado deverá providenciar a juntada nos autos de cópia do comprovante de depósito.</h4>
-      <h4>§ 2º Não serão aceitos comprovantes de depósitos realizados em caixas eletrônicos e bancos 24 horas.</h4>
-      <h3>Art. 6º Os valores pagos à vítima ou aos seus dependentes prescindem de prestação de contas.</h3>
-      <h3>TÍTULO III</h3>
-      <h3>DEMAIS MODALIDADES DE DESTINAÇÃO DA PRESTAÇÃO PECUNIÁRIA</h3>
-      <h2>CAPÍTULO I</h2>
-      <h3>DISPOSIÇÕES COMUNS</h3>
-      <h3>Art. 7º Os valores de prestação pecuniária decorrentes de penas ou medidas alternativas, quando não destinados diretamente à vítima ou aos dependentes, serão revertidos:</h3>
-      <h5>I - ao Conselho da Comunidade da Comarca ou Foro, segundo as regras dos Capítulos II e III do Título III;</h5>
-      <h5>II - segundo as regras da Capítulo III do Título III, à entidade pública ou privada com finalidade social e sem fim lucrativo, previamente cadastrada, preferencialmente aquela que:</h5>
-      <h6>a) promova atividade afeta ou correlata à área de execução penal;</h6>
-      <h6>b) auxilie na execução das penas restritivas ou medidas alternativas;</h6>
-      <h6>c) desenvolva programas de assistência às vítimas de infrações penais;</h6>
-      <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais .</h6>
-      <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas e demais crimes contra a saúde pública, à violência doméstica e familiar, à violência contra a criança e adolescente, à violência de trânsito, aos crimes ambientais e demais crimes que tenham por objetivo a proteção de bens jurídicos coletivos; (Redação dada pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
-      <h6>e) atue em projetos voltados para a prevenção, reparação ou recuperação de infrações penais contra bens jurídicos coletivos, notadamente, o meio ambiente, a saúde pública, os direitos das crianças e adolescentes, as relações de consumo e o patrimônio público. (Incluído pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
-      <h3>Art. 8º Para que os valores decorrentes da prestação pecuniária sejam regularmente direcionados às entidades mencionadas no artigo 7º, serão observadas as seguintes etapas sequenciais:</h3>
-      <h5>I - recolhimento dos valores;</h5>
-      <h5>II - liberação dos valores;</h5>
-      <h5>III - prestação de contas dos valores recebidos.</h5>
-      <h4>§ 1º A forma de recolhimento de valores é idêntica para os Conselhos da Comunidade e demais entidades descritas no artigo 7º.</h4>
-      <h4>§ 2º É vedada a destinação de valores, bens ou donativos de qualquer espécie diretamente ao Conselho da Comunidade ou demais entidades, devendo ser observada a forma de recolhimento prevista na Seção I deste Capítulo.</h4>
-      <h4>§ 3º Os Juízes e Promotores de Justiça devem abster-se de indicar em suas decisões e manifestações, respectivamente, bem como de constar nos termos de audiência, o nome do Conselho da Comunidade ou de outra entidade a ser beneficiada por valor proveniente de prestação pecuniária.</h4>
-      <p>Seção I</p>
-      <p>Forma de Recolhimento</p>
-      <h3>Art. 9º Quando não destinados à vítima ou seus dependentes, o pagamento dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas será efetuado pelo obrigado, exclusivamente mediante guia de recolhimento gerada em sistema informatizado disponível no site do Tribunal de Justiça do Estado do Paraná, a qual ensejará depósito em conta única administrada pelo Tribunal de Justiça e disponibilizada por unidade judicial, cuja movimentação ocorrerá apenas por meio de autorização judicial.</h3>
-      <h4>§ 1º Entende-se por unidade judicial o Juízo responsável pela execução da pena ou medida alternativa.</h4>
-      <p>- Ver Resolução nº 93/2013 do Órgão Especial.</p>
-      <h4>§ 2º A conta única, administrada pelo Tribunal de Justiça, permitirá:</h4>
-      <h5>I - a identificação do crédito por unidade judicial;</h5>
-      <h5>II - o conhecimento da origem dos recolhimentos;</h5>
-      <h5>III - a consulta ao saldo existente em cada unidade judicial, para fins de liberação de recursos;</h5>
-      <h5>IV - as transferências autorizadas por unidade judicial, com discriminação dos beneficiários e dos valores liberados.</h5>
-      <h3>Art. 10. Compete à Escrivania/Secretaria da unidade judicial a geração da(s) guia(s) de recolhimento na intranet do Tribunal de Justiça do Estado do Paraná.</h3>
-      <h4>§ 1º A(s) guia(s) de recolhimento será(ão) gerada(s) na audiência em que se estabelece o cumprimento da pena ou medida alternativa de prestação pecuniária, ou logo após seu encerramento, sendo imediatamente entregue(s) ao obrigado pelo pagamento.</h4>
-      <h4>§ 2º A(s) guia(s) de recolhimento conterá(ão) os seguintes dados:</h4>
-      <h5>I - Comarca ou Foro;</h5>
-      <h5>II - unidade judicial responsável pela execução da pena ou medida alternativa;</h5>
-      <h5>III - o número dos autos;</h5>
-      <h5>IV - o nome do obrigado pelo recolhimento;</h5>
-      <h5>V - o valor total;</h5>
-      <h5>VI - o número de parcelas, caso estabelecido na respectiva medida;</h5>
-      <h5>VII - se parcela única, a data de vencimento;</h5>
-      <h5>VIII - no caso de parcelamento, a data de vencimento da primeira parcela, sendo que as demais datas serão automaticamente geradas pelo sistema que emite as guias.</h5>
-      <h4>§ 3º Por ocasião do cadastramento da pena ou medida alternativa de prestação pecuniária pagável em parcela única, a Escrivania/Secretaria lançará no Sistema PROJUDI somente o campo número de documento gerado automaticamente pelo sistema informatizado e constante da guia.</h4>
-      <h4>§ 4º Na hipótese de pagamento parcelado, deverá ser lançado no Sistema PROJUDI somente o campo número de documento constante da primeira guia. Automaticamente, o sistema preencherá as demais datas para pagamento e respectivas numerações de guias.</h4>
-      <h4>§ 5º O número de guias emitidas corresponderá ao número de parcelas estabelecidas para o cumprimento das condições, contendo as respectivas datas de vencimento.</h4>
-      <h4>§ 6º Efetuado o pagamento da guia, após o processamento bancário, a informação será automaticamente lançada nos autos pelo Sistema PROJUDI, sendo desnecessárias a apresentação e a juntada do comprovante de pagamento pelo obrigado.</h4>
-      <h4>§ 7º O sistema PROJUDI gerará automaticamente as seguintes informações nos autos em que cadastrada a pena ou medida alternativa em conformidade com este artigo:</h4>
-      <h5>I - pagamento;</h5>
-      <h5>II - atraso, quando decorridos 10 (dez) dias do vencimento, gerando pendência para análise da Escrivania/Secretaria;</h5>
-      <h5>III - pagamento(s) efetuado(s) a menor;</h5>
-      <h5>IV - cumprimento da pena ou medida alternativa, cujo status deve ser analisado pela Escrivania/Secretaria.</h5>
-      <h4>§ 8º Constatado o atraso no recolhimento, a Escrivania/Secretaria, independente de determinação judicial, intimará o obrigado a promover a regularização, no prazo de 5 (cinco) dias.</h4>
-      <h4>§ 9º Não havendo a regularização no prazo fixado no § 8º, a Escrivania/Secretaria remeterá os autos ao Ministério Público para manifestação.</h4>
-      <h3>Art. 11. É vedado o recolhimento de valores diretamente ao Conselho da Comunidade ou demais entidades, devendo ser observada a forma de recolhimento prevista nesta Subseção.</h3>
-      <h3>Art. 12. É vedado a qualquer agente, servidor ou serventuário da Justiça e do Ministério Público, remunerado ou não pelos cofres públicos, receber valores de pagamento de prestação pecuniária decorrentes de penas ou medidas alternativas, em inobservância ao sistema informatizado definido nesta Seção.</h3>
-      <h4>Parágrafo único. A não observância do disposto no caput deste artigo ensejará a responsabilidade administrativa do servidor ou serventuário, sem prejuízo de outras sanções cabíveis.</h4>
-      <h2>CAPÍTULO I I</h2>
-      <h3>DA DESTINAÇÃO AO CONSELHO DA COMUNIDADE</h3>
-      <p>Seção I</p>
-      <p>Requisitos para o Recebimento de Valores</p>
-      <h3>Art. 13. O Conselho da Comunidade que desejar receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverá:</h3>
-      <h5>I - estar devidamente constituído e em situação regular, de acordo com a regulamentação da Instrução Normativa Conjunta 01/2014 CGJ/PR e MP/PR;</h5>
-      <h5>II - celebrar Termo de Compromisso e estar cadastrado na respectiva Comarca/Foro, de acordo com o disposto na Instrução Normativa Conjunta 01/2014 CGJ/PR e MP/PR;</h5>
-      <h5>III - de acordo com as normas da Seção II deste Capítulo, apresentar plano de aplicação de recursos e/ou pedido de habilitação em procedimento de disponibilização de recursos instaurado pelo Juízo;</h5>
-      <h5>IV - cumprir estritamente o plano de aplicação e/ou o cronograma de execução do projeto contemplado;</h5>
-      <h5>V - entregar prestação de contas dos valores recebidos;</h5>
-      <h5>VI - manter escrita contábil, fiscal e trabalhista, em ordem e subscrita por contabilista devidamente habilitado junto ao CRC - Conselho Regional de Contabilidade;</h5>
-      <h5>VII - possuir conta específica para o recebimento de valores.</h5>
-      <p>Seção I I</p>
-      <p>Da Aplicação e Liberação dos Recursos</p>
-      <p>Subseção I</p>
-      <p>Das Modalidades</p>
-      <h3>Art. 14. O Conselho da Comunidade poderá receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas de duas formas:</h3>
-      <h5>I - mediante plano de aplicação de recursos, para o custeio de suas despesas administrativas;</h5>
-      <h5>II - através de pedido de habilitação em procedimento de disponibilização de recursos, visando o pagamento das despesas de projetos.</h5>
-      <h4>§ 1º Para possibilitar o recebimento dos valores liberados, o Conselho da Comunidade deverá possuir, para cada modalidade de despesa, conta bancária específica.</h4>
-      <p>-- Ver</p>
-      <p>Instrução Normativa Conjunta nº 01/2014</p>
-      <p>CGJ/PR e MP/PR</p>
-      <h4>§ 2º A apreciação do plano de aplicação de recursos para o custeio das despesas administrativas do Conselho da Comunidade incumbirá ao respectivo Juízo Supervisor.</h4>
-      <h4>§ 3º O pedido de habilitação para o recebimento de recursos visando ao pagamento das despesas de projetos do Conselho da Comunidade incumbirá ao Juízo que disponibilizar os valores, ao qual são atribuídas as competências:</h4>
-      <h5>I - criminal especializada na execução penal em meio aberto; ou</h5>
-      <h5>II - do Juizado Especial Criminal.</h5>
-      <p>- Ver artigos 36 e 43 desta Instrução Normativa Conjunta.</p>
-      <h3>Art. 15. Compreendem-se por despesas administrativas, os gastos de caráter continuado do Conselho da Comunidade, vinculados à sua atividade fim e que envolvam:</h3>
-      <h5>I - a remuneração e recolhimento de encargos sociais de seu quadro de funcionários;</h5>
-      <h5>II - o pagamento de bolsa-auxílio de estágios e contratação de prestação de serviço técnico especializado;</h5>
-      <h5>III - despesas bancárias e recolhimento de tributos devidos pelo Conselho da Comunidade;</h5>
-      <h5>IV - despesas relativas à aquisição de material de expediente e bens permanentes, entre outras necessárias para a manutenção de seus objetivos;</h5>
-      <h5>V - o pagamento de despesas relativas aos programas e ações do Conselho da Comunidade, voltadas ao atendimento das necessidades de presos, egressos e familiares, no tocante à:</h5>
-      <h6>a) assistência material, em especial alimentação, vestuário, higiene pessoal, transporte, entre outros;</h6>
-      <h6>b) saúde; ou</h6>
-      <h6>c) educação;</h6>
-      <h5>VI - o pagamento de bolsa auxílio ao preso pelo trabalho autorizado pelo Juiz da Execução Penal e prestado em programas profissionalizantes desenvolvidos pelo Conselho da Comunidade.</h5>
-      <h4>Parágrafo único. Compreendem-se, ainda, nas despesas administrativas do Conselho da Comunidade os gastos excepcionais ou emergenciais, autorizados pelo Juízo, executados no Conselho da Comunidade ou por este executados em entidade com destinação social sem fim lucrativo.</h4>
-      <h3>Art. 16. Compreendem-se por despesas de projetos, os gastos do Conselho da Comunidade que envolvem obra ou projeto desenvolvido ou mantido pelo Conselho da Comunidade ou por entidade com destinação social sem fim lucrativo credenciada por aquele, de duração limitada e preferencialmente voltado à:</h3>
-      <h5>I - execução penal, em especial a execução de penas restritivas ou medidas alternativas;</h5>
-      <h5>II - assistência e ressocialização de presos, de pessoas em cumprimento de pena e de egressos do sistema penitenciário;</h5>
-      <h5>III - assistência às vítimas de infrações penais; ou</h5>
-      <h5>IV - prevenção da criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais.</h5>
-      <p>Subseção II</p>
-      <p>Do Plano de Aplicação de Recursos e Prestação de Contas</p>
-      <h3>Art. 17. O plano de aplicação de recursos destina-se exclusivamente ao custeio das despesas administrativas do Conselho da Comunidade previstas no artigo 15.</h3>
-      <h3>Art. 18. Trimestralmente, nos meses de janeiro, abril, julho e outubro, o Conselho da Comunidade apresentará ao Juiz Supervisor do Conselho da Comunidade o plano de aplicação de recursos.</h3>
-      <h3>Art. 19. O plano de aplicação de recursos deverá:</h3>
-      <h5>I - especificar os gastos estimados no respectivo trimestre e indicar o valor global de todas as despesas;</h5>
-      <h5>II - estar acompanhado de:</h5>
-      <h6>a) Certidão Conjunta Negativa de Débitos Relativos aos Tributos Federais e a Dívida Ativa da União;</h6>
-      <h6>b) Certidão Negativa de Débitos Trabalhistas;</h6>
-      <h6>c) Certidão de Regularidade do FGTS;</h6>
-      <h6>d) Certidão Negativa de Débitos Previdenciários;</h6>
-      <h6>e) Certidão Negativa de Débito de Tributos Estaduais;</h6>
-      <h6>f) Certidão Negativa de Débito de Tributos Municipais, referente aos Municípios em que atua o Conselho da Comunidade;</h6>
-      <h6>g) comprovante de inscrição e situação cadastral regular no CNPJ;</h6>
-      <h5>III - quando os dados constantes do cadastro do Conselho da Comunidade estiverem desatualizados, estar acompanhado:</h5>
-      <h6>a) de comprovante do registro de seu ato constitutivo atualizado;</h6>
-      <h6>b) da identificação e qualificação completa dos seus dirigentes atuais, especificando seu representante legal e eventual mandato;</h6>
-      <h6>c) dos dados bancários (banco, agência, conta, espécie de conta, operação) da conta aberta pelo Conselho da Comunidade para o recebimento de recursos para o custeio de despesas administrativas, em que será(ão) depositado(s) o(s) valor(es) eventualmente liberado(s);</h6>
-      <h5>IV - a fim de atender os princípios da moralidade, da impessoalidade, da economicidade, da isonomia, da eficiência e da eficácia, quando se pleitearem valores destinados ao custeio de despesas relativas à aquisição de material de expediente e bens e serviços, estar acompanhado dos preços válidos cotados por no mínimo 3 (três) fornecedores, apresentados em orçamentos com a indicação do valor unitário dos serviços ou produtos, sendo que, nos casos de ofertas de encartes, tabloides, anúncios de internet, ou outras formas de anúncio, estes deverão estar impressos e corresponderão a uma proposta válida para o item pesquisado.</h5>
-      <h3>Art. 20. O plano de aplicação de recursos deve ser recebido, digitalizado e cadastrado pela Escrivania/Secretaria na área de competência Corregedoria dos Presídios do Sistema PROJUDI, sendo autuado com a classe Processo Administrativo e assunto Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) .</h3>
-      <h4>§ 1º A Escrivania/Secretaria registrará como partes no Plano de Aplicação de Recursos e Prestação de Contas (PARPreC):</h4>
-      <h5>I - Requerente: o Conselho da Comunidade;</h5>
-      <h5>II - Requerido: o Juízo em que tramita o procedimento.</h5>
-      <h4>§ 2º Cada Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) corresponderá a único trimestre, sendo vedado à Escrivania/Secretaria juntar mais de um pedido aos mesmos autos.</h4>
-      <h3>Art. 21. Após a autuação do Plano de Aplicação de Recursos e Prestação de Contas (PARPreC), a Escrivania/Secretaria, promoverá a conclusão dos autos ao Juiz Supervisor que verificará a existência de disponibilidade financeira para a liberação pleiteada, mediante consulta ao sistema informatizado mencionado no artigo 9º.</h3>
-      <h4>§ 1º Para o cumprimento deste artigo, o Juiz Supervisor poderá consultar a disponibilidade financeira de toda Comarca/Foro e não somente de sua Vara Judicial.</h4>
-      <h4>§ 2º Verificando o Juiz Supervisor que necessitará utilizar recursos de outra Vara Judicial para complementar o valor pleiteado pelo Conselho da Comunidade, oficiará ao magistrado, por sistema mensageiro, solicitando a transferência do montante.</h4>
-      <h4>§ 3º Caso não consiga obter integralmente os recursos pleiteados pelo Conselho da Comunidade, o Juiz Supervisor indeferirá o pedido, mandado arquivar os autos.</h4>
-      <h4>§ 4º Da decisão referida no § 3º será cientificado o Conselho da Comunidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone, dela não cabendo reconsideração ou recurso.</h4>
-      <h4>§ 5º Cientificado o Conselho da Comunidade do indeferimento, a Escrivania/Secretaria arquivará o processo, após as baixas necessárias.</h4>
-      <h4>§ 6º O indeferimento não obsta que o Conselho da Comunidade apresente novo plano de aplicação de recursos, adequando o pedido ao valor disponível.</h4>
-      <h4>§ 7º Todas as varas judiciais que recebem valores de prestação pecuniária decorrentes de penas ou medidas alternativas devem contribuir, especialmente para os fins do caput e do § 2º, no repasse de valores visando o custeio das despesas administrativas do Conselho da Comunidade.</h4>
-      <h4>§ 8º O Juiz Supervisor do Conselho da Comunidade deve atentar para que os valores pleiteados a título de despesa administrativa:</h4>
-      <h5>I - não inviabilizem a execução de projetos;</h5>
-      <h5>II - sejam condizentes às necessidades mínimas para funcionamento do Conselho da Comunidade.</h5>
-      <h4>§ 9º A transferência mencionada nos §§ 2º e 7º poderá ser feita pela Escrivania/Secretaria, desde que autorizada pelo respectivo Juiz.</h4>
-      <h3>Art. 22. Obtidos integralmente os recursos pleiteados pelo Conselho da Comunidade, o Juiz Supervisor determinará à Escrivania/Secretaria que reserve e bloqueie o valor pelo sistema informatizado.</h3>
-      <h4>§ 1º Após o bloqueio do montante, a Escrivania/Secretaria:</h4>
-      <h5>I - certificará:</h5>
-      <h6>a) sobre a regularidade da contabilidade e das prestações de contas do Conselho da Comunidade;</h6>
-      <h6>b) que o Conselho da Comunidade apresentou o plano e a documentação em conformidade com o artigo 19.</h6>
-      <h5>II - remeterá os autos para análise:</h5>
-      <h6>a) da equipe técnica, onde houver;</h6>
-      <h6>b) do Ministério Público;</h6>
-      <h6>c) do Juiz.</h6>
-      <h4>§ 1º Se o plano e/ou a documentação não estiverem em conformidade com o artigo 19, antes da remessa a que alude o inciso II do caput, a Escrivania/Secretaria intimará o Conselho da Comunidade para regularização no prazo de 5 (cinco) dias, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 2º O Juiz, de ofício, indeferirá o pedido e determinará o seu arquivamento quando:</h4>
-      <h5>I - o Conselho da Comunidade não estiver com suas prestações de contas regulares;</h5>
-      <h5>II - intimado, o Conselho da Comunidade não regularizar seu plano e/ou documentação de acordo com o artigo 19.</h5>
-      <h4>§ 3º Da decisão referida no § 2º não cabe reconsideração ou recurso.</h4>
-      <h4>§ 4º Da decisão prolatada pelo Juiz será cientificado o Conselho da Comunidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 5º Cientificado o Conselho da Comunidade do indeferimento, a Escrivania/Secretaria arquivará o processo, após as baixas necessárias.</h4>
-      <h4>§ 6º Indeferido o pedido, não será admissível sua retificação no mesmo processo, podendo ser formulado novo requerimento pelo o Conselho da Comunidade, no qual deverá ser comprovado o saneamento de eventuais irregularidades.</h4>
-      <h3>Art. 23. Bloqueado o valor, estando o Conselho da Comunidade com as prestações de contas regulares e tendo apresentado o plano e a documentação de acordo com o artigo 19, o Juiz, deferindo o requerimento:</h3>
-      <h5>I - indicará o valor liberado;</h5>
-      <h5>II - determinará a lavratura do Termo de Responsabilidade;</h5>
-      <h5>III - determinará a intimação do Conselho da Comunidade para assinatura do Termo de Responsabilidade;</h5>
-      <h5>IV - determinará a expedição de alvará(s), condicionada à subscrição do Termo de Responsabilidade.</h5>
-      <h4>Parágrafo único. Da decisão prolatada, será cientificado o Conselho da Comunidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone, dela não cabendo reconsideração ou recurso.</h4>
-      <h3>Art. 24. Antes da expedição do(s) alvará(s) de levantamento, o Conselho da Comunidade deverá assinar, perante o Juízo, Termo de Responsabilidade, no qual constarão as obrigações:</h3>
-      <h5>I - de empregar o valor liberado exclusivamente para o cumprimento do plano aprovado;</h5>
-      <h5>II - de apresentação da respectiva prestação de contas;</h5>
-      <h5>III - de colaborar com o Juízo da Execução Penal;</h5>
-      <h5>IV - de devolução do saldo residual não aplicado no plano aprovado;</h5>
-      <h5>V - de garantir o livre acesso às suas instalações para fiscalização, a qualquer tempo, bem como de exibir, quando solicitado, qualquer documento relacionado com o procedimento de liberação de valor;</h5>
-      <h5>VI - de atender as recomendações, exigências e determinações do Juízo responsável pela liberação do valor.</h5>
-      <h5>VII - de utilizar os valores liberados para execução do projeto, preferencialmente através de cheque, transferência bancárias, TED ou DOC, não recomendado o pagamento em espécie a fornecedores;</h5>
-      <h5>VIII - de organizar e manter a documentação conforme artigo 66.</h5>
-      <h4>§ 1º Para os fins de cumprimento deste artigo, a Escrivania/Secretaria intimará o Conselho da Comunidade para subscrição do Termo de Responsabilidade, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 2º Subscrito o Termo de Responsabilidade, a Escrivania/Secretaria:</h4>
-      <h5>I - efetuará a digitalização e o juntará aos autos de Plano de Aplicação de Recursos e Prestação de Contas (PARPreC);</h5>
-      <h5>II - expedirá o(s) alvará(s) de levantamento determinado pelo Juiz.</h5>
-      <h3>Art. 25. O(s) alvará(s) de levantamento deve(m) ser assinado(s) eletronicamente pelo Juiz e encaminhado(s) automaticamente ao Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para cumprimento.</h3>
-      <h4>§ 1º Enquanto não houver a possibilidade de encaminhamento automático, o alvará será remetido por mensageiro para a lista Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência .</h4>
-      <h4>§ 2º Cumprido o alvará pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça, o valor liberado será automaticamente transferido para a conta bancária indicada pelo Conselho da Comunidade, ficando seu representante legal na qualidade de fiel depositário até sua efetiva utilização para os fins e nos exatos termos aprovados.</h4>
-      <h4>§ 3º A critério do Juiz, os alvarás de levantamento podem ser expedidos mensalmente.</h4>
-      <h3>Art. 26. Após a expedição do alvará, a Escrivania/Secretaria suspenderá os autos de Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) até a apresentação da respectiva prestação de contas.</h3>
-      <h3>Art. 27. Na execução do plano de aplicação, o Conselho da Comunidade poderá remanejar ou redistribuir os valores recebidos entre suas despesas, desde que respeite o valor global do respectivo plano de aplicação trimestral e apresente justificativa por ocasião da prestação de contas.</h3>
-      <h3>Art. 28. O Conselho da Comunidade que receber valores deverá prestar contas:</h3>
-      <h5>I - quanto aos recursos recebidos em relação ao 1º trimestre, até 30 de abril do mesmo ano;</h5>
-      <h5>II - quanto aos recursos recebidos em relação ao 2º trimestre, até 31 de julho do mesmo ano;</h5>
-      <h5>III - quanto aos recursos recebidos em relação ao 3º trimestre, até 31 de outubro do mesmo ano;</h5>
-      <h5>IV - quanto aos recursos recebidos em relação ao 4º trimestre, até 31 de janeiro do ano seguinte.</h5>
-      <h4>§ 1º A prestação de contas deverá ser acompanhada:</h4>
-      <h5>I - dos comprovantes das despesas (notas fiscais, recibos de pagamento a autônomo, folhas de pagamento, Guia da Previdência Social - GPS, Guia de Recolhimento do FGTS e Informações a Previdência Social, Sistema Empresa de Recolhimento do FGTS e Informações à Previdência Social - SEFIP, holerites);</h5>
-      <h5>II - dos comprovantes de devolução de saldos, caso não utilizado todo o recurso repassado;</h5>
-      <h5>III - das certidões mencionadas no artigo 19, se expirados os respectivos prazos de validade;</h5>
-      <h5>IV - extrato bancário da conta para a qual foi transferido o valor liberado, referente ao período do respectivo trimestre;</h5>
-      <h5>V - caso tenha ocorrido remanejamento ou redistribuição de valores entre as despesas inicialmente estimadas, de especificação das operações efetuadas e da respectiva justificativa.</h5>
-      <h4>§ 2º A devolução dos saldos deverá ser efetuada mediante guia de recolhimento, nos termos previstos nos artigos 9º e 10.</h4>
-      <h3>Art. 29. A prestação de contas será juntada nos autos do Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h3>
-      <h4>§ 1º Apresentadas as contas, o processo será remetido, sequencialmente, para análise:</h4>
-      <h5>I - da equipe técnica da Escrivania/Secretaria, onde houver;</h5>
-      <h5>II - do Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para parecer conclusivo;</h5>
-      <h5>III - do Ministério Público;</h5>
-      <h5>IV - do Juiz.</h5>
-      <h4>§ 2º A remessa referida no inciso II do § 1º será efetuada pelo Sistema PROJUDI.</h4>
-      <h4>§ 3º O parecer emitido pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça deve recomendar:</h4>
-      <h5>I - a aprovação das contas, quando a documentação apresentada refletir adequadamente a movimentação financeira indicar que as contas estão regulares;</h5>
-      <h5>II - a aprovação das contas com ressalva, quando forem verificadas falhas, omissões ou impropriedades de natureza formal que não comprometam a regularidade das contas, ocasião em que a ressalva deve ser especificada claramente, e os seus efeitos demonstrados sobre as contas prestadas; e</h5>
-      <h5>III - a desaprovação das contas, quando restar evidenciada qualquer das seguintes ocorrências:</h5>
-      <h6>a) constatação de falhas, omissões ou irregularidades que comprometam a regularidade, a confiabilidade ou a consistência das contas; e</h6>
-      <h6>b) conclusão pela desconformidade entre a documentação apresentada e a movimentação financeira.</h6>
-      <h3>Art. 30. O Juiz, ao analisar o procedimento de prestação de contas, poderá:</h3>
-      <h5>I - determinar diligências ao Conselho da Comunidade ou à equipe técnica, fixando o respectivo prazo;</h5>
-      <h5>II - julgar as contas:</h5>
-      <h6>a) aprovadas;</h6>
-      <h6>b) aprovadas com ressalvas;</h6>
-      <h6>c) desaprovadas.</h6>
-      <h4>§ 1º Determinada diligência pelo Juiz, a Escrivania/Secretaria intimará o Conselho da Comunidade ou a equipe técnica, por meio idôneo de comunicação, para cumprimento, no prazo fixado.</h4>
-      <h4>§ 2º Da decisão que julgar as contas (inciso II do caput ) deverá ser intimado o Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
-      <h4>§ 3º Julgadas aprovadas ou aprovadas com ressalvas as contas, depois de intimar o Conselho da Comunidade da decisão, a Escrivania/Secretaria, após as baixas necessárias, arquivará o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h4>
-      <h4>§ 4º Julgadas desaprovadas as contas, a Escrivania/Secretaria, depois de intimar o Conselho da Comunidade:</h4>
-      <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
-      <h5>II - lançará a informação no campo Cadastro - Conselho da Comunidade disponível no Sistema PROJUDI.</h5>
-      <h5>III - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
-      <h5>IV - após as baixas necessárias, arquivará o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h5>
-      <h3>Art. 31. Não apresentadas as contas no prazo mencionado no art. 28, os autos serão conclusos ao Juiz, que as julgará não apresentadas.</h3>
-      <h4>§ 1º Da decisão que julgar as contas não apresentadas deverá ser intimado o Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
-      <h4>§ 2º Julgadas não apresentadas as contas, a Escrivania/Secretaria, depois de intimar o Conselho da Comunidade:</h4>
-      <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
-      <h5>II - lançará a informação no campo Cadastro - Conselho da Comunidade disponível no Sistema PROJUDI.</h5>
-      <h5>III - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
-      <h5>IV - após as baixas necessárias, arquivará o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h5>
-      <h3>Art. 32. O Conselho da Comunidade que tiver suas contas julgadas desaprovadas ou não apresentadas, para pleitear novo plano de aplicação de recursos, deverá sanar as irregularidades constatadas, no próprio Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h3>
-      <h4>§ 1º Apresentado o pedido de regularização das contas, o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) seguirá o trâmite previsto nos artigos 29 e 30.</h4>
-      <h4>§ 2º A regularização das falhas ensejará a retirada da anotação no cadastro do Conselho da Comunidade, competindo à Escrivania/Secretaria apontar a regularização no campo específico do Sistema PROJUDI, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
-      <p>Subseção III</p>
-      <p>Do Pedido de Habilitação em Processo de Disponibilização de Recursos e Prestação de Contas</p>
-      <h3>Art. 33. O pedido de habilitação em processo de disponibilização de recursos destina-se exclusivamente ao custeio das despesas de projetos do Conselho da Comunidade.</h3>
-      <h4>Parágrafo único. O Conselho da Comunidade concorrerá com as demais entidades públicas ou privadas que se habilitarem no Processo de Disponibilização de Recursos.</h4>
-      <h3>Art. 34. Aplicar-se-ão ao Conselho da Comunidade as demais regras previstas para a liberação de recursos às entidades públicas ou privadas com finalidade social, ressalvado o disposto no parágrafo único.</h3>
-      <h4>Parágrafo único. Para o recebimento de valores de prestação pecuniária decorrentes de penas ou medidas alternativas visando o custeio de despesas de projetos, o Conselho da Comunidade:</h4>
-      <h5>I - deverá atender ao disposto no artigo 13;</h5>
-      <h5>II - não está sujeito ao Processo de Cadastramento de Entidade previsto na Seção II do Capítulo III do Título III;</h5>
-      <h5>III - apresentará a prestação de contas ao Juízo que liberou os valores.</h5>
-      <h2>CAPÍTULO III</h2>
-      <h3>DA DESTINAÇÃO PARA PROJETOS DE ENTIDADES E DO CONSELHO DA COMUNIDADE</h3>
-      <p>Seção I</p>
-      <p>Requisitos para o Recebimento de Valores</p>
-      <h3>Art. 35. As entidades públicas ou privadas com finalidade social que desejarem receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverão:</h3>
-      <h5>I - estar devidamente constituídas e em situação regular;</h5>
-      <h5>II - estar cadastradas na forma disciplinada na Seção II deste Capítulo;</h5>
-      <h5>III - apresentar pedido de habilitação em procedimento de disponibilização de recursos instaurado pelo Juízo por meio de edital, observadas as disposições da Seção III deste Capítulo;</h5>
-      <h5>IV - cumprir estritamente o cronograma de execução do projeto contemplado;</h5>
-      <h5>V - entregar prestação de contas dos valores eventualmente recebidos, em conformidade com o disciplinado na Seção V deste Capítulo.</h5>
-      <h4>Parágrafo único. O Conselho da Comunidade poderá pleitear, concorrendo com as entidades referidas no caput, a liberação de valores para o custeio de despesas de projetos, sujeitando-se aos requisitos exigidos no artigo 13, sendo dispensado o cadastro exigido na Seção II deste Capítulo.</h4>
-      <p>Seção II</p>
-      <p>Do Cadastro</p>
-      <p>Subseção I</p>
-      <p>Do Processo de Cadastramento de Entidade (PCE)</p>
-      <h3>Art. 36. As entidades públicas ou privadas com finalidade social que desejarem receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverão apresentar pedido de cadastramento junto à Comarca ou Foro.</h3>
-      <h4>§ 1º A apreciação do pedido de cadastro competirá às varas judiciais a que atribuídas as competências:</h4>
-      <h5>I - criminal especializada na execução penal em meio aberto; ou</h5>
-      <h5>II - do juizado especial criminal.</h5>
-      <p>- Ver Resolução nº 93/2013 do Órgão Especial.</p>
-      <h4>§ 2º A entidade deverá apresentar somente um pedido de cadastro em cada Comarca ou Foro que, se deferido, constará do cadastro de entidades disponível no Sistema PROJUDI, passível de aproveitamento por todas as Varas Judiciais da respectiva Comarca ou Foro.</h4>
-      <h4>§ 3º Nas Comarcas e Foros em que existir mais de uma Vara Judicial a que atribuídas as competências previstas no § 1º, apenas uma delas poderá ficar responsável pela apreciação do pedido, desde que haja ajuste entre as Varas Judiciais, disciplinada em Portaria Conjunta que deve ser comunicada à Corregedoria-Geral da Justiça para anotação.</h4>
-      <h3>Art. 37. O pedido de cadastro deverá:</h3>
-      <h5>I - estar acompanhado da documentação pertinente, de acordo com a espécie da entidade - se pública (§ 1º) ou privada (§ 2º);</h5>
-      <h5>II - indicar a área territorial de atuação da entidade;</h5>
-      <h5>III - apontar o número de vagas para prestação de serviço e respectivas áreas, se a entidade disponibilizá-las.</h5>
-      <h4>§ 1º As entidades públicas que apresentarem pedido de cadastramento deverão anexar documentação comprobatória de sua personalidade jurídica.</h4>
-      <h4>§ 2º As entidades privadas que apresentarem pedido de cadastramento deverão apresentar:</h4>
-      <h5>I - comprovante do registro de seu ato constitutivo, no qual sejam identificadas:</h5>
-      <h6>a) sua finalidade social;</h6>
-      <h6>b) entre suas atividades, a colaboração com a área de execução penal;</h6>
-      <h6>c) finalidade não-lucrativa;</h6>
-      <h5>II - comprovante de inscrição e situação cadastral regular no CNPJ;</h5>
-      <h5>III - a identificação e qualificação completa dos seus dirigentes, especificando seu representante legal e eventual mandato.</h5>
-      <h3>Art. 38. O pedido de cadastramento da entidade deve ser recebido, digitalizado e cadastrado pela Escrivania/Secretaria na área de competência Gestão de Valores - Prestação Pecuniária do Sistema PROJUDI, sendo autuado com a classe Processo Administrativo e assunto Processo de Cadastramento de Entidade (PCE) .</h3>
-      <h4>§ 1º A Escrivania/Secretaria registrará como partes no Processo de Cadastramento de Entidade (PCE):</h4>
-      <h5>I - Requerente: a entidade que postula o cadastro;</h5>
-      <h5>II - Requerido: o Juízo em que tramita o procedimento.</h5>
-      <h4>§ 2º O Processo de Cadastramento de Entidade (PCE) deve ser individualizado por entidade.</h4>
-      <h3>Art. 39. Após a autuação do Processo de Cadastramento de Entidade (PCE), a Escrivania/Secretaria, sequencialmente:</h3>
-      <h5>I - lavrará certidão atestando:</h5>
-      <h6>a) que a entidade requerente não se encontra cadastrada ou em processo de cadastramento perante outro Juízo da mesma Comarca/Foro;</h6>
-      <h6>b) que a entidade apresentou o pedido e documentação em conformidade com o artigo 37.</h6>
-      <h5>II - remeterá os autos para análise:</h5>
-      <h6>a) da equipe técnica, onde houver;</h6>
-      <h6>b) do Ministério Público;</h6>
-      <h6>c) do Juiz.</h6>
-      <h4>§ 1º Se o pedido e/ou documentação não estiverem em conformidade com o artigo 37, antes da remessa a que alude o inciso II do caput, a Escrivania/Secretaria intimará a entidade para regularização no prazo de 5 (cinco) dias, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 2º O Juiz, de ofício, indeferirá o pedido e determinará o seu arquivamento quando:</h4>
-      <h5>I - a entidade requerente se encontrar cadastrada ou em processo de cadastramento perante outro Juízo;</h5>
-      <h5>II - intimada, a entidade requerente não regularizar seu pedido e/ou documentação de acordo com o artigo 37.</h5>
-      <h4>§ 3º Da decisão referida no § 2º não cabe reconsideração ou recurso.</h4>
-      <h4>§ 4º Da decisão prolatada pelo Juiz será cientificada a entidade requerente por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 5º Indeferido o pedido de cadastramento, não será admissível sua retificação no mesmo processo, podendo ser formulado novo requerimento pela entidade, no qual deverá ser comprovado o saneamento de eventuais irregularidades.</h4>
-      <h4>§ 6º Deferido o pedido, a Escrivania/Secretaria:</h4>
-      <h5>I - promoverá o cadastramento da entidade no campo cadastro de entidades disponível no Sistema PROJUDI, certificando nos autos;</h5>
-      <h5>II - arquivará o processo, após as baixas necessárias.</h5>
-      <p>Subseção II</p>
-      <p>Da Manutenção, Alteração e Exclusão do Cadastro</p>
-      <h3>Art. 40. O cadastro da entidade perante a Comarca ou Foro valerá por tempo indeterminado.</h3>
-      <h4>§ 1º Quando da modificação do estatuto social ou de dados cadastrais da entidade, esta deverá formular pedido de alteração do cadastro.</h4>
-      <h4>§ 2º O pedido de alteração do cadastro será digitalizado e juntado pela Escrivania/Secretaria no Processo de Cadastramento de Entidade (PCE) que foi deferido, mesmo que esteja arquivado.</h4>
-      <h4>§ 3º Após a juntada do pedido de alteração do cadastro, o processo será concluso ao Juiz, que poderá:</h4>
-      <h5>I - determinar diligências à entidade, fixando o respectivo prazo;</h5>
-      <h5>II - deferir o pedido;</h5>
-      <h5>III - indeferir o pedido.</h5>
-      <h4>§ 4º A decisão que deferir ou indeferir o pedido de alteração do cadastro será comunicada à entidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 5º Deferido o pedido de alteração de cadastro, a Escrivania/Secretaria fará a retificação no campo cadastro de entidades disponível no Sistema PROJUDI, certificando nos autos.</h4>
-      <h4>§ 6º Apreciado o pedido de alteração de cadastro em Processo de Cadastramento de Entidade (PCE) que se encontrava arquivado, este retornará ao arquivo.</h4>
-      <h3>Art. 41. O cadastro da entidade perante a Comarca ou Foro pode ser excluído em razão de:</h3>
-      <h5>I - decisão judicial proferida no Processo de Habilitação e Prestação de Contas (PHPC);</h5>
-      <h6>a) que interromper a execução do projeto contemplado;</h6>
-      <h6>b) que julgar as contas desaprovadas; ou</h6>
-      <h6>c) que julgar as contas não prestadas;</h6>
-      <h5>II - pedido formulado pela própria entidade.</h5>
-      <h4>§ 1º A exclusão do cadastro motivada por decisão judicial deverá ser comunicada pelo Juízo prolator à Vara Judicial que deferiu o cadastramento da entidade.</h4>
-      <h4>§ 2º O pedido de exclusão do cadastro deverá ser apresentado pela entidade junto à Vara Judicial que deferiu o cadastramento.</h4>
-      <h4>§ 3º A comunicação ou o pedido de exclusão do cadastro serão juntados pela Escrivania/Secretaria no Processo de Cadastramento de Entidade (PCE) que foi deferido, mesmo que esteja arquivado.</h4>
-      <h4>§ 4º Em ambas as hipóteses, a Escrivania/Secretaria anotará a exclusão da entidade no campo cadastro de entidades disponível no Sistema PROJUDI, certificando nos autos.</h4>
-      <h4>§ 5º Dispensa-se a comunicação à entidade da anotação da exclusão do cadastro.</h4>
-      <h4>§ 6º Se a comunicação ou o pedido de exclusão do cadastro for juntada em Processo de Cadastramento de Entidade (PCE) que se encontrava arquivado, este retornará ao arquivo.</h4>
-      <h3>Art. 42. Uma vez excluída do cadastro, a entidade não poderá se habilitar em Processo de Habilitação e Prestação de Contas (PHPC), salvo se tiver deferido novo pedido de cadastro, na forma da Subseção I desta Seção.</h3>
-      <h4>Parágrafo único. Se a exclusão é decorrente de decisão judicial prolatada em Processo de Habilitação e Prestação de Contas (PHPC), no novo pedido de cadastro deverá ser comprovado pela entidade o saneamento de eventuais irregularidades.</h4>
-      <p>Seção III</p>
-      <p>Da Disponibilização dos Recursos</p>
-      <h3>Art. 43. A liberação dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas será efetuada por procedimento específico que competirá às varas judiciais a que atribuídas as competências:</h3>
-      <h5>I - criminal especializada na execução penal em meio aberto; ou</h5>
-      <h5>II - do juizado especial criminal.</h5>
-      <p>- Ver Resolução nº 93/2013 do Órgão Especial.</p>
-      <h4>Parágrafo único. Nas Comarcas e Foros em que existir mais de uma Vara Judicial a que atribuídas as competências previstas no caput , apenas uma delas poderá ficar responsável pela liberação, desde que haja ajuste entre as Varas Judiciais, disciplinada em Portaria Conjunta que deve ser comunicada à Corregedoria-Geral da Justiça para anotação.</h4>
-      <p>Subseção I</p>
-      <p>Do Processo de Disponibilização de Recursos (PDR)</p>
-      <h3>Art. 44. O Juízo que desejar liberar valores de prestação pecuniária decorrentes de penas ou medidas alternativas às entidades públicas ou privadas com finalidade social deverá:</h3>
-      <h5>I - verificar a existência de disponibilidade financeira, mediante consulta ao sistema informatizado mencionado no artigo 9º;</h5>
-      <h5>II - por portaria, determinar a instauração de Processo de Disponibilização de Recursos (PDR);</h5>
-      <h5>III - expedir edital de habilitação, em que deve constar:</h5>
-      <h6>a) o valor total disponível para liberação, que poderá ser partilhado entre os projetos que vierem a ser aprovados;</h6>
-      <h6>b) o prazo mínimo de 10 (dez) dias para apresentação de pedido de habilitação pelas entidades;</h6>
-      <h6>c) que somente podem se habilitar as entidades públicas e privadas cadastradas na Comarca ou Foro, bem como o Conselho da Comunidade;</h6>
-      <h6>d) que a entidade ou o Conselho da Comunidade que desejar se habilitar deve apresentar o pedido de habilitação acompanhado da documentação e do(s) respectivo(s) projeto(s), de acordo com o disposto no artigo 47.</h6>
-      <h5>IV - determinar à Escrivania/Secretaria que reserve e bloqueie o valor a ser liberado pelo sistema informatizado.</h5>
-      <h4>§ 1º O Edital será publicado no átrio do Fórum.</h4>
-      <h4>§ 2º As entidades e o Conselho da Comunidade que constarem do cadastro de entidades ou do cadastro - Conselho da Comunidade disponíveis no Sistema PROJUDI serão ser comunicados do Edital via e-mail, caso possuam.</h4>
-      <h4>§ 3º A expedição da portaria ou do edital prescindem de comunicação à Corregedoria-Geral da Justiça.</h4>
-      <h4>§ 4º Havendo saldo, o Juiz pode determinar a instauração de mais de um Processo de Disponibilização de Recursos (PDR), desde que expeça, para cada procedimento, uma portaria e um edital específicos.</h4>
-      <h3>Art. 45. A Escrivania/Secretaria autuará a portaria e o edital expedidos na área de competência Gestão de Valores - Prestação Pecuniária do Sistema PROJUDI, com a classe Processo Administrativo e assunto Processo de Disponibilização de Recursos (PDR) .</h3>
-      <h4>§ 1º A Escrivania/Secretaria registrará, no Processo de Disponibilização de Recursos (PDR), o Juízo como parte requerente.</h4>
-      <h4>§ 2º É prescindível o registro da parte requerida no Processo de Disponibilização de Recursos (PDR).</h4>
-      <h4>§ 3º A cada portaria expedida corresponderá um Processo de Disponibilização de Recursos (PDR).</h4>
-      <h3>Art. 46. Após a autuação do Processo de Disponibilização de Recursos (PDR), a Escrivania/Secretaria, lavrará certidão atestando:</h3>
-      <h5>I - a publicação do edital no átrio do Fórum;</h5>
-      <h5>II - que as entidades e o Conselho da Comunidade constantes do cadastro de entidades ou do cadastro - Conselho da Comunidade disponíveis no Sistema PROJUDI foram comunicados do Edital via e-mail , caso possuam;</h5>
-      <h5>III - que reservou e bloqueou o valor a ser liberado pelo sistema informatizado.</h5>
-      <h4>§ 1º O bloqueio de valores pelo sistema deve corresponder ao montante total a ser liberado.</h4>
-      <h4>§ 2º O Processo de Disponibilização de Recursos (PDR) ficará suspenso até o julgamento de todos os pedidos de habilitação, voltando a tramitar, após a lavratura da certidão circunstanciada referida no inciso I do artigo 50, de acordo com as regras estabelecidas no artigo 50 e seguintes.</h4>
-      <p>Subseção II</p>
-      <p>Dos Pedidos de Habilitação</p>
-      <h3>Art. 47. O pedido de habilitação será apresentado pela entidade ou pelo Conselho da Comunidade ao Juízo que instaurou o Processo de Disponibilização de Recursos (PDR), no prazo estabelecido no respectivo edital.</h3>
-      <h4>§ 1º Constarão do pedido de habilitação as seguintes informações:</h4>
-      <h5>I - a identificação e qualificação completa dos dirigentes atuais da entidade ou do Conselho da Comunidade, especificando seu representante legal e eventual mandato;</h5>
-      <h5>II - do número de prestadores de serviço que eventualmente tiver recebido nos 6 (seis) meses anteriores à expedição do edital;</h5>
-      <h4>§ 2º O pedido de habilitação deve ainda ser instruído com:</h4>
-      <h5>I - a documentação pertinente da entidade ou do Conselho da Comunidade;</h5>
-      <h5>II - o(s) respectivo(s) projeto(s), cujo(s) valor(es) não ultrapasse(m) o limite estabelecido no edital;</h5>
-      <h5>III - declaração, firmada pelo representante legal, de ciência da necessidade da existência de conta bancária exclusiva para o recebimento dos valores eventualmente liberados;</h5>
-      <h4>§ 3º Acompanharão o pedido de habilitação da entidade ou do Conselho da Comunidade:</h4>
-      <h5>I - comprovante do registro de seu ato constitutivo atualizado, no qual sejam identificadas sua finalidade social, a colaboração com a área de execução penal entre suas atividades, bem como sua finalidade não lucrativa;</h5>
-      <h5>II - comprovante de inscrição e situação cadastral regular no CNPJ;</h5>
-      <h5>III - comprovação dos poderes de representação daqueles que firmarão o Termo de Responsabilidade;</h5>
-      <h5>IV - as certidões:</h5>
-      <h6>a) Certidão Conjunta Negativa de Débitos Relativos aos Tributos Federais e a Dívida Ativa da União;</h6>
-      <h6>b) Certidão Negativa de Débitos Trabalhistas;</h6>
-      <h6>c) Certidão de Regularidade do FGTS;</h6>
-      <h6>d) Certidão Negativa de Débitos Previdenciários;</h6>
-      <h6>e) Certidão Negativa de Débito de Tributos Estaduais;</h6>
-      <h6>f) Certidão Negativa de Débito de Tributos Municipais, referente aos Municípios em que atua a entidade ou o Conselho da Comunidade.</h6>
-      <h4>§ 4º Devem constar do(s) projeto(s) apresentado(s) pela entidade ou pelo Conselho da Comunidade:</h4>
-      <h5>I - o valor total;</h5>
-      <h5>II - destinação da verba;</h5>
-      <h5>III - justificativa para implementação do projeto apresentado;</h5>
-      <h5>IV - prazo inicial e final da execução do projeto;</h5>
-      <h5>V - o cronograma de execução do projeto;</h5>
-      <h5>VI - a descrição dos recursos materiais e humanos eventualmente necessários à execução do projeto;</h5>
-      <h5>VII - os valores necessários para consecução das etapas do projeto;</h5>
-      <h5>VIII - a fim de atender os princípios da moralidade, da impessoalidade, da economicidade, da isonomia, da eficiência e da eficácia, os preços válidos cotados por no mínimo 3 (três) fornecedores, apresentados em orçamentos com a indicação do valor unitário dos serviços ou produtos, sendo que, nos casos de ofertas de encartes, tabloides, anúncios de internet, ou outras formas de anúncio, estes deverão estar impressos e corresponderão a uma proposta válida para o item pesquisado.</h5>
-      <h4>§ 5º Caso o(s) projeto(s) compreenda(m) a construção, reforma ou ampliação de obra, deverá ser comprovada, ainda, a prévia aferição de sua viabilidade, mediante os seguintes documentos:</h4>
-      <h5>I - o projeto básico e a respectiva anotação de responsabilidade técnica (ART), instituída pela Lei Federal nº 6.496, de 7 de dezembro de 1977;</h5>
-      <h5>II - orçamento detalhado;</h5>
-      <h5>III - certidão atualizada do registro imobiliário, comprovando a titularidade do imóvel;</h5>
-      <h5>IV - comprovação pela entidade de que ela dispõe de recursos para complementar a execução da obra, na hipótese do valor total constante do projeto ser insuficiente para custeá-la;</h5>
-      <h5>V - se a obra for realizada em imóveis pertencentes à Administração Pública, a autorização do respectivo ente.</h5>
-      <h4>§ 6º Permite-se que o pedido verse sobre complementação financeira para a execução de projeto realizado com recursos próprios e/ou de terceiros, desde que seja possível a aplicação imediata do valor a ser liberado.</h4>
-      <h4>§ 7º São vedados pedidos condicionais e pedidos que visem captação de recursos para utilização futura.</h4>
-      <h3>Art. 48. O pedido de habilitação deve ser recebido, digitalizado e cadastrado pela Escrivania/Secretaria na área de competência Gestão de Valores - Prestação Pecuniária do Sistema PROJUDI, sendo autuado com a classe Processo Administrativo e assunto Processo de Habilitação e Prestação de Contas (PHPC) .</h3>
-      <h4>§ 1º A Escrivania registrará como partes no Processo de Habilitação e Prestação de Contas (PHPC):</h4>
-      <h5>I - Requerente: a entidade ou o Conselho da Comunidade que postula a habilitação;</h5>
-      <h5>II - Requerido: o Juízo em que tramita o procedimento.</h5>
-      <h4>§ 2º O Processo de Habilitação e Prestação de Contas (PHPC) deve ser individualizado por requerente.</h4>
-      <h4>§ 3º O Processo de Habilitação e Prestação de Contas (PHPC) será apensado ao Processo de Disponibilização de Recursos (PDR).</h4>
-      <h3>Art. 49. Após a autuação do Processo de Habilitação e Prestação de Contas (PHPC), a Escrivania/Secretaria:</h3>
-      <h5>I - quando a requerente for entidade, lavrará certidão atestando que ela:</h5>
-      <h6>a) encontra-se cadastrada perante a Comarca/Foro;</h6>
-      <h6>b) não se encontra com o cadastro excluído;</h6>
-      <h6>c) apresentou o pedido e documentação em conformidade com o artigo 47.</h6>
-      <h5>II - quando o requerente for o Conselho da Comunidade, certificará:</h5>
-      <h6>a) em consulta ao cadastro constante do Sistema PROJUDI, sobre a regularidade da contabilidade e das prestações de contas do Conselho da Comunidade;</h6>
-      <h6>b) que o Conselho da Comunidade apresentou o pedido e documentação em conformidade com o artigo 47.</h6>
-      <h4>§ 1º Após lavrar a certidão referida no caput , a Escrivania/Secretaria remeterá os autos para análise:</h4>
-      <h5>I - da equipe técnica, onde houver;</h5>
-      <h5>II - do Ministério Público;</h5>
-      <h5>III - do Juiz.</h5>
-      <h4>§ 2º Se o pedido e/ou documentação não estiverem em conformidade com o artigo 47, antes da remessa a que alude o § 1º , a Escrivania/Secretaria intimará a entidade para regularização no prazo de 5 (cinco) dias, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 3º O Juiz, de ofício, indeferirá o pedido e determinará o seu arquivamento:</h4>
-      <h5>I - quando for requerente entidade, esta não se encontrar cadastrada;</h5>
-      <h5>II - quando for requerente entidade, e esta estiver com o cadastro suspenso ou excluído;</h5>
-      <h5>III - quando for requerente o Conselho da Comunidade, e este não estiver com suas prestações de contas regulares;</h5>
-      <h5>IV - intimado, a entidade ou o Conselho da Comunidade proponente não regularizar seu pedido e/ou documentação de acordo com o artigo 47.</h5>
-      <h4>§ 4º Da decisão referida no § 3º não cabe reconsideração ou recurso.</h4>
-      <h4>§ 5º Indeferido o pedido de habilitação, não será admissível sua retificação no mesmo procedimento, podendo ser formulado novo requerimento, se ainda não decorrido o prazo do edital, no qual deverá ser comprovado o saneamento de eventuais irregularidades.</h4>
-      <h4>§ 6º Indeferido o pedido de habilitação, a escrivania/secretaria:</h4>
-      <h5>I - cientificará a entidade ou o Conselho da Comunidade da decisão por meio idôneo de comunicação, preferencialmente e-mail ou telefone;</h5>
-      <h5>II - desapensará o Processo de Habilitação e Prestação de Contas (PHPC) do Processo de Disponibilização de Recursos (PDR);</h5>
-      <h5>III - arquivará os autos, após as baixas necessárias.</h5>
-      <h4>§ 7º Deferido o pedido, a entidade ou o Conselho da Comunidade estará habilitado para concorrer à liberação de recursos, nos termos do edital.</h4>
-      <p>Subseção III</p>
-      <p>Da Apreciação do Processo de Disponibilização de Recursos (PDR)</p>
-      <h3>Art. 50. Decorrido o prazo constante do edital e, após o julgamento de todos os pedidos de habilitação, a escrivania/secretaria:</h3>
-      <h5>I - lavrará certidão circunstanciada no Processo de Disponibilização de Recursos (PDR), descrevendo as entidades e/ou Conselho da Comunidade que tiveram o pedido de habilitação deferido, apontando os números dos processos respectivos;</h5>
-      <h5>II - remeterá o Processo de Disponibilização de Recursos (PDR), sequencialmente, para análise:</h5>
-      <h6>a) da equipe técnica, onde houver;</h6>
-      <h6>b) do Ministério Público;</h6>
-      <h6>c) do Juiz.</h6>
-      <h4>Parágrafo único. Os autos não serão remetidos na forma do inciso II, quando a apreciação do pedido for realizada por comissão multidisciplinar, na forma do artigo 51.</h4>
-      <h3>Art. 51. A apreciação do Processo de Disponibilização de Recursos (PDR), será efetuada pelo Juiz ou, caso conste do respectivo Edital, por comissão multidisciplinar composta:</h3>
-      <h5>I - pelo Juiz;</h5>
-      <h5>II - por membro do Ministério Público;</h5>
-      <h5>III - pela equipe técnica da vara, onde houver;</h5>
-      <h5>IV - por membro de entidade pública vinculada à área social, desde que não esteja participando da seleção.</h5>
-      <h3>Art. 52. O Juiz ou a Comissão, ao apreciar o Processo de Disponibilização de Recursos (PDR) e os projetos habilitados:</h3>
-      <h5>I - deliberará sobre a(s) entidade(s) e/ou Conselho da Comunidade para a(s) qual(is) será(ão) liberado(s) o(s) recurso(s);</h5>
-      <h5>II - indicará o(s) valor(es) liberado(s) para cada contemplado;</h5>
-      <h5>III - determinará a lavratura do(s) Termo(s) de Responsabilidade em relação ao(s) contemplado(s);</h5>
-      <h5>IV - determinará a intimação do(s) contemplado(s) para assinatura do(s) Termo(s) de Responsabilidade;</h5>
-      <h5>V - determinará a expedição de alvará(s), condicionada à subscrição dos do(s) Termo(s) de Responsabilidade.</h5>
-      <h4>§ 1º Havendo sobra de recursos, o saldo remanescente permanecerá depositado na conta judicial única, devendo o magistrado desbloquear o valor residual pelo sistema informatizado de recolhimento.</h4>
-      <h4>§ 2º A seleção do(s) projeto(s), que adotará o juízo de relevância social quanto ao(s) serviço(s) a ser(em) prestado(s), bem como considerará a expectativa de resultados com a implementação do(s) projeto(s) e seu(s) impacto(s) social(is), segundo critérios de utilidade e necessidade, levará em consideração, ainda, aquele(s) que apresentam maior relevância:</h4>
-      <h5>I - na área de execução penal, em especial na execução das penas restritivas ou medidas alternativas;</h5>
-      <h5>II - na assistência às vítimas de infrações penais;</h5>
-      <h5>III - na prevenção à criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais.</h5>
-      <h5>III - na prevenção à criminalidade, em especial ao enfrentamento às drogas e demais crimes contra a saúde pública, à violência doméstica e familiar, à violência contra a criança e adolescente, à violência de trânsito, aos crimes ambientais e demais crimes que tenham por objetivo a proteção de bens jurídicos coletivos, priorizandose aqueles que melhor se adéquem à realidade social daquela localidade, de acordo com os bens jurídicos mais afetados pela prática criminosa; (Redação dada pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h5>
-      <h5>IV - na atuação em projetos voltados para a prevenção, reparação ou recuperação de infrações penais contra bens jurídicos coletivos, notadamente, o meio ambiente, a saúde pública, os direitos das crianças e adolescentes, as relações de consumo e o patrimônio público, priorizando-se aqueles que melhor se adéquem à realidade social daquela localidade, de acordo com os bens jurídicos mais afetados pela prática criminosa. (Incluído pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h5>
-      <h4>§ 3º Como critério de desempate, terá preferência da destinação de valores:</h4>
-      <h5>I - o Conselho da Comunidade, quando concorrer no processo;</h5>
-      <h5>II - a entidade que tiver recebido maior número de prestadores de serviço nos 6 (seis) meses anteriores à expedição do edital.</h5>
-      <h4>§ 4º Quando a execução do projeto consistir em mais de uma etapa, pode ocorrer a liberação parcelada de valores.</h4>
-      <h4>§ 5º A decisão do(s) contemplado(s), quando prolatada pela Comissão, será tomada pela maioria de votos dos seus membros.</h4>
-      <h4>§ 6º Poderá o Juiz ou a Comissão, caso opte, realizar cerimônia pública de divulgação do(s) contemplado(s).</h4>
-      <h4>§ 7º Da decisão prolatada, serão comunicadas as entidades e/ou Conselho da Comunidade habilitados e concorrentes, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 8º Não cabe recurso da decisão que julgar o Processo de Disponibilização de Recursos (PDR).</h4>
-      <h3>Art. 53. Efetuada(s) a(s) comunicação(ões) da decisão prolatada, o(s) Processo(s) de Habilitação e Prestação de Contas (PHPC) referente(s) ao(s) não contemplado(s) com o repasse de valores deve(m) ser:</h3>
-      <h5>I - desapensado(s) do Processo de Disponibilização de Recursos (PDR), certificando-se o motivo do desapensamento.</h5>
-      <h5>II - arquivado(s), com as baixas necessárias.</h5>
-      <h4>Parágrafo único. Deve(m) permanecer apensado(s) ao Processo de Disponibilização de Recursos (PDR) somente o(s) Processo(s) de Habilitação e Prestação de Contas (PHPC) referente(s) ao(s) contemplado(s) com o repasse de valores.</h4>
-      <p>Subseção IV</p>
-      <p>Do Repasse de Recursos às Entidades</p>
-      <h3>Art. 54. Antes da expedição do(s) alvará(s) de levantamento, cada contemplado deverá assinar, perante o Juízo, Termo de Responsabilidade, no qual constarão:</h3>
-      <h5>I - as obrigações:</h5>
-      <h6>a) de utilização e gestão do(s) valor(es) liberado(s), de acordo com o(s) projeto(s) aprovado(s);</h6>
-      <h6>b) de apresentação da respectiva prestação de contas;</h6>
-      <h6>c) de colaborar com o Juízo da Execução Penal;</h6>
-      <h6>d) de devolução do saldo residual não aplicado no projeto aprovado.</h6>
-      <h6>e) de garantir o livre acesso às suas instalações para fiscalização, a qualquer tempo, bem como de exibir, quando solicitado, qualquer documento relacionado com o procedimento de liberação de valor;</h6>
-      <h6>f) de atender as recomendações, exigências e determinações do Juízo responsável pela liberação do valor.</h6>
-      <h6>g) de utilizar os valores liberados para execução do projeto, preferencialmente através de cheque, transferência bancárias, TED ou DOC, não recomendado o pagamento em espécie a fornecedores;</h6>
-      <h6>h) de organizar e manter a documentação conforme artigo 66;</h6>
-      <h5>II - os dados bancários (banco, agência, conta, espécie de conta, operação) da conta destinada exclusivamente ao recebimento de valores de prestação pecuniária, de titularidade da entidade ou do Conselho da Comunidade, em que será(ão) depositado(s) o(s) valor(es) eventualmente liberado(s);</h5>
-      <h4>§ 1º Para o cumprimento do inciso II do caput , o Conselho da Comunidade deverá indicar os dados da conta bancária destinada exclusivamente ao recebimento de valores para o custeio de despesas projetos.</h4>
-      <h4>§ 2º Para os fins de cumprimento deste artigo, a Escrivania/Secretaria intimará o(s) contemplado(s) para subscrição do(s) respectivo(s) Termo(s) de Responsabilidade, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
-      <h4>§ 3º Subscrito o Termo de Responsabilidade, a Escrivania/Secretaria:</h4>
-      <h5>I - efetuará a digitalização e o juntará ao respectivo Processo de Habilitação e Prestação de Contas (PHPC);</h5>
-      <h5>II - expedirá o(s) alvará(s) de levantamento determinado(s) pelo Juiz.</h5>
-      <h3>Art. 55. O(s) alvará(s) de levantamento ao(s) contemplado(s) será(ão) expedido(s) no Processo de Disponibilização de Recursos (PDR), juntando-se cópia(s) ao(s) respectivo(s) Processo(s) de Habilitação e Prestação de Contas (PHPC).</h3>
-      <h4>§ 1º O alvará deve ser assinado eletronicamente pelo Juiz e encaminhado automaticamente ao Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para cumprimento.</h4>
-      <h4>§ 2º Enquanto não houver a possibilidade de encaminhamento automático, o alvará será remetido por mensageiro para a lista Centro de Apoio Administrativo e Financeiro da Secretaria / Presidência .</h4>
-      <h4>§ 3º Cumprido o alvará pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça, o valor liberado será automaticamente transferido para a conta bancária indicada pelo contemplado em sua habilitação, ficando seu representante legal na qualidade de fiel depositário até sua efetiva utilização para os fins e nos exatos termos aprovados.</h4>
-      <h3>Art. 56. Após a expedição do(s) alvará(s) e juntada da(s) respectiva(s) cópia(s) ao(s) auto(s) de Processo(s) de Habilitação e Prestação de Contas (PHPC), a Escrivania/Secretaria:</h3>
-      <h5>I - após as baixas necessárias, arquivará o Processo de Disponibilização de Recursos (PDR), mantendo-o apensado ao(s) Processo(s) de Habilitação e Prestação de Contas (PHPC);</h5>
-      <h5>II - remeterá o(s) Processo(s) de Habilitação e Prestação de Contas (PHPC) concluso(s) ao Juiz, para determinar a forma de acompanhamento da execução do(s) projeto(s) contemplado(s).</h5>
-      <p>Seção IV</p>
-      <p>Da Execução dos Projetos Contemplados</p>
-      <h3>Art. 57. O Juiz estabelecerá, em cada Processo de Habilitação e Prestação de Contas (PHPC), a forma de acompanhamento da execução do projeto contemplado, fiscalizando o cumprimento do cronograma inicialmente proposto.</h3>
-      <h4>Parágrafo único. O prazo para conclusão do projeto poderá ser prorrogado, desde que, em até 5 (cinco) dias do término inicialmente estabelecido, a entidade ou o Conselho da Comunidade contemplado apresente requerimento justificado ao Juiz.</h4>
-      <h3>Art. 58. O acompanhamento do projeto deverá ser feito pelo Ministério Público e pelo Juízo durante todo o período de execução, não somente por ocasião da prestação de contas.</h3>
-      <h4>§ 1º Recomenda-se que o acompanhamento do projeto seja efetuado pela equipe técnica da Escrivania/Secretaria, onde houver.</h4>
-      <h4>§ 2º Na falta da equipe técnica, o acompanhamento do projeto poderá ser feito por servidores indicados:</h4>
-      <h5>I - pelo Juízo;</h5>
-      <h5>II - pela Promotoria de Justiça.</h5>
-      <h3>Art. 59. Constatado o descumprimento das etapas da execução do projeto, a entidade ou o Conselho da Comunidade contemplado será intimado a apresentar a respectiva justificativa, no prazo de 5 (cinco) dias, contados da intimação.</h3>
-      <h4>§ 1º Apresentada a justificativa, os autos de Processo de Habilitação e Prestação de Contas (PHPC) devem ser remetidos para análise do Ministério Público.</h4>
-      <h4>§ 2º Com a manifestação do Ministério Público, a justificativa será apreciada pelo Juiz, que poderá:</h4>
-      <h5>I - acolhê-la, reorganizando, se for o caso, o cronograma de execução do projeto;</h5>
-      <h5>II - rejeitá-la, interrompendo a execução do projeto e determinando:</h5>
-      <h6>a) a devolução do montante repassado;</h6>
-      <h6>b) a suspensão dos demais repasses, caso haja;</h6>
-      <h6>c) a exclusão do cadastro, se o contemplado for entidade, comunicando-se o Juízo que deferiu o cadastramento.</h6>
-      <h6>d) a anotação no cadastro disponível no Sistema PROJUDI, se o contemplado for o Conselho da Comunidade, comunicando-se o Juízo Supervisor do Conselho da Comunidade.</h6>
-      <h4>§ 3º Da decisão prolatada será intimado o Conselho da Comunidade ou a entidade.</h4>
-      <h4>§ 4º Não cabe recurso da decisão referida no § 2º.</h4>
-      <h4>§ 5º Os valores a serem devolvidos à unidade judicial devem ser corrigidos monetariamente pela variação INPC/IGP-DI ou índice que vier a substituí-los, sem prejuízo das demais penalidades.</h4>
-      <h4>§ 6º A devolução deverá ser efetuada mediante guia de recolhimento, nos termos previstos nos artigos 9º e 10.</h4>
-      <h4>§ 7º A exclusão do cadastro referida na alínea c do inciso II do § 2º deverá ser comunicada à Vara Judicial que deferiu o cadastramento, com cópia da decisão respectiva.</h4>
-      <h4>§ 8º A anotação no cadastro mencionada na alínea d do inciso II do § 2º deverá ser solicitada, com cópia da decisão respectiva, ao Juízo Supervisor do Conselho da Comunidade, ao qual incumbirá, exclusivamente, anotar no campo cadastro - Conselho da Comunidade " do Sistema PROJUDI a interrupção da execução do projeto, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
-      <h4>§ 9º Nas hipóteses dos §§ 7º e 8º, quando a Vara Judicial que determinou a exclusão/anotação for a mesma que deferiu o cadastro e/ou Supervisiona o Conselho da Comunidade, os lançamentos serão efetuados e certificados pela própria Escrivania/Secretaria, prescindindo de comunicação.</h4>
-      <h3>Art. 60. Determinada a interrupção da execução do projeto, é prescindível a apresentação da prestação de contas.</h3>
-      <h4>§ 1º Após a devolução dos valores à unidade judicial e cumprimento das demais providências determinadas, os autos de Processo de Habilitação e Prestação de Contas (PHPC) devem ser arquivados, com as baixas necessárias.</h4>
-      <h4>§ 2º Não havendo a devolução dos valores à unidade judicial, a Escrivania/Secretaria, independente de determinação judicial, sequencialmente:</h4>
-      <h5>I - expedirá certidão discriminando o valor que deve ser restituído à unidade judicial;</h5>
-      <h5>II - com cópia integral do Processo de Habilitação e Prestação de Contas (PHPC), oficiará ao Ministério Público para fins de apuração de responsabilidade administrativa, cível, criminal e ressarcimento de valores;</h5>
-      <h5>III - promoverá o arquivamento dos autos de Processo de Habilitação e Prestação de Contas (PHPC), após as baixas necessárias.</h5>
-      <p>Seção V</p>
-      <p>Da Prestação de Contas</p>
-      <h3>Art. 61. A entidade e/ou o Conselho da Comunidade contemplado que receber valores deverá prestar contas em até 30 (trinta) dias após o prazo final de execução do projeto, a qual deverá ser acompanhada:</h3>
-      <h5>I - dos comprovantes das despesas (notas fiscais, recibos de pagamento a autônomo, folhas de pagamento, Guia da Previdência Social - GPS, Guia de Recolhimento do FGTS e Informações a Previdência Social, Sistema Empresa de Recolhimento do FGTS e Informações à Previdência Social - SEFIP, holerites);</h5>
-      <h5>II - dos comprovantes de devolução de saldos, caso não utilizado todo o recurso repassado;</h5>
-      <h5>III - das certidões mencionadas no inciso IV do § 3º do artigo 47, se expirados os respectivos prazos de validade;</h5>
-      <h5>IV - extrato bancário da conta para a qual foi(ram) transferido(s) o(s) valor(es) liberado(s), compreendendo o período entre o pedido de habilitação e a apresentação da prestação de contas.</h5>
-      <h4>Parágrafo único. A devolução dos saldos deverá ser efetuada mediante guia de recolhimento, nos termos previstos nos artigos 9º e 10.</h4>
-      <h3>Art. 62. A prestação de contas será juntada nos autos do Processo de Habilitação e Prestação de Contas (PHPC).</h3>
-      <h4>§ 1º Apresentadas as contas, o processo será remetido, sequencialmente, para análise:</h4>
-      <h5>I - da equipe técnica da Escrivania/Secretaria, onde houver;</h5>
-      <h5>II - do Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para parecer conclusivo;</h5>
-      <h5>III - do Ministério Público;</h5>
-      <h5>IV - do Juiz.</h5>
-      <h4>§ 2º A remessa referida no inciso II do § 1º será efetuada pelo Sistema PROJUDI.</h4>
-      <h4>§ 3º O parecer emitido pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça deve recomendar:</h4>
-      <h5>I - a aprovação das contas, quando a documentação apresentada refletir adequadamente a movimentação financeira indicar que as contas estão regulares;</h5>
-      <h5>II - a aprovação das contas com ressalva, quando forem verificadas falhas, omissões ou impropriedades de natureza formal que não comprometam a regularidade das contas, ocasião em que a ressalva deve ser especificada claramente, e os seus efeitos demonstrados sobre as contas prestadas; e</h5>
-      <h5>III - a desaprovação das contas, quando restar evidenciada qualquer das seguintes ocorrências:</h5>
-      <h6>a) constatação de falhas, omissões ou irregularidades que comprometam a regularidade, a confiabilidade ou a consistência das contas; e</h6>
-      <h6>b) conclusão pela desconformidade entre a documentação apresentada e a movimentação financeira.</h6>
-      <h3>Art. 63. O Juiz, ao analisar o procedimento de prestação de contas, poderá:</h3>
-      <h5>I - determinar diligências à entidade/Conselho da Comunidade ou à equipe técnica, fixando o respectivo prazo;</h5>
-      <h5>II - julgar as contas:</h5>
-      <h6>a) aprovadas;</h6>
-      <h6>b) aprovadas com ressalvas;</h6>
-      <h6>c) desaprovadas, determinando, quando se tratar de entidade, a exclusão do respectivo cadastro, comunicando-se o Juízo que deferiu o cadastramento.</h6>
-      <h6>d) desaprovadas, determinando, quando se tratar do Conselho da Comunidade, a anotação no cadastro disponível no Sistema PROJUDI, comunicando-se o Juízo Supervisor do Conselho da Comunidade.</h6>
-      <h4>§ 1º Determinada diligência pelo Juiz, a Escrivania/Secretaria intimará a entidade/Conselho da Comunidade ou a equipe técnica, por meio idôneo de comunicação, para cumprimento, no prazo fixado.</h4>
-      <h4>§ 2º Da decisão que julgar as contas (inciso II do caput ) deverá ser intimada a entidade ou Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
-      <h4>§ 3º Julgadas aprovadas ou aprovadas com ressalvas as contas, depois de intimar a entidade ou o Conselho da Comunidade, a Escrivania/Secretaria, após as baixas necessárias, arquivará o respectivo Processo de Habilitação e Prestação de Contas (PHPC), mantendo o apensamento anteriormente realizado.</h4>
-      <h4>§ 4º Julgadas desaprovadas as contas, a Escrivania/Secretaria, depois de intimar a entidade ou o Conselho da Comunidade:</h4>
-      <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
-      <h5>II - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
-      <h5>III - quando se tratar de entidade, oficiará à Vara Judicial que deferiu o cadastro, comunicando sua exclusão, com cópia da decisão;</h5>
-      <h5>IV - quando se tratar do Conselho da Comunidade, oficiará ao Juízo Supervisor, solicitando a anotação no cadastro, com cópia da decisão;</h5>
-      <h5>V - após as baixas necessárias, arquivará o respectivo Processo de Habilitação e Prestação de Contas (PHPC), mantendo o apensamento anteriormente realizado.</h5>
-      <h4>§ 5º A anotação no cadastro mencionada no inciso IV do § 4º deverá ser solicitada, com cópia da decisão respectiva, ao Juízo Supervisor do Conselho da Comunidade, ao qual incumbirá, exclusivamente, anotar no campo cadastro - Conselho da Comunidade " do Sistema PROJUDI a desaprovação das contas, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
-      <h4>§ 6º Nas hipóteses dos incisos III e IV do § 4º, quando a Vara Judicial que determinou a exclusão/anotação for a mesma que deferiu o cadastro e/ou Supervisiona o Conselho da Comunidade, os lançamentos serão efetuados e certificados pela própria Escrivania/Secretaria, prescindindo de comunicação.</h4>
-      <h3>Art. 64. Não apresentadas as contas no prazo mencionado no art. 61, os autos serão conclusos ao Juiz, que as julgará não apresentadas, determinando:</h3>
-      <h5>I - quando se tratar de entidade, a exclusão do respectivo cadastro, comunicando-se o Juízo que deferiu o cadastramento;</h5>
-      <h5>II - quando se tratar do Conselho da Comunidade, a anotação no cadastro disponível no Sistema PROJUDI, comunicando-se o Juízo Supervisor do Conselho da Comunidade.</h5>
-      <h4>§ 1º Da decisão que julgar as contas não apresentadas deverá ser intimada a entidade ou o Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
-      <h4>§ 2º Julgadas não apresentadas as contas, a Escrivania/Secretaria, depois de intimar a entidade ou o Conselho da Comunidade:</h4>
-      <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
-      <h5>II - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
-      <h5>III - quando se tratar de entidade, oficiará à Vara Judicial que deferiu o cadastro, comunicando sua exclusão, com cópia da decisão;</h5>
-      <h5>IV - quando se tratar do Conselho da Comunidade, oficiará ao Juízo Supervisor, solicitando a anotação no cadastro, com cópia da decisão;</h5>
-      <h5>V - após as baixas necessárias, arquivará o respectivo Processo de Habilitação e Prestação de Contas (PHPC), mantendo o apensamento anteriormente realizado.</h5>
-      <h4>§ 3º A anotação no cadastro mencionada no inciso IV do § 2º deverá ser solicitada, com cópia da decisão respectiva, ao Juízo Supervisor do Conselho da Comunidade, ao qual incumbirá, exclusivamente, anotar no campo cadastro - Conselho da Comunidade " do Sistema PROJUDI a não apresentação das contas, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
-      <h4>§ 4º Nas hipóteses dos incisos III e IV do § 2º, quando a Vara Judicial que determinou a exclusão/anotação for a mesma que deferiu o cadastro e/ou Supervisiona o Conselho da Comunidade, os lançamentos serão efetuados e certificados pela própria Escrivania/Secretaria, prescindindo de comunicação.</h4>
-      <h3>Art. 65. A entidade ou o Conselho da Comunidade que tiver suas contas julgadas desaprovadas ou não apresentadas, para se habilitar em futuro Processo de Disponibilização de Recursos (PDR), deverá sanar as irregularidades constatadas, no próprio Processo de Habilitação e Prestação de Contas (PHPC).</h3>
-      <h4>§ 1º Apresentado o pedido de regularização das contas, o Processo de Habilitação e Prestação de Contas (PHPC) seguirá o trâmite previsto nos artigos 62 e 63.</h4>
-      <h4>§ 2º A regularização das falhas não enseja automaticamente:</h4>
-      <h5>I - o restabelecimento do cadastro da entidade, que deverá formular novo pedido de cadastro;</h5>
-      <h5>II - a retirada da anotação no cadastro do Conselho da Comunidade, competindo a este solicitar perante o Juízo Supervisor a retificação, instruindo o pedido com cópia da decisão que atesta a regularização.</h5>
-      <h4>§ 3º Recebido o pedido de retificação pelo Juízo Supervisor do Conselho da Comunidade, a este incumbirá, exclusivamente, anotar no campo específico do Sistema PROJUDI a regularização, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
-      <h3>TÍTULO IV</h3>
-      <h3>DAS DISPOSIÇÕES FINAIS</h3>
-      <h3>Art. 66. As entidades e o Conselho da Comunidade deverão manter, pelo prazo de 10 (dez) anos, toda documentação que instruiu as respectivas prestações de contas.</h3>
-      <h4>Parágrafo único. Para a guarda dos documentos deverão ser observadas as seguintes regras:</h4>
-      <h5>I - serão ordenados de forma cronológica e agregados por tipo de documento na seguinte ordem:</h5>
-      <h6>a) Plano de aplicação ou Projeto;</h6>
-      <h6>b) documentos pertinentes à comprovação da condição de regularidade da entidade;</h6>
-      <h6>c) orçamentos para aquisição de bens e serviços;</h6>
-      <h6>d) comprovantes das despesas em vias originais;</h6>
-      <h6>e) comprovantes das devoluções de saldos;</h6>
-      <h6>f) extratos bancários;</h6>
-      <h6>g) parecer técnico emitido pela equipe técnica, se houver;</h6>
-      <h6>h) parecer emitido pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça.</h6>
-      <h3>Art. 67. As ações penais e termos circunstanciados cujas infrações penais admitirem transação penal ou suspensão condicional do processo deverão ser integralmente digitalizados pelas Escrivanias/Secretarias e cadastrados no Sistema PROJUDI.</h3>
-      <h3>Art. 68. As cartas precatórias recebidas que versarem sobre prestações pecuniárias deverão ser cumpridas nos termos determinados pelo Juízo Deprecante.</h3>
-      <h4>Parágrafo único. Se o Juízo Deprecante delegar o estabelecimento das condições em que devem ser cumpridas as penas ou medidas alternativas de prestação pecuniária, a Escrivania/Secretaria deverá observar os termos desta Instrução Normativa Conjunta.</h4>
-      <h3>Art. 69. As unidades gestoras não prestarão contas dos valores manejados e destinados às entidades e/ou Conselhos da Comunidade diretamente ao Tribunal de Contas.</h3>
-      <h4>Parágrafo único. A prestação de contas das unidades gestoras será incorporada, através de relatório circunstanciado de valores arrecadados e transferidos, à prestação de contas do Tribunal de Justiça apresentada ao Tribunal de Contas do Estado do Paraná.</h4>
-      <p>- Ver acórdão nº 7002/2014 do Tribunal Pleno do Tribunal de Contas do Estado do Paraná, proferido no Processo de Consulta nº 368729/14.</p>
-      <h3>Art. 70. A Corregedoria-Geral da Justiça e o Ministério Público do Estado do Paraná, no prazo de 30 (trinta) dias da entrada em vigor desta Instrução Normativa Conjunta, deverão adaptar suas normativas de modo que não conflitem com o disposto neste ato.</h3>
-      <h3>Art. 71. Para o cumprimento integral deste ato, a Corregedoria-Geral da Justiça deverá aprovar, por Instrução Normativa Conjunta, Manual de Procedimentos.</h3>
-      <h4>Parágrafo único. Nas Comarcas e Foros em que exista Vara Judicial que apenas recolha valores de prestação pecuniária, entretanto, não possua competência para a respectiva liberação, bem como nas hipóteses do § 3º do artigo 36 e do parágrafo único do artigo 43, a Corregedoria-Geral da Justiça, por Instrução Normativa Conjunta, poderá regulamentar a transferência automática dos valores recolhidos por essas Varas Judiciais a outras que disponibilizem recursos.</h4>
-      <h3>Art. 72. A presente Instrução Normativa Conjunta deve ser observada em relação às prestações pecuniárias aplicadas após 1º de janeiro de 2015.</h3>
-      <h4>§ 1º As prestações pecuniárias aplicadas antes da data mencionada no caput observarão:</h4>
-      <h5>I - os termos do Provimento nº 68/2005, em relação aos valores destinados ao Conselho da Comunidade;</h5>
-      <h5>II - o determinado pelo respectivo Juiz, em relação aos valores destinados às demais entidades;</h5>
-      <h4>§ 2º Os Juízos que abriram conta judicial única para destinação de valores de prestações pecuniárias, na forma determinada pela Resolução 154/CNJ, deverão encerrar as respectivas contas e promover a transferência dos montantes à conta judicial prevista nesta Instrução Normativa Conjunta, conforme regulamentação a ser expedida pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça.</h4>
-      <h3>Art. 73. Esta Instrução Normativa Conjunta entrará em vigor em 1º de janeiro de 2015, devendo ser publicada no Diário da Justiça Eletrônico. Curitiba, 2 de dezembro de 2014. EUGÊNIO ACHILLE GRANDINETTI</h3>
-      <p>Corregedor-Geral da Justiça GILBERTO GIACOIA</p>
-      <p>Procurador-Geral de Justiça ARION ROLIM PEREIRA</p>
-      <p>Corregedor-Geral do Ministério Público *O conteúdo disponibilizado possui caráter informativo e não substitui aquele publicado no Diário da Justiça Eletrônico. Imprimir Voltar Oculto</p>
-      <p>Praça Nossa Senhora de Salette, S/N</p>
-      <p>CEP 80.530-912 - Curitiba, PR</p>
-      <p>Telefone: 41 3200-2000 EXPEDIENTE DE FUNCIONAMENTO</p>
-      <p>Horário regimental de funcionamento – das 12:00 às 19:00</p>
-      <p>Horário de atendimento ao público – das 12:00 às 18:00 ACESSO À INFORMAÇÃO</p>
-      <p>Número: | 2/2014  CGJ/PR E MP/PR - Origem: | CORREGEDORIA-GERAL DA JUSTIÇA</p>
-      <p>Instrução Normativa Conjunta nº 2/2014</p>
-      <h3> CGJ/PR E MP/PR -</h3>
-      <p>Assunto: | 1.Regulamentação Conjunta 2.Corregedoria-Geral da Justiça 3.Ministério Público 4.Corregedoria da Justiça 5.Foro Judicial 6.Prestação Pecuniária 7.Recolhimento 8.Destinação 9.Prestação de Contas</p>
-      <p>Ementa: | Texto atualizado até a Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022.</p>
-      <p>Referências: | Documentos do mesmo sentido:</p>
-      <p>Instrução Normativa Conjunta nº 116/2022</p>
-      <p>-CGJ/MPPR/CGMPDocumentos do mesmo sentido:</p>
-      <p>Instrução Normativa Conjunta nº 2/2014</p>
-      <p>- CGJ/MPPR- Texto Original</p>
-    </article>
+ <p>INSTRUÇÃO NORMATIVA CONJUNTA Nº 2, DE 2 DE DEZEMBRO DE 2014</p>
+ <p>- CGJ-PR E MP-PR - Atualizado até a Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022 - CGJ/MPPR/CGMP Institui normas para o recolhimento, a destinação, a liberação, a aplicação e a prestação de contas de recursos oriundos de prestações pecuniárias no âmbito do Poder Judiciário do Estado do Paraná. A CORREGEDORIA-GERAL DA JUSTIÇA DO ESTADO DO PARANÁ (CGJ/PR) e o MINISTÉRIO PÚBLICO DO ESTADO DO PARANÁ (MP/PR), neste ato representados, respectivamente, pelo CORREGEDOR-GERAL DA JUSTIÇA , DES. EUGÊNIO ACHILLE GRANDINETTI , pelo PROCURADOR-GERAL DA JUSTIÇA , DR. GILBERTO GIACÓIA , e pelo CORREGEDOR-GERAL DO MINISTÉRIO PÚBLICO , DR. ARION ROLIM PEREIRA , no uso de suas atribuições legais e</p>
+ <h2>CONSIDERANDO a Resolução nº 101, de 15 de dezembro de 2009, do Conselho Nacional de Justiça, que definiu a política institucional do Poder Judiciário na execução de penas e medidas alternativas à prisão;</h2>
+ <h2>CONSIDERANDO a Resolução nº 154, de 13 de julho de 2012, do Conselho Nacional de Justiça, que definiu a política institucional do Poder Judiciário na utilização dos recursos oriundos da aplicação da pena de prestação pecuniária;</h2>
+ <h2>CONSIDERANDO o Provimento nº 21, de 30 de agosto de 2012, da Corregedoria Nacional de Justiça, que definiu regras para destinação e fiscalização de medidas e penas alternativas;</h2>
+ <h2>CONSIDERANDO que os valores de prestação pecuniária decorrentes de penas ou medidas alternativas, quando possível, deverão ser prioritariamente destinadas diretamente à vítima ou aos seus dependentes;</h2>
+ <h2>CONSIDERANDO que, no Estado do Paraná, é notória a atuação e contribuição dos Conselhos da Comunidade para o alcance dos objetivos da lei de execução penal;</h2>
+ <h2>CONSIDERANDO a necessidade de adequar o Provimento nº 68/2005-CGJ, que versa sobre a destinação dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas aos Conselhos da Comunidade, ao disposto na Resolução nº 154/CNJ;</h2>
+ <h2>CONSIDERANDO a necessidade de regulamentar e uniformizar a forma de destinação, recolhimento, liberação, aplicação e prestação de contas pelas demais entidades beneficiárias dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas aplicadas no âmbito do Poder Judiciário do Estado do Paraná;</h2>
+ <h2>CONSIDERANDO que os valores de prestação pecuniária decorrentes de penas ou medidas alternativas possuem natureza extra orçamentaria, de acordo com a resposta à Consulta nº 368729/14 do Tribunal de Contas do Estado do Paraná, figurando o Tribunal de Justiça apenas como depositário dos montantes referidos;</h2>
+ <h2>CONSIDERANDO a adoção do sistema informatizado de guias para o recolhimento, bem como do processo eletrônico para liberação dos valores aos beneficiários e processamento das prestações de contas apresentadas por estes, que asseguram a publicidade e a transparência na destinação dos valores, bem como atendem ao disposto no artigo 37 da Constituição Federal;</h2>
+ <h2>CONSIDERANDO que, nos termos do artigo 5º da Resolução nº 154/CNJ, compete às Corregedorias a regulamentação da matéria quanto ao procedimento atinente à forma e apresentação dos projetos, à forma de prestação de contas e o estabelecimento de outras condições ou vedações além daquelas disciplinadas na Resolução referida, observadas as peculiaridades locais.</h2>
+ <h2>RESOLVEM :</h2>
+ <h3>TÍTULO I</h3>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º A presente Instrução Normativa Conjunta regulamenta o recolhimento, a destinação, a liberação, a aplicação e a prestação de contas pelas entidades beneficiárias de valores depositados a título de prestação pecuniária aplicada pelas Varas Criminais, Varas de Execução de Penas e Medidas Alternativas e Juizados Especiais Criminais do Estado, em cumprimento de pena restritiva de direitos decorrente de sentença condenatória ou de medida alternativa aplicada em função de transação penal ou de condição judicial da suspensão condicional do processo, nos termos dos artigos 43, inciso I, e 45 do Código Penal e dos artigos 76 e 89, § 2º, da Lei Federal nº 9.099/1995, sem prejuízo de outras hipóteses.</h3>
+ <h3>Art. 2º Os valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverão ser revertidos:</h3>
+ <h5>I - em favor da vítima ou seus dependentes, conforme estabelecido no Título II;</h5>
+ <h5>II - ao Conselho da Comunidade da Comarca ou Foro, segundo as regras dos Capítulos II e III do Título III;</h5>
+ <h5>III - segundo as regras do Capítulo III do Título III, à entidade pública ou privada com finalidade social e sem fim lucrativo, previamente cadastrada, preferencialmente aquela que:</h5>
+ <h6>a) promova atividade afeta ou correlata à área de execução penal;</h6>
+ <h6>b) auxilie na execução das penas restritivas ou medidas alternativas;</h6>
+ <h6>c) desenvolva programas de assistência às vítimas de infrações penais;</h6>
+ <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais.</h6>
+ <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas e demais crimes contra a saúde pública, à violência doméstica e familiar, à violência contra a criança e adolescente, à violência de trânsito, aos crimes ambientais e demais crimes que tenham por objetivo a proteção de bens jurídicos coletivos; e (Redação dada pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
+ <h6>e) atue em projetos voltados para a prevenção, reparação ou recuperação de infrações penais contra bens jurídicos coletivos, notadamente, o meio ambiente, a saúde pública, os direitos das crianças e adolescentes, as relações de consumo e o patrimônio público. (Incluído pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
+ <h4>§ 1º Para os fins desta Instrução, consideram-se entidades públicas as unidades de atuação dotadas de personalidade jurídica, de acordo com o artigo 1º, § 2º, inciso II, da Lei Federal nº 9.784/1999.</h4>
+ <h4>§ 2º É vedada a destinação dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas:</h4>
+ <h5>I - ao custeio do Poder Judiciário e do Ministério Público;</h5>
+ <h5>II - para a promoção pessoal de magistrados, promotores de justiça ou integrantes das entidades beneficiadas;</h5>
+ <h5>III - para pagamento de quaisquer espécies de remuneração aos membros da diretoria das entidades beneficiadas;</h5>
+ <h5>IV - para fins político-partidários;</h5>
+ <h5>V - a entidades que não estejam regularmente constituídas, obstando a responsabilização caso haja desvio de finalidade.</h5>
+ <p>- Ver artigo 3º da Resolução nº 154/2012 do Conselho Nacional de Justiça.</p>
+ <h5>VI - a entidades cujos sócios, associados ou dirigentes sejam cônjuges, companheiros ou parentes em linha reta, colateral ou por afinidade até o 2º grau, do Juiz ou do Promotor de Justiça vinculado à Vara Judicial que disponibilizar recursos.</h5>
+ <h3>TÍTULO II</h3>
+ <h3>DA DESTINAÇÃO À VÍTIMA</h3>
+ <h3>Art. 3º O valor da prestação pecuniária decorrente de pena ou medida alternativa aplicada como forma de reparação do dano causado será destinada prioritariamente à vítima ou aos seus dependentes, salvo se:</h3>
+ <h5>I - o dano causado à vítima tiver sido reparado;</h5>
+ <h5>II - não houver composição do dano, inclusive em razão da ausência da vítima ou de seu dependente em audiência, ficando ressalvado o direito destes em pleiteá-lo no juízo cível;</h5>
+ <h5>III - a vítima tiver renunciado ao direito à reparação respectiva;</h5>
+ <h5>IV - inexistir vítima determinada; ou</h5>
+ <h5>V - inexistir dependente, caso a vítima seja falecida.</h5>
+ <h3>Art. 4º Na hipótese de o beneficiário da prestação pecuniária ser a vítima ou seus dependentes, a destinação do valor respectivo constará do termo de audiência, que deverá conter:</h3>
+ <h5>I - o nome do(s) destinatário(s);</h5>
+ <h5>II - informação prestada pela vítima ou seu dependente quanto aos dados bancários (banco, agência, conta, espécie de conta, operação, número de CPF ou CNPJ) em que deverá ser depositado o valor devido;</h5>
+ <h5>III - o endereço atualizado do obrigado ao pagamento e da vítima ou dependente, com a advertência de que eventuais alterações deverão ser comunicadas ao Juízo;</h5>
+ <h5>IV - o e-mail da vítima ou dependente, caso o possua;</h5>
+ <h5>V - prazo para pagamento;</h5>
+ <h5>VI - número de prestações, caso haja parcelamento;</h5>
+ <h5>VII - prazo para comprovação de pagamento;</h5>
+ <h5>VIII - a informação de que, quando for o caso, a vítima ou algum dos seus dependentes é incapaz, bem como a assinatura do respectivo representante legal;</h5>
+ <h4>Parágrafo único. Quando a destinação sobrevier por força de sentença condenatória transitada em julgado, as condições referidas no caput serão estabelecidas em audiência admonitória realizada pelo Juízo competente para a execução da pena ou medida.</h4>
+ <h3>Art. 5º Os valores, quando destinados à vítima ou aos seus dependentes, serão depositados diretamente pelo obrigado na conta corrente informada pelo beneficiário em Juízo.</h3>
+ <h4>§ 1º Depois de efetuado o pagamento, o obrigado deverá providenciar a juntada nos autos de cópia do comprovante de depósito.</h4>
+ <h4>§ 2º Não serão aceitos comprovantes de depósitos realizados em caixas eletrônicos e bancos 24 horas.</h4>
+ <h3>Art. 6º Os valores pagos à vítima ou aos seus dependentes prescindem de prestação de contas.</h3>
+ <h3>TÍTULO III</h3>
+ <h3>DEMAIS MODALIDADES DE DESTINAÇÃO DA PRESTAÇÃO PECUNIÁRIA</h3>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES COMUNS</h3>
+ <h3>Art. 7º Os valores de prestação pecuniária decorrentes de penas ou medidas alternativas, quando não destinados diretamente à vítima ou aos dependentes, serão revertidos:</h3>
+ <h5>I - ao Conselho da Comunidade da Comarca ou Foro, segundo as regras dos Capítulos II e III do Título III;</h5>
+ <h5>II - segundo as regras da Capítulo III do Título III, à entidade pública ou privada com finalidade social e sem fim lucrativo, previamente cadastrada, preferencialmente aquela que:</h5>
+ <h6>a) promova atividade afeta ou correlata à área de execução penal;</h6>
+ <h6>b) auxilie na execução das penas restritivas ou medidas alternativas;</h6>
+ <h6>c) desenvolva programas de assistência às vítimas de infrações penais;</h6>
+ <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais .</h6>
+ <h6>d) atue na prevenção à criminalidade, em especial ao enfrentamento às drogas e demais crimes contra a saúde pública, à violência doméstica e familiar, à violência contra a criança e adolescente, à violência de trânsito, aos crimes ambientais e demais crimes que tenham por objetivo a proteção de bens jurídicos coletivos; (Redação dada pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
+ <h6>e) atue em projetos voltados para a prevenção, reparação ou recuperação de infrações penais contra bens jurídicos coletivos, notadamente, o meio ambiente, a saúde pública, os direitos das crianças e adolescentes, as relações de consumo e o patrimônio público. (Incluído pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h6>
+ <h3>Art. 8º Para que os valores decorrentes da prestação pecuniária sejam regularmente direcionados às entidades mencionadas no artigo 7º, serão observadas as seguintes etapas sequenciais:</h3>
+ <h5>I - recolhimento dos valores;</h5>
+ <h5>II - liberação dos valores;</h5>
+ <h5>III - prestação de contas dos valores recebidos.</h5>
+ <h4>§ 1º A forma de recolhimento de valores é idêntica para os Conselhos da Comunidade e demais entidades descritas no artigo 7º.</h4>
+ <h4>§ 2º É vedada a destinação de valores, bens ou donativos de qualquer espécie diretamente ao Conselho da Comunidade ou demais entidades, devendo ser observada a forma de recolhimento prevista na Seção I deste Capítulo.</h4>
+ <h4>§ 3º Os Juízes e Promotores de Justiça devem abster-se de indicar em suas decisões e manifestações, respectivamente, bem como de constar nos termos de audiência, o nome do Conselho da Comunidade ou de outra entidade a ser beneficiada por valor proveniente de prestação pecuniária.</h4>
+ <p>Seção I</p>
+ <p>Forma de Recolhimento</p>
+ <h3>Art. 9º Quando não destinados à vítima ou seus dependentes, o pagamento dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas será efetuado pelo obrigado, exclusivamente mediante guia de recolhimento gerada em sistema informatizado disponível no site do Tribunal de Justiça do Estado do Paraná, a qual ensejará depósito em conta única administrada pelo Tribunal de Justiça e disponibilizada por unidade judicial, cuja movimentação ocorrerá apenas por meio de autorização judicial.</h3>
+ <h4>§ 1º Entende-se por unidade judicial o Juízo responsável pela execução da pena ou medida alternativa.</h4>
+ <p>- Ver Resolução nº 93/2013 do Órgão Especial.</p>
+ <h4>§ 2º A conta única, administrada pelo Tribunal de Justiça, permitirá:</h4>
+ <h5>I - a identificação do crédito por unidade judicial;</h5>
+ <h5>II - o conhecimento da origem dos recolhimentos;</h5>
+ <h5>III - a consulta ao saldo existente em cada unidade judicial, para fins de liberação de recursos;</h5>
+ <h5>IV - as transferências autorizadas por unidade judicial, com discriminação dos beneficiários e dos valores liberados.</h5>
+ <h3>Art. 10. Compete à Escrivania/Secretaria da unidade judicial a geração da(s) guia(s) de recolhimento na intranet do Tribunal de Justiça do Estado do Paraná.</h3>
+ <h4>§ 1º A(s) guia(s) de recolhimento será(ão) gerada(s) na audiência em que se estabelece o cumprimento da pena ou medida alternativa de prestação pecuniária, ou logo após seu encerramento, sendo imediatamente entregue(s) ao obrigado pelo pagamento.</h4>
+ <h4>§ 2º A(s) guia(s) de recolhimento conterá(ão) os seguintes dados:</h4>
+ <h5>I - Comarca ou Foro;</h5>
+ <h5>II - unidade judicial responsável pela execução da pena ou medida alternativa;</h5>
+ <h5>III - o número dos autos;</h5>
+ <h5>IV - o nome do obrigado pelo recolhimento;</h5>
+ <h5>V - o valor total;</h5>
+ <h5>VI - o número de parcelas, caso estabelecido na respectiva medida;</h5>
+ <h5>VII - se parcela única, a data de vencimento;</h5>
+ <h5>VIII - no caso de parcelamento, a data de vencimento da primeira parcela, sendo que as demais datas serão automaticamente geradas pelo sistema que emite as guias.</h5>
+ <h4>§ 3º Por ocasião do cadastramento da pena ou medida alternativa de prestação pecuniária pagável em parcela única, a Escrivania/Secretaria lançará no Sistema PROJUDI somente o campo número de documento gerado automaticamente pelo sistema informatizado e constante da guia.</h4>
+ <h4>§ 4º Na hipótese de pagamento parcelado, deverá ser lançado no Sistema PROJUDI somente o campo número de documento constante da primeira guia. Automaticamente, o sistema preencherá as demais datas para pagamento e respectivas numerações de guias.</h4>
+ <h4>§ 5º O número de guias emitidas corresponderá ao número de parcelas estabelecidas para o cumprimento das condições, contendo as respectivas datas de vencimento.</h4>
+ <h4>§ 6º Efetuado o pagamento da guia, após o processamento bancário, a informação será automaticamente lançada nos autos pelo Sistema PROJUDI, sendo desnecessárias a apresentação e a juntada do comprovante de pagamento pelo obrigado.</h4>
+ <h4>§ 7º O sistema PROJUDI gerará automaticamente as seguintes informações nos autos em que cadastrada a pena ou medida alternativa em conformidade com este artigo:</h4>
+ <h5>I - pagamento;</h5>
+ <h5>II - atraso, quando decorridos 10 (dez) dias do vencimento, gerando pendência para análise da Escrivania/Secretaria;</h5>
+ <h5>III - pagamento(s) efetuado(s) a menor;</h5>
+ <h5>IV - cumprimento da pena ou medida alternativa, cujo status deve ser analisado pela Escrivania/Secretaria.</h5>
+ <h4>§ 8º Constatado o atraso no recolhimento, a Escrivania/Secretaria, independente de determinação judicial, intimará o obrigado a promover a regularização, no prazo de 5 (cinco) dias.</h4>
+ <h4>§ 9º Não havendo a regularização no prazo fixado no § 8º, a Escrivania/Secretaria remeterá os autos ao Ministério Público para manifestação.</h4>
+ <h3>Art. 11. É vedado o recolhimento de valores diretamente ao Conselho da Comunidade ou demais entidades, devendo ser observada a forma de recolhimento prevista nesta Subseção.</h3>
+ <h3>Art. 12. É vedado a qualquer agente, servidor ou serventuário da Justiça e do Ministério Público, remunerado ou não pelos cofres públicos, receber valores de pagamento de prestação pecuniária decorrentes de penas ou medidas alternativas, em inobservância ao sistema informatizado definido nesta Seção.</h3>
+ <h4>Parágrafo único. A não observância do disposto no caput deste artigo ensejará a responsabilidade administrativa do servidor ou serventuário, sem prejuízo de outras sanções cabíveis.</h4>
+ <h2>CAPÍTULO I I</h2>
+ <h3>DA DESTINAÇÃO AO CONSELHO DA COMUNIDADE</h3>
+ <p>Seção I</p>
+ <p>Requisitos para o Recebimento de Valores</p>
+ <h3>Art. 13. O Conselho da Comunidade que desejar receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverá:</h3>
+ <h5>I - estar devidamente constituído e em situação regular, de acordo com a regulamentação da Instrução Normativa Conjunta 01/2014 CGJ/PR e MP/PR;</h5>
+ <h5>II - celebrar Termo de Compromisso e estar cadastrado na respectiva Comarca/Foro, de acordo com o disposto na Instrução Normativa Conjunta 01/2014 CGJ/PR e MP/PR;</h5>
+ <h5>III - de acordo com as normas da Seção II deste Capítulo, apresentar plano de aplicação de recursos e/ou pedido de habilitação em procedimento de disponibilização de recursos instaurado pelo Juízo;</h5>
+ <h5>IV - cumprir estritamente o plano de aplicação e/ou o cronograma de execução do projeto contemplado;</h5>
+ <h5>V - entregar prestação de contas dos valores recebidos;</h5>
+ <h5>VI - manter escrita contábil, fiscal e trabalhista, em ordem e subscrita por contabilista devidamente habilitado junto ao CRC - Conselho Regional de Contabilidade;</h5>
+ <h5>VII - possuir conta específica para o recebimento de valores.</h5>
+ <p>Seção I I</p>
+ <p>Da Aplicação e Liberação dos Recursos</p>
+ <p>Subseção I</p>
+ <p>Das Modalidades</p>
+ <h3>Art. 14. O Conselho da Comunidade poderá receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas de duas formas:</h3>
+ <h5>I - mediante plano de aplicação de recursos, para o custeio de suas despesas administrativas;</h5>
+ <h5>II - através de pedido de habilitação em procedimento de disponibilização de recursos, visando o pagamento das despesas de projetos.</h5>
+ <h4>§ 1º Para possibilitar o recebimento dos valores liberados, o Conselho da Comunidade deverá possuir, para cada modalidade de despesa, conta bancária específica.</h4>
+ <p>-- Ver</p>
+ <p>Instrução Normativa Conjunta nº 01/2014</p>
+ <p>CGJ/PR e MP/PR</p>
+ <h4>§ 2º A apreciação do plano de aplicação de recursos para o custeio das despesas administrativas do Conselho da Comunidade incumbirá ao respectivo Juízo Supervisor.</h4>
+ <h4>§ 3º O pedido de habilitação para o recebimento de recursos visando ao pagamento das despesas de projetos do Conselho da Comunidade incumbirá ao Juízo que disponibilizar os valores, ao qual são atribuídas as competências:</h4>
+ <h5>I - criminal especializada na execução penal em meio aberto; ou</h5>
+ <h5>II - do Juizado Especial Criminal.</h5>
+ <p>- Ver artigos 36 e 43 desta Instrução Normativa Conjunta.</p>
+ <h3>Art. 15. Compreendem-se por despesas administrativas, os gastos de caráter continuado do Conselho da Comunidade, vinculados à sua atividade fim e que envolvam:</h3>
+ <h5>I - a remuneração e recolhimento de encargos sociais de seu quadro de funcionários;</h5>
+ <h5>II - o pagamento de bolsa-auxílio de estágios e contratação de prestação de serviço técnico especializado;</h5>
+ <h5>III - despesas bancárias e recolhimento de tributos devidos pelo Conselho da Comunidade;</h5>
+ <h5>IV - despesas relativas à aquisição de material de expediente e bens permanentes, entre outras necessárias para a manutenção de seus objetivos;</h5>
+ <h5>V - o pagamento de despesas relativas aos programas e ações do Conselho da Comunidade, voltadas ao atendimento das necessidades de presos, egressos e familiares, no tocante à:</h5>
+ <h6>a) assistência material, em especial alimentação, vestuário, higiene pessoal, transporte, entre outros;</h6>
+ <h6>b) saúde; ou</h6>
+ <h6>c) educação;</h6>
+ <h5>VI - o pagamento de bolsa auxílio ao preso pelo trabalho autorizado pelo Juiz da Execução Penal e prestado em programas profissionalizantes desenvolvidos pelo Conselho da Comunidade.</h5>
+ <h4>Parágrafo único. Compreendem-se, ainda, nas despesas administrativas do Conselho da Comunidade os gastos excepcionais ou emergenciais, autorizados pelo Juízo, executados no Conselho da Comunidade ou por este executados em entidade com destinação social sem fim lucrativo.</h4>
+ <h3>Art. 16. Compreendem-se por despesas de projetos, os gastos do Conselho da Comunidade que envolvem obra ou projeto desenvolvido ou mantido pelo Conselho da Comunidade ou por entidade com destinação social sem fim lucrativo credenciada por aquele, de duração limitada e preferencialmente voltado à:</h3>
+ <h5>I - execução penal, em especial a execução de penas restritivas ou medidas alternativas;</h5>
+ <h5>II - assistência e ressocialização de presos, de pessoas em cumprimento de pena e de egressos do sistema penitenciário;</h5>
+ <h5>III - assistência às vítimas de infrações penais; ou</h5>
+ <h5>IV - prevenção da criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais.</h5>
+ <p>Subseção II</p>
+ <p>Do Plano de Aplicação de Recursos e Prestação de Contas</p>
+ <h3>Art. 17. O plano de aplicação de recursos destina-se exclusivamente ao custeio das despesas administrativas do Conselho da Comunidade previstas no artigo 15.</h3>
+ <h3>Art. 18. Trimestralmente, nos meses de janeiro, abril, julho e outubro, o Conselho da Comunidade apresentará ao Juiz Supervisor do Conselho da Comunidade o plano de aplicação de recursos.</h3>
+ <h3>Art. 19. O plano de aplicação de recursos deverá:</h3>
+ <h5>I - especificar os gastos estimados no respectivo trimestre e indicar o valor global de todas as despesas;</h5>
+ <h5>II - estar acompanhado de:</h5>
+ <h6>a) Certidão Conjunta Negativa de Débitos Relativos aos Tributos Federais e a Dívida Ativa da União;</h6>
+ <h6>b) Certidão Negativa de Débitos Trabalhistas;</h6>
+ <h6>c) Certidão de Regularidade do FGTS;</h6>
+ <h6>d) Certidão Negativa de Débitos Previdenciários;</h6>
+ <h6>e) Certidão Negativa de Débito de Tributos Estaduais;</h6>
+ <h6>f) Certidão Negativa de Débito de Tributos Municipais, referente aos Municípios em que atua o Conselho da Comunidade;</h6>
+ <h6>g) comprovante de inscrição e situação cadastral regular no CNPJ;</h6>
+ <h5>III - quando os dados constantes do cadastro do Conselho da Comunidade estiverem desatualizados, estar acompanhado:</h5>
+ <h6>a) de comprovante do registro de seu ato constitutivo atualizado;</h6>
+ <h6>b) da identificação e qualificação completa dos seus dirigentes atuais, especificando seu representante legal e eventual mandato;</h6>
+ <h6>c) dos dados bancários (banco, agência, conta, espécie de conta, operação) da conta aberta pelo Conselho da Comunidade para o recebimento de recursos para o custeio de despesas administrativas, em que será(ão) depositado(s) o(s) valor(es) eventualmente liberado(s);</h6>
+ <h5>IV - a fim de atender os princípios da moralidade, da impessoalidade, da economicidade, da isonomia, da eficiência e da eficácia, quando se pleitearem valores destinados ao custeio de despesas relativas à aquisição de material de expediente e bens e serviços, estar acompanhado dos preços válidos cotados por no mínimo 3 (três) fornecedores, apresentados em orçamentos com a indicação do valor unitário dos serviços ou produtos, sendo que, nos casos de ofertas de encartes, tabloides, anúncios de internet, ou outras formas de anúncio, estes deverão estar impressos e corresponderão a uma proposta válida para o item pesquisado.</h5>
+ <h3>Art. 20. O plano de aplicação de recursos deve ser recebido, digitalizado e cadastrado pela Escrivania/Secretaria na área de competência Corregedoria dos Presídios do Sistema PROJUDI, sendo autuado com a classe Processo Administrativo e assunto Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) .</h3>
+ <h4>§ 1º A Escrivania/Secretaria registrará como partes no Plano de Aplicação de Recursos e Prestação de Contas (PARPreC):</h4>
+ <h5>I - Requerente: o Conselho da Comunidade;</h5>
+ <h5>II - Requerido: o Juízo em que tramita o procedimento.</h5>
+ <h4>§ 2º Cada Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) corresponderá a único trimestre, sendo vedado à Escrivania/Secretaria juntar mais de um pedido aos mesmos autos.</h4>
+ <h3>Art. 21. Após a autuação do Plano de Aplicação de Recursos e Prestação de Contas (PARPreC), a Escrivania/Secretaria, promoverá a conclusão dos autos ao Juiz Supervisor que verificará a existência de disponibilidade financeira para a liberação pleiteada, mediante consulta ao sistema informatizado mencionado no artigo 9º.</h3>
+ <h4>§ 1º Para o cumprimento deste artigo, o Juiz Supervisor poderá consultar a disponibilidade financeira de toda Comarca/Foro e não somente de sua Vara Judicial.</h4>
+ <h4>§ 2º Verificando o Juiz Supervisor que necessitará utilizar recursos de outra Vara Judicial para complementar o valor pleiteado pelo Conselho da Comunidade, oficiará ao magistrado, por sistema mensageiro, solicitando a transferência do montante.</h4>
+ <h4>§ 3º Caso não consiga obter integralmente os recursos pleiteados pelo Conselho da Comunidade, o Juiz Supervisor indeferirá o pedido, mandado arquivar os autos.</h4>
+ <h4>§ 4º Da decisão referida no § 3º será cientificado o Conselho da Comunidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone, dela não cabendo reconsideração ou recurso.</h4>
+ <h4>§ 5º Cientificado o Conselho da Comunidade do indeferimento, a Escrivania/Secretaria arquivará o processo, após as baixas necessárias.</h4>
+ <h4>§ 6º O indeferimento não obsta que o Conselho da Comunidade apresente novo plano de aplicação de recursos, adequando o pedido ao valor disponível.</h4>
+ <h4>§ 7º Todas as varas judiciais que recebem valores de prestação pecuniária decorrentes de penas ou medidas alternativas devem contribuir, especialmente para os fins do caput e do § 2º, no repasse de valores visando o custeio das despesas administrativas do Conselho da Comunidade.</h4>
+ <h4>§ 8º O Juiz Supervisor do Conselho da Comunidade deve atentar para que os valores pleiteados a título de despesa administrativa:</h4>
+ <h5>I - não inviabilizem a execução de projetos;</h5>
+ <h5>II - sejam condizentes às necessidades mínimas para funcionamento do Conselho da Comunidade.</h5>
+ <h4>§ 9º A transferência mencionada nos §§ 2º e 7º poderá ser feita pela Escrivania/Secretaria, desde que autorizada pelo respectivo Juiz.</h4>
+ <h3>Art. 22. Obtidos integralmente os recursos pleiteados pelo Conselho da Comunidade, o Juiz Supervisor determinará à Escrivania/Secretaria que reserve e bloqueie o valor pelo sistema informatizado.</h3>
+ <h4>§ 1º Após o bloqueio do montante, a Escrivania/Secretaria:</h4>
+ <h5>I - certificará:</h5>
+ <h6>a) sobre a regularidade da contabilidade e das prestações de contas do Conselho da Comunidade;</h6>
+ <h6>b) que o Conselho da Comunidade apresentou o plano e a documentação em conformidade com o artigo 19.</h6>
+ <h5>II - remeterá os autos para análise:</h5>
+ <h6>a) da equipe técnica, onde houver;</h6>
+ <h6>b) do Ministério Público;</h6>
+ <h6>c) do Juiz.</h6>
+ <h4>§ 1º Se o plano e/ou a documentação não estiverem em conformidade com o artigo 19, antes da remessa a que alude o inciso II do caput, a Escrivania/Secretaria intimará o Conselho da Comunidade para regularização no prazo de 5 (cinco) dias, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 2º O Juiz, de ofício, indeferirá o pedido e determinará o seu arquivamento quando:</h4>
+ <h5>I - o Conselho da Comunidade não estiver com suas prestações de contas regulares;</h5>
+ <h5>II - intimado, o Conselho da Comunidade não regularizar seu plano e/ou documentação de acordo com o artigo 19.</h5>
+ <h4>§ 3º Da decisão referida no § 2º não cabe reconsideração ou recurso.</h4>
+ <h4>§ 4º Da decisão prolatada pelo Juiz será cientificado o Conselho da Comunidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 5º Cientificado o Conselho da Comunidade do indeferimento, a Escrivania/Secretaria arquivará o processo, após as baixas necessárias.</h4>
+ <h4>§ 6º Indeferido o pedido, não será admissível sua retificação no mesmo processo, podendo ser formulado novo requerimento pelo o Conselho da Comunidade, no qual deverá ser comprovado o saneamento de eventuais irregularidades.</h4>
+ <h3>Art. 23. Bloqueado o valor, estando o Conselho da Comunidade com as prestações de contas regulares e tendo apresentado o plano e a documentação de acordo com o artigo 19, o Juiz, deferindo o requerimento:</h3>
+ <h5>I - indicará o valor liberado;</h5>
+ <h5>II - determinará a lavratura do Termo de Responsabilidade;</h5>
+ <h5>III - determinará a intimação do Conselho da Comunidade para assinatura do Termo de Responsabilidade;</h5>
+ <h5>IV - determinará a expedição de alvará(s), condicionada à subscrição do Termo de Responsabilidade.</h5>
+ <h4>Parágrafo único. Da decisão prolatada, será cientificado o Conselho da Comunidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone, dela não cabendo reconsideração ou recurso.</h4>
+ <h3>Art. 24. Antes da expedição do(s) alvará(s) de levantamento, o Conselho da Comunidade deverá assinar, perante o Juízo, Termo de Responsabilidade, no qual constarão as obrigações:</h3>
+ <h5>I - de empregar o valor liberado exclusivamente para o cumprimento do plano aprovado;</h5>
+ <h5>II - de apresentação da respectiva prestação de contas;</h5>
+ <h5>III - de colaborar com o Juízo da Execução Penal;</h5>
+ <h5>IV - de devolução do saldo residual não aplicado no plano aprovado;</h5>
+ <h5>V - de garantir o livre acesso às suas instalações para fiscalização, a qualquer tempo, bem como de exibir, quando solicitado, qualquer documento relacionado com o procedimento de liberação de valor;</h5>
+ <h5>VI - de atender as recomendações, exigências e determinações do Juízo responsável pela liberação do valor.</h5>
+ <h5>VII - de utilizar os valores liberados para execução do projeto, preferencialmente através de cheque, transferência bancárias, TED ou DOC, não recomendado o pagamento em espécie a fornecedores;</h5>
+ <h5>VIII - de organizar e manter a documentação conforme artigo 66.</h5>
+ <h4>§ 1º Para os fins de cumprimento deste artigo, a Escrivania/Secretaria intimará o Conselho da Comunidade para subscrição do Termo de Responsabilidade, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 2º Subscrito o Termo de Responsabilidade, a Escrivania/Secretaria:</h4>
+ <h5>I - efetuará a digitalização e o juntará aos autos de Plano de Aplicação de Recursos e Prestação de Contas (PARPreC);</h5>
+ <h5>II - expedirá o(s) alvará(s) de levantamento determinado pelo Juiz.</h5>
+ <h3>Art. 25. O(s) alvará(s) de levantamento deve(m) ser assinado(s) eletronicamente pelo Juiz e encaminhado(s) automaticamente ao Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para cumprimento.</h3>
+ <h4>§ 1º Enquanto não houver a possibilidade de encaminhamento automático, o alvará será remetido por mensageiro para a lista Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência .</h4>
+ <h4>§ 2º Cumprido o alvará pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça, o valor liberado será automaticamente transferido para a conta bancária indicada pelo Conselho da Comunidade, ficando seu representante legal na qualidade de fiel depositário até sua efetiva utilização para os fins e nos exatos termos aprovados.</h4>
+ <h4>§ 3º A critério do Juiz, os alvarás de levantamento podem ser expedidos mensalmente.</h4>
+ <h3>Art. 26. Após a expedição do alvará, a Escrivania/Secretaria suspenderá os autos de Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) até a apresentação da respectiva prestação de contas.</h3>
+ <h3>Art. 27. Na execução do plano de aplicação, o Conselho da Comunidade poderá remanejar ou redistribuir os valores recebidos entre suas despesas, desde que respeite o valor global do respectivo plano de aplicação trimestral e apresente justificativa por ocasião da prestação de contas.</h3>
+ <h3>Art. 28. O Conselho da Comunidade que receber valores deverá prestar contas:</h3>
+ <h5>I - quanto aos recursos recebidos em relação ao 1º trimestre, até 30 de abril do mesmo ano;</h5>
+ <h5>II - quanto aos recursos recebidos em relação ao 2º trimestre, até 31 de julho do mesmo ano;</h5>
+ <h5>III - quanto aos recursos recebidos em relação ao 3º trimestre, até 31 de outubro do mesmo ano;</h5>
+ <h5>IV - quanto aos recursos recebidos em relação ao 4º trimestre, até 31 de janeiro do ano seguinte.</h5>
+ <h4>§ 1º A prestação de contas deverá ser acompanhada:</h4>
+ <h5>I - dos comprovantes das despesas (notas fiscais, recibos de pagamento a autônomo, folhas de pagamento, Guia da Previdência Social - GPS, Guia de Recolhimento do FGTS e Informações a Previdência Social, Sistema Empresa de Recolhimento do FGTS e Informações à Previdência Social - SEFIP, holerites);</h5>
+ <h5>II - dos comprovantes de devolução de saldos, caso não utilizado todo o recurso repassado;</h5>
+ <h5>III - das certidões mencionadas no artigo 19, se expirados os respectivos prazos de validade;</h5>
+ <h5>IV - extrato bancário da conta para a qual foi transferido o valor liberado, referente ao período do respectivo trimestre;</h5>
+ <h5>V - caso tenha ocorrido remanejamento ou redistribuição de valores entre as despesas inicialmente estimadas, de especificação das operações efetuadas e da respectiva justificativa.</h5>
+ <h4>§ 2º A devolução dos saldos deverá ser efetuada mediante guia de recolhimento, nos termos previstos nos artigos 9º e 10.</h4>
+ <h3>Art. 29. A prestação de contas será juntada nos autos do Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h3>
+ <h4>§ 1º Apresentadas as contas, o processo será remetido, sequencialmente, para análise:</h4>
+ <h5>I - da equipe técnica da Escrivania/Secretaria, onde houver;</h5>
+ <h5>II - do Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para parecer conclusivo;</h5>
+ <h5>III - do Ministério Público;</h5>
+ <h5>IV - do Juiz.</h5>
+ <h4>§ 2º A remessa referida no inciso II do § 1º será efetuada pelo Sistema PROJUDI.</h4>
+ <h4>§ 3º O parecer emitido pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça deve recomendar:</h4>
+ <h5>I - a aprovação das contas, quando a documentação apresentada refletir adequadamente a movimentação financeira indicar que as contas estão regulares;</h5>
+ <h5>II - a aprovação das contas com ressalva, quando forem verificadas falhas, omissões ou impropriedades de natureza formal que não comprometam a regularidade das contas, ocasião em que a ressalva deve ser especificada claramente, e os seus efeitos demonstrados sobre as contas prestadas; e</h5>
+ <h5>III - a desaprovação das contas, quando restar evidenciada qualquer das seguintes ocorrências:</h5>
+ <h6>a) constatação de falhas, omissões ou irregularidades que comprometam a regularidade, a confiabilidade ou a consistência das contas; e</h6>
+ <h6>b) conclusão pela desconformidade entre a documentação apresentada e a movimentação financeira.</h6>
+ <h3>Art. 30. O Juiz, ao analisar o procedimento de prestação de contas, poderá:</h3>
+ <h5>I - determinar diligências ao Conselho da Comunidade ou à equipe técnica, fixando o respectivo prazo;</h5>
+ <h5>II - julgar as contas:</h5>
+ <h6>a) aprovadas;</h6>
+ <h6>b) aprovadas com ressalvas;</h6>
+ <h6>c) desaprovadas.</h6>
+ <h4>§ 1º Determinada diligência pelo Juiz, a Escrivania/Secretaria intimará o Conselho da Comunidade ou a equipe técnica, por meio idôneo de comunicação, para cumprimento, no prazo fixado.</h4>
+ <h4>§ 2º Da decisão que julgar as contas (inciso II do caput ) deverá ser intimado o Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
+ <h4>§ 3º Julgadas aprovadas ou aprovadas com ressalvas as contas, depois de intimar o Conselho da Comunidade da decisão, a Escrivania/Secretaria, após as baixas necessárias, arquivará o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h4>
+ <h4>§ 4º Julgadas desaprovadas as contas, a Escrivania/Secretaria, depois de intimar o Conselho da Comunidade:</h4>
+ <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
+ <h5>II - lançará a informação no campo Cadastro - Conselho da Comunidade disponível no Sistema PROJUDI.</h5>
+ <h5>III - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
+ <h5>IV - após as baixas necessárias, arquivará o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h5>
+ <h3>Art. 31. Não apresentadas as contas no prazo mencionado no art. 28, os autos serão conclusos ao Juiz, que as julgará não apresentadas.</h3>
+ <h4>§ 1º Da decisão que julgar as contas não apresentadas deverá ser intimado o Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
+ <h4>§ 2º Julgadas não apresentadas as contas, a Escrivania/Secretaria, depois de intimar o Conselho da Comunidade:</h4>
+ <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
+ <h5>II - lançará a informação no campo Cadastro - Conselho da Comunidade disponível no Sistema PROJUDI.</h5>
+ <h5>III - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
+ <h5>IV - após as baixas necessárias, arquivará o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h5>
+ <h3>Art. 32. O Conselho da Comunidade que tiver suas contas julgadas desaprovadas ou não apresentadas, para pleitear novo plano de aplicação de recursos, deverá sanar as irregularidades constatadas, no próprio Plano de Aplicação de Recursos e Prestação de Contas (PARPreC).</h3>
+ <h4>§ 1º Apresentado o pedido de regularização das contas, o Plano de Aplicação de Recursos e Prestação de Contas (PARPreC) seguirá o trâmite previsto nos artigos 29 e 30.</h4>
+ <h4>§ 2º A regularização das falhas ensejará a retirada da anotação no cadastro do Conselho da Comunidade, competindo à Escrivania/Secretaria apontar a regularização no campo específico do Sistema PROJUDI, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
+ <p>Subseção III</p>
+ <p>Do Pedido de Habilitação em Processo de Disponibilização de Recursos e Prestação de Contas</p>
+ <h3>Art. 33. O pedido de habilitação em processo de disponibilização de recursos destina-se exclusivamente ao custeio das despesas de projetos do Conselho da Comunidade.</h3>
+ <h4>Parágrafo único. O Conselho da Comunidade concorrerá com as demais entidades públicas ou privadas que se habilitarem no Processo de Disponibilização de Recursos.</h4>
+ <h3>Art. 34. Aplicar-se-ão ao Conselho da Comunidade as demais regras previstas para a liberação de recursos às entidades públicas ou privadas com finalidade social, ressalvado o disposto no parágrafo único.</h3>
+ <h4>Parágrafo único. Para o recebimento de valores de prestação pecuniária decorrentes de penas ou medidas alternativas visando o custeio de despesas de projetos, o Conselho da Comunidade:</h4>
+ <h5>I - deverá atender ao disposto no artigo 13;</h5>
+ <h5>II - não está sujeito ao Processo de Cadastramento de Entidade previsto na Seção II do Capítulo III do Título III;</h5>
+ <h5>III - apresentará a prestação de contas ao Juízo que liberou os valores.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA DESTINAÇÃO PARA PROJETOS DE ENTIDADES E DO CONSELHO DA COMUNIDADE</h3>
+ <p>Seção I</p>
+ <p>Requisitos para o Recebimento de Valores</p>
+ <h3>Art. 35. As entidades públicas ou privadas com finalidade social que desejarem receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverão:</h3>
+ <h5>I - estar devidamente constituídas e em situação regular;</h5>
+ <h5>II - estar cadastradas na forma disciplinada na Seção II deste Capítulo;</h5>
+ <h5>III - apresentar pedido de habilitação em procedimento de disponibilização de recursos instaurado pelo Juízo por meio de edital, observadas as disposições da Seção III deste Capítulo;</h5>
+ <h5>IV - cumprir estritamente o cronograma de execução do projeto contemplado;</h5>
+ <h5>V - entregar prestação de contas dos valores eventualmente recebidos, em conformidade com o disciplinado na Seção V deste Capítulo.</h5>
+ <h4>Parágrafo único. O Conselho da Comunidade poderá pleitear, concorrendo com as entidades referidas no caput, a liberação de valores para o custeio de despesas de projetos, sujeitando-se aos requisitos exigidos no artigo 13, sendo dispensado o cadastro exigido na Seção II deste Capítulo.</h4>
+ <p>Seção II</p>
+ <p>Do Cadastro</p>
+ <p>Subseção I</p>
+ <p>Do Processo de Cadastramento de Entidade (PCE)</p>
+ <h3>Art. 36. As entidades públicas ou privadas com finalidade social que desejarem receber valores de prestação pecuniária decorrentes de penas ou medidas alternativas deverão apresentar pedido de cadastramento junto à Comarca ou Foro.</h3>
+ <h4>§ 1º A apreciação do pedido de cadastro competirá às varas judiciais a que atribuídas as competências:</h4>
+ <h5>I - criminal especializada na execução penal em meio aberto; ou</h5>
+ <h5>II - do juizado especial criminal.</h5>
+ <p>- Ver Resolução nº 93/2013 do Órgão Especial.</p>
+ <h4>§ 2º A entidade deverá apresentar somente um pedido de cadastro em cada Comarca ou Foro que, se deferido, constará do cadastro de entidades disponível no Sistema PROJUDI, passível de aproveitamento por todas as Varas Judiciais da respectiva Comarca ou Foro.</h4>
+ <h4>§ 3º Nas Comarcas e Foros em que existir mais de uma Vara Judicial a que atribuídas as competências previstas no § 1º, apenas uma delas poderá ficar responsável pela apreciação do pedido, desde que haja ajuste entre as Varas Judiciais, disciplinada em Portaria Conjunta que deve ser comunicada à Corregedoria-Geral da Justiça para anotação.</h4>
+ <h3>Art. 37. O pedido de cadastro deverá:</h3>
+ <h5>I - estar acompanhado da documentação pertinente, de acordo com a espécie da entidade - se pública (§ 1º) ou privada (§ 2º);</h5>
+ <h5>II - indicar a área territorial de atuação da entidade;</h5>
+ <h5>III - apontar o número de vagas para prestação de serviço e respectivas áreas, se a entidade disponibilizá-las.</h5>
+ <h4>§ 1º As entidades públicas que apresentarem pedido de cadastramento deverão anexar documentação comprobatória de sua personalidade jurídica.</h4>
+ <h4>§ 2º As entidades privadas que apresentarem pedido de cadastramento deverão apresentar:</h4>
+ <h5>I - comprovante do registro de seu ato constitutivo, no qual sejam identificadas:</h5>
+ <h6>a) sua finalidade social;</h6>
+ <h6>b) entre suas atividades, a colaboração com a área de execução penal;</h6>
+ <h6>c) finalidade não-lucrativa;</h6>
+ <h5>II - comprovante de inscrição e situação cadastral regular no CNPJ;</h5>
+ <h5>III - a identificação e qualificação completa dos seus dirigentes, especificando seu representante legal e eventual mandato.</h5>
+ <h3>Art. 38. O pedido de cadastramento da entidade deve ser recebido, digitalizado e cadastrado pela Escrivania/Secretaria na área de competência Gestão de Valores - Prestação Pecuniária do Sistema PROJUDI, sendo autuado com a classe Processo Administrativo e assunto Processo de Cadastramento de Entidade (PCE) .</h3>
+ <h4>§ 1º A Escrivania/Secretaria registrará como partes no Processo de Cadastramento de Entidade (PCE):</h4>
+ <h5>I - Requerente: a entidade que postula o cadastro;</h5>
+ <h5>II - Requerido: o Juízo em que tramita o procedimento.</h5>
+ <h4>§ 2º O Processo de Cadastramento de Entidade (PCE) deve ser individualizado por entidade.</h4>
+ <h3>Art. 39. Após a autuação do Processo de Cadastramento de Entidade (PCE), a Escrivania/Secretaria, sequencialmente:</h3>
+ <h5>I - lavrará certidão atestando:</h5>
+ <h6>a) que a entidade requerente não se encontra cadastrada ou em processo de cadastramento perante outro Juízo da mesma Comarca/Foro;</h6>
+ <h6>b) que a entidade apresentou o pedido e documentação em conformidade com o artigo 37.</h6>
+ <h5>II - remeterá os autos para análise:</h5>
+ <h6>a) da equipe técnica, onde houver;</h6>
+ <h6>b) do Ministério Público;</h6>
+ <h6>c) do Juiz.</h6>
+ <h4>§ 1º Se o pedido e/ou documentação não estiverem em conformidade com o artigo 37, antes da remessa a que alude o inciso II do caput, a Escrivania/Secretaria intimará a entidade para regularização no prazo de 5 (cinco) dias, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 2º O Juiz, de ofício, indeferirá o pedido e determinará o seu arquivamento quando:</h4>
+ <h5>I - a entidade requerente se encontrar cadastrada ou em processo de cadastramento perante outro Juízo;</h5>
+ <h5>II - intimada, a entidade requerente não regularizar seu pedido e/ou documentação de acordo com o artigo 37.</h5>
+ <h4>§ 3º Da decisão referida no § 2º não cabe reconsideração ou recurso.</h4>
+ <h4>§ 4º Da decisão prolatada pelo Juiz será cientificada a entidade requerente por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 5º Indeferido o pedido de cadastramento, não será admissível sua retificação no mesmo processo, podendo ser formulado novo requerimento pela entidade, no qual deverá ser comprovado o saneamento de eventuais irregularidades.</h4>
+ <h4>§ 6º Deferido o pedido, a Escrivania/Secretaria:</h4>
+ <h5>I - promoverá o cadastramento da entidade no campo cadastro de entidades disponível no Sistema PROJUDI, certificando nos autos;</h5>
+ <h5>II - arquivará o processo, após as baixas necessárias.</h5>
+ <p>Subseção II</p>
+ <p>Da Manutenção, Alteração e Exclusão do Cadastro</p>
+ <h3>Art. 40. O cadastro da entidade perante a Comarca ou Foro valerá por tempo indeterminado.</h3>
+ <h4>§ 1º Quando da modificação do estatuto social ou de dados cadastrais da entidade, esta deverá formular pedido de alteração do cadastro.</h4>
+ <h4>§ 2º O pedido de alteração do cadastro será digitalizado e juntado pela Escrivania/Secretaria no Processo de Cadastramento de Entidade (PCE) que foi deferido, mesmo que esteja arquivado.</h4>
+ <h4>§ 3º Após a juntada do pedido de alteração do cadastro, o processo será concluso ao Juiz, que poderá:</h4>
+ <h5>I - determinar diligências à entidade, fixando o respectivo prazo;</h5>
+ <h5>II - deferir o pedido;</h5>
+ <h5>III - indeferir o pedido.</h5>
+ <h4>§ 4º A decisão que deferir ou indeferir o pedido de alteração do cadastro será comunicada à entidade por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 5º Deferido o pedido de alteração de cadastro, a Escrivania/Secretaria fará a retificação no campo cadastro de entidades disponível no Sistema PROJUDI, certificando nos autos.</h4>
+ <h4>§ 6º Apreciado o pedido de alteração de cadastro em Processo de Cadastramento de Entidade (PCE) que se encontrava arquivado, este retornará ao arquivo.</h4>
+ <h3>Art. 41. O cadastro da entidade perante a Comarca ou Foro pode ser excluído em razão de:</h3>
+ <h5>I - decisão judicial proferida no Processo de Habilitação e Prestação de Contas (PHPC);</h5>
+ <h6>a) que interromper a execução do projeto contemplado;</h6>
+ <h6>b) que julgar as contas desaprovadas; ou</h6>
+ <h6>c) que julgar as contas não prestadas;</h6>
+ <h5>II - pedido formulado pela própria entidade.</h5>
+ <h4>§ 1º A exclusão do cadastro motivada por decisão judicial deverá ser comunicada pelo Juízo prolator à Vara Judicial que deferiu o cadastramento da entidade.</h4>
+ <h4>§ 2º O pedido de exclusão do cadastro deverá ser apresentado pela entidade junto à Vara Judicial que deferiu o cadastramento.</h4>
+ <h4>§ 3º A comunicação ou o pedido de exclusão do cadastro serão juntados pela Escrivania/Secretaria no Processo de Cadastramento de Entidade (PCE) que foi deferido, mesmo que esteja arquivado.</h4>
+ <h4>§ 4º Em ambas as hipóteses, a Escrivania/Secretaria anotará a exclusão da entidade no campo cadastro de entidades disponível no Sistema PROJUDI, certificando nos autos.</h4>
+ <h4>§ 5º Dispensa-se a comunicação à entidade da anotação da exclusão do cadastro.</h4>
+ <h4>§ 6º Se a comunicação ou o pedido de exclusão do cadastro for juntada em Processo de Cadastramento de Entidade (PCE) que se encontrava arquivado, este retornará ao arquivo.</h4>
+ <h3>Art. 42. Uma vez excluída do cadastro, a entidade não poderá se habilitar em Processo de Habilitação e Prestação de Contas (PHPC), salvo se tiver deferido novo pedido de cadastro, na forma da Subseção I desta Seção.</h3>
+ <h4>Parágrafo único. Se a exclusão é decorrente de decisão judicial prolatada em Processo de Habilitação e Prestação de Contas (PHPC), no novo pedido de cadastro deverá ser comprovado pela entidade o saneamento de eventuais irregularidades.</h4>
+ <p>Seção III</p>
+ <p>Da Disponibilização dos Recursos</p>
+ <h3>Art. 43. A liberação dos valores de prestação pecuniária decorrentes de penas ou medidas alternativas será efetuada por procedimento específico que competirá às varas judiciais a que atribuídas as competências:</h3>
+ <h5>I - criminal especializada na execução penal em meio aberto; ou</h5>
+ <h5>II - do juizado especial criminal.</h5>
+ <p>- Ver Resolução nº 93/2013 do Órgão Especial.</p>
+ <h4>Parágrafo único. Nas Comarcas e Foros em que existir mais de uma Vara Judicial a que atribuídas as competências previstas no caput , apenas uma delas poderá ficar responsável pela liberação, desde que haja ajuste entre as Varas Judiciais, disciplinada em Portaria Conjunta que deve ser comunicada à Corregedoria-Geral da Justiça para anotação.</h4>
+ <p>Subseção I</p>
+ <p>Do Processo de Disponibilização de Recursos (PDR)</p>
+ <h3>Art. 44. O Juízo que desejar liberar valores de prestação pecuniária decorrentes de penas ou medidas alternativas às entidades públicas ou privadas com finalidade social deverá:</h3>
+ <h5>I - verificar a existência de disponibilidade financeira, mediante consulta ao sistema informatizado mencionado no artigo 9º;</h5>
+ <h5>II - por portaria, determinar a instauração de Processo de Disponibilização de Recursos (PDR);</h5>
+ <h5>III - expedir edital de habilitação, em que deve constar:</h5>
+ <h6>a) o valor total disponível para liberação, que poderá ser partilhado entre os projetos que vierem a ser aprovados;</h6>
+ <h6>b) o prazo mínimo de 10 (dez) dias para apresentação de pedido de habilitação pelas entidades;</h6>
+ <h6>c) que somente podem se habilitar as entidades públicas e privadas cadastradas na Comarca ou Foro, bem como o Conselho da Comunidade;</h6>
+ <h6>d) que a entidade ou o Conselho da Comunidade que desejar se habilitar deve apresentar o pedido de habilitação acompanhado da documentação e do(s) respectivo(s) projeto(s), de acordo com o disposto no artigo 47.</h6>
+ <h5>IV - determinar à Escrivania/Secretaria que reserve e bloqueie o valor a ser liberado pelo sistema informatizado.</h5>
+ <h4>§ 1º O Edital será publicado no átrio do Fórum.</h4>
+ <h4>§ 2º As entidades e o Conselho da Comunidade que constarem do cadastro de entidades ou do cadastro - Conselho da Comunidade disponíveis no Sistema PROJUDI serão ser comunicados do Edital via e-mail, caso possuam.</h4>
+ <h4>§ 3º A expedição da portaria ou do edital prescindem de comunicação à Corregedoria-Geral da Justiça.</h4>
+ <h4>§ 4º Havendo saldo, o Juiz pode determinar a instauração de mais de um Processo de Disponibilização de Recursos (PDR), desde que expeça, para cada procedimento, uma portaria e um edital específicos.</h4>
+ <h3>Art. 45. A Escrivania/Secretaria autuará a portaria e o edital expedidos na área de competência Gestão de Valores - Prestação Pecuniária do Sistema PROJUDI, com a classe Processo Administrativo e assunto Processo de Disponibilização de Recursos (PDR) .</h3>
+ <h4>§ 1º A Escrivania/Secretaria registrará, no Processo de Disponibilização de Recursos (PDR), o Juízo como parte requerente.</h4>
+ <h4>§ 2º É prescindível o registro da parte requerida no Processo de Disponibilização de Recursos (PDR).</h4>
+ <h4>§ 3º A cada portaria expedida corresponderá um Processo de Disponibilização de Recursos (PDR).</h4>
+ <h3>Art. 46. Após a autuação do Processo de Disponibilização de Recursos (PDR), a Escrivania/Secretaria, lavrará certidão atestando:</h3>
+ <h5>I - a publicação do edital no átrio do Fórum;</h5>
+ <h5>II - que as entidades e o Conselho da Comunidade constantes do cadastro de entidades ou do cadastro - Conselho da Comunidade disponíveis no Sistema PROJUDI foram comunicados do Edital via e-mail , caso possuam;</h5>
+ <h5>III - que reservou e bloqueou o valor a ser liberado pelo sistema informatizado.</h5>
+ <h4>§ 1º O bloqueio de valores pelo sistema deve corresponder ao montante total a ser liberado.</h4>
+ <h4>§ 2º O Processo de Disponibilização de Recursos (PDR) ficará suspenso até o julgamento de todos os pedidos de habilitação, voltando a tramitar, após a lavratura da certidão circunstanciada referida no inciso I do artigo 50, de acordo com as regras estabelecidas no artigo 50 e seguintes.</h4>
+ <p>Subseção II</p>
+ <p>Dos Pedidos de Habilitação</p>
+ <h3>Art. 47. O pedido de habilitação será apresentado pela entidade ou pelo Conselho da Comunidade ao Juízo que instaurou o Processo de Disponibilização de Recursos (PDR), no prazo estabelecido no respectivo edital.</h3>
+ <h4>§ 1º Constarão do pedido de habilitação as seguintes informações:</h4>
+ <h5>I - a identificação e qualificação completa dos dirigentes atuais da entidade ou do Conselho da Comunidade, especificando seu representante legal e eventual mandato;</h5>
+ <h5>II - do número de prestadores de serviço que eventualmente tiver recebido nos 6 (seis) meses anteriores à expedição do edital;</h5>
+ <h4>§ 2º O pedido de habilitação deve ainda ser instruído com:</h4>
+ <h5>I - a documentação pertinente da entidade ou do Conselho da Comunidade;</h5>
+ <h5>II - o(s) respectivo(s) projeto(s), cujo(s) valor(es) não ultrapasse(m) o limite estabelecido no edital;</h5>
+ <h5>III - declaração, firmada pelo representante legal, de ciência da necessidade da existência de conta bancária exclusiva para o recebimento dos valores eventualmente liberados;</h5>
+ <h4>§ 3º Acompanharão o pedido de habilitação da entidade ou do Conselho da Comunidade:</h4>
+ <h5>I - comprovante do registro de seu ato constitutivo atualizado, no qual sejam identificadas sua finalidade social, a colaboração com a área de execução penal entre suas atividades, bem como sua finalidade não lucrativa;</h5>
+ <h5>II - comprovante de inscrição e situação cadastral regular no CNPJ;</h5>
+ <h5>III - comprovação dos poderes de representação daqueles que firmarão o Termo de Responsabilidade;</h5>
+ <h5>IV - as certidões:</h5>
+ <h6>a) Certidão Conjunta Negativa de Débitos Relativos aos Tributos Federais e a Dívida Ativa da União;</h6>
+ <h6>b) Certidão Negativa de Débitos Trabalhistas;</h6>
+ <h6>c) Certidão de Regularidade do FGTS;</h6>
+ <h6>d) Certidão Negativa de Débitos Previdenciários;</h6>
+ <h6>e) Certidão Negativa de Débito de Tributos Estaduais;</h6>
+ <h6>f) Certidão Negativa de Débito de Tributos Municipais, referente aos Municípios em que atua a entidade ou o Conselho da Comunidade.</h6>
+ <h4>§ 4º Devem constar do(s) projeto(s) apresentado(s) pela entidade ou pelo Conselho da Comunidade:</h4>
+ <h5>I - o valor total;</h5>
+ <h5>II - destinação da verba;</h5>
+ <h5>III - justificativa para implementação do projeto apresentado;</h5>
+ <h5>IV - prazo inicial e final da execução do projeto;</h5>
+ <h5>V - o cronograma de execução do projeto;</h5>
+ <h5>VI - a descrição dos recursos materiais e humanos eventualmente necessários à execução do projeto;</h5>
+ <h5>VII - os valores necessários para consecução das etapas do projeto;</h5>
+ <h5>VIII - a fim de atender os princípios da moralidade, da impessoalidade, da economicidade, da isonomia, da eficiência e da eficácia, os preços válidos cotados por no mínimo 3 (três) fornecedores, apresentados em orçamentos com a indicação do valor unitário dos serviços ou produtos, sendo que, nos casos de ofertas de encartes, tabloides, anúncios de internet, ou outras formas de anúncio, estes deverão estar impressos e corresponderão a uma proposta válida para o item pesquisado.</h5>
+ <h4>§ 5º Caso o(s) projeto(s) compreenda(m) a construção, reforma ou ampliação de obra, deverá ser comprovada, ainda, a prévia aferição de sua viabilidade, mediante os seguintes documentos:</h4>
+ <h5>I - o projeto básico e a respectiva anotação de responsabilidade técnica (ART), instituída pela Lei Federal nº 6.496, de 7 de dezembro de 1977;</h5>
+ <h5>II - orçamento detalhado;</h5>
+ <h5>III - certidão atualizada do registro imobiliário, comprovando a titularidade do imóvel;</h5>
+ <h5>IV - comprovação pela entidade de que ela dispõe de recursos para complementar a execução da obra, na hipótese do valor total constante do projeto ser insuficiente para custeá-la;</h5>
+ <h5>V - se a obra for realizada em imóveis pertencentes à Administração Pública, a autorização do respectivo ente.</h5>
+ <h4>§ 6º Permite-se que o pedido verse sobre complementação financeira para a execução de projeto realizado com recursos próprios e/ou de terceiros, desde que seja possível a aplicação imediata do valor a ser liberado.</h4>
+ <h4>§ 7º São vedados pedidos condicionais e pedidos que visem captação de recursos para utilização futura.</h4>
+ <h3>Art. 48. O pedido de habilitação deve ser recebido, digitalizado e cadastrado pela Escrivania/Secretaria na área de competência Gestão de Valores - Prestação Pecuniária do Sistema PROJUDI, sendo autuado com a classe Processo Administrativo e assunto Processo de Habilitação e Prestação de Contas (PHPC) .</h3>
+ <h4>§ 1º A Escrivania registrará como partes no Processo de Habilitação e Prestação de Contas (PHPC):</h4>
+ <h5>I - Requerente: a entidade ou o Conselho da Comunidade que postula a habilitação;</h5>
+ <h5>II - Requerido: o Juízo em que tramita o procedimento.</h5>
+ <h4>§ 2º O Processo de Habilitação e Prestação de Contas (PHPC) deve ser individualizado por requerente.</h4>
+ <h4>§ 3º O Processo de Habilitação e Prestação de Contas (PHPC) será apensado ao Processo de Disponibilização de Recursos (PDR).</h4>
+ <h3>Art. 49. Após a autuação do Processo de Habilitação e Prestação de Contas (PHPC), a Escrivania/Secretaria:</h3>
+ <h5>I - quando a requerente for entidade, lavrará certidão atestando que ela:</h5>
+ <h6>a) encontra-se cadastrada perante a Comarca/Foro;</h6>
+ <h6>b) não se encontra com o cadastro excluído;</h6>
+ <h6>c) apresentou o pedido e documentação em conformidade com o artigo 47.</h6>
+ <h5>II - quando o requerente for o Conselho da Comunidade, certificará:</h5>
+ <h6>a) em consulta ao cadastro constante do Sistema PROJUDI, sobre a regularidade da contabilidade e das prestações de contas do Conselho da Comunidade;</h6>
+ <h6>b) que o Conselho da Comunidade apresentou o pedido e documentação em conformidade com o artigo 47.</h6>
+ <h4>§ 1º Após lavrar a certidão referida no caput , a Escrivania/Secretaria remeterá os autos para análise:</h4>
+ <h5>I - da equipe técnica, onde houver;</h5>
+ <h5>II - do Ministério Público;</h5>
+ <h5>III - do Juiz.</h5>
+ <h4>§ 2º Se o pedido e/ou documentação não estiverem em conformidade com o artigo 47, antes da remessa a que alude o § 1º , a Escrivania/Secretaria intimará a entidade para regularização no prazo de 5 (cinco) dias, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 3º O Juiz, de ofício, indeferirá o pedido e determinará o seu arquivamento:</h4>
+ <h5>I - quando for requerente entidade, esta não se encontrar cadastrada;</h5>
+ <h5>II - quando for requerente entidade, e esta estiver com o cadastro suspenso ou excluído;</h5>
+ <h5>III - quando for requerente o Conselho da Comunidade, e este não estiver com suas prestações de contas regulares;</h5>
+ <h5>IV - intimado, a entidade ou o Conselho da Comunidade proponente não regularizar seu pedido e/ou documentação de acordo com o artigo 47.</h5>
+ <h4>§ 4º Da decisão referida no § 3º não cabe reconsideração ou recurso.</h4>
+ <h4>§ 5º Indeferido o pedido de habilitação, não será admissível sua retificação no mesmo procedimento, podendo ser formulado novo requerimento, se ainda não decorrido o prazo do edital, no qual deverá ser comprovado o saneamento de eventuais irregularidades.</h4>
+ <h4>§ 6º Indeferido o pedido de habilitação, a escrivania/secretaria:</h4>
+ <h5>I - cientificará a entidade ou o Conselho da Comunidade da decisão por meio idôneo de comunicação, preferencialmente e-mail ou telefone;</h5>
+ <h5>II - desapensará o Processo de Habilitação e Prestação de Contas (PHPC) do Processo de Disponibilização de Recursos (PDR);</h5>
+ <h5>III - arquivará os autos, após as baixas necessárias.</h5>
+ <h4>§ 7º Deferido o pedido, a entidade ou o Conselho da Comunidade estará habilitado para concorrer à liberação de recursos, nos termos do edital.</h4>
+ <p>Subseção III</p>
+ <p>Da Apreciação do Processo de Disponibilização de Recursos (PDR)</p>
+ <h3>Art. 50. Decorrido o prazo constante do edital e, após o julgamento de todos os pedidos de habilitação, a escrivania/secretaria:</h3>
+ <h5>I - lavrará certidão circunstanciada no Processo de Disponibilização de Recursos (PDR), descrevendo as entidades e/ou Conselho da Comunidade que tiveram o pedido de habilitação deferido, apontando os números dos processos respectivos;</h5>
+ <h5>II - remeterá o Processo de Disponibilização de Recursos (PDR), sequencialmente, para análise:</h5>
+ <h6>a) da equipe técnica, onde houver;</h6>
+ <h6>b) do Ministério Público;</h6>
+ <h6>c) do Juiz.</h6>
+ <h4>Parágrafo único. Os autos não serão remetidos na forma do inciso II, quando a apreciação do pedido for realizada por comissão multidisciplinar, na forma do artigo 51.</h4>
+ <h3>Art. 51. A apreciação do Processo de Disponibilização de Recursos (PDR), será efetuada pelo Juiz ou, caso conste do respectivo Edital, por comissão multidisciplinar composta:</h3>
+ <h5>I - pelo Juiz;</h5>
+ <h5>II - por membro do Ministério Público;</h5>
+ <h5>III - pela equipe técnica da vara, onde houver;</h5>
+ <h5>IV - por membro de entidade pública vinculada à área social, desde que não esteja participando da seleção.</h5>
+ <h3>Art. 52. O Juiz ou a Comissão, ao apreciar o Processo de Disponibilização de Recursos (PDR) e os projetos habilitados:</h3>
+ <h5>I - deliberará sobre a(s) entidade(s) e/ou Conselho da Comunidade para a(s) qual(is) será(ão) liberado(s) o(s) recurso(s);</h5>
+ <h5>II - indicará o(s) valor(es) liberado(s) para cada contemplado;</h5>
+ <h5>III - determinará a lavratura do(s) Termo(s) de Responsabilidade em relação ao(s) contemplado(s);</h5>
+ <h5>IV - determinará a intimação do(s) contemplado(s) para assinatura do(s) Termo(s) de Responsabilidade;</h5>
+ <h5>V - determinará a expedição de alvará(s), condicionada à subscrição dos do(s) Termo(s) de Responsabilidade.</h5>
+ <h4>§ 1º Havendo sobra de recursos, o saldo remanescente permanecerá depositado na conta judicial única, devendo o magistrado desbloquear o valor residual pelo sistema informatizado de recolhimento.</h4>
+ <h4>§ 2º A seleção do(s) projeto(s), que adotará o juízo de relevância social quanto ao(s) serviço(s) a ser(em) prestado(s), bem como considerará a expectativa de resultados com a implementação do(s) projeto(s) e seu(s) impacto(s) social(is), segundo critérios de utilidade e necessidade, levará em consideração, ainda, aquele(s) que apresentam maior relevância:</h4>
+ <h5>I - na área de execução penal, em especial na execução das penas restritivas ou medidas alternativas;</h5>
+ <h5>II - na assistência às vítimas de infrações penais;</h5>
+ <h5>III - na prevenção à criminalidade, em especial ao enfrentamento às drogas, à violência doméstica e familiar, à violência de trânsito, bem como de projetos educacionais voltados para a prevenção de infrações ambientais.</h5>
+ <h5>III - na prevenção à criminalidade, em especial ao enfrentamento às drogas e demais crimes contra a saúde pública, à violência doméstica e familiar, à violência contra a criança e adolescente, à violência de trânsito, aos crimes ambientais e demais crimes que tenham por objetivo a proteção de bens jurídicos coletivos, priorizandose aqueles que melhor se adéquem à realidade social daquela localidade, de acordo com os bens jurídicos mais afetados pela prática criminosa; (Redação dada pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h5>
+ <h5>IV - na atuação em projetos voltados para a prevenção, reparação ou recuperação de infrações penais contra bens jurídicos coletivos, notadamente, o meio ambiente, a saúde pública, os direitos das crianças e adolescentes, as relações de consumo e o patrimônio público, priorizando-se aqueles que melhor se adéquem à realidade social daquela localidade, de acordo com os bens jurídicos mais afetados pela prática criminosa. (Incluído pela Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022)</h5>
+ <h4>§ 3º Como critério de desempate, terá preferência da destinação de valores:</h4>
+ <h5>I - o Conselho da Comunidade, quando concorrer no processo;</h5>
+ <h5>II - a entidade que tiver recebido maior número de prestadores de serviço nos 6 (seis) meses anteriores à expedição do edital.</h5>
+ <h4>§ 4º Quando a execução do projeto consistir em mais de uma etapa, pode ocorrer a liberação parcelada de valores.</h4>
+ <h4>§ 5º A decisão do(s) contemplado(s), quando prolatada pela Comissão, será tomada pela maioria de votos dos seus membros.</h4>
+ <h4>§ 6º Poderá o Juiz ou a Comissão, caso opte, realizar cerimônia pública de divulgação do(s) contemplado(s).</h4>
+ <h4>§ 7º Da decisão prolatada, serão comunicadas as entidades e/ou Conselho da Comunidade habilitados e concorrentes, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 8º Não cabe recurso da decisão que julgar o Processo de Disponibilização de Recursos (PDR).</h4>
+ <h3>Art. 53. Efetuada(s) a(s) comunicação(ões) da decisão prolatada, o(s) Processo(s) de Habilitação e Prestação de Contas (PHPC) referente(s) ao(s) não contemplado(s) com o repasse de valores deve(m) ser:</h3>
+ <h5>I - desapensado(s) do Processo de Disponibilização de Recursos (PDR), certificando-se o motivo do desapensamento.</h5>
+ <h5>II - arquivado(s), com as baixas necessárias.</h5>
+ <h4>Parágrafo único. Deve(m) permanecer apensado(s) ao Processo de Disponibilização de Recursos (PDR) somente o(s) Processo(s) de Habilitação e Prestação de Contas (PHPC) referente(s) ao(s) contemplado(s) com o repasse de valores.</h4>
+ <p>Subseção IV</p>
+ <p>Do Repasse de Recursos às Entidades</p>
+ <h3>Art. 54. Antes da expedição do(s) alvará(s) de levantamento, cada contemplado deverá assinar, perante o Juízo, Termo de Responsabilidade, no qual constarão:</h3>
+ <h5>I - as obrigações:</h5>
+ <h6>a) de utilização e gestão do(s) valor(es) liberado(s), de acordo com o(s) projeto(s) aprovado(s);</h6>
+ <h6>b) de apresentação da respectiva prestação de contas;</h6>
+ <h6>c) de colaborar com o Juízo da Execução Penal;</h6>
+ <h6>d) de devolução do saldo residual não aplicado no projeto aprovado.</h6>
+ <h6>e) de garantir o livre acesso às suas instalações para fiscalização, a qualquer tempo, bem como de exibir, quando solicitado, qualquer documento relacionado com o procedimento de liberação de valor;</h6>
+ <h6>f) de atender as recomendações, exigências e determinações do Juízo responsável pela liberação do valor.</h6>
+ <h6>g) de utilizar os valores liberados para execução do projeto, preferencialmente através de cheque, transferência bancárias, TED ou DOC, não recomendado o pagamento em espécie a fornecedores;</h6>
+ <h6>h) de organizar e manter a documentação conforme artigo 66;</h6>
+ <h5>II - os dados bancários (banco, agência, conta, espécie de conta, operação) da conta destinada exclusivamente ao recebimento de valores de prestação pecuniária, de titularidade da entidade ou do Conselho da Comunidade, em que será(ão) depositado(s) o(s) valor(es) eventualmente liberado(s);</h5>
+ <h4>§ 1º Para o cumprimento do inciso II do caput , o Conselho da Comunidade deverá indicar os dados da conta bancária destinada exclusivamente ao recebimento de valores para o custeio de despesas projetos.</h4>
+ <h4>§ 2º Para os fins de cumprimento deste artigo, a Escrivania/Secretaria intimará o(s) contemplado(s) para subscrição do(s) respectivo(s) Termo(s) de Responsabilidade, por meio idôneo de comunicação, preferencialmente e-mail ou telefone.</h4>
+ <h4>§ 3º Subscrito o Termo de Responsabilidade, a Escrivania/Secretaria:</h4>
+ <h5>I - efetuará a digitalização e o juntará ao respectivo Processo de Habilitação e Prestação de Contas (PHPC);</h5>
+ <h5>II - expedirá o(s) alvará(s) de levantamento determinado(s) pelo Juiz.</h5>
+ <h3>Art. 55. O(s) alvará(s) de levantamento ao(s) contemplado(s) será(ão) expedido(s) no Processo de Disponibilização de Recursos (PDR), juntando-se cópia(s) ao(s) respectivo(s) Processo(s) de Habilitação e Prestação de Contas (PHPC).</h3>
+ <h4>§ 1º O alvará deve ser assinado eletronicamente pelo Juiz e encaminhado automaticamente ao Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para cumprimento.</h4>
+ <h4>§ 2º Enquanto não houver a possibilidade de encaminhamento automático, o alvará será remetido por mensageiro para a lista Centro de Apoio Administrativo e Financeiro da Secretaria / Presidência .</h4>
+ <h4>§ 3º Cumprido o alvará pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça, o valor liberado será automaticamente transferido para a conta bancária indicada pelo contemplado em sua habilitação, ficando seu representante legal na qualidade de fiel depositário até sua efetiva utilização para os fins e nos exatos termos aprovados.</h4>
+ <h3>Art. 56. Após a expedição do(s) alvará(s) e juntada da(s) respectiva(s) cópia(s) ao(s) auto(s) de Processo(s) de Habilitação e Prestação de Contas (PHPC), a Escrivania/Secretaria:</h3>
+ <h5>I - após as baixas necessárias, arquivará o Processo de Disponibilização de Recursos (PDR), mantendo-o apensado ao(s) Processo(s) de Habilitação e Prestação de Contas (PHPC);</h5>
+ <h5>II - remeterá o(s) Processo(s) de Habilitação e Prestação de Contas (PHPC) concluso(s) ao Juiz, para determinar a forma de acompanhamento da execução do(s) projeto(s) contemplado(s).</h5>
+ <p>Seção IV</p>
+ <p>Da Execução dos Projetos Contemplados</p>
+ <h3>Art. 57. O Juiz estabelecerá, em cada Processo de Habilitação e Prestação de Contas (PHPC), a forma de acompanhamento da execução do projeto contemplado, fiscalizando o cumprimento do cronograma inicialmente proposto.</h3>
+ <h4>Parágrafo único. O prazo para conclusão do projeto poderá ser prorrogado, desde que, em até 5 (cinco) dias do término inicialmente estabelecido, a entidade ou o Conselho da Comunidade contemplado apresente requerimento justificado ao Juiz.</h4>
+ <h3>Art. 58. O acompanhamento do projeto deverá ser feito pelo Ministério Público e pelo Juízo durante todo o período de execução, não somente por ocasião da prestação de contas.</h3>
+ <h4>§ 1º Recomenda-se que o acompanhamento do projeto seja efetuado pela equipe técnica da Escrivania/Secretaria, onde houver.</h4>
+ <h4>§ 2º Na falta da equipe técnica, o acompanhamento do projeto poderá ser feito por servidores indicados:</h4>
+ <h5>I - pelo Juízo;</h5>
+ <h5>II - pela Promotoria de Justiça.</h5>
+ <h3>Art. 59. Constatado o descumprimento das etapas da execução do projeto, a entidade ou o Conselho da Comunidade contemplado será intimado a apresentar a respectiva justificativa, no prazo de 5 (cinco) dias, contados da intimação.</h3>
+ <h4>§ 1º Apresentada a justificativa, os autos de Processo de Habilitação e Prestação de Contas (PHPC) devem ser remetidos para análise do Ministério Público.</h4>
+ <h4>§ 2º Com a manifestação do Ministério Público, a justificativa será apreciada pelo Juiz, que poderá:</h4>
+ <h5>I - acolhê-la, reorganizando, se for o caso, o cronograma de execução do projeto;</h5>
+ <h5>II - rejeitá-la, interrompendo a execução do projeto e determinando:</h5>
+ <h6>a) a devolução do montante repassado;</h6>
+ <h6>b) a suspensão dos demais repasses, caso haja;</h6>
+ <h6>c) a exclusão do cadastro, se o contemplado for entidade, comunicando-se o Juízo que deferiu o cadastramento.</h6>
+ <h6>d) a anotação no cadastro disponível no Sistema PROJUDI, se o contemplado for o Conselho da Comunidade, comunicando-se o Juízo Supervisor do Conselho da Comunidade.</h6>
+ <h4>§ 3º Da decisão prolatada será intimado o Conselho da Comunidade ou a entidade.</h4>
+ <h4>§ 4º Não cabe recurso da decisão referida no § 2º.</h4>
+ <h4>§ 5º Os valores a serem devolvidos à unidade judicial devem ser corrigidos monetariamente pela variação INPC/IGP-DI ou índice que vier a substituí-los, sem prejuízo das demais penalidades.</h4>
+ <h4>§ 6º A devolução deverá ser efetuada mediante guia de recolhimento, nos termos previstos nos artigos 9º e 10.</h4>
+ <h4>§ 7º A exclusão do cadastro referida na alínea c do inciso II do § 2º deverá ser comunicada à Vara Judicial que deferiu o cadastramento, com cópia da decisão respectiva.</h4>
+ <h4>§ 8º A anotação no cadastro mencionada na alínea d do inciso II do § 2º deverá ser solicitada, com cópia da decisão respectiva, ao Juízo Supervisor do Conselho da Comunidade, ao qual incumbirá, exclusivamente, anotar no campo cadastro - Conselho da Comunidade " do Sistema PROJUDI a interrupção da execução do projeto, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
+ <h4>§ 9º Nas hipóteses dos §§ 7º e 8º, quando a Vara Judicial que determinou a exclusão/anotação for a mesma que deferiu o cadastro e/ou Supervisiona o Conselho da Comunidade, os lançamentos serão efetuados e certificados pela própria Escrivania/Secretaria, prescindindo de comunicação.</h4>
+ <h3>Art. 60. Determinada a interrupção da execução do projeto, é prescindível a apresentação da prestação de contas.</h3>
+ <h4>§ 1º Após a devolução dos valores à unidade judicial e cumprimento das demais providências determinadas, os autos de Processo de Habilitação e Prestação de Contas (PHPC) devem ser arquivados, com as baixas necessárias.</h4>
+ <h4>§ 2º Não havendo a devolução dos valores à unidade judicial, a Escrivania/Secretaria, independente de determinação judicial, sequencialmente:</h4>
+ <h5>I - expedirá certidão discriminando o valor que deve ser restituído à unidade judicial;</h5>
+ <h5>II - com cópia integral do Processo de Habilitação e Prestação de Contas (PHPC), oficiará ao Ministério Público para fins de apuração de responsabilidade administrativa, cível, criminal e ressarcimento de valores;</h5>
+ <h5>III - promoverá o arquivamento dos autos de Processo de Habilitação e Prestação de Contas (PHPC), após as baixas necessárias.</h5>
+ <p>Seção V</p>
+ <p>Da Prestação de Contas</p>
+ <h3>Art. 61. A entidade e/ou o Conselho da Comunidade contemplado que receber valores deverá prestar contas em até 30 (trinta) dias após o prazo final de execução do projeto, a qual deverá ser acompanhada:</h3>
+ <h5>I - dos comprovantes das despesas (notas fiscais, recibos de pagamento a autônomo, folhas de pagamento, Guia da Previdência Social - GPS, Guia de Recolhimento do FGTS e Informações a Previdência Social, Sistema Empresa de Recolhimento do FGTS e Informações à Previdência Social - SEFIP, holerites);</h5>
+ <h5>II - dos comprovantes de devolução de saldos, caso não utilizado todo o recurso repassado;</h5>
+ <h5>III - das certidões mencionadas no inciso IV do § 3º do artigo 47, se expirados os respectivos prazos de validade;</h5>
+ <h5>IV - extrato bancário da conta para a qual foi(ram) transferido(s) o(s) valor(es) liberado(s), compreendendo o período entre o pedido de habilitação e a apresentação da prestação de contas.</h5>
+ <h4>Parágrafo único. A devolução dos saldos deverá ser efetuada mediante guia de recolhimento, nos termos previstos nos artigos 9º e 10.</h4>
+ <h3>Art. 62. A prestação de contas será juntada nos autos do Processo de Habilitação e Prestação de Contas (PHPC).</h3>
+ <h4>§ 1º Apresentadas as contas, o processo será remetido, sequencialmente, para análise:</h4>
+ <h5>I - da equipe técnica da Escrivania/Secretaria, onde houver;</h5>
+ <h5>II - do Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça para parecer conclusivo;</h5>
+ <h5>III - do Ministério Público;</h5>
+ <h5>IV - do Juiz.</h5>
+ <h4>§ 2º A remessa referida no inciso II do § 1º será efetuada pelo Sistema PROJUDI.</h4>
+ <h4>§ 3º O parecer emitido pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça deve recomendar:</h4>
+ <h5>I - a aprovação das contas, quando a documentação apresentada refletir adequadamente a movimentação financeira indicar que as contas estão regulares;</h5>
+ <h5>II - a aprovação das contas com ressalva, quando forem verificadas falhas, omissões ou impropriedades de natureza formal que não comprometam a regularidade das contas, ocasião em que a ressalva deve ser especificada claramente, e os seus efeitos demonstrados sobre as contas prestadas; e</h5>
+ <h5>III - a desaprovação das contas, quando restar evidenciada qualquer das seguintes ocorrências:</h5>
+ <h6>a) constatação de falhas, omissões ou irregularidades que comprometam a regularidade, a confiabilidade ou a consistência das contas; e</h6>
+ <h6>b) conclusão pela desconformidade entre a documentação apresentada e a movimentação financeira.</h6>
+ <h3>Art. 63. O Juiz, ao analisar o procedimento de prestação de contas, poderá:</h3>
+ <h5>I - determinar diligências à entidade/Conselho da Comunidade ou à equipe técnica, fixando o respectivo prazo;</h5>
+ <h5>II - julgar as contas:</h5>
+ <h6>a) aprovadas;</h6>
+ <h6>b) aprovadas com ressalvas;</h6>
+ <h6>c) desaprovadas, determinando, quando se tratar de entidade, a exclusão do respectivo cadastro, comunicando-se o Juízo que deferiu o cadastramento.</h6>
+ <h6>d) desaprovadas, determinando, quando se tratar do Conselho da Comunidade, a anotação no cadastro disponível no Sistema PROJUDI, comunicando-se o Juízo Supervisor do Conselho da Comunidade.</h6>
+ <h4>§ 1º Determinada diligência pelo Juiz, a Escrivania/Secretaria intimará a entidade/Conselho da Comunidade ou a equipe técnica, por meio idôneo de comunicação, para cumprimento, no prazo fixado.</h4>
+ <h4>§ 2º Da decisão que julgar as contas (inciso II do caput ) deverá ser intimada a entidade ou Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
+ <h4>§ 3º Julgadas aprovadas ou aprovadas com ressalvas as contas, depois de intimar a entidade ou o Conselho da Comunidade, a Escrivania/Secretaria, após as baixas necessárias, arquivará o respectivo Processo de Habilitação e Prestação de Contas (PHPC), mantendo o apensamento anteriormente realizado.</h4>
+ <h4>§ 4º Julgadas desaprovadas as contas, a Escrivania/Secretaria, depois de intimar a entidade ou o Conselho da Comunidade:</h4>
+ <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
+ <h5>II - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
+ <h5>III - quando se tratar de entidade, oficiará à Vara Judicial que deferiu o cadastro, comunicando sua exclusão, com cópia da decisão;</h5>
+ <h5>IV - quando se tratar do Conselho da Comunidade, oficiará ao Juízo Supervisor, solicitando a anotação no cadastro, com cópia da decisão;</h5>
+ <h5>V - após as baixas necessárias, arquivará o respectivo Processo de Habilitação e Prestação de Contas (PHPC), mantendo o apensamento anteriormente realizado.</h5>
+ <h4>§ 5º A anotação no cadastro mencionada no inciso IV do § 4º deverá ser solicitada, com cópia da decisão respectiva, ao Juízo Supervisor do Conselho da Comunidade, ao qual incumbirá, exclusivamente, anotar no campo cadastro - Conselho da Comunidade " do Sistema PROJUDI a desaprovação das contas, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
+ <h4>§ 6º Nas hipóteses dos incisos III e IV do § 4º, quando a Vara Judicial que determinou a exclusão/anotação for a mesma que deferiu o cadastro e/ou Supervisiona o Conselho da Comunidade, os lançamentos serão efetuados e certificados pela própria Escrivania/Secretaria, prescindindo de comunicação.</h4>
+ <h3>Art. 64. Não apresentadas as contas no prazo mencionado no art. 61, os autos serão conclusos ao Juiz, que as julgará não apresentadas, determinando:</h3>
+ <h5>I - quando se tratar de entidade, a exclusão do respectivo cadastro, comunicando-se o Juízo que deferiu o cadastramento;</h5>
+ <h5>II - quando se tratar do Conselho da Comunidade, a anotação no cadastro disponível no Sistema PROJUDI, comunicando-se o Juízo Supervisor do Conselho da Comunidade.</h5>
+ <h4>§ 1º Da decisão que julgar as contas não apresentadas deverá ser intimada a entidade ou o Conselho da Comunidade, dela não cabendo recurso ou reconsideração.</h4>
+ <h4>§ 2º Julgadas não apresentadas as contas, a Escrivania/Secretaria, depois de intimar a entidade ou o Conselho da Comunidade:</h4>
+ <h5>I - cumprirá eventuais providências determinadas na decisão;</h5>
+ <h5>II - dará ciência ao Ministério Público para adoção das medidas que entender cabíveis;</h5>
+ <h5>III - quando se tratar de entidade, oficiará à Vara Judicial que deferiu o cadastro, comunicando sua exclusão, com cópia da decisão;</h5>
+ <h5>IV - quando se tratar do Conselho da Comunidade, oficiará ao Juízo Supervisor, solicitando a anotação no cadastro, com cópia da decisão;</h5>
+ <h5>V - após as baixas necessárias, arquivará o respectivo Processo de Habilitação e Prestação de Contas (PHPC), mantendo o apensamento anteriormente realizado.</h5>
+ <h4>§ 3º A anotação no cadastro mencionada no inciso IV do § 2º deverá ser solicitada, com cópia da decisão respectiva, ao Juízo Supervisor do Conselho da Comunidade, ao qual incumbirá, exclusivamente, anotar no campo cadastro - Conselho da Comunidade " do Sistema PROJUDI a não apresentação das contas, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
+ <h4>§ 4º Nas hipóteses dos incisos III e IV do § 2º, quando a Vara Judicial que determinou a exclusão/anotação for a mesma que deferiu o cadastro e/ou Supervisiona o Conselho da Comunidade, os lançamentos serão efetuados e certificados pela própria Escrivania/Secretaria, prescindindo de comunicação.</h4>
+ <h3>Art. 65. A entidade ou o Conselho da Comunidade que tiver suas contas julgadas desaprovadas ou não apresentadas, para se habilitar em futuro Processo de Disponibilização de Recursos (PDR), deverá sanar as irregularidades constatadas, no próprio Processo de Habilitação e Prestação de Contas (PHPC).</h3>
+ <h4>§ 1º Apresentado o pedido de regularização das contas, o Processo de Habilitação e Prestação de Contas (PHPC) seguirá o trâmite previsto nos artigos 62 e 63.</h4>
+ <h4>§ 2º A regularização das falhas não enseja automaticamente:</h4>
+ <h5>I - o restabelecimento do cadastro da entidade, que deverá formular novo pedido de cadastro;</h5>
+ <h5>II - a retirada da anotação no cadastro do Conselho da Comunidade, competindo a este solicitar perante o Juízo Supervisor a retificação, instruindo o pedido com cópia da decisão que atesta a regularização.</h5>
+ <h4>§ 3º Recebido o pedido de retificação pelo Juízo Supervisor do Conselho da Comunidade, a este incumbirá, exclusivamente, anotar no campo específico do Sistema PROJUDI a regularização, lançando o número dos respectivos autos e digitalizando a decisão.</h4>
+ <h3>TÍTULO IV</h3>
+ <h3>DAS DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 66. As entidades e o Conselho da Comunidade deverão manter, pelo prazo de 10 (dez) anos, toda documentação que instruiu as respectivas prestações de contas.</h3>
+ <h4>Parágrafo único. Para a guarda dos documentos deverão ser observadas as seguintes regras:</h4>
+ <h5>I - serão ordenados de forma cronológica e agregados por tipo de documento na seguinte ordem:</h5>
+ <h6>a) Plano de aplicação ou Projeto;</h6>
+ <h6>b) documentos pertinentes à comprovação da condição de regularidade da entidade;</h6>
+ <h6>c) orçamentos para aquisição de bens e serviços;</h6>
+ <h6>d) comprovantes das despesas em vias originais;</h6>
+ <h6>e) comprovantes das devoluções de saldos;</h6>
+ <h6>f) extratos bancários;</h6>
+ <h6>g) parecer técnico emitido pela equipe técnica, se houver;</h6>
+ <h6>h) parecer emitido pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça.</h6>
+ <h3>Art. 67. As ações penais e termos circunstanciados cujas infrações penais admitirem transação penal ou suspensão condicional do processo deverão ser integralmente digitalizados pelas Escrivanias/Secretarias e cadastrados no Sistema PROJUDI.</h3>
+ <h3>Art. 68. As cartas precatórias recebidas que versarem sobre prestações pecuniárias deverão ser cumpridas nos termos determinados pelo Juízo Deprecante.</h3>
+ <h4>Parágrafo único. Se o Juízo Deprecante delegar o estabelecimento das condições em que devem ser cumpridas as penas ou medidas alternativas de prestação pecuniária, a Escrivania/Secretaria deverá observar os termos desta Instrução Normativa Conjunta.</h4>
+ <h3>Art. 69. As unidades gestoras não prestarão contas dos valores manejados e destinados às entidades e/ou Conselhos da Comunidade diretamente ao Tribunal de Contas.</h3>
+ <h4>Parágrafo único. A prestação de contas das unidades gestoras será incorporada, através de relatório circunstanciado de valores arrecadados e transferidos, à prestação de contas do Tribunal de Justiça apresentada ao Tribunal de Contas do Estado do Paraná.</h4>
+ <p>- Ver acórdão nº 7002/2014 do Tribunal Pleno do Tribunal de Contas do Estado do Paraná, proferido no Processo de Consulta nº 368729/14.</p>
+ <h3>Art. 70. A Corregedoria-Geral da Justiça e o Ministério Público do Estado do Paraná, no prazo de 30 (trinta) dias da entrada em vigor desta Instrução Normativa Conjunta, deverão adaptar suas normativas de modo que não conflitem com o disposto neste ato.</h3>
+ <h3>Art. 71. Para o cumprimento integral deste ato, a Corregedoria-Geral da Justiça deverá aprovar, por Instrução Normativa Conjunta, Manual de Procedimentos.</h3>
+ <h4>Parágrafo único. Nas Comarcas e Foros em que exista Vara Judicial que apenas recolha valores de prestação pecuniária, entretanto, não possua competência para a respectiva liberação, bem como nas hipóteses do § 3º do artigo 36 e do parágrafo único do artigo 43, a Corregedoria-Geral da Justiça, por Instrução Normativa Conjunta, poderá regulamentar a transferência automática dos valores recolhidos por essas Varas Judiciais a outras que disponibilizem recursos.</h4>
+ <h3>Art. 72. A presente Instrução Normativa Conjunta deve ser observada em relação às prestações pecuniárias aplicadas após 1º de janeiro de 2015.</h3>
+ <h4>§ 1º As prestações pecuniárias aplicadas antes da data mencionada no caput observarão:</h4>
+ <h5>I - os termos do Provimento nº 68/2005, em relação aos valores destinados ao Conselho da Comunidade;</h5>
+ <h5>II - o determinado pelo respectivo Juiz, em relação aos valores destinados às demais entidades;</h5>
+ <h4>§ 2º Os Juízos que abriram conta judicial única para destinação de valores de prestações pecuniárias, na forma determinada pela Resolução 154/CNJ, deverão encerrar as respectivas contas e promover a transferência dos montantes à conta judicial prevista nesta Instrução Normativa Conjunta, conforme regulamentação a ser expedida pelo Centro de Apoio Administrativo e Financeiro da Secretaria/Presidência do Tribunal de Justiça.</h4>
+ <h3>Art. 73. Esta Instrução Normativa Conjunta entrará em vigor em 1º de janeiro de 2015, devendo ser publicada no Diário da Justiça Eletrônico. Curitiba, 2 de dezembro de 2014. EUGÊNIO ACHILLE GRANDINETTI</h3>
+ <p>Corregedor-Geral da Justiça GILBERTO GIACOIA</p>
+ <p>Procurador-Geral de Justiça ARION ROLIM PEREIRA</p>
+ <p>Corregedor-Geral do Ministério Público *O conteúdo disponibilizado possui caráter informativo e não substitui aquele publicado no Diário da Justiça Eletrônico. Imprimir Voltar Oculto</p>
+ <p>Praça Nossa Senhora de Salette, S/N</p>
+ <p>CEP 80.530-912 - Curitiba, PR</p>
+ <p>Telefone: 41 3200-2000 EXPEDIENTE DE FUNCIONAMENTO</p>
+ <p>Horário regimental de funcionamento – das 12:00 às 19:00</p>
+ <p>Horário de atendimento ao público – das 12:00 às 18:00 ACESSO À INFORMAÇÃO</p>
+ <p>Número: | 2/2014  CGJ/PR E MP/PR - Origem: | CORREGEDORIA-GERAL DA JUSTIÇA</p>
+ <p>Instrução Normativa Conjunta nº 2/2014</p>
+ <h3> CGJ/PR E MP/PR -</h3>
+ <p>Assunto: | 1.Regulamentação Conjunta 2.Corregedoria-Geral da Justiça 3.Ministério Público 4.Corregedoria da Justiça 5.Foro Judicial 6.Prestação Pecuniária 7.Recolhimento 8.Destinação 9.Prestação de Contas</p>
+ <p>Ementa: | Texto atualizado até a Instrução Normativa Conjunta nº 116, de 19 de agosto de 2022.</p>
+ <p>Referências: | Documentos do mesmo sentido:</p>
+ <p>Instrução Normativa Conjunta nº 116/2022</p>
+ <p>-CGJ/MPPR/CGMPDocumentos do mesmo sentido:</p>
+ <p>Instrução Normativa Conjunta nº 2/2014</p>
+ <p>- CGJ/MPPR- Texto Original</p>
+ </article>
 
-    <footer>
-      <p class="disclaimer">
-        <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
-        O conteúdo oficial e juridicamente válido está disponível no 
-        <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4661289" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
-        e no Diário da Justiça Eletrônico.
-      </p>
-    </footer>
-  </main>
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4661289" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
 </body>
 </html>
