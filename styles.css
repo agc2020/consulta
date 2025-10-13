@@ -52,7 +52,7 @@ h1 {
   font-size: 1.05rem;
 }
 
-/* Seções brancas “cartão” */
+/* Seções brancas "cartão" */
 section {
   background: white;
   margin-bottom: 40px;
@@ -86,7 +86,7 @@ section {
   color: var(--text-light);
 }
 
-/* Corpo com linhas (minimalista, sem “caixotes” excessivos) */
+/* Corpo com linhas (minimalista, sem "caixotes" excessivos) */
 .org-body { display: grid; gap: 18px; }
 
 /* Subgrupos dentro do TJPR (Órgão Especial, Foro, etc.) */
@@ -214,3 +214,176 @@ a:hover { text-decoration: underline; }
   .ato-title { font-size: 1rem; }
   .badge-json { padding: 5px 7px; font-size: 0.8rem; }
 }
+
+/* ======= CONTROLES DE BUSCA E FILTROS (HARMONIZADO) ======= */
+
+/* Container principal dos controles - estilo cartão como as seções */
+.controls-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 28px 40px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+/* Input de busca - bordas arredondadas e estilo minimalista */
+#searchInput {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  background: white;
+  color: var(--text-color);
+  transition: all .2s ease;
+  font-family: inherit;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(0, 85, 204, 0.1);
+}
+
+#searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+/* Linha de filtros */
+.filters-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Selects de filtro - estilo minimalista harmonizado */
+.filter-select {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: white;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+}
+
+.filter-select:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 85, 204, 0.1);
+}
+
+/* Botão limpar filtros - estilo badge harmonizado */
+.reset-btn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: white;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.reset-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-hover);
+}
+
+.reset-btn:active {
+  transform: scale(0.98);
+}
+
+/* Informação de resultados */
+.result-info {
+  text-align: center;
+  margin-top: 4px;
+}
+
+#resultCount {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.result-count-filtered {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.result-count-all {
+  color: var(--text-muted) !important;
+}
+
+/* Animação suave para itens filtrados */
+.ato-line {
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.ato-line.hidden-by-filter {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .controls-container {
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  
+  .filters-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .filter-select {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .reset-btn {
+    width: 100%;
+  }
+  
+  #searchInput {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Ajuste do header para não conflitar com sticky */
+header {
+  position: relative;
+  z-index: 50;
+}
+
+/* Melhorias visuais para seções vazias */
+.org-group[style*="display: none"] {
+  margin: 0;
+  padding: 0;
+}
+
