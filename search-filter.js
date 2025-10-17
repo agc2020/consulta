@@ -295,12 +295,24 @@
   }
 
   function updateSectionVisibility() {
-    // Ocultar seções que não têm atos visíveis
+    // Ocultar seções e sub-seções que não têm atos visíveis
     const sections = document.querySelectorAll('.org-group');
     
     sections.forEach(section => {
-      const visibleAtos = section.querySelectorAll('.ato-line:not(.hidden-by-filter)');
+      // Primeiro, ocultar cada suborg sem atos visíveis
+      const suborgs = section.querySelectorAll('.suborg');
+      suborgs.forEach(suborg => {
+        // Seleciona apenas os atos visíveis (não escondidos por filtros)
+        const visibleAtosInSub = suborg.querySelectorAll('.ato-line:not(.hidden-by-filter)');
+        if (visibleAtosInSub.length === 0) {
+          suborg.style.display = 'none';
+        } else {
+          suborg.style.display = '';
+        }
+      });
       
+      // Em seguida, ocultar a seção inteira se não houver atos visíveis
+      const visibleAtos = section.querySelectorAll('.ato-line:not(.hidden-by-filter)');
       if (visibleAtos.length === 0) {
         section.style.display = 'none';
       } else {
