@@ -1,13 +1,16 @@
-
 /*
  * Pagefind Bridge — integra Pagefind ao seu campo de busca
  * e posiciona o botão "Buscar no conteúdo" LOGO ABAIXO dos filtros
  * e ACIMA do contador de resultados, quando esses elementos são encontrados.
  * Mantém fallback: se não achar, injeta logo abaixo do input de busca.
+ * Patch: filtros da UI também filtram a busca Pagefind
+ * Requer: selects de filtro com "name" equivalente às chaves de data-pagefind-filter
+ * Ex.: <select name="orgao">, <select name="tipo"> ...
  */
 (function () {
   let pfReady = false;
   let lastPreviewQuery = '';
+  let lastPreviewFiltersKey = '';
   let previewTimer = null;
   let deepCount = 0;
 
@@ -59,6 +62,42 @@
   }
 
   // Cria UI (botão + modal) e posiciona o botão
+  // === NOVO: coleta filtros ativos da UI ===
+  function mapSelectNameToFilterKey(name) {
+    // Ajuste este mapa se os nomes dos <select> diferirem da chave do filtro Pagefind
+    const map = {
+      orgao: 'orgao',
+      tipo: 'tipo',
+      assunto: 'assunto',
+      ano: 'ano',
+      // adicione outros se necessário
+    };
+    return map[name] || name;
+  }
+
+  function getActiveFiltersObject() {
+    const container = findFiltersBlock() || document;
+    const selects = Array.from(container.querySelectorAll('select'));
+    const filters = {};
+    for (const sel of selects) {
+      const key = mapSelectNameToFilterKey(sel.name || sel.id || '');
+      if (!key) continue;
+
+      // suporta single e multiple
+      const values = sel.multiple
+        ? Array.from(sel.selectedOptions).map(o => (o.value || '').trim()).filter(Boolean)
+        : [(sel.value || '').trim()].filter(Boolean);
+
+      if (!values.length) continue; // não envia filtro vazio
+      filters[key] = values.length === 1 ? values[0] : values;
+    }
+    return filters;
+  }
+
+  function filtersCacheKey(obj) {
+    try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ''; }
+  }
+  
   function injectUI(searchInput) {
     const btn = document.createElement('button');
     btn.id = 'pf-trigger';
@@ -114,6 +153,15 @@
         performDeepSearch(searchInput.value.trim(), true);
       }
     });
+	
+	// NOVO: reagir à mudança dos filtros para atualizar badge
+    const fb = findFiltersBlock();
+    if (fb) {
+      fb.addEventListener('change', () => {
+        clearTimeout(previewTimer);
+        previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 250);
+      });
+    }
 
     btn.addEventListener('click', () => performDeepSearch(searchInput.value.trim(), true));
     searchInput.addEventListener('input', () => {
@@ -138,12 +186,16 @@
   }
 
   async function updateBadge(query, button) {
+	const activeFilters = getActiveFiltersObject();
+    const currentFK = filtersCacheKey(activeFilters);
+
     if (!query || query.length < 2) { setBadgeCount(button, 0); return; }
-    if (query === lastPreviewQuery) return;
+    if (query === lastPreviewQuery && currentFK === lastPreviewFiltersKey) return;
     lastPreviewQuery = query;
+	lastPreviewFiltersKey = currentFK;
     if (!(await ensurePagefind())) { setBadgeCount(button, 0); return; }
     try {
-      const result = await window.pagefind.search(query);
+      const result = await window.pagefind.search(query, { filters: activeFilters });
       setBadgeCount(button, result?.results?.length || 0);
     } catch (e) {
       console.warn('[Pagefind] Erro na contagem de preview:', e);
@@ -173,6 +225,9 @@
     const body = overlay.querySelector('#pf-body');
     const countElement = overlay.querySelector('.count');
     if (!query || query.length < 2) return;
+	
+	const activeFilters = getActiveFiltersObject();
+	
     if (!(await ensurePagefind())) {
       countElement.textContent = '';
       body.innerHTML = '<div class="pf-empty">O índice de conteúdo não está disponível.</div>';
@@ -182,7 +237,7 @@
     }
     body.innerHTML = '<div class="pf-empty">Buscando…</div>';
     try {
-      const res = await window.pagefind.search(query);
+      const res = await window.pagefind.search(query, { filters: activeFilters }); // ← aplica filtros
       const hits = res?.results || [];
       countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : '— 0 resultados';
       if (hits.length === 0) {
@@ -236,5 +291,12 @@
     const input = await waitForSearchInput();
     const { btn } = injectUI(input);
     if (input.value) updateBadge(input.value.trim(), btn);
+	
+	// Opcional: pré-carregar catálogo de filtros
+    try {
+      if (await ensurePagefind() && window.pagefind.filters) {
+        await window.pagefind.filters();
+      }
+    } catch {}
   })();
 })();
