@@ -130,8 +130,8 @@
     const btn = document.createElement("button");
     btn.id = "pf-trigger";
     btn.type = "button";
-    btn.title = "Buscar no conteúdo (Pagefind) – Alt+Enter";
-    btn.textContent = "Buscar no conteúdo";
+    btn.title = "Busca Avançada (Pagefind) – Alt+Enter";
+    btn.textContent = "Busca Avançada";
 
     const backdrop = document.createElement("div");
     backdrop.id = "pf-overlay-backdrop";
