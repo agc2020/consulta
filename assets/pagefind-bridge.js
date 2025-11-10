@@ -19,6 +19,35 @@
  * - As páginas indexadas DEVEM fornecer os mesmos filtros via <meta data-pagefind-filter="chave" content="valor">.
  */
 (function () {
+  // Exposto para o index.html criar o container antes do PagefindUI montar
+  // Sem isso, o PagefindUI não encontra #pf-body e não renderiza filtros.
+  if (!window.PagefindBridgeEnsureOverlayForUI) {
+    window.PagefindBridgeEnsureOverlayForUI = function() {
+      // reutiliza a mesma função de injeção, mas sem acoplar eventos duplicados
+      try {
+        const existing = document.getElementById("pf-overlay");
+        if (existing && existing.querySelector("#pf-body")) return existing.querySelector("#pf-body");
+      } catch (_) {}
+      // cria rapidamente a estrutura básica; listeners serão adicionados no boot normal
+      const overlay = document.createElement("div");
+      overlay.id = "pf-overlay";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.style.display = "none";
+      overlay.innerHTML = `
+        <div id="pf-overlay-backdrop" class="backdrop"></div>
+        <div class="panel">
+          <header class="pf-header">
+            <h2>Busca no conteúdo <span class="count"></span></h2>
+            <button class="pf-close" aria-label="Fechar" title="Fechar">×</button>
+          </header>
+          <div id="pf-body" role="region" aria-live="polite"></div>
+        </div>`;
+      document.body.appendChild(overlay);
+      return overlay.querySelector("#pf-body");
+    };
+  }
+  
   let pfReady = false;
   let lastPreviewQuery = "";
   let lastPreviewFiltersKey = "";
@@ -247,6 +276,14 @@
     const overlay = document.getElementById("pf-overlay");
     const backdrop = document.getElementById("pf-overlay-backdrop");
     const body = overlay.querySelector("#pf-body");
+	// Se a UI padrão do Pagefind estiver montada, não renderizamos manualmente os resultados
+    if (body && body.querySelector('[data-pagefind-ui]')) {
+      overlay.style.display = "block";
+      backdrop.style.display = "block";
+      const inputUI = body.querySelector('input[type="search"], input[type="text"]');
+      if (inputUI) inputUI.focus();
+      return;
+    }
     const countElement = overlay.querySelector(".count");
     if (!query || query.length < 2) return;
 

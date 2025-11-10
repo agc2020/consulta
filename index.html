@@ -3609,6 +3609,11 @@
 		const path = window.location.pathname;
 		const underSubpath = path.startsWith('/consulta');
 		const bundlePath = underSubpath ? '/consulta/pagefind/' : 'pagefind/';
+		// Garante o container do overlay antes de montar o PagefindUI,
+		// assim a UI (com filtros) aparece corretamente no #pf-body.
+		if (window.PagefindBridgeEnsureOverlayForUI) {
+		  window.PagefindBridgeEnsureOverlayForUI();
+		}
 		new PagefindUI({
 		  element: '#pf-body',
 		  bundlePath,
