@@ -3621,6 +3621,36 @@
 			clear_search: 'Limpar'
 		  }
 		});
+		// === [patch:pagefind-open-in-new-tab] Força todos os links do Pagefind a abrirem em nova aba
+		try {
+		  const pfBodyEl = document.querySelector('#pf-body');
+		  const patchResultLinks = () => {
+			if (!pfBodyEl) return;
+			pfBodyEl.querySelectorAll('a[href]').forEach(a => {
+			  a.setAttribute('target', '_blank');
+			  const rel = (a.getAttribute('rel') || '');
+			  const parts = new Set(rel.split(/\s+/).filter(Boolean));
+			  parts.add('noopener'); parts.add('noreferrer');
+			  a.setAttribute('rel', Array.from(parts).join(' '));
+			});
+		  };
+		  // Observa renderizações do Pagefind (UI oficial) e aplica o patch
+		  if (pfBodyEl) {
+			const mo = new MutationObserver(patchResultLinks);
+			mo.observe(pfBodyEl, { childList: true, subtree: true });
+			patchResultLinks();
+			pfBodyEl.addEventListener('click', (e) => {
+			  const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+			  if (a && pfBodyEl.contains(a)) {
+				a.target = '_blank';
+				if (!a.rel) a.rel = 'noopener noreferrer';
+			  }
+			});
+		  }
+		} catch (err) {
+		  // no-op (não falhar se DOM não existir)
+		}
+
 		const open = () => {
 		  document.getElementById('pf-overlay-backdrop').style.display = 'block';
 		  document.getElementById('pf-overlay').style.display = 'block';

@@ -291,7 +291,7 @@
     const title = (data.meta && (data.meta.title || data.meta.h1)) || url;
     const excerpt = data.excerpt || "";
     return `
-      <a class="pf-hit" href="${url}">
+      <a class="pf-hit" href="${url}" target="_blank" rel="noopener noreferrer">
         <div class="pf-title">${escapeHtml(title)}</div>
         ${excerpt ? `<div class="pf-snippet">${excerpt}</div>` : ""}
         <div class="pf-url">${escapeHtml(url)}</div>
