@@ -54,6 +54,18 @@
   }
 
   // ======= EXTRAÇÃO DE DADOS =======
+  // Normaliza o nome do órgão para corresponder aos valores canônicos do Pagefind
+  function normalizeOrgao(orgao) {
+    const normalized = orgao.toLowerCase().trim();
+    
+    if (normalized.includes('federal')) return 'Federal';
+    if (normalized.includes('cnj')) return 'CNJ';
+    if (normalized.includes('tjpr')) return 'TJPR';
+    if (normalized.includes('paraná') || normalized.includes('parana')) return 'TJPR';
+    
+    return orgao; // Retorna original se não encontrar correspondência
+  }
+
   function extractAtos() {
     const articles = document.querySelectorAll('.ato-line');
     
@@ -65,7 +77,8 @@
       
       const title = titleElement ? titleElement.textContent.trim() : '';
       const description = descriptionElement ? descriptionElement.textContent.trim() : '';
-      const orgao = orgaoElement ? orgaoElement.textContent.trim() : '';
+      const orgaoRaw = orgaoElement ? orgaoElement.textContent.trim() : '';
+      const orgao = normalizeOrgao(orgaoRaw);
       
       // Extrair tipo de ato (Lei, Resolução, Decreto, etc.)
       const tipo = extractTipoAto(title);
@@ -144,15 +157,15 @@
         </div>
         
         <div class="filters-row">
-          <select id="filterOrgao" class="filter-select">
+          <select id="filterOrgao" class="filter-select" data-filter-key="orgao">
             <option value="">Todos os Órgãos</option>
           </select>
           
-          <select id="filterTipo" class="filter-select">
+          <select id="filterTipo" class="filter-select" data-filter-key="tipo">
             <option value="">Todos os Tipos</option>
           </select>
           
-          <select id="filterAno" class="filter-select">
+          <select id="filterAno" class="filter-select" data-filter-key="ano">
             <option value="">Todos os Anos</option>
           </select>
           
