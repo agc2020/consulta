@@ -130,64 +130,48 @@
   }
 
   function getActiveFiltersObject() {
-  // 1) (Opcional) Se existir overlay com filtros próprios e houver seleção, priorize
-  try {
-    if (typeof getOverlayFiltersObject === "function") {
-      const over = getOverlayFiltersObject();
-      if (over && Object.keys(over).length) {
-        return over;
-      }
-    }
-  } catch {}
+  // Overlay: se existir e tiver filtros, prioriza
+  const overFilters = getOverlayFiltersObject();
+  if (overFilters && Object.keys(overFilters).length) {
+    return overFilters;
+  }
 
   const container = findFiltersBlock() || document;
   const filters = {};
 
-  // 2) Lógica original para <select> (mantida)
-  const selects = Array.from(container.querySelectorAll("select"));
-  for (const sel of selects) {
-    const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
+  // 1) CHECKBOXES (prioritário quando existir para a mesma chave)
+  const checkboxGroups = {};
+  container.querySelectorAll('input[type="checkbox"][name]').forEach(cb => {
+    if (!checkboxGroups[cb.name]) checkboxGroups[cb.name] = [];
+    checkboxGroups[cb.name].push(cb);
+  });
+
+  for (const groupName in checkboxGroups) {
+    const key = mapSelectNameToFilterKey(groupName, "", null);
     if (!key) continue;
+
+    const checkedValues = checkboxGroups[groupName]
+      .filter(cb => cb.checked)
+      .map(cb => (cb.value || "").trim())
+      .filter(Boolean);
+
+    if (checkedValues.length > 0) {
+      filters[key] = checkedValues; // Pagefind interpreta array como OR
+    }
+  }
+
+  // 2) SELECTS (fallback: só usa se não houver checkbox para a mesma chave)
+  container.querySelectorAll("select").forEach(sel => {
+    const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
+    if (!key || filters[key]) return; // já preenchido por checkbox
     const raw = sel.multiple
       ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
-      : [(sel.value || "").trim()];
+      : [ (sel.value || "").trim() ];
     const values = raw.filter(v => v && !/^todos\b/i.test(v));
-    if (values.length) {
-      filters[key] = values.length === 1 ? values[0] : values;
+    if (values.length > 0) {
+      filters[key] = values; // mantém como array (OR)
     }
-  }
-
-  // 3) NOVO: Ler grupos de checkboxes (Pagefind UI)
-  const checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"][name]'));
-  if (checkboxes.length) {
-    const groups = {};
-    for (const cb of checkboxes) {
-      let gname = cb.name || "";
-      const m = gname.match(/\[(.*?)\]/); // suporta name="filters[tipo]" -> "tipo"
-      if (m) gname = m[1];
-      if (!gname) continue;
-      (groups[gname] = groups[gname] || []).push(cb);
-    }
-
-    for (const groupName of Object.keys(groups)) {
-      const key = mapSelectNameToFilterKey(groupName, "", null);
-      if (!key) continue;
-      const checkedValues = groups[groupName]
-        .filter(cb => cb.checked)
-        .map(cb => (cb.value || "").trim())
-        .filter(Boolean);
-      if (!checkedValues.length) continue;
-
-      // Mescla com o que veio de <select>, se existir
-      if (filters[key]) {
-        const arr = Array.isArray(filters[key]) ? filters[key].slice() : [filters[key]];
-        const merged = Array.from(new Set(arr.concat(checkedValues)));
-        filters[key] = merged.length === 1 ? merged[0] : merged;
-      } else {
-        filters[key] = checkedValues.length === 1 ? checkedValues[0] : checkedValues;
-      }
-    }
-  }
+  });
 
   return filters;
 }
