@@ -210,6 +210,58 @@
   }
 
   // ---------- UI (botão + modal) ----------
+  
+  // --- Busca com OR dentro do mesmo filtro (ex.: tipo: [A,B], ano: [2020,2021]) ---
+  async function searchWithOr(query, activeFilters) {
+    const hasArray = Object.values(activeFilters || {}).some(v => Array.isArray(v) && v.length > 1);
+    if (!hasArray) {
+      return await searchWithOr(query, activeFilters);
+    }
+    const scalar = {};
+    const arrays = {};
+    for (const [k, v] of Object.entries(activeFilters || {})) {
+      if (Array.isArray(v)) arrays[k] = v.filter(Boolean);
+      else if (v) scalar[k] = v;
+    }
+    const run = async (filters) => await window.pagefind.search(query, { filters });
+    async function unionForKey(key, values) {
+      const seen = new Map(); // id/url -> result
+      for (const val of values) {
+        const r = await run({ ...scalar, [key]: val });
+        const results = r?.results || [];
+        for (const ref of results) {
+          let id = ref.id;
+          if (!id) {
+            try { const d = await ref.data(); id = d.url || d.id || (d.meta && d.meta.url) || Math.random().toString(36).slice(2); } catch (e) {}
+          }
+          if (!seen.has(id)) seen.set(id, ref);
+        }
+      }
+      return seen;
+    }
+    const mapsByKey = {};
+    for (const [k, vals] of Object.entries(arrays)) {
+      if (!vals || !vals.length) continue;
+      mapsByKey[k] = await unionForKey(k, vals);
+    }
+    const keys = Object.keys(mapsByKey);
+    if (!keys.length) {
+      return await searchWithOr(query, activeFilters);
+    }
+    if (keys.length === 1) {
+      const list = Array.from(mapsByKey[keys[0]].values());
+      return { results: list };
+    }
+    const [first, ...rest] = keys;
+    let setIds = new Set(mapsByKey[first].keys());
+    for (const k of rest) {
+      const nextIds = new Set(mapsByKey[k].keys());
+      setIds = new Set([...setIds].filter(id => nextIds.has(id)));
+    }
+    const merged = [...setIds].map(id => mapsByKey[first].get(id) || mapsByKey[rest[0]].get(id));
+    return { results: merged };
+  }
+
   function injectUI(searchInput) {
     const btn = document.createElement("button");
     btn.id = "pf-trigger";
@@ -327,7 +379,7 @@
 
     if (!(await ensurePagefind())) { setBadgeCount(button, 0); return; }
     try {
-      const result = await window.pagefind.search(query, { filters: activeFilters });
+      const result = await searchWithOr(query, activeFilters);
       setBadgeCount(button, result?.results?.length || 0);
     } catch (e) {
       console.warn("[Pagefind] Erro na contagem de preview:", e);
@@ -376,7 +428,7 @@
     }
     body.innerHTML = '<div class="pf-empty">Buscando…</div>';
     try {
-      const res = await window.pagefind.search(query, { filters: activeFilters });
+      const res = await searchWithOr(query, activeFilters);
       const hits = res?.results || [];
       countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : "— 0 resultados";
 
