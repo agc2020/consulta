@@ -130,17 +130,10 @@
   }
 
   function getActiveFiltersObject() {
-  // Overlay: se existir e tiver filtros, prioriza
-  const overFilters = getOverlayFiltersObject();
-  if (overFilters && Object.keys(overFilters).length) {
-    return overFilters;
-  }
-
   const container = findFiltersBlock() || document;
   const filters = {};
-
-  // 1) CHECKBOXES (prioritário quando existir para a mesma chave)
   const checkboxGroups = {};
+
   container.querySelectorAll('input[type="checkbox"][name]').forEach(cb => {
     if (!checkboxGroups[cb.name]) checkboxGroups[cb.name] = [];
     checkboxGroups[cb.name].push(cb);
@@ -152,27 +145,14 @@
 
     const checkedValues = checkboxGroups[groupName]
       .filter(cb => cb.checked)
-      .map(cb => (cb.value || "").trim())
+      .map(cb => cb.value.trim())
       .filter(Boolean);
 
     if (checkedValues.length > 0) {
-      filters[key] = checkedValues; // Pagefind interpreta array como OR
+      // A API do Pagefind espera um array para a lógica 'OU'. É só isso.
+      filters[key] = checkedValues;
     }
   }
-
-  // 2) SELECTS (fallback: só usa se não houver checkbox para a mesma chave)
-  container.querySelectorAll("select").forEach(sel => {
-    const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
-    if (!key || filters[key]) return; // já preenchido por checkbox
-    const raw = sel.multiple
-      ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
-      : [ (sel.value || "").trim() ];
-    const values = raw.filter(v => v && !/^todos\b/i.test(v));
-    if (values.length > 0) {
-      filters[key] = values; // mantém como array (OR)
-    }
-  });
-
   return filters;
 }
 
