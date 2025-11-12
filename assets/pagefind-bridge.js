@@ -41,7 +41,7 @@
             <h2>Busca no conteúdo <span class="count"></span></h2>
             <button class="pf-close" aria-label="Fechar" title="Fechar">×</button>
           </header>
-          <div id="pf-filters" class="pf-filters">  <div class="pf-filter-group">    <label for="pf-filter-tipo">Tipo (conteúdo)</label>    <select id="pf-filter-tipo" multiple></select>  </div>  <div class="pf-filter-group">    <label for="pf-filter-ano">Ano (conteúdo)</label>    <select id="pf-filter-ano" multiple></select>  </div>  <button id="pf-clear-filters" type="button" class="pf-clear">Limpar</button></div><div id="pf-body" role="region" aria-live="polite"></div>
+          <div id="pf-body" role="region" aria-live="polite"></div>
         </div>`;
       document.body.appendChild(overlay);
       return overlay.querySelector("#pf-body");
@@ -129,173 +129,74 @@
     return name || id || "";
   }
 
-  
-  function populateOverlayFilters() {
-    const over = document.getElementById('pf-overlay');
-    if (!over) return;
-    const selTipo = over.querySelector('#pf-filter-tipo');
-    const selAno = over.querySelector('#pf-filter-ano');
-    if (!selTipo || !selAno) return;
-
-    function copyOptions(target, source) {
-      target.innerHTML = '';
-      const append = (value, text) => {
-        const opt = document.createElement('option');
-        opt.value = value;
-        opt.textContent = text;
-        target.appendChild(opt);
-      };
-      const src = document.getElementById(source);
-      if (src) {
-        Array.from(src.options).forEach(o => {
-          const v = (o.value || '').trim();
-          if (!v || /^todos\b/i.test(v)) return;
-          append(v, o.textContent || v);
-        });
-      }
-    }
-
-    copyOptions(selTipo, 'filterTipo');
-    if (![...selTipo.options].some(o => /of[ií]cio\s*-?\s*circular/i.test(o.textContent))) {
-      const opt = document.createElement('option');
-      opt.value = 'Ofício Circular';
-      opt.textContent = 'Ofício Circular';
-      selTipo.appendChild(opt);
-    }
-
-    copyOptions(selAno, 'filterAno');
-  }
-
-  function getOverlayFiltersObject() {
-    const over = document.getElementById('pf-overlay');
-    if (!over) return {};
-    const selects = Array.from(over.querySelectorAll('#pf-filters select'));
-    if (!selects.length) return {};
-    const filters = {};
-    for (const sel of selects) {
-      const id = sel.id || '';
-      const key = id.includes('tipo') ? 'tipo' : id.includes('ano') ? 'ano' : '';
-      if (!key) continue;
-      const vals = Array.from(sel.selectedOptions).map(o => (o.value || '').trim()).filter(Boolean);
-      if (vals.length) filters[key] = vals;
-    }
-    return filters;
-  }
-
   function getActiveFiltersObject() {
-    const overFilters = getOverlayFiltersObject();
-    if (Object.keys(overFilters).length) return overFilters;
-
-    const container = findFiltersBlock() || document;
-    const filters = {};
-
-    // 1. Lógica original para <select> (mantida para compatibilidade)
-    const selects = Array.from(container.querySelectorAll("select"));
-    for (const sel of selects) {
-      const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
-      if (!key) continue;
-
-      const raw = sel.multiple
-        ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
-        : [(sel.value || "").trim()];
-      
-      const values = raw.filter(v => v && !/^todos\b/i.test(v));
-      if (values.length) {
-        filters[key] = values.length === 1 ? values[0] : values;
+  // 1) (Opcional) Se existir overlay com filtros próprios e houver seleção, priorize
+  try {
+    if (typeof getOverlayFiltersObject === "function") {
+      const over = getOverlayFiltersObject();
+      if (over && Object.keys(over).length) {
+        return over;
       }
     }
+  } catch {}
 
-    // 2. NOVA LÓGICA para ler checkboxes
-    // Encontra todos os checkboxes com um atributo 'name' dentro do container de filtros
-    const checkboxGroups = {};
-    const checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"][name]'));
+  const container = findFiltersBlock() || document;
+  const filters = {};
 
-    for (const cb of checkboxes) {
-        if (!cb.name) continue;
-        // Agrupa os checkboxes pelo atributo 'name'
-        if (!checkboxGroups[cb.name]) {
-            checkboxGroups[cb.name] = [];
-        }
-        checkboxGroups[cb.name].push(cb);
+  // 2) Lógica original para <select> (mantida)
+  const selects = Array.from(container.querySelectorAll("select"));
+  for (const sel of selects) {
+    const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
+    if (!key) continue;
+    const raw = sel.multiple
+      ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
+      : [(sel.value || "").trim()];
+    const values = raw.filter(v => v && !/^todos\b/i.test(v));
+    if (values.length) {
+      filters[key] = values.length === 1 ? values[0] : values;
     }
-
-    // Itera sobre os grupos de checkboxes encontrados
-    for (const groupName in checkboxGroups) {
-        const key = mapSelectNameToFilterKey(groupName, "", null); // Mapeia o 'name' para uma chave de filtro (ex: 'tipo')
-        if (!key) continue;
-
-        const checkedValues = checkboxGroups[groupName]
-            .filter(cb => cb.checked) // Pega apenas os que estão marcados
-            .map(cb => (cb.value || "").trim()) // Pega o valor
-            .filter(Boolean); // Remove valores vazios
-
-        if (checkedValues.length > 0) {
-            // Adiciona ao objeto de filtros. Se já houver um filtro com essa chave (de um <select>),
-            // ele será sobrescrito. A lógica de checkbox é mais apropriada para seleção múltipla.
-            filters[key] = checkedValues;
-        }
-    }
-
-    return filters;
   }
+
+  // 3) NOVO: Ler grupos de checkboxes (Pagefind UI)
+  const checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"][name]'));
+  if (checkboxes.length) {
+    const groups = {};
+    for (const cb of checkboxes) {
+      let gname = cb.name || "";
+      const m = gname.match(/\[(.*?)\]/); // suporta name="filters[tipo]" -> "tipo"
+      if (m) gname = m[1];
+      if (!gname) continue;
+      (groups[gname] = groups[gname] || []).push(cb);
+    }
+
+    for (const groupName of Object.keys(groups)) {
+      const key = mapSelectNameToFilterKey(groupName, "", null);
+      if (!key) continue;
+      const checkedValues = groups[groupName]
+        .filter(cb => cb.checked)
+        .map(cb => (cb.value || "").trim())
+        .filter(Boolean);
+      if (!checkedValues.length) continue;
+
+      // Mescla com o que veio de <select>, se existir
+      if (filters[key]) {
+        const arr = Array.isArray(filters[key]) ? filters[key].slice() : [filters[key]];
+        const merged = Array.from(new Set(arr.concat(checkedValues)));
+        filters[key] = merged.length === 1 ? merged[0] : merged;
+      } else {
+        filters[key] = checkedValues.length === 1 ? checkedValues[0] : checkedValues;
+      }
+    }
+  }
+
+  return filters;
+}
 
   function filtersCacheKey(obj) {
     try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ""; }
   }
 
   // ---------- UI (botão + modal) ----------
-  
-  // --- Busca com OR dentro do mesmo filtro (ex.: tipo: [A,B], ano: [2020,2021]) ---
-  async function searchWithOr(query, activeFilters) {
-    const hasArray = Object.values(activeFilters || {}).some(v => Array.isArray(v) && v.length > 1);
-    if (!hasArray) {
-      return await searchWithOr(query, activeFilters);
-    }
-    const scalar = {};
-    const arrays = {};
-    for (const [k, v] of Object.entries(activeFilters || {})) {
-      if (Array.isArray(v)) arrays[k] = v.filter(Boolean);
-      else if (v) scalar[k] = v;
-    }
-    const run = async (filters) => await window.pagefind.search(query, { filters });
-    async function unionForKey(key, values) {
-      const seen = new Map(); // id/url -> result
-      for (const val of values) {
-        const r = await run({ ...scalar, [key]: val });
-        const results = r?.results || [];
-        for (const ref of results) {
-          let id = ref.id;
-          if (!id) {
-            try { const d = await ref.data(); id = d.url || d.id || (d.meta && d.meta.url) || Math.random().toString(36).slice(2); } catch (e) {}
-          }
-          if (!seen.has(id)) seen.set(id, ref);
-        }
-      }
-      return seen;
-    }
-    const mapsByKey = {};
-    for (const [k, vals] of Object.entries(arrays)) {
-      if (!vals || !vals.length) continue;
-      mapsByKey[k] = await unionForKey(k, vals);
-    }
-    const keys = Object.keys(mapsByKey);
-    if (!keys.length) {
-      return await searchWithOr(query, activeFilters);
-    }
-    if (keys.length === 1) {
-      const list = Array.from(mapsByKey[keys[0]].values());
-      return { results: list };
-    }
-    const [first, ...rest] = keys;
-    let setIds = new Set(mapsByKey[first].keys());
-    for (const k of rest) {
-      const nextIds = new Set(mapsByKey[k].keys());
-      setIds = new Set([...setIds].filter(id => nextIds.has(id)));
-    }
-    const merged = [...setIds].map(id => mapsByKey[first].get(id) || mapsByKey[rest[0]].get(id));
-    return { results: merged };
-  }
-
   function injectUI(searchInput) {
     const btn = document.createElement("button");
     btn.id = "pf-trigger";
@@ -315,30 +216,6 @@
       <div id="pf-body" role="region" aria-live="polite"></div>
     `;
     document.body.append(backdrop, overlay);
-
-    // Popular filtros do overlay e ouvir mudanças
-    populateOverlayFilters();
-    const pfTipo = overlay.querySelector('#pf-filter-tipo');
-    const pfAno = overlay.querySelector('#pf-filter-ano');
-    const pfClear = overlay.querySelector('#pf-clear-filters');
-
-    function triggerOverlaySearch() {
-      const query = (searchInput.value || '').trim();
-      if (query.length >= 2) {
-        doSearch(query, false);
-      } else {
-        updateBadge(query, btn);
-      }
-    }
-
-    if (pfTipo) pfTipo.addEventListener('change', triggerOverlaySearch);
-    if (pfAno) pfAno.addEventListener('change', triggerOverlaySearch);
-    if (pfClear) pfClear.addEventListener('click', () => {
-      if (pfTipo) Array.from(pfTipo.options).forEach(o => o.selected = false);
-      if (pfAno) Array.from(pfAno.options).forEach(o => o.selected = false);
-      triggerOverlaySearch();
-    });
-
 
     // Preferência: entre filtros e contador
     let placed = false;
@@ -413,7 +290,7 @@
 
     if (!(await ensurePagefind())) { setBadgeCount(button, 0); return; }
     try {
-      const result = await searchWithOr(query, activeFilters);
+      const result = await window.pagefind.search(query, { filters: activeFilters });
       setBadgeCount(button, result?.results?.length || 0);
     } catch (e) {
       console.warn("[Pagefind] Erro na contagem de preview:", e);
@@ -462,7 +339,7 @@
     }
     body.innerHTML = '<div class="pf-empty">Buscando…</div>';
     try {
-      const res = await searchWithOr(query, activeFilters);
+      const res = await window.pagefind.search(query, { filters: activeFilters });
       const hits = res?.results || [];
       countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : "— 0 resultados";
 
