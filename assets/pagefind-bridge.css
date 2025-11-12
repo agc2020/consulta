@@ -1,9 +1,9 @@
+
 /* === Pagefind Bridge — estilo harmonizado com o tema do site ===
    Usa variáveis definidas em styles.css (:root) para manter consistência visual.
-   - Botão "Busca Avançada" segue a aparência do .reset-btn
+   - Botão "Buscar no conteúdo" segue a aparência do .reset-btn
    - Modal claro, cartões de resultados e tipografia coerentes
-   - Badges de filtros múltiplos com visual limpo e intuitivo
-   =================================================================*/
+=================================================================*/
 
 /* Backdrop do modal */
 #pf-overlay-backdrop {
@@ -25,13 +25,12 @@
   box-shadow: var(--shadow-hover);
   z-index: 9999;
   display: none;
-  flex-direction: column;
   overflow: hidden;
   max-height: 90vh;
 }
 
 /* Cabeçalho do modal */
-.pf-header {
+#pf-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,104 +39,79 @@
   background: white;
 }
 
-.pf-header h2 {
+#pf-header .title {
   font-weight: 600;
   font-size: 1rem;
   color: var(--text-color);
-  margin: 0;
 }
 
-.pf-header .count {
+#pf-header .count {
   opacity: .8;
   font-size: .95rem;
   margin-left: .5rem;
   color: var(--text-muted);
 }
 
-.pf-close {
+#pf-close {
   background: transparent;
   border: 0;
   color: var(--text-muted);
   font-size: 1.3rem;
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
 }
-.pf-close:hover { color: var(--primary-color); }
+#pf-close:hover { color: var(--primary-color); }
 
 /* Conteúdo do modal */
 #pf-body {
   padding: 12px 16px 16px;
   overflow: auto;
-  flex: 1;
+  max-height: calc(90vh - 54px);
 }
 
 /* Cada resultado */
-.pf-result {
+.pf-hit {
   display: block;
-  padding: 12px;
+  padding: 12px 12px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
   background: #fafafa;
   margin-bottom: 10px;
   transition: box-shadow .2s ease, transform .2s ease;
 }
-.pf-result:hover { 
-  box-shadow: var(--shadow-hover); 
-  transform: translateY(-1px); 
-}
+.pf-hit:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
 
-.pf-result h3 {
+.pf-title {
   font-weight: 600;
-  margin: 0 0 8px 0;
-  font-size: 1rem;
-}
-
-.pf-result h3 a {
+  margin-bottom: 4px;
   color: var(--text-color);
-  text-decoration: none;
 }
 
-.pf-result h3 a:hover {
-  color: var(--primary-color);
+.pf-hit .pf-url {
+  font-size: .82rem;
+  opacity: .75;
+  margin-top: .25rem;
+  color: var(--text-muted);
 }
 
-.pf-result p {
+.pf-snippet {
   font-size: .95rem;
   line-height: 1.45;
-  margin: 8px 0;
+  margin-top: .25rem;
+}
+
+.pf-empty {
+  opacity: .85;
+  padding: .5rem 0;
   color: var(--text-muted);
 }
 
-.pf-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: .9rem;
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.pf-link:hover {
-  text-decoration: underline;
-}
-
-.loading, .error, .no-results {
-  padding: 20px;
-  text-align: center;
-  color: var(--text-muted);
-}
-
-.error {
-  color: #d32f2f;
-}
-
-/* Botão "Busca Avançada" — harmonizado com .reset-btn */
-.pf-trigger-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0 0 12px;
-  padding: 10px 16px;
+/* Botão "Buscar no conteúdo" — harmonizado com .reset-btn */
+#pf-trigger {
+  display: block;
+  margin: 8px auto 0 auto;  /* centraliza horizontalmente abaixo do input */
+  padding: 12px 16px;
   font-size: .95rem;
   font-weight: 600;
   border: 2px solid var(--primary-color);
@@ -148,90 +122,26 @@
   transition: all .2s ease;
   font-family: inherit;
   white-space: nowrap;
+  width: fit-content;       /* mantém tamanho ao conteúdo */
 }
 
-.pf-trigger-btn:hover {
+#pf-trigger:hover {
   background: var(--primary-color);
   color: white;
   box-shadow: var(--shadow-hover);
 }
 
-.pf-trigger-btn:active { 
-  transform: scale(0.98); 
-}
+#pf-trigger:active { transform: scale(0.98); }
 
-.pf-trigger-btn .icon {
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-.pf-trigger-btn .badge {
+#pf-trigger .badge {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 12px;
-  background: var(--badge-bg, #e3f2fd);
-  border: 1px solid var(--badge-border, #90caf9);
+  padding: 0 .25rem;
+  border-radius: 8px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
   color: var(--primary-color);
   font-size: .85rem;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-/* === NOVO: Badges de filtros múltiplos === */
-.filter-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
-  min-height: 24px;
-}
-
-.filter-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px 4px 12px;
-  background: var(--primary-color, #2563eb);
-  color: white;
-  border-radius: 16px;
-  font-size: .85rem;
-  font-weight: 500;
-  line-height: 1.2;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all .2s ease;
-}
-
-.filter-badge:hover {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
-}
-
-.badge-remove {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1;
-  cursor: pointer;
-  transition: all .15s ease;
-}
-
-.badge-remove:hover {
-  background: rgba(255, 255, 255, 0.35);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.1);
-}
-
-.badge-remove:active {
-  transform: scale(0.95);
+  line-height: 1.1;
 }
 
 /* Destacar matches (caso venha marcado do Pagefind) */
@@ -243,34 +153,24 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  #pf-overlay { 
-    inset: 6% 4%; 
-  }
-  
-  #pf-body { 
-    padding: 10px 12px 12px; 
-  }
-  
-  .pf-trigger-btn {
-    margin: 8px auto 0 auto;
-    display: flex;
-    width: fit-content;
-  }
-  
-  .filter-badges {
-    gap: 4px;
-  }
-  
-  .filter-badge {
-    font-size: .8rem;
-    padding: 3px 6px 3px 10px;
-  }
-  
-  .badge-remove {
-    width: 16px;
-    height: 16px;
-    font-size: 12px;
-  }
+  #pf-overlay { inset: 6% 4%; }
+  #pf-body { padding: 10px 12px 12px; }
+  #pf-trigger {
+  display: block;
+  margin: 8px auto 0 auto;  /* centraliza horizontalmente abaixo do input */
+  padding: 12px 16px;
+  font-size: .95rem;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: white;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+  width: fit-content;       /* mantém tamanho ao conteúdo */
+}
 }
 
 /* ==== Overrides Pagefind: trechos mais longos nos resultados ==== */
@@ -282,4 +182,34 @@
   -webkit-line-clamp: unset !important;
   line-clamp: unset !important;
   white-space: normal !important;
+}
+
+
+/* --- Pagefind overlay filters (multi-select para tipo/ano) --- */
+#pf-overlay .pf-filters{
+  display:flex;
+  gap:0.75rem;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  margin: 0.5rem 0 1rem 0;
+}
+#pf-overlay .pf-filter-group{
+  display:flex;
+  flex-direction:column;
+  gap:0.25rem;
+}
+#pf-overlay .pf-filter-group select{
+  min-width: 200px;
+  max-width: 320px;
+  min-height: 2.2rem;
+}
+#pf-overlay .pf-clear{
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  background: #f6f6f6;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#pf-overlay .pf-clear:hover{
+  background:#eee;
 }

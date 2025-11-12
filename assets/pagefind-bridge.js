@@ -1,459 +1,34 @@
+
 /*
  * Pagefind Bridge — integra Pagefind à busca existente
- * VERSÃO CORRIGIDA FINAL: Suporte a seleção múltipla de filtros com lógica OR
+ * Patch: filtros da UI também filtram a busca Pagefind.
  *
- * Mudanças principais:
- * 1. Intercepta eventos nos filtros para evitar conflito com search-filter.js
- * 2. Coleta múltiplas seleções de filtros e cria badges visuais
- * 3. Aplica filtros com lógica OR na página principal (filtra os atos visíveis)
- * 4. Passa filtros para Pagefind como arrays para lógica OR nativa no modal
+ * Como o Pagefind requer chaves/valores EXATOS, esta bridge coleta os <select>
+ * de filtros e os converte para o objeto { filters } de window.pagefind.search().
+ *
+ * Regras para mapear cada <select> -> chave do filtro:
+ * 1) Se o <select> tiver data-filter-key="chave", usa isso.
+ * 2) Senão, se houver window.PAGEFIND_FILTER_MAP, tenta id/name nesse mapa.
+ * 3) Senão, aplica sinônimos comuns (esfera|nível|jurisdicao -> orgao; categoria|classe -> tipo; year -> ano).
+ * 4) Caso nada corresponda, usa name ou id do próprio select.
+ *
+ * IMPORTANTE:
+ * - Os valores enviados ao Pagefind são os .value das <option>. Portanto, configure os values
+ *   para o canônico do índice (ex.: value="CNJ", "Federal", "Estadual", "2021" etc.), deixando o texto
+ *   visível livre para acentos e frases como "Legislação Federal".
+ * - As páginas indexadas DEVEM fornecer os mesmos filtros via <meta data-pagefind-filter="chave" content="valor">.
  */
 (function () {
-  'use strict';
-
-  // ========== CONFIGURAÇÃO ==========
-  const CONFIG = {
-    // Mapeamento de IDs dos selects da página principal para chaves do Pagefind
-    filterMapping: {
-      'filterTipo': 'tipo',
-      'filterOrgao': 'orgao',
-      'filterAno': 'ano'
-    },
-    // Filtros que devem permitir seleção múltipla
-    multiSelectFilters: ['tipo', 'orgao'],
-    // Debounce para atualização de preview
-    previewDebounce: 400
-  };
-
-  // ========== ESTADO GLOBAL ==========
-  let pfReady = false;
-  let pagefindInitialized = false;
-  let lastPreviewQuery = "";
-  let lastPreviewFiltersKey = "";
-  let previewTimer = null;
-  let deepCount = 0;
-  let activeMultiFilters = {
-    tipo: new Set(),
-    orgao: new Set(),
-    ano: new Set()
-  };
-  
-  // Referência aos dados extraídos pelo search-filter.js
-  let allAtos = [];
-
-  // ========== FUNÇÕES UTILITÁRIAS ==========
-  
-  /**
-   * Aguarda o input de busca principal estar disponível no DOM
-   */
-  function waitForSearchInput() {
-    return new Promise(resolve => {
-      const existing = document.getElementById("searchInput");
-      if (existing) return resolve(existing);
-      const observer = new MutationObserver(() => {
-        const el = document.getElementById("searchInput");
-        if (el) { 
-          observer.disconnect(); 
-          resolve(el); 
-        }
-      });
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-    });
-  }
-
-  /**
-   * Encontra o container de filtros na página
-   */
-  function findFiltersBlock() {
-    return document.querySelector("#searchControls, .filters-row, .controls-container");
-  }
-
-  /**
-   * Encontra o contador de resultados
-   */
-  function findResultsCounter() {
-    return document.querySelector("#resultCount, .result-info, .results-count");
-  }
-
-  /**
-   * Gera uma chave de cache para os filtros ativos
-   */
-  function filtersCacheKey(obj) {
-    try { 
-      return JSON.stringify(obj, Object.keys(obj).sort()); 
-    } catch { 
-      return ""; 
-    }
-  }
-
-  /**
-   * Inicializa o Pagefind se ainda não foi feito
-   */
-  async function ensurePagefind() {
-    if (pfReady) return true;
-    if (!window.pagefind || !window.pagefind.init) return false;
-    try {
-      await window.pagefind.init();
-      pfReady = true;
-      return true;
-    } catch (e) {
-      console.warn("[Pagefind] Falha ao inicializar:", e);
-      return false;
-    }
-  }
-
-  /**
-   * Extrai os dados dos atos da página (similar ao search-filter.js)
-   */
-  function extractAtosData() {
-    const articles = document.querySelectorAll('.ato-line');
-    allAtos = [];
-    
-    articles.forEach((article, index) => {
-      const titleElement = article.querySelector('.ato-title a:first-child');
-      const descriptionElement = article.querySelector('.ato-description');
-      const orgaoSection = article.closest('.org-group');
-      const orgaoElement = orgaoSection ? orgaoSection.querySelector('.org-title h2') : null;
-      
-      const title = titleElement ? titleElement.textContent.trim() : '';
-      const description = descriptionElement ? descriptionElement.textContent.trim() : '';
-      const orgaoRaw = orgaoElement ? orgaoElement.textContent.trim() : '';
-      const orgao = normalizeOrgao(orgaoRaw);
-      
-      // Extrair tipo de ato (Lei, Resolução, Decreto, etc.)
-      const tipo = extractTipoAto(title);
-      
-      // Extrair ano do título
-      const ano = extractAno(title);
-      
-      allAtos.push({
-        index: index,
-        element: article,
-        title: title,
-        description: description,
-        orgao: orgao,
-        tipo: tipo,
-        ano: ano
-      });
-    });
-  }
-
-  function normalizeOrgao(orgao) {
-    const normalized = orgao.toLowerCase().trim();
-    
-    if (normalized.includes('federal')) return 'Federal';
-    if (normalized.includes('cnj')) return 'CNJ';
-    if (normalized.includes('tjpr')) return 'TJPR';
-    if (normalized.includes('paraná') || normalized.includes('parana')) return 'TJPR';
-    
-    return orgao;
-  }
-
-  function extractTipoAto(title) {
-    const tipos = [
-      'Constituição',
-      'Lei Complementar',
-      'Lei',
-      'Decreto-Lei',
-      'Decreto',
-      'Resolução',
-      'Portaria',
-      'Instrução Normativa',
-      'Provimento',
-      'Ato Normativo',
-      'Ato Conjunto',
-      'Código'
-    ];
-    
-    for (let tipo of tipos) {
-      if (title.toLowerCase().includes(tipo.toLowerCase())) {
-        return tipo;
-      }
-    }
-    
-    return 'Outro';
-  }
-
-  function extractAno(title) {
-    const match = title.match(/[nº°]\s*[\d.]+\/(\d{4})|[\(\[](\d{4})[\)\]]/);
-    if (match) {
-      return match[1] || match[2];
-    }
-    
-    const yearMatch = title.match(/\b(19\d{2}|20\d{2})\b/);
-    if (yearMatch) {
-      return yearMatch[1];
-    }
-    
-    return '';
-  }
-
-  // ========== GERENCIAMENTO DE FILTROS MÚLTIPLOS ==========
-
-  /**
-   * Coleta os filtros ativos em formato compatível com Pagefind
-   * Retorna objeto com arrays para lógica OR: { tipo: ["Lei", "Decreto"], orgao: ["Federal"] }
-   */
-  function getActiveFiltersObject() {
-    const filters = {};
-    
-    // Converte Sets em arrays, filtrando valores vazios
-    for (const [key, valueSet] of Object.entries(activeMultiFilters)) {
-      const values = Array.from(valueSet).filter(v => v && v.trim() && !/^todos\b/i.test(v));
-      if (values.length > 0) {
-        // Pagefind aceita array para OR, string única para match exato
-        filters[key] = values.length === 1 ? values[0] : values;
-      }
-    }
-    
-    return filters;
-  }
-
-  /**
-   * Intercepta eventos de mudança nos filtros para evitar conflito com search-filter.js
-   * e permitir seleção múltipla
-   */
-  function setupFilterInterception() {
-    const filtersBlock = findFiltersBlock();
-    if (!filtersBlock) return;
-
-    // Para cada filtro que deve ser multi-seleção
-    CONFIG.multiSelectFilters.forEach(filterKey => {
-      const selectId = Object.keys(CONFIG.filterMapping).find(
-        id => CONFIG.filterMapping[id] === filterKey
-      );
-      if (!selectId) return;
-
-      const select = document.getElementById(selectId);
-      if (!select) return;
-
-      // Adiciona listener com captura para interceptar antes do search-filter.js
-      select.addEventListener('change', handleMultiFilterChange, true);
-      
-      // Marca o select para indicar que está sob controle do bridge
-      select.dataset.pagefindBridgeManaged = 'true';
-    });
-  }
-
-  /**
-   * Handler para mudanças nos filtros com suporte a multi-seleção
-   */
-  function handleMultiFilterChange(event) {
-    const select = event.target;
-    const selectId = select.id;
-    const filterKey = CONFIG.filterMapping[selectId];
-    
-    if (!filterKey || !CONFIG.multiSelectFilters.includes(filterKey)) {
-      // Não é um filtro multi-seleção, deixa o comportamento padrão
-      return;
-    }
-
-    // Impede propagação para o search-filter.js não processar
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-
-    const value = select.value.trim();
-    
-    if (!value || /^todos\b/i.test(value)) {
-      // "Todos" foi selecionado - limpa o filtro
-      activeMultiFilters[filterKey].clear();
-      select.value = ''; // Reseta o select
-    } else {
-      // Adiciona o valor ao Set (não permite duplicatas)
-      activeMultiFilters[filterKey].add(value);
-      
-      // Reseta o select para permitir nova seleção
-      select.value = '';
-    }
-
-    // Atualiza a UI de badges/chips
-    updateFilterBadges(filterKey);
-    
-    // NOVO: Aplica os filtros na página principal
-    applyMultiFiltersToPage();
-    
-    // Atualiza o preview do botão de busca avançada
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-      clearTimeout(previewTimer);
-      previewTimer = setTimeout(() => {
-        updateBadge(searchInput.value.trim(), document.getElementById('pf-trigger'));
-      }, CONFIG.previewDebounce);
-    }
-
-    // Previne o comportamento padrão completamente
-    return false;
-  }
-
-  /**
-   * Cria e atualiza badges visuais para mostrar filtros ativos
-   */
-  function updateFilterBadges(filterKey) {
-    const selectId = Object.keys(CONFIG.filterMapping).find(
-      id => CONFIG.filterMapping[id] === filterKey
-    );
-    if (!selectId) return;
-
-    const select = document.getElementById(selectId);
-    if (!select) return;
-
-    // Remove badges existentes
-    let badgesContainer = select.parentElement.querySelector('.filter-badges');
-    if (!badgesContainer) {
-      badgesContainer = document.createElement('div');
-      badgesContainer.className = 'filter-badges';
-      select.parentElement.appendChild(badgesContainer);
-    }
-    badgesContainer.innerHTML = '';
-
-    // Adiciona badges para cada valor ativo
-    const values = Array.from(activeMultiFilters[filterKey]);
-    values.forEach(value => {
-      const badge = document.createElement('span');
-      badge.className = 'filter-badge';
-      badge.innerHTML = `
-        ${value}
-        <button type="button" class="badge-remove" data-filter="${filterKey}" data-value="${value}" aria-label="Remover ${value}">×</button>
-      `;
-      badgesContainer.appendChild(badge);
-
-      // Handler para remover o badge
-      badge.querySelector('.badge-remove').addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        activeMultiFilters[filterKey].delete(value);
-        updateFilterBadges(filterKey);
-        
-        // NOVO: Reaplica os filtros
-        applyMultiFiltersToPage();
-        
-        // Atualiza preview
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-          clearTimeout(previewTimer);
-          previewTimer = setTimeout(() => {
-            updateBadge(searchInput.value.trim(), document.getElementById('pf-trigger'));
-          }, CONFIG.previewDebounce);
-        }
-      });
-    });
-  }
-
-  /**
-   * NOVA FUNÇÃO: Aplica filtros múltiplos com lógica OR na página principal
-   * Esta é a função que estava faltando!
-   */
-  function applyMultiFiltersToPage() {
-    // Se não há filtros ativos, mostra todos os atos
-    const hasActiveFilters = Object.values(activeMultiFilters).some(set => set.size > 0);
-    
-    if (!hasActiveFilters) {
-      // Mostra todos os atos
-      allAtos.forEach(ato => {
-        ato.element.style.display = '';
-        ato.element.classList.remove('hidden-by-filter');
-      });
-      updateSectionVisibility();
-      updateResultCount(allAtos.length);
-      return;
-    }
-
-    // Aplica filtros com lógica OR
-    let visibleCount = 0;
-    
-    allAtos.forEach(ato => {
-      let matches = true;
-      
-      // Para cada tipo de filtro (tipo, orgao, ano)
-      for (const [filterKey, valueSet] of Object.entries(activeMultiFilters)) {
-        if (valueSet.size === 0) continue; // Pula filtros vazios
-        
-        // Lógica OR: o ato deve corresponder a PELO MENOS UM dos valores selecionados
-        const atoValue = ato[filterKey];
-        if (!valueSet.has(atoValue)) {
-          matches = false;
-          break;
-        }
-      }
-      
-      if (matches) {
-        ato.element.style.display = '';
-        ato.element.classList.remove('hidden-by-filter');
-        visibleCount++;
-      } else {
-        ato.element.style.display = 'none';
-        ato.element.classList.add('hidden-by-filter');
-      }
-    });
-    
-    // Atualiza visibilidade das seções
-    updateSectionVisibility();
-    
-    // Atualiza contador
-    updateResultCount(visibleCount);
-  }
-
-  /**
-   * Atualiza a visibilidade das seções baseado nos atos visíveis
-   */
-  function updateSectionVisibility() {
-    const sections = document.querySelectorAll('.org-group');
-    
-    sections.forEach(section => {
-      // Primeiro, ocultar cada suborg sem atos visíveis
-      const suborgs = section.querySelectorAll('.suborg');
-      suborgs.forEach(suborg => {
-        const visibleAtosInSub = suborg.querySelectorAll('.ato-line:not(.hidden-by-filter)');
-        if (visibleAtosInSub.length === 0) {
-          suborg.style.display = 'none';
-        } else {
-          suborg.style.display = '';
-        }
-      });
-      
-      // Em seguida, ocultar a seção inteira se não houver atos visíveis
-      const visibleAtos = section.querySelectorAll('.ato-line:not(.hidden-by-filter)');
-      if (visibleAtos.length === 0) {
-        section.style.display = 'none';
-      } else {
-        section.style.display = '';
-      }
-    });
-  }
-
-  /**
-   * Atualiza o contador de resultados
-   */
-  function updateResultCount(count) {
-    const resultCount = findResultsCounter();
-    if (!resultCount) return;
-    
-    const total = allAtos.length;
-    const displayCount = count !== undefined ? count : total;
-    
-    if (displayCount === total) {
-      resultCount.textContent = `Exibindo todos os ${total} atos normativos`;
-      resultCount.className = 'result-count-all';
-    } else {
-      resultCount.textContent = `Exibindo ${displayCount} de ${total} atos normativos`;
-      resultCount.className = 'result-count-filtered';
-    }
-  }
-
-  // ========== UI DO MODAL ==========
-
-  /**
-   * Garante que o overlay do modal existe (chamado pelo index.html)
-   */
+  // Exposto para o index.html criar o container antes do PagefindUI montar
+  // Sem isso, o PagefindUI não encontra #pf-body e não renderiza filtros.
   if (!window.PagefindBridgeEnsureOverlayForUI) {
     window.PagefindBridgeEnsureOverlayForUI = function() {
+      // reutiliza a mesma função de injeção, mas sem acoplar eventos duplicados
       try {
         const existing = document.getElementById("pf-overlay");
-        if (existing && existing.querySelector("#pf-body")) {
-          return existing.querySelector("#pf-body");
-        }
+        if (existing && existing.querySelector("#pf-body")) return existing.querySelector("#pf-body");
       } catch (_) {}
-      
+      // cria rapidamente a estrutura básica; listeners serão adicionados no boot normal
       const overlay = document.createElement("div");
       overlay.id = "pf-overlay";
       overlay.setAttribute("role", "dialog");
@@ -472,246 +47,329 @@
       return overlay.querySelector("#pf-body");
     };
   }
+  
+  let pfReady = false;
+  let lastPreviewQuery = "";
+  let lastPreviewFiltersKey = "";
+  let previewTimer = null;
+  let deepCount = 0;
 
-  /**
-   * Injeta o botão de busca avançada e configura o modal
-   */
+  function waitForSearchInput() {
+    return new Promise(resolve => {
+      const existing = document.getElementById("searchInput");
+      if (existing) return resolve(existing);
+      const observer = new MutationObserver(() => {
+        const el = document.getElementById("searchInput");
+        if (el) { observer.disconnect(); resolve(el); }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    });
+  }
+
+  function findFiltersBlock() {
+    let el = document.querySelector("#filters, .filters-row, .filters-container, .filters");
+    if (el) return el;
+    const selects = Array.from(document.querySelectorAll("select"));
+    if (selects.length >= 2) {
+      let ancestor = selects[0].parentElement;
+      outer: while (ancestor && ancestor !== document.body) {
+        for (const s of selects.slice(0, 2)) {
+          if (!ancestor.contains(s)) { ancestor = ancestor.parentElement; continue outer; }
+        }
+        return ancestor;
+      }
+    }
+    return null;
+  }
+
+  function findResultsCounter() {
+    const byId = document.querySelector("#resultsCount, .results-count, .results-info");
+    if (byId) return byId;
+    const candidates = Array.from(document.querySelectorAll("p,div,span"));
+    for (const el of candidates) {
+      const t = (el.textContent || "").trim();
+      if (/^Exibindo\b/i.test(t) && /\batos normativos\b/i.test(t)) return el;
+    }
+    return null;
+  }
+
+  // ---------- Mapeamento de filtros ----------
+  function normalizeKey(k) {
+    return String(k || "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+  }
+
+  function mapSelectNameToFilterKey(name, id, el) {
+    // Priority 1: data-filter-key explícito
+    const dataKey = el?.dataset?.filterKey;
+    if (dataKey) return dataKey;
+
+    // Priority 2: mapeamento global configurável
+    const map = (window.PAGEFIND_FILTER_MAP || {});
+    if (map[name]) return map[name];
+    if (map[id]) return map[id];
+
+    // Priority 3: sinônimos comuns
+    const nName = normalizeKey(name);
+    const nId   = normalizeKey(id);
+    const n = nName || nId;
+
+    const synonyms = {
+      // "orgao"
+      "orgao": "orgao", "órgão": "orgao", "esfera": "orgao", "nivel": "orgao",
+      "nível": "orgao", "jurisdicao": "orgao", "jurisdiçao": "orgao", "conselho": "orgao",
+      // "tipo"
+      "tipo": "tipo", "categoria": "tipo", "classe": "tipo",
+      // "ano"
+      "ano": "ano", "ano_publicacao": "ano", "ano_publicação": "ano", "year": "ano"
+    };
+
+    if (synonyms[n]) return synonyms[n];
+
+    // Priority 4: fallback em name/id crus
+    return name || id || "";
+  }
+
+  function getActiveFiltersObject() {
+    const container = findFiltersBlock() || document;
+    const selects = Array.from(container.querySelectorAll("select"));
+    const filters = {};
+    for (const sel of selects) {
+      const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
+      if (!key) continue;
+
+      // Ignora valores vazios ou placeholders "Todos ..."
+      const raw = sel.multiple
+        ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
+        : [(sel.value || "").trim()];
+
+      const values = raw.filter(v => v && !/^todos\b/i.test(v));
+      if (!values.length) continue;
+
+      filters[key] = values.length === 1 ? values[0] : values;
+    }
+    return filters;
+  }
+
+  function filtersCacheKey(obj) {
+    try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ""; }
+  }
+
+  // ---------- UI (botão + modal) ----------
   function injectUI(searchInput) {
-    // Verifica se já existe um botão
-    let btn = document.getElementById("pf-trigger");
-    if (btn) return { btn };
-
-    // Cria o botão de busca avançada
-    btn = document.createElement("button");
+    const btn = document.createElement("button");
     btn.id = "pf-trigger";
-    btn.className = "pf-trigger-btn";
     btn.type = "button";
-    btn.innerHTML = `
-      <span class="icon">🔍</span>
-      <span class="label">Busca Avançada</span>
-      <span class="badge"></span>
+    btn.title = "Busca Avançada (Pagefind) – Alt+Enter";
+    btn.textContent = "Busca Avançada";
+
+    const backdrop = document.createElement("div");
+    backdrop.id = "pf-overlay-backdrop";
+    const overlay = document.createElement("div");
+    overlay.id = "pf-overlay";
+    overlay.innerHTML = `
+      <div id="pf-header">
+        <div class="title">Resultados no conteúdo <span class="count"></span></div>
+        <button id="pf-close" aria-label="Fechar (Esc)">&times;</button>
+      </div>
+      <div id="pf-body" role="region" aria-live="polite"></div>
     `;
-    btn.title = "Buscar dentro do conteúdo dos documentos";
+    document.body.append(backdrop, overlay);
 
-    // Insere o botão após o input de busca
-    const searchBox = searchInput.parentElement;
-    searchBox.appendChild(btn);
-
-    // Configura o modal
-    const overlayBody = window.PagefindBridgeEnsureOverlayForUI();
-    const overlay = overlayBody.closest("#pf-overlay");
-
-    // Event listeners
-    btn.addEventListener("click", () => openModal(searchInput, overlayBody));
-    
-    const closeBtn = overlay.querySelector(".pf-close");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => closeModal());
+    // Preferência: entre filtros e contador
+    let placed = false;
+    try {
+      const filters = findFiltersBlock();
+      const counter = findResultsCounter();
+      if (counter && counter.parentElement) {
+        counter.parentElement.insertBefore(btn, counter);
+        placed = true;
+      } else if (filters) {
+        filters.insertAdjacentElement("afterend", btn);
+        placed = true;
+      }
+    } catch {}
+    if (!placed) {
+      searchInput.insertAdjacentElement("afterend", btn);
     }
 
-    const backdrop = overlay.querySelector("#pf-overlay-backdrop");
-    if (backdrop) {
-      backdrop.addEventListener("click", () => closeModal());
+    function close() {
+      overlay.style.display = "none";
+      backdrop.style.display = "none";
     }
-
-    // Fechar com ESC
+    backdrop.addEventListener("click", close);
+    overlay.querySelector("#pf-close").addEventListener("click", close);
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && overlay.style.display !== "none") {
-        closeModal();
+      if (e.key === "Escape") close();
+      if (e.key === "Enter" && e.altKey) {
+        e.preventDefault();
+        performDeepSearch(searchInput.value.trim(), true);
       }
     });
 
-    return { btn, overlayBody, overlay };
-  }
-
-  /**
-   * Abre o modal de busca avançada
-   */
-  async function openModal(searchInput, overlayBody) {
-    const overlay = overlayBody.closest("#pf-overlay");
-    overlay.style.display = "flex";
-    document.body.style.overflow = "hidden";
-
-    const query = searchInput.value.trim();
-    const filters = getActiveFiltersObject();
-
-    // Inicializa o Pagefind se necessário
-    if (!pagefindInitialized) {
-      overlayBody.innerHTML = '<p class="loading">Carregando índice de busca...</p>';
-      const ready = await ensurePagefind();
-      if (!ready) {
-        overlayBody.innerHTML = '<p class="error">Erro ao carregar o sistema de busca.</p>';
-        return;
-      }
-      pagefindInitialized = true;
+    // Atualiza badge quando filtros mudam
+    const fb = findFiltersBlock();
+    if (fb) {
+      fb.addEventListener("change", () => {
+        clearTimeout(previewTimer);
+        previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 250);
+      });
     }
 
-    // Executa a busca
-    await performSearch(query, filters, overlayBody);
-  }
-
-  /**
-   * Fecha o modal
-   */
-  function closeModal() {
-    const overlay = document.getElementById("pf-overlay");
-    if (overlay) {
-      overlay.style.display = "none";
-      document.body.style.overflow = "";
-    }
-  }
-
-  /**
-   * Executa a busca no Pagefind
-   */
-  async function performSearch(query, filters, container) {
-    try {
-      deepCount++;
-      const currentDeep = deepCount;
-
-      // Busca no Pagefind com filtros
-      const results = await window.pagefind.search(query, { filters });
-
-      // Verifica se ainda é a busca mais recente
-      if (currentDeep !== deepCount) return;
-
-      // Renderiza os resultados
-      if (results.results.length === 0) {
-        container.innerHTML = '<p class="no-results">Nenhum resultado encontrado.</p>';
-        updateCountBadge(0);
-        return;
-      }
-
-      // Carrega os dados dos resultados
-      const items = await Promise.all(
-        results.results.slice(0, 50).map(r => r.data())
-      );
-
-      // Renderiza
-      renderResults(items, container);
-      updateCountBadge(results.results.length);
-
-    } catch (error) {
-      console.error("[Pagefind] Erro na busca:", error);
-      container.innerHTML = '<p class="error">Erro ao realizar a busca.</p>';
-    }
-  }
-
-  /**
-   * Renderiza os resultados da busca
-   */
-  function renderResults(items, container) {
-    const html = items.map(item => {
-      const url = item.url || '#';
-      const title = item.meta?.title || 'Sem título';
-      const excerpt = item.excerpt || '';
-      
-      return `
-        <article class="pf-result">
-          <h3><a href="${url}" target="_blank">${title}</a></h3>
-          <p>${excerpt}</p>
-          <a href="${url}" target="_blank" class="pf-link">Ver documento completo →</a>
-        </article>
-      `;
-    }).join('');
-
-    container.innerHTML = html;
-  }
-
-  /**
-   * Atualiza o badge de contagem no botão
-   */
-  function updateCountBadge(count) {
-    const countSpan = document.querySelector("#pf-overlay .pf-header .count");
-    if (countSpan) {
-      countSpan.textContent = count > 0 ? `(${count})` : '';
-    }
-  }
-
-  /**
-   * Atualiza o badge de preview no botão de busca avançada
-   */
-  async function updateBadge(query, btn) {
-    if (!btn) return;
-    
-    const badge = btn.querySelector(".badge");
-    if (!badge) return;
-
-    const filters = getActiveFiltersObject();
-    const filtersKey = filtersCacheKey(filters);
-
-    // Verifica cache
-    if (query === lastPreviewQuery && filtersKey === lastPreviewFiltersKey) {
-      return;
-    }
-
-    lastPreviewQuery = query;
-    lastPreviewFiltersKey = filtersKey;
-
-    // Se não há query nem filtros, limpa o badge
-    if (!query && Object.keys(filters).length === 0) {
-      badge.textContent = "";
-      badge.style.display = "none";
-      return;
-    }
-
-    // Tenta obter preview
-    try {
-      if (!pfReady) await ensurePagefind();
-      if (!pfReady) return;
-
-      const results = await window.pagefind.search(query, { filters });
-      const count = results.results.length;
-
-      if (count > 0) {
-        badge.textContent = count;
-        badge.style.display = "inline-block";
-      } else {
-        badge.textContent = "0";
-        badge.style.display = "inline-block";
-      }
-    } catch (e) {
-      console.warn("[Pagefind] Erro ao atualizar preview:", e);
-    }
-  }
-
-  // ========== INICIALIZAÇÃO ==========
-  
-  /**
-   * Inicializa o bridge após o DOM estar pronto
-   */
-  async function boot() {
-    // Aguarda o input de busca estar disponível
-    const searchInput = await waitForSearchInput();
-    
-    // Aguarda um pouco para o search-filter.js extrair os dados
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    // Extrai os dados dos atos
-    extractAtosData();
-    
-    // Injeta a UI do modal
-    const { btn } = injectUI(searchInput);
-    
-    // Configura interceptação de filtros
-    setupFilterInterception();
-    
-    // Atualiza o preview inicial
-    updateBadge(searchInput.value.trim(), btn);
-    
-    // Monitora mudanças no input de busca
+    btn.addEventListener("click", () => performDeepSearch(searchInput.value.trim(), true));
     searchInput.addEventListener("input", () => {
       clearTimeout(previewTimer);
-      previewTimer = setTimeout(() => {
-        updateBadge(searchInput.value.trim(), btn);
-      }, CONFIG.previewDebounce);
+      previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 400);
     });
+
+    return { btn, overlay, backdrop };
   }
 
-  // Inicia quando o DOM estiver pronto
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
+  async function ensurePagefind() {
+    if (pfReady) return true;
+    if (!window.pagefind || !window.pagefind.init) return false;
+    try {
+      await window.pagefind.init();
+      pfReady = true;
+      return true;
+    } catch (e) {
+      console.warn("[Pagefind] Falha ao inicializar:", e);
+      return false;
+    }
   }
+
+  async function updateBadge(query, button) {
+    const activeFilters = getActiveFiltersObject();
+    const currentFK = filtersCacheKey(activeFilters);
+
+    if (!query || query.length < 2) { setBadgeCount(button, 0); return; }
+    if (query === lastPreviewQuery && currentFK === lastPreviewFiltersKey) return;
+    lastPreviewQuery = query;
+    lastPreviewFiltersKey = currentFK;
+
+    if (!(await ensurePagefind())) { setBadgeCount(button, 0); return; }
+    try {
+      const result = await window.pagefind.search(query, { filters: activeFilters });
+      setBadgeCount(button, result?.results?.length || 0);
+    } catch (e) {
+      console.warn("[Pagefind] Erro na contagem de preview:", e);
+      setBadgeCount(button, 0);
+    }
+  }
+
+  function setBadgeCount(button, n) {
+    deepCount = n;
+    const existing = button.querySelector(".badge");
+    if (n > 0) {
+      if (existing) existing.textContent = `(${n})`;
+      else {
+        const b = document.createElement("span");
+        b.className = "badge";
+        b.textContent = `(${n})`;
+        button.appendChild(b);
+      }
+    } else if (existing) {
+      existing.remove();
+    }
+  }
+
+  async function performDeepSearch(query, openOverlay) {
+    const overlay = document.getElementById("pf-overlay");
+    const backdrop = document.getElementById("pf-overlay-backdrop");
+    const body = overlay.querySelector("#pf-body");
+    
+    // === [fix:transfer-search-content] Captura valor do input principal se query estiver vazia
+    const mainSearchInput = document.getElementById('searchInput');
+    if (!query && mainSearchInput) {
+      query = mainSearchInput.value.trim();
+    }
+    
+	// Se a UI padrão do Pagefind estiver montada, não renderizamos manualmente os resultados
+    if (body && body.querySelector('[data-pagefind-ui]')) {
+      overlay.style.display = "block";
+      backdrop.style.display = "block";
+      const inputUI = body.querySelector('input[type="search"], input[type="text"]');
+      if (inputUI) {
+        // === [fix:transfer-search-content] Transfere o valor para o input do modal
+        if (query) {
+          inputUI.value = query;
+          inputUI.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+        inputUI.focus();
+      }
+      
+      // === [fix:transfer-search-content] Limpa o input principal para não interferir na busca do Pagefind
+      if (mainSearchInput && query) {
+        mainSearchInput.value = '';
+        mainSearchInput.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      return;
+    }
+    const countElement = overlay.querySelector(".count");
+    if (!query || query.length < 2) return;
+
+    const activeFilters = getActiveFiltersObject();
+    if (!(await ensurePagefind())) {
+      countElement.textContent = "";
+      body.innerHTML = '<div class="pf-empty">O índice de conteúdo não está disponível.</div>';
+      overlay.style.display = "block";
+      backdrop.style.display = "block";
+      return;
+    }
+    body.innerHTML = '<div class="pf-empty">Buscando…</div>';
+    try {
+      const res = await window.pagefind.search(query, { filters: activeFilters });
+      const hits = res?.results || [];
+      countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : "— 0 resultados";
+
+      if (hits.length === 0) {
+        body.innerHTML = `<div class="pf-empty">Sem resultados no conteúdo para “${escapeHtml(query)}”.</div>`;
+      } else {
+        const items = [];
+        for (const r of hits.slice(0, 200)) {
+          const data = await r.data();
+          items.push(renderHit(data));
+        }
+        body.innerHTML = items.join("");
+      }
+      if (openOverlay) {
+        overlay.style.display = "block";
+        backdrop.style.display = "block";
+      }
+    } catch (e) {
+      console.error("[Pagefind] Erro ao buscar:", e);
+      body.innerHTML = '<div class="pf-empty">Erro ao consultar o índice de conteúdo.</div>';
+      overlay.style.display = "block";
+      backdrop.style.display = "block";
+    }
+  }
+
+  function renderHit(data) {
+    const url = data.url || "#";
+    const title = (data.meta && (data.meta.title || data.meta.h1)) || url;
+    const excerpt = data.excerpt || "";
+    return `
+      <a class="pf-hit" href="${url}" target="_blank" rel="noopener noreferrer">
+        <div class="pf-title">${escapeHtml(title)}</div>
+        ${excerpt ? `<div class="pf-snippet">${excerpt}</div>` : ""}
+        <div class="pf-url">${escapeHtml(url)}</div>
+      </a>
+    `;
+  }
+
+  function escapeHtml(str) {
+    return String(str || "").replace(/[&<>\"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m]);
+  }
+
+  (async function boot() {
+    // Garante que o CSS esteja aplicado (site já inclui, mas deixamos por segurança).
+    if (!document.querySelector('link[href$="pagefind-bridge.css"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "assets/pagefind-bridge.css";
+      document.head.appendChild(link);
+    }
+    const input = await waitForSearchInput();
+    const { btn } = injectUI(input);
+    if (input.value) updateBadge(input.value.trim(), btn);
+  })();
 })();
