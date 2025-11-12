@@ -41,7 +41,7 @@
             <h2>Busca no conteúdo <span class="count"></span></h2>
             <button class="pf-close" aria-label="Fechar" title="Fechar">×</button>
           </header>
-          <div id="pf-body" role="region" aria-live="polite"></div>
+          <div id="pf-filters" class="pf-filters">  <div class="pf-filter-group">    <label for="pf-filter-tipo">Tipo (conteúdo)</label>    <select id="pf-filter-tipo" multiple></select>  </div>  <div class="pf-filter-group">    <label for="pf-filter-ano">Ano (conteúdo)</label>    <select id="pf-filter-ano" multiple></select>  </div>  <button id="pf-clear-filters" type="button" class="pf-clear">Limpar</button></div><div id="pf-body" role="region" aria-live="polite"></div>
         </div>`;
       document.body.appendChild(overlay);
       return overlay.querySelector("#pf-body");
@@ -129,7 +129,62 @@
     return name || id || "";
   }
 
+  
+  function populateOverlayFilters() {
+    const over = document.getElementById('pf-overlay');
+    if (!over) return;
+    const selTipo = over.querySelector('#pf-filter-tipo');
+    const selAno = over.querySelector('#pf-filter-ano');
+    if (!selTipo || !selAno) return;
+
+    function copyOptions(target, source) {
+      target.innerHTML = '';
+      const append = (value, text) => {
+        const opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = text;
+        target.appendChild(opt);
+      };
+      const src = document.getElementById(source);
+      if (src) {
+        Array.from(src.options).forEach(o => {
+          const v = (o.value || '').trim();
+          if (!v || /^todos\b/i.test(v)) return;
+          append(v, o.textContent || v);
+        });
+      }
+    }
+
+    copyOptions(selTipo, 'filterTipo');
+    if (![...selTipo.options].some(o => /of[ií]cio\s*-?\s*circular/i.test(o.textContent))) {
+      const opt = document.createElement('option');
+      opt.value = 'Ofício Circular';
+      opt.textContent = 'Ofício Circular';
+      selTipo.appendChild(opt);
+    }
+
+    copyOptions(selAno, 'filterAno');
+  }
+
+  function getOverlayFiltersObject() {
+    const over = document.getElementById('pf-overlay');
+    if (!over) return {};
+    const selects = Array.from(over.querySelectorAll('#pf-filters select'));
+    if (!selects.length) return {};
+    const filters = {};
+    for (const sel of selects) {
+      const id = sel.id || '';
+      const key = id.includes('tipo') ? 'tipo' : id.includes('ano') ? 'ano' : '';
+      if (!key) continue;
+      const vals = Array.from(sel.selectedOptions).map(o => (o.value || '').trim()).filter(Boolean);
+      if (vals.length) filters[key] = vals;
+    }
+    return filters;
+  }
+
   function getActiveFiltersObject() {
+    const overFilters = getOverlayFiltersObject();
+    if (Object.keys(overFilters).length) return overFilters;
     const container = findFiltersBlock() || document;
     const selects = Array.from(container.querySelectorAll("select"));
     const filters = {};
@@ -174,6 +229,30 @@
       <div id="pf-body" role="region" aria-live="polite"></div>
     `;
     document.body.append(backdrop, overlay);
+
+    // Popular filtros do overlay e ouvir mudanças
+    populateOverlayFilters();
+    const pfTipo = overlay.querySelector('#pf-filter-tipo');
+    const pfAno = overlay.querySelector('#pf-filter-ano');
+    const pfClear = overlay.querySelector('#pf-clear-filters');
+
+    function triggerOverlaySearch() {
+      const query = (searchInput.value || '').trim();
+      if (query.length >= 2) {
+        doSearch(query, false);
+      } else {
+        updateBadge(query, btn);
+      }
+    }
+
+    if (pfTipo) pfTipo.addEventListener('change', triggerOverlaySearch);
+    if (pfAno) pfAno.addEventListener('change', triggerOverlaySearch);
+    if (pfClear) pfClear.addEventListener('click', () => {
+      if (pfTipo) Array.from(pfTipo.options).forEach(o => o.selected = false);
+      if (pfAno) Array.from(pfAno.options).forEach(o => o.selected = false);
+      triggerOverlaySearch();
+    });
+
 
     // Preferência: entre filtros e contador
     let placed = false;
