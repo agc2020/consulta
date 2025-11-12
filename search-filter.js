@@ -22,8 +22,8 @@
   let currentFilters = {
     search: '',
     orgao: '',
-    tipo: '',
-    ano: ''
+    tipo: [],
+    ano: []
   };
 
   // ======= INICIALIZAÇÃO =======
@@ -99,26 +99,41 @@
   }
 
   function extractTipoAto(title) {
-    const tipos = [
-      'Constituição',
-      'Lei Complementar',
-      'Lei',
-      'Decreto-Lei',
-      'Decreto',
-      'Resolução',
-      'Portaria',
-      'Instrução Normativa',
-      'Provimento',
-      'Ato Normativo',
-      'Ato Conjunto',
-      'Código'
-    ];
-    
-    for (let tipo of tipos) {
-      if (title.toLowerCase().includes(tipo.toLowerCase())) {
-        return tipo;
-      }
+  // Normaliza para buscas robustas (acentos, hífens e caixa)
+  const norm = (s) => s
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase();
+  const t = norm(title);
+
+  // Detecta explicitamente "Ofício Circular" e variantes
+  if (/\boficio[-\s]?circular\b/.test(t)) return 'Ofício Circular';
+
+  // Lista original (mantida) + mapeamento por includes (case/acentos-insensitive)
+  const tipos = [
+    'Constituição',
+    'Lei Complementar',
+    'Lei',
+    'Decreto-Lei',
+    'Decreto',
+    'Resolução',
+    'Portaria',
+    'Instrução Normativa',
+    'Provimento',
+    'Ato Normativo',
+    'Ato Conjunto',
+    'Código'
+  ];
+
+  for (let tipo of tipos) {
+    const tt = norm(tipo);
+    if (t.includes(tt)) {
+      // Reconstituir com acentos/capitalização canônica
+      return tipo;
     }
+  }
+  return 'Outro';
+}}
     
     return 'Outro';
   }
@@ -161,11 +176,11 @@
             <option value="">Todos os Órgãos</option>
           </select>
           
-          <select id="filterTipo" class="filter-select" data-filter-key="tipo">
+          <select id="filterTipo" class="filter-select" data-filter-key="tipo" multiple>
             <option value="">Todos os Tipos</option>
           </select>
           
-          <select id="filterAno" class="filter-select" data-filter-key="ano">
+          <select id="filterAno" class="filter-select" data-filter-key="ano" multiple>
             <option value="">Todos os Anos</option>
           </select>
           
@@ -249,14 +264,15 @@
     });
     
     filterTipo.addEventListener('change', (e) => {
-      currentFilters.tipo = e.target.value;
-      applyFilters();
-    });
-    
-    filterAno.addEventListener('change', (e) => {
-      currentFilters.ano = e.target.value;
-      applyFilters();
-    });
+  const selected = Array.from(e.target.selectedOptions).map(o => o.value).filter(Boolean);
+  currentFilters.tipo = selected; // array de tipos (OR)
+  applyFilters();
+});
+filterAno.addEventListener('change', (e) => {
+  const selected = Array.from(e.target.selectedOptions).map(o => o.value).filter(Boolean);
+  currentFilters.ano = selected; // array de anos (OR)
+  applyFilters();
+});
     
     // Reset
     resetBtn.addEventListener('click', resetFilters);
@@ -277,15 +293,17 @@
       filteredAtos = filteredAtos.filter(ato => ato.orgao === currentFilters.orgao);
     }
     
-    if (currentFilters.tipo) {
-      filteredAtos = filteredAtos.filter(ato => ato.tipo === currentFilters.tipo);
-    }
-    
-    if (currentFilters.ano) {
-      filteredAtos = filteredAtos.filter(ato => ato.ano === currentFilters.ano);
-    }
-    
-    // Atualizar visualização
+    if (Array.isArray(currentFilters.tipo) && currentFilters.tipo.length) {
+  filteredAtos = filteredAtos.filter(ato => currentFilters.tipo.includes(ato.tipo));
+} else if (typeof currentFilters.tipo === 'string' && currentFilters.tipo) {
+  filteredAtos = filteredAtos.filter(ato => ato.tipo === currentFilters.tipo);
+}
+if (Array.isArray(currentFilters.ano) && currentFilters.ano.length) {
+  filteredAtos = filteredAtos.filter(ato => currentFilters.ano.includes(String(ato.ano)) || currentFilters.ano.includes(ato.ano));
+} else if (typeof currentFilters.ano === 'string' && currentFilters.ano) {
+  filteredAtos = filteredAtos.filter(ato => String(ato.ano) == String(currentFilters.ano));
+}
+// Atualizar visualização
     updateDisplay(filteredAtos);
     updateResultCount(filteredAtos.length);
     
@@ -352,15 +370,15 @@
     // Limpar inputs
     document.getElementById('searchInput').value = '';
     document.getElementById('filterOrgao').value = '';
-    document.getElementById('filterTipo').value = '';
-    document.getElementById('filterAno').value = '';
+    Array.from(document.getElementById('filterTipo').options).forEach(o => o.selected = false);
+    Array.from(document.getElementById('filterAno').options).forEach(o => o.selected = false);
     
     // Resetar filtros
     currentFilters = {
       search: '',
       orgao: '',
-      tipo: '',
-      ano: ''
+      tipo: [],
+      ano: []
     };
     
     // Mostrar todos os atos
