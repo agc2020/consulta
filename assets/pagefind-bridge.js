@@ -347,15 +347,37 @@
   }
 
   (async function boot() {
-    // Garante que o CSS esteja aplicado (site já inclui, mas deixamos por segurança).
-    if (!document.querySelector('link[href$="pagefind-bridge.css"]')) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "assets/pagefind-bridge.css";
-      document.head.appendChild(link);
-    }
-    const input = await waitForSearchInput();
-    const { btn } = injectUI(input);
-    if (input.value) updateBadge(input.value.trim(), btn);
+    // Garante que o CSS esteja aplicado.
+  if (!document.querySelector('link[href$="pagefind-bridge.css"]')) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "assets/pagefind-bridge.css"; // Verifique se este caminho está correto
+    document.head.appendChild(link);
+  }
+
+  const input = await waitForSearchInput();
+  const { btn } = injectUI(input);
+  
+  // --- INÍCIO DA CORREÇÃO CRUCIAL ---
+  // Encontra o container dos filtros e impede que o script principal da página
+  // processe os cliques nos checkboxes, deixando o controle para o Pagefind.
+  const filtersContainer = findFiltersBlock();
+  if (filtersContainer) {
+    filtersContainer.addEventListener('click', function(event) {
+      // Verifica se o clique foi em um checkbox de filtro de tipo
+      const target = event.target;
+      if (target.matches('input[type="checkbox"][name="tipo"]')) {
+        // Impede que outros scripts na página (a busca principal)
+        // recebam este evento de clique.
+        event.stopPropagation();
+      }
+    }, true); // O 'true' (useCapture) é importante para capturar o evento antes de outros scripts.
+  }
+  // --- FIM DA CORREÇÃO CRUCIAL ---
+
+  // Atualiza o badge com a contagem inicial, se houver texto na busca.
+  if (input.value) {
+    updateBadge(input.value.trim(), btn);
+  }
   })();
 })();
