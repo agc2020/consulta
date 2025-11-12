@@ -3806,12 +3806,22 @@
 		const path = window.location.pathname;
 		const underSubpath = path.startsWith('/consulta');
 		const bundlePath = underSubpath ? '/consulta/pagefind/' : 'pagefind/';
-		// Garante o container do overlay antes de montar o PagefindUI,
-		// assim a UI (com filtros) aparece corretamente no #pf-body.
-		if (window.PagefindBridgeEnsureOverlayForUI) {
-		  window.PagefindBridgeEnsureOverlayForUI();
-		}
-		new PagefindUI({
+		
+		// === [fix:lazy-init] Flag para controlar se o PagefindUI já foi inicializado
+		let pagefindInitialized = false;
+		
+		// === [fix:lazy-init] Função para inicializar o PagefindUI de forma lazy
+		const initPagefindUI = () => {
+		  if (pagefindInitialized) return;
+		  pagefindInitialized = true;
+		  
+		  // Garante o container do overlay antes de montar o PagefindUI,
+		  // assim a UI (com filtros) aparece corretamente no #pf-body.
+		  if (window.PagefindBridgeEnsureOverlayForUI) {
+			window.PagefindBridgeEnsureOverlayForUI();
+		  }
+		  
+		  new PagefindUI({
 		  element: '#pf-body',
 		  bundlePath,
 		  showSubResults: true,
@@ -3852,14 +3862,20 @@
 		} catch (err) {
 		  // no-op (não falhar se DOM não existir)
 		}
+		};
 
 		const open = () => {
 		  // === [fix:transfer-search-content] Captura valor do input principal antes de abrir o modal
 		  const mainSearchInput = document.getElementById('searchInput');
 		  const searchValue = mainSearchInput ? mainSearchInput.value.trim() : '';
 		  
+		  // === [fix:lazy-init] Inicializa o PagefindUI antes de abrir o modal
+		  initPagefindUI();
+		  
 		  document.getElementById('pf-overlay-backdrop').style.display = 'block';
 		  document.getElementById('pf-overlay').style.display = 'block';
+		  
+		  // === [fix:lazy-init] Aguarda mais tempo para garantir que o PagefindUI foi montado
 		  setTimeout(() => {
 			const input = document.querySelector('.pagefind-ui__search-input');
 			if (input) {
@@ -3878,8 +3894,9 @@
 			  // Dispara evento para resetar os filtros visuais da busca principal
 			  mainSearchInput.dispatchEvent(new Event('input', { bubbles: true }));
 			}
-		  }, 50);
+		  }, 300); // Aumentado de 50ms para 300ms para dar tempo ao PagefindUI inicializar
 		};
+		
 		const close = () => {
 		  document.getElementById('pf-overlay-backdrop').style.display = 'none';
 		  document.getElementById('pf-overlay').style.display = 'none';
