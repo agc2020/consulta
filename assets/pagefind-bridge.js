@@ -185,23 +185,57 @@
   function getActiveFiltersObject() {
     const overFilters = getOverlayFiltersObject();
     if (Object.keys(overFilters).length) return overFilters;
+
     const container = findFiltersBlock() || document;
-    const selects = Array.from(container.querySelectorAll("select"));
     const filters = {};
+
+    // 1. Lógica original para <select> (mantida para compatibilidade)
+    const selects = Array.from(container.querySelectorAll("select"));
     for (const sel of selects) {
       const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
       if (!key) continue;
 
-      // Ignora valores vazios ou placeholders "Todos ..."
       const raw = sel.multiple
         ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
         : [(sel.value || "").trim()];
-
+      
       const values = raw.filter(v => v && !/^todos\b/i.test(v));
-      if (!values.length) continue;
-
-      filters[key] = values.length === 1 ? values[0] : values;
+      if (values.length) {
+        filters[key] = values.length === 1 ? values[0] : values;
+      }
     }
+
+    // 2. NOVA LÓGICA para ler checkboxes
+    // Encontra todos os checkboxes com um atributo 'name' dentro do container de filtros
+    const checkboxGroups = {};
+    const checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"][name]'));
+
+    for (const cb of checkboxes) {
+        if (!cb.name) continue;
+        // Agrupa os checkboxes pelo atributo 'name'
+        if (!checkboxGroups[cb.name]) {
+            checkboxGroups[cb.name] = [];
+        }
+        checkboxGroups[cb.name].push(cb);
+    }
+
+    // Itera sobre os grupos de checkboxes encontrados
+    for (const groupName in checkboxGroups) {
+        const key = mapSelectNameToFilterKey(groupName, "", null); // Mapeia o 'name' para uma chave de filtro (ex: 'tipo')
+        if (!key) continue;
+
+        const checkedValues = checkboxGroups[groupName]
+            .filter(cb => cb.checked) // Pega apenas os que estão marcados
+            .map(cb => (cb.value || "").trim()) // Pega o valor
+            .filter(Boolean); // Remove valores vazios
+
+        if (checkedValues.length > 0) {
+            // Adiciona ao objeto de filtros. Se já houver um filtro com essa chave (de um <select>),
+            // ele será sobrescrito. A lógica de checkbox é mais apropriada para seleção múltipla.
+            filters[key] = checkedValues;
+        }
+    }
+
     return filters;
   }
 
