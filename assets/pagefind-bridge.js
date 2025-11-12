@@ -130,31 +130,25 @@
   }
 
   function getActiveFiltersObject() {
-  const container = findFiltersBlock() || document;
-  const filters = {};
-  const checkboxGroups = {};
+    const container = findFiltersBlock() || document;
+    const selects = Array.from(container.querySelectorAll("select"));
+    const filters = {};
+    for (const sel of selects) {
+      const key = mapSelectNameToFilterKey(sel.name || "", sel.id || "", sel);
+      if (!key) continue;
 
-  container.querySelectorAll('input[type="checkbox"][name]').forEach(cb => {
-    if (!checkboxGroups[cb.name]) checkboxGroups[cb.name] = [];
-    checkboxGroups[cb.name].push(cb);
-  });
+      // Ignora valores vazios ou placeholders "Todos ..."
+      const raw = sel.multiple
+        ? Array.from(sel.selectedOptions).map(o => (o.value || "").trim())
+        : [(sel.value || "").trim()];
 
-  for (const groupName in checkboxGroups) {
-    const key = mapSelectNameToFilterKey(groupName, "", null);
-    if (!key) continue;
+      const values = raw.filter(v => v && !/^todos\b/i.test(v));
+      if (!values.length) continue;
 
-    const checkedValues = checkboxGroups[groupName]
-      .filter(cb => cb.checked)
-      .map(cb => cb.value.trim())
-      .filter(Boolean);
-
-    if (checkedValues.length > 0) {
-      // A API do Pagefind espera um array para a lógica 'OU'. É só isso.
-      filters[key] = checkedValues;
+      filters[key] = values.length === 1 ? values[0] : values;
     }
+    return filters;
   }
-  return filters;
-}
 
   function filtersCacheKey(obj) {
     try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ""; }
@@ -347,37 +341,15 @@
   }
 
   (async function boot() {
-    // Garante que o CSS esteja aplicado.
-  if (!document.querySelector('link[href$="pagefind-bridge.css"]')) {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "assets/pagefind-bridge.css"; // Verifique se este caminho está correto
-    document.head.appendChild(link);
-  }
-
-  const input = await waitForSearchInput();
-  const { btn } = injectUI(input);
-  
-  // --- INÍCIO DA CORREÇÃO CRUCIAL ---
-  // Encontra o container dos filtros e impede que o script principal da página
-  // processe os cliques nos checkboxes, deixando o controle para o Pagefind.
-  const filtersContainer = findFiltersBlock();
-  if (filtersContainer) {
-    filtersContainer.addEventListener('click', function(event) {
-      // Verifica se o clique foi em um checkbox de filtro de tipo
-      const target = event.target;
-      if (target.matches('input[type="checkbox"][name="tipo"]')) {
-        // Impede que outros scripts na página (a busca principal)
-        // recebam este evento de clique.
-        event.stopPropagation();
-      }
-    }, true); // O 'true' (useCapture) é importante para capturar o evento antes de outros scripts.
-  }
-  // --- FIM DA CORREÇÃO CRUCIAL ---
-
-  // Atualiza o badge com a contagem inicial, se houver texto na busca.
-  if (input.value) {
-    updateBadge(input.value.trim(), btn);
-  }
+    // Garante que o CSS esteja aplicado (site já inclui, mas deixamos por segurança).
+    if (!document.querySelector('link[href$="pagefind-bridge.css"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "assets/pagefind-bridge.css";
+      document.head.appendChild(link);
+    }
+    const input = await waitForSearchInput();
+    const { btn } = injectUI(input);
+    if (input.value) updateBadge(input.value.trim(), btn);
   })();
 })();
