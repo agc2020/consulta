@@ -276,12 +276,32 @@
     const overlay = document.getElementById("pf-overlay");
     const backdrop = document.getElementById("pf-overlay-backdrop");
     const body = overlay.querySelector("#pf-body");
+    
+    // === [fix:transfer-search-content] Captura valor do input principal se query estiver vazia
+    const mainSearchInput = document.getElementById('searchInput');
+    if (!query && mainSearchInput) {
+      query = mainSearchInput.value.trim();
+    }
+    
 	// Se a UI padrão do Pagefind estiver montada, não renderizamos manualmente os resultados
     if (body && body.querySelector('[data-pagefind-ui]')) {
       overlay.style.display = "block";
       backdrop.style.display = "block";
       const inputUI = body.querySelector('input[type="search"], input[type="text"]');
-      if (inputUI) inputUI.focus();
+      if (inputUI) {
+        // === [fix:transfer-search-content] Transfere o valor para o input do modal
+        if (query) {
+          inputUI.value = query;
+          inputUI.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+        inputUI.focus();
+      }
+      
+      // === [fix:transfer-search-content] Limpa o input principal para não interferir na busca do Pagefind
+      if (mainSearchInput && query) {
+        mainSearchInput.value = '';
+        mainSearchInput.dispatchEvent(new Event('input', { bubbles: true }));
+      }
       return;
     }
     const countElement = overlay.querySelector(".count");
