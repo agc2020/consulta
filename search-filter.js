@@ -105,12 +105,14 @@
       'Lei',
       'Decreto-Lei',
       'Decreto',
+	  'Decreto Judiciário',
       'Resolução',
       'Portaria',
       'Instrução Normativa',
       'Provimento',
       'Ato Normativo',
       'Ato Conjunto',
+	  'Ofício-Circular',
       'Código'
     ];
     
