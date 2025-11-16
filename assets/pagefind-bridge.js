@@ -373,3 +373,54 @@
     if (input.value) updateBadge(input.value.trim(), btn);
   })();
 })();
+
+
+// ==== Correção: Remover lupa do placeholder quando o usuário digita ====
+// Monitora o input do Pagefind e ajusta o placeholder dinamicamente
+(function() {
+  function setupSearchIconRemoval() {
+    // Aguardar o Pagefind UI ser montado
+    const checkInterval = setInterval(() => {
+      const pagefindInput = document.querySelector('.pagefind-ui__search-input');
+      
+      if (pagefindInput) {
+        clearInterval(checkInterval);
+        
+        // Salvar o placeholder original
+        const originalPlaceholder = pagefindInput.getAttribute('placeholder') || '';
+        const placeholderWithoutIcon = originalPlaceholder.replace(/🔍\s*/g, '');
+        
+        // Função para atualizar o placeholder
+        function updatePlaceholder() {
+          if (pagefindInput.value.trim() !== '') {
+            // Se houver texto, remover a lupa
+            pagefindInput.setAttribute('placeholder', placeholderWithoutIcon);
+          } else {
+            // Se estiver vazio, restaurar a lupa
+            pagefindInput.setAttribute('placeholder', originalPlaceholder);
+          }
+        }
+        
+        // Monitorar eventos de input
+        pagefindInput.addEventListener('input', updatePlaceholder);
+        pagefindInput.addEventListener('change', updatePlaceholder);
+        pagefindInput.addEventListener('keyup', updatePlaceholder);
+        
+        // Verificar estado inicial
+        updatePlaceholder();
+        
+        console.log('[Pagefind] Remoção automática da lupa configurada');
+      }
+    }, 100); // Verificar a cada 100ms
+    
+    // Timeout de segurança para não ficar verificando eternamente
+    setTimeout(() => clearInterval(checkInterval), 10000); // 10 segundos
+  }
+  
+  // Executar quando o DOM estiver pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupSearchIconRemoval);
+  } else {
+    setupSearchIconRemoval();
+  }
+})();

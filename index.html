@@ -13,6 +13,28 @@
 <body>
   <main class="container">
     <header>
+      <!-- Toggle de Tema -->
+      <div class="theme-toggle-container">
+        <div class="theme-toggle-label">Tema</div>
+        <div class="theme-options">
+          <label class="theme-option" data-theme="auto">
+            <input type="radio" name="theme" value="auto" checked>
+            <span class="theme-icon">🌓</span>
+            <span>Sistema</span>
+          </label>
+          <label class="theme-option" data-theme="light">
+            <input type="radio" name="theme" value="light">
+            <span class="theme-icon">☀️</span>
+            <span>Claro</span>
+          </label>
+          <label class="theme-option" data-theme="dark">
+            <input type="radio" name="theme" value="dark">
+            <span class="theme-icon">🌙</span>
+            <span>Escuro</span>
+          </label>
+        </div>
+      </div>
+      
       <h1>Base de Atos Normativos (Espelho Não oficial)</h1>
       <p class="subtitle">
         Espelho técnico com URLs rasas para facilitar ingestão do conteúdo por IAs previamente autorizadas.
@@ -5920,7 +5942,82 @@
 			}
 		  }
 		}
-	  });
-	</script>
-</body>
+		  });
+		</script>
+		
+		<!-- Script de Controle de Tema -->
+		<script>
+		  (function() {
+			// Função para aplicar o tema
+			function applyTheme(theme) {
+			  const root = document.documentElement;
+			  
+			  if (theme === 'dark') {
+				root.setAttribute('data-theme', 'dark');
+			  } else if (theme === 'light') {
+				root.removeAttribute('data-theme');
+			  } else if (theme === 'auto') {
+				// Detecta o tema do sistema
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (prefersDark) {
+				  root.setAttribute('data-theme', 'dark');
+				} else {
+				  root.removeAttribute('data-theme');
+				}
+			  }
+			}
+			
+			// Função para atualizar a UI do toggle
+			function updateToggleUI(theme) {
+			  const options = document.querySelectorAll('.theme-option');
+			  options.forEach(option => {
+				const input = option.querySelector('input');
+				if (input.value === theme) {
+				  option.classList.add('active');
+				  input.checked = true;
+				} else {
+				  option.classList.remove('active');
+				  input.checked = false;
+				}
+			  });
+			}
+			
+			// Carrega a preferência salva ou usa 'auto' como padrão
+			const savedTheme = localStorage.getItem('theme') || 'auto';
+			applyTheme(savedTheme);
+			
+			// Aguarda o DOM estar pronto para configurar os event listeners
+			document.addEventListener('DOMContentLoaded', function() {
+			  updateToggleUI(savedTheme);
+			  
+			  // Adiciona listeners aos botões de tema
+			  const themeOptions = document.querySelectorAll('.theme-option');
+			  themeOptions.forEach(option => {
+				option.addEventListener('click', function() {
+				  const input = this.querySelector('input');
+				  const theme = input.value;
+				  
+				  // Salva a preferência
+				  localStorage.setItem('theme', theme);
+				  
+				  // Aplica o tema
+				  applyTheme(theme);
+				  
+				  // Atualiza a UI
+				  updateToggleUI(theme);
+				});
+			  });
+			  
+			  // Observa mudanças no tema do sistema quando 'auto' está selecionado
+			  const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			  darkModeMediaQuery.addEventListener('change', function(e) {
+				const currentTheme = localStorage.getItem('theme') || 'auto';
+				if (currentTheme === 'auto') {
+				  applyTheme('auto');
+				}
+			  });
+			});
+		  })();
+		</script>
+	</body>
 </html>

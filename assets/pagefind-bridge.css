@@ -27,6 +27,12 @@
   display: none;
   overflow: hidden;
   max-height: 90vh;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] #pf-overlay {
+  background: #252525;
+  border-color: #333;
 }
 
 /* Cabeçalho do modal */
@@ -37,6 +43,12 @@
   padding: 12px 16px;
   border-bottom: 1px solid var(--border-color);
   background: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] #pf-header {
+  background: #2a2a2a;
+  border-color: #333;
 }
 
 #pf-header .title {
@@ -78,8 +90,14 @@
   color: inherit;
   background: #fafafa;
   margin-bottom: 10px;
-  transition: box-shadow .2s ease, transform .2s ease;
+  transition: box-shadow .2s ease, transform .2s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
+
+[data-theme="dark"] .pf-hit {
+  background: #2a2a2a;
+  border-color: #333;
+}
+
 .pf-hit:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
 
 .pf-title {
@@ -116,13 +134,17 @@
   font-weight: 600;
   border: 2px solid var(--primary-color);
   border-radius: 10px;
-  background: white;
+  background: transparent;
   color: var(--primary-color);
   cursor: pointer;
   transition: all .2s ease;
   font-family: inherit;
   white-space: nowrap;
   width: fit-content;       /* mantém tamanho ao conteúdo */
+}
+
+[data-theme="dark"] #pf-trigger {
+  background: transparent;
 }
 
 #pf-trigger:hover {
@@ -149,6 +171,12 @@
   background: #ffe08a;
   padding: 0 .1em;
   border-radius: .2em;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] #pf-body mark {
+  background: #8b7300;
+  color: #fff;
 }
 
 /* Responsividade */
@@ -156,21 +184,9 @@
   #pf-overlay { inset: 6% 4%; }
   #pf-body { padding: 10px 12px 12px; }
   #pf-trigger {
-  display: block;
-  margin: 8px auto 0 auto;  /* centraliza horizontalmente abaixo do input */
-  padding: 12px 16px;
-  font-size: .95rem;
-  font-weight: 600;
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  background: white;
-  color: var(--primary-color);
-  cursor: pointer;
-  transition: all .2s ease;
-  font-family: inherit;
-  white-space: nowrap;
-  width: fit-content;       /* mantém tamanho ao conteúdo */
-}
+    padding: 10px 14px;
+    font-size: .9rem;
+  }
 }
 
 /* ==== Overrides Pagefind: trechos mais longos nos resultados ==== */
@@ -205,11 +221,140 @@
 }
 #pf-overlay .pf-clear{
   padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   background: #f6f6f6;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
+[data-theme="dark"] #pf-overlay .pf-clear {
+  background: #2a2a2a;
+  border-color: #333;
+  color: var(--text-color);
+}
+
 #pf-overlay .pf-clear:hover{
   background:#eee;
+}
+
+[data-theme="dark"] #pf-overlay .pf-clear:hover {
+  background: #333;
+}
+
+
+/* ==== Harmonização da barra de pesquisa do Pagefind ==== */
+/* Estilo igual ao #searchInput da página principal */
+
+/* Seletores do Pagefind UI para o input de busca */
+.pagefind-ui__search-input,
+#pf-overlay input[type="search"],
+#pf-overlay input[type="text"],
+#pf-body input[type="search"],
+#pf-body input[type="text"] {
+  width: 100% !important;
+  padding: 16px 20px 16px 45px !important;
+  font-size: 1rem !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: 12px !important;
+  background: white !important;
+  color: var(--text-color) !important;
+  transition: all .2s ease !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+}
+
+/* Modo dark para a barra de pesquisa */
+[data-theme="dark"] .pagefind-ui__search-input,
+[data-theme="dark"] #pf-overlay input[type="search"],
+[data-theme="dark"] #pf-overlay input[type="text"],
+[data-theme="dark"] #pf-body input[type="search"],
+[data-theme="dark"] #pf-body input[type="text"] {
+  background: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Estado de foco */
+.pagefind-ui__search-input:focus,
+#pf-overlay input[type="search"]:focus,
+#pf-overlay input[type="text"]:focus,
+#pf-body input[type="search"]:focus,
+#pf-body input[type="text"]:focus {
+  outline: none !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 4px rgba(0, 85, 204, 0.1) !important;
+}
+
+[data-theme="dark"] .pagefind-ui__search-input:focus,
+[data-theme="dark"] #pf-overlay input[type="search"]:focus,
+[data-theme="dark"] #pf-overlay input[type="text"]:focus,
+[data-theme="dark"] #pf-body input[type="search"]:focus,
+[data-theme="dark"] #pf-body input[type="text"]:focus {
+  box-shadow: 0 0 0 4px rgba(74, 158, 255, 0.2) !important;
+}
+
+/* Placeholder */
+.pagefind-ui__search-input::placeholder,
+#pf-overlay input[type="search"]::placeholder,
+#pf-overlay input[type="text"]::placeholder,
+#pf-body input[type="search"]::placeholder,
+#pf-body input[type="text"]::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Remover estilos padrão do Pagefind que podem conflitar */
+.pagefind-ui__search-clear {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .pagefind-ui__search-clear {
+  color: #a0a0a0 !important;
+}
+
+/* Container da busca do Pagefind */
+.pagefind-ui__form,
+.pagefind-ui__search {
+  background: transparent !important;
+}
+
+
+/* ==== Correção: Ocultar lupa quando o usuário digita ==== */
+/* A lupa do Pagefind é adicionada via ::before no container do input */
+/* Precisamos ocultá-la quando o input tiver valor (não vazio) */
+
+/* Ocultar lupa quando o input não está vazio */
+.pagefind-ui__search-input:not(:placeholder-shown) {
+  padding-left: 20px !important;  /* Remove espaço extra da lupa */
+}
+
+/* Ocultar o ícone de lupa do Pagefind quando houver texto */
+.pagefind-ui__form:has(input:not(:placeholder-shown)) .pagefind-ui__search-clear {
+  display: block !important;
+}
+
+/* Alternativa: usar JavaScript para adicionar classe quando houver texto */
+/* Mas vamos tentar primeiro com CSS puro usando :not(:placeholder-shown) */
+
+/* Se o Pagefind usar um elemento separado para a lupa, ocultá-lo */
+.pagefind-ui__search-input:not(:placeholder-shown) ~ .pagefind-ui__search-icon,
+.pagefind-ui__search-input:not(:placeholder-shown) + .pagefind-ui__search-icon {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Se a lupa for um pseudo-elemento ::before ou ::after */
+.pagefind-ui__form:has(input:not(:placeholder-shown))::before,
+.pagefind-ui__search:has(input:not(:placeholder-shown))::before {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Ajustar padding do input quando vazio (com lupa) vs quando preenchido (sem lupa) */
+.pagefind-ui__search-input:placeholder-shown {
+  padding-left: 40px !important;  /* Espaço para a lupa */
+}
+
+.pagefind-ui__search-input:not(:placeholder-shown) {
+  padding-left: 20px !important;  /* Sem espaço para lupa */
 }
