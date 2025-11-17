@@ -26,10 +26,6 @@
     ano: ''
   };
 
-  // ======= VARIÁVEIS PARA CONTROLE DE LISTENERS =======
-  let searchTimeout;
-  let listenersAttached = false;
-
   // ======= INICIALIZAÇÃO =======
   function init() {
     // Aguardar carregamento do DOM
@@ -55,10 +51,6 @@
     
     // Atualizar contador inicial
     updateResultCount();
-    
-    // ======= PROTEÇÃO CONTRA PERDA DE LISTENERS =======
-    // Monitora mudanças no DOM para garantir que os listeners persistam
-    observeSearchInputChanges();
   }
 
   // ======= EXTRAÇÃO DE DADOS =======
@@ -157,15 +149,6 @@
     // Criar container de controles
     const controlsHTML = `
       <div class="controls-container" id="searchControls">
-        <div class="search-box">
-          <input 
-            type="search" 
-            id="searchInput" 
-            placeholder="🔍 Buscar por título, descrição ou palavra-chave..."
-            autocomplete="off"
-          />
-        </div>
-        
         <div class="filters-row">
           <select id="filterOrgao" class="filter-select" data-filter-key="orgao">
             <option value="">Todos os Órgãos</option>
@@ -236,86 +219,29 @@
 
   // ======= EVENT LISTENERS =======
   function setupEventListeners() {
-    // Marcar que os listeners foram anexados
-    listenersAttached = true;
-    
-    const searchInput = document.getElementById('searchInput');
     const filterOrgao = document.getElementById('filterOrgao');
     const filterTipo = document.getElementById('filterTipo');
     const filterAno = document.getElementById('filterAno');
     const resetBtn = document.getElementById('resetFilters');
     
-    // Verificar se os elementos existem antes de adicionar listeners
-    if (!searchInput || !filterOrgao || !filterTipo || !filterAno || !resetBtn) {
-      console.warn('[search-filter] Elementos não encontrados, aguardando...');
-      listenersAttached = false;
-      return;
-    }
-    
-    // Busca com debounce
-    searchInput.addEventListener('input', handleSearchInput);
-    
     // Filtros
-    filterOrgao.addEventListener('change', handleFilterOrgaoChange);
-    filterTipo.addEventListener('change', handleFilterTipoChange);
-    filterAno.addEventListener('change', handleFilterAnoChange);
+    filterOrgao.addEventListener('change', (e) => {
+      currentFilters.orgao = e.target.value;
+      applyFilters();
+    });
+    
+    filterTipo.addEventListener('change', (e) => {
+      currentFilters.tipo = e.target.value;
+      applyFilters();
+    });
+    
+    filterAno.addEventListener('change', (e) => {
+      currentFilters.ano = e.target.value;
+      applyFilters();
+    });
     
     // Reset
     resetBtn.addEventListener('click', resetFilters);
-  }
-
-  // ======= HANDLERS DE EVENTOS (funções nomeadas para facilitar remoção/readição) =======
-  function handleSearchInput(e) {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-      currentFilters.search = e.target.value.trim();
-      applyFilters();
-    }, 300);
-  }
-
-  function handleFilterOrgaoChange(e) {
-    currentFilters.orgao = e.target.value;
-    applyFilters();
-  }
-
-  function handleFilterTipoChange(e) {
-    currentFilters.tipo = e.target.value;
-    applyFilters();
-  }
-
-  function handleFilterAnoChange(e) {
-    currentFilters.ano = e.target.value;
-    applyFilters();
-  }
-
-  // ======= OBSERVADOR DE MUDANÇAS NO DOM =======
-  function observeSearchInputChanges() {
-    // Criar um MutationObserver para detectar se o searchInput é removido ou modificado
-    const observer = new MutationObserver((mutations) => {
-      // Verificar se o searchInput ainda existe e se os listeners estão anexados
-      const searchInput = document.getElementById('searchInput');
-      
-      if (searchInput && !listenersAttached) {
-        console.log('[search-filter] Reanexando event listeners após mudança no DOM');
-        setupEventListeners();
-      }
-    });
-    
-    // Observar mudanças no container de controles
-    const controlsContainer = document.getElementById('searchControls');
-    if (controlsContainer) {
-      observer.observe(controlsContainer, {
-        childList: true,
-        subtree: true,
-        attributes: false
-      });
-    }
-    
-    // Também observar mudanças no body para capturar recriações completas
-    observer.observe(document.body, {
-      childList: true,
-      subtree: false
-    });
   }
 
   // ======= APLICAÇÃO DE FILTROS =======
@@ -406,7 +332,6 @@
 
   function resetFilters() {
     // Limpar inputs
-    document.getElementById('searchInput').value = '';
     document.getElementById('filterOrgao').value = '';
     document.getElementById('filterTipo').value = '';
     document.getElementById('filterAno').value = '';
