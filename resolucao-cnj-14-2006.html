@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução CNJ Nº 14/2006 – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="CNJ" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2006" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>RESOLUÇÃO CNJ Nº 14, DE 30 DE MARÇO DE 2006 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="CNJ" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2006" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,127 +315,246 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução CNJ Nº 14/2006</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 03:09:04 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/178" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 9.803 caracteres | espelho: 9.700 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução Nº 14 de 21/03/2006</p>
-<p>Teto Remuneratório; </p>
-<p>Ementa: Dispõe sobre a aplicação do teto remuneratório constitucional para os servidores do Poder Judiciário e para a magistratura dos Estados que não adotam o subsídio.</p>
-<p>Fonte: DJ nº 62/2006, de 30 de março de 2006, pg. 145-146.</p>
-<p>Alteração</p>
-<p>Resolução n. 42, de 11 de setembro de 2007</p>
-<p>Resolução n. 326, de 26 junho de 2020</p>
-<p>Resolução n. 517, de 25 de agosto de 2023</p>
-<p>Resolução n. 607, de 19 de dezembro de 2024</p>
-<p>Legislação Correlata</p>
-<p>Lei n. 11.143, de 26 de julho de 2005</p>
-<p>Resolução n. 13, de 21 de março de 2006</p>
-<p>Texto</p>
-<p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA, no uso de suas atribuições, tendo em vista o decidido em Sessão de 21 de março de 2006,</p>
-<h2>CONSIDERANDO o disposto na Lei nº 11.143, de 26 de julho de 2005,</h2>
-<h2>CONSIDERANDO o disposto no art. 37, inciso XI, da Constituição Federal, com a redação dada pela Emenda Constitucional nº 41, de 19 de dezembro de 2003,</h2>
-<h2>CONSIDERANDO o disposto no art. 103-B, § 4º, II, da Constituição Federal, introduzido pela Emenda Constitucional nº 45, de 30 de dezembro de 2004,</h2>
-<h2>CONSIDERANDO o disposto na Resolução CNJ nº 13, de 21 de março de 2006,</h2>
-<h2>RESOLVE:</h2>
-<h3>Art. 1º O teto remuneratório para os servidores do Poder Judiciário da União, nos termos do inciso XI do art. 37 da Constituição Federal , é o subsídio de Ministro do Supremo Tribunal Federal e corresponde a R$ 24.500,00 (vinte e quatro mil e quinhentos reais).</h3>
-<h3>Art. 1º O teto remuneratório para os servidores do Poder Judiciário da União, nos termos do inciso XI do art. 37 da Constituição Federal , é o subsídio de Ministro do Supremo Tribunal Federal, no valor fixado em Lei. ( Redação dada pela Resolução nº 326, de 26.6.2020)</h3>
-<h4>Parágrafo único. Enquanto não editadas as leis estaduais referidas no a rt. 93, inciso V, da Constituição Federal , o limite remuneratório dos magistrados e servidores dos Tribunais de Justiça corresponde a 90,25% (noventa inteiros e vinte e cinco centésimos por cento) do teto remuneratório constitucional referido no caput, nos termos do disposto no art. 8º da Emenda Constitucional nº 41/2003 . ( Eficácia suspensa – vide ADI/3854) ( Declarado inconstitucional conforme Ação Direta de Inconstitucionalidade nº 4014)</h4>
-<h3>Art. 2º Estão sujeitas aos tetos remuneratórios previstos no art. 1º as seguintes verbas:</h3>
-<h5>I - de caráter permanente:</h5>
-<h6>a) vencimentos fixados nas tabelas respectivas;</h6>
-<h6>b) verbas de representação;</h6>
-<h6>c) parcelas de equivalência ou isonomia;</h6>
-<h6>d) abonos;</h6>
-<h6>e) prêmios;</h6>
-<h6>f) adicionais, inclusive anuênios, biênios, triênios, qüinqüênios, sexta-parte, "cascatinha", 15% e 25%, trintenário e quaisquer outros referentes a tempo de serviço;</h6>
-<h6>g) gratificações;</h6>
-<h6>h) vantagens de qualquer natureza, tais como:</h6>
-<p>1. gratificação por exercício de mandato (Presidente, Vice-Presidente, Corregedor, Diretor de Foro e outros encargos de direção e confiança);</p>
-<p>2. diferenças individuais para compensar decréscimo remuneratório;</p>
-<p>3. verba de permanência em serviço mantida nos proventos e nas pensões estatutárias;</p>
-<p>4. quintos;</p>
-<p>5. vantagens pessoais e as nominalmente identificadas - VPNI;</p>
-<p>6. ajuda de custo para capacitação profissional.</p>
-<p>i) retribuição pelo exercício, enquanto este perdurar, em comarca de difícil provimento;</p>
-<h6>j) proventos e pensões estatutárias;</h6>
-<p><del>k) percepção cumulativa de remuneração, proventos e pensões, de qualquer origem, nos termos do art. 37, inciso XI da Constituição Federal, ressalvado o disposto no art. 4º desta Resolução. ( Revogada pela Resolução nº 42, de 11.09.07)</del></p>
-<p>l - outras verbas remuneratórias, de qualquer origem;</p>
-<h5>II - de caráter eventual ou temporário:</h5>
-<h6>a) gratificação pelo exercício de encargos de direção: Presidente de Tribunal e de Conselho, Vice-Presidente, Corregedor e Vice-Corregedor , Conselheiro, Presidente de Câmara, Seção ou Turma, Diretor de Foro, Coordenador de Juizados Especiais, Diretor e Vice-Diretor de Escola e outros;</h6>
-<h6>b) exercício cumulativo de atribuições, como nos casos de atuação em comarcas integradas, varas distintas na mesma Comarca ou circunscrição, distintas jurisdições e juizados especiais;</h6>
-<h6>c) substituições;</h6>
-<h6>d) diferença de entrância;</h6>
-<h6>e) gratificação por outros encargos na magistratura, tais como: Juiz Auxiliar na Presidência, na Vice-Presidência, na Corregedoria, e no segundo grau de jurisdição, Ouvidor, Grupos de Trabalho e Comissões, Plantão, Juiz Regional de Menores, Juizado Especial Adjunto, Juiz Orientador do Disque Judiciário, e Turma Recursal;</h6>
-<h6>f) remuneração pelo exercício de função comissionada ou cargo em comissão;</h6>
-<h6>g) abono, verba de representação e qualquer outra espécie remuneratória referente à remuneração do cargo e à de seu ocupante;</h6>
-<h6>h) valores pagos em atraso, sujeitos ao cotejo com o teto junto com a remuneração do mês de competência;</h6>
-<h5>III - outras verbas, de qualquer origem, que não estejam explicitamente excluídas pelo art. 4º.</h5>
-<h4>Parágrafo único. Para efeito de percepção cumulativa de subsídios, remuneração ou proventos, juntamente com pensão decorrente de falecimento de cônjuge ou companheira(o), observar-se-á o limite fixado na Constituição Federal como teto remuneratório, hipótese em que deverão ser considerados individualmente. ( Incluído pela Resolução nº 42, de 11.09.07) (revogado em razão da decisão objeto do Acórdão proferido na Consulta 0005598-27.2021.2.00.0000) (revogado em razão da redação dada pela Resolução n. 517, de 25.8.2023)</h4>
-<h3>Art. 3º Não podem exceder o valor do teto remuneratório, embora não se somem entre si e nem com a remuneração do mês em que se der o pagamento:</h3>
-<h5>I - adiantamento de férias;</h5>
-<h5>II - décimo terceiro salário;</h5>
-<h5>III - terço constitucional de férias;</h5>
-<h5>IV - trabalho extraordinário de servidores.</h5>
-<h3>Art. 4º Ficam excluídas da incidência do teto remuneratório constitucional as seguintes verbas:</h3>
-<h5>I - de caráter indenizatório, previstas em lei:</h5>
-<h6>a) ajuda de custo para mudança e transporte;</h6>
-<h6>b) auxílio-alimentação;</h6>
-<h6>c) auxílio-moradia;</h6>
-<h6>d) diárias;</h6>
-<h6>e) auxílio-funeral;</h6>
-<h6>f) auxílio-reclusão;</h6>
-<h6>g) auxílio-transporte;</h6>
-<h6>h) indenização de férias não gozadas;</h6>
-<p>i) indenização de transporte;</p>
-<h6>j) licença-prêmio convertida em pecúnia;</h6>
-<h6>k) outras parcelas indenizatórias previstas em lei e, para os magistrados, as previstas na Lei Orgânica da Magistratura Nacional de que trata o art. 93 da Constituição Federal.</h6>
-<h5>II - de caráter permanente:</h5>
-<h6>a) remuneração ou provento de magistrado decorrente do exercício do magistério, nos termos do art. 95, parágrafo único, inciso I, da Constituição Federal.</h6>
-<h6>b) benefícios percebidos de planos de previdência instituídos por entidades fechadas, ainda que extintas.</h6>
-<h5>III - de caráter eventual ou temporário:</h5>
-<h6>a) auxílio pré-escolar;</h6>
-<h6>b) benefícios de plano de assistência médico-social;</h6>
-<h6>c) devolução de valores tributários e/ou contribuições previdenciárias indevidamente recolhidos;</h6>
-<h6>d) gratificação do magistrado pelo exercício da função eleitoral, prevista nos art. 1º e 2º da Lei nº 8.350, de 28 de dezembro de 1991 , na redação dada pela Lei nº 11.143, de 26 de julho de 2005 ;</h6>
-<h6>e) gratificação de magistério por hora-aula proferida no âmbito do Poder Público;</h6>
-<h6>f) bolsa de estudo que tenha caráter remuneratório.</h6>
-<h5>IV - abono de permanência em serviço, no mesmo valor da contribuição previdenciária, conforme previsto no art. 40, § 19, da Constituição Federal , incluído pela Emenda Constitucional nº 41, de 31 de dezembro de 2003.</h5>
-<h4>Parágrafo único . § 1º É vedada, no cotejo com o teto remuneratório, a exclusão de verbas que não estejam arroladas nos incisos e alíneas deste artigo. ( renumerado pela Resolução n. 607, de 19.12.2024)</h4>
-<h4>§ 2º Nas hipóteses de acumulação de cargos, empregos e funções públicas e de acumulação de proventos de aposentadoria com remuneração decorrente do exercício de cargo, emprego e função pública, quando constitucionalmente autorizadas, o limite remuneratório constitucional considerará cada um dos vínculos formalizados, afastada a observância do teto remuneratório quanto ao somatório dos ganhos do agente público. ( incluído pela Resolução n. 607, de 19.12.2024)</h4>
-<h3>Art. 5º É vedado ao Poder Judiciário dos Estados:</h3>
-<h5>I - conceder adicionais ou vantagens pecuniárias não previstas na Lei Complementar nº 35/79 (LOMAN) , bem como em bases e limites superiores aos nela fixados;</h5>
-<h5>II - propor alteração nas leis que dispõem sobre verbas remuneratórias dos magistrados, salvo para reestruturação das carreiras com fixação do subsídio.</h5>
-<h5>III - conceder, após a vigência do teto remuneratório fixado no parágrafo único do art. 1º desta Resolução, vantagens pecuniárias automáticas em razão da alteração do subsídio de Ministro do Supremo Tribunal Federal.</h5>
-<p><del></del></p>
-<h3>Art. 6º Os Tribunais publicação, no Diário Oficial respectivo, até 15 de janeiro de cada ano, os valores da remuneração de seus magistrados e dos cargos e empregos públicos de seus servidores, em cumprimento ao disposto no § 6º do art. 39 da Constituição Federal . ( Revogado pela Resolução nº 326, de 26.6.2020)</h3>
-<p><del></del></p>
-<h3>Art. 7º Os Tribunais ajustar-se-ão, a partir do mês de junho de 2006, inclusive, aos termos desta Resolução. ( Revogado pela Resolução nº 326, de 26.6.2020)</h3>
-<p><del>Parágrafo único. Os Presidentes dos Tribunais enviarão ao Conselho Nacional de Justiça, no mês de julho de 2006, relatório circunstanciado das medidas efetivadas, constando a remuneração dos membros do Poder Judiciário e a de seus servidores. ( Revogado pela Resolução nº 326, de 26.6.2020)</del></p>
-<h3>Art. 8º Esta Resolução entra em vigor na data de sua publicação.</h3>
-<p>Ministro NELSON JOBIM</p>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>RESOLUÇÃO CNJ Nº 14, DE 30 DE MARÇO DE 2006</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:16:53 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/178" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 9.803 caracteres | espelho: 9.700 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução Nº 14 de 21/03/2006</p>
+ <p>Teto Remuneratório; <div class="row"> <div class="col-2 identificacao">Assuntos</div> <div class="col-10 dsc_conteudo"> </div> </div></p>
+ <p>Ementa: Dispõe sobre a aplicação do teto remuneratório constitucional para os servidores do Poder Judiciário e para a magistratura dos Estados que não adotam o subsídio.</p>
+ <p>Fonte: DJ nº 62/2006, de 30 de março de 2006, pg. 145-146.</p>
+ <p>Alteração</p>
+ <p>Resolução n. 42, de 11 de setembro de 2007</p>
+ <p>Resolução n. 326, de 26 junho de 2020</p>
+ <p>Resolução n. 517, de 25 de agosto de 2023</p>
+ <p>Resolução n. 607, de 19 de dezembro de 2024</p>
+ <p>Legislação Correlata</p>
+ <p>Lei n. 11.143, de 26 de julho de 2005</p>
+ <p>Resolução n. 13, de 21 de março de 2006</p>
+ <p>Texto</p>
+ <p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA, no uso de suas atribuições, tendo em vista o decidido em Sessão de 21 de março de 2006,</p>
+ <h2>CONSIDERANDO o disposto na Lei nº 11.143, de 26 de julho de 2005,</h2>
+ <h2>CONSIDERANDO o disposto no art. 37, inciso XI, da Constituição Federal, com a redação dada pela Emenda Constitucional nº 41, de 19 de dezembro de 2003,</h2>
+ <h2>CONSIDERANDO o disposto no art. 103-B, § 4º, II, da Constituição Federal, introduzido pela Emenda Constitucional nº 45, de 30 de dezembro de 2004,</h2>
+ <h2>CONSIDERANDO o disposto na Resolução CNJ nº 13, de 21 de março de 2006,</h2>
+ <h2>RESOLVE:</h2>
+ <h3>Art. 1º O teto remuneratório para os servidores do Poder Judiciário da União, nos termos do inciso XI do art. 37 da Constituição Federal , é o subsídio de Ministro do Supremo Tribunal Federal e corresponde a R$ 24.500,00 (vinte e quatro mil e quinhentos reais).</h3>
+ <h3>Art. 1º O teto remuneratório para os servidores do Poder Judiciário da União, nos termos do inciso XI do art. 37 da Constituição Federal , é o subsídio de Ministro do Supremo Tribunal Federal, no valor fixado em Lei. ( Redação dada pela Resolução nº 326, de 26.6.2020)</h3>
+ <h4>Parágrafo único. Enquanto não editadas as leis estaduais referidas no a rt. 93, inciso V, da Constituição Federal , o limite remuneratório dos magistrados e servidores dos Tribunais de Justiça corresponde a 90,25% (noventa inteiros e vinte e cinco centésimos por cento) do teto remuneratório constitucional referido no caput, nos termos do disposto no art. 8º da Emenda Constitucional nº 41/2003 . ( Eficácia suspensa – vide ADI/3854) ( Declarado inconstitucional conforme Ação Direta de Inconstitucionalidade nº 4014)</h4>
+ <h3>Art. 2º Estão sujeitas aos tetos remuneratórios previstos no art. 1º as seguintes verbas:</h3>
+ <h5>I - de caráter permanente:</h5>
+ <h6>a) vencimentos fixados nas tabelas respectivas;</h6>
+ <h6>b) verbas de representação;</h6>
+ <h6>c) parcelas de equivalência ou isonomia;</h6>
+ <h6>d) abonos;</h6>
+ <h6>e) prêmios;</h6>
+ <h6>f) adicionais, inclusive anuênios, biênios, triênios, qüinqüênios, sexta-parte, "cascatinha", 15% e 25%, trintenário e quaisquer outros referentes a tempo de serviço;</h6>
+ <h6>g) gratificações;</h6>
+ <h6>h) vantagens de qualquer natureza, tais como:</h6>
+ <p>1. gratificação por exercício de mandato (Presidente, Vice-Presidente, Corregedor, Diretor de Foro e outros encargos de direção e confiança);</p>
+ <p>2. diferenças individuais para compensar decréscimo remuneratório;</p>
+ <p>3. verba de permanência em serviço mantida nos proventos e nas pensões estatutárias;</p>
+ <p>4. quintos;</p>
+ <p>5. vantagens pessoais e as nominalmente identificadas - VPNI;</p>
+ <p>6. ajuda de custo para capacitação profissional.</p>
+ <p>i) retribuição pelo exercício, enquanto este perdurar, em comarca de difícil provimento;</p>
+ <h6>j) proventos e pensões estatutárias;</h6>
+ <p><del>k) percepção cumulativa de remuneração, proventos e pensões, de qualquer origem, nos termos do art. 37, inciso XI da Constituição Federal, ressalvado o disposto no art. 4º desta Resolução. ( Revogada pela Resolução nº 42, de 11.09.07)</del></p>
+ <p>l - outras verbas remuneratórias, de qualquer origem;</p>
+ <h5>II - de caráter eventual ou temporário:</h5>
+ <h6>a) gratificação pelo exercício de encargos de direção: Presidente de Tribunal e de Conselho, Vice-Presidente, Corregedor e Vice-Corregedor , Conselheiro, Presidente de Câmara, Seção ou Turma, Diretor de Foro, Coordenador de Juizados Especiais, Diretor e Vice-Diretor de Escola e outros;</h6>
+ <h6>b) exercício cumulativo de atribuições, como nos casos de atuação em comarcas integradas, varas distintas na mesma Comarca ou circunscrição, distintas jurisdições e juizados especiais;</h6>
+ <h6>c) substituições;</h6>
+ <h6>d) diferença de entrância;</h6>
+ <h6>e) gratificação por outros encargos na magistratura, tais como: Juiz Auxiliar na Presidência, na Vice-Presidência, na Corregedoria, e no segundo grau de jurisdição, Ouvidor, Grupos de Trabalho e Comissões, Plantão, Juiz Regional de Menores, Juizado Especial Adjunto, Juiz Orientador do Disque Judiciário, e Turma Recursal;</h6>
+ <h6>f) remuneração pelo exercício de função comissionada ou cargo em comissão;</h6>
+ <h6>g) abono, verba de representação e qualquer outra espécie remuneratória referente à remuneração do cargo e à de seu ocupante;</h6>
+ <h6>h) valores pagos em atraso, sujeitos ao cotejo com o teto junto com a remuneração do mês de competência;</h6>
+ <h5>III - outras verbas, de qualquer origem, que não estejam explicitamente excluídas pelo art. 4º.</h5>
+ <h4>Parágrafo único. Para efeito de percepção cumulativa de subsídios, remuneração ou proventos, juntamente com pensão decorrente de falecimento de cônjuge ou companheira(o), observar-se-á o limite fixado na Constituição Federal como teto remuneratório, hipótese em que deverão ser considerados individualmente. ( Incluído pela Resolução nº 42, de 11.09.07) (revogado em razão da decisão objeto do Acórdão proferido na Consulta 0005598-27.2021.2.00.0000) (revogado em razão da redação dada pela Resolução n. 517, de 25.8.2023)</h4>
+ <h3>Art. 3º Não podem exceder o valor do teto remuneratório, embora não se somem entre si e nem com a remuneração do mês em que se der o pagamento:</h3>
+ <h5>I - adiantamento de férias;</h5>
+ <h5>II - décimo terceiro salário;</h5>
+ <h5>III - terço constitucional de férias;</h5>
+ <h5>IV - trabalho extraordinário de servidores.</h5>
+ <h3>Art. 4º Ficam excluídas da incidência do teto remuneratório constitucional as seguintes verbas:</h3>
+ <h5>I - de caráter indenizatório, previstas em lei:</h5>
+ <h6>a) ajuda de custo para mudança e transporte;</h6>
+ <h6>b) auxílio-alimentação;</h6>
+ <h6>c) auxílio-moradia;</h6>
+ <h6>d) diárias;</h6>
+ <h6>e) auxílio-funeral;</h6>
+ <h6>f) auxílio-reclusão;</h6>
+ <h6>g) auxílio-transporte;</h6>
+ <h6>h) indenização de férias não gozadas;</h6>
+ <p>i) indenização de transporte;</p>
+ <h6>j) licença-prêmio convertida em pecúnia;</h6>
+ <h6>k) outras parcelas indenizatórias previstas em lei e, para os magistrados, as previstas na Lei Orgânica da Magistratura Nacional de que trata o art. 93 da Constituição Federal.</h6>
+ <h5>II - de caráter permanente:</h5>
+ <h6>a) remuneração ou provento de magistrado decorrente do exercício do magistério, nos termos do art. 95, parágrafo único, inciso I, da Constituição Federal.</h6>
+ <h6>b) benefícios percebidos de planos de previdência instituídos por entidades fechadas, ainda que extintas.</h6>
+ <h5>III - de caráter eventual ou temporário:</h5>
+ <h6>a) auxílio pré-escolar;</h6>
+ <h6>b) benefícios de plano de assistência médico-social;</h6>
+ <h6>c) devolução de valores tributários e/ou contribuições previdenciárias indevidamente recolhidos;</h6>
+ <h6>d) gratificação do magistrado pelo exercício da função eleitoral, prevista nos art. 1º e 2º da Lei nº 8.350, de 28 de dezembro de 1991 , na redação dada pela Lei nº 11.143, de 26 de julho de 2005 ;</h6>
+ <h6>e) gratificação de magistério por hora-aula proferida no âmbito do Poder Público;</h6>
+ <h6>f) bolsa de estudo que tenha caráter remuneratório.</h6>
+ <h5>IV - abono de permanência em serviço, no mesmo valor da contribuição previdenciária, conforme previsto no art. 40, § 19, da Constituição Federal , incluído pela Emenda Constitucional nº 41, de 31 de dezembro de 2003.</h5>
+ <h4>Parágrafo único . § 1º É vedada, no cotejo com o teto remuneratório, a exclusão de verbas que não estejam arroladas nos incisos e alíneas deste artigo. ( renumerado pela Resolução n. 607, de 19.12.2024)</h4>
+ <h4>§ 2º Nas hipóteses de acumulação de cargos, empregos e funções públicas e de acumulação de proventos de aposentadoria com remuneração decorrente do exercício de cargo, emprego e função pública, quando constitucionalmente autorizadas, o limite remuneratório constitucional considerará cada um dos vínculos formalizados, afastada a observância do teto remuneratório quanto ao somatório dos ganhos do agente público. ( incluído pela Resolução n. 607, de 19.12.2024)</h4>
+ <h3>Art. 5º É vedado ao Poder Judiciário dos Estados:</h3>
+ <h5>I - conceder adicionais ou vantagens pecuniárias não previstas na Lei Complementar nº 35/79 (LOMAN) , bem como em bases e limites superiores aos nela fixados;</h5>
+ <h5>II - propor alteração nas leis que dispõem sobre verbas remuneratórias dos magistrados, salvo para reestruturação das carreiras com fixação do subsídio.</h5>
+ <h5>III - conceder, após a vigência do teto remuneratório fixado no parágrafo único do art. 1º desta Resolução, vantagens pecuniárias automáticas em razão da alteração do subsídio de Ministro do Supremo Tribunal Federal.</h5>
+ <p><del></p>
+ <h3>Art. 6º Os Tribunais publicação, no Diário Oficial respectivo, até 15 de janeiro de cada ano, os valores da remuneração de seus magistrados e dos cargos e empregos públicos de seus servidores, em cumprimento ao disposto no § 6º do art. 39 da Constituição Federal . ( Revogado pela Resolução nº 326, de 26.6.2020)</del></h3>
+ <p><del></p>
+ <h3>Art. 7º Os Tribunais ajustar-se-ão, a partir do mês de junho de 2006, inclusive, aos termos desta Resolução. ( Revogado pela Resolução nº 326, de 26.6.2020)</del></h3>
+ <p><del>Parágrafo único. Os Presidentes dos Tribunais enviarão ao Conselho Nacional de Justiça, no mês de julho de 2006, relatório circunstanciado das medidas efetivadas, constando a remuneração dos membros do Poder Judiciário e a de seus servidores. ( Revogado pela Resolução nº 326, de 26.6.2020)</del></p>
+ <h3>Art. 8º Esta Resolução entra em vigor na data de sua publicação.</h3>
+ <p>Ministro NELSON JOBIM</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://atos.cnj.jus.br/atos/detalhar/178" rel="nofollow" target="_blank">CNJ – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

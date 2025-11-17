@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução CNJ Nº 370/2021 – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="CNJ" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2021" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>RESOLUÇÃO CNJ Nº 370, DE 28 DE JANEIRO DE 2021 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="CNJ" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2021" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,302 +315,421 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução CNJ Nº 370/2021</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 03:30:47 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/3706" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 36.808 caracteres | espelho: 36.638 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução Nº 370 de 28/01/2021</p>
-<p>Tecnologia Da Informação E Comunicação; Gestão da Informação e de Demandas Judiciais; Gestão e Organização Judiciária; </p>
-<p>Ementa</p>
-<p>Estabelece a Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD).</p>
-<p>Fonte: DJe/CNJ nº 158/2021, de 22 de junho de 2021, p. 2-11 (republicação).</p>
-<p>Alteração</p>
-<p>Resolução n. 396, de 7 de junho de 2021</p>
-<p>Legislação Correlata</p>
-<p>Lei n. 13.709, de 14 de agosto de 2018</p>
-<p>Lei n. 11.419, de 19 de dezembro de 2006</p>
-<p>Decreto n. 10.332, de 28 de abril de 2020</p>
-<p>Resolução n. 91, de 29 de setembro de 2009</p>
-<p>Resolução n. 121, de 5 de outubro de 2010</p>
-<p>Resolução n. 182, de 17 de outubro de 2013</p>
-<p>Resolução n. 185, de 18 de dezembro de 2013</p>
-<p>Resolução n. 192, de 8 de maio de 2014</p>
-<p>Resolução n. 194, de 26 de maio de 2014</p>
-<p>Resolução n. 198, de 1º de julho de 2014</p>
-<p>Resolução n. 211, de 15 de dezembro de 2015 - revogada</p>
-<p>Resolução n. 325, de 29 de junho de 2020</p>
-<p>Recomendação n. 46, de 17 de dezembro de 2013</p>
-<p>Observação / CUMPRDEC / CONSULTA</p>
-<p>CONSULTA 0007756-21.2022.2.00.0000</p>
-<p>Cumprdec 0001454-10.2021.2.00.0000</p>
-<p>A Secretaria Processual comunica republicação da Resolução n. 370/2021, de 28 de janeiro de 2021, disponibilizada no DJe n. 24, em 29 de janeiro de 2021 em razão das alterações abaixo relacionadas:</p>
-<p>1. Deslocamento do parágrafo único do art. 31 para o art. 32 e correção da remissão no atual art. 32, § 1º:</p>
-<h3>Art. 31. Cada órgão do Poder Judiciário deverá seguir as diretrizes propostas pelo CNJ na adoção de arquitetura e plataforma de serviços em nuvem, atendendo aos requisitos de segurança da informação e proteção de dados.</h3>
-<h3>Art. 32. Na contratação de desenvolvimento de sistemas de informação considerados estratégicos, em que a propriedade intelectual não é da pessoa de direito público contratante, o órgão deverá fazer constar no instrumento contratual cláusula que determine o depósito da documentação e afins pertinentes à tecnologia de concepção, manutenção e atualização, bem como, quando cabível, do código fonte junto a autoridade brasileira que controla a propriedade intelectual de softwares para garantia da continuidade.</h3>
-<h4>Parágrafo único . § 1º O Departamento de Tecnologia da Informação e Comunicação do CNJ disponibilizará manual de referência com as diretrizes para o desenvolvimento dos sistemas elencados no art. 31 32 desta Resolução.</h4>
-<h4>Parágrafo único. § 2º Cada órgão deverá classificar seus sistemas de informação identificando quais são estratégicos. .....</h4>
-<p>2. Alterar o art. 43, fazer menção aos incisos dispostos no art. 42, não do art. 41, conforme abaixo:</p>
-<h3>Art. 43. Os órgãos que já possuem os instrumentos estratégicos e diretores de TIC poderão consolidar as iniciativas previstas nos incisos do art. 41 42 em um único plano.</h3>
-<p>Texto</p>
-<p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA (CNJ), no uso de suas atribuições legais e regimentais,</p>
-<h2>CONSIDERANDO os macrodesafios da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) para o período 2021- 2026, em especial o que trata do “Fortalecimento da Estratégia Nacional de TIC e de Proteção de Dados" – Resolução CNJ Nº 325/2020 ;</h2>
-<h2>CONSIDERANDO as atribuições estabelecidas pela Coordenação de Planejamento de Tecnologia da Informação e Comunicação (TIC) do Poder Judiciário;</h2>
-<h2>CONSIDERANDO a necessidade de assegurar a convergência dos recursos humanos, administrativos e financeiros empregados pelos segmentos do Poder Judiciário no que concerne à Tecnologia da Informação e Comunicação;</h2>
-<h2>CONSIDERANDO a Lei Nº 11.419/2006 , que dispõe sobre a informatização do processo judicial, bem como as Resoluções CNJ Nº 91/2009 , 121/2010 , 182/2013 , 185/2013 , 192/2014 , 194/2014 e 198/2014 e o Decreto Nº 10.332/2020 ;</h2>
-<h2>CONSIDERANDO a edição dos Acórdãos Nº 1603/2008, 2471/2008, 2308/2010, 2585/2012, 1200/2014, 3051/2015, 588/2018, 1534/2019, todos do Plenário do Tribunal de Contas da União (TCU), que recomendam ao Conselho Nacional de Justiça a promoção de ações voltadas para a normatização e o aperfeiçoamento dos controles e processos de governança, de gestão e de uso de TIC, inclusive com o estabelecimento de estratégias que minimizem a rotatividade do pessoal efetivo, de modo a assegurar a entrega de resultados efetivos para o Judiciário;</h2>
-<h2>CONSIDERANDO a decisão plenária tomada no julgamento do Ato Normativo Nº 0010412-19.2020.2.00.0000, na 79ª Sessão Virtual, realizada no dia 18 de dezembro de 2020;</h2>
-<h2>RESOLVE:</h2>
-<h2>CAPÍTULO I</h2>
-<h3>DISPOSIÇÕES PRELIMINARES</h3>
-<h3>Art. 1º Fica instituída a Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) para o sexênio 2021-2026, em harmonia com os macrodesafios do Poder Judiciário, em especial com o que estabelece o “Fortalecimento da Estratégia Nacional de TIC e a Proteção de Dados”.</h3>
-<h4>Parágrafo único. O objetivo da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário é constituir o principal instrumento de promoção da governança ágil e da transformação digital do Poder Judiciário por meio de serviços e soluções digitais inovadoras que impulsionem a evolução tecnológica do Poder Judiciário.</h4>
-<h3>Art. 2º A Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário é orientada em seu preâmbulo pelos objetivos dos seguintes componentes:</h3>
-<h5>I – Objetivos estratégicos, distribuídos em três perspectivas:</h5>
-<h6>a) Sociedade:</h6>
-<p>Objetivo 1: Aumentar a Satisfação dos Usuários do Sistema Judiciário;</p>
-<p>Objetivo 2: Promover a Transformação Digital;</p>
-<h6>b) Aprendizado e Crescimento:</h6>
-<p>Objetivo 3: Reconhecer e Desenvolver as Competências dos Colaboradores;</p>
-<p>Objetivo 4: Buscar a Inovação de Forma Colaborativa;</p>
-<h6>c) Processos Internos:</h6>
-<p>Objetivo 5: Aperfeiçoar a Governança e a Gestão;</p>
-<p>Objetivo 6: Aprimorar as Aquisições e Contratações;</p>
-<p>Objetivo 7: Aprimorar a Segurança da Informação e a Gestão de Dados;</p>
-<p>Objetivo 8: Promover Serviços de Infraestrutura e Soluções Corporativas.</p>
-<h5>II – Meta: Atingir no mínimo 75% dos órgãos do Poder Judiciário com nível de maturidade satisfatório no índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD) até dezembro de 2026.</h5>
-<h2>CAPÍTULO II</h2>
-<h3>DO OBJETIVO E PRINCÍPIOS</h3>
-<h3>Art. 3º A Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) tem como meta promover a melhoria da governança, da gestão e da colaboração tecnológica no âmbito do Poder Judiciário, visando direcionar e propiciar a eficiência, eficácia, efetividade e economicidade dos órgãos, com o objetivo de maximizar os resultados com otimização de recursos.</h3>
-<h4>Parágrafo único. A materialização da meta se dará a partir do alcance dos objetivos estratégicos estabelecidos que serão concretizados por meio de execução da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário de forma colaborativa e participativa, em consonância com as Diretrizes Estratégicas de Nivelamento contidas nesta Resolução.</h4>
-<h3>Art. 4º As Diretrizes Estratégicas de Nivelamento, em seu conjunto, promoverão o objetivo almejado por meio do aperfeiçoamento dos Viabilizadores de Governança de Tecnologia da Informação e Comunicação, que serão divididos em dois domínios: Governança e Gestão, e Gerenciamento de Serviços de TIC.</h3>
-<h4>§ 1º O domínio de Governança e Gestão de TIC conterá os seguintes temas: Políticas e Planejamento, iGovTIC-JUD, Transformação Digital, Atendimento e Suporte ao Usuário, Estruturas Organizacionais e Macroprocessos e Pessoas.</h4>
-<h4>§ 2º O domínio dos Serviços de TIC conterá os seguintes temas: Sistemas de Informação, Infraestrutura Tecnológica e Serviços em Nuvem, Riscos, Segurança da Informação e Proteção de Dados.</h4>
-<h3>Art. 5º Institui-se como instrumento de orientação e direcionamento à presente Resolução o Guia Estratégico de TIC do Poder Judiciário que conterá os procedimentos, recomendações e boas práticas aplicáveis ao tema, cuja disponibilização ocorrerá em até 120 dias após a publicação desta Resolução.</h3>
-<h4>§ 1º O Guia será objeto de atualização ordinária anual, sem a necessidade de elaboração de nova Resolução, após parecer de mérito do Departamento de Tecnologia da Informação (DTI) e aprovação da Comissão Permanente de Tecnologia da Informação e Inovação (CPTII) do Conselho Nacional de Justiça, assegurado o controle documental e versionamento.</h4>
-<h4>§ 2º Extraordinariamente poderão ser solicitadas revisões do Guia encaminhados pelos dirigentes de Tecnologia da Informação dos órgãos submetidos ao controle administrativo e financeiro do CNJ.</h4>
-<h4>§ 3º Os pedidos de revisão do Guia abrangerão a inclusão de sugestões, revisões ou melhorias, devendo ser devidamente justificados.</h4>
-<h2>CAPÍTULO III</h2>
-<h3>DA GOVERNANÇA E DA GESTÃO DE TIC</h3>
-<p>Seção I</p>
-<p>Das Políticas e Planejamento</p>
-<h3>Art. 6º Cada órgão deverá elaborar e manter o Plano Diretor de Tecnologia da Informação e Comunicação (PDTIC), o qual deverá elencar as ações que estarão alinhadas ao Planejamento Estratégico Institucional, ao Planejamento Estratégico Nacional do Poder Judiciário e à Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário.</h3>
-<h4>§ 1º As propostas orçamentárias de TIC de cada órgão deverão ser elaboradas em integral harmonia e alinhamento aos seus respectivos Planos Diretores.</h4>
-<h4>§ 2º As despesas de TIC terão preferência sobre as demais, salvo determinação expressa da Administração, competindo ao órgão adotar as medidas necessárias para o cumprimento da presente Resolução e pela área financeira do respectivo tribunal à fiscalização e cumprimento da prioridade exigida.</h4>
-<h4>§ 3º Os órgãos que possuem em seu planejamento o Plano Estratégico de TIC (PETIC) poderão utilizar este Instrumento até um ano após o início da vigência desta Resolução. Decorrido o prazo, as linhas estratégicas de atuação deverão ser contempladas no Plano Diretor de Tecnologia da Informação e Comunicação, com objetivo de manter a continuidade do trabalho e alinhamento da estratégia.</h4>
-<h3>Art. 7º Todos os órgãos do Poder Judiciário deverão constituir ou manter um Comitê de Governança de Tecnologia da Informação e Comunicação multidisciplinar, composto por representantes de todas as áreas estratégicas do órgão e pelo titular da área de Tecnologia da Informação e Comunicação, que ficará responsável por:</h3>
-<h5>I – apoiar o desenvolvimento e estabelecimento de estratégias, indicadores e metas institucionais;</h5>
-<h5>II – aprovar projetos e planos estratégicos;</h5>
-<h5>III – gerir os riscos da área de TIC;</h5>
-<h5>IV – fomentar a colaboração entre os tribunais;</h5>
-<h5>V – orientar quanto à geração de iniciativas para proporcionar investimentos tecnológicos no âmbito institucional;</h5>
-<h5>VI – estimular o desenvolvimento colaborativo, integrado e distribuído de soluções;</h5>
-<h5>VII – estimular a participação da administração do órgão em assuntos relacionados à Governança de Tecnologia da Informação e Comunicação;</h5>
-<h5>VIII – promover ações de transparência, responsabilidade e prestação de conta, possibilitando um maior controle e acompanhamento da governança para convergência dos interesses entre Poder Judiciário e a sociedade;</h5>
-<h5>IX – definir papéis e responsabilidades das instâncias internas de governança incluindo atividades de tomada de decisão, elaboração, implementação e revisão de diretrizes, monitoramento e controle;</h5>
-<h5>X – recomendar e acompanhar a adoção de boas práticas de Governança de TIC, assim como a eficácia de seus processos, propondo atualizações e melhorias quando necessário;</h5>
-<h5>XI – estabelecer os canais e processos para interação entre a área de TIC e a administração do órgão, especialmente no que tange às questões de estratégia e governança.</h5>
-<h3>Art. 8º As áreas de TIC de todos os órgãos do Poder Judiciário deverão constituir ou manter Comitê de Gestão de Tecnologia da Informação e Comunicação, coordenado pelo titular da área de TIC. Serão atribuições do comitê:</h3>
-<h5>I – envolver a alta administração nas decisões estratégicas que incidem sobre os serviços de TIC;</h5>
-<h5>II – aprovar planos táticos e operacionais junto a alta administração, disseminando a importância da área de TIC nos tribunais;</h5>
-<h5>III – monitorar a execução orçamentária e financeira de TIC;</h5>
-<h5>IV – planejar, priorizar e monitorar as contratações de TIC;</h5>
-<h5>V – acompanhar o andamento das iniciativas estratégicas bem como seus desdobramentos;</h5>
-<h5>VI – apoiar na estruturação de escritório de projetos que favoreça o emprego das melhores práticas de gestão de projetos preconizadas pelos padrões nacionais e internacionais;</h5>
-<h5>VII – definir a carteira de projetos e a gestão de portfólio de serviços de TIC;</h5>
-<h5>VIII – estabelecer plano de ação para iniciativas de curta duração ou escopo simplificado;</h5>
-<h5>IX – promover recomendações e a adoção de boas práticas;</h5>
-<h5>X – propor modelos e padrões referentes à Governança de Tecnologia da Informação e Comunicação por meio de campanhas institucionais;</h5>
-<h5>XI – promover a participação coletiva na elaboração de propostas e admissão de projetos;</h5>
-<h5>XII – analisar, organizar e estruturar o atendimento das demandas de TIC.</h5>
-<h3>Art. 9º As aquisições de bens e contratação de serviços de TIC deverão atender às determinações do CNJ.</h3>
-<h4>§ 1º O Conselho Nacional de Justiça manterá repositório nacional disponível a todos os órgãos do Poder Judiciário com os editais de licitação, lista de fornecedores por tema de aquisição e contratos de aquisição de bens e contratação de serviços de Tecnologia da Informação e Comunicação.</h4>
-<h4>§ 2º Cada órgão deverá disponibilizar junto ao repositório nacional os seus editais, contratos e anexos, assim que homologados em seus órgãos.</h4>
-<h3>Art. 10. Para o fortalecimento da comunicação entre os entes do Poder Judiciário deverão ser realizadas ações junto ao repositório nacional para:</h3>
-<h5>I – disseminar a cultura e valor da área de TIC nos órgãos;</h5>
-<h5>II – semear a importância do uso de tecnologias no dia a dia;</h5>
-<h5>III – colaborar e disseminar de boas práticas das iniciativas de TIC nos órgãos;</h5>
-<h5>IV – divulgar as principais entregas, avanços e realizações da área de TIC.</h5>
-<p>Seção II</p>
-<p>Índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD)</p>
-<h3>Art. 11. Será aplicado periodicamente o Índice de Governança, Gestão e Infraestrutura de Tecnologia da Informação e Comunicação do Poder Judiciário (iGovTIC-JUD), que tem por finalidade a medição da maturidade em TIC dos órgãos submetidos ao controle administrativo e financeiro do CNJ.</h3>
-<h5>I – os itens do levantamento de governança, gestão e infraestrutura de TIC serão construídos em consonância com as diretrizes estratégicas de TIC, estabelecidas nesta Resolução, e poderão ser reavaliados anualmente com vistas ao aprimoramento do levantamento, considerando as inovações no cenário de tecnologia da informação e comunicação.</h5>
-<h5>II – os resultados do levantamento serão estabelecidos utilizando-se metodologias de cálculo dispostas no Guia;</h5>
-<h5>III – as respostas apresentadas no questionário servirão de subsídio para estabelecer o índice de maturidade de cada órgão.</h5>
-<h3>Art. 12. É competência do Comitê de Governança e Tecnologia da Informação e Comunicação deliberar sobre as informações do levantamento periódico realizado no órgão.</h3>
-<h4>Parágrafo único. As respostas de cada órgão deverão ser suportadas pelas evidências documentais e oportunamente reunidas e mantidas à disposição das instâncias de auditoria interna e externa.</h4>
-<h3>Art. 13. A valoração dos itens do questionário e os critérios de classificação são definidos pelo Comitê Nacional de Gestão de Tecnologia da Informação e Comunicação (CNGTIC.PJ).</h3>
-<h3>Art. 14. O resultado do levantamento será divulgado no sítio eletrônico do CNJ, na Plataforma Connect-Jus e no Painel Público do Levantamento de Maturidade em Governança, Gestão e Infraestrutura de TIC com o objetivo de promover a transparência, a integração e o compartilhamento de informações entre os órgãos e as áreas de TIC do Poder Judiciário.</h3>
-<h4>Parágrafo único. O levantamento contemplará informações como a média por segmento, dimensão e evolução histórica geral dos órgãos, englobando relatórios detalhados, notas, respostas do questionário de cada órgão.</h4>
-<p>Seção III</p>
-<p>Da Transformação Digital</p>
-<h3>Art. 15. Para a consecução dos objetivos estabelecidos na Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD), os órgãos elaborarão o seguinte instrumento de planejamento:</h3>
-<h4>§ 1º Plano de Transformação Digital que conterá, no mínimo, as ações de:</h4>
-<h5>I – transformação digital de serviços;</h5>
-<h5>II – integração de canais digitais;</h5>
-<h5>III – interoperabilidade de sistemas; e</h5>
-<h5>IV – estratégia de monitoramento.</h5>
-<h4>§ 2º O instrumento de planejamento de que trata o caput será:</h4>
-<h5>I – elaborado pela unidade competente dos órgãos, respeitando suas especificidades;</h5>
-<h5>II – aprovado pelo Comitê de Governança de Tecnologia da Informação e Comunicação.</h5>
-<h4>§ 3º Os órgãos poderão elaborar conjuntamente seus Planos de Transformação Digital, estruturados de acordo com a área temática.</h4>
-<p>Seção IV</p>
-<p>Atendimento e Suporte ao Usuário</p>
-<h3>Art. 16. O fortalecimento da relação do Poder Judiciário com a sociedade se dará por meio de estratégias de comunicação, procedimentos objetivos e ágeis e com uso de linguagem de fácil compreensão.</h3>
-<h3>Art. 17. As soluções de aprimoramento à interação com a sociedade deverão ser realizadas por meio de canais e serviços digitais simples e intuitivos, em busca de estabelecer padrão mínimo de qualidade para os serviços digitais do Poder Judiciário.</h3>
-<h4>§ 1º As soluções de que trata o caput proporcionam experiência consistente de atendimento ao cidadão e integra dados do Poder Judiciário, reduzindo custos e ampliando a oferta de serviços digitais, além de retirar do cidadão o ônus do deslocamento e apresentação de documentos.</h4>
-<h4>§ 2º Cada órgão será responsável em promover a divulgação ampla das pesquisas de satisfação e experiência do usuário.</h4>
-<h3>Art. 18. Para avaliar a satisfação do usuário, cada órgão deverá oferecer meio de avaliação ou pesquisa de satisfação padronizado com o objetivo de aprimorar a percepção de utilidade das informações dos serviços, monitorar e implementar ações de melhoria dos serviços prestados, baseado nos resultados da avaliação de satisfação dos usuários.</h3>
-<h4>§ 1º Para aperfeiçoar os atendimentos, os órgãos deverão implantar processos de gestão baseados em modelos e boas práticas de mercado, e definir parâmetros de pesquisa com o objetivo de uniformizar e gerar indicadores mais precisos e equiparados entre os órgãos do Poder Judiciário.</h4>
-<h4>§ 2º Para melhorar os serviços prestados ao cidadão, os órgãos do Poder Judiciário deverão implantar estratégias flexíveis e aderentes às especificidades locais, regionais e próprias de cada segmento do Poder Judiciário de forma colaborativa visando a eficiência operacional interna, humanização do atendimento de TIC, simplificação dos processos internos da área de TIC e otimização dos processos de trabalho.</h4>
-<h3>Art. 19. Todos os órgãos do Poder Judiciário devem adotar modelos de governança e práticas de gerenciamento de serviços de Tecnologia da Informação e Comunicação que favoreçam a entrega de valor para a sociedade no qual a concepção, entrega e melhoria contínua de serviços ocorram de forma adaptável, rápida e transparente.</h3>
-<h3>Art. 20. Cada órgão deverá utilizar ferramentas e soluções para proporcionar atendimento personalizado aos usuários, observando a segmentação do atendimento por perfil, com o objetivo de conhecer o usuário e propor soluções mais eficazes, com foco no valor agregado, bem como promover a melhoria na experiência do usuário e na oferta de serviços.</h3>
-<p>Seção V</p>
-<p>Das Estruturas Organizacionais e Macroprocessos</p>
-<h3>Art. 21. Cada órgão deverá constituir e manter estruturas organizacionais adequadas e compatíveis de acordo com a demanda de TIC considerando, no mínimo, os seguintes macroprocessos:</h3>
-<h5>I – Governança e Gestão de TIC:</h5>
-<h6>a) planejamento e gestão;</h6>
-<h6>b) transformação digital, inovação e colaboração;</h6>
-<h6>c) orçamentária;</h6>
-<h6>d) aquisições e contratações de soluções;</h6>
-<h6>e) projetos e processos;</h6>
-<h6>f) gestão de competência, de capacitação e reconhecimento; e</h6>
-<h6>g) comunicação e divulgação.</h6>
-<h5>II – Segurança da Informação e Proteção de Dados:</h5>
-<h6>a) incidentes de segurança;</h6>
-<h6>b) riscos;</h6>
-<h6>c) continuidade de serviços essenciais; e</h6>
-<h6>d) segurança dos serviços em nuvem.</h6>
-<h5>III – Desenvolvimento de Soluções e Aplicações:</h5>
-<h6>a) escopo e requisitos;</h6>
-<h6>b) arquitetura;</h6>
-<h6>c) processos de desenvolvimento e sustentação; e</h6>
-<h6>d) ciclo de vida de desenvolvimento seguro.</h6>
-<h5>IV – Infraestrutura e Serviços:</h5>
-<h6>a) disponibilidade;</h6>
-<h6>b) capacidade;</h6>
-<h6>c) ativos de infraestrutura, de tecnologia da informação e de telecomunicação corporativas;</h6>
-<h6>d) catálogo;</h6>
-<h6>e) requisições;</h6>
-<h6>f) incidentes;</h6>
-<h6>g) central de serviços; e</h6>
-<h6>h) atendimento, experiência e satisfação do usuário.</h6>
-<h3>Art. 22. As estruturas organizacionais de que tratam o caput deverão privilegiar a departamentalização por função e possuir níveis hierárquicos de decisão, quais sejam estratégicos ou institucionais, táticos ou gerenciais, e operacionais, a fim de garantir a plena execução dos macroprocessos.</h3>
-<h3>Art. 23. A estrutura organizacional, o quadro permanente de servidores, a gestão de ativos e os processos de gestão de trabalho da área de TIC de cada órgão deverão estar adequados às melhores práticas para as atividades consideradas como estratégicas. Deve-se observar sempre as diretrizes tanto na definição da estrutura organizacional de TIC, como nos papéis, responsabilidades e revisão bienal, compatibilizando a estrutura com as demandas estabelecidas.</h3>
-<h4>Parágrafo único. A coordenação dos macroprocessos de TIC e as funções gerenciais deverão ser executadas preferencialmente por servidores do quadro permanente do órgão e em regime de dedicação exclusiva.</h4>
-<p>Seção VI</p>
-<p>Das Pessoas</p>
-<h3>Art. 24. Cada órgão deverá compor o seu quadro permanente com servidores que exercerão atividades voltadas exclusivamente para a área de TIC.</h3>
-<h4>§ 1º O quadro permanente de servidores de que trata o caput deverá ser compatível com a demanda, adotando-se como critérios para fixar o quantitativo necessário com base no número de usuários internos e externos de recursos de TIC, bem como o referencial mínimo estabelecido no Guia.</h4>
-<h4>§ 2º O referencial mínimo contido no Guia poderá ser redimensionado com base em estudos que justifiquem a necessidade de ajuste, considerando ainda aspectos como o portfólio de projetos e serviços, o orçamento destinado à área de TIC, além de considerar outros esforços de TIC e as especificidades de cada segmento de Justiça.</h4>
-<h3>Art. 25. É recomendado que o órgão busque implementar instrumentos de reconhecimento e valorização dos servidores da área de TIC, propiciando oportunidades de crescimento profissional direcionadas aos servidores do quadro permanente do órgão, com vistas à retenção de talentos.</h3>
-<h3>Art. 26. Recomenda-se a realização de análise de rotatividade, a ser realizada a cada dois anos, visando avaliar a eficácia das medidas implementadas, com o objetivo de reduzir a evasão de servidores do quadro permanente.</h3>
-<h3>Art. 27. Deverá ser elaborado, implantado e divulgado o Plano Anual de Capacitações de TIC para desenvolver as competências gerenciais e técnicas necessárias à operacionalização da governança, gestão e atualização tecnológica, utilizando as ferramentas de capacitação disponíveis, inclusive o uso de Plataformas de Educação à Distância (EaD) do CNJ, por meio do Centro de Formação e Aperfeiçoamento de Servidores do Poder Judiciário (CEAJud/CNJ).</h3>
-<h4>§ 1º A área de TIC será responsável pelo acompanhamento e desenvolvimento das lacunas de competências identificadas nos servidores de TIC, alinhado com a gestão por competências institucional.</h4>
-<h4>§ 2º O Plano de Capacitação de TIC deverá ser publicado e atualizado periodicamente pelos órgãos do Poder Judiciário no Repositório Nacional.</h4>
-<h2>CAPÍTULO IV</h2>
-<h3>DO GERENCIAMENTO DE SERVIÇOS DE TIC</h3>
-<p>Seção I</p>
-<p>Dos Sistemas de Informação</p>
-<h3>Art. 28. Cada órgão deverá executar ou contratar serviços de desenvolvimento e de sustentação de sistemas de informação obedecendo os requisitos estabelecidos nesta Resolução e outros pertinentes, bem como as diretrizes legais e técnicas definidas para o processo judicial.</h3>
-<h4>Parágrafo único. Sem prejuízo da atuação de que trata o caput deste artigo, deverá ser utilizado preferencialmente os sistemas nacionais desenvolvidos colaborativamente e amplamente disseminados pelo Poder Judiciário, com o intuito da ampliação e compartilhamento de soluções.</h4>
-<h3>Art. 29. Cada órgão do Poder Judiciário deverá adotar o padrão nacional definido pelo CNJ para a utilização das credenciais de login único e interface de interação dos sistemas, com o objetivo de uniformizar e garantir a experiência única de interação com os sistemas judiciais.</h3>
-<h3>Art. 30. Cada órgão do Poder Judiciário deverá seguir as diretrizes propostas pelo CNJ, no que se refere aos sistemas de informação e, em especial, às diretrizes estabelecidas na Resolução Nº 335/2020 que estabeleceu a Plataforma Digital do Poder Judiciário Brasileiro.</h3>
-<h3>Art. 31. Cada órgão do Poder Judiciário deverá seguir as diretrizes propostas pelo CNJ na adoção de arquitetura e plataforma de serviços em nuvem, atendendo aos requisitos de segurança da informação e proteção de dados.</h3>
-<h3>Art. 32. Na contratação de desenvolvimento de sistemas de informação considerados estratégicos, em que a propriedade intelectual não é da pessoa de direito público contratante, o órgão deverá fazer constar no instrumento contratual cláusula que determine o depósito da documentação e afins pertinentes à tecnologia de concepção, manutenção e atualização, bem como, quando cabível, do código-fonte junto a autoridade brasileira que controla a propriedade intelectual de softwares para garantia da continuidade.</h3>
-<h4>§ 1º O Departamento de Tecnologia da Informação e Comunicação do CNJ disponibilizará manual de referência com as diretrizes para o desenvolvimento dos sistemas elencados no art. 32 desta Resolução.</h4>
-<h4>§ 2º Cada órgão deverá classificar seus sistemas de informação identificando quais são estratégicos.</h4>
-<h3>Art. 33. Os sistemas de informação deverão atender a padrões de interoperabilidade e outros que venham a ser recomendados pelo Comitê Nacional de Gestão de Tecnologia da Informação e Comunicação do Poder Judiciário.</h3>
-<h4>Parágrafo único. Os novos sistemas de informação deverão atender aos seguintes requisitos:</h4>
-<h5>I – ser portáveis e interoperáveis;</h5>
-<h5>II – ser disponíveis para dispositivos móveis e responsivos;</h5>
-<h5>III – possuir documentação atualizada;</h5>
-<h5>IV – oferecer suporte para assinatura baseado em certificado emitido por Autoridade Certificadora credenciada na forma da Infraestrutura de Chaves Públicas Brasileira (ICP Brasil);</h5>
-<h5>V – atender ao Modelo de Acessibilidade em Governo Eletrônico (eMAG), do Governo Federal.</h5>
-<h5>VI – recomenda-se o uso de sistemas de informação já desenvolvidos, disseminados e experimentados no âmbito do Poder Judiciário.</h5>
-<h5>VII – recomenda-se o uso do Repositório Nacional para disseminação de boas práticas e compartilhamento de soluções colaborativas de TIC.</h5>
-<p>Seção II</p>
-<p>Da Infraestrutura Tecnológica e Serviços em Nuvem</p>
-<h3>Art. 34. Os itens de infraestrutura tecnológica deverão atender as especificações, temporalidade de uso e obsolescência a serem regulados em instrumentos aplicáveis e específicos.</h3>
-<h4>§ 1º Deverão ser observadas as necessidades estratégicas dos órgãos do Poder Judiciário para que as especificações dos produtos constantes no parque tecnológico estejam adequadas e compatíveis.</h4>
-<h4>§ 2º A gestão dos ativos de infraestrutura tecnológica deverá ser realizada por meio da definição dos processos, visando o registro e monitoramento da localização de cada ativo.</h4>
-<h4>§ 3º A manutenção de documentos eletrônicos, incluindo o armazenamento e descarte, deverá seguir as diretrizes definidas na Recomendação CNJ Nº 46/2013 e na Lei Nº 13.709/2018 , e alterações posteriores.</h4>
-<h3>Art. 35. Recomenda-se utilizar serviços em nuvem que simplificam a estrutura física, viabilizam a integração, requisitos aceitáveis de segurança da informação, proteção de dados, disponibilidade e padronização do uso dessa tecnologia no Poder Judiciário.</h3>
-<p>Seção III</p>
-<p>Dos Riscos, Segurança da Informação e Proteção de Dados</p>
-<h3>Art. 36. Cada órgão deverá elaborar Plano de Gestão de Continuidade de Negócios ou de Serviços no qual estabeleça estratégias e planos de ação que garantam o funcionamento dos serviços essenciais quando na ocorrência de falhas.</h3>
-<h3>Art. 37. Cada órgão deverá elaborar Plano de Gestão de Riscos de TIC, com foco na continuidade de negócios, manutenção dos serviços e alinhado ao plano institucional de gestão de riscos, objetivando mitigar as ameaças mapeadas para atuar de forma preditiva e preventiva às possíveis incertezas.</h3>
-<h3>Art. 38. Cada órgão deverá elaborar e aplicar práticas e processos de segurança da informação e proteção de dados a serem adotadas na instituição, conforme disposto na Lei Nº 13.709/2018 que dispõe sobre a Proteção de Dados Pessoais.</h3>
-<p><del></del></p>
-<h3>Art. 39. Cada órgão deverá definir a Política de Segurança da Informação (PSI) em consonância com os objetivos institucionais, da área de TIC e segurança da informação. (revogado pela Resolução n. 396, de 7.6.2021)</h3>
-<p><del></del></p>
-<h3>Art. 40. Cada órgão deverá constituir ou manter um Comitê Gestor de Segurança da Informação multidisciplinar, composto por titulares de todas as áreas estratégicas do órgão e coordenado pelo titular da área de Tecnologia da Informação e Comunicação. (revogado pela Resolução n. 396, de 7.6.2021)</h3>
-<p><del>§ 1º O Comitê será responsável por aprovar e revisar periodicamente a Política de Segurança da Informação (PSI); (revogado pela Resolução n. 396, de 7.6.2021)</del></p>
-<p><del>§ 2º Compete ao comitê acompanhar os processos de segurança da informação e os processos de proteção de dados pessoais; (revogado pela Resolução n. 396, de 7.6.2021)</del></p>
-<p><del>§ 3º As atribuições previstas neste artigo serão desenvolvidas em todos os níveis da instituição e em harmonia com as diretrizes nacionais preconizadas pelo Conselho Nacional de Justiça. (revogado pela Resolução n. 396, de 7.6.2021)</del></p>
-<h3>Art. 41. Cada órgão deverá constituir um Comitê gestor institucional para tratar da Lei Geral de Proteção de dados (LGPD), que ficará responsável pela avaliação dos mecanismos de tratamento e proteção dos dados existentes, pela proposição de ações voltadas a seu aperfeiçoamento e por gerar os requisitos para área de TIC, em consonância com as diretrizes nacionais preconizadas pelo Conselho Nacional de Justiça.</h3>
-<h2>CAPÍTULO V</h2>
-<h3>DO DESDOBRAMENTO DA ESTRATÉGIA</h3>
-<h3>Art. 42. Os órgãos submetidos ao controle administrativo e financeiro do Conselho Nacional de Justiça deverão alinhar, até julho de 2021, os seus respectivos Planos Diretores de Tecnologia da Informação e Comunicação (PDTIC) à Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD), contemplando elementos mínimos elencados abaixo:</h3>
-<h5>I – alinhamento à Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) e ao Plano Estratégico Institucional;</h5>
-<h5>II – as diretrizes estabelecidas em resoluções, recomendações e políticas inerentes à TIC instituídas para a concretização das estratégias nacionais do Poder Judiciário;</h5>
-<h5>III – as metas associadas aos indicadores de resultado; e</h5>
-<h5>IV – ações a serem implantadas no ciclo estratégico.</h5>
-<h3>Art. 43. Os órgãos que já possuem os instrumentos estratégicos e diretores de TIC poderão consolidar as iniciativas previstas nos incisos do art. 42 em um único plano.</h3>
-<h3>Art. 44. O Conselho Nacional de Justiça divulgará anualmente em seu portal na internet os indicadores nacionais e metas de medição periódicas de Tecnologia da Informação e Comunicação a serem alcançadas pelos órgãos em cada ano, bem como acompanhará o cumprimento da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) promoverá medidas necessárias à melhoria do desempenho, quando necessário.</h3>
-<h4>Parágrafo único. Sem prejuízo da atuação de que trata o caput, os órgãos promoverão em seu âmbito o acompanhamento dos resultados das metas institucionais e nacionais estabelecidas.</h4>
-<h2>CAPÍTULO VI</h2>
-<h3>DA EXECUÇÃO DA ESTRATÉGIA</h3>
-<h3>Art. 45. Cada órgão deverá elaborar um Plano de Trabalho para atendimento aos critérios estabelecidos nesta Resolução, conforme modelo a ser disponibilizado pelo CNJ.</h3>
-<h4>§ 1º O Plano de Trabalho deverá ser entregue ao Conselho Nacional de Justiça até julho de 2021 e seguir a estrutura de grupos de entregáveis, apresentando os seguintes prazos de atendimento intermediário, no que compete à execução do Plano:</h4>
-<h5>I – Grupo 1: da colaboração e inovação o prazo é de até dois anos, contado após a vigência desta Resolução;</h5>
-<h5>II – Grupo 2: da governança e gestão de tecnologia da informação e comunicação o prazo é de até um ano, contado após a vigência desta Resolução;</h5>
-<h5>III – Grupo 3: da segurança da informação e proteção de dados o prazo é de até um ano, contado após a vigência desta Resolução;</h5>
-<h5>IV – Grupo 4: das aquisições e contratações o prazo é de até dois anos, contados após a vigência desta Resolução;</h5>
-<h5>V – Grupo 5: dos serviços de infraestrutura e soluções corporativas é de até dois anos, contados após a vigência desta Resolução;</h5>
-<h5>VI – Grupo 6: do atendimento e satisfação do usuário o prazo é de até dois anos, contados após a vigência desta Resolução;</h5>
-<h5>VII – Grupo 7: do desenvolvimento das competências dos colaboradores: o prazo é de até três anos, contados após a vigência desta Resolução;</h5>
-<h5>VIII – Grupo 8: das iniciativas de transformação digital o prazo é de até quatro anos, contados após a vigência desta Resolução.</h5>
-<h4>§ 2º O Conselho Nacional de Justiça realizará no final do prazo de conclusão de cada grupo de entregáveis do Plano de Trabalho, uma avaliação do cumprimento dos itens constantes desta Resolução.</h4>
-<h4>§ 3º O Conselho Nacional de Justiça poderá oferecer apoio aos órgãos no atendimento dos objetivos estratégicos propostos por meio da colaboração e compartilhamento de experiências a serem difundidos em todo o Poder Judiciário de modo a aprimorar a maturidade em governança, gestão e infraestrutura de TIC.</h4>
-<h4>§ 4º Como instrumento de gestão da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD), será utilizada a metodologia OKR (Objectives and Key Results), que tem por finalidade avaliar os objetivos, resultados chave e metas definidas por cada um dos órgãos no seu planejamento de TIC.</h4>
-<h2>CAPÍTULO VII</h2>
-<h3>DO ACOMPANHAMENTO E REVISÕES DA ESTRATÉGIA</h3>
-<h3>Art. 46. O Comitê Nacional de Gestão de Tecnologia da Informação e Comunicação do Poder Judiciário acompanhará o cumprimento da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) do Poder Judiciário, especialmente no que se refere aos Indicadores Nacionais e Metas de Medição Periódicas e proporá medidas necessárias à melhoria do desempenho, quando necessário.</h3>
-<h4>Parágrafo único. O índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD) será o mecanismo de acompanhamento da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) com periodicidade de avaliação anual.</h4>
-<h3>Art. 47. Caberá aos órgãos encaminhar, dentro dos prazos requeridos, os planos que constituem os produtos de Gestão do Judiciário previstos nesta Resolução, de forma periódica, conforme formatos padronizados no repositório nacional definido pelo CNJ.</h3>
-<h4>Parágrafo único. Os órgãos do Poder Judiciário deverão atender os requisitos do formato de transmissão de dados preconizados pelo Conselho Nacional de Justiça.</h4>
-<h3>Art. 48. O Conselho Nacional de Justiça realizará anualmente avaliações e diagnósticos para aferir o nível de cumprimento das diretrizes estratégicas de nivelamento constantes desta Resolução, bem como em outras resoluções, recomendações e políticas estabelecidas para os órgãos do Poder Judiciário.</h3>
-<h4>Parágrafo único. Os diagnósticos descritos no caput deste artigo serão realizados a partir de levantamento de maturidade de TIC e mecanismo de acompanhamento, índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD), que permitam aferir e avaliar a evolução da maturidade dos órgãos do Poder Judiciário. Poderão ser solicitadas evidências comprobatórias dos elementos apresentados nos levantamentos e demais insumos de resultantes do diagnóstico.</h4>
-<h3>Art. 49. O Conselho Nacional de Justiça divulgará em seu sítio eletrônico e no repositório nacional o resultado dos diagnósticos com objetivo de promover a transparência, a integração e o compartilhamento de informações entre os órgãos e as áreas de TIC do Poder Judiciário.</h3>
-<h3>Art. 50. A revisão da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) será realizada a cada biênio ou quando se fizer necessário.</h3>
-<h2>CAPÍTULO VIII</h2>
-<h3>DAS DISPOSIÇÕES FINAIS</h3>
-<h3>Art. 51. Outros instrumentos complementares a estas diretrizes poderão ser elaborados e formalizados em normativos específicos do órgão desde que não contrariem as disposições estabelecidas nesta Resolução.</h3>
-<h3>Art. 52. Fica revogada a Resolução CNJ Nº 211/2015 .</h3>
-<h3>Art. 53. Esta Resolução entra em vigor em 1º de janeiro de 2021.</h3>
-<p>(Guia Estratégico de TIC do Poder Judiciário)</p>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>RESOLUÇÃO CNJ Nº 370, DE 28 DE JANEIRO DE 2021</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:26:32 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/3706" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 36.808 caracteres | espelho: 36.638 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução Nº 370 de 28/01/2021</p>
+ <p>Tecnologia Da Informação E Comunicação; Gestão da Informação e de Demandas Judiciais; Gestão e Organização Judiciária; <div class="row"> <div class="col-2 identificacao">Assuntos</div> <div class="col-10 dsc_conteudo"> </div> </div></p>
+ <p>Ementa</p>
+ <p>Estabelece a Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD).</p>
+ <p>Fonte: DJe/CNJ nº 158/2021, de 22 de junho de 2021, p. 2-11 (republicação).</p>
+ <p>Alteração</p>
+ <p>Resolução n. 396, de 7 de junho de 2021</p>
+ <p>Legislação Correlata</p>
+ <p>Lei n. 13.709, de 14 de agosto de 2018</p>
+ <p>Lei n. 11.419, de 19 de dezembro de 2006</p>
+ <p>Decreto n. 10.332, de 28 de abril de 2020</p>
+ <p>Resolução n. 91, de 29 de setembro de 2009</p>
+ <p>Resolução n. 121, de 5 de outubro de 2010</p>
+ <p>Resolução n. 182, de 17 de outubro de 2013</p>
+ <p>Resolução n. 185, de 18 de dezembro de 2013</p>
+ <p>Resolução n. 192, de 8 de maio de 2014</p>
+ <p>Resolução n. 194, de 26 de maio de 2014</p>
+ <p>Resolução n. 198, de 1º de julho de 2014</p>
+ <p>Resolução n. 211, de 15 de dezembro de 2015 - revogada</p>
+ <p>Resolução n. 325, de 29 de junho de 2020</p>
+ <p>Recomendação n. 46, de 17 de dezembro de 2013</p>
+ <p>Observação / CUMPRDEC / CONSULTA</p>
+ <p>CONSULTA 0007756-21.2022.2.00.0000</p>
+ <p>Cumprdec 0001454-10.2021.2.00.0000</p>
+ <p>A Secretaria Processual comunica republicação da Resolução n. 370/2021, de 28 de janeiro de 2021, disponibilizada no DJe n. 24, em 29 de janeiro de 2021 em razão das alterações abaixo relacionadas:</p>
+ <p>1. Deslocamento do parágrafo único do art. 31 para o art. 32 e correção da remissão no atual art. 32, § 1º:</p>
+ <h3>Art. 31. Cada órgão do Poder Judiciário deverá seguir as diretrizes propostas pelo CNJ na adoção de arquitetura e plataforma de serviços em nuvem, atendendo aos requisitos de segurança da informação e proteção de dados.</h3>
+ <h3>Art. 32. Na contratação de desenvolvimento de sistemas de informação considerados estratégicos, em que a propriedade intelectual não é da pessoa de direito público contratante, o órgão deverá fazer constar no instrumento contratual cláusula que determine o depósito da documentação e afins pertinentes à tecnologia de concepção, manutenção e atualização, bem como, quando cabível, do código fonte junto a autoridade brasileira que controla a propriedade intelectual de softwares para garantia da continuidade.</h3>
+ <h4>Parágrafo único . § 1º O Departamento de Tecnologia da Informação e Comunicação do CNJ disponibilizará manual de referência com as diretrizes para o desenvolvimento dos sistemas elencados no art. 31 32 desta Resolução.</h4>
+ <h4>Parágrafo único. § 2º Cada órgão deverá classificar seus sistemas de informação identificando quais são estratégicos. .....</h4>
+ <p>2. Alterar o art. 43, fazer menção aos incisos dispostos no art. 42, não do art. 41, conforme abaixo:</p>
+ <h3>Art. 43. Os órgãos que já possuem os instrumentos estratégicos e diretores de TIC poderão consolidar as iniciativas previstas nos incisos do art. 41 42 em um único plano.</h3>
+ <p>Texto</p>
+ <p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA (CNJ), no uso de suas atribuições legais e regimentais,</p>
+ <h2>CONSIDERANDO os macrodesafios da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) para o período 2021- 2026, em especial o que trata do “Fortalecimento da Estratégia Nacional de TIC e de Proteção de Dados" – Resolução CNJ Nº 325/2020 ;</h2>
+ <h2>CONSIDERANDO as atribuições estabelecidas pela Coordenação de Planejamento de Tecnologia da Informação e Comunicação (TIC) do Poder Judiciário;</h2>
+ <h2>CONSIDERANDO a necessidade de assegurar a convergência dos recursos humanos, administrativos e financeiros empregados pelos segmentos do Poder Judiciário no que concerne à Tecnologia da Informação e Comunicação;</h2>
+ <h2>CONSIDERANDO a Lei Nº 11.419/2006 , que dispõe sobre a informatização do processo judicial, bem como as Resoluções CNJ Nº 91/2009 , 121/2010 , 182/2013 , 185/2013 , 192/2014 , 194/2014 e 198/2014 e o Decreto Nº 10.332/2020 ;</h2>
+ <h2>CONSIDERANDO a edição dos Acórdãos Nº 1603/2008, 2471/2008, 2308/2010, 2585/2012, 1200/2014, 3051/2015, 588/2018, 1534/2019, todos do Plenário do Tribunal de Contas da União (TCU), que recomendam ao Conselho Nacional de Justiça a promoção de ações voltadas para a normatização e o aperfeiçoamento dos controles e processos de governança, de gestão e de uso de TIC, inclusive com o estabelecimento de estratégias que minimizem a rotatividade do pessoal efetivo, de modo a assegurar a entrega de resultados efetivos para o Judiciário;</h2>
+ <h2>CONSIDERANDO a decisão plenária tomada no julgamento do Ato Normativo Nº 0010412-19.2020.2.00.0000, na 79ª Sessão Virtual, realizada no dia 18 de dezembro de 2020;</h2>
+ <h2>RESOLVE:</h2>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Fica instituída a Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) para o sexênio 2021-2026, em harmonia com os macrodesafios do Poder Judiciário, em especial com o que estabelece o “Fortalecimento da Estratégia Nacional de TIC e a Proteção de Dados”.</h3>
+ <h4>Parágrafo único. O objetivo da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário é constituir o principal instrumento de promoção da governança ágil e da transformação digital do Poder Judiciário por meio de serviços e soluções digitais inovadoras que impulsionem a evolução tecnológica do Poder Judiciário.</h4>
+ <h3>Art. 2º A Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário é orientada em seu preâmbulo pelos objetivos dos seguintes componentes:</h3>
+ <h5>I – Objetivos estratégicos, distribuídos em três perspectivas:</h5>
+ <h6>a) Sociedade:</h6>
+ <p>Objetivo 1: Aumentar a Satisfação dos Usuários do Sistema Judiciário;</p>
+ <p>Objetivo 2: Promover a Transformação Digital;</p>
+ <h6>b) Aprendizado e Crescimento:</h6>
+ <p>Objetivo 3: Reconhecer e Desenvolver as Competências dos Colaboradores;</p>
+ <p>Objetivo 4: Buscar a Inovação de Forma Colaborativa;</p>
+ <h6>c) Processos Internos:</h6>
+ <p>Objetivo 5: Aperfeiçoar a Governança e a Gestão;</p>
+ <p>Objetivo 6: Aprimorar as Aquisições e Contratações;</p>
+ <p>Objetivo 7: Aprimorar a Segurança da Informação e a Gestão de Dados;</p>
+ <p>Objetivo 8: Promover Serviços de Infraestrutura e Soluções Corporativas.</p>
+ <h5>II – Meta: Atingir no mínimo 75% dos órgãos do Poder Judiciário com nível de maturidade satisfatório no índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD) até dezembro de 2026.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO OBJETIVO E PRINCÍPIOS</h3>
+ <h3>Art. 3º A Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) tem como meta promover a melhoria da governança, da gestão e da colaboração tecnológica no âmbito do Poder Judiciário, visando direcionar e propiciar a eficiência, eficácia, efetividade e economicidade dos órgãos, com o objetivo de maximizar os resultados com otimização de recursos.</h3>
+ <h4>Parágrafo único. A materialização da meta se dará a partir do alcance dos objetivos estratégicos estabelecidos que serão concretizados por meio de execução da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário de forma colaborativa e participativa, em consonância com as Diretrizes Estratégicas de Nivelamento contidas nesta Resolução.</h4>
+ <h3>Art. 4º As Diretrizes Estratégicas de Nivelamento, em seu conjunto, promoverão o objetivo almejado por meio do aperfeiçoamento dos Viabilizadores de Governança de Tecnologia da Informação e Comunicação, que serão divididos em dois domínios: Governança e Gestão, e Gerenciamento de Serviços de TIC.</h3>
+ <h4>§ 1º O domínio de Governança e Gestão de TIC conterá os seguintes temas: Políticas e Planejamento, iGovTIC-JUD, Transformação Digital, Atendimento e Suporte ao Usuário, Estruturas Organizacionais e Macroprocessos e Pessoas.</h4>
+ <h4>§ 2º O domínio dos Serviços de TIC conterá os seguintes temas: Sistemas de Informação, Infraestrutura Tecnológica e Serviços em Nuvem, Riscos, Segurança da Informação e Proteção de Dados.</h4>
+ <h3>Art. 5º Institui-se como instrumento de orientação e direcionamento à presente Resolução o Guia Estratégico de TIC do Poder Judiciário que conterá os procedimentos, recomendações e boas práticas aplicáveis ao tema, cuja disponibilização ocorrerá em até 120 dias após a publicação desta Resolução.</h3>
+ <h4>§ 1º O Guia será objeto de atualização ordinária anual, sem a necessidade de elaboração de nova Resolução, após parecer de mérito do Departamento de Tecnologia da Informação (DTI) e aprovação da Comissão Permanente de Tecnologia da Informação e Inovação (CPTII) do Conselho Nacional de Justiça, assegurado o controle documental e versionamento.</h4>
+ <h4>§ 2º Extraordinariamente poderão ser solicitadas revisões do Guia encaminhados pelos dirigentes de Tecnologia da Informação dos órgãos submetidos ao controle administrativo e financeiro do CNJ.</h4>
+ <h4>§ 3º Os pedidos de revisão do Guia abrangerão a inclusão de sugestões, revisões ou melhorias, devendo ser devidamente justificados.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA GOVERNANÇA E DA GESTÃO DE TIC</h3>
+ <p>Seção I</p>
+ <p>Das Políticas e Planejamento</p>
+ <h3>Art. 6º Cada órgão deverá elaborar e manter o Plano Diretor de Tecnologia da Informação e Comunicação (PDTIC), o qual deverá elencar as ações que estarão alinhadas ao Planejamento Estratégico Institucional, ao Planejamento Estratégico Nacional do Poder Judiciário e à Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário.</h3>
+ <h4>§ 1º As propostas orçamentárias de TIC de cada órgão deverão ser elaboradas em integral harmonia e alinhamento aos seus respectivos Planos Diretores.</h4>
+ <h4>§ 2º As despesas de TIC terão preferência sobre as demais, salvo determinação expressa da Administração, competindo ao órgão adotar as medidas necessárias para o cumprimento da presente Resolução e pela área financeira do respectivo tribunal à fiscalização e cumprimento da prioridade exigida.</h4>
+ <h4>§ 3º Os órgãos que possuem em seu planejamento o Plano Estratégico de TIC (PETIC) poderão utilizar este Instrumento até um ano após o início da vigência desta Resolução. Decorrido o prazo, as linhas estratégicas de atuação deverão ser contempladas no Plano Diretor de Tecnologia da Informação e Comunicação, com objetivo de manter a continuidade do trabalho e alinhamento da estratégia.</h4>
+ <h3>Art. 7º Todos os órgãos do Poder Judiciário deverão constituir ou manter um Comitê de Governança de Tecnologia da Informação e Comunicação multidisciplinar, composto por representantes de todas as áreas estratégicas do órgão e pelo titular da área de Tecnologia da Informação e Comunicação, que ficará responsável por:</h3>
+ <h5>I – apoiar o desenvolvimento e estabelecimento de estratégias, indicadores e metas institucionais;</h5>
+ <h5>II – aprovar projetos e planos estratégicos;</h5>
+ <h5>III – gerir os riscos da área de TIC;</h5>
+ <h5>IV – fomentar a colaboração entre os tribunais;</h5>
+ <h5>V – orientar quanto à geração de iniciativas para proporcionar investimentos tecnológicos no âmbito institucional;</h5>
+ <h5>VI – estimular o desenvolvimento colaborativo, integrado e distribuído de soluções;</h5>
+ <h5>VII – estimular a participação da administração do órgão em assuntos relacionados à Governança de Tecnologia da Informação e Comunicação;</h5>
+ <h5>VIII – promover ações de transparência, responsabilidade e prestação de conta, possibilitando um maior controle e acompanhamento da governança para convergência dos interesses entre Poder Judiciário e a sociedade;</h5>
+ <h5>IX – definir papéis e responsabilidades das instâncias internas de governança incluindo atividades de tomada de decisão, elaboração, implementação e revisão de diretrizes, monitoramento e controle;</h5>
+ <h5>X – recomendar e acompanhar a adoção de boas práticas de Governança de TIC, assim como a eficácia de seus processos, propondo atualizações e melhorias quando necessário;</h5>
+ <h5>XI – estabelecer os canais e processos para interação entre a área de TIC e a administração do órgão, especialmente no que tange às questões de estratégia e governança.</h5>
+ <h3>Art. 8º As áreas de TIC de todos os órgãos do Poder Judiciário deverão constituir ou manter Comitê de Gestão de Tecnologia da Informação e Comunicação, coordenado pelo titular da área de TIC. Serão atribuições do comitê:</h3>
+ <h5>I – envolver a alta administração nas decisões estratégicas que incidem sobre os serviços de TIC;</h5>
+ <h5>II – aprovar planos táticos e operacionais junto a alta administração, disseminando a importância da área de TIC nos tribunais;</h5>
+ <h5>III – monitorar a execução orçamentária e financeira de TIC;</h5>
+ <h5>IV – planejar, priorizar e monitorar as contratações de TIC;</h5>
+ <h5>V – acompanhar o andamento das iniciativas estratégicas bem como seus desdobramentos;</h5>
+ <h5>VI – apoiar na estruturação de escritório de projetos que favoreça o emprego das melhores práticas de gestão de projetos preconizadas pelos padrões nacionais e internacionais;</h5>
+ <h5>VII – definir a carteira de projetos e a gestão de portfólio de serviços de TIC;</h5>
+ <h5>VIII – estabelecer plano de ação para iniciativas de curta duração ou escopo simplificado;</h5>
+ <h5>IX – promover recomendações e a adoção de boas práticas;</h5>
+ <h5>X – propor modelos e padrões referentes à Governança de Tecnologia da Informação e Comunicação por meio de campanhas institucionais;</h5>
+ <h5>XI – promover a participação coletiva na elaboração de propostas e admissão de projetos;</h5>
+ <h5>XII – analisar, organizar e estruturar o atendimento das demandas de TIC.</h5>
+ <h3>Art. 9º As aquisições de bens e contratação de serviços de TIC deverão atender às determinações do CNJ.</h3>
+ <h4>§ 1º O Conselho Nacional de Justiça manterá repositório nacional disponível a todos os órgãos do Poder Judiciário com os editais de licitação, lista de fornecedores por tema de aquisição e contratos de aquisição de bens e contratação de serviços de Tecnologia da Informação e Comunicação.</h4>
+ <h4>§ 2º Cada órgão deverá disponibilizar junto ao repositório nacional os seus editais, contratos e anexos, assim que homologados em seus órgãos.</h4>
+ <h3>Art. 10. Para o fortalecimento da comunicação entre os entes do Poder Judiciário deverão ser realizadas ações junto ao repositório nacional para:</h3>
+ <h5>I – disseminar a cultura e valor da área de TIC nos órgãos;</h5>
+ <h5>II – semear a importância do uso de tecnologias no dia a dia;</h5>
+ <h5>III – colaborar e disseminar de boas práticas das iniciativas de TIC nos órgãos;</h5>
+ <h5>IV – divulgar as principais entregas, avanços e realizações da área de TIC.</h5>
+ <p>Seção II</p>
+ <p>Índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD)</p>
+ <h3>Art. 11. Será aplicado periodicamente o Índice de Governança, Gestão e Infraestrutura de Tecnologia da Informação e Comunicação do Poder Judiciário (iGovTIC-JUD), que tem por finalidade a medição da maturidade em TIC dos órgãos submetidos ao controle administrativo e financeiro do CNJ.</h3>
+ <h5>I – os itens do levantamento de governança, gestão e infraestrutura de TIC serão construídos em consonância com as diretrizes estratégicas de TIC, estabelecidas nesta Resolução, e poderão ser reavaliados anualmente com vistas ao aprimoramento do levantamento, considerando as inovações no cenário de tecnologia da informação e comunicação.</h5>
+ <h5>II – os resultados do levantamento serão estabelecidos utilizando-se metodologias de cálculo dispostas no Guia;</h5>
+ <h5>III – as respostas apresentadas no questionário servirão de subsídio para estabelecer o índice de maturidade de cada órgão.</h5>
+ <h3>Art. 12. É competência do Comitê de Governança e Tecnologia da Informação e Comunicação deliberar sobre as informações do levantamento periódico realizado no órgão.</h3>
+ <h4>Parágrafo único. As respostas de cada órgão deverão ser suportadas pelas evidências documentais e oportunamente reunidas e mantidas à disposição das instâncias de auditoria interna e externa.</h4>
+ <h3>Art. 13. A valoração dos itens do questionário e os critérios de classificação são definidos pelo Comitê Nacional de Gestão de Tecnologia da Informação e Comunicação (CNGTIC.PJ).</h3>
+ <h3>Art. 14. O resultado do levantamento será divulgado no sítio eletrônico do CNJ, na Plataforma Connect-Jus e no Painel Público do Levantamento de Maturidade em Governança, Gestão e Infraestrutura de TIC com o objetivo de promover a transparência, a integração e o compartilhamento de informações entre os órgãos e as áreas de TIC do Poder Judiciário.</h3>
+ <h4>Parágrafo único. O levantamento contemplará informações como a média por segmento, dimensão e evolução histórica geral dos órgãos, englobando relatórios detalhados, notas, respostas do questionário de cada órgão.</h4>
+ <p>Seção III</p>
+ <p>Da Transformação Digital</p>
+ <h3>Art. 15. Para a consecução dos objetivos estabelecidos na Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD), os órgãos elaborarão o seguinte instrumento de planejamento:</h3>
+ <h4>§ 1º Plano de Transformação Digital que conterá, no mínimo, as ações de:</h4>
+ <h5>I – transformação digital de serviços;</h5>
+ <h5>II – integração de canais digitais;</h5>
+ <h5>III – interoperabilidade de sistemas; e</h5>
+ <h5>IV – estratégia de monitoramento.</h5>
+ <h4>§ 2º O instrumento de planejamento de que trata o caput será:</h4>
+ <h5>I – elaborado pela unidade competente dos órgãos, respeitando suas especificidades;</h5>
+ <h5>II – aprovado pelo Comitê de Governança de Tecnologia da Informação e Comunicação.</h5>
+ <h4>§ 3º Os órgãos poderão elaborar conjuntamente seus Planos de Transformação Digital, estruturados de acordo com a área temática.</h4>
+ <p>Seção IV</p>
+ <p>Atendimento e Suporte ao Usuário</p>
+ <h3>Art. 16. O fortalecimento da relação do Poder Judiciário com a sociedade se dará por meio de estratégias de comunicação, procedimentos objetivos e ágeis e com uso de linguagem de fácil compreensão.</h3>
+ <h3>Art. 17. As soluções de aprimoramento à interação com a sociedade deverão ser realizadas por meio de canais e serviços digitais simples e intuitivos, em busca de estabelecer padrão mínimo de qualidade para os serviços digitais do Poder Judiciário.</h3>
+ <h4>§ 1º As soluções de que trata o caput proporcionam experiência consistente de atendimento ao cidadão e integra dados do Poder Judiciário, reduzindo custos e ampliando a oferta de serviços digitais, além de retirar do cidadão o ônus do deslocamento e apresentação de documentos.</h4>
+ <h4>§ 2º Cada órgão será responsável em promover a divulgação ampla das pesquisas de satisfação e experiência do usuário.</h4>
+ <h3>Art. 18. Para avaliar a satisfação do usuário, cada órgão deverá oferecer meio de avaliação ou pesquisa de satisfação padronizado com o objetivo de aprimorar a percepção de utilidade das informações dos serviços, monitorar e implementar ações de melhoria dos serviços prestados, baseado nos resultados da avaliação de satisfação dos usuários.</h3>
+ <h4>§ 1º Para aperfeiçoar os atendimentos, os órgãos deverão implantar processos de gestão baseados em modelos e boas práticas de mercado, e definir parâmetros de pesquisa com o objetivo de uniformizar e gerar indicadores mais precisos e equiparados entre os órgãos do Poder Judiciário.</h4>
+ <h4>§ 2º Para melhorar os serviços prestados ao cidadão, os órgãos do Poder Judiciário deverão implantar estratégias flexíveis e aderentes às especificidades locais, regionais e próprias de cada segmento do Poder Judiciário de forma colaborativa visando a eficiência operacional interna, humanização do atendimento de TIC, simplificação dos processos internos da área de TIC e otimização dos processos de trabalho.</h4>
+ <h3>Art. 19. Todos os órgãos do Poder Judiciário devem adotar modelos de governança e práticas de gerenciamento de serviços de Tecnologia da Informação e Comunicação que favoreçam a entrega de valor para a sociedade no qual a concepção, entrega e melhoria contínua de serviços ocorram de forma adaptável, rápida e transparente.</h3>
+ <h3>Art. 20. Cada órgão deverá utilizar ferramentas e soluções para proporcionar atendimento personalizado aos usuários, observando a segmentação do atendimento por perfil, com o objetivo de conhecer o usuário e propor soluções mais eficazes, com foco no valor agregado, bem como promover a melhoria na experiência do usuário e na oferta de serviços.</h3>
+ <p>Seção V</p>
+ <p>Das Estruturas Organizacionais e Macroprocessos</p>
+ <h3>Art. 21. Cada órgão deverá constituir e manter estruturas organizacionais adequadas e compatíveis de acordo com a demanda de TIC considerando, no mínimo, os seguintes macroprocessos:</h3>
+ <h5>I – Governança e Gestão de TIC:</h5>
+ <h6>a) planejamento e gestão;</h6>
+ <h6>b) transformação digital, inovação e colaboração;</h6>
+ <h6>c) orçamentária;</h6>
+ <h6>d) aquisições e contratações de soluções;</h6>
+ <h6>e) projetos e processos;</h6>
+ <h6>f) gestão de competência, de capacitação e reconhecimento; e</h6>
+ <h6>g) comunicação e divulgação.</h6>
+ <h5>II – Segurança da Informação e Proteção de Dados:</h5>
+ <h6>a) incidentes de segurança;</h6>
+ <h6>b) riscos;</h6>
+ <h6>c) continuidade de serviços essenciais; e</h6>
+ <h6>d) segurança dos serviços em nuvem.</h6>
+ <h5>III – Desenvolvimento de Soluções e Aplicações:</h5>
+ <h6>a) escopo e requisitos;</h6>
+ <h6>b) arquitetura;</h6>
+ <h6>c) processos de desenvolvimento e sustentação; e</h6>
+ <h6>d) ciclo de vida de desenvolvimento seguro.</h6>
+ <h5>IV – Infraestrutura e Serviços:</h5>
+ <h6>a) disponibilidade;</h6>
+ <h6>b) capacidade;</h6>
+ <h6>c) ativos de infraestrutura, de tecnologia da informação e de telecomunicação corporativas;</h6>
+ <h6>d) catálogo;</h6>
+ <h6>e) requisições;</h6>
+ <h6>f) incidentes;</h6>
+ <h6>g) central de serviços; e</h6>
+ <h6>h) atendimento, experiência e satisfação do usuário.</h6>
+ <h3>Art. 22. As estruturas organizacionais de que tratam o caput deverão privilegiar a departamentalização por função e possuir níveis hierárquicos de decisão, quais sejam estratégicos ou institucionais, táticos ou gerenciais, e operacionais, a fim de garantir a plena execução dos macroprocessos.</h3>
+ <h3>Art. 23. A estrutura organizacional, o quadro permanente de servidores, a gestão de ativos e os processos de gestão de trabalho da área de TIC de cada órgão deverão estar adequados às melhores práticas para as atividades consideradas como estratégicas. Deve-se observar sempre as diretrizes tanto na definição da estrutura organizacional de TIC, como nos papéis, responsabilidades e revisão bienal, compatibilizando a estrutura com as demandas estabelecidas.</h3>
+ <h4>Parágrafo único. A coordenação dos macroprocessos de TIC e as funções gerenciais deverão ser executadas preferencialmente por servidores do quadro permanente do órgão e em regime de dedicação exclusiva.</h4>
+ <p>Seção VI</p>
+ <p>Das Pessoas</p>
+ <h3>Art. 24. Cada órgão deverá compor o seu quadro permanente com servidores que exercerão atividades voltadas exclusivamente para a área de TIC.</h3>
+ <h4>§ 1º O quadro permanente de servidores de que trata o caput deverá ser compatível com a demanda, adotando-se como critérios para fixar o quantitativo necessário com base no número de usuários internos e externos de recursos de TIC, bem como o referencial mínimo estabelecido no Guia.</h4>
+ <h4>§ 2º O referencial mínimo contido no Guia poderá ser redimensionado com base em estudos que justifiquem a necessidade de ajuste, considerando ainda aspectos como o portfólio de projetos e serviços, o orçamento destinado à área de TIC, além de considerar outros esforços de TIC e as especificidades de cada segmento de Justiça.</h4>
+ <h3>Art. 25. É recomendado que o órgão busque implementar instrumentos de reconhecimento e valorização dos servidores da área de TIC, propiciando oportunidades de crescimento profissional direcionadas aos servidores do quadro permanente do órgão, com vistas à retenção de talentos.</h3>
+ <h3>Art. 26. Recomenda-se a realização de análise de rotatividade, a ser realizada a cada dois anos, visando avaliar a eficácia das medidas implementadas, com o objetivo de reduzir a evasão de servidores do quadro permanente.</h3>
+ <h3>Art. 27. Deverá ser elaborado, implantado e divulgado o Plano Anual de Capacitações de TIC para desenvolver as competências gerenciais e técnicas necessárias à operacionalização da governança, gestão e atualização tecnológica, utilizando as ferramentas de capacitação disponíveis, inclusive o uso de Plataformas de Educação à Distância (EaD) do CNJ, por meio do Centro de Formação e Aperfeiçoamento de Servidores do Poder Judiciário (CEAJud/CNJ).</h3>
+ <h4>§ 1º A área de TIC será responsável pelo acompanhamento e desenvolvimento das lacunas de competências identificadas nos servidores de TIC, alinhado com a gestão por competências institucional.</h4>
+ <h4>§ 2º O Plano de Capacitação de TIC deverá ser publicado e atualizado periodicamente pelos órgãos do Poder Judiciário no Repositório Nacional.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO GERENCIAMENTO DE SERVIÇOS DE TIC</h3>
+ <p>Seção I</p>
+ <p>Dos Sistemas de Informação</p>
+ <h3>Art. 28. Cada órgão deverá executar ou contratar serviços de desenvolvimento e de sustentação de sistemas de informação obedecendo os requisitos estabelecidos nesta Resolução e outros pertinentes, bem como as diretrizes legais e técnicas definidas para o processo judicial.</h3>
+ <h4>Parágrafo único. Sem prejuízo da atuação de que trata o caput deste artigo, deverá ser utilizado preferencialmente os sistemas nacionais desenvolvidos colaborativamente e amplamente disseminados pelo Poder Judiciário, com o intuito da ampliação e compartilhamento de soluções.</h4>
+ <h3>Art. 29. Cada órgão do Poder Judiciário deverá adotar o padrão nacional definido pelo CNJ para a utilização das credenciais de login único e interface de interação dos sistemas, com o objetivo de uniformizar e garantir a experiência única de interação com os sistemas judiciais.</h3>
+ <h3>Art. 30. Cada órgão do Poder Judiciário deverá seguir as diretrizes propostas pelo CNJ, no que se refere aos sistemas de informação e, em especial, às diretrizes estabelecidas na Resolução Nº 335/2020 que estabeleceu a Plataforma Digital do Poder Judiciário Brasileiro.</h3>
+ <h3>Art. 31. Cada órgão do Poder Judiciário deverá seguir as diretrizes propostas pelo CNJ na adoção de arquitetura e plataforma de serviços em nuvem, atendendo aos requisitos de segurança da informação e proteção de dados.</h3>
+ <h3>Art. 32. Na contratação de desenvolvimento de sistemas de informação considerados estratégicos, em que a propriedade intelectual não é da pessoa de direito público contratante, o órgão deverá fazer constar no instrumento contratual cláusula que determine o depósito da documentação e afins pertinentes à tecnologia de concepção, manutenção e atualização, bem como, quando cabível, do código-fonte junto a autoridade brasileira que controla a propriedade intelectual de softwares para garantia da continuidade.</h3>
+ <h4>§ 1º O Departamento de Tecnologia da Informação e Comunicação do CNJ disponibilizará manual de referência com as diretrizes para o desenvolvimento dos sistemas elencados no art. 32 desta Resolução.</h4>
+ <h4>§ 2º Cada órgão deverá classificar seus sistemas de informação identificando quais são estratégicos.</h4>
+ <h3>Art. 33. Os sistemas de informação deverão atender a padrões de interoperabilidade e outros que venham a ser recomendados pelo Comitê Nacional de Gestão de Tecnologia da Informação e Comunicação do Poder Judiciário.</h3>
+ <h4>Parágrafo único. Os novos sistemas de informação deverão atender aos seguintes requisitos:</h4>
+ <h5>I – ser portáveis e interoperáveis;</h5>
+ <h5>II – ser disponíveis para dispositivos móveis e responsivos;</h5>
+ <h5>III – possuir documentação atualizada;</h5>
+ <h5>IV – oferecer suporte para assinatura baseado em certificado emitido por Autoridade Certificadora credenciada na forma da Infraestrutura de Chaves Públicas Brasileira (ICP Brasil);</h5>
+ <h5>V – atender ao Modelo de Acessibilidade em Governo Eletrônico (eMAG), do Governo Federal.</h5>
+ <h5>VI – recomenda-se o uso de sistemas de informação já desenvolvidos, disseminados e experimentados no âmbito do Poder Judiciário.</h5>
+ <h5>VII – recomenda-se o uso do Repositório Nacional para disseminação de boas práticas e compartilhamento de soluções colaborativas de TIC.</h5>
+ <p>Seção II</p>
+ <p>Da Infraestrutura Tecnológica e Serviços em Nuvem</p>
+ <h3>Art. 34. Os itens de infraestrutura tecnológica deverão atender as especificações, temporalidade de uso e obsolescência a serem regulados em instrumentos aplicáveis e específicos.</h3>
+ <h4>§ 1º Deverão ser observadas as necessidades estratégicas dos órgãos do Poder Judiciário para que as especificações dos produtos constantes no parque tecnológico estejam adequadas e compatíveis.</h4>
+ <h4>§ 2º A gestão dos ativos de infraestrutura tecnológica deverá ser realizada por meio da definição dos processos, visando o registro e monitoramento da localização de cada ativo.</h4>
+ <h4>§ 3º A manutenção de documentos eletrônicos, incluindo o armazenamento e descarte, deverá seguir as diretrizes definidas na Recomendação CNJ Nº 46/2013 e na Lei Nº 13.709/2018 , e alterações posteriores.</h4>
+ <h3>Art. 35. Recomenda-se utilizar serviços em nuvem que simplificam a estrutura física, viabilizam a integração, requisitos aceitáveis de segurança da informação, proteção de dados, disponibilidade e padronização do uso dessa tecnologia no Poder Judiciário.</h3>
+ <p>Seção III</p>
+ <p>Dos Riscos, Segurança da Informação e Proteção de Dados</p>
+ <h3>Art. 36. Cada órgão deverá elaborar Plano de Gestão de Continuidade de Negócios ou de Serviços no qual estabeleça estratégias e planos de ação que garantam o funcionamento dos serviços essenciais quando na ocorrência de falhas.</h3>
+ <h3>Art. 37. Cada órgão deverá elaborar Plano de Gestão de Riscos de TIC, com foco na continuidade de negócios, manutenção dos serviços e alinhado ao plano institucional de gestão de riscos, objetivando mitigar as ameaças mapeadas para atuar de forma preditiva e preventiva às possíveis incertezas.</h3>
+ <h3>Art. 38. Cada órgão deverá elaborar e aplicar práticas e processos de segurança da informação e proteção de dados a serem adotadas na instituição, conforme disposto na Lei Nº 13.709/2018 que dispõe sobre a Proteção de Dados Pessoais.</h3>
+ <p><del></p>
+ <h3>Art. 39. Cada órgão deverá definir a Política de Segurança da Informação (PSI) em consonância com os objetivos institucionais, da área de TIC e segurança da informação. (revogado pela Resolução n. 396, de 7.6.2021)</del></h3>
+ <p><del></p>
+ <h3>Art. 40. Cada órgão deverá constituir ou manter um Comitê Gestor de Segurança da Informação multidisciplinar, composto por titulares de todas as áreas estratégicas do órgão e coordenado pelo titular da área de Tecnologia da Informação e Comunicação. (revogado pela Resolução n. 396, de 7.6.2021)</del></h3>
+ <p><del>§ 1º O Comitê será responsável por aprovar e revisar periodicamente a Política de Segurança da Informação (PSI); (revogado pela Resolução n. 396, de 7.6.2021)</del></p>
+ <p><del>§ 2º Compete ao comitê acompanhar os processos de segurança da informação e os processos de proteção de dados pessoais; (revogado pela Resolução n. 396, de 7.6.2021)</del></p>
+ <p><del>§ 3º As atribuições previstas neste artigo serão desenvolvidas em todos os níveis da instituição e em harmonia com as diretrizes nacionais preconizadas pelo Conselho Nacional de Justiça. (revogado pela Resolução n. 396, de 7.6.2021)</del></p>
+ <h3>Art. 41. Cada órgão deverá constituir um Comitê gestor institucional para tratar da Lei Geral de Proteção de dados (LGPD), que ficará responsável pela avaliação dos mecanismos de tratamento e proteção dos dados existentes, pela proposição de ações voltadas a seu aperfeiçoamento e por gerar os requisitos para área de TIC, em consonância com as diretrizes nacionais preconizadas pelo Conselho Nacional de Justiça.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO DESDOBRAMENTO DA ESTRATÉGIA</h3>
+ <h3>Art. 42. Os órgãos submetidos ao controle administrativo e financeiro do Conselho Nacional de Justiça deverão alinhar, até julho de 2021, os seus respectivos Planos Diretores de Tecnologia da Informação e Comunicação (PDTIC) à Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD), contemplando elementos mínimos elencados abaixo:</h3>
+ <h5>I – alinhamento à Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) e ao Plano Estratégico Institucional;</h5>
+ <h5>II – as diretrizes estabelecidas em resoluções, recomendações e políticas inerentes à TIC instituídas para a concretização das estratégias nacionais do Poder Judiciário;</h5>
+ <h5>III – as metas associadas aos indicadores de resultado; e</h5>
+ <h5>IV – ações a serem implantadas no ciclo estratégico.</h5>
+ <h3>Art. 43. Os órgãos que já possuem os instrumentos estratégicos e diretores de TIC poderão consolidar as iniciativas previstas nos incisos do art. 42 em um único plano.</h3>
+ <h3>Art. 44. O Conselho Nacional de Justiça divulgará anualmente em seu portal na internet os indicadores nacionais e metas de medição periódicas de Tecnologia da Informação e Comunicação a serem alcançadas pelos órgãos em cada ano, bem como acompanhará o cumprimento da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) promoverá medidas necessárias à melhoria do desempenho, quando necessário.</h3>
+ <h4>Parágrafo único. Sem prejuízo da atuação de que trata o caput, os órgãos promoverão em seu âmbito o acompanhamento dos resultados das metas institucionais e nacionais estabelecidas.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA EXECUÇÃO DA ESTRATÉGIA</h3>
+ <h3>Art. 45. Cada órgão deverá elaborar um Plano de Trabalho para atendimento aos critérios estabelecidos nesta Resolução, conforme modelo a ser disponibilizado pelo CNJ.</h3>
+ <h4>§ 1º O Plano de Trabalho deverá ser entregue ao Conselho Nacional de Justiça até julho de 2021 e seguir a estrutura de grupos de entregáveis, apresentando os seguintes prazos de atendimento intermediário, no que compete à execução do Plano:</h4>
+ <h5>I – Grupo 1: da colaboração e inovação o prazo é de até dois anos, contado após a vigência desta Resolução;</h5>
+ <h5>II – Grupo 2: da governança e gestão de tecnologia da informação e comunicação o prazo é de até um ano, contado após a vigência desta Resolução;</h5>
+ <h5>III – Grupo 3: da segurança da informação e proteção de dados o prazo é de até um ano, contado após a vigência desta Resolução;</h5>
+ <h5>IV – Grupo 4: das aquisições e contratações o prazo é de até dois anos, contados após a vigência desta Resolução;</h5>
+ <h5>V – Grupo 5: dos serviços de infraestrutura e soluções corporativas é de até dois anos, contados após a vigência desta Resolução;</h5>
+ <h5>VI – Grupo 6: do atendimento e satisfação do usuário o prazo é de até dois anos, contados após a vigência desta Resolução;</h5>
+ <h5>VII – Grupo 7: do desenvolvimento das competências dos colaboradores: o prazo é de até três anos, contados após a vigência desta Resolução;</h5>
+ <h5>VIII – Grupo 8: das iniciativas de transformação digital o prazo é de até quatro anos, contados após a vigência desta Resolução.</h5>
+ <h4>§ 2º O Conselho Nacional de Justiça realizará no final do prazo de conclusão de cada grupo de entregáveis do Plano de Trabalho, uma avaliação do cumprimento dos itens constantes desta Resolução.</h4>
+ <h4>§ 3º O Conselho Nacional de Justiça poderá oferecer apoio aos órgãos no atendimento dos objetivos estratégicos propostos por meio da colaboração e compartilhamento de experiências a serem difundidos em todo o Poder Judiciário de modo a aprimorar a maturidade em governança, gestão e infraestrutura de TIC.</h4>
+ <h4>§ 4º Como instrumento de gestão da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD), será utilizada a metodologia OKR (Objectives and Key Results), que tem por finalidade avaliar os objetivos, resultados chave e metas definidas por cada um dos órgãos no seu planejamento de TIC.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DO ACOMPANHAMENTO E REVISÕES DA ESTRATÉGIA</h3>
+ <h3>Art. 46. O Comitê Nacional de Gestão de Tecnologia da Informação e Comunicação do Poder Judiciário acompanhará o cumprimento da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) do Poder Judiciário, especialmente no que se refere aos Indicadores Nacionais e Metas de Medição Periódicas e proporá medidas necessárias à melhoria do desempenho, quando necessário.</h3>
+ <h4>Parágrafo único. O índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD) será o mecanismo de acompanhamento da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) com periodicidade de avaliação anual.</h4>
+ <h3>Art. 47. Caberá aos órgãos encaminhar, dentro dos prazos requeridos, os planos que constituem os produtos de Gestão do Judiciário previstos nesta Resolução, de forma periódica, conforme formatos padronizados no repositório nacional definido pelo CNJ.</h3>
+ <h4>Parágrafo único. Os órgãos do Poder Judiciário deverão atender os requisitos do formato de transmissão de dados preconizados pelo Conselho Nacional de Justiça.</h4>
+ <h3>Art. 48. O Conselho Nacional de Justiça realizará anualmente avaliações e diagnósticos para aferir o nível de cumprimento das diretrizes estratégicas de nivelamento constantes desta Resolução, bem como em outras resoluções, recomendações e políticas estabelecidas para os órgãos do Poder Judiciário.</h3>
+ <h4>Parágrafo único. Os diagnósticos descritos no caput deste artigo serão realizados a partir de levantamento de maturidade de TIC e mecanismo de acompanhamento, índice de Governança de Tecnologia da Informação e Comunicação (iGovTIC-JUD), que permitam aferir e avaliar a evolução da maturidade dos órgãos do Poder Judiciário. Poderão ser solicitadas evidências comprobatórias dos elementos apresentados nos levantamentos e demais insumos de resultantes do diagnóstico.</h4>
+ <h3>Art. 49. O Conselho Nacional de Justiça divulgará em seu sítio eletrônico e no repositório nacional o resultado dos diagnósticos com objetivo de promover a transparência, a integração e o compartilhamento de informações entre os órgãos e as áreas de TIC do Poder Judiciário.</h3>
+ <h3>Art. 50. A revisão da Estratégia Nacional de Tecnologia da Informação e Comunicação do Poder Judiciário (ENTIC-JUD) será realizada a cada biênio ou quando se fizer necessário.</h3>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DAS DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 51. Outros instrumentos complementares a estas diretrizes poderão ser elaborados e formalizados em normativos específicos do órgão desde que não contrariem as disposições estabelecidas nesta Resolução.</h3>
+ <h3>Art. 52. Fica revogada a Resolução CNJ Nº 211/2015 .</h3>
+ <h3>Art. 53. Esta Resolução entra em vigor em 1º de janeiro de 2021.</h3>
+ <p>(Guia Estratégico de TIC do Poder Judiciário)</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://atos.cnj.jus.br/atos/detalhar/3706" rel="nofollow" target="_blank">CNJ – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

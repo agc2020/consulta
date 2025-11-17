@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução CNJ Nº 289/2019 – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="CNJ" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2019" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>Resolução CNJ Nº 289, de 14 de AGOSTO de 2019 - Presidência – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="CNJ" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2019" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,128 +315,247 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução CNJ Nº 289/2019</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 03:21:38 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/2976" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 16.244 caracteres | espelho: 15.880 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução Nº 289 de 14/08/2019</p>
-<p>Infância/Juventude; Direitos Humanos; </p>
-<p>Ementa</p>
-<p>Dispõe sobre a implantação e funcionamento do Sistema Nacional de Adoção e Acolhimento – SNA e dá outras providências.</p>
-<p>Fonte: DJe/CNJ nº 165/2019, de 15/08/2019, p. 2-5.</p>
-<p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA, no uso de suas atribuições legais e regimentais;</p>
-<h2>CONSIDERANDO o princípio constitucional da prioridade absoluta, aplicável às políticas de atendimento à infância e juventude;</h2>
-<h2>CONSIDERANDO as normas referentes ao instituto do acolhimento e da adoção contidas no Estatuto da Criança e do Adolescente , no Código Civil , em outros normativos nacionais sobre a matéria e em acordos ou pactos internacionais de que o Brasil seja signatário;</h2>
-<h2>CONSIDERANDO a necessidade de racionalizar e aprimorar os bancos de dados, os cadastros e os sistemas do Conselho Nacional de Justiça que versam sobre acolhimento e adoção de crianças e adolescentes;</h2>
-<h2>CONSIDERANDO a edição da Portaria nº 11, de 6 de março de 2018 , pela Corregedoria Nacional de Justiça, que instituiu Grupo de Trabalho multidisciplinar para a execução das ações necessárias à implementação da modernização dos cadastros referentes à adoção e ao acolhimento infantojuvenis;</h2>
-<h2>CONSIDERANDO a edição da Portaria Conjunta nº 4, de 4 de julho de 2019 , que instituiu o Sistema Nacional de Adoção e Acolhimento – SNA, sob a gestão do Comitê Gestor dos Cadastros Nacionais – CGCN; instituído pela Portaria Conjunta nº 1, de 6 de novembro de 2018;</h2>
-<h2>CONSIDERANDO a decisão plenária tomada no Ato Normativo nº 0005538-25.2019.2.00.0000, na 294ª Sessão Ordinária, realizada em 6 de agosto de 2019;</h2>
-<h2>RESOLVE:</h2>
-<h3>Art. 1º O Conselho Nacional de Justiça implantará o Sistema Nacional de Adoção e de Acolhimento – SNA, cuja finalidade é consolidar dados fornecidos pelos Tribunais de Justiça referentes ao acolhimento institucional e familiar, à adoção, incluindo as intuitu personae, e a outras modalidades de colocação em família substituta, bem como sobre pretendentes nacionais e estrangeiros habilitados à adoção.</h3>
-<h4>§ 1º A inserção de pretendentes domiciliados fora do território brasileiro no SNA compete às as Comissões Estaduais Judiciárias de Adoção – CEJAS/CEJAIS dos Tribunais de Justiça.</h4>
-<h4>§ 2º Fica assegurado à Autoridade Central Administrativa Federal – ACAF o acesso ao sistema para inserção de dados sobre organismos internacionais e autoridades estrangeiras, bem como para visualização dos dados referentes ao cadastro dos pretendentes à adoção domiciliados no exterior, brasileiros que desejam adotar no exterior, crianças aptas à adoção internacional e adoções internacionais realizadas.</h4>
-<h4>§ 3º Os Tribunais de Justiça deverão dispor de condições técnicas, operacionais e de pessoal para receber e processar os pedidos de habilitação para adoção apresentados por pretendentes residentes no exterior.</h4>
-<h4>§ 4º O tratamento dos dados pessoais contidos no SNA submete-se, no que couber, aos princípios e às determinações da legislação penal, processual penal e de proteção de dados pessoais, especialmente no que diz respeito às hipóteses de sigilo, ao armazenamento e ao compartilhamento de dados. (incluído pela Resolução n. 451, de 22.4.2022)</h4>
-<h3>Art. 2º As Corregedorias dos Tribunais de Justiça ou as Coordenadorias da Infância e Juventude funcionarão como administradoras do SNA na respectiva unidade federativa e terão acesso integral aos dados cadastrados, competindo-lhes cadastrar e liberar o acesso ao usuário, bem como zelar pela correta alimentação do sistema.</h3>
-<h4>Parágrafo único. A responsabilidade pelo cadastro de pessoa, expedição de documentos, classificação, atualização, inclusão e exclusão de dados no sistema é exclusiva das autoridades judiciárias competentes.</h4>
-<h3>Art. 3º O Conselho Nacional de Justiça prestará o apoio técnico necessário aos Tribunais de Justiça para a correta alimentação do SNA.</h3>
-<h3>Art. 4º O Conselho Nacional de Justiça, as Comissões Estaduais Judiciárias de Adoção, as Coordenadorias da Infância e Juventude e as Corregedorias-Gerais dos Tribunais de Justiça devem promover e estimular campanhas de incentivo à reintegração à família de origem, à inclusão em família extensa ou à adoção de crianças e adolescentes em acolhimento familiar ou institucional, sem perspectivas de reinserção à família natural.</h3>
-<h3>Art. 5º O SNA integra todos os cadastros municipais, estaduais e nacional de crianças e adolescentes em condições de serem adotados e de pretendentes habilitados à adoção, inclusive os cadastros internacionais, conforme preceitua o art. 50, § 5º e 6º, do Estatuto da Criança e do Adolescente , dispensada a manutenção pelos tribunais de cadastros separados.</h3>
-<p><del></del></p>
-<h3>Art. 6º Compete ao Comitê Gestor dos Cadastros Nacionais viabilizar a migração dos dados armazenados no Cadastro Nacional de Adoção – CNA e no Cadastro Nacional de Crianças de Adolescentes Acolhidos –CNCA para o SNA . (revogado pela Resolução n. 390, de 6.5.2021)</h3>
-<h4>§ 1º Os cadastros CNA e CNCA ficarão disponíveis para consulta até o dia 12 de outubro de 2019.</h4>
-<h4>§ 2º Concluída a migração dos dados para o SNA e observado o disposto no § 1º deste artigo, os cadastros CNA e CNCA serão extintos, em conformidade com a Lei nº 13.709, de 14 de agosto de 2018 , Lei Geral de Proteção de Dados.</h4>
-<h3>Art. 7º As regras técnicas do SNA estão inseridas no Anexo I desta Resolução.</h3>
-<h4>Parágrafo único. Eventuais atualizações do anexo poderão ser feitas por meio da edição de Portaria da Presidência do CNJ, após parecer técnico do CGCN .</h4>
-<h4>Parágrafo único. Eventuais atualizações do anexo desta Resolução poderão ser feitas por meio da edição de Portaria da Presidência do CNJ, após parecer técnico do Comitê de Apoio ao Sistema Nacional de Adoção e Acolhimento. (redação dada pela Resolução n. 451, de 22.4.2022)</h4>
-<h3>Art. 7º -A O SNA adotará os conceitos, as diretrizes e os princípios previstos na Resolução CNJ Nº 335/2020 , que dispõe sobre a Plataforma Digital do Poder Judiciário, e será desenvolvido como serviço desta, contando com as estruturas nela disponibilizadas. (incluído pela Resolução n. 451, de 22.4.2022)</h3>
-<h4>Parágrafo único. O SNA poderá ser alimentado pelos tribunais e demais órgãos por meio de Application Programming Interface (API), a ser desenvolvido pelo CNJ. (incluído pela Resolução n. 451, de 22.4.2022)</h4>
-<h3>Art. 7º -B O CNJ poderá firmar parcerias para integrar o SNA a outros sistemas, com a finalidade de possibilitar o intercâmbio de informações, respeitando, no que couber, as normas de proteção de dados e as regras de sigilo. (incluído pela Resolução n. 451, de 22.4.2022)</h3>
-<h4>Parágrafo único. As integrações serão realizadas mediante acordo de cooperação técnica que deverá prever, entre outras obrigações: (incluído pela Resolução n. 451, de 22.4.2022)</h4>
-<h5>I – a finalidade da integração, observada a atribuição legal de cada instituição; (incluído pela Resolução n. 451, de 22.4.2022)</h5>
-<h5>II – a forma de gestão de usuários(as) e de acesso ao sistema; (incluído pela Resolução n. 451, de 22.4.2022)</h5>
-<h5>III – o registro dos tratamentos de dados realizados, com indicação do operador, da data e da hora do tratamento; bem como a extensão dos dados tratados, com imediata disponibilização ao CNJ; e (incluído pela Resolução n. 451, de 22.4.2022)</h5>
-<h5>IV – as sanções aplicadas em caso de descumprimento. (incluído pela Resolução n. 451, de 22.4.2022)</h5>
-<h3>Art. 8º Os Tribunais de Justiça deverão dar ampla publicidade sobre as funcionalidades do SNA, em ato próprio, a ser editado nos termos da minuta proposta no Anexo II desta Resolução.</h3>
-<h3>Art. 9º Ficam revogadas as Resoluções nº 54, de 29 de abril de 2008 , nº 93, de 27 de outubro de 2009 , e nº 190, de 1º de abril de 2014 , bem como a Portaria Conjunta nº 2, de 9 de fevereiro de 2010 .</h3>
-<h3>Art. 10. Os</h3>
-<p>Provimentos nº 32, de 24 de junho de 2013</p>
-<p>, e nº 36, de 5 de maio de 2014 , por meio de ato específico da Corregedoria Nacional de Justiça, deverão ter sua redação adequada aos termos desta Resolução, substituindo-se, onde couber, Cadastro Nacional de Crianças de Adolescentes Acolhidos – CNCA e Cadastro Nacional de Adoção – CNA, por Sistema Nacional de Adoção e Acolhimento – SNA.</p>
-<h3>Art. 11. Esta Resolução entra em vigor na data de sua publicação.</h3>
-<p>Ministro DIAS TOFFOLI</p>
-<p>ANEXO I DA RESOLUÇÃO Nº 289, DE 14 DE AGOSTO DE 2019.</p>
-<h3>REGULAMENTAÇÃO TÉCNICA DO SISTEMA NACIONAL DE ADOÇÃO E ACOLHIMENTO</h3>
-<h5>I – DA HABILITAÇÃO PARA ADOÇÃO</h5>
-<h3>Art. 1º A inscrição dos pretendentes no SNA será efetuada em ordem cronológica, a partir da data da sentença de habilitação, observando-se, como critério de desempate, a data do ajuizamento do pedido.</h3>
-<h4>Parágrafo único. A data de habilitação será mantida mesmo em caso de mudança de pretendente para outra comarca.</h4>
-<h3>Art. 2º A habilitação do pretendente terá validade de três anos, devendo ser renovada até o seu vencimento.</h3>
-<h4>§ 1º Expirado o prazo mencionado no caput, a habilitação será suspensa por 30 dias, durante os quais o postulante poderá solicitar a renovação.</h4>
-<h4>§ 2º Enquanto suspensa a habilitação, o postulante não será consultado para novas adoções.</h4>
-<h4>§ 3º Decorrido o prazo de 30 dias sem que o pretendente renove sua habilitação, esta será arquivada, com imediata inativação no sistema.</h4>
-<h5>II - DA INCLUSÃO DA CRIANÇA OU ADOLESCENTE NA SITUAÇÃO APTA PARA ADOÇÃO</h5>
-<h3>Art. 3º A colocação da criança ou do adolescente na situação “apta para adoção” deverá ocorrer após o trânsito em julgado da decisão do processo de destituição ou extinção do poder familiar, ou ainda quando a criança ou o adolescente for órfão ou tiver ambos os genitores desconhecidos.</h3>
-<h3>Art. 4º O juiz poderá, no melhor interesse da criança ou do adolescente, determinar a inclusão cautelar na situação “apta para adoção” antes do trânsito em julgado da decisão que destitui ou extingue o poder familiar, hipótese em que o pretendente deverá ser informado sobre o risco jurídico.</h3>
-<h5>III – DA VINCULAÇÃO ENTRE CRIANÇAS E/OU ADOLESCENTES E PRETENDENTES</h5>
-<h3>Art. 5º Iniciada a vinculação entre a criança ou adolescente e o pretendente, a habilitação do pretendente ficará suspensa no sistema para novas consultas.</h3>
-<h3>Art. 6º Iniciado o estágio de convivência, caso o pretendente esteja inicialmente habilitado para adoção de outras crianças ou adolescentes, o sistema o reclassificará, sendo mantida como data da classificação a do início do estágio de convivência, observada a hipótese do art. 197- E, §3º, do ECA .</h3>
-<h3>Art. 7º Realizada a vinculação, o juízo terá o prazo de 15 dias para comunicar o fato ao pretendente, atualizando as informações no sistema.</h3>
-<h4>Parágrafo único. Caso o pretendente não receba comunicação do juízo no prazo citado no caput, o sistema automaticamente lhe encaminhará correspondência eletrônica, convocando-o para manifestar interesse em conhecer a criança ou o adolescente.</h4>
-<h3>Art. 8º Esgotada a busca por pretendentes nacionais, deve o juízo competente, no prazo máximo de cinco dias, iniciar as buscas internacionais, com a devida ciência à CEJA/CEJAI do respectivo tribunal.</h3>
-<h5>IV – DAS GUIAS DE ACOLHIMENTO E DESLIGAMENTO</h5>
-<h3>Art. 9º A Guia Nacional de Acolhimento e a Guia Nacional de Desligamento de Crianças e Adolescentes Acolhidos deverão ser obrigatoriamente emitidas no sistema para todas as crianças e adolescentes cuja medida protetiva de acolhimento tenha sido aplicada.</h3>
-<h5>V – DO RELATÓRIO ELETRÔNICO DAS AUDIÊNCIAS CONCENTRADAS</h5>
-<h3>Art. 10. O sistema gerará automaticamente o relatório eletrônico das audiências concentradas na unidade judiciária, contendo as estatísticas referentes às crianças e aos adolescentes que passaram por acolhimento naquele semestre, substituindo o preenchimento eletrônico dos dados.</h3>
-<p>ANEXO II DA RESOLUÇÃO Nº 289, DE 14 DE AGOSTO DE 2019.</p>
-<h3>MINUTA DE ATO PARA DAR PUBLICIDADE ÀS FUNCIONALIDADES DO SNA AOS PRETENDENTES</h3>
-<h5>I – DA HABILITAÇÃO PARA ADOÇÃO</h5>
-<h3>Art. 1º O pretendente interessado em iniciar o processo de habilitação poderá realizar seu pré-cadastro no SNA por meio de formulário eletrônico e se dirigir à Vara da Infância e Juventude da comarca de seu domicílio para protocolar o pedido de habilitação para adoção.</h3>
-<h4>Parágrafo único. O pretendente somente será considerado habilitado após a sentença de deferimento proferida no procedimento de habilitação.</h4>
-<h3>Art. 2º Se o pretendente apresentar perfil de adotando de difícil colocação em família substituta, o magistrado deverá dar prioridade à tramitação da habilitação.</h3>
-<h3>Art. 3º Nos pedidos de habilitação para adoção, as Varas da Infância e Juventude deverão verificar se o requerente possui residência habitual naquela comarca.</h3>
-<h3>Art. 4º O pretendente é responsável pela atualização de seus dados pessoais e meios de contato junto à Vara da Infância e Juventude, podendo alterá-los diretamente em área exclusiva do sistema ou presencialmente.</h3>
-<h4>§ 1º Em caso de mudança de domicílio, o pretendente deverá dar imediata ciência à Vara da Infância e Juventude, devendo juntar comprovante do novo endereço nos autos do processo original ou requerer pessoalmente a remessa dos autos na vara com competência em infância e juventude do novo endereço.</h4>
-<h4>§ 2º Caso eventual desatualização dos dados venha a ensejar impossibilidade de comunicação com o pretendente, tal fato será considerado recusa injustificada do habilitado à adoção de crianças ou adolescentes, com as consequências do art. 197-E, §4º, do ECA .</h4>
-<h3>Art. 5º Havendo mudança de endereço do pretendente, o magistrado da comarca da nova residência verificará a necessidade de nova avaliação psicossocial, podendo suspender o processo.</h3>
-<h4>Parágrafo único. A inclusão dos novos dados do pretendente no sistema não altera a data-base de habilitação inicial.</h4>
-<h3>Art. 6º No caso de separação dos pretendentes, havendo interesse de qualquer deles ou de ambos em permanecer no sistema, deverão ser renovadas as avaliações, mantida, para efeito de ordem no cadastro, a mesma data-base da habilitação do casal.</h3>
-<h3>Art. 7º A renovação da habilitação, para manutenção da ordem de preferência no sistema, deverá ser solicitada pelo postulante com antecedência de 120 dias.</h3>
-<h3>Art. 8º O pretendente poderá solicitar suspensão de consultas para adoção pelo prazo máximo de seis meses, nos termos do art. 313, II, e § 4º, do Código de Processo Civil .</h3>
-<h3>Art. 9º O sistema inativará a habilitação dos pretendentes à adoção nos seguintes casos:</h3>
-<h5>I – transcorridos 30 dias do vencimento do processo de habilitação, caso não haja pedido de renovação;</h5>
-<h5>II – trânsito em julgado de sentença que deferir pedido de adoção na forma pretendida pelo postulante; e</h5>
-<h5>III – decisão judicial. Parágrafo único. Inativada a habilitação, o pretendente não será consultado para novas adoções e deverá se submeter a um novo processo de habilitação.</h5>
-<h3>Art. 10. Os casos omissos ou que suscitarem dúvidas deverão ser decididos pelo juiz do processo de habilitação ou, existindo mais de um, pela Corregedoria local, se na mesma unidade federativa, ou pela Corregedoria Nacional de Justiça, quando envolver unidades federativas diversas.</h3>
-<h3>Art. 11. As comunicações com o pretendente serão realizadas preferencialmente por meio eletrônico.</h3>
-<h5>II – DA VINCULAÇÃO ENTRE CRIANÇAS OU ADOLESCENTES E PRETENDENTES</h5>
-<h3>Art. 12. Compete ao órgão julgador responsável pela criança ou adolescente vinculado a um pretendente dar início ao processo de aproximação entre os envolvidos.</h3>
-<h4>§ 1º O pretendente, após formalmente consultado, terá o prazo de dois dias úteis para manifestar interesse em conhecer a criança ou adolescente.</h4>
-<h4>§ 2º Em caso de omissão ou desinteresse do pretendente em conhecer a criança ou adolescente, será iniciada nova busca por pretendente habilitado.</h4>
-<h4>§ 3º Manifestada, por qualquer meio, a anuência em conhecer o adotando, o pretendente deverá comparecer ao juízo que o convocou em até cinco dias, prorrogáveis a juízo do magistrado e mediante justificação adequada, para dar início aos procedimentos prévios à adoção.</h4>
-<h4>§ 4º Caso o pretendente não se apresente em até cinco dias ao juízo que o convocou, o magistrado cancelará a vinculação no sistema e determinará a consulta ao próximo pretendente habilitado.</h4>
-<p>Ministro DIAS TOFFOLI</p>
-<p>Presidente</p>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>Resolução CNJ Nº 289, de 14 de AGOSTO de 2019 - Presidência</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:22:47 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/2976" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 16.244 caracteres | espelho: 15.880 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução Nº 289 de 14/08/2019</p>
+ <p>Infância/Juventude; Direitos Humanos; <div class="row"> <div class="col-2 identificacao">Assuntos</div> <div class="col-10 dsc_conteudo"> </div> </div></p>
+ <p>Ementa</p>
+ <p>Dispõe sobre a implantação e funcionamento do Sistema Nacional de Adoção e Acolhimento – SNA e dá outras providências.</p>
+ <p>Fonte: DJe/CNJ nº 165/2019, de 15/08/2019, p. 2-5.</p>
+ <p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA, no uso de suas atribuições legais e regimentais;</p>
+ <h2>CONSIDERANDO o princípio constitucional da prioridade absoluta, aplicável às políticas de atendimento à infância e juventude;</h2>
+ <h2>CONSIDERANDO as normas referentes ao instituto do acolhimento e da adoção contidas no Estatuto da Criança e do Adolescente , no Código Civil , em outros normativos nacionais sobre a matéria e em acordos ou pactos internacionais de que o Brasil seja signatário;</h2>
+ <h2>CONSIDERANDO a necessidade de racionalizar e aprimorar os bancos de dados, os cadastros e os sistemas do Conselho Nacional de Justiça que versam sobre acolhimento e adoção de crianças e adolescentes;</h2>
+ <h2>CONSIDERANDO a edição da Portaria nº 11, de 6 de março de 2018 , pela Corregedoria Nacional de Justiça, que instituiu Grupo de Trabalho multidisciplinar para a execução das ações necessárias à implementação da modernização dos cadastros referentes à adoção e ao acolhimento infantojuvenis;</h2>
+ <h2>CONSIDERANDO a edição da Portaria Conjunta nº 4, de 4 de julho de 2019 , que instituiu o Sistema Nacional de Adoção e Acolhimento – SNA, sob a gestão do Comitê Gestor dos Cadastros Nacionais – CGCN; instituído pela Portaria Conjunta nº 1, de 6 de novembro de 2018;</h2>
+ <h2>CONSIDERANDO a decisão plenária tomada no Ato Normativo nº 0005538-25.2019.2.00.0000, na 294ª Sessão Ordinária, realizada em 6 de agosto de 2019;</h2>
+ <h2>RESOLVE:</h2>
+ <h3>Art. 1º O Conselho Nacional de Justiça implantará o Sistema Nacional de Adoção e de Acolhimento – SNA, cuja finalidade é consolidar dados fornecidos pelos Tribunais de Justiça referentes ao acolhimento institucional e familiar, à adoção, incluindo as intuitu personae, e a outras modalidades de colocação em família substituta, bem como sobre pretendentes nacionais e estrangeiros habilitados à adoção.</h3>
+ <h4>§ 1º A inserção de pretendentes domiciliados fora do território brasileiro no SNA compete às as Comissões Estaduais Judiciárias de Adoção – CEJAS/CEJAIS dos Tribunais de Justiça.</h4>
+ <h4>§ 2º Fica assegurado à Autoridade Central Administrativa Federal – ACAF o acesso ao sistema para inserção de dados sobre organismos internacionais e autoridades estrangeiras, bem como para visualização dos dados referentes ao cadastro dos pretendentes à adoção domiciliados no exterior, brasileiros que desejam adotar no exterior, crianças aptas à adoção internacional e adoções internacionais realizadas.</h4>
+ <h4>§ 3º Os Tribunais de Justiça deverão dispor de condições técnicas, operacionais e de pessoal para receber e processar os pedidos de habilitação para adoção apresentados por pretendentes residentes no exterior.</h4>
+ <h4>§ 4º O tratamento dos dados pessoais contidos no SNA submete-se, no que couber, aos princípios e às determinações da legislação penal, processual penal e de proteção de dados pessoais, especialmente no que diz respeito às hipóteses de sigilo, ao armazenamento e ao compartilhamento de dados. (incluído pela Resolução n. 451, de 22.4.2022)</h4>
+ <h3>Art. 2º As Corregedorias dos Tribunais de Justiça ou as Coordenadorias da Infância e Juventude funcionarão como administradoras do SNA na respectiva unidade federativa e terão acesso integral aos dados cadastrados, competindo-lhes cadastrar e liberar o acesso ao usuário, bem como zelar pela correta alimentação do sistema.</h3>
+ <h4>Parágrafo único. A responsabilidade pelo cadastro de pessoa, expedição de documentos, classificação, atualização, inclusão e exclusão de dados no sistema é exclusiva das autoridades judiciárias competentes.</h4>
+ <h3>Art. 3º O Conselho Nacional de Justiça prestará o apoio técnico necessário aos Tribunais de Justiça para a correta alimentação do SNA.</h3>
+ <h3>Art. 4º O Conselho Nacional de Justiça, as Comissões Estaduais Judiciárias de Adoção, as Coordenadorias da Infância e Juventude e as Corregedorias-Gerais dos Tribunais de Justiça devem promover e estimular campanhas de incentivo à reintegração à família de origem, à inclusão em família extensa ou à adoção de crianças e adolescentes em acolhimento familiar ou institucional, sem perspectivas de reinserção à família natural.</h3>
+ <h3>Art. 5º O SNA integra todos os cadastros municipais, estaduais e nacional de crianças e adolescentes em condições de serem adotados e de pretendentes habilitados à adoção, inclusive os cadastros internacionais, conforme preceitua o art. 50, § 5º e 6º, do Estatuto da Criança e do Adolescente , dispensada a manutenção pelos tribunais de cadastros separados.</h3>
+ <p><del></p>
+ <h3>Art. 6º Compete ao Comitê Gestor dos Cadastros Nacionais viabilizar a migração dos dados armazenados no Cadastro Nacional de Adoção – CNA e no Cadastro Nacional de Crianças de Adolescentes Acolhidos –CNCA para o SNA . (revogado pela Resolução n. 390, de 6.5.2021)</del></h3>
+ <h4>§ 1º Os cadastros CNA e CNCA ficarão disponíveis para consulta até o dia 12 de outubro de 2019.</h4>
+ <h4>§ 2º Concluída a migração dos dados para o SNA e observado o disposto no § 1º deste artigo, os cadastros CNA e CNCA serão extintos, em conformidade com a Lei nº 13.709, de 14 de agosto de 2018 , Lei Geral de Proteção de Dados.</h4>
+ <h3>Art. 7º As regras técnicas do SNA estão inseridas no Anexo I desta Resolução.</h3>
+ <h4>Parágrafo único. Eventuais atualizações do anexo poderão ser feitas por meio da edição de Portaria da Presidência do CNJ, após parecer técnico do CGCN .</h4>
+ <h4>Parágrafo único. Eventuais atualizações do anexo desta Resolução poderão ser feitas por meio da edição de Portaria da Presidência do CNJ, após parecer técnico do Comitê de Apoio ao Sistema Nacional de Adoção e Acolhimento. (redação dada pela Resolução n. 451, de 22.4.2022)</h4>
+ <h3>Art. 7º -A O SNA adotará os conceitos, as diretrizes e os princípios previstos na Resolução CNJ Nº 335/2020 , que dispõe sobre a Plataforma Digital do Poder Judiciário, e será desenvolvido como serviço desta, contando com as estruturas nela disponibilizadas. (incluído pela Resolução n. 451, de 22.4.2022)</h3>
+ <h4>Parágrafo único. O SNA poderá ser alimentado pelos tribunais e demais órgãos por meio de Application Programming Interface (API), a ser desenvolvido pelo CNJ. (incluído pela Resolução n. 451, de 22.4.2022)</h4>
+ <h3>Art. 7º -B O CNJ poderá firmar parcerias para integrar o SNA a outros sistemas, com a finalidade de possibilitar o intercâmbio de informações, respeitando, no que couber, as normas de proteção de dados e as regras de sigilo. (incluído pela Resolução n. 451, de 22.4.2022)</h3>
+ <h4>Parágrafo único. As integrações serão realizadas mediante acordo de cooperação técnica que deverá prever, entre outras obrigações: (incluído pela Resolução n. 451, de 22.4.2022)</h4>
+ <h5>I – a finalidade da integração, observada a atribuição legal de cada instituição; (incluído pela Resolução n. 451, de 22.4.2022)</h5>
+ <h5>II – a forma de gestão de usuários(as) e de acesso ao sistema; (incluído pela Resolução n. 451, de 22.4.2022)</h5>
+ <h5>III – o registro dos tratamentos de dados realizados, com indicação do operador, da data e da hora do tratamento; bem como a extensão dos dados tratados, com imediata disponibilização ao CNJ; e (incluído pela Resolução n. 451, de 22.4.2022)</h5>
+ <h5>IV – as sanções aplicadas em caso de descumprimento. (incluído pela Resolução n. 451, de 22.4.2022)</h5>
+ <h3>Art. 8º Os Tribunais de Justiça deverão dar ampla publicidade sobre as funcionalidades do SNA, em ato próprio, a ser editado nos termos da minuta proposta no Anexo II desta Resolução.</h3>
+ <h3>Art. 9º Ficam revogadas as Resoluções nº 54, de 29 de abril de 2008 , nº 93, de 27 de outubro de 2009 , e nº 190, de 1º de abril de 2014 , bem como a Portaria Conjunta nº 2, de 9 de fevereiro de 2010 .</h3>
+ <h3>Art. 10. Os</h3>
+ <p>Provimentos nº 32, de 24 de junho de 2013</p>
+ <p>, e nº 36, de 5 de maio de 2014 , por meio de ato específico da Corregedoria Nacional de Justiça, deverão ter sua redação adequada aos termos desta Resolução, substituindo-se, onde couber, Cadastro Nacional de Crianças de Adolescentes Acolhidos – CNCA e Cadastro Nacional de Adoção – CNA, por Sistema Nacional de Adoção e Acolhimento – SNA.</p>
+ <h3>Art. 11. Esta Resolução entra em vigor na data de sua publicação.</h3>
+ <p>Ministro DIAS TOFFOLI</p>
+ <p>ANEXO I DA RESOLUÇÃO Nº 289, DE 14 DE AGOSTO DE 2019.</p>
+ <h3>REGULAMENTAÇÃO TÉCNICA DO SISTEMA NACIONAL DE ADOÇÃO E ACOLHIMENTO</h3>
+ <h5>I – DA HABILITAÇÃO PARA ADOÇÃO</h5>
+ <h3>Art. 1º A inscrição dos pretendentes no SNA será efetuada em ordem cronológica, a partir da data da sentença de habilitação, observando-se, como critério de desempate, a data do ajuizamento do pedido.</h3>
+ <h4>Parágrafo único. A data de habilitação será mantida mesmo em caso de mudança de pretendente para outra comarca.</h4>
+ <h3>Art. 2º A habilitação do pretendente terá validade de três anos, devendo ser renovada até o seu vencimento.</h3>
+ <h4>§ 1º Expirado o prazo mencionado no caput, a habilitação será suspensa por 30 dias, durante os quais o postulante poderá solicitar a renovação.</h4>
+ <h4>§ 2º Enquanto suspensa a habilitação, o postulante não será consultado para novas adoções.</h4>
+ <h4>§ 3º Decorrido o prazo de 30 dias sem que o pretendente renove sua habilitação, esta será arquivada, com imediata inativação no sistema.</h4>
+ <h5>II - DA INCLUSÃO DA CRIANÇA OU ADOLESCENTE NA SITUAÇÃO APTA PARA ADOÇÃO</h5>
+ <h3>Art. 3º A colocação da criança ou do adolescente na situação “apta para adoção” deverá ocorrer após o trânsito em julgado da decisão do processo de destituição ou extinção do poder familiar, ou ainda quando a criança ou o adolescente for órfão ou tiver ambos os genitores desconhecidos.</h3>
+ <h3>Art. 4º O juiz poderá, no melhor interesse da criança ou do adolescente, determinar a inclusão cautelar na situação “apta para adoção” antes do trânsito em julgado da decisão que destitui ou extingue o poder familiar, hipótese em que o pretendente deverá ser informado sobre o risco jurídico.</h3>
+ <h5>III – DA VINCULAÇÃO ENTRE CRIANÇAS E/OU ADOLESCENTES E PRETENDENTES</h5>
+ <h3>Art. 5º Iniciada a vinculação entre a criança ou adolescente e o pretendente, a habilitação do pretendente ficará suspensa no sistema para novas consultas.</h3>
+ <h3>Art. 6º Iniciado o estágio de convivência, caso o pretendente esteja inicialmente habilitado para adoção de outras crianças ou adolescentes, o sistema o reclassificará, sendo mantida como data da classificação a do início do estágio de convivência, observada a hipótese do art. 197- E, §3º, do ECA .</h3>
+ <h3>Art. 7º Realizada a vinculação, o juízo terá o prazo de 15 dias para comunicar o fato ao pretendente, atualizando as informações no sistema.</h3>
+ <h4>Parágrafo único. Caso o pretendente não receba comunicação do juízo no prazo citado no caput, o sistema automaticamente lhe encaminhará correspondência eletrônica, convocando-o para manifestar interesse em conhecer a criança ou o adolescente.</h4>
+ <h3>Art. 8º Esgotada a busca por pretendentes nacionais, deve o juízo competente, no prazo máximo de cinco dias, iniciar as buscas internacionais, com a devida ciência à CEJA/CEJAI do respectivo tribunal.</h3>
+ <h5>IV – DAS GUIAS DE ACOLHIMENTO E DESLIGAMENTO</h5>
+ <h3>Art. 9º A Guia Nacional de Acolhimento e a Guia Nacional de Desligamento de Crianças e Adolescentes Acolhidos deverão ser obrigatoriamente emitidas no sistema para todas as crianças e adolescentes cuja medida protetiva de acolhimento tenha sido aplicada.</h3>
+ <h5>V – DO RELATÓRIO ELETRÔNICO DAS AUDIÊNCIAS CONCENTRADAS</h5>
+ <h3>Art. 10. O sistema gerará automaticamente o relatório eletrônico das audiências concentradas na unidade judiciária, contendo as estatísticas referentes às crianças e aos adolescentes que passaram por acolhimento naquele semestre, substituindo o preenchimento eletrônico dos dados.</h3>
+ <p>ANEXO II DA RESOLUÇÃO Nº 289, DE 14 DE AGOSTO DE 2019.</p>
+ <h3>MINUTA DE ATO PARA DAR PUBLICIDADE ÀS FUNCIONALIDADES DO SNA AOS PRETENDENTES</h3>
+ <h5>I – DA HABILITAÇÃO PARA ADOÇÃO</h5>
+ <h3>Art. 1º O pretendente interessado em iniciar o processo de habilitação poderá realizar seu pré-cadastro no SNA por meio de formulário eletrônico e se dirigir à Vara da Infância e Juventude da comarca de seu domicílio para protocolar o pedido de habilitação para adoção.</h3>
+ <h4>Parágrafo único. O pretendente somente será considerado habilitado após a sentença de deferimento proferida no procedimento de habilitação.</h4>
+ <h3>Art. 2º Se o pretendente apresentar perfil de adotando de difícil colocação em família substituta, o magistrado deverá dar prioridade à tramitação da habilitação.</h3>
+ <h3>Art. 3º Nos pedidos de habilitação para adoção, as Varas da Infância e Juventude deverão verificar se o requerente possui residência habitual naquela comarca.</h3>
+ <h3>Art. 4º O pretendente é responsável pela atualização de seus dados pessoais e meios de contato junto à Vara da Infância e Juventude, podendo alterá-los diretamente em área exclusiva do sistema ou presencialmente.</h3>
+ <h4>§ 1º Em caso de mudança de domicílio, o pretendente deverá dar imediata ciência à Vara da Infância e Juventude, devendo juntar comprovante do novo endereço nos autos do processo original ou requerer pessoalmente a remessa dos autos na vara com competência em infância e juventude do novo endereço.</h4>
+ <h4>§ 2º Caso eventual desatualização dos dados venha a ensejar impossibilidade de comunicação com o pretendente, tal fato será considerado recusa injustificada do habilitado à adoção de crianças ou adolescentes, com as consequências do art. 197-E, §4º, do ECA .</h4>
+ <h3>Art. 5º Havendo mudança de endereço do pretendente, o magistrado da comarca da nova residência verificará a necessidade de nova avaliação psicossocial, podendo suspender o processo.</h3>
+ <h4>Parágrafo único. A inclusão dos novos dados do pretendente no sistema não altera a data-base de habilitação inicial.</h4>
+ <h3>Art. 6º No caso de separação dos pretendentes, havendo interesse de qualquer deles ou de ambos em permanecer no sistema, deverão ser renovadas as avaliações, mantida, para efeito de ordem no cadastro, a mesma data-base da habilitação do casal.</h3>
+ <h3>Art. 7º A renovação da habilitação, para manutenção da ordem de preferência no sistema, deverá ser solicitada pelo postulante com antecedência de 120 dias.</h3>
+ <h3>Art. 8º O pretendente poderá solicitar suspensão de consultas para adoção pelo prazo máximo de seis meses, nos termos do art. 313, II, e § 4º, do Código de Processo Civil .</h3>
+ <h3>Art. 9º O sistema inativará a habilitação dos pretendentes à adoção nos seguintes casos:</h3>
+ <h5>I – transcorridos 30 dias do vencimento do processo de habilitação, caso não haja pedido de renovação;</h5>
+ <h5>II – trânsito em julgado de sentença que deferir pedido de adoção na forma pretendida pelo postulante; e</h5>
+ <h5>III – decisão judicial. Parágrafo único. Inativada a habilitação, o pretendente não será consultado para novas adoções e deverá se submeter a um novo processo de habilitação.</h5>
+ <h3>Art. 10. Os casos omissos ou que suscitarem dúvidas deverão ser decididos pelo juiz do processo de habilitação ou, existindo mais de um, pela Corregedoria local, se na mesma unidade federativa, ou pela Corregedoria Nacional de Justiça, quando envolver unidades federativas diversas.</h3>
+ <h3>Art. 11. As comunicações com o pretendente serão realizadas preferencialmente por meio eletrônico.</h3>
+ <h5>II – DA VINCULAÇÃO ENTRE CRIANÇAS OU ADOLESCENTES E PRETENDENTES</h5>
+ <h3>Art. 12. Compete ao órgão julgador responsável pela criança ou adolescente vinculado a um pretendente dar início ao processo de aproximação entre os envolvidos.</h3>
+ <h4>§ 1º O pretendente, após formalmente consultado, terá o prazo de dois dias úteis para manifestar interesse em conhecer a criança ou adolescente.</h4>
+ <h4>§ 2º Em caso de omissão ou desinteresse do pretendente em conhecer a criança ou adolescente, será iniciada nova busca por pretendente habilitado.</h4>
+ <h4>§ 3º Manifestada, por qualquer meio, a anuência em conhecer o adotando, o pretendente deverá comparecer ao juízo que o convocou em até cinco dias, prorrogáveis a juízo do magistrado e mediante justificação adequada, para dar início aos procedimentos prévios à adoção.</h4>
+ <h4>§ 4º Caso o pretendente não se apresente em até cinco dias ao juízo que o convocou, o magistrado cancelará a vinculação no sistema e determinará a consulta ao próximo pretendente habilitado.</h4>
+ <p>Ministro DIAS TOFFOLI</p>
+ <p>Presidente</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://atos.cnj.jus.br/atos/detalhar/2976" rel="nofollow" target="_blank">CNJ – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

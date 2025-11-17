@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução CNJ Nº 439/2022 – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="CNJ" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2022" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>RESOLUÇÃO CNJ Nº 439, DE 7 DE JANEIRO DE 2022 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="CNJ" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2022" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,98 +315,217 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução CNJ Nº 439/2022</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 03:40:45 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/4303" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 9.332 caracteres | espelho: 9.206 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução Nº 439 de 07/01/2022</p>
-<p>Concurso, Promoção e Disciplina; Funcionamento dos Órgãos Judiciais; </p>
-<p>Ementa</p>
-<p>Autoriza os tribunais a instituírem programas de residência jurídica.</p>
-<p>Fonte: DJe/CNJ n. 124/2024, de 6 de junho de 2024, p. 2-4 (republicação).</p>
-<p>Alteração</p>
-<p>Resolução n. 635, de 9 de setembro de 2025</p>
-<p>Legislação Correlata</p>
-<p>Resolução n. 336, de 29 de setembro de 2020</p>
-<p>Resolução n. 75, de 12 de maio de 2009</p>
-<p>ADI 5752 - STF</p>
-<p>ADI 6693 - STF</p>
-<p>ADI 5477 - STF</p>
-<p>ADI 5803 - STF</p>
-<p>ADI 6520 - STF</p>
-<p>Observação / CUMPRDEC / CONSULTA</p>
-<p>Cumprdec 0000696-94.2022.2.00.0000</p>
-<p>CONSULTA 0004204-48.2022.2.00.0000</p>
-<p>Publicada originariamente no DJe/CNJ nº 7/2022, de 11 de janeiro de 2022, p. 2-3.</p>
-<p>A Secretaria Processual do Conselho Nacional de Justiça comunica republicação da Resolução n. 439, de 7 de janeiro de 2022, disponibilizada no Dje n. 7, em 11 de janeiro de 2022, em decorrência de alterações aprovadas pelo Plenário do Conselho Nacional de Justiça em 24 de maio de 2024.</p>
-<p>Texto</p>
-<p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA (CNJ), no uso de suas atribuições legais e regimentais;</p>
-<h2>CONSIDERANDO que o art. 205 da CRFB/1988 consagra um conceito amplo de direito à educação, gizando suas potencialidades no campo do desenvolvimento existencial do indivíduo e sua especial relevância para o exercício da cidadania e qualificação para o trabalho;</h2>
-<h2>CONSIDERANDO que a jurisprudência do Supremo Tribunal Federal já assentou a possibilidade de instituição de programas de residência jurídica, nos termos dos seguintes precedentes: ADI 5752 , julgado em 18.10.2019, Rel. Min. Luiz Fux, Tribunal Pleno; ADI 6693 , julgado em 27.09.2021; ADI 5477 , Rel. Min. Cármen Lúcia, Tribunal Pleno, julgado em 29.03.2021; ADI 5803 , Rel. Min. Marco Aurélio, Tribunal Pleno, julgado em 18.12.2019; e, ADI 6520 , Rel. Min. Roberto Barroso, decisão monocrática, julgado em 17.8.2020;</h2>
-<h2>CONSIDERANDO que a Administração Pública deve se pautar pelo princípio da eficiência, nos termos do art. 37 da Constituição da República ;</h2>
-<h2>CONSIDERANDO que o Poder Judiciário deve trabalhar pelo aprimoramento contínuo da qualidade dos serviços jurisdicionais;</h2>
-<h2>CONSIDERANDO a necessidade de motivar e comprometer os recursos humanos, propiciando-lhes condições para o desenvolvimento de suas potencialidades pessoais e profissionais;</h2>
-<h2>CONSIDERANDO a decisão plenária tomada no julgamento do Ato Normativo Nº 0004888-17.2015.2.00.0000, na 61ª Sessão Extraordinária, realizada no dia 14 de dezembro de 2021;</h2>
-<h2>RESOLVE:</h2>
-<h3>Art. 1º Os tribunais ficam autorizados a instituir Programas de Residência Jurídica, objetivando proporcionar o aprimoramento da formação teórica e prática dos profissionais do Sistema de Justiça.</h3>
-<h4>§ 1º A Residência Jurídica constitui modalidade de ensino destinado a bacharéis em Direito que estejam cursando especialização, mestrado, doutorado, pós-doutorado ou, ainda, que tenham concluído o curso de graduação há no máximo 5 (cinco) anos.</h4>
-<h4>§ 1º-A O Conselho da Justiça Federal e o Conselho Superior da Justiça do Trabalho regulamentarão a matéria no âmbito da Justiça Federal e do Trabalho, no prazo de 90 (noventa) dias, observados os parâmetros desta Resolução. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 2º A Residência Jurídica consiste no treinamento em serviço, abrangendo ensino, pesquisa e extensão, bem como o auxílio prático aos magistrados e servidores do Poder Judiciário no desempenho de suas atribuições institucionais.</h4>
-<h4>§ 3º Os Programas de Residência poderão ter jornada de estágio máxima de 30 (trinta) horas semanais e duração de até 36 (trinta e seis) meses, não gerando vínculo de qualquer natureza com a Administração Pública.</h4>
-<h4>§ 4º A jornada será exercida na modalidade presencial, podendo, a critério do tribunal/conselho, ser realizada na modalidade teletrabalho, parcial ou integral. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 5º O número de residentes selecionados pelo tribunal/conselho não poderá ultrapassar o limite de 10% (dez por cento) em relação ao número de servidores da área judiciária. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 6º É vedado aos tribunais ou conselhos utilizarem a Resolução CNJ nº 439/2022 como fundamento para a instituição de programas de residência para outras áreas que não a jurídica. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h3>Art. 2º A regulamentação do Programa de Residência deve se dar por meio de ato normativo local, que deverá dispor sobre o processo seletivo para o ingresso no programa e seu conteúdo programático, a delimitação das atividades a serem exercidas pelo residente, as hipóteses de desligamento e os requisitos para obtenção do certificado final, observadas as disposições insculpidas na presente Resolução.</h3>
-<h4>§ 1º A admissão em Programa de Residência deve ocorrer mediante processo seletivo público, com publicação de edital e ampla divulgação, abrangendo a aplicação de provas objetiva e discursiva, de caráter classificatório e eliminatório.</h4>
-<h4>§ 2º Aplicam-se aos Programas de Residência Jurídica o disposto na Resolução CNJ Nº 336/2020 , que dispõe sobre a promoção de cotas raciais nos programas de estágio dos órgãos do Poder Judiciário nacional.</h4>
-<h4>§ 2º-A Do total das vagas no processo seletivo, serão reservadas: (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h5>I – às pessoas com deficiência, o percentual de, no mínimo 5% (cinco por cento) e, no máximo, de 20% (vinte por cento); (incluído pela Resolução n. 635, de 9.9.2025)</h5>
-<h5>II – ao gênero feminino, o percentual de 50% (cinquenta por cento); e (incluído pela Resolução n. 635, de 9.9.2025)</h5>
-<h5>III – às pessoas que se autodeclararem indígenas, o percentual de, pelo menos, 3% (três por cento), podendo os tribunais elevarem-no, diante de suas particularidades locais, desde que devidamente justificada a alteração. (incluído pela Resolução n. 635, de 9.9.2025)</h5>
-<h4>§ 2º-B A reserva de vagas de que trata o § 2-A, III, será aplicada sempre que o número de vagas oferecidas for igual ou superior a 10 (dez). (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 2º-C Na hipótese de não haver número suficiente de pessoas negras, com deficiência, do gênero feminino ou indígenas selecionadas para ocupar as vagas reservadas nos termos dos parágrafos anteriores, as vagas remanescentes serão destinadas à ampla concorrência. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 3º Os residentes deverão receber orientações teóricas e práticas sobre a atuação do Poder Judiciário ao longo do programa, contando com um magistrado-orientador, bem como participar também de atividades e eventos acadêmicos realizados pelas Escolas da Magistratura.</h4>
-<h4>§ 4º Os residentes não poderão exercer atividades privativas de magistrados, nem atuar de forma isolada nas atividades finalísticas do Poder Judiciário.</h4>
-<h4>§ 5º É vedada a assinatura de peças privativas de integrantes da magistratura, mesmo em conjunto com o magistrado-orientador.</h4>
-<h4>§ 6º Os residentes não poderão exercer a advocacia durante a vigência do Programa de Residência Jurídica.</h4>
-<h4>§ 7º O residente deverá receber, ao longo do período de participação, uma bolsa-auxílio mensal, cujo valor deverá ser definido por meio do ato normativo local.</h4>
-<h4>§ 7º O residente deverá receber, ao longo do período de participação, auxílio-transporte e bolsa-auxílio mensal. (redação dada pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 8º É compulsória a contratação do seguro coletivo contra acidentes pessoais. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 9º Os valores dos auxílios financeiros de que trata o § 7º serão definidos pelos tribunais/conselhos, ressalvada a bolsa-auxílio mensal que não poderá ultrapassar o valor correspondente a 3 (três) salários-mínimos. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h4>§ 10. É vedada a concessão de auxílio-alimentação, assistência à saúde ou qualquer outro benefício não previsto nesta Resolução, salvo legislação local ou especial disciplinando a matéria de modo diverso. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h3>Art. 3º Cumpridos os requisitos de frequência e obtida a aprovação em procedimento de avaliação, nos termos do ato normativo local, o residente fará jus ao Certificado de conclusão de Programa de Residência.</h3>
-<h4>§ 3º-A Aplicam-se aos programas de residência jurídica, no que couber, as disposições da Lei nº 11.788/2008 (Lei do Estágio). (incluído pela Resolução n. 635, de 9.9.2025)</h4>
-<h3>Art. 4º A participação em Programa de Residência instituído por tribunal deverá ser considerada como título, nos termos da Resolução CNJ Nº 75/2009 .</h3>
-<h3>Art. 5º O art. 67 da Resolução CNJ Nº 75/2009 passa a vigorar com a seguinte alteração:</h3>
-<p>“</p>
-<h3>Art. 67. Constituem títulos:</h3>
-<p>.......................................................................................................</p>
-<h5>XII – Certificado de conclusão de Programa de Residência instituído por Tribunal, com duração de pelo menos 12 (doze) meses: 0,5.” (NR)</h5>
-<h5>XII - exercício, no mínimo durante 1 (um) ano, das atribuições de conciliador nos juizados especiais, ou na prestação de assistência jurídica voluntária: 0,5; (redação dada em razão de republicação)</h5>
-<h5>XIII – Certificado de conclusão de Programa de Residência instituído por Tribunal, com duração de pelo menos 12 (doze) meses: 0,5. (redação dada em razão de republicação)</h5>
-<h3>Art. 6º Esta Resolução entra em vigor na data de sua publicação.</h3>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>RESOLUÇÃO CNJ Nº 439, DE 7 DE JANEIRO DE 2022</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:31:09 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://atos.cnj.jus.br/atos/detalhar/4303" rel="nofollow" target="_blank">CNJ – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 9.332 caracteres | espelho: 9.206 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução Nº 439 de 07/01/2022</p>
+ <p>Concurso, Promoção e Disciplina; Funcionamento dos Órgãos Judiciais; <div class="row"> <div class="col-2 identificacao">Assuntos</div> <div class="col-10 dsc_conteudo"> </div> </div></p>
+ <p>Ementa</p>
+ <p>Autoriza os tribunais a instituírem programas de residência jurídica.</p>
+ <p>Fonte: DJe/CNJ n. 124/2024, de 6 de junho de 2024, p. 2-4 (republicação).</p>
+ <p>Alteração</p>
+ <p>Resolução n. 635, de 9 de setembro de 2025</p>
+ <p>Legislação Correlata</p>
+ <p>Resolução n. 336, de 29 de setembro de 2020</p>
+ <p>Resolução n. 75, de 12 de maio de 2009</p>
+ <p>ADI 5752 - STF</p>
+ <p>ADI 6693 - STF</p>
+ <p>ADI 5477 - STF</p>
+ <p>ADI 5803 - STF</p>
+ <p>ADI 6520 - STF</p>
+ <p>Observação / CUMPRDEC / CONSULTA</p>
+ <p>Cumprdec 0000696-94.2022.2.00.0000</p>
+ <p>CONSULTA 0004204-48.2022.2.00.0000</p>
+ <p>Publicada originariamente no DJe/CNJ nº 7/2022, de 11 de janeiro de 2022, p. 2-3.</p>
+ <p>A Secretaria Processual do Conselho Nacional de Justiça comunica republicação da Resolução n. 439, de 7 de janeiro de 2022, disponibilizada no Dje n. 7, em 11 de janeiro de 2022, em decorrência de alterações aprovadas pelo Plenário do Conselho Nacional de Justiça em 24 de maio de 2024.</p>
+ <p>Texto</p>
+ <p>O PRESIDENTE DO CONSELHO NACIONAL DE JUSTIÇA (CNJ), no uso de suas atribuições legais e regimentais;</p>
+ <h2>CONSIDERANDO que o art. 205 da CRFB/1988 consagra um conceito amplo de direito à educação, gizando suas potencialidades no campo do desenvolvimento existencial do indivíduo e sua especial relevância para o exercício da cidadania e qualificação para o trabalho;</h2>
+ <h2>CONSIDERANDO que a jurisprudência do Supremo Tribunal Federal já assentou a possibilidade de instituição de programas de residência jurídica, nos termos dos seguintes precedentes: ADI 5752 , julgado em 18.10.2019, Rel. Min. Luiz Fux, Tribunal Pleno; ADI 6693 , julgado em 27.09.2021; ADI 5477 , Rel. Min. Cármen Lúcia, Tribunal Pleno, julgado em 29.03.2021; ADI 5803 , Rel. Min. Marco Aurélio, Tribunal Pleno, julgado em 18.12.2019; e, ADI 6520 , Rel. Min. Roberto Barroso, decisão monocrática, julgado em 17.8.2020;</h2>
+ <h2>CONSIDERANDO que a Administração Pública deve se pautar pelo princípio da eficiência, nos termos do art. 37 da Constituição da República ;</h2>
+ <h2>CONSIDERANDO que o Poder Judiciário deve trabalhar pelo aprimoramento contínuo da qualidade dos serviços jurisdicionais;</h2>
+ <h2>CONSIDERANDO a necessidade de motivar e comprometer os recursos humanos, propiciando-lhes condições para o desenvolvimento de suas potencialidades pessoais e profissionais;</h2>
+ <h2>CONSIDERANDO a decisão plenária tomada no julgamento do Ato Normativo Nº 0004888-17.2015.2.00.0000, na 61ª Sessão Extraordinária, realizada no dia 14 de dezembro de 2021;</h2>
+ <h2>RESOLVE:</h2>
+ <h3>Art. 1º Os tribunais ficam autorizados a instituir Programas de Residência Jurídica, objetivando proporcionar o aprimoramento da formação teórica e prática dos profissionais do Sistema de Justiça.</h3>
+ <h4>§ 1º A Residência Jurídica constitui modalidade de ensino destinado a bacharéis em Direito que estejam cursando especialização, mestrado, doutorado, pós-doutorado ou, ainda, que tenham concluído o curso de graduação há no máximo 5 (cinco) anos.</h4>
+ <h4>§ 1º-A O Conselho da Justiça Federal e o Conselho Superior da Justiça do Trabalho regulamentarão a matéria no âmbito da Justiça Federal e do Trabalho, no prazo de 90 (noventa) dias, observados os parâmetros desta Resolução. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 2º A Residência Jurídica consiste no treinamento em serviço, abrangendo ensino, pesquisa e extensão, bem como o auxílio prático aos magistrados e servidores do Poder Judiciário no desempenho de suas atribuições institucionais.</h4>
+ <h4>§ 3º Os Programas de Residência poderão ter jornada de estágio máxima de 30 (trinta) horas semanais e duração de até 36 (trinta e seis) meses, não gerando vínculo de qualquer natureza com a Administração Pública.</h4>
+ <h4>§ 4º A jornada será exercida na modalidade presencial, podendo, a critério do tribunal/conselho, ser realizada na modalidade teletrabalho, parcial ou integral. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 5º O número de residentes selecionados pelo tribunal/conselho não poderá ultrapassar o limite de 10% (dez por cento) em relação ao número de servidores da área judiciária. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 6º É vedado aos tribunais ou conselhos utilizarem a Resolução CNJ nº 439/2022 como fundamento para a instituição de programas de residência para outras áreas que não a jurídica. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h3>Art. 2º A regulamentação do Programa de Residência deve se dar por meio de ato normativo local, que deverá dispor sobre o processo seletivo para o ingresso no programa e seu conteúdo programático, a delimitação das atividades a serem exercidas pelo residente, as hipóteses de desligamento e os requisitos para obtenção do certificado final, observadas as disposições insculpidas na presente Resolução.</h3>
+ <h4>§ 1º A admissão em Programa de Residência deve ocorrer mediante processo seletivo público, com publicação de edital e ampla divulgação, abrangendo a aplicação de provas objetiva e discursiva, de caráter classificatório e eliminatório.</h4>
+ <h4>§ 2º Aplicam-se aos Programas de Residência Jurídica o disposto na Resolução CNJ Nº 336/2020 , que dispõe sobre a promoção de cotas raciais nos programas de estágio dos órgãos do Poder Judiciário nacional.</h4>
+ <h4>§ 2º-A Do total das vagas no processo seletivo, serão reservadas: (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h5>I – às pessoas com deficiência, o percentual de, no mínimo 5% (cinco por cento) e, no máximo, de 20% (vinte por cento); (incluído pela Resolução n. 635, de 9.9.2025)</h5>
+ <h5>II – ao gênero feminino, o percentual de 50% (cinquenta por cento); e (incluído pela Resolução n. 635, de 9.9.2025)</h5>
+ <h5>III – às pessoas que se autodeclararem indígenas, o percentual de, pelo menos, 3% (três por cento), podendo os tribunais elevarem-no, diante de suas particularidades locais, desde que devidamente justificada a alteração. (incluído pela Resolução n. 635, de 9.9.2025)</h5>
+ <h4>§ 2º-B A reserva de vagas de que trata o § 2-A, III, será aplicada sempre que o número de vagas oferecidas for igual ou superior a 10 (dez). (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 2º-C Na hipótese de não haver número suficiente de pessoas negras, com deficiência, do gênero feminino ou indígenas selecionadas para ocupar as vagas reservadas nos termos dos parágrafos anteriores, as vagas remanescentes serão destinadas à ampla concorrência. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 3º Os residentes deverão receber orientações teóricas e práticas sobre a atuação do Poder Judiciário ao longo do programa, contando com um magistrado-orientador, bem como participar também de atividades e eventos acadêmicos realizados pelas Escolas da Magistratura.</h4>
+ <h4>§ 4º Os residentes não poderão exercer atividades privativas de magistrados, nem atuar de forma isolada nas atividades finalísticas do Poder Judiciário.</h4>
+ <h4>§ 5º É vedada a assinatura de peças privativas de integrantes da magistratura, mesmo em conjunto com o magistrado-orientador.</h4>
+ <h4>§ 6º Os residentes não poderão exercer a advocacia durante a vigência do Programa de Residência Jurídica.</h4>
+ <h4>§ 7º O residente deverá receber, ao longo do período de participação, uma bolsa-auxílio mensal, cujo valor deverá ser definido por meio do ato normativo local.</h4>
+ <h4>§ 7º O residente deverá receber, ao longo do período de participação, auxílio-transporte e bolsa-auxílio mensal. (redação dada pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 8º É compulsória a contratação do seguro coletivo contra acidentes pessoais. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 9º Os valores dos auxílios financeiros de que trata o § 7º serão definidos pelos tribunais/conselhos, ressalvada a bolsa-auxílio mensal que não poderá ultrapassar o valor correspondente a 3 (três) salários-mínimos. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h4>§ 10. É vedada a concessão de auxílio-alimentação, assistência à saúde ou qualquer outro benefício não previsto nesta Resolução, salvo legislação local ou especial disciplinando a matéria de modo diverso. (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h3>Art. 3º Cumpridos os requisitos de frequência e obtida a aprovação em procedimento de avaliação, nos termos do ato normativo local, o residente fará jus ao Certificado de conclusão de Programa de Residência.</h3>
+ <h4>§ 3º-A Aplicam-se aos programas de residência jurídica, no que couber, as disposições da Lei nº 11.788/2008 (Lei do Estágio). (incluído pela Resolução n. 635, de 9.9.2025)</h4>
+ <h3>Art. 4º A participação em Programa de Residência instituído por tribunal deverá ser considerada como título, nos termos da Resolução CNJ Nº 75/2009 .</h3>
+ <h3>Art. 5º O art. 67 da Resolução CNJ Nº 75/2009 passa a vigorar com a seguinte alteração:</h3>
+ <p>“</p>
+ <h3>Art. 67. Constituem títulos:</h3>
+ <p>.......................................................................................................</p>
+ <h5>XII – Certificado de conclusão de Programa de Residência instituído por Tribunal, com duração de pelo menos 12 (doze) meses: 0,5.” (NR)</h5>
+ <h5>XII - exercício, no mínimo durante 1 (um) ano, das atribuições de conciliador nos juizados especiais, ou na prestação de assistência jurídica voluntária: 0,5; (redação dada em razão de republicação)</h5>
+ <h5>XIII – Certificado de conclusão de Programa de Residência instituído por Tribunal, com duração de pelo menos 12 (doze) meses: 0,5. (redação dada em razão de republicação)</h5>
+ <h3>Art. 6º Esta Resolução entra em vigor na data de sua publicação.</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://atos.cnj.jus.br/atos/detalhar/4303" rel="nofollow" target="_blank">CNJ – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>
