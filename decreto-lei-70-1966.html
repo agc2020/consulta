@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Decreto-Lei Nº 70/1966 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Decreto-Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1966" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Decreto-Lei Nº 70/1966</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:44:25 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0070-66.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 30.710 caracteres | espelho: 27.846 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>DECRETO-LEI Nº 70, DE 21 DE NOVEMBRO DE 1966. Autoriza o funcionamento de associações de poupança e empréstimo, institui a cédula hipotecária e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , com base no disposto pelo artigo 31, parágrafo único, do Ato Institucional nº 2, de 27 de outubro de 1965, e tendo em vista o Ato Complementar nº 23, de 20 de outubro de 1966,</p>
+ <p>DECRETA:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Das Associações de Poupança e Empréstimo</p>
+ <h3>Art 1º Dentro das normas gerais que forem estabelecidas pelo Conselho Monetário Nacional, poderão ser autorizadas a funcionar, nos têrmos dêste decreto-lei, associações de poupança e empréstimo, que se constituirão obrigatòriamente sob a forma de sociedades civis, de âmbito regional restrito, tendo por objetivos fundamentais:</h3>
+ <h5>I - propiciar ou facilitar a aquisição de casa própria aos associados;</h5>
+ <h5>II - captar, incentivar e disseminar a poupança.</h5>
+ <h4>§ 1º As associações de poupança e empréstimo estarão compreendidas no Sistema Financeiro da Habitação no item IV do artigo 8º da Lei número 4.380, de 21 de agôsto de 1964 , e legislação complementar, com todos os encargos e vantagens decorrentes.</h4>
+ <h4>§ 2º As associações de poupança e empréstimo e seus administradores ficam subordinados aos mesmos preceitos e normas atinentes às instituições financeiras, estabelecidos no capítulo V da Lei nº 4.595, de 31 de dezembro de 1964 .</h4>
+ <h3>Art 2º São características essenciais das associações de poupança e empréstimo:</h3>
+ <h5>I - a formação de vínculo societário, para todos os efeitos legais, através de depósitos em dinheiro efetuados por pessoas físicas interessadas em delas participar;</h5>
+ <h5>II - a distribuição aos associados, como dividendos, da totalidade dos resultados líquidos operacionais, uma vez deduzidas as importâncias destinadas à constituição dos fundos de reserva e de emergência e a participação da administração nos resultados das associações.</h5>
+ <h3>Art 3º É assegurado aos Associados:</h3>
+ <h5>I - retirar ou movimentar seus depósitos, observadas as condições regulamentares;</h5>
+ <h5>II - tomar parte nas assembléias gerais, com plena autonomia deliberativa, em todos os assuntos da competência delas;</h5>
+ <h5>III - votar e ser votado.</h5>
+ <h3>Art 4º Para o exercício de seus direitos societários, cada associado terá pelo menos um voto, qualquer que seja o volume de seus depósitos na Associação, e terá tantos votos quantas "Unidades-Padrão de Capital do Banco Nacional da Habitação" se contenham no respectivo depósito, nos têrmos do artigo 52 e seus parágrafos da Lei nº 4.380, de 21-8-64 , e artigo 9º e seus parágrafos dêste decreto-lei.</h3>
+ <h4>§ 1º Quando o associado dispuser de mais de um voto, a soma respectiva será apurada na forma prevista neste artigo, sendo desprezadas as frações inferiores a uma "Unidade-Padrão de Capital".</h4>
+ <h4>§ 2º Poderá ser limitado, como norma geral, variável de região a região, o número máximo de votos correspondentes a cada depósito ou a cada depositante.</h4>
+ <h3>Art 5º Será obrigatório, como despesa operacional das associações de poupança e empréstimo, o pagamento de prêmio para seguro dos depósitos.</h3>
+ <h3>Art 6º O Banco Nacional da Habitação poderá determinar, deliberando inclusive quanto à maneira de fazê-lo, a reorganização, incorporação, fusão ou liquidação de associações de poupança e empréstimo, bem como intervir nas mesmas, através de interventor ou interventores especialmente nomeados, independentemente das respectivas assembléias - gerais sempre que verificada uma ou mais das seguintes hipóteses:</h3>
+ <h6>a) insolvência;</h6>
+ <h6>b) violação das leis ou dos regulamentes;</h6>
+ <h6>c) negativa em exibir papéis e documentos ou tentativa de impedir inspeções;</h6>
+ <h6>d) realização de operações inseguras ou antieconômicas;</h6>
+ <h6>e) operação em regime de perda.</h6>
+ <h3>Art 7º As Associações de poupança e empréstimo são isentas de impôsto de renda; são também isentas de impôsto de renda as correções monetárias que vierem a pagar a seus depositantes.</h3>
+ <h3>Art 8º Aplicam-se às associações de poupança e empréstimo, no que êste decreto-lei não contrariar, os artigos 1.363 e seguintes do Código Civil ou legislação substitutiva ou modificativa dêles.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Da Cédula Hipotecária</p>
+ <h3>Art 9º Os contratos de empréstimo com garantia hipotecária, com exceção das que consubstanciam operações de crédito rural, poderão prever o reajustamento das respectivas prestações de amortização e juros com a conseqüente correção monetária da dívida.</h3>
+ <h4>§ 1º Nas hipotecas não vinculadas ao Sistema Financeiro da Habitação, a correção monetária da dívida obedecerá ao que fôr disposto para o Sistema Financeiro da Habitação.</h4>
+ <h4>§ 2º A menção a Obrigações Reajustáveis do Tesouro Nacional nas operações mencionadas no § 2º do artigo 1º do Decreto-lei nº 19, de 30 de agôsto de 1966 , e neste decreto-lei entende-se como equivalente a menção de Unidades-padrão de Capital do Banco Nacional da Habitação e o valor destas será sempre corrigido monetàriamente durante a vigência do contrato, segundo os critérios do art. 7º , 1º, da Lei nº 4.357-64 .</h4>
+ <h4>§ 3º A cláusula de correção monetária utilizável nas operações do Sistema Financeiro da Habitação poderá ser aplicada em tôdas as operações mencionadas no § 2º do art. 1º do Decreto-lei nº 19, de 30.8.66 , que vierem a ser pactuadas por pessoas não integrantes daquele Sistema, desde que os atos jurídicos se refiram a operações imobiliárias.</h4>
+ <h3>Art 10. É instituída a cédula hipotecária para hipotecas inscritas no Registro Geral de Imóveis, como instrumento hábil para a representação dos respectivos créditos hipotecários, a qual poderá ser emitida pelo credor hipotecário nos casos de:</h3>
+ <h5>I - operações compreendidas no Sistema Financeiro da Habitação;</h5>
+ <h5>II - hipotecas de que sejam credores instituições financeiras em geral, e companhias de seguro;</h5>
+ <h5>III - hipotecas entre outras partes, desde que a cédula hipotecária seja originàriamente emitida em favor das pessoas jurídicas a que se refere o inciso II supra.</h5>
+ <h4>§ 1º A cédula hipotecária poderá ser integral, quando representar a totalidade do crédito hipotecário, ou fracionária, quando representar parte dêle, entendido que a soma do principal das cédulas hipotecárias fracionárias emitidas sôbre uma determinada hipoteca e ainda em circulação não poderá exceder, em hipótese alguma, o valor total do respectivo crédito hipotecário em nenhum momento.</h4>
+ <h4>§ 2º Para os efeitos do valor total mencionado no parágrafo anterior, admite-se o cômputo das correções efetivamente realizadas, na forma do artigo 9º, do valor Monetário da dívida envolvida.</h4>
+ <h4>§ 3º As cédulas hipotecárias fracionárias poderão ser emitidas em conjunto ou isoladamente a critério do credor, a qualquer momento antes do vencimento da correspondente dívida hipotecária.</h4>
+ <h3>Art 11. É admitida a emissão de cédula hipotecária sôbre segunda hipoteca, desde que tal circunstância seja expressamente declarada com evidência, no seu anverso.</h3>
+ <h3>Art 12. O valor nominal de cada cédula hipotecária vinculada ao Sistema Financeiro da Habitação poderá ser expresso pela sua equivalência em Obrigações Reajustáveis do Tesouro Nacional ou Unidades-padrão de Capital do Banco Nacional da Habitação e representado pelo quociente da divisão do valor inicial da divida ou da prestação, prestações ou frações de prestações de amortizações e juros da dívida originária pelo valor corrigido de uma Obrigação Reajustável do Tesouro Nacional ou Unidade-padrão de Capital do Banco Nacional da Habitação no trimestre de constituição da dívida.</h3>
+ <h4>§ 1º O valor real ou o valor corrigido de cada cédula hipotecária corresponderá ao produto de seu valor nominal, definido neste artigo, pelo valor corrigido de uma Obrigação Reajustável do Tesouro Nacional ou Unidade-padrão de Capital do Banco Nacional da Habitação no momento da apuração dêsse valor real.</h4>
+ <h4>§ 2º O valor nominal discriminará, na forma dêste artigo, a parcela de amortização de capital e a parcela de juros representados pela cédula hipotecária, bem como o prêmio mensal dos seguros obrigatórios estipulados pelo Banco Nacional da Habitação.</h4>
+ <h3>Art 13. A cédula hipotecária só poderá ser lançada à circulação depois de averbada à margem da inscrição da hipoteca a que disser respeito, no Registro-Geral de Imóveis, observando-se para essa averbação o disposto na legislação e regulamentação dos serviços concernentes aos registros públicos, no que couber.</h3>
+ <h4>Parágrafo único. Cada cédula hipotecária averbada será autenticada pelo Oficial do Registro-Geral de Imóveis competente, com indicação de seu número, série e data, bem como do livro, fôlhas e a data da inscrição da hipoteca a que corresponder a emissão e à margem da qual fôr averbada.</h4>
+ <h3>Art 14. Não será permitida a averbação de cédula hipotecária, quando haja pré-notação, inscrição ou averbação de qualquer outro ônus real, ação, penhora ou procedimento judicial que afetem o imóvel, direta ou indiretamente, ou de cédula hipotecária anterior, salvo nos casos dos artigos 10, § 1º, e 11.</h3>
+ <h3>Art 15. A cédula hipotecária conterá obrigatòriamente:</h3>
+ <h5>I - No anverso:</h5>
+ <h6>a) nome, qualificação e enderêço do emitente, e do devedor;</h6>
+ <h6>b) número e série da cédula hipotecária, com indicação da parcela ou totalidade do crédito que represente;</h6>
+ <h6>c) número, data, livro e fôlhas do Registro-Geral de Imóveis em que foi inscrita a hipoteca, e averbada a cédula hipotecária;</h6>
+ <h6>d) individualização, do imóvel dado em garantia;</h6>
+ <h6>e) o valor da cédula, como previsto nos artigos 10 e 12, os juros convencionados e a multa estipulada para o caso de inadimplemento;</h6>
+ <h6>f) o número de ordem da prestação a que corresponder a cédula hipotecária, quando houver;</h6>
+ <h6>g) a data do vencimento da cédula hipotecária ou, quando representativa de várias prestações, os seus vencimentos de amortização e juros;'</h6>
+ <h6>h) a autenticação feita pelo oficial do Registro-Geral de Imóveis;</h6>
+ <p>i) a data da emissão, e as assinaturas do emitente, com a promessa de pagamento do devedor;</p>
+ <h6>j) o lugar de pagamento do principal, juros, seguros e taxa.</h6>
+ <h5>II - No verso, a menção ou locais apropriados para o lançamento dos seguintes elementos:</h5>
+ <h6>a) data ou datas de transferência por endôsso;</h6>
+ <h6>b) nome, assinatura e enderêço do endossante;</h6>
+ <h6>c) nome, qualificação, endereço e assinatura do endossatário;</h6>
+ <h6>d) as condições do endôsso;</h6>
+ <h6>e) a designação do agente recebedor e sua comissão.</h6>
+ <h4>Parágrafo único. A cédula hipotecária vinculada ao Sistema Financeiro da Habitação deverá conter ainda, no verso, a indicação dos seguros obrigatórios, estipulados pelo Banco Nacional da Habitação.</h4>
+ <h3>Art 16. A cédula hipotecária é sempre nominativa, e de emissão do credor da hipoteca a que disser respeito, podendo ser transferida por endôsso em prêto lançado no seu verso, na forma do artigo 15, II, aplicando-se à espécie, no que êste decreto-lei não contrarie, os artigos 1.065 e seguintes do Código Civil.</h3>
+ <h4>Parágrafo único. Emitida a cédula hipotecária, passa a hipoteca sôbre a qual incidir e fazer parte integrante dela, acompanhando-a nos endossos subseqüentes, sub-rogando-se automàticamente o favorecido ou o endossatário em todos os direitos creditícios respectivos, que serão exercidos pelo último dêles, titular pelo endôsso em prêto.</h4>
+ <h3>Art 17. Na emissão e no endôsso da cédula hipotecária, o emitente e o endossante permanecem solidàriamente responsáveis pela boa liquidação do crédito, a menos que avisem o devedor hipotecário e o segurador quando houver, de cada emissão ou endôsso, até 30 (trinta) dias após sua realização através de carta (do emitente ou do endossante, conforme o caso), entregue mediante recibo ou enviada pelo registro de Títulos e Documentos, ou ainda por meio de notificação judicial, indicando-se, na carta ou na notificação, o nome, a qualificação e o enderêço completo do beneficiário (se se tratar de emissão) ou do endossatário (se se tratar de endôsso).</h3>
+ <h4>§ 1º O Conselho Monetário Nacional fixará as condições em que as companhias de seguro e as instituições financeiras poderão realizar endossos de cédulas hipotecárias, permanecendo solidàriamente responsáveis por sua boa liquidação, inclusive despesas judiciais, hipótese em que deverão indicar na própria cédula, obrigatòriamente, o custo de tais serviços.</h4>
+ <h4>§ 2º Na emissão e no endôsso da cédula hipotecária é dispensável a outorga uxória.</h4>
+ <h3>Art 18. A liquidação total ou parcial da hipoteca sôbre a qual haja sido emitida cédula hipotecária prova-se pela restituição da mesma cédula hipotecária, quitada, ao devedor, ou, na falta dela, por outros meios admitidos em lei.</h3>
+ <h4>Parágrafo único. O emitente, endossante, ou endossatário de cédula hipotecária que receber seu pagamento sem restituí-la ao devedor, permanece responsável por tôdas as conseqüências de sua permanência em circulação.</h4>
+ <h3>Art 19. Nenhuma cédula hipotecária poderá ter prazo de resgate diferente do prazo da dívida hipotecária a que disser respeito, cujo vencimento antecipado, por qualquer motivo, acarretará automàticamente o vencimento, idênticamente antecipado, de tôdas as cédulas hipotecárias que sôbre ela houverem sido emitidos.</h3>
+ <h3>Art 20. É a cédula hipotecária resgatável antecipadamente, desde que o devedor efetue o pagamento correspondente ao seu valor, corrigido monetàriamente até a data da liquidação antecipada; se o credor recusar infundadamente o recebimento, poderá o devedor consignar judicialmente as importâncias devidas, cabendo ao Juízo determinar a expedição de comunicação ao Registro-Geral de Imóveis para o cancelamento da correspondente averbação ou da inscrição hipotecária, quando se trate de liquidação integral desta.</h3>
+ <h3>Art 21. É vedada a emissão de cédulas hipotecárias sôbre hipotecas cujos contratos não prevejam a obrigação do devedor de:</h3>
+ <h5>I - conservar o imóvel hipotecado em condições normais de uso;</h5>
+ <h5>II - pagar nas épocas próprias todos os impostos, taxas, multas, ou quaisquer outras obrigações fiscais que recaiam ou venham a recair sôbre o imóvel;</h5>
+ <h5>III - manter o imóvel segurado por quantia no mínimo correspondente ao do seu valor monetário corrigido.</h5>
+ <h4>Parágrafo único. O Conselho de Administração do Banco Nacional da Habitação poderá determinar a adoção de instrumentos - padrão, cujos têrmos fixará, para as hipotecas do Sistema Financeiro da Habitação.</h4>
+ <h3>Art 22. As instituições financeiras em geral e as companhias do seguro poderão adquirir cédulas hipotecárias ou recebê-las em caução, nas condições que o Conselho Monetário Nacional estabelecer.</h3>
+ <h3>Art 23. Na hipótese de penhora, aresto, seqüestro ou outra medida judicial que venha a recair em imóvel objeto de hipoteca sôbre a qual haja sido emitida cédula hipotecária, fica o devedor obrigado a denunciar ao Juízo da ação ou execução a existência do fato, comunicando-o incontinenti aos oficiais incumbidos da diligência, sob pena de responder pelos prejuízos que de sua omissão advierem para o credor.</h3>
+ <h3>Art 24. O cancelamento da averbação da cédula hipotecária e da inscrição da hipoteca respectiva, quando se trate de liquidação integral desta, far-se-ão:</h3>
+ <h5>I - à vista das cédulas hipotecárias devidamente quitadas, exibidas pelo devedor ao Oficial do Registro Geral de Imóveis;</h5>
+ <h5>II - nos casos dos artigos 18 e 20, in fine ;</h5>
+ <h5>III - por sentença judicial transitada em julgado.</h5>
+ <h4>Parágrafo único. Se o devedor não possuir a cédula hipotecária quitada, poderá suprir a falta com a apresentação de declaração de quitação do emitente ou endossante em documento à parte.</h4>
+ <h3>Art 25. É proibida a emissão de cédulas hipotecárias sôbre hipotecas convencionadas anteriormente à vigência dêste decreto-lei, salvo nôvo acôrdo entre credor e devedor, ou quando tenha sido prevista a correção monetária nos têrmos dos artigos 9 e 11.</h3>
+ <h3>Art 26. Todos os atos previstos neste decreto-lei, poderão ser feitos por instrumento particular, aplicando-se ao seu extravio, no que couber, o disposto no Título VII, do Livro IV, do Código de Processo Civil.</h3>
+ <h3>Art 27. A emissão ou o endôsso de cédula hipotecária com infrigência dêste decreto-lei, constitui, para o emitente ou o endossante, crime de estelionato, sujeitando-o às sanções do artigo 171 do Código Penal.</h3>
+ <h3>Art 28. Ficam isentos do impôsto das operações financeiras os atos jurídicos e os instrumentos mencionados neste Capítulo, bem como tôdas as operações passivas de entidades integrantes do Sistema Financeiro da Habitação; não estarão sujeitos, outrossim, no impôsto de renda;</h3>
+ <h5>I - durante o exercício financeiro de 1967, os juros das operações previstas no mesmo Capítulo, quando vinculados ao Sistema Financeiro da Habitação;</h5>
+ <h5>II - a correção monetária dessas operações, em todos os casos.</h5>
+ <h2>CAPÍTULO III</h2>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <p><del>Art 29. As hipotecas a que se referem os artigos 9º e 10 e seus incisos, quando não pagas no vencimento, poderão, à escolha do credor, ser objeto de execução na forma do Código de Processo Civil (Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>Parágrafo único. A falta de pagamento do principal, no todo ou em parte, ou de qualquer parcela de juros, nas épocas próprias, bem como descumprimento das obrigações constantes do artigo 21, importará, automàticamente, salvo disposição diversa do contrato de hipoteca, em exigibilidade imediata de tôda a dívida.</h4>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h5>I - nas hipotecas compreendidas no Sistema Financeiro da Habitação, o Banca Nacional da Habitação;</h5>
+ <h5>II - nas demais, as instituições financeiras inclusive sociedades de crédito imobiliário, credenciadas a tanto pelo Banco Central da República do Brasil, nas condições que o Conselho Monetário Nacional, venha a autorizar.</h5>
+ <h4>§ 1º O Conselho de Administração ao Banco Nacional da Habitação poderá determinar que êste exerça as funções de agente fiduciário, conforme o inciso I, diretamente ou através das pessoas jurídicas mencionadas no inciso II, fixando os critérios de atuação delas.</h4>
+ <h4>§ 2º As pessoas jurídicas mencionadas no inciso II, a fim de poderem exercer as funções de agente fiduciário dêste decreto-lei, deverão ter sido escolhidas para tanto, de comum acôrdo entre o credor e o devedor, no contrato originário de hipoteca ou em aditamento ao mesmo, salvo se estiverem agindo em nome do Banco Nacional da Habitação ou nas hipóteses do artigo 41.</h4>
+ <h4>§ 3º Os agentes fiduciários não poderão ter ou manter vínculos societários com os credores ou devedores das hipotecas em que sejam envolvidos.</h4>
+ <h4>§ 4º É lícito às partes, em qualquer tempo, substituir o agente fiduciário eleito, em aditamento ao contrato de hipoteca.</h4>
+ <h3>Art 31. Vencida e não paga a hipoteca no todo ou em parte, o credor que houver preferido executá-la de acôrdo com êste decreto-lei, participará o fato, até 6 (seis) meses antes da prescrição do crédito, ao agente fiduciário sob pena de caducidade do direito de opção constante do artigo 29.</h3>
+ <h4>§ 1º Recebida a comunicação a que se refere êste artigo, o agente fiduciário, nos 10 (dez) dias subseqüentes, comunicará ao devedor que lhe é assegurado o prazo de 20 (vinte) dias para vir purgar o débito.</h4>
+ <h4>§ 2º As participações e comunicações dêste artigo serão feitas através de carta entregue mediante recibo ou enviada pelo Registro de Títulos e Documentos ou ainda por meio de notificação judicial.</h4>
+ <p><del></p>
+ <h3>Art. 31 (Revogado pela Lei nº 14.711, de 2023)</del></h3>
+ <h5>I - o título da dívida devidamente registrado; (Inciso incluído pela Lei nº 8.004, de 14.3.1990)</h5>
+ <h5>II - a indicação discriminada do valor das prestações e encargos não pagos; (Inciso incluído pela Lei nº 8.004, de 14.3.1990)</h5>
+ <h5>III - o demonstrativo do saldo devedor discriminando as parcelas relativas a principal, juros, multa e outros encargos contratuais e legais; e (Inciso incluído pela Lei nº 8.004, de 14.3.1990)</h5>
+ <h5>IV - cópia dos avisos reclamando pagamento da dívida, expedidos segundo instruções regulamentares relativas ao SFH. (Inciso incluído pela Lei nº 8.004, de 14.3.1990)</h5>
+ <h4>§ 1º Recebida a solicitação da execução da dívida, o agente fiduciário, nos dez dias subseqüentes, promoverá a notificação do devedor, por intermédio de Cartório de Títulos e Documentos, concedendo-lhe o prazo de vinte dias para a purgação da mora. (Redação dada pela Lei nº 8.004, de 14.3.1990)</h4>
+ <h4>§ 2º Quando o devedor se encontrar em lugar incerto ou não sabido, o oficial certificará o fato, cabendo, então, ao agente fiduciário promover a notificação por edital, publicado por três dias, pelo menos, em um dos jornais de maior circulação local, ou noutro de comarca de fácil acesso, se no local não houver imprensa diária. (Redação dada pela Lei nº 8.004, de 14.3.1990)</h4>
+ <p><del>Art 32. Não acudindo o devedor à purgação do débito, o agente fiduciário estará de pleno direito autorizado a publicar editais e a efetuar no decurso dos 15 (quinze) (Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>§ 1º Se, no primeiro público leilão, o maior lance obtido fôr inferior ao saldo devedor no momento, acrescido das despesas constantes do artigo 33, mais as do anúncio e contratação da praça, será realizado o segundo público leilão, nos 15 (quinze) dias seguintes, no qual será aceito o maior lance apurado, ainda que inferior à soma das aludidas quantias.</h4>
+ <h4>§ 2º Se o maior lance do segundo público leilão fôr inferior àquela soma, serão pagas inicialmente as despesas componentes da mesma soma, e a diferença entregue ao credor, que poderá cobrar do devedor, por via executiva, o valor remanescente de seu crédito, sem nenhum direito de retenção ou indenização sôbre o imóvel alienado.</h4>
+ <h4>§ 3º Se o lance de alienação do imóvel, em qualquer dos dois públicos leilões, fôr superior ao total das importâncias referidas no caput dêste artigo, a diferença afinal apurada será entregue ao devedor.</h4>
+ <h4>§ 4º A morte do devedor pessoa física, ou a falência, concordata ou dissolução do devedor pessoa jurídica, não impede a aplicação dêste artigo.</h4>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>Parágrafo único. Na hipótese do segundo público leilão não cobrir sequer as despesas do artigo supra, o credor nada receberá, permanecendo íntegra a responsabilidade de adquirente do imóvel por êste garantida, em relação aos créditos remanescentes da fazenda pública e das seguradoras.</h4>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h5>I - se a purgação se efetuar conforme o parágrafo primeiro do artigo 31, o débito será acrescido das penalidades previstas no contrato de hipoteca, até 10% (dez por cento) do valor do mesmo débito, e da remuneração do agente fiduciário;</h5>
+ <h5>II - daí em diante, o débito, para os efeitos de purgação, abrangerá ainda os juros de mora e a correção monetária incidente até o momento da purgação.</h5>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>§ 1º A entrega em causa será feita até 5 (cinco) dias após o recebimento das quantias envolvidas, sob pena de cobrança, contra o agente fiduciário, pela parte que tiver direito às quantias, por ação executiva.</h4>
+ <h4>§ 2º Os créditos previstos neste artigo, contra agente fiduciário, são privilegiados, em caso de falência ou concordata.</h4>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>Parágrafo único. Considera-se não escrita a cláusula contratual que sob qualquer pretexto preveja condições que subtraiam ao devedor o conhecimento dos públicos leilões de imóvel hipotecado, ou que autorizem sua promoção e realização sem publicidade pelo menos igual à usualmente adotada pelos leiloeiros públicos em sua atividade corrente.</h4>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>§ 1º O devedor, se estiver presente ao público leilão, deverá assinar a carta de arrematação que, em caso contrário, conterá necessàriamente a constatação de sua ausência ou de sua recusa em subscrevê-la.</h4>
+ <h4>§ 2º Uma vez transcrita no Registro Geral de Imóveis a carta de arrematação, poderá o adquirente requerer ao Juízo competente imissão de posse no imóvel, que lhe será concedida liminarmente, após decorridas as 48 horas mencionadas no parágrafo terceiro dêste artigo, sem prejuízo de se prosseguir no feito, em rito ordinário, para o debate das alegações que o devedor porventura aduzir em contestação.</h4>
+ <h4>§ 3º A concessão da medida liminar do parágrafo anterior só será negada se o devedor, citado, comprovar, no prazo de 48 (quarenta e oito) horas, que resgatou ou consignou judicialmente o valor de seu débito, antes da realização do primeiro ou do segundo público leilão.</h4>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <p><del>Art 39. O contrato de hipoteca deverá prever os honorários do agente fiduciário, que sòmente lhe serão devidos se se verificar sua intervenção na cobrança do crédito; tais honorários não poderão ultrapassar a 5% (cinco por cento) (Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>Parágrafo único. Para as hipotecas do Sistema Financeiro da Habitação o Conselho de Administração do Banco Nacional da Habitação poderá fixar tabelas de remuneração no agente fiduciário, dentro dos limites fixados neste artigo.</h4>
+ <p><del>Art 40. O agente fiduciário que, mediante ato ilícito, fraude, simulação ou comprovada má-fé, alienar imóvel hipotecado em prejuízo do credor ou devedor envolvido, responderá por seus atos, perante as autoridades competentes, na forma do C apítulo V (Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <p>(Revogado pela Lei nº 14.711, de 2023)</del></p>
+ <h4>§ 1º Se o credor ou o devedor, a qualquer tempo antes do início da execução conforme o artigo 31, tiverem fundadas razões para pôr em dúvida a imparcialidade ou idoneidade do agente fiduciário eleito no contrato hipotecário, e se não houver acôrdo entre êles para substituí-lo, qualquer dos dois poderá pedir ao Juízo competente sua destituição.</h4>
+ <h4>§ 2º Os pedidos a que se referem êste artigo e o parágrafo anterior serão processados segundo o que determina o Código de Processo Civil para as ações declaratórias, com a citação das outras partes envolvidas no contrato hipotecário e do agente fiduciário.</h4>
+ <h4>§ 3º O pedido previsto no parágrafo segundo pode ser de iniciativa do agente fiduciário.</h4>
+ <h4>§ 4º Destituído o agente fiduciário, o Juiz nomeará outro em seu lugar, que assumirá imediatamente as funções, mediante têrmo lavrado nos autos, que será levado a averbação no Registro Geral de Imóveis e passará a constituir parte integrante do contrato hipotecário.</h4>
+ <h4>§ 5º Até a sentença destitutória transitar em julgado, o agente fiduciário destituído continuará no pleno exercício de suas funções, salvo nos casos do parágrafo seguinte.</h4>
+ <h4>§ 6º Sempre que o Juiz julgar necessário, poderá, nos casos dêste artigo, nomear liminarmente o nôvo agente fiduciário, mantendo-o ou substituindo-o na decisão final do pedido.</h4>
+ <h4>§ 7º A destituição do agente fiduciário não exclui a aplicação de sanções cabíveis, em virtude de sua ação ou omissão dolosa.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Disposições Finais</p>
+ <h3>Art 42. O disposto no art. 26 e seu parágrafo da Lei número 4.862, de 29 de novembro de 1966 , estende-se aos empréstimos contraídos pelas sociedades a que se referem os artigos 62 da Lei 4.728, de 14 de julho de 1965 e art. 8º da Lei 4.380, de 21-8-1964 , para finalidades habitacionais ou a construção residencial. (Revogado pelo Decreto Lei nº 1.494, de 7.12.1976)</h3>
+ <h3>Art 43. Os empréstimos destinados ao financiamento da construção ou da venda de unidades mobiliárias Poderão ser garantidos pela caução, cessão parcial ou cessão fiduciária dos direitos decorrentes de alienação de imóveis, aplicando-se, no que couber, o disposto nos parágrafos primeiro e segundo do artigo 22 da Lei número 4.864, de 29 de novembro de 1965 .</h3>
+ <h4>Parágrafo único. As garantias a que se refere êste artigo constituem direitos reais sôbre os respectivos imóveis.</h4>
+ <h3>Art 44. São passíveis de inscrição, nos Cartórios do Registro de Imóveis, os contratos a que se refere o artigo 43, e os de hipoteca de unidades imobiliárias em construção ou já construídas mas ainda sem " habitese " das autoridades públicas competentes e respectiva, averbação, desde que estejam devidamente registrados os lotes de terreno em que elas se situem.</h3>
+ <h3>Art 45. Êste decreto-lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art 46. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 21 de novembro de 1966; 145º da Independência e 78º da República.</p>
+ <h3>H. CASTELLO BRANCO</h3>
+ <p>Carlos Medeiros Silva</p>
+ <p>Eduardo Lopes Rodrigues</p>
+ <p>Este texto não substitui o publicado no DOU de 22.11.1966 e retificado em 1º.12.1966</p>
+ <p>Presidência da RepúblicaSubchefia para Assuntos Jurídicos</p>
+ <p>Autoriza o funcionamento de associações de poupança e empréstimo, institui a cédula hipotecária e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0070-66.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

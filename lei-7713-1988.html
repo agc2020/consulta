@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 7.713, DE 22 DE DEZEMBRO DE 1988 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1988" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 7.713, DE 22 DE DEZEMBRO DE 1988</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:46:53 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L7713compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 42.820 caracteres | espelho: 43.239 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 7.713, DE 22 DE DEZEMBRO DE 1988.</p>
+ <p>Vide 	Medida Provisória nº 582, de 2012</p>
+ <p>Altera a legislação do imposto de renda e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Os rendimentos e ganhos de capital percebidos a partir de 1º de janeiro de 1989, por pessoas físicas residentes ou domiciliados no Brasil, serão tributados pelo imposto de renda na forma da legislação vigente, com as modificações introduzidas por esta Lei.</h3>
+ <h3>Art. 2º O imposto de renda das pessoas físicas será devido, mensalmente, à medida em que os rendimentos e ganhos de capital forem percebidos.</h3>
+ <h3>Art. 3º O imposto incidirá sobre o rendimento bruto, sem qualquer dedução, ressalvado o disposto nos arts. 9º a 14 desta Lei. (Vide Lei 8.023, de 12.4.90) (Vide ADIN 5422)</h3>
+ <h4>§ 1º Constituem rendimento bruto todo o produto do capital, do trabalho ou da combinação de ambos, os alimentos e pensões percebidos em dinheiro, e ainda os proventos de qualquer natureza, assim também entendidos os acréscimos patrimoniais não correspondentes aos rendimentos declarados. (Vide ADIN 5422)</h4>
+ <h4>§ 2º Integrará o rendimento bruto, como ganho de capital, o resultado da soma dos ganhos auferidos no mês, decorrentes de alienação de bens ou direitos de qualquer natureza, considerando-se como ganho a diferença positiva entre o valor de transmissão do bem ou direito e o respectivo custo de aquisição corrigido monetariamente, observado o disposto nos arts. 15 a 22 desta Lei.</h4>
+ <h4>§ 3º Na apuração do ganho de capital serão consideradas as operações que importem alienação, a qualquer título, de bens ou direitos ou cessão ou promessa de cessão de direitos à sua aquisição, tais como as realizadas por compra e venda, permuta, adjudicação, desapropriação, dação em pagamento, doação, procuração em causa própria, promessa de compra e venda, cessão de direitos ou promessa de cessão de direitos e contratos afins.</h4>
+ <h4>§ 4º A tributação independe da denominação dos rendimentos, títulos ou direitos, da localização, condição jurídica ou nacionalidade da fonte, da origem dos bens produtores da renda, e da forma de percepção das rendas ou proventos, bastando, para a incidência do imposto, o benefício do contribuinte por qualquer forma e a qualquer título.</h4>
+ <h4>§ 5º Ficam revogados todos os dispositivos legais concessivos de isenção ou exclusão, da base de cálculo do imposto de renda das pessoas físicas, de rendimentos e proventos de qualquer natureza, bem como os que autorizam redução do imposto por investimento de interesse econômico ou social.</h4>
+ <h4>§ 6º Ficam revogados todos os dispositivos legais que autorizam deduções cedulares ou abatimentos da renda bruta do contribuinte, para efeito de incidência do imposto de renda.</h4>
+ <h3>Art. 4º Fica suprimida a classificação por cédulas dos rendimentos e ganhos de capital percebidos pelas pessoas físicas.</h3>
+ <h3>Art. 5º Salvo disposição em contrário, o imposto retido na fonte sobre rendimentos e ganhos de capital percebidos por pessoas físicas será considerado redução do apurado na forma dos arts. 23 e 24 desta Lei.</h3>
+ <h3>Art. 6º Ficam isentos do imposto de renda os seguinte rendimentos percebidos por pessoas físicas:</h3>
+ <h5>I - a alimentação, o transporte e os uniformes ou vestimentas especiais de trabalho, fornecidos gratuitamente pelo empregador a seus empregados, ou a diferença entre o preço cobrado e o valor de mercado;</h5>
+ <h5>II - as diárias destinadas, exclusivamente, ao pagamento de despesas de alimentação e pousada, por serviço eventual realizado em município diferente do da sede de trabalho;</h5>
+ <h5>III - o valor locativo do prédio construído, quando ocupado por seu proprietário ou cedido gratuitamente para uso do cônjuge ou de parentes de primeiro grau;</h5>
+ <h5>IV - as indenizações por acidentes de trabalho;</h5>
+ <h5>V - a indenização e o aviso prévio pagos por despedida ou rescisão de contrato de trabalho, até o limite garantido por lei, bem como o montante recebido pelos empregados e diretores, ou respectivos beneficiários, referente aos depósitos, juros e correção monetária creditados em contas vinculadas, nos termos da legislação do Fundo de Garantia do Tempo de Serviço;</h5>
+ <h5>VI - o montante dos depósitos, juros, correção monetária e quotas-partes creditados em contas individuais pelo Programa de Integração Social e pelo Programa de Formação do Patrimônio do Servidor Público;</h5>
+ <h5>VII - os seguros recebidos de entidades de previdência privada decorrentes de morte ou invalidez permanente do participante. (Redação dada pela Lei nº 9.250, de 1995)</h5>
+ <h5>VIII - as contribuições pagas pelos empregadores relativas a programas de previdência privada em favor de seus empregados e dirigentes;</h5>
+ <h5>IX - os valores resgatados dos Planos de Poupança e Investimento - PAIT, de que trata o Decreto-Lei nº 2.292, de 21 de novembro de 1986 , relativamente à parcela correspondente às contribuições efetuadas pelo participante;</h5>
+ <h5>X - as contribuições empresariais a Plano de Poupança e Investimento - PAIT, a que se refere o art. 5º, § 2º, do Decreto-Lei nº 2.292, de 21 de novembro de 1986;</h5>
+ <h5>XI - o pecúlio recebido pelos aposentados que voltam a trabalhar em atividade sujeita ao regime previdenciário, quando dela se afastarem, e pelos trabalhadores que ingressarem nesse regime após completarem sessenta anos de idade, pago pelo Instituto Nacional de Previdência Social ao segurado ou a seus dependentes, após sua morte, nos termos do art. 1º da Lei nº 6.243, de 24 de setembro de 1975;</h5>
+ <h5>XII - as pensões e os proventos concedidos de acordo com os Decretos-Leis, nºs 8.794 e 8.795, de 23 de janeiro de 1946 , e Lei nº 2.579, de 23 de agosto de 1955 , e art. 30 da Lei nº 4.242, de 17 de julho de 1963 , em decorrência de reforma ou falecimento de ex-combatente da Força Expedicionária Brasileira;</h5>
+ <h5>XIII - capital das apólices de seguro ou pecúlio pago por morte do segurado, bem como os prêmios de seguro restituídos em qualquer caso, inclusive no de renúncia do contrato;</h5>
+ <h5>XIV – os proventos de aposentadoria ou reforma motivada por acidente em serviço e os percebidos pelos portadores de moléstia profissional, tuberculose ativa, alienação mental, esclerose múltipla, neoplasia maligna, cegueira, hanseníase, paralisia irreversível e incapacitante, cardiopatia grave, doença de Parkinson, espondiloartrose anquilosante, nefropatia grave, hepatopatia grave, estados avançados da doença de Paget (osteíte deformante), contaminação por radiação, síndrome da imunodeficiência adquirida, com base em conclusão da medicina especializada, mesmo que a doença tenha sido contraída depois da aposentadoria ou reforma; (Redação dada pela Lei nº 11.052, de 2004)
+(Vide Lei nº 13.105, de 2015) (Vide ADIN 6025)</h5>
+ <h5>XV - os rendimentos provenientes de aposentadoria e pensão, de transferência para a reserva remunerada ou de reforma pagos pela Previdência Social da União, dos Estados, do Distrito Federal e dos Municípios, por qualquer pessoa jurídica de direito público interno ou por entidade de previdência privada, a partir do mês em que o contribuinte completar 65 (sessenta e cinco) anos de idade, sem prejuízo da parcela isenta prevista na tabela de incidência mensal do imposto, até o valor de: (Redação dada pela Lei nº 11.482, de 2007)</h5>
+ <h6>a) R$ 1.313,69 (mil, trezentos e treze reais e sessenta e nove centavos), por mês, para o ano-calendário de 2007; (Incluído pela Lei nº 11.482, de 2007)</h6>
+ <h6>b) R$ 1.372,81 (mil, trezentos e setenta e dois reais e oitenta e um centavos), por mês, para o ano-calendário de 2008; (Incluído pela Lei nº 11.482, de 2007)</h6>
+ <h6>c) R$ 1.434,59 (mil, quatrocentos e trinta e quatro reais e cinqüenta e nove centavos), por mês, para o ano-calendário de 2009; (Incluído pela Lei nº 11.482, de 2007)</h6>
+ <h6>d) R$ 1.499,15 (mil, quatrocentos e noventa e nove reais e quinze centavos), por mês, para o ano-calendário de 2010; (Redação dada pela Lei nº 12.469, de 2011)</h6>
+ <h6>e) R$ 1.566,61 (mil, quinhentos e sessenta e seis reais e sessenta e um centavos), por mês, para o ano-calendário de 2011; (Incluída pela Lei nº 12.469, de 2011)</h6>
+ <h6>f) R$ 1.637,11 (mil, seiscentos e trinta e sete reais e onze centavos), por mês, para o ano-calendário de 2012; (Incluída pela Lei nº 12.469, de 2011)</h6>
+ <h6>g) R$ 1.710,78 (mil, setecentos e dez reais e setenta e oito centavos), por mês, para o ano-calendário de 2013; (Incluída pela Lei nº 12.469, de 2011)</h6>
+ <h6>h) R$ 1.787,77 (mil, setecentos e oitenta e sete reais e setenta e sete centavos), por mês, para o ano-calendário de 2014 e nos meses de janeiro a março do ano-calendário de 2015; e (Redação dada pela Lei nº 13.149, de 2015)</h6>
+ <p>i) R$ 1.903,98 (mil, 	novecentos e três reais e noventa e oito centavos), por mês, a partir do mês de abril do ano-calendário de 2015; (Redação dada pela Lei nº 13.149, de 2015)</p>
+ <h5>XVI - o valor dos bens adquiridos por doação ou herança;</h5>
+ <h5>XVII - os valores decorrentes de aumento de capital:</h5>
+ <h6>a) mediante a incorporação de reservas ou lucros que tenham sido tributados na forma do art. 36 desta Lei;</h6>
+ <h6>b) efetuado com observância do disposto no art. 63 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977 , relativamente aos lucros apurados em períodos-base encerrados anteriormente à vigência desta Lei;</h6>
+ <h5>XVIII - a correção monetária de investimentos, calculada aos mesmos índices aprovados para os Bônus do Tesouro Nacional - BTN, e desde que seu pagamento ou crédito ocorra em intervalos não inferiores a trinta dias; (Redação dada pela Lei nº 7.799, de 1989)</h5>
+ <h5>XIX - a diferença entre o valor de aplicação e o de resgate de quotas de fundos de aplicações de curto prazo;</h5>
+ <h5>XX - ajuda de custo destinada a atender às despesas com transporte, frete e locomoção do beneficiado e seus familiares, em caso de remoção de um município para outro, sujeita à comprovação posterior pelo contribuinte.</h5>
+ <h5>XXI - os valores recebidos a título de pensão quando o beneficiário desse rendimento for portador das doenças relacionadas no inciso XIV deste artigo, exceto as decorrentes de moléstia profissional, com base em conclusão da medicina especializada, mesmo que a doença tenha sido contraída após a concessão da pensão. (Incluído pela Lei nº 8.541, de 1992)
+(Vide Lei 9.250, de 1995)</h5>
+ <h5>XXII - os valores pagos em espécie pelos Estados, Distrito Federal e Municípios, relativos ao Imposto sobre Operações relativas à Circulação de Mercadorias e sobre Prestações de Serviços de Transporte Interestadual e Intermunicipal e de Comunicação - ICMS e ao Imposto sobre Serviços de Qualquer Natureza - ISS, no âmbito de programas de concessão de crédito voltados ao estímulo à solicitação de documento fiscal na aquisição de mercadorias e serviços. (Incluído pela Lei nº 11.945, de 2009). (Produção de efeitos).</h5>
+ <h5>XXIII - o valor recebido a título de vale-cultura. (Incluído pela Lei nº 12.761, de 2012)</h5>
+ <h5>XXIV 	- (Incluído pela 	Medida Provisória nº 1.251, de 2024) encerrada</h5>
+ <h4>Parágrafo único. O disposto no inciso XXII do caput deste artigo não se aplica aos prêmios recebidos por meio de sorteios, em espécie, bens ou serviços, no âmbito dos referidos programas. (Incluído pela Lei nº 11.945, de 2009). (Produção de efeitos).</h4>
+ <h3>Art. 7º Ficam sujeito à incidência do imposto de renda na fonte, calculado de acordo com o disposto no art. 25 desta Lei: (Vide: Lei nº 8.134, de 1990 , Lei nº 8.383, de 1991 , Lei nº 8.848, de 1994 , Lei nº 9.250, de 1995)</h3>
+ <h5>I - os rendimentos do trabalho assalariado, pagos ou creditados por pessoas físicas ou jurídicas; (Vide Lei complementar nº 150, de 2015)</h5>
+ <h5>II - os demais rendimentos percebidos por pessoas físicas, que não estejam sujeitos à tributação exclusiva na fonte, pagos ou creditados por pessoas jurídicas.</h5>
+ <h4>§ 1º O imposto a que se refere este artigo será retido por ocasião de cada pagamento ou crédito e, se houver mais de um pagamento ou crédito, pela mesma fonte pagadora, aplicar-se-á a alíquota correspondente à soma dos rendimentos pagos ou creditados à pessoa física no mês, a qualquer título.</h4>
+ <p><del>§ 2º (Revogado pela Lei nº 8.218, de 1991)</del></p>
+ <h4>§ 3º (Vetado).</h4>
+ <h3>Art. 8º Fica sujeito ao pagamento do imposto de renda, calculado de acordo com o disposto no art. 25 desta Lei, a pessoa física que receber de outra pessoa física, ou de fontes situadas no exterior, rendimentos e ganhos de capital que não tenham sido tributados na fonte, no País. (Vide: Lei nº 8.012, de 1990 , Lei nº 8.134, de 1990 , Lei nº 8.383, de 1991 , e Lei nº 8.848, de 1994 , Lei nº 9.250, de 1995)</h3>
+ <h4>§ 1º O disposto neste artigo se aplica, também, aos emolumentos e custas dos serventuários da justiça, como tabeliães, notários, oficiais públicos e outros, quando não forem remunerados exclusivamente pelos cofres públicos.</h4>
+ <h4>§ 2º O imposto de que trata este artigo deverá ser pago até o último dia útil da primeira quinzena do mês subseqüente ao da percepção dos rendimentos.</h4>
+ <h3>Art. 9º Quando o contribuinte auferir rendimentos da prestação de serviços de transporte, em veículo próprio locado, ou adquirido com reservas de domínio ou alienação fiduciária, o imposto de renda incidirá sobre:</h3>
+ <h5>I - 10% (dez por cento) do rendimento bruto, decorrente do transporte de carga; (Redação dada pela lei nº 12.794, de 2013)</h5>
+ <h5>II - sessenta por cento do rendimento bruto, decorrente do transporte de passageiros.</h5>
+ <h4>Parágrafo único. O percentual referido no item I deste artigo aplica-se também sobre o rendimento bruto da prestação de serviços com trator, máquina de terraplenagem, colheitadeira e assemelhados.</h4>
+ <h3>Art. 10. O imposto incidirá sobre dez por cento do rendimento bruto auferido pelos garimpeiros matriculados nos termos do art. 73 do Decreto-Lei nº 227, de 28 de fevereiro de 1967 , remunerado pelo art. 2º do Decreto-Lei nº. 318, de 14 de março de 1967 , na venda a empresas legalmente habilitadas de metais preciosos, pedras preciosas e semipreciosas por eles extraídos.</h3>
+ <h4>Parágrafo único. A prova de origem dos rendimentos de que trata este artigo far-se-á com base na via da nota de aquisição destinada ao garimpeiro pela empresa compradora.</h4>
+ <h3>Art. 11 Os titulares dos serviços notariais e de registro a que se refere o art. 236 da Constituição da República , desde que mantenham escrituração das receitas e das despesas, poderão deduzir dos emolumentos recebidos, para efeito da incidência do imposto:</h3>
+ <h5>I - a remuneração paga a terceiros, desde que com vínculo empregatício, inclusive encargos trabalhistas e previdenciários;</h5>
+ <h5>II - os emolumentos pagos a terceiros;</h5>
+ <h5>III - as despesas de custeio necessárias à manutenção dos serviços notariais e de registro.</h5>
+ <h4>§ 1º Fica ainda assegurada aos odontólogos a faculdade de deduzir, da receita decorrente do exercício da respectiva profissão, as despesas com a aquisição do material odontológico por eles aplicadas nos serviços prestados aos seus pacientes, assim como as despesas com o pagamento dos profissionais dedicados à prótese e à anestesia, eventualmente utilizados na prestação dos serviços, desde que, em qualquer caso, mantenham escrituração das receitas e despesas realizadas. (Incluído pela Lei nº 7.975, de 1989)</h4>
+ <h4>§ 2º (Vetado) (Incluído pela Lei nº 7.975, de 1989)</h4>
+ <p><del></p>
+ <h3>Art. 12 (Revogado pela Lei nº 13.149, de 2015)</del></h3>
+ <h3>Art. 12-A. Os rendimentos recebidos acumuladamente e submetidos à incidência do imposto sobre a renda com base na tabela progressiva, quando correspondentes a anos-calendário anteriores ao do recebimento, serão tributados exclusivamente na fonte, no mês do recebimento ou crédito, em separado dos demais rendimentos recebidos no mês. (Redação dada pela Lei nº 13.149, de 2015)</h3>
+ <h4>§ 1º O imposto será retido pela pessoa física ou jurídica obrigada ao pagamento ou pela instituição financeira depositária do crédito e calculado sobre o montante dos rendimentos pagos, mediante a utilização de tabela progressiva resultante da multiplicação da quantidade de meses a que se refiram os rendimentos pelos valores constantes da tabela progressiva mensal correspondente ao mês do recebimento ou crédito. (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 2º Poderão ser excluídas as despesas, relativas ao montante dos rendimentos tributáveis, com ação judicial necessárias ao seu recebimento, inclusive de advogados, se tiverem sido pagas pelo contribuinte, sem indenização. (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 3º A base de cálculo será determinada mediante a dedução das seguintes despesas relativas ao montante dos rendimentos tributáveis: (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h5>I – importâncias pagas em dinheiro a título de pensão alimentícia em face das normas do Direito de Família, quando em cumprimento de decisão judicial, de acordo homologado judicialmente ou de separação ou divórcio consensual realizado por escritura pública; e (Incluído pela Lei nº 12.350, de 2010)</h5>
+ <h5>II – contribuições para a Previdência Social da União, dos Estados, do Distrito Federal e dos Municípios. (Incluído pela Lei nº 12.350, de 2010)</h5>
+ <h4>§ 4º Não se aplica ao disposto neste artigo o constante no art. 27 da Lei Nº 10.833, de 29 de dezembro de 2003, salvo o previsto nos seus §§ 1º e 3º . (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 5º O total dos rendimentos de que trata o caput , observado o disposto no § 2º , poderá integrar a base de cálculo do Imposto sobre a Renda na Declaração de Ajuste Anual do ano-calendário do recebimento, à opção irretratável do contribuinte. (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 6º Na hipótese do § 5º , o Imposto sobre a Renda Retido na Fonte será considerado antecipação do imposto devido apurado na Declaração de Ajuste Anual. (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 7º Os rendimentos de que trata o caput , recebidos entre 1º de janeiro de 2010 e o dia anterior ao de publicação da Lei resultante da conversão da Medida Provisória Nº 497, de 27 de julho de 2010, poderão ser tributados na forma deste artigo, devendo ser informados na Declaração de Ajuste Anual referente ao ano-calendário de 2010. (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 8º (VETADO) (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h4>§ 9º A Secretaria da Receita Federal do Brasil disciplinará o disposto neste artigo. (Incluído pela Lei nº 12.350, de 2010)</h4>
+ <h3>Art. 12-B. Os rendimentos recebidos acumuladamente, quando correspondentes ao ano-calendário em curso, serão tributados, no mês do recebimento ou crédito, sobre o total dos rendimentos, diminuídos do valor das despesas com ação judicial necessárias ao seu recebimento, inclusive de advogados, se tiverem sido pagas pelo contribuinte, sem indenização. (Incluído pela Lei nº 13.149, de 2015)</h3>
+ <p><del></p>
+ <h3>Art. 13 (Revogado pela Lei nº 8.383, de 1991)</del></h3>
+ <p><del></p>
+ <h3>Art. 14 (Revogado pela Lei nº 8.383, de 1991)</del></h3>
+ <p><del>I (Revogado pela Lei nº 8.134, de 1990)</del></p>
+ <p><del>II (Revogado pela Lei nº 8.383, de 1991)</del></p>
+ <p>§§ 1º a 7º - (Revogados pela Lei nº 8.134, de 1990)</p>
+ <p><del></p>
+ <h3>Art. 15 (Revogado pela Lei nº 7.774, de 1989)</del></h3>
+ <h3>Art. 16. O custo de aquisição dos bens e direitos será o preço ou valor pago, e, na ausência deste, conforme o caso:</h3>
+ <h5>I - o valor atribuído para efeito de pagamento do imposto de transmissão;</h5>
+ <h5>II - o valor que tenha servido de base para o cálculo do Imposto de Importação acrescido do valor dos tributos e das despesas de desembaraço aduaneiro;</h5>
+ <h5>III - o valor da avaliação do inventário ou arrolamento;</h5>
+ <h5>IV - o valor de transmissão, utilizado na aquisição, para cálculo do ganho de capital do alienante;</h5>
+ <h5>V - seu valor corrente, na data da aquisição.</h5>
+ <h4>§ 1º O valor da contribuição de melhoria integra o custo do imóvel.</h4>
+ <h4>§ 2º O custo de aquisição de títulos e valores mobiliários, de quotas de capital e dos bens fungíveis será a média ponderada dos custos unitários, por espécie, desses bens.</h4>
+ <h4>§ 3º No caso de participação societária resultantes de aumento de capital por incorporação de lucros e reservas, que tenham sido tributados na forma do art. 36 desta Lei, o custo de aquisição é igual à parcela do lucro ou reserva capitalizado, que corresponder ao sócio ou acionista beneficiário.</h4>
+ <h4>§ 4º O custo é considerado igual a zero no caso das participações societárias resultantes de aumento de capital por incorporação de lucros e reservas, no caso de partes beneficiárias adquiridas gratuitamente, assim como de qualquer bem cujo valor não possa ser determinado nos termos previsto neste artigo.</h4>
+ <h3>Art. 17. O valor de aquisição de cada bem ou direito, expresso em cruzados novos, apurado de acordo com o artigo anterior, deverá ser corrigido monetariamente, a partir da data do pagamento, da seguinte forma: (Redação dada pela Lei nº 7.959, de 1989)</h3>
+ <h5>I - até janeiro de 1989, pela variação da OTN; (Incluído pela Lei nº 7.959, de 1989)</h5>
+ <h5>II - nos meses de fevereiro a abril de 1989, pelas seguintes variações: em fevereiro, 31,2025%; em março, 30,5774%; e em abril, 9,2415%; (Incluído pela Lei nº 7.959, de 1989)</h5>
+ <h5>III - a partir de maio de 1989, pela variação do BTN. (Incluído pela Lei nº 7.959, de 1989)</h5>
+ <h4>§ 1° Na falta de documento que comprove a data do pagamento, no caso de bens e direitos adquiridos até 31 de dezembro de 1988, a conversão poderá ser feita pelo valor da OTN no mês de dezembro do ano em que este tiver constado pela primeira vez na declaração de bens. (Redação dada pela Lei nº 7.799, de 1989)</h4>
+ <h4>§ 2º Os bens ou direitos da mesma espécie, pagos em datas diferentes, mas que constem agrupadamente na declaração de bens, poderão ser convertidos na forma do parágrafo anterior, desde que tomados isoladamente em relação ao ano da aquisição.</h4>
+ <h4>§ 3º No caso do parágrafo anterior, não sendo possível identificar o ano dos pagamentos, a conversão será efetuada tomando-se por base o ano da aquisição mais recente.</h4>
+ <h4>§ 4° No caso de aquisição com pagamento parcelado, a correção monetária será efetivada em relação a cada parcela. (Redação dada pela Lei nº 7.799, de 1989)</h4>
+ <h3>Art. 18. Para apuração do valor a ser tributado, no caso de alienação de bens imóveis, poderá ser aplicado um percentual de redução sobre o ganho de capital apurado, segundo o ano de aquisição ou incorporação do bem, de acordo com a seguinte tabela: (Vide Lei 8.023, de 1990)</h3>
+ <p>Ano de Aquisição ou Incorporação</p>
+ <p>Percentual de Redução</p>
+ <p>Ano de Aquisição ou Incorporação</p>
+ <p>Percentual de Redução</p>
+ <p>Até 1969</p>
+ <p>100</p>
+ <p>1979</p>
+ <p>50</p>
+ <p>1970</p>
+ <p>95%</p>
+ <p>1980</p>
+ <p>45%</p>
+ <p>1971</p>
+ <p>90%</p>
+ <p>1981</p>
+ <p>40%</p>
+ <p>1972</p>
+ <p>85%</p>
+ <p>1982</p>
+ <p>35%</p>
+ <p>1973</p>
+ <p>80%</p>
+ <p>1983</p>
+ <p>30%</p>
+ <p>1974</p>
+ <p>75%</p>
+ <p>1984</p>
+ <p>25%</p>
+ <p>1975</p>
+ <p>70%</p>
+ <p>1985</p>
+ <p>20%</p>
+ <p>1976</p>
+ <p>65%</p>
+ <p>1986</p>
+ <p>15%</p>
+ <p>1977</p>
+ <p>60%</p>
+ <p>1987</p>
+ <p>10%</p>
+ <p>1978</p>
+ <p>55%</p>
+ <p>1988</p>
+ <p>5%</p>
+ <h4>Parágrafo único. Não haverá redução, relativamente aos imóveis cuja aquisição venha ocorrer a partir de 1º de janeiro de 1989.</h4>
+ <h3>Art. 19. Valor da transmissão é o preço efetivo de operação de venda ou da cessão de direitos, ressalvado o disposto no art. 20 desta Lei.</h3>
+ <h4>Parágrafo único. Nas operações em que o valor não se expressar em dinheiro, o valor da transmissão será arbitrado segundo o valor de mercado.</h4>
+ <h3>Art. 20. A autoridade lançadora, mediante processo regular, arbitrará o valor ou preço, sempre que não mereça fé, por notoriamente diferente do de mercado, o valor ou preço informado pelo contribuinte, ressalvada, em caso de contestação, avaliação contraditória, administrativa ou judicial.</h3>
+ <h4>Parágrafo único. (Vetado).</h4>
+ <h3>Art. 21. Nas alienações a prazo, o ganho de capital será tributado na proporção das parcelas recebidas em cada mês, considerando-se a respectiva atualização monetária, se houver.</h3>
+ <h3>Art. 22. Na determinação do ganho de capital serão excluídos: (Vide Lei 8.023, de 1990)</h3>
+ <h5>I - o ganho de capital decorrente da alienação do único imóvel que o titular possua, desde que não tenha realizado outra operação nos últimos cinco anos e o valor da alienação não seja superior ao equivalente a trezentos mil BTN no mês da operação. (Redação dada pela Lei 8.134, de 1990)
+(Vide Lei nº 8.218, de 1991)</h5>
+ <p><del>II (Revogado pela Lei nº 8.014, de 1990)</del></p>
+ <h5>III - as transferências causa mortis e as doações em adiantamento da legítima;</h5>
+ <h5>IV - o ganho de capital auferido na alienação de bens de pequeno valor, definido pelo Poder executivo.</h5>
+ <h4>Parágrafo único. Não se considera ganho de capital o valor decorrente de indenização por desapropriação para fins de reforma agrária, conforme o disposto no § 5º do art. 184 da Constituição Federal , e de liquidação de sinistro, furto ou roubo, relativo a objeto segurado.</h4>
+ <p><del></p>
+ <h3>Art. 23 (Revogado pela Lei nº 8.134, de 1990)</del></h3>
+ <p><del></p>
+ <h3>Art. 24 (Revogado pela Lei nº 8.134, de 1990)</del></h3>
+ <h3>Art. 25. O imposto será calculado, observado o seguinte: (Redação dada pela Lei nº 8.269, de 1991)</h3>
+ <h5>I - se o rendimento mensal for de até Cr$ 750.000,00, será deduzida uma parcela correspondente a Cr$ 250.000,00 e, sobre o saldo remanescente incidirá alíquota de 10%; (Redação dada pela Lei nº 8.269, de 1991)</h5>
+ <h5>II - se o rendimento mensal for superior a Cr$ 750.000,00, será deduzida uma parcela correspondente a Cr$ 550.000,00 e, sobre o saldo remanescente incidirá alíquota de 25%. (Redação dada pela Lei nº 8.269, de 1991)</h5>
+ <h4>§ 1° Na determinação da base de cálculo sujeita a incidência do imposto poderão ser deduzidos: (Redação dada pela Lei nº 8.269, de 1991)</h4>
+ <h6>a) Cr$ 20.000,00 por dependente, até o limite de cinco dependentes; (Redação dada pela Lei nº 8.269, de 1991)</h6>
+ <h6>b) Cr$ 250.000,00, correspondentes à parcela isenta dos rendimentos provenientes de aposentadoria e pensão, transferência para reserva remunerada ou reforma pagos pela Previdência Social da União, dos Estados, do Distrito Federal e dos Municípios, ou por qualquer pessoa jurídica de direito público interno, a partir do mês em que o contribuinte completar sessenta e cinco anos de idade; (Redação dada pela Lei nº 8.269, de 1991)</h6>
+ <h6>c) o valor da contribuição paga, no mês, para a Previdência Social da União, dos Estados, do Distrito Federal e dos Municípios; (Redação dada pela Lei nº 8.269, de 1991)</h6>
+ <h6>d) o valor da pensão judicial paga. (Redação dada pela Lei nº 8.269, de 1991)</h6>
+ <h4>§ 2° As disposições deste artigo aplicam-se aos pagamentos efetuados a partir de 1° de dezembro de 1991. (Redação dada pela Lei nº 8.269, de 1991)</h4>
+ <h3>Art. 26. O valor da Gratificação de Natal (13º salário) a que se referem as Leis nº 4.090, de 13 de julho de 1962 , e de nº 4.281, de 8 de novembro de 1963 , e o art. 10 do Decreto-Lei nº 2.413, de 10 de fevereiro de 1988 , será tributado à mesma alíquota (art. 25) a que estiver sujeito o rendimento mensal do contribuinte, antes de sua inclusão. (Vide Lei nº 7.959, de 1989)</h3>
+ <p><del></p>
+ <h3>Art. 27 (Revogado pela Lei nº 9.250, de 1995)</del></h3>
+ <p>Arts. 28 e 29 (Revogados pela Lei nº 8.134, de 1990)</p>
+ <h3>Art. 30. Permanecem em vigor as isenções de que tratam os arts. 3º a 7º do Decreto-Lei nº 1.380, de 23 de dezembro de 1974 , e o art. 5º da Lei nº 4.506, de 30 de novembro de 1964.</h3>
+ <h3>Art 31. Ficam sujeitos à incidência do imposto de renda na fonte, calculado de acordo com o disposto no art. 25 desta Lei, relativamente à parcela correspondente às contribuições cujo ônus não tenha sido do beneficiário ou quando os rendimentos e ganhos de capital produzidos pelo patrimônio da entidade de previdência não tenham sido tributados na fonte: (Redação dada pela Lei nº 7.751, de 1989)</h3>
+ <h5>I - as importâncias pagas ou creditadas a pessoas físicas, sob a forma de resgate, pecúlio ou renda periódica, pelas entidades de previdência privada;</h5>
+ <h5>II - os valores resgatados dos Planos de Poupança e Investimento - PAIT de que trata o Decreto-Lei nº 2.292, de 21 de novembro de 1986.</h5>
+ <h4>§ 1º O imposto será retido por ocasião do pagamento ou crédito, pela entidade de previdência privada, no caso do inciso I, e pelo administrador da carteira, fundo ou clube PAIT, no caso do inciso II.</h4>
+ <h4>§ 2º (Vetado).</h4>
+ <h3>Art. 32. Ficam sujeitos à incidência do imposto de renda na fonte, à alíquota de vinte e cinco por cento:</h3>
+ <h5>I - os benefícios líquidos resultantes da amortização antecipada, mediante sorteio, dos títulos de economia denominados capitalização;</h5>
+ <h5>II - os benefícios atribuídos aos portadores de títulos de capitalização nos lucros da empresa emitente.</h5>
+ <h4>§ 1º A alíquota prevista neste artigo será de quinze por cento em relação aos prêmios pagos aos proprietários e criadores de cavalos de corrida.</h4>
+ <h4>§ 2º O imposto de que trata este artigo será considerado:</h4>
+ <h6>a) antecipação do devido na declaração de rendimentos, quando o beneficiário for pessoa jurídica tributada com base no lucro real;</h6>
+ <h6>b) devido exclusivamente na fonte, nos demais casos, inclusive quando o beneficiário for pessoa jurídica isenta.</h6>
+ <h4>§ 3º (Vetado).</h4>
+ <h3>Art. 33. Ressalvado o disposto em normas especiais, no caso de ganho de capital auferido por residente ou domiciliado no exterior, o imposto será devido, à alíquota de vinte e cinco por cento, no momento da alienação do bem ou direito.</h3>
+ <h4>Parágrafo único. O imposto deverá ser pago no prazo de quinze dias contados da realização da operação ou por ocasião da remessa, sempre que esta ocorrer antes desse prazo.</h4>
+ <h3>Art. 34. Na inexistência de outros bens sujeitos a inventário ou arrolamento, os valores relativos ao imposto de renda e outros tributos administrados pela Secretaria da Receita Federal, bem como o resgate de quotas dos fundos fiscais criados pelos Decretos-Leis nºs 157, de 10 de fevereiro de 1967 , e 880, de 18 de setembro de 1969 , não recebidos em vida pelos respectivos titulares, poderão ser restituídos ao cônjuge, filho e demais dependentes do contribuinte falecido, inexigível a apresentação de alvará judicial.</h3>
+ <h4>Parágrafo único. Existindo outros bens sujeitos a inventário ou arrolamento, a restituição ao meeiro, herdeiros ou sucessores, far-se-á na forma e condições do alvará expedido pela autoridade judicial para essa finalidade.</h4>
+ <h3>Art. 35. O sócio quotista, o acionista ou titular da empresa individual ficará sujeito ao imposto de renda na fonte, à alíquota de oito por cento, calculado com base no lucro líquido apurado pelas pessoas jurídicas na data do encerramento do período-base. (Vide RSF nº 82, de 1996)</h3>
+ <h4>§ 1º Para efeito da incidência de que trata este artigo, o lucro líquido do período-base apurado com observância da legislação comercial, será ajustado pela:</h4>
+ <h6>a) adição do valor das provisões não dedutíveis na determinação do lucro real, exceto a provisão para o imposto de renda;</h6>
+ <h6>b) adição do valor da reserva de reavaliação, baixado no curso do período-base, que não tenha sido computado no lucro líquido;</h6>
+ <h6>c) exclusão do valor, corrigido monetariamente, das provisões adicionadas, na forma da alínea a, que tenham sido baixadas no curso do período-base, utilizando-se a variação do BTN Fiscal. (Redação dada pela Lei nº 7.799, de 1989)</h6>
+ <h6>d) compensação de prejuízos contábeis apurados em balanço de encerramento de período-base anterior, desde que tenham sido compensados contabilmente, ressalvado do disposto no § 2º deste artigo.</h6>
+ <h6>e) exclusão do resultado positivo de avaliação de investimentos pelo valor de patrimônio líquido; (Incluída pela Lei nº 7.959, de 1989)</h6>
+ <h6>f) exclusão dos lucros e dividendos derivados de investimentos avaliados pelo custo de aquisição, que tenham sido computados como receita; (Incluída pela Lei nº 7.959, de 1989)</h6>
+ <h6>g) adição do resultado negativo da avaliação de investimentos pelo valor de patrimônio líquido. (Incluída pela Lei nº 7.959, de 1989)</h6>
+ <h4>§ 2º Não poderão ser compensados os prejuízos:</h4>
+ <h6>a) que absorverem lucros ou reservas que não tenham sido tributados na forma deste artigo;</h6>
+ <h6>b) absorvidos na redução de capital que tenha sido aumentado com os benefícios do art. 63 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977.</h6>
+ <h4>§ 3º O disposto nas alíneas a e c do § 1º não se aplica em relação às provisões admitidas pela Comissão de Valores Mobiliários, Banco Central do Brasil e Superintendência de Seguros Privados, quando contribuídas por pessoas jurídicas submetidas à orientação normativa dessas entidades.</h4>
+ <h4>§ 4º O imposto de que trata este artigo:</h4>
+ <h6>a) será considerado devido exclusivamente na fonte, quando o beneficiário do lucro for pessoa física;</h6>
+ <p><del>b) (Revogada pela Lei nº 7.759, de 1989)</del></p>
+ <h6>c) poderá ser compensado com o imposto incidente na fonte sobre a parcela dos lucros apurados pelas pessoas jurídicas, que corresponder à participação de beneficiário, pessoa física ou jurídica, residente ou domiciliado no exterior.</h6>
+ <h4>§ 5º É dispensada a retenção na fonte do imposto a que se refere este artigo sobre a parcela do lucro líquido que corresponder à participação de pessoa jurídica imune ou isenta do imposto de renda. (Redação dada pela Lei 7.730, de 1989)</h4>
+ <h4>§ 6º O disposto neste artigo se aplica em relação ao lucro líquido apurado nos períodos-base encerrados a partir da data da vigência desta Lei.</h4>
+ <h3>Art. 36. Os lucros que forem tributados na forma do artigo anterior, quando distribuídos, não estarão sujeitos à incidência do imposto de renda na fonte.</h3>
+ <h4>Parágrafo único. Incide, entretanto, o imposto de renda na fonte;</h4>
+ <h6>a) em relação aos lucros que não tenham sido tributados na forma do artigo anterior;</h6>
+ <h6>b) no caso de pagamento, crédito, entrega, emprego ou remessa de lucros, quando o beneficiário for residente ou domiciliado no exterior.</h6>
+ <h3>Art. 37. O imposto a que se refere o art. 36 desta lei será convertido em número de OTN, pelo valor desta no mês de encerramento do período-base e deverá ser pago até o último dia útil do quarto mês subseqüente ao do encerramento do período-base.</h3>
+ <h3>Art. 38. O disposto no art. 63 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977 , somente se aplicará aos lucros e reservas relativos a resultados de períodos-base encerrados à data da vigência desta Lei.</h3>
+ <h3>Art. 39. O disposto no art. 36 desta Lei não se aplicará às sociedades civis de que trata o art. 1º do Decreto-Lei nº 2.397, de 21 de dezembro de 1987.</h3>
+ <h3>Art 40. Fica sujeita ao pagamento do imposto de renda à alíquota de dez por cento, a pessoa física que auferir ganhos líquidos nas operações realizadas nas bolsas de valores, de mercadorias, de futuros e assemelhadas, ressalvado o disposto no inciso II do art. 22 desta Lei. (Redação dada pela Lei nº 7.751, de 1989)
+(Vide Lei nº 8.012, de 1990)</h3>
+ <h4>§ 1º Considera-se ganho líquido o resultado positivo auferido nas operações ou contratos liquidados em cada mês, admitida a dedução dos custos e despesas efetivamente incorridos, necessários à realização das operações, e à compensação das perdas efetivas ocorridas no mesmo período.</h4>
+ <h4>§ 2º O ganho líquido será constituído: (Redação dada pela Lei 7.730, de 1989)</h4>
+ <h6>a) no caso dos mercados à vista, pela diferença positiva entre o valor de transmissão do ativo e o custo de aquisição do mesmo; (Redação dada pela Lei 7.730, de 1989)</h6>
+ <h6>b) no caso do mercado de opções: (Redação dada pela Lei 7.730, de 1989)</h6>
+ <p>1. nas operações tendo por objeto a opção, a diferença positiva apurada entre o valor das posições encerradas ou não exercidas até o vencimento da opção; (Redação dada pela Lei 7.730, de 1989)</p>
+ <p>2. nas operações de exercício, a diferença positiva apurada entre o valor de venda à vista ou o preço médio à vista na data do exercício e o preço fixado para o exercício, ou a diferença positiva entre o preço do exercício acrescido do prêmio e o custo de aquisição; (Redação dada pela Lei 7.730, de 1989)</p>
+ <h6>c) no caso dos mercados a termo, a diferença positiva apurada entre o valor da venda à vista ou o preço médio à vista na data da liquidação do contrato a termo e o preço neste estabelecido;</h6>
+ <h6>d) no caso dos mercados futuros, o resultado líquido positivo dos ajustes diários apurados no período.</h6>
+ <h4>§ 3º Se o contribuinte apurar resultado negativo no mês será admitida a sua apropriação nos meses subseqüente. (Redação dada pela Lei 7.730, de 1989)</h4>
+ <h4>§ 4º O imposto deverá ser pago até o último dia útil da primeira quinzena do mês subseqüente ao da percepção dos rendimentos.</h4>
+ <p><del>§ 5º (Revogado pela Lei nº 8.014, de 1990)</del></p>
+ <h4>§ 6º O Poder Executivo poderá baixar normas para apuração e demonstração de ganhos líquidos, bem como autorizar a compensação de perdas entre dois ou mais mercados ou modalidades operacionais, previstos neste artigo.</h4>
+ <h3>Art. 41. As deduções de despesas, bem como a compensação de perdas previstas no artigo anterior, serão admitidas exclusivamente para as operações realizadas em mercados organizados, geridos ou sob a responsabilidade de instituição credenciada pelo Poder Executivo e com objetivos semelhantes aos das bolsas de valores, de mercadorias ou de futuros. (Vide Medida 	Provisória nº 1.303, de 2025) Produção de efeitos</h3>
+ <p><del></p>
+ <h3>Art. 42 (Revogado pela Lei nº 8.134, de 1990)</del></h3>
+ <h3>Art. 43. Fica sujeito à incidência do imposto de renda na fonte, à alíquota de vinte e cinco por cento, o rendimento real produzido por quaisquer aplicações financeiras, inclusive em fundos em condomínio, clubes de investimento e cadernetas de poupança, mesmo as do tipo pecúlio.</h3>
+ <h4>§ 1º O disposto neste artigo aplica-se também a operações de financiamento realizadas em bolsas de valores, de mercadorias, de futuros e assemelhadas.</h4>
+ <h4>§ 2º O disposto neste artigo não se aplica aos rendimentos ganhos de capital auferidos:</h4>
+ <h6>a) em aplicações do fundo de curto prazo, tributados nos termos do Decreto-Lei nº 2.458, de 25 de agosto de 1988;</h6>
+ <h6>b - em operações financeiras de curto prazo, assim consideradas as de prazo inferior a noventa dias, que serão tributadas às seguintes alíquotas, sobre o rendimento bruto: (Redação dada pela Lei 7.730, de 1989)</h6>
+ <p>1. dez por cento quando o beneficiário do rendimento se identificar; (Incluído pela Lei 7.730, de 1989)</p>
+ <p>2. trinta por cento quando o beneficiário não se identificar. (Incluído pela Lei 7.730, de 1989)</p>
+ <h4>§ 3º As operações compromissadas de curto prazo que tenham por objeto Letras Financeiras do Tesouro - LFT e títulos estaduais e municipais do tipo LFT, serão tributadas pela alíquota de quarenta por cento incidente sobre o rendimento que ultrapassar da taxa referencial acumulada da LFT, divulgada pelo Banco Central do Brasil. (Redação dada pela Lei 7.730, de 1989)</h4>
+ <h4>§ 4º. Considera-se rendimento real: (Redação dada pela Lei 7.730, de 1989)</h4>
+ <h6>a) nas operações prefixadas e com taxas flutuantes, o rendimento que exceder da variação do IPC - Índice de Preço ao Consumidor, verificado entre a data da aplicação e do resgate; (Incluída pela Lei 7.730, de 1989)</h6>
+ <h6>b) no caso das operações com cláusula de correção monetária, a parcela do rendimento que exceder da variação do índice pactuado, verificado entre a data da aplicação e do resgate. (Incluída pela Lei 7.730, de 1989)</h6>
+ <p><del>§ 5º (Revogado pela Lei 7.730, de 1989)</del></p>
+ <h4>§ 6º O imposto deverá ser retido pela fonte pagadora:</h4>
+ <p><del>a) (Revogada pela Lei 7.730, de 1989)</del></p>
+ <h6>b) no caso de cadernetas de poupança, na data do pagamento ou créditos dos rendimentos;</h6>
+ <h6>c) no caso de operações de financiamento realizados em bolsas de valores, de mercadorias, de futuros e assemelhadas, na liquidação;</h6>
+ <h6>d) nos demais casos, na data da cessão, liquidação ou resgate.</h6>
+ <h4>§ 7º (Vetado).</h4>
+ <h4>§ 8º No caso de aplicações em fundos de condomínio e clubes de investimento, efetuadas até 31 de dezembro de 1988, o rendimento real será determinado tomando-se por base o valor da quota no dia 1º de janeiro de 1989.</h4>
+ <h4>§ 9º No caso de depósito em cadernetas de poupança, efetuado até 31 de dezembro de 1988, o rendimento real será determinado a partir do primeiro dia posterior ao do primeiro crédito efetuado na conta do beneficiário no mês de janeiro de 1989.</h4>
+ <h4>§ 10. No caso de cadernetas de poupança, o imposto de que trata este artigo incidirá sobre a parcela do rendimento real que exceder ao valor correspondente a sessenta OTNs vigente para o mês.</h4>
+ <h4>§ 11. Na determinação da base de cálculo do imposto será excluída a parcela de rendimentos intermediários, recebida e já tributada na fonte.</h4>
+ <h3>Art. 44. O imposto de que trata o artigo anterior será considerado:</h3>
+ <h5>I - antecipação do devido na declaração de rendimentos, quando o beneficiário for pessoa jurídica tributada com base no lucro real;</h5>
+ <h5>II - devido exclusivamente na fonte nos demais casos, inclusive quando o beneficiário for pessoa jurídica isenta, observado o disposto no art. 47 desta lei.</h5>
+ <p><del></p>
+ <h3>Art. 45 (Revogado pela Lei nº 8.134, de 1990)</del></h3>
+ <p><del></p>
+ <h3>Art. 46 (Revogado pela Lei 7.730, de 1989)</del></h3>
+ <h3>Art. 47. Fica sujeito à incidência do imposto de renda exclusivamente na fonte, à alíquota de trinta por cento, todo rendimento real ou ganho de capital pago a beneficiário não identificado.</h3>
+ <h3>Art. 48. A tributação de que tratam os arts. 7º, 8º e 23 não se aplica aos rendimentos e ganhos de capital tributados na forma dos arts. 41 e 47 desta Lei.</h3>
+ <h3>Art. 49. O disposto nesta Lei não se aplica aos rendimentos da atividade agrícola e pastoril, que serão tributados na forma da legislação específica.</h3>
+ <h3>Art. 50. (Vetado).</h3>
+ <h3>Art. 51. A isenção do imposto de renda de que trata o art. 11, item I, da Lei nº 7.256, de 27 de novembro de 1984 , não se aplica à empresa que se encontre nas situações previstas no art. 3º, itens I a V, da referida Lei, nem às empresas que prestem serviços profissionais de corretor, despachante, ator, empresário e produtor de espetáculos públicos, cantor, músico, médico, dentista, enfermeiro, engenheiro, físico, químico, economista, contador, auditor, estatístico, administrador, programador, analista de sistema, advogado, psicólogo, professor, jornalista, publicitário, ou assemelhados, e qualquer outra profissão cujo exercício dependa de habilitação profissional legalmente exigida.</h3>
+ <h3>Art. 52. A falta ou insuficiência de recolhimento do imposto ou de quota deste, nos prazos fixados nesta Lei, apresentada ou não a declaração, sujeitará o contribuinte às multas e acréscimos previstos na legislação do imposto de renda.</h3>
+ <h3>Art. 53. Os juros e as multas serão calculados sobre o imposto ou quota, observado o seguinte: (Redação dada pela Lei nº 7.799, de 1989)</h3>
+ <h6>a) quando expresso em BTN serão convertidos em cruzados novos pelo valor do BTN no mês do pagamento; (Incluída pela Lei nº 7.799, de 1989)</h6>
+ <h6>b) quando expresso em BTN Fiscal, serão convertidos em cruzados novos pelo valor do BTN Fiscal no dia do pagamento. (Incluída pela Lei nº 7.799, de 1989)</h6>
+ <h3>Art. 54. Fica o Poder Executivo autorizado a implantar medidas de estímulo à eficiência da atividade fiscal em programas especiais de fiscalização.</h3>
+ <h3>Art. 55. Fica reduzida para um por cento a alíquota aplicável às importâncias pagas ou creditadas, a partir do mês de janeiro de 1989, a pessoas jurídicas, civis ou mercantis, pela prestação de serviços de limpeza, conservação, segurança, vigilância e por locação de mão-de-obra de que trata o art. 3º do Decreto-Lei nº 2.462, de 30 de agosto de 1988 . (Vide Medida Provisória nº 232, de 2004)</h3>
+ <p><del></p>
+ <h3>Art. 56 (Revogado pela Lei nº 9.430, de 1996)</del></h3>
+ <h3>Art. 57. Esta Lei entra em vigor em 1º de janeiro de 1989.</h3>
+ <h3>Art. 58. Revogam-se o art. 50 da Lei nº 4.862, de 29 de novembro de 1965 , os arts. 1º a 9º do Decreto-Lei nº 1.510, de 27 de dezembro de 1976 , os arts. 65 e 66 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977 , os arts. 1º a 4º do Decreto-Lei nº 1.641, de 7 de dezembro de 1978 , os arts. 12 e 13 do Decreto-Lei nº 1.950, de 14 de julho de 1982 , os arts. 15 e 100 da Lei nº 7.450, de 23 de dezembro de 1985 , o art. 18 do Decreto-Lei nº 2.287, de 23 de julho de 1986 , o item IV e o parágrafo único do art. 12 do Decreto-Lei nº 2.292, de 21 de novembro de 1986 , o item III do art. 2º do Decreto-Lei nº 2.301, de 21 de novembro de 1986 , o item III do art. 7º do Decreto-Lei nº 2.394, de 21 de dezembro de 1987 , e demais disposições em contrário.</h3>
+ <p>Brasília, 22 de dezembro de 1988; 167º da Independência e 100º da República.</p>
+ <h3>JOSÉ SARNEY</h3>
+ <p>Mailson Ferreira da Nóbrega</p>
+ <p>Este texto não substitui o publicado no DOU de 23.12.1998</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Medida Provisória nº 582, de 2012 | Altera a legislação do imposto de renda e dá outras providências.</p>
+ <p>Ano de Aquisição ou Incorporação | Percentual de Redução | Ano de Aquisição ou Incorporação | Percentual de Redução</p>
+ <p>--- | --- | --- | ---</p>
+ <p>1969 | 100 | 1979 | 50</p>
+ <p>1970 | 95% | 1980 | 45%</p>
+ <p>1971 | 90% | 1981 | 40%</p>
+ <p>1972 | 85% | 1982 | 35%</p>
+ <p>1973 | 80% | 1983 | 30%</p>
+ <p>1974 | 75% | 1984 | 25%</p>
+ <p>1975 | 70% | 1985 | 20%</p>
+ <p>1976 | 65% | 1986 | 15%</p>
+ <p>1977 | 60% | 1987 | 10%</p>
+ <p>1978 | 55% | 1988 | 5%</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L7713compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Decreto-Lei Nº 972/1969 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Decreto-Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1969" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Decreto-Lei Nº 972/1969</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:51:17 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del0972.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 46.355 caracteres | espelho: 44.578 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>DECRETO-LEI Nº 972, DE 17 DE OUTUBRO DE 1969.</p>
+ <p>Dispõe sôbre o exercício da profissão de jornalista.</p>
+ <p>OS MINISTROS DA MARINHA DE GUERRA, DO EXÉRCITO E DA AERONÁUTICA MILITAR , usando das atribuições que lhes confere o artigo 3º do Ato Institucional nº 16, de 14 de outubro de 1969, combinado com o § 1º do artigo 2º do Ato Institucional nº 5, de 13 de dezembro de 1968,</p>
+ <p>DECRETAM:</p>
+ <h3>Art 1º O exercício da profissão de jornalista é livre, em todo o território nacional, aos que satisfizerem as condições estabelecidas neste Decreto-Lei.</h3>
+ <h3>Art 2º A profissão de jornalista compreende, privativamente, o exercício habitual e remunerado de qualquer das seguintes atividades:</h3>
+ <h6>a) redação, condensação, titulação, interpretação, correção ou coordenação de matéria a ser divulgada, contenha ou não comentário;</h6>
+ <h6>b) comentário ou crônica, pelo rádio ou pela televisão;</h6>
+ <h6>c) entrevista, inquérito ou reportagem, escrita ou falada;</h6>
+ <h6>d) planejamento, organização, direção e eventual execução de serviços técnicos de jornalismo, como os de arquivo, ilustração ou distribuição gráfica de matéria a ser divulgada;</h6>
+ <h6>e) planejamento, organização e administração técnica dos serviços de que trata a alínea " a ";</h6>
+ <h6>f) ensino de técnicas de jornalismo;</h6>
+ <h6>g) coleta de notícias ou informações e seu preparo para divulgação;</h6>
+ <h6>h) revisão de originais de matéria jornalística, com vistas à correção redacional e a adequação da linguagem;</h6>
+ <p>i) organização e conservação de arquivo jornalístico, e pesquisa dos respectivos dados para a elaboração de notícias;</p>
+ <h6>j) execução da distribuição gráfica de texto, fotografia ou ilustração de caráter jornalístico, para fins de divulgação;</h6>
+ <p>l) execução de desenhos artísticos ou técnicos de caráter jornalístico.</p>
+ <h3>Art 3º Considera-se emprêsa jornalística, para os efeitos deste Decreto-Lei, aquela que tenha como atividade a edição de jornal ou revista, ou a distribuição de noticiário, com funcionamento efetivo idoneidade financeira e registro legal.</h3>
+ <h4>§ 1º Equipara-se a emprêsa jornalística a seção ou serviço de emprêsa de radiodifusão, televisão ou divulgação cinematográfica, ou de agência de publicidade, onde sejam exercidas as atividades previstas no artigo 2º.</h4>
+ <p><del>§ 2º (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 3º A emprêsa não-jornalística sob cuja responsabilidade se editar publicação destinada a circulação externa, promoverá o cumprimento desta lei relativamente aos jornalistas que contratar, observado, porém, o que determina o artigo 8º, § 4º.</h4>
+ <h3>Art 4º O exercício da profissão de jornalista requer prévio registro no órgão regional competente do Ministério do Trabalho e Previdência Social que se fará mediante a apresentação de: (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h5>I - prova de nacionalidade brasileira; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>II - fôlha corrida; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>III - carteira profissional (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <p><del>IV - (Revogado pela Lei nº 6.612, de 1978) encerrada</del></p>
+ <h5>V - diploma de curso superior de jornalismo, oficial ou reconhecido registrado no Ministério da Educação e Cultura ou em instituição por êste credenciada, para as funções relacionadas de " a " a " g " no artigo 6º. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <p><del>§ 1º O estágio de que trata o item IV (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 1º O regulamento disporá ainda sôbre o registro especial de: (Renumerado pela Lei nº 7.360, de 1985) (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h6>a) colaborador, assim entendido aquêle que exerça, habitual e remuneradamente atividade jornalística, sem relação de emprêgo;</h6>
+ <h6>a) colaborador, assim entendido aquele que, mediante remuneração e sem relação de emprego, produz trabalho de natureza técnica, científica ou cultural, relacionado com a sua especialização, para ser divulgado com o nome e qualificação do autor; (Redação dada pela Lei nº 6.612, de 1978) (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>b) funcionário público titular de cargo cujas atribuições legais coincidam com as do artigo 2º; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>c) provisionados na forma do artigo 12.</h6>
+ <h6>c) provisionados na forma do art. 12, aos quais será assegurado o direito de transformar seu registro em profissional, desde que comprovem o exercício de atividade jornalística nos dois últimos anos anteriores à data do Regulamento. (Redação dada pela Lei nº 7.360, de 1985) (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <p><del>§ 2º (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 2º O registro de que tratam as alíneas " a " e " b " do parágrafo anterior não implica o reconhecimento de quaisquer direitos que decorram da condição de empregado, nem, no caso da alínea " b ", os resultantes do exercício privado e autônomo da profissão. (Renumerado pela Lei nº 7.360, de 1985) (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h3>Art 4º O exercício da profissão de jornalista requer prévio registro no órgão regional competente do Ministério do Trabalho e Previdência Social que se fará mediante a apresentação de: (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h5>I - prova de nacionalidade brasileira; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>II - fôlha corrida; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>III - carteira profissional (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>IV - declaração de cumprimento de estágio em emprêsa jornalística; (Vigência encerrada)</h5>
+ <h5>V - diploma de curso superior de jornalismo, oficial ou reconhecido registrado no Ministério da Educação e Cultura ou em instituição por êste credenciada, para as funções relacionadas de " a " a " g " no artigo 6º. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <p><del>§ 1º O estágio de que trata o item IV (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 1º O regulamento disporá ainda sôbre o registro especial de: (Renumerado pela Lei nº 7.360, de 1985) (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h6>a) colaborador, assim entendido aquêle que exerça, habitual e remuneradamente atividade jornalística, sem relação de emprêgo;</h6>
+ <h6>a) colaborador, assim entendido aquele que, mediante remuneração e sem relação de emprego, produz trabalho de natureza técnica, científica ou cultural, relacionado com a sua especialização, para ser divulgado com o nome e qualificação do autor; (Redação dada pela Lei nº 6.612, de 1978) (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h6>b) funcionário público titular de cargo cujas atribuições legais coincidam com as do artigo 2º; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h6>c) provisionados na forma do artigo 12.</h6>
+ <h6>c) provisionados na forma do art. 12, aos quais será assegurado o direito de transformar seu registro em profissional, desde que comprovem o exercício de atividade jornalística nos dois últimos anos anteriores à data do Regulamento. (Redação dada pela Lei nº 7.360, de 1985) (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <p><del>§ 2º (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 2º O registro de que tratam as alíneas " a " e " b " do parágrafo anterior não implica o reconhecimento de quaisquer direitos que decorram da condição de empregado, nem, no caso da alínea " b ", os resultantes do exercício privado e autônomo da profissão. (Renumerado pela Lei nº 7.360, de 1985) (Revogado pela Medida 	Provisória nº 905, de 2019)</h4>
+ <p>(Vigência encerrada)</p>
+ <h3>Art 4º O exercício da profissão de jornalista requer prévio registro no órgão regional competente do Ministério do Trabalho e Previdência Social que se fará mediante a apresentação de:</h3>
+ <h5>I - prova de nacionalidade brasileira;</h5>
+ <h5>II - fôlha corrida;</h5>
+ <h5>III - carteira profissional;</h5>
+ <p><del>IV - (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h5>V - diploma de curso superior de jornalismo, oficial ou reconhecido registrado no Ministério da Educação e Cultura ou em instituição por êste credenciada, para as funções relacionadas de " a " a " g " no artigo 6º.</h5>
+ <p><del>§ 1º O estágio de que trata o item IV (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 1º O regulamento disporá ainda sôbre o registro especial de: (Renumerado pela Lei nº 7.360, de 1985)</h4>
+ <h6>a) colaborador, assim entendido aquêle que exerça, habitual e remuneradamente atividade jornalística, sem relação de emprêgo;</h6>
+ <h6>a) colaborador, assim entendido aquele que, mediante remuneração e sem relação de emprego, produz trabalho de natureza técnica, científica ou cultural, relacionado com a sua especialização, para ser divulgado com o nome e qualificação do autor; (Redação dada pela Lei nº 6.612, de 1978)</h6>
+ <h6>b) funcionário público titular de cargo cujas atribuições legais coincidam com as do artigo 2º;</h6>
+ <h6>c) provisionados na forma do artigo 12.</h6>
+ <h6>c) provisionados na forma do art. 12, aos quais será assegurado o direito de transformar seu registro em profissional, desde que comprovem o exercício de atividade jornalística nos dois últimos anos anteriores à data do Regulamento. (Redação dada pela Lei nº 7.360, de 1985)</h6>
+ <p><del>§ 2º (Revogado pela Lei nº 6.612, de 1978)</del></p>
+ <h4>§ 2º O registro de que tratam as alíneas " a " e " b " do parágrafo anterior não implica o reconhecimento de quaisquer direitos que decorram da condição de empregado, nem, no caso da alínea " b ", os resultantes do exercício privado e autônomo da profissão. (Renumerado pela Lei nº 7.360, de 1985)</h4>
+ <h3>Art 5º Haverá, ainda, no mesmo órgão, a que se refere o artigo anterior, o registro dos diretores de emprêsas jornalísticas que, não sendo jornalistas, respondam pelas respectivas publicações. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h4>§ 1º Para êsse registro, serão exigidos: (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h5>I - prova de nacionalidade brasileira; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>II - fôlha corrida; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>III - prova de registro civil ou comercial da emprêsa jornalística, com o inteiro teor do seu ato constitutivo; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>IV - prova do depósito do título da publicação ou da agência de notícias no órgão competente do Ministério da Indústria e do Comércio; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>V - para emprêsa já existente na data dêste Decreto-Lei, conforme o caso: (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h6>a) trinta exemplares do jornal; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>b) doze exemplares da revista; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>c) trinta recortes ou cópia de noticiário com datas diferentes e prova de sua divulgação. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h4>§ 2º Tratando-se de emprêsa nova, o registro será provisório com validade por dois anos, tornando-se definitivo após o cumprimento do disposto no item V. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 3º Não será admitida a renovação de registro provisório nem a prorrogação do prazo de sua validade. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 4º Na hipótese do § 3º do artigo 3º, será obrigatório o registro especial do responsável pela publicação, na forma do presente artigo para efeitos do § 4º do artigo 8º. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h3>Art 5º Haverá, ainda, no mesmo órgão, a que se refere o artigo anterior, o registro dos diretores de emprêsas jornalísticas que, não sendo jornalistas, respondam pelas respectivas publicações. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h4>§ 1º Para êsse registro, serão exigidos: (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h5>I - prova de nacionalidade brasileira; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>II - fôlha corrida; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>III - prova de registro civil ou comercial da emprêsa jornalística, com o inteiro teor do seu ato constitutivo; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>IV - prova do depósito do título da publicação ou da agência de notícias no órgão competente do Ministério da Indústria e do Comércio; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>V - para emprêsa já existente na data dêste Decreto-Lei, conforme o caso: (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020)</h5>
+ <h6>a) trinta exemplares do jornal; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h6>b) doze exemplares da revista; (Revogado pela Medida 	Provisória nº 905, de 2019 (Vigência encerrada)</h6>
+ <h6>c) trinta recortes ou cópia de noticiário com datas diferentes e prova de sua divulgação. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h4>§ 2º Tratando-se de emprêsa nova, o registro será provisório com validade por dois anos, tornando-se definitivo após o cumprimento do disposto no item V. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 3º Não será admitida a renovação de registro provisório nem a prorrogação do prazo de sua validade. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 4º Na hipótese do § 3º do artigo 3º, será obrigatório o registro especial do responsável pela publicação, na forma do presente artigo para efeitos do § 4º do artigo 8º. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h3>Art 5º Haverá, ainda, no mesmo órgão, a que se refere o artigo anterior, o registro dos diretores de emprêsas jornalísticas que, não sendo jornalistas, respondam pelas respectivas publicações.</h3>
+ <h4>§ 1º Para êsse registro, serão exigidos:</h4>
+ <h5>I - prova de nacionalidade brasileira;</h5>
+ <h5>II - fôlha corrida;</h5>
+ <h5>III - prova de registro civil ou comercial da emprêsa jornalística, com o inteiro teor do seu ato constitutivo;</h5>
+ <h5>IV - prova do depósito do título da publicação ou da agência de notícias no órgão competente do Ministério da Indústria e do Comércio;</h5>
+ <h5>V - para emprêsa já existente na data dêste Decreto-Lei, conforme o caso:</h5>
+ <h6>a) trinta exemplares do jornal;</h6>
+ <h6>b) doze exemplares da revista;</h6>
+ <h6>c) trinta recortes ou cópia de noticiário com datas diferentes e prova de sua divulgação.</h6>
+ <h4>§ 2º Tratando-se de emprêsa nova, o registro será provisório com validade por dois anos, tornando-se definitivo após o cumprimento do disposto no item V.</h4>
+ <h4>§ 3º Não será admitida a renovação de registro provisório nem a prorrogação do prazo de sua validade.</h4>
+ <h4>§ 4º Na hipótese do § 3º do artigo 3º, será obrigatório o registro especial do responsável pela publicação, na forma do presente artigo para efeitos do § 4º do artigo 8º.</h4>
+ <h3>Art 6º As funções desempenhadas pelos jornalistas profissionais, como empregados, serão assim classificadas:</h3>
+ <h6>a) Redator: aquêle que além das incumbências de redação comum, tem o encargo de redigir editoriais, crônicas ou comentários;</h6>
+ <h6>b) Noticiarista: aquêle que tem o encargo de redigir matéria de caráter informativo, desprovida de apreciação ou comentários;</h6>
+ <h6>c) Repórter: aquêle que cumpre a determinação de colhêr notícias ou informações, preparando-a para divulgação;</h6>
+ <h6>d) Repórter de Setor: aquêle que tem o encargo de colhêr notícias ou informações sôbre assuntos pré-determinados, preparando-as para divulgação;</h6>
+ <h6>e) Rádio-Repórter: aquêle a quem cabe a difusão oral de acontecimento ou entrevista pelo rádio ou pela televisão, no instante ou no local em que ocorram, assim como o comentário ou crônica, pelos mesmos veículos;</h6>
+ <h6>f) Arquivista-Pesquisador: aquêle que tem a incumbência de organizar e conservar cultural e tècnicamente, o arquivo redatorial, procedendo à pesquisa dos respectivos dados para a elaboração de notícias;</h6>
+ <h6>g) Revisor: aquêle que tem o encargo de rever as provas tipográficas de matéria jornalística;</h6>
+ <h6>h) Ilustrador: aquêle que tem a seu cargo criar ou executar desenhos artísticos ou técnicos de caráter jornalístico;</h6>
+ <p>i) Repórter-Fotográfico: aquêle a quem cabe registrar, fotogràficamente, quaisquer fatos ou assuntos de interêsse jornalístico;</p>
+ <h6>j) Repórter-Cinematográfico: aquêle a quem cabe registrar cinematogràficamente, quaisquer fatos ou assuntos de interêsse jornalístico;</h6>
+ <p>l) Diagramador: aquêle a quem compete planejar e executar a distribuição gráfica de matérias, fotografias ou ilustrações de caráter jornalístico, para fins de publicação.</p>
+ <h4>Parágrafo único: também serão privativas de jornalista profissional as funções de confiança pertinentes às atividades descritas no artigo 2º como editor, secretário, subsecretário, chefe de reportagem e chefe de revisão.</h4>
+ <h3>Art 7º Não haverá incompatibilidade entre o exercício da profissão de jornalista e o de qualquer outra função remunerada, ainda que pública, respeitada a proibição de acumular cargos e as demais restrições de lei.</h3>
+ <h3>Art 8º Será passível de trancamento, voluntário ou de ofício, o registro profissional do jornalista que, sem motivo legal deixar de exercer a profissão por mais de dois anos. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h4>§ 1º Não incide na cominação dêste artigo o afastamento decorrente de: (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h6>a) suspensão ou interrupção do contrato de trabalho; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>b) aposentadoria como jornalista; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>c) viagem ou bôlsa de estudos, para aperfeiçoamento profissional; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h6>d) desemprêgo, apurado na forma da Lei nº 4.923, de 23 de dezembro de 1965. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h6>
+ <h4>§ 2º O trancamento de ofício será da iniciativa do órgão referido no artigo 4º ou a requerimento da entidade sindical de jornalistas. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 3º Os órgãos do Ministério do Trabalho e Previdência Social prestarão aos sindicatos de jornalistas as informações que lhes forem solicitadas, especialmente quanto ao registro de admissões e dispensas nas emprêsas jornalísticas, realizando as inspeções que se tornarem necessárias para a verificação do exercício da profissão de jornalista. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 4º O exercício da atividade prevista no artigo 3º, § 3º, não constituirá prova suficiente de permanência na profissão se a publicação e seu responsável não tiverem registro legal. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 5º O registro trancado suspende a titularidade e o exercício das prerrogativas profissionais, mas pode ser revalidado mediante a apresentação dos documentos previstos nos itens Il e III do artigo 4º, sujeitando-se a definitivo cancelamento se, um ano após, não provar o interessado nôvo e efetivo exercício da profissão, perante o órgão que deferir a revalidação.</h4>
+ <h4>§ 5º O registro trancado suspende a titularidade e o exercício das prerrogativas profissionais, mas pode ser revalidado mediante a apresentação dos documentos previstos nos incisos II e III do artigo 4º. (Redação dada pela Lei nº 5.696, de 1971) (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h3>Art 8º Será passível de trancamento, voluntário ou de ofício, o registro profissional do jornalista que, sem motivo legal deixar de exercer a profissão por mais de dois anos. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h4>§ 1º Não incide na cominação dêste artigo o afastamento decorrente de: (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h6>a) suspensão ou interrupção do contrato de trabalho; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h6>b) aposentadoria como jornalista; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h6>c) viagem ou bôlsa de estudos, para aperfeiçoamento profissional; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h6>d) desemprêgo, apurado na forma da Lei nº 4.923, de 23 de dezembro de 1965. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h6>
+ <h4>§ 2º O trancamento de ofício será da iniciativa do órgão referido no artigo 4º ou a requerimento da entidade sindical de jornalistas. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 3º Os órgãos do Ministério do Trabalho e Previdência Social prestarão aos sindicatos de jornalistas as informações que lhes forem solicitadas, especialmente quanto ao registro de admissões e dispensas nas emprêsas jornalísticas, realizando as inspeções que se tornarem necessárias para a verificação do exercício da profissão de jornalista. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 4º O exercício da atividade prevista no artigo 3º, § 3º, não constituirá prova suficiente de permanência na profissão se a publicação e seu responsável não tiverem registro legal. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 5º O registro trancado suspende a titularidade e o exercício das prerrogativas profissionais, mas pode ser revalidado mediante a apresentação dos documentos previstos nos itens Il e III do artigo 4º, sujeitando-se a definitivo cancelamento se, um ano após, não provar o interessado nôvo e efetivo exercício da profissão, perante o órgão que deferir a revalidação.</h4>
+ <h4>§ 5º O registro trancado suspende a titularidade e o exercício das prerrogativas profissionais, mas pode ser revalidado mediante a apresentação dos documentos previstos nos incisos II e III do artigo 4º. (Redação dada pela Lei nº 5.696, de 1971) (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h3>Art 8º Será passível de trancamento, voluntário ou de ofício, o registro profissional do jornalista que, sem motivo legal deixar de exercer a profissão por mais de dois anos.</h3>
+ <h4>§ 1º Não incide na cominação dêste artigo o afastamento decorrente de:</h4>
+ <h6>a) suspensão ou interrupção do contrato de trabalho;</h6>
+ <h6>b) aposentadoria como jornalista;</h6>
+ <h6>c) viagem ou bôlsa de estudos, para aperfeiçoamento profissional;</h6>
+ <h6>d) desemprêgo, apurado na forma da Lei nº 4.923, de 23 de dezembro de 1965.</h6>
+ <h4>§ 2º O trancamento de ofício será da iniciativa do órgão referido no artigo 4º ou a requerimento da entidade sindical de jornalistas.</h4>
+ <h4>§ 3º Os órgãos do Ministério do Trabalho e Previdência Social prestarão aos sindicatos de jornalistas as informações que lhes forem solicitadas, especialmente quanto ao registro de admissões e dispensas nas emprêsas jornalísticas, realizando as inspeções que se tornarem necessárias para a verificação do exercício da profissão de jornalista.</h4>
+ <h4>§ 4º O exercício da atividade prevista no artigo 3º, § 3º, não constituirá prova suficiente de permanência na profissão se a publicação e seu responsável não tiverem registro legal</h4>
+ <h4>§ 5º O registro trancado suspende a titularidade e o exercício das prerrogativas profissionais, mas pode ser revalidado mediante a apresentação dos documentos previstos nos itens Il e III do artigo 4º, sujeitando-se a definitivo cancelamento se, um ano após, não provar o interessado nôvo e efetivo exercício da profissão, perante o órgão que deferir a revalidação.</h4>
+ <h4>§ 5º O registro trancado suspende a titularidade e o exercício das prerrogativas profissionais, mas pode ser revalidado mediante a apresentação dos documentos previstos nos incisos II e III do artigo 4º. (Redação dada pela Lei nº 5.696, de 1971)</h4>
+ <h3>Art 9º O salário de jornalista não poderá ser ajustado nos contratos individuais de trabalho, para a jornada normal de cinco horas, em base inferior à do salário estipulado, para a respectiva função em acôrdo ou convenção coletiva de trabalho, ou sentença normativa da Justiça do Trabalho.</h3>
+ <h4>Parágrafo único. Em negociação ou dissídio coletivos poderão os sindicatos de jornalistas reclamar o estabelecimento de critérios de remuneração adicional pela divulgação de trabalho produzido por jornalista em mais de um veículo de comunicação coletiva.</h4>
+ <h3>Art 10. Até noventa dias após a publicação do regulamento deste Decreto-Lei, poderá obter registro de jornalista profissional quem comprovar o exercício atual da profissão, em qualquer das atividades descritas no artigo 2º, desde doze meses consecutivos ou vinte e quatro intercalados, mediante: (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h5>I - os documentos previstos nos item I, II e III do artigo 4º; (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>II - atestado de emprêsa jornalística, do qual conste a data de admissão, a função exercida e o salário ajustado; (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <p>Ill - prova de contribuição para o Instituto Nacional de Previdência Social, relativa à relação de emprêgo com a emprêsa jornalística atestante. (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</p>
+ <h4>§ 1º Sôbre o pedido, opinará, antes da decisão da autoridade regional competente, o Sindicato de Jornalistas da respectiva base territorial. (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 2º Na instrução do processo relativo ao registro de que trata êste artigo a autoridade competente determinará verificação minuciosa dos assentamentos na emprêsa, em especial, as fôlhas de pagamento ao período considerado, registro de empregados, livros contábeis, relações anuais de empregados e comunicações mensais de admissão e dispensa, guias de recolhimento ao INPS e registro de ponto diário. (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 3º Nos municípios com população inferior a cem mil habitantes, exceto se capitais de Estado, os diretores-proprietários de empresas jornalísticas que comprovadamente exerçam a atividade de jornalista há mais de cinco anos poderão, se requererem ao órgão regional competente do Ministério do Trabalho, dentro de noventa dias, contados da publicação desta Lei, obter também o registro de que trata o art. 4º, mediante apresentação de prova de nacionalidade brasileira e folha corrida. (Incluído pela Lei nº 6.727, de 1979) (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 4º O registro de que trata o parágrafo anterior terá validade exclusiva no município em que o interessado houver exercido a respectiva atividade. (Incluído pela Lei nº 6.727, de 1979) (Revogado pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h3>Art 10. Até noventa dias após a publicação do regulamento deste Decreto-Lei, poderá obter registro de jornalista profissional quem comprovar o exercício atual da profissão, em qualquer das atividades descritas no artigo 2º, desde doze meses consecutivos ou vinte e quatro intercalados, mediante: (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h5>I - os documentos previstos nos item I, II e III do artigo 4º; (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>II - atestado de emprêsa jornalística, do qual conste a data de admissão, a função exercida e o salário ajustado; (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <p>Ill - prova de contribuição para o Instituto Nacional de Previdência Social, relativa à relação de emprêgo com a emprêsa jornalística atestante. (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</p>
+ <h4>§ 1º Sôbre o pedido, opinará, antes da decisão da autoridade regional competente, o Sindicato de Jornalistas da respectiva base territorial. (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 2º Na instrução do processo relativo ao registro de que trata êste artigo a autoridade competente determinará verificação minuciosa dos assentamentos na emprêsa, em especial, as fôlhas de pagamento ao período considerado, registro de empregados, livros contábeis, relações anuais de empregados e comunicações mensais de admissão e dispensa, guias de recolhimento ao INPS e registro de ponto diário. (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 3º Nos municípios com população inferior a cem mil habitantes, exceto se capitais de Estado, os diretores-proprietários de empresas jornalísticas que comprovadamente exerçam a atividade de jornalista há mais de cinco anos poderão, se requererem ao órgão regional competente do Ministério do Trabalho, dentro de noventa dias, contados da publicação desta Lei, obter também o registro de que trata o art. 4º, mediante apresentação de prova de nacionalidade brasileira e folha corrida. (Incluído pela Lei nº 6.727, de 1979) (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 4º O registro de que trata o parágrafo anterior terá validade exclusiva no município em que o interessado houver exercido a respectiva atividade. (Incluído pela Lei nº 6.727, de 1979) (Revogado pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h3>Art 10. Até noventa dias após a publicação do regulamento deste Decreto-Lei, poderá obter registro de jornalista profissional quem comprovar o exercício atual da profissão, em qualquer das atividades descritas no artigo 2º, desde doze meses consecutivos ou vinte e quatro intercalados, mediante:</h3>
+ <h5>I - os documentos previstos nos item I, II e III do artigo 4º;</h5>
+ <h5>II - atestado de emprêsa jornalística, do qual conste a data de admissão, a função exercida e o salário ajustado;</h5>
+ <p>Ill - prova de contribuição para o Instituto Nacional de Previdência Social, relativa à relação de emprêgo com a emprêsa jornalística atestante.</p>
+ <h4>§ 1º Sôbre o pedido, opinará, antes da decisão da autoridade regional competente, o Sindicato de Jornalistas da respectiva base territorial.</h4>
+ <h4>§ 2º Na instrução do processo relativo ao registro de que trata êste artigo a autoridade competente determinará verificação minuciosa dos assentamentos na emprêsa, em especial, as fôlhas de pagamento ao período considerado, registro de empregados, livros contábeis, relações anuais de empregados e comunicações mensais de admissão e dispensa, guias de recolhimento ao INPS e registro de ponto diário.</h4>
+ <h4>§ 3º Nos municípios com população inferior a cem mil habitantes, exceto se capitais de Estado, os diretores-proprietários de empresas jornalísticas que comprovadamente exerçam a atividade de jornalista há mais de cinco anos poderão, se requererem ao órgão regional competente do Ministério do Trabalho, dentro de noventa dias, contados da publicação desta Lei, obter também o registro de que trata o art. 4º, mediante apresentação de prova de nacionalidade brasileira e folha corrida. (Incluído pela Lei nº 6.727, de 1979)</h4>
+ <h4>§ 4º O registro de que trata o parágrafo anterior terá validade exclusiva no município em que o interessado houver exercido a respectiva atividade. (Incluído pela Lei nº 6.727, de 1979)</h4>
+ <h3>Art 11. Dentro do primeiro ano de vigência deste Decreto-Lei, o Ministério do Trabalho e Previdência Social promoverá a revisão, de registro de jornalistas profissionais cancelando os viciados por irregularidade insanável. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h4>§ 1º A revisão será disciplinada em regulamento, observadas as seguintes normas: (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h5>I - A verificação será feita em comissão de três membros, sendo um representante do Ministério, que a presidirá, outro da categoria econômica e outro da categoria profissional, indicados pelos respectivos sindicatos, ou, onde não os houver, pela correspondente federação; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>II - O interessado será notificado por via postal, contra recibo ou, se ineficaz a notificação postal, por edital publicado três vezes em órgão oficial ou de grande circulação na localidade do registro; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>III - A notificação ou edital fixará o prazo de quinze dias para regularização das falhas do processo de registro, se fôr o caso, ou para apresentação de defesa; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>IV - Decorrido o prazo da notificação ou edital, a comissão diligenciará no sentido de instruir o processo e esclarecer as dúvidas existentes, emitindo a seguir seu parecer conclusivo; (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h5>V - Do despacho caberá recurso, inclusive por parte dos Sindicatos de Jornalistas Profissionais ou de Emprêsas Proprietárias de Jornais e Revistas, para o Ministro do Trabalho e Previdência Social, no prazo de quinze dias, tornando-se definitiva a decisão da autoridade regional após o decurso dêsse prazo sem a interposição de recurso ou se confirmada pelo Ministro. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h5>
+ <h4>§ 2º Decorrido o prazo estabelecido neste artigo, os registros de jornalista profissional e de diretor de emprêsa jornalística serão havidos como legítimos e definitivos, vedada a instauração ou renovação de quaisquer processos de revisão administrativa, salvo o disposto no artigo 8º. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 3º Responderá administrativa e criminalmente a autoridade que indevidamente autorizar o registro de jornalista profissional ou de diretor de emprêsa jornalística, ou que se omitir no processamento da revisão de que trata êste artigo. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h3>Art 11. Dentro do primeiro ano de vigência deste Decreto-Lei, o Ministério do Trabalho e Previdência Social promoverá a revisão, de registro de jornalistas profissionais cancelando os viciados por irregularidade insanável. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h4>§ 1º A revisão será disciplinada em regulamento, observadas as seguintes normas: (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h5>I - A verificação será feita em comissão de três membros, sendo um representante do Ministério, que a presidirá, outro da categoria econômica e outro da categoria profissional, indicados pelos respectivos sindicatos, ou, onde não os houver, pela correspondente federação; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>II - O interessado será notificado por via postal, contra recibo ou, se ineficaz a notificação postal, por edital publicado três vezes em órgão oficial ou de grande circulação na localidade do registro; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>III - A notificação ou edital fixará o prazo de quinze dias para regularização das falhas do processo de registro, se fôr o caso, ou para apresentação de defesa; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>IV - Decorrido o prazo da notificação ou edital, a comissão diligenciará no sentido de instruir o processo e esclarecer as dúvidas existentes, emitindo a seguir seu parecer conclusivo; (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h5>V - Do despacho caberá recurso, inclusive por parte dos Sindicatos de Jornalistas Profissionais ou de Emprêsas Proprietárias de Jornais e Revistas, para o Ministro do Trabalho e Previdência Social, no prazo de quinze dias, tornando-se definitiva a decisão da autoridade regional após o decurso dêsse prazo sem a interposição de recurso ou se confirmada pelo Ministro. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h5>
+ <h4>§ 2º Decorrido o prazo estabelecido neste artigo, os registros de jornalista profissional e de diretor de emprêsa jornalística serão havidos como legítimos e definitivos, vedada a instauração ou renovação de quaisquer processos de revisão administrativa, salvo o disposto no artigo 8º. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 3º Responderá administrativa e criminalmente a autoridade que indevidamente autorizar o registro de jornalista profissional ou de diretor de emprêsa jornalística, ou que se omitir no processamento da revisão de que trata êste artigo. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h3>Art 11. Dentro do primeiro ano de vigência deste Decreto-Lei, o Ministério do Trabalho e Previdência Social promoverá a revisão, de registro de jornalistas profissionais cancelando os viciados por irregularidade insanável.</h3>
+ <h4>§ 1º A revisão será disciplinada em regulamento, observadas as seguintes normas:</h4>
+ <h5>I - A verificação será feita em comissão de três membros, sendo um representante do Ministério, que a presidirá, outro da categoria econômica e outro da categoria profissional, indicados pelos respectivos sindicatos, ou, onde não os houver, pela correspondente federação;</h5>
+ <h5>II - O interessado será notificado por via postal, contra recibo ou, se ineficaz a notificação postal, por edital publicado três vezes em órgão oficial ou de grande circulação na localidade do registro;</h5>
+ <h5>III - A notificação ou edital fixará o prazo de quinze dias para regularização das falhas do processo de registro, se fôr o caso, ou para apresentação de defesa;</h5>
+ <h5>IV - Decorrido o prazo da notificação ou edital, a comissão diligenciará no sentido de instruir o processo e esclarecer as dúvidas existentes, emitindo a seguir seu parecer conclusivo;</h5>
+ <h5>V - Do despacho caberá recurso, inclusive por parte dos Sindicatos de Jornalistas Profissionais ou de Emprêsas Proprietárias de Jornais e Revistas, para o Ministro do Trabalho e Previdência Social, no prazo de quinze dias, tornando-se definitiva a decisão da autoridade regional após o decurso dêsse prazo sem a interposição de recurso ou se confirmada pelo Ministro.</h5>
+ <h4>§ 2º Decorrido o prazo estabelecido neste artigo, os registros de jornalista profissional e de diretor de emprêsa jornalística serão havidos como legítimos e definitivos, vedada a instauração ou renovação de quaisquer processos de revisão administrativa, salvo o disposto no artigo 8º.</h4>
+ <h4>§ 3º Responderá administrativa e criminalmente a autoridade que indevidamente autorizar o registro de jornalista profissional ou de diretor de emprêsa jornalística, ou que se omitir no processamento da revisão de que trata êste artigo.</h4>
+ <h3>Art 12. A admissão de jornalistas, nas funções relacionadas de " a " a " g " no artigo 6º, e com dispensa da exigência constante do item V do artigo 4º, será permitida enquanto o Poder Executivo não dispuser em contrário, até o limite de um têrço das novas admissões a partir da vigência dêste Decreto-Lei. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h4>Parágrafo único. A fixação, em decreto, de limites diversos do estipulado neste artigo, assim como do prazo da autorização nêle contida, será precedida de amplo estudo de sua viabilidade, a cargo do Departamento Nacional de Mão-de-obra. (Revogado pela Medida 	Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h3>Art 12. A admissão de jornalistas, nas funções relacionadas de " a " a " g " no artigo 6º, e com dispensa da exigência constante do item V do artigo 4º, será permitida enquanto o Poder Executivo não dispuser em contrário, até o limite de um têrço das novas admissões a partir da vigência dêste Decreto-Lei. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h4>Parágrafo único. A fixação, em decreto, de limites diversos do estipulado neste artigo, assim como do prazo da autorização nêle contida, será precedida de amplo estudo de sua viabilidade, a cargo do Departamento Nacional de Mão-de-obra. (Revogado pela Medida 	Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h3>Art 12. A admissão de jornalistas, nas funções relacionadas de " a " a " g " no artigo 6º, e com dispensa da exigência constante do item V do artigo 4º, será permitida enquanto o Poder Executivo não dispuser em contrário, até o limite de um têrço das novas admissões a partir da vigência dêste Decreto-Lei.</h3>
+ <h4>Parágrafo único. A fixação, em decreto, de limites diversos do estipulado neste artigo, assim como do prazo da autorização nêle contida, será precedida de amplo estudo de sua viabilidade, a cargo do Departamento Nacional de Mão-de-obra.</h4>
+ <h3>Art 13. A fiscalização do cumprimento dos preceitos dêste Decreto-Lei se fará na forma do artigo 626 e seguintes da Consolidação das Leis do Trabalho sendo aplicável aos infratores multa, variável de uma a dez vêzes o maior salário-mínimo vigente no País.</h3>
+ <h3>Art. 13. A fiscalização do cumprimento das disposições deste Decreto-Lei será feita na forma prevista nos art. 626 e seguintes da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943 , e as infrações às disposições acarretarão a aplicação da multa prevista no inciso I do caput do art. 634-A da referida Consolidação . (Redação dada pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h3>Art. 13. A fiscalização do cumprimento das disposições deste Decreto-Lei será feita na forma prevista nos art. 626 e seguintes da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943 , e as infrações às disposições acarretarão a aplicação da multa prevista no inciso I do caput do art. 634-A da referida Consolidação . (Redação dada pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h3>Art 13. A fiscalização do cumprimento dos preceitos dêste Decreto-Lei se fará na forma do artigo 626 e seguintes da Consolidação das Leis do Trabalho sendo aplicável aos infratores multa, variável de uma a dez vêzes o maior salário-mínimo vigente no País.</h3>
+ <h4>Parágrafo único. Aos Sindicatos de Jornalistas incumbe representar as autoridades competentes acerca do exercício irregular da profissão.</h4>
+ <h3>Art 14. O regulamento dêste Decreto-Lei será expedido dentro de sessenta dias de sua publicação.</h3>
+ <h3>Art 15. Êste Decreto-Lei entrará em vigor na data de sua publicação, ressalvadas as disposições que dependem de regulamentação e revogadas as disposições em contrário, em especial os artigos 310 e 314 da Consolidação das Leis do Trabalho . (Regulamento)</h3>
+ <p>Brasília, 17 de outubro de 1969; 148º da Independência e 81º da República.</p>
+ <h3>AUGUSTO HAMANN RADEMAKER GRÜNEWALD</h3>
+ <h3>AURÉLIO DE LYRA TAVARES</h3>
+ <h3>MÁRCIO DE SOUZA E MELLO</h3>
+ <p>Este texto não substitui o publicado no D.O.U. de 21.10.1969</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Dispõe sôbre o exercício da profissão de jornalista.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del0972.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

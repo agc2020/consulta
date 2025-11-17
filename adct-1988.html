@@ -10,6 +10,38 @@
  <meta data-pagefind-filter="tipo[content]" content="Ato das Disposições Constitucionais Transitórias" />
  <meta data-pagefind-filter="ano[content]" content="1988" />
  <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -19,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -28,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -67,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -84,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -104,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -114,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -124,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -134,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -144,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -159,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -202,6 +315,24 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
@@ -212,11 +343,33 @@
  <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
  </header>
 
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
  <div class="meta">
- <div><strong>Última sincronização:</strong> 11/11/2025 02:30:16 (processado via snapshot.py)</div>
+ <div><strong>Última sincronização:</strong> 16/11/2025 20:48:33 (processado via snapshot.py)</div>
  <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/constituicao/ConstituicaoCompilado.htm#adct" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
  <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
- <div><strong>Tamanho do conteúdo:</strong> origem: 680.711 caracteres | espelho: 680.912 caracteres</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 680.711 caracteres | espelho: 680.844 caracteres</div>
  <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
  </div>
 
@@ -938,7 +1091,6 @@
  <p>Ulysses Guimarães , Presidente - Mauro Benevides , 1.º Vice-Presidente - Jorge Arbage , 2.º Vice-Presidente - Marcelo Cordeiro , 1.º Secretário - Mário Maia , 2.º Secretário - Arnaldo Faria de Sá , 3.º Secretário - Benedita da Silva , 1.º Suplente de Secretário - Luiz Soyer , 2.º Suplente de Secretário - Sotero Cunha , 3.º Suplente de Secretário - Bernardo Cabral , Relator Geral - Adolfo Oliveira , Relator Adjunto - Antônio Carlos Konder Reis , Relator Adjunto - José Fogaça , Relator Adjunto - Abigail Feitosa - Acival Gomes - Adauto Pereira - Ademir Andrade - Adhemar de Barros Filho - Adroaldo Streck - Adylson Motta - Aécio de Borba - Aécio Neves - Affonso Camargo - Afif Domingos - Afonso Arinos - Afonso Sancho - Agassiz Almeida - Agripino de Oliveira Lima - Airton Cordeiro - Airton Sandoval - Alarico Abib - Albano Franco - Albérico Cordeiro - Albérico Filho - Alceni Guerra - Alcides Saldanha - Aldo Arantes - Alércio Dias - Alexandre Costa - Alexandre Puzyna - Alfredo Campos - Almir Gabriel - Aloisio Vasconcelos - Aloysio Chaves - Aloysio Teixeira - Aluizio Bezerra - Aluízio Campos - Álvaro Antônio - Álvaro Pacheco - Álvaro Valle - Alysson Paulinelli - Amaral Netto - Amaury Müller - Amilcar Moreira - Ângelo Magalhães - Anna Maria Rattes - Annibal Barcellos - Antero de Barros - Antônio Câmara - Antônio Carlos Franco - Antonio Carlos Mendes Thame - Antônio de Jesus - Antonio Ferreira - Antonio Gaspar - Antonio Mariz - Antonio Perosa - Antônio Salim Curiati - Antonio Ueno - Arnaldo Martins - Arnaldo Moraes - Arnaldo Prieto - Arnold Fioravante - Arolde de Oliveira - Artenir Werner - Artur da Távola - Asdrubal Bentes - Assis Canuto - Átila Lira - Augusto Carvalho - Áureo Mello - Basílio Villani - Benedicto Monteiro - Benito Gama - Beth Azize - Bezerra de Melo - Bocayuva Cunha - Bonifácio de Andrada - Bosco França - Brandão Monteiro - Caio Pompeu - Carlos Alberto - Carlos Alberto Caó - Carlos Benevides - Carlos Cardinal - Carlos Chiarelli - Carlos Cotta - Carlos De’Carli - Carlos Mosconi - Carlos Sant’Anna - Carlos Vinagre - Carlos Virgílio - Carrel Benevides - Cássio Cunha Lima - Célio de Castro - Celso Dourado - César Cals Neto - César Maia - Chagas Duarte - Chagas Neto - Chagas Rodrigues - Chico Humberto - Christóvam Chiaradia - Cid Carvalho - Cid Sabóia de Carvalho - Cláudio Ávila - Cleonâncio Fonseca - Costa Ferreira - Cristina Tavares - Cunha Bueno - Dálton Canabrava - Darcy Deitos - Darcy Pozza - Daso Coimbra - Davi Alves Silva - Del Bosco Amaral - Delfim Netto - Délio Braz - Denisar Arneiro - Dionisio Dal Prá - Dionísio Hage - Dirce Tutu Quadros - Dirceu Carneiro - Divaldo Suruagy - Djenal Gonçalves - Domingos Juvenil - Domingos Leonelli - Doreto Campanari - Edésio Frias - Edison Lobão - Edivaldo Motta - Edme Tavares - Edmilson Valentim - Eduardo Bonfim - Eduardo Jorge - Eduardo Moreira - Egídio Ferreira Lima - Elias Murad - Eliel Rodrigues - Eliézer Moreira - Enoc Vieira - Eraldo Tinoco - Eraldo Trindade - Erico Pegoraro - Ervin Bonkoski - Etevaldo Nogueira - Euclides Scalco - Eunice Michiles - Evaldo Gonçalves - Expedito Machado - Ézio Ferreira - Fábio Feldmann - Fábio Raunheitti - Farabulini Júnior - Fausto Fernandes - Fausto Rocha - Felipe Mendes - Feres Nader - Fernando Bezerra Coelho - Fernando Cunha - Fernando Gasparian - Fernando Gomes - Fernando Henrique Cardoso - Fernando Lyra - Fernando Santana - Fernando Velasco - Firmo de Castro - Flavio Palmier da Veiga - Flávio Rocha - Florestan Fernandes - Floriceno Paixão - França Teixeira - Francisco Amaral - Francisco Benjamim - Francisco Carneiro - Francisco Coelho - Francisco Diógenes - Francisco Dornelles - Francisco Küster - Francisco Pinto - Francisco Rollemberg - Francisco Rossi - Francisco Sales - Furtado Leite - Gabriel Guerreiro - Gandi Jamil - Gastone Righi - Genebaldo Correia - Genésio Bernardino - Geovani Borges - Geraldo Alckmin Filho - Geraldo Bulhões - Geraldo Campos - Geraldo Fleming - Geraldo Melo - Gerson Camata - Gerson Marcondes - Gerson Peres - Gidel Dantas - Gil César - Gilson Machado - Gonzaga Patriota - Guilherme Palmeira - Gumercindo Milhomem - Gustavo de Faria - Harlan Gadelha - Haroldo Lima - Haroldo Sabóia - Hélio Costa - Hélio Duque - Hélio Manhães - Hélio Rosas - Henrique Córdova - Henrique Eduardo Alves - Heráclito Fortes - Hermes Zaneti - Hilário Braun - Homero Santos - Humberto Lucena - Humberto Souto - Iberê Ferreira - Ibsen Pinheiro - Inocêncio Oliveira - Irajá Rodrigues - Iram Saraiva - Irapuan Costa Júnior - Irma Passoni - Ismael Wanderley - Israel Pinheiro - Itamar Franco - Ivo Cersósimo - Ivo Lech - Ivo Mainardi - Ivo Vanderlinde - Jacy Scanagatta - Jairo Azi - Jairo Carneiro - Jalles Fontoura - Jamil Haddad - Jarbas Passarinho - Jayme Paliarin - Jayme Santana - Jesualdo Cavalcanti - Jesus Tajra - Joaci Góes - João Agripino - João Alves - João Calmon - João Carlos Bacelar - João Castelo - João Cunha - João da Mata - João de Deus Antunes - João Herrmann Neto - João Lobo - João Machado Rollemberg - João Menezes - João Natal - João Paulo - João Rezek - Joaquim Bevilácqua - Joaquim Francisco - Joaquim Hayckel - Joaquim Sucena - Jofran Frejat - Jonas Pinheiro - Jonival Lucas - Jorge Bornhausen - Jorge Hage - Jorge Leite - Jorge Uequed - Jorge Vianna - José Agripino - José Camargo - José Carlos Coutinho - José Carlos Grecco - José Carlos Martinez - José Carlos Sabóia - José Carlos Vasconcelos - José Costa - José da Conceição - José Dutra - José Egreja - José Elias - José Fernandes - José Freire - José Genoíno - José Geraldo - José Guedes - José Ignácio Ferreira - José Jorge - José Lins - José Lourenço - José Luiz de Sá - José Luiz Maia - José Maranhão - José Maria Eymael - José Maurício - José Melo - José Mendonça Bezerra - José Moura - José Paulo Bisol - José Queiroz - José Richa - José Santana de Vasconcellos - José Serra - José Tavares - José Teixeira - José Thomaz Nonô - José Tinoco - José Ulísses de Oliveira - José Viana - José Yunes - Jovanni Masini - Juarez Antunes - Júlio Campos - Júlio Costamilan - Jutahy Júnior - Jutahy Magalhães - Koyu Iha - Lael Varella - Lavoisier Maia - Leite Chaves - Lélio Souza - Leopoldo Peres - Leur Lomanto - Levy Dias - Lézio Sathler - Lídice da Mata - Louremberg Nunes Rocha - Lourival Baptista - Lúcia Braga - Lúcia Vânia - Lúcio Alcântara - Luís Eduardo - Luís Roberto Ponte - Luiz Alberto Rodrigues - Luiz Freire - Luiz Gushiken - Luiz Henrique - Luiz Inácio Lula da Silva - Luiz Leal - Luiz Marques - Luiz Salomão - Luiz Viana - Luiz Viana Neto - Lysâneas Maciel - Maguito Vilela - Maluly Neto - Manoel Castro - Manoel Moreira - Manoel Ribeiro - Mansueto de Lavor - Manuel Viana - Márcia Kubitschek - Márcio Braga - Márcio Lacerda - Marco Maciel - Marcondes Gadelha - Marcos Lima - Marcos Queiroz - Maria de Lourdes Abadia - Maria Lúcia - Mário Assad - Mário Covas - Mário de Oliveira - Mário Lima - Marluce Pinto - Matheus Iensen - Mattos Leão - Maurício Campos - Maurício Correa - Maurício Fruet - Maurício Nasser - Maurício Pádua - Maurílio Ferreira Lima - Mauro Borges - Mauro Campos - Mauro Miranda - Mauro Sampaio - Max Rosenmann - Meira Filho - Melo Freire - Mello Reis - Mendes Botelho - Mendes Canale - Mendes Ribeiro - Messias Góis - Messias Soares - Michel Temer - Milton Barbosa - Milton Lima - Milton Reis - Miraldo Gomes - Miro Teixeira - Moema São Thiago - Moysés Pimentel - Mozarildo Cavalcanti - Mussa Demes - Myrian Portella - Nabor Júnior - Naphtali Alves de Souza - Narciso Mendes - Nelson Aguiar - Nelson Carneiro - Nelson Jobim - Nelson Sabrá - Nelson Seixas - Nelson Wedekin - Nelton Friedrich - Nestor Duarte - Ney Maranhão - Nilso Sguarezi - Nilson Gibson - Nion Albernaz - Noel de Carvalho - Nyder Barbosa - Octávio Elísio - Odacir Soares - Olavo Pires - Olívio Dutra - Onofre Corrêa - Orlando Bezerra - Orlando Pacheco - Oscar Corrêa - Osmar Leitão - Osmir Lima - Osmundo Rebouças - Osvaldo Bender - Osvaldo Coelho - Osvaldo Macedo - Osvaldo Sobrinho - Oswaldo Almeida - Oswaldo Trevisan - Ottomar Pinto - Paes de Andrade - Paes Landim - Paulo Delgado - Paulo Macarini - Paulo Marques - Paulo Mincarone - Paulo Paim - Paulo Pimentel - Paulo Ramos - Paulo Roberto - Paulo Roberto Cunha - Paulo Silva - Paulo Zarzur - Pedro Canedo - Pedro Ceolin - Percival Muniz - Pimenta da Veiga - Plínio Arruda Sampaio - Plínio Martins - Pompeu de Sousa - Rachid Saldanha Derzi - Raimundo Bezerra - Raimundo Lira - Raimundo Rezende - Raquel Cândido - Raquel Capiberibe - Raul Belém - Raul Ferraz - Renan Calheiros - Renato Bernardi - Renato Johnsson - Renato Vianna - Ricardo Fiuza - Ricardo Izar - Rita Camata - Rita Furtado - Roberto Augusto - Roberto Balestra - Roberto Brant - Roberto Campos - Roberto D’Ávila - Roberto Freire - Roberto Jefferson - Roberto Rollemberg - Roberto Torres - Roberto Vital - Robson Marinho - Rodrigues Palma - Ronaldo Aragão - Ronaldo Carvalho - Ronaldo Cezar Coelho - Ronan Tito - Ronaro Corrêa - Rosa Prata - Rose de Freitas - Rospide Netto - Rubem Branquinho - Rubem Medina - Ruben Figueiró - Ruberval Pilotto - Ruy Bacelar - Ruy Nedel - Sadie Hauache - Salatiel Carvalho - Samir Achôa - Sandra Cavalcanti - Santinho Furtado - Sarney Filho - Saulo Queiroz - Sérgio Brito - Sérgio Spada - Sérgio Werneck - Severo Gomes - Sigmaringa Seixas - Sílvio Abreu - Simão Sessim - Siqueira Campos - Sólon Borges dos Reis - Stélio Dias - Tadeu França - Telmo Kirst - Teotonio Vilela Filho - Theodoro Mendes - Tito Costa - Ubiratan Aguiar - Ubiratan Spinelli - Uldurico Pinto - Valmir Campelo - Valter Pereira - Vasco Alves - Vicente Bogo - Victor Faccioni - Victor Fontana - Victor Trovão - Vieira da Silva - Vilson Souza - Vingt Rosado - Vinicius Cansanção - Virgildásio de Senna - Virgílio Galassi - Virgílio Guimarães - Vitor Buaiz - Vivaldo Barbosa - Vladimir Palmeira - Wagner Lago - Waldec Ornélas - Waldyr Pugliesi - Walmor de Luca - Wilma Maia - Wilson Campos - Wilson Martins - Ziza Valadares.</p>
  <p>Participantes: Álvaro Dias - Antônio Britto - Bete Mendes - Borges da Silveira - Cardoso Alves - Edivaldo Holanda - Expedito Júnior - Fadah Gattass - Francisco Dias - Geovah Amarante - Hélio Gueiros - Horácio Ferraz - Hugo Napoleão - Iturival Nascimento - Ivan Bonato - Jorge Medauar - José Mendonça de Morais - Leopoldo Bessone - Marcelo Miranda - Mauro Fecury - Neuto de Conto - Nivaldo Machado - Oswaldo Lima Filho - Paulo Almada - Prisco Viana - Ralph Biasi - Rosário Congro Neto - Sérgio Naya - Tidei de Lima.</p>
  <p>In Memoriam: Alair Ferreira - Antônio Farias - Fábio Lucena - Norberto Schwantes - Virgílio Távora.</p>
- <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
  <p>Constitucional nº 91, de 2016</p>
  <p>Constitucional nº 106, de 2020</p>
  <p>Constitucional nº 107, de 2020</p>
@@ -957,5 +1109,81 @@
  </p>
  </footer>
  </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>
