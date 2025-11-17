@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução TJPR Nº 89/2013 - Órgão Especial – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="TJPR" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2013" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>Resolução TJPR Nº 89, de 3 de JUNHO de 2013 - Presidência – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="TJPR" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2013" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,106 +315,225 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução TJPR Nº 89/2013 - Órgão Especial</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 03:01:13 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4744467" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 65.191 caracteres | espelho: 15.212 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução - Órgão Especial Nº 89/2013 -</p>
-<p>Assunto: RESOLUÇÃO Nº 89/2013 -</p>
-<p>RESOLUÇÃO N° 89, DE 3 DE JUNHO DE 2013</p>
-<p>- atualizado até a Resolução n° 505, de 11 de agosto de 2025 - OE</p>
-<p>Regulamenta o uso do espaço dos imóveis pertencentes ou sob a administração do Poder Judiciário por terceiros.</p>
-<p>O ÓRGÃO ESPECIAL DO TRIBUNAL DE JUSTIÇA , no uso de suas atribuições legais, tendo em vista o contido no protocolizado nº 418496/2011, e</p>
-<h2>CONSIDERANDO a necessidade de regulamentar a destinação dos espaços, bem como orientar servidores e magistrados quanto às possibilidades de destinação e utilização dos imóveis por terceiros;</h2>
-<h2>CONSIDERANDO o reduzido espaço físico para comportar a atual estrutura administrativa e jurisdicional deste Tribunal de Justiça;</h2>
-<h2>CONSIDERANDO o interesse deste Tribunal de Justiça pela ocupação de espaço por diversas entidades públicas e privadas;</h2>
-<h2>CONSIDERANDO a necessidade de conter as despesas de manutenção dos imóveis pertencentes ou locados por este Tribunal de Justiça;</h2>
-<h2>RESOLVE:</h2>
-<h3>Art. 1º Regulamentar o uso das dependências dos imóveis pertencentes ou sob a administração do Poder Judiciário por entidades públicas e privadas.</h3>
-<h3>Art. 2º Os espaços físicos dos Fóruns ou edificações do Poder Judiciário são de ocupação preferencial dos setores administrativos e jurisdicionais do Tribunal de Justiça.</h3>
-<h3>Art. 3º O Presidente do Tribunal de Justiça, se entender conveniente, poderá autorizar o uso de espaço a terceiros que desenvolvam atividades que tragam benefícios diretos ao Poder Judiciário, aos jurisdicionados e à comunidade local.</h3>
-<h4>Parágrafo Único. A área cedida não prejudicará o desenvolvimento da atividade-fim do Poder Judiciário.</h4>
-<h3>Art. 4º Os pedidos para uso de espaço nos Fóruns serão submetidos ao respectivo Juiz Diretor, o qual fará a análise preliminar e o encaminhará ao Presidente para apreciação da sua conveniência e da necessidade do procedimento licitatório.</h3>
-<h4>Parágrafo Único: Os pedidos para os demais prédios serão encaminhados diretamente ao Presidente.</h4>
-<h3>Art. 5º A cessão de uso será obrigatoriamente precedida de manifestação do Departamento de Engenharia e Arquitetura quanto à viabilidade técnica de ocupação de espação por terceiro, notadamente quanto à capacidade do imóvel em relação à energia elétrica, água/esgoto, pontos de internet e estrutura física geral.</h3>
-<h3>Art. 5º A cessão de uso será precedida de relatório que avalie a viabilidade técnica de ocupação de espaço por terceiro, notadamente quanto à capacidade do imóvel em relação à energia elétrica, água/esgoto, pontos de internet e estrutura física geral. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h4>Parágrafo Único. A manifestação do Departamento de Engenharia e Arquitetura deverá ser colhida igualmente nos casos de formalização de novos termos de cessão de uso, em face do decurso do prazo máximo dos 60 (sessenta) meses iniciais.</h4>
-<h4>§ 1º O relatório de entrada será realizado pela parte cessionária, mediante modelo a ser fornecido pelo cedente, com participação da Direção do Fórum que verificará a correspondência entre o relatado e a situação existente. (Parágrafo único transformado em § 1º e com nova redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 2º O relatório de vistoria de entrada é dispensado no caso de renovações de cessões de uso. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 3º Nas cessões de uso em que não forem constatados problemas de ordem elétrica, hidráulica ou estrutural, o relatório de entrada poderá ser substituído por declaração conjunta do cedente e do cessionário, atestando a inexistência de danos preexistentes e assumindo o compromisso de reversão das melhorias previamente autorizadas. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 4º A elaboração de vistoria por engenheiroserá excepcional, quando constatada, pela Direção do Fórum ou pelo cessionário, complexidade técnica que demande conhecimentos especializados de engenharia. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 5º No caso do § 4º, a vistoria deverá ser elaborada por profissional do cessionário e atestada pela Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura, da Secretaria de Infraestrutura. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h3>Art. 6º Caso exista manifestação favorável do Departamento de Engenharia e Arquitetura, o pedido será encaminhado à assessoria jurídica competente para a análise da necessidade de instauração de procedimento licitatório, dispensa ou inexigibilidade de licitação.</h3>
-<h3>Art. 6º Caso exista viabilidade técnica da ocupação, o pedido será encaminhado à consultoria jurídica competente para a análise da necessidade de instauração de procedimento licitatório, dispensa ou inexigibilidade de licitação. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h3>Art. 7º Se a utilização de espaço for destinada a empreendimentos de fins lucrativos, a cessão de uso será sempre onerosa e, se houver condições de competitividade, deverá ser instaurado procedimento licitatório, salvo nos casos de dispensa ou inexigibilidade de licitação previstos em lei.</h3>
-<h3>Art. 8º Toda cessão de uso será regulada por contrato administrativo, devidamente publicado no Diário Oficial, por meio do qual serão estipuladas as obrigações das partes contratadas.</h3>
-<h3>Art. 8º Toda cessão de uso será regulada por contrato administrativo, devidamente publicado no Diário Oficial e no Portal de Transparência, por meio do qual serão estipuladas as obrigações das partes contratadas. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h3>Art. 9º O Fundo de Reequipamento do Poder Judiciário - FUNREJUS deverá indicar qual o valor da Taxa de Ocupação que o cessionário recolherá mensalmente para a ocupação do espaço cedido, salvo nos casos de isenção previstos na legislação específica.</h3>
-<h3>Art. 9º A Divisão de Arrecadação, da Coordenadoria de Arrecadação e Fiscalização, da Secretaria de Finanças, deverá indicar qual o valor da Taxa de Ocupação que o cessionário recolherá mensalmente para a ocupação do espaço cedido, salvo nos casos de isenção previstos na legislação específica. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h4>Parágrafo Único. Em caso de procedimento licitatório instaurado para o uso de espaço para o desenvolvimento de atividade com fins lucrativos, a Taxa de Ocupação poderá ser composta pelo maior lance ou oferta do certame.</h4>
-<h3>Art. 10. Caberá ao cessionário restituir o local nas mesmas condições verificadas no início da cessão, mediante vistoria do Departamento de Engenharia e Arquitetura, sob pena de responsabilização civil.</h3>
-<h3>Art. 10. Caberá ao cessionário restituir o espaço nas mesmas condições verificadas no início da cessão, mediante relatório de saída homologado pela Direção do Fórum e pela Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura, ou declaração de que não houve avarias de que trata o § 3º do art. 5º, sob pena de responsabilização civil. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h4>§ 1º Fica vedado ao cessionário promover qualquer modificação, ampliação ou reforma na área cedida, salvo expressa autorização do Exmo.</h4>
-<p>Presidente do Tribunal de Justiça, após prévia análise do Departamento de Engenharia e Arquitetura.</p>
-<h4>§ 1º Fica vedado ao cessionário promover qualquer modificação, ampliação ou reforma na área cedida, salvo expressa autorização do Presidente do Tribunal de Justiça, após prévia análise da Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 2º As adaptações e divisões das áreas cedidas que forem autorizadas pelo cedente serão executadas pelo cessionário, as suas expensas, sem ônus para o cedente.</h4>
-<h4>§ 3º Serão de responsabilidade do cessionário as despesas de manutenção e conservação da área cedida, bem como os ônus de natureza trabalhista, tributária e fiscal resultante de suas contratações.</h4>
-<h4>§ 4º O cessionário deverá manter seus funcionários devidamente identificados, bem como fornecer relação mensal à Direção do respectivo Fórum e/ou à Secretaria do Tribunal de Justiça, contendo o nome e o CNPJ da empresa, nome, cargo/atividade e lotação/local de exercício do funcionário, para os fins de controle e registro de acesso.</h4>
-<h4>§ 5º É do cessionário a responsabilidade pela guarda e conservação de seus equipamentos e valores, ficando o cedente, desde logo, eximido de qualquer responsabilidade quanto a eventuais reparos, substituições, furtos ou roubos.</h4>
-<h4>§ 6º Caso o cessionário tenha necessidade na contratação de vigilância armada deverá requerer previamente ao Presidente, informando as razões que fundamentam seu pedido.</h4>
-<h4>§ 7º O relatório de saída será elaborado pela parte cessionária, mediante modelo a ser fornecido pelo cedente, com participação da Direção do Fórum e da Divisão de Obras da Coordenação de Edificações e Infraestrutura que especificará e precificará as reparações à condição original, caso sejam necessárias. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 8º Nas cessões de uso em que não forem constatados problemas de ordem elétrica, hidráulica ou estrutural, o relatório de saída poderá ser substituído por declaração conjunta do cedente e do cessionário de que as instalações foram devolvidas nas mesmas condições descritas no relatório de entrada ou na declaração conjunta de ocupação firmada no início da cessão. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 9º A elaboração de vistoria de saída por engenheiro será excepcional, quando constatada, pela Direção do Fórum ou pelo cessionário, complexidade técnica que demande conhecimentos especializados de engenharia. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 10. No caso do § 9º, a vistoria deverá ser elaborada por profissional do cessionário e atestada pela Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h3>Art. 11. O cessionário fica impedido de utilizar a área cedida para fins diversos do consignados na cessão de uso.</h3>
-<h3>Art. 12 . As alterações de localização ou de metragem da área cedida serão solicitadas ao Juiz Diretor do Fórum e, com sua anuência, serão encaminhadas à análise dos Departamentos de Engenharia e Arquitetura e do Patrimônio do Tribunal de Justiça, para os fins de controle da ocupação do imóvel e de alteração contratual. Posteriormente, caso exista parecer favorável da parte técnica e jurídica, o pedido de alteração será enviado à apreciação do Presidente deste Tribunal de Justiça.</h3>
-<h3>Art. 12. As alterações de localização ou de metragem da área cedida serão solicitadas ao Juiz Diretor do Fórum e, com sua anuência, serão encaminhadas à análise das Secretarias de Infraestrutura e de Contratações Institucionais para os fins de controle da ocupação do imóvel e de alteração contratual. Parágrafo único. Caso exista parecer favorável da parte técnica e jurídica, o pedido de alteração será enviado à apreciação do Presidente do Tribunal de Justiça ou a servidor com competência delegada. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h3>Art. 13. A utilização esporádica das dependências dos Fóruns ou edificações do Poder Judiciário por terceiros terá o prazo máximo de 07 (sete) dias úteis, será gratuita, e poderá ser autorizada pelo Juiz Diretor do Fórum ou Presidente, desde que atenda à utilidade pública.</h3>
-<h3>Art. 13. A utilização esporádica das dependências dos Fóruns ou edificações do Poder Judiciário por terceiros terá o prazo máximo de 30 (trinta) dias úteis, será gratuita e poderá ser autorizada pelo Juiz Diretor do Fórum ou pelo Presidente do Tribunal de Justiça, desde que atenda à utilidade pública. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<p><del>Parágrafo único. A prorrogação ou renovação do pedido de utilização esporádica não poderá ser deferida senão após 6 (seis) meses da última autorização. (Revogado pela Resolução n° 505, de 11 de agosto de 2025)</del></p>
-<h3>Art. 14. As cessões de uso terão prazo máximo de 60 (sessenta) meses, fixado de acordo com o interesse da Administração.</h3>
-<h3>Art. 14. As cessões de uso terão prazo máximo de até 120 (cento e vinte) meses. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h4>Parágrafo único. A cessão de uso poderá ser revogada quando não mais convier a uma das partes ou quando o interesse público assim o exigir, devendo a manifestação ser por escrito, com antecedência de 30 (trinta) dias.</h4>
-<h4>§ 1º A cessão de uso poderá ser revogada quando não mais convier a uma das partes ou quando o interesse público assim o exigir, devendo a manifestação ser por escrito, com antecedência de 30 (trinta) dias. (Parágrafo único transformado em § 1º e com redação original ratificada pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h4>§ 2º A prorrogação da cessão de uso ou a formalização de nova cessão de uso serão precedidas de manifestação sobre sua conveniência, por meio de informação da Direção do Fórum, quando se tratar de salas no interior do Fórum, ou da Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura, quando se tratar de prédios inteiros. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
-<h3>Art. 15. O cessionário deverá observar o horário de funcionamento estipulado pelo Poder Judiciário e respeitar os procedimentos internos, bem como as normas atinentes à segurança e medicina do trabalho.</h3>
-<h3>Art. 16. Aplica-se subsidiariamente, no que couber, a Lei Federal nº 8.666/93 e a Lei Estadual nº 15.608/2007.</h3>
-<h3>Art. 16. Aplicam-se, subsidiariamente, no que couber, a Lei Federal nº 14.133, de 1º de abril de 2021, e o Decreto Estadual nº 10.086, de 17 de janeiro de 2022, ou outras normativas, que vierem substituí-las. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
-<h3>Art. 17. Esta resolução entrará em vigor na data de sua publicação.</h3>
-<p>Curitiba, 3 de junho de 2013.</p>
-<p>Desembargador CLAYTON CAMARGO</p>
-<p>Presidente do Tribunal de Justiça</p>
-<p>Estiveram presentes à sessão do Órgão Especial do dia 13 de agosto de 2012, data da aprovação da presente Resolução, os Excelentíssimos Senhores Desembargadores Miguel Kfouri Neto, Jesus Sarrão, Onésimo Mendonça de Anunciação, Jonny de Jesus Campos Marques, Idevan Batista Lopes, Sérgio Arenhart, José Augusto Gomes Aniceto (substituindo o Des. Rafael Cassetari), Dulce Maria Cecconi, Miguel Pessoa Filho, Ruy Cunha Sobrinho, Lauro Augusto Fabrício de Melo, Irajá Romeo Hilgenberg Prestes Mattar, Noeval de Quadros, Paulo Cezar Bellio, Jorge de Oliveira Vargas, Lidio José Rotoli de Macedo, Luiz Carlos Gabardo (substituindo o Des. Luiz Lopes), Paulo Roberto Hapner, Antônio Loyola Vieira, Paulo Habith, Nilson Mizuta (vaga Des. Rogério Coelho) e Adalberto Jorge Xisto Pereira (vaga Des. Rabello Filho). Aprovada por unanimidade.</p>
-<p>* O conteúdo disponibilizado possui caráter informativo e não substitui aquele publicado no Diário da Justiça Eletrônico.</p>
-<p>Tipo: | Resolução - Órgão Especial</p>
-<p>Origem: | DEPARTAMENTO DA MAGISTRATURA</p>
-<p>Documento: | RESOLUÇÃO Nº 89/2013 -</p>
-<p>Assunto: | RESOLUÇÃO Nº 89/2013 -</p>
-<p>Ementa: | Texto atualizado até a Resolução nº 505, de 11 de agosto de 2025.</p>
-<p>Referências: | Documentos do mesmo sentido:Resolução nº 89/2013 - TEXTO ORIGINALDocumentos do mesmo sentido:Resolução nº 505/2025-OE</p>
-<h3>TRIBUNAL DE JUSTIÇA</h3>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>Resolução TJPR Nº 89, de 3 de JUNHO de 2013 - Presidência</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:13:15 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4744467" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 65.191 caracteres | espelho: 15.212 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução - Órgão Especial Nº 89/2013 -</p>
+ <p>Assunto: RESOLUÇÃO Nº 89/2013 -</p>
+ <p>RESOLUÇÃO N° 89, DE 3 DE JUNHO DE 2013</p>
+ <p>- atualizado até a Resolução n° 505, de 11 de agosto de 2025 - OE</p>
+ <p>Regulamenta o uso do espaço dos imóveis pertencentes ou sob a administração do Poder Judiciário por terceiros.</p>
+ <p>O ÓRGÃO ESPECIAL DO TRIBUNAL DE JUSTIÇA , no uso de suas atribuições legais, tendo em vista o contido no protocolizado nº 418496/2011, e</p>
+ <h2>CONSIDERANDO a necessidade de regulamentar a destinação dos espaços, bem como orientar servidores e magistrados quanto às possibilidades de destinação e utilização dos imóveis por terceiros;</h2>
+ <h2>CONSIDERANDO o reduzido espaço físico para comportar a atual estrutura administrativa e jurisdicional deste Tribunal de Justiça;</h2>
+ <h2>CONSIDERANDO o interesse deste Tribunal de Justiça pela ocupação de espaço por diversas entidades públicas e privadas;</h2>
+ <h2>CONSIDERANDO a necessidade de conter as despesas de manutenção dos imóveis pertencentes ou locados por este Tribunal de Justiça;</h2>
+ <h2>RESOLVE:</h2>
+ <h3>Art. 1º Regulamentar o uso das dependências dos imóveis pertencentes ou sob a administração do Poder Judiciário por entidades públicas e privadas.</h3>
+ <h3>Art. 2º Os espaços físicos dos Fóruns ou edificações do Poder Judiciário são de ocupação preferencial dos setores administrativos e jurisdicionais do Tribunal de Justiça.</h3>
+ <h3>Art. 3º O Presidente do Tribunal de Justiça, se entender conveniente, poderá autorizar o uso de espaço a terceiros que desenvolvam atividades que tragam benefícios diretos ao Poder Judiciário, aos jurisdicionados e à comunidade local.</h3>
+ <h4>Parágrafo Único. A área cedida não prejudicará o desenvolvimento da atividade-fim do Poder Judiciário.</h4>
+ <h3>Art. 4º Os pedidos para uso de espaço nos Fóruns serão submetidos ao respectivo Juiz Diretor, o qual fará a análise preliminar e o encaminhará ao Presidente para apreciação da sua conveniência e da necessidade do procedimento licitatório.</h3>
+ <h4>Parágrafo Único: Os pedidos para os demais prédios serão encaminhados diretamente ao Presidente.</h4>
+ <h3>Art. 5º A cessão de uso será obrigatoriamente precedida de manifestação do Departamento de Engenharia e Arquitetura quanto à viabilidade técnica de ocupação de espação por terceiro, notadamente quanto à capacidade do imóvel em relação à energia elétrica, água/esgoto, pontos de internet e estrutura física geral.</h3>
+ <h3>Art. 5º A cessão de uso será precedida de relatório que avalie a viabilidade técnica de ocupação de espaço por terceiro, notadamente quanto à capacidade do imóvel em relação à energia elétrica, água/esgoto, pontos de internet e estrutura física geral. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h4>Parágrafo Único. A manifestação do Departamento de Engenharia e Arquitetura deverá ser colhida igualmente nos casos de formalização de novos termos de cessão de uso, em face do decurso do prazo máximo dos 60 (sessenta) meses iniciais.</h4>
+ <h4>§ 1º O relatório de entrada será realizado pela parte cessionária, mediante modelo a ser fornecido pelo cedente, com participação da Direção do Fórum que verificará a correspondência entre o relatado e a situação existente. (Parágrafo único transformado em § 1º e com nova redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 2º O relatório de vistoria de entrada é dispensado no caso de renovações de cessões de uso. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 3º Nas cessões de uso em que não forem constatados problemas de ordem elétrica, hidráulica ou estrutural, o relatório de entrada poderá ser substituído por declaração conjunta do cedente e do cessionário, atestando a inexistência de danos preexistentes e assumindo o compromisso de reversão das melhorias previamente autorizadas. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 4º A elaboração de vistoria por engenheiroserá excepcional, quando constatada, pela Direção do Fórum ou pelo cessionário, complexidade técnica que demande conhecimentos especializados de engenharia. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 5º No caso do § 4º, a vistoria deverá ser elaborada por profissional do cessionário e atestada pela Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura, da Secretaria de Infraestrutura. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h3>Art. 6º Caso exista manifestação favorável do Departamento de Engenharia e Arquitetura, o pedido será encaminhado à assessoria jurídica competente para a análise da necessidade de instauração de procedimento licitatório, dispensa ou inexigibilidade de licitação.</h3>
+ <h3>Art. 6º Caso exista viabilidade técnica da ocupação, o pedido será encaminhado à consultoria jurídica competente para a análise da necessidade de instauração de procedimento licitatório, dispensa ou inexigibilidade de licitação. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h3>Art. 7º Se a utilização de espaço for destinada a empreendimentos de fins lucrativos, a cessão de uso será sempre onerosa e, se houver condições de competitividade, deverá ser instaurado procedimento licitatório, salvo nos casos de dispensa ou inexigibilidade de licitação previstos em lei.</h3>
+ <h3>Art. 8º Toda cessão de uso será regulada por contrato administrativo, devidamente publicado no Diário Oficial, por meio do qual serão estipuladas as obrigações das partes contratadas.</h3>
+ <h3>Art. 8º Toda cessão de uso será regulada por contrato administrativo, devidamente publicado no Diário Oficial e no Portal de Transparência, por meio do qual serão estipuladas as obrigações das partes contratadas. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h3>Art. 9º O Fundo de Reequipamento do Poder Judiciário - FUNREJUS deverá indicar qual o valor da Taxa de Ocupação que o cessionário recolherá mensalmente para a ocupação do espaço cedido, salvo nos casos de isenção previstos na legislação específica.</h3>
+ <h3>Art. 9º A Divisão de Arrecadação, da Coordenadoria de Arrecadação e Fiscalização, da Secretaria de Finanças, deverá indicar qual o valor da Taxa de Ocupação que o cessionário recolherá mensalmente para a ocupação do espaço cedido, salvo nos casos de isenção previstos na legislação específica. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h4>Parágrafo Único. Em caso de procedimento licitatório instaurado para o uso de espaço para o desenvolvimento de atividade com fins lucrativos, a Taxa de Ocupação poderá ser composta pelo maior lance ou oferta do certame.</h4>
+ <h3>Art. 10. Caberá ao cessionário restituir o local nas mesmas condições verificadas no início da cessão, mediante vistoria do Departamento de Engenharia e Arquitetura, sob pena de responsabilização civil.</h3>
+ <h3>Art. 10. Caberá ao cessionário restituir o espaço nas mesmas condições verificadas no início da cessão, mediante relatório de saída homologado pela Direção do Fórum e pela Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura, ou declaração de que não houve avarias de que trata o § 3º do art. 5º, sob pena de responsabilização civil. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h4>§ 1º Fica vedado ao cessionário promover qualquer modificação, ampliação ou reforma na área cedida, salvo expressa autorização do Exmo.</h4>
+ <p>Presidente do Tribunal de Justiça, após prévia análise do Departamento de Engenharia e Arquitetura.</p>
+ <h4>§ 1º Fica vedado ao cessionário promover qualquer modificação, ampliação ou reforma na área cedida, salvo expressa autorização do Presidente do Tribunal de Justiça, após prévia análise da Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 2º As adaptações e divisões das áreas cedidas que forem autorizadas pelo cedente serão executadas pelo cessionário, as suas expensas, sem ônus para o cedente.</h4>
+ <h4>§ 3º Serão de responsabilidade do cessionário as despesas de manutenção e conservação da área cedida, bem como os ônus de natureza trabalhista, tributária e fiscal resultante de suas contratações.</h4>
+ <h4>§ 4º O cessionário deverá manter seus funcionários devidamente identificados, bem como fornecer relação mensal à Direção do respectivo Fórum e/ou à Secretaria do Tribunal de Justiça, contendo o nome e o CNPJ da empresa, nome, cargo/atividade e lotação/local de exercício do funcionário, para os fins de controle e registro de acesso.</h4>
+ <h4>§ 5º É do cessionário a responsabilidade pela guarda e conservação de seus equipamentos e valores, ficando o cedente, desde logo, eximido de qualquer responsabilidade quanto a eventuais reparos, substituições, furtos ou roubos.</h4>
+ <h4>§ 6º Caso o cessionário tenha necessidade na contratação de vigilância armada deverá requerer previamente ao Presidente, informando as razões que fundamentam seu pedido.</h4>
+ <h4>§ 7º O relatório de saída será elaborado pela parte cessionária, mediante modelo a ser fornecido pelo cedente, com participação da Direção do Fórum e da Divisão de Obras da Coordenação de Edificações e Infraestrutura que especificará e precificará as reparações à condição original, caso sejam necessárias. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 8º Nas cessões de uso em que não forem constatados problemas de ordem elétrica, hidráulica ou estrutural, o relatório de saída poderá ser substituído por declaração conjunta do cedente e do cessionário de que as instalações foram devolvidas nas mesmas condições descritas no relatório de entrada ou na declaração conjunta de ocupação firmada no início da cessão. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 9º A elaboração de vistoria de saída por engenheiro será excepcional, quando constatada, pela Direção do Fórum ou pelo cessionário, complexidade técnica que demande conhecimentos especializados de engenharia. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 10. No caso do § 9º, a vistoria deverá ser elaborada por profissional do cessionário e atestada pela Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h3>Art. 11. O cessionário fica impedido de utilizar a área cedida para fins diversos do consignados na cessão de uso.</h3>
+ <h3>Art. 12 . As alterações de localização ou de metragem da área cedida serão solicitadas ao Juiz Diretor do Fórum e, com sua anuência, serão encaminhadas à análise dos Departamentos de Engenharia e Arquitetura e do Patrimônio do Tribunal de Justiça, para os fins de controle da ocupação do imóvel e de alteração contratual. Posteriormente, caso exista parecer favorável da parte técnica e jurídica, o pedido de alteração será enviado à apreciação do Presidente deste Tribunal de Justiça.</h3>
+ <h3>Art. 12. As alterações de localização ou de metragem da área cedida serão solicitadas ao Juiz Diretor do Fórum e, com sua anuência, serão encaminhadas à análise das Secretarias de Infraestrutura e de Contratações Institucionais para os fins de controle da ocupação do imóvel e de alteração contratual. Parágrafo único. Caso exista parecer favorável da parte técnica e jurídica, o pedido de alteração será enviado à apreciação do Presidente do Tribunal de Justiça ou a servidor com competência delegada. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h3>Art. 13. A utilização esporádica das dependências dos Fóruns ou edificações do Poder Judiciário por terceiros terá o prazo máximo de 07 (sete) dias úteis, será gratuita, e poderá ser autorizada pelo Juiz Diretor do Fórum ou Presidente, desde que atenda à utilidade pública.</h3>
+ <h3>Art. 13. A utilização esporádica das dependências dos Fóruns ou edificações do Poder Judiciário por terceiros terá o prazo máximo de 30 (trinta) dias úteis, será gratuita e poderá ser autorizada pelo Juiz Diretor do Fórum ou pelo Presidente do Tribunal de Justiça, desde que atenda à utilidade pública. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <p><del>Parágrafo único. A prorrogação ou renovação do pedido de utilização esporádica não poderá ser deferida senão após 6 (seis) meses da última autorização. (Revogado pela Resolução n° 505, de 11 de agosto de 2025)</del></p>
+ <h3>Art. 14. As cessões de uso terão prazo máximo de 60 (sessenta) meses, fixado de acordo com o interesse da Administração.</h3>
+ <h3>Art. 14. As cessões de uso terão prazo máximo de até 120 (cento e vinte) meses. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h4>Parágrafo único. A cessão de uso poderá ser revogada quando não mais convier a uma das partes ou quando o interesse público assim o exigir, devendo a manifestação ser por escrito, com antecedência de 30 (trinta) dias.</h4>
+ <h4>§ 1º A cessão de uso poderá ser revogada quando não mais convier a uma das partes ou quando o interesse público assim o exigir, devendo a manifestação ser por escrito, com antecedência de 30 (trinta) dias. (Parágrafo único transformado em § 1º e com redação original ratificada pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h4>§ 2º A prorrogação da cessão de uso ou a formalização de nova cessão de uso serão precedidas de manifestação sobre sua conveniência, por meio de informação da Direção do Fórum, quando se tratar de salas no interior do Fórum, ou da Divisão de Obras, da Coordenadoria de Edificações e Infraestrutura, quando se tratar de prédios inteiros. (Incluído pela Resolução n° 505, de 11 de agosto de 2025)</h4>
+ <h3>Art. 15. O cessionário deverá observar o horário de funcionamento estipulado pelo Poder Judiciário e respeitar os procedimentos internos, bem como as normas atinentes à segurança e medicina do trabalho.</h3>
+ <h3>Art. 16. Aplica-se subsidiariamente, no que couber, a Lei Federal nº 8.666/93 e a Lei Estadual nº 15.608/2007.</h3>
+ <h3>Art. 16. Aplicam-se, subsidiariamente, no que couber, a Lei Federal nº 14.133, de 1º de abril de 2021, e o Decreto Estadual nº 10.086, de 17 de janeiro de 2022, ou outras normativas, que vierem substituí-las. (Redação dada pela Resolução n° 505, de 11 de agosto de 2025)</h3>
+ <h3>Art. 17. Esta resolução entrará em vigor na data de sua publicação.</h3>
+ <p>Curitiba, 3 de junho de 2013.</p>
+ <p>Desembargador CLAYTON CAMARGO</p>
+ <p>Presidente do Tribunal de Justiça</p>
+ <p>Estiveram presentes à sessão do Órgão Especial do dia 13 de agosto de 2012, data da aprovação da presente Resolução, os Excelentíssimos Senhores Desembargadores Miguel Kfouri Neto, Jesus Sarrão, Onésimo Mendonça de Anunciação, Jonny de Jesus Campos Marques, Idevan Batista Lopes, Sérgio Arenhart, José Augusto Gomes Aniceto (substituindo o Des. Rafael Cassetari), Dulce Maria Cecconi, Miguel Pessoa Filho, Ruy Cunha Sobrinho, Lauro Augusto Fabrício de Melo, Irajá Romeo Hilgenberg Prestes Mattar, Noeval de Quadros, Paulo Cezar Bellio, Jorge de Oliveira Vargas, Lidio José Rotoli de Macedo, Luiz Carlos Gabardo (substituindo o Des. Luiz Lopes), Paulo Roberto Hapner, Antônio Loyola Vieira, Paulo Habith, Nilson Mizuta (vaga Des. Rogério Coelho) e Adalberto Jorge Xisto Pereira (vaga Des. Rabello Filho). Aprovada por unanimidade.</p>
+ <p>* O conteúdo disponibilizado possui caráter informativo e não substitui aquele publicado no Diário da Justiça Eletrônico.</p>
+ <p>Tipo: | Resolução - Órgão Especial</p>
+ <p>Origem: | DEPARTAMENTO DA MAGISTRATURA</p>
+ <p>Documento: | RESOLUÇÃO Nº 89/2013 -</p>
+ <p>Assunto: | RESOLUÇÃO Nº 89/2013 -</p>
+ <p>Ementa: | Texto atualizado até a Resolução nº 505, de 11 de agosto de 2025.</p>
+ <p>Referências: | Documentos do mesmo sentido:Resolução nº 89/2013 - TEXTO ORIGINALDocumentos do mesmo sentido:Resolução nº 505/2025-OE</p>
+ <h3>TRIBUNAL DE JUSTIÇA</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4744467" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

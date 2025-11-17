@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução TJPR Nº 236/2019 - Órgão Especial – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="TJPR" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2019" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>Resolução TJPR Nº 236, de 14 de outubro de 2019 - Presidência – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="TJPR" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2019" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,191 +315,310 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução TJPR Nº 236/2019 - Órgão Especial</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 02:57:36 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4591380" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 79.645 caracteres | espelho: 29.059 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução - Órgão Especial Nº 236/2019</p>
-<p>RESOLUÇÃO Nº 236, de 14 de outubro de 2019.</p>
-<p>Dispõe sobre os procedimentos a serem adotados para a estatização de Serventias Judiciais, nos termos do art. 31 do Ato das Disposições Constitucionais Transitórias da Constituição da República e do art. 1º, § 5º, do Código de Organização e Divisão Judiciárias do Estado do Paraná.</p>
-<p>O TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ , por seu Órgão Especial , no uso de suas atribuições legais e regimentais,</p>
-<h2>CONSIDERANDO o comando contido no art. 31 do Ato das Disposições Constitucionais Transitórias da Constituição Federal de 1988, determinando que serão estatizadas as serventias do foro judicial, assim definidas em lei, respeitados os direitos dos atuais titulares ;</h2>
-<h2>CONSIDERANDO o § 5º do art. 1º da Lei Estadual nº 14.277, de 30 de dezembro de 2003 - Código de Organização e Divisão Judiciárias do Estado do Paraná - dispõe sobre a estatização das Serventias do Foro Judicial, respeitados os direitos dos atuais titulares;</h2>
-<h2>CONSIDERANDO que o Supremo Tribunal Federal concluiu que o art. 31 do ADCT é norma constitucional de aplicabilidade imediata, ao afirmar que o regime privatizado somente perduraria, de forma transitória, enquanto as serventias administrativas sobre tal sistema vagassem (STF - ADI nº 1498-6/RS - Pleno - Rel. Ministro Ilmar Galvão, j. 7.11.2002);</h2>
-<h2>CONSIDERANDO que, no Procedimento de Controle Administrativo nº 0002363.72.2009.2.00.0000, o Conselho Nacional de Justiça considerou irregulares os provimentos de Serventias do Foro Judicial ocorridos após a Constituição Federal de 1988;</h2>
-<h2>CONSIDERANDO que, naquele mesmo procedimento administrativo, o referido órgão de controle concedeu ao Tribunal de Justiça do Estado do Paraná o prazo de 60 (sessenta) dias para que apresentasse ao CNJ um plano, acompanhado de cronograma de implantação, juntamente com demonstrativos financeiros, para estatizar todas as Serventias Judiciais, exercidas em caráter privado, cuja titularidade tenha sido concedida, por qualquer modo ou forma, após 5 de outubro de 1988;</h2>
-<h2>CONSIDERANDO que, no Mandado de Segurança nº 28495, impetrado pela Associação dos Serventuários da Justiça do Estado do Paraná (ASSEJEPAR), em 13.11.2018, a Primeira Turma do Supremo Tribunal Federal, por maioria, denegou a segurança e revogou a liminar anteriormente deferida;</h2>
-<h2>CONSIDERANDO a Política Nacional de Atenção Prioritária ao Primeiro Grau de Jurisdição instituída pela Resolução nº 194, de 26 de maio de 2014, do Conselho Nacional de Justiça;</h2>
-<h2>CONSIDERANDO a necessidade de adoção de medidas que possibilitem o aumento da eficiência na utilização dos recursos públicos e a padronização de rotinas de procedimento nas Serventias Judiciais do 1º Grau de Jurisdição;</h2>
-<h2>CONSIDERANDO que a Lei nº 8.159/91, em seu art. 25, dispõe que ficará sujeito à responsabilidade penal, civil e administrativa, na forma da legislação em vigor, aquele que desfigurar ou destruir documentos de valor permanente ou considerado como de interesse público e social ;</h2>
-<h2>CONSIDERANDO que a Resolução nº 106, de 26 de maio de 2014, do Órgão Especial do Tribunal de Justiça instituiu o Programa de Gestão Documental do Tribunal de Justiça do Estado do Paraná, estabeleceu a sua Normatização e aprovou o Plano de Classificação de Documentos e a Tabela de Temporalidade e Destinação de Documentos, entre outras providências;</h2>
-<h2>CONSIDERANDO que a Resolução nº 106, de 26 de maio de 2014, do Órgão Especial do Tribunal de Justiça, em seu art. 1º, § 1º, estabeleceu que o Programa de Gestão Documental do Tribunal de Justiça do Estado do Paraná será conduzido pelo Centro de Protocolo Judiciário Estadual e Arquivo Geral, com a colaboração das Comissões Permanentes de Avaliação Documental do 1º e 2º Graus de Jurisdição , e que, em seu art. 2º, estabeleceu que o Programa tem a finalidade de assegurar a gestão, a proteção, a destinação, a guarda, a preservação e o acesso aos documentos institucionais, produzidos no exercício das atribuições jurisdicionais e administrativas do Tribunal de Justiça do Estado do Paraná e suas unidades de 1º Grau de Jurisdição ;</h2>
-<h2>CONSIDERANDO que, no Relatório da Gestão do Processo de Estatização (Biênio 2017-2018), apresentando no SEI 0050920-09.2017.8.16.6000, concluiu-se que um dos pontos críticos do processo de estatização é a transferência dos processos físicos arquivados, uma vez que a responsabilidade pela gestão e alocação deste acervo é transmitida ao Tribunal de Justiça , e, além do espaço, verificou-se a necessidade de se aprimorar o Sistema GAJUS para padronização do controle do acervo arquivado ;</h2>
-<h2>CONSIDERANDO que, no Relatório da Gestão do Processo de Estatização (Biênio 2017-2018), apresentando no SEI 0050920-09.2017.8.16.6000, concluiu-se que a utilização, por todas as Unidades Privadas, de um sistema próprio do Tribunal de Justiça do Estado do Paraná para catalogação e controle dos processos judiciais físicos arquivados é medida que trará segurança às informações, permitindo a continuidade da prestação jurisdicional sem obstáculos após a estatização e, ainda, possibilitará à Administração um controle mais eficiente sobre todo o acervo processual do Estado ;</h2>
-<h2>CONSIDERANDO que, no Relatório da Gestão do Processo de Estatização (Biênio 2017-2018), apresentando no SEI 0050920-09.2017.8.16.6000, concluiu-se que relativamente aos Ofícios do Distribuidor, outro ponto crítico, são os bens guardados no Depositário Público que dificultam o processo de estatização, uma vez que, após a transição para o modelo público, os custos decorrentes da guarda serão transferidos para os cofres públicos ;</h2>
-<h2>CONSIDERANDO que a estatização de Serventias Judiciais envolve a atuação coordenada e conjunta de diversos Departamentos e setores do Tribunal de Justiça, sendo necessário disciplinar a sua forma e procedimento;</h2>
-<h2>CONSIDERANDO que a estatização de Serventias Judiciais deve ser conduzida de forma segura e eficaz, sem prejuízo da prestação jurisdicional, porém situações excepcionais poderão ocorrer e deverão ser enfrentadas com rapidez pela administração do Tribunal,</h2>
-<h2>RESOLVE</h2>
-<h2>CAPÍTULO I</h2>
-<h3>INTRODUÇÃO</h3>
-<h3>Art. 1º. Esta Resolução regulamenta os procedimentos a serem adotados na estatização de Serventias Judiciais nominadas no art. 119 da Lei Estadual n.º 14.277/03.</h3>
-<h3>Art. 2º. Para fins desta Resolução, entende-se por:</h3>
-<h5>I - Serventia Judicial: o Ofício da Justiça ou Escrivania Judicial;</h5>
-<h5>II - Serventia Judicial Estatizada: Ofício da Justiça ou Escrivania Judicial cujo titular é remunerado pelos cofres públicos;</h5>
-<h5>III - Serventia Judicial Não Estatizada: Ofício da Justiça ou Escrivania Judicial cujo titular não é remunerado pelos cofres públicos;</h5>
-<h5>IV - Gestor na Execução dos Atos de Estatização das Serventias Judiciais: autoridade designada pelo Presidente do Tribunal de Justiça do Estado do Paraná para promover os atos e atividades relacionadas ao processo de estatização das Serventias Judiciais Não Estatizadas;</h5>
-<h5>V - Expediente de Monitoramento: expediente iniciado por determinação do Gestor na Execução dos Atos de Estatização das Serventias Judiciais no Sistema Eletrônico de Informações (SEI), mantido pela Divisão de Gestão do Processo de Estatização e destinado especificamente ao monitoramento e controle de cada uma das Serventias Judiciais Não Estatizadas ou daquelas Unidades Judiciárias Estatizadas em que possa haver risco de retorno de titular, remunerado ou não pelos cofres públicos, por meio de eventual medida judicial;</h5>
-<h5>VI - Equipe de Diagnóstico: grupo de servidores com conhecimento na área de competência da unidade designados pelo Presidente do Tribunal para proceder ao diagnóstico in loco da Serventia ou do Ofício Judicial em processo de estatização;</h5>
-<h5>VII - Equipe de Estatização: grupo de servidores com conhecimento na área de competência da unidade designados pela Presidência do Tribunal para proceder aos atos preparatórios e de execução da implantação da estatização, que poderão permanecer na Secretaria Judicial durante determinado período para adequar os serviços na unidade;</h5>
-<h5>VIII - Período de transição para a Estatização: período, fixado pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais, em que serão adotadas diversas providências relacionadas à estrutura física, layout de mobiliário, equipamentos, instalação de sistemas, capacitação dos servidores e demais providências preparatórias à estatização de Serventia Judicial ou Ofício da Justiça.</h5>
-<h2>CAPÍTULO II</h2>
-<h3>DO PROCEDIMENTO PRÉVIO DE MONITORAMENTO E ADEQUAÇÃO DAS SERVENTIAS JUDICIAIS</h3>
-<h3>Art. 3º. A Corregedoria-Geral da Justiça, por sua Divisão de Gestão do Processo de Estatização, manterá, para cada Serventia Judicial Não Estatizada do Estado do Paraná, Expediente de Monitoramento Específico, para fins de cadastro e controle das informações de cada Serventia Judicial em processo de estatização, que servirá de base informativa e executória para o Gestor na Execução dos Atos de Estatização das Serventias Judiciais.</h3>
-<h3>Art. 4º. O Expediente de Monitoramento será iniciado após despacho inaugural do Gestor na Execução dos Atos de Estatização das Serventias Judiciais com determinação para que a Divisão de Gestão do Processo de Estatização forneça os dados e informações objetivas da Serventia Judicial em monitoramento, tais como:</h3>
-<h5>I - nome do serventuário, data de nascimento, CPF, e-mail, cargo que ocupa, data de assunção, forma de provimento (ingresso, remoção, permuta, etc.), Comarca, competência da Serventia Judicial de titularidade do serventuário, telefone da Serventia Judicial e telefone celular do serventuário;</h5>
-<h5>II - informações acerca da situação funcional do serventuário, se designado ou responsável por outra Serventia. Caso esteja designado, constar dados da Comarca e da unidade de designação e o motivo para tal;</h5>
-<h5>III - se o serventuário ingressou com pedido de aposentadoria na PARANAPREVIDÊNCIA ou no INSS, se houve renúncia à delegação pendente de análise, devendo constar o número do processo e demais dados úteis;</h5>
-<h5>IV - se o serventuário possui procedimento administrativo disciplinar em trâmite e, em caso afirmativo, indicar o número do processo;</h5>
-<h5>V - se o serventuário se encontra afastado de suas funções e, em caso afirmativo, precisar o motivo;</h5>
-<h5>VI - identificação de todos os servidores lotados na respectiva Comarca ou Foro, com controle da movimentação e da situação funcional, a partir dos dados a serem fornecidos pelo Departamento de Gestão de Recursos Humanos;</h5>
-<h4>§1º. Com relação aos Ofícios do Distribuidor e Anexos, além dos dados tratados nos incisos I a VI deste artigo, a Divisão de Gestão do Processo de Estatização deverá manter os seguintes dados:</h4>
-<h6>a) indicar o sistema informatizado utilizado para distribuição com as especificações necessárias;</h6>
-<h6>b) indicar o sistema informatizado utilizado para cálculos e contas com as especificações necessárias;</h6>
-<h6>c) indicar se há bens móveis registrados no Depositário Público e, em caso afirmativo, manter dados descritivos de todos os bens depositados, do local onde se encontram, do estado de conservação, do número e da natureza do processo ou inquérito onde se determinou o depósito judicial e dos sistemas eventualmente utilizados para controle e segurança.</h6>
-<h4>§2º. Com relação aos demais Ofícios Judiciais, além dos dados tratados nos incisos I a VI desse artigo, a Divisão de Gestão do Processo de Estatização deverá manter os seguintes dados:</h4>
-<h6>a) o sistema informatizado utilizado para movimentação de feitos físicos com as especificações necessárias;</h6>
-<h6>b) o número de processos arquivados, com indicação do local, condições de armazenamento, sistemas de catalogação e controle e demais dados correlatos.</h6>
-<h4>§3º. A Divisão de Gestão do Processo de Estatização deverá colher dos serventuários ou designados responsáveis pelas Serventias Judiciais privadas, bem como por outros meios, os dados acima tratados, cabendo-lhe verificar a correção das informações e adotar as providências para adequação, se necessário.</h4>
-<h4>§4º. Os expedientes em Monitoramento Permanente e Adequação deverão ter as informações de que trata o art. 4º desta Resolução atualizadas semestralmente pela Divisão de Gestão do Processo de Estatização, visando à higidez dos dados coletados, salvo situação excepcional superveniente que possa interferir na situação da Serventia ou Oficio e necessite ser informada.</h4>
-<h3>Art. 5º. A Divisão de Gestão do Processo de Estatização incluirá nos expedientes de monitoramento, além dos dados e informações tratadas no art. 4º desta Resolução, todas as informações necessárias, tais como relatórios, atos administrativos, decisões judiciais e demais documentos referentes a cada Serventia Judicial, bem como os dados e as informações que o Gestor na Execução dos Atos de Estatização das Serventias Judiciais reputar necessárias e pertinentes.</h3>
-<h3>Art. 6º. Com base nos dados colhidos na forma do art. 4º desta Resolução, a Divisão de Gestão do Processo de Estatização elaborará Informação pormenorizada no expediente de monitoramento, sintetizando os dados e juntando os documentos relevantes para análise da situação atual das Serventias Judiciais Não Estatizadas.</h3>
-<h3>Art. 7º. Após instrução, os expedientes serão encaminhados para análise pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais, que apresentará ao Presidente do Tribunal sugestão das medidas que deverão ser executadas para a adequação da Serventia ou do Ofício ao modelo público, incluindo a definição de eventuais acumulações de Serventias, conforme estabelece o art. 4º, §§ 2º e 3º, da Lei Estadual 16.023/2008 com suas alterações;</h3>
-<h4>Parágrafo único. A definição do modelo gerencial levará em consideração a incompatibilidade de conversão de Escrivania em Secretaria, em razão de a unidade receptora do Juízo Único ser chefiada por escrivão do crime, caso em que embora se proceda à unificação, manter-se-á o modelo de Escrivania até a vacância do cargo, conforme estabelece o art. 21 da Lei Estadual 16.023/2008.</h4>
-<h3>Art. 8º. Na fase de adequação serão adotadas medidas tendentes a preparar a unidade para o processo de estatização, conforme as providências fixadas pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais, simultaneamente às atividades de monitoramento permanente pela Divisão de Gestão do Processo de Estatização, tais como:</h3>
-<h5>I - verificação do cumprimento de recomendação existente no sentido de que os Juízes de Direito promovam, tanto quanto possível, as medidas necessárias e adequadas para a destinação dos bens sob a guarda do Depositário Público, tais como nomeação de depositário particular, venda antecipada ou definitiva após declaração judicial de perdimento, doação ou destruição, conforme o caso, mediante remessa de relatório circunstanciado das medidas adotadas no prazo de 30 (trinta) dias;</h5>
-<h5>II - adoção de providências necessárias à organização dos arquivos de autos findos;</h5>
-<h5>III - outras providências preparatórias que devam ser antecipadas.</h5>
-<h2>CAPÍTULO III</h2>
-<h3>DO PROCEDIMENTO DE ESTATIZAÇÃO DAS SERVENTIAS JUDICIAIS</h3>
-<h3>Art. 9º. É dever do serventuário titular de Serventia Judicial ou Ofício da Justiça não remunerado pelos cofres públicos, ou designado para responder por essas unidades ainda em regime privado comunicar:</h3>
-<h5>I - ao Juiz de Direito a que estiver subordinado e à Divisão de Gestão do Processo de Estatização, simultaneamente, sua intenção de pedir aposentadoria, pelo menos 3 (três) meses antes da protocolização do pedido na PARANAPREVIDÊNCIA ou no INSS;</h5>
-<h5>II - imediatamente ao Juiz de Direito a que estiver subordinado e à Divisão de Gestão do Processo de Estatização, simultaneamente, do pedido de aposentadoria realizado perante a PARANAPREVIDÊNCIA ou o INSS, instruindo o expediente com as informações e os documentos necessários à comprovação.</h5>
-<h4>Parágrafo único. Em ambas as hipóteses, a comunicação deverá ser feita obrigatoriamente por meio do Sistema Eletrônico de Informações (SEI).</h4>
-<h3>Art. 10. Caso o Juiz de Direito a que estiver subordinado o serventuário titular ou designado de Serventia Judicial ou Ofício da Justiça Não Estatizado venha a tomar conhecimento do descumprimento desta determinação ou da intenção do titular ou designado de se aposentar, adotadas as diligências prévias de verificação, procederá às devidas comunicações à Divisão de Gestão do Processo de Estatização, instruindo-a com os documentos e informações necessárias, sem prejuízo da adoção das medidas disciplinares cabíveis ao serventuário ou designado por descumprimento de norma a que deve observar.</h3>
-<h4>Parágrafo único. Caberá também ao Juiz de Direito competente efetuar idêntica comunicação à Divisão de Gestão do Processo de Estatização em caso de morte ou invalidez permanente do serventuário titular ou designado de Serventia Judicial ou Ofício da Justiça Não Estatizado.</h4>
-<h3>Art. 11. Identificada a vacância, ou mesmo a iminência de vacância, de uma Serventia Judicial, a Divisão de Gestão do Processo de Estatização atualizará imediatamente o respectivo procedimento de monitoramento com as informações e documentos pertinentes e o remeterá ao Gestor na Execução dos Atos de Estatização das Serventias Judiciais para apreciação.</h3>
-<h3>Art. 12. O Gestor na Execução dos Atos de Estatização das Serventias Judiciais poderá determinar a adoção das providências que reputar necessárias, bem como a realização de diagnóstico in loco.</h3>
-<h3>Art. 13. O diagnóstico in loco será realizado pela Equipe de Diagnóstico ou Equipe de Estatização que venha a ser constituída especificamente para dar suporte ao processo de estatização, a qual apresentará relatório, que deverá conter as seguintes informações:</h3>
-<h5>I - em caso de Serventia Cível:</h5>
-<h6>a) atual estrutura física da Serventia ou do Ofício, com definição e sugestão da adequação do layout, pontos de energia e lógica, bem como da Secretaria Criminal da Comarca, objetivando a possibilidade de anexação/cumulação de Serventias;</h6>
-<h6>b) sistemas informatizados utilizados e, ainda, se compatíveis ou não com os sistemas desenvolvidos pelo Tribunal de Justiça;</h6>
-<h6>c) equipamentos e móveis eventualmente necessários;</h6>
-<h6>d) descrição e identificação do número do patrimônio de eventuais móveis ou equipamentos do Poder Judiciário que se encontram na Serventia ou no Ofício privado;</h6>
-<h6>e) a apuração dos seguintes dados:</h6>
-<p>1. processos ativos;</p>
-<p>2. processos paralisados por mais de 30 (trinta) dias;</p>
-<p>3. processos com retorno de conclusão;</p>
-<p>4. processos com pendência de análise de juntada;</p>
-<p>5. processo com decurso de prazo de intimação ou citações;</p>
-<p>6. mandados aguardando análise de retorno;</p>
-<p>7. processos com pendência de expedição de citação, ofício, mandados e demais cumprimentos;</p>
-<p>8. pauta de audiências;</p>
-<p>9. processos com carga ou remessa (Ministério Público, Contador, Avaliador, Distribuidor, Advogado e Tribunal de Justiça, entre outros);</p>
-<p>10. processos físicos em andamento, cadastrados ou não no Sistema Cível-Papel;</p>
-<p>11. número de Agravos de Instrumento que deverão ser arquivados; e</p>
-<p>12. Relação de todas as contas bancárias com depósitos judiciais.</p>
-<h6>f) relativamente ao arquivo de processos físicos:</h6>
-<p>1. a quantidade de processos que integram o acervo;</p>
-<p>2. o endereço do local em que se encontram armazenados e as dimensões do espaço utilizado, a quantidade de prateleiras e tamanhos, caixas e tamanhos, etc.;</p>
-<p>3. se utiliza sistema específico de catalogação de arquivo; e</p>
-<p>4. as condições em que se encontram arquivados os processos (maços, caixas, estantes, etc.).</p>
-<h5>II - Em caso de Ofício do Distribuidor:</h5>
-<h6>a) atual estrutura física da Serventia ou do Ofício, com definição e sugestão da adequação do layout, pontos de energia e lógica;</h6>
-<h6>b) sistemas informatizados utilizados e, ainda, se compatíveis ou não com os sistemas desenvolvidos pelo Tribunal de Justiça;</h6>
-<h6>c) definição dos equipamentos e móveis necessários;</h6>
-<h6>d) descrição e identificação do número do patrimônio de eventuais móveis ou equipamentos do Poder Judiciário que se encontram na Serventia ou no Ofício privado;</h6>
-<h6>e) relatório de bens sob a guarda do Ofício e dos bens em mãos de particulares.</h6>
-<h3>Art. 14. Juntado o relatório pela Equipe de Estatização ou pela Equipe de Estatização responsável pelo diagnóstico da unidade, o expediente seguirá para a Divisão de Gestão do Processo de Estatização, que analisará as informações apresentadas e, por meio de informação, estimará o período necessário para a estatização valendo-se dos critérios estabelecidos nos Anexos A e B desta Resolução.</h3>
-<h3>Art. 15. O Gestor na Execução dos Atos de Estatização das Serventias Judiciais, considerando os dados contidos no Relatório de Diagnóstico e nas informações apresentadas pela Divisão de Gestão do Processo de Estatização, verificará se é possível realizar a estatização imediatamente ou se há fator impeditivo.</h3>
-<h4>Parágrafo único. Caso seja constatada a necessidade de retorno de serventuário a alguma Serventia Judicial Estatizada, promover-se-á a desestatização, por indicação do Gestor e deliberação do Presidente do Tribunal, sendo, a partir dessa data, iniciado expediente de monitoramento junto à Divisão de Gestão do Processo de Estatização.</h4>
-<h3>Art. 16. Constatada a existência de impeditivo para a estatização, como no caso de decisão judicial ou de possibilidade de retorno de anterior titular, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais manifestar-se-á a respeito de designação de substituto provisório, pelo Juiz Diretor do Fórum, ouvido o magistrado responsável pela Serventia.</h3>
-<h4>Parágrafo único. O Diretor do Fórum será comunicado sobre a deliberação do Gestor na Execução dos Atos de Estatização das Serventias Judiciais para adoção das devidas providências e encaminhará a respectiva portaria de designação de substituto provisório para a Diretoria do Departamento da Corregedoria-Geral da Justiça, que adotará as medidas cabíveis para sua apreciação pelo Conselho da Magistratura.</h4>
-<h3>Art. 17. Constatada a possibilidade de estatização imediata, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais elaborará cronograma, fixará prazos aos Departamentos da Secretaria do Tribunal de Justiça e apresentará sugestão ao Presidente do Tribunal para que delibere sobre as medidas de adequação que reputar necessárias, sobretudo com as seguintes providências:</h3>
-<h5>I - pelo Departamento de Gestão Documental (DGD) ou empresa contratada para tal finalidade:</h5>
-<h6>a) remoção, organização e transferência de arquivo físico;</h6>
-<h6>b) gestão do arquivo físico.</h6>
-<h5>II - pelo Departamento do Patrimônio (DP):</h5>
-<h6>a) disponibilização de mobiliário e materiais de expediente;</h6>
-<h6>b) prateleiras para a acomodação dos processos arquivados.</h6>
-<h5>III - pelo Departamento de Engenharia e Arquitetura (DEA):</h5>
-<h6>a) elaboração de projeto de layout e ocupação interna de espaços, com elaboração de projeto de mobiliário, devendo ser utilizado, preferencialmente, mobiliário padrão do TJPR;</h6>
-<h6>b) avaliação e realização dos serviços necessários para instalação de tomadas, pontos de lógica, luminárias e outras instalações necessárias para atendimento ao projeto de ocupação interna de espaços, podendo esta ser realizada mediante contratação de empresa especializada, caso o TJPR não disponha de equipe capacitada ou materiais disponíveis para atendimento ao projeto elaborado;</h6>
-<h6>c) avaliar a necessidade de instalação de aparelhos de ar condicionado, podendo estes serem reaproveitados de equipamentos próprios em condições de uso, ou providenciados junto a empresa especializada.</h6>
-<h5>IV - pelo Departamento de Gestão de Recursos Humanos (DGRH):</h5>
-<h6>a) os atos de designação, nomeação ou relotação de servidores;</h6>
-<h5>V - pelo Departamento de Tecnologia da Informação (DTIC):</h5>
-<h6>a) providências para migração de dados de sistemas informatizados particulares;</h6>
-<h6>b) disponibilização de computadores, impressoras, escâneres, telefones e demais equipamentos eletrônicos necessários.</h6>
-<h5>VI - pelo Departamento de Gestão de Serviços Terceirizados (DGST):</h5>
-<h6>a) se necessário, a remoção e transferência dos arquivos;</h6>
-<h5>VII - pelo Departamento Econômico e Financeiro (DEF):</h5>
-<h6>a) proceder às alterações no Sistema Uniformizado de Recolhimento de Custas e Despesas Processuais;</h6>
-<h5>VIII - pela Escola de Servidores da Justiça Estadual do Paraná (ESEJE):</h5>
-<h6>a) a capacitação dos servidores que atuam e dos que irão atuar na Serventia Judicial por meio do Programa PROSERVIDOR, ou outro que venha a substituí-lo;</h6>
-<h6>b) outras capacitações sugeridas pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais.</h6>
-<h5>X - pela Secretaria do Tribunal de Justiça:</h5>
-<h6>a) a fiscalização do cumprimento das medidas de que trata este artigo pelos Departamentos;</h6>
-<h6>b) outras medidas solicitadas pelo Gestor na Execução dos Atos de Estatização das Serventias.</h6>
-<h4>§ 1º. O Gestor na Execução dos Atos de Estatização das Serventias Judiciais poderá também propor ao Presidente do Tribunal de Justiça:</h4>
-<h5>I - a unificação de Serventias;</h5>
-<h5>II - definição da força de trabalho necessária;</h5>
-<h5>III - eventual necessidade de servidores para apoio a distância;</h5>
-<h5>IV - a expedição dos atos de estatização para salvaguarda da memória e fixação da data em que a Serventia ou o Ofício da Justiça se tornou estatizado.</h5>
-<h4>§ 2º. O layout da unidade em processo de estatização será previamente submetido à aprovação do Juiz de Direito responsável, que manifestará sua concordância ou sugerirá alterações no prazo de até 5 (cinco) dias, importando seu silencio em anuência tácita.</h4>
-<h3>Art. 18. A critério do Gestor na Execução dos Atos de Estatização das Serventias Judiciais, por período não superior a 90 (noventa) dias por ele fixado em decisão fundamentada, poderá ser decretado período de transição para a estatização, momento em que as providências preparatórias à estatização de Serventia Judicial ou Ofício da Justiça, tratadas no art. 17 desta Resolução, poderão ser adotadas concomitante e paralelamente à continuidade dos trabalhos da unidade, sem prejuízo das medidas que possam ter sido adotadas antes desse prazo, na forma permitida pelo art. 8º desta Resolução.</h3>
-<h3>Art. 19. A critério do Gestor na Execução dos Atos de Estatização das Serventias Judiciais, poderão ser propostas ao Presidente do Tribunal as seguintes medidas em relação às Serventias Judiciais em processo de estatização, isoladas ou cumulativamente, visando à efetiva estatização:</h3>
-<h5>I - suspensão dos prazos processuais;</h5>
-<h5>II - suspensão de distribuição de processos ao Juiz de Direito responsável pela unidade;</h5>
-<h5>III - suspensão do atendimento ao público.</h5>
-<h4>§ 1º. Ao propor alguma das medidas tratadas nos incisos I a III deste artigo, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais também indicará o prazo de sua duração.</h4>
-<h4>§ 2º. Nas hipóteses tratadas nos incisos I a III deste artigo, a Serventia Judicial realizará atividades internas na unidade, bem como o atendimento de medidas de urgência.</h4>
-<h3>Art. 20. Todos os Departamentos e setores do Tribunal de Justiça darão atendimento prioritário às atividades relativas à execução dos autos de estatização das Serventias Judiciais.</h3>
-<h3>Art. 21. O expediente será concomitantemente encaminhado:</h3>
-<h5>I - à Secretaria do Tribunal de Justiça para coordenação das medidas de adequação junto aos Departamentos;</h5>
-<h5>II - à Presidência do Tribunal para análise de eventual unificação de Secretarias, definição de cargos de Chefia, Supervisão e Juiz Corregedor;</h5>
-<h5>III - à Divisão de Gestão do Processo de Estatização para apoio no cumprimento da decisão, mediante a instauração de subprocessos no SEI para acompanhamento de cada providência.</h5>
-<h3>Art. 22. Certificadas pelos Departamentos as medidas implementadas, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais deliberará sobre a necessidade de novas medidas, estabelecendo o cronograma de estatização, caso ainda existam diligências ou medidas de adequação pendentes, ou sobre os preparativos finais, submetendo à apreciação do Presidente do Tribunal.</h3>
-<h3>Art. 23. A Divisão de Gestão do Processo de Estatização dará cumprimento à decisão e acompanhará as medidas a serem tomadas por outros setores, promovendo as comunicações aos órgãos oficiais sobre a estatização.</h3>
-<h3>Art. 24. O Gestor da Estatização tomará ciência das providências e, constatando eventuais pendências, determinará o seu saneamento, possibilitando a conclusão do expediente de estatização.</h3>
-<h3>Art. 25. Os casos omissos serão apresentados pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais ao Presidente do Tribunal para deliberação.</h3>
-<h3>Art. 26. Esta Resolução entra em vigor na data de sua publicação.</h3>
-<p>Curitiba, 14 de outubro de 2019.</p>
-<p>Des. ADALBERTO JORGE XISTO PEREIRA</p>
-<p>Presidente do Tribunal de Justiça</p>
-<p>Estiveram presentes à sessão os Excelentíssimos Senhores Desembargadores Adalberto Jorge Xisto Pereira, Ramon de Medeiros Nogueira (substituindo o Des. Telmo Cherem), Octávio Campos Fischer (substituindo a Desª. Regina Helena Afonso Portes), Ruy Cunha Sobrinho, Irajá Romeo Hilgenberg Prestes Mattar, Robson Marques Cury, Maria José de Toledo Marcondes Teixeira, Jorge Wagih Massad, Sônia Regina de Castro, Lauro Laertes de Oliveira, Arquelau Araujo Ribas, José Augusto Gomes Aniceto, Carlos Mansur Arida, Paulo Cezar Bellio, Mário Helton Jorge, José Laurindo de Souza Netto, Luiz Osório Moraes Panza, Fernando Paulino da Silva Wolff Filho, Sigurd Roberto Bengtsson, Wellington Emanuel Coimbra de Moura e Fernando Antonio Prazeres.</p>
-<h3>TRIBUNAL DE JUSTIÇA</h3>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>Resolução TJPR Nº 236, de 14 de outubro de 2019 - Presidência</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:09:39 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4591380" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 79.645 caracteres | espelho: 29.059 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução - Órgão Especial Nº 236/2019</p>
+ <p>RESOLUÇÃO Nº 236, de 14 de outubro de 2019.</p>
+ <p>Dispõe sobre os procedimentos a serem adotados para a estatização de Serventias Judiciais, nos termos do art. 31 do Ato das Disposições Constitucionais Transitórias da Constituição da República e do art. 1º, § 5º, do Código de Organização e Divisão Judiciárias do Estado do Paraná.</p>
+ <p>O TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ , por seu Órgão Especial , no uso de suas atribuições legais e regimentais,</p>
+ <h2>CONSIDERANDO o comando contido no art. 31 do Ato das Disposições Constitucionais Transitórias da Constituição Federal de 1988, determinando que serão estatizadas as serventias do foro judicial, assim definidas em lei, respeitados os direitos dos atuais titulares ;</h2>
+ <h2>CONSIDERANDO o § 5º do art. 1º da Lei Estadual nº 14.277, de 30 de dezembro de 2003 - Código de Organização e Divisão Judiciárias do Estado do Paraná - dispõe sobre a estatização das Serventias do Foro Judicial, respeitados os direitos dos atuais titulares;</h2>
+ <h2>CONSIDERANDO que o Supremo Tribunal Federal concluiu que o art. 31 do ADCT é norma constitucional de aplicabilidade imediata, ao afirmar que o regime privatizado somente perduraria, de forma transitória, enquanto as serventias administrativas sobre tal sistema vagassem (STF - ADI nº 1498-6/RS - Pleno - Rel. Ministro Ilmar Galvão, j. 7.11.2002);</h2>
+ <h2>CONSIDERANDO que, no Procedimento de Controle Administrativo nº 0002363.72.2009.2.00.0000, o Conselho Nacional de Justiça considerou irregulares os provimentos de Serventias do Foro Judicial ocorridos após a Constituição Federal de 1988;</h2>
+ <h2>CONSIDERANDO que, naquele mesmo procedimento administrativo, o referido órgão de controle concedeu ao Tribunal de Justiça do Estado do Paraná o prazo de 60 (sessenta) dias para que apresentasse ao CNJ um plano, acompanhado de cronograma de implantação, juntamente com demonstrativos financeiros, para estatizar todas as Serventias Judiciais, exercidas em caráter privado, cuja titularidade tenha sido concedida, por qualquer modo ou forma, após 5 de outubro de 1988;</h2>
+ <h2>CONSIDERANDO que, no Mandado de Segurança nº 28495, impetrado pela Associação dos Serventuários da Justiça do Estado do Paraná (ASSEJEPAR), em 13.11.2018, a Primeira Turma do Supremo Tribunal Federal, por maioria, denegou a segurança e revogou a liminar anteriormente deferida;</h2>
+ <h2>CONSIDERANDO a Política Nacional de Atenção Prioritária ao Primeiro Grau de Jurisdição instituída pela Resolução nº 194, de 26 de maio de 2014, do Conselho Nacional de Justiça;</h2>
+ <h2>CONSIDERANDO a necessidade de adoção de medidas que possibilitem o aumento da eficiência na utilização dos recursos públicos e a padronização de rotinas de procedimento nas Serventias Judiciais do 1º Grau de Jurisdição;</h2>
+ <h2>CONSIDERANDO que a Lei nº 8.159/91, em seu art. 25, dispõe que ficará sujeito à responsabilidade penal, civil e administrativa, na forma da legislação em vigor, aquele que desfigurar ou destruir documentos de valor permanente ou considerado como de interesse público e social ;</h2>
+ <h2>CONSIDERANDO que a Resolução nº 106, de 26 de maio de 2014, do Órgão Especial do Tribunal de Justiça instituiu o Programa de Gestão Documental do Tribunal de Justiça do Estado do Paraná, estabeleceu a sua Normatização e aprovou o Plano de Classificação de Documentos e a Tabela de Temporalidade e Destinação de Documentos, entre outras providências;</h2>
+ <h2>CONSIDERANDO que a Resolução nº 106, de 26 de maio de 2014, do Órgão Especial do Tribunal de Justiça, em seu art. 1º, § 1º, estabeleceu que o Programa de Gestão Documental do Tribunal de Justiça do Estado do Paraná será conduzido pelo Centro de Protocolo Judiciário Estadual e Arquivo Geral, com a colaboração das Comissões Permanentes de Avaliação Documental do 1º e 2º Graus de Jurisdição , e que, em seu art. 2º, estabeleceu que o Programa tem a finalidade de assegurar a gestão, a proteção, a destinação, a guarda, a preservação e o acesso aos documentos institucionais, produzidos no exercício das atribuições jurisdicionais e administrativas do Tribunal de Justiça do Estado do Paraná e suas unidades de 1º Grau de Jurisdição ;</h2>
+ <h2>CONSIDERANDO que, no Relatório da Gestão do Processo de Estatização (Biênio 2017-2018), apresentando no SEI 0050920-09.2017.8.16.6000, concluiu-se que um dos pontos críticos do processo de estatização é a transferência dos processos físicos arquivados, uma vez que a responsabilidade pela gestão e alocação deste acervo é transmitida ao Tribunal de Justiça , e, além do espaço, verificou-se a necessidade de se aprimorar o Sistema GAJUS para padronização do controle do acervo arquivado ;</h2>
+ <h2>CONSIDERANDO que, no Relatório da Gestão do Processo de Estatização (Biênio 2017-2018), apresentando no SEI 0050920-09.2017.8.16.6000, concluiu-se que a utilização, por todas as Unidades Privadas, de um sistema próprio do Tribunal de Justiça do Estado do Paraná para catalogação e controle dos processos judiciais físicos arquivados é medida que trará segurança às informações, permitindo a continuidade da prestação jurisdicional sem obstáculos após a estatização e, ainda, possibilitará à Administração um controle mais eficiente sobre todo o acervo processual do Estado ;</h2>
+ <h2>CONSIDERANDO que, no Relatório da Gestão do Processo de Estatização (Biênio 2017-2018), apresentando no SEI 0050920-09.2017.8.16.6000, concluiu-se que relativamente aos Ofícios do Distribuidor, outro ponto crítico, são os bens guardados no Depositário Público que dificultam o processo de estatização, uma vez que, após a transição para o modelo público, os custos decorrentes da guarda serão transferidos para os cofres públicos ;</h2>
+ <h2>CONSIDERANDO que a estatização de Serventias Judiciais envolve a atuação coordenada e conjunta de diversos Departamentos e setores do Tribunal de Justiça, sendo necessário disciplinar a sua forma e procedimento;</h2>
+ <h2>CONSIDERANDO que a estatização de Serventias Judiciais deve ser conduzida de forma segura e eficaz, sem prejuízo da prestação jurisdicional, porém situações excepcionais poderão ocorrer e deverão ser enfrentadas com rapidez pela administração do Tribunal,</h2>
+ <h2>RESOLVE</h2>
+ <h2>CAPÍTULO I</h2>
+ <h3>INTRODUÇÃO</h3>
+ <h3>Art. 1º. Esta Resolução regulamenta os procedimentos a serem adotados na estatização de Serventias Judiciais nominadas no art. 119 da Lei Estadual n.º 14.277/03.</h3>
+ <h3>Art. 2º. Para fins desta Resolução, entende-se por:</h3>
+ <h5>I - Serventia Judicial: o Ofício da Justiça ou Escrivania Judicial;</h5>
+ <h5>II - Serventia Judicial Estatizada: Ofício da Justiça ou Escrivania Judicial cujo titular é remunerado pelos cofres públicos;</h5>
+ <h5>III - Serventia Judicial Não Estatizada: Ofício da Justiça ou Escrivania Judicial cujo titular não é remunerado pelos cofres públicos;</h5>
+ <h5>IV - Gestor na Execução dos Atos de Estatização das Serventias Judiciais: autoridade designada pelo Presidente do Tribunal de Justiça do Estado do Paraná para promover os atos e atividades relacionadas ao processo de estatização das Serventias Judiciais Não Estatizadas;</h5>
+ <h5>V - Expediente de Monitoramento: expediente iniciado por determinação do Gestor na Execução dos Atos de Estatização das Serventias Judiciais no Sistema Eletrônico de Informações (SEI), mantido pela Divisão de Gestão do Processo de Estatização e destinado especificamente ao monitoramento e controle de cada uma das Serventias Judiciais Não Estatizadas ou daquelas Unidades Judiciárias Estatizadas em que possa haver risco de retorno de titular, remunerado ou não pelos cofres públicos, por meio de eventual medida judicial;</h5>
+ <h5>VI - Equipe de Diagnóstico: grupo de servidores com conhecimento na área de competência da unidade designados pelo Presidente do Tribunal para proceder ao diagnóstico in loco da Serventia ou do Ofício Judicial em processo de estatização;</h5>
+ <h5>VII - Equipe de Estatização: grupo de servidores com conhecimento na área de competência da unidade designados pela Presidência do Tribunal para proceder aos atos preparatórios e de execução da implantação da estatização, que poderão permanecer na Secretaria Judicial durante determinado período para adequar os serviços na unidade;</h5>
+ <h5>VIII - Período de transição para a Estatização: período, fixado pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais, em que serão adotadas diversas providências relacionadas à estrutura física, layout de mobiliário, equipamentos, instalação de sistemas, capacitação dos servidores e demais providências preparatórias à estatização de Serventia Judicial ou Ofício da Justiça.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO PROCEDIMENTO PRÉVIO DE MONITORAMENTO E ADEQUAÇÃO DAS SERVENTIAS JUDICIAIS</h3>
+ <h3>Art. 3º. A Corregedoria-Geral da Justiça, por sua Divisão de Gestão do Processo de Estatização, manterá, para cada Serventia Judicial Não Estatizada do Estado do Paraná, Expediente de Monitoramento Específico, para fins de cadastro e controle das informações de cada Serventia Judicial em processo de estatização, que servirá de base informativa e executória para o Gestor na Execução dos Atos de Estatização das Serventias Judiciais.</h3>
+ <h3>Art. 4º. O Expediente de Monitoramento será iniciado após despacho inaugural do Gestor na Execução dos Atos de Estatização das Serventias Judiciais com determinação para que a Divisão de Gestão do Processo de Estatização forneça os dados e informações objetivas da Serventia Judicial em monitoramento, tais como:</h3>
+ <h5>I - nome do serventuário, data de nascimento, CPF, e-mail, cargo que ocupa, data de assunção, forma de provimento (ingresso, remoção, permuta, etc.), Comarca, competência da Serventia Judicial de titularidade do serventuário, telefone da Serventia Judicial e telefone celular do serventuário;</h5>
+ <h5>II - informações acerca da situação funcional do serventuário, se designado ou responsável por outra Serventia. Caso esteja designado, constar dados da Comarca e da unidade de designação e o motivo para tal;</h5>
+ <h5>III - se o serventuário ingressou com pedido de aposentadoria na PARANAPREVIDÊNCIA ou no INSS, se houve renúncia à delegação pendente de análise, devendo constar o número do processo e demais dados úteis;</h5>
+ <h5>IV - se o serventuário possui procedimento administrativo disciplinar em trâmite e, em caso afirmativo, indicar o número do processo;</h5>
+ <h5>V - se o serventuário se encontra afastado de suas funções e, em caso afirmativo, precisar o motivo;</h5>
+ <h5>VI - identificação de todos os servidores lotados na respectiva Comarca ou Foro, com controle da movimentação e da situação funcional, a partir dos dados a serem fornecidos pelo Departamento de Gestão de Recursos Humanos;</h5>
+ <h4>§1º. Com relação aos Ofícios do Distribuidor e Anexos, além dos dados tratados nos incisos I a VI deste artigo, a Divisão de Gestão do Processo de Estatização deverá manter os seguintes dados:</h4>
+ <h6>a) indicar o sistema informatizado utilizado para distribuição com as especificações necessárias;</h6>
+ <h6>b) indicar o sistema informatizado utilizado para cálculos e contas com as especificações necessárias;</h6>
+ <h6>c) indicar se há bens móveis registrados no Depositário Público e, em caso afirmativo, manter dados descritivos de todos os bens depositados, do local onde se encontram, do estado de conservação, do número e da natureza do processo ou inquérito onde se determinou o depósito judicial e dos sistemas eventualmente utilizados para controle e segurança.</h6>
+ <h4>§2º. Com relação aos demais Ofícios Judiciais, além dos dados tratados nos incisos I a VI desse artigo, a Divisão de Gestão do Processo de Estatização deverá manter os seguintes dados:</h4>
+ <h6>a) o sistema informatizado utilizado para movimentação de feitos físicos com as especificações necessárias;</h6>
+ <h6>b) o número de processos arquivados, com indicação do local, condições de armazenamento, sistemas de catalogação e controle e demais dados correlatos.</h6>
+ <h4>§3º. A Divisão de Gestão do Processo de Estatização deverá colher dos serventuários ou designados responsáveis pelas Serventias Judiciais privadas, bem como por outros meios, os dados acima tratados, cabendo-lhe verificar a correção das informações e adotar as providências para adequação, se necessário.</h4>
+ <h4>§4º. Os expedientes em Monitoramento Permanente e Adequação deverão ter as informações de que trata o art. 4º desta Resolução atualizadas semestralmente pela Divisão de Gestão do Processo de Estatização, visando à higidez dos dados coletados, salvo situação excepcional superveniente que possa interferir na situação da Serventia ou Oficio e necessite ser informada.</h4>
+ <h3>Art. 5º. A Divisão de Gestão do Processo de Estatização incluirá nos expedientes de monitoramento, além dos dados e informações tratadas no art. 4º desta Resolução, todas as informações necessárias, tais como relatórios, atos administrativos, decisões judiciais e demais documentos referentes a cada Serventia Judicial, bem como os dados e as informações que o Gestor na Execução dos Atos de Estatização das Serventias Judiciais reputar necessárias e pertinentes.</h3>
+ <h3>Art. 6º. Com base nos dados colhidos na forma do art. 4º desta Resolução, a Divisão de Gestão do Processo de Estatização elaborará Informação pormenorizada no expediente de monitoramento, sintetizando os dados e juntando os documentos relevantes para análise da situação atual das Serventias Judiciais Não Estatizadas.</h3>
+ <h3>Art. 7º. Após instrução, os expedientes serão encaminhados para análise pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais, que apresentará ao Presidente do Tribunal sugestão das medidas que deverão ser executadas para a adequação da Serventia ou do Ofício ao modelo público, incluindo a definição de eventuais acumulações de Serventias, conforme estabelece o art. 4º, §§ 2º e 3º, da Lei Estadual 16.023/2008 com suas alterações;</h3>
+ <h4>Parágrafo único. A definição do modelo gerencial levará em consideração a incompatibilidade de conversão de Escrivania em Secretaria, em razão de a unidade receptora do Juízo Único ser chefiada por escrivão do crime, caso em que embora se proceda à unificação, manter-se-á o modelo de Escrivania até a vacância do cargo, conforme estabelece o art. 21 da Lei Estadual 16.023/2008.</h4>
+ <h3>Art. 8º. Na fase de adequação serão adotadas medidas tendentes a preparar a unidade para o processo de estatização, conforme as providências fixadas pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais, simultaneamente às atividades de monitoramento permanente pela Divisão de Gestão do Processo de Estatização, tais como:</h3>
+ <h5>I - verificação do cumprimento de recomendação existente no sentido de que os Juízes de Direito promovam, tanto quanto possível, as medidas necessárias e adequadas para a destinação dos bens sob a guarda do Depositário Público, tais como nomeação de depositário particular, venda antecipada ou definitiva após declaração judicial de perdimento, doação ou destruição, conforme o caso, mediante remessa de relatório circunstanciado das medidas adotadas no prazo de 30 (trinta) dias;</h5>
+ <h5>II - adoção de providências necessárias à organização dos arquivos de autos findos;</h5>
+ <h5>III - outras providências preparatórias que devam ser antecipadas.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO PROCEDIMENTO DE ESTATIZAÇÃO DAS SERVENTIAS JUDICIAIS</h3>
+ <h3>Art. 9º. É dever do serventuário titular de Serventia Judicial ou Ofício da Justiça não remunerado pelos cofres públicos, ou designado para responder por essas unidades ainda em regime privado comunicar:</h3>
+ <h5>I - ao Juiz de Direito a que estiver subordinado e à Divisão de Gestão do Processo de Estatização, simultaneamente, sua intenção de pedir aposentadoria, pelo menos 3 (três) meses antes da protocolização do pedido na PARANAPREVIDÊNCIA ou no INSS;</h5>
+ <h5>II - imediatamente ao Juiz de Direito a que estiver subordinado e à Divisão de Gestão do Processo de Estatização, simultaneamente, do pedido de aposentadoria realizado perante a PARANAPREVIDÊNCIA ou o INSS, instruindo o expediente com as informações e os documentos necessários à comprovação.</h5>
+ <h4>Parágrafo único. Em ambas as hipóteses, a comunicação deverá ser feita obrigatoriamente por meio do Sistema Eletrônico de Informações (SEI).</h4>
+ <h3>Art. 10. Caso o Juiz de Direito a que estiver subordinado o serventuário titular ou designado de Serventia Judicial ou Ofício da Justiça Não Estatizado venha a tomar conhecimento do descumprimento desta determinação ou da intenção do titular ou designado de se aposentar, adotadas as diligências prévias de verificação, procederá às devidas comunicações à Divisão de Gestão do Processo de Estatização, instruindo-a com os documentos e informações necessárias, sem prejuízo da adoção das medidas disciplinares cabíveis ao serventuário ou designado por descumprimento de norma a que deve observar.</h3>
+ <h4>Parágrafo único. Caberá também ao Juiz de Direito competente efetuar idêntica comunicação à Divisão de Gestão do Processo de Estatização em caso de morte ou invalidez permanente do serventuário titular ou designado de Serventia Judicial ou Ofício da Justiça Não Estatizado.</h4>
+ <h3>Art. 11. Identificada a vacância, ou mesmo a iminência de vacância, de uma Serventia Judicial, a Divisão de Gestão do Processo de Estatização atualizará imediatamente o respectivo procedimento de monitoramento com as informações e documentos pertinentes e o remeterá ao Gestor na Execução dos Atos de Estatização das Serventias Judiciais para apreciação.</h3>
+ <h3>Art. 12. O Gestor na Execução dos Atos de Estatização das Serventias Judiciais poderá determinar a adoção das providências que reputar necessárias, bem como a realização de diagnóstico in loco.</h3>
+ <h3>Art. 13. O diagnóstico in loco será realizado pela Equipe de Diagnóstico ou Equipe de Estatização que venha a ser constituída especificamente para dar suporte ao processo de estatização, a qual apresentará relatório, que deverá conter as seguintes informações:</h3>
+ <h5>I - em caso de Serventia Cível:</h5>
+ <h6>a) atual estrutura física da Serventia ou do Ofício, com definição e sugestão da adequação do layout, pontos de energia e lógica, bem como da Secretaria Criminal da Comarca, objetivando a possibilidade de anexação/cumulação de Serventias;</h6>
+ <h6>b) sistemas informatizados utilizados e, ainda, se compatíveis ou não com os sistemas desenvolvidos pelo Tribunal de Justiça;</h6>
+ <h6>c) equipamentos e móveis eventualmente necessários;</h6>
+ <h6>d) descrição e identificação do número do patrimônio de eventuais móveis ou equipamentos do Poder Judiciário que se encontram na Serventia ou no Ofício privado;</h6>
+ <h6>e) a apuração dos seguintes dados:</h6>
+ <p>1. processos ativos;</p>
+ <p>2. processos paralisados por mais de 30 (trinta) dias;</p>
+ <p>3. processos com retorno de conclusão;</p>
+ <p>4. processos com pendência de análise de juntada;</p>
+ <p>5. processo com decurso de prazo de intimação ou citações;</p>
+ <p>6. mandados aguardando análise de retorno;</p>
+ <p>7. processos com pendência de expedição de citação, ofício, mandados e demais cumprimentos;</p>
+ <p>8. pauta de audiências;</p>
+ <p>9. processos com carga ou remessa (Ministério Público, Contador, Avaliador, Distribuidor, Advogado e Tribunal de Justiça, entre outros);</p>
+ <p>10. processos físicos em andamento, cadastrados ou não no Sistema Cível-Papel;</p>
+ <p>11. número de Agravos de Instrumento que deverão ser arquivados; e</p>
+ <p>12. Relação de todas as contas bancárias com depósitos judiciais.</p>
+ <h6>f) relativamente ao arquivo de processos físicos:</h6>
+ <p>1. a quantidade de processos que integram o acervo;</p>
+ <p>2. o endereço do local em que se encontram armazenados e as dimensões do espaço utilizado, a quantidade de prateleiras e tamanhos, caixas e tamanhos, etc.;</p>
+ <p>3. se utiliza sistema específico de catalogação de arquivo; e</p>
+ <p>4. as condições em que se encontram arquivados os processos (maços, caixas, estantes, etc.).</p>
+ <h5>II - Em caso de Ofício do Distribuidor:</h5>
+ <h6>a) atual estrutura física da Serventia ou do Ofício, com definição e sugestão da adequação do layout, pontos de energia e lógica;</h6>
+ <h6>b) sistemas informatizados utilizados e, ainda, se compatíveis ou não com os sistemas desenvolvidos pelo Tribunal de Justiça;</h6>
+ <h6>c) definição dos equipamentos e móveis necessários;</h6>
+ <h6>d) descrição e identificação do número do patrimônio de eventuais móveis ou equipamentos do Poder Judiciário que se encontram na Serventia ou no Ofício privado;</h6>
+ <h6>e) relatório de bens sob a guarda do Ofício e dos bens em mãos de particulares.</h6>
+ <h3>Art. 14. Juntado o relatório pela Equipe de Estatização ou pela Equipe de Estatização responsável pelo diagnóstico da unidade, o expediente seguirá para a Divisão de Gestão do Processo de Estatização, que analisará as informações apresentadas e, por meio de informação, estimará o período necessário para a estatização valendo-se dos critérios estabelecidos nos Anexos A e B desta Resolução.</h3>
+ <h3>Art. 15. O Gestor na Execução dos Atos de Estatização das Serventias Judiciais, considerando os dados contidos no Relatório de Diagnóstico e nas informações apresentadas pela Divisão de Gestão do Processo de Estatização, verificará se é possível realizar a estatização imediatamente ou se há fator impeditivo.</h3>
+ <h4>Parágrafo único. Caso seja constatada a necessidade de retorno de serventuário a alguma Serventia Judicial Estatizada, promover-se-á a desestatização, por indicação do Gestor e deliberação do Presidente do Tribunal, sendo, a partir dessa data, iniciado expediente de monitoramento junto à Divisão de Gestão do Processo de Estatização.</h4>
+ <h3>Art. 16. Constatada a existência de impeditivo para a estatização, como no caso de decisão judicial ou de possibilidade de retorno de anterior titular, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais manifestar-se-á a respeito de designação de substituto provisório, pelo Juiz Diretor do Fórum, ouvido o magistrado responsável pela Serventia.</h3>
+ <h4>Parágrafo único. O Diretor do Fórum será comunicado sobre a deliberação do Gestor na Execução dos Atos de Estatização das Serventias Judiciais para adoção das devidas providências e encaminhará a respectiva portaria de designação de substituto provisório para a Diretoria do Departamento da Corregedoria-Geral da Justiça, que adotará as medidas cabíveis para sua apreciação pelo Conselho da Magistratura.</h4>
+ <h3>Art. 17. Constatada a possibilidade de estatização imediata, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais elaborará cronograma, fixará prazos aos Departamentos da Secretaria do Tribunal de Justiça e apresentará sugestão ao Presidente do Tribunal para que delibere sobre as medidas de adequação que reputar necessárias, sobretudo com as seguintes providências:</h3>
+ <h5>I - pelo Departamento de Gestão Documental (DGD) ou empresa contratada para tal finalidade:</h5>
+ <h6>a) remoção, organização e transferência de arquivo físico;</h6>
+ <h6>b) gestão do arquivo físico.</h6>
+ <h5>II - pelo Departamento do Patrimônio (DP):</h5>
+ <h6>a) disponibilização de mobiliário e materiais de expediente;</h6>
+ <h6>b) prateleiras para a acomodação dos processos arquivados.</h6>
+ <h5>III - pelo Departamento de Engenharia e Arquitetura (DEA):</h5>
+ <h6>a) elaboração de projeto de layout e ocupação interna de espaços, com elaboração de projeto de mobiliário, devendo ser utilizado, preferencialmente, mobiliário padrão do TJPR;</h6>
+ <h6>b) avaliação e realização dos serviços necessários para instalação de tomadas, pontos de lógica, luminárias e outras instalações necessárias para atendimento ao projeto de ocupação interna de espaços, podendo esta ser realizada mediante contratação de empresa especializada, caso o TJPR não disponha de equipe capacitada ou materiais disponíveis para atendimento ao projeto elaborado;</h6>
+ <h6>c) avaliar a necessidade de instalação de aparelhos de ar condicionado, podendo estes serem reaproveitados de equipamentos próprios em condições de uso, ou providenciados junto a empresa especializada.</h6>
+ <h5>IV - pelo Departamento de Gestão de Recursos Humanos (DGRH):</h5>
+ <h6>a) os atos de designação, nomeação ou relotação de servidores;</h6>
+ <h5>V - pelo Departamento de Tecnologia da Informação (DTIC):</h5>
+ <h6>a) providências para migração de dados de sistemas informatizados particulares;</h6>
+ <h6>b) disponibilização de computadores, impressoras, escâneres, telefones e demais equipamentos eletrônicos necessários.</h6>
+ <h5>VI - pelo Departamento de Gestão de Serviços Terceirizados (DGST):</h5>
+ <h6>a) se necessário, a remoção e transferência dos arquivos;</h6>
+ <h5>VII - pelo Departamento Econômico e Financeiro (DEF):</h5>
+ <h6>a) proceder às alterações no Sistema Uniformizado de Recolhimento de Custas e Despesas Processuais;</h6>
+ <h5>VIII - pela Escola de Servidores da Justiça Estadual do Paraná (ESEJE):</h5>
+ <h6>a) a capacitação dos servidores que atuam e dos que irão atuar na Serventia Judicial por meio do Programa PROSERVIDOR, ou outro que venha a substituí-lo;</h6>
+ <h6>b) outras capacitações sugeridas pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais.</h6>
+ <h5>X - pela Secretaria do Tribunal de Justiça:</h5>
+ <h6>a) a fiscalização do cumprimento das medidas de que trata este artigo pelos Departamentos;</h6>
+ <h6>b) outras medidas solicitadas pelo Gestor na Execução dos Atos de Estatização das Serventias.</h6>
+ <h4>§ 1º. O Gestor na Execução dos Atos de Estatização das Serventias Judiciais poderá também propor ao Presidente do Tribunal de Justiça:</h4>
+ <h5>I - a unificação de Serventias;</h5>
+ <h5>II - definição da força de trabalho necessária;</h5>
+ <h5>III - eventual necessidade de servidores para apoio a distância;</h5>
+ <h5>IV - a expedição dos atos de estatização para salvaguarda da memória e fixação da data em que a Serventia ou o Ofício da Justiça se tornou estatizado.</h5>
+ <h4>§ 2º. O layout da unidade em processo de estatização será previamente submetido à aprovação do Juiz de Direito responsável, que manifestará sua concordância ou sugerirá alterações no prazo de até 5 (cinco) dias, importando seu silencio em anuência tácita.</h4>
+ <h3>Art. 18. A critério do Gestor na Execução dos Atos de Estatização das Serventias Judiciais, por período não superior a 90 (noventa) dias por ele fixado em decisão fundamentada, poderá ser decretado período de transição para a estatização, momento em que as providências preparatórias à estatização de Serventia Judicial ou Ofício da Justiça, tratadas no art. 17 desta Resolução, poderão ser adotadas concomitante e paralelamente à continuidade dos trabalhos da unidade, sem prejuízo das medidas que possam ter sido adotadas antes desse prazo, na forma permitida pelo art. 8º desta Resolução.</h3>
+ <h3>Art. 19. A critério do Gestor na Execução dos Atos de Estatização das Serventias Judiciais, poderão ser propostas ao Presidente do Tribunal as seguintes medidas em relação às Serventias Judiciais em processo de estatização, isoladas ou cumulativamente, visando à efetiva estatização:</h3>
+ <h5>I - suspensão dos prazos processuais;</h5>
+ <h5>II - suspensão de distribuição de processos ao Juiz de Direito responsável pela unidade;</h5>
+ <h5>III - suspensão do atendimento ao público.</h5>
+ <h4>§ 1º. Ao propor alguma das medidas tratadas nos incisos I a III deste artigo, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais também indicará o prazo de sua duração.</h4>
+ <h4>§ 2º. Nas hipóteses tratadas nos incisos I a III deste artigo, a Serventia Judicial realizará atividades internas na unidade, bem como o atendimento de medidas de urgência.</h4>
+ <h3>Art. 20. Todos os Departamentos e setores do Tribunal de Justiça darão atendimento prioritário às atividades relativas à execução dos autos de estatização das Serventias Judiciais.</h3>
+ <h3>Art. 21. O expediente será concomitantemente encaminhado:</h3>
+ <h5>I - à Secretaria do Tribunal de Justiça para coordenação das medidas de adequação junto aos Departamentos;</h5>
+ <h5>II - à Presidência do Tribunal para análise de eventual unificação de Secretarias, definição de cargos de Chefia, Supervisão e Juiz Corregedor;</h5>
+ <h5>III - à Divisão de Gestão do Processo de Estatização para apoio no cumprimento da decisão, mediante a instauração de subprocessos no SEI para acompanhamento de cada providência.</h5>
+ <h3>Art. 22. Certificadas pelos Departamentos as medidas implementadas, o Gestor na Execução dos Atos de Estatização das Serventias Judiciais deliberará sobre a necessidade de novas medidas, estabelecendo o cronograma de estatização, caso ainda existam diligências ou medidas de adequação pendentes, ou sobre os preparativos finais, submetendo à apreciação do Presidente do Tribunal.</h3>
+ <h3>Art. 23. A Divisão de Gestão do Processo de Estatização dará cumprimento à decisão e acompanhará as medidas a serem tomadas por outros setores, promovendo as comunicações aos órgãos oficiais sobre a estatização.</h3>
+ <h3>Art. 24. O Gestor da Estatização tomará ciência das providências e, constatando eventuais pendências, determinará o seu saneamento, possibilitando a conclusão do expediente de estatização.</h3>
+ <h3>Art. 25. Os casos omissos serão apresentados pelo Gestor na Execução dos Atos de Estatização das Serventias Judiciais ao Presidente do Tribunal para deliberação.</h3>
+ <h3>Art. 26. Esta Resolução entra em vigor na data de sua publicação.</h3>
+ <p>Curitiba, 14 de outubro de 2019.</p>
+ <p>Des. ADALBERTO JORGE XISTO PEREIRA</p>
+ <p>Presidente do Tribunal de Justiça</p>
+ <p>Estiveram presentes à sessão os Excelentíssimos Senhores Desembargadores Adalberto Jorge Xisto Pereira, Ramon de Medeiros Nogueira (substituindo o Des. Telmo Cherem), Octávio Campos Fischer (substituindo a Desª. Regina Helena Afonso Portes), Ruy Cunha Sobrinho, Irajá Romeo Hilgenberg Prestes Mattar, Robson Marques Cury, Maria José de Toledo Marcondes Teixeira, Jorge Wagih Massad, Sônia Regina de Castro, Lauro Laertes de Oliveira, Arquelau Araujo Ribas, José Augusto Gomes Aniceto, Carlos Mansur Arida, Paulo Cezar Bellio, Mário Helton Jorge, José Laurindo de Souza Netto, Luiz Osório Moraes Panza, Fernando Paulino da Silva Wolff Filho, Sigurd Roberto Bengtsson, Wellington Emanuel Coimbra de Moura e Fernando Antonio Prazeres.</p>
+ <h3>TRIBUNAL DE JUSTIÇA</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4591380" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

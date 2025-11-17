@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução TJPR Nº 510/2025 - Órgão Especial – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="TJPR" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2025" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>Resolução TJPR Nº 510, de 1 de setembro de 2025 - Presidência – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="TJPR" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2025" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,67 +315,186 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução TJPR Nº 510/2025 - Órgão Especial</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 02:59:48 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4746678" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 55.726 caracteres | espelho: 7.187 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução - Órgão Especial - DGD Nº 510/2025</p>
-<p> Resolução nº 510/2025 - 0036755-73.2025.8.16.6000 - Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico - eproc</p>
-<p>Assunto: 1.Regulamentação 2.Órgão Especial 3.Adesão 4.Sistema de Processo Judicial Eletrônico-Eproc 5.Tribunal Regional Federal da 4ª Região 6.Acordo de Cooperação Técnica 7.Tribunal de Justiça do Estado do Rio Grande do Sul 8.Tribunal de Justiça do Estado de Santa Catarina 9.Tribunal de Justiça do Estado de São Paulo 10.Tribunal de Justiça do Estado do Tocantins 11.Tramitação Eletrônica 12.Processo Judicial 13.Ato Administrativo 14.Migração 15.Cronograma</p>
-<p>Ementa: Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico-Eproc, desenvolvido pelo Tribunal Regional Federal da 4ª Região. Data do diário: 03/09/2025</p>
-<p>Diário: 3975</p>
-<p>TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ</p>
-<p>RESOLUÇÃO Nº 510-OE, de 1º de setembro de 2025. Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico - eproc, desenvolvido pelo Tribunal Regional Federal da 4ª Região. O TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ , por seu colendo ÓRGÃO ESPECIAL , no uso de suas atribuições,</p>
-<h2>CONSIDERANDO o contido no art. 18 da Lei nº 11.419, de 19 de dezembro de 2006, que dispõe sobre a informatização do processo judicial e atribuiu aos órgãos do Poder Judiciário a sua regulamentação no âmbito de suas respectivas competências;</h2>
-<h2>CONSIDERANDO que a modificação de solução pública de processo judicial eletrônico, desde que para outra solução também pública, encontra amparo nos artigos 5º, 8º e 16 da Resolução CNJ nº 335/2020, que institui a política pública para governança e gestão do processo judicial eletrônico, bem como nos itens 31 e 32, do Anexo I, da Portaria CNJ nº 36/2023;</h2>
-<h2>CONSIDERANDO que, entre as diretrizes do Conselho Nacional de Justiça, estão a integração e a interoperabilidade das plataformas de processo judicial eletrônico, visando a convergência de sistemas e a adesão ao programa Justiça 4.0, no qual se insere a Plataforma Digital do Poder Judiciário (PDPJ);</h2>
-<h2>CONSIDERANDO que a Secretaria de Tecnologia da Informação deste Tribunal, mesmo realizando os esforços possíveis, não tem conseguido atender, no tempo necessário, todas as demandas relacionadas ao Projudi, inclusive as originárias do Conselho Nacional de Justiça;</h2>
-<h2>CONSIDERANDO que o Comitê Gestor Interinstitucional do eproc é integrado por representantes de todos os Tribunais aderentes (TJSP, TJRS, TJMG, TJRJ, TJBA, TJSC, TJTO, TJSE, TJAL, TJAC, TJMS, TRF2, TRF4, TRF6, STM, TJMMG, TJMRS), os quais, atuando em conjunto e dividindo tarefas, detêm condições de fazer frente às demandas dos usuários e de cumprir as determinações do Conselho Nacional de Justiça, dentro dos prazos estabelecidos;</h2>
-<h2>CONSIDERANDO que, conforme consta no Relatório Justiça em Números do Conselho Nacional de Justiça, os Tribunais Estaduais que aderiram ao sistema eproc são responsáveis por 74,5% de todos os processos em trâmite na Justiça Estadual - com a adesão do Tribunal de Justiça do Estado do Paraná, o percentual será de 80,18%;</h2>
-<h2>CONSIDERANDO que todos os Tribunais de grande porte (TJSP, TJRJ, TJRS, TJMG e TJBA), à exceção do Tribunal de Justiça do Estado do Paraná, já aderiram ao eproc;</h2>
-<h2>CONSIDERANDO que no SEI nº 0036755-73.2025.8.16.6000 estão em andamento as tratativas para a formalização do Acordo de Cooperação Técnica que viabilizará a cessão gratuita do direito de uso do eproc a este Tribunal de Justiça;</h2>
-<h2>CONSIDERANDO que, na hipótese de este Tribunal de Justiça aderir ao eproc, receberá o apoio técnico e negocial do TRF4, do TJRS, do TJSC, do TJSP e do TJTO, o que facilitará a implantação do novo sistema de processo eletrônico no âmbito do Poder Judiciário do Estado do Paraná,</h2>
-<h2>RESOLVE:</h2>
-<h3>Art. 1º O Tribunal de Justiça do Estado do Paraná celebrará acordo de cooperação técnica com o Tribunal Regional Federal da 4ª Região, o Tribunal de Justiça do Estado do Rio Grande do Sul, o Tribunal de Justiça do Estado de Santa Catarina, o Tribunal de Justiça do Estado de São Paulo e o Tribunal de Justiça do Estado do Tocantins, a fim de obter a cessão do direito de uso do Sistema de Processo Judicial Eletrônico - eproc, que servirá de plataforma para a tramitação eletrônica dos processos judiciais no âmbito do Poder Judiciário do Estado do Paraná.</h3>
-<h3>Art. 2º A Presidência deste Tribunal de Justiça, além de subscrever o termo de cooperação, providenciará os atos administrativos necessários para viabilizar a implantação do eproc no Poder Judiciário do Estado do Paraná e a migração gradual dos processos atualmente em trâmite no projudi para o eproc, observado cronograma a ser elaborado pela Presidência.</h3>
-<h3>Art. 3° Esta Resolução entra em vigor na data de sua publicação. Curitiba, 1º de setembro de 2025.</h3>
-<p>Desembargadora LIDIA MAEJIMA</p>
-<p>Presidente do Tribunal de Justiça do Estado do Paraná Estiveram presentes à sessão os Excelentíssimos Senhores Desembargadores: Lidia Maejima, Ivanise Maria Tratz Martins (substituindo o Des. Telmo Cherem), Carvílio da Silveira Filho, Marcus Vinícius de Lacerda Costa, Rogério Luís Nielsen Kanayama, Lauro Laertes de Oliveira, Antonio Renato Strapasson, Eugênio Achille Grandinetti, Miguel Kfouri Neto, Hayton Lee Swain Filho, Luiz Carlos Gabardo, Renato Naves Barcellos, Fernando Wolff Bodziak, Jorge de Oliveira Vargas, Lenice Bodstein, Espedito Reis do Amaral, Octávio Campos Fischer, Lilian Romero, Gil Francisco de Paula Xavier Fernandes Guerra, Cláudio Smirne Diniz, Fábio André Santos Muniz, Luciano Carrasco Falavinha Souza, Sérgio Luiz Kreuz e Antônio Franco Ferreira da Costa Neto. Imprimir Voltar Oculto</p>
-<p>Praça Nossa Senhora de Salette, S/N</p>
-<p>CEP 80.530-912 - Curitiba, PR</p>
-<p>Telefone: 41 3200-2000 EXPEDIENTE DE FUNCIONAMENTO</p>
-<p>Horário regimental de funcionamento – das 12:00 às 19:00</p>
-<p>Horário de atendimento ao público – das 12:00 às 18:00 ACESSO À INFORMAÇÃO</p>
-<p>Tipo: | Resolução - Órgão Especial - DGD</p>
-<p>Origem: | DEPARTAMENTO DE GESTÃO DOCUMENTAL</p>
-<p>Documento: | Resolução nº 510/2025 - 0036755-73.2025.8.16.6000 - Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico - eproc</p>
-<p>Assunto: | 1.Regulamentação 2.Órgão Especial 3.Adesão 4.Sistema de Processo Judicial Eletrônico-Eproc 5.Tribunal Regional Federal da 4ª Região 6.Acordo de Cooperação Técnica 7.Tribunal de Justiça do Estado do Rio Grande do Sul 8.Tribunal de Justiça do Estado de Santa Catarina 9.Tribunal de Justiça do Estado de São Paulo 10.Tribunal de Justiça do Estado do Tocantins 11.Tramitação Eletrônica 12.Processo Judicial 13.Ato Administrativo 14.Migração 15.Cronograma</p>
-<p>Ementa: | Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico-Eproc, desenvolvido pelo Tribunal Regional Federal da 4ª Região.</p>
-<p>Data do diário: | 03/09/2025</p>
-<p>Diário: | 3975 --- Tabela 2 ---</p>
-<h3>TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ</h3>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>Resolução TJPR Nº 510, de 1 de setembro de 2025 - Presidência</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:11:49 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4746678" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 55.726 caracteres | espelho: 7.187 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução - Órgão Especial - DGD Nº 510/2025</p>
+ <p> Resolução nº 510/2025 - 0036755-73.2025.8.16.6000 - Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico - eproc</p>
+ <p>Assunto: 1.Regulamentação 2.Órgão Especial 3.Adesão 4.Sistema de Processo Judicial Eletrônico-Eproc 5.Tribunal Regional Federal da 4ª Região 6.Acordo de Cooperação Técnica 7.Tribunal de Justiça do Estado do Rio Grande do Sul 8.Tribunal de Justiça do Estado de Santa Catarina 9.Tribunal de Justiça do Estado de São Paulo 10.Tribunal de Justiça do Estado do Tocantins 11.Tramitação Eletrônica 12.Processo Judicial 13.Ato Administrativo 14.Migração 15.Cronograma</p>
+ <p>Ementa: Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico-Eproc, desenvolvido pelo Tribunal Regional Federal da 4ª Região. Data do diário: 03/09/2025</p>
+ <p>Diário: 3975</p>
+ <p>TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ</p>
+ <p>RESOLUÇÃO Nº 510-OE, de 1º de setembro de 2025. Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico - eproc, desenvolvido pelo Tribunal Regional Federal da 4ª Região. O TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ , por seu colendo ÓRGÃO ESPECIAL , no uso de suas atribuições,</p>
+ <h2>CONSIDERANDO o contido no art. 18 da Lei nº 11.419, de 19 de dezembro de 2006, que dispõe sobre a informatização do processo judicial e atribuiu aos órgãos do Poder Judiciário a sua regulamentação no âmbito de suas respectivas competências;</h2>
+ <h2>CONSIDERANDO que a modificação de solução pública de processo judicial eletrônico, desde que para outra solução também pública, encontra amparo nos artigos 5º, 8º e 16 da Resolução CNJ nº 335/2020, que institui a política pública para governança e gestão do processo judicial eletrônico, bem como nos itens 31 e 32, do Anexo I, da Portaria CNJ nº 36/2023;</h2>
+ <h2>CONSIDERANDO que, entre as diretrizes do Conselho Nacional de Justiça, estão a integração e a interoperabilidade das plataformas de processo judicial eletrônico, visando a convergência de sistemas e a adesão ao programa Justiça 4.0, no qual se insere a Plataforma Digital do Poder Judiciário (PDPJ);</h2>
+ <h2>CONSIDERANDO que a Secretaria de Tecnologia da Informação deste Tribunal, mesmo realizando os esforços possíveis, não tem conseguido atender, no tempo necessário, todas as demandas relacionadas ao Projudi, inclusive as originárias do Conselho Nacional de Justiça;</h2>
+ <h2>CONSIDERANDO que o Comitê Gestor Interinstitucional do eproc é integrado por representantes de todos os Tribunais aderentes (TJSP, TJRS, TJMG, TJRJ, TJBA, TJSC, TJTO, TJSE, TJAL, TJAC, TJMS, TRF2, TRF4, TRF6, STM, TJMMG, TJMRS), os quais, atuando em conjunto e dividindo tarefas, detêm condições de fazer frente às demandas dos usuários e de cumprir as determinações do Conselho Nacional de Justiça, dentro dos prazos estabelecidos;</h2>
+ <h2>CONSIDERANDO que, conforme consta no Relatório Justiça em Números do Conselho Nacional de Justiça, os Tribunais Estaduais que aderiram ao sistema eproc são responsáveis por 74,5% de todos os processos em trâmite na Justiça Estadual - com a adesão do Tribunal de Justiça do Estado do Paraná, o percentual será de 80,18%;</h2>
+ <h2>CONSIDERANDO que todos os Tribunais de grande porte (TJSP, TJRJ, TJRS, TJMG e TJBA), à exceção do Tribunal de Justiça do Estado do Paraná, já aderiram ao eproc;</h2>
+ <h2>CONSIDERANDO que no SEI nº 0036755-73.2025.8.16.6000 estão em andamento as tratativas para a formalização do Acordo de Cooperação Técnica que viabilizará a cessão gratuita do direito de uso do eproc a este Tribunal de Justiça;</h2>
+ <h2>CONSIDERANDO que, na hipótese de este Tribunal de Justiça aderir ao eproc, receberá o apoio técnico e negocial do TRF4, do TJRS, do TJSC, do TJSP e do TJTO, o que facilitará a implantação do novo sistema de processo eletrônico no âmbito do Poder Judiciário do Estado do Paraná,</h2>
+ <h2>RESOLVE:</h2>
+ <h3>Art. 1º O Tribunal de Justiça do Estado do Paraná celebrará acordo de cooperação técnica com o Tribunal Regional Federal da 4ª Região, o Tribunal de Justiça do Estado do Rio Grande do Sul, o Tribunal de Justiça do Estado de Santa Catarina, o Tribunal de Justiça do Estado de São Paulo e o Tribunal de Justiça do Estado do Tocantins, a fim de obter a cessão do direito de uso do Sistema de Processo Judicial Eletrônico - eproc, que servirá de plataforma para a tramitação eletrônica dos processos judiciais no âmbito do Poder Judiciário do Estado do Paraná.</h3>
+ <h3>Art. 2º A Presidência deste Tribunal de Justiça, além de subscrever o termo de cooperação, providenciará os atos administrativos necessários para viabilizar a implantação do eproc no Poder Judiciário do Estado do Paraná e a migração gradual dos processos atualmente em trâmite no projudi para o eproc, observado cronograma a ser elaborado pela Presidência.</h3>
+ <h3>Art. 3° Esta Resolução entra em vigor na data de sua publicação. Curitiba, 1º de setembro de 2025.</h3>
+ <p>Desembargadora LIDIA MAEJIMA</p>
+ <p>Presidente do Tribunal de Justiça do Estado do Paraná Estiveram presentes à sessão os Excelentíssimos Senhores Desembargadores: Lidia Maejima, Ivanise Maria Tratz Martins (substituindo o Des. Telmo Cherem), Carvílio da Silveira Filho, Marcus Vinícius de Lacerda Costa, Rogério Luís Nielsen Kanayama, Lauro Laertes de Oliveira, Antonio Renato Strapasson, Eugênio Achille Grandinetti, Miguel Kfouri Neto, Hayton Lee Swain Filho, Luiz Carlos Gabardo, Renato Naves Barcellos, Fernando Wolff Bodziak, Jorge de Oliveira Vargas, Lenice Bodstein, Espedito Reis do Amaral, Octávio Campos Fischer, Lilian Romero, Gil Francisco de Paula Xavier Fernandes Guerra, Cláudio Smirne Diniz, Fábio André Santos Muniz, Luciano Carrasco Falavinha Souza, Sérgio Luiz Kreuz e Antônio Franco Ferreira da Costa Neto. Imprimir Voltar Oculto</p>
+ <p>Praça Nossa Senhora de Salette, S/N</p>
+ <p>CEP 80.530-912 - Curitiba, PR</p>
+ <p>Telefone: 41 3200-2000 EXPEDIENTE DE FUNCIONAMENTO</p>
+ <p>Horário regimental de funcionamento – das 12:00 às 19:00</p>
+ <p>Horário de atendimento ao público – das 12:00 às 18:00 ACESSO À INFORMAÇÃO</p>
+ <p>Tipo: | Resolução - Órgão Especial - DGD</p>
+ <p>Origem: | DEPARTAMENTO DE GESTÃO DOCUMENTAL</p>
+ <p>Documento: | Resolução nº 510/2025 - 0036755-73.2025.8.16.6000 - Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico - eproc</p>
+ <p>Assunto: | 1.Regulamentação 2.Órgão Especial 3.Adesão 4.Sistema de Processo Judicial Eletrônico-Eproc 5.Tribunal Regional Federal da 4ª Região 6.Acordo de Cooperação Técnica 7.Tribunal de Justiça do Estado do Rio Grande do Sul 8.Tribunal de Justiça do Estado de Santa Catarina 9.Tribunal de Justiça do Estado de São Paulo 10.Tribunal de Justiça do Estado do Tocantins 11.Tramitação Eletrônica 12.Processo Judicial 13.Ato Administrativo 14.Migração 15.Cronograma</p>
+ <p>Ementa: | Dispõe sobre a adesão do Tribunal de Justiça do Estado do Paraná ao Sistema de Processo Judicial Eletrônico-Eproc, desenvolvido pelo Tribunal Regional Federal da 4ª Região.</p>
+ <p>Data do diário: | 03/09/2025</p>
+ <p>Diário: | 3975 --- Tabela 2 ---</p>
+ <h3>TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4746678" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

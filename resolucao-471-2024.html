@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Resolução TJPR Nº 471/2024 - Órgão Especial – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="TJPR" data-pagefind-filter="orgao[content]"/>
-<meta content="Resolução" data-pagefind-filter="tipo[content]"/>
-<meta content="2024" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>Resolução TJPR Nº 471, de 28 de outubro de 2024 - Presidência – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="TJPR" />
+ <meta data-pagefind-filter="tipo[content]" content="Resolução" />
+ <meta data-pagefind-filter="ano[content]" content="2024" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,121 +315,240 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Resolução TJPR Nº 471/2024 - Órgão Especial</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 02:58:56 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4721036" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 64.433 caracteres | espelho: 13.984 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Resolução - Órgão Especial Nº 471/2024</p>
-<p>RESOLUÇÃO Nº 471/2024 -OE, de 28 de outubro de 2024.</p>
-<p>Regulamenta a gestão por competências no âmbito do Poder Judiciário do Estado do Paraná.</p>
-<p>O TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ, por seu ÓRGÃO ESPECIAL , no uso de suas atribuições legais e regimentais,</p>
-<h2>CONSIDERANDO que a Resolução nº 192/2014 do Conselho Nacional de Justiça - CNJ, que dispõe sobre a Política Nacional de Formação e Aperfeiçoamento dos Servidores do Poder Judiciário, estabelece como objetivo desenvolver as competências profissionais necessárias aos Tribunais de Justiça;</h2>
-<h2>CONSIDERANDO o contido na Resolução nº 240/2016 do Conselho Nacional de Justiça - CNJ, que dispõe sobre a Política Nacional de Gestão de Pessoas no âmbito do Poder Judiciário e a necessidade de se aprimorar a gestão de pessoas nos órgãos públicos;</h2>
-<h2>CONSIDERANDO o início, por este Tribunal, da implantação da gestão por competências em 2017, com a contratação de consultoria externa;</h2>
-<h2>CONSIDERANDO que uma gestão de pessoas adequada pode promover melhorias nos processos de trabalho, tornando as instituições mais eficientes, eficazes e efetivas;</h2>
-<h2>CONSIDERANDO que uma gestão de pessoas adequada possibilita a efetivação na qualidade de vida de seus colaboradores e colaboradoras;</h2>
-<h2>CONSIDERANDO a previsão da gestão por competências no Planejamento Estratégico 2021/2026 como objetivo estratégico nº 10, por meio do Aperfeiçoamento da Gestão de Pessoas;</h2>
-<h2>CONSIDERANDO que as metas do CNJ no macrodesafio de aprendizado e crescimento, por meio do Aperfeiçoamento da Gestão de Pessoas, levam em conta a gestão por competências;</h2>
-<h2>CONSIDERANDO a gestão por competências como um modelo de gestão estratégica de pessoas, vinculada ao planejamento estratégico e que possibilita benefícios a todo o Poder Judiciário Paranaense;</h2>
-<h2>CONSIDERANDO que o Programa de Gestão por Competências do Tribunal de Justiça do Estado do Paraná foi instituído no SEI! nº 0105937-88.2021.8.16.6000; e</h2>
-<h2>CONSIDERANDO o contido no SEI! nº 0123126-45.2022.8.16.6000,</h2>
-<h2>RESOLVE:</h2>
-<h3>Art. 1º Estabelecer a gestão por competências como modelo de gestão estratégica de pessoas a ser adotado no Poder Judiciário do Estado do Paraná, a ser observada no desenvolvimento de competências, seleção de pessoal, lotação, relotação e designação e avaliação de desempenho.</h3>
-<h3>Art. 2º Para os fins desta Resolução consideram-se:</h3>
-<h5>I - Gestão por Competências: ferramenta da gestão estratégica de pessoas que visa a maximizar o potencial humano e a produtividade das instituições, de forma a integrar os conhecimentos e saberes dos servidores às necessidades das unidades de trabalho;</h5>
-<h5>II - Competências: conhecimentos e saberes, somados às atitudes e comportamentos, aplicados na prática para executar as atividades e demandas, visando ao alcance dos objetivos estratégicos do Poder Judiciário do Estado do Paraná, subdividindo-se nas seguintes categorias:</h5>
-<h6>a) Competências Gerenciais: conjunto de competências imprescindíveis para o desempenho das funções gerenciais, em seus diferentes níveis;</h6>
-<h6>b) Competências Individuais Comportamentais: conjunto de competências imprescindíveis que orientam o comportamento esperado por todo o quadro funcional da instituição;</h6>
-<h6>c) Competências Técnicas: conjunto de competências desenvolvidas e obtidas por meio de educação formal, capacitações ou experiência, e se vinculam aos processos de trabalho da instituição, contemplados na cadeia de valor.</h6>
-<h5>III - Dicionário de Competências: lista de competências relacionadas a cada categoria de competências, que orienta os processos de trabalho da gestão por competências na instituição;</h5>
-<h5>IV - Unidade: subdivisão administrativa do Tribunal de Justiça do Estado dotada de gestor ou gestora;</h5>
-<h5>V - Gestores e Gestoras: magistrado(a) ou servidor(a) ocupante de cargo em comissão ou função comissionada responsável pelo gerenciamento de unidade ou da própria instituição, divididos em cinco níveis:</h5>
-<h6>a) Gestores e Gestoras institucionais: nível gerencial responsável pela gestão da instituição, desenvolvendo a visão estratégica global, tomando decisões de alto impacto e acompanhando a execução do planejamento estratégico para garantir sua implementação a longo prazo e a satisfação das partes interessadas;</h6>
-<h6>b) Gestores e Gestoras de Negócios: nível gerencial responsável por coordenar e integrar as áreas funcionais, focado na formulação de estratégias, gerenciamento de resultados e na alocação de recursos para garantir o aprimoramento e o crescimento institucional;</h6>
-<h6>c) Gestores e Gestoras funcionais: nível gerencial responsável por coordenar e integrar uma área funcional específica dentro da organização, alinhando suas operações com a estratégia organizacional e otimizando a eficiência e eficácia dos processos;</h6>
-<h6>d) Gestores e Gestoras de Gestores(as): nível gerencial responsável por supervisionar e desenvolver outros gestores, assegurando que estes conduzam suas equipes de forma alinhada à estratégia organizacional, promovendo a integração entre as atividades;</h6>
-<h6>e) Gestores e Gestoras de Pessoas: nível gerencial responsável por desenvolver, apoiar e motivar sua equipe, garantindo alinhamento com os objetivos organizacionais, comunicação eficaz e gestão de desempenho.</h6>
-<h5>VI - Avaliação por Competências: processo de avaliação do grau de desenvolvimento das competências da organização, unidades ou pessoas, voltado à identificação das lacunas existentes;</h5>
-<h5>VII - Lacunas de Competências: diferença existente entre o domínio de competências esperado pela organização e o real existente;</h5>
-<h5>VIII - Desenvolvimento de Competências: processo de aprendizagem orientado para o saber, o saber fazer e o saber ser, na perspectiva da estratégia organizacional;</h5>
-<h5>IX - Seleção de Pessoas: processo de seleção de pessoal para o desempenho de funções na organização;</h5>
-<h5>X - Avaliação de Desempenho: avaliação periódica de desempenho individual que objetiva avaliar o desempenho de servidores e servidoras;</h5>
-<h5>XI - Lotação: definição da unidade de trabalho para servidores e servidoras;</h5>
-<h5>XII - Relotação: alteração definitiva da unidade de trabalho para servidores e servidoras;</h5>
-<h5>XIII - Designação: alteração temporária da unidade de trabalho para servidores e servidoras, sem alteração da sua lotação;</h5>
-<h5>XIV - Área funcional: macroprocesso ou função específica cuja execução possui impacto significativo na organização, no cumprimento dos objetivos e/ou na entrega de serviços;</h5>
-<h5>XV - Eficiência: realização de ações e tarefas utilizando os recursos de forma otimizada, minimizando desperdícios e maximizando a produtividade;</h5>
-<h5>XVI- Eficácia: realização de ações e tomada de decisões que levam ao alcance dos objetivos e metas desejados;</h5>
-<h5>XVII - Efetividade: relação entre os resultados de uma ação, em termos de efeitos sobre o público-alvo e os objetivos pretendidos.</h5>
-<h4>Parágrafo único: Os cargos e funções vinculados aos níveis de gestão indicados no inciso V deste artigo serão instituídos por ato normativo do Presidente do Tribunal de Justiça do Estado do Paraná.</h4>
-<h3>DAS COMPETÊNCIAS GERENCIAIS, INDIVIDUAIS E TÉCNICAS</h3>
-<h3>Art. 3º Há um dicionário de competência para cada uma das categorias, quais sejam: gerencial, individual comportamental e técnica.</h3>
-<h4>§ 1º As competências individuais comportamentais são inerentes a todos os colaboradores e colaboradoras do órgão.</h4>
-<h4>§ 2º O dicionário de competências gerenciais do Poder Judiciário do Estado do Paraná é delimitado por níveis de gestão, estabelecidos no artigo 2º.</h4>
-<h3>Art. 4º Os dicionários de competências do Poder Judiciário do Estado do Paraná embasam o desenvolvimento da temática de gestão de pessoas, que consistem em:</h3>
-<h5>I - Seleção de Pessoas;</h5>
-<h5>II - Desenvolvimento de Competências;</h5>
-<h5>III - Avaliação de Desempenho;</h5>
-<h5>IV - Lotação;</h5>
-<h5>V - Relotação; e</h5>
-<h5>VI - Designação.</h5>
-<h3>Art. 5º Cabe ao Comitê de Gestão por Competências revisar e propor alterações para os dicionários de competências gerenciais e individuais comportamentais, atualizando-os e adequando-os às necessidades da instituição.</h3>
-<h4>Parágrafo único. Os dicionários previstos neste artigo serão instituídos por ato normativo do Presidente do Tribunal de Justiça do Estado do Paraná.</h4>
-<h3>Art. 6º As competências técnicas são identificadas para cada unidade do Tribunal de Justiça do Estado do Paraná, referentes aos processos de trabalho contemplados na cadeia de valor da instituição.</h3>
-<h4>§ 1º Cabe à Secretaria de Gestão de Pessoas o mapeamento das competências técnicas das unidades, com validação pelos próprios gestores e gestoras das unidades, vez que são conhecedores de seus processos de trabalho.</h4>
-<h4>§ 2º A revisão e atualização das competências técnicas, considerando alterações regimentais, tecnológicas, legislativas, dentre outras, se dará a cada quatro anos, com gestão realizada pela Secretaria de Gestão de Pessoas, admitindo-se revisão extraordinária.</h4>
-<h4>§ 3º Após a abertura de processo para o mapeamento ou revisão de competências, registrado no Sistema Eletrônico de Informações - SEI ou em outro sistema informatizado que venha o substituir, as unidades terão o prazo de noventa dias para a conclusão do procedimento.</h4>
-<h4>§ 4º Os dicionários de competências técnicas serão registrados em sistema informatizado gerenciado pela Secretaria de Gestão de Pessoas, sendo disponibilizados às unidades sempre que solicitado ou necessário.</h4>
-<h3>Art. 7º Os gestores e gestoras de negócios, gestores e gestoras funcionais, gestores e gestoras de gestores e gestores e gestoras de pessoas serão avaliados com relação às competências gerenciais a cada dois anos, conforme ato normativo a ser expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
-<h3>Art. 8º Os servidores(as), efetivos(as) e comissionados(as), serão avaliados com relação às competências individuais comportamentais a cada dois anos, nos anos em que não houver a avaliação de competências gerenciais, conforme ato normativo a ser expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
-<h3>Art. 9º A avaliação do desenvolvimento de competências técnicas dos servidores e servidoras lotados em cada unidade se dará conforme cronograma a ser elaborado pela Secretaria de Gestão de Pessoas, com auxílio da Escola Judicial do Tribunal de Justiça do Estado do Paraná.</h3>
-<h4>§ 1º Será realizada a reavaliação das competências técnicas quatro anos após a primeira avaliação, com a finalidade de identificar o grau de desenvolvimento das competências e lacunas ainda existentes.</h4>
-<h4>§ 2º Ato normativo que regulamente os procedimentos de avaliações de competências técnicas será expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h4>
-<h3>Art. 10. Cabe à Secretaria de Gestão de Pessoas o gerenciamento das avaliações por competências.</h3>
-<h3>Art. 11. O resultado das avaliações por competências, com as lacunas de competências identificadas, será repassado à Escola Judicial do Tribunal de Justiça do Estado do Paraná para indicação e/ou promoção de capacitações e ações educacionais que possibilitem o desenvolvimento de competências por parte do quadro funcional do Poder Judiciário do Estado do Paraná.</h3>
-<h3>DO COMITÊ DE GESTÃO POR COMPETÊNCIAS</h3>
-<h3>Art. 12. Fica criado o Comitê de Gestão por Competências, composto por integrantes a serem designados pelo Presidente do Tribunal de Justiça.</h3>
-<h4>Parágrafo único: Os integrantes do Comitê, preferencialmente, terão formação acadêmica ou experiência em áreas de interesse ao tema tratado, com ênfase na Gestão de Pessoas, Administração, Gestão Pública e Gestão por Competências.</h4>
-<h3>Art. 13. São atribuições do Comitê de Gestão por Competências:</h3>
-<h5>I - Estabelecer, atualizar e apresentar proposta do dicionário de competências gerenciais ao Presidente do Tribunal de Justiça do Estado do Paraná;</h5>
-<h5>II - Estabelecer, atualizar e apresentar proposta do dicionário de competências individuais comportamentais ao Presidente do Tribunal de Justiça do Estado do Paraná;</h5>
-<h5>III - Acompanhar os processos referentes à gestão por competências na instituição, identificando e propondo melhorias e ajustes;</h5>
-<h5>IV - Fomentar a aplicação da gestão por competências na instituição, propondo a implementação de novos processos ou sugerindo aprimoramentos nos já existentes; e</h5>
-<h5>V - Propor projetos e ações referentes à gestão por competências na instituição.</h5>
-<h3>DO SELO DE GESTÃO POR COMPETÊNCIAS</h3>
-<h3>Art. 14. Fica instituído o Selo de Gestão por Competências do Poder Judiciário do Estado do Paraná, atribuído a unidades reconhecidas por boas práticas no uso da gestão por competências para aprimoramento da gestão de pessoas, conforme ato normativo a ser expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
-<p>Disposições Finais</p>
-<h3>Art. 15. A gestão por competências no Poder Judiciário do Estado do Paraná será gerida por sistema informatizado, que possibilitará a celeridade que os processos demandam, tendo em vista se tratar de ação estratégica aplicada a todo o quadro funcional da instituição.</h3>
-<h3>Art. 16. A gestão por competências será, preferencialmente, aplicada nas temáticas de gestão de pessoas de seleção, lotação, relotação, designação e avaliação de desempenho, mediante regulamentações próprias.</h3>
-<h3>Art. 17. Casos omissos serão analisados pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
-<h3>Art. 18. Esta Resolução entra em vigor na data da sua publicação.</h3>
-<p>Curitiba, 28 de outubro de 2024.</p>
-<h3>DES. LUIZ FERNANDO TOMASI KEPPEN</h3>
-<p>Presidente do Tribunal de Justiça do Estado do Paraná</p>
-<p>Estiveram presentes à sessão os Excelentíssimos Senhores Desembargadores: Luiz Fernando Tomasi Keppen, Carvílio da Silveira Filho, Marcus Vinícius de Lacerda Costa, Lauro Laertes de Oliveira, Antonio Renato Strapasson, Roberto Antonio Massaro - Corregedor-Geral da Justiça em exercício - (cargo vago - Corregedor-Geral da Justiça), Eugênio Achille Grandinetti, Miguel Kfouri Neto, Hayton Lee Swain Filho, José Maurício Pinto de Almeida, Luiz Carlos Gabardo, Paulo Cezar Bellio, Jorge de Oliveira Vargas, Joeci Machado Camargo, José Sebastião Fagundes Cunha, Espedito Reis do Amaral, Roberto Portugal Bacellar, Rogério Etzel, Fabian Schweitzer, Luciano Carrasco Falavinha Souza, Francisco Cardoso de Oliveira e Andrei de Oliveira Rech.</p>
-<h3>TRIBUNAL DE JUSTIÇA</h3>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>Resolução TJPR Nº 471, de 28 de outubro de 2024 - Presidência</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 22:10:57 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4721036" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 64.433 caracteres | espelho: 13.984 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Resolução - Órgão Especial Nº 471/2024</p>
+ <p>RESOLUÇÃO Nº 471/2024 -OE, de 28 de outubro de 2024.</p>
+ <p>Regulamenta a gestão por competências no âmbito do Poder Judiciário do Estado do Paraná.</p>
+ <p>O TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ, por seu ÓRGÃO ESPECIAL , no uso de suas atribuições legais e regimentais,</p>
+ <h2>CONSIDERANDO que a Resolução nº 192/2014 do Conselho Nacional de Justiça - CNJ, que dispõe sobre a Política Nacional de Formação e Aperfeiçoamento dos Servidores do Poder Judiciário, estabelece como objetivo desenvolver as competências profissionais necessárias aos Tribunais de Justiça;</h2>
+ <h2>CONSIDERANDO o contido na Resolução nº 240/2016 do Conselho Nacional de Justiça - CNJ, que dispõe sobre a Política Nacional de Gestão de Pessoas no âmbito do Poder Judiciário e a necessidade de se aprimorar a gestão de pessoas nos órgãos públicos;</h2>
+ <h2>CONSIDERANDO o início, por este Tribunal, da implantação da gestão por competências em 2017, com a contratação de consultoria externa;</h2>
+ <h2>CONSIDERANDO que uma gestão de pessoas adequada pode promover melhorias nos processos de trabalho, tornando as instituições mais eficientes, eficazes e efetivas;</h2>
+ <h2>CONSIDERANDO que uma gestão de pessoas adequada possibilita a efetivação na qualidade de vida de seus colaboradores e colaboradoras;</h2>
+ <h2>CONSIDERANDO a previsão da gestão por competências no Planejamento Estratégico 2021/2026 como objetivo estratégico nº 10, por meio do Aperfeiçoamento da Gestão de Pessoas;</h2>
+ <h2>CONSIDERANDO que as metas do CNJ no macrodesafio de aprendizado e crescimento, por meio do Aperfeiçoamento da Gestão de Pessoas, levam em conta a gestão por competências;</h2>
+ <h2>CONSIDERANDO a gestão por competências como um modelo de gestão estratégica de pessoas, vinculada ao planejamento estratégico e que possibilita benefícios a todo o Poder Judiciário Paranaense;</h2>
+ <h2>CONSIDERANDO que o Programa de Gestão por Competências do Tribunal de Justiça do Estado do Paraná foi instituído no SEI! nº 0105937-88.2021.8.16.6000; e</h2>
+ <h2>CONSIDERANDO o contido no SEI! nº 0123126-45.2022.8.16.6000,</h2>
+ <h2>RESOLVE:</h2>
+ <h3>Art. 1º Estabelecer a gestão por competências como modelo de gestão estratégica de pessoas a ser adotado no Poder Judiciário do Estado do Paraná, a ser observada no desenvolvimento de competências, seleção de pessoal, lotação, relotação e designação e avaliação de desempenho.</h3>
+ <h3>Art. 2º Para os fins desta Resolução consideram-se:</h3>
+ <h5>I - Gestão por Competências: ferramenta da gestão estratégica de pessoas que visa a maximizar o potencial humano e a produtividade das instituições, de forma a integrar os conhecimentos e saberes dos servidores às necessidades das unidades de trabalho;</h5>
+ <h5>II - Competências: conhecimentos e saberes, somados às atitudes e comportamentos, aplicados na prática para executar as atividades e demandas, visando ao alcance dos objetivos estratégicos do Poder Judiciário do Estado do Paraná, subdividindo-se nas seguintes categorias:</h5>
+ <h6>a) Competências Gerenciais: conjunto de competências imprescindíveis para o desempenho das funções gerenciais, em seus diferentes níveis;</h6>
+ <h6>b) Competências Individuais Comportamentais: conjunto de competências imprescindíveis que orientam o comportamento esperado por todo o quadro funcional da instituição;</h6>
+ <h6>c) Competências Técnicas: conjunto de competências desenvolvidas e obtidas por meio de educação formal, capacitações ou experiência, e se vinculam aos processos de trabalho da instituição, contemplados na cadeia de valor.</h6>
+ <h5>III - Dicionário de Competências: lista de competências relacionadas a cada categoria de competências, que orienta os processos de trabalho da gestão por competências na instituição;</h5>
+ <h5>IV - Unidade: subdivisão administrativa do Tribunal de Justiça do Estado dotada de gestor ou gestora;</h5>
+ <h5>V - Gestores e Gestoras: magistrado(a) ou servidor(a) ocupante de cargo em comissão ou função comissionada responsável pelo gerenciamento de unidade ou da própria instituição, divididos em cinco níveis:</h5>
+ <h6>a) Gestores e Gestoras institucionais: nível gerencial responsável pela gestão da instituição, desenvolvendo a visão estratégica global, tomando decisões de alto impacto e acompanhando a execução do planejamento estratégico para garantir sua implementação a longo prazo e a satisfação das partes interessadas;</h6>
+ <h6>b) Gestores e Gestoras de Negócios: nível gerencial responsável por coordenar e integrar as áreas funcionais, focado na formulação de estratégias, gerenciamento de resultados e na alocação de recursos para garantir o aprimoramento e o crescimento institucional;</h6>
+ <h6>c) Gestores e Gestoras funcionais: nível gerencial responsável por coordenar e integrar uma área funcional específica dentro da organização, alinhando suas operações com a estratégia organizacional e otimizando a eficiência e eficácia dos processos;</h6>
+ <h6>d) Gestores e Gestoras de Gestores(as): nível gerencial responsável por supervisionar e desenvolver outros gestores, assegurando que estes conduzam suas equipes de forma alinhada à estratégia organizacional, promovendo a integração entre as atividades;</h6>
+ <h6>e) Gestores e Gestoras de Pessoas: nível gerencial responsável por desenvolver, apoiar e motivar sua equipe, garantindo alinhamento com os objetivos organizacionais, comunicação eficaz e gestão de desempenho.</h6>
+ <h5>VI - Avaliação por Competências: processo de avaliação do grau de desenvolvimento das competências da organização, unidades ou pessoas, voltado à identificação das lacunas existentes;</h5>
+ <h5>VII - Lacunas de Competências: diferença existente entre o domínio de competências esperado pela organização e o real existente;</h5>
+ <h5>VIII - Desenvolvimento de Competências: processo de aprendizagem orientado para o saber, o saber fazer e o saber ser, na perspectiva da estratégia organizacional;</h5>
+ <h5>IX - Seleção de Pessoas: processo de seleção de pessoal para o desempenho de funções na organização;</h5>
+ <h5>X - Avaliação de Desempenho: avaliação periódica de desempenho individual que objetiva avaliar o desempenho de servidores e servidoras;</h5>
+ <h5>XI - Lotação: definição da unidade de trabalho para servidores e servidoras;</h5>
+ <h5>XII - Relotação: alteração definitiva da unidade de trabalho para servidores e servidoras;</h5>
+ <h5>XIII - Designação: alteração temporária da unidade de trabalho para servidores e servidoras, sem alteração da sua lotação;</h5>
+ <h5>XIV - Área funcional: macroprocesso ou função específica cuja execução possui impacto significativo na organização, no cumprimento dos objetivos e/ou na entrega de serviços;</h5>
+ <h5>XV - Eficiência: realização de ações e tarefas utilizando os recursos de forma otimizada, minimizando desperdícios e maximizando a produtividade;</h5>
+ <h5>XVI- Eficácia: realização de ações e tomada de decisões que levam ao alcance dos objetivos e metas desejados;</h5>
+ <h5>XVII - Efetividade: relação entre os resultados de uma ação, em termos de efeitos sobre o público-alvo e os objetivos pretendidos.</h5>
+ <h4>Parágrafo único: Os cargos e funções vinculados aos níveis de gestão indicados no inciso V deste artigo serão instituídos por ato normativo do Presidente do Tribunal de Justiça do Estado do Paraná.</h4>
+ <h3>DAS COMPETÊNCIAS GERENCIAIS, INDIVIDUAIS E TÉCNICAS</h3>
+ <h3>Art. 3º Há um dicionário de competência para cada uma das categorias, quais sejam: gerencial, individual comportamental e técnica.</h3>
+ <h4>§ 1º As competências individuais comportamentais são inerentes a todos os colaboradores e colaboradoras do órgão.</h4>
+ <h4>§ 2º O dicionário de competências gerenciais do Poder Judiciário do Estado do Paraná é delimitado por níveis de gestão, estabelecidos no artigo 2º.</h4>
+ <h3>Art. 4º Os dicionários de competências do Poder Judiciário do Estado do Paraná embasam o desenvolvimento da temática de gestão de pessoas, que consistem em:</h3>
+ <h5>I - Seleção de Pessoas;</h5>
+ <h5>II - Desenvolvimento de Competências;</h5>
+ <h5>III - Avaliação de Desempenho;</h5>
+ <h5>IV - Lotação;</h5>
+ <h5>V - Relotação; e</h5>
+ <h5>VI - Designação.</h5>
+ <h3>Art. 5º Cabe ao Comitê de Gestão por Competências revisar e propor alterações para os dicionários de competências gerenciais e individuais comportamentais, atualizando-os e adequando-os às necessidades da instituição.</h3>
+ <h4>Parágrafo único. Os dicionários previstos neste artigo serão instituídos por ato normativo do Presidente do Tribunal de Justiça do Estado do Paraná.</h4>
+ <h3>Art. 6º As competências técnicas são identificadas para cada unidade do Tribunal de Justiça do Estado do Paraná, referentes aos processos de trabalho contemplados na cadeia de valor da instituição.</h3>
+ <h4>§ 1º Cabe à Secretaria de Gestão de Pessoas o mapeamento das competências técnicas das unidades, com validação pelos próprios gestores e gestoras das unidades, vez que são conhecedores de seus processos de trabalho.</h4>
+ <h4>§ 2º A revisão e atualização das competências técnicas, considerando alterações regimentais, tecnológicas, legislativas, dentre outras, se dará a cada quatro anos, com gestão realizada pela Secretaria de Gestão de Pessoas, admitindo-se revisão extraordinária.</h4>
+ <h4>§ 3º Após a abertura de processo para o mapeamento ou revisão de competências, registrado no Sistema Eletrônico de Informações - SEI ou em outro sistema informatizado que venha o substituir, as unidades terão o prazo de noventa dias para a conclusão do procedimento.</h4>
+ <h4>§ 4º Os dicionários de competências técnicas serão registrados em sistema informatizado gerenciado pela Secretaria de Gestão de Pessoas, sendo disponibilizados às unidades sempre que solicitado ou necessário.</h4>
+ <h3>Art. 7º Os gestores e gestoras de negócios, gestores e gestoras funcionais, gestores e gestoras de gestores e gestores e gestoras de pessoas serão avaliados com relação às competências gerenciais a cada dois anos, conforme ato normativo a ser expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
+ <h3>Art. 8º Os servidores(as), efetivos(as) e comissionados(as), serão avaliados com relação às competências individuais comportamentais a cada dois anos, nos anos em que não houver a avaliação de competências gerenciais, conforme ato normativo a ser expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
+ <h3>Art. 9º A avaliação do desenvolvimento de competências técnicas dos servidores e servidoras lotados em cada unidade se dará conforme cronograma a ser elaborado pela Secretaria de Gestão de Pessoas, com auxílio da Escola Judicial do Tribunal de Justiça do Estado do Paraná.</h3>
+ <h4>§ 1º Será realizada a reavaliação das competências técnicas quatro anos após a primeira avaliação, com a finalidade de identificar o grau de desenvolvimento das competências e lacunas ainda existentes.</h4>
+ <h4>§ 2º Ato normativo que regulamente os procedimentos de avaliações de competências técnicas será expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h4>
+ <h3>Art. 10. Cabe à Secretaria de Gestão de Pessoas o gerenciamento das avaliações por competências.</h3>
+ <h3>Art. 11. O resultado das avaliações por competências, com as lacunas de competências identificadas, será repassado à Escola Judicial do Tribunal de Justiça do Estado do Paraná para indicação e/ou promoção de capacitações e ações educacionais que possibilitem o desenvolvimento de competências por parte do quadro funcional do Poder Judiciário do Estado do Paraná.</h3>
+ <h3>DO COMITÊ DE GESTÃO POR COMPETÊNCIAS</h3>
+ <h3>Art. 12. Fica criado o Comitê de Gestão por Competências, composto por integrantes a serem designados pelo Presidente do Tribunal de Justiça.</h3>
+ <h4>Parágrafo único: Os integrantes do Comitê, preferencialmente, terão formação acadêmica ou experiência em áreas de interesse ao tema tratado, com ênfase na Gestão de Pessoas, Administração, Gestão Pública e Gestão por Competências.</h4>
+ <h3>Art. 13. São atribuições do Comitê de Gestão por Competências:</h3>
+ <h5>I - Estabelecer, atualizar e apresentar proposta do dicionário de competências gerenciais ao Presidente do Tribunal de Justiça do Estado do Paraná;</h5>
+ <h5>II - Estabelecer, atualizar e apresentar proposta do dicionário de competências individuais comportamentais ao Presidente do Tribunal de Justiça do Estado do Paraná;</h5>
+ <h5>III - Acompanhar os processos referentes à gestão por competências na instituição, identificando e propondo melhorias e ajustes;</h5>
+ <h5>IV - Fomentar a aplicação da gestão por competências na instituição, propondo a implementação de novos processos ou sugerindo aprimoramentos nos já existentes; e</h5>
+ <h5>V - Propor projetos e ações referentes à gestão por competências na instituição.</h5>
+ <h3>DO SELO DE GESTÃO POR COMPETÊNCIAS</h3>
+ <h3>Art. 14. Fica instituído o Selo de Gestão por Competências do Poder Judiciário do Estado do Paraná, atribuído a unidades reconhecidas por boas práticas no uso da gestão por competências para aprimoramento da gestão de pessoas, conforme ato normativo a ser expedido pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
+ <p>Disposições Finais</p>
+ <h3>Art. 15. A gestão por competências no Poder Judiciário do Estado do Paraná será gerida por sistema informatizado, que possibilitará a celeridade que os processos demandam, tendo em vista se tratar de ação estratégica aplicada a todo o quadro funcional da instituição.</h3>
+ <h3>Art. 16. A gestão por competências será, preferencialmente, aplicada nas temáticas de gestão de pessoas de seleção, lotação, relotação, designação e avaliação de desempenho, mediante regulamentações próprias.</h3>
+ <h3>Art. 17. Casos omissos serão analisados pelo Presidente do Tribunal de Justiça do Estado do Paraná.</h3>
+ <h3>Art. 18. Esta Resolução entra em vigor na data da sua publicação.</h3>
+ <p>Curitiba, 28 de outubro de 2024.</p>
+ <h3>DES. LUIZ FERNANDO TOMASI KEPPEN</h3>
+ <p>Presidente do Tribunal de Justiça do Estado do Paraná</p>
+ <p>Estiveram presentes à sessão os Excelentíssimos Senhores Desembargadores: Luiz Fernando Tomasi Keppen, Carvílio da Silveira Filho, Marcus Vinícius de Lacerda Costa, Lauro Laertes de Oliveira, Antonio Renato Strapasson, Roberto Antonio Massaro - Corregedor-Geral da Justiça em exercício - (cargo vago - Corregedor-Geral da Justiça), Eugênio Achille Grandinetti, Miguel Kfouri Neto, Hayton Lee Swain Filho, José Maurício Pinto de Almeida, Luiz Carlos Gabardo, Paulo Cezar Bellio, Jorge de Oliveira Vargas, Joeci Machado Camargo, José Sebastião Fagundes Cunha, Espedito Reis do Amaral, Roberto Portugal Bacellar, Rogério Etzel, Fabian Schweitzer, Luciano Carrasco Falavinha Souza, Francisco Cardoso de Oliveira e Andrei de Oliveira Rech.</p>
+ <h3>TRIBUNAL DE JUSTIÇA</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4721036" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>

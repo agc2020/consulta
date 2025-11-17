@@ -10,6 +10,38 @@
  <meta data-pagefind-filter="tipo[content]" content="Lei Complementar" />
  <meta data-pagefind-filter="ano[content]" content="2006" />
  <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -19,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -28,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -67,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -84,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -104,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -114,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -124,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -134,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -144,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -159,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -202,6 +315,24 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
@@ -212,11 +343,33 @@
  <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
  </header>
 
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
  <div class="meta">
- <div><strong>Última sincronização:</strong> 11/11/2025 02:42:08 (processado via snapshot.py)</div>
+ <div><strong>Última sincronização:</strong> 16/11/2025 21:24:49 (processado via snapshot.py)</div>
  <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
  <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
- <div><strong>Tamanho do conteúdo:</strong> origem: 287.839 caracteres | espelho: 291.412 caracteres</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 287.839 caracteres | espelho: 291.339 caracteres</div>
  <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
  </div>
 
@@ -794,7 +947,7 @@
  <h4>§ 8º O desenquadramento de ofício dar-se-á quando verificada a falta de comunicação de que trata o § 7º deste artigo.</h4>
  <h4>§ 9º O Empresário Individual desenquadrado da sistemática de recolhimento prevista no caput deste artigo passará a recolher os tributos devidos pela regra geral do Simples Nacional a partir da data de início dos efeitos do desenquadramento, ressalvado o disposto no § 10 deste artigo.</h4>
  <h4>§ 10. Nas hipóteses previstas nas alíneas a dos incisos III e IV do § 7º deste artigo, o MEI deverá recolher a diferença, sem acréscimos, em parcela única, juntamente com a da apuração do mês de janeiro do ano-calendário subseqüente ao do excesso, na forma a ser estabelecida em ato do Comitê Gestor.</h4>
- <h4>§ 11. O valor referido na alínea a do inciso V do § 3º deste artigo será reajustado, na forma prevista em lei ordinária, na mesma data de reajustamento dos benefícios de que trata a Lei Nº 8.213, de 24 de julho de 1991 , de forma a manter equivalência com a contribuição de que trata o § 2º do art. 21 da Lei n º 8.212, de 24 de julho de 1991.</h4>
+ <h4>§ 11. O valor referido na alínea a do inciso V do § 3º deste artigo será reajustado, na forma prevista em lei ordinária, na mesma data de reajustamento dos benefícios de que trata a Lei Nº 8.213, de 24 de julho de 1991 , de forma a manter equivalência com a contribuição de que trata o § 2º do art. 21 da Lei n° 8.212, de 24 de julho de 1991.</h4>
  <h4>§ 12. Aplica-se ao MEI que tenha optado pela contribuição na forma do § 1º deste artigo o disposto no § 4º do art. 55 e no § 2º do art. 94, ambos da Lei nº 8.213, de 24 de julho de 1991 , exceto se optar pela complementação da contribuição previdenciária a que se refere o § 3º do art. 21 da Lei Nº 8.212, de 24 de julho de 1991 .</h4>
  <h4>§ 13. O MEI está dispensado, ressalvado o disposto no art. 18-C desta Lei Complementar, de:</h4>
  <h5>I - atender o disposto no inciso IV do caput do art. 32 da Lei Nº 8.212, de 24 de julho de 1991 ;</h5>
@@ -1199,7 +1352,7 @@
  <h5>I - ( Revogado ); (Redação dada pela Lei Complementar nº 147, de 2014) (Produção de efeito)</h5>
  <h5>II - não houver um mínimo de 3 (três) fornecedores competitivos enquadrados como microempresas ou empresas de pequeno porte sediados local ou regionalmente e capazes de cumprir as exigências estabelecidas no instrumento convocatório;</h5>
  <h5>III - o tratamento diferenciado e simplificado para as microempresas e empresas de pequeno porte não for vantajoso para a administração pública ou representar prejuízo ao conjunto ou complexo do objeto a ser contratado;</h5>
- <h5>IV - a licitação for dispensável ou inexigível, nos termos dos arts. 24 e 25 da Lei n º 8.666, de 21 de junho de 1993.</h5>
+ <h5>IV - a licitação for dispensável ou inexigível, nos termos dos arts. 24 e 25 da Lei n° 8.666, de 21 de junho de 1993.</h5>
  <h5>IV - a licitação for dispensável ou inexigível, nos termos dos arts. 24 e 25 da Lei nº 8.666, de 21 de junho de 1993 , excetuando-se as dispensas tratadas pelos incisos I e II do art. 24 da mesma Lei, nas quais a compra deverá ser feita preferencialmente de microempresas e empresas de pequeno porte, aplicando-se o disposto no inciso I do art. 48. (Redação dada pela Lei Complementar nº 147, de 2014)</h5>
  <p>Seção II</p>
  <p>(Redação dada pela Lei Complementar nº 147, de 2014)</p>
@@ -1419,7 +1572,7 @@
  <p>Das Regras Civis</p>
  <p>Subseção I</p>
  <p>Do Pequeno Empresário</p>
- <h3>Art. 68. Considera-se pequeno empresário, para efeito de aplicação do disposto nos arts. 970 e 1.179 da Lei n º 10.406, de 10 de janeiro de 2002 (Código Civil), o empresário individual caracterizado como microempresa na forma desta Lei Complementar que aufira receita bruta anual até o limite previsto no § 1º do art. 18-A .</h3>
+ <h3>Art. 68. Considera-se pequeno empresário, para efeito de aplicação do disposto nos arts. 970 e 1.179 da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), o empresário individual caracterizado como microempresa na forma desta Lei Complementar que aufira receita bruta anual até o limite previsto no § 1º do art. 18-A .</h3>
  <p>Subseção II</p>
  <h3>(VETADO).</h3>
  <h3>Art. 69. (VETADO).</h3>
@@ -1446,7 +1599,7 @@
  <h3>DO ACESSO À JUSTIÇA</h3>
  <p>Seção I</p>
  <p>Do Acesso aos Juizados Especiais</p>
- <h3>Art. 74. Aplica-se às microempresas e às empresas de pequeno porte de que trata esta Lei Complementar o disposto no § 1º do art. 8º da Lei nº 9.099, de 26 de setembro de 1995 , e no inciso I do caput do art. 6º da Lei n º 10.259, de 12 de julho de 2001 , as quais, assim como as pessoas físicas capazes, passam a ser admitidas como proponentes de ação perante o Juizado Especial, excluídos os cessionários de direito de pessoas jurídicas.</h3>
+ <h3>Art. 74. Aplica-se às microempresas e às empresas de pequeno porte de que trata esta Lei Complementar o disposto no § 1º do art. 8º da Lei nº 9.099, de 26 de setembro de 1995 , e no inciso I do caput do art. 6º da Lei n° 10.259, de 12 de julho de 2001 , as quais, assim como as pessoas físicas capazes, passam a ser admitidas como proponentes de ação perante o Juizado Especial, excluídos os cessionários de direito de pessoas jurídicas.</h3>
  <h3>Art. 74-A. O Poder Judiciário, especialmente por meio do Conselho Nacional de Justiça - CNJ, e o Ministério da Justiça implementarão medidas para disseminar o tratamento diferenciado e favorecido às microempresas e empresas de pequeno porte em suas respectivas áreas de competência. (Incluído pela Lei Complementar nº 147, de 2014)</h3>
  <p>Seção II</p>
  <p>Da Conciliação Prévia, Mediação e Arbitragem</p>
@@ -1490,7 +1643,7 @@
  <h3>Art. 79-C. A microempresa e a empresa de pequeno porte que, em 30 de junho de 2007, se enquadravam no regime previsto na Lei Nº 9.317, de 5 de dezembro de 1996 , e que não ingressaram no regime previsto no art. 12 desta Lei Complementar sujeitar-se-ão, a partir de 1º de julho de 2007, às normas de tributação aplicáveis às demais pessoas jurídicas.</h3>
  <h4>§ 1º Para efeito do disposto no caput deste artigo, o sujeito passivo poderá optar pelo recolhimento do Imposto sobre a Renda da Pessoa Jurídica – IRPJ e da Contribuição Social sobre o Lucro Líquido - CSLL na forma do lucro real, trimestral ou anual, ou do lucro presumido.</h4>
  <h4>§ 2º A opção pela tributação com base no lucro presumido dar-se-á pelo pagamento, no vencimento, do IRPJ e da CSLL devidos, correspondente ao 3º (terceiro) trimestre de 2007 e, no caso do lucro real anual, com o pagamento do IRPJ e da CSLL relativos ao mês de julho de 2007 com base na estimativa mensal.</h4>
- <h3>Art. 79-D Excepcionalmente, para os fatos geradores ocorridos entre 1º de julho de 2007 e 31 de dezembro de 2008, as pessoas jurídicas que exerçam atividade sujeita simultaneamente à incidência do IPI e do ISS deverão recolher o ISS diretamente ao Município em que este imposto é devido até o último dia útil de fevereiro de 2009, aplicando-se, até esta data, o disposto no parágrafo único do art. 100 da Lei n º 5.172, de 25 de outubro de 1966 - Código Tributário Nacional - CTN.</h3>
+ <h3>Art. 79-D Excepcionalmente, para os fatos geradores ocorridos entre 1º de julho de 2007 e 31 de dezembro de 2008, as pessoas jurídicas que exerçam atividade sujeita simultaneamente à incidência do IPI e do ISS deverão recolher o ISS diretamente ao Município em que este imposto é devido até o último dia útil de fevereiro de 2009, aplicando-se, até esta data, o disposto no parágrafo único do art. 100 da Lei n° 5.172, de 25 de outubro de 1966 - Código Tributário Nacional - CTN.</h3>
  <h3>Art. 79-E. A empresa de pequeno porte optante pelo Simples Nacional em 31 de dezembro de 2011 que durante o ano-calendário de 2011 auferir receita bruta total anual entre R$ 2.400.000,01 (dois milhões, quatrocentos mil reais e um centavo) e R$ 3.600.000,00 (três milhões e seiscentos mil reais) continuará automaticamente incluída no Simples Nacional com efeitos a partir de 1º de janeiro de 2012, ressalvado o direito de exclusão por comunicação da optante.</h3>
  <h3>Art. 79-E. A e mpre sa de pequeno porte optante pelo S i mp les Nacional em 31 de de zembro de 2017 que du rante o an o -calendár io de 2017 au ferir receita bruta total a nual entre R$ 3.60 0.000,01 (tr ês mi lhões, seis centos mil reais e um cent avo) e R$ 4.800.00 0,00 (quat ro mi lhões e oito centos mil reais) cont inuará aut o matic amente i nclu ída no S i mples Na cional c om e feitos a partir de 1º de janeiro de 20 18, ressalvado o direito de exclusão p or c o m unic ação da opta nte. (Redação dada pela Lei Complementar nº 155, de 2016) Produção de efeito</h3>
  <h3>Art. 80. O art. 21 da Lei nº 8.212, de 24 de julho de 1991 , fica acrescido dos seguintes §§ 2º e 3º , passando o parágrafo único a vigorar como § 1º :</h3>
@@ -1853,7 +2006,6 @@
  <p>De 3.240.000,01 a 3.420.000,00</p>
  <p>De 3.420.000,01 a 3.600.000,00</p>
  <p>(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</p>
- <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
  <p>(Vide Decreto nº 8.538,</p>
  <p>de 2015)(Vide Lei Complementar nº 168,</p>
  <p>Complementar nº 214, de 2025)Produção de efeitos(Vide Lei</p>
@@ -2159,5 +2311,81 @@
  </p>
  </footer>
  </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>
