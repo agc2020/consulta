@@ -53,6 +53,11 @@
   let lastPreviewFiltersKey = "";
   let previewTimer = null;
   let deepCount = 0;
+  
+  // ======= VARIÁVEIS PARA CONTROLE DE LISTENERS =======
+  let currentSearchInput = null;
+  let currentButton = null;
+  let listenersAttached = false;
 
   function waitForSearchInput() {
     return new Promise(resolve => {
@@ -154,6 +159,39 @@
     try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ""; }
   }
 
+  // ======= HANDLERS DE EVENTOS (funções nomeadas para facilitar remoção/readição) =======
+  function handleSearchInputChange() {
+    if (!currentSearchInput || !currentButton) return;
+    clearTimeout(previewTimer);
+    previewTimer = setTimeout(() => updateBadge(currentSearchInput.value.trim(), currentButton), 400);
+  }
+
+  function handleButtonClick() {
+    if (!currentSearchInput) return;
+    performDeepSearch(currentSearchInput.value.trim(), true);
+  }
+
+  function handleFiltersChange() {
+    if (!currentSearchInput || !currentButton) return;
+    clearTimeout(previewTimer);
+    previewTimer = setTimeout(() => updateBadge(currentSearchInput.value.trim(), currentButton), 250);
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === "Escape") {
+      const overlay = document.getElementById("pf-overlay");
+      const backdrop = document.getElementById("pf-overlay-backdrop");
+      if (overlay) overlay.style.display = "none";
+      if (backdrop) backdrop.style.display = "none";
+    }
+    if (e.key === "Enter" && e.altKey) {
+      e.preventDefault();
+      if (currentSearchInput) {
+        performDeepSearch(currentSearchInput.value.trim(), true);
+      }
+    }
+  }
+
   // ---------- UI (botão + modal) ----------
   function injectUI(searchInput) {
     const btn = document.createElement("button");
@@ -198,30 +236,105 @@
     }
     backdrop.addEventListener("click", close);
     overlay.querySelector("#pf-close").addEventListener("click", close);
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
-      if (e.key === "Enter" && e.altKey) {
-        e.preventDefault();
-        performDeepSearch(searchInput.value.trim(), true);
-      }
-    });
+    
+    // Armazenar referências globais
+    currentSearchInput = searchInput;
+    currentButton = btn;
+    
+    // Anexar event listeners usando as funções nomeadas
+    attachEventListeners();
 
+    return { btn, overlay, backdrop };
+  }
+
+  // ======= FUNÇÃO PARA ANEXAR EVENT LISTENERS =======
+  function attachEventListeners() {
+    if (listenersAttached) {
+      console.log('[Pagefind Bridge] Listeners já anexados, pulando...');
+      return;
+    }
+    
+    if (!currentSearchInput || !currentButton) {
+      console.warn('[Pagefind Bridge] Elementos não disponíveis para anexar listeners');
+      return;
+    }
+    
+    // Adicionar listeners
+    currentButton.addEventListener("click", handleButtonClick);
+    currentSearchInput.addEventListener("input", handleSearchInputChange);
+    document.addEventListener("keydown", handleKeyDown);
+    
     // Atualiza badge quando filtros mudam
     const fb = findFiltersBlock();
     if (fb) {
-      fb.addEventListener("change", () => {
-        clearTimeout(previewTimer);
-        previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 250);
+      fb.addEventListener("change", handleFiltersChange);
+    }
+    
+    listenersAttached = true;
+    console.log('[Pagefind Bridge] Event listeners anexados com sucesso');
+  }
+
+  // ======= FUNÇÃO PARA REMOVER EVENT LISTENERS =======
+  function detachEventListeners() {
+    if (!listenersAttached) return;
+    
+    if (currentButton) {
+      currentButton.removeEventListener("click", handleButtonClick);
+    }
+    
+    if (currentSearchInput) {
+      currentSearchInput.removeEventListener("input", handleSearchInputChange);
+    }
+    
+    document.removeEventListener("keydown", handleKeyDown);
+    
+    const fb = findFiltersBlock();
+    if (fb) {
+      fb.removeEventListener("change", handleFiltersChange);
+    }
+    
+    listenersAttached = false;
+    console.log('[Pagefind Bridge] Event listeners removidos');
+  }
+
+  // ======= OBSERVADOR DE MUDANÇAS NO DOM =======
+  function observeSearchInputChanges() {
+    const observer = new MutationObserver((mutations) => {
+      const searchInput = document.getElementById('searchInput');
+      const button = document.getElementById('pf-trigger');
+      
+      // Se os elementos existem mas os listeners não estão anexados, reanexar
+      if (searchInput && button && !listenersAttached) {
+        console.log('[Pagefind Bridge] Reanexando event listeners após mudança no DOM');
+        currentSearchInput = searchInput;
+        currentButton = button;
+        attachEventListeners();
+      }
+      
+      // Se os elementos mudaram, atualizar referências
+      if (searchInput && searchInput !== currentSearchInput) {
+        console.log('[Pagefind Bridge] SearchInput modificado, atualizando referências');
+        detachEventListeners();
+        currentSearchInput = searchInput;
+        attachEventListeners();
+      }
+    });
+    
+    // Observar mudanças no container de controles
+    const controlsContainer = document.getElementById('searchControls');
+    if (controlsContainer) {
+      observer.observe(controlsContainer, {
+        childList: true,
+        subtree: true,
+        attributes: false
       });
     }
-
-    btn.addEventListener("click", () => performDeepSearch(searchInput.value.trim(), true));
-    searchInput.addEventListener("input", () => {
-      clearTimeout(previewTimer);
-      previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 400);
+    
+    // Também observar mudanças no body
+    observer.observe(document.body, {
+      childList: true,
+      subtree: false
     });
-
-    return { btn, overlay, backdrop };
   }
 
   async function ensurePagefind() {
@@ -322,7 +435,7 @@
       countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : "— 0 resultados";
 
       if (hits.length === 0) {
-        body.innerHTML = `<div class="pf-empty">Sem resultados no conteúdo para “${escapeHtml(query)}”.</div>`;
+        body.innerHTML = `<div class="pf-empty">Sem resultados no conteúdo para "${escapeHtml(query)}".</div>`;
       } else {
         const items = [];
         for (const r of hits.slice(0, 200)) {
@@ -371,6 +484,9 @@
     const input = await waitForSearchInput();
     const { btn } = injectUI(input);
     if (input.value) updateBadge(input.value.trim(), btn);
+    
+    // ======= ATIVAR OBSERVADOR DE MUDANÇAS =======
+    observeSearchInputChanges();
   })();
 })();
 
