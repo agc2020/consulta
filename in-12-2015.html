@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Instrução Normativa TJPR Nº 12/2015 – Espelho</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex" name="robots"/>
-<meta content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" name="description"/>
-<meta content="TJPR" data-pagefind-filter="orgao[content]"/>
-<meta content="Instrução Normativa" data-pagefind-filter="tipo[content]"/>
-<meta content="2015" data-pagefind-filter="ano[content]"/>
-<style>
+ <meta charset="utf-8" />
+ <title>Instrução Normativa TJPR Nº 12, de 16 de OUTUBRO de 2015 - Presidência – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="TJPR" />
+ <meta data-pagefind-filter="tipo[content]" content="Instrução Normativa" />
+ <meta data-pagefind-filter="ano[content]" content="2015" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -20,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -29,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -68,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -85,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -105,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -115,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -125,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -135,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -145,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -160,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -203,93 +315,210 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
-<main class="container">
-<header>
-<h1>Instrução Normativa TJPR Nº 12/2015</h1>
-<p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
-</header>
-<div class="meta">
-<div><strong>Última sincronização:</strong> 11/11/2025 02:35:52 (processado via snapshot.py)</div>
-<div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4586904" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
-<div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 55.391 caracteres | espelho: 6.251 caracteres</div>
-<div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
-</div>
-<article>
-<p>Instrução Normativa TJPR Nº 12/2015 -</p>
-<p></p>
-<p>INSTRUÇÃO NORMATIVA Nº 12/2015</p>
-<p>-</p>
-<p>Assunto: 1.Regulamentação 2.Corregedoria-Geral da Justiça 3.Foro Judicial 4.Avaliador Judicial 5.Despesa de Condução 6.Fundo da Justiça-Funjus 7.Revogação 8.</p>
-<p>Instrução Normativa 1/2000</p>
-<p>9.Ofício-Circular 128/1999</p>
-<p>INSTRUÇÃO NORMATIVA Nº 12, DE 16 DE OUTUBRO DE 2015</p>
-<p>-CGJPR</p>
-<p>Autos SEI: 0028253-97.2015.8.16.6000</p>
-<p>- atualizado até a Instrução Normativa nº 2/2017, de 16 de março de 2017. O DESEMBARGADOR EUGÊNIO ACHILLE GRANDINETTI, CORREGEDOR-GERAL DA JUSTIÇA DO ESTADO DO PARANÁ , no uso de suas atribuições legais,</p>
-<h2>CONSIDERANDO o Regimento de Custas do Estado do Paraná;</h2>
-<h2>CONSIDERANDO a Tabela XVII, anexa ao Regimento de Custas do Estado do Paraná;</h2>
-<h2>CONSIDERANDO as disposições do Código de Normas da Corregedoria-Geral da Justiça (Foro Judicial);</h2>
-<h2>CONSIDERANDO a necessidade de uniformização do valor das despesas de condução dos avaliadores judiciais;</h2>
-<h2>RESOLVE :</h2>
-<h3>Art. 1° As despesas processuais com avaliação judicial subdividem-se em:</h3>
-<h5>I. Ato complementar de avaliação;</h5>
-<h5>II. Despesa de condução.</h5>
-<h3>Art. 2° O ato complementar de avaliação deve ser cotado com base na Tabela XVII, anexa ao Regimento de Custas, observando as diferentes faixas de valores.</h3>
-<h4>§1° No caso de pluralidade de bens imóveis sujeitos à avaliação, deverá ser cotado um ato complementar de avaliação para cada bem imóvel.</h4>
-<h4>§2° No caso de pluralidade de bens móveis ou semoventes sujeitos à avaliação, deverá ser cotado um ato complementar de avaliação para a totalidade dos bens móveis ou semoventes.</h4>
-<h4>§3° Para enquadramento dos bens imóveis nas diferentes faixas de valores da Tabela XVII, deverá ser usado, conforme o caso, o valor venal do imóvel informado pelo ente público competente para efeitos de Imposto Predial Territorial Urbano (IPTU) ou o valor fundiário do imóvel informado pelo ente público competente para efeitos de Imposto sobre a Propriedade Territorial Rural (ITR).</h4>
-<h4>§4° Para enquadramento dos bens móveis ou semoventes nas diferentes faixas de valores da Tabela XVII, deverá utilizado o valor mínimo da tabela.</h4>
-<h4>§5° Após a realização da avaliação, caso o valor do bem (móvel, imóvel ou semovente) suplante o valor inicialmente estimado, a parte deverá ser intimada para recolher a diferença entre uma faixa de valores da Tabela XVII e a outra.</h4>
-<h3>Art. 3° As despesas de condução dos avaliadores judiciais deverão ser cotadas, em todo âmbito de jurisdição do Tribunal de Justiça do Estado do Paraná, de acordo com o anexo I deste ato normativo.</h3>
-<h4>§1° Caso o Tribunal de Justiça do Estado do Paraná forneça veículo oficial para o cumprimento da diligência de avaliação judicial, os valores fixados no anexo I desta norma devem ser recolhidos em favor do Fundo da Justiça.</h4>
-<h4>§2º Se por qualquer motivo não houver gasto com condução do avaliador judicial, não é devido o recolhimento das despesas de condução.</h4>
-<h3>Art. 4° Na hipótese em que o cumpridor de mandados (Oficial de Justiça ou Técnico Judiciário com essa atribuição) vier a exercer o encargo de avaliador judicial, é devido o pagamento das despesas de avaliação nos mesmos moldes do art. 1° desta norma.</h3>
-<h4>§1° Se no mesmo contexto for cumulada à avaliação judicial outra diligência (exemplo: penhora e avaliação), não devem ser cobradas as despesas de condução fixadas no Anexo I desta Norma.</h4>
-<h4>§2° Se o cumpridor de mandados for um Técnico Judiciário, as despesas do art. 1° desta norma devem ser recolhidas em favor do Fundo da Justiça.</h4>
-<h3>Art. 5° Sendo infrutífera a tentativa de avaliação judicial, para a repetição do ato, somente é devido novo recolhimento da despesa de condução.</h3>
-<h4>§1° No caso do caput , se o não cumprimento da avaliação decorrer de culpa do avaliador, não caberá novo pagamento de despesa de condução.</h4>
-<h3>Art. 6° A despesa de condução e o ato complementar de avaliação judicial devem ser cobrados antecipadamente por meio de boleto bancário expedido pelo Sistema Uniformizado de Recolhimento de Custas e Despesas Processuais.</h3>
-<h3>Art. 7° Aplicam-se subsidiariamente a esta norma, no que couber, a Instrução Normativa 08/2014 da Corregedoria-Geral da Justiça e o Decreto Judiciário 1752/2014 (e atualizações posteriores).</h3>
-<h3>Art. 8° Os casos omissos devem ser resolvidos pelo juiz que presidir o processo.</h3>
-<h3>Art. 9° Ficam revogadas as disposições em contrário, inclusive a Instrução Normativa 01/2000 e o Ofício-Circular 128/1999.</h3>
-<h3>Art. 10. Esta norma entra em vigor 30 (trinta) dias após a sua publicação.</h3>
-<p>ANEXO I Distância do local de cumprimento da avaliação em relação à Sede do Fórum Valor da Despesa de Condução Até 30 km R$ 27,95 Mais de 30 km R$ 41,92</p>
-<p>Anexo I (Redação dada pela Instrução Normativa nº 2 /2017, de 16 de março de 2017)</p>
-<p>Distância do local de cumprimento da avaliação em relação à sede do Fórum</p>
-<p>Valor da despesa de condução em VRC</p>
-<p>247,16 Curitiba, 16 de outubro de 2015.</p>
-<p>Des. EUGÊNIO ACHILLE GRANDINETTI</p>
-<p>Corregedor-Geral da Justiça *O conteúdo disponibilizado possui caráter informativo e não substitui aquele publicado no Diário da Justiça Eletrônico. Imprimir Voltar Oculto</p>
-<p>Praça Nossa Senhora de Salette, S/N</p>
-<p>CEP 80.530-912 - Curitiba, PR</p>
-<p>Telefone: 41 3200-2000 EXPEDIENTE DE FUNCIONAMENTO</p>
-<p>Horário regimental de funcionamento – das 12:00 às 19:00</p>
-<p>Horário de atendimento ao público – das 12:00 às 18:00 ACESSO À INFORMAÇÃO</p>
-<p>Tipo: | Instrução Normativa</p>
-<p>Origem: | CORREGEDORIA-GERAL DA JUSTIÇA</p>
-<p>INSTRUÇÃO NORMATIVA Nº 12/2015</p>
-<p>Assunto: | 1.Regulamentação 2.Corregedoria-Geral da Justiça 3.Foro Judicial 4.Avaliador Judicial 5.Despesa de Condução 6.Fundo da Justiça-Funjus 7.Revogação 8.</p>
-<p>Instrução Normativa 1/2000</p>
-<p>9.Ofício-Circular 128/1999</p>
-<p>Ementa: | Texto atualizado até a Instrução Normativa nº 2/2017, de 16 de março de 2017.</p>
-<p>Distância do local de cumprimento da avaliação em relação à Sede do Fórum | Valor da Despesa de Condução</p>
-<p>Mais de 30 km | R$ 41,92 --- Tabela 3 ---</p>
-<p>Distância do local de cumprimento da avaliação em relação à sede do Fórum | Valor da despesa de condução em VRC</p>
-<p>Mais de 30 km | 247,16</p>
-</article>
-<footer>
-<p class="disclaimer">
-<strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ <main class="container">
+ <header>
+ <h1>Instrução Normativa TJPR Nº 12, de 16 de OUTUBRO de 2015 - Presidência</h1>
+ <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 21:03:00 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4586904" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 55.391 caracteres | espelho: 5.857 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Instrução Normativa TJPR Nº 12/2015 -</p>
+ <p>Instrução Normativa 1/2000</p>
+ <p>9.Ofício-Circular 128/1999</p>
+ <p>Ementa: Texto atualizado até a Instrução Normativa nº 2/2017, de 16 de março de 2017.</p>
+ <p>Situação: VIGENTE Imprimir Voltar</p>
+ <p>INSTRUÇÃO NORMATIVA Nº 12, DE 16 DE OUTUBRO DE 2015</p>
+ <p>-CGJPR</p>
+ <p>Autos SEI: 0028253-97.2015.8.16.6000</p>
+ <p>- atualizado até a Instrução Normativa nº 2/2017, de 16 de março de 2017. O DESEMBARGADOR EUGÊNIO ACHILLE GRANDINETTI, CORREGEDOR-GERAL DA JUSTIÇA DO ESTADO DO PARANÁ , no uso de suas atribuições legais,</p>
+ <h2>CONSIDERANDO o Regimento de Custas do Estado do Paraná;</h2>
+ <h2>CONSIDERANDO a Tabela XVII, anexa ao Regimento de Custas do Estado do Paraná;</h2>
+ <h2>CONSIDERANDO as disposições do Código de Normas da Corregedoria-Geral da Justiça (Foro Judicial);</h2>
+ <h2>CONSIDERANDO a necessidade de uniformização do valor das despesas de condução dos avaliadores judiciais;</h2>
+ <h2>RESOLVE :</h2>
+ <h3>Art. 1° As despesas processuais com avaliação judicial subdividem-se em:</h3>
+ <h5>I. Ato complementar de avaliação;</h5>
+ <h5>II. Despesa de condução.</h5>
+ <h3>Art. 2° O ato complementar de avaliação deve ser cotado com base na Tabela XVII, anexa ao Regimento de Custas, observando as diferentes faixas de valores.</h3>
+ <h4>§1° No caso de pluralidade de bens imóveis sujeitos à avaliação, deverá ser cotado um ato complementar de avaliação para cada bem imóvel.</h4>
+ <h4>§2° No caso de pluralidade de bens móveis ou semoventes sujeitos à avaliação, deverá ser cotado um ato complementar de avaliação para a totalidade dos bens móveis ou semoventes.</h4>
+ <h4>§3° Para enquadramento dos bens imóveis nas diferentes faixas de valores da Tabela XVII, deverá ser usado, conforme o caso, o valor venal do imóvel informado pelo ente público competente para efeitos de Imposto Predial Territorial Urbano (IPTU) ou o valor fundiário do imóvel informado pelo ente público competente para efeitos de Imposto sobre a Propriedade Territorial Rural (ITR).</h4>
+ <h4>§4° Para enquadramento dos bens móveis ou semoventes nas diferentes faixas de valores da Tabela XVII, deverá utilizado o valor mínimo da tabela.</h4>
+ <h4>§5° Após a realização da avaliação, caso o valor do bem (móvel, imóvel ou semovente) suplante o valor inicialmente estimado, a parte deverá ser intimada para recolher a diferença entre uma faixa de valores da Tabela XVII e a outra.</h4>
+ <h3>Art. 3° As despesas de condução dos avaliadores judiciais deverão ser cotadas, em todo âmbito de jurisdição do Tribunal de Justiça do Estado do Paraná, de acordo com o anexo I deste ato normativo.</h3>
+ <h4>§1° Caso o Tribunal de Justiça do Estado do Paraná forneça veículo oficial para o cumprimento da diligência de avaliação judicial, os valores fixados no anexo I desta norma devem ser recolhidos em favor do Fundo da Justiça.</h4>
+ <h4>§2º Se por qualquer motivo não houver gasto com condução do avaliador judicial, não é devido o recolhimento das despesas de condução.</h4>
+ <h3>Art. 4° Na hipótese em que o cumpridor de mandados (Oficial de Justiça ou Técnico Judiciário com essa atribuição) vier a exercer o encargo de avaliador judicial, é devido o pagamento das despesas de avaliação nos mesmos moldes do art. 1° desta norma.</h3>
+ <h4>§1° Se no mesmo contexto for cumulada à avaliação judicial outra diligência (exemplo: penhora e avaliação), não devem ser cobradas as despesas de condução fixadas no Anexo I desta Norma.</h4>
+ <h4>§2° Se o cumpridor de mandados for um Técnico Judiciário, as despesas do art. 1° desta norma devem ser recolhidas em favor do Fundo da Justiça.</h4>
+ <h3>Art. 5° Sendo infrutífera a tentativa de avaliação judicial, para a repetição do ato, somente é devido novo recolhimento da despesa de condução.</h3>
+ <h4>§1° No caso do caput , se o não cumprimento da avaliação decorrer de culpa do avaliador, não caberá novo pagamento de despesa de condução.</h4>
+ <h3>Art. 6° A despesa de condução e o ato complementar de avaliação judicial devem ser cobrados antecipadamente por meio de boleto bancário expedido pelo Sistema Uniformizado de Recolhimento de Custas e Despesas Processuais.</h3>
+ <h3>Art. 7° Aplicam-se subsidiariamente a esta norma, no que couber, a Instrução Normativa 08/2014 da Corregedoria-Geral da Justiça e o Decreto Judiciário 1752/2014 (e atualizações posteriores).</h3>
+ <h3>Art. 8° Os casos omissos devem ser resolvidos pelo juiz que presidir o processo.</h3>
+ <h3>Art. 9° Ficam revogadas as disposições em contrário, inclusive a Instrução Normativa 01/2000 e o Ofício-Circular 128/1999.</h3>
+ <h3>Art. 10. Esta norma entra em vigor 30 (trinta) dias após a sua publicação.</h3>
+ <p>ANEXO I Distância do local de cumprimento da avaliação em relação à Sede do Fórum Valor da Despesa de Condução Até 30 km R$ 27,95 Mais de 30 km R$ 41,92</p>
+ <p>Anexo I (Redação dada pela Instrução Normativa nº 2 /2017, de 16 de março de 2017)</p>
+ <p>Distância do local de cumprimento da avaliação em relação à sede do Fórum</p>
+ <p>Valor da despesa de condução em VRC</p>
+ <p>247,16 Curitiba, 16 de outubro de 2015.</p>
+ <p>Des. EUGÊNIO ACHILLE GRANDINETTI</p>
+ <p>Corregedor-Geral da Justiça *O conteúdo disponibilizado possui caráter informativo e não substitui aquele publicado no Diário da Justiça Eletrônico. Imprimir Voltar Oculto</p>
+ <p>Praça Nossa Senhora de Salette, S/N</p>
+ <p>CEP 80.530-912 - Curitiba, PR</p>
+ <p>Telefone: 41 3200-2000 EXPEDIENTE DE FUNCIONAMENTO</p>
+ <p>Horário regimental de funcionamento – das 12:00 às 19:00</p>
+ <p>Horário de atendimento ao público – das 12:00 às 18:00 ACESSO À INFORMAÇÃO</p>
+ <p>Tipo: | Instrução Normativa</p>
+ <p>Origem: | CORREGEDORIA-GERAL DA JUSTIÇA</p>
+ <p>INSTRUÇÃO NORMATIVA Nº 12/2015</p>
+ <p>Assunto: | 1.Regulamentação 2.Corregedoria-Geral da Justiça 3.Foro Judicial 4.Avaliador Judicial 5.Despesa de Condução 6.Fundo da Justiça-Funjus 7.Revogação 8.</p>
+ <p>Instrução Normativa 1/2000</p>
+ <p>9.Ofício-Circular 128/1999</p>
+ <p>Ementa: | Texto atualizado até a Instrução Normativa nº 2/2017, de 16 de março de 2017.</p>
+ <p>Distância do local de cumprimento da avaliação em relação à Sede do Fórum | Valor da Despesa de Condução</p>
+ <p>Mais de 30 km | R$ 41,92 --- Tabela 3 ---</p>
+ <p>Distância do local de cumprimento da avaliação em relação à sede do Fórum | Valor da despesa de condução em VRC</p>
+ <p>Mais de 30 km | 247,16</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
  O conteúdo oficial e juridicamente válido está disponível no 
  <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4586904" rel="nofollow" target="_blank">TJPR – Atos Normativos</a> 
  e no Diário da Justiça Eletrônico.
  </p>
-</footer>
-</main>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>
