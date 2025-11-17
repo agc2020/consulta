@@ -228,21 +228,12 @@
     return { btn, overlay, backdrop };
   }
 
-  // ======= CORREÇÃO: Função aprimorada para garantir que o Pagefind está pronto =======
+  // ======= CORREÇÃO: Função simplificada para garantir que o Pagefind está pronto =======
   async function ensurePagefind() {
-    // Se já está pronto e funcionando, retorna true
-    if (pfReady && window.pagefind && window.pagefind.search) {
-      try {
-        // Testa se o Pagefind realmente está funcional
-        await window.pagefind.search("", { filters: {} });
-        return true;
-      } catch (e) {
-        console.warn("[Pagefind Bridge] Pagefind estava marcado como pronto mas falhou no teste:", e);
-        pfReady = false;
-      }
-    }
+    // Se já está marcado como pronto, retorna true
+    if (pfReady) return true;
     
-    // Se não está pronto, tenta inicializar
+    // Verifica se window.pagefind está disponível
     if (!window.pagefind || !window.pagefind.init) {
       console.warn("[Pagefind Bridge] window.pagefind não está disponível");
       return false;
@@ -357,7 +348,13 @@
     
     if (!pagefindReady) {
       countElement.textContent = "";
-      body.innerHTML = '<div class="pf-empty">O índice de conteúdo não está disponível. <button onclick="location.reload()" style="margin-top: 10px; padding: 8px 16px; cursor: pointer;">Recarregar página</button></div>';
+      // ======= CORREÇÃO: Botão estilizado com as classes do site =======
+      body.innerHTML = `
+        <div class="pf-empty">
+          O índice de conteúdo não está disponível.
+          <button class="pf-reload-btn" onclick="location.reload()">Recarregar página</button>
+        </div>
+      `;
       overlay.style.display = "block";
       backdrop.style.display = "block";
       return;
@@ -385,7 +382,13 @@
       }
     } catch (e) {
       console.error("[Pagefind] Erro ao buscar:", e);
-      body.innerHTML = '<div class="pf-empty">Erro ao consultar o índice de conteúdo. <button onclick="location.reload()" style="margin-top: 10px; padding: 8px 16px; cursor: pointer;">Recarregar página</button></div>';
+      // ======= CORREÇÃO: Botão estilizado com as classes do site =======
+      body.innerHTML = `
+        <div class="pf-empty">
+          Erro ao consultar o índice de conteúdo.
+          <button class="pf-reload-btn" onclick="location.reload()">Recarregar página</button>
+        </div>
+      `;
       overlay.style.display = "block";
       backdrop.style.display = "block";
     }

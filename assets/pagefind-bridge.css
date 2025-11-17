@@ -3,7 +3,7 @@
    Usa variáveis definidas em styles.css (:root) para manter consistência visual.
    - Botão "Buscar no conteúdo" segue a aparência do .reset-btn
    - Modal claro, cartões de resultados e tipografia coerentes
-=================================================================*/
+   =================================================================*/
 
 /* Backdrop do modal */
 #pf-overlay-backdrop {
@@ -132,6 +132,39 @@
   color: var(--text-muted);
 }
 
+/* ======= CORREÇÃO: Botão de recarregar página estilizado ======= */
+.pf-reload-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  font-size: .95rem;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+}
+
+[data-theme="dark"] .pf-reload-btn {
+  background: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.pf-reload-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.pf-reload-btn:active {
+  transform: scale(0.98);
+}
+
 /* Botão "Buscar no conteúdo" — harmonizado com .reset-btn */
 #pf-trigger {
   display: block;
@@ -192,6 +225,10 @@
   #pf-body { padding: 10px 12px 12px; }
   #pf-trigger {
     padding: 10px 14px;
+    font-size: .9rem;
+  }
+  .pf-reload-btn {
+    padding: 8px 16px;
     font-size: .9rem;
   }
 }
@@ -380,186 +417,105 @@
   color: #d0d0d0 !important;
 }
 
-/* Filtros da sidebar - Labels */
-[data-theme="dark"] #pf-overlay label,
-[data-theme="dark"] #pf-body label {
-  color: #e0e0e0 !important;
-}
-
-/* Filtros da sidebar - Títulos de seção (Ano, Órgão, Tipo) */
-[data-theme="dark"] #pf-overlay .pf-filter-group label,
-[data-theme="dark"] #pf-body .pf-filter-group label {
-  color: #e0e0e0 !important;
-  font-weight: 600;
-}
-
-/* Checkboxes labels */
-[data-theme="dark"] input[type="checkbox"] + label,
-[data-theme="dark"] input[type="radio"] + label {
-  color: #d0d0d0 !important;
-}
-
-/* Contagem de resultados */
-[data-theme="dark"] #pf-header .count,
-[data-theme="dark"] .pf-count {
-  color: #b0b0b0 !important;
-}
-
-/* Texto geral dentro do modal */
-[data-theme="dark"] #pf-overlay,
-[data-theme="dark"] #pf-body {
-  color: #d0d0d0 !important;
-}
-
-/* Selects e inputs de filtro */
-[data-theme="dark"] #pf-overlay select,
-[data-theme="dark"] #pf-body select {
-  background: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #444 !important;
-}
-
-/* Options dentro dos selects */
-[data-theme="dark"] #pf-overlay option,
-[data-theme="dark"] #pf-body option {
-  background: #2a2a2a !important;
-  color: #e0e0e0 !important;
-}
-
-/* Texto de "nenhum resultado" */
-[data-theme="dark"] .pf-empty {
-  color: #b0b0b0 !important;
-}
-
-/* URLs dos resultados */
+/* URLs */
 [data-theme="dark"] .pf-url {
   color: #a0a0a0 !important;
 }
 
-/* Qualquer parágrafo ou texto dentro do modal */
-[data-theme="dark"] #pf-overlay p,
-[data-theme="dark"] #pf-body p,
-[data-theme="dark"] #pf-overlay span,
-[data-theme="dark"] #pf-body span {
-  color: #d0d0d0 !important;
+/* Mensagens vazias */
+[data-theme="dark"] .pf-empty {
+  color: #b0b0b0 !important;
 }
 
-/* Headings dentro do modal */
-[data-theme="dark"] #pf-overlay h1,
-[data-theme="dark"] #pf-overlay h2,
-[data-theme="dark"] #pf-overlay h3,
-[data-theme="dark"] #pf-overlay h4,
-[data-theme="dark"] #pf-body h1,
-[data-theme="dark"] #pf-body h2,
-[data-theme="dark"] #pf-body h3,
-[data-theme="dark"] #pf-body h4 {
+/* Contador de resultados */
+[data-theme="dark"] #pf-header .count {
+  color: #b0b0b0 !important;
+}
+
+/* Título do modal */
+[data-theme="dark"] #pf-header .title {
   color: #e0e0e0 !important;
 }
 
+/* Botão de fechar */
+[data-theme="dark"] #pf-close {
+  color: #b0b0b0 !important;
+}
 
-/* ==== Correção Específica para Classes do Pagefind UI ==== */
-/* Sobrescrever estilos do pagefind-ui.css no modo dark */
+[data-theme="dark"] #pf-close:hover {
+  color: var(--primary-color) !important;
+}
 
-/* Títulos dos resultados do Pagefind UI */
+
+/* ==== Estilos para Pagefind UI (quando montado no modal) ==== */
+
+/* Container principal do Pagefind UI */
+[data-theme="dark"] .pagefind-ui {
+  background: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+/* Resultados do Pagefind UI */
+[data-theme="dark"] .pagefind-ui__result {
+  background: #2a2a2a !important;
+  border-color: #333 !important;
+  color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .pagefind-ui__result:hover {
+  background: #333 !important;
+}
+
+/* Título do resultado */
 [data-theme="dark"] .pagefind-ui__result-title {
   color: #e0e0e0 !important;
 }
 
-/* Texto dos excerpts/snippets do Pagefind UI */
-[data-theme="dark"] .pagefind-ui__result-excerpt,
-[data-theme="dark"] .pagefind-ui__result-excerpt p {
+/* Link do resultado */
+[data-theme="dark"] .pagefind-ui__result-link {
+  color: var(--primary-color) !important;
+}
+
+/* Trecho/excerpt do resultado */
+[data-theme="dark"] .pagefind-ui__result-excerpt {
   color: #d0d0d0 !important;
 }
 
-/* Container interno dos resultados */
-[data-theme="dark"] .pagefind-ui__result-inner {
-  color: #d0d0d0 !important;
+/* Tags/metadados */
+[data-theme="dark"] .pagefind-ui__result-tag {
+  background: #333 !important;
+  color: #b0b0b0 !important;
+  border-color: #444 !important;
 }
 
-/* Mensagens (contagem de resultados) */
+/* Mensagem de "sem resultados" */
 [data-theme="dark"] .pagefind-ui__message {
-  color: #e0e0e0 !important;
+  color: #b0b0b0 !important;
 }
 
-/* Lista de resultados */
-[data-theme="dark"] .pagefind-ui__results {
-  color: #d0d0d0 !important;
-}
-
-/* Cada item de resultado */
-[data-theme="dark"] .pagefind-ui__result {
-  color: #d0d0d0 !important;
+/* Filtros do Pagefind UI */
+[data-theme="dark"] .pagefind-ui__filter-panel {
   background: #2a2a2a !important;
   border-color: #333 !important;
 }
 
-/* Links dos resultados */
-[data-theme="dark"] .pagefind-ui__result-link {
-  color: #e0e0e0 !important;
-}
-
-/* Tags/badges nos resultados */
-[data-theme="dark"] .pagefind-ui__result-tag {
-  color: #d0d0d0 !important;
-  background: #333 !important;
-}
-
-/* Imagens nos resultados */
-[data-theme="dark"] .pagefind-ui__result-image {
-  border-color: #333 !important;
-}
-
-/* Painel de filtros do Pagefind UI */
-[data-theme="dark"] .pagefind-ui__filter-panel {
-  background: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-
-/* Blocos de filtro */
-[data-theme="dark"] .pagefind-ui__filter-block {
-  background: #1a1a1a !important;
-  color: #e0e0e0 !important;
-}
-
-/* Labels de filtro */
 [data-theme="dark"] .pagefind-ui__filter-name {
   color: #e0e0e0 !important;
 }
 
-/* Labels de grupo de filtro (Ano, Órgão, Tipo) */
-[data-theme="dark"] .pagefind-ui__filter-group-label {
-  color: #e0e0e0 !important;
-}
-
-/* Labels individuais dos filtros */
-[data-theme="dark"] .pagefind-ui__filter-label {
-  color: #d0d0d0 !important;
-}
-
-/* Valores de filtro */
 [data-theme="dark"] .pagefind-ui__filter-value {
   color: #d0d0d0 !important;
+  background: #333 !important;
 }
 
-/* Checkboxes de filtro */
-[data-theme="dark"] .pagefind-ui__filter-checkbox {
-  border-color: #444 !important;
+[data-theme="dark"] .pagefind-ui__filter-value:hover {
+  background: #3a3a3a !important;
 }
 
-/* Drawer (container geral) */
-[data-theme="dark"] .pagefind-ui__drawer {
-  color: #d0d0d0 !important;
-}
-
-/* Área de resultados */
-[data-theme="dark"] .pagefind-ui__results-area {
-  color: #d0d0d0 !important;
-}
-
-/* Botão "Ver mais resultados" */
+/* Botões do Pagefind UI */
 [data-theme="dark"] .pagefind-ui__button {
+  background: transparent !important;
   color: var(--primary-color) !important;
-  background: #2a2a2a !important;
   border-color: var(--primary-color) !important;
 }
 
@@ -568,85 +524,7 @@
   color: white !important;
 }
 
-/* Sobrescrever variáveis CSS do Pagefind UI no modo dark */
-[data-theme="dark"] .pagefind-ui {
-  --pagefind-ui-primary: var(--primary-color);
-  --pagefind-ui-text: #d0d0d0;
-  --pagefind-ui-background: #252525;
-  --pagefind-ui-border: #333;
-  --pagefind-ui-tag: #333;
-}
-
-
-/* ==== Correção Adicional: Sidebar de Filtros do Pagefind ==== */
-/* Garantir contraste adequado em TODOS os elementos da sidebar */
-
-/* Títulos dos grupos de filtros na sidebar (Ano, Órgão, Tipo) */
-[data-theme="dark"] .pagefind-ui__filter-panel summary,
-[data-theme="dark"] .pagefind-ui__filter-panel details > summary {
-  background: #1a1a1a !important;
-  color: #e0e0e0 !important;
-  font-weight: 600 !important;
-}
-
-/* Conteúdo dos filtros expandidos */
-[data-theme="dark"] .pagefind-ui__filter-panel details {
-  background: #1a1a1a !important;
-  color: #d0d0d0 !important;
-}
-
-/* Labels dos checkboxes na sidebar */
-[data-theme="dark"] .pagefind-ui__filter-panel label,
-[data-theme="dark"] .pagefind-ui__filter-panel .pagefind-ui__filter-label {
-  color: #d0d0d0 !important;
-}
-
-/* Contadores ao lado dos labels (ex: "(1)", "(2)", "(7)") */
-[data-theme="dark"] .pagefind-ui__filter-panel .pagefind-ui__filter-count {
+/* Loading/spinner */
+[data-theme="dark"] .pagefind-ui__loading {
   color: #b0b0b0 !important;
-}
-
-/* Inputs de checkbox na sidebar */
-[data-theme="dark"] .pagefind-ui__filter-panel input[type="checkbox"] {
-  border-color: #555 !important;
-  background: #2a2a2a !important;
-}
-
-[data-theme="dark"] .pagefind-ui__filter-panel input[type="checkbox"]:checked {
-  background: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
-}
-
-/* Fieldsets na sidebar */
-[data-theme="dark"] .pagefind-ui__filter-panel fieldset {
-  border-color: #333 !important;
-}
-
-/* Legends na sidebar */
-[data-theme="dark"] .pagefind-ui__filter-panel legend {
-  color: #e0e0e0 !important;
-}
-
-/* Qualquer texto dentro da sidebar de filtros */
-[data-theme="dark"] .pagefind-ui__filter-panel * {
-  color: #d0d0d0 !important;
-}
-
-/* Sobrescrever especificamente para títulos */
-[data-theme="dark"] .pagefind-ui__filter-panel summary * {
-  color: #e0e0e0 !important;
-}
-
-/* Garantir que todos os elementos details/summary sejam visíveis */
-[data-theme="dark"] details summary {
-  color: #e0e0e0 !important;
-}
-
-[data-theme="dark"] details {
-  color: #d0d0d0 !important;
-}
-
-/* Forçar cor em todos os spans dentro da sidebar */
-[data-theme="dark"] .pagefind-ui__filter-panel span {
-  color: inherit !important;
 }
