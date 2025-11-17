@@ -54,10 +54,9 @@
   let previewTimer = null;
   let deepCount = 0;
   
-  // ======= VARIÁVEIS PARA CONTROLE DE LISTENERS =======
-  let currentSearchInput = null;
-  let currentButton = null;
-  let listenersAttached = false;
+  // ======= CORREÇÃO: Variáveis para rastrear estado do Pagefind =======
+  let pagefindInitAttempts = 0;
+  const MAX_INIT_ATTEMPTS = 3;
 
   function waitForSearchInput() {
     return new Promise(resolve => {
@@ -159,39 +158,6 @@
     try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ""; }
   }
 
-  // ======= HANDLERS DE EVENTOS (funções nomeadas para facilitar remoção/readição) =======
-  function handleSearchInputChange() {
-    if (!currentSearchInput || !currentButton) return;
-    clearTimeout(previewTimer);
-    previewTimer = setTimeout(() => updateBadge(currentSearchInput.value.trim(), currentButton), 400);
-  }
-
-  function handleButtonClick() {
-    if (!currentSearchInput) return;
-    performDeepSearch(currentSearchInput.value.trim(), true);
-  }
-
-  function handleFiltersChange() {
-    if (!currentSearchInput || !currentButton) return;
-    clearTimeout(previewTimer);
-    previewTimer = setTimeout(() => updateBadge(currentSearchInput.value.trim(), currentButton), 250);
-  }
-
-  function handleKeyDown(e) {
-    if (e.key === "Escape") {
-      const overlay = document.getElementById("pf-overlay");
-      const backdrop = document.getElementById("pf-overlay-backdrop");
-      if (overlay) overlay.style.display = "none";
-      if (backdrop) backdrop.style.display = "none";
-    }
-    if (e.key === "Enter" && e.altKey) {
-      e.preventDefault();
-      if (currentSearchInput) {
-        performDeepSearch(currentSearchInput.value.trim(), true);
-      }
-    }
-  }
-
   // ---------- UI (botão + modal) ----------
   function injectUI(searchInput) {
     const btn = document.createElement("button");
@@ -236,118 +202,78 @@
     }
     backdrop.addEventListener("click", close);
     overlay.querySelector("#pf-close").addEventListener("click", close);
-    
-    // Armazenar referências globais
-    currentSearchInput = searchInput;
-    currentButton = btn;
-    
-    // Anexar event listeners usando as funções nomeadas
-    attachEventListeners();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+      if (e.key === "Enter" && e.altKey) {
+        e.preventDefault();
+        performDeepSearch(searchInput.value.trim(), true);
+      }
+    });
+
+    // Atualiza badge quando filtros mudam
+    const fb = findFiltersBlock();
+    if (fb) {
+      fb.addEventListener("change", () => {
+        clearTimeout(previewTimer);
+        previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 250);
+      });
+    }
+
+    btn.addEventListener("click", () => performDeepSearch(searchInput.value.trim(), true));
+    searchInput.addEventListener("input", () => {
+      clearTimeout(previewTimer);
+      previewTimer = setTimeout(() => updateBadge(searchInput.value.trim(), btn), 400);
+    });
 
     return { btn, overlay, backdrop };
   }
 
-  // ======= FUNÇÃO PARA ANEXAR EVENT LISTENERS =======
-  function attachEventListeners() {
-    if (listenersAttached) {
-      console.log('[Pagefind Bridge] Listeners já anexados, pulando...');
-      return;
-    }
-    
-    if (!currentSearchInput || !currentButton) {
-      console.warn('[Pagefind Bridge] Elementos não disponíveis para anexar listeners');
-      return;
-    }
-    
-    // Adicionar listeners
-    currentButton.addEventListener("click", handleButtonClick);
-    currentSearchInput.addEventListener("input", handleSearchInputChange);
-    document.addEventListener("keydown", handleKeyDown);
-    
-    // Atualiza badge quando filtros mudam
-    const fb = findFiltersBlock();
-    if (fb) {
-      fb.addEventListener("change", handleFiltersChange);
-    }
-    
-    listenersAttached = true;
-    console.log('[Pagefind Bridge] Event listeners anexados com sucesso');
-  }
-
-  // ======= FUNÇÃO PARA REMOVER EVENT LISTENERS =======
-  function detachEventListeners() {
-    if (!listenersAttached) return;
-    
-    if (currentButton) {
-      currentButton.removeEventListener("click", handleButtonClick);
-    }
-    
-    if (currentSearchInput) {
-      currentSearchInput.removeEventListener("input", handleSearchInputChange);
-    }
-    
-    document.removeEventListener("keydown", handleKeyDown);
-    
-    const fb = findFiltersBlock();
-    if (fb) {
-      fb.removeEventListener("change", handleFiltersChange);
-    }
-    
-    listenersAttached = false;
-    console.log('[Pagefind Bridge] Event listeners removidos');
-  }
-
-  // ======= OBSERVADOR DE MUDANÇAS NO DOM =======
-  function observeSearchInputChanges() {
-    const observer = new MutationObserver((mutations) => {
-      const searchInput = document.getElementById('searchInput');
-      const button = document.getElementById('pf-trigger');
-      
-      // Se os elementos existem mas os listeners não estão anexados, reanexar
-      if (searchInput && button && !listenersAttached) {
-        console.log('[Pagefind Bridge] Reanexando event listeners após mudança no DOM');
-        currentSearchInput = searchInput;
-        currentButton = button;
-        attachEventListeners();
-      }
-      
-      // Se os elementos mudaram, atualizar referências
-      if (searchInput && searchInput !== currentSearchInput) {
-        console.log('[Pagefind Bridge] SearchInput modificado, atualizando referências');
-        detachEventListeners();
-        currentSearchInput = searchInput;
-        attachEventListeners();
-      }
-    });
-    
-    // Observar mudanças no container de controles
-    const controlsContainer = document.getElementById('searchControls');
-    if (controlsContainer) {
-      observer.observe(controlsContainer, {
-        childList: true,
-        subtree: true,
-        attributes: false
-      });
-    }
-    
-    // Também observar mudanças no body
-    observer.observe(document.body, {
-      childList: true,
-      subtree: false
-    });
-  }
-
+  // ======= CORREÇÃO: Função aprimorada para garantir que o Pagefind está pronto =======
   async function ensurePagefind() {
-    if (pfReady) return true;
-    if (!window.pagefind || !window.pagefind.init) return false;
-    try {
-      await window.pagefind.init();
-      pfReady = true;
-      return true;
-    } catch (e) {
-      console.warn("[Pagefind] Falha ao inicializar:", e);
+    // Se já está pronto e funcionando, retorna true
+    if (pfReady && window.pagefind && window.pagefind.search) {
+      try {
+        // Testa se o Pagefind realmente está funcional
+        await window.pagefind.search("", { filters: {} });
+        return true;
+      } catch (e) {
+        console.warn("[Pagefind Bridge] Pagefind estava marcado como pronto mas falhou no teste:", e);
+        pfReady = false;
+      }
+    }
+    
+    // Se não está pronto, tenta inicializar
+    if (!window.pagefind || !window.pagefind.init) {
+      console.warn("[Pagefind Bridge] window.pagefind não está disponível");
       return false;
     }
+    
+    // Limita tentativas de inicialização para evitar loop infinito
+    if (pagefindInitAttempts >= MAX_INIT_ATTEMPTS) {
+      console.error("[Pagefind Bridge] Máximo de tentativas de inicialização atingido");
+      return false;
+    }
+    
+    try {
+      pagefindInitAttempts++;
+      console.log(`[Pagefind Bridge] Tentando inicializar Pagefind (tentativa ${pagefindInitAttempts}/${MAX_INIT_ATTEMPTS})...`);
+      await window.pagefind.init();
+      pfReady = true;
+      console.log("[Pagefind Bridge] Pagefind inicializado com sucesso");
+      return true;
+    } catch (e) {
+      console.error("[Pagefind Bridge] Erro ao inicializar Pagefind:", e);
+      pfReady = false;
+      return false;
+    }
+  }
+  
+  // ======= CORREÇÃO: Função para forçar reinicialização do Pagefind =======
+  async function reinitializePagefind() {
+    console.log("[Pagefind Bridge] Forçando reinicialização do Pagefind...");
+    pfReady = false;
+    pagefindInitAttempts = 0;
+    return await ensurePagefind();
   }
 
   async function updateBadge(query, button) {
@@ -421,13 +347,22 @@
     if (!query || query.length < 2) return;
 
     const activeFilters = getActiveFiltersObject();
-    if (!(await ensurePagefind())) {
+    
+    // ======= CORREÇÃO: Tenta reinicializar se o Pagefind não estiver disponível =======
+    let pagefindReady = await ensurePagefind();
+    if (!pagefindReady) {
+      console.warn("[Pagefind Bridge] Primeira tentativa falhou, tentando reinicializar...");
+      pagefindReady = await reinitializePagefind();
+    }
+    
+    if (!pagefindReady) {
       countElement.textContent = "";
-      body.innerHTML = '<div class="pf-empty">O índice de conteúdo não está disponível.</div>';
+      body.innerHTML = '<div class="pf-empty">O índice de conteúdo não está disponível. <button onclick="location.reload()" style="margin-top: 10px; padding: 8px 16px; cursor: pointer;">Recarregar página</button></div>';
       overlay.style.display = "block";
       backdrop.style.display = "block";
       return;
     }
+    
     body.innerHTML = '<div class="pf-empty">Buscando…</div>';
     try {
       const res = await window.pagefind.search(query, { filters: activeFilters });
@@ -450,7 +385,7 @@
       }
     } catch (e) {
       console.error("[Pagefind] Erro ao buscar:", e);
-      body.innerHTML = '<div class="pf-empty">Erro ao consultar o índice de conteúdo.</div>';
+      body.innerHTML = '<div class="pf-empty">Erro ao consultar o índice de conteúdo. <button onclick="location.reload()" style="margin-top: 10px; padding: 8px 16px; cursor: pointer;">Recarregar página</button></div>';
       overlay.style.display = "block";
       backdrop.style.display = "block";
     }
@@ -473,6 +408,27 @@
     return String(str || "").replace(/[&<>\"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m]);
   }
 
+  // ======= CORREÇÃO: Observador de mudanças no tema =======
+  function observeThemeChanges() {
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+          console.log("[Pagefind Bridge] Mudança de tema detectada, verificando integridade do Pagefind...");
+          // Reseta o estado para forçar verificação na próxima busca
+          pfReady = false;
+          pagefindInitAttempts = 0;
+        }
+      }
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+    
+    console.log("[Pagefind Bridge] Observador de mudanças de tema ativado");
+  }
+
   (async function boot() {
     // Garante que o CSS esteja aplicado (site já inclui, mas deixamos por segurança).
     if (!document.querySelector('link[href$="pagefind-bridge.css"]')) {
@@ -485,8 +441,8 @@
     const { btn } = injectUI(input);
     if (input.value) updateBadge(input.value.trim(), btn);
     
-    // ======= ATIVAR OBSERVADOR DE MUDANÇAS =======
-    observeSearchInputChanges();
+    // ======= CORREÇÃO: Ativa observador de mudanças de tema =======
+    observeThemeChanges();
   })();
 })();
 
