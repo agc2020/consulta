@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 10.257, DE 10 DE JULHO DE 2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 10.257, DE 10 DE JULHO DE 2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 07:23:51 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10257.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 52.526 caracteres | espelho: 52.483 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 10.257, DE 10 DE JULHO DE 2001. Mensagem de Veto nº 730</p>
+ <p>Regulamenta os arts. 182 e 183 da Constituição Federal, estabelece diretrizes gerais da política urbana e dá outras providências .</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DIRETRIZES GERAIS</h3>
+ <h3>Art. 1º Na execução da política urbana, de que tratam os arts. 182 e 183 da Constituição Federal , será aplicado o previsto nesta Lei.</h3>
+ <h4>Parágrafo único. Para todos os efeitos, esta Lei, denominada Estatuto da Cidade, estabelece normas de ordem pública e interesse social que regulam o uso da propriedade urbana em prol do bem coletivo, da segurança e do bem-estar dos cidadãos, bem como do equilíbrio ambiental.</h4>
+ <h3>Art. 2º A política urbana tem por objetivo ordenar o pleno desenvolvimento das funções sociais da cidade e da propriedade urbana, mediante as seguintes diretrizes gerais:</h3>
+ <h5>I – garantia do direito a cidades sustentáveis, entendido como o direito à terra urbana, à moradia, ao saneamento ambiental, à infra-estrutura urbana, ao transporte e aos serviços públicos, ao trabalho e ao lazer, para as presentes e futuras gerações;</h5>
+ <h5>II – gestão democrática por meio da participação da população e de associações representativas dos vários segmentos da comunidade na formulação, execução e acompanhamento de planos, programas e projetos de desenvolvimento urbano;</h5>
+ <h5>III – cooperação entre os governos, a iniciativa privada e os demais setores da sociedade no processo de urbanização, em atendimento ao interesse social;</h5>
+ <h5>IV – planejamento do desenvolvimento das cidades, da distribuição espacial da população e das atividades econômicas do Município e do território sob sua área de influência, de modo a evitar e corrigir as distorções do crescimento urbano e seus efeitos negativos sobre o meio ambiente;</h5>
+ <h5>V – oferta de equipamentos urbanos e comunitários, transporte e serviços públicos adequados aos interesses e necessidades da população e às características locais;</h5>
+ <h5>VI – ordenação e controle do uso do solo, de forma a evitar:</h5>
+ <h6>a) a utilização inadequada dos imóveis urbanos;</h6>
+ <h6>b) a proximidade de usos incompatíveis ou inconvenientes;</h6>
+ <h6>c) o parcelamento do solo, a edificação ou o uso excessivos ou inadequados em relação à infra-estrutura urbana;</h6>
+ <h6>d) a instalação de empreendimentos ou atividades que possam funcionar como pólos geradores de tráfego, sem a previsão da infra-estrutura correspondente;</h6>
+ <h6>e) a retenção especulativa de imóvel urbano, que resulte na sua subutilização ou não utilização;</h6>
+ <h6>f) a deterioração das áreas urbanizadas;</h6>
+ <h6>g) a poluição e a degradação ambiental;</h6>
+ <h6>h) a exposição da população a riscos de desastres naturais; (Incluído pela Medida Provisória nº 547, de 2011).</h6>
+ <h6>h) a exposição da população a riscos de desastres. (Incluído dada pela Lei nº 12.608, de 2012)</h6>
+ <h5>VII – integração e complementaridade entre as atividades urbanas e rurais, tendo em vista o desenvolvimento socioeconômico do Município e do território sob sua área de influência;</h5>
+ <h5>VIII – adoção de padrões de produção e consumo de bens e serviços e de expansão urbana compatíveis com os limites da sustentabilidade ambiental, social e econômica do Município e do território sob sua área de influência;</h5>
+ <h5>IX – justa distribuição dos benefícios e ônus decorrentes do processo de urbanização;</h5>
+ <h5>X – adequação dos instrumentos de política econômica, tributária e financeira e dos gastos públicos aos objetivos do desenvolvimento urbano, de modo a privilegiar os investimentos geradores de bem-estar geral e a fruição dos bens pelos diferentes segmentos sociais;</h5>
+ <h5>XI – recuperação dos investimentos do Poder Público de que tenha resultado a valorização de imóveis urbanos;</h5>
+ <h5>XII – proteção, preservação e recuperação do meio ambiente natural e construído, do patrimônio cultural, histórico, artístico, paisagístico e arqueológico;</h5>
+ <h5>XIII – audiência do Poder Público municipal e da população interessada nos processos de implantação de empreendimentos ou atividades com efeitos potencialmente negativos sobre o meio ambiente natural ou construído, o conforto ou a segurança da população;</h5>
+ <h5>XIV – regularização fundiária e urbanização de áreas ocupadas por população de baixa renda mediante o estabelecimento de normas especiais de urbanização, uso e ocupação do solo e edificação, consideradas a situação socioeconômica da população e as normas ambientais;</h5>
+ <h5>XV – simplificação da legislação de parcelamento, uso e ocupação do solo e das normas edilícias, com vistas a permitir a redução dos custos e o aumento da oferta dos lotes e unidades habitacionais;</h5>
+ <h5>XVI – isonomia de condições para os agentes públicos e privados na promoção de empreendimentos e atividades relativos ao processo de urbanização, atendido o interesse social.</h5>
+ <h5>XVII - estímulo à utilização, nos parcelamentos do solo e nas edificações urbanas, de sistemas operacionais, padrões construtivos e aportes tecnológicos que objetivem a redução de impactos ambientais e a economia de recursos naturais. (Incluído pela Lei nº 12.836, de 2013)</h5>
+ <h5>XVIII - tratamento prioritário às obras e edificações de infraestrutura de energia, telecomunicações, abastecimento de água e saneamento. (Incluído pela Lei nº 13.116, de 2015)</h5>
+ <h5>XIX – garantia de condições condignas de acessibilidade, utilização e conforto nas dependências internas das edificações urbanas, inclusive nas destinadas à moradia e ao serviço dos trabalhadores domésticos, observados requisitos mínimos de dimensionamento, ventilação, iluminação, ergonomia, privacidade e qualidade dos materiais empregados. (Incluído pela Lei nº 13.699, de 2018)</h5>
+ <h5>XX - promoção de conforto, abrigo, descanso, bem-estar e acessibilidade na fruição dos espaços livres de uso público, de seu mobiliário e de suas interfaces com os espaços de uso privado, vedado o emprego de materiais, estruturas, equipamentos e técnicas construtivas hostis que tenham como objetivo ou resultado o afastamento de pessoas em situação de rua, idosos, jovens e outros segmentos da população. (Redação dada pela Lei nº 14.489, de 2022) Regulamento</h5>
+ <h3>Art. 3º Compete à União, entre outras atribuições de interesse da política urbana:</h3>
+ <h5>I – legislar sobre normas gerais de direito urbanístico;</h5>
+ <h5>II – legislar sobre normas para a cooperação entre a União, os Estados, o Distrito Federal e os Municípios em relação à política urbana, tendo em vista o equilíbrio do desenvolvimento e do bem-estar em âmbito nacional;</h5>
+ <h5>III – promover, por iniciativa própria e em conjunto com os Estados, o Distrito Federal e os Municípios, programas de construção de moradias e a melhoria das condições habitacionais e de saneamento básico;</h5>
+ <h5>III - promover, por iniciativa própria e em conjunto com os Estados, o Distrito Federal e os Municípios, programas de construção de moradias e melhoria das condições habitacionais, de saneamento básico, das calçadas, dos passeios públicos, do mobiliário urbano e dos demais espaços de uso público; (Redação dada pela Lei nº 13.146, de 2015) (Vigência)</h5>
+ <h5>IV – instituir diretrizes para o desenvolvimento urbano, inclusive habitação, saneamento básico e transportes urbanos;</h5>
+ <h5>IV - instituir diretrizes para o desenvolvimento urbano, inclusive habitação, saneamento básico, transportes urbanos e infraestrutura de energia e telecomunicações; (Redação dada pela Lei nº 13.116, de 2015)</h5>
+ <h5>IV - instituir diretrizes para desenvolvimento urbano, inclusive habitação, saneamento básico, transporte e mobilidade urbana, que incluam regras de acessibilidade aos locais de uso público; (Redação dada pela Lei nº 13.146, de 2015) (Vigência)</h5>
+ <h5>V – elaborar e executar planos nacionais e regionais de ordenação do território e de desenvolvimento econômico e social.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS INSTRUMENTOS DA POLÍTICA URBANA</h3>
+ <p>Seção I</p>
+ <p>Dos instrumentos em geral</p>
+ <h3>Art. 4º Para os fins desta Lei, serão utilizados, entre outros instrumentos:</h3>
+ <h5>I – planos nacionais, regionais e estaduais de ordenação do território e de desenvolvimento econômico e social;</h5>
+ <h5>II – planejamento das regiões metropolitanas, aglomerações urbanas e microrregiões;</h5>
+ <h5>III – planejamento municipal, em especial:</h5>
+ <h6>a) plano diretor;</h6>
+ <h6>b) disciplina do parcelamento, do uso e da ocupação do solo;</h6>
+ <h6>c) zoneamento ambiental;</h6>
+ <h6>d) plano plurianual;</h6>
+ <h6>e) diretrizes orçamentárias e orçamento anual;</h6>
+ <h6>f) gestão orçamentária participativa;</h6>
+ <h6>g) planos, programas e projetos setoriais;</h6>
+ <h6>h) planos de desenvolvimento econômico e social;</h6>
+ <h5>IV – institutos tributários e financeiros:</h5>
+ <h6>a) imposto sobre a propriedade predial e territorial urbana - IPTU;</h6>
+ <h6>b) contribuição de melhoria;</h6>
+ <h6>c) incentivos e benefícios fiscais e financeiros;</h6>
+ <h5>V – institutos jurídicos e políticos:</h5>
+ <h6>a) desapropriação;</h6>
+ <h6>b) servidão administrativa;</h6>
+ <h6>c) limitações administrativas;</h6>
+ <h6>d) tombamento de imóveis ou de mobiliário urbano;</h6>
+ <h6>e) instituição de unidades de conservação;</h6>
+ <h6>f) instituição de zonas especiais de interesse social;</h6>
+ <h6>g) concessão de direito real de uso;</h6>
+ <h6>h) concessão de uso especial para fins de moradia;</h6>
+ <p>i) parcelamento, edificação ou utilização compulsórios;</p>
+ <h6>j) usucapião especial de imóvel urbano;</h6>
+ <p>l) direito de superfície;</p>
+ <h6>m) direito de preempção;</h6>
+ <h6>n) outorga onerosa do direito de construir e de alteração de uso;</h6>
+ <h6>o) transferência do direito de construir;</h6>
+ <h6>p) operações urbanas consorciadas;</h6>
+ <h6>q) regularização fundiária;</h6>
+ <h6>r) assistência técnica e jurídica gratuita para as comunidades e grupos sociais menos favorecidos;</h6>
+ <h6>s) referendo popular e plebiscito;</h6>
+ <h6>t) demarcação urbanística para fins de regularização fundiária; (Incluído pela Medida Provisória nº 459, de 2009)</h6>
+ <h6>t) demarcação urbanística para fins de regularização fundiária; (Incluído pela Lei nº 11.977, de 2009)</h6>
+ <h6>u) legitimação de posse. (Incluído pela Medida Provisória nº 459, de 2009)</h6>
+ <h6>u) legitimação de posse. (Incluído pela Lei nº 11.977, de 2009)</h6>
+ <h5>VI – estudo prévio de impacto ambiental (EIA) e estudo prévio de impacto de vizinhança (EIV).</h5>
+ <h4>§ 1º Os instrumentos mencionados neste artigo regem-se pela legislação que lhes é própria, observado o disposto nesta Lei.</h4>
+ <h4>§ 2º Nos casos de programas e projetos habitacionais de interesse social, desenvolvidos por órgãos ou entidades da Administração Pública com atuação específica nessa área, a concessão de direito real de uso de imóveis públicos poderá ser contratada coletivamente.</h4>
+ <h4>§ 3º Os instrumentos previstos neste artigo que demandam dispêndio de recursos por parte do Poder Público municipal devem ser objeto de controle social, garantida a participação de comunidades, movimentos e entidades da sociedade civil.</h4>
+ <p>Seção II</p>
+ <p>Do parcelamento, edificação ou utilização compulsórios</p>
+ <h3>Art. 5º Lei municipal específica para área incluída no plano diretor poderá determinar o parcelamento, a edificação ou a utilização compulsórios do solo urbano não edificado, subutilizado ou não utilizado, devendo fixar as condições e os prazos para implementação da referida obrigação.</h3>
+ <h4>§ 1º Considera-se subutilizado o imóvel:</h4>
+ <h5>I – cujo aproveitamento seja inferior ao mínimo definido no plano diretor ou em legislação dele decorrente;</h5>
+ <h5>II – (VETADO)</h5>
+ <h4>§ 2º O proprietário será notificado pelo Poder Executivo municipal para o cumprimento da obrigação, devendo a notificação ser averbada no cartório de registro de imóveis.</h4>
+ <h4>§ 3º A notificação far-se-á:</h4>
+ <h5>I – por funcionário do órgão competente do Poder Público municipal, ao proprietário do imóvel ou, no caso de este ser pessoa jurídica, a quem tenha poderes de gerência geral ou administração;</h5>
+ <h5>II – por edital quando frustrada, por três vezes, a tentativa de notificação na forma prevista pelo inciso I.</h5>
+ <h4>§ 4º Os prazos a que se refere o caput não poderão ser inferiores a:</h4>
+ <h5>I - um ano, a partir da notificação, para que seja protocolado o projeto no órgão municipal competente;</h5>
+ <h5>II - dois anos, a partir da aprovação do projeto, para iniciar as obras do empreendimento.</h5>
+ <h4>§ 5º Em empreendimentos de grande porte, em caráter excepcional, a lei municipal específica a que se refere o caput poderá prever a conclusão em etapas, assegurando-se que o projeto aprovado compreenda o empreendimento como um todo.</h4>
+ <h3>Art. 6º A transmissão do imóvel, por ato inter vivos ou causa mortis, posterior à data da notificação, transfere as obrigações de parcelamento, edificação ou utilização previstas no art. 5º desta Lei, sem interrupção de quaisquer prazos.</h3>
+ <p>Seção III</p>
+ <p>Do IPTU progressivo no tempo</p>
+ <h3>Art. 7º Em caso de descumprimento das condições e dos prazos previstos na forma do caput do art. 5º desta Lei, ou não sendo cumpridas as etapas previstas no § 5º do art. 5º desta Lei, o Município procederá à aplicação do imposto sobre a propriedade predial e territorial urbana (IPTU) progressivo no tempo, mediante a majoração da alíquota pelo prazo de cinco anos consecutivos.</h3>
+ <h4>§ 1º O valor da alíquota a ser aplicado a cada ano será fixado na lei específica a que se refere o caput do art. 5º desta Lei e não excederá a duas vezes o valor referente ao ano anterior, respeitada a alíquota máxima de quinze por cento.</h4>
+ <h4>§ 2º Caso a obrigação de parcelar, edificar ou utilizar não esteja atendida em cinco anos, o Município manterá a cobrança pela alíquota máxima, até que se cumpra a referida obrigação, garantida a prerrogativa prevista no art. 8º .</h4>
+ <h4>§ 3º É vedada a concessão de isenções ou de anistia relativas à tributação progressiva de que trata este artigo.</h4>
+ <p>Seção IV</p>
+ <p>Da desapropriação com pagamento em títulos</p>
+ <h3>Art. 8º Decorridos cinco anos de cobrança do IPTU progressivo sem que o proprietário tenha cumprido a obrigação de parcelamento, edificação ou utilização, o Município poderá proceder à desapropriação do imóvel, com pagamento em títulos da dívida pública.</h3>
+ <h4>§ 1º Os títulos da dívida pública terão prévia aprovação pelo Senado Federal e serão resgatados no prazo de até dez anos, em prestações anuais, iguais e sucessivas, assegurados o valor real da indenização e os juros legais de seis por cento ao ano.</h4>
+ <h4>§ 2º O valor real da indenização:</h4>
+ <h5>I – refletirá o valor da base de cálculo do IPTU, descontado o montante incorporado em função de obras realizadas pelo Poder Público na área onde o mesmo se localiza após a notificação de que trata o § 2º do art. 5º desta Lei;</h5>
+ <h5>II – não computará expectativas de ganhos, lucros cessantes e juros compensatórios.</h5>
+ <h4>§ 3º Os títulos de que trata este artigo não terão poder liberatório para pagamento de tributos.</h4>
+ <h4>§ 4º O Município procederá ao adequado aproveitamento do imóvel no prazo máximo de cinco anos, contado a partir da sua incorporação ao patrimônio público.</h4>
+ <h4>§ 5º O aproveitamento do imóvel poderá ser efetivado diretamente pelo Poder Público ou por meio de alienação ou concessão a terceiros, observando-se, nesses casos, o devido procedimento licitatório.</h4>
+ <h4>§ 6º Ficam mantidas para o adquirente de imóvel nos termos do § 5º as mesmas obrigações de parcelamento, edificação ou utilização previstas no art. 5º desta Lei.</h4>
+ <p>Seção V</p>
+ <p>Da usucapião especial de imóvel urbano</p>
+ <h3>Art. 9º Aquele que possuir como sua área ou edificação urbana de até duzentos e cinqüenta metros quadrados, por cinco anos, ininterruptamente e sem oposição, utilizando-a para sua moradia ou de sua família, adquirir-lhe-á o domínio, desde que não seja proprietário de outro imóvel urbano ou rural.</h3>
+ <h4>§ 1º O título de domínio será conferido ao homem ou à mulher, ou a ambos, independentemente do estado civil.</h4>
+ <h4>§ 2º O direito de que trata este artigo não será reconhecido ao mesmo possuidor mais de uma vez.</h4>
+ <h4>§ 3º Para os efeitos deste artigo, o herdeiro legítimo continua, de pleno direito, a posse de seu antecessor, desde que já resida no imóvel por ocasião da abertura da sucessão.</h4>
+ <h3>Art. 10. As áreas urbanas com mais de duzentos e cinqüenta metros quadrados, ocupadas por população de baixa renda para sua moradia, por cinco anos, ininterruptamente e sem oposição, onde não for possível identificar os terrenos ocupados por cada possuidor, são susceptíveis de serem usucapidas coletivamente, desde que os possuidores não sejam proprietários de outro imóvel urbano ou rural.</h3>
+ <h3>Art. 10. Os núcleos urbanos informais existentes sem oposição há mais de cinco anos e cuja área total dividida pelo número de possuidores seja inferior a duzentos e cinquenta metros quadrados por possuidor são suscetíveis de serem usucapidos coletivamente, desde que os possuidores não sejam proprietários de outro imóvel urbano ou rural. (Redação dada pela lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º O possuidor pode, para o fim de contar o prazo exigido por este artigo, acrescentar sua posse à de seu antecessor, contanto que ambas sejam contínuas.</h4>
+ <h4>§ 2º A usucapião especial coletiva de imóvel urbano será declarada pelo juiz, mediante sentença, a qual servirá de título para registro no cartório de registro de imóveis.</h4>
+ <h4>§ 3º Na sentença, o juiz atribuirá igual fração ideal de terreno a cada possuidor, independentemente da dimensão do terreno que cada um ocupe, salvo hipótese de acordo escrito entre os condôminos, estabelecendo frações ideais diferenciadas.</h4>
+ <h4>§ 4º O condomínio especial constituído é indivisível, não sendo passível de extinção, salvo deliberação favorável tomada por, no mínimo, dois terços dos condôminos, no caso de execução de urbanização posterior à constituição do condomínio.</h4>
+ <h4>§ 5º As deliberações relativas à administração do condomínio especial serão tomadas por maioria de votos dos condôminos presentes, obrigando também os demais, discordantes ou ausentes.</h4>
+ <h3>Art. 11. Na pendência da ação de usucapião especial urbana, ficarão sobrestadas quaisquer outras ações, petitórias ou possessórias, que venham a ser propostas relativamente ao imóvel usucapiendo.</h3>
+ <h3>Art. 12. São partes legítimas para a propositura da ação de usucapião especial urbana:</h3>
+ <h5>I – o possuidor, isoladamente ou em litisconsórcio originário ou superveniente;</h5>
+ <h5>II – os possuidores, em estado de composse;</h5>
+ <h5>III – como substituto processual, a associação de moradores da comunidade, regularmente constituída, com personalidade jurídica, desde que explicitamente autorizada pelos representados.</h5>
+ <h4>§ 1º Na ação de usucapião especial urbana é obrigatória a intervenção do Ministério Público.</h4>
+ <h4>§ 2º O autor terá os benefícios da justiça e da assistência judiciária gratuita, inclusive perante o cartório de registro de imóveis.</h4>
+ <h3>Art. 13. A usucapião especial de imóvel urbano poderá ser invocada como matéria de defesa, valendo a sentença que a reconhecer como título para registro no cartório de registro de imóveis.</h3>
+ <h3>Art. 14. Na ação judicial de usucapião especial de imóvel urbano, o rito processual a ser observado é o sumário.</h3>
+ <p>Seção VI</p>
+ <p>Da concessão de uso especial para fins de moradia</p>
+ <h3>Art. 15. (VETADO)</h3>
+ <h3>Art. 16. (VETADO)</h3>
+ <h3>Art. 17. (VETADO)</h3>
+ <h3>Art. 18. (VETADO)</h3>
+ <h3>Art. 19. (VETADO)</h3>
+ <h3>Art. 20. (VETADO)</h3>
+ <p>Seção VII</p>
+ <p>Do direito de superfície</p>
+ <h3>Art. 21. O proprietário urbano poderá conceder a outrem o direito de superfície do seu terreno, por tempo determinado ou indeterminado, mediante escritura pública registrada no cartório de registro de imóveis.</h3>
+ <h4>§ 1º O direito de superfície abrange o direito de utilizar o solo, o subsolo ou o espaço aéreo relativo ao terreno, na forma estabelecida no contrato respectivo, atendida a legislação urbanística.</h4>
+ <h4>§ 2º A concessão do direito de superfície poderá ser gratuita ou onerosa.</h4>
+ <h4>§ 3º O superficiário responderá integralmente pelos encargos e tributos que incidirem sobre a propriedade superficiária, arcando, ainda, proporcionalmente à sua parcela de ocupação efetiva, com os encargos e tributos sobre a área objeto da concessão do direito de superfície, salvo disposição em contrário do contrato respectivo.</h4>
+ <h4>§ 4º O direito de superfície pode ser transferido a terceiros, obedecidos os termos do contrato respectivo.</h4>
+ <h4>§ 5º Por morte do superficiário, os seus direitos transmitem-se a seus herdeiros.</h4>
+ <h3>Art. 22. Em caso de alienação do terreno, ou do direito de superfície, o superficiário e o proprietário, respectivamente, terão direito de preferência, em igualdade de condições à oferta de terceiros.</h3>
+ <h3>Art. 23. Extingue-se o direito de superfície:</h3>
+ <h5>I – pelo advento do termo;</h5>
+ <h5>II – pelo descumprimento das obrigações contratuais assumidas pelo superficiário.</h5>
+ <h3>Art. 24. Extinto o direito de superfície, o proprietário recuperará o pleno domínio do terreno, bem como das acessões e benfeitorias introduzidas no imóvel, independentemente de indenização, se as partes não houverem estipulado o contrário no respectivo contrato.</h3>
+ <h4>§ 1º Antes do termo final do contrato, extinguir-se-á o direito de superfície se o superficiário der ao terreno destinação diversa daquela para a qual for concedida.</h4>
+ <h4>§ 2º A extinção do direito de superfície será averbada no cartório de registro de imóveis.</h4>
+ <p>Seção VIII</p>
+ <p>Do direito de preempção</p>
+ <h3>Art. 25. O direito de preempção confere ao Poder Público municipal preferência para aquisição de imóvel urbano objeto de alienação onerosa entre particulares.</h3>
+ <h4>§ 1º Lei municipal, baseada no plano diretor, delimitará as áreas em que incidirá o direito de preempção e fixará prazo de vigência, não superior a cinco anos, renovável a partir de um ano após o decurso do prazo inicial de vigência.</h4>
+ <h4>§ 2º O direito de preempção fica assegurado durante o prazo de vigência fixado na forma do § 1º , independentemente do número de alienações referentes ao mesmo imóvel.</h4>
+ <h3>Art. 26. O direito de preempção será exercido sempre que o Poder Público necessitar de áreas para:</h3>
+ <h5>I – regularização fundiária;</h5>
+ <h5>II – execução de programas e projetos habitacionais de interesse social;</h5>
+ <h5>III – constituição de reserva fundiária;</h5>
+ <h5>IV – ordenamento e direcionamento da expansão urbana;</h5>
+ <h5>V – implantação de equipamentos urbanos e comunitários;</h5>
+ <h5>VI – criação de espaços públicos de lazer e áreas verdes;</h5>
+ <h5>VII – criação de unidades de conservação ou proteção de outras áreas de interesse ambiental;</h5>
+ <h5>VIII – proteção de áreas de interesse histórico, cultural ou paisagístico;</h5>
+ <h5>IX – (VETADO)</h5>
+ <h4>Parágrafo único. A lei municipal prevista no § 1º do art. 25 desta Lei deverá enquadrar cada área em que incidirá o direito de preempção em uma ou mais das finalidades enumeradas por este artigo.</h4>
+ <h3>Art. 27. O proprietário deverá notificar sua intenção de alienar o imóvel, para que o Município, no prazo máximo de trinta dias, manifeste por escrito seu interesse em comprá-lo.</h3>
+ <h4>§ 1º À notificação mencionada no caput será anexada proposta de compra assinada por terceiro interessado na aquisição do imóvel, da qual constarão preço, condições de pagamento e prazo de validade.</h4>
+ <h4>§ 2º O Município fará publicar, em órgão oficial e em pelo menos um jornal local ou regional de grande circulação, edital de aviso da notificação recebida nos termos do caput e da intenção de aquisição do imóvel nas condições da proposta apresentada.</h4>
+ <h4>§ 3º Transcorrido o prazo mencionado no caput sem manifestação, fica o proprietário autorizado a realizar a alienação para terceiros, nas condições da proposta apresentada.</h4>
+ <h4>§ 4º Concretizada a venda a terceiro, o proprietário fica obrigado a apresentar ao Município, no prazo de trinta dias, cópia do instrumento público de alienação do imóvel.</h4>
+ <h4>§ 5º A alienação processada em condições diversas da proposta apresentada é nula de pleno direito.</h4>
+ <h4>§ 6º Ocorrida a hipótese prevista no § 5º o Município poderá adquirir o imóvel pelo valor da base de cálculo do IPTU ou pelo valor indicado na proposta apresentada, se este for inferior àquele.</h4>
+ <p>Seção IX</p>
+ <p>Da outorga onerosa do direito de construir</p>
+ <h3>Art. 28. O plano diretor poderá fixar áreas nas quais o direito de construir poderá ser exercido acima do coeficiente de aproveitamento básico adotado, mediante contrapartida a ser prestada pelo beneficiário.</h3>
+ <h4>§ 1º Para os efeitos desta Lei, coeficiente de aproveitamento é a relação entre a área edificável e a área do terreno.</h4>
+ <h4>§ 2º O plano diretor poderá fixar coeficiente de aproveitamento básico único para toda a zona urbana ou diferenciado para áreas específicas dentro da zona urbana.</h4>
+ <h4>§ 3º O plano diretor definirá os limites máximos a serem atingidos pelos coeficientes de aproveitamento, considerando a proporcionalidade entre a infra-estrutura existente e o aumento de densidade esperado em cada área.</h4>
+ <h3>Art. 29. O plano diretor poderá fixar áreas nas quais poderá ser permitida alteração de uso do solo, mediante contrapartida a ser prestada pelo beneficiário.</h3>
+ <h3>Art. 30. Lei municipal específica estabelecerá as condições a serem observadas para a outorga onerosa do direito de construir e de alteração de uso, determinando:</h3>
+ <h5>I – a fórmula de cálculo para a cobrança;</h5>
+ <h5>II – os casos passíveis de isenção do pagamento da outorga;</h5>
+ <h5>III – a contrapartida do beneficiário.</h5>
+ <h3>Art. 31. Os recursos auferidos com a adoção da outorga onerosa do direito de construir e de alteração de uso serão aplicados com as finalidades previstas nos incisos I a IX do art. 26 desta Lei.</h3>
+ <p>Seção X</p>
+ <p>Das operações urbanas consorciadas</p>
+ <h3>Art. 32. Lei municipal específica, baseada no plano diretor, poderá delimitar área para aplicação de operações consorciadas.</h3>
+ <h4>§ 1º Considera-se operação urbana consorciada o conjunto de intervenções e medidas coordenadas pelo Poder Público municipal, com a participação dos proprietários, moradores, usuários permanentes e investidores privados, com o objetivo de alcançar em uma área transformações urbanísticas estruturais, melhorias sociais e a valorização ambiental.</h4>
+ <h4>§ 2º Poderão ser previstas nas operações urbanas consorciadas, entre outras medidas:</h4>
+ <h5>I – a modificação de índices e características de parcelamento, uso e ocupação do solo e subsolo, bem como alterações das normas edilícias, considerado o impacto ambiental delas decorrente;</h5>
+ <h5>II – a regularização de construções, reformas ou ampliações executadas em desacordo com a legislação vigente.</h5>
+ <h5>III - a concessão de incentivos a operações urbanas que utilizam tecnologias visando a redução de impactos ambientais, e que comprovem a utilização, nas construções e uso de edificações urbanas, de tecnologias que reduzam os impactos ambientais e economizem recursos naturais, especificadas as modalidades de design e de obras a serem contempladas. (Incluído pela Lei nº 12.836, de 2013)</h5>
+ <h3>Art. 33. Da lei específica que aprovar a operação urbana consorciada constará o plano de operação urbana consorciada, contendo, no mínimo:</h3>
+ <h5>I – definição da área a ser atingida;</h5>
+ <h5>II – programa básico de ocupação da área;</h5>
+ <h5>III – programa de atendimento econômico e social para a população diretamente afetada pela operação;</h5>
+ <h5>IV – finalidades da operação;</h5>
+ <h5>V – estudo prévio de impacto de vizinhança;</h5>
+ <h5>VI – contrapartida a ser exigida dos proprietários, usuários permanentes e investidores privados em função da utilização dos benefícios previstos nos incisos I e II do § 2º do art. 32 desta Lei;</h5>
+ <h5>VI - contrapartida a ser exigida dos proprietários, usuários permanentes e investidores privados em função da utilização dos benefícios previstos nos incisos I, II e III do § 2º do art. 32 desta Lei; (Redação dada pela Lei nº 12.836, de 2013)</h5>
+ <h5>VII – forma de controle da operação, obrigatoriamente compartilhado com representação da sociedade civil.</h5>
+ <h5>VIII - natureza dos incentivos a serem concedidos aos proprietários, usuários permanentes e investidores privados, uma vez atendido o disposto no inciso III do § 2º do art. 32 desta Lei. (Incluído pela Lei nº 12.836, de 2013)</h5>
+ <h4>§ 1º Os recursos obtidos pelo Poder Público municipal na forma do inciso VI deste artigo serão aplicados exclusivamente na própria operação urbana consorciada.</h4>
+ <h4>§ 2º A partir da aprovação da lei específica de que trata o caput, são nulas as licenças e autorizações a cargo do Poder Público municipal expedidas em desacordo com o plano de operação urbana consorciada.</h4>
+ <h3>Art. 34. A lei específica que aprovar a operação urbana consorciada poderá prever a emissão pelo Município de quantidade determinada de certificados de potencial adicional de construção, que serão alienados em leilão ou utilizados diretamente no pagamento das obras necessárias à própria operação.</h3>
+ <h4>§ 1º Os certificados de potencial adicional de construção serão livremente negociados, mas conversíveis em direito de construir unicamente na área objeto da operação.</h4>
+ <h4>§ 2º Apresentado pedido de licença para construir, o certificado de potencial adicional será utilizado no pagamento da área de construção que supere os padrões estabelecidos pela legislação de uso e ocupação do solo, até o limite fixado pela lei específica que aprovar a operação urbana consorciada.</h4>
+ <h3>Art. 34-A. Nas regiões metropolitanas ou nas aglomerações urbanas instituídas por lei complementar estadual, poderão ser realizadas operações urbanas consorciadas interfederativas, aprovadas por leis estaduais específicas. (Incluído pela Lei nº 13.089, de 2015)</h3>
+ <h4>Parágrafo único. As disposições dos arts. 32 a 34 desta Lei aplicam-se às operações urbanas consorciadas interfederativas previstas no caput deste artigo, no que couber. (Incluído pela Lei nº 13.089, de 2015)</h4>
+ <p>Seção XI</p>
+ <p>Da transferência do direito de construir</p>
+ <h3>Art. 35. Lei municipal, baseada no plano diretor, poderá autorizar o proprietário de imóvel urbano, privado ou público, a exercer em outro local, ou alienar, mediante escritura pública, o direito de construir previsto no plano diretor ou em legislação urbanística dele decorrente, quando o referido imóvel for considerado necessário para fins de:</h3>
+ <h5>I – implantação de equipamentos urbanos e comunitários;</h5>
+ <h5>II – preservação, quando o imóvel for considerado de interesse histórico, ambiental, paisagístico, social ou cultural;</h5>
+ <h5>III – servir a programas de regularização fundiária, urbanização de áreas ocupadas por população de baixa renda e habitação de interesse social.</h5>
+ <h4>§ 1º A mesma faculdade poderá ser concedida ao proprietário que doar ao Poder Público seu imóvel, ou parte dele, para os fins previstos nos incisos I a III do caput.</h4>
+ <h4>§ 2º A lei municipal referida no caput estabelecerá as condições relativas à aplicação da transferência do direito de construir.</h4>
+ <p>Seção XII</p>
+ <p>Do estudo de impacto de vizinhança</p>
+ <h3>Art. 36. Lei municipal definirá os empreendimentos e atividades privados ou públicos em área urbana que dependerão de elaboração de estudo prévio de impacto de vizinhança (EIV) para obter as licenças ou autorizações de construção, ampliação ou funcionamento a cargo do Poder Público municipal.</h3>
+ <h3>Art. 37. O EIV será executado de forma a contemplar os efeitos positivos e negativos do empreendimento ou atividade quanto à qualidade de vida da população residente na área e suas proximidades, incluindo a análise, no mínimo, das seguintes questões:</h3>
+ <h5>I – adensamento populacional;</h5>
+ <h5>II – equipamentos urbanos e comunitários;</h5>
+ <h5>III – uso e ocupação do solo;</h5>
+ <h5>IV – valorização imobiliária;</h5>
+ <h5>V – geração de tráfego e demanda por transporte público;</h5>
+ <h5>V - mobilidade urbana, geração de tráfego e demanda por transporte público; (Redação dada pela Lei nº 14.849, de 2024)</h5>
+ <h5>VI – ventilação e iluminação;</h5>
+ <h5>VII – paisagem urbana e patrimônio natural e cultural.</h5>
+ <h4>Parágrafo único. Dar-se-á publicidade aos documentos integrantes do EIV, que ficarão disponíveis para consulta, no órgão competente do Poder Público municipal, por qualquer interessado.</h4>
+ <h3>Art. 38. A elaboração do EIV não substitui a elaboração e a aprovação de estudo prévio de impacto ambiental (EIA), requeridas nos termos da legislação ambiental.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO PLANO DIRETOR</h3>
+ <h3>Art. 39. A propriedade urbana cumpre sua função social quando atende às exigências fundamentais de ordenação da cidade expressas no plano diretor, assegurando o atendimento das necessidades dos cidadãos quanto à qualidade de vida, à justiça social e ao desenvolvimento das atividades econômicas, respeitadas as diretrizes previstas no art. 2º desta Lei.</h3>
+ <h3>Art. 40. O plano diretor, aprovado por lei municipal, é o instrumento básico da política de desenvolvimento e expansão urbana.</h3>
+ <h4>§ 1º O plano diretor é parte integrante do processo de planejamento municipal, devendo o plano plurianual, as diretrizes orçamentárias e o orçamento anual incorporar as diretrizes e as prioridades nele contidas.</h4>
+ <h4>§ 2º O plano diretor deverá englobar o território do Município como um todo.</h4>
+ <h4>§ 3º A lei que instituir o plano diretor deverá ser revista, pelo menos, a cada dez anos.</h4>
+ <h4>§ 4º No processo de elaboração do plano diretor e na fiscalização de sua implementação, os Poderes Legislativo e Executivo municipais garantirão:</h4>
+ <h5>I – a promoção de audiências públicas e debates com a participação da população e de associações representativas dos vários segmentos da comunidade;</h5>
+ <h5>II – a publicidade quanto aos documentos e informações produzidos;</h5>
+ <h5>III – o acesso de qualquer interessado aos documentos e informações produzidos.</h5>
+ <h4>§ 5º (VETADO)</h4>
+ <h3>Art. 41. O plano diretor é obrigatório para cidades:</h3>
+ <h5>I – com mais de vinte mil habitantes;</h5>
+ <h5>II – integrantes de regiões metropolitanas e aglomerações urbanas;</h5>
+ <h5>III – onde o Poder Público municipal pretenda utilizar os instrumentos previstos no § 4º do art. 182 da Constituição Federal;</h5>
+ <h5>IV – integrantes de áreas de especial interesse turístico;</h5>
+ <h5>V – inseridas na área de influência de empreendimentos ou atividades com significativo impacto ambiental de âmbito regional ou nacional.</h5>
+ <h5>VI - incluídas no cadastro nacional de Municípios com áreas suscetíveis à ocorrência de deslizamentos de grande impacto, inundações bruscas ou processos geológicos ou hidrológicos correlatos. (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h4>§ 1º No caso da realização de empreendimentos ou atividades enquadrados no inciso V do caput, os recursos técnicos e financeiros para a elaboração do plano diretor estarão inseridos entre as medidas de compensação adotadas.</h4>
+ <h4>§ 2º No caso de cidades com mais de quinhentos mil habitantes, deverá ser elaborado um plano de transporte urbano integrado, compatível com o plano diretor ou nele inserido.</h4>
+ <h4>§ 3º As cidades de que trata o caput deste artigo devem elaborar plano de rotas acessíveis, compatível com o plano diretor no qual está inserido, que disponha sobre os passeios públicos a serem implantados ou reformados pelo poder público, com vistas a garantir acessibilidade da pessoa com deficiência ou com mobilidade reduzida a todas as rotas e vias existentes, inclusive as que concentrem os focos geradores de maior circulação de pedestres, como os órgãos públicos e os locais de prestação de serviços públicos e privados de saúde, educação, assistência social, esporte, cultura, correios e telégrafos, bancos, entre outros, sempre que possível de maneira integrada com os sistemas de transporte coletivo de passageiros. (Incluído pela Lei nº 13.146, de 2015) (Vigência)</h4>
+ <h3>Art. 42. O plano diretor deverá conter no mínimo:</h3>
+ <h5>I – a delimitação das áreas urbanas onde poderá ser aplicado o parcelamento, edificação ou utilização compulsórios, considerando a existência de infra-estrutura e de demanda para utilização, na forma do art. 5º desta Lei;</h5>
+ <h5>II – disposições requeridas pelos arts. 25, 28, 29, 32 e 35 desta Lei;</h5>
+ <h5>III – sistema de acompanhamento e controle.</h5>
+ <h3>Art. 42-A. Os municípios que possuam áreas de expansão urbana deverão elaborar Plano de Expansão Urbana no qual constarão, no mínimo: (Incluído pela Medida Provisória nº 547, de 2011)</h3>
+ <h5>I - demarcação da área de expansão urbana; (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h5>II - delimitação dos trechos com restrições à urbanização e dos trechos sujeitos a controle especial em função de ameaça de desastres naturais; (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h5>III - definição de diretrizes específicas e de áreas que serão utilizadas para infraestrutura, sistema viário, equipamentos e instalações públicas, urbanas e sociais; (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h5>IV - definição de parâmetros de parcelamento, uso e ocupação do solo, de modo a promover a diversidade de usos e contribuir para a geração de emprego e renda; (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h5>V - a previsão de áreas para habitação de interesse social por meio da demarcação de zonas especiais de interesse social e de outros instrumentos de política urbana, quando o uso habitacional for permitido; (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h5>VI - definição de diretrizes e instrumentos específicos para proteção ambiental e do patrimônio histórico e cultural; e (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h5>VII - definição de mecanismos para garantir a justa distribuição dos ônus e benefícios decorrentes do processo de urbanização do território de expansão urbana e a recuperação para a coletividade da valorização imobiliária resultante da ação do Poder Público. (Incluído pela Medida Provisória nº 547, de 2011)</h5>
+ <h4>§ 1º Consideram-se áreas de expansão urbana aquelas destinadas pelo Plano Diretor ou lei municipal ao crescimento ordenado das cidades, vilas e demais núcleos urbanos, bem como aquelas que forem incluídas no perímetro urbano a partir da publicação desta Medida Provisória. (Incluído pela Medida Provisória nº 547, de 2011)</h4>
+ <h4>§ 2º O Plano de Expansão Urbana deverá atender às diretrizes do Plano Diretor, quando houver. (Incluído pela Medida Provisória nº 547, de 2011)</h4>
+ <h4>§ 3º § 3º A aprovação de projetos de parcelamento do solo urbano em áreas de expansão urbana ficará condicionada à existência do Plano de Expansão Urbana. (Vide Medida Provisória nº 547, de 2011)</h4>
+ <h4>§ 4º Quando o Plano Diretor contemplar as exigências estabelecidas no caput , o Município ficará dispensado da elaboração do Plano de Expansão Urbana. (Incluído pela Medida Provisória nº 547, de 2011)</h4>
+ <h3>Art. 42-A. Além do conteúdo previsto no art. 42, o plano diretor dos Municípios incluídos no cadastro nacional de municípios com áreas suscetíveis à ocorrência de deslizamentos de grande impacto, inundações bruscas ou processos geológicos ou hidrológicos correlatos deverá conter: (Incluído pela Lei nº 12.608, de 2012)</h3>
+ <h5>I - parâmetros de parcelamento, uso e ocupação do solo, de modo a promover a diversidade de usos e a contribuir para a geração de emprego e renda; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>II - mapeamento contendo as áreas suscetíveis à ocorrência de deslizamentos de grande impacto, inundações bruscas ou processos geológicos ou hidrológicos correlatos; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>III - planejamento de ações de intervenção preventiva e realocação de população de áreas de risco de desastre; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>IV - medidas de drenagem urbana necessárias à prevenção e à mitigação de impactos de desastres; e (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>V - diretrizes para a regularização fundiária de assentamentos urbanos irregulares, se houver, observadas a Lei Nº 11.977, de 7 de julho de 2009 , e demais normas federais e estaduais pertinentes, e previsão de áreas para habitação de interesse social por meio da demarcação de zonas especiais de interesse social e de outros instrumentos de política urbana, onde o uso habitacional for permitido. (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>VI - identificação e diretrizes para a preservação e ocupação das áreas verdes municipais, quando for o caso, com vistas à redução da impermeabilização das cidades. (Incluído pela Lei nº 12.983, de 2014)</h5>
+ <h4>§ 1º A identificação e o mapeamento de áreas de risco levarão em conta as cartas geotécnicas. (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h4>§ 2º O conteúdo do plano diretor deverá ser compatível com as disposições insertas nos planos de recursos hídricos, formulados consoante a Lei Nº 9.433, de 8 de janeiro de 1997 . (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h4>§ 3º Os Municípios adequarão o plano diretor às disposições deste artigo, por ocasião de sua revisão, observados os prazos legais. (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h4>§ 4º Os Municípios enquadrados no inciso VI do art. 41 desta Lei e que não tenham plano diretor aprovado terão o prazo de 5 (cinco) anos para o seu encaminhamento para aprovação pela Câmara Municipal. (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h3>Art. 42-B. Os Municípios que pretendam ampliar o seu perímetro urbano após a data de publicação desta Lei deverão elaborar projeto específico que contenha, no mínimo: (Incluído pela Lei nº 12.608, de 2012)</h3>
+ <h5>I - demarcação do novo perímetro urbano; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>II - delimitação dos trechos com restrições à urbanização e dos trechos sujeitos a controle especial em função de ameaça de desastres naturais; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>III - definição de diretrizes específicas e de áreas que serão utilizadas para infraestrutura, sistema viário, equipamentos e instalações públicas, urbanas e sociais; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>IV - definição de parâmetros de parcelamento, uso e ocupação do solo, de modo a promover a diversidade de usos e contribuir para a geração de emprego e renda; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>V - a previsão de áreas para habitação de interesse social por meio da demarcação de zonas especiais de interesse social e de outros instrumentos de política urbana, quando o uso habitacional for permitido; (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>VI - definição de diretrizes e instrumentos específicos para proteção ambiental e do patrimônio histórico e cultural; e (Incluído pela Lei nº 12.608, de 2012)</h5>
+ <h5>VII - definição de mecanismos para garantir a justa distribuição dos ônus e benefícios decorrentes do processo de urbanização do território de expansão urbana e a recuperação para a coletividade da valorização imobiliária resultante da ação do poder público.</h5>
+ <h5>VIII - planejamento integrado de transporte urbano, inclusive por meio de veículos não motorizados, com vistas a melhorar a mobilidade. (Incluído pela Lei nº 14.729, 	de 2023)</h5>
+ <h4>§ 1º O projeto específico de que trata o caput deste artigo deverá ser instituído por lei municipal e atender às diretrizes do plano diretor, quando houver. (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h4>§ 2º Quando o plano diretor contemplar as exigências estabelecidas no caput , o Município ficará dispensado da elaboração do projeto específico de que trata o caput deste artigo. (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h4>§ 3º A aprovação de projetos de parcelamento do solo no novo perímetro urbano ficará condicionada à existência do projeto específico e deverá obedecer às suas disposições. (Incluído pela Lei nº 12.608, de 2012)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA GESTÃO DEMOCRÁTICA DA CIDADE</h3>
+ <h3>Art. 43. Para garantir a gestão democrática da cidade, deverão ser utilizados, entre outros, os seguintes instrumentos:</h3>
+ <h5>I – órgãos colegiados de política urbana, nos níveis nacional, estadual e municipal;</h5>
+ <h5>II – debates, audiências e consultas públicas;</h5>
+ <h5>III – conferências sobre assuntos de interesse urbano, nos níveis nacional, estadual e municipal;</h5>
+ <h5>IV – iniciativa popular de projeto de lei e de planos, programas e projetos de desenvolvimento urbano;</h5>
+ <h5>V – (VETADO)</h5>
+ <h3>Art. 44. No âmbito municipal, a gestão orçamentária participativa de que trata a alínea f do inciso III do art. 4º desta Lei incluirá a realização de debates, audiências e consultas públicas sobre as propostas do plano plurianual, da lei de diretrizes orçamentárias e do orçamento anual, como condição obrigatória para sua aprovação pela Câmara Municipal.</h3>
+ <h3>Art. 45. Os organismos gestores das regiões metropolitanas e aglomerações urbanas incluirão obrigatória e significativa participação da população e de associações representativas dos vários segmentos da comunidade, de modo a garantir o controle direto de suas atividades e o pleno exercício da cidadania.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 46. O Poder Público municipal poderá facultar ao proprietário de área atingida pela obrigação de que trata o caput do art. 5º desta Lei, a requerimento deste, o estabelecimento de consórcio imobiliário como forma de viabilização financeira do aproveitamento do imóvel.</h3>
+ <h3>Art. 46. O poder público municipal poderá facultar ao proprietário da área atingida pela obrigação de que trata o caput do art. 5º desta Lei, ou objeto de regularização fundiária urbana para fins de regularização fundiária, o estabelecimento de consórcio imobiliário como forma de viabilização financeira do aproveitamento do imóvel. (Redação dada pela lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º Considera-se consórcio imobiliário a forma de viabilização de planos de urbanização ou edificação por meio da qual o proprietário transfere ao Poder Público municipal seu imóvel e, após a realização das obras, recebe, como pagamento, unidades imobiliárias devidamente urbanizadas ou edificadas.</h4>
+ <h4>§ 1º Considera-se consórcio imobiliário a forma de viabilização de planos de urbanização, de regularização fundiária ou de reforma, conservação ou construção de edificação por meio da qual o proprietário transfere ao p oder público municipal seu imóvel e, após a realização das obras, recebe, como pagamento, unidades imobiliárias devidamente urbanizadas ou edificadas, ficando as demais unidades incorporadas ao patrimônio público. (Redação dada pela lei nº 13.465, de 2017)</h4>
+ <h4>§ 2º O valor das unidades imobiliárias a serem entregues ao proprietário será correspondente ao valor do imóvel antes da execução das obras, observado o disposto no § 2º do art. 8º desta Lei.</h4>
+ <h4>§ 2º O valor das unidades imobiliárias a serem entregues ao proprietário será correspondente ao valor do imóvel antes da execução das obras. (Redação dada pela lei nº 13.465, de 2017)</h4>
+ <h4>§ 3º A instauração do consórcio imobiliário por proprietários que tenham dado causa à formação de núcleos urbanos informais, ou por seus sucessores, não os eximirá das responsabilidades administrativa, civil ou criminal (incluído pela lei nº 13.465, de 2017)</h4>
+ <h3>Art. 47. Os tributos sobre imóveis urbanos, assim como as tarifas relativas a serviços públicos urbanos, serão diferenciados em função do interesse social.</h3>
+ <h3>Art. 48. Nos casos de programas e projetos habitacionais de interesse social, desenvolvidos por órgãos ou entidades da Administração Pública com atuação específica nessa área, os contratos de concessão de direito real de uso de imóveis públicos:</h3>
+ <h5>I – terão, para todos os fins de direito, caráter de escritura pública, não se aplicando o disposto no inciso II do art. 134 do Código Civil ;</h5>
+ <h5>II – constituirão título de aceitação obrigatória em garantia de contratos de financiamentos habitacionais.</h5>
+ <h3>Art. 49. Os Estados e Municípios terão o prazo de noventa dias, a partir da entrada em vigor desta Lei, para fixar prazos, por lei, para a expedição de diretrizes de empreendimentos urbanísticos, aprovação de projetos de parcelamento e de edificação, realização de vistorias e expedição de termo de verificação e conclusão de obras.</h3>
+ <h4>Parágrafo único. Não sendo cumprida a determinação do caput, fica estabelecido o prazo de sessenta dias para a realização de cada um dos referidos atos administrativos, que valerá até que os Estados e Municípios disponham em lei de forma diversa.</h4>
+ <h3>Art. 50. Os Municípios que estejam enquadrados na obrigação prevista nos incisos I e II do art. 41 desta Lei que não tenham plano diretor aprovado na data de entrada em vigor desta Lei, deverão aprová-lo no prazo de cinco anos.</h3>
+ <h3>Art. 50. Os Municípios que estejam enquadrados na obrigação prevista nos incisos I e II do caput do art. 41 desta Lei e que não tenham plano diretor aprovado na data de entrada em vigor desta Lei deverão aprová-lo até 30 de junho de 2008. (Redação dada pela Lei nº 11.673, 2008)</h3>
+ <h3>Art. 51. Para os efeitos desta Lei, aplicam-se ao Distrito Federal e ao Governador do Distrito Federal as disposições relativas, respectivamente, a Município e a Prefeito.</h3>
+ <h3>Art. 52. Sem prejuízo da punição de outros agentes públicos envolvidos e da aplicação de outras sanções cabíveis, o Prefeito incorre em improbidade administrativa, nos termos da Lei Nº 8.429, de 2 de junho de 1992, quando:</h3>
+ <h5>I – (VETADO)</h5>
+ <h5>II – deixar de proceder, no prazo de cinco anos, o adequado aproveitamento do imóvel incorporado ao patrimônio público, conforme o disposto no § 4º do art. 8º desta Lei;</h5>
+ <h5>III – utilizar áreas obtidas por meio do direito de preempção em desacordo com o disposto no art. 26 desta Lei;</h5>
+ <h5>IV – aplicar os recursos auferidos com a outorga onerosa do direito de construir e de alteração de uso em desacordo com o previsto no art. 31 desta Lei;</h5>
+ <h5>V – aplicar os recursos auferidos com operações consorciadas em desacordo com o previsto no § 1º do art. 33 desta Lei;</h5>
+ <h5>VI – impedir ou deixar de garantir os requisitos contidos nos incisos I a III do § 4º do art. 40 desta Lei;</h5>
+ <h5>VII – deixar de tomar as providências necessárias para garantir a observância do disposto no § 3º do art. 40 e no art. 50 desta Lei;</h5>
+ <h5>VIII – adquirir imóvel objeto de direito de preempção, nos termos dos arts. 25 a 27 desta Lei, pelo valor da proposta apresentada, se este for, comprovadamente, superior ao de mercado.</h5>
+ <h3>Art. 53. O art. 1º da Lei nº 7.347, de 24 de julho de 1985 , passa a vigorar acrescido de novo inciso III, renumerando o atual inciso III e os subseqüentes: (Revogado pela Medida Provisória nº 2.180-35, de 24.8.2001)</h3>
+ <p>"</p>
+ <h3>Art. 1º .......................................................</h3>
+ <p>...................................................................</p>
+ <h5>III – à ordem urbanística;</h5>
+ <h3>.........................................................." (NR)</h3>
+ <h3>Art. 54. O art. 4º da Lei nº 7.347, de 1985 , passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 4º Poderá ser ajuizada ação cautelar para os fins desta Lei, objetivando, inclusive, evitar o dano ao meio ambiente, ao consumidor, à ordem urbanística ou aos bens e direitos de valor artístico, estético, histórico, turístico e paisagístico (VETADO)." (NR)</h3>
+ <h3>Art. 55. O art. 167, inciso I, item 28, da Lei Nº 6.015, de 31 de dezembro de 1973 , alterado pela Lei Nº 6.216, de 30 de junho de 1975, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 167. ...................................................</h3>
+ <h5>I - ..............................................................</h5>
+ <p>..................................................................</p>
+ <p>28) das sentenças declaratórias de usucapião, independente da regularidade do parcelamento do solo ou da edificação;</p>
+ <h3>........................................................." (NR)</h3>
+ <h3>Art. 56. O art. 167, inciso I, da Lei Nº 6.015, de 1973 , passa a vigorar acrescido dos seguintes itens 37, 38 e 39:</h3>
+ <p>"</p>
+ <h3>Art. 167. ....................................................</h3>
+ <h5>I – ..............................................................</h5>
+ <p>37) dos termos administrativos ou das sentenças declaratórias da concessão de uso especial para fins de moradia, independente da regularidade do parcelamento do solo ou da edificação;</p>
+ <h3>38) (VETADO)</h3>
+ <p>39) da constituição do direito de superfície de imóvel urbano;" (NR)</p>
+ <h3>Art. 57. O art. 167, inciso II, da Lei Nº 6.015, de 1973 , passa a vigorar acrescido dos seguintes itens 18, 19 e 20:</h3>
+ <p>"</p>
+ <h3>Art. 167. ....................................................</h3>
+ <h5>II – ..............................................................</h5>
+ <p>18) da notificação para parcelamento, edificação ou utilização compulsórios de imóvel urbano;</p>
+ <p>19) da extinção da concessão de uso especial para fins de moradia;</p>
+ <p>20) da extinção do direito de superfície do imóvel urbano." (NR)</p>
+ <h3>Art. 57-A. A administradora ferroviária, inclusive metroferroviária, poderá constituir o direito real de laje de que trata a Lei nº 10.406, de 10 de janeiro de 2002 , e de superfície de que trata esta Lei, sobre ou sob a faixa de domínio de sua via férrea, observado o Plano Diretor e o procedimento a ser delineado em ato do Poder Executivo Federal. (Incluído pela 	Medida Provisória nº 1.065, de 2021) encerrada</h3>
+ <h4>Parágrafo único. A constituição do direito real de laje ou de superfície de que trata o caput é condicionada a licenciamento urbanístico municipal, que estabelecerá os ônus urbanísticos a serem observados e o direito de construir incorporado a cada unidade imobiliária. (Incluído pela Medida Provisória nº 1.065, de 2021) encerrada</h4>
+ <h3>Art. 57-A. A operadora ferroviária, inclusive metroferroviária, poderá constituir o direito real de laje de que trata a Lei nº 10.406, de 10 de janeiro de 2002 (Código Civil), e o de superfície de que trata esta Lei, sobre ou sob a faixa de domínio de sua via férrea, 	observado o plano diretor e o respectivo contrato de outorga com o poder concedente. (Incluído pela Lei nº 14.273, de 2021)</h3>
+ <h4>Parágrafo único. A constituição do direito real de laje ou de superfície a que se refere o caput deste artigo é condicionada à existência prévia de licenciamento urbanístico municipal, que estabelecerá os ônus urbanísticos a serem observados e o direito de construir incorporado a cada unidade imobiliária. (Incluído pela Lei nº 14.273, de 2021)</h4>
+ <h3>Art. 58. Esta Lei entra em vigor após decorridos noventa dias de sua publicação.</h3>
+ <p>Brasília, 10 de julho de 2001; 180º da Independência e 113º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Paulo de Tarso Ramos Ribeiro</p>
+ <p>Geraldo Magela da Cruz Quintão</p>
+ <p>Benjamin Benzaquen Sicsú</p>
+ <p>Alberto Mendes Cardoso</p>
+ <p>Este texto não substitui o publicado no DOU de 11.7.2001 e retificado em 17.7.2001</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Mensagem de Veto nº 730 | Regulamenta os arts. 182 e 183 da Constituição Federal, estabelece diretrizes gerais da política urbana e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10257.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

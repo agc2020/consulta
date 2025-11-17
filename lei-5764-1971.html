@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 5.764, DE 16 DE DEZEMBRO DE 1971 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1971" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 5.764, DE 16 DE DEZEMBRO DE 1971</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:40:29 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/l5764.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 67.864 caracteres | espelho: 66.916 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 5.764, DE 16 DE DEZEMBRO DE 1971.</p>
+ <p>Define a Política Nacional de Cooperativismo, institui o regime jurídico das sociedades cooperativas, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Da Política Nacional de Cooperativismo</p>
+ <h3>Art. 1° Compreende-se como Política Nacional de Cooperativismo a atividade decorrente das iniciativas ligadas ao sistema cooperativo, originárias de setor público ou privado, isoladas ou coordenadas entre si, desde que reconhecido seu interesse público.</h3>
+ <h3>Art. 2° As atribuições do Governo Federal na coordenação e no estímulo às atividades de cooperativismo no território nacional serão exercidas na forma desta Lei e das normas que surgirem em sua decorrência.</h3>
+ <h4>Parágrafo único. A ação do Poder Público se exercerá, principalmente, mediante prestação de assistência técnica e de incentivos financeiros e creditórios especiais, necessários à criação, desenvolvimento e integração das entidades cooperativas.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>Das Sociedades Cooperativas</p>
+ <h3>Art. 3° Celebram contrato de sociedade cooperativa as pessoas que reciprocamente se obrigam a contribuir com bens ou serviços para o exercício de uma atividade econômica, de proveito comum, sem objetivo de lucro.</h3>
+ <h3>Art. 4º As cooperativas são sociedades de pessoas, com forma e natureza jurídica próprias, de natureza civil, não sujeitas a falência, constituídas para prestar serviços aos associados, distinguindo-se das demais sociedades pelas seguintes características:</h3>
+ <h5>I - adesão voluntária, com número ilimitado de associados, salvo impossibilidade técnica de prestação de serviços;</h5>
+ <h5>II - variabilidade do capital social representado por quotas-partes;</h5>
+ <h5>III - limitação do número de quotas-partes do capital para cada associado, facultado, porém, o estabelecimento de critérios de proporcionalidade, se assim for mais adequado para o cumprimento dos objetivos sociais;</h5>
+ <h5>IV - incessibilidade das quotas-partes do capital a terceiros, estranhos à sociedade;</h5>
+ <h5>V - singularidade de voto, podendo as cooperativas centrais, federações e confederações de cooperativas, com exceção das que exerçam atividade de crédito, optar pelo critério da proporcionalidade;</h5>
+ <h5>VI - quorum para o funcionamento e deliberação da Assembléia Geral baseado no número de associados e não no capital;</h5>
+ <h5>VII - retorno das sobras líquidas do exercício, proporcionalmente às operações realizadas pelo associado, salvo deliberação em contrário da Assembléia Geral;</h5>
+ <h5>VIII - indivisibilidade dos fundos de Reserva e de Assistência Técnica Educacional e Social;</h5>
+ <h5>IX - neutralidade política e indiscriminação religiosa, racial e social;</h5>
+ <h5>X - prestação de assistência aos associados, e, quando previsto nos estatutos, aos empregados da cooperativa;</h5>
+ <h5>XI - área de admissão de associados limitada às possibilidades de reunião, controle, operações e prestação de serviços.</h5>
+ <h2>CAPÍTULO III</h2>
+ <p>Do Objetivo e Classificação das Sociedades Cooperativas</p>
+ <h3>Art. 5° As sociedades cooperativas poderão adotar por objeto qualquer gênero de serviço, operação ou atividade, assegurando-se-lhes o direito exclusivo e exigindo-se-lhes a obrigação do uso da expressão "cooperativa" em sua denominação.</h3>
+ <h4>Parágrafo único. É vedado às cooperativas o uso da expressão "Banco".</h4>
+ <h3>Art. 6º As sociedades cooperativas são consideradas:</h3>
+ <h5>I - singulares, as constituídas pelo número mínimo de 20 (vinte) pessoas físicas, sendo excepcionalmente permitida a admissão de pessoas jurídicas que tenham por objeto as mesmas ou correlatas atividades econômicas das pessoas físicas ou, ainda, aquelas sem fins lucrativos;</h5>
+ <h5>II - cooperativas centrais ou federações de cooperativas, as constituídas de, no mínimo, 3 (três) singulares, podendo, excepcionalmente, admitir associados individuais;</h5>
+ <h5>III - confederações de cooperativas, as constituídas, pelo menos, de 3 (três) federações de cooperativas ou cooperativas centrais, da mesma ou de diferentes modalidades.</h5>
+ <h4>§ 1º Os associados individuais das cooperativas centrais e federações de cooperativas serão inscritos no Livro de Matrícula da sociedade e classificados em grupos visando à transformação, no futuro, em cooperativas singulares que a elas se filiarão.</h4>
+ <h4>§ 2º A exceção estabelecida no item II, in fine, do caput deste artigo não se aplica às centrais e federações que exerçam atividades de crédito.</h4>
+ <h3>Art. 7º As cooperativas singulares se caracterizam pela prestação direta de serviços aos associados.</h3>
+ <h3>Art. 8° As cooperativas centrais e federações de cooperativas objetivam organizar, em comum e em maior escala, os serviços econômicos e assistenciais de interesse das filiadas, integrando e orientando suas atividades, bem como facilitando a utilização recíproca dos serviços.</h3>
+ <h4>Parágrafo único. Para a prestação de serviços de interesse comum, é permitida a constituição de cooperativas centrais, às quais se associem outras cooperativas de objetivo e finalidades diversas.</h4>
+ <h3>Art. 9° As confederações de cooperativas têm por objetivo orientar e coordenar as atividades das filiadas, nos casos em que o vulto dos empreendimentos transcender o âmbito de capacidade ou conveniência de atuação das centrais e federações.</h3>
+ <h3>Art. 10. As cooperativas se classificam também de acordo com o objeto ou pela natureza das atividades desenvolvidas por elas ou por seus associados.</h3>
+ <h4>§ 1º Além das modalidades de cooperativas já consagradas, caberá ao respectivo órgão controlador apreciar e caracterizar outras que se apresentem.</h4>
+ <h4>§ 2º Serão consideradas mistas as cooperativas que apresentarem mais de um objeto de atividades.</h4>
+ <p><del>§ 3 (Revogado pela Lei Complementar nº 130, de 20090)</del></p>
+ <h3>Art. 11. As sociedades cooperativas serão de responsabilidade limitada, quando a responsabilidade do associado pelos compromissos da sociedade se limitar ao valor do capital por ele subscrito.</h3>
+ <h3>Art. 12. As sociedades cooperativas serão de responsabilidade ilimitada, quando a responsabilidade do associado pelos compromissos da sociedade for pessoal, solidária e não tiver limite.</h3>
+ <h3>Art. 13. A responsabilidade do associado para com terceiros, como membro da sociedade, somente poderá ser invocada depois de judicialmente exigida da cooperativa.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <p>Da Constituição das Sociedades Cooperativas</p>
+ <h3>Art. 14. A sociedade cooperativa constitui-se por deliberação da Assembléia Geral dos fundadores, constantes da respectiva ata ou por instrumento público.</h3>
+ <h3>Art. 15. O ato constitutivo, sob pena de nulidade, deverá declarar:</h3>
+ <h5>I - a denominação da entidade, sede e objeto de funcionamento;</h5>
+ <h5>II - o nome, nacionalidade, idade, estado civil, profissão e residência dos associados, fundadores que o assinaram, bem como o valor e número da quota-parte de cada um;</h5>
+ <h5>III - aprovação do estatuto da sociedade;</h5>
+ <h5>IV - o nome, nacionalidade, estado civil, profissão e residência dos associados eleitos para os órgãos de administração, fiscalização e outros.</h5>
+ <h3>Art. 16. O ato constitutivo da sociedade e os estatutos, quando não transcritos naquele, serão assinados pelos fundadores.</h3>
+ <p>Seção I</p>
+ <p>Da Autorização de Funcionamento</p>
+ <h3>Art. 17. A cooperativa constituída na forma da legislação vigente apresentará ao respectivo órgão executivo federal de controle, no Distrito Federal, Estados ou Territórios, ou ao órgão local para isso credenciado, dentro de 30 (trinta) dias da data da constituição, para fins de autorização, requerimento acompanhado de 4 (quatro) vias do ato constitutivo, estatuto e lista nominativa, além de outros documentos considerados necessários.</h3>
+ <h3>Art. 18. Verificada, no prazo máximo de 60 (sessenta) dias, a contar da data de entrada em seu protocolo, pelo respectivo órgão executivo federal de controle ou órgão local para isso credenciado, a existência de condições de funcionamento da cooperativa em constituição, bem como a regularidade da documentação apresentada, o órgão controlador devolverá, devidamente autenticadas, 2 (duas) vias à cooperativa, acompanhadas de documento dirigido à Junta Comercial do Estado, onde a entidade estiver sediada, comunicando a aprovação do ato constitutivo da requerente.</h3>
+ <h4>§ 1° Dentro desse prazo, o órgão controlador, quando julgar conveniente, no interesse do fortalecimento do sistema, poderá ouvir o Conselho Nacional de Cooperativismo, caso em que não se verificará a aprovação automática prevista no parágrafo seguinte.</h4>
+ <h4>§ 2º A falta de manifestação do órgão controlador no prazo a que se refere este artigo implicará a aprovação do ato constitutivo e o seu subseqüente arquivamento na Junta Comercial respectiva.</h4>
+ <h4>§ 3º Se qualquer das condições citadas neste artigo não for atendida satisfatoriamente, o órgão ao qual compete conceder a autorização dará ciência ao requerente, indicando as exigências a serem cumpridas no prazo de 60 (sessenta) dias, findos os quais, se não atendidas, o pedido será automaticamente arquivado.</h4>
+ <h4>§ 4° À parte é facultado interpor da decisão proferida pelo órgão controlador, nos Estados, Distrito Federal ou Territórios, recurso para a respectiva administração central, dentro do prazo de 30 (trinta) dias contado da data do recebimento da comunicação e, em segunda e última instância, ao Conselho Nacional de Cooperativismo, também no prazo de 30 (trinta) dias, exceção feita às cooperativas de crédito, às seções de crédito das cooperativas agrícolas mistas, e às cooperativas habitacionais, hipótese em que o recurso será apreciado pelo Conselho Monetário Nacional, no tocante às duas primeiras, e pelo Banco Nacional de Habitação em relação às últimas.</h4>
+ <h4>§ 5º Cumpridas as exigências, deverá o despacho do deferimento ou indeferimento da autorização ser exarado dentro de 60 (sessenta) dias, findos os quais, na ausência de decisão, o requerimento será considerado deferido. Quando a autorização depender de dois ou mais órgãos do Poder Público, cada um deles terá o prazo de 60 (sessenta) dias para se manifestar.</h4>
+ <h4>§ 6º Arquivados os documentos na Junta Comercial e feita a respectiva publicação, a cooperativa adquire personalidade jurídica, tornando-se apta a funcionar.</h4>
+ <h4>§ 7º A autorização caducará, independentemente de qualquer despacho, se a cooperativa não entrar em atividade dentro do prazo de 90 (noventa) dias contados da data em que forem arquivados os documentos na Junta Comercial.</h4>
+ <h4>§ 8º Cancelada a autorização, o órgão de controle expedirá comunicação à respectiva Junta Comercial, que dará baixa nos documentos arquivados.</h4>
+ <h4>§ 9° A autorização para funcionamento das cooperativas de habitação, das de crédito e das seções de crédito das cooperativas agrícolas mistas subordina-se ainda, à política dos respectivos órgãos normativos.</h4>
+ <p><del>§ 10 (Revogado pela Lei Complementar nº 130, de 20090)</del></p>
+ <h3>Art. 19. A cooperativa escolar não estará sujeita ao arquivamento dos documentos de constituição, bastando remetê-los ao Instituto Nacional de Colonização e Reforma Agrária, ou respectivo órgão local de controle, devidamente autenticados pelo diretor do estabelecimento de ensino ou a maior autoridade escolar do município, quando a cooperativa congregar associações de mais de um estabelecimento de ensino.</h3>
+ <h3>Art. 20. A reforma de estatutos obedecerá, no que couber, ao disposto nos artigos anteriores, observadas as prescrições dos órgãos normativos.</h3>
+ <p>Seção II</p>
+ <p>Do Estatuto Social</p>
+ <h3>Art. 21. O estatuto da cooperativa, além de atender ao disposto no artigo 4º, deverá indicar:</h3>
+ <h5>I - a denominação, sede, prazo de duração, área de ação, objeto da sociedade, fixação do exercício social e da data do levantamento do balanço geral;</h5>
+ <h5>II - os direitos e deveres dos associados, natureza de suas responsabilidades e as condições de admissão, demissão, eliminação e exclusão e as normas para sua representação nas assembléias gerais;</h5>
+ <h5>III - o capital mínimo, o valor da quota-parte, o mínimo de quotas-partes a ser subscrito pelo associado, o modo de integralização das quotas-partes, bem como as condições de sua retirada nos casos de demissão, eliminação ou de exclusão do associado;</h5>
+ <h5>IV - a forma de devolução das sobras registradas aos associados, ou do rateio das perdas apuradas por insuficiência de contribuição para cobertura das despesas da sociedade;</h5>
+ <h5>V - o modo de administração e fiscalização, estabelecendo os respectivos órgãos, com definição de suas atribuições, poderes e funcionamento, a representação ativa e passiva da sociedade em juízo ou fora dele, o prazo do mandato, bem como o processo de substituição dos administradores e conselheiros fiscais;</h5>
+ <h5>VI - as formalidades de convocação das assembléias gerais e a maioria requerida para a sua instalação e validade de suas deliberações, vedado o direito de voto aos que nelas tiverem interesse particular sem privá-los da participação nos debates;</h5>
+ <h5>VII - os casos de dissolução voluntária da sociedade;</h5>
+ <h5>VIII - o modo e o processo de alienação ou oneração de bens imóveis da sociedade;</h5>
+ <h5>IX - o modo de reformar o estatuto;</h5>
+ <h5>X - o número mínimo de associados.</h5>
+ <p>´ XI – se a cooperativa tem poder para agir como substituta processual de seus associados, na forma do art. 88-A desta Lei. (Incluído pela Lei nº 13.806, de 2019)</p>
+ <h2>CAPÍTULO V</h2>
+ <p>Dos Livros</p>
+ <h3>Art. 22. A sociedade cooperativa deverá possuir os seguintes livros:</h3>
+ <h5>I - de Matrícula;</h5>
+ <h5>II - de Atas das Assembléias Gerais;</h5>
+ <h5>III - de Atas dos Órgãos de Administração;</h5>
+ <h5>IV - de Atas do Conselho Fiscal;</h5>
+ <h5>V - de presença dos Associados nas Assembléias Gerais;</h5>
+ <h5>VI - outros, fiscais e contábeis, obrigatórios.</h5>
+ <h4>Parágrafo único. É facultada a adoção de livros de folhas soltas ou fichas.</h4>
+ <h4>Parágrafo único. É facultada a adoção de livros de folhas soltas ou fichas ou em meio digital, nos termos de regulamento do órgão competente do Poder Executivo federal. (Redação dada pela Lei nº 14.195, de 2021)</h4>
+ <h3>Art. 23. No Livro de Matrícula, os associados serão inscritos por ordem cronológica de admissão, dele constando:</h3>
+ <h5>I - o nome, idade, estado civil, nacionalidade, profissão e residência do associado;</h5>
+ <h5>II - a data de sua admissão e, quando for o caso, de sua demissão a pedido, eliminação ou exclusão;</h5>
+ <h5>III - a conta corrente das respectivas quotas-partes do capital social.</h5>
+ <h2>CAPÍTULO VI</h2>
+ <p>Do Capital Social</p>
+ <h3>Art. 24. O capital social será subdividido em quotas-partes, cujo valor unitário não poderá ser superior ao maior salário mínimo vigente no País.</h3>
+ <h4>§ 1º Nenhum associado poderá subscrever mais de 1/3 (um terço) do total das quotas-partes, salvo nas sociedades em que a subscrição deva ser diretamente proporcional ao movimento financeiro do cooperado ou ao quantitativo dos produtos a serem comercializados, beneficiados ou transformados, ou ainda, em relação à área cultivada ou ao número de plantas e animais em exploração.</h4>
+ <h4>§ 2º Não estão sujeitas ao limite estabelecido no parágrafo anterior as pessoas jurídicas de direito público que participem de cooperativas de eletrificação, irrigação e telecomunicações.</h4>
+ <h4>§ 3° É vedado às cooperativas distribuírem qualquer espécie de benefício às quotas-partes do capital ou estabelecer outras vantagens ou privilégios, financeiros ou não, em favor de quaisquer associados ou terceiros excetuando-se os juros até o máximo de 12% (doze por cento) ao ano que incidirão sobre a parte integralizada.</h4>
+ <h4>§ 4º As quotas de que trata o caput deixam de integrar o patrimônio líquido da cooperativa quando se tornar exigível, na forma prevista no estatuto social e na legislação vigente, a restituição do capital integralizado pelo associado, em razão do seu desligamento, por demissão, exclusão ou eliminação. (Incluído pela Lei nº 13.097, de 2015)</h4>
+ <h3>Art. 25. Para a formação do capital social poder-se-á estipular que o pagamento das quotas-partes seja realizado mediante prestações periódicas, independentemente de chamada, por meio de contribuições ou outra forma estabelecida a critério dos respectivos órgãos executivos federais.</h3>
+ <h3>Art. 26. A transferência de quotas-partes será averbada no Livro de Matrícula, mediante termo que conterá as assinaturas do cedente, do cessionário e do diretor que o estatuto designar.</h3>
+ <h3>Art. 27. A integralização das quotas-partes e o aumento do capital social poderão ser feitos com bens avaliados previamente e após homologação em Assembléia Geral ou mediante retenção de determinada porcentagem do valor do movimento financeiro de cada associado.</h3>
+ <h4>§ 1º O disposto neste artigo não se aplica às cooperativas de crédito, às agrícolas mistas com seção de crédito e às habitacionais.</h4>
+ <h4>§ 2° Nas sociedades cooperativas em que a subscrição de capital for diretamente proporcional ao movimento ou à expressão econômica de cada associado, o estatuto deverá prever sua revisão periódica para ajustamento às condições vigentes.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <p>Dos Fundos</p>
+ <h3>Art. 28. As cooperativas são obrigadas a constituir:</h3>
+ <h5>I - Fundo de Reserva destinado a reparar perdas e atender ao desenvolvimento de suas</h5>
+ <p>atividades, constituído com 10% (dez por cento), pelo menos, das sobras líquidas do exercício;</p>
+ <h5>II - Fundo de Assistência Técnica, Educacional e Social, destinado a prestação de assistência aos associados, seus familiares e, quando previsto nos estatutos, aos empregados da cooperativa, constituído de 5% (cinco por cento), pelo menos, das sobras líquidas apuradas no exercício.</h5>
+ <h4>§ 1° Além dos previstos neste artigo, a Assembléia Geral poderá criar outros fundos, inclusive rotativos, com recursos destinados a fins específicos fixando o modo de formação, aplicação e liquidação.</h4>
+ <h4>§ 2º Os serviços a serem atendidos pelo Fundo de Assistência Técnica, Educacional e Social poderão ser executados mediante convênio com entidades públicas e privadas.</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <p>Dos Associados</p>
+ <h3>Art. 29. O ingresso nas cooperativas é livre a todos que desejarem utilizar os serviços prestados pela sociedade, desde que adiram aos propósitos sociais e preencham as condições estabelecidas no estatuto, ressalvado o disposto no artigo 4º, item I, desta Lei.</h3>
+ <h4>§ 1° A admissão dos associados poderá ser restrita, a critério do órgão normativo respectivo, às pessoas que exerçam determinada atividade ou profissão, ou estejam vinculadas a determinada entidade.</h4>
+ <h4>§ 2° Poderão ingressar nas cooperativas de pesca e nas constituídas por produtores rurais ou extrativistas, as pessoas jurídicas que pratiquem as mesmas atividades econômicas das pessoas físicas associadas.</h4>
+ <h4>§ 3° Nas cooperativas de eletrificação, irrigação e telecomunicações, poderão ingressar as pessoas jurídicas que se localizem na respectiva área de operações.</h4>
+ <h4>§ 4° Não poderão ingressar no quadro das cooperativas os agentes de comércio e empresários que operem no mesmo campo econômico da sociedade.</h4>
+ <h3>Art. 30. À exceção das cooperativas de crédito e das agrícolas mistas com seção de crédito, a admissão de associados, que se efetive mediante aprovação de seu pedido de ingresso pelo órgão de administração, complementa-se com a subscrição das quotas-partes de capital social e a sua assinatura no Livro de Matrícula.</h3>
+ <h3>Art. 31. O associado que aceitar e estabelecer relação empregatícia com a cooperativa, perde o direito de votar e ser votado, até que sejam aprovadas as contas do exercício em que ele deixou o emprego.</h3>
+ <h3>Art. 32. A demissão do associado será unicamente a seu pedido.</h3>
+ <h3>Art. 33. A eliminação do associado é aplicada em virtude de infração legal ou estatutária, ou por fato especial previsto no estatuto, mediante termo firmado por quem de direito no Livro de Matrícula, com os motivos que a determinaram.</h3>
+ <h3>Art. 34. A diretoria da cooperativa tem o prazo de 30 (trinta) dias para comunicar ao interessado a sua eliminação.</h3>
+ <h4>Parágrafo único. Da eliminação cabe recurso, com efeito suspensivo à primeira Assembléia Geral.</h4>
+ <h3>Art. 35. A exclusão do associado será feita:</h3>
+ <h5>I - por dissolução da pessoa jurídica;</h5>
+ <h5>II - por morte da pessoa física;</h5>
+ <h5>III - por incapacidade civil não suprida;</h5>
+ <h5>IV - por deixar de atender aos requisitos estatutários de ingresso ou permanência na cooperativa.</h5>
+ <h3>Art. 36. A responsabilidade do associado perante terceiros, por compromissos da sociedade, perdura para os demitidos, eliminados ou excluídos até quando aprovadas as contas do exercício em que se deu o desligamento.</h3>
+ <h4>Parágrafo único. As obrigações dos associados falecidos, contraídas com a sociedade, e as oriundas de sua responsabilidade como associado em face de terceiros, passam aos herdeiros, prescrevendo, porém, após um ano contado do dia da abertura da sucessão, ressalvados os aspectos peculiares das cooperativas de eletrificação rural e habitacionais.</h4>
+ <h3>Art. 37. A cooperativa assegurará a igualdade de direitos dos associados sendo-lhe defeso:</h3>
+ <h5>I - remunerar a quem agencie novos associados;</h5>
+ <h5>II - cobrar prêmios ou ágio pela entrada de novos associados ainda a título de compensação das reservas;</h5>
+ <h5>III - estabelecer restrições de qualquer espécie ao livre exercício dos direitos sociais.</h5>
+ <h2>CAPÍTULO IX</h2>
+ <p>Dos Órgãos Sociais</p>
+ <p>Seção I</p>
+ <p>Das Assembléias Gerais</p>
+ <h3>Art. 38. A Assembléia Geral dos associados é o órgão supremo da sociedade, dentro dos limites legais e estatutários, tendo poderes para decidir os negócios relativos ao objeto da sociedade e tomar as resoluções convenientes ao desenvolvimento e defesa desta, e suas deliberações vinculam a todos, ainda que ausentes ou discordantes.</h3>
+ <h4>§ 1º As Assembléias Gerais serão convocadas com antecedência mínima de 10 (dez) dias, em primeira convocação, mediante editais afixados em locais apropriados das dependências comumente mais freqüentadas pelos associados, publicação em jornal e comunicação aos associados por intermédio de circulares. Não havendo no horário estabelecido, quorum de instalação, as assembléias poderão ser realizadas em segunda ou terceira convocações desde que assim permitam os estatutos e conste do respectivo edital, quando então será observado o intervalo mínimo de 1 (uma) hora entre a realização por uma ou outra convocação.</h4>
+ <h4>§ 2º A convocação será feita pelo Presidente, ou por qualquer dos órgãos de administração, pelo Conselho Fiscal, ou após solicitação não atendida, por 1/5 (um quinto) dos associados em pleno gôzo dos seus direitos.</h4>
+ <h4>§ 3° As deliberações nas Assembléias Gerais serão tomadas por maioria de votos dos associados presentes com direito de votar.</h4>
+ <h3>Art. 39. É da competência das Assembléias Gerais, ordinárias ou extraordinárias, a destituição dos membros dos órgãos de administração ou fiscalização.</h3>
+ <h4>Parágrafo único. Ocorrendo destituição que possa afetar a regularidade da administração ou fiscalização da entidade, poderá a Assembléia designar administradores e conselheiros provisórios, até a posse dos novos, cuja eleição se efetuará no prazo máximo de 30 (trinta) dias.</h4>
+ <h3>Art. 40. Nas Assembléias Gerais o quorum de instalação será o seguinte:</h3>
+ <h5>I - 2/3 (dois terços) do número de associados, em primeira convocação;</h5>
+ <h5>II - metade mais 1 (um) dos associados em segunda convocação;</h5>
+ <h5>III - mínimo de 10 (dez) associados na terceira convocação ressalvado o caso de cooperativas centrais e federações e confederações de cooperativas, que se instalarão com qualquer número.</h5>
+ <h3>Art. 41. Nas Assembléias Gerais das cooperativas centrais, federações e confederações de cooperativas, a representação será feita por delegados indicados na forma dos seus estatutos e credenciados pela diretoria das respectivas filiadas.</h3>
+ <h4>Parágrafo único. Os grupos de associados individuais das cooperativas centrais e federações de cooperativas serão representados por 1 (um) delegado, escolhida entre seus membros e credenciado pela respectiva administração.</h4>
+ <h3>Art. 42. Nas cooperativas singulares, cada associado presente ou representado não terá direito a mais de 1 (um) voto, qualquer que seja o número de suas quotas-partes.</h3>
+ <h4>§ 1º Nas Assembléias Gerais das cooperativas singulares cujos associados se distribuam por área distante a mais de 50 km (cinqüenta quilômetros) da sede, ou no caso de doença comprovada, será permitida a representação por meio de mandatário que tenha a qualidade de associado no gôzo de seus direitos sociais e não exerça cargo eletivo na sociedade, vedado a cada mandatário dispor de mais de 3 (três) votos, compreendido o seu.</h4>
+ <h4>§ 2º Nas cooperativas singulares, cujo número de associados fôr superior a 1.000 (mil), poderá o mandatário que preencher as condições do parágrafo anterior representar até o máximo de 4 (quatro) associados, de conformidade com o critério que, em função da densidade do quadro associativo, fôr estabelecido no estatuto.</h4>
+ <h4>§ 3º Quando o número de associados nas cooperativas singulares exceder a 3.000 (três mil), pode o estatuto estabelecer que os mesmos sejam representados nas Assembléias Gerais por delegados que se revistam com as condições exigidas para o mandatário a que se refere o § 1°. O estatuto determinará o número de delegados, a época e a forma de sua escolha por grupos seccionais de associados de igual número e o tempo de duração da delegação.</h4>
+ <h4>§ 4º O delegado disporá de tantos votos quantos forem os associados componentes do grupo seccional que o elegeu.</h4>
+ <h4>§ 5º Aos associados localizados em áreas afastadas, os quais, por insuficiência de número, não puderam ser organizados em grupo seccional próprio, é facultado comparecer pessoalmente às Assembléias para exercer o seu direito de voto.</h4>
+ <h4>§ 6º Os associados, integrantes de grupos seccionais, que não sejam delegados, poderão comparecer às Assembléias Gerais, privados, contudo, de voz e voto.</h4>
+ <h4>§ 7º As Assembléias Gerais compostas por delegados decidem sôbre tôdas as matérias que, nos têrmos da lei ou dos estatutos, constituem objeto de decisão da assembléia geral dos associados.</h4>
+ <h3>Art. 42. Nas cooperativas singulares, cada associado presente não terá direito a mais de 1 (um) voto, qualquer que seja o número de suas quotas-partes. (Redação dada pela Lei nº 6.981, de 30/03/82)</h3>
+ <h4>§ 1° Não será permitida a representação por meio de mandatário. (Redação dada pela Lei nº 6.981, de 30/03/82)</h4>
+ <h4>§ 2° Quando o número de associados, nas cooperativas singulares exceder a 3.000 (três mil), pode o estatuto estabelecer que os mesmos sejam representados nas Assembléias Gerais por delegados que tenham a qualidade de associados no gozo de seus direitos sociais e não exerçam cargos eletivos na sociedade. (Redação dada pela Lei nº 6.981, de 30/03/82)</h4>
+ <h4>§ 3° O estatuto determinará o número de delegados, a época e forma de sua escolha por grupos seccionais de associados de igual número e o tempo de duração da delegação. (Redação dada pela Lei nº 6.981, de 30/03/82)</h4>
+ <h4>§ 4º Admitir-se-á, também, a delegação definida no parágrafo anterior nas cooperativas singulares cujo número de associados seja inferior a 3.000 (três mil), desde que haja filiados residindo a mais de 50 km (cinqüenta quilômetros) da sede. (Redação dada pela Lei nº 6.981, de 30/03/82)</h4>
+ <h4>§ 5° Os associados, integrantes de grupos seccionais, que não sejam delegados, poderão comparecer às Assembléias Gerais, privados, contudo, de voz e voto. (Redação dada pela Lei nº 6.981, de 30/03/82)</h4>
+ <h4>§ 6° As Assembléias Gerais compostas por delegados decidem sobre todas as matérias que, nos termos da lei ou dos estatutos, constituem objeto de decisão da assembléia geral dos associados. (Redação dada pela Lei nº 6.981, de 30/03/82)</h4>
+ <h3>Art. 43. Prescreve em 4 (quatro) anos, a ação para anular as deliberações da Assembléia Geral viciadas de erro, dolo, fraude ou simulação, ou tomadas com violação da lei ou do estatuto, contado o prazo da data em que a Assembléia foi realizada.</h3>
+ <h3>Art. 43-A. O associado poderá participar e votar a distância em reunião ou assembleia, nos termos do disposto na regulamentação do Departamento Nacional de Registro Empresarial e Integração da Secretaria Especial de Desburocratização, Gestão e Governo Digital do Ministério da Economia. (Incluído pela Medida Provisória nº 931, de 2020)</h3>
+ <h3>Art. 43-A. O associado poderá participar e votar a distância em reunião ou em assembleia, que poderão ser realizadas em meio digital, nos termos do regulamento do órgão competente do Poder Executivo federal. (Incluído pela Lei nº 14.030, de 2020)</h3>
+ <h4>Parágrafo único. A assembleia geral poderá ser realizada de forma digital, respeitados os direitos legalmente previstos de participação e de manifestação dos associados e os demais requisitos regulamentares. (Incluído pela Lei nº 14.030, de 2020)</h4>
+ <p>Seção II</p>
+ <p>Das Assembléias Gerais Ordinárias</p>
+ <h3>Art. 44. A Assembléia Geral Ordinária, que se realizará anualmente nos 3 (três) primeiros meses após o término do exercício social, deliberará sobre os seguintes assuntos que deverão constar da ordem do dia:</h3>
+ <h5>I - prestação de contas dos órgãos de administração acompanhada de parecer do Conselho Fiscal, compreendendo:</h5>
+ <h6>a) relatório da gestão;</h6>
+ <h6>b) balanço;</h6>
+ <h6>c) demonstrativo das sobras apuradas ou das perdas decorrentes da insuficiência das contribuições para cobertura das despesas da sociedade e o parecer do Conselho Fiscal.</h6>
+ <h5>II - destinação das sobras apuradas ou rateio das perdas decorrentes da insuficiência das contribuições para cobertura das despesas da sociedade, deduzindo-se, no primeiro caso as parcelas para os Fundos Obrigatórios;</h5>
+ <h5>III - eleição dos componentes dos órgãos de administração, do Conselho Fiscal e de outros, quando for o caso;</h5>
+ <h5>IV - quando previsto, a fixação do valor dos honorários, gratificações e cédula de presença dos membros do Conselho de Administração ou da Diretoria e do Conselho Fiscal;</h5>
+ <h5>V - quaisquer assuntos de interesse social, excluídos os enumerados no artigo 46.</h5>
+ <h4>§ 1° Os membros dos órgãos de administração e fiscalização não poderão participar da votação das matérias referidas nos itens I e IV deste artigo.</h4>
+ <h4>§ 2º À exceção das cooperativas de crédito e das agrícolas mistas com seção de crédito, a aprovação do relatório, balanço e contas dos órgãos de administração, desonera seus componentes de responsabilidade, ressalvados os casos de erro, dolo, fraude ou simulação, bem como a infração da lei ou do estatuto.</h4>
+ <p>Seção III</p>
+ <p>Das Assembléias Gerais Extraordinárias</p>
+ <h3>Art. 45. A Assembléia Geral Extraordinária realizar-se-á sempre que necessário e poderá deliberar sobre qualquer assunto de interesse da sociedade, desde que mencionado no edital de convocação.</h3>
+ <h3>Art. 46. É da competência exclusiva da Assembléia Geral Extraordinária deliberar sobre os seguintes assuntos:</h3>
+ <h5>I - reforma do estatuto;</h5>
+ <h5>II - fusão, incorporação ou desmembramento;</h5>
+ <h5>III - mudança do objeto da sociedade;</h5>
+ <h5>IV - dissolução voluntária da sociedade e nomeação de liquidantes;</h5>
+ <h5>V - contas do liquidante.</h5>
+ <h4>Parágrafo único. São necessários os votos de 2/3 (dois terços) dos associados presentes, para tornar válidas as deliberações de que trata este artigo.</h4>
+ <p>Seção IV</p>
+ <p>Dos Órgãos de Administração</p>
+ <h3>Art. 47. A sociedade será administrada por uma Diretoria ou Conselho de Administração, composto exclusivamente de associados eleitos pela Assembléia Geral, com mandato nunca superior a 4 (quatro) anos, sendo obrigatória a renovação de, no mínimo, 1/3 (um terço) do Conselho de Administração.</h3>
+ <h4>§ 1º O estatuto poderá criar outros órgãos necessários à administração.</h4>
+ <h4>§ 2° A posse dos administradores e conselheiros fiscais das cooperativas de crédito e das agrícolas mistas com seção de crédito e habitacionais fica sujeita à prévia homologação dos respectivos órgãos normativos.</h4>
+ <h3>Art. 48. Os órgãos de administração podem contratar gerentes técnicos ou comerciais, que não pertençam ao quadro de associados, fixando-lhes as atribuições e salários.</h3>
+ <h3>Art. 49. Ressalvada a legislação específica que rege as cooperativas de crédito, as seções de crédito das cooperativas agrícolas mistas e as de habitação, os administradores eleitos ou contratados não serão pessoalmente responsáveis pelas obrigações que contraírem em nome da sociedade, mas responderão solidariamente pelos prejuízos resultantes de seus atos, se procederem com culpa ou dolo.</h3>
+ <h4>Parágrafo único. A sociedade responderá pelos atos a que se refere a última parte deste artigo se os houver ratificado ou deles logrado proveito.</h4>
+ <h3>Art. 50. Os participantes de ato ou operação social em que se oculte a natureza da sociedade podem ser declarados pessoalmente responsáveis pelas obrigações em nome dela contraídas, sem prejuízo das sanções penais cabíveis.</h3>
+ <h3>Art. 51. São inelegíveis, além das pessoas impedidas por lei, os condenados a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato, ou contra a economia popular, a fé pública ou a propriedade.</h3>
+ <h4>Parágrafo único. Não podem compor uma mesma Diretoria ou Conselho de Administração, os parentes entre si até 2º (segundo) grau, em linha reta ou colateral.</h4>
+ <h3>Art. 52. O diretor ou associado que, em qualquer operação, tenha interesse oposto ao da sociedade, não pode participar das deliberações referentes a essa operação, cumprindo-lhe acusar o seu impedimento.</h3>
+ <h3>Art. 53. Os componentes da Administração e do Conselho fiscal, bem como os liquidantes, equiparam-se aos administradores das sociedades anônimas para efeito de responsabilidade criminal.</h3>
+ <h3>Art. 54. Sem prejuízo da ação que couber ao associado, a sociedade, por seus diretores, ou representada pelo associado escolhido em Assembléia Geral, terá direito de ação contra os administradores, para promover sua responsabilidade.</h3>
+ <h3>Art. 55. Os empregados de empresas que sejam eleitos diretores de sociedades cooperativas pelos mesmos criadas, gozarão das garantias asseguradas aos dirigentes sindicais pelo artigo 543 da Consolidação das Leis do Trabalho (Decreto-Lei n. 5.452, de 1° de maio de 1943).</h3>
+ <p>Seção V</p>
+ <p>Do Conselho Fiscal</p>
+ <h3>Art. 56. A administração da sociedade será fiscalizada, assídua e minuciosamente, por um Conselho Fiscal, constituído de 3 (três) membros efetivos e 3 (três) suplentes, todos associados eleitos anualmente pela Assembléia Geral, sendo permitida apenas a reeleição de 1/3 (um terço) dos seus componentes.</h3>
+ <h4>§ 1º Não podem fazer parte do Conselho Fiscal, além dos inelegíveis enumerados no artigo 51, os parentes dos diretores até o 2° (segundo) grau, em linha reta ou colateral, bem como os parentes entre si até esse grau.</h4>
+ <h4>§ 2º O associado não pode exercer cumulativamente cargos nos órgãos de administração e de fiscalização.</h4>
+ <h2>CAPÍTULO X</h2>
+ <p>Fusão, Incorporação e Desmembramento</p>
+ <h3>Art. 57. Pela fusão, duas ou mais cooperativas formam nova sociedade.</h3>
+ <h4>§ 1° Deliberada a fusão, cada cooperativa interessada indicará nomes para comporem comissão mista que procederá aos estudos necessários à constituição da nova sociedade, tais como o levantamento patrimonial, balanço geral, plano de distribuição de quotas-partes, destino dos fundos de reserva e outros e o projeto de estatuto.</h4>
+ <h4>§ 2° Aprovado o relatório da comissão mista e constituída a nova sociedade em Assembléia Geral conjunta os respectivos documentos serão arquivados, para aquisição de personalidade jurídica, na Junta Comercial competente, e duas vias dos mesmos, com a publicação do arquivamento, serão encaminhadas ao órgão executivo de controle ou ao órgão local credenciado.</h4>
+ <h4>§ 3° Exclui-se do disposto no parágrafo anterior a fusão que envolver cooperativas que exerçam atividades de crédito. Nesse caso, aprovado o relatórios da comissão mista e constituída a nova sociedade em Assembléia Geral conjunta, a autorização para funcionar e o registro dependerão de prévia anuência do Banco Central do Brasil.</h4>
+ <h3>Art. 58. A fusão determina a extinção das sociedades que se unem para formar a nova sociedade que lhe sucederá nos direitos e obrigações.</h3>
+ <h3>Art. 59. Pela incorporação, uma sociedade cooperativa absorve o patrimônio, recebe os associados, assume as obrigações e se investe nos direitos de outra ou outras cooperativas.</h3>
+ <h4>Parágrafo único. Na hipótese prevista neste artigo, serão obedecidas as mesmas formalidades estabelecidas para a fusão, limitadas as avaliações ao patrimônio da ou das sociedades incorporandas.</h4>
+ <h3>Art. 60. As sociedades cooperativas poderão desmembrar-se em tantas quantas forem necessárias para atender aos interesses dos seus associados, podendo uma das novas entidades ser constituída como cooperativa central ou federação de cooperativas, cujas autorizações de funcionamento e os arquivamentos serão requeridos conforme o disposto nos artigos 17 e seguintes.</h3>
+ <h3>Art. 61. Deliberado o desmembramento, a Assembléia designará uma comissão para estudar as providências necessárias à efetivação da medida.</h3>
+ <h4>§ 1° O relatório apresentado pela comissão, acompanhado dos projetos de estatutos das novas cooperativas, será apreciado em nova Assembléia especialmente convocada para esse fim.</h4>
+ <h4>§ 2º O plano de desmembramento preverá o rateio, entre as novas cooperativas, do ativo e passivo da sociedade desmembrada.</h4>
+ <h4>§ 3° No rateio previsto no parágrafo anterior, atribuir-se-á a cada nova cooperativa parte do capital social da sociedade desmembrada em quota correspondente à participação dos associados que passam a integrá-la.</h4>
+ <h4>§ 4° Quando uma das cooperativas for constituída como cooperativa central ou federação de cooperativas, prever-se-á o montante das quotas-partes que as associadas terão no capital social.</h4>
+ <h3>Art. 62. Constituídas as sociedades e observado o disposto nos artigos 17 e seguintes, proceder-se-á às transferências contábeis e patrimoniais necessárias à concretização das medidas adotadas.</h3>
+ <h2>CAPÍTULO XI</h2>
+ <p>Da Dissolução e Liquidação</p>
+ <h3>Art. 63. As sociedades cooperativas se dissolvem de pleno direito:</h3>
+ <h5>I - quando assim deliberar a Assembléia Geral, desde que os associados, totalizando o número mínimo exigido por esta Lei, não se disponham a assegurar a sua continuidade;</h5>
+ <h5>II - pelo decurso do prazo de duração;</h5>
+ <h5>III - pela consecução dos objetivos predeterminados;</h5>
+ <h5>IV - devido à alteração de sua forma jurídica;</h5>
+ <h5>V - pela redução do número mínimo de associados ou do capital social mínimo se, até a Assembléia Geral subseqüente, realizada em prazo não inferior a 6 (seis) meses, eles não forem restabelecidos;</h5>
+ <h5>VI - pelo cancelamento da autorização para funcionar;</h5>
+ <h5>VII - pela paralisação de suas atividades por mais de 120 (cento e vinte) dias.</h5>
+ <h4>Parágrafo único. A dissolução da sociedade importará no cancelamento da autorização para funcionar e do registro.</h4>
+ <h3>Art. 64. Quando a dissolução da sociedade não for promovida voluntariamente, nas hipóteses previstas no artigo anterior, a medida poderá ser tomada judicialmente a pedido de qualquer associado ou por iniciativa do órgão executivo federal.</h3>
+ <h3>Art. 65. Quando a dissolução for deliberada pela Assembléia Geral, esta nomeará um liquidante ou mais, e um Conselho Fiscal de 3 (três) membros para proceder à sua liquidação.</h3>
+ <h4>§ 1º O processo de liquidação só poderá ser iniciado após a audiência do respectivo órgão executivo federal.</h4>
+ <h4>§ 2° A Assembléia Geral, nos limites de suas atribuições, poderá, em qualquer época, destituir os liquidantes e os membros do Conselho Fiscal, designando os seus substitutos.</h4>
+ <h3>Art. 66. Em todos os atos e operações, os liquidantes deverão usar a denominação da cooperativa, seguida da expressão: "Em liquidação".</h3>
+ <h3>Art. 67. Os liquidantes terão todos os poderes normais de administração podendo praticar atos e operações necessários à realização do ativo e pagamento do passivo.</h3>
+ <h3>Art. 68. São obrigações dos liquidantes:</h3>
+ <h5>I - providenciar o arquivamento, na junta Comercial, da Ata da Assembléia Geral em que foi deliberada a liquidação;</h5>
+ <h5>II - comunicar à administração central do respectivo órgão executivo federal e ao Banco Nacional de Crédito Cooperativo S/A., a sua nomeação, fornecendo cópia da Ata da Assembléia Geral que decidiu a matéria;</h5>
+ <h5>III - arrecadar os bens, livros e documentos da sociedade, onde quer que estejam;</h5>
+ <h5>IV - convocar os credores e devedores e promover o levantamento dos créditos e débitos da sociedade;</h5>
+ <h5>V - proceder nos 15 (quinze) dias seguintes ao de sua investidura e com a assistência, sempre que possível, dos administradores, ao levantamento do inventário e balanço geral do ativo e passivo;</h5>
+ <h5>VI - realizar o ativo social para saldar o passivo e reembolsar os associados de suas quotas-partes, destinando o remanescente, inclusive o dos fundos indivisíveis, ao Banco Nacional de Crédito Cooperativo S/A.;</h5>
+ <h5>VII - exigir dos associados a integralização das respectivas quotas-partes do capital social não realizadas, quando o ativo não bastar para solução do passivo;</h5>
+ <h5>VIII - fornecer aos credores a relação dos associados, se a sociedade for de responsabilidade ilimitada e se os recursos apurados forem insuficientes para o pagamento das dívidas;</h5>
+ <h5>IX - convocar a Assembléia Geral, cada 6 (seis) meses ou sempre que necessário, para apresentar relatório e balanço do estado da liquidação e prestar contas dos atos praticados durante o período anterior;</h5>
+ <h5>X - apresentar à Assembléia Geral, finda a liquidação, o respectivo relatório e as contas finais;</h5>
+ <h5>XI - averbar, no órgão competente, a Ata da Assembléia Geral que considerar encerrada a liquidação.</h5>
+ <h3>Art. 69. As obrigações e as responsabilidades dos liquidantes regem-se pelos preceitos peculiares aos dos administradores da sociedade liquidanda.</h3>
+ <h3>Art. 70. Sem autorização da Assembléia não poderá o liquidante gravar de ônus os móveis e imóveis, contrair empréstimos, salvo quando indispensáveis para o pagamento de obrigações inadiáveis, nem prosseguir, embora para facilitar a liquidação, na atividade social.</h3>
+ <h3>Art. 71. Respeitados os direitos dos credores preferenciais, pagará o liquidante as dívidas sociais proporcionalmente e sem distinção entre vencidas ou não.</h3>
+ <h3>Art. 72. A Assembléia Geral poderá resolver, antes de ultimada a liquidação, mas depois de pagos os credores, que o liquidante faça rateios por antecipação da partilha, à medida em que se apurem os haveres sociais.</h3>
+ <h3>Art. 73. Solucionado o passivo, reembolsados os cooperados até o valor de suas quotas-partes e encaminhado o remanescente conforme o estatuído, convocará o liquidante Assembléia Geral para prestação final de contas.</h3>
+ <h3>Art. 74. Aprovadas as contas, encerra-se a liquidação e a sociedade se extingue, devendo a ata da Assembléia ser arquivada na Junta Comercial e publicada.</h3>
+ <h4>Parágrafo único. O associado discordante terá o prazo de 30 (trinta) dias, a contar da publicação da ata, para promover a ação que couber.</h4>
+ <h3>Art. 75. A liquidação extrajudicial das cooperativas poderá ser promovida por iniciativa do respectivo órgão executivo federal, que designará o liquidante, e será processada de acordo com a legislação específica e demais disposições regulamentares, desde que a sociedade deixe de oferecer condições operacionais, principalmente por constatada insolvência.</h3>
+ <h4>§ 1° A liquidação extrajudicial, tanto quanto possível, deverá ser precedida de intervenção na sociedade.</h4>
+ <h4>§ 2° Ao interventor, além dos poderes expressamente concedidos no ato de intervenção, são atribuídas funções, prerrogativas e obrigações dos órgãos de administração.</h4>
+ <h3>Art. 76. A publicação no Diário Oficial, da ata da Assembléia Geral da sociedade, que deliberou sua liquidação, ou da decisão do órgão executivo federal quando a medida for de sua iniciativa, implicará a sustação de qualquer ação judicial contra a cooperativa, pelo prazo de 1 (um) ano, sem prejuízo, entretanto, da fluência dos juros legais ou pactuados e seus acessórios.</h3>
+ <h4>Parágrafo único. Decorrido o prazo previsto neste artigo, sem que, por motivo relevante, esteja encerrada a liquidação, poderá ser o mesmo prorrogado, no máximo por mais 1 (um) ano, mediante decisão do órgão citado no artigo, publicada, com os mesmos efeitos, no Diário Oficial.</h4>
+ <h3>Art. 77. Na realização do ativo da sociedade, o liquidante devera:</h3>
+ <h5>I - mandar avaliar, por avaliadores judiciais ou de Instituições Financeiras Públicas, os bens de sociedade;</h5>
+ <h5>II - proceder à venda dos bens necessários ao pagamento do passivo da sociedade, observadas, no que couber, as normas constantes dos artigos 117 e 118 do Decreto-Lei n. 7.661, de 21 de junho de 1945 .</h5>
+ <h3>Art. 78. A liquidação das cooperativas de crédito e da seção de crédito das cooperativas agrícolas mistas reger-se-á pelas normas próprias legais e regulamentares.</h3>
+ <h2>CAPÍTULO XII</h2>
+ <p>Do Sistema Operacional das Cooperativas</p>
+ <p>Seção I</p>
+ <p>Do Ato Cooperativo</p>
+ <h3>Art. 79. Denominam-se atos cooperativos os praticados entre as cooperativas e seus associados, entre estes e aquelas e pelas cooperativas entre si quando associados, para a consecução dos objetivos sociais.</h3>
+ <h4>Parágrafo único. O ato cooperativo não implica operação de mercado, nem contrato de compra e venda de produto ou mercadoria.</h4>
+ <p>Seção II</p>
+ <p>Das Distribuições de Despesas</p>
+ <h3>Art. 80. As despesas da sociedade serão cobertas pelos associados mediante rateio na proporção direta da fruição de serviços.</h3>
+ <h4>Parágrafo único. A cooperativa poderá, para melhor atender à equanimidade de cobertura das despesas da sociedade, estabelecer:</h4>
+ <h5>I - rateio, em partes iguais, das despesas gerais da sociedade entre todos os associados, quer tenham ou não, no ano, usufruído dos serviços por ela prestados, conforme definidas no estatuto;</h5>
+ <h5>II - rateio, em razão diretamente proporcional, entre os associados que tenham usufruído dos serviços durante o ano, das sobras líquidas ou dos prejuízos verificados no balanço do exercício, excluídas as despesas gerais já atendidas na forma do item anterior.</h5>
+ <h3>Art. 81. A cooperativa que tiver adotado o critério de separar as despesas da sociedade e estabelecido o seu rateio na forma indicada no parágrafo único do artigo anterior deverá levantar separadamente as despesas gerais.</h3>
+ <p>Seção III</p>
+ <p>Das Operações da Cooperativa</p>
+ <h3>Art. 82. A cooperativa que se dedicar a vendas em comum poderá registrar-se como armazém geral e, nessa condição, expedir "Conhecimentos de Depósitos" e Warrants para os produtos de seus associados conservados em seus armazéns, próprios ou arrendados, sem prejuízo da emissão de outros títulos decorrentes de suas atividades normais, aplicando-se, no que couber, a legislação específica.</h3>
+ <h3>Art. 82. A cooperativa que se dedicar a vendas em comum poderá registrar-se como</h3>
+ <p>armazém geral, podendo também desenvolver as atividades previstas na Lei Nº 9.973, de 29 de maio de 2000 , e nessa condição expedir Conhecimento de Depósito, Warrant, Certificado de Depósito Agropecuário - CDA e Warrant Agropecuário - WA para os produtos de seus associados conservados em seus armazéns, próprios ou arrendados, sem prejuízo da emissão de outros títulos decorrentes de suas atividades normais, aplicando-se, no que couber, a legislação específica. (Redação dada pela Lei nº 11.076, de 2004)</p>
+ <h4>§ 1° Para efeito deste artigo, os armazéns da cooperativa se equiparam aos "Armazéns Gerais", com as prerrogativas e obrigações destes, ficando os componentes do Conselho de Administração ou Diretoria Executiva, emitente do título, responsáveis pessoal e solidariamente, pela boa guarda e conservação dos produtos vinculados, respondendo criminal e civilmente pelas declarações constantes do título, como também por qualquer ação ou omissão que acarrete o desvio, deterioração ou perda dos produtos.</h4>
+ <h4>§ 2° Observado o disposto no § 1°, as cooperativas poderão operar unidades de armazenagem, embalagem e frigorificação, bem como armazéns gerais alfandegários, nos termos do disposto no Capítulo IV da Lei n. 5.025, de 10 de junho de 1966 .</h4>
+ <h3>Art. 83. A entrega da produção do associado à sua cooperativa significa a outorga a esta de plenos poderes para a sua livre disposição, inclusive para gravá-la e dá-la em garantia de operações de crédito realizadas pela sociedade, salvo se, tendo em vista os usos e costumes relativos à comercialização de determinados produtos, sendo de interesse do produtor, os estatutos dispuserem de outro modo.</h3>
+ <p><del></p>
+ <h3>Art. 84 (Revogado pela Lei Complementar nº 130, de 20090)</del></h3>
+ <p><del>I - (Revogado pela Lei Complementar nº 130, de 20090)</del></p>
+ <p><del>II - (Revogado pela Lei Complementar nº 130, de 20090)</del></p>
+ <p><del>Parágrafo único (Revogado pela Lei Complementar nº 130, de 20090)</del></p>
+ <h3>Art. 85. As cooperativas agropecuárias e de pesca poderão adquirir produtos de não associados, agricultores, pecuaristas ou pescadores, para completar lotes destinados ao cumprimento de contratos ou suprir capacidade ociosa de instalações industriais das cooperativas que as possuem.</h3>
+ <h3>Art. 86. As cooperativas poderão fornecer bens e serviços a não associados, desde que tal faculdade atenda aos objetivos sociais e estejam de conformidade com a presente lei.</h3>
+ <p><del>Parágrafo único (Revogado pela Lei Complementar nº 130, de 20090)</del></p>
+ <h3>Art. 87. Os resultados das operações das cooperativas com não associados, mencionados nos artigos 85 e 86, serão levados à conta do "Fundo de Assistência Técnica, Educacional e Social" e serão contabilizados em separado, de molde a permitir cálculo para incidência de tributos.</h3>
+ <h3>Art. 88. Mediante prévia e expressa autorização concedida pelo respectivo órgão executivo federal, consoante as normas e limites instituídos pelo Conselho Nacional de Cooperativismo, poderão as cooperativas participar de sociedades não cooperativas públicas ou privadas, em caráter excepcional, para atendimento de objetivos acessórios ou complementares.</h3>
+ <h4>Parágrafo único. As inversões decorrentes dessa participação serão contabilizadas em títulos específicos e seus eventuais resultados positivos levados ao "Fundo de Assistência Técnica, Educacional e Social"</h4>
+ <h3>Art. 88. Poderão as cooperativas participar de sociedades não cooperativas para melhor atendimento dos próprios objetivos e de outros de caráter acessório ou complementar. (Redação dada pela Medida Provisória nº 2.168-40, de 24 de agosto de 2001)</h3>
+ <h3>Art. 88-A. A cooperativa poderá ser dotada de legitimidade extraordinária autônoma concorrente para agir como substituta processual em defesa dos direitos coletivos de seus associados quando a causa de pedir versar sobre atos de interesse direto dos associados que tenham relação com as operações de mercado da cooperativa, desde que isso seja previsto em seu estatuto e haja, de forma expressa, autorização manifestada individualmente pelo associado ou por meio de assembleia geral que delibere sobre a propositura da medida judicial. (Incluído pela Lei nº 13.806, de 2019)</h3>
+ <p>Seção IV</p>
+ <p>Dos Prejuízos</p>
+ <h3>Art. 89. Os prejuízos verificados no decorrer do exercício serão cobertos com recursos provenientes do Fundo de Reserva e, se insuficiente este, mediante rateio, entre os associados, na razão direta dos serviços usufruídos, ressalvada a opção prevista no parágrafo único do artigo 80.</h3>
+ <p>Seção V</p>
+ <p>Do Sistema Trabalhista</p>
+ <h3>Art. 90. Qualquer que seja o tipo de cooperativa, não existe vínculo empregatício entre ela e seus associados.</h3>
+ <h3>Art. 91. As cooperativas igualam-se às demais empresas em relação aos seus empregados para os fins da legislação trabalhista e previdenciária.</h3>
+ <h2>CAPÍTULO XIII</h2>
+ <p>Da Fiscalização e Controle</p>
+ <h3>Art. 92. A fiscalização e o controle das sociedades cooperativas, nos termos desta lei e dispositivos legais específicos, serão exercidos, de acordo com o objeto de funcionamento, da seguinte forma:</h3>
+ <h5>I - as de crédito e as seções de crédito das agrícolas mistas pelo Banco Central do Brasil;</h5>
+ <h5>II - as de habitação pelo Banco Nacional de Habitação;</h5>
+ <h5>III - as demais pelo Instituto Nacional de Colonização e Reforma Agrária.</h5>
+ <h4>§ 1º Mediante autorização do Conselho Nacional de Cooperativismo, os órgãos controladores federais, poderão solicitar, quando julgarem necessário, a colaboração de outros órgãos administrativos, na execução das atribuições previstas neste artigo.</h4>
+ <h4>§ 2º As sociedades cooperativas permitirão quaisquer verificações determinadas pelos respectivos órgãos de controle, prestando os esclarecimentos que lhes forem solicitados, além de serem obrigadas a remeter-lhes anualmente a relação dos associados admitidos, demitidos, eliminados e excluídos no período, cópias de atas, de balanços e dos relatórios do exercício social e parecer do Conselho Fiscal.</h4>
+ <h3>Art. 93. O Poder Público, por intermédio da administração central dos órgãos executivos federais competentes, por iniciativa própria ou solicitação da Assembléia Geral ou do Conselho Fiscal, intervirá nas cooperativas quando ocorrer um dos seguintes casos:</h3>
+ <h5>I - violação contumaz das disposições legais;</h5>
+ <h5>II - ameaça de insolvência em virtude de má administração da sociedade;</h5>
+ <h5>III - paralisação das atividades sociais por mais de 120 (cento e vinte) dias consecutivos;</h5>
+ <h5>IV - inobservância do artigo 56, § 2º.</h5>
+ <h4>Parágrafo único. Aplica-se, no que couber, às cooperativas habitacionais, o disposto neste artigo.</h4>
+ <h3>Art. 94. Observar-se-á, no processo de intervenção, a disposição constante do § 2º do artigo 75.</h3>
+ <h2>CAPÍTULO XIV</h2>
+ <p>Do Conselho Nacional de Cooperativismo</p>
+ <h3>Art. 95. A orientação geral da política cooperativista nacional caberá ao Conselho Nacional de Cooperativismo - CNC, que passará a funcionar junto ao Instituto Nacional de Colonização e Reforma Agrária - INCRA, com plena autonomia administrativa e financeira, na forma do artigo 172 do Decreto-Lei n. 200, de 25 de fevereiro de 1967 , sob a presidência do Ministro da Agricultura e composto de 8 (oito) membros indicados pelos seguintes representados:</h3>
+ <h5>I - Ministério do Planejamento e Coordenação Geral;</h5>
+ <h5>II - Ministério da Fazenda, por intermédio do Banco Central do Brasil;</h5>
+ <h5>III - Ministério do Interior, por intermédio do Banco Nacional da Habitação;</h5>
+ <h5>IV - Ministério da Agricultura, por intermédio do Instituto Nacional de Colonização e Reforma Agrária - INCRA, e do Banco Nacional de Crédito Cooperativo S/A.;</h5>
+ <h5>V - Organização das Cooperativas Brasileiras.</h5>
+ <h4>Parágrafo único. A entidade referida no inciso V deste artigo contará com 3 (três) elementos para fazer-se representar no Conselho.</h4>
+ <h3>Art. 96. O Conselho, que deverá reunir-se ordinariamente uma vez por mês, será presidido pelo Ministro da Agricultura, a quem caberá o voto de qualidade, sendo suas resoluções votadas por maioria simples, com a presença, no mínimo de 3 (três) representantes dos órgãos oficiais mencionados nos itens I a IV do artigo anterior.</h3>
+ <h4>Parágrafo único. Nos seus impedimentos eventuais, o substituto do Presidente será o Presidente do Instituto Nacional de Colonização e Reforma Agrária.</h4>
+ <h3>Art. 97. Ao Conselho Nacional de Cooperativismo compete:</h3>
+ <h5>I - editar atos normativos para a atividade cooperativista nacional;</h5>
+ <h5>II - baixar normas regulamentadoras, complementares e interpretativas, da legislação cooperativista;</h5>
+ <h5>III - organizar e manter atualizado o cadastro geral das cooperativas nacionais;</h5>
+ <h5>IV - decidir, em última instância, os recursos originários de decisões do respectivo órgão executivo federal;</h5>
+ <h5>V - apreciar os anteprojetos que objetivam a revisão da legislação cooperativista;</h5>
+ <h5>VI - estabelecer condições para o exercício de quaisquer cargos eletivos de administração ou fiscalização de cooperativas;</h5>
+ <h5>VII - definir as condições de funcionamento do empreendimento cooperativo, a que se refere o artigo 18;</h5>
+ <h5>VIII - votar o seu próprio regimento;</h5>
+ <h5>IX - autorizar, onde houver condições, a criação de Conselhos Regionais de Cooperativismo, definindo-lhes as atribuições;</h5>
+ <h5>X - decidir sobre a aplicação do Fundo Nacional de Cooperativismo, nos termos do artigo 102 desta Lei;</h5>
+ <h5>XI - estabelecer em ato normativo ou de caso a caso, conforme julgar necessário, o limite a ser observado nas operações com não associados a que se referem os artigos 85 e 86.</h5>
+ <h4>Parágrafo único. As atribuições do Conselho Nacional de Cooperativismo não se estendem às cooperativas de habitação, às de crédito e às seções de crédito das cooperativas agrícolas mistas, no que forem regidas por legislação própria.</h4>
+ <h3>Art. 98. O Conselho Nacional de Cooperativismo - CNC contará com uma Secretaria Executiva que se incumbirá de seus encargos administrativos, podendo seu Secretário Executivo requisitar funcionários de qualquer órgão da Administração Pública.</h3>
+ <h4>§ 1º O Secretário Executivo do Conselho Nacional de Cooperativismo será o Diretor do Departamento de Desenvolvimento Rural do Instituto Nacional de Colonização e Reforma Agrária - INCRA, devendo o Departamento referido incumbir-se dos encargos administrativos do Conselho Nacional de Cooperativismo.</h4>
+ <h4>§ 2° Para os impedimentos eventuais do Secretário Executivo, este indicará à apreciação do Conselho seu substituto.</h4>
+ <h3>Art. 99. Compete ao Presidente do Conselho Nacional de Cooperativismo:</h3>
+ <h5>I - presidir as reuniões;</h5>
+ <h5>II - convocar as reuniões extraordinárias;</h5>
+ <h5>III - proferir o voto de qualidade.</h5>
+ <h3>Art. 100. Compete à Secretaria Executiva do Conselho Nacional de Cooperativismo:</h3>
+ <h5>I - dar execução às resoluções do Conselho;</h5>
+ <h5>II - comunicar as decisões do Conselho ao respectivo órgão executivo federal;</h5>
+ <h5>III - manter relações com os órgãos executivos federais, bem assim com quaisquer outros órgãos públicos ou privados, nacionais ou estrangeiros, que possam influir no aperfeiçoamento do cooperativismo;</h5>
+ <h5>IV - transmitir aos órgãos executivos federais e entidade superior do movimento cooperativista nacional todas as informações relacionadas com a doutrina e práticas cooperativistas de seu interesse;</h5>
+ <h5>V - organizar e manter atualizado o cadastro geral das cooperativas nacionais e expedir as respectivas certidões;</h5>
+ <h5>VI - apresentar ao Conselho, em tempo hábil, a proposta orçamentária do órgão, bem como o relatório anual de suas atividades;</h5>
+ <h5>VII - providenciar todos os meios que assegurem o regular funcionamento do Conselho;</h5>
+ <h5>VIII - executar quaisquer outras atividades necessárias ao pleno exercício das atribuições do Conselho.</h5>
+ <h3>Art. 101. O Ministério da Agricultura incluirá, em sua proposta orçamentária anual, os recursos financeiros solicitados pelo Conselho Nacional de Cooperativismo - CNC, para custear seu funcionamento.</h3>
+ <h4>Parágrafo único. As contas do Conselho Nacional de Cooperativismo - CNC, serão prestadas por intermédio do Ministério da Agricultura, observada a legislação específica que regula a matéria.</h4>
+ <h3>Art. 102. Fica mantido, junto ao Banco Nacional de Crédito Cooperativo S/A., o "Fundo Nacional de Cooperativismo", criado pelo Decreto-Lei n. 59, de 21 de novembro de 1966 , destinado a prover recursos de apoio ao movimento cooperativista nacional.</h3>
+ <h4>§ 1º O Fundo de que trata este artigo será, suprido por:</h4>
+ <h5>I - dotação incluída no orçamento do Ministério da Agricultura para o fim específico de incentivos às atividades cooperativas;</h5>
+ <h5>II - juros e amortizações dos financiamentos realizados com seus recursos;</h5>
+ <h5>III - doações, legados e outras rendas eventuais;</h5>
+ <h5>IV - dotações consignadas pelo Fundo Federal Agropecuário e pelo Instituto Nacional de Colonização e Reforma Agrária - INCRA.</h5>
+ <h4>§ 2° Os recursos do Fundo, deduzido o necessário ao custeio de sua administração, serão aplicados pelo Banco Nacional de Crédito Cooperativo S/A., obrigatoriamente, em financiamento de atividades que interessem de maneira relevante o abastecimento das populações, a critério do Conselho Nacional de Cooperativismo.</h4>
+ <h4>§ 3º O Conselho Nacional de Cooperativismo poderá, por conta do Fundo, autorizar a concessão de estímulos ou auxílios para execução de atividades que, pela sua relevância sócio-econômica, concorram para o desenvolvimento do sistema cooperativista nacional.</h4>
+ <h2>CAPÍTULO XV</h2>
+ <p>Dos Órgãos Governamentais</p>
+ <h3>Art. 103. As cooperativas permanecerão subordinadas, na parte normativa, ao Conselho Nacional de Cooperativismo, com exceção das de crédito, das seções de crédito das agrícolas mistas e das de habitação, cujas normas continuarão a ser baixadas pelo Conselho Monetário Nacional, relativamente às duas primeiras, e Banco Nacional de Habitação, com relação à última, observado o disposto no artigo 92 desta Lei.</h3>
+ <h4>Parágrafo único. Os órgãos executivos federais, visando à execução descentralizada de seus serviços, poderão delegar sua competência, total ou parcialmente, a órgãos e entidades da administração estadual e municipal, bem como, excepcionalmente, a outros órgãos e entidades da administração federal.</h4>
+ <h3>Art. 104. Os órgãos executivos federais comunicarão todas as alterações havidas nas cooperativas sob a sua jurisdição ao Conselho Nacional de Cooperativismo, para fins de atualização do cadastro geral das cooperativas nacionais.</h3>
+ <h2>CAPÍTULO XVI</h2>
+ <p>Da Representação do Sistema Cooperativista</p>
+ <h3>Art. 105. A representação do sistema cooperativista nacional cabe à Organização das Cooperativas Brasileiras - OCB, sociedade civil, com sede na Capital Federal, órgão técnico-consultivo do Governo, estruturada nos termos desta Lei, sem finalidade lucrativa, competindo-lhe precipuamente:</h3>
+ <h6>a) manter neutralidade política e indiscriminação racial, religiosa e social;</h6>
+ <h6>b) integrar todos os ramos das atividades cooperativistas;</h6>
+ <h6>c) manter registro de todas as sociedades cooperativas que, para todos os efeitos, integram a Organização das Cooperativas Brasileiras - OCB;</h6>
+ <h6>d) manter serviços de assistência geral ao sistema cooperativista, seja quanto à estrutura social, seja quanto aos métodos operacionais e orientação jurídica, mediante pareceres e recomendações, sujeitas, quando for o caso, à aprovação do Conselho Nacional de Cooperativismo - CNC;</h6>
+ <h6>e) denunciar ao Conselho Nacional de Cooperativismo práticas nocivas ao desenvolvimento cooperativista;</h6>
+ <h6>f) opinar nos processos que lhe sejam encaminhados pelo Conselho Nacional de Cooperativismo;</h6>
+ <h6>g) dispor de setores consultivos especializados, de acordo com os ramos de cooperativismo;</h6>
+ <h6>h) fixar a política da organização com base nas proposições emanadas de seus órgãos técnicos;</h6>
+ <p>i) exercer outras atividades inerentes à sua condição de órgão de representação e defesa do sistema cooperativista;</p>
+ <h6>j) manter relações de integração com as entidades congêneres do exterior e suas cooperativas.</h6>
+ <h4>§ 1º A Organização das Cooperativas Brasileiras - OCB, será constituída de entidades, uma para cada Estado, Território e Distrito Federal, criadas com as mesmas características da organização nacional.</h4>
+ <h4>§ 2º As Assembléias Gerais do órgão central serão formadas pelos Representantes credenciados das filiadas, 1 (um) por entidade, admitindo-se proporcionalidade de voto.</h4>
+ <h4>§ 3° A proporcionalidade de voto, estabelecida no parágrafo anterior, ficará a critério da OCB, baseando-se no número de associados - pessoas físicas e as exceções previstas nesta Lei - que compõem o quadro das cooperativas filiadas.</h4>
+ <h4>§ 4º A composição da Diretoria da Organização das Cooperativas Brasileiras - OCB será estabelecida em seus estatutos sociais.</h4>
+ <h4>§ 5° Para o exercício de cargos de Diretoria e Conselho Fiscal, as eleições se processarão por escrutínio secreto, permitida a reeleição para mais um mandato consecutivo.</h4>
+ <h3>Art. 106. A atual Organização das Cooperativas Brasileiras e as suas filiadas ficam investidas das atribuições e prerrogativas conferidas nesta Lei, devendo, no prazo de 1 (um) ano, promover a adaptação de seus estatutos e a transferência da sede nacional.</h3>
+ <h3>Art. 107. As cooperativas são obrigadas, para seu funcionamento, a registrar-se na Organização das Cooperativas Brasileiras ou na entidade estadual, se houver, mediante apresentação dos estatutos sociais e suas alterações posteriores.</h3>
+ <h4>Parágrafo único. Por ocasião do registro, a cooperativa pagará 10% (dez por cento) do maior salário mínimo vigente, se a soma do respectivo capital integralizado e fundos não exceder de 250 (duzentos e cinqüenta) salários mínimos, e 50% (cinqüenta por cento) se aquele montante for superior.</h4>
+ <h3>Art. 108. Fica instituída, além do pagamento previsto no parágrafo único do artigo anterior, a Contribuição Cooperativista, que será recolhida anualmente pela cooperativa após o encerramento de seu exercício social, a favor da Organização das Cooperativas Brasileiras de que trata o artigo 105 desta Lei.</h3>
+ <h4>§ 1º A Contribuição Cooperativista constituir-se-á de importância correspondente a 0,2% (dois décimos por cento) do valor do capital integralizado e fundos da sociedade cooperativa, no exercício social do ano anterior, sendo o respectivo montante distribuído, por metade, a suas filiadas, quando constituídas.</h4>
+ <h4>§ 2º No caso das cooperativas centrais ou federações, a Contribuição de que trata o parágrafo anterior será calculada sobre os fundos e reservas existentes.</h4>
+ <h4>§ 3° A Organização das Cooperativas Brasileiras poderá estabelecer um teto à Contribuição Cooperativista, com base em estudos elaborados pelo seu corpo técnico.</h4>
+ <h2>CAPÍTULO XVII</h2>
+ <p>Dos Estímulos Creditícios</p>
+ <h3>Art. 109. Caberá ao Banco Nacional de Crédito Cooperativo S/A., estimular e apoiar as cooperativas, mediante concessão de financiamentos necessários ao seu desenvolvimento.</h3>
+ <h4>§ 1° Poderá o Banco Nacional de Crédito Cooperativo S/A., receber depósitos das cooperativas de crédito e das seções de crédito das cooperativas agrícolas mistas.</h4>
+ <h4>§ 2° Poderá o Banco Nacional de Crédito Cooperativo S/A., operar com pessoas físicas ou jurídicas, estranhas ao quadro social cooperativo, desde que haja benefício para as cooperativas e estas figurem na operação bancária.</h4>
+ <h4>§ 3° O Banco Nacional de Crédito Cooperativo S/A., manterá linhas de crédito específicas para as cooperativas, de acordo com o objeto e a natureza de suas atividades, a juros módicos e prazos adequados inclusive com sistema de garantias ajustado às peculiaridades das cooperativas a que se destinam.</h4>
+ <h4>§ 4º O Banco Nacional de Crédito Cooperativo S/A., manterá linha especial de crédito para financiamento de quotas-partes de capital.</h4>
+ <h3>Art. 110. Fica extinta a contribuição de que trata o artigo 13 do Decreto-Lei n. 60, de 21 de novembro de 1966 , com a redação dada pelo Decreto-Lei n. 668, de 3 de julho de 1969.</h3>
+ <h2>CAPÍTULO XVIII</h2>
+ <p>Das Disposições Gerais e Transitórias</p>
+ <h3>Art. 111. Serão considerados como renda tributável os resultados positivos obtidos pelas cooperativas nas operações de que tratam os artigos 85, 86 e 88 desta Lei.</h3>
+ <h3>Art. 112. O Balanço Geral e o Relatório do exercício social que as cooperativas deverão encaminhar anualmente aos órgãos de controle serão acompanhados, a juízo destes, de parecer emitido por um serviço independente de auditoria credenciado pela Organização das Cooperativas Brasileiras.</h3>
+ <h4>Parágrafo único. Em casos especiais, tendo em vista a sede da Cooperativa, o volume de suas operações e outras circunstâncias dignas de consideração, a exigência da apresentação do parecer pode ser dispensada.</h4>
+ <h3>Art. 113. Atendidas as deduções determinadas pela legislação específica, às sociedades cooperativas ficará assegurada primeira prioridade para o recebimento de seus créditos de pessoas jurídicas que efetuem descontos na folha de pagamento de seus empregados, associados de cooperativas.</h3>
+ <h3>Art. 114. Fica estabelecido o prazo de 36 (trinta e seis) meses para que as cooperativas atualmente registradas nos órgãos competentes reformulem os seus estatutos, no que for cabível, adaptando-os ao disposto na presente Lei.</h3>
+ <h3>Art. 115. As Cooperativas dos Estados, Territórios ou do Distrito Federal, enquanto não constituírem seus órgãos de representação, serão convocadas às Assembléias da OCB, como vogais, com 60 (sessenta) dias de antecedência, mediante editais publicados 3 (três) vezes em jornal de grande circulação local.</h3>
+ <h3>Art. 116. A presente Lei não altera o disposto nos sistemas próprios instituídos para as cooperativas de habitação e cooperativas de crédito, aplicando-se ainda, no que couber, o regime instituído para essas últimas às seções de crédito das agrícolas mistas.</h3>
+ <h3>Art. 117. Esta Lei entrará em vigor na data de sua publicação, revogadas as disposições em contrário e especificamente o Decreto-Lei n. 59, de 21 de novembro de 1966 , bem como o Decreto n. 60.597, de 19 de abril de 1967 .</h3>
+ <p>Brasília, 16 de dezembro de 1971; 150º da Independência e 83º da República.</p>
+ <p>João Paulo dos Reis Velloso</p>
+ <p>José Costa Cavalcanti</p>
+ <p>Este texto não substitui o publicado no DOU de 16.12.1971</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Define a Política Nacional de</p>
+ <p>Cooperativismo, institui o regime jurídico das sociedades cooperativas, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/l5764.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

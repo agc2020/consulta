@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 14.238, DE 19 DE NOVEMBRO DE 2021 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2021" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 14.238, DE 19 DE NOVEMBRO DE 2021</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:43:53 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14238.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 11.233 caracteres | espelho: 11.248 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 14.238, 	DE 19 DE NOVEMBRO DE 2021</p>
+ <p>Institui o Estatuto da Pessoa com Câncer; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Fica instituído o Estatuto da Pessoa com Câncer, 	destinado a assegurar e a promover, em condições de igualdade, o acesso ao tratamento adequado e o exercício dos direitos e das liberdades fundamentais da pessoa com câncer, com vistas a garantir o respeito à dignidade, à 	cidadania e à sua inclusão social.</h3>
+ <h4>Parágrafo único. Esta Lei estabelece princípios e objetivos essenciais à 	proteção dos direitos da pessoa com câncer e à efetivação de políticas públicas de prevenção e combate ao câncer.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS PRINCÍPIOS E DOS OBJETIVOS</h3>
+ <h3>Art. 2º São princípios essenciais deste Estatuto:</h3>
+ <h5>I - respeito à dignidade da pessoa humana, à igualdade, à não discriminação e à autonomia individual;</h5>
+ <h5>II - acesso universal e equânime ao tratamento adequado;</h5>
+ <h5>III - diagnóstico precoce;</h5>
+ <h5>IV - estímulo à prevenção;</h5>
+ <h5>V - informação clara e confiável sobre a doença e o seu tratamento;</h5>
+ <h5>VI - transparência das informações dos órgãos e das entidades em seus processos, prazos e fluxos;</h5>
+ <h5>VII - oferecimento de tratamento sistêmico referenciado em acordo com diretrizes preestabelecidas por órgãos competentes;</h5>
+ <h5>VIII - fomento à formação e à especialização dos profissionais envolvidos;</h5>
+ <h5>IX - estímulo à conscientização, à educação e ao apoio familiar;</h5>
+ <h5>X - ampliação da rede de atendimento e de sua infraestrutura;</h5>
+ <h5>XI - sustentabilidade dos tratamentos, garantida, inclusive, a tomada de decisão com vistas à prevenção de agravamentos e à socioeficiência;</h5>
+ <h5>XII - humanização da atenção ao paciente e à sua família.</h5>
+ <h3>Art. 3º São objetivos essenciais deste Estatuto:</h3>
+ <h5>I - garantir e viabilizar o pleno exercício dos direitos sociais da pessoa com câncer;</h5>
+ <h5>II - promover mecanismos adequados para o diagnóstico precoce da doença;</h5>
+ <h5>III - garantir o tratamento adequado, nos termos das Leis n os 8.080, de 19 de setembro de 1990 , e 12.732, de 22 de novembro de 2012;</h5>
+ <h5>IV - fomentar a comunicação, a publicidade e a conscientização sobre a doença, sua prevenção, seus tratamentos e os direitos da pessoa com câncer;</h5>
+ <h5>V - garantir transparência das informações dos órgãos e das entidades em seus processos, prazos e fluxos e o acesso às informações imprescindíveis acerca da doença e do seu tratamento pelos pacientes e por seus familiares;</h5>
+ <h5>VI - garantir o cumprimento da legislação vigente com vistas a reduzir as dificuldades da pessoa com câncer desde o diagnóstico até a realização do tratamento;</h5>
+ <h5>VII - fomentar e promover instrumentos para viabilização da Política 	Nacional para a Prevenção e Controle do Câncer na Rede de Atenção à Saúde das Pessoas com Doenças Crônicas no âmbito do Sistema Único de Saúde (SUS);</h5>
+ <h5>VIII - fomentar a criação e o fortalecimento de políticas públicas de prevenção e combate ao câncer;</h5>
+ <h5>IX - promover a articulação entre países, órgãos e entidades sobre tecnologias, conhecimentos, métodos e práticas na prevenção e no tratamento da doença;</h5>
+ <h5>X - promover a formação, a qualificação e a especialização dos recursos humanos envolvidos no processo de prevenção e tratamento do câncer;</h5>
+ <h5>XI - viabilizar métodos e sistemas para aferição qualificada do número de pessoas acometidas pela doença;</h5>
+ <h5>XII - combater a desinformação e o preconceito;</h5>
+ <h5>XIII - contribuir para melhoria na qualidade de vida e no tratamento da pessoa com câncer e de seus familiares;</h5>
+ <h5>XIV - reduzir a incidência da doença por meio de ações de prevenção;</h5>
+ <h5>XV - reduzir a mortalidade e a incapacidade causadas pela doença;</h5>
+ <h5>XVI - fomentar a educação e o apoio ao paciente e à sua família;</h5>
+ <h5>XVII - incentivar a criação, a manutenção e a utilização de fundos especiais, nacionais, estaduais e municipais de prevenção e combate ao câncer;</h5>
+ <h5>XVIII - garantir tratamento diferenciado, universal e integral às crianças e aos adolescentes, priorizando a prevenção e o diagnóstico precoce;</h5>
+ <h5>XIX - estimular a expansão contínua, sustentável e responsável da rede de atendimento e de sua infraestrutura;</h5>
+ <h5>XX - estimular a humanização do tratamento, prestando atenção diferenciada ao paciente e à sua família.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DOS DIREITOS FUNDAMENTAIS</h3>
+ <h3>Art. 4º São direitos fundamentais da pessoa com câncer:</h3>
+ <h5>I - obtenção de diagnóstico precoce;</h5>
+ <h5>II - acesso a tratamento universal, equânime, adequado e menos nocivo;</h5>
+ <h5>III - acesso a informações transparentes e objetivas relativas à doença e ao seu tratamento;</h5>
+ <h5>IV - assistência social e jurídica;</h5>
+ <h5>V - prioridade;</h5>
+ <h5>VI - proteção do seu bem-estar pessoal, social e econômico;</h5>
+ <h5>VII - presença de acompanhante durante o atendimento e o período de tratamento;</h5>
+ <h5>VIII - acolhimento, preferencialmente, por sua própria família, em detrimento de abrigo ou de instituição de longa permanência, exceto da que careça de condições de manutenção da própria sobrevivência;</h5>
+ <h5>IX - tratamento domiciliar priorizado;</h5>
+ <h5>X - atendimento educacional em classe hospitalar ou regime domiciliar, 	conforme interesse da pessoa com câncer e de sua família, nos termos do respectivo sistema de ensino.</h5>
+ <h4>§ 1º Para os efeitos desta Lei, considera-se pessoa com câncer aquela que tenha o regular diagnóstico, nos termos de relatório elaborado por médico devidamente inscrito no conselho profissional, acompanhado pelos laudos e exames diagnósticos complementares necessários para a correta caracterização da doença.</h4>
+ <h4>§ 2º Entende-se por direito à prioridade, previsto no inciso V do caput deste artigo, as seguintes garantias concedidas à pessoa com câncer clinicamente ativo, respeitadas e conciliadas as normas que garantem o mesmo direito aos idosos, às gestantes e às pessoas com deficiência:</h4>
+ <h5>I - assistência preferencial, respeitada a precedência dos casos mais graves e outras prioridades legais;</h5>
+ <h5>II - atendimento nos serviços públicos nos órgãos públicos e privados prestadores de serviços à população, respeitada a precedência dos casos mais graves e de outras prioridades legais;</h5>
+ <h5>III - prioridade no acesso a mecanismos que favoreçam a divulgação de informações relativas à prevenção e ao tratamento da doença;</h5>
+ <h5>IV - prioridade na tramitação dos processos judiciais e administrativos.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DOS DEVERES</h3>
+ <h3>Art. 5º É dever da família, da comunidade, da sociedade e do poder público assegurar à pessoa com câncer, prioritariamente, a plena efetivação dos direitos referentes à vida, à saúde, à alimentação, à 	assistência social e jurídica, à convivência familiar e comunitária, entre outros decorrentes da Constituição Federal e das leis.</h3>
+ <h3>Art. 6º Nenhuma pessoa com câncer será objeto de qualquer tipo de negligência, discriminação ou violência, e todo atentado aos seus direitos, por ação ou omissão, será punido na forma da lei.</h3>
+ <h4>§ 1º Considera-se discriminação qualquer distinção, restrição ou exclusão em razão da doença, mediante ação ou omissão, que tenha o propósito ou o efeito de prejudicar, de impedir ou de anular o reconhecimento dos direitos assegurados nesta Lei.</h4>
+ <h4>§ 2º Todo cidadão tem o dever de comunicar à autoridade competente qualquer forma de violação a esta Lei que tenha testemunhado ou de que tenha conhecimento.</h4>
+ <h3>Art. 7º É dever do Estado desenvolver políticas públicas de saúde específicas direcionadas à pessoa com câncer, que incluam, entre outras medidas:</h3>
+ <h5>I - promover ações e campanhas preventivas da doença;</h5>
+ <h5>II - garantir acesso universal, igualitário e gratuito aos serviços de saúde;</h5>
+ <h5>III – (VETADO);</h5>
+ <h5>IV - promover avaliação periódica do tratamento ofertado ao paciente com câncer na rede pública de saúde e adotar as medidas necessárias para diminuir as desigualdades existentes;</h5>
+ <h5>V - estabelecer normas técnicas e padrões de conduta a serem observados pelos serviços públicos e privados de saúde no atendimento à pessoa com câncer;</h5>
+ <h5>VI - estimular o desenvolvimento científico e tecnológico para promoção de avanços na prevenção, no diagnóstico e no combate à doença;</h5>
+ <h5>VII - promover processos contínuos de capacitação dos profissionais que atuam diretamente nas fases de prevenção, de diagnóstico e de tratamento da pessoa com câncer;</h5>
+ <h5>VIII - capacitar e orientar familiares, cuidadores, entidades assistenciais e grupos de autoajuda de pessoas com câncer;</h5>
+ <h5>IX - organizar programa de rastreamento e diagnóstico que favoreça o início precoce do tratamento;</h5>
+ <h5>X - promover campanhas de conscientização a respeito de direitos e de benefícios previdenciários, tributários, trabalhistas, processuais e de tratamentos de saúde, entre outros, da pessoa com câncer.</h5>
+ <h3>Art. 8º O direito à assistência social, previsto no inciso IV do caput do art. 4º desta Lei, será prestado de forma articulada e com base nos princípios e diretrizes previstos na Lei nº 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), 	de forma harmonizada com as demais políticas sociais, observadas as demais normas pertinentes.</h3>
+ <h4>§ 1º O poder público deverá promover o acesso da pessoa com câncer ao 	Ministério Público, à Defensoria Pública e ao Poder Judiciário em todas suas instâncias.</h4>
+ <h4>§ 2º O poder público estimulará, por meio de assistência jurídica, o conhecimento e o acesso aos incentivos fiscais e aos subsídios devidos à 	pessoa com câncer.</h4>
+ <h3>Art. 9º O Estado deverá formular políticas direcionadas à 	pessoa com câncer que esteja em situação de vulnerabilidade social, de forma a facilitar o andamento dos procedimentos de diagnóstico e de tratamento.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO ATENDIMENTO ESPECIAL ÀS CRIANÇAS E AOS ADOLESCENTES</h3>
+ <h3>Art. 10. O atendimento prestado às crianças e aos adolescentes com câncer, ou em suspeição, deverá ser especial em todas suas fases, devendo ser garantido tratamento universal e integral, priorizados a prevenção e o diagnóstico precoce.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 11. O direito à saúde da pessoa com câncer será 	assegurado mediante a efetivação de políticas sociais públicas, de modo a garantir seu bem-estar físico, psíquico, emocional e social com vistas à 	preservação ou à recuperação de sua saúde.</h3>
+ <h3>Art. 12. É obrigatório o atendimento integral à saúde da pessoa com câncer por intermédio do SUS, na forma de regulamento.</h3>
+ <h4>§ 1º Para efeitos desta Lei, entende-se por atendimento integral aquele realizado nos diversos níveis de complexidade e hierarquia, bem como nas diversas especialidades médicas, de acordo com as necessidades de saúde da pessoa com câncer, incluídos assistência médica e de fármacos, assistência psicológica, atendimentos especializados e, sempre que possível, atendimento e internação domiciliares.</h4>
+ <h4>§ 2º O atendimento integral deverá garantir, ainda, tratamento adequado da dor, atendimento multidisciplinar e cuidados paliativos.</h4>
+ <h3>Art. 13. A conscientização e o apoio à família da pessoa com câncer constituem compromissos fundamentais do Estado e fazem parte indispensáveis deste Estatuto.</h3>
+ <h3>Art. 14. Os direitos e as garantias previstos nesta Lei não excluem os já resguardados em outras legislações.</h3>
+ <h3>Art. 15. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 19 de novembro de 2021; 200º da 	Independência e 133º da República.</p>
+ <h3>JAIR 	MESSIAS BOLSONARO</h3>
+ <p>Marcelo Antônio Cartaxo Queiroga Lopes</p>
+ <p>Este texto não substitui o publicado no DOU de 22.11.2021</p>
+ <p>Presidência da RepúblicaSecretaria-GeralSubchefia para</p>
+ <p>Institui o Estatuto da Pessoa com Câncer;</p>
+ <p>e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14238.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

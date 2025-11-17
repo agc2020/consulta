@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 11.794, DE 8 DE OUTUBRO DE 2008 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2008" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 11.794, DE 8 DE OUTUBRO DE 2008</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:34:23 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2008/Lei/L11794.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 18.523 caracteres | espelho: 18.593 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 11.794, DE 8 DE OUTUBRO DE 2008.</p>
+ <p>Regulamenta o inciso VII do § 1º do art. 225 da Constituição Federal, estabelecendo procedimentos para o uso científico de animais; revoga a Lei Nº 6.638, de 8 de maio de 1979; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DAS DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º A criação e a utilização de animais em atividades de ensino e pesquisa científica, em todo o território nacional, obedece aos critérios estabelecidos nesta Lei.</h3>
+ <h4>§ 1º A utilização de animais em atividades educacionais fica restrita a:</h4>
+ <h5>I – estabelecimentos de ensino superior;</h5>
+ <h5>II – estabelecimentos de educação profissional técnica de nível médio da área biomédica.</h5>
+ <h4>§ 2º São consideradas como atividades de pesquisa científica todas aquelas relacionadas com ciência básica, ciência aplicada, desenvolvimento tecnológico, produção e controle da qualidade de drogas, medicamentos, alimentos, imunobiológicos, instrumentos, ou quaisquer outros testados em animais, conforme definido em regulamento próprio.</h4>
+ <h4>§ 3º Não são consideradas como atividades de pesquisa as práticas zootécnicas relacionadas à agropecuária.</h4>
+ <h3>Art. 2º O disposto nesta Lei aplica-se aos animais das espécies classificadas como filo Chordata , subfilo Vertebrata , observada a legislação ambiental.</h3>
+ <h3>Art. 3º Para as finalidades desta Lei entende-se por:</h3>
+ <h5>I – filo Chordata : animais que possuem, como características exclusivas, ao menos na fase embrionária, a presença de notocorda, fendas branquiais na faringe e tubo nervoso dorsal único;</h5>
+ <h5>II – subfilo Vertebrata : animais cordados que têm, como características exclusivas, um encéfalo grande encerrado numa caixa craniana e uma coluna vertebral;</h5>
+ <h5>III – experimentos: procedimentos efetuados em animais vivos, visando à elucidação de fenônemos fisiológicos ou patológicos, mediante técnicas específicas e preestabelecidas;</h5>
+ <h5>IV – morte por meios humanitários: a morte de um animal em condições que envolvam, segundo as espécies, um mínimo de sofrimento físico ou mental.</h5>
+ <h5>V - produtos de higiene pessoal, cosméticos e perfumes: preparações constituídas por ingredientes naturais ou sintéticos, de uso externo nas diversas partes do corpo humano, pele, sistema capilar, unhas, lábios, órgãos genitais externos, dentes e membranas mucosas da cavidade oral, com o objetivo exclusivo ou principal de limpá-los, de perfumá-los, de alterar sua aparência, de protegê-los, de mantê-los em bom estado ou de corrigir odores corporais, excetuados formulações e ingredientes destinados a repelir insetos. (Incluído pela Lei nº 15.183, de 2025)</h5>
+ <h4>Parágrafo único. Não se considera experimento:</h4>
+ <h5>I – a profilaxia e o tratamento veterinário do animal que deles necessite;</h5>
+ <h5>II – o anilhamento, a tatuagem, a marcação ou a aplicação de outro método com finalidade de identificação do animal, desde que cause apenas dor ou aflição momentânea ou dano passageiro;</h5>
+ <h5>III – as intervenções não-experimentais relacionadas às práticas agropecuárias.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO CONSELHO NACIONAL DE CONTROLE DE</h3>
+ <h3>EXPERIMENTAÇÃO ANIMAL – CONCEA</h3>
+ <h3>Art. 4º Fica criado o Conselho Nacional de Controle de Experimentação Animal – CONCEA.</h3>
+ <h3>Art. 5º Compete ao CONCEA:</h3>
+ <h5>I – formular e zelar pelo cumprimento das normas relativas à utilização humanitária de animais com finalidade de ensino e pesquisa científica;</h5>
+ <h5>II – credenciar instituições para criação ou utilização de animais em ensino e pesquisa científica;</h5>
+ <h5>III – monitorar e avaliar a introdução de técnicas alternativas que substituam a utilização de animais em ensino e pesquisa;</h5>
+ <h5>IV – estabelecer e rever, periodicamente, as normas para uso e cuidados com animais para ensino e pesquisa, em consonância com as convenções internacionais das quais o Brasil seja signatário;</h5>
+ <h5>V – estabelecer e rever, periodicamente, normas técnicas para instalação e funcionamento de centros de criação, de biotérios e de laboratórios de experimentação animal, bem como sobre as condições de trabalho em tais instalações;</h5>
+ <h5>VI – estabelecer e rever, periodicamente, normas para credenciamento de instituições que criem ou utilizem animais para ensino e pesquisa;</h5>
+ <h5>VII – manter cadastro atualizado dos procedimentos de ensino e pesquisa realizados ou em andamento no País, assim como dos pesquisadores, a partir de informações remetidas pelas Comissões de Ética no Uso de Animais - CEUAs, de que trata o art. 8º desta Lei;</h5>
+ <h5>VIII – apreciar e decidir recursos interpostos contra decisões das CEUAs;</h5>
+ <h5>IX – elaborar e submeter ao Ministro de Estado da Ciência e Tecnologia, para aprovação, o seu regimento interno;</h5>
+ <h5>X – assessorar o Poder Executivo a respeito das atividades de ensino e pesquisa tratadas nesta Lei.</h5>
+ <h3>Art. 6º O CONCEA é constituído por:</h3>
+ <h5>I – Plenário;</h5>
+ <h5>II – Câmaras Permanentes e Temporárias;</h5>
+ <h5>III – Secretaria-Executiva.</h5>
+ <h4>§ 1º As Câmaras Permanentes e Temporárias do CONCEA serão definidas no regimento interno.</h4>
+ <h4>§ 2º A Secretaria-Executiva é responsável pelo expediente do CONCEA e terá o apoio administrativo do Ministério da Ciência e Tecnologia.</h4>
+ <h4>§ 3º O CONCEA poderá valer-se de consultores ad hoc de reconhecida competência técnica e científica, para instruir quaisquer processos de sua pauta de trabalhos.</h4>
+ <h3>Art. 7º O CONCEA será presidido pelo Ministro de Estado da Ciência e Tecnologia e integrado por:</h3>
+ <h5>I – 1 (um) representante de cada órgão e entidade a seguir indicados:</h5>
+ <h6>a) Ministério da Ciência e Tecnologia;</h6>
+ <h6>b) Conselho Nacional de Desenvolvimento Científico e Tecnológico – CNPq;</h6>
+ <h6>c) Ministério da Educação;</h6>
+ <h6>d) Ministério do Meio Ambiente;</h6>
+ <h6>e) Ministério da Saúde;</h6>
+ <h6>f) Ministério da Agricultura, Pecuária e Abastecimento;</h6>
+ <h6>g) Conselho de Reitores das Universidades do Brasil – CRUB;</h6>
+ <h6>h) Academia Brasileira de Ciências;</h6>
+ <p>i) Sociedade Brasileira para o Progresso da Ciência;</p>
+ <h6>j) Federação das Sociedades de Biologia Experimental;</h6>
+ <p>l) Colégio Brasileiro de Experimentação Animal;</p>
+ <h6>m) Federação Nacional da Indústria Farmacêutica;</h6>
+ <h5>II – 2 (dois) representantes das sociedades protetoras de animais legalmente estabelecidas no País.</h5>
+ <h4>§ 1º Nos seus impedimentos, o Ministro de Estado da Ciência e Tecnologia será substituído, na Presidência do CONCEA, pelo Secretário-Executivo do respectivo Ministério.</h4>
+ <h4>§ 2º O Presidente do CONCEA terá o voto de qualidade.</h4>
+ <h4>§ 3º Os membros do CONCEA não serão remunerados, sendo os serviços por eles prestados considerados, para todos os efeitos, de relevante serviço público.</h4>
+ <h2>CAPÍTULO III</h2>
+ <p>DAS COMISSÕES DE ÉTICA NO USO DE ANIMAIS – CEUAs</p>
+ <h3>Art. 8º É condição indispensável para o credenciamento das instituições com atividades de ensino ou pesquisa com animais a constituição prévia de Comissões de Ética no Uso de Animais – CEUAs.</h3>
+ <h3>Art. 9º As CEUAs são integradas por:</h3>
+ <h5>I – médicos veterinários e biólogos;</h5>
+ <h5>II – docentes e pesquisadores na área específica;</h5>
+ <h5>III – 1 (um) representante de sociedades protetoras de animais legalmente estabelecidas no País, na forma do Regulamento.</h5>
+ <h3>Art. 10. Compete às CEUAs:</h3>
+ <h5>I – cumprir e fazer cumprir, no âmbito de suas atribuições, o disposto nesta Lei e nas demais normas aplicáveis à utilização de animais para ensino e pesquisa, especialmente nas resoluções do CONCEA;</h5>
+ <h5>II – examinar previamente os procedimentos de ensino e pesquisa a serem realizados na instituição à qual esteja vinculada, para determinar sua compatibilidade com a legislação aplicável;</h5>
+ <h5>III – manter cadastro atualizado dos procedimentos de ensino e pesquisa realizados, ou em andamento, na instituição, enviando cópia ao CONCEA;</h5>
+ <h5>IV – manter cadastro dos pesquisadores que realizem procedimentos de ensino e pesquisa, enviando cópia ao CONCEA;</h5>
+ <h5>V – expedir, no âmbito de suas atribuições, certificados que se fizerem necessários perante órgãos de financiamento de pesquisa, periódicos científicos ou outros;</h5>
+ <h5>VI – notificar imediatamente ao CONCEA e às autoridades sanitárias a ocorrência de qualquer acidente com os animais nas instituições credenciadas, fornecendo informações que permitam ações saneadoras.</h5>
+ <h4>§ 1º Constatado qualquer procedimento em descumprimento às disposições desta Lei na execução de atividade de ensino e pesquisa, a respectiva CEUA determinará a paralisação de sua execução, até que a irregularidade seja sanada, sem prejuízo da aplicação de outras sanções cabíveis.</h4>
+ <h4>§ 2º Quando se configurar a hipótese prevista no § 1º deste artigo, a omissão da CEUA acarretará sanções à instituição, nos termos dos arts. 17 e 20 desta Lei.</h4>
+ <h4>§ 3º Das decisões proferidas pelas CEUAs cabe recurso, sem efeito suspensivo, ao CONCEA.</h4>
+ <h4>§ 4º Os membros das CEUAs responderão pelos prejuízos que, por dolo, causarem às pesquisas em andamento.</h4>
+ <h4>§ 5º Os membros das CEUAs estão obrigados a resguardar o segredo industrial, sob pena de responsabilidade.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DAS CONDIÇÕES DE CRIAÇÃO E USO DE ANIMAIS PARA ENSINO E</h3>
+ <h3>PESQUISA CIENTÍFICA</h3>
+ <h3>Art. 11. Compete ao Ministério da Ciência e Tecnologia licenciar as atividades destinadas à criação de animais, ao ensino e à pesquisa científica de que trata esta Lei.</h3>
+ <h4>§ 1º (VETADO)</h4>
+ <h4>§ 2º (VETADO)</h4>
+ <h4>§ 3º (VETADO)</h4>
+ <h3>Art. 12. A criação ou a utilização de animais para pesquisa ficam restritas, exclusivamente, às instituições credenciadas no CONCEA.</h3>
+ <h3>Art. 13. Qualquer instituição legalmente estabelecida em território nacional que crie ou utilize animais para ensino e pesquisa deverá requerer credenciamento no CONCEA, para uso de animais, desde que, previamente, crie a CEUA.</h3>
+ <h4>§ 1º A critério da instituição e mediante autorização do CONCEA, é admitida a criação de mais de uma CEUA por instituição.</h4>
+ <h4>§ 2º Na hipótese prevista no § 1º deste artigo, cada CEUA definirá os laboratórios de experimentação animal, biotérios e centros de criação sob seu controle.</h4>
+ <h3>Art. 14. O animal só poderá ser submetido às intervenções recomendadas nos protocolos dos experimentos que constituem a pesquisa ou programa de aprendizado quando, antes, durante e após o experimento, receber cuidados especiais, conforme estabelecido pelo CONCEA.</h3>
+ <h4>§ 1º O animal será submetido a eutanásia, sob estrita obediência às prescrições pertinentes a cada espécie, conforme as diretrizes do Ministério da Ciência e Tecnologia, sempre que, encerrado o experimento ou em qualquer de suas fases, for tecnicamente recomendado aquele procedimento ou quando ocorrer intenso sofrimento.</h4>
+ <h4>§ 2º Excepcionalmente, quando os animais utilizados em experiências ou demonstrações não forem submetidos a eutanásia, poderão sair do biotério após a intervenção, ouvida a respectiva CEUA quanto aos critérios vigentes de segurança, desde que destinados a pessoas idôneas ou entidades protetoras de animais devidamente legalizadas, que por eles queiram responsabilizar-se.</h4>
+ <h4>§ 3º Sempre que possível, as práticas de ensino deverão ser fotografadas, filmadas ou gravadas, de forma a permitir sua reprodução para ilustração de práticas futuras, evitando-se a repetição desnecessária de procedimentos didáticos com animais.</h4>
+ <h4>§ 4º O número de animais a serem utilizados para a execução de um projeto e o tempo de duração de cada experimento será o mínimo indispensável para produzir o resultado conclusivo, poupando-se, ao máximo, o animal de sofrimento.</h4>
+ <h4>§ 5º Experimentos que possam causar dor ou angústia desenvolver-se-ão sob sedação, analgesia ou anestesia adequadas.</h4>
+ <h4>§ 6º Experimentos cujo objetivo seja o estudo dos processos relacionados à dor e à angústia exigem autorização específica da CEUA, em obediência a normas estabelecidas pelo CONCEA.</h4>
+ <h4>§ 7º É vedado o uso de bloqueadores neuromusculares ou de relaxantes musculares em substituição a substâncias sedativas, analgésicas ou anestésicas.</h4>
+ <h4>§ 8º É vedada a reutilização do mesmo animal depois de alcançado o objetivo principal do projeto de pesquisa.</h4>
+ <h4>§ 9º Em programa de ensino, sempre que forem empregados procedimentos traumáticos, vários procedimentos poderão ser realizados num mesmo animal, desde que todos sejam executados durante a vigência de um único anestésico e que o animal seja sacrificado antes de recobrar a consciência.</h4>
+ <h4>§ 10. Para a realização de trabalhos de criação e experimentação de animais em sistemas fechados, serão consideradas as condições e normas de segurança recomendadas pelos organismos internacionais aos quais o Brasil se vincula.</h4>
+ <h4>§ 11. É vedada a utilização de animais vertebrados vivos em testes de produtos de higiene pessoal, cosméticos e perfumes, inclusive nos testes que visem a averiguar seu perigo, sua eficácia ou sua segurança. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 12. É vedada a utilização de animais vertebrados vivos em testes de ingredientes para compor exclusivamente produtos de higiene pessoal, cosméticos e perfumes, inclusive nos testes que visem a averiguar seu perigo, sua eficácia ou sua segurança. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 13. Dados provenientes de testes em animais feitos após a data de entrada em vigor deste parágrafo não poderão ser utilizados para autorizar a comercialização de produtos de higiene pessoal, cosméticos ou perfumes ou de seus ingredientes, exceto nos casos em que forem obtidos para cumprir regulamentação não cosmética nacional ou estrangeira. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 14. Para a aplicação da exceção prevista no § 13 deste artigo, as empresas interessadas na fabricação ou na comercialização do produto deverão fornecer, quando solicitadas pelas autoridades competentes, evidências documentais do propósito não cosmético do teste. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 15. O fabricante de produto cuja segurança foi estabelecida pelo uso de novos dados de testes com animais de acordo com o disposto no § 13 deste artigo não poderá incluir no rótulo ou no invólucro do produto a menção, logotipo ou selo “não testado em animais”, “livre de crueldade” ou outras expressões similares. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 16. É permitida a comercialização de produtos de higiene pessoal, cosméticos e perfumes, bem como de seus ingredientes, que tenham sido testados em animais antes da data de entrada em vigor deste parágrafo. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 17. Os métodos alternativos de testagem dos produtos de que trata o § 11 deste artigo internacionalmente reconhecidos e validados serão aceitos pelas autoridades brasileiras em caráter prioritário. (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h4>§ 18. Em circunstâncias excepcionais em que surjam graves preocupações no que diz respeito à segurança de um ingrediente cosmético, as proibições constantes dos §§ 11, 12, e 13 deste artigo poderão ser derrogadas pelo Concea, desde que satisfeitas simultaneamente as seguintes condições: (Incluído pela Lei nº 15.183, de 2025)</h4>
+ <h5>I - tratar-se de ingrediente amplamente utilizado no mercado e que não possa ser substituído por outro capaz de desempenhar função semelhante; (Incluído pela Lei nº 15.183, de 2025)</h5>
+ <h5>II - detectar-se problema específico de saúde humana relacionado ao ingrediente; (Incluído pela Lei nº 15.183, de 2025)</h5>
+ <h5>III - inexistir método alternativo hábil a satisfazer as exigências de testagem. (Incluído pela Lei nº 15.183, de 2025)</h5>
+ <h3>Art. 15. O CONCEA, levando em conta a relação entre o nível de sofrimento para o animal e os resultados práticos que se esperam obter, poderá restringir ou proibir experimentos que importem em elevado grau de agressão.</h3>
+ <h3>Art. 16. Todo projeto de pesquisa científica ou atividade de ensino será supervisionado por profissional de nível superior, graduado ou pós-graduado na área biomédica, vinculado a entidade de ensino ou pesquisa credenciada pelo CONCEA.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DAS PENALIDADES</h3>
+ <h3>Art. 17. As instituições que executem atividades reguladas por esta Lei estão sujeitas, em caso de transgressão às suas disposições e ao seu regulamento, às penalidades administrativas de:</h3>
+ <h5>I – advertência;</h5>
+ <h5>II – multa de R$ 5.000,00 (cinco mil reais) a R$ 20.000,00 (vinte mil reais);</h5>
+ <h5>III – interdição temporária;</h5>
+ <h5>IV – suspensão de financiamentos provenientes de fontes oficiais de crédito e fomento científico;</h5>
+ <h5>V – interdição definitiva.</h5>
+ <h4>Parágrafo único. A interdição por prazo superior a 30 (trinta) dias somente poderá ser determinada em ato do Ministro de Estado da Ciência e Tecnologia, ouvido o CONCEA.</h4>
+ <h3>Art. 18. Qualquer pessoa que execute de forma indevida atividades reguladas por esta Lei ou participe de procedimentos não autorizados pelo CONCEA será passível das seguintes penalidades administrativas:</h3>
+ <h5>I – advertência;</h5>
+ <h5>II – multa de R$ 1.000,00 (mil reais) a R$ 5.000,00 (cinco mil reais);</h5>
+ <h5>III – suspensão temporária;</h5>
+ <h5>IV – interdição definitiva para o exercício da atividade regulada nesta Lei.</h5>
+ <h3>Art. 19. As penalidades previstas nos arts. 17 e 18 desta Lei serão aplicadas de acordo com a gravidade da infração, os danos que dela provierem, as circunstâncias agravantes ou atenuantes e os antecedentes do infrator.</h3>
+ <h3>Art. 20. As sanções previstas nos arts. 17 e 18 desta Lei serão aplicadas pelo CONCEA, sem prejuízo de correspondente responsabilidade penal.</h3>
+ <h3>Art. 21. A fiscalização das atividades reguladas por esta Lei fica a cargo dos órgãos dos Ministérios da Agricultura, Pecuária e Abastecimento, da Saúde, da Educação, da Ciência e Tecnologia e do Meio Ambiente, nas respectivas áreas de competência.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES GERAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 22. As instituições que criem ou utilizem animais para ensino ou pesquisa existentes no País antes da data de vigência desta Lei deverão:</h3>
+ <h5>I – criar a CEUA, no prazo máximo de 90 (noventa) dias, após a regulamentação referida no art. 25 desta Lei;</h5>
+ <h5>II – compatibilizar suas instalações físicas, no prazo máximo de 5 (cinco) anos, a partir da entrada em vigor das normas estabelecidas pelo CONCEA, com base no inciso V do caput do art. 5º desta Lei.</h5>
+ <h3>Art. 23. O CONCEA, mediante resolução, recomendará às agências de amparo e fomento à pesquisa científica o indeferimento de projetos por qualquer dos seguintes motivos:</h3>
+ <h5>I – que estejam sendo realizados sem a aprovação da CEUA;</h5>
+ <h5>II – cuja realização tenha sido suspensa pela CEUA.</h5>
+ <h3>Art. 24. Os recursos orçamentários necessários ao funcionamento do CONCEA serão previstos nas dotações do Ministério da Ciência e Tecnologia.</h3>
+ <h3>Art. 25. Esta Lei será regulamentada no prazo de 180 (cento e oitenta) dias.</h3>
+ <h3>Art. 26. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 27. Revoga-se a Lei Nº 6.638, de 8 de maio de 1979.</h3>
+ <p>Brasília, 8 de outubro de 2008; 187º da Independência e 120º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Luiz Antonio Rodrigues Elias</p>
+ <p>Este texto não substitui o publicado no DOU de 9.10.2008</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Regulamenta o inciso VII do § 1odo art. 225 da Constituição Federal, estabelecendo procedimentos para o uso científico de animais; revoga a Lei no6.638, de 8 de maio de</p>
+ <p>1979; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2008/Lei/L11794.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 5.741, DE 1 DE DEZEMBRO DE 1971 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1971" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 5.741, DE 1 DE DEZEMBRO DE 1971</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:44:59 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/l5741.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 7.580 caracteres | espelho: 7.642 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 5.741, DE 1 DE DEZEMBRO DE 1971.</p>
+ <p>Dispõe sobre a proteção do financiamento de bens imóveis vinculados ao Sistema Financeiro da Habitação.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Para a cobrança de crédito hipotecário vinculado ao Sistema Financeiro da Habitação criado pela Lei nº 4.380, de 21 de agosto de 1964 , é lícito ao credor promover a execução de que tratam os artigos 31 e 32 do Decreto-lei nº 70, de 21 de novembro de 1966 , ou ajuizar a ação executiva na forma da presente lei.</h3>
+ <h3>Art. 2º A execução terá início por petição escrita, com os requisitos do art. 158 do Código de Processo Civil , apresentada em três vias, servindo a segunda e terceira de mandado contrafé, e sendo a primeira instruída com:</h3>
+ <h5>I - o título da dívida devidamente inscrita;</h5>
+ <h5>II - a indicação do valor das prestações e encargos cujo não pagamento deu lugar ao vencimento do contrato;</h5>
+ <h5>III - o saldo devedor, discriminadas as parcelas relativas a principal, juros, multa e encargos contratuais, fiscais e honorários advocatícios;</h5>
+ <h5>IV - cópia dos avisos regulamentares reclamando o pagamento da dívida, expedidos segundo instruções do Banco Nacional da Habitação.</h5>
+ <h3>Art. 2º A execução terá início por petição escrita, com os requisitos do Art. 282 do Código de Processo Civil , apresentada em três vias, servindo a segunda e terceira de mandado e contra-fé, e sendo a primeira instruída com: (Redação dada pela Lei nº 6.071, de 1974)</h3>
+ <h5>I - o título da dívida devidamente inscrita; (Redação dada pela Lei nº 6.071, de 1974)</h5>
+ <p>Il - a indicação do valor das prestações e encargos cujo não pagamento deu lugar ao vencimento do contrato; (Redação dada pela Lei nº 6.071, de 1974)</p>
+ <h5>III - o saldo devedor, discriminadas as parceIas relativas a principal, juros, multa e outros encargos contratuais fiscais e honorários advocatícios; (Redação dada pela Lei nº 6.071, de 1974)</h5>
+ <h5>IV - cópia dos avisos regulamentares reclamando o pagamento da dívida, expedidos segundo instruções do Banco Nacional da Habitação. (Redação dada pela Lei nº 6.071, de 1974)</h5>
+ <h3>Art. 3º O devedor será citado para pagar o valor do crédito reclamado ou depositá-lo em juízo no prazo de vinte e quatro horas, sob pena de lhe ser penhorado o imóvel hipotecado.</h3>
+ <h4>§ 1º A citação far-se-á na pessoa do réu ou do seu representante legal. Mas, a do marido dispensa a da mulher, quando aquele for o devedor.</h4>
+ <h4>§ 1º A citação far-se-á na pessoa do réu e de seu cônjuge ou de seus representantes legais. (Redação dada pela Lei nº 8.004, de 1990).</h4>
+ <h4>§ 2º Se o executado e seu cônjuge se acharem fora da jurisdição da situação do imóvel, a citação far-se-á por meio de edital, pelo prazo de 10 (dez) dias, publicado, uma vez no órgão oficial do Estado e, pelo menos, duas vezes em jornal local de grande circulação onde houver.</h4>
+ <h3>Art. 4º Se o executado não pagar a dívida indicada no inciso II do art. 2º, acrescida das custas e honorários de advogado ou não depositar o saldo devedor, efetuar-se-á penhora do imóvel hipotecado, sendo nomeado depositário o exeqüente ou quem êste indicar.</h3>
+ <h4>§ 1º Se o executado não estiver na posse direta do imóvel, o juiz ordenará a expedição de mandado de desocupação contra a pessoa que o estiver ocupando, para entregá-lo ao exeqüente no prazo de 10 (dez) dias.</h4>
+ <h4>§ 2º Se o executado estiver na posse direta do imóvel, o juiz ordenará que o desocupe no prazo de 30 (trinta) dias, entregando-o ao exeqüente.</h4>
+ <h3>Art. 5º O executado poderá opor embargos no prazo de 10 (dez) dias contados da penhora que serão recebidos com efeito suspensivo, desde que alegue e prove:</h3>
+ <h5>I - que depositou, por inteiro a importância reclamada na inicial.</h5>
+ <h5>II - que pagou a dívida, apresentando desde logo a prova da quitação.</h5>
+ <h4>§ 1º Da decisão do juiz que rejeitar os embargos caberá agravo de instrumento.</h4>
+ <h4>§ 2º Os demais fundamentos de embargos, previstos no art. 1.010 do Código de Processo Civil, incisos I e III , não suspendem a execução.</h4>
+ <h3>Art. 5º O executado poderá opor embargos no prazo de dez (10) dias contados da penhora e que serão recebidos com efeito suspensivo, desde que alegue e prove: (Redação dada pela Lei nº 6.014, de 1973)</h3>
+ <h5>I - que depositou por inteiro a importância reclamada na inicial; (Redação dada pela Lei nº 6.014, de 1973)</h5>
+ <h5>II - que resgatou a dívida, oferecendo desde logo a prova da quitação. (Redação dada pela Lei nº 6.014, de 1973)</h5>
+ <h4>Parágrafo único. Os demais fundos de fundamentos de embargos, previstos no artigo 741 do Código de 	Processo Civil , não suspendem a execução. (Incluído dada pela Lei nº 6.014, de 1973)</h4>
+ <h3>Art. 6º Rejeitados os embargos referidos no caput do artigo anterior, o juiz ordenará a venda do imóvel hipotecado em praça pública por preço não inferior do saldo devedor expedindo-se edital pelo prazo de 10 (dez) dias.</h3>
+ <h4>Parágrafo único. O edital será afixado à porta do edifício onde tiver sede o juízo e publicado três vezes, por extrato, em um dos jornais locais de maior circulação, onde houver.</h4>
+ <h3>Art. 7º Não havendo licitante na praça pública, o Juiz adjudicará, dentro de quarenta e oito horas, ao exeqüente o imóvel hipotecado, ficando exonerado o executado da obrigação de pagar o restante da dívida.</h3>
+ <h3>Art. 8º É lícito ao executado remir o imóvel penhorado, desde que deposite em juízo, até a assinatura do auto de arrematação, a importância que baste ao pagamento da dívida reclamada mais custas e honorários advocatícios; caso em que convalescerá o contrato hipotecário.</h3>
+ <h3>Art. 9º Constitui crime de ação pública, punido com a pena de detenção de 6 (seis) meses a 2 (dois) anos e multa de cinco a vinte salários mínimos, invadir alguém, ou ocupar, com o fim de esbulho possessório, terreno ou unidade residencial, construída ou em construção, objeto de financiamento do Sistema Financeiro da Habitação.</h3>
+ <h4>§ 1º Se o agente usa de violência, incorre também nas penas a esta cominada.</h4>
+ <h4>§ 2º É isento da pena de esbulho o agente que, espontaneamente, desocupa o imóvel antes de qualquer medida coativa.</h4>
+ <p>3º O salário a que se refere este artigo é o maior mensal vigente no País, à época do fato.</p>
+ <h3>Art. 10. A ação executiva, fundada em outra causa que não a falta de pagamento pelo executado das prestações vencidas, será processada na forma do Código de Processo Civil , que se aplicará, subsidiàriamente, a ação executiva de que trata esta lei.</h3>
+ <h3>Art. 11. Ficam dispensadas de averbação no Registro de Imóveis as alterações contratuais de qualquer natureza, desde que não importem em novação objetiva da dívida, realizadas em operações do Sistema Financeiro da Habitação, criado pela Lei nº 4.380, de 21 de agosto de 1964 , sejam as operações consubstanciadas, em instrumentos públicos ou particulares, ou em cédulas hipotecárias.</h3>
+ <h4>Parágrafo único. O registro da cédula hipotecária limitar-se-á à averbação de suas características originais, a que se refere o art. 13 do Decreto-lei nº 70, de 21 de novembro de 1966 , ficando dispensadas de averbação também as alterações que decorram da circulação do título.</h4>
+ <h3>Art. 12. As entidades credoras integrantes do Sistema Financeiro da Habitação ficam obrigadas a fornecer por escrito, no prazo de cinco dias, as informações sobre as alterações de que trata o artigo 11, quando requeridas por interessados.</h3>
+ <h3>Art. 13. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 14. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 1º de dezembro de 1971; 150º da Independência e 83º da República.</p>
+ <h3>EMÍLIO G. MÉDICI</h3>
+ <p>José Costa Cavalcanti</p>
+ <p>Este texto não substitui o publicado no DOU de 2.12.1971</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Dispõe sobre a proteção do financiamento de bens imóveis vinculados ao Sistema Financeiro da Habitação.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/l5741.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

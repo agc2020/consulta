@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 10.820, DE 17 DE DEZEMBRO DE 2003 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2003" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 10.820, DE 17 DE DEZEMBRO DE 2003</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:33:18 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.820Compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 34.273 caracteres | espelho: 34.348 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 10.820, DE 17 DE DEZEMBRO DE 2003. Conversão da MPv nº 130, de 2003</p>
+ <p>Vide Medida Provisória nº 656, de 2014</p>
+ <p>Dispõe sobre a autorização para desconto de prestações em folha de pagamento, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Os empregados regidos pela Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , poderão autorizar, de forma irrevogável e irretratável, o desconto em folha de pagamento ou na sua remuneração disponível dos valores referentes ao pagamento de empréstimos, 	financiamentos, cartões de crédito e operações de arrendamento mercantil concedidos por instituições financeiras e sociedades de arrendamento mercantil, quando previsto nos respectivos contratos. (Redação dada pela Lei nº 13.172, de 2015)</h3>
+ <h4>§ 1º O desconto mencionado neste artigo também poderá incidir sobre verbas rescisórias devidas pelo empregador, se assim previsto no respectivo contrato de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil, até o limite de 40% (quarenta por cento), sendo 35% (trinta e cinco por cento) destinados exclusivamente a empréstimos, financiamentos e arrendamentos mercantis e 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão de crédito consignado ou à utilização com a finalidade de saque por meio de cartão de crédito consignado. (Redação dada pela Lei nº 14.431, de 2022)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei nº 14.431, de 2022)</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei nº 14.431, de 2022)</h5>
+ <h4>§ 2º O regulamento disporá sobre os limites de valor do empréstimo, da prestação consignável para os fins do caput e do comprometimento das verbas rescisórias para os fins do § 1º deste artigo.</h4>
+ <h4>§ 3º Os empregados de que trata o caput poderão solicitar o bloqueio, a qualquer tempo, de novos descontos. (Incluído pela Lei nº 13.097, de 2015)</h4>
+ <h4>§ 4º O disposto no § 3º não se aplica aos descontos autorizados em data anterior à da solicitação do bloqueio. (Incluído pela Lei nº 13.097, de 2015)</h4>
+ <h4>§ 5º Nas operações de crédito consignado de que trata este artigo, o empregado poderá oferecer em garantia, de forma irrevogável e irretratável: (Redação dada pela Lei nº 13.313, de 2016)</h4>
+ <h5>I - até 10% (dez por cento) do saldo de sua conta vinculada no Fundo de Garantia do Tempo de Serviço - FGTS; (Incluído pela Lei nº 13.313, de 2016)</h5>
+ <h5>II - até 100% (cem por cento) do valor da multa paga pelo empregador, em caso de despedida sem justa causa ou de despedida por culpa recíproca ou força maior, nos termos dos §§ 1º e 2º do art. 18 da Lei nº 8.036, de 11 de maio de 1990 . (Incluído pela Lei nº 13.313, de 2016)</h5>
+ <h4>§ 6º A garantia de que trata o § 5º só poderá ser acionada na ocorrência de despedida sem justa causa, inclusive a indireta, ou de despedida por culpa recíproca ou força maior, não se aplicando, em relação à referida garantia, o disposto no § 2º do art. 2º da Lei nº 8.036, de 11 de maio de 1990 . (Redação dada pela Lei nº 13.313, de 2016)</h4>
+ <h4>§ 7º (Revogado) . (Redação dada pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 8º Cabe ao agente operador do FGTS definir os procedimentos operacionais necessários à execução do disposto nos §§ 5º e 6º deste artigo, nos termos do inciso II do caput do art. 7º da Lei nº 8.036, de 11 de maio de 1990 . (Redação dada pela Lei nº 13.313, de 2016)</h4>
+ <h4>§ 9º A consignação voluntária prevista no caput deste artigo será aplicável a todos os vínculos empregatícios ativos no momento da contratação do crédito que se fizerem necessários ao adimplemento das obrigações assumidas, e, em caso de rescisão ou de suspensão do contrato de trabalho, o seu redirecionamento será automático, independentemente de consentimento adicional do devedor, para: (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h5>I – outros vínculos de emprego ativos no momento da contratação do crédito, mas inicialmente não alcançados pela consignação; e (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h5>II – vínculos empregatícios que surjam posteriormente à contratação da operação de crédito. (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h4>§ 10. Para fins do disposto no caput deste artigo, ato do Poder Executivo federal disporá sobre as formalidades para a habilitação das instituições consignatárias. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 11. O disposto neste artigo aplica-se aos empregados de que tratam a Lei nº 5.889, de 8 de junho de 1973 (Lei do Trabalho Rural), e a Lei Complementar nº 150, de 1º de junho de 2015 , e aos diretores não empregados com direito ao FGTS. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 1º-A. Os entes públicos da administração direta, autárquica e fundacional e as empresas estatais dependentes das esferas federal, estadual, distrital e municipal deverão manter solução própria de gestão de crédito consignado com desconto em folha de pagamento para seus empregados públicos regidos pela Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943 , podendo aderir aos sistemas ou às plataformas de que trata o art. 2º-A desta Lei, nos termos da regulamentação do Comitê Gestor das Operações de Crédito Consignado, instituído pelo art. 2º-G desta Lei. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h3>Art. 1º-B. O disposto no art. 1º desta Lei não se aplica às operações realizadas pelas entidades fechadas de previdência complementar com seus participantes e assistidos, nos termos do § 1º do art. 9º da Lei Complementar nº 109, de 29 de maio de 2001 , da regulamentação do Conselho Monetário Nacional e da Superintendência Nacional de Previdência Complementar (Previc). (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>Parágrafo único. As entidades fechadas de previdência complementar deverão integrar as informações das operações realizadas com seus participantes e assistidos com os sistemas ou as plataformas de que trata o art. 2º-A desta Lei, de forma a evidenciar a assistência concedida e a garantir adequada avaliação das condições de endividamento do trabalhador. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º Para os fins desta Lei, considera-se:</h3>
+ <h5>I - empregador, a pessoa jurídica assim definida pela legislação trabalhista e o empresário a que se refere o</h5>
+ <p>TÍTULO I do Livro II da Parte Especial da Lei Nº 10.406, de 10 de janeiro de 2002 - Código Civil; (Redação dada pela Lei nº 13.097, de 2015)</p>
+ <h5>II - empregado, aquele assim definido pela legislação trabalhista;</h5>
+ <h5>III - instituição consignatária, a instituição autorizada a conceder empréstimo ou financiamento ou realizar operação com cartão de crédito ou de arrendamento mercantil mencionada no caput do art. 1º ; (Redação dada pela Lei nº 13.172, de 2015)</h5>
+ <h5>IV - mutuário, empregado que firma com instituição consignatária contrato de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil regulado por esta Lei; (Redação dada pela Lei nº 13.172, de 2015)</h5>
+ <h5>V - verbas rescisórias, as importâncias devidas em dinheiro pelo empregador ao empregado em razão de rescisão do seu contrato de trabalho.</h5>
+ <h5>VI - instituição financeira mantenedora, a instituição a que se refere o inciso III do caput e que mantém as contas para crédito da remuneração disponível dos empregados; (Incluído pela Lei nº 13.097, de 2015)</h5>
+ <h5>VII - desconto, ato de descontar na folha de pagamento ou em momento anterior ao do crédito devido pelo empregador ao empregado como remuneração disponível ou verba rescisória o valor das prestações assumidas em operação de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil; e (Redação dada pela Lei nº 13.172, de 2015)</h5>
+ <h5>VIII - remuneração disponível, os vencimentos, subsídios, soldos, salários ou remunerações, descontadas as consignações compulsórias. (Incluído pela Lei nº 13.097, de 2015)</h5>
+ <h4>§ 1º Para os fins desta Lei, são consideradas consignações voluntárias as autorizadas pelo empregado.</h4>
+ <h4>§ 2º No momento da contratação da operação, a autorização para a efetivação dos descontos permitidos nesta Lei observará, para cada mutuário, os seguintes limites:</h4>
+ <h5>I - a soma dos descontos referidos no art. 1º desta Lei não poderá exceder a 40% (quarenta por cento) da remuneração disponível, conforme definido em regulamento; (Redação dada pela Lei nº 14.431, de 2022)</h5>
+ <h6>a) (revogada); (Redação dada pela Lei nº 14.431, de 2022)</h6>
+ <h6>b) (revogada); (Redação dada pela Lei nº 14.431, de 2022)</h6>
+ <h5>II - o total das consignações voluntárias, incluindo as referidas no art. 1º , não poderá exceder a quarenta por cento da remuneração disponível, conforme definida em regulamento.</h5>
+ <h3>Art. 2º-A. Sem prejuízo da possibilidade de contratação mediante canais próprios das instituições consignatárias, a operacionalização das operações de crédito de que trata o caput do art. 1º desta Lei será efetuada em sistemas ou em plataformas digitais acessíveis por meio eletrônico e mantidos por agentes operadores públicos. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>§ 1º Ato do Poder Executivo federal disporá sobre as normas complementares necessárias ao cumprimento do disposto no caput deste artigo. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º A utilização de sistemas ou de plataformas digitais de que trata o caput deste artigo implicará: (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h5>I – para os empregadores: (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h6>a) a autorização para os descontos dos valores das prestações contratadas em operação de crédito, quando realizados por meio de sistemas ou de plataformas digitais; (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h6>b) o consentimento em compartilhar dados pessoais com os agentes operadores públicos credenciados e com as instituições consignatárias habilitadas para a contratação de operação de crédito consignado; e (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h6>c) a obrigação de efetuar todos os procedimentos operacionais necessários à eficácia do contrato de operação de crédito na instituição consignatária escolhida pelo empregado, independentemente da existência de prévio acordo ou de convênio firmado na forma dos §§ 1º ou 2º do art. 4º desta Lei; (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h5>II – para os empregados: (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h6>a) a autorização para os descontos dos valores das prestações contratadas em operação de crédito, quando realizados por meio de sistemas ou de plataformas digitais; (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h6>b) o consentimento em compartilhar dados pessoais com os agentes operadores públicos credenciados e com as instituições consignatárias habilitadas para a contratação de operação de crédito consignado; e (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h6>c) (VETADO); e (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h5>III – para as instituições consignatárias habilitadas: (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h6>a) a obrigação de realizar todos os procedimentos necessários à adaptação de sistemas e à operacionalização do empréstimo nos sistemas ou nas plataformas digitais; e (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h6>b) o cumprimento das obrigações assumidas nos atos expedidos pelo Poder Executivo federal, sob pena de suspensão ou de cancelamento da habilitação. (Incluído pela Lei nº 15.179, de 2025)</h6>
+ <h4>§ 3º O recolhimento das consignações voluntárias descontadas em folha de pagamento ou em remuneração disponível poderá ser efetuado por meio de documento de arrecadação gerado nos sistemas ou nas plataformas digitais de que trata o caput deste artigo. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 4º A utilização do Sistema de Escrituração Digital das Obrigações Fiscais, Previdenciárias e Trabalhistas (eSocial) e do Cadastro Nacional de Informações Sociais (CNIS) constitui condição necessária à formalização e à averbação das operações de crédito consignado disciplinadas neste artigo, observado o disposto em regulamento do Poder Executivo federal. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-B. Aos agentes operadores públicos a que se refere o art. 2º-A ficam autorizados o acesso aos dados pessoais dos empregados, observado o consentimento previsto no art. 2º-A, § 2º, inciso II, alínea ‘b’, desta Lei, e o tratamento e o uso compartilhado desses dados com as instituições consignatárias, para a operacionalização dos sistemas ou das plataformas digitais, nos termos da Lei nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais). (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>§ 1º (VETADO). (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º É vedado o compartilhamento de informações pessoais dos empregados entre as instituições consignatárias ou o uso de informações pessoais recebidas para qualquer outra finalidade, nos termos da Lei nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais). (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-C. Os órgãos e as entidades federais compartilharão com os agentes operadores públicos a que se refere o art. 2º-A desta Lei e com as instituições consignatárias dados e informações necessários à operacionalização dos sistemas ou das plataformas digitais, observados o sigilo legal e o disposto na Lei nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais). (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>Parágrafo único. (VETADO). (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-D. As autorizações de desconto em folha de pagamento ou em remuneração disponível dos valores referentes ao pagamento de operações de crédito cursadas fora dos sistemas ou das plataformas de que trata o art. 2º-A desta Lei deverão ser averbadas no sistema ou na plataforma dos operadores públicos, sob pena de nulidade, conforme o disposto em ato do Ministério do Trabalho e Emprego. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>§ 1º É facultada ao empregado a transferência da consignação de que trata esta Lei entre as instituições consignatárias. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º As instituições consignatárias habilitadas nos termos do § 10 do art. 1º desta Lei que já possuam autorizações de desconto na data de entrada em vigor da Medida Provisória nº 1.292, de 12 de março de 2025 , terão até 120 (cento e vinte) dias para averbá-las no sistema ou na plataforma dos operadores públicos de que trata o art. 2º-A desta Lei, conforme ato do Ministério do Trabalho e Emprego, condicionada essa averbação à adequação do contrato aos termos desta Lei. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 3º Para as operações de que trata o § 2º deste artigo, a nova operação de crédito terá taxa de juros inferior à taxa de juros da operação originária. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-E. Durante o período de 120 (cento e vinte) dias, contado da entrada em funcionamento dos sistemas ou das plataformas de que trata o art. 2º-A desta Lei, as operações de crédito realizadas com instituições consignatárias deverão ter seus recursos destinados exclusivamente ao pagamento das seguintes modalidades, caso os mutuários tenham operações ativas nessas modalidades na data da concessão: (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h5>I – empréstimo não consignado, sem garantia e com parcelas vincendas; ou (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h5>II – empréstimo com desconto em folha de pagamento, com parcelas vincendas. (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h4>§ 1º As novas operações de crédito de que trata este artigo poderão ser ofertadas por quaisquer instituições consignatárias habilitadas. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º Nas hipóteses previstas no caput deste artigo, a nova operação de crédito deverá ter taxa de juros inferior à taxa de juros da operação originária. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 3º As instituições consignatárias deverão informar os dados das operações de crédito de que tratam os incisos I e II do caput deste artigo aos agentes operadores públicos a que se refere o art. 2º-A desta Lei. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-F. Fica autorizada a portabilidade das operações de crédito que estejam averbadas nos sistemas ou nas plataformas de que trata o art. 2º-A desta Lei. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>Parágrafo único. As operações de crédito de que trata o caput deste artigo terão taxa de juros inferior à taxa de juros da operação originária. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-G. É instituído o Comitê Gestor das Operações de Crédito Consignado, que, entre outras atribuições, poderá estabelecer os parâmetros para os elementos, os termos e as condições do contrato e para a operacionalização e a execução das operações de crédito consignado de empregados de que trata o art. 1º desta Lei. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>§ 1º O Comitê Gestor das Operações de Crédito Consignado será constituído por representantes da Casa Civil da Presidência da República, do Ministério do Trabalho e Emprego e do Ministério da Fazenda. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º O Poder Executivo federal regulamentará as competências, a forma de funcionamento e as demais atribuições do Comitê Gestor das Operações de Crédito Consignado. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 3º Os membros do Comitê Gestor das Operações de Crédito Consignado não serão remunerados por suas atividades no exercício da função. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-H. O Poder Executivo federal fomentará, em cooperação com as instituições consignatárias habilitadas e os agentes operadores públicos, ações de educação financeira direcionadas aos trabalhadores elegíveis às operações de crédito consignado de que trata esta Lei, conforme disponibilidade financeira-orçamentária. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h4>§ 1º Ato do Poder Executivo federal definirá parâmetros e diretrizes das formas de disponibilização das ações de que trata este artigo. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º A adesão do trabalhador às ações de educação financeira será facultativa, assegurado seu acesso gratuito, em linguagem acessível e compatível com a legislação de proteção de dados pessoais. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 2º-I. As instituições consignatárias habilitadas e os agentes operadores públicos deverão adotar mecanismos de verificação biométrica da identidade do trabalhador nas operações de crédito consignado realizadas por meio dos sistemas ou das plataformas digitais conforme ato do Poder Executivo federal. (Incluído pela Lei nº 15.179, de 2025) (Regulamento)</h3>
+ <h4>§ 1º O consentimento do trabalhador quanto à coleta e ao tratamento de dados biométricos será obrigatório, nos termos da Lei nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais). (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h4>§ 2º Os atos de contratação de operações de empréstimo consignado efetivados por meio dos sistemas e das plataformas digitais para operacionalização das operações de crédito deverão ser firmados por meio de: (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h5>I – assinaturas eletrônicas qualificadas, baseadas em certificado digital emitido pela Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil); ou (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h5>II – assinaturas eletrônicas avançadas que assegurem a autoria e a integridade de documentos eletrônicos, nos termos da legislação aplicável e das normas regulamentares vigentes. (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h4>§ 3º As assinaturas eletrônicas avançadas referidas no inciso II do § 2º deste artigo deverão atender, cumulativamente, aos requisitos do inciso II do caput do art. 4º da Lei nº 14.063, de 23 de setembro de 2020 , e aos seguintes: (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h5>I – autenticação biométrica que assegure alto nível de segurança, com prova de vida, no ato da assinatura; (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h5>II – geração de evidências técnicas que comprovem a autenticação e a integridade do ato, utilizáveis em procedimentos administrativos ou judiciais. (Incluído pela Lei nº 15.179, de 2025)</h5>
+ <h4>§ 4º Para fins do disposto neste artigo, consideram-se adequadas às exigências desta Lei as assinaturas eletrônicas avançadas já homologadas pelo Poder Executivo federal ou pelo Poder Judiciário na data de entrada em vigor deste artigo, bem como as assinaturas digitais, nos termos de regulamentação do Poder Executivo, que poderá atualizar os parâmetros de segurança aplicáveis. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 3º Para os fins desta Lei, são obrigações do empregador:</h3>
+ <h5>I - prestar ao empregado e à instituição consignatária, mediante solicitação formal do primeiro, as informações necessárias para a contratação da operação de crédito ou arrendamento mercantil;</h5>
+ <h5>II - tornar disponíveis aos empregados, bem como às respectivas entidades sindicais que as solicitem, as informações referentes aos custos referidos no § 2º ; e (Redação dada pela Lei nº 13.097, de 2015)</h5>
+ <h5>III - efetuar os descontos autorizados pelo empregado, inclusive sobre as verbas rescisórias, e repassar o valor à instituição consignatária na forma e no prazo previstos em regulamento. (Redação dada pela Lei nº 13.097, de 2015)</h5>
+ <h4>§ 1º É vedado ao empregador impor ao mutuário e à instituição consignatária escolhida pelo empregado qualquer condição que não esteja prevista nesta Lei ou em seu regulamento para a efetivação do contrato e a implementação dos descontos autorizados.</h4>
+ <h4>§ 2º Observado o disposto em regulamento e nos casos nele admitidos, é facultado ao empregador descontar na folha de pagamento do mutuário os custos operacionais decorrentes da realização da operação objeto desta Lei.</h4>
+ <h4>§ 3º Cabe ao empregador informar, no demonstrativo de rendimentos do empregado, de forma discriminada, o valor do desconto mensal decorrente de cada operação de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil e os custos operacionais referidos no § 2º . (Redação dada pela Lei nº 13.172, de 2015)</h4>
+ <h4>§ 4º Os descontos autorizados na forma desta Lei e seu regulamento terão preferência sobre outros descontos da mesma natureza que venham a ser autorizados posteriormente.</h4>
+ <h4>§ 5º No caso de descumprimento do disposto no inciso III do caput deste artigo, o empregador fica sujeito ao pagamento do documento de arrecadação atualizado, com os juros e as correções previstos nos contratos de empréstimo contraído por seus colaboradores, sem prejuízo de responder por perdas e danos que houver causado à instituição consignatária e ao empregado e, no caso de apropriação indevida dos recursos, estará sujeito às penalidades administrativas, civis e penais aplicáveis. (Incluído pela Lei nº 15.179, de 2025)</h4>
+ <h3>Art. 4º A concessão de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil será 	feita a critério da instituição consignatária, sendo os valores e as demais condições objeto de livre negociação entre ela e o mutuário, observadas as demais disposições desta Lei e seu regulamento. (Redação dada pela Lei nº 13.172, de 2015)</h3>
+ <h4>§ 1º Poderá o empregador, com a anuência da entidade sindical representativa da maioria dos empregados, 	sem ônus para estes, firmar, com instituições consignatárias, acordo que defina condições gerais e demais critérios a serem observados nas operações de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil que venham a ser realizadas com seus empregados. (Redação dada pela Lei nº 13.172, de 2015)</h4>
+ <h4>§ 2º Poderão as entidades e centrais sindicais, sem ônus para os empregados, firmar, com instituições consignatárias, acordo que defina condições gerais e demais critérios a serem observados nas operações de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil que venham a ser realizadas com seus representados. (Redação dada pela Lei nº 13.172, de 2015)</h4>
+ <h4>§ 3º Na hipótese de ser firmado um dos acordos a que se referem os §§ 1º ou 2º e sendo observados e atendidos pelo empregado todos os requisitos e condições nele previstos, inclusive as regras de concessão de crédito, não poderá a instituição consignatária negar-se a celebrar a operação de empréstimo, financiamento, cartão de crédito ou arrendamento mercantil. (Redação dada pela Lei nº 13.172, de 2015)</h4>
+ <h4>§ 4º Para a realização das operações referidas nesta Lei, é assegurado ao empregado o direito de optar por instituição consignatária que tenha firmado acordo com o empregador, com sua entidade sindical, ou qualquer outra instituição consignatária de sua livre escolha, ficando o empregador obrigado a proceder aos descontos e repasses por ele contratados e autorizados.</h4>
+ <h4>§ 5º No caso dos acordos celebrados nos termos do § 2º deste artigo, os custos de que trata o § 2º do art. 3º deverão ser negociados entre o empregador e a entidade sindical, sendo vedada a fixação de custos superiores aos previstos pelo mesmo empregador nos acordos referidos no § 1º deste artigo.</h4>
+ <h4>§ 6º Poderá ser prevista nos acordos referidos nos §§ 1º e 2º deste artigo, ou em acordo específico entre a instituição consignatária e o empregador, a absorção dos custos referidos no § 2º do art. 3º pela instituição consignatária.</h4>
+ <h4>§ 7º É vedada aos empregadores, entidades e centrais sindicais a cobrança de qualquer taxa ou exigência de contrapartida pela celebração ou pela anuência nos acordos referidos nos §§ 1º e 2º , bem como a inclusão neles de cláusulas que impliquem pagamento em seu favor, a qualquer título, pela realização das operações de que trata esta Lei, ressalvado o disposto no § 2º do art. 3º .</h4>
+ <h4>§ 8º Fica o empregador ou a instituição consignatária obrigada a disponibilizar, inclusive em meio eletrônico, a opção de bloqueio de novos descontos. (Incluído pela Lei nº 13.097, de 2015)</h4>
+ <h3>Art. 5º O empregador será o responsável pelas informações prestadas, pelo desconto e pelo recolhimento dos valores devidos por meio dos sistemas ou das plataformas de que trata o art. 2º-A desta Lei, nos termos estabelecidos em regulamento. (Redação dada pela Lei nº 15.179, de 2025)</h3>
+ <h4>§ 1º O empregador, salvo disposição contratual em contrário, não será corresponsável pelo pagamento dos empréstimos, financiamentos, cartões de crédito e arrendamentos mercantis concedidos aos seus empregados, mas responderá como devedor principal e solidário perante a instituição consignatária por valores a ela devidos em razão de contratações por ele confirmadas na forma desta Lei e de seu regulamento que deixarem, por sua falha ou culpa, de ser retidos ou repassados. (Redação dada pela Lei nº 13.172, de 2015)</h4>
+ <h4>§ 2º Na hipótese de comprovação de que o pagamento mensal do empréstimo, financiamento, cartão de crédito ou arrendamento mercantil tenha sido descontado do mutuário e não tenha sido repassado pelo empregador, ou pela instituição financeira mantenedora, na forma do § 5º , à instituição consignatária, 	fica esta proibida de incluir o nome do mutuário em cadastro de inadimplentes. (Redação dada pela Lei nº 13.172, de 2015)</h4>
+ <h4>§ 3º Na hipótese de ocorrência da situação descrita no § 2º , é cabível o ajuizamento de ação de depósito, nos termos do Capítulo II do Título I do Livro IV da Lei Nº 5.869, de 11 de janeiro de 1973 - Código de Processo Civil, em face do empregador, ou da instituição financeira mantenedora, se responsável pelo desconto, na forma do § 5º , e de seus representantes legais. (Redação dada pela Lei nº 13.097, de 2015)</h4>
+ <h4>§ 4º No caso de falência do empregador, antes do repasse das importâncias descontadas dos mutuários, fica assegurado à instituição consignatária o direito de pedir, na forma prevista em lei, a restituição das importâncias retidas.</h4>
+ <h4>§ 5º O acordo firmado entre o empregador e a instituição financeira mantenedora poderá prever que a responsabilidade pelo desconto de que trata o caput será da instituição financeira mantenedora. (Incluído pela Lei nº 13.097, de 2015)</h4>
+ <h3>Art. 6º Os titulares de benefícios de aposentadoria e pensão do Regime Geral de Previdência Social e do benefício de prestação continuada de que trata o art. 20 da Lei nº 8.742, de 7 de dezembro de 1993, poderão autorizar que o Instituto Nacional do Seguro Social (INSS) proceda aos descontos referidos no art. 1º desta Lei e, de forma irrevogável e irretratável, que a instituição financeira na qual recebam os seus benefícios retenha, para fins de amortização, valores referentes ao pagamento mensal de empréstimos, financiamentos, cartões de crédito e operações de arrendamento mercantil por ela concedidos, quando previstos em contrato, na forma estabelecida em regulamento, observadas as normas editadas pelo INSS e ouvido o Conselho Nacional de Previdência Social. (Redação dada pela Lei nº 14.431, de 2022)</h3>
+ <h4>§ 1º Para os fins do caput , fica o INSS autorizado a dispor, em ato próprio, sobre:</h4>
+ <h5>I - as formalidades para habilitação das instituições e sociedades referidas no art. 1º ;</h5>
+ <h5>II - os benefícios elegíveis, em função de sua natureza e forma de pagamento;</h5>
+ <h5>III - as rotinas a serem observadas para a prestação aos titulares de benefícios em manutenção e às instituições consignatárias das informações necessárias à consecução do disposto nesta Lei;</h5>
+ <h5>IV - os prazos para o início dos descontos autorizados e para o repasse das prestações às instituições consignatárias;</h5>
+ <h5>V - o valor dos encargos a serem cobrados para ressarcimento dos custos operacionais a ele acarretados pelas operações; e</h5>
+ <h5>VI - as demais normas que se fizerem necessárias.</h5>
+ <h4>§ 2º Em qualquer circunstância, a responsabilidade do INSS em relação às operações referidas no caput deste artigo restringe-se à: (Redação dada pela Lei nº 10.953, de 2004)</h4>
+ <h5>I - retenção dos valores autorizados pelo beneficiário e repasse à instituição consignatária nas operações de desconto, não cabendo à autarquia responsabilidade solidária pelos débitos contratados pelo segurado; e (Incluído pela Lei nº 10.953, de 2004)</h5>
+ <h5>II - manutenção dos pagamentos do titular do benefício na mesma instituição financeira enquanto houver saldo devedor nas operações em que for autorizada a retenção, não cabendo à autarquia responsabilidade solidária pelos débitos contratados pelo segurado. (Incluído pela Lei nº 10.953, de 2004)</h5>
+ <h4>§ 3º É vedado ao titular de benefício que realizar qualquer das operações referidas nesta Lei solicitar a alteração da instituição financeira pagadora, enquanto houver saldo devedor em amortização. (Redação dada pela Lei nº 10.953, de 2004)</h4>
+ <h4>§ 4º É facultada a transferência da consignação do empréstimo, financiamento ou arrendamento firmado pelo empregado na vigência do seu contrato de trabalho quando de sua aposentadoria, observadas as condições estabelecidas nesta Lei.</h4>
+ <h4>§ 5º Para os titulares de benefícios de aposentadoria e pensão do Regime Geral de Previdência Social, os descontos e as retenções referidos no caput deste artigo não poderão ultrapassar o limite de 45% (quarenta e cinco por cento) do valor dos benefícios, dos quais 35% (trinta e cinco por cento) destinados exclusivamente a empréstimos, a financiamentos e a arrendamentos mercantis, 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão de crédito consignado ou à utilização com a finalidade de saque por meio de cartão de crédito consignado e 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão consignado de benefício ou à utilização com a finalidade de saque por meio de cartão consignado de benefício. (Redação dada pela Lei nº 14.601, de 2023)</h4>
+ <h4>§ 5º-A Para os titulares do benefício de prestação continuada de que trata o art. 20 da Lei nº 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), os descontos e as retenções referidos no caput deste artigo não poderão ultrapassar o limite de 35% (trinta e cinco por cento) do valor dos benefícios, dos quais 30% (trinta por cento) destinados exclusivamente a empréstimos, a financiamentos e a arrendamentos mercantis e 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão de crédito consignado ou cartão consignado de benefício ou à utilização com a finalidade de saque por meio de cartão de crédito consignado ou cartão consignado de benefício. (Redação dada pela Lei nº 14.601, de 2023)</h4>
+ <h4>§ 6º A instituição financeira que proceder à retenção de valor superior ao limite estabelecido nos §§ 5º e 5º-A deste artigo perderá todas as garantias que lhe são conferidas nesta Lei. (Redação dada pela Lei nº 14.601, de 2023)</h4>
+ <h4>§ 7º Aplica-se o previsto no caput e no § 5º deste artigo aos titulares da renda mensal vitalícia prevista na Lei nº 6.179, de 11 de dezembro de 1974 . (Redação dada pela Lei nº 14.601, de 2023)</h4>
+ <h4>§ 8º Para os benefícios que tenham como requisito para sua concessão a preexistência do benefício de prestação continuada de que trata o art. 20 da Lei nº 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), aplica-se o previsto no caput e no § 5º-A deste artigo. (Incluído pela Lei nº 14.601, de 2023)</h4>
+ <h3>Art. 6º-A Equiparam-se, para os fins do disposto nos arts. 1º e 6º, às operações neles referidas as que são realizadas com entidades abertas ou fechadas de previdência complementar pelos respectivos participantes ou assistidos. (Incluído pela Lei nº 13.183, de 2015)</h3>
+ <p><del></p>
+ <h3>Art. 6º-B (Revogado pela Lei nº 14.601, de 2023)</del></h3>
+ <h3>Art. 7º O art. 115 da Lei Nº 8.213, de 24 de julho de 1991 , passa a vigorar com as seguintes alterações:</h3>
+ <p>"</p>
+ <h3>Art. 115. ......................................................................</h3>
+ <p>.....................................................................</p>
+ <h5>VI - pagamento de empréstimos, financiamentos e operações de arrendamento mercantil concedidos por instituições financeiras e sociedades de arrendamento mercantil, públicas e privadas, quando expressamente autorizado pelo beneficiário, até o limite de trinta por cento do valor do benefício.</h5>
+ <h4>§ 1º Na hipótese do inciso II, o desconto será feito em parcelas, conforme dispuser o regulamento, salvo má-fé.</h4>
+ <h4>§ 2º Na hipótese dos incisos II e VI, haverá prevalência do desconto do inciso II." (NR)</h4>
+ <h3>Art. 8º O Poder Executivo regulamentará o disposto nesta Lei.</h3>
+ <h3>Art. 8º-A. A União não responde pelo descumprimento das obrigações relativas aos contratos de financiamento de que trata esta Lei. (Incluído pela Lei nº 15.179, de 2025)</h3>
+ <h3>Art. 9º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 17 de dezembro de 2003; 182º da Independência e 115º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Antonio Palocci Filho</p>
+ <p>Ricardo José Ribeiro Berzoini</p>
+ <p>Este texto não substitui o publicado no DOU de 18.12.2003</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Conversão da MPv nº 130, de 2003</p>
+ <p>Provisória nº 656, de 2014 | Dispõe sobre a autorização para desconto de prestações em folha de pagamento, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.820Compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

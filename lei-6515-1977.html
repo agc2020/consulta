@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 6.515, DE 26 DE DEZEMBRO DE 1977 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1977" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 6.515, DE 26 DE DEZEMBRO DE 1977</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:40:59 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/l6515.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 20.157 caracteres | espelho: 20.056 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 6.515, DE 26 DE DEZEMBRO DE 1977.</p>
+ <p>Regula os casos de dissolução da sociedade conjugal e do casamento, seus efeitos e respectivos processos, e dá outras providências</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art 1º - A separação judicial, a dissolução do casamento, ou a cessação de seus efeitos civis, de que trata a Emenda Constitucional nº 9, de 28 de junho de 1977 , ocorrerão nos casos e segundo a forma que esta Lei regula.</h3>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA DISSOLUÇÃO DA SOCIEDADE CONJUGAL</h3>
+ <h3>Art 2º - A Sociedade Conjugal termina:</h3>
+ <h5>I - pela morte de um dos cônjuges;</h5>
+ <p>Il - pela nulidade ou anulação do casamento;</p>
+ <h5>III - pela separação judicial;</h5>
+ <h5>IV - pelo divórcio.</h5>
+ <h4>Parágrafo único - O casamento válido somente se dissolve pela morte de um dos cônjuges ou pelo divórcio.</h4>
+ <p>Seção I</p>
+ <p>Dos Casos e Efeitos da Separação Judicial</p>
+ <h3>Art 3º - A separação judicial põe termo aos deveres de coabitação, fidelidade recíproca e ao regime matrimonial de bens, como se o casamento fosse dissolvido.</h3>
+ <h4>§ 1º - O procedimento judicial da separação caberá somente aos cônjuges, e, no caso de incapacidade, serão representados por curador, ascendente ou irmão.</h4>
+ <h4>§ 2º - O juiz deverá promover todos os meios para que as partes se reconciliem ou transijam, ouvindo pessoal e separadamente cada uma delas e, a seguir, reunindo-as em sua presença, se assim considerar necessário.</h4>
+ <h4>§ 3º - Após a fase prevista no parágrafo anterior, se os cônjuges pedirem, os advogados deverão ser chamados a assistir aos entendimentos e deles participar.</h4>
+ <h3>Art 4º - Dar-se-á a separação judicial por mútuo consentimento dos cônjuges, se forem casados há mais de 2 (dois) anos, manifestado perante o juiz e devidamente homologado.</h3>
+ <h3>Art 5º - A separação judicial pode ser pedida por um só dos cônjuges quando imputar ao outro conduta desonrosa ou qualquer ato que importe em grave violação dos deveres do casamento e tornem insuportável a vida em comum.</h3>
+ <h4>§ 1º - A separação judicial pode, também, ser pedida se um dos cônjuges provar a ruptura da vida em comum há mais de 5 (cinco) anos consecutivos, e a impossibilidade de sua reconstituição.</h4>
+ <h4>§ 1° A separação judicial pode, também, ser pedida se um dos cônjuges provar a ruptura da vida em comum há mais de um ano consecutivo, e a impossibilidade de sua reconstituição. (Redação dada pela Lei nº 8.408, de 1992)</h4>
+ <h4>§ 2º - O cônjuge pode ainda pedir a separação judicial quando o outro estiver acometido de grave doença mental, manifestada após o casamento, que torne impossível a continuação da vida em comum, desde que, após uma duração de 5 (cinco) anos, a enfermidade tenha sido reconhecida de cura improvável.</h4>
+ <h4>§ 3º - Nos casos dos parágrafos anteriores, reverterão, ao cônjuge que não houver pedido a separação judicial, os remanescentes dos bens que levou para o casamento, e, se o regime de bens adotado o permitir, também a meação nos adquiridos na constância da sociedade conjugal.</h4>
+ <h3>Art 6º - Nos casos dos §§ 1º e 2º do artigo anterior, a separação judicial poderá ser negada, se constituir respectivamente, causa de agravamento das condições pessoais ou da doença do outro cônjuge, ou determinar, em qualquer caso, conseqüências morais de excepcional gravidade para os filhos menores.</h3>
+ <h3>Art 7º - A separação judicial importará na separação de corpos e na partilha de bens.</h3>
+ <h4>§ 1º - A separação de corpos poderá ser determinada como medida cautelar (art. 796 do CPC) .</h4>
+ <h4>§ 2º - A partilha de bens poderá ser feita mediante proposta dos cônjuges e homologada pelo juiz ou por este decidida.</h4>
+ <h3>Art 8º - A sentença que julgar a separação judicial produz seus efeitos à data de seu trânsito em julgado, o à da decisão que tiver concedido separação cautelar.</h3>
+ <p>Seção II</p>
+ <p>Da Proteção da Pessoa dos Filhos</p>
+ <h3>Art 9º - No caso de dissolução da sociedade conjugal pela separação judicial consensual (art. 4º), observar-se-á o que os cônjuges acordarem sobre a guarda dos filhos.</h3>
+ <h3>Art 10 - Na separação judicial fundada no " caput " do art. 5º, os filhos menores ficarão com o cônjuge que a e não houver dado causa.</h3>
+ <h4>§ 1º - Se pela separação judicial forem responsáveis ambos os cônjuges; os filhos menores ficarão em poder da mãe, salvo se o juiz verificar que de tal solução possa adv prejuízo de ordem moral para eles.</h4>
+ <h4>§ 2º - Verificado que não devem os filhos permanecer em poder da mãe nem do pai, deferirá o juiz a sua guarda a pessoa notoriamente idônea da família de qualquer dos cônjuges.</h4>
+ <h3>Art 11 - Quando a separação judicial ocorrer com fundamento no § 1º do art. 5º, os filhos ficarão em poder do cônjuge em cuja companhia estavam durante o tempo de ruptura da vida em comum.</h3>
+ <h3>Art 12 - Na separação judicial fundada no § 2º do art. 5º, o juiz deferirá a entrega dos filhos ao cônjuge que estiver em condições de assumir, normalmente, a responsabilidade de sua guarda e educação.</h3>
+ <h3>Art 13 - Se houver motivos graves, poderá o juiz, em qualquer caso, a bem dos filhos, regular por maneira diferente da estabelecida nos artigos anteriores a situação deles com os pais.</h3>
+ <h3>Art 14 - No caso de anulação do casamento, havendo filhos comuns, observar-se-á o disposto nos arts. 10 e 13.</h3>
+ <h4>Parágrafo único - Ainda que nenhum dos cônjuges esteja de boa fé ao contrair o casamento, seus efeitos civis aproveitarão aos filhos comuns.</h4>
+ <h3>Art 15 - Os pais, em cuja guarda não estejam os filhos, poderão visitá-los e tê-los em sua companhia, segundo fixar o juiz, bem como fiscalizar sua manutenção e educação.</h3>
+ <h3>Art 16 - As disposições relativas à guarda e à prestação de alimentos aos filhos menores estendem-se aos filhos maiores inválidos.</h3>
+ <p>Seção III</p>
+ <p>Do Uso do Nome</p>
+ <h3>Art 17 - Vencida na ação de separação judicial (art. 5º " caput "), voltará a mulher a usar o nome de solteira.</h3>
+ <h4>§ 1º - Aplica-se, ainda, o disposto neste artigo, quando é da mulher a iniciativa da separação judicial com fundamento nos §§ 1º e 2º do art. 5º.</h4>
+ <h4>§ 2º - Nos demais casos, caberá à mulher a opção pela conservação do nome de casada.</h4>
+ <h3>Art 18 - Vencedora na ação de separação judicial (art. 5º " caput "), poderá a mulher renunciar, a qualquer momento, o direito de usar o nome do marido.</h3>
+ <p>Seção IV</p>
+ <p>Dos Alimentos</p>
+ <h3>Art 19 - O cônjuge responsável pela separação judicial prestará ao outro, se dela necessitar, a pensão que o juiz fixar.</h3>
+ <h3>Art 20 - Para manutenção dos filhos, os cônjuges, separados judicialmente, contribuirão na proporção de seus recursos.</h3>
+ <h3>Art 21 - Para assegurar o pagamento da pensão alimentícia, o juiz poderá determinar a constituição de garantia real ou fidejussória.</h3>
+ <h4>§ 1º - Se o cônjuge credor preferir, o juiz poderá determinar que a pensão consista no usufruto de determinados bens do cônjuge devedor.</h4>
+ <h4>§ 2º - Aplica-se, também, o disposto no parágrafo anterior, se o cônjuge credor justificar a possibilidade do não recebimento regular da pensão.</h4>
+ <h3>Art 22 - Salvo decisão judicial, as prestações alimentícias, de qualquer natureza, serão corrigidas monetariamente na forma dos índices de atualização das Obrigações Reajustáveis do Tesouro Nacional - ORTN.</h3>
+ <h4>Parágrafo único - No caso do não pagamento das referidas prestações no vencimento, o devedor responderá, ainda, por custas e honorários de advogado apurados simultaneamente.</h4>
+ <h3>Art 23 - A obrigação de prestar alimentos transmite-se aos herdeiros do devedor, na forma do art. 1.796 do Código Civil .</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO DIVÓRCIO</h3>
+ <h3>Art 24 - O divórcio põe termo ao casamento e aos efeitos civis do matrimônio religioso.</h3>
+ <h4>Parágrafo único - O pedido somente competirá aos cônjuges, podendo, contudo, ser exercido, em caso de incapacidade, por curador, ascendente ou irmão.</h4>
+ <h3>Art 25 - A conversão em divórcio da separação judicial dos cônjuges, existente há mais de três anos, contada da data da decisão ou da que concedeu a medida cautelar correspondente (art. 8º), será decretada por sentença, da qual não constará referência à causa que a determinou.</h3>
+ <h3>Art. 25. A conversão em divórcio da separação judicial dos cônjuges existente há mais de um ano, contada da data da decisão ou da que concedeu a medida cautelar correspondente (art. 8°), será decretada por sentença, da qual não constará referência à causa que a determinou. (Redação dada pela Lei nº 8.408, de 1992)</h3>
+ <h4>Parágrafo único. A sentença de conversão determinará que a mulher volte a usar o nome que tinha antes de contrair matrimônio, só conservando o nome de família do ex-marido se alteração prevista neste artigo acarretar: (Incluído pela Lei nº 8.408, de 1992)</h4>
+ <h5>I - evidente prejuízo para a sua identificação; (Incluído pela Lei nº 8.408, de 1992)</h5>
+ <h5>II - manifesta distinção entre o seu nome de família e dos filhos havidos da união dissolvida; (Incluído pela Lei nº 8.408, de 1992)</h5>
+ <h5>III - dano grave reconhecido em decisão judicial. (Incluído pela Lei nº 8.408, de 1992)</h5>
+ <h3>Art 26 - No caso de divórcio resultante da separação prevista nos §§ 1º e 2º do art. 5º, o cônjuge que teve a iniciativa da separação continuará com o dever de assistência ao outro. (Código Civil - art. 231, nº III) .</h3>
+ <h3>Art 27 - O divórcio não modificará os direitos e deveres dos pais em relação aos filhos.</h3>
+ <h4>Parágrafo único - O novo casamento de qualquer dos pais ou de ambos também não importará restrição a esses direitos e deveres.</h4>
+ <h3>Art 28 - Os alimentos devidos pelos pais e fixados na sentença de separação poderão ser alterados a qualquer tempo.</h3>
+ <h3>Art 29 - O novo casamento do cônjuge credor da pensão extingüirá a obrigação do cônjuge devedor.</h3>
+ <h3>Art 30 - Se o cônjuge devedor da pensão vier a casar-se, o novo casamento não alterará sua obrigação.</h3>
+ <h3>Art 31 - Não se decretará o divórcio se ainda não houver sentença definitiva de separação judicial, ou se esta não tiver decidido sobre a partilha dos bens. (Vide Lei nº 10.406, de 2002)</h3>
+ <h3>Art 32 - A sentença definitiva do divórcio produzirá efeitos depois de registrada no Registro Público competente.</h3>
+ <h3>Art 33 - Se os cônjuges divorciados quiserem restabelecer a união conjugal só poderão fazê-lo mediante novo casamento.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO PROCESSO</h3>
+ <h3>Art 34 - A separação judicial consensual se fará pelo procedimento previsto nos arts. 1.120 e 1.124 do Código de Processo Civil , e as demais pelo procedimento ordinário.</h3>
+ <h4>§ 1º - A petição será também assinada pelos advogados das partes ou pelo advogado escolhido de comum acordo.</h4>
+ <h4>§ 2º - O juiz pode recusar a homologação e não decretar a separação judicial, se comprovar que a convenção não preserva suficientemente os interesses dos filhos ou de um dos cônjuges.</h4>
+ <h4>§ 3º - Se os cônjuges não puderem ou não souberem assinar, é lícito que outrem o faça a rogo deles.</h4>
+ <h4>§ 4º - Às assinaturas, quando não lançadas na presença do juiz, serão, obrigatoriamente, reconhecidas por tabelião.</h4>
+ <h3>Art 35 - A conversão da separação judicial em divórcio será feita mediante pedido de qualquer dos cônjuges.</h3>
+ <h4>Parágrafo único - O pedido será apensado aos autos da separação judicial. (art. 48)</h4>
+ <h3>Art 36 - Do pedido referido no artigo anterior, será citado o outro cônjuge, em cuja resposta não caberá reconvenção.</h3>
+ <h4>Parágrafo único - A contestação só pode fundar-se em:</h4>
+ <h5>I - falta de decurso do prazo de 3 (três) anos de separação judicial;</h5>
+ <h5>I - falta do decurso de 1 (um) ano da separação judicial; (Redação dada pela Lei nº 7.841, de 1989)</h5>
+ <h5>II - descumprimento das obrigações assumidas pelo requerente na separação.</h5>
+ <h3>Art 37 - O juiz conhecerá diretamente do pedido, quando não houver contestação ou necessidade de produzir prova em audiência, e proferirá sentença dentro em 10 (dez) dias.</h3>
+ <h4>§ 1º - A sentença limitar-se-á à conversão da separação em divórcio, que não poderá ser negada, salvo se provada qualquer das hipóteses previstas no parágrafo único do artigo anterior.</h4>
+ <h4>§ 2º - A improcedência do pedido de conversão não impede que o mesmo cônjuge o renove, desde que satisfeita a condição anteriormente descumprida.</h4>
+ <p>(Revogado pela Lei nº 7.841, de 1989)</del></p>
+ <h3>Art 39 - O</h3>
+ <h2>CAPÍTULO III do Título Il do Livro IV do Código de Processo Civil, as expressões "desquite por mútuo consentimento", "desquite" e "desquite litigioso" são substituídas por "separação consensual" e "separação judicial".</h2>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DAS DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art 40 - No caso de separação de fato, com início anterior a 28 de junho de 1977, e desde que completados 5 (cinco) anos, poderá ser promovida ação de divórcio, na qual se deverão provar o decurso do tempo da separação e a sua causa.</h3>
+ <h3>Art. 40. No caso de separação de fato, e desde que completados 2 (dois) anos consecutivos, poderá ser promovida ação de divórcio, na qual deverá ser comprovado decurso do tempo da separação. (Redação dada pela Lei nº 7.841, de 1989)</h3>
+ <p><del>§ 1º (Revogado pela Lei nº 7.841, de 1989)</del></p>
+ <h4>§ 2º - No divórcio consensual, o procedimento adotado será o previsto nos artigos 1.120 a 1.124 do Código de Processo Civil , observadas, ainda, as seguintes normas:</h4>
+ <h5>I - a petição conterá a indicação dos meios probatórios da separação de fato, e será instruída com a prova documental já existente;</h5>
+ <h5>II - a petição fixará o valor da pensão do cônjuge que dela necessitar para sua manutenção, e indicará as garantias para o cumprimento da obrigação assumida;</h5>
+ <h5>III - se houver prova testemunhal, ela será produzida na audiência de ratificação do pedido de divórcio a qual será obrigatoriamente realizada.</h5>
+ <h5>IV - a partilha dos bens deverá ser homologada pela sentença do divórcio.</h5>
+ <h4>§ 3º - Nos demais casos, adotar-se-á o procedimento ordinário.</h4>
+ <h3>Art 41 - As causas de desquite em curso na data da vigência desta Lei, tanto as que se processam pelo procedimento especial quanto as de procedimento ordinário, passam automaticamente a visar à separação judicial.</h3>
+ <h3>Art 42 - As sentenças já proferidas em causas de desquite são equiparadas, para os efeitos desta Lei, às de separação judicial.</h3>
+ <h3>Art 43 - Se, na sentença do desquite, não tiver sido homologada ou decidida a partilha dos bens, ou quando esta não tenha sido feita posteriormente, a decisão de conversão disporá sobre ela.</h3>
+ <h3>Art 44 - Contar-se-á o prazo de separação judicial a partir da data em que, por decisão judicial proferida em qualquer processo, mesmo nos de jurisdição voluntária, for determinada ou presumida a separação dos cônjuges.</h3>
+ <h3>Art 45 - Quando o casamento se seguir a uma comunhão de vida entre os nubentes, existentes antes de 28 de junho de 1977, que haja perdurado por 10 (dez) anos consecutivos ou da qual tenha resultado filhos, o regime matrimonial de bens será estabelecido livremente, não se lhe aplicando o disposto no artigo 258, parágrafo único, nº II, do Código Civil .</h3>
+ <h3>Art 46 - Seja qual for a causa da separação judicial, e o modo como esta se faça, é permitido aos cônjuges restabelecer a todo o tempo a sociedade conjugal, nos termos sem que fora constituída, contanto que o façam mediante requerimento nos autos da ação de separação.</h3>
+ <h4>Parágrafo único - A reconciliação em nada prejudicará os direitos de terceiros, adquiridos antes e durante a separação, seja qual for o regime de bens.</h4>
+ <h3>Art 47 - Se os autos do desquite ou os da separação judicial tiverem sido extraviados, ou se encontrarem em outra circunscrição judiciária, o pedido de conversão em divórcio será instruído com a certidão da sentença, ou da sua averbação no assento de casamento.</h3>
+ <h3>Art 48 - Aplica-se o disposto no artigo anterior, quando a mulher desquitada tiver domicílio diverso daquele em que se julgou o desquite.</h3>
+ <h3>Art 49 - Os §§ 5º e 6º do art. 7º da Lei de Introdução ao Código Civil passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 7º. ..................................................</h3>
+ <h4>§ 5º - O estrangeiro casado, que se naturalizar brasileiro, pode, mediante expressa anuência de seu cônjuge, requerer ao juiz, no ato de entrega do decreto de naturalização, se apostile ao mesmo a adoção do regime de comunhão parcial de bens, respeitados os direitos de terceiros e dada esta adoção ao competente registro.</h4>
+ <h4>§ 6º - O divórcio realizado no estrangeiro, se um ou ambos os cônjuges forem brasileiros, só será reconhecido no Brasil depois de três anos da data da sentença, salvo se houver sido antecedida de separarão judicial por igual prazo, caso em que a homologação produzirá efeito imediato, obedecidas as condições estabelecidas para a eficácia das sentenças estrangeiras no País. O Supremo Tribunal Federal, na forma de seu regimento interno, poderá reexaminar, a requerimento do interessado, decisões já proferidas em pedidos de homologação de sentenças estrangeiras de divórcio de brasileiros, a fim de que passem a produzir todos os efeitos legais."</h4>
+ <h3>Art 50 - São introduzidas no Código Civil as alterações seguintes:</h3>
+ <p>1) "</p>
+ <h3>Art. 12. .................................</h3>
+ <h5>I - os nascimentos, casamentos, separações judiciais, divórcios e óbitos."</h5>
+ <p>2) "</p>
+ <h3>Art. 180. .............................</h3>
+ <h5>V - certidão de óbito do cônjuge falecido, da anulação do casamento anterior ou do registro da sentença de divórcio."</h5>
+ <p>3) "</p>
+ <h3>Art. 186 - Discordando eles entre si, prevalecerá a vontade paterna, ou, sendo o casal separado, devorciado ou tiver sido o seu casamento anulado, a vontade do cônjuge, com quem estiverem os filhos."</h3>
+ <p>4) "</p>
+ <h3>Art. 195. .................................</h3>
+ <h5>VII - o regime do casamento, com a declaração data e do cartório em cujas notas foi passada a escritura antenupcial, quando o regime não for o de comunhão parcial, ou o legal estabelecido no Titulo IIl deste livro, para outros casamentos."</h5>
+ <p>5) "</p>
+ <h3>Art. 240 - A mulher, com o casamento, assume a condição de companheira, consorte e colaboradora do marido nos encargos de família, cumprindo-lhe velar pela direção material e moral desta.</h3>
+ <h4>Parágrafo único - A mulher poderá acrescer ao seus os apelidos do marido."</h4>
+ <p>6) "</p>
+ <h3>Art. 248. ......................................</h3>
+ <h5>VIII - propor a separação judicial e o divórcio."</h5>
+ <p>7) "</p>
+ <h3>Art. 258 - Não havendo convenção, ou sendo nula, vigorará, quanto aos bens entre os cônjuges, o regime de comunhão parcial."</h3>
+ <p>8) "</p>
+ <h3>Art. 267. ........................................</h3>
+ <h5>III - pela separação judicial;</h5>
+ <h5>IV - pelo divórcio."</h5>
+ <p>9) "</p>
+ <h3>Art. 1.611 - A falta de descendentes ou ascedentes será deferida a sucessão ao cônjuge sobrevivente se, ao tempo da morte do outro, não estava dissolvida a sociedade conjugal."</h3>
+ <h3>Art 51 - A Lei nº 883, de 21 de outubro de 1949 passa a vigorar com as seguintes alterações:</h3>
+ <p>1) "</p>
+ <h3>Art. 1º. ....................</h3>
+ <h4>Parágrafo único - Ainda na vigência do casamento qualquer dos cônjuges poderá reconhecer o filho havido fora do matrimônio, em testamento cerrado, aprovado antes ou depois do nascimento do filho, e, nessa parte, irrevogável."</h4>
+ <p>2) "</p>
+ <h3>Art. 2º - Qualquer que seja a natureza da filiação, o direito à herança será reconhecido em igualdade de condições."</h3>
+ <p>3) - "</p>
+ <h3>Art. 4º. ...................................</h3>
+ <h4>Parágrafo único - Dissolvida a sociedade conjugal do que foi condenado a prestar alimentos, quem os obteve não precisa propor ação de investigação para ser reconhecido, cabendo, porém, aos interessados o direito de impugnar a filiação."</h4>
+ <p>4) "</p>
+ <h3>Art. 9º - O filho havido fora do casamento e reconhecido pode ser privado da herança nos casos dos arts. 1.595 e 1.744 do Código Civil ."</h3>
+ <h3>Art 52 - O nº I do art. 100, o nº Il do art. 155 e o § 2º do art. 733 do Código de Processo Civil passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 100. .................................</h3>
+ <h5>I - da residência da mulher, para a ação de separação dos cônjuges e a conversão desta em divórcio, e para a anulação de casamento.</h5>
+ <h3>Art. 155. .....................................................</h3>
+ <h5>II - que dizem respeito a casamento, filiação, separação dos cônjuges, conversão desta em divórcio, alimentos e guarda de menores."</h5>
+ <p>"</p>
+ <h3>Art. 733. ........................................................</h3>
+ <h4>§ 2º - O cumprimento da pena não exime o devedor do pagamento das prestações vencidas e vincendas."</h4>
+ <h3>Art 53 - A presente Lei entrará em vigor na data de sua publicação.</h3>
+ <h3>Art 54 - Revogam-se os arts. 315 a 328 e o § 1º do art. 1605 do Código Civil e as demais disposições em contrário.</h3>
+ <p>Brasília, em 26 de dezembro de 1977; 156º da Independência e 89º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Este teto não substitui o publicado no DOU de 27.12.1977</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Regula os casos de dissolução da sociedade conjugal e do casamento, seus efeitos e respectivos processos, e dá outras providências</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/l6515.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

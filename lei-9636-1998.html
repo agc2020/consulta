@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 9.636, DE 15 DE MAIO DE 1998 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1998" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 9.636, DE 15 DE MAIO DE 1998</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:45:15 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L9636compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 100.945 caracteres | espelho: 101.089 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 9.636, DE 15 DE MAIO DE 1998. Regulamentação</p>
+ <p>Conversão da MPv nº 1.647-15, 	de 1998</p>
+ <p>Dispõe sobre a regularização, administração, aforamento e alienação de bens imóveis de domínio da União, altera dispositivos dos Decretos-Leis n os 9.760, de 5 de setembro de 1946, e 2.398, de 21 de dezembro de 1987, regulamenta o § 2º do art. 49 do Ato das Disposições Constitucionais Transitórias, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA REGULARIZAÇÃO E UTILIZAÇÃO ORDENADA</h3>
+ <h3>Art. 1º É o Poder Executivo autorizado, por intermédio da Secretaria de Coordenação e Governança do Patrimônio da União da Secretaria Especial de Desestatização, Desinvestimento e Mercados do Ministério da Economia, a executar ações de identificação, de demarcação, de cadastramento, de registro e de fiscalização dos bens imóveis da União e a regularizar as ocupações desses imóveis, inclusive de assentamentos informais de baixa renda, e poderá, para tanto, firmar convênios com os Estados, o Distrito Federal e os Municípios em cujos territórios se localizem e, observados os procedimentos licitatórios previstos em lei, celebrar contratos com a iniciativa privada. (Redação dada pela Lei nº 14.011, de 2020)</h3>
+ <h4>§ 1º Fica dispensada a exigência de habilitação técnica complementar para execução de georreferenciamento e inscrição em registro ou cadastro fundiário públicos dos imóveis de que trata o caput deste artigo, quando o responsável técnico for servidor ou empregado público ocupante de cargo ou de emprego compatível com o exercício dessas atividades. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 2º Constitui requisito à dispensa de que trata o § 1º deste artigo para o credenciamento do servidor ou do empregado público perante o Instituto Nacional de Colonização e Reforma Agrária (Incra), para atendimento ao disposto no § 5º do art. 176 da Lei nº 6.015, de 31 de dezembro de 1973 (Lei dos Registros Públicos), a indicação por ato do Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h3>Art. 1º-A. A comunicação dos atos necessários à execução das ações previstas no art. 1º desta Lei e das atividades de destinação de imóveis da União, de auto de infração, de arrecadação e de cobrança de receitas patrimoniais poderá ser efetuada mediante notificação por meio eletrônico, nos termos definidos pelo Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei nº 14.474, de 2022)</h3>
+ <h4>Parágrafo único. Na hipótese de notificação prevista no caput deste artigo, o usuário de imóvel da União será considerado notificado 30 (trinta) dias após a inclusão da informação no sistema eletrônico e o envio da respectiva mensagem. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h3>Art. 2º Concluído, na forma da legislação vigente, o processo de identificação e demarcação das terras de domínio da União, a SPU lavrará, em livro próprio, com força de escritura pública, o termo competente, incorporando a área ao patrimônio da União.</h3>
+ <h4>§ 1º O termo a que se refere o caput deste artigo será registrado no Cartório de Registro de Imóveis competente, com certidão de inteiro teor, acompanhado de plantas e de outros documentos técnicos que permitam a correta caracterização do imóvel. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 2º Nos registros relativos a direitos reais de titularidade da União, deverão ser utilizados o número de inscrição no Cadastro Nacional da Pessoa Jurídica (CNPJ) do órgão central da Secretaria de Coordenação e Governança do Patrimônio da União e o nome "UNIÃO", independentemente do órgão gestor do imóvel, retificados para esse fim os registros anteriores à vigência deste dispositivo. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h3>Art. 3º A regularização dos imóveis de que trata esta Lei, junto aos órgãos municipais e aos Cartórios de Registro de Imóveis, será promovida pela SPU e pela Procuradoria-Geral da Fazenda Nacional - PGFN, com o concurso, sempre que necessário, da Caixa Econômica Federal - CEF.</h3>
+ <h4>Parágrafo único. Os órgãos públicos federais, estaduais e municipais e os Cartórios de Registro de Imóveis darão preferência ao atendimento dos serviços de regularização de que trata este artigo.</h4>
+ <h3>Art. 3º -A Caberá ao Poder Executivo organizar e manter sistema unificado de informações sobre os bens de que trata esta Lei, que conterá, além de outras informações relativas a cada imóvel: (Incluído pela Lei nº 11.481, de 2007)</h3>
+ <h5>I - a localização e a área; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>II - a respectiva matrícula no registro de imóveis competente; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>III - o tipo de uso; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>IV - a indicação da pessoa física ou jurídica à qual, por qualquer instrumento, o imóvel tenha sido destinado; e (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>V - o valor atualizado, se disponível. (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h4>Parágrafo único. As informações do sistema de que trata o caput deste artigo deverão ser disponibilizadas na internet , sem prejuízo de outras formas de divulgação. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <p>Seção I</p>
+ <p>Da Celebração de Convênios e Contratos</p>
+ <h3>Art. 4º Os Estados, o Distrito Federal, os Municípios e a iniciativa privada, a critério da Secretaria de Coordenação e Governança do Patrimônio da União, observadas as instruções que regulamentam a matéria, poderão firmar, mediante convênios ou contratos com essa Secretaria, compromisso para executar ações de demarcação, de cadastramento, de avaliação, de venda e de fiscalização de áreas do patrimônio da União, assim como para o planejamento, a execução e a aprovação dos parcelamentos urbanos e rurais. (Redação dada pela Lei nº 14.011, de 2020)</h3>
+ <h4>§ 1º Na elaboração e execução dos projetos de que trata este artigo, serão sempre respeitados a preservação e o livre acesso às praias marítimas, fluviais e lacustres e a outras áreas de uso comum do povo.</h4>
+ <h4>§ 2º Como retribuição pelas obrigações assumidas na elaboração dos projetos de parcelamentos urbanos e rurais, os Estados, o Distrito Federal, os Municípios e a iniciativa privada farão jus a parte das receitas provenientes da alienação dos imóveis da União, no respectivo projeto de parcelamento, até a satisfação integral dos custos por eles assumidos, observado que: (Redação dada pela Lei nº 14.011, de 2020)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei nº 14.011, de 2020)</h5>
+ <h5>II - (revogado); (Redação dada pela Lei nº 14.011, de 2020)</h5>
+ <h5>III - os contratos e convênios firmados em conformidade com o disposto no caput deste artigo deverão ser registrados nas matrículas dos imóveis; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>IV - o interessado que optar pela aquisição da área por ele ocupada poderá desmembrar parte de seu imóvel para fins de pagamento dos custos da regularização, respeitado o limite mínimo de parcelamento definido no plano diretor do Município em que se encontre; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>V - a partir da assinatura dos contratos ou convênios, as taxas de ocupação poderão ser revertidas para amortizar os custos da regularização no momento da alienação, desde que o ocupante esteja adimplente e seja comprovada a sua participação no financiamento dos custos para regularização do parcelamento; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>VI - o domínio útil ou pleno dos lotes resultantes de projetos urbanísticos poderá ser vendido para o ressarcimento dos projetos de parcelamento referidos no caput deste parágrafo; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>VII - os custos para a elaboração das peças técnicas necessárias à regularização de imóvel da União, para fins de alienação, poderão ser abatidos do valor do pagamento do imóvel no momento da sua aquisição. (Incluído pela Lei 14.011, de 2020)</h5>
+ <h4>§ 3º A participação nas receitas de que trata o parágrafo anterior será ajustada nos respectivos convênios ou contratos, observados os limites previstos em regulamento e as instruções a serem baixadas pelo Ministro de Estado da Fazenda, que considerarão a complexidade, o volume e o custo dos trabalhos de identificação, demarcação, cadastramento, recadastramento e fiscalização das áreas vagas existentes, bem como de elaboração e execução dos projetos de parcelamento e urbanização e, ainda, o valor de mercado dos imóveis na região e, quando for o caso, a densidade de ocupação local.</h4>
+ <h4>§ 4º A participação dos Estados e Municípios nas receitas de que tratam os incisos I e II poderá ser realizada mediante repasse de recursos financeiros.</h4>
+ <h4>§ 5º Na contratação, por intermédio da iniciativa privada, da elaboração e execução dos projetos urbanísticos de que trata este artigo, observados os procedimentos licitatórios previstos em lei, quando os serviços contratados envolverem, também, a cobrança e o recebimento das receitas deles decorrentes, poderá ser admitida a dedução prévia, pela contratada, da participação acordada.</h4>
+ <h3>Art. 5º A demarcação de terras, o cadastramento e os loteamentos, realizados com base no disposto no art. 4º , somente terão validade depois de homologados pela SPU.</h3>
+ <h3>Art. 5º -A. Após a conclusão dos trabalhos, a Secretaria do Patrimônio da União (SPU) fica autorizada a utilizar, total ou parcialmente, os dados e informações decorrentes dos serviços executados por empresas contratadas para prestação de consultorias e elaboração de trabalhos de atualização e certificação cadastral, pelo prazo de até vinte anos, nos termos constantes de ato da SPU. (Incluído pela Lei 13.465, de 2017)</h3>
+ <p>Seção II</p>
+ <p>Do Cadastramento</p>
+ <h3>Art. 6º Para fins do disposto no art. 1º desta Lei, as terras da União deverão ser cadastradas, nos termos do regulamento. (Redação dada pela Lei nº 11.481, de 2007)</h3>
+ <h4>§ 1º Nas áreas urbanas, em imóveis possuídos por população carente ou de baixa renda para sua moradia, onde não for possível individualizar as posses, poderá ser feita a demarcação da área a ser regularizada, cadastrando-se o assentamento, para posterior outorga de título de forma individual ou coletiva. (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 2º (Revogado). (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 3º (Revogado). (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 4º (Revogado). (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h3>Art. 6º -A No caso de cadastramento de ocupações para fins de moradia cujo ocupante seja considerado carente ou de baixa renda, na forma do § 2º do art. 1º do Decreto-Lei nº 1.876, de 15 de julho de 1981 , a União poderá proceder à regularização fundiária da área, utilizando, entre outros, os instrumentos previstos no art. 18, no inciso VI do art. 19 e nos arts. 22-A e 31 desta Lei. (Incluído pela Lei nº 11.481, de 2007)</h3>
+ <p>Seção II-A</p>
+ <p>Da Inscrição da Ocupação</p>
+ <p>(Redação dada pela Lei nº 11.481, de 2007)</p>
+ <h3>Art. 7º A inscrição de ocupação, a cargo da Secretaria do Patrimônio da União, é ato administrativo precário, resolúvel a qualquer tempo, que pressupõe o efetivo aproveitamento do terreno pelo ocupante, nos termos do regulamento, outorgada pela administração depois de analisada a conveniência e oportunidade, e gera obrigação de pagamento anual da taxa de ocupação. (Redação dada pela Lei nº 11.481, de 2007)</h3>
+ <h4>§ 1º É vedada a inscrição de ocupação sem a comprovação do efetivo aproveitamento de que trata o caput deste artigo. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 2º A comprovação do efetivo aproveitamento será dispensada nos casos de assentamentos informais definidos pelo Município como área ou zona especial de interesse social, nos termos do seu plano diretor ou outro instrumento legal que garanta a função social da área, exceto na faixa de fronteira ou quando se tratar de imóveis que estejam sob a administração do Ministério da Defesa e dos Comandos da Marinha, do Exército e da Aeronáutica. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 3º A inscrição de ocupação de imóvel dominial da União, a pedido ou de ofício, será formalizada por meio de ato da autoridade local da Secretaria do Patrimônio da União em processo administrativo específico. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 4º Será inscrito o ocupante do imóvel, tornando-se este o responsável no cadastro dos bens dominiais da União, para efeito de administração e cobrança de receitas patrimoniais. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 5º As ocupações anteriores à inscrição, sempre que identificadas, serão anotadas no cadastro a que se refere o § 4º . (Redação dada pela Lei nº 13.139, de 2015)</h4>
+ <h4>§ 6º Os créditos originados em receitas patrimoniais decorrentes da ocupação de imóvel da União serão lançados após concluído o processo administrativo correspondente, observadas a decadência e a inexigibilidade previstas no art. 47 desta Lei. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 7º Para fins de regularização nos registros cadastrais da Secretaria do Patrimônio da União do Ministério do Planejamento, Desenvolvimento e Gestão das ocupações ocorridas até 10 de junho de 2014, as transferências de posse na cadeia sucessória do imóvel serão anotadas no cadastro dos bens dominiais da União para o fim de cobrança de receitas patrimoniais dos responsáveis, independentemente do prévio recolhimento do laudêmio. (Redação dada pela Lei nº 13.813, de 2019)</h4>
+ <h3>Art. 8º Na realização do cadastramento ou recadastramento de ocupantes, serão observados os procedimentos previstos no art. 128 do Decreto-Lei Nº 9.760, de 5 de setembro de 1946 , com as alterações desta Lei.</h3>
+ <h3>Art. 9º É vedada a inscrição de ocupações que:</h3>
+ <h5>I - ocorreram após 10 de junho de 2014; (Redação dada pela Lei nº 13.139, de 2015)</h5>
+ <h5>II - estejam concorrendo ou tenham concorrido para comprometer a integridade das áreas de uso comum do povo, de segurança nacional, de preservação ambiental ou necessárias à preservação dos ecossistemas naturais e de implantação de programas ou ações de regularização fundiária de interesse social ou habitacionais das reservas indígenas, das áreas ocupadas por comunidades remanescentes de quilombos, das vias federais de comunicação e das áreas reservadas para construção de hidrelétricas ou congêneres, ressalvados os casos especiais autorizados na forma da lei. (Redação dada pela Lei nº 11.481, de 2007)</h5>
+ <h3>Art. 10. Constatada a existência de posses ou ocupações em desacordo com o disposto nesta Lei, a União deverá imitir-se sumariamente na posse do imóvel, cancelando-se as inscrições eventualmente realizadas.</h3>
+ <h4>Parágrafo único. Até a efetiva desocupação, será devida à União indenização pela posse ou ocupação ilícita, correspondente a 10% (dez por cento) do valor atualizado do domínio pleno do terreno, por ano ou fração de ano em que a União tenha ficado privada da posse ou ocupação do imóvel, sem prejuízo das demais sanções cabíveis.</h4>
+ <h3>Art. 10-A. A autorização de uso sustentável, de incumbência da Secretaria do Patrimônio da União (SPU), ato administrativo excepcional, transitório e precário, é outorgada às comunidades tradicionais, mediante termo, quando houver necessidade de reconhecimento de ocupação em área da União, conforme procedimento estabelecido em ato da referida Secretaria. (Incluído pela Lei 13.465, de 2017)</h3>
+ <h4>Parágrafo único. A autorização a que se refere o caput deste artigo visa a possibilitar a ordenação do uso racional e sustentável dos recursos naturais disponíveis na orla marítima e fluvial, destinados à subsistência da população tradicional, de maneira a possibilitar o início do processo de regularização fundiária que culminará na concessão de título definitivo, quando cabível. (Incluído pela Lei 13.465, de 2017)</h4>
+ <p>Seção III</p>
+ <p>Da Fiscalização e Conservação</p>
+ <h3>Art. 11. Caberá à SPU a incumbência de fiscalizar e zelar para que sejam mantidas a destinação e o interesse público, o uso e a integridade física dos imóveis pertencentes ao patrimônio da União, podendo, para tanto, por intermédio de seus técnicos credenciados, embargar serviços e obras, aplicar multas e demais sanções previstas em lei e, ainda, requisitar força policial federal e solicitar o necessário auxílio de força pública estadual.</h3>
+ <h4>§ 1º Para fins do disposto neste artigo, quando necessário, a SPU poderá, na forma do regulamento, solicitar a cooperação de força militar federal.</h4>
+ <h4>§ 2º A incumbência de que trata o presente artigo não implicará prejuízo para:</h4>
+ <h5>I - as obrigações e responsabilidades previstas nos arts. 70 e 79, § 2º , do Decreto-Lei Nº 9.760, de 1946;</h5>
+ <h5>II - as atribuições dos demais órgãos federais, com área de atuação direta ou indiretamente relacionada, nos termos da legislação vigente, com o patrimônio da União.</h5>
+ <h4>§ 3º As obrigações e prerrogativas previstas neste artigo poderão ser repassadas, no que couber, às entidades conveniadas ou contratadas na forma dos arts. 1º e 4º .</h4>
+ <h4>§ 4º Constitui obrigação do Poder Público federal, estadual e municipal, observada a legislação específica vigente, zelar pela manutenção das áreas de preservação ambiental, das necessárias à proteção dos ecossistemas naturais e de uso comum do povo, independentemente da celebração de convênio para esse fim.</h4>
+ <h3>Art. 11-A. Para efeitos desta Lei, considera-se avaliação de imóvel a atividade desenvolvida por profissional habilitado para identificar o valor de bem imóvel, os seus custos, frutos e direitos e determinar os indicadores de viabilidade de sua utilização econômica para determinada finalidade, por meio do seu valor de mercado, do valor da terra nua, do valor venal ou do valor de referência, consideradas suas características físicas e econômicas, a partir de exames, vistorias e pesquisas. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º As avaliações no âmbito da União terão como objeto os bens classificados como de uso comum do povo, de uso especial e dominicais, nos termos estabelecidos em ato da Secretaria do Patrimônio da União (SPU). (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 2º Os imóveis da União cedidos ou administrados por outros órgãos ou entidades da administração pública federal serão por estes avaliados, conforme critérios estabelecidos em ato da Secretaria do Patrimônio da União (SPU). (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 11-B. O valor do domínio pleno do terreno da União será obtido com base na planta de valores da Secretaria de Coordenação e Governança do Patrimônio da União. (Redação dada pela Lei nº 14.011, de 2020)</h3>
+ <h5>I - (revogado); (Redação dada pela Lei nº 14.011, de 2020)</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei nº 14.011, de 2020)</h5>
+ <h4>§ 1º (Revogado) . (Redação dada pela Lei nº 14.011, de 2020)</h4>
+ <h4>§ 2º (Revogado) . (Redação dada pela Lei nº 14.011, de 2020)</h4>
+ <h4>§ 3º (Revogado) . (Redação dada pela Lei nº 14.011, de 2020)</h4>
+ <h4>§ 4º Os Municípios e o Distrito Federal fornecerão à Secretaria de Coordenação e Governança do Patrimônio da União, até 30 de junho de cada ano, o valor venal dos terrenos localizados sob sua jurisdição, para subsidiar a atualização da base de dados da referida Secretaria. (Redação dada pela Lei nº 14.011, de 2020)</h4>
+ <h4>§ 5º Em caso de descumprimento do prazo estabelecido no § 4º deste artigo para encaminhamento do valor venal dos terrenos pelos Municípios e pelo Distrito Federal, o ente federativo perderá o direito, no exercício seguinte, ao repasse de 20% (vinte por cento) dos recursos arrecadados por meio da cobrança de taxa de ocupação, foro e laudêmio aos Municípios e ao Distrito Federal onde estão localizados os imóveis que deram origem à cobrança, previstos no Decreto-Lei Nº 2.398, de 21 de dezembro de 1987, e dos 20% (vinte por cento) da receita patrimonial decorrente da alienação desses imóveis, conforme o disposto na Lei Nº 13.240, de 30 de dezembro de 2015. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 6º Para o exercício de 2017, o valor de que trata o caput deste artigo será determinado de acordo com a planta de valores da Secretaria do Patrimônio da União (SPU), referente ao exercício de 2016 e atualizada pelo percentual de 7,17% (sete inteiros e dezessete centésimos por cento), ressalvada a correção de inconsistências cadastrais. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 7º Ato do Secretário de Coordenação e Governança do Patrimônio da União disporá sobre as condições para o encaminhamento dos dados de que trata o § 4º deste artigo. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 8º O lançamento de débitos relacionados ao foro, à taxa de ocupação e a outras receitas extraordinárias: (Incluído pela Lei 14.011, de 2020)</h4>
+ <h5>I - utilizará como parâmetro o valor do domínio pleno do terreno estabelecido de acordo com o disposto no caput deste artigo; e (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>II - observará o percentual máximo de atualização estabelecido em regulamento, aplicado sobre os valores cobrados no ano anterior, ressalvada a correção de inconsistências cadastrais. (Redação dada pela Lei nº 14.474, de 2022)</h5>
+ <h4>§ 8º-A. O regulamento a que se refere o inciso II do § 8º deste artigo não estabelecerá percentual superior a 2 (duas) vezes o Índice Nacional de Preços ao Consumidor Amplo (IPCA) do exercício anterior ou o índice que vier a substituí- lo. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 9º A Secretaria de Coordenação e Governança do Patrimônio da União atualizará a planta de valores anualmente e estabelecerá os valores mínimos para fins de cobrança dos débitos a que se refere o § 8º deste artigo. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 10. (VETADO). (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 11-C. As avaliações para fins de alienação onerosa dos domínios pleno, útil ou direto de imóveis da União, permitida a contratação da Caixa Econômica Federal ou de empresas públicas, órgãos ou entidades da administração pública direta ou indireta da União, do Distrito Federal, dos Estados ou dos Municípios cuja atividade-fim seja o desenvolvimento urbano ou imobiliário, com dispensa de licitação, ou de empresa privada, por meio de licitação, serão realizadas: (Redação dada pela Lei nº 14.011, de 2020)</h3>
+ <h5>I - pela Secretaria de Coordenação e Governança do Patrimônio da União; ou (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>II - pelo órgão ou entidade pública gestora responsável pelo imóvel. (Incluído pela Lei 14.011, de 2020)</h5>
+ <h4>§ 1º O preço mínimo para as alienações onerosas será fixado com base no valor de mercado do imóvel, estabelecido em laudo de avaliação, cujo prazo de validade será de 12 (doze) meses. (Redação dada pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 2º Para as áreas públicas da União objeto da Reurb-E, nos casos de venda direta, o preço de venda será fixado com base no valor de mercado do imóvel, excluídas as benfeitorias realizadas pelo ocupante, cujo prazo de validade da avaliação será de, no máximo, doze meses. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 3º Para as alienações que tenham como objeto a remição do aforamento ou a venda do domínio pleno ou útil, para os ocupantes ou foreiros regularmente cadastrados na SPU, a avaliação, cujo prazo de validade será de, no máximo, doze meses, poderá ser realizada por trecho ou região, desde que comprovadamente homogêneos, com base em pesquisa mercadológica e critérios estabelecidos no zoneamento ou plano diretor do Município. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 4º Será admitida a avaliação por planta de valores da Secretaria de Coordenação e Governança do Patrimônio da União por ocasião da alienação de: (Redação dada pela Lei nº 14.474, de 2022)</h4>
+ <h5>I - terrenos da União ou de suas frações de até 250 m² (duzentos e cinquenta metros quadrados) em área urbana; (Incluído pela Lei nº 14.474, de 2022)</h5>
+ <h5>II - imóveis inscritos em ocupação, utilizados como moradia pelos atuais ocupantes, independentemente da extensão da área; ou (Incluído pela Lei nº 14.474, de 2022)</h5>
+ <h5>III - imóveis rurais de até o limite do módulo fiscal, definido pelo Instituto Nacional de Colonização e Reforma Agrária (Incra). (Incluído pela Lei nº 14.474, de 2022)</h5>
+ <h4>§ 5º ( Revogado ). (Redação dada pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 6º As avaliações poderão ser realizadas sem que haja visita presencial, por meio de modelos de precificação, automatizados ou não, nos termos dos §§ 4º e 5º deste artigo. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 7º Os laudos de avaliação dos imóveis elaborados por empresas especializadas serão homologados pela Secretaria de Coordenação e Governança do Patrimônio da União ou pelo órgão ou entidade pública gestora do imóvel, por meio de modelos preestabelecidos e sistema automatizado. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 8º É dispensada a homologação de que trata o § 7º deste artigo dos laudos de avaliação realizados por banco público federal ou por empresas públicas. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 9º O órgão ou a entidade pública gestora poderá estabelecer que o laudo de avaliação preveja os valores para a venda do imóvel de acordo com prazo inferior à média de absorção do mercado. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 10. A Secretaria de Coordenação e Governança do Patrimônio da União poderá utilizar o valor estimado nos laudos de avaliação para fins de venda do imóvel em prazo menor do que a média de absorção do mercado. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 11. É vedada a avaliação por empresas especializadas cujos sócios sejam servidores da Secretaria de Coordenação e Governança do Patrimônio da União ou da Secretaria Especial de Desestatização, Desinvestimento e Mercados do Ministério da Economia, ou seus parentes, em linha reta ou colateral, por consanguinidade ou afinidade, até o terceiro grau, inclusive. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 12. Ato do Secretário de Coordenação e Governança do Patrimônio da União disporá sobre critérios técnicos para a elaboração e a homologação dos laudos de avaliação. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 13. Nos casos de homologação dos laudos de avaliação, a Secretaria de Coordenação e Governança do Patrimônio da União será responsável exclusivamente pela verificação das normas aplicáveis, sem prejuízo da responsabilidade integral do agente privado que elaborou o laudo. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 14. As avaliações de imóveis da União poderão ter seu prazo de validade estendido, por meio de revalidação, conforme critérios técnicos estabelecidos em ato do Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h3>Art. 11-D. Ato do Secretário de Coordenação e Governança do Patrimônio da União estabelecerá critérios técnicos e impessoais para habilitação de profissionais com vistas à execução de medidas necessárias ao processo de alienação dos bens imóveis da União. (Incluído pela Lei 14.011, de 2020)</h3>
+ <h4>§ 1º A remuneração do profissional habilitado pela Secretaria de Coordenação e Governança do Patrimônio da União será devida somente na hipótese de êxito do processo de alienação correspondente. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 2º Os laudos de avaliação dos imóveis elaborados pelos avaliadores serão homologados pela Secretaria de Coordenação e Governança do Patrimônio da União ou pelo órgão ou entidade pública gestora do imóvel, por meio de modelos preestabelecidos e sistema automatizado. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 3º O profissional ou empresa que atender aos critérios estabelecidos no ato a que se refere o caput deste artigo será automaticamente considerado habilitado, sem necessidade de declaração da Secretaria de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <p>Seção IV</p>
+ <p>Do Aforamento</p>
+ <h3>Art. 12. Observadas as condições previstas no § 1º do art. 23 e resguardadas as situações previstas no inciso I do art. 5º do Decreto-Lei Nº 2.398, de 1987 , os imóveis dominiais da União, situados em zonas sujeitas ao regime enfitêutico, poderão ser aforados, mediante leilão ou concorrência pública, respeitado, como preço mínimo, o valor de mercado do respectivo domínio útil, estabelecido em avaliação de precisão, realizada, especificamente para esse fim, pela SPU ou, sempre que necessário, pela Caixa Econômica Federal, com validade de seis meses a contar da data de sua publicação.</h3>
+ <h4>§ 1º Na impossibilidade, devidamente justificada, de realização de avaliação de precisão, será admitida a avaliação expedita.</h4>
+ <h4>§ 2º Para realização das avaliações de que trata este artigo, a SPU e a CEF poderão contratar serviços especializados de terceiros, devendo os respectivos laudos, para os fins previstos nesta Lei, ser homologados por quem os tenha contratado, quanto à observância das normas técnicas pertinentes.</h4>
+ <h4>§ 3º Não serão objeto de aforamento os imóveis que: (Redação dada pela Lei nº 13.139, de 2015)</h4>
+ <h5>I - por sua natureza e em razão de norma especial, são ou venham a ser considerados indisponíveis e inalienáveis; e (Incluído pela Lei nº 13.139, de 2015)</h5>
+ <h5>II - são considerados de interesse do serviço público, mediante ato do Secretário do Patrimônio da União do Ministério do Planejamento, Orçamento e Gestão. (Incluído pela Lei nº 13.139, de 2015)</h5>
+ <h3>Art. 13. Na concessão do aforamento, será dada preferência a quem, comprovadamente, em 10 de junho de 2014, já ocupava o imóvel há mais de 1 (um) ano e esteja, até a data da formalização do contrato de alienação do domínio útil, regularmente inscrito como ocupante e em dia com suas obrigações perante a Secretaria do Patrimônio da União do Ministério do Planejamento, Orçamento e Gestão. (Redação dada pela Lei nº 13.139, de 2015)</h3>
+ <h4>§ 1º Previamente à publicação do edital de licitação, dar-se-á conhecimento do preço mínimo para venda do domínio útil ao titular da preferência de que trata este artigo, que poderá adquiri-lo por esse valor, devendo, para este fim, sob pena de decadência, manifestar o seu interesse na aquisição e apresentar a documentação exigida em lei na forma e nos prazos previstos em regulamento e, ainda, celebrar o contrato de aforamento de que trata o art. 14 no prazo de seis meses, a contar da data da notificação.</h4>
+ <h4>§ 2º O prazo para celebração do contrato de que trata o parágrafo anterior poderá ser prorrogado, a pedido do interessado e observadas as condições previstas em regulamento, por mais seis meses, situação em que, havendo variação significativa no mercado imobiliário local, será feita nova avaliação, correndo os custos de sua realização por conta do respectivo ocupante.</h4>
+ <h4>§ 3º A notificação de que trata o § 1º será feita por edital publicado no Diário Oficial da União e, sempre que possível, por carta registrada a ser enviada ao ocupante do imóvel que se encontre inscrito na SPU.</h4>
+ <h4>§ 4º O edital especificará o nome do ocupante, a localização do imóvel e a respectiva área, o valor de avaliação, bem como o local e horário de atendimento aos interessados.</h4>
+ <h4>§ 5º (Revogado) . (Redação dada pela Lei nº 13.139, de 2015)</h4>
+ <h4>§ 6º Para fins de regularização nos registros cadastrais da Secretaria do Patrimônio da União do Ministério do Planejamento, Desenvolvimento e Gestão dos aforamentos ocorridos até 10 de junho de 2014, as transferências de posse na cadeia sucessória do imóvel serão anotadas no cadastro dos bens dominiais da União para o fim de cobrança de receitas patrimoniais dos respectivos responsáveis, independentemente do prévio recolhimento do laudêmio. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h3>Art. 14. O domínio útil, quando adquirido mediante o exercício da preferência de que tratam o art. 13 e o § 3º do art. 17 desta Lei, poderá ser pago: (Redação dada pela Lei nº 13.465, de 2017)</h3>
+ <h5>I - à vista; (Redação dada pela Lei nº 13.465, de 2017)</h5>
+ <h5>II - a prazo, mediante pagamento, no ato da assinatura do contrato de aforamento, de entrada mínima de 10% (dez por cento) do preço, a título de sinal e princípio de pagamento, e do saldo em até cento e vinte prestações mensais e consecutivas, devidamente atualizadas, observando-se, neste caso, que o término do parcelamento não poderá ultrapassar a data em que o adquirente completar oitenta anos de idade.</h5>
+ <h4>Parágrafo único. (Revogado) . (Redação dada pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 15. A Secretaria do Patrimônio da União do Ministério do Planejamento, Orçamento e Gestão promoverá, mediante licitação, o aforamento dos terrenos de domínio da União situados em zonas sujeitas ao regime enfitêutico que estiverem vagos ou ocupados há até 1 (um) ano em 10 de junho de 2014, bem como daqueles cujos ocupantes não tenham exercido a preferência ou a opção de que tratam os arts. 13 e 17 desta Lei e o inciso I do caput do art. 5º do Decreto-Lei Nº 2.398, de 21 de dezembro de 1987 . (Redação dada pela Lei nº 13.139, de 2015)</h3>
+ <h4>§ 1º O domínio pleno das benfeitorias incorporadas ao imóvel, independentemente de quem as tenha realizado, será também objeto de alienação.</h4>
+ <h4>§ 2º Os ocupantes com até 1 (um) ano de ocupação em 10 de junho de 2014 que continuem ocupando o imóvel e estejam regularmente inscritos e em dia com suas obrigações perante a Secretaria do Patrimônio da União do Ministério do Planejamento, Orçamento e Gestão na data da realização da licitação poderão adquirir o domínio útil do imóvel, em caráter preferencial, pelo preço, abstraído o valor correspondente às benfeitorias por eles realizadas, e nas mesmas condições oferecidas pelo vencedor da licitação, desde que manifestem seu interesse no ato do pregão ou no prazo de 48 (quarenta e oito) horas, contado da publicação do resultado do julgamento da concorrência. (Redação dada pela Lei nº 13.139, de 2015)</h4>
+ <h4>§ 3º O edital de licitação especificará, com base na proporção existente entre os valores apurados no laudo de avaliação, o percentual a ser subtraído da proposta ou do lance vencedor, correspondente às benfeitorias realizadas pelo ocupante, caso este exerça a preferência de que trata o parágrafo anterior.</h4>
+ <h4>§ 4º Ocorrendo a venda, na forma deste artigo, do domínio útil do imóvel a terceiros, será repassado ao ocupante, exclusivamente neste caso, o valor correspondente às benfeitorias por ele realizadas calculado com base no percentual apurado na forma do parágrafo anterior, sendo vedada a extensão deste benefício a outros casos, mesmo que semelhantes.</h4>
+ <h4>§ 5º O repasse de que trata o parágrafo anterior será realizado nas mesmas condições de pagamento, pelo adquirente, do preço do domínio útil.</h4>
+ <h4>§ 6º Caso o domínio útil do imóvel não seja vendido no primeiro certame, serão promovidas, após a reintegração sumária da União na posse do imóvel, novas licitações, nas quais não será dada nenhuma preferência ao ocupante.</h4>
+ <h4>§ 7º Os ocupantes que não exercerem, conforme o caso, as preferências de que tratam os arts. 13 e 15, § 2º , e a opção de que trata o art. 17, nos termos e condições previstos nesta Lei e em seu regulamento, terão o prazo de sessenta dias para desocupar o imóvel, findo o qual ficarão sujeitos ao pagamento de indenização pela ocupação ilícita, correspondente a 10% (dez por cento) do valor atualizado do domínio pleno do terreno, por ano ou fração de ano, até que a União seja reintegrada na posse do imóvel.</h4>
+ <h3>Art. 16. Constatado, no processo de habilitação, que os adquirentes prestaram declaração falsa sobre pré-requisitos necessários ao exercício da preferência de que tratam os arts. 13, 15, § 2º , e 17, § 3º , desta Lei, e o inciso I do art. 5º do Decreto-Lei Nº 2.398, de 1987 , os respectivos contratos de aforamento serão nulos de pleno direito, sem prejuízo das sanções penais aplicáveis, independentemente de notificação judicial ou extrajudicial, retornando automaticamente o imóvel ao domínio pleno da União e perdendo os compradores o valor correspondente aos pagamentos eventualmente já efetuados.</h3>
+ <h3>Art. 16. Constatado, no processo de habilitação, que os adquirentes prestaram declaração falsa sobre pré-requisitos necessários ao exercício da preferência de que tratam os arts. 13, 15, § 2º , e 17, § 3º , desta Lei, e o inciso I do art. 5º do Decreto-Lei Nº 2.398, de 1987 , os respectivos contratos de aforamento serão nulos de pleno direito, sem prejuízo das sanções penais aplicáveis, independentemente de notificação judicial ou extrajudicial, retornando automaticamente o imóvel ao domínio pleno da União e perdendo os compradores o valor correspondente aos pagamentos eventualmente já efetuados.</h3>
+ <h3>Art. 16-A. Para os terrenos submetidos ao regime enfitêutico, ficam autorizadas a remição do foro e a consolidação do domínio pleno com o foreiro mediante o pagamento do valor correspondente ao domínio direto do terreno, segundo os critérios de avaliação previstos no art. 11-C desta Lei, cujo prazo de validade da avaliação será de, no máximo, doze meses, e das obrigações pendentes na Secretaria do Patrimônio da União (SPU), inclusive aquelas objeto de parcelamento, excluídas as benfeitorias realizadas pelo foreiro. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º Ficam dispensadas do pagamento pela remição as pessoas consideradas carentes ou de baixa renda, nos termos previstos no art. 1º do Decreto-Lei Nº 1.876, de 15 de julho de 1981 . (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 2º A remição do foro e a consolidação do domínio pleno com o foreiro a que se refere este artigo poderão ser efetuadas à vista ou de forma parcelada, permitida a utilização dos recursos do FGTS para pagamento total, parcial ou em amortização de parcelas e liquidação do saldo devedor, observadas as demais regras e condições estabelecidas para uso do FGTS. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 3º As demais condições para a remição do foro dos imóveis submetidos ao regime enfitêutico a que se refere este artigo serão estabelecidas em ato da Secretaria do Patrimônio da União (SPU). (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 4º O foreiro que não optar pela aquisição dos imóveis de que trata este artigo continuará submetido ao regime enfitêutico, na forma da legislação vigente. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 5º A Secretaria do Patrimônio da União (SPU) verificará a regularidade cadastral dos imóveis a serem alienados e procederá aos ajustes eventualmente necessários durante o processo de alienação. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 6º Não se aplica o disposto neste artigo aos imóveis da União: (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h5>I - administrados pelo Ministério das Relações Exteriores, pelo Ministério da Defesa ou pelos Comandos da Marinha, do Exército ou da Aeronáutica; (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h5>II - situados na faixa de fronteira de que trata a Lei Nº 6.634, de 2 de maio de 1979 , ou na faixa de segurança de que trata o § 3º do art. 49 do Ato das Disposições Constitucionais Transitórias . (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h4>§ 7º Para os fins desta Lei, considera-se faixa de segurança a extensão de trinta metros a partir do final da praia, nos termos do § 3º do art. 10 da Lei Nº 7.661, de 16 de maio de 1988 . (Incluído pela Lei nº 13.139, de 2015)</h4>
+ <h3>Art. 16-B. Fica o Poder Executivo Federal autorizado, por intermédio da Secretaria do Patrimônio da União (SPU), a contratar a Caixa Econômica Federal, independentemente de processo licitatório, para a prestação de serviços relacionados à administração dos contratos, à arrecadação e à cobrança administrativa decorrentes da remição do foro dos imóveis a que se refere o art. 16-A desta Lei. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h4>Parágrafo único. A Caixa Econômica Federal representará a União na celebração dos contratos de que trata o caput deste artigo. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 16-C. O Ministro de Estado do Planejamento, Desenvolvimento e Gestão, permitida a delegação, editará portaria com a lista de áreas ou imóveis sujeitos à alienação nos termos do art. 16-A desta Lei. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º Os terrenos de marinha e acrescidos alienados na forma desta Lei: (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h5>I - não incluirão: (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h6>a) áreas de preservação permanente, na forma do inciso II do caput do art. 3º da Lei Nº 12.651, de 25 de maio de 2012 ; ou (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h6>b) áreas em que seja vedado o parcelamento do solo, na forma do art. 3º e do inciso I do caput do art. 13 da Lei Nº 6.766, de 19 de dezembro de 1979 ; (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h5>II - deverão estar situados em área urbana consolidada. (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h4>§ 2º Para os fins desta Lei, considera-se área urbana consolidada aquela: (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h5>I - incluída no perímetro urbano ou em zona urbana pelo plano diretor ou por lei municipal específica; (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h5>II - com sistema viário implantado e vias de circulação pavimentadas; (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h5>III - organizada em quadras e lotes predominantemente edificados; (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h5>IV - de uso predominantemente urbano, caracterizado pela existência de edificações residenciais, comerciais, industriais, institucionais, mistas ou voltadas à prestação de serviços; e (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h5>V - com a presença de, no mínimo, três dos seguintes equipamentos de infraestrutura urbana implantados: (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h6>a) drenagem de águas pluviais; (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h6>b) esgotamento sanitário; (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h6>c) abastecimento de água potável; (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h6>d) distribuição de energia elétrica; e (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h6>e) limpeza urbana, coleta e manejo de resíduos sólidos. (Incluído pela Lei nº 13.465, de 2017)</h6>
+ <h4>§ 3º A alienação dos imóveis de que trata o § 1º deste artigo não implica supressão das restrições administrativas de uso ou edificação que possam prejudicar a segurança da navegação, conforme estabelecido em ato do Ministro de Estado da Defesa. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 4º Não há necessidade de autorização legislativa específica para alienação dos imóveis arrolados na portaria a que se refere o caput deste artigo. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 16-D. O adquirente receberá desconto de 25% (vinte e cinco por cento) 	na aquisição à vista, com fundamento no art. 16-A desta Lei, desde que atendidas as seguintes condições, cumulativamente: (Redação dada pela Lei nº 13.813, de 2019)</h3>
+ <h5>I – tenha sido apresentada manifestação de interesse para a aquisição à 	vista com o desconto de que trata o caput deste artigo no prazo de 30 (trinta) dias, 	contado a partir da data do recebimento da notificação da inclusão do imóvel na portaria de que trata o art. 16-C desta Lei; e (Incluído pela Lei nº 13.813, de 2019)</h5>
+ <h5>II – tenha sido efetuado o pagamento à vista do valor da alienação no prazo de 60 (sessenta) dias, contado a partir da data da manifestação de interesse do adquirente. (Incluído pela Lei nº 13.813, de 2019)</h5>
+ <h4>Parágrafo único. Para as alienações efetuadas de forma parcelada não será concedido desconto. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 16-E. O pagamento das alienações realizadas nos termos do art. 16-A desta Lei observará critérios fixados em regulamento e poderá ser realizado: (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h5>I - à vista; (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h5>II - a prazo, mediante as condições de parcelamento estabelecidas em ato da Secretaria do Patrimônio da União (SPU). (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h3>Art. 16-F. Para os imóveis divididos em frações ideais em que já tenha havido aforamento de, no mínimo, uma das unidades autônomas, na forma do item 1º do art. 105 do Decreto-Lei Nº 9.760, de 5 de setembro de 1946 , combinado com o inciso I do caput do art. 5º do Decreto-Lei Nº 2.398, de 21 de dezembro 198 7, será aplicado o mesmo critério de outorga de aforamento para as demais unidades do imóvel. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h3>Art. 16-G. A União repassará 20% (vinte por cento) da receita patrimonial decorrente da remição do foro dos imóveis a que se refere o art. 16-A desta Lei aos Municípios e ao Distrito Federal onde estão localizados. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h3>Art. 16-H. Fica a Secretaria do Patrimônio da União (SPU) autorizada a receber Proposta de Manifestação de Aquisição, por foreiro de imóvel da União, que esteja regularmente inscrito e adimplente com suas obrigações com aquela Secretaria. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º O foreiro deverá apresentar à SPU carta formalizando o interesse na aquisição juntamente com a identificação do imóvel e do foreiro, comprovação do período de foro e de estar em dia com as respectivas taxas, avaliação do imóvel e das benfeitorias, proposta de pagamento e, para imóveis rurais, georreferenciamento e CAR individualizado. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 2º Para a análise da Proposta de Manifestação de Aquisição de que trata este artigo deverão ser cumpridos todos os requisitos e condicionantes estabelecidos na legislação que normatiza a alienação de imóveis da União, mediante a edição da portaria do Ministério do Planejamento, Desenvolvimento e Gestão de que trata o art. 16-C, bem como os critérios de avaliação previstos no art. 11-C, ambos desta Lei. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 3º O protocolo da Proposta de Manifestação de Aquisição de imóvel da União pela Secretaria do Patrimônio da União (SPU) não constituirá nenhum direito ao foreiro perante a União. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 4º A Secretaria do Patrimônio da União (SPU) fica autorizada a regulamentar a Proposta de Manifestação de Aquisição de que trata este artigo, mediante edição de portaria específica. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 16-I. Os imóveis submetidos ao regime enfitêutico com valor de remição do domínio direto do terreno até o limite estabelecido em ato do Ministro de Estado da Economia terão, mediante procedimento simplificado, a remição do foro autorizada, e o domínio pleno será consolidado em nome dos atuais foreiros que estejam regularmente cadastrados na Secretaria de Coordenação e Governança do Patrimônio da União e que estejam em dia com suas obrigações. (Incluído pela Lei 14.011, de 2020)</h3>
+ <h4>§ 1º O valor para remição do foro dos imóveis enquadrados no caput deste artigo será definido de acordo com a planta de valores da Secretaria de Coordenação e Governança do Patrimônio da União, observado, no que couber, o disposto no art. 11-C desta Lei. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 2º Os imóveis sujeitos à alienação nos termos deste artigo serão remidos mediante venda direta ao atual foreiro, dispensada a edição de portaria específica. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 3º Os imóveis com valor do domínio direto do terreno superior ao estabelecido em ato do Ministro de Estado da Economia poderão ser alienados nos termos do art. 16-A desta Lei. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 4º A hipótese de que trata este artigo está condicionada à edição de ato do Secretário de Coordenação e Governança do Patrimônio da União que discipline os procedimentos e o cronograma dos imóveis abrangidos. (Incluído pela Lei 14.011, de 2020)</h4>
+ <p>Seção V</p>
+ <p>Dos Direitos dos Ocupantes Regularmente Inscritos até 5 de Outubro de 1988</p>
+ <h3>Art. 17. Os ocupantes regularmente inscritos até 5 de outubro de 1988, que não exercerem a preferência de que trata o art. 13, terão os seus direitos e obrigações assegurados mediante a celebração de contratos de cessão de uso onerosa, por prazo indeterminado.</h3>
+ <h4>§ 1º A opção pela celebração do contrato de cessão de que trata este artigo deverá ser manifestada e formalizada, sob pena de decadência, observando-se os mesmos prazos previstos no art. 13 para exercício da preferência ao aforamento.</h4>
+ <h4>§ 2º Havendo interesse do serviço público, a União poderá, a qualquer tempo, revogar o contrato de cessão e reintegrar-se na posse do imóvel, após o decurso do prazo de noventa dias da notificação administrativa que para esse fim expedir, em cada caso, não sendo reconhecidos ao cessionário quaisquer direitos sobre o terreno ou a indenização por benfeitorias realizadas.</h4>
+ <h4>§ 3º A qualquer tempo, durante a vigência do contrato de cessão, poderá o cessionário pleitear novamente a preferência à aquisição, exceto na hipótese de haver sido declarado o interesse do serviço público, na forma do art. 5º do Decreto-Lei Nº 2.398, de 1987.</h4>
+ <p>Seção VI</p>
+ <p>Da Cessão</p>
+ <h3>Art. 18. A critério do Poder Executivo poderão ser cedidos, gratuitamente ou em condições especiais, sob qualquer dos regimes previstos no Decreto-Lei Nº 9.760, de 1946 , imóveis da União a:</h3>
+ <h5>I - Estados, Distrito Federal, Municípios e entidades sem fins lucrativos das áreas de educação, cultura, assistência social ou saúde; (Redação dada pela Lei nº 11.481, de 2007)</h5>
+ <h5>II - pessoas físicas ou jurídicas, em se tratando de interesse público ou social ou de aproveitamento econômico de interesse nacional. (Redação dada pela Lei nº 11.481, de 2007)</h5>
+ <h4>§ 1º A cessão de que trata este artigo poderá ser realizada, ainda, sob o regime de concessão de direito real de uso resolúvel, previsto no art. 7º do Decreto-Lei nº 271, de 28 de fevereiro de 1967 , aplicando-se, inclusive, em terrenos de marinha e acrescidos, dispensando-se o procedimento licitatório para associações e cooperativas que se enquadrem no inciso II do caput deste artigo. (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 2º O espaço aéreo sobre bens públicos, o espaço físico em águas públicas, as áreas de álveo de lagos, rios e quaisquer correntes d’água, de vazantes, da plataforma continental e de outros bens de domínio da União, insusceptíveis de transferência de direitos reais a terceiros, poderão ser objeto de cessão de uso, nos termos deste artigo, observadas as prescrições legais vigentes.</h4>
+ <h4>§ 3º A cessão será autorizada em ato do Presidente da República e se formalizará mediante termo ou contrato, do qual constarão expressamente as condições estabelecidas, entre as quais a finalidade da sua realização e o prazo para seu cumprimento, e tornar-se-á nula, independentemente de ato especial, se ao imóvel, no todo ou em parte, vier a ser dada aplicação diversa da prevista no ato autorizativo e conseqüente termo ou contrato.</h4>
+ <h4>§ 4º A competência para autorizar a cessão de que trata este artigo poderá ser delegada ao Ministro de Estado da Fazenda, permitida a subdelegação.</h4>
+ <h4>§ 5º Na hipótese de destinação à execução de empreendimento de fim lucrativo, a cessão será onerosa e, sempre que houver condições de competitividade, serão observados os procedimentos licitatórios previstos em lei e o disposto no art. 18-B desta Lei. (Redação dada pela Lei nº 13.813, de 2019)</h4>
+ <h4>§ 6º Fica dispensada de licitação a cessão prevista no caput deste artigo relativa a: (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h5>I - bens imóveis residenciais construídos, destinados ou efetivamente utilizados no âmbito de programas de provisão habitacional ou de regularização fundiária de interesse social desenvolvidos por órgãos ou entidades da administração pública; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>II - bens imóveis de uso comercial de âmbito local com área de até 250 m² (duzentos e cinqüenta metros quadrados), inseridos no âmbito de programas de regularização fundiária de interesse social desenvolvidos por órgãos ou entidades da administração pública e cuja ocupação se tenha consolidado até 27 de abril de 2006. (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>III - espaços físicos em corpos d’água de domínio da União para fins de aquicultura, no âmbito da regularização aquícola desenvolvida por órgãos ou entidades da administração pública. (Incluído pela Lei 14.011, de 2020)</h5>
+ <h4>§ 6º-A. Os espaços físicos a que refere o inciso III do § 6º deste artigo serão cedidos ao requerente que tiver projeto aprovado perante a Secretaria de Aquicultura e Pesca do Ministério da Agricultura, Pecuária e Abastecimento e demais órgãos da administração pública. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 7º Além das hipóteses previstas nos incisos I e II do caput e no § 2º deste artigo, o espaço aéreo sobre bens públicos, o espaço físico em águas públicas, as áreas de álveo de lagos, rios e quaisquer correntes d’água, de vazantes e de outros bens do domínio da União, contíguos a imóveis da União afetados ao regime de aforamento ou ocupação, poderão ser objeto de cessão de uso. (Incluído pela Lei nº 12.058, de 2009) (Vide ADIN 4970)</h4>
+ <h4>§ 8º A destinação que tenha como beneficiários entes públicos ou privados concessionários ou delegatários da prestação de serviços de coleta, tratamento e distribuição de água potável, esgoto sanitário e destinação final de resíduos sólidos poderá ser realizada com dispensa de licitação e sob regime gratuito. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 9º Na hipótese prevista no § 8º deste artigo, caso haja a instalação de tubulação subterrânea e subaquática que permita outro uso concomitante, a destinação dar-se-á por meio de autorização de passagem, nos termos de ato da Secretaria do Patrimônio da União (SPU). (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 10. A cessão de que trata este artigo poderá estabelecer como contrapartida a obrigação de construir, reformar ou prestar serviços de engenharia em imóveis da União ou em bens móveis de interesse da União, admitida a contrapartida em imóveis da União que não sejam objeto da cessão. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 11. A cessão com contrapartida será celebrada sob condição resolutiva até que a obrigação seja integralmente cumprida pelo cessionário. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 12. Na hipótese de descumprimento pelo cessionário da contrapartida, nas condições e nos prazos estabelecidos, o instrumento jurídico da cessão resolver-se-á sem direito à indenização pelas acessões e benfeitorias nem a qualquer outra indenização ao cessionário, e a posse do imóvel será imediatamente revertida para a União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 13. A cessão que tenha como beneficiária autorizatária de exploração ferroviária, nos termos da legislação específica, será realizada com dispensa de licitação. (Incluído pela Lei nº 14.273, de 2021)</h4>
+ <h3>Art. 18-A. Os responsáveis pelas estruturas náuticas instaladas ou em instalação no mar territorial, nos rios e nos lagos de domínio da União que requererem a sua regularização até 31 de dezembro de 2018 perceberão desconto de 50% (cinquenta por cento) no valor do recolhimento do preço público pelo uso privativo de área da União quanto ao período que antecedeu a data de publicação da Medida Provisória Nº 759, de 22 de dezembro de 2016. (Incluído pela Lei nº 13.465, de 2017)</h3>
+ <h4>§ 1º O desconto de que trata o caput deste artigo fica condicionado ao deferimento do pedido de regularização pela Secretaria do Patrimônio da União (SPU). (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 2º O disposto no caput deste artigo não se aplica aos créditos inscritos em dívida ativa da União. (Incluído pela Lei nº 13.465, de 2017)</h4>
+ <h3>Art. 18-B. Os imóveis da União que estiverem ocupados por entidades desportivas de quaisquer modalidades poderão ser objeto de cessão em condições especiais, dispensado o procedimento licitatório e observadas as seguintes condições: (Incluído pela Lei nº 13.813, de 2019)</h3>
+ <h5>I – que as ocupações sejam anteriores a 5 de outubro de 1988, 	exclusivamente; e (Incluído pela Lei nº 13.813, de 2019)</h5>
+ <h5>II – que a cessão seja pelo prazo máximo de 30 (trinta) anos, admitidas prorrogações por iguais períodos. (Incluído pela Lei nº 13.813, de 2019)</h5>
+ <h4>§ 1º A cessão será formalizada por meio de termo ou de contrato, do qual constarão expressamente as condições estabelecidas. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h4>§ 2º A cessão será tornada nula, independentemente de ato especial, se ao imóvel vier a ser dada aplicação diversa da prevista no termo ou no contrato, no todo ou em parte, observado o disposto no § 5º do art. 18 desta 	Lei. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h4>§ 3º As entidades desportivas de que trata este artigo receberão desconto de 50% (cinquenta por cento) sobre os débitos inadimplidos relativos a preços públicos pelo uso privativo de área da União quanto ao período anterior à data de formalização do termo ou do contrato. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h4>§ 4º O desconto de que trata o § 3º deste artigo somente será concedido aos interessados que requererem a regularização até 31 de dezembro de 2019 e ficará condicionado ao deferimento do pedido pela Secretaria do Patrimônio da União do Ministério do Planejamento, Desenvolvimento e Gestão. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h3>Art. 19. O ato autorizativo da cessão de que trata o artigo anterior poderá:</h3>
+ <h5>I - permitir a alienação do domínio útil ou de direitos reais de uso de frações do terreno cedido mediante regime competente, com a finalidade de obter recursos para execução dos objetivos da cessão, inclusive para construção de edificações que pertencerão, no todo ou em parte, ao cessionário;</h5>
+ <h5>II - permitir a hipoteca do domínio útil ou de direitos reais de uso de frações do terreno cedido, mediante regime competente, e de benfeitorias eventualmente aderidas, com as finalidades referidas no inciso anterior;</h5>
+ <h5>III - permitir a locação ou o arrendamento de partes do imóvel cedido e benfeitorias eventualmente aderidas, desnecessárias ao uso imediato do cessionário;</h5>
+ <h5>IV - isentar o cessionário do pagamento de foro, enquanto o domínio útil do terreno fizer parte do seu patrimônio, e de laudêmios, nas transferências de domínio útil de que trata este artigo;</h5>
+ <h5>V - conceder prazo de carência para início de pagamento das retribuições devidas, quando:</h5>
+ <h6>a) for necessária a viabilização econômico-financeira do empreendimento;</h6>
+ <h6>b) houver interesse em incentivar atividade pouco ou ainda não desenvolvida no País ou em alguma de suas regiões; ou</h6>
+ <h6>c) for necessário ao desenvolvimento de microempresas, cooperativas e associações de pequenos produtores e de outros segmentos da economia brasileira que precisem ser incrementados.</h6>
+ <h5>VI - permitir a cessão gratuita de direitos enfitêuticos relativos a frações de terrenos cedidos quando se tratar de regularização fundiária ou provisão habitacional para famílias carentes ou de baixa renda. (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h3>Art. 20. Não será considerada utilização em fim diferente do previsto no termo de entrega, a que se refere o § 2º do art. 79 do Decreto-Lei Nº 9.760, de 1946 , a cessão de uso a terceiros, a título gratuito ou oneroso, de áreas para exercício de atividade de apoio, definidas em regulamento, necessárias ao desempenho da atividade do órgão a que o imóvel foi entregue.</h3>
+ <h4>Parágrafo único. A cessão de que trata este artigo será formalizada pelo chefe da repartição, estabelecimento ou serviço público federal a que tenha sido entregue o imóvel, desde que aprovada sua realização pelo Secretário-Geral da Presidência da República, respectivos Ministros de Estado ou autoridades com competência equivalente nos Poderes Legislativo ou Judiciário, conforme for o caso, e tenham sido observadas as condições previstas no regulamento e os procedimentos licitatórios previstos em lei.</h4>
+ <h3>Art. 21. Quando o projeto envolver investimentos cujo retorno, justificadamente, não possa ocorrer dentro do prazo máximo de 20 (vinte) anos, a cessão sob o regime de arrendamento poderá ser realizada por prazo superior, observando-se, nesse caso, como prazo de vigência, o tempo seguramente necessário à viabilização econômico-financeira do empreendimento, não ultrapassando o período da possível renovação. (Redação dada pela Lei nº 11.314 de 2006)</h3>
+ <p>Seção VII</p>
+ <p>Da Permissão de Uso</p>
+ <h3>Art. 22. A utilização, a título precário, de áreas de domínio da União para a realização de eventos de curta duração, de natureza recreativa, esportiva, cultural, religiosa ou educacional, poderá ser autorizada, na forma do regulamento, sob o regime de permissão de uso, em ato do Secretário do Patrimônio da União, publicado no Diário Oficial da União.</h3>
+ <h4>§ 1º A competência para autorizar a permissão de uso de que trata este artigo poderá ser delegada aos titulares das Delegacias do Patrimônio da União nos Estados.</h4>
+ <h4>§ 2º Em áreas específicas, devidamente identificadas, a competência para autorizar a permissão de uso poderá ser repassada aos Estados e Municípios, devendo, para tal fim, as áreas envolvidas lhes serem cedidas sob o regime de cessão de uso, na forma do art. 18.</h4>
+ <p>Seção VIII</p>
+ <p>(Incluído pela Lei nº 11.481, de 2007)</p>
+ <p>Da Concessão de Uso Especial para Fins de Moradia</p>
+ <h3>Art. 22-A. A concessão de uso especial para fins de moradia aplica-se às áreas de propriedade da União, inclusive aos terrenos de marinha e acrescidos, e será conferida aos possuidores ou ocupantes que preencham os requisitos legais estabelecidos na Medida Provisória nº 2.220, de 4 de setembro de 2001 . (Incluído pela Lei nº 11.481, de 2007)</h3>
+ <h4>§ 1º O direito de que trata o caput deste artigo não se aplica a imóveis funcionais. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 2º Os imóveis sob administração do Ministério da Defesa ou dos Comandos da Marinha, do Exército e da Aeronáutica são considerados de interesse da defesa nacional para efeito do disposto no inciso III do caput do art. 5º da Medida Provisória nº 2.220, de 4 de setembro de 2001 , sem prejuízo do estabelecido no § 1º deste artigo. (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA ALIENAÇÃO</h3>
+ <h3>Art. 23. A alienação de bens imóveis da União dependerá de autorização, mediante ato do Presidente da República, e será sempre precedida de parecer da SPU quanto à sua oportunidade e conveniência.</h3>
+ <h4>§ 1º A alienação ocorrerá quando não houver interesse público, econômico ou social em manter o imóvel no domínio da União, nem inconveniência quanto à preservação ambiental e à defesa nacional, no desaparecimento do vínculo de propriedade.</h4>
+ <h4>§ 2º A competência para autorizar a alienação poderá ser delegada ao Ministro de Estado da Fazenda, permitida a subdelegação.</h4>
+ <h3>Art. 23-A. Qualquer interessado poderá apresentar proposta de aquisição de imóveis da União que não estejam inscritos em regime enfitêutico ou em ocupação, mediante requerimento específico à Secretaria de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h3>
+ <h4>§ 1º O requerimento de que trata o caput deste artigo não gera para a administração pública federal obrigação de alienar o imóvel nem direito subjetivo à aquisição. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 2º A Secretaria de Coordenação e Governança do Patrimônio da União manifestar-se-á sobre o requerimento de que trata o caput deste artigo e avaliará a conveniência e a oportunidade de alienar o imóvel. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 3º Na hipótese de manifestação favorável da Secretaria de Coordenação e Governança do Patrimônio da União, se o imóvel não possuir avaliação dentro do prazo de validade, o interessado providenciará, a expensas dele, avaliação elaborada por avaliador habilitado ou empresa especializada, nos termos dos §§ 1º, 7º e 8º do art. 11-C desta Lei. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 4º Compete à Secretaria de Coordenação e Governança do Patrimônio da União homologar os laudos de avaliação e iniciar o processo de alienação do imóvel, observado o disposto no art. 24 desta Lei. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 5º A homologação de avaliação pela Secretaria de Coordenação e Governança do Patrimônio da União limitar-se-á à verificação quanto à aplicação das normas técnicas de avaliação de ativos e à assinatura do documento por profissional habilitado para o trabalho de avaliação e não constituirá nenhum direito ao interessado, e a Secretaria poderá desistir da alienação. (Redação dada pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 6º As propostas apresentadas que não cumprirem os requisitos mínimos ou que forem descartadas de plano pela Secretaria de Coordenação e Governança do Patrimônio da União serão desconsideradas. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 7º As propostas apresentadas nos termos deste artigo serão disponibilizadas pela Secretaria de Coordenação e Governança do Patrimônio da União em sua página na internet, exceto as propostas de que trata o § 6º deste artigo. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 8º Ato do Secretário de Coordenação e Governança do Patrimônio da União disporá sobre o conteúdo e a forma do requerimento de que trata o caput deste artigo. (Incluído pela Lei 14.011, de 2020)</h4>
+ <p>Seção I</p>
+ <p>Da Venda</p>
+ <h3>Art. 24. A venda de bens imóveis da União será feita mediante concorrência ou leilão público, observadas as seguintes condições:</h3>
+ <h5>I - na venda por leilão público, a publicação do edital observará as mesmas disposições legais aplicáveis à concorrência pública;</h5>
+ <h5>II - os licitantes apresentarão propostas ou lances distintos para cada imóvel;</h5>
+ <h5>III - (revogado); (Redação dada pela Lei nº 13.240, de 2015)</h5>
+ <h5>IV - no caso de leilão público, o arrematante pagará, no ato do pregão, sinal correspondente a, no mínimo, 10% (dez por cento) do valor da arrematação, complementando o preço no prazo e nas condições previstas no edital, sob pena de perder, em favor da União, o valor correspondente ao sinal e, em favor do leiloeiro, se for o caso, a respectiva comissão;</h5>
+ <h5>V - o leilão público será realizado por leiloeiro oficial ou por servidor especialmente designado;</h5>
+ <h5>VI - quando o leilão público for realizado por leiloeiro oficial, a respectiva comissão será, na forma do regulamento, de até 5% (cinco por cento) do valor da arrematação e será paga pelo arrematante, juntamente com o sinal;</h5>
+ <h5>VII - o preço mínimo de venda será fixado com base no valor de mercado do imóvel, estabelecido na forma dos arts. 11-C, 11-D e 23-A desta Lei; e (Redação dada pela Lei nº 14.011, de 2020)</h5>
+ <h5>VIII - demais condições previstas no regulamento e no edital de licitação.</h5>
+ <h4>§ 1º (Revogado). (Redação dada pela Lei nº 14.011, de 2020)</h4>
+ <h4>§ 2º Para realização das avaliações de que trata o inciso VII, é dispensada a homologação dos serviços técnicos de engenharia realizados pela Caixa Econômica Federal. (Redação dada pela Lei nº 13.240, de 2015)</h4>
+ <h4>§ 3º Poderá adquirir o imóvel, em condições de igualdade com o vencedor da licitação, o cessionário de direito real ou pessoal, o locatário ou arrendatário que esteja em dia com suas obrigações junto à SPU, bem como o expropriado.</h4>
+ <p>3º -A. Os ocupantes regulares de imóveis funcionais da União poderão adquiri-los, com direito de preferência, excluídos aqueles considerados indispensáveis ao serviço público, em condições de igualdade com o vencedor da licitação. (Incluído pela Lei nº 13.465, de 2017)</p>
+ <h4>§ 4º A venda, em quaisquer das modalidades previstas neste artigo, poderá ser parcelada, mediante pagamento de sinal correspondente a, no mínimo, 10% (dez por cento) do valor de aquisição, na forma a ser regulamentada em ato do Poder Executivo federal. (Redação dada pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 5º (Revogado) . (Redação dada pela Lei nº 13.465, de 2017)</h4>
+ <h4>§ 6º O interessado que tiver custeado a avaliação poderá adquirir o imóvel, em condições de igualdade com o vencedor da licitação, na hipótese de não serem exercidos os direitos previstos nos §§ 3º e 3º-A deste artigo. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 7º O vencedor da licitação ressarcirá os gastos com a avaliação diretamente àquele que a tiver custeado, na hipótese de o vencedor ser outra pessoa, observados os limites de remuneração da avaliação estabelecidos pelo Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 8º Os procedimentos licitatórios de que trata este artigo poderão ser realizados integralmente por meio de recursos de tecnologia da informação, com a utilização de sistemas próprios ou disponibilizados por terceiros, mediante acordo ou contrato. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 9º Os procedimentos específicos a serem adotados na execução do disposto no § 8º deste artigo serão estabelecidos em ato específico do Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 24-A. Na hipótese de concorrência ou leilão público deserto ou fracassado na venda de bens imóveis da União, poderão esses imóveis ser disponibilizados para venda direta. (Redação dada pela Lei nº 13.813, de 2019)</h3>
+ <h4>§ 1º Na hipótese de concorrência ou leilão público deserto ou fracassado, a Secretaria de Coordenação e Governança do Patrimônio da União poderá realizar segunda concorrência ou leilão público com desconto de 25% (vinte e cinco por cento) sobre o valor de avaliação vigente. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 2º Na hipótese de concorrência ou leilão público deserto ou fracassado por 2 (duas) vezes consecutivas, os imóveis poderão ser disponibilizados para venda direta, aplicado o desconto de 25% (vinte e cinco por cento) sobre o valor do imóvel constante do primeiro edital. (Redação dada pela Lei nº 14.474, de 2022)</h4>
+ <h4>§ 3º A compra de imóveis da União disponibilizados para venda direta poderá ser intermediada por corretores de imóveis. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 4º Na hipótese de que trata o § 3º deste artigo, caberá ao comprador o pagamento dos valores de corretagem. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 5º Na hipótese de realização de leilão eletrônico, nos termos do § 8º do art. 24 desta Lei, a Secretaria de Coordenação e Governança do Patrimônio da União poderá realizar sessões públicas com prazos definidos e aplicar descontos sucessivos, até o limite de 25% (vinte e cinco por cento) sobre o valor de avaliação vigente. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 24-B. A Secretaria de Coordenação e Governança do Patrimônio da União poderá realizar a alienação de imóveis da União por lote, se essa modalidade implicar, conforme demonstrado em parecer técnico: (Incluído pela Lei 14.011, de 2020)</h3>
+ <h5>I - maior valorização dos bens; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>II - maior liquidez para os imóveis cuja alienação isolada seja difícil ou não recomendada; ou (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>III - outras situações decorrentes das práticas normais do mercado ou em que se observem condições mais vantajosas para a administração pública, devidamente fundamentadas. (Incluído pela Lei 14.011, de 2020)</h5>
+ <h4>Parágrafo único. A alienação por lote a que se refere o caput deste artigo somente poderá ser adotada após o encerramento da vigência do estado de emergência em saúde pública a que se refere a Lei nº 13.979, de 6 de fevereiro de 2020 . (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 24-C. A Secretaria de Coordenação e Governança do Patrimônio da União poderá contratar empresas privadas, por meio de licitação, ou bancos públicos federais, bem como empresas públicas, órgãos ou entidades da administração pública direta ou indireta da União, do Distrito Federal, dos Estados ou dos Municípios cuja atividade-fim seja o desenvolvimento urbano ou imobiliário, com dispensa de licitação, e celebrar convênios ou acordos de cooperação com os demais entes da Federação e seus órgãos para: (Incluído pela Lei 14.011, de 2020)</h3>
+ <h5>I - elaboração de propostas de alienação para bens individuais ou lotes de ativos imobiliários da União; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>II - execução de ações de cadastramento, de regularização, de avaliação e de alienação dos bens imóveis; e (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>III - execução das atividades de alienação dos ativos indicados, incluídas a realização do procedimento licitatório e a representação da União na assinatura dos instrumentos jurídicos indicados. (Incluído pela Lei 14.011, de 2020)</h5>
+ <h4>§ 1º Fica dispensada a homologação da avaliação realizada, nos termos deste artigo, por bancos públicos federais ou empresas públicas, órgãos ou entidades da administração pública direta ou indireta da União, do Distrito Federal, dos Estados ou dos Municípios que tenham como atividade-fim o desenvolvimento urbano ou imobiliário, bem como nas hipóteses de convênios ou acordos de cooperação firmados com órgãos ou entidades da administração pública federal, estadual, distrital ou municipal. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 2º A remuneração fixa, a remuneração variável ou a combinação das duas modalidades, em percentual da operação concluída, poderá ser admitida, além do ressarcimento dos gastos efetuados com terceiros necessários à execução dos processos de alienação previstos neste artigo, conforme estabelecido em ato do Secretário de Coordenação e Governança do Patrimônio da União e no ato de contratação. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 3º Outras condições para a execução das ações previstas neste artigo serão estabelecidas em ato do Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 24-D. A Secretaria de Coordenação e Governança do Patrimônio da União poderá contratar o Banco Nacional de Desenvolvimento Econômico e Social (BNDES), com dispensa de licitação, para a realização de estudos e a execução de plano de desestatização de ativos imobiliários da União. (Incluído pela Lei 14.011, de 2020)</h3>
+ <h4>§ 1º A desestatização referida no caput deste artigo poderá ocorrer por meio de: (Incluído pela Lei 14.011, de 2020)</h4>
+ <h5>I - remição de foro, alienação mediante venda ou permuta, cessão ou concessão de direito real de uso; (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>II - constituição de fundos de investimento imobiliário e contratação de seus gestores e administradores, conforme legislação vigente; ou (Incluído pela Lei 14.011, de 2020)</h5>
+ <h5>III - qualquer outro meio admitido em lei. (Incluído pela Lei 14.011, de 2020)</h5>
+ <h4>§ 2º Os atos de que trata o inciso I do § 1º deste artigo dependem de ratificação pela Secretaria de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 3º A execução do plano de desestatização poderá incluir as ações previstas nos incisos I, II e III do caput do art. 24-C desta Lei. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 4º A remuneração fixa, a remuneração variável ou a combinação das duas modalidades, no percentual de até 3% (três por cento) sobre a receita pública decorrente de cada plano de desestatização, poderá ser admitida, além do ressarcimento dos gastos efetuados com terceiros necessários à execução dos planos de desestatização previstos neste artigo, conforme estabelecido em regulamento e no instrumento de contratação. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 25. A preferência de que trata o art. 13, exceto com relação aos imóveis sujeitos aos regimes dos arts. 80 a 85 do Decreto-Lei Nº 9.760, de 1946 , e da Lei Nº 8.025, de 12 de abril de 1990 , poderá, a critério da Administração, ser estendida, na aquisição do domínio útil ou pleno de imóveis residenciais de propriedade da União, que venham a ser colocados à venda, àqueles que, em 15 de fevereiro de 1997, já os ocupavam, na qualidade de locatários, independentemente do tempo de locação, observadas, no que couber, as demais condições estabelecidas para os ocupantes.</h3>
+ <h4>Parágrafo único. A preferência de que trata este artigo poderá, ainda, ser estendida àquele que, atendendo as demais condições previstas neste artigo, esteja regularmente cadastrado como locatário, independentemente da existência de contrato locativo.</h4>
+ <h3>Art. 26. Em se tratando de projeto de caráter social para fins de moradia, a venda do domínio pleno ou útil observará os critérios de habilitação e renda familiar fixados em regulamento, podendo o pagamento ser efetivado mediante um sinal de, no mínimo, 5% (cinco por cento) do valor da avaliação, permitido o seu parcelamento em até 2 (duas) vezes e do saldo em até 300 (trezentas) prestações mensais e consecutivas, observando-se, como mínimo, a quantia correspondente a 30% (trinta por cento) do valor do salário mínimo vigente. (Redação dada pela Lei nº 11.481, de 2007)</h3>
+ <h4>§ 1º (Revogado). (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 2º (Revogado). (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <p><del>§ 3º (Revogado pela Lei nº 13.465, de 2017)</del></p>
+ <p><del></p>
+ <h3>Art. 27 (Revogado pela lei nº 13.465, de 2017)</del></h3>
+ <p><del></p>
+ <h3>Art. 28 (Revogado pela lei nº 13.465, de 2017)</del></h3>
+ <p><del></p>
+ <h3>Art. 29 (Revogado pela Lei nº 13.465, de 2017)</del></h3>
+ <p>Seção II</p>
+ <p>Da Permuta</p>
+ <h3>Art. 30. Poderá ser autorizada, na forma do art. 23, a permuta de imóveis de qualquer natureza, de propriedade da União, por imóveis edificados ou não, ou por edificações a construir.</h3>
+ <h4>§ 1º Os imóveis permutados com base neste artigo não poderão ser utilizados para fins residenciais funcionais, exceto nos casos de residências de caráter obrigatório, de que tratam os arts. 80 a 85 do Decreto-Lei Nº 9.760, de 1946.</h4>
+ <h4>§ 2º Na permuta, sempre que houver condições de competitividade, deverão ser observados os procedimentos licitatórios previstos em lei.</h4>
+ <p>Seção III</p>
+ <p>Da Doação</p>
+ <h3>Art. 31. Mediante ato do Poder Executivo e a seu critério, poderá ser autorizada a doação de bens imóveis de domínio da União, observado o disposto no art. 23 desta Lei, a: (Redação dada pela Lei nº 11.481, de 2007)</h3>
+ <h5>I - Estados, Distrito Federal, Municípios, fundações públicas e autarquias públicas federais, estaduais e municipais; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>II - empresas públicas federais, estaduais e municipais; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>III – fundos públicos e fundos privados dos quais a União seja cotista, nas transferências destinadas à realização de programas de provisão habitacional ou de regularização fundiária de interesse social; (Incluído pela Lei nº 12.963, de 2012)</h5>
+ <h5>IV – sociedades de economia mista direcionadas à execução de programas de provisão habitacional ou de regularização fundiária de interesse social; (Redação dada pela Lei nº 13.813, de 2019)</h5>
+ <h5>V – beneficiários, pessoas físicas ou jurídicas, de programas de provisão habitacional ou de regularização fundiária de interesse social desenvolvidos por órgãos ou entidades da administração pública, para cuja execução seja efetivada a doação; ou (Redação dada pela Lei nº 13.813, de 2019)</h5>
+ <h5>VI – instituições filantrópicas devidamente comprovadas como entidades beneficentes de assistência social e organizações religiosas. (Incluído pela Lei nº 13.813, de 2019)</h5>
+ <h4>§ 1º No ato autorizativo e no respectivo termo constarão a finalidade da doação e o prazo para seu cumprimento.</h4>
+ <h4>§ 2º O encargo de que trata o parágrafo anterior será permanente e resolutivo, revertendo automaticamente o imóvel à propriedade da União, independentemente de qualquer indenização por benfeitorias realizadas, se:</h4>
+ <h5>I - não for cumprida, dentro do prazo, a finalidade da doação;</h5>
+ <h5>II - cessarem as razões que justificaram a doação; ou</h5>
+ <h5>III - ao imóvel, no todo ou em parte, vier a ser dada aplicação diversa da prevista.</h5>
+ <h4>§ 3º Nas hipóteses de que tratam os incisos I a IV do caput deste artigo, é vedada ao beneficiário a possibilidade de alienar o imóvel recebido em doação, exceto quando a finalidade for a execução, por parte do donatário, de projeto de assentamento de famílias carentes ou de baixa renda, na forma do art. 26 desta Lei, e desde que, no caso de alienação onerosa, o produto da venda seja destinado à instalação de infra-estrutura, equipamentos básicos ou de outras melhorias necessárias ao desenvolvimento do projeto. (Redação dada pela Lei nº 11.481, de 2007)</h4>
+ <h4>§ 4º Na hipótese de que trata o inciso V do caput deste artigo: (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h5>I - não se aplica o disposto no § 2º deste artigo para o beneficiário pessoa física, devendo o contrato dispor sobre eventuais encargos e conter cláusula de inalienabilidade por um período de 5 (cinco) anos; e (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>II - a pessoa jurídica que receber o imóvel em doação só poderá utilizá-lo no âmbito do respectivo programa habitacional ou de regularização fundiária e deverá observar, nos contratos com os beneficiários finais, o requisito de inalienabilidade previsto no inciso I deste parágrafo. (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h4>§ 5º Nas hipóteses de que tratam os incisos III a V do caput deste artigo, o beneficiário final pessoa física deve atender aos seguintes requisitos: (Incluído pela Lei nº 11.481, de 2007)</h4>
+ <h5>I - possuir renda familiar mensal não superior a 5 (cinco) salários mínimos; (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h5>II - não ser proprietário de outro imóvel urbano ou rural. (Incluído pela Lei nº 11.481, de 2007)</h5>
+ <h4>§ 6º Na hipótese de que trata o inciso VI do caput deste artigo, a escolha da instituição será precedida de chamamento público, na forma prevista em regulamento. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h3>Art. 31-A. As autarquias, as fundações e as empresas públicas federais poderão doar à União os imóveis de sua propriedade que não estejam vinculados às suas atividades operacionais. (Incluído pela Lei nº 14.474, de 2022)</h3>
+ <h4>Parágrafo único. Poderão ser objeto de doação os imóveis vinculados às atividades operacionais das autarquias, das fundações e das empresas públicas federais que não estejam sendo utilizados por essas entidades. (Incluído pela Lei nº 14.474, de 2022)</h4>
+ <h3>C APÍTULO III</h3>
+ <h3>DAS DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 32. Os arts. 79, 81, 82, 101, 103, 104, 110, 118, 123 e 128 do Decreto-Lei no 9.760, de 1946 , passam a vigorar com as seguintes alterações:</h3>
+ <p>"</p>
+ <h3>Art. 79. A entrega de imóvel para uso da Administração Pública Federal direta compete privativamente à Secretaria do Patrimônio da União - SPU.</h3>
+ <p>....................................................................................</p>
+ <h4>§ 3º Havendo necessidade de destinar imóvel ao uso de entidade da Administração Pública Federal indireta, a aplicação se fará sob o regime da cessão de uso."</h4>
+ <p>"</p>
+ <h3>Art. 81 ...........................................................................</h3>
+ <p>.......................................................................................</p>
+ <h4>§ 5º A taxa de uso dos imóveis ocupados por servidores militares continuará a ser regida pela legislação específica que dispõe sobre a remuneração dos militares, resguardado o disposto no § 3º em se tratando de residência em alojamentos militares ou em instalações semelhantes."</h4>
+ <p>"</p>
+ <h3>Art. 82 ..........................................................................</h3>
+ <h4>Parágrafo único. Os imóveis residenciais administrados pelos órgãos militares e destinados a ocupação por servidor militar, enquanto utilizados nesta finalidade, serão considerados de caráter obrigatório, independentemente dos procedimentos previstos neste artigo."</h4>
+ <p>"</p>
+ <h3>Art. 101.........................................................................</h3>
+ <h4>Parágrafo único. O não-pagamento do foro durante três anos consecutivos, ou quatro anos intercalados, importará a caducidade do aforamento."</h4>
+ <p>"</p>
+ <h3>Art. 103. O aforamento se extinguirá por inadimplemento de cláusula contratual, por acordo entre as partes, ou, a critério do Presidente da República, por proposta do Ministério da Fazenda, pela remição do foro nas zonas onde não mais subsistam os motivos determinantes da aplicação do regime enfitêutico.</h3>
+ <h4>§ 1º Consistindo o inadimplemento de cláusula contratual no não-pagamento do foro durante três anos consecutivos, ou quatro anos intercalados, é facultado ao foreiro, sem prejuízo do disposto no art. 120, revigorar o aforamento mediante as condições que lhe forem impostas.</h4>
+ <h4>§ 2º Na consolidação pela União do domínio pleno de terreno que haja concedido em aforamento, deduzir-se-á do valor do mesmo domínio a importância equivalente a 17% (dezessete por cento), correspondente ao valor do domínio direto."</h4>
+ <p>"</p>
+ <h3>Art. 104. Decidida a aplicação do regime enfitêutico a terrenos compreendidos em determinada zona, a SPU notificará os interessados com preferência ao aforamento nos termos dos arts. 105 e 215, para que o requeiram dentro do prazo de cento e oitenta dias, sob pena de perda dos direitos que porventura lhes assistam.</h3>
+ <h4>Parágrafo único. A notificação será feita por edital afixado na repartição arrecadadora da Fazenda Nacional com jurisdição na localidade do imóvel, e publicado no Diário Oficial da União, mediante aviso publicado três vezes, durante o período de convocação, nos dois jornais de maior veiculação local e, sempre que houver interessados conhecidos, por carta registrada."</h4>
+ <p>"</p>
+ <h3>Art. 110. Expirado o prazo de que trata o art. 104 e não havendo interesse do serviço público na manutenção do imóvel no domínio pleno da União, a SPU promoverá a venda do domínio útil dos terrenos sem posse, ou daqueles que se encontrem na posse de quem não tenha atendido à notificação a que se refere o mesmo artigo ou de quem, tendo requerido, não tenha preenchido as condições necessárias para obter a concessão do aforamento."</h3>
+ <p>"</p>
+ <h3>Art. 118. Caduco o aforamento na forma do parágrafo único do art. 101, o órgão local da SPU notificará o foreiro, por edital, ou quando possível por carta registrada, marcando-lhe o prazo de noventa dias para apresentar qualquer reclamação ou solicitar a revigoração do aforamento.</h3>
+ <p>....................................................................................."</p>
+ <p>"</p>
+ <h3>Art. 123. A remição do aforamento será feita pela importância correspondente a 17% (dezessete por cento) do valor do domínio pleno do terreno."</h3>
+ <p>"</p>
+ <h3>Art. 128. Para cobrança da taxa, a SPU fará a inscrição dos ocupantes, ex officio , ou à vista da declaração destes, notificando-os para requererem, dentro do prazo de cento e oitenta dias, o seu cadastramento.</h3>
+ <h4>§ 1º A falta de inscrição não isenta o ocupante da obrigação do pagamento da taxa, devida desde o início da ocupação.</h4>
+ <h4>§ 2º A notificação de que trata este artigo será feita por edital afixado na repartição arrecadadora da Fazenda Nacional, publicado no Diário Oficial da União, e mediante aviso publicado três vezes, durante o período de convocação, nos dois jornais de maior veiculação local.</h4>
+ <h4>§ 3º Expirado o prazo da notificação, a União imitir-se-á sumariamente na posse do imóvel cujo ocupante não tenha atendido à notificação, ou cujo posseiro não tenha preenchido as condições para obter a sua inscrição, sem prejuízo da cobrança das taxas, quando for o caso, devidas no valor correspondente a 10% (dez por cento) do valor atualizado do domínio pleno do terreno, por ano ou fração."</h4>
+ <h3>Art. 32-A. A Secretaria de Coordenação e Governança do Patrimônio da União será responsável pelo acompanhamento e monitoramento dos dados patrimoniais recebidos dos órgãos e das entidades da administração pública federal e pelo apoio à realização das operações de alienação de bens imóveis. (Incluído pela Lei 14.011, de 2020)</h3>
+ <h4>§ 1º É obrigação dos órgãos e das entidades da administração pública manter inventário atualizado dos bens imóveis sob sua gestão, públicos ou privados, e disponibilizá-lo à Secretaria de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 2º A Secretaria de Coordenação e Governança do Patrimônio da União será responsável pela compilação dos dados patrimoniais recebidos dos órgãos, das autarquias e das fundações públicas e pelo apoio à realização das operações de alienação de bens regidas por esta Lei. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h4>§ 3º As demais condições para a execução das ações previstas neste artigo serão estabelecidas em ato do Secretário de Coordenação e Governança do Patrimônio da União. (Incluído pela Lei 14.011, de 2020)</h4>
+ <h3>Art. 33. Os arts. 3º , 5º e 6º do Decreto-Lei nº 2.398, de 1987 , passam a vigorar com as seguintes alterações:</h3>
+ <p>"</p>
+ <h3>Art. 3º .......................................................................</h3>
+ <p>.................................................................................</p>
+ <h4>§ 2º Os Cartórios de Notas e Registro de Imóveis, sob pena de responsabilidade dos seus respectivos titulares, não lavrarão nem registrarão escrituras relativas a bens imóveis de propriedade da União, ou que contenham, ainda que parcialmente, área de seu domínio:</h4>
+ <h5>I - sem certidão da Secretaria do Patrimônio da União - SPU que declare:</h5>
+ <h6>a) ter o interessado recolhido o laudêmio devido, nas transferências onerosas entre vivos;</h6>
+ <h6>b) estar o transmitente em dia com as demais obrigações junto ao Patrimônio da União; e</h6>
+ <h6>c) estar autorizada a transferência do imóvel, em virtude de não se encontrar em área de interesse do serviço público;</h6>
+ <h5>II - sem a observância das normas estabelecidas em regulamento.</h5>
+ <h4>§ 3º A SPU procederá ao cálculo do valor do laudêmio, mediante solicitação do interessado.</h4>
+ <h4>§ 4º Concluída a transmissão, o adquirente deverá requerer ao órgão local da SPU, no prazo máximo de sessenta dias, que providencie a transferência dos registros cadastrais para o seu nome, observando-se, no caso de imóvel aforado, o disposto no art. 116 do Decreto-Lei Nº 9.760, de 1946.</h4>
+ <h4>§ 5º A não-observância do prazo estipulado no § 4º sujeitará o adquirente à multa de 0,05% (cinco centésimos por cento), por mês ou fração, sobre o valor do terreno e benfeitorias nele existentes.</h4>
+ <h4>§ 6º É vedado o loteamento ou o desmembramento de áreas objeto de ocupação sem preferência ao aforamento, nos termos dos arts. 105 e 215 do Decreto-Lei Nº 9.760, de 1946, exceto quando:</h4>
+ <p>a ) realizado pela própria União, em razão do interesse público;</p>
+ <p>b ) solicitado pelo próprio ocupante, comprovada a existência de benfeitoria suficiente para caracterizar, nos termos da legislação vigente, o aproveitamento efetivo e independente da parcela a ser desmembrada."</p>
+ <p>"</p>
+ <h3>Art. 5º Ressalvados os terrenos da União que, a critério do Poder Executivo, venham a ser considerados de interesse do serviço público, conceder-se-á o aforamento:</h3>
+ <h5>I - independentemente do pagamento do preço correspondente ao valor do domínio útil, nos casos previstos nos arts. 105 e 215 do Decreto-Lei Nº 9.760, de 1946;</h5>
+ <h5>II - mediante leilão público ou concorrência, observado o disposto no art. 99 do Decreto-Lei Nº 9.760, de 1946.</h5>
+ <h4>Parágrafo único. Considera-se de interesse do serviço público todo imóvel necessário ao desenvolvimento de projetos públicos, sociais ou econômicos de interesse nacional, à preservação ambiental, à proteção dos ecossistemas naturais e à defesa nacional, independentemente de se encontrar situado em zona declarada de interesse do serviço público, mediante portaria do Secretário do Patrimônio da União."</h4>
+ <p>"</p>
+ <h3>Art. 6º A realização de aterro, construção ou obra e, bem assim, a instalação de equipamentos no mar, lagos, rios e quaisquer correntes de água, inclusive em áreas de praias, mangues e vazantes, ou em outros bens de uso comum, de domínio da União, sem a prévia autorização do Ministério da Fazenda, importará:</h3>
+ <h5>I - na remoção do aterro, da construção, obra e dos equipamentos instalados, inclusive na demolição das benfeitorias, à conta de quem as houver efetuado; e</h5>
+ <h5>II - a automática aplicação de multa mensal em valor equivalente a R$ 30,00 (trinta reais), atualizados anualmente em 1º de janeiro de cada ano, mediante portaria do Ministério da Fazenda, para cada metro quadrado das áreas aterradas ou construídas, ou em que forem realizadas obras ou instalados equipamentos, que será cobrada em dobro após trinta dias da notificação, pessoal, pelo correio ou por edital, se o infrator não tiver removido o aterro e demolido as benfeitorias efetuadas."</h5>
+ <p><del></p>
+ <h3>Art. 34 (Revogado pela Lei nº 13.465, de 2017)</del></h3>
+ <p><del></p>
+ <h3>Art. 35 (Revogado pela Lei nº 13.465, de 2017)</del></h3>
+ <h3>Art. 36. Nas vendas de que trata esta Lei, quando realizadas mediante licitação, os adquirentes poderão, a critério da Administração, utilizar, para pagamento à vista do domínio útil ou pleno de imóveis de propriedade da União, créditos securitizados ou títulos da dívida pública de emissão do Tesouro Nacional.</h3>
+ <h3>Art. 37. Fica instituído o Programa de Administração Patrimonial Imobiliária da União - PROAP, destinado, segundo as possibilidades e as prioridades definidas pela administração pública federal: (Redação dada pela Lei nº 13.240, de 2015)</h3>
+ <h5>I - à adequação dos imóveis de uso especial aos critérios de: (Incluído pela Lei nº 13.240, de 2015)</h5>
+ <h6>a) acessibilidade das pessoas com deficiência ou com mobilidade reduzida; (Incluído pela Lei nº 13.240, de 2015)</h6>
+ <h6>b) sustentabilidade; (Incluído pela Lei nº 13.240, de 2015)</h6>
+ <h6>c) baixo impacto ambiental; (Incluído pela Lei nº 13.240, de 2015)</h6>
+ <h6>d) eficiência energética; (Incluído pela Lei nº 13.240, de 2015)</h6>
+ <h6>e) redução de gastos com manutenção; (Incluído pela Lei nº 13.240, de 2015)</h6>
+ <h6>f) qualidade e eficiência das edificações; (Incluído pela Lei nº 13.240, de 2015)</h6>
+ <h5>II - à ampliação e à qualificação do cadastro dos bens imóveis da União; (Incluído pela Lei nº 13.240, de 2015)</h5>
+ <h5>III - à aquisição, à reforma, ao restauro e à construção de imóveis; (Incluído pela Lei nº 13.240, de 2015)</h5>
+ <h5>IV - ao incentivo à regularização e realização de atividades de fiscalização, demarcação, cadastramento, controle e avaliação dos imóveis públicos federais e ao incremento das receitas patrimoniais; (Redação dada pela Lei nº 13.465, de 2017)</h5>
+ <h5>V - ao desenvolvimento de recursos humanos visando à qualificação da gestão patrimonial, mediante a realização de cursos de capacitação e participação em eventos relacionados ao tema; (Redação dada pela Lei nº 13.465, de 2017)</h5>
+ <h5>VI - à aquisição e instalação de equipamentos, bem como à modernização e informatização dos métodos e processos inerentes à gestão patrimonial dos imóveis públicos federais; (Redação dada pela Lei nº 13.465, de 2017)</h5>
+ <h5>VII - à regularização fundiária; e (Redação dada pela Lei nº 13.465, de 2017)</h5>
+ <h5>VIII - à gestão e manutenção das atividades das Unidades Central e Descentralizadas da SPU. (Incluído pela Lei nº 13.465, de 2017)</h5>
+ <h4>Parágrafo único. Comporão o Fundo instituído pelo Decreto-Lei Nº 1.437, de 17 de dezembro de 1975 , e integrarão subconta especial destinada a atender às despesas com o Programa instituído neste artigo, que será gerida pelo Secretário do Patrimônio da União, as receitas patrimoniais decorrentes de:</h4>
+ <h5>I - multas; e</h5>
+ <h5>II - parcela do produto das alienações de que trata esta Lei, nos percentuais adiante indicados, observado o limite de R$ 25.000.000,00 (vinte e cinco milhões de reais) ao ano: (Redação dada pela Lei nº 9.821, de 1999)</h5>
+ <h6>a) vinte por cento, nos anos 1998 e 1999; (Redação dada pela Lei nº 9.821, de 1999)</h6>
+ <h6>b) quinze por cento, no ano 2000; (Redação dada pela Lei nº 9.821, de 1999)</h6>
+ <h6>c) dez por cento, no ano 2001; (Redação dada pela Lei nº 9.821, de 1999)</h6>
+ <h6>d) cinco por cento, nos anos 2002 e 2003. (Redação dada pela Lei nº 9.821, de 1999)</h6>
+ <h3>Art. 38. No desenvolvimento do PROAP, a SPU priorizará ações no sentido de desobrigar-se de tarefas operacionais, recorrendo, sempre que possível, à execução indireta, mediante convênio com outros órgãos públicos federais, estaduais e municipais e contrato com a iniciativa privada, ressalvadas as atividades típicas de Estado e resguardados os ditames do interesse público e as conveniências da segurança nacional.</h3>
+ <h3>Art. 39. As disposições previstas no art. 30 aplicam-se, no que couber, às entidades da Administração Pública Federal indireta, inclusive às autarquias e fundações públicas e às sociedades sob controle direto ou indireto da União.</h3>
+ <h4>Parágrafo único. A permuta que venha a ser realizada com base no disposto neste artigo deverá ser previamente autorizada pelo conselho de administração, ou órgão colegiado equivalente, das entidades de que trata o caput , ou ainda, na inexistência destes ou de respectiva autorização, pelo Ministro de Estado a cuja Pasta se vinculem, dispensando-se autorização legislativa para a correspondente alienação. (Incluído pela Lei nº 9.821, de 1999)</h4>
+ <h3>Art. 40. Será de competência exclusiva da SPU, observado o disposto no art. 38 e sem prejuízo das competências da Procuradoria-Geral da Fazenda Nacional, previstas no Decreto-Lei Nº 147, de 3 de fevereiro de 1967 , a realização de aforamentos, concessões de direito real de uso, locações, arrendamentos, entregas e cessões a qualquer título, de imóveis de propriedade da União, exceto nos seguintes casos:</h3>
+ <h5>I - cessões, locações e arrendamentos especialmente autorizados nos termos de entrega, observadas as condições fixadas em regulamento;</h5>
+ <h5>II - locações de imóveis residenciais de caráter obrigatório, de que tratam os arts. 80 a 85 do Decreto-Lei Nº 9.760, de 1946;</h5>
+ <h5>III- locações de imóveis residenciais sob o regime da Lei Nº 8.025, de 1990;</h5>
+ <h5>IV - cessões de que trata o art. 20; e</h5>
+ <h5>V - as locações e arrendamentos autorizados nos termos do inciso III do art. 19.</h5>
+ <h3>Art. 41. Será observado como valor mínimo para efeito de aluguel, arrendamento, cessão de uso onerosa, foro e taxa de ocupação, aquele correspondente ao custo de processamento da respectiva cobrança.</h3>
+ <h3>Art. 42. Serão reservadas, na forma do regulamento, áreas necessárias à gestão ambiental, à implantação de projetos demonstrativos de uso sustentável de recursos naturais e dos ecossistemas costeiros, de compensação por impactos ambientais, relacionados com instalações portuárias, marinas, complexos navais e outros complexos náuticos, desenvolvimento do turismo, de atividades pesqueiras, da aqüicultura, da exploração de petróleo e gás natural, de recursos hídricos e minerais, aproveitamento de energia hidráulica e outros empreendimentos considerados de interesse nacional.</h3>
+ <h4>§ 1º Na hipótese de o empreendimento envolver áreas originariamente de uso comum do povo, poderá ser autorizada a utilização dessas áreas, mediante cessão de uso na forma do art. 18 desta Lei, condicionada, quando necessário, à apresentação de licença ambiental que ateste a viabilidade do empreendimento, observadas as demais disposições legais pertinentes. (Numerado do parágrafo 	único para parágrafo primeiro pela Lei nº 13.813, de 2019)</h4>
+ <h4>§ 2º A regularidade ambiental é condicionante de contratos de destinação de 	áreas da União e, comprovada a existência de comprometimento da integridade da área pelo órgão ambiental competente, o contrato será rescindido sem ônus para a União e sem prejuízo das demais sanções cabíveis. (Incluído pela Lei nº 13.813, de 2019)</h4>
+ <h3>Art. 43. Nos aterros realizados até 15 de fevereiro de 1997, sem prévia autorização, a aplicação das penalidades de que tratam os incisos I e II do art. 6º do Decreto-Lei Nº 2.398, de 1987 , com a redação dada por esta Lei, será suspensa a partir do mês seguinte ao da sua aplicação, desde que o interessado solicite, junto ao Ministério da Fazenda, a regularização e a compra à vista do domínio útil do terreno acrescido, acompanhado do comprovante de recolhimento das multas até então incidentes, cessando a suspensão trinta dias após a ciência do eventual indeferimento.</h3>
+ <h4>Parágrafo único. O deferimento do pleito dependerá da prévia audiência dos órgãos técnicos envolvidos.</h4>
+ <h3>Art. 44. As condições previstas nesta Lei aplicar-se-ão às ocupações existentes nas terras de propriedade da União situadas na Área de Proteção Ambiental - APA da Bacia do Rio São Bartolomeu, no Distrito Federal, que se tornarem passíveis de regularização, após o rezoneamento de que trata a Lei Nº 9.262, de 12 de janeiro de 1996.</h3>
+ <h4>Parágrafo único. A alienação dos imóveis residenciais da União, localizados nas Vilas Operárias de Nossa Senhora das Graças e Santa Alice, no Conjunto Residencial Salgado Filho, em Xerém, no Município de Duque de Caxias (RJ), e na Vila Portuária Presidente Dutra, na Rua da América Nº 31, no Bairro da Gamboa, no Município do Rio de Janeiro (RJ), observará, também, o disposto nesta Lei.</h4>
+ <p><del></p>
+ <h3>Art. 45 (Revogado pela Lei nº 13.465, de 2017)</del></h3>
+ <h3>Art. 46. O disposto nesta Lei não se aplica à alienação do domínio útil ou pleno dos terrenos interiores de domínio da União, situados em ilhas oceânicas e costeiras de que trata o inciso IV do art. 20 da Constituição Federal , onde existam sedes de municípios, que será disciplinada em lei específica, ressalvados os terrenos de uso especial que vierem a ser desafetados.</h3>
+ <h3>Art. 47. O crédito originado de receita patrimonial será submetido aos seguintes prazos: (Redação dada pela Lei nº 10.852, de 2004)</h3>
+ <h5>I - decadencial de dez anos para sua constituição, mediante lançamento; e (Incluído pela Lei nº 10.852, de 2004)</h5>
+ <h5>II - prescricional de cinco anos para sua exigência, contados do lançamento. (Incluído pela Lei nº 10.852, de 2004)</h5>
+ <h4>§ 1º O prazo de decadência de que trata o caput conta-se do instante em que o respectivo crédito poderia ser constituído, a partir do conhecimento por iniciativa da União ou por solicitação do interessado das circunstâncias e fatos que caracterizam a hipótese de incidência da receita patrimonial, ficando limitada a cinco anos a cobrança de créditos relativos a período anterior ao conhecimento. (Redação dada pela Lei nº 9.821, de 1999)</h4>
+ <h4>§ 2º Os débitos cujos créditos foram alcançados pela prescrição serão considerados apenas para o efeito da caracterização da ocorrência de caducidade de que trata o parágrafo único do art. 101 do Decreto-Lei Nº 9.760, de 1946 , com a redação dada pelo art. 32 desta Lei. (Redação dada pela Lei nº 9.821, de 1999)</h4>
+ <h3>Art. 48. (VETADO)</h3>
+ <h3>Art. 49. O Poder Executivo regulamentará esta Lei no prazo de noventa dias, contado da sua publicação.</h3>
+ <h3>Art. 50. O Poder Executivo fará publicar no Diário Oficial da União, no prazo de noventa dias, contado da publicação desta Lei, texto consolidado do Decreto-Lei Nº 9.760, de 1946 , e legislação superveniente.</h3>
+ <h3>Art. 51. São convalidados os atos praticados com base na Medida Provisória Nº 1.647-14, de 24 de março de 1998 .</h3>
+ <h3>Art. 52. Esta Lei entra em vigor na data da sua publicação.</h3>
+ <h3>Art. 53. São revogados os arts. 65 , 66 , 125 , 126 e 133 , e os itens 5º , 8º , 9º e 10 do art. 105 do Decreto-Lei Nº 9.760, de 5 de setembro de 1946 , o Decreto-Lei Nº 178, de 16 de fevereiro de 1967 , o art. 195 do Decreto-Lei Nº 200, de 25 de fevereiro de 1967 , o art. 4º do Decreto-Lei Nº 1.561, de 13 de julho de 1977 , a Lei Nº 6.609, de 7 de dezembro de 1978 , o art. 90 da Lei Nº 7.450, de 23 de dezembro de 1985 , o art. 4º do Decreto-Lei Nº 2.398, de 21 de dezembro de 1987 , e a Lei Nº 9.253, de 28 de dezembro de 1995 .</h3>
+ <p>Brasília, 15 de maio de 1998; 177º da Independência e 110º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Este texto não substitui o Publicado no DOU de 18.5.1998</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>RegulamentaçãoConversão da MPv nº 1.647-15,</p>
+ <p>de 1998 | Dispõe sobre a regularização, administração, aforamento e alienação de bens imóveis de domínio da União, altera dispositivos dos Decretos-Leis nos9.760, de 5 de setembro de 1946, e 2.398, de 21 de dezembro de 1987, regulamenta o § 2odo art. 49 do Ato das Disposições Constitucionais Transitórias, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L9636compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 6.001, DE 19 DE DEZEMBRO DE 1973 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1973" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 6.001, DE 19 DE DEZEMBRO DE 1973</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:41:23 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/l6001.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 27.123 caracteres | espelho: 27.118 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 6.001, DE 19 DE DEZEMBRO DE 1973.</p>
+ <p>Regulamento</p>
+ <p>Dispõe sobre o Estatuto do Índio.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <p>TÍTULO I</p>
+ <p>Dos Princípios e Definições</p>
+ <h3>Art. 1º Esta Lei regula a situação jurídica dos índios ou silvícolas e das comunidades indígenas, com o propósito de preservar a sua cultura e integrá-los, progressiva e harmoniosamente, à comunhão nacional.</h3>
+ <h4>Parágrafo único. Aos índios e às comunidades indígenas se estende a proteção das leis do País, nos mesmos termos em que se aplicam aos demais brasileiros, resguardados os usos, costumes e tradições indígenas, bem como as condições peculiares reconhecidas nesta Lei.</h4>
+ <h3>Art. 2° Cumpre à União, aos Estados e aos Municípios, bem como aos órgãos das respectivas administrações indiretas, nos limites de sua competência, para a proteção das comunidades indígenas e a preservação dos seus direitos:</h3>
+ <h5>I - estender aos índios os benefícios da legislação comum, sempre que possível a sua aplicação;</h5>
+ <h5>II - prestar assistência aos índios e às comunidades indígenas ainda não integrados à comunhão nacional;</h5>
+ <h5>III - respeitar, ao proporcionar aos índios meios para o seu desenvolvimento, as peculiaridades inerentes à sua condição;</h5>
+ <h5>IV - assegurar aos índios a possibilidade de livre escolha dos seus meios de vida e subsistência;</h5>
+ <h5>V - garantir aos índios a permanência voluntária no seu habitat , proporcionando-lhes ali recursos para seu desenvolvimento e progresso;</h5>
+ <h5>VI - respeitar, no processo de integração do índio à comunhão nacional, a coesão das comunidades indígenas, os seus valores culturais, tradições, usos e costumes;</h5>
+ <h5>VII - executar, sempre que possível mediante a colaboração dos índios, os programas e projetos tendentes a beneficiar as comunidades indígenas;</h5>
+ <h5>VIII - utilizar a cooperação, o espírito de iniciativa e as qualidades pessoais do índio, tendo em vista a melhoria de suas condições de vida e a sua integração no processo de desenvolvimento;</h5>
+ <h5>IX - garantir aos índios e comunidades indígenas, nos termos da Constituição, a posse permanente das terras que habitam, reconhecendo-lhes o direito ao usufruto exclusivo das riquezas naturais e de todas as utilidades naquelas terras existentes;</h5>
+ <h5>IX - garantir aos índios e comunidades indígenas, nos termos da Constituição Federal, a posse permanente das terras tradicionalmente ocupadas em 5 de outubro de 1988, reconhecendo-lhes o direito ao usufruto exclusivo das riquezas naturais e de todas as utilidades naquelas terras existentes; (Redação dada pela Lei nº 14.701, de 2023)</h5>
+ <h5>X - garantir aos índios o pleno exercício dos direitos civis e políticos que em face da legislação lhes couberem.</h5>
+ <h4>Parágrafo único. (Vetado).</h4>
+ <h3>Art. 3º Para os efeitos de lei, ficam estabelecidas as definições a seguir discriminadas:</h3>
+ <h5>I - Índio ou Silvícola - É todo indivíduo de origem e ascendência pré-colombiana que se identifica e é identificado como pertencente a um grupo étnico cujas características culturais o distinguem da sociedade nacional;</h5>
+ <h5>II - Comunidade Indígena ou Grupo Tribal - É um conjunto de famílias ou comunidades índias, quer vivendo em estado de completo isolamento em relação aos outros setores da comunhão nacional, quer em contatos intermitentes ou permanentes, sem contudo estarem neles integrados.</h5>
+ <h3>Art 4º Os índios são considerados:</h3>
+ <h5>I - Isolados - Quando vivem em grupos desconhecidos ou de que se possuem poucos e vagos informes através de contatos eventuais com elementos da comunhão nacional;</h5>
+ <h5>II - Em vias de integração - Quando, em contato intermitente ou permanente com grupos estranhos, conservam menor ou maior parte das condições de sua vida nativa, mas aceitam algumas práticas e modos de existência comuns aos demais setores da comunhão nacional, da qual vão necessitando cada vez mais para o próprio sustento;</h5>
+ <h5>III - Integrados - Quando incorporados à comunhão nacional e reconhecidos no pleno exercício dos direitos civis, ainda que conservem usos, costumes e tradições característicos da sua cultura.</h5>
+ <h3>TÍTULO II</h3>
+ <p>Dos Direitos Civis e Políticos</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Dos Princípios</p>
+ <h3>Art. 5º Aplicam-se aos índios ou silvícolas as normas dos artigos 145 e 146, da Constituição Federal , relativas à nacionalidade e à cidadania.</h3>
+ <h4>Parágrafo único. O exercício dos direitos civis e políticos pelo índio depende da verificação das condições especiais estabelecidas nesta Lei e na legislação pertinente.</h4>
+ <h3>Art. 6º Serão respeitados os usos, costumes e tradições das comunidades indígenas e seus efeitos, nas relações de família, na ordem de sucessão, no regime de propriedade e nos atos ou negócios realizados entre índios, salvo se optarem pela aplicação do direito comum.</h3>
+ <h4>Parágrafo único. Aplicam-se as normas de direito comum às relações entre índios não integrados e pessoas estranhas à comunidade indígena, excetuados os que forem menos favoráveis a eles e ressalvado o disposto nesta Lei.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>Da Assistência ou Tutela</p>
+ <h3>Art. 7º Os índios e as comunidades indígenas ainda não integrados à comunhão nacional ficam sujeito ao regime tutelar estabelecido nesta Lei.</h3>
+ <h4>§ 1º Ao regime tutelar estabelecido nesta Lei aplicam-se no que couber, os princípios e normas da tutela de direito comum, independendo, todavia, o exercício da tutela da especialização de bens imóveis em hipoteca legal, bem como da prestação de caução real ou fidejussória.</h4>
+ <h4>§ 2º Incumbe a tutela à União, que a exercerá através do competente órgão federal de assistência aos silvícolas.</h4>
+ <h3>Art. 8º São nulos os atos praticados entre o índio não integrado e qualquer pessoa estranha à comunidade indígena quando não tenha havido assistência do órgão tutelar competente.</h3>
+ <h4>Parágrafo único. Não se aplica a regra deste artigo no caso em que o índio revele consciência e conhecimento do ato praticado, desde que não lhe seja prejudicial, e da extensão dos seus efeitos.</h4>
+ <h3>Art. 9º Qualquer índio poderá requerer ao Juiz competente a sua liberação do regime tutelar previsto nesta Lei, investindo-se na plenitude da capacidade civil, desde que preencha os requisitos seguintes:</h3>
+ <h5>I - idade mínima de 21 anos;</h5>
+ <h5>II - conhecimento da língua portuguesa;</h5>
+ <h5>III - habilitação para o exercício de atividade útil, na comunhão nacional;</h5>
+ <h5>IV - razoável compreensão dos usos e costumes da comunhão nacional.</h5>
+ <h4>Parágrafo único. O Juiz decidirá após instrução sumária, ouvidos o órgão de assistência ao índio e o Ministério Público, transcrita a sentença concessiva no registro civil.</h4>
+ <h3>Art. 10. Satisfeitos os requisitos do artigo anterior e a pedido escrito do interessado, o órgão de assistência poderá reconhecer ao índio, mediante declaração formal, a condição de integrado, cessando toda restrição à capacidade, desde que, homologado judicialmente o ato, seja inscrito no registro civil.</h3>
+ <h3>Art. 11. Mediante decreto do Presidente da República, poderá ser declarada a emancipação da comunidade indígena e de seus membros, quanto ao regime tutelar estabelecido em lei, desde que requerida pela maioria dos membros do grupo e comprovada, em inquérito realizado pelo órgão federal competente, a sua plena integração na comunhão nacional.</h3>
+ <h4>Parágrafo único. Para os efeitos do disposto neste artigo, exigir-se-á o preenchimento, pelos requerentes, dos requisitos estabelecidos no artigo 9º.</h4>
+ <h2>CAPÍTULO III</h2>
+ <p>Do Registro Civil</p>
+ <h3>Art. 12. Os nascimentos e óbitos, e os casamentos civis dos índios não integrados, serão registrados de acordo com a legislação comum, atendidas as peculiaridades de sua condição quanto à qualificação do nome, prenome e filiação.</h3>
+ <h4>Parágrafo único. O registro civil será feito a pedido do interessado ou da autoridade administrativa competente.</h4>
+ <h3>Art. 13. Haverá livros próprios, no órgão competente de assistência, para o registro administrativo de nascimentos e óbitos dos índios, da cessação de sua incapacidade e dos casamentos contraídos segundo os costumes tribais.</h3>
+ <h4>Parágrafo único. O registro administrativo constituirá, quando couber documento hábil para proceder ao registro civil do ato correspondente, admitido, na falta deste, como meio subsidiário de prova.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Condições de Trabalho</p>
+ <h3>Art. 14. Não haverá discriminação entre trabalhadores indígenas e os demais trabalhadores, aplicando-se-lhes todos os direitos e garantias das leis trabalhistas e de previdência social.</h3>
+ <h4>Parágrafo único. É permitida a adaptação de condições de trabalho aos usos e costumes da comunidade a que pertencer o índio.</h4>
+ <h3>Art. 15. Será nulo o contrato de trabalho ou de locação de serviços realizado com os índios de que trata o artigo 4°, I.</h3>
+ <h3>Art. 16. Os contratos de trabalho ou de locação de serviços realizados com indígenas em processo de integração ou habitantes de parques ou colônias agrícolas dependerão de prévia aprovação do órgão de proteção ao índio, obedecendo, quando necessário, a normas próprias.</h3>
+ <h4>§ 1º Será estimulada a realização de contratos por equipe, ou a domicílio, sob a orientação do órgão competente, de modo a favorecer a continuidade da via comunitária.</h4>
+ <h4>§ 2º Em qualquer caso de prestação de serviços por indígenas não integrados, o órgão de proteção ao índio exercerá permanente fiscalização das condições de trabalho, denunciando os abusos e providenciando a aplicação das sanções cabíveis.</h4>
+ <h4>§ 3º O órgão de assistência ao indígena propiciará o acesso, aos seus quadros, de índios integrados, estimulando a sua especialização indigenista.</h4>
+ <h3>TÍTULO III</h3>
+ <p>Das Terras dos Índios</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Das Disposições Gerais</p>
+ <h3>Art. 17. Reputam-se terras indígenas:</h3>
+ <h5>I - as terras ocupadas ou habitadas pelos silvícolas, a que se referem os artigos 4º, IV , e 198, da Constituição ; (Regulamento) (Vide Decreto nº 22, de 1991)</h5>
+ <p>(Vide Decreto nº 1.775, de 1996)</p>
+ <h5>II - as áreas reservadas de que trata o</h5>
+ <h2>CAPÍTULO III deste Título;</h2>
+ <h5>III - as terras de domínio das comunidades indígenas ou de silvícolas.</h5>
+ <h3>Art. 18. As terras indígenas não poderão ser objeto de arrendamento ou de qualquer ato ou negócio jurídico que restrinja o pleno exercício da posse direta pela comunidade indígena ou pelos silvícolas.</h3>
+ <h4>§ 1º Nessas áreas, é vedada a qualquer pessoa estranha aos grupos tribais ou comunidades indígenas a prática da caça, pesca ou coleta de frutos, assim como de atividade agropecuária ou extrativa.</h4>
+ <h4>§ 2º (Vetado).</h4>
+ <h3>Art. 19. As terras indígenas, por iniciativa e sob orientação do órgão federal de assistência ao índio, serão administrativamente demarcadas, de acordo com o processo estabelecido em decreto do Poder Executivo.</h3>
+ <h4>§ 1º A demarcação promovida nos termos deste artigo, homologada pelo Presidente da República, será registrada em livro próprio do Serviço do Patrimônio da União (SPU) e do registro imobiliário da comarca da situação das terras.</h4>
+ <h4>§ 2º Contra a demarcação processada nos termos deste artigo não caberá a concessão de interdito possessório, facultado aos interessados contra ela recorrer à ação petitória ou à demarcatória.</h4>
+ <h3>Art. 20. Em caráter excepcional e por qualquer dos motivos adiante enumerados, poderá a União intervir, se não houver solução alternativa, em área indígena, determinada a providência por decreto do Presidente da República.</h3>
+ <p>1º A intervenção poderá ser decretada:</p>
+ <h6>a) para pôr termo à luta entre grupos tribais;</h6>
+ <h6>b) para combater graves surtos epidêmicos, que possam acarretar o extermínio da comunidade indígena, ou qualquer mal que ponha em risco a integridade do silvícola ou do grupo tribal;</h6>
+ <h6>c) por imposição da segurança nacional;</h6>
+ <h6>d) para a realização de obras públicas que interessem ao desenvolvimento nacional;</h6>
+ <h6>e) para reprimir a turbação ou esbulho em larga escala;</h6>
+ <h6>f) para a exploração de riquezas do subsolo de relevante interesse para a segurança e o desenvolvimento nacional.</h6>
+ <p>2º A intervenção executar-se-á nas condições estipuladas no decreto e sempre por meios suasórios, dela podendo resultar, segundo a gravidade do fato, uma ou algumas das medidas seguintes:</p>
+ <h6>a) contenção de hostilidades, evitando-se o emprego de força contra os índios;</h6>
+ <h6>b) deslocamento temporário de grupos tribais de uma para outra área;</h6>
+ <h6>c) remoção de grupos tribais de uma para outra área.</h6>
+ <p>3º Somente caberá a remoção de grupo tribal quando de todo impossível ou desaconselhável a sua permanência na área sob intervenção, destinando-se à comunidade indígena removida área equivalente à anterior, inclusive quanto às condições ecológicas.</p>
+ <p>4º A comunidade indígena removida será integralmente ressarcida dos prejuízos decorrentes da remoção.</p>
+ <p>5º O ato de intervenção terá a assistência direta do órgão federal que exercita a tutela do índio.</p>
+ <h3>Art. 21. As terras espontânea e definitivamente abandonadas por comunidade indígena ou grupo tribal reverterão, por proposta do órgão federal de assistência ao índio e mediante ato declaratório do Poder Executivo, à posse e ao domínio pleno da União.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Das Terras Ocupadas</p>
+ <h3>Art. 22. Cabe aos índios ou silvícolas a posse permanente das terras que habitam e o direito ao usufruto exclusivo das riquezas naturais e de todas as utilidades naquelas terras existentes.</h3>
+ <h4>Parágrafo único. As terras ocupadas pelos índios, nos termos deste artigo, serão bens inalienáveis da União ( artigo 4º, IV , e 198, da Constituição Federal ).</h4>
+ <h3>Art. 23. Considera-se posse do índio ou silvícola a ocupação efetiva da terra que, de acordo com os usos, costumes e tradições tribais, detém e onde habita ou exerce atividade indispensável à sua subsistência ou economicamente útil.</h3>
+ <h3>Art. 24. O usufruto assegurado aos índios ou silvícolas compreende o direito à posse, uso e percepção das riquezas naturais e de todas as utilidades existentes nas terras ocupadas, bem assim ao produto da exploração econômica de tais riquezas naturais e utilidades.</h3>
+ <h4>§ 1° Incluem-se, no usufruto, que se estende aos acessórios e seus acrescidos, o uso dos mananciais e das águas dos trechos das vias fluviais compreendidos nas terras ocupadas.</h4>
+ <h4>§ 2° É garantido ao índio o exclusivo exercício da caça e pesca nas áreas por ele ocupadas, devendo ser executadas por forma suasória as medidas de polícia que em relação a ele eventualmente tiverem de ser aplicadas.</h4>
+ <h3>Art. 25. O reconhecimento do direito dos índios e grupos tribais à posse permanente das terras por eles habitadas, nos termos do artigo 198, da Constituição Federal , independerá de sua demarcação, e será assegurado pelo órgão federal de assistência aos silvícolas, atendendo à situação atual e ao consenso histórico sobre a antigüidade da ocupação, sem prejuízo das medidas cabíveis que, na omissão ou erro do referido órgão, tomar qualquer dos Poderes da República.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Das Áreas Reservadas</p>
+ <h3>Art. 26. A União poderá estabelecer, em qualquer parte do território nacional, áreas destinadas à posse e ocupação pelos índios, onde possam viver e obter meios de subsistência, com direito ao usufruto e utilização das riquezas naturais e dos bens nelas existentes, respeitadas as restrições legais.</h3>
+ <h4>Parágrafo único. As áreas reservadas na forma deste artigo não se confundem com as de posse imemorial das tribos indígenas, podendo organizar-se sob uma das seguintes modalidades:</h4>
+ <h6>a) reserva indígena;</h6>
+ <h6>b) parque indígena;</h6>
+ <h6>c) colônia agrícola indígena.</h6>
+ <h3>Art. 27. Reserva indígena é uma área destinada a servidor de habitat a grupo indígena, com os meios suficientes à sua subsistência.</h3>
+ <h3>Art. 28. Parque indígena é a área contida em terra na posse de índios, cujo grau de integração permita assistência econômica, educacional e sanitária dos órgãos da União, em que se preservem as reservas de flora e fauna e as belezas naturais da região.</h3>
+ <h4>§ 1º Na administração dos parques serão respeitados a liberdade, usos, costumes e tradições dos índios.</h4>
+ <h4>§ 2° As medidas de polícia, necessárias à ordem interna e à preservação das riquezas existentes na área do parque, deverão ser tomadas por meios suasórios e de acordo com o interesse dos índios que nela habitem.</h4>
+ <h4>§ 3º O loteamento das terras dos parques indígenas obedecerá ao regime de propriedade, usos e costumes tribais, bem como às normas administrativas nacionais, que deverão ajustar-se aos interesses das comunidades indígenas.</h4>
+ <h3>Art. 29. Colônia agrícola indígena é a área destinada à exploração agropecuária, administrada pelo órgão de assistência ao índio, onde convivam tribos aculturadas e membros da comunidade nacional.</h3>
+ <h3>Art. 30. Território federal indígena é a unidade administrativa subordinada à União, instituída em região na qual pelo menos um terço da população seja formado por índios.</h3>
+ <h3>Art. 31. As disposições deste Capítulo serão aplicadas, no que couber, às áreas em que a posse decorra da aplicação do artigo 198, da Constituição Federal .</h3>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Terras de Domínio Indígena</p>
+ <h3>Art. 32. São de propriedade plena do índio ou da comunidade indígena, conforme o caso, as terras havidas por qualquer das formas de aquisição do domínio, nos termos da legislação civil.</h3>
+ <h3>Art. 33. O índio, integrado ou não, que ocupe como próprio, por dez anos consecutivos, trecho de terra inferior a cinqüenta hectares, adquirir-lhe-á a propriedade plena.</h3>
+ <h4>Parágrafo único. O disposto neste artigo não se aplica às terras do domínio da União, ocupadas por grupos tribais, às áreas reservadas de que trata esta Lei, nem às terras de propriedade coletiva de grupo tribal.</h4>
+ <h2>CAPÍTULO V</h2>
+ <p>Da Defesa das Terras Indígenas</p>
+ <h3>Art. 34. O órgão federal de assistência ao índio poderá solicitar a colaboração das Forças Armadas e Auxiliares e da Polícia Federal, para assegurar a proteção das terras ocupadas pelos índios e pelas comunidades indígenas.</h3>
+ <h3>Art. 35. Cabe ao órgão federal de assistência ao índio a defesa judicial ou extrajudicial dos direitos dos silvícolas e das comunidades indígenas.</h3>
+ <h3>Art. 36. Sem prejuízo do disposto no artigo anterior, compete à União adotar as medidas administrativas ou propor, por intermédio do Ministério Público Federal, as medidas judiciais adequadas à proteção da posse dos silvícolas sobre as terras que habitem.</h3>
+ <h4>Parágrafo único. Quando as medidas judiciais previstas neste artigo forem propostas pelo órgão federal de assistência, ou contra ele, a União será litisconsorte ativa ou passiva.</h4>
+ <h3>Art. 37. Os grupos tribais ou comunidades indígenas são partes legítimas para a defesa dos seus direitos em juízo, cabendo-lhes, no caso, a assistência do Ministério Público Federal ou do órgão de proteção ao índio.</h3>
+ <h3>Art. 38. As terras indígenas são inusucapíveis e sobre elas não poderá recair desapropriação, salvo o previsto no artigo 20.</h3>
+ <h3>TÍTULO IV</h3>
+ <p>Dos Bens e Renda do Patrimônio Indígena</p>
+ <h3>Art 39. Constituem bens do Patrimônio Indígena:</h3>
+ <h5>I - as terras pertencentes ao domínio dos grupos tribais ou comunidades indígenas;</h5>
+ <h5>II - o usufruto exclusivo das riquezas naturais e de todas as utilidades existentes nas terras ocupadas por grupos tribais ou comunidades indígenas e nas áreas a eles reservadas;</h5>
+ <h5>III - os bens móveis ou imóveis, adquiridos a qualquer título.</h5>
+ <h3>Art. 40. São titulares do Patrimônio Indígena:</h3>
+ <h5>I - a população indígena do País, no tocante a bens ou rendas pertencentes ou destinadas aos silvícolas, sem discriminação de pessoas ou grupos tribais;</h5>
+ <h5>II - o grupo tribal ou comunidade indígena determinada, quanto à posse e usufruto das terras por ele exclusivamente ocupadas, ou a ele reservadas;</h5>
+ <h5>III - a comunidade indígena ou grupo tribal nomeado no título aquisitivo da propriedade, em relação aos respectivos imóveis ou móveis.</h5>
+ <h3>Art. 41. Não integram o Patrimônio Indígena:</h3>
+ <h5>I - as terras de exclusiva posse ou domínio do índio ou silvícola, individualmente considerado, e o usufruto das respectivas riquezas naturais e utilidades;</h5>
+ <h5>II - a habitação, os móveis e utensílios domésticos, os objetos de uso pessoal, os instrumentos de trabalho e os produtos da lavoura, caça, pesca e coleta ou do trabalho em geral dos silvícolas.</h5>
+ <h3>Art. 42. Cabe ao órgão de assistência a gestão do Patrimônio Indígena, propiciando-se, porém, a participação dos silvícolas e dos grupos tribais na administração dos próprios bens, sendo-lhes totalmente confiado o encargo, quando demonstrem capacidade efetiva para o seu exercício.</h3>
+ <h4>Parágrafo único. O arrolamento dos bens do Patrimônio Indígena será permanentemente atualizado, procedendo-se à fiscalização rigorosa de sua gestão, mediante controle interno e externo, a fim de tornar efetiva a responsabilidade dos seus administradores.</h4>
+ <h3>Art. 43. A renda indígena é a resultante da aplicação de bens e utilidades integrantes do Patrimônio Indígena, sob a responsabilidade do órgão de assistência ao índio.</h3>
+ <h4>§ 1º A renda indígena será preferencialmente reaplicada em atividades rentáveis ou utilizada em programas de assistência ao índio.</h4>
+ <h4>§ 2° A reaplicação prevista no parágrafo anterior reverterá principalmente em benefício da comunidade que produziu os primeiros resultados econômicos.</h4>
+ <h3>Art. 44. As riquezas do solo, nas áreas indígenas, somente pelos silvícolas podem ser exploradas, cabendo-lhes com exclusividade o exercício da garimpagem, faiscação e cata das áreas referidas. (Regulamento)</h3>
+ <h3>Art. 45. A exploração das riquezas do subsolo nas áreas pertencentes aos índios, ou do domínio da União, mas na posse de comunidades indígenas, far-se-á nos termos da legislação vigente, observado o disposto nesta Lei. (Regulamento)</h3>
+ <h4>§ 1º O Ministério do Interior, através do órgão competente de assistência aos índios, representará os interesses da União, como proprietária do solo, mas a participação no resultado da exploração, as indenizações e a renda devida pela ocupação do terreno, reverterão em benefício dos índios e constituirão fontes de renda indígena.</h4>
+ <h4>§ 2º Na salvaguarda dos interesses do Patrimônio Indígena e do bem-estar dos silvícolas, a autorização de pesquisa ou lavra, a terceiros, nas posses tribais, estará condicionada a prévio entendimento com o órgão de assistência ao índio.</h4>
+ <h3>Art. 46. O corte de madeira nas florestas indígenas, consideradas em regime de preservação permanente, de acordo com a letra g e § 2º, do artigo 3°, do Código Florestal , está condicionado à existência de programas ou projetos para o aproveitamento das terras respectivas na exploração agropecuária, na indústria ou no reflorestamento.</h3>
+ <h3>TÍTULO V</h3>
+ <p>Da Educação, Cultura e Saúde</p>
+ <h3>Art. 47. É assegurado o respeito ao patrimônio cultural das comunidades indígenas, seus valores artísticos e meios de expressão.</h3>
+ <h3>Art. 48. Estende-se à população indígena, com as necessárias adaptações, o sistema de ensino em vigor no País.</h3>
+ <h3>Art. 49. A alfabetização dos índios far-se-á na língua do grupo a que pertençam, e em português, salvaguardado o uso da primeira.</h3>
+ <h3>Art. 50. A educação do índio será orientada para a integração na comunhão nacional mediante processo de gradativa compreensão dos problemas gerais e valores da sociedade nacional, bem como do aproveitamento das suas aptidões individuais.</h3>
+ <h3>Art. 51. A assistência aos menores, para fins educacionais, será prestada, quanto possível, sem afastá-los do convívio familiar ou tribal.</h3>
+ <h3>Art. 52. Será proporcionada ao índio a formação profissional adequada, de acordo com o seu grau de aculturação.</h3>
+ <h3>Art. 53. O artesanato e as indústrias rurais serão estimulados, no sentido de elevar o padrão de vida do índio com a conveniente adaptação às condições técnicas modernas.</h3>
+ <h3>Art. 54. Os índios têm direito aos meios de proteção à saúde facultados à comunhão nacional.</h3>
+ <h4>Parágrafo único. Na infância, na maternidade, na doença e na velhice, deve ser assegurada ao silvícola, especial assistência dos poderes públicos, em estabelecimentos a esse fim destinados.</h4>
+ <h3>Art. 55. O regime geral da previdência social será extensivo aos índios, atendidas as condições sociais, econômicas e culturais das comunidades beneficiadas.</h3>
+ <h3>TÍTULO VI</h3>
+ <p>Das Normas Penais</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Dos Princípios</p>
+ <h3>Art. 56. No caso de condenação de índio por infração penal, a pena deverá ser atenuada e na sua aplicação o Juiz atenderá também ao grau de integração do silvícola.</h3>
+ <h4>Parágrafo único. As penas de reclusão e de detenção serão cumpridas, se possível, em regime especial de semiliberdade, no local de funcionamento do órgão federal de assistência aos índios mais próximos da habitação do condenado.</h4>
+ <h3>Art. 57. Será tolerada a aplicação, pelos grupos tribais, de acordo com as instituições próprias, de sanções penais ou disciplinares contra os seus membros, desde que não revistam caráter cruel ou infamante, proibida em qualquer caso a pena de morte.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Dos Crimes Contra os Índios</p>
+ <h3>Art. 58. Constituem crimes contra os índios e a cultura indígena:</h3>
+ <h5>I - escarnecer de cerimônia, rito, uso, costume ou tradição culturais indígenas, vilipendiá-los ou perturbar, de qualquer modo, a sua prática. Pena - detenção de um a três meses;</h5>
+ <h5>II - utilizar o índio ou comunidade indígena como objeto de propaganda turística ou de exibição para fins lucrativos. Pena - detenção de dois a seis meses;</h5>
+ <h5>III - propiciar, por qualquer meio, a aquisição, o uso e a disseminação de bebidas alcoólicas, nos grupos tribais ou entre índios não integrados. Pena - detenção de seis meses a dois anos.</h5>
+ <h4>Parágrafo único. As penas estatuídas neste artigo são agravadas de um terço, quando o crime for praticado por funcionário ou empregado do órgão de assistência ao índio.</h4>
+ <h3>Art. 59. No caso de crime contra a pessoa, o patrimônio ou os costumes, em que o ofendido seja índio não integrado ou comunidade indígena, a pena será agravada de um terço.</h3>
+ <h3>TÍTULO VII</h3>
+ <p>Disposições Gerais</p>
+ <h3>Art. 60. Os bens e rendas do Patrimônio Indígena gozam de plena isenção tributária.</h3>
+ <h3>Art. 61. São extensivos aos interesses do Patrimônio Indígena os privilégios da Fazenda Pública, quanto à impenhorabilidade de bens, rendas e serviços, ações especiais, prazos processuais, juros e custas.</h3>
+ <h3>Art. 62. Ficam declaradas a nulidade e a extinção dos efeitos jurídicos dos atos de qualquer natureza que tenham por objeto o domínio, a posse ou a ocupação das terras habitadas pelos índios ou comunidades indígenas.</h3>
+ <h4>§ 1° Aplica-se o disposto deste artigo às terras que tenham sido desocupadas pelos índios ou comunidades indígenas em virtude de ato ilegítimo de autoridade e particular.</h4>
+ <h4>§ 2º Ninguém terá direito a ação ou indenização contra a União, o órgão de assistência ao índio ou os silvícolas em virtude da nulidade e extinção de que trata este artigo, ou de suas conseqüências econômicas.</h4>
+ <h4>§ 3º Em caráter excepcional e a juízo exclusivo do dirigente do órgão de assistência ao índio, será permitida a continuação, por prazo razoável dos efeitos dos contratos de arrendamento em vigor na data desta Lei, desde que a sua extinção acarrete graves conseqüências sociais.</h4>
+ <h3>Art. 63. Nenhuma medida judicial será concedida liminarmente em causas que envolvam interesse de silvícolas ou do Patrimônio Indígena, sem prévia audiência da União e do órgão de proteção ao índio.</h3>
+ <h3>Art. 64 (Vetado).</h3>
+ <h4>Parágrafo único. (Vetado).</h4>
+ <h3>Art. 65. O Poder Executivo fará, no prazo de cinco anos, a demarcação das terras indígenas, ainda não demarcadas.</h3>
+ <h3>Art. 66. O órgão de proteção ao silvícola fará divulgar e respeitar as normas da Convenção 107, promulgada pelo Decreto nº 58.824, de 14 julho de 1966 .</h3>
+ <h3>Art. 67. É mantida a Lei nº 5.371, de 5 de dezembro de 1967 .</h3>
+ <h3>Art. 68. Esta Lei entrará em vigor na data de sua publicação, revogadas as disposições em contrário.</h3>
+ <h3>EMÍLIO G. MEDICI</h3>
+ <p>José Costa Cavalcanti</p>
+ <p>Este texto não substitui o publicado no DOU de 21.12.1973</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Regulamento | Dispõe sobre o Estatuto do</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/l6001.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

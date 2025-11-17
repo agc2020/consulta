@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 12.288, DE 20 DE JULHO DE 2010 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2010" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 12.288, DE 20 DE JULHO DE 2010</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:39:36 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 38.467 caracteres | espelho: 38.612 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 12.288, DE 20 DE JULHO DE 2010.</p>
+ <p>(Vide Decreto nº 8.136, de 2013)</p>
+ <p>Institui o Estatuto da Igualdade Racial; altera as Leis n os 7.716, de 5 de janeiro de 1989, 9.029, de 13 de abril de 1995, 7.347, de 24 de julho de 1985, e 10.778, de 24 de novembro de 2003.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <p>TÍTULO I</p>
+ <p>DISPOSIÇÕES PRELIMINARES</p>
+ <h3>Art. 1º Esta Lei institui o Estatuto da Igualdade Racial, destinado a garantir à população negra a efetivação da igualdade de oportunidades, a defesa dos direitos étnicos individuais, coletivos e difusos e o combate à discriminação e às demais formas de intolerância étnica.</h3>
+ <h4>Parágrafo único. Para efeito deste Estatuto, considera-se:</h4>
+ <h5>I - discriminação racial ou étnico-racial: toda distinção, exclusão, restrição ou preferência baseada em raça, cor, descendência ou origem nacional ou étnica que tenha por objeto anular ou restringir o reconhecimento, gozo ou exercício, em igualdade de condições, de direitos humanos e liberdades fundamentais nos campos político, econômico, social, cultural ou em qualquer outro campo da vida pública ou privada;</h5>
+ <h5>II - desigualdade racial: toda situação injustificada de diferenciação de acesso e fruição de bens, serviços e oportunidades, nas esferas pública e privada, em virtude de raça, cor, descendência ou origem nacional ou étnica;</h5>
+ <h5>III - desigualdade de gênero e raça: assimetria existente no âmbito da sociedade que acentua a distância social entre mulheres negras e os demais segmentos sociais;</h5>
+ <h5>IV - população negra: o conjunto de pessoas que se autodeclaram pretas e pardas, conforme o quesito cor ou raça usado pela Fundação Instituto Brasileiro de Geografia e Estatística (IBGE), ou que adotam autodefinição análoga;</h5>
+ <h5>V - políticas públicas: as ações, iniciativas e programas adotados pelo Estado no cumprimento de suas atribuições institucionais;</h5>
+ <h5>VI - ações afirmativas: os programas e medidas especiais adotados pelo Estado e pela iniciativa privada para a correção das desigualdades raciais e para a promoção da igualdade de oportunidades.</h5>
+ <h3>Art. 2º É dever do Estado e da sociedade garantir a igualdade de oportunidades, reconhecendo a todo cidadão brasileiro, independentemente da etnia ou da cor da pele, o direito à participação na comunidade, especialmente nas atividades políticas, econômicas, empresariais, educacionais, culturais e esportivas, defendendo sua dignidade e seus valores religiosos e culturais.</h3>
+ <h3>Art. 3º Além das normas constitucionais relativas aos princípios fundamentais, aos direitos e garantias fundamentais e aos direitos sociais, econômicos e culturais, o Estatuto da Igualdade Racial adota como diretriz político-jurídica a inclusão das vítimas de desigualdade étnico-racial, a valorização da igualdade étnica e o fortalecimento da identidade nacional brasileira.</h3>
+ <h3>Art. 4º A participação da população negra, em condição de igualdade de oportunidade, na vida econômica, social, política e cultural do País será promovida, prioritariamente, por meio de:</h3>
+ <h5>I - inclusão nas políticas públicas de desenvolvimento econômico e social;</h5>
+ <h5>II - adoção de medidas, programas e políticas de ação afirmativa;</h5>
+ <h5>III - modificação das estruturas institucionais do Estado para o adequado enfrentamento e a superação das desigualdades étnicas decorrentes do preconceito e da discriminação étnica;</h5>
+ <h5>IV - promoção de ajustes normativos para aperfeiçoar o combate à discriminação étnica e às desigualdades étnicas em todas as suas manifestações individuais, institucionais e estruturais;</h5>
+ <h5>V - eliminação dos obstáculos históricos, socioculturais e institucionais que impedem a representação da diversidade étnica nas esferas pública e privada;</h5>
+ <h5>VI - estímulo, apoio e fortalecimento de iniciativas oriundas da sociedade civil direcionadas à promoção da igualdade de oportunidades e ao combate às desigualdades étnicas, inclusive mediante a implementação de incentivos e critérios de condicionamento e prioridade no acesso aos recursos públicos;</h5>
+ <h5>VII - implementação de programas de ação afirmativa destinados ao enfrentamento das desigualdades étnicas no tocante à educação, cultura, esporte e lazer, saúde, segurança, trabalho, moradia, meios de comunicação de massa, financiamentos públicos, acesso à terra, à Justiça, e outros.</h5>
+ <h4>Parágrafo único. Os programas de ação afirmativa constituir-se-ão em políticas públicas destinadas a reparar as distorções e desigualdades sociais e demais práticas discriminatórias adotadas, nas esferas pública e privada, durante o processo de formação social do País.</h4>
+ <h3>Art. 5º Para a consecução dos objetivos desta Lei, é instituído o Sistema Nacional de Promoção da Igualdade Racial (Sinapir), conforme estabelecido no Título III.</h3>
+ <h3>TÍTULO II</h3>
+ <h3>DOS DIREITOS FUNDAMENTAIS</h3>
+ <h2>CAPÍTULO I</h2>
+ <h3>DO DIREITO À SAÚDE</h3>
+ <h3>Art. 6º O direito à saúde da população negra será garantido pelo poder público mediante políticas universais, sociais e econômicas destinadas à redução do risco de doenças e de outros agravos.</h3>
+ <h4>§ 1º O acesso universal e igualitário ao Sistema Único de Saúde (SUS) para promoção, proteção e recuperação da saúde da população negra será de responsabilidade dos órgãos e instituições públicas federais, estaduais, distritais e municipais, da administração direta e indireta.</h4>
+ <h4>§ 2º O poder público garantirá que o segmento da população negra vinculado aos seguros privados de saúde seja tratado sem discriminação.</h4>
+ <h3>Art. 7º O conjunto de ações de saúde voltadas à população negra constitui a Política Nacional de Saúde Integral da População Negra, organizada de acordo com as diretrizes abaixo especificadas:</h3>
+ <h5>I - ampliação e fortalecimento da participação de lideranças dos movimentos sociais em defesa da saúde da população negra nas instâncias de participação e controle social do SUS;</h5>
+ <h5>II - produção de conhecimento científico e tecnológico em saúde da população negra;</h5>
+ <h5>III - desenvolvimento de processos de informação, comunicação e educação para contribuir com a redução das vulnerabilidades da população negra.</h5>
+ <h3>Art. 8º Constituem objetivos da Política Nacional de Saúde Integral da População Negra:</h3>
+ <h5>I - a promoção da saúde integral da população negra, priorizando a redução das desigualdades étnicas e o combate à discriminação nas instituições e serviços do SUS;</h5>
+ <h5>II - a melhoria da qualidade dos sistemas de informação do SUS no que tange à coleta, ao processamento e à análise dos dados desagregados por cor, etnia e gênero;</h5>
+ <h5>III - o fomento à realização de estudos e pesquisas sobre racismo e saúde da população negra;</h5>
+ <h5>IV - a inclusão do conteúdo da saúde da população negra nos processos de formação e educação permanente dos trabalhadores da saúde;</h5>
+ <h5>V - a inclusão da temática saúde da população negra nos processos de formação política das lideranças de movimentos sociais para o exercício da participação e controle social no SUS.</h5>
+ <h4>Parágrafo único. Os moradores das comunidades de remanescentes de quilombos serão beneficiários de incentivos específicos para a garantia do direito à saúde, incluindo melhorias nas condições ambientais, no saneamento básico, na segurança alimentar e nutricional e na atenção integral à saúde.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO DIREITO À EDUCAÇÃO, À CULTURA, AO ESPORTE E AO LAZER</h3>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 9º A população negra tem direito a participar de atividades educacionais, culturais, esportivas e de lazer adequadas a seus interesses e condições, de modo a contribuir para o patrimônio cultural de sua comunidade e da sociedade brasileira.</h3>
+ <h3>Art. 10. Para o cumprimento do disposto no art. 9º , os governos federal, estaduais, distrital e municipais adotarão as seguintes providências:</h3>
+ <h5>I - promoção de ações para viabilizar e ampliar o acesso da população negra ao ensino gratuito e às atividades esportivas e de lazer;</h5>
+ <h5>II - apoio à iniciativa de entidades que mantenham espaço para promoção social e cultural da população negra;</h5>
+ <h5>III - desenvolvimento de campanhas educativas, inclusive nas escolas, para que a solidariedade aos membros da população negra faça parte da cultura de toda a sociedade;</h5>
+ <h5>IV - implementação de políticas públicas para o fortalecimento da juventude negra brasileira.</h5>
+ <p>Seção II</p>
+ <p>Da Educação</p>
+ <h3>Art. 11. Nos estabelecimentos de ensino fundamental e de ensino médio, públicos e privados, é obrigatório o estudo da história geral da África e da história da população negra no Brasil, observado o disposto na Lei Nº 9.394, de 20 de dezembro de 1996 .</h3>
+ <h4>§ 1º Os conteúdos referentes à história da população negra no Brasil serão ministrados no âmbito de todo o currículo escolar, resgatando sua contribuição decisiva para o desenvolvimento social, econômico, político e cultural do País.</h4>
+ <h4>§ 2º O órgão competente do Poder Executivo fomentará a formação inicial e continuada de professores e a elaboração de material didático específico para o cumprimento do disposto no caput deste artigo.</h4>
+ <h4>§ 3º Nas datas comemorativas de caráter cívico, os órgãos responsáveis pela educação incentivarão a participação de intelectuais e representantes do movimento negro para debater com os estudantes suas vivências relativas ao tema em comemoração.</h4>
+ <h3>Art. 12. Os órgãos federais, distritais e estaduais de fomento à pesquisa e à pós-graduação poderão criar incentivos a pesquisas e a programas de estudo voltados para temas referentes às relações étnicas, aos quilombos e às questões pertinentes à população negra.</h3>
+ <h3>Art. 13. O Poder Executivo federal, por meio dos órgãos competentes, incentivará as instituições de ensino superior públicas e privadas, sem prejuízo da legislação em vigor, a:</h3>
+ <h5>I - resguardar os princípios da ética em pesquisa e apoiar grupos, núcleos e centros de pesquisa, nos diversos programas de pós-graduação que desenvolvam temáticas de interesse da população negra;</h5>
+ <h5>II - incorporar nas matrizes curriculares dos cursos de formação de professores temas que incluam valores concernentes à pluralidade étnica e cultural da sociedade brasileira;</h5>
+ <h5>III - desenvolver programas de extensão universitária destinados a aproximar jovens negros de tecnologias avançadas, assegurado o princípio da proporcionalidade de gênero entre os beneficiários;</h5>
+ <h5>IV - estabelecer programas de cooperação técnica, nos estabelecimentos de ensino públicos, privados e comunitários, com as escolas de educação infantil, ensino fundamental, ensino médio e ensino técnico, para a formação docente baseada em princípios de equidade, de tolerância e de respeito às diferenças étnicas.</h5>
+ <h3>Art. 14. O poder público estimulará e apoiará ações socioeducacionais realizadas por entidades do movimento negro que desenvolvam atividades voltadas para a inclusão social, mediante cooperação técnica, intercâmbios, convênios e incentivos, entre outros mecanismos.</h3>
+ <h3>Art. 15. O poder público adotará programas de ação afirmativa.</h3>
+ <h3>Art. 16. O Poder Executivo federal, por meio dos órgãos responsáveis pelas políticas de promoção da igualdade e de educação, acompanhará e avaliará os programas de que trata esta Seção.</h3>
+ <p>Seção III</p>
+ <p>Da Cultura</p>
+ <h3>Art. 17. O poder público garantirá o reconhecimento das sociedades negras, clubes e outras formas de manifestação coletiva da população negra, com trajetória histórica comprovada, como patrimônio histórico e cultural, nos termos dos arts. 215 e 216 da Constituição Federal.</h3>
+ <h3>Art. 18. É assegurado aos remanescentes das comunidades dos quilombos o direito à preservação de seus usos, costumes, tradições e manifestos religiosos, sob a proteção do Estado.</h3>
+ <h4>Parágrafo único. A preservação dos documentos e dos sítios detentores de reminiscências históricas dos antigos quilombos, tombados nos termos do § 5º do art. 216 da Constituição Federal , receberá especial atenção do poder público.</h4>
+ <h3>Art. 19. O poder público incentivará a celebração das personalidades e das datas comemorativas relacionadas à trajetória do samba e de outras manifestações culturais de matriz africana, bem como sua comemoração nas instituições de ensino públicas e privadas.</h3>
+ <h3>Art. 20. O poder público garantirá o registro e a proteção da capoeira, em todas as suas modalidades, como bem de natureza imaterial e de formação da identidade cultural brasileira, nos termos do art. 216 da Constituição Federal.</h3>
+ <h4>Parágrafo único. O poder público buscará garantir, por meio dos atos normativos necessários, a preservação dos elementos formadores tradicionais da capoeira nas suas relações internacionais.</h4>
+ <p>Seção IV</p>
+ <p>Do Esporte e Lazer</p>
+ <h3>Art. 21. O poder público fomentará o pleno acesso da população negra às práticas desportivas, consolidando o esporte e o lazer como direitos sociais.</h3>
+ <h3>Art. 22. A capoeira é reconhecida como desporto de criação nacional, nos termos do art. 217 da Constituição Federal.</h3>
+ <h4>§ 1º A atividade de capoeirista será reconhecida em todas as modalidades em que a capoeira se manifesta, seja como esporte, luta, dança ou música, sendo livre o exercício em todo o território nacional.</h4>
+ <h4>§ 2º É facultado o ensino da capoeira nas instituições públicas e privadas pelos capoeiristas e mestres tradicionais, pública e formalmente reconhecidos.</h4>
+ <h2>CAPÍTULO III</h2>
+ <p>DO DIREITO À LIBERDADE DE CONSCIÊNCIA E DE CRENÇA E AO LIVRE EXERCÍCIO DOS CULTOS RELIGIOSOS</p>
+ <h3>Art. 23. É inviolável a liberdade de consciência e de crença, sendo assegurado o livre exercício dos cultos religiosos e garantida, na forma da lei, a proteção aos locais de culto e a suas liturgias.</h3>
+ <h3>Art. 24. O direito à liberdade de consciência e de crença e ao livre exercício dos cultos religiosos de matriz africana compreende:</h3>
+ <h5>I - a prática de cultos, a celebração de reuniões relacionadas à religiosidade e a fundação e manutenção, por iniciativa privada, de lugares reservados para tais fins;</h5>
+ <h5>II - a celebração de festividades e cerimônias de acordo com preceitos das respectivas religiões;</h5>
+ <h5>III - a fundação e a manutenção, por iniciativa privada, de instituições beneficentes ligadas às respectivas convicções religiosas;</h5>
+ <h5>IV - a produção, a comercialização, a aquisição e o uso de artigos e materiais religiosos adequados aos costumes e às práticas fundadas na respectiva religiosidade, ressalvadas as condutas vedadas por legislação específica;</h5>
+ <h5>V - a produção e a divulgação de publicações relacionadas ao exercício e à difusão das religiões de matriz africana;</h5>
+ <h5>VI - a coleta de contribuições financeiras de pessoas naturais e jurídicas de natureza privada para a manutenção das atividades religiosas e sociais das respectivas religiões;</h5>
+ <h5>VII - o acesso aos órgãos e aos meios de comunicação para divulgação das respectivas religiões;</h5>
+ <h5>VIII - a comunicação ao Ministério Público para abertura de ação penal em face de atitudes e práticas de intolerância religiosa nos meios de comunicação e em quaisquer outros locais.</h5>
+ <h3>Art. 25. É assegurada a assistência religiosa aos praticantes de religiões de matrizes africanas internados em hospitais ou em outras instituições de internação coletiva, inclusive àqueles submetidos a pena privativa de liberdade.</h3>
+ <h3>Art. 26. O poder público adotará as medidas necessárias para o combate à intolerância com as religiões de matrizes africanas e à discriminação de seus seguidores, especialmente com o objetivo de:</h3>
+ <h5>I - coibir a utilização dos meios de comunicação social para a difusão de proposições, imagens ou abordagens que exponham pessoa ou grupo ao ódio ou ao desprezo por motivos fundados na religiosidade de matrizes africanas;</h5>
+ <h5>II - inventariar, restaurar e proteger os documentos, obras e outros bens de valor artístico e cultural, os monumentos, mananciais, flora e sítios arqueológicos vinculados às religiões de matrizes africanas;</h5>
+ <h5>III - assegurar a participação proporcional de representantes das religiões de matrizes africanas, ao lado da representação das demais religiões, em comissões, conselhos, órgãos e outras instâncias de deliberação vinculadas ao poder público.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO ACESSO À TERRA E À MORADIA ADEQUADA</h3>
+ <p>Seção I</p>
+ <p>Do Acesso à Terra</p>
+ <h3>Art. 27. O poder público elaborará e implementará políticas públicas capazes de promover o acesso da população negra à terra e às atividades produtivas no campo.</h3>
+ <h3>Art. 28. Para incentivar o desenvolvimento das atividades produtivas da população negra no campo, o poder público promoverá ações para viabilizar e ampliar o seu acesso ao financiamento agrícola.</h3>
+ <h3>Art. 29. Serão assegurados à população negra a assistência técnica rural, a simplificação do acesso ao crédito agrícola e o fortalecimento da infraestrutura de logística para a comercialização da produção.</h3>
+ <h3>Art. 30. O poder público promoverá a educação e a orientação profissional agrícola para os trabalhadores negros e as comunidades negras rurais.</h3>
+ <h3>Art. 31. Aos remanescentes das comunidades dos quilombos que estejam ocupando suas terras é reconhecida a propriedade definitiva, devendo o Estado emitir-lhes os títulos respectivos.</h3>
+ <h3>Art. 32. O Poder Executivo federal elaborará e desenvolverá políticas públicas especiais voltadas para o desenvolvimento sustentável dos remanescentes das comunidades dos quilombos, respeitando as tradições de proteção ambiental das comunidades.</h3>
+ <h3>Art. 33. Para fins de política agrícola, os remanescentes das comunidades dos quilombos receberão dos órgãos competentes tratamento especial diferenciado, assistência técnica e linhas especiais de financiamento público, destinados à realização de suas atividades produtivas e de infraestrutura.</h3>
+ <h3>Art. 34. Os remanescentes das comunidades dos quilombos se beneficiarão de todas as iniciativas previstas nesta e em outras leis para a promoção da igualdade étnica.</h3>
+ <p>Seção II</p>
+ <p>Da Moradia</p>
+ <h3>Art. 35. O poder público garantirá a implementação de políticas públicas para assegurar o direito à moradia adequada da população negra que vive em favelas, cortiços, áreas urbanas subutilizadas, degradadas ou em processo de degradação, a fim de reintegrá-las à dinâmica urbana e promover melhorias no ambiente e na qualidade de vida.</h3>
+ <h4>Parágrafo único. O direito à moradia adequada, para os efeitos desta Lei, inclui não apenas o provimento habitacional, mas também a garantia da infraestrutura urbana e dos equipamentos comunitários associados à função habitacional, bem como a assistência técnica e jurídica para a construção, a reforma ou a regularização fundiária da habitação em área urbana.</h4>
+ <h3>Art. 36. Os programas, projetos e outras ações governamentais realizadas no âmbito do Sistema Nacional de Habitação de Interesse Social (SNHIS), regulado pela Lei Nº 11.124, de 16 de junho de 2005 , devem considerar as peculiaridades sociais, econômicas e culturais da população negra.</h3>
+ <h4>Parágrafo único. Os Estados, o Distrito Federal e os Municípios estimularão e facilitarão a participação de organizações e movimentos representativos da população negra na composição dos conselhos constituídos para fins de aplicação do Fundo Nacional de Habitação de Interesse Social (FNHIS).</h4>
+ <h3>Art. 37. Os agentes financeiros, públicos ou privados, promoverão ações para viabilizar o acesso da população negra aos financiamentos habitacionais.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO TRABALHO</h3>
+ <h3>Art. 38. A implementação de políticas voltadas para a inclusão da população negra no mercado de trabalho será de responsabilidade do poder público, observando-se:</h3>
+ <h5>I - o instituído neste Estatuto;</h5>
+ <h5>II - os compromissos assumidos pelo Brasil ao ratificar a Convenção Internacional sobre a Eliminação de Todas as Formas de Discriminação Racial, de 1965;</h5>
+ <h5>III - os compromissos assumidos pelo Brasil ao ratificar a Convenção Nº 111, de 1958, da Organização Internacional do Trabalho (OIT), que trata da discriminação no emprego e na profissão;</h5>
+ <h5>IV - os demais compromissos formalmente assumidos pelo Brasil perante a comunidade internacional.</h5>
+ <h3>Art. 39. O poder público promoverá ações que assegurem a igualdade de oportunidades no mercado de trabalho para a população negra, inclusive mediante a implementação de medidas visando à promoção da igualdade nas contratações do setor público e o incentivo à adoção de medidas similares nas empresas e organizações privadas.</h3>
+ <h4>§ 1º A igualdade de oportunidades será lograda mediante a adoção de políticas e programas de formação profissional, de emprego e de geração de renda voltados para a população negra.</h4>
+ <h4>§ 2º As ações visando a promover a igualdade de oportunidades na esfera da administração pública far-se-ão por meio de normas estabelecidas ou a serem estabelecidas em legislação específica e em seus regulamentos.</h4>
+ <h4>§ 3º O poder público estimulará, por meio de incentivos, a adoção de iguais medidas pelo setor privado.</h4>
+ <h4>§ 4º As ações de que trata o caput deste artigo assegurarão o princípio da proporcionalidade de gênero entre os beneficiários.</h4>
+ <h4>§ 5º Será assegurado o acesso ao crédito para a pequena produção, nos meios rural e urbano, com ações afirmativas para mulheres negras.</h4>
+ <h4>§ 6º O poder público promoverá campanhas de sensibilização contra a marginalização da mulher negra no trabalho artístico e cultural.</h4>
+ <h4>§ 7º O poder público promoverá ações com o objetivo de elevar a escolaridade e a qualificação profissional nos setores da economia que contem com alto índice de ocupação por trabalhadores negros de baixa escolarização.</h4>
+ <h4>§ 8º Os registros administrativos direcionados a órgãos e entidades da Administração Pública, a empregadores privados e a trabalhadores que lhes sejam subordinados conterão campos destinados a identificar o segmento étnico e racial a que pertence o trabalhador retratado no respectivo documento, com utilização do critério da autoclassificação em grupos previamente delimitados. (Incluído pela Lei nº 14.553, de 2023)</h4>
+ <h4>§ 9º Sem prejuízo de extensão obrigatória a outros documentos ou registros de mesma natureza identificados em regulamento, aplica-se o disposto no § 8º deste artigo a: (Incluído pela Lei nº 14.553, de 2023)</h4>
+ <h5>I - formulários de admissão e demissão no emprego; (Incluído pela Lei nº 14.553, de 2023)</h5>
+ <h5>II - formulários de acidente de trabalho; (Incluído pela Lei nº 14.553, de 2023)</h5>
+ <h5>III - instrumentos de registro do Sistema Nacional de Emprego (Sine), ou de estrutura que venha a suceder-lhe em suas finalidades; (Incluído pela Lei nº 14.553, de 2023)</h5>
+ <h5>IV - Relação Anual de Informações Sociais (Rais), ou outro documento criado posteriormente com conteúdo e propósitos a ela assemelhados; (Incluído pela Lei nº 14.553, de 2023)</h5>
+ <h5>V - documentos, inclusive os disponibilizados em meio eletrônico, destinados à inscrição de segurados e dependentes no Regime Geral de Previdência Social; (Incluído pela Lei nº 14.553, de 2023)</h5>
+ <h5>VI - questionários de pesquisas levadas a termo pela Fundação Instituto Brasileiro de Geografia e Estatística (IBGE), ou por órgão ou entidade posteriormente incumbida das atribuições imputadas a essa autarquia. (Incluído pela Lei nº 14.553, de 2023)</h5>
+ <h3>Art. 40. O Conselho Deliberativo do Fundo de Amparo ao Trabalhador (Codefat) formulará políticas, programas e projetos voltados para a inclusão da população negra no mercado de trabalho e orientará a destinação de recursos para seu financiamento.</h3>
+ <h3>Art. 41. As ações de emprego e renda, promovidas por meio de financiamento para constituição e ampliação de pequenas e médias empresas e de programas de geração de renda, contemplarão o estímulo à promoção de empresários negros.</h3>
+ <h4>Parágrafo único. O poder público estimulará as atividades voltadas ao turismo étnico com enfoque nos locais, monumentos e cidades que retratem a cultura, os usos e os costumes da população negra.</h4>
+ <h3>Art. 42. O Poder Executivo federal poderá implementar critérios para provimento de cargos em comissão e funções de confiança destinados a ampliar a participação de negros, buscando reproduzir a estrutura da distribuição étnica nacional ou, quando for o caso, estadual, observados os dados demográficos oficiais.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DOS MEIOS DE COMUNICAÇÃO</h3>
+ <h3>Art. 43. A produção veiculada pelos órgãos de comunicação valorizará a herança cultural e a participação da população negra na história do País.</h3>
+ <h3>Art. 44. Na produção de filmes e programas destinados à veiculação pelas emissoras de televisão e em salas cinematográficas, deverá ser adotada a prática de conferir oportunidades de emprego para atores, figurantes e técnicos negros, sendo vedada toda e qualquer discriminação de natureza política, ideológica, étnica ou artística.</h3>
+ <h4>Parágrafo único. A exigência disposta no caput não se aplica aos filmes e programas que abordem especificidades de grupos étnicos determinados.</h4>
+ <h3>Art. 45. Aplica-se à produção de peças publicitárias destinadas à veiculação pelas emissoras de televisão e em salas cinematográficas o disposto no art. 44.</h3>
+ <h3>Art. 46. Os órgãos e entidades da administração pública federal direta, autárquica ou fundacional, as empresas públicas e as sociedades de economia mista federais deverão incluir cláusulas de participação de artistas negros nos contratos de realização de filmes, programas ou quaisquer outras peças de caráter publicitário.</h3>
+ <h4>§ 1º Os órgãos e entidades de que trata este artigo incluirão, nas especificações para contratação de serviços de consultoria, conceituação, produção e realização de filmes, programas ou peças publicitárias, a obrigatoriedade da prática de iguais oportunidades de emprego para as pessoas relacionadas com o projeto ou serviço contratado.</h4>
+ <h4>§ 2º Entende-se por prática de iguais oportunidades de emprego o conjunto de medidas sistemáticas executadas com a finalidade de garantir a diversidade étnica, de sexo e de idade na equipe vinculada ao projeto ou serviço contratado.</h4>
+ <h4>§ 3º A autoridade contratante poderá, se considerar necessário para garantir a prática de iguais oportunidades de emprego, requerer auditoria por órgão do poder público federal.</h4>
+ <h4>§ 4º A exigência disposta no caput não se aplica às produções publicitárias quando abordarem especificidades de grupos étnicos determinados.</h4>
+ <h3>TÍTULO III</h3>
+ <p>Do Sistema NACIONAL DE PROMOÇÃO DA IGUALDADE RACIAL</p>
+ <h3>(SINAPIR)</h3>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÃO PRELIMINAR</h3>
+ <h3>Art. 47. É instituído o Sistema Nacional de Promoção da Igualdade Racial (Sinapir) como forma de organização e de articulação voltadas à implementação do conjunto de políticas e serviços destinados a superar as desigualdades étnicas existentes no País, prestados pelo poder público federal.</h3>
+ <h4>§ 1º Os Estados, o Distrito Federal e os Municípios poderão participar do Sinapir mediante adesão.</h4>
+ <h4>§ 2º O poder público federal incentivará a sociedade e a iniciativa privada a participar do Sinapir.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS OBJETIVOS</h3>
+ <h3>Art. 48. São objetivos do Sinapir:</h3>
+ <h5>I - promover a igualdade étnica e o combate às desigualdades sociais resultantes do racismo, inclusive mediante adoção de ações afirmativas;</h5>
+ <h5>II - formular políticas destinadas a combater os fatores de marginalização e a promover a integração social da população negra;</h5>
+ <h5>III - descentralizar a implementação de ações afirmativas pelos governos estaduais, distrital e municipais;</h5>
+ <h5>IV - articular planos, ações e mecanismos voltados à promoção da igualdade étnica;</h5>
+ <h5>V - garantir a eficácia dos meios e dos instrumentos criados para a implementação das ações afirmativas e o cumprimento das metas a serem estabelecidas.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA ORGANIZAÇÃO E COMPETÊNCIA</h3>
+ <h3>Art. 49. O Poder Executivo federal elaborará plano nacional de promoção da igualdade racial contendo as metas, princípios e diretrizes para a implementação da Política Nacional de Promoção da Igualdade Racial (PNPIR).</h3>
+ <h4>§ 1º A elaboração, implementação, coordenação, avaliação e acompanhamento da PNPIR, bem como a organização, articulação e coordenação do Sinapir, serão efetivados pelo órgão responsável pela política de promoção da igualdade étnica em âmbito nacional. (Vide Lei nº 12.990, de 2014)</h4>
+ <h4>§ 2º É o Poder Executivo federal autorizado a instituir fórum intergovernamental de promoção da igualdade étnica, a ser coordenado pelo órgão responsável pelas políticas de promoção da igualdade étnica, com o objetivo de implementar estratégias que visem à incorporação da política nacional de promoção da igualdade étnica nas ações governamentais de Estados e Municípios.</h4>
+ <h4>§ 3º As diretrizes das políticas nacional e regional de promoção da igualdade étnica serão elaboradas por órgão colegiado que assegure a participação da sociedade civil.</h4>
+ <h4>§ 4º A Fundação Instituto Brasileiro de Geografia e Estatística (IBGE) realizará, a cada 5 (cinco) anos, pesquisa destinada a identificar o percentual de ocupação por parte de segmentos étnicos e raciais no âmbito do setor público, a fim de obter subsídios direcionados à implementação da PNPIR. (Incluído pela Lei nº 14.553, de 2023)</h4>
+ <h3>Art. 50. Os Poderes Executivos estaduais, distrital e municipais, no âmbito das respectivas esferas de competência, poderão instituir conselhos de promoção da igualdade étnica, de caráter permanente e consultivo, compostos por igual número de representantes de órgãos e entidades públicas e de organizações da sociedade civil representativas da população negra.</h3>
+ <h4>Parágrafo único. O Poder Executivo priorizará o repasse dos recursos referentes aos programas e atividades previstos nesta Lei aos Estados, Distrito Federal e Municípios que tenham criado conselhos de promoção da igualdade étnica.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Ouvidorias Permanentes E DO ACESSO À JUSTIÇA E À SEGURANÇA</p>
+ <h3>Art. 51. O poder público federal instituirá, na forma da lei e no âmbito dos Poderes Legislativo e Executivo, Ouvidorias Permanentes em Defesa da Igualdade Racial, para receber e encaminhar denúncias de preconceito e discriminação com base em etnia ou cor e acompanhar a implementação de medidas para a promoção da igualdade.</h3>
+ <h3>Art. 52. É assegurado às vítimas de discriminação étnica o acesso aos órgãos de Ouvidoria Permanente, à Defensoria Pública, ao Ministério Público e ao Poder Judiciário, em todas as suas instâncias, para a garantia do cumprimento de seus direitos.</h3>
+ <h4>Parágrafo único. O Estado assegurará atenção às mulheres negras em situação de violência, garantida a assistência física, psíquica, social e jurídica.</h4>
+ <h3>Art. 53. O Estado adotará medidas especiais para coibir a violência policial incidente sobre a população negra.</h3>
+ <h4>Parágrafo único. O Estado implementará ações de ressocialização e proteção da juventude negra em conflito com a lei e exposta a experiências de exclusão social.</h4>
+ <h3>Art. 54. O Estado adotará medidas para coibir atos de discriminação e preconceito praticados por servidores públicos em detrimento da população negra, observado, no que couber, o disposto na Lei Nº 7.716, de 5 de janeiro de 1989.</h3>
+ <h3>Art. 55. Para a apreciação judicial das lesões e das ameaças de lesão aos interesses da população negra decorrentes de situações de desigualdade étnica, recorrer-se-á, entre outros instrumentos, à ação civil pública, disciplinada na Lei Nº 7.347, de 24 de julho de 1985.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO FINANCIAMENTO DAS INICIATIVAS DE PROMOÇÃO DA IGUALDADE RACIAL</h3>
+ <h3>Art. 56. Na implementação dos programas e das ações constantes dos planos plurianuais e dos orçamentos anuais da União, deverão ser observadas as políticas de ação afirmativa a que se refere o inciso VII do art. 4º desta Lei e outras políticas públicas que tenham como objetivo promover a igualdade de oportunidades e a inclusão social da população negra, especialmente no que tange a:</h3>
+ <h5>I - promoção da igualdade de oportunidades em educação, emprego e moradia;</h5>
+ <h5>II - financiamento de pesquisas, nas áreas de educação, saúde e emprego, voltadas para a melhoria da qualidade de vida da população negra;</h5>
+ <h5>III - incentivo à criação de programas e veículos de comunicação destinados à divulgação de matérias relacionadas aos interesses da população negra;</h5>
+ <h5>IV - incentivo à criação e à manutenção de microempresas administradas por pessoas autodeclaradas negras;</h5>
+ <h5>V - iniciativas que incrementem o acesso e a permanência das pessoas negras na educação fundamental, média, técnica e superior;</h5>
+ <h5>VI - apoio a programas e projetos dos governos estaduais, distrital e municipais e de entidades da sociedade civil voltados para a promoção da igualdade de oportunidades para a população negra;</h5>
+ <h5>VII - apoio a iniciativas em defesa da cultura, da memória e das tradições africanas e brasileiras.</h5>
+ <h4>§ 1º O Poder Executivo federal é autorizado a adotar medidas que garantam, em cada exercício, a transparência na alocação e na execução dos recursos necessários ao financiamento das ações previstas neste Estatuto, explicitando, entre outros, a proporção dos recursos orçamentários destinados aos programas de promoção da igualdade, especialmente nas áreas de educação, saúde, emprego e renda, desenvolvimento agrário, habitação popular, desenvolvimento regional, cultura, esporte e lazer.</h4>
+ <h4>§ 2º Durante os 5 (cinco) primeiros anos, a contar do exercício subsequente à publicação deste Estatuto, os órgãos do Poder Executivo federal que desenvolvem políticas e programas nas áreas referidas no § 1º deste artigo discriminarão em seus orçamentos anuais a participação nos programas de ação afirmativa referidos no inciso VII do art. 4º desta Lei.</h4>
+ <h4>§ 3º O Poder Executivo é autorizado a adotar as medidas necessárias para a adequada implementação do disposto neste artigo, podendo estabelecer patamares de participação crescente dos programas de ação afirmativa nos orçamentos anuais a que se refere o § 2º deste artigo.</h4>
+ <h4>§ 4º O órgão colegiado do Poder Executivo federal responsável pela promoção da igualdade racial acompanhará e avaliará a programação das ações referidas neste artigo nas propostas orçamentárias da União.</h4>
+ <h3>Art. 57. Sem prejuízo da destinação de recursos ordinários, poderão ser consignados nos orçamentos fiscal e da seguridade social para financiamento das ações de que trata o art. 56:</h3>
+ <h5>I - transferências voluntárias dos Estados, do Distrito Federal e dos Municípios;</h5>
+ <h5>II - doações voluntárias de particulares;</h5>
+ <h5>III - doações de empresas privadas e organizações não governamentais, nacionais ou internacionais;</h5>
+ <h5>IV - doações voluntárias de fundos nacionais ou internacionais;</h5>
+ <h5>V - doações de Estados estrangeiros, por meio de convênios, tratados e acordos internacionais.</h5>
+ <h3>TÍTULO IV</h3>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 58. As medidas instituídas nesta Lei não excluem outras em prol da população negra que tenham sido ou venham a ser adotadas no âmbito da União, dos Estados, do Distrito Federal ou dos Municípios.</h3>
+ <h3>Art. 59. O Poder Executivo federal criará instrumentos para aferir a eficácia social das medidas previstas nesta Lei e efetuará seu monitoramento constante, com a emissão e a divulgação de relatórios periódicos, inclusive pela rede mundial de computadores.</h3>
+ <h3>Art. 60. Os arts. 3º e 4º da Lei nº 7.716, de 1989 , passam a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 3º ........................................................................</h3>
+ <h4>Parágrafo único. Incorre na mesma pena quem, por motivo de discriminação de raça, cor, etnia, religião ou procedência nacional, obstar a promoção funcional.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 4º ........................................................................</h3>
+ <h4>§ 1º Incorre na mesma pena quem, por motivo de discriminação de raça ou de cor ou práticas resultantes do preconceito de descendência ou origem nacional ou étnica:</h4>
+ <h5>I - deixar de conceder os equipamentos necessários ao empregado em igualdade de condições com os demais trabalhadores;</h5>
+ <h5>II - impedir a ascensão funcional do empregado ou obstar outra forma de benefício profissional;</h5>
+ <h5>III - proporcionar ao empregado tratamento diferenciado no ambiente de trabalho, especialmente quanto ao salário.</h5>
+ <h4>§ 2º Ficará sujeito às penas de multa e de prestação de serviços à comunidade, incluindo atividades de promoção da igualdade racial, quem, em anúncios ou qualquer outra forma de recrutamento de trabalhadores, exigir aspectos de aparência próprios de raça ou etnia para emprego cujas atividades não justifiquem essas exigências.” (NR)</h4>
+ <h3>Art. 61. Os arts. 3º e 4º da Lei nº 9.029, de 13 de abril de 1995 , passam a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 3º Sem prejuízo do prescrito no art. 2º e nos dispositivos legais que tipificam os crimes resultantes de preconceito de etnia, raça ou cor, as infrações do disposto nesta Lei são passíveis das seguintes cominações:</h3>
+ <p>...................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 4º O rompimento da relação de trabalho por ato discriminatório, nos moldes desta Lei, além do direito à reparação pelo dano moral, faculta ao empregado optar entre:</h3>
+ <p>...................................................................................” (NR)</p>
+ <h3>Art. 62. O art. 13 da Lei no 7.347, de 1985 , passa a vigorar acrescido do seguinte § 2º , renumerando-se o atual parágrafo único como § 1º :</h3>
+ <p>“</p>
+ <h3>Art. 13. ........................................................................</h3>
+ <h4>§ 1º ...............................................................................</h4>
+ <h4>§ 2º Havendo acordo ou condenação com fundamento em dano causado por ato de discriminação étnica nos termos do disposto no art. 1º desta Lei, a prestação em dinheiro reverterá diretamente ao fundo de que trata o caput e será utilizada para ações de promoção da igualdade étnica, conforme definição do Conselho Nacional de Promoção da Igualdade Racial, na hipótese de extensão nacional, ou dos Conselhos de Promoção de Igualdade Racial estaduais ou locais, nas hipóteses de danos com extensão regional ou local, respectivamente.” (NR)</h4>
+ <h3>Art. 63. O § 1º do art. 1º da Lei nº 10.778, de 24 de novembro de 2003 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 1º .......................................................................</h3>
+ <h4>§ 1º Para os efeitos desta Lei, entende-se por violência contra a mulher qualquer ação ou conduta, baseada no gênero, inclusive decorrente de discriminação ou desigualdade étnica, que cause morte, dano ou sofrimento físico, sexual ou psicológico à mulher, tanto no âmbito público quanto no privado.</h4>
+ <p>...................................................................................” (NR)</p>
+ <h3>Art. 64. O § 3º do art. 20 da Lei nº 7.716, de 1989 , passa a vigorar acrescido do seguinte inciso III:</h3>
+ <p>“</p>
+ <h3>Art. 20. ......................................................................</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 3º ...............................................................................</h4>
+ <p>.............................................................................................</p>
+ <h5>III - a interdição das respectivas mensagens ou páginas de informação na rede mundial de computadores.</h5>
+ <p>...................................................................................” (NR)</p>
+ <h3>Art. 65. Esta Lei entra em vigor 90 (noventa) dias após a data de sua publicação.</h3>
+ <p>Brasília, 20 de julho de 2010; 189º da Independência e 122º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Eloi Ferreira de Araújo</p>
+ <p>Este texto não substitui o publicado no DOU de 21.7.2010</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Decreto nº 8.136, de 2013) | Institui o Estatuto da Igualdade Racial; altera as Leis nos7.716, de 5 de janeiro de 1989, 9.029, de 13 de abril de 1995, 7.347, de 24 de julho de 1985,e10.778, de 24 de novembro de 2003.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 8.167, DE 16 DE JANEIRO DE 1991 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1991" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 8.167, DE 16 DE JANEIRO DE 1991</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:47:07 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L8167compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 31.046 caracteres | espelho: 31.237 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 8.167, DE 16 DE JANEIRO DE 1991 . Regulamento</p>
+ <p>(Vide 	Decreto nº 1.733, de 1995)</p>
+ <p>(Vide 	Decreto nº 2.259, de 1997)</p>
+ <p>(Vide 	MPV nº 1.602, de 1997)</p>
+ <p>Altera a legislação do imposto sobre a renda relativa a incentivos fiscais, estabelece novas condições operacionais dos Fundos de Investimentos Regionais e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o Congresso Nacional decreta e eu sanciono a seguinte lei:</p>
+ <h3>Art. 1º A partir do exercício financeiro de 1991, correspondente ao período-base de 1990, fica restabelecida a faculdade da pessoa jurídica optar pela aplicação de parcelas do imposto de renda devido:</h3>
+ <h5>I - (Revogado pela MPV, nº 2.156-5, de 24.8.2001)</h5>
+ <h5>II - em depósito para reinvestimento, de que tratam os arts. 23 da Lei nº 5.508, de 11 de outubro de 1968 , e 29 do Decreto-Lei nº 756, de 11 de agosto de 1969 , e alterações posteriores. (Vide Lei nº 9.532, de 1997)</h5>
+ <h3>Art. 2º São mantidos até dezembro de 2017 os prazos e os percentuais para destinação dos recursos de que tratam o art. 5º do Decreto-Lei Nº 1.106, de 16 de junho de 1970 , e o art. 6º do Decreto-Lei Nº 1.179, de 6 de julho de 1971 , para aplicação em projetos relevantes para o desenvolvimento da Amazônia e do Nordeste, sob a responsabilidade do Ministério da Integração Nacional. (Redação dada pela Lei nº 12.995, de 2014)</h3>
+ <h4>Parágrafo único. Enquanto não promulgadas as leis atinentes aos planos regionais, de que trata o caput deste artigo, os recursos serão aplicados em programas e projetos considerados prioritários pelo Conselho Deliberativo da respectiva Superintendência de Desenvolvimento Regional, em estreita conformidade com as diretrizes aprovadas pelo Presidente da República.</h4>
+ <h3>Art. 3º A pessoa jurídica que optar pela dedução prevista no art. 1º recolherá nas agências bancárias arrecadadoras de tributos federais, mediante Darf específico, o valor correspondente a cada parcela ou ao total do desconto. Vide Decreto nº 1.733, de 1995</h3>
+ <p>Vide Decreto nº 2.259, de 1997</p>
+ <h4>§ 1º O Departamento do Tesouro Nacional autorizará a transferência dos recursos ao banco operador no prazo de quinze dias de seu recolhimento, para crédito ao fundo correspondente, à ordem da respectiva Superintendência de Desenvolvimento Regional.</h4>
+ <h4>§ 2º Após decorrido o prazo de que trata o parágrafo anterior, os recursos serão transferidos aos respectivos fundos devidamente corrigidos pela variação do Bônus do Tesouro Nacional Fiscal.</h4>
+ <h4>§ 3º Os valores das deduções do Imposto de Renda, expressos na respectiva declaração, serão recolhidos pelo contribuinte devidamente corrigidos pelo mesmo índice de atualização aplicado ao valor do Imposto de Renda, de acordo com a sistemática estabelecida para o recolhimento desse tributo.</h4>
+ <h4>§ 4º O recolhimento das parcelas correspondentes ao incentivo fiscal ficará condicionado ao pagamento da parcela do Imposto de Renda.</h4>
+ <h3>Art. 4º As importância repassadas pelo Departamento do Tesouro Nacional, decorrentes das opções por incentivo fiscal, de que trata o art. 1º, inciso I, e outros recursos dos Fundos de Investimentos, enquanto não aplicados, serão atualizados monetariamente pelos bancos operadores, referidos no Decreto-Lei nº 1.376, de 12 de dezembro de 1974 , segundo a variação do Bônus do Tesouro Nacional Fiscal (BTNF).</h3>
+ <h4>Parágrafo único. O resultado da variação monetária constitui recursos dos aludidos fundos.</h4>
+ <h3>Art. 5º Os Fundos de Investimentos aplicarão os seus recursos, a partir de 24 de agosto de 2000, sob a forma de subscrição de debêntures conversíveis em ações, de emissão das empresas beneficiárias, observando-se que a conversão somente ocorrerá: (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h3>
+ <h5>I - após o projeto ter iniciado a sua fase de operação atestada pela Superintendência de Desenvolvimento Regional respectiva;</h5>
+ <h5>II - em ações ordinárias ou preferenciais, observada a legislação das sociedades por ações. ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h4>§ 1º A partir de 1º de setembro de 2000, só haverá aprovação de projeto que tenha comprovada viabilidade econômico-financeira, atestada por estudos atualizados, e que esteja devidamente enquadrado nas diretrizes e prioridades aprovadas pelo Conselho Deliberativo respectivo, ficando a emissão das debêntures condicionada a adequada constituição das garantias previstas no § 4º deste artigo. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 2º Os Bancos Operadores ficam responsáveis pela conversão de que trata o caput , a qual deverá efetivar-se, integralmente, no prazo de um ano a contar da data de emissão do Certificado de Empreendimento Implantado (CEI), nos termos do § 12 deste artigo, não admitida a colocação secundária das debêntures. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 3º Vencido o prazo estabelecido para conversão, nos termos do § 2º , permanecerá a obrigação de resgate das debêntures, no respectivo vencimento, a ser realizada pela empresa emissora. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 4º As debêntures a serem subscritas com os recursos dos Fundos deverão ter garantia real ou flutuante, cumulativamente ou não, admitida, em relação à primeira, sua constituição em concorrência com outros créditos, a critério do Banco Operador, além de fiança prestada pelos acionistas controladores. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 5º Na hipótese de debêntures com garantia flutuante, a empresa emissora deverá assumir, na escritura de emissão, a obrigação de não alienar ou onerar bem imóvel ou outro bem sujeito a registro de propriedade que faça parte do projeto, sem a prévia e expressa autorização do Ministério da Integração Nacional, o que deverá ser averbado no competente registro. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 6º A escritura de emissão de debêntures far-se-á por instrumento público ou particular. ( Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 7º Não se aplica às debêntures de que trata esta Lei, o disposto no § 1º do art. 57, a rt. 66 e art. 70 da Lei no 6.404, de 15 de dezembro de 1976 (Lei das Sociedades por Ações). (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 8º Os limites máximos e mínimos para os prazos de carência, amortização e vencimento e demais condições das debêntures emitidas com base no disposto neste artigo serão estabelecidos pelo Ministério da Integração Nacional, levando em consideração as peculiaridades setoriais e locais dos empreendimentos a serem incentivados. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 9º A remuneração das debêntures emitidas com base no disposto nesta Lei será estabelecida, conforme a legislação em vigor, pelo Conselho Monetário Nacional, por si ou seus mandatários, utilizando-se como referência os encargos financeiros dos financiamentos concedidos com recursos dos Fundos Constitucionais de Financiamento do Norte, Nordeste e Centro-Oeste. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 10. Os contratos referentes aos projetos a serem beneficiados com recursos dos incentivos dos Fundos de Investimentos do Nordeste e da Amazônia conterão cláusula prevendo que os encargos financeiros estabelecidos como remuneração das debêntures a que se refere esta Lei serão revistos anualmente e sempre que a Taxa de Juros de Longo Prazo - TJLP apresentar variação acumulada, para mais ou para menos, superior a trinta por cento. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 11. A revisão de que trata o § 10 será efetuada no mês de janeiro de cada ano, podendo ocorrer a qualquer tempo, sempre que a variação acumulada da TJLP, para mais ou para menos, a contar do mês de janeiro do ano 2001 ou da data da última revisão, atinja percentual superior a trinta por cento. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 12. O certificado de implantação a que se refere o caput do art. 19 do Decreto-Lei Nº 1.376, de 12 de dezembro de 1974 , passa a se denominar Certificado de Empreendimento Implantado (CEI), preservando-se todos os direitos e deveres derivados de ações e eventos administrados sob a denominação agora alterada. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h3>Art. 6º Os fundos de investimentos ficam autorizados a subscrever as sobras de valores mobiliários emitidos por companhias abertas, vinculadas a projeto aprovado, obedecidas as normas da legislação em vigor sobre a matéria e respeitado o limite de desembolso de recursos pelos fundos.</h3>
+ <h3>Art. 7º Para efeito de avaliação, os títulos integrantes da carteira dos Fundos de Investimentos serão computados:</h3>
+ <h5>I - pela cotação média do último dia em que foram negociados, na hipótese de ações cotadas em bolsa;</h5>
+ <h5>II - pelo valor patrimonial, com base no balanço da empresa do último exercício; ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h5>III - pelo valor atualizado, acrescido dos juros decorridos, na hipótese de debêntures.</h5>
+ <h4>Parágrafo único. Deverão ser constituídas provisões adequadas, a fim de ajustar o valor de avaliação constantes das carteiras dos fundos ao valor provável de realização desses investimentos, com base em parecer técnico elaborado pelos bancos operadores, e ouvida a Superintendência de Desenvolvimento Regional respectiva.</h4>
+ <h3>Art. 8º Os Certificados de Investimentos poderão ser convertidos, mediante leilões especiais realizados nas bolsas de valores, em títulos pertencentes às carteiras dos fundos, de acordo com suas respectivas cotações.</h3>
+ <h4>§ 1º Caberá à Comissão de Valores Mobiliários, ouvidos as agências de desenvolvimento regional e os bancos operadores, fixar as condições e os sistemas de:</h4>
+ <h5>I - conversão de que trata este artigo; e</h5>
+ <h5>II - negociação dos certificados de investimentos em bolsas de valores.</h5>
+ <h4>§ 2º Os bancos operadores poderão estipular pagamento em moeda corrente de parcela do preço dos títulos ofertados nos leilões especiais.</h4>
+ <h4>§ 3º Os Certificados de Investimentos referidos neste artigo poderão ser escriturais, mantidos em conta de depósito junto aos bancos operadores.</h4>
+ <h3>Art. 9º As Agências de Desenvolvimento Regional e os Bancos Operadores assegurarão às pessoas jurídicas ou grupos de empresas coligadas que, isolada ou conjuntamente, detenham pelo menos cinqüenta e um por cento do capital votante de sociedade titular de empreendimento de setor da economia considerado, pelo Poder Executivo, prioritário para o desenvolvimento regional, a aplicação, nesse empreendimento, de recursos equivalentes a setenta por cento do valor das opções de que trata o art. 1º , inciso I. (Redação dada pela Medida Provisória nº 2.199-14, de 2001) Vide Decreto nº 2.259, de 1997</h3>
+ <h4>§ 1º Na hipótese de que trata este artigo, serão obedecidos os limites de incentivos fiscais constantes do esquema financeiro aprovado para o projeto, o qual, além de ajustado ao orçamento anual dos Fundos, não incluirá qualquer parcela de recursos para aplicação na conformidade do art. 5º desta Lei. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 2º Nos casos de participação conjunta, será obedecido o limite mínimo de vinte por cento do capital votante para cada pessoa jurídica ou grupo de empresas coligadas, a ser integralizado com recursos próprios. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 3º O limite mínimo de que trata o parágrafo anterior será exigido para as opções que forem realizadas a partir do exercício seguinte ao da entrada em vigor desta lei.</h4>
+ <h4>§ 4º Relativamente aos projetos de infra-estrutura, conforme definição constante do caput do art. 1º da Lei Nº 9.808, de 20 de julho de 1999 , bem como aos considerados estruturadores para o desenvolvimento regional, assim definidos pelo Poder Executivo, tomando como base os planos estaduais e regionais de desenvolvimento, o limite de que trata o § 2º deste artigo será de cinco por cento. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 5º O disposto no § 1º do art. 1º da Lei nº 9.808, de 1999 , será realizado somente na forma deste artigo ou, excepcionalmente, em composição com recursos do art. 5º desta Lei, mediante subscrição de debêntures conversíveis em ações, a critério do Ministério da Integração Nacional. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 6º Excepcionalmente, apenas para os casos de empresas titulares dos projetos constituídas na forma de companhias abertas, serão mantidas as regras vigentes no inciso II do § 2º do art. 1º da Lei nº 9.808, de 1999 . (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 7º Consideram-se empresas coligadas, para fins do disposto neste artigo, aquelas cuja maioria do capital votante seja controlada, direta ou indiretamente, pela mesma pessoa física ou jurídica, compreendida também, esta última, como integrante do grupo. (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 8º Os investidores que se enquadrarem na hipótese deste artigo deverão comprovar capacidade de aportar os recursos necessários à implantação do projeto, descontadas as participações em outros projetos na área de atuação das extintas SUDENE e SUDAM, cujos pleitos de transferência do controle acionário serão submetidos ao Ministério da Integração Nacional, salvo nos casos de participação conjunta minoritária, quando observada qualquer das condições previstas no § 9º . (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 9º A aplicação dos recursos das pessoas jurídicas ou grupos de empresas coligadas que se enquadrarem na hipótese deste artigo será realizada: (Redação dada pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h5>I - quando o controle acionário ocorrer de forma isolada, sob a modalidade de ações ordinárias ou preferenciais, observadas as normas das sociedades por ações; e (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h5>II - nos casos de participação conjunta minoritária, sob a modalidade de ações ou debêntures conversíveis em ações. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h4>§ 10. O Ministério da Integração Nacional poderá, excepcionalmente, autorizar o ingresso de novo acionista com a participação mínima exigida nos §§ 2º , 4º e 6º , deduzidos os compromissos assumidos em outros projetos já aprovados pelas extintas SUDENE e SUDAM, com o objetivo de aplicação do incentivo na forma estabelecida neste artigo, desde que a nova participação acionária minoritária venha a garantir os recursos de incentivos anteriormente previstos, em substituição às deduções de pessoa jurídica ou grupo de empresas coligadas que: (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h5>I - esteja em processo de concordata, falência ou liquidação; ou (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h5>II - não tenha apresentado, nas declarações de imposto sobre a renda dos dois últimos exercícios, capacidade de geração de incentivo compatível com os compromissos assumidos por ocasião da aprovação do projeto, com base em parecer técnico da Secretaria-Executiva da respectiva Superintendência de Desenvolvimento Regional extinta. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h4>§ 11. Nas hipóteses de fusão, incorporação ou cisão de pessoa jurídica titular de participação acionária, o direito à utilização do incentivo, na forma estabelecida neste artigo, será automaticamente transferido à pessoa jurídica sucessora, que deverá manter o percentual de que tratam os §§ 2º , 4º e 6º deste artigo. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 12. Os recursos deduzidos do imposto sobre a renda para aplicação em projeto próprio, conforme estabelecido neste artigo, deverão ser aplicados até 31 de dezembro do segundo ano subseqüente ao ano-calendário a que corresponder a opção, sob pena de reversão ao Fundo respectivo com a correspondente emissão de quotas em favor do optante. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 13. O prazo de que trata o § 12 poderá ser prorrogado, a critério do Ministério da Integração Nacional, quando a aplicação dos recursos estiver pendente de decisão judicial ou administrativa. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h4>§ 14. A aplicação dos recursos na modalidade prevista neste artigo não poderá ultrapassar sessenta por cento do valor do investimento total previsto no projeto ou, excepcionalmente, setenta por cento para o caso de projetos de infra-estrutura, a critério do Ministério da Integração Nacional, obedecidos aos limites de incentivos fiscais constantes do Calendário de Inversões e Mobilização de Recursos Aprovado. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h3>Art. 10. Aos Conselhos Deliberativos das Superintendências de Desenvolvimento Regional caberá:</h3>
+ <h5>I - (Revogado pela MPV nº 2.216-37, de 31.8.2001)</h5>
+ <h5>II - aprovar os projetos merecedores das aplicações de recursos, observados os parâmetros e objetivos constantes dos planos regionais de desenvolvimento.</h5>
+ <h4>§ 1º Antes de ser submetido ao Conselho Deliberativo das Superintendências de Desenvolvimento Regional, o projeto deverá receber parecer conclusivo favorável das Secretarias Executivas das respectivas superintendências, no prazo de cento e oitenta dias, a partir de sua apresentação.</h4>
+ <h4>§ 2º O acompanhamento e a fiscalização dos projetos beneficiários serão realizados pelas Superintendências de Desenvolvimento Regional, as quais recorrerão ao concurso dos bancos operadores e de auditorias independentes.</h4>
+ <h4>§ 3º Os projetos aprovados e com implantação ainda não iniciada, serão reavaliados pela Secretaria Executiva das Superintendências de Desenvolvimento Regional para efeito de enquadramento na sistemática ora estabelecida.</h4>
+ <h4>§ 4º Os Bancos Operadores ficam responsáveis pela conversão de que trata o art. 5º desta Lei. ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h4>
+ <h3>Art. 11. Os recursos dos fundos de que trata esta lei destinar-se-ão, nos projetos a serem aprovados, à cobertura de investimento fixos, sendo:</h3>
+ <h5>I - nos casos de projetos industriais, preferencialmente para máquinas, aparelhos e equipamentos; e</h5>
+ <h5>II - nos demais projetos, as Superintendências de Desenvolvimento Regional estabelecerão, previamente, as inversões fixas a serem admitidas para efeito de vinculação.</h5>
+ <h4>Parágrafo único. A aplicação de recursos do Finor e do Finam em projetos agropecuários somente se fará em regiões de reconhecida vocação agropastoril, respeitadas as diretrizes governamentais de preservação ambiental e, em situação de conflito social, ouvido o Incra.</h4>
+ <h3>Art. 12. A aplicação dos recursos dos fundos será realizada em estrita consonância com os objetivos do projeto e em conformidade com todas as cláusulas condicionantes quando da sua aprovação pelo Conselho Deliberativo das Superintendências de Desenvolvimento Regional.</h3>
+ <h4>§ 1º O descumprimento do disposto no caput deste artigo, que caracterize desvio da aplicação de recursos, resultará: ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h4>
+ <h5>I - no cancelamento, pelo Conselho Deliberativo da respectiva Superintendência, dos incentivos aprovados;</h5>
+ <h5>II - no recolhimento, pela empresa beneficiária, ao Banco Operador, das quantias recebidas, atualizadas pelo mesmo índice adotado para os tributos federais, a partir da data de seu recebimento, acrescidas de multa de dez por cento e de juros de mora de um por cento ao mês, deduzidas, no caso de aplicação de recursos sob a forma de debêntures, as parcelas já amortizadas. ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h4>§ 2º Sem prejuízo do disposto no § 1º deste artigo, a Comissão de Valores Mobiliários poderá impor aos infratores as penalidades previstas no art. 11, da Lei nº 6.385, de 7 de dezembro de 1976 .</h4>
+ <h4>§ 3º Após o recolhimento dos recursos, a empresa beneficiária emissora fica autorizada a proceder a redução do capital social, proporcionalmente às ações subscritas pelo fundo, com o conseqüente cancelamento dos respectivos títulos.</h4>
+ <h4>§ 4º Poderão, igualmente, ser cancelados pelo Conselho Deliberativo os incentivos concedidos a empresas: (Incluído pela Lei nº 9.808, de 20.7.1999)</h4>
+ <h5>I - que não tenham iniciado a implantação física de seus projetos no prazo de seis meses após sua aprovação, salvo motivo de força maior, devidamente reconhecido pela Superintendência de Desenvolvimento Regional; (Incluído pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h5>II - que, em função de inadimplências para com a Superintendência de Desenvolvimento Regional, tenham tido suspensas as liberações dos recursos por período superior a seis meses consecutivos; (Incluído pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h5>III - cujos projetos se tenham tornado inviáveis, em função de fatores supervenientes de natureza técnica, econômica, financeira, mercadológica ou legal; (Incluído pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h5>IV - que tenham desistido da implantação de seus projetos. (Incluído pela Lei nº 9.808, de 20.7.1999)</h5>
+ <h4>§ 5º Nas hipóteses de que tratam os incisos II, III e IV do parágrafo anterior, se ficar evidenciado que os recursos dos Fundos foram aplicados corretamente, a Superintendência de Desenvolvimento Regional poderá conceder prazo para recompra das ações e resgate das debêntures emitidas pela empresa e que integrem a carteira do Fundo. (Incluído pela Lei nº 9.808, de 20.7.1999)</h4>
+ <h4>§ 6º Nos casos previstos no parágrafo anterior, salvo com relação aos projetos inviáveis, a Superintendência de Desenvolvimento Regional poderá, previamente, conceder prazo para transferência do controle acionário, só se aplicando aquela regra se essa transferência não se efetivar. (Incluído pela Lei nº 9.808, de 20.7.1999)</h4>
+ <h4>§ 7º Em qualquer hipótese, se forem constatados indícios de desvio na aplicação dos recursos liberados, aplicam-se as regras dos arts. 12 a 15 desta Lei. (Incluído pela Lei nº 9.808, de 20.7.1999)</h4>
+ <h3>Art. 13. A apuração dos desvios das aplicações dos recursos dos Fundos será feita mediante processo administrativo a ser instaurado pela Superintendência de Desenvolvimento Regional, que solicitará, quando julgar necessário, a participação do Banco Operador, admitida ao infrator ampla defesa. ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h3>
+ <h3>Art 14. A falta de recolhimento, pela empresa beneficiária, dos valores apurados em processo, no prazo de trinta dias contados da data do recebimento da comunicação do cancelamento, importará na execução judicial a ser promovida pela agência de desenvolvimento regional.</h3>
+ <h3>Art. 15. As importâncias recebidas, na forma do art. 12, reverterão em favor do Fundo correspondente, cabendo ao Banco Operador respectivo, caso os títulos já tenham sido negociados, promover a emissão de novas quotas. ( Redação dada pela Lei nº 9.808, de 20.7.1999)</h3>
+ <h3>Art 16. Para efeito do disposto no art. 12, equipara-se à aplicação de recursos em desacordo com o projeto aprovado:</h3>
+ <h5>I - a paralisação ou suspensão das obras ou serviços de implantação do empreendimento, sem prévia autorização da autoridade competente; e</h5>
+ <h5>II - o descumprimento dos cronogramas estabelecidos no ato de aprovação do projeto, motivado por falta de aporte de recursos do grupo empreendedor, salvo motivo de força maior devidamente comunicado à Superintendência de Desenvolvimento Regional e por ela reconhecido.</h5>
+ <h3>Art 17. Considerar-se-ão solidariamente responsáveis pela aplicação dos recursos dos fundos liberados pelos bancos operadores e recebidos a partir da data da publicação desta lei a empresa titular do projeto e seus acionistas controladores.</h3>
+ <h3>Art 18. Cabe à Comissão de Valores Mobiliários disciplinar a constituição, a organização, o funcionamento e a administração de Fundos Mútuos de Ações Incentivadas, inclusive estabelecer normas e práticas a serem observadas quanto à administração e composição das carteiras de títulos e valores mobiliários, bem assim quanto aos limites máximos de remuneração.</h3>
+ <h3>Art 19. As empresas que tenham empreendimentos industriais e agroindustriais, em operação nas áreas de atuação da Superintendência de Desenvolvimento do Nordeste (Sudene) e da Superintendência de Desenvolvimento da Amazônia (Sudam), poderão depositar no Banco do Nordeste do Brasil S.A. e no Banco da Amazônia S.A., respectivamente, para reinvestimento, quarenta por cento do valor do Imposto de Renda devido pelos referidos empreendimentos, calculados sobre o lucro da exploração, acrescido de cinqüenta por cento de recursos próprios, ficando, porém, a liberação desses recursos condicionada à aprovação, pelas agências do desenvolvimento regional, dos respectivos projetos técnico-econômicos de modernização ou complementação de equipamento. (Vide Lei nº 9.532, de 1997)</h3>
+ <h4>§ 1º Os recursos de que trata este artigo, enquanto não aplicados, serão corrigidos monetariamente pelo banco operador, com base na variação do BTNF.</h4>
+ <h4>§ 2º Poderá ser deduzida a quantia correspondente a 3% (três por cento) do valor de cada parcela de recursos liberada, a título de custo de administração do projeto, a ser dividida da seguinte forma: (Redação dada pela Lei nº 13.682, de 2018)</h4>
+ <h5>I - 2% (dois por cento) para a Superintendência de Desenvolvimento Regional; e (Incluído pela Lei nº 13.682, de 2018)</h5>
+ <h5>II - 1% (um por cento) para o banco operador. (Incluído pela Lei nº 13.682, de 2018)</h5>
+ <h4>§ 3º Na hipótese de o projeto não ser aprovado, caberá ao banco operador devolver à empresa depositante a parcela de recursos próprios e recolher à União Federal o valor depositado como incentivo.</h4>
+ <h4>§ 4º Para os empreendimentos que tenham depósitos efetuados há mais de 5 	(cinco) anos e não tenham projeto apresentado à Sudene ou à Sudam até 31 de dezembro de 2018, os recursos a título de reinvestimento do imposto de renda, excluída a parcela de recursos próprios, serão revertidos em favor da 	União. (Incluído pela Lei nº 13.799, de 2019)</h4>
+ <h4>§ 5º As empresas com projetos de reinvestimento do imposto de renda aprovados pela Sudene ou pela Sudam poderão pleitear até 50% (cinquenta por cento) dos valores depositados para investimento em capital de giro, desde que o percentual restante seja destinado à aquisição de máquinas e equipamentos novos que façam parte do processo produtivo. (Incluído pela Lei nº 13.799, de 2019)</h4>
+ <h4>§ 6º (VETADO). (Incluído pela Lei nº 13.799, de 2019)</h4>
+ <h4>§ 7º (VETADO). (Incluído pela Lei nº 13.799, de 2019)</h4>
+ <h3>Art 20. Pela administração dos recursos dos Fundos de Investimento, caberão as seguintes remunerações:</h3>
+ <h5>I - três por cento ao ano ao banco operador, devidos mensalmente, calculados sobre o valor do patrimônio líquido do respectivo fundo, a título de serviço de administração das carteiras;</h5>
+ <h5>II - um e meio por cento ao banco operador, calculados, sobre o valor de cada liberação de recursos pelo respectivo fundo, para custeio de atividades de pesquisa e promoção;</h5>
+ <h5>III - três e meio por cento à Superintendência de Desenvolvimento Regional, calculados sobre o valor de cada liberação de recursos pelo respectivo fundo, para custeio das atividades de pesquisa e promoção relacionadas com as regiões beneficiadas com os incentivos e de análise, acompanhamento e fiscalização dos projetos.</h5>
+ <h3>Art 21. As empresas beneficiárias dos recursos dos fundos ficam obrigadas, em cada exercício, a remeter à Comissão de Valores Mobiliários e aos bancos operadores dos respectivos fundos cópias das demonstrações financeiras devidamente auditadas por auditores independentes.</h3>
+ <h4>§ 1º As empresas beneficiárias de incentivos fiscais, que tenham patrimônio líquido igual ou inferior a R$ 10.000.000,00 (dez milhões de reais), ficam dispensadas: (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h5>I - de registro na Comissão de Valores Mobiliários - CVM; (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h5>II - da realização de auditoria independente de suas demonstrações financeiras; e (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h5>III - do envio de cópia das demonstrações financeiras à CVM. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h4>§ 2º Os valores mobiliários de emissão de empresas beneficiárias de incentivos fiscais que utilizem alguma das faculdades previstas no § 1º e integrem as carteiras do FINOR, FINAM e FUNRES somente serão negociados: ( (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h5>I - em leilões especiais em bolsa de valores, mediante processo de conversão de Certificados de Investimento, vedada, neste caso, a faculdade estabelecida no § 2º do art. 8º desta Lei, de estipulação do pagamento em moeda corrente de parcela do preço dos títulos ofertados; ou (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h5>II - privadamente, após a sua aquisição nos leilões especiais. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h4>§ 3º No caso descrito no inciso I do § 2º , dos editais de leilão especial deverá constar: (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h5>I - a condição de empresa beneficiária de incentivos fiscais com patrimônio líquido igual ou inferior a R$ 10.000.000,00 (dez milhões de reais) não registrada e não fiscalizada pela CVM; e (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h5>II - a advertência de que os valores mobiliários nas condições descritas no inciso I não são negociados em bolsa de valores ou mercado de balcão e que os seus adquirentes somente poderão negociá-los em transações privadas. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h5>
+ <h4>§ 4º As faculdades previstas no § 1º e incisos deste artigo não se aplicam às empresas beneficiárias de incentivos fiscais que tenham valores mobiliários disseminados no mercado, até que procedam ao cancelamento do seu registro na CVM, mediante oferta pública de aquisição da totalidade daqueles títulos, nos termos das normas por ela fixadas. (Incluído pela Medida Provisória nº 2.199-14, de 2001)</h4>
+ <h3>Art 22. É assegurado aos beneficiários de projetos aprovados e em implantação, o direito à adoção de uma das seguintes alternativas.</h3>
+ <h5>I - opção pela sistemática de incentivos fiscais instituída pela presente lei;</h5>
+ <h5>II - conclusão do empreendimento por meio de outras fontes de recursos.</h5>
+ <h3>Art 23. A faculdade referida no art. 1º será extinta no prazo de dez anos, a contar do exercício financeiro de 1991, ano-base de 1990, inclusive. (Vide caput do art. 2 e § 1º do art. 2 da Lei nº 9.532, de 1997)</h3>
+ <h3>Art 24. Os estatutos da companhia poderão excluir o direito de preferência nas subscrições das debêntures conversíveis em ações correspondentes a emissões a serem adquiridas, exclusivamente, com recursos dos fundos.</h3>
+ <h3>Art 25. Aplicam-se ao Fundo de Recuperação Econômica do Estado do Espírito Santo (Funres) e ao Grupo Executivo para Recuperação Econômica do Estado do Espírito Santo (Geres), no que couberem, as disposições desta lei.</h3>
+ <h3>Art 26. Até doze meses após o início da legislatura a iniciar-se em 1991, Comissão Mista do Congresso Nacional reavaliará os incentivos fiscais regionais, propondo as medidas corretivas à luz de suas conclusões.</h3>
+ <h3>Art 27. O Poder Executivo regulamentará a presente lei no prazo de sessenta dias contados de sua publicação.</h3>
+ <h3>Art 28. Esta lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art 29. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 16 de janeiro de 1991; 170º da Independência e 103º da República.</p>
+ <h3>FERNANDO COLLOR</h3>
+ <p>Zélia M. Cardoso de Mello</p>
+ <p>Este texto não substitui o publicado no DOU de 17.1.1991</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Decreto nº 1.733, de 1995)(Vide</p>
+ <p>Decreto nº 2.259, de 1997)(Vide</p>
+ <p>MPV nº 1.602, de 1997) | Altera a legislação do imposto sobre a renda relativa a incentivos fiscais, estabelece novas condições operacionais dos Fundos de Investimentos Regionais e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L8167compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

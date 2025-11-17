@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 12.016, DE 7 DE AGOSTO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 12.016, DE 7 DE AGOSTO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 07:16:38 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12016.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 15.729 caracteres | espelho: 15.728 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 12.016, DE 7 DE AGOSTO DE 2009.</p>
+ <p>Disciplina o mandado de segurança individual e coletivo e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Conceder-se-á mandado de segurança para proteger direito líquido e certo, não amparado por habeas corpus ou habeas data , sempre que, ilegalmente ou com abuso de poder, qualquer pessoa física ou jurídica sofrer violação ou houver justo receio de sofrê-la por parte de autoridade, seja de que categoria for e sejam quais forem as funções que exerça. (Vide ADIN 4296)</h3>
+ <h4>§ 1º Equiparam-se às autoridades, para os efeitos desta Lei, os representantes ou órgãos de partidos políticos e os administradores de entidades autárquicas, bem como os dirigentes de pessoas jurídicas ou as pessoas naturais no exercício de atribuições do poder público, somente no que disser respeito a essas atribuições.</h4>
+ <h4>§ 2º Não cabe mandado de segurança contra os atos de gestão comercial praticados pelos administradores de empresas públicas, de sociedade de economia mista e de concessionárias de serviço público. (Vide ADIN 4296)</h4>
+ <h4>§ 3º Quando o direito ameaçado ou violado couber a várias pessoas, qualquer delas poderá requerer o mandado de segurança.</h4>
+ <h3>Art. 2º Considerar-se-á federal a autoridade coatora se as consequências de ordem patrimonial do ato contra o qual se requer o mandado houverem de ser suportadas pela União ou entidade por ela controlada.</h3>
+ <h3>Art. 3º O titular de direito líquido e certo decorrente de direito, em condições idênticas, de terceiro poderá impetrar mandado de segurança a favor do direito originário, se o seu titular não o fizer, no prazo de 30 (trinta) dias, quando notificado judicialmente.</h3>
+ <h4>Parágrafo único. O exercício do direito previsto no caput deste artigo submete-se ao prazo fixado no art. 23 desta Lei, contado da notificação.</h4>
+ <h3>Art. 4º Em caso de urgência, é permitido, observados os requisitos legais, impetrar mandado de segurança por telegrama, radiograma, fax ou outro meio eletrônico de autenticidade comprovada.</h3>
+ <h4>§ 1º Poderá o juiz, em caso de urgência, notificar a autoridade por telegrama, radiograma ou outro meio que assegure a autenticidade do documento e a imediata ciência pela autoridade.</h4>
+ <h4>§ 2º O texto original da petição deverá ser apresentado nos 5 (cinco) dias úteis seguintes.</h4>
+ <h4>§ 3º Para os fins deste artigo, em se tratando de documento eletrônico, serão observadas as regras da Infra-Estrutura de Chaves Públicas Brasileira - ICP-Brasil.</h4>
+ <h3>Art. 5º Não se concederá mandado de segurança quando se tratar:</h3>
+ <h5>I - de ato do qual caiba recurso administrativo com efeito suspensivo, independentemente de caução;</h5>
+ <h5>II - de decisão judicial da qual caiba recurso com efeito suspensivo;</h5>
+ <h5>III - de decisão judicial transitada em julgado.</h5>
+ <h4>Parágrafo único. (VETADO)</h4>
+ <h3>Art. 6º A petição inicial, que deverá preencher os requisitos estabelecidos pela lei processual, será apresentada em 2 (duas) vias com os documentos que instruírem a primeira reproduzidos na segunda e indicará, além da autoridade coatora, a pessoa jurídica que esta integra, à qual se acha vinculada ou da qual exerce atribuições.</h3>
+ <h4>§ 1º No caso em que o documento necessário à prova do alegado se ache em repartição ou estabelecimento público ou em poder de autoridade que se recuse a fornecê-lo por certidão ou de terceiro, o juiz ordenará, preliminarmente, por ofício, a exibição desse documento em original ou em cópia autêntica e marcará, para o cumprimento da ordem, o prazo de 10 (dez) dias. O escrivão extrairá cópias do documento para juntá-las à segunda via da petição.</h4>
+ <h4>§ 2º Se a autoridade que tiver procedido dessa maneira for a própria coatora, a ordem far-se-á no próprio instrumento da notificação.</h4>
+ <h4>§ 3º Considera-se autoridade coatora aquela que tenha praticado o ato impugnado ou da qual emane a ordem para a sua prática.</h4>
+ <h4>§ 4º (VETADO)</h4>
+ <h4>§ 5º Denega-se o mandado de segurança nos casos previstos pelo art. 267 da Lei Nº 5.869, de 11 de janeiro de 1973 - Código de Processo Civil.</h4>
+ <h4>§ 6º O pedido de mandado de segurança poderá ser renovado dentro do prazo decadencial, se a decisão denegatória não lhe houver apreciado o mérito.</h4>
+ <h3>Art. 7º Ao despachar a inicial, o juiz ordenará:</h3>
+ <h5>I - que se notifique o coator do conteúdo da petição inicial, enviando-lhe a segunda via apresentada com as cópias dos documentos, a fim de que, no prazo de 10 (dez) dias, preste as informações;</h5>
+ <h5>II - que se dê ciência do feito ao órgão de representação judicial da pessoa jurídica interessada, enviando-lhe cópia da inicial sem documentos, para que, querendo, ingresse no feito;</h5>
+ <h5>III - que se suspenda o ato que deu motivo ao pedido, quando houver fundamento relevante e do ato impugnado puder resultar a ineficácia da medida, caso seja finalmente deferida, sendo facultado exigir do impetrante caução, fiança ou depósito, com o objetivo de assegurar o ressarcimento à pessoa jurídica. (Vide ADIN 4296)</h5>
+ <h4>§ 1º Da decisão do juiz de primeiro grau que conceder ou denegar a liminar caberá agravo de instrumento, observado o disposto na Lei Nº 5.869, de 11 de janeiro de 1973 - Código de Processo Civil.</h4>
+ <h4>§ 2º Não será concedida medida liminar que tenha por objeto a compensação de créditos tributários, a entrega de mercadorias e bens provenientes do exterior, a reclassificação ou equiparação de servidores públicos e a concessão de aumento ou a extensão de vantagens ou pagamento de qualquer natureza. (Vide ADIN 4296)</h4>
+ <h4>§ 3º Os efeitos da medida liminar, salvo se revogada ou cassada, persistirão até a prolação da sentença.</h4>
+ <h4>§ 4º Deferida a medida liminar, o processo terá prioridade para julgamento.</h4>
+ <h4>§ 5º As vedações relacionadas com a concessão de liminares previstas neste artigo se estendem à tutela antecipada a que se referem os arts. 273 e 461 da Lei Nº 5.869, de 11 janeiro de 1973 - Código de Processo Civil.</h4>
+ <h3>Art. 8º Será decretada a perempção ou caducidade da medida liminar ex officio ou a requerimento do Ministério Público quando, concedida a medida, o impetrante criar obstáculo ao normal andamento do processo ou deixar de promover, por mais de 3 (três) dias úteis, os atos e as diligências que lhe cumprirem.</h3>
+ <h3>Art. 9º As autoridades administrativas, no prazo de 48 (quarenta e oito) horas da notificação da medida liminar, remeterão ao Ministério ou órgão a que se acham subordinadas e ao Advogado-Geral da União ou a quem tiver a representação judicial da União, do Estado, do Município ou da entidade apontada como coatora cópia autenticada do mandado notificatório, assim como indicações e elementos outros necessários às providências a serem tomadas para a eventual suspensão da medida e defesa do ato apontado como ilegal ou abusivo de poder.</h3>
+ <h3>Art. 10. A inicial será desde logo indeferida, por decisão motivada, quando não for o caso de mandado de segurança ou lhe faltar algum dos requisitos legais ou quando decorrido o prazo legal para a impetração.</h3>
+ <h4>§ 1º Do indeferimento da inicial pelo juiz de primeiro grau caberá apelação e, quando a competência para o julgamento do mandado de segurança couber originariamente a um dos tribunais, do ato do relator caberá agravo para o órgão competente do tribunal que integre.</h4>
+ <h4>§ 2º O ingresso de litisconsorte ativo não será admitido após o despacho da petição inicial.</h4>
+ <h3>Art. 11. Feitas as notificações, o serventuário em cujo cartório corra o feito juntará aos autos cópia autêntica dos ofícios endereçados ao coator e ao órgão de representação judicial da pessoa jurídica interessada, bem como a prova da entrega a estes ou da sua recusa em aceitá-los ou dar recibo e, no caso do art. 4º desta Lei, a comprovação da remessa.</h3>
+ <h3>Art. 12. Findo o prazo a que se refere o inciso I do caput do art. 7º desta Lei, o juiz ouvirá o representante do Ministério Público, que opinará, dentro do prazo improrrogável de 10 (dez) dias.</h3>
+ <h4>Parágrafo único. Com ou sem o parecer do Ministério Público, os autos serão conclusos ao juiz, para a decisão, a qual deverá ser necessariamente proferida em 30 (trinta) dias.</h4>
+ <h3>Art. 13. Concedido o mandado, o juiz transmitirá em ofício, por intermédio do oficial do juízo, ou pelo correio, mediante correspondência com aviso de recebimento, o inteiro teor da sentença à autoridade coatora e à pessoa jurídica interessada.</h3>
+ <h4>Parágrafo único. Em caso de urgência, poderá o juiz observar o disposto no art. 4º desta Lei.</h4>
+ <h3>Art. 14. Da sentença, denegando ou concedendo o mandado, cabe apelação.</h3>
+ <h4>§ 1º Concedida a segurança, a sentença estará sujeita obrigatoriamente ao duplo grau de jurisdição.</h4>
+ <h4>§ 2º Estende-se à autoridade coatora o direito de recorrer.</h4>
+ <h4>§ 3º A sentença que conceder o mandado de segurança pode ser executada provisoriamente, salvo nos casos em que for vedada a concessão da medida liminar.</h4>
+ <h4>§ 4º O pagamento de vencimentos e vantagens pecuniárias assegurados em sentença concessiva de mandado de segurança a servidor público da administração direta ou autárquica federal, estadual e municipal somente será efetuado relativamente às prestações que se vencerem a contar da data do ajuizamento da inicial.</h4>
+ <h3>Art. 15. Quando, a requerimento de pessoa jurídica de direito público interessada ou do Ministério Público e para evitar grave lesão à ordem, à saúde, à segurança e à economia públicas, o presidente do tribunal ao qual couber o conhecimento do respectivo recurso suspender, em decisão fundamentada, a execução da liminar e da sentença, dessa decisão caberá agravo, sem efeito suspensivo, no prazo de 5 (cinco) dias, que será levado a julgamento na sessão seguinte à sua interposição.</h3>
+ <h4>§ 1º Indeferido o pedido de suspensão ou provido o agravo a que se refere o caput deste artigo, caberá novo pedido de suspensão ao presidente do tribunal competente para conhecer de eventual recurso especial ou extraordinário.</h4>
+ <h4>§ 2º É cabível também o pedido de suspensão a que se refere o § 1º deste artigo, quando negado provimento a agravo de instrumento interposto contra a liminar a que se refere este artigo.</h4>
+ <h4>§ 3º A interposição de agravo de instrumento contra liminar concedida nas ações movidas contra o poder público e seus agentes não prejudica nem condiciona o julgamento do pedido de suspensão a que se refere este artigo.</h4>
+ <h4>§ 4º O presidente do tribunal poderá conferir ao pedido efeito suspensivo liminar se constatar, em juízo prévio, a plausibilidade do direito invocado e a urgência na concessão da medida.</h4>
+ <h4>§ 5º As liminares cujo objeto seja idêntico poderão ser suspensas em uma única decisão, podendo o presidente do tribunal estender os efeitos da suspensão a liminares supervenientes, mediante simples aditamento do pedido original.</h4>
+ <h3>Art. 16. Nos casos de competência originária dos tribunais, caberá ao relator a instrução do processo, sendo assegurada a defesa oral na sessão do julgamento.</h3>
+ <h3>Art. 16. Nos casos de competência originária dos tribunais, caberá ao relator a instrução do processo, sendo assegurada a defesa oral na sessão do julgamento do mérito ou do pedido liminar. (Redação dada pela Lei nº 13.676, de 2018)</h3>
+ <h4>Parágrafo único. Da decisão do relator que conceder ou denegar a medida liminar caberá agravo ao órgão competente do tribunal que integre.</h4>
+ <h3>Art. 17. Nas decisões proferidas em mandado de segurança e nos respectivos recursos, quando não publicado, no prazo de 30 (trinta) dias, contado da data do julgamento, o acórdão será substituído pelas respectivas notas taquigráficas, independentemente de revisão.</h3>
+ <h3>Art. 18. Das decisões em mandado de segurança proferidas em única instância pelos tribunais cabe recurso especial e extraordinário, nos casos legalmente previstos, e recurso ordinário, quando a ordem for denegada.</h3>
+ <h3>Art. 19. A sentença ou o acórdão que denegar mandado de segurança, sem decidir o mérito, não impedirá que o requerente, por ação própria, pleiteie os seus direitos e os respectivos efeitos patrimoniais.</h3>
+ <h3>Art. 20. Os processos de mandado de segurança e os respectivos recursos terão prioridade sobre todos os atos judiciais, salvo habeas corpus .</h3>
+ <h4>§ 1º Na instância superior, deverão ser levados a julgamento na primeira sessão que se seguir à data em que forem conclusos ao relator.</h4>
+ <h4>§ 2º O prazo para a conclusão dos autos não poderá exceder de 5 (cinco) dias.</h4>
+ <h3>Art. 21. O mandado de segurança coletivo pode ser impetrado por partido político com representação no Congresso Nacional, na defesa de seus interesses legítimos relativos a seus integrantes ou à finalidade partidária, ou por organização sindical, entidade de classe ou associação legalmente constituída e em funcionamento há, pelo menos, 1 (um) ano, em defesa de direitos líquidos e certos da totalidade, ou de parte, dos seus membros ou associados, na forma dos seus estatutos e desde que pertinentes às suas finalidades, dispensada, para tanto, autorização especial.</h3>
+ <h4>Parágrafo único. Os direitos protegidos pelo mandado de segurança coletivo podem ser:</h4>
+ <h5>I - coletivos, assim entendidos, para efeito desta Lei, os transindividuais, de natureza indivisível, de que seja titular grupo ou categoria de pessoas ligadas entre si ou com a parte contrária por uma relação jurídica básica;</h5>
+ <h5>II - individuais homogêneos, assim entendidos, para efeito desta Lei, os decorrentes de origem comum e da atividade ou situação específica da totalidade ou de parte dos associados ou membros do impetrante.</h5>
+ <h3>Art. 22. No mandado de segurança coletivo, a sentença fará coisa julgada limitadamente aos membros do grupo ou categoria substituídos pelo impetrante. (Vide ADIN 4296)</h3>
+ <h4>§ 1º O mandado de segurança coletivo não induz litispendência para as ações individuais, mas os efeitos da coisa julgada não beneficiarão o impetrante a título individual se não requerer a desistência de seu mandado de segurança no prazo de 30 (trinta) dias a contar da ciência comprovada da impetração da segurança coletiva.</h4>
+ <h4>§ 2º No mandado de segurança coletivo, a liminar só poderá ser concedida após a audiência do representante judicial da pessoa jurídica de direito público, que deverá se pronunciar no prazo de 72 (setenta e duas) horas. (Vide ADIN 4296)</h4>
+ <h3>Art. 23. O direito de requerer mandado de segurança extinguir-se-á decorridos 120 (cento e vinte) dias, contados da ciência, pelo interessado, do ato impugnado. (Vide ADIN 4296)</h3>
+ <h3>Art. 24. Aplicam-se ao mandado de segurança os arts. 46 a 49 da Lei Nº 5.869, de 11 de janeiro de 1973 - Código de Processo Civil.</h3>
+ <h3>Art. 25. Não cabem, no processo de mandado de segurança, a interposição de embargos infringentes e a condenação ao pagamento dos honorários advocatícios, sem prejuízo da aplicação de sanções no caso de litigância de má-fé. (Vide ADIN 4296)</h3>
+ <h3>Art. 26. Constitui crime de desobediência, nos termos do art. 330 do Decreto-Lei Nº 2.848, de 7 de dezembro de 1940 , o não cumprimento das decisões proferidas em mandado de segurança, sem prejuízo das sanções administrativas e da aplicação da Lei Nº 1.079, de 10 de abril de 1950 , quando cabíveis.</h3>
+ <h3>Art. 27. Os regimentos dos tribunais e, no que couber, as leis de organização judiciária deverão ser adaptados às disposições desta Lei no prazo de 180 (cento e oitenta) dias, contado da sua publicação.</h3>
+ <h3>Art. 28. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 29. Revogam-se as Leis n os 1.533, de 31 de dezembro de 1951 , 4.166, de 4 de dezembro de 1962 , 4.348, de 26 de junho de 1964 , 5.021, de 9 de junho de 1966 ; o art. 3º da Lei Nº 6.014, de 27 de dezembro de 1973 , o art. 1º da Lei Nº 6.071, de 3 de julho de 1974 , o art. 12 da Lei Nº 6.978, de 19 de janeiro de 1982 , e o art. 2º da Lei Nº 9.259, de 9 de janeiro de 1996.</h3>
+ <p>Brasília, 7 de agosto de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>José Antonio Dias Toffoli</p>
+ <p>Este texto não substitui o publicado no DOU de 10.8.2009</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Disciplina o mandado de segurança individual e coletivo e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12016.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

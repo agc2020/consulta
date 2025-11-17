@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 14.789, DE 29 DE DEZEMBRO DE 2023 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2023" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 14.789, DE 29 DE DEZEMBRO DE 2023</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:44:10 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14789.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 18.982 caracteres | espelho: 19.413 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 14.789, DE 29 DE DEZEMBRO DE 2023 Conversão da Medida 	Provisória nº 1.185, de 2023</p>
+ <p>Produção de efeitos</p>
+ <p>(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</p>
+ <p>Dispõe sobre o crédito fiscal decorrente de subvenção para implantação ou expansão de empreendimento econômico; altera as Leis nºs 9.249, de 26 de dezembro de 1995, 14.592, de 30 de maio de 2023, e 14.754, de 12 de dezembro de 2023; e revoga dispositivos do Decreto-Lei nº 1.598, de 26 de dezembro de 1977, e das Leis nºs 10.637, de 30 de dezembro de 2002, 10.833, de 29 de dezembro de 2003, e 12.973, de 13 de maio de 2014.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte em:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES 	GERAIS</h3>
+ <h3>Art. 1º A pessoa jurídica tributada pelo lucro real que receber subvenção da União, dos Estados, do Distrito Federal ou dos Municípios para implantar ou expandir empreendimento econômico poderá apurar crédito fiscal de subvenção para investimento, observado o disposto nesta Lei.</h3>
+ <h3>Art. 2º Para os fins do disposto no art. 1º desta Lei, considera-se:</h3>
+ <h5>I - implantação - 	o estabelecimento de empreendimento econômico para o desenvolvimento da atividade a ser explorada por pessoa jurídica não domiciliada na localização geográfica do ente federativo que concede a subvenção;</h5>
+ <h5>II - expansão - a ampliação da capacidade, a modernização ou a diversificação do comércio ou da produção de bens ou serviços do empreendimento econômico, inclusive mediante o estabelecimento de outra unidade, pela pessoa jurídica domiciliada na localização geográfica do ente federativo que concede a subvenção;</h5>
+ <h5>III - crédito fiscal de subvenção para investimento - o direito creditório:</h5>
+ <h6>a) decorrente de implantação ou expansão do empreendimento econômico subvencionado por ente federativo;</h6>
+ <h6>b) concedido a título de Imposto sobre a Renda das Pessoas Jurídicas (IRPJ); e</h6>
+ <h6>c) passível de ressarcimento ou de compensação com tributos administrados pela Secretaria 	Especial da Receita Federal do Brasil do Ministério da Fazenda.</h6>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA 	HABILITAÇÃO DA PESSOA JURÍDICA</h3>
+ <h3>Art. 3º Poderá ser beneficiária do crédito fiscal de subvenção para investimento a pessoa jurídica habilitada pela Secretaria Especial da 	Receita Federal do Brasil.</h3>
+ <h3>Art. 4º São requisitos para a concessão da habilitação à pessoa jurídica:</h3>
+ <h5>I - ser beneficiária de subvenção para investimento concedida por ente federativo;</h5>
+ <h5>II - haver ato concessivo da subvenção editado pelo ente federativo anterior à implantação ou à expansão do empreendimento econômico; e</h5>
+ <h5>III - haver ato concessivo da subvenção editado pelo ente federativo que estabeleça expressamente as condições e as contrapartidas a serem observadas pela pessoa jurídica relativas à implantação ou à expansão do empreendimento econômico.</h5>
+ <h4>Parágrafo único. 	Transcorrido o prazo de 30 (trinta) dias da apresentação do pedido de habilitação pela pessoa jurídica sem que tenha havido a manifestação pela 	Secretaria Especial da Receita Federal do Brasil, a pessoa jurídica será 	considerada habilitada.</h4>
+ <h3>Art. 5º Observado o direito à ampla defesa e ao contraditório, a habilitação será:</h3>
+ <h5>I - indeferida, 	na hipótese de a pessoa jurídica não atender aos requisitos de que trata o art. 4º desta Lei; ou</h5>
+ <h5>II - cancelada, 	na hipótese de a pessoa jurídica deixar de atender aos requisitos de que trata o art. 4º desta Lei.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA 	APURAÇÃO DO CRÉDITO FISCAL</h3>
+ <h3>Art. 6º A pessoa jurídica habilitada poderá apurar crédito fiscal de subvenção para investimento, que corresponderá ao produto das receitas de subvenção e da alíquota de 25% (vinte e cinco por cento) relativa ao IRPJ.</h3>
+ <h4>Parágrafo único. 	O crédito fiscal deverá ser apurado na Escrituração Contábil Fiscal (ECF) 	relativa ao período de apuração de reconhecimento das receitas de subvenção.</h4>
+ <h3>Art. 7º Na apuração do crédito fiscal, poderão ser computadas somente as receitas de subvenção que:</h3>
+ <h5>I - estejam relacionadas à implantação ou à expansão do empreendimento econômico; e</h5>
+ <h5>II - sejam reconhecidas após o protocolo do pedido de habilitação da pessoa jurídica.</h5>
+ <h3>Art. 8º Na apuração do crédito fiscal, somente poderão ser computadas as receitas:</h3>
+ <h5>I - que sejam relacionadas às despesas de depreciação, amortização ou exaustão ou de locação ou arrendamento de bens de capital, relativas à implantação ou à 	expansão do empreendimento econômico; e</h5>
+ <h5>II - que tenham sido computadas na base de cálculo do IRPJ e da Contribuição Social sobre o 	Lucro Líquido (CSLL).</h5>
+ <h4>§ 1º Não poderão ser computadas na apuração do crédito fiscal:</h4>
+ <h5>I - a parcela das receitas que superar o valor das despesas a que se refere o inciso I do caput deste artigo;</h5>
+ <h5>II - a parcela das receitas que superar o valor das subvenções concedidas pelo ente federativo; e</h5>
+ <h5>III - as receitas decorrentes de incentivos de IRPJ e do próprio crédito fiscal de subvenção para investimento.</h5>
+ <h4>§ 2º Para fins do disposto nos incisos I e II do § 1º deste artigo, os valores serão considerados de forma acumulada a partir da data do ato concessivo da subvenção.</h4>
+ <h4>§ 3º O disposto no inciso I do caput e no inciso I do § 1º deste artigo não se aplicará na hipótese de subvenção relacionada a bem não sujeito a depreciação, amortização ou exaustão.</h4>
+ <h4>§ 4º As receitas de subvenção de que trata o caput deste artigo não serão computadas na base de cálculo da estimativa mensal para fins do IRPJ e da CSLL e deverão ser tributadas no ajuste anual.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA 	UTILIZAÇÃO DO CRÉDITO FISCAL</h3>
+ <h3>Art. 9º O crédito fiscal de subvenção para investimento devidamente apurado e informado à Secretaria Especial da Receita Federal do Brasil poderá ser objeto de:</h3>
+ <h5>I - compensação com débitos próprios, vincendos ou vencidos, relativos a tributos administrados pela Secretaria Especial da Receita Federal do Brasil, 	observada a legislação específica; ou</h5>
+ <h5>II - ressarcimento em dinheiro.</h5>
+ <h3>Art. 10. O pedido de ressarcimento e a declaração de compensação relativos ao crédito fiscal serão recepcionados após o reconhecimento das receitas de subvenção para fins de tributação.</h3>
+ <h4>Parágrafo único. 	Na hipótese de o crédito fiscal não ter sido objeto de compensação, a 	Secretaria Especial da Receita Federal do Brasil efetuará o seu ressarcimento no vigésimo quarto mês, contado dos termos iniciais de que trata o caput deste artigo.</h4>
+ <h3>Art. 11. O valor do crédito fiscal não será computado na base de cálculo do IRPJ, da CSLL, da Contribuição para os Programas de Integração Social e de Formação do Patrimônio do Servidor Público (Contribuição para o 	PIS/Pasep) e da Contribuição para o Financiamento da Seguridade Social (Cofins).</h3>
+ <h3>Art. 12. O crédito fiscal de subvenção para investimento apurado em desacordo com o disposto nesta Lei não será reconhecido pela Secretaria 	Especial da Receita Federal do Brasil.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO 	TRATAMENTO DOS DÉBITOS ANTERIORES</h3>
+ <h3>Art. 13. Os débitos tributários, inscritos ou não em dívida ativa da 	União, apurados em virtude de exclusões em desacordo com o art. 30 da Lei nº 12.973, de 13 de maio de 2014 , serão objeto de transação tributária especial em razão da disseminação de casos controvertidos no contencioso administrativo e judicial que envolva o assunto.</h3>
+ <h4>§ 1º A adesão à 	transação tributária especial prevista no caput deste artigo implicará a conformação do contribuinte ao disposto nesta Lei, em especial quanto às condições para habilitação e aos limites de aproveitamento do crédito fiscal, sob pena de rescisão.</h4>
+ <h4>§ 2º A transação tributária especial prevista no caput deste artigo será proposta pelo 	Ministro de Estado da Fazenda, conforme regulamentação por ele expedida, que deverá observar o mesmo regime jurídico da transação por adesão no contencioso tributário de relevante e disseminada controvérsia jurídica, 	prevista na Lei nº 13.988, de 14 de abril de 2020 , em especial no que concerne às hipóteses de rescisão, prazos de pagamento e não tributação de descontos.</h4>
+ <h4>§ 3º Os créditos envolvidos na transação especial prevista no caput deste artigo poderão ser pagos da seguinte forma:</h4>
+ <h5>I - pagamento em espécie do valor da dívida consolidada, com redução de 80% (oitenta por cento), em até 12 (doze) parcelas mensais e sucessivas; ou</h5>
+ <h5>II - pagamento em espécie de, no mínimo, 5% (cinco por cento) do valor da dívida consolidada, 	sem reduções, em até 5 (cinco) parcelas mensais e sucessivas, com a possibilidade de pagamento de eventual saldo remanescente:</h5>
+ <h6>a) parcelado em até 60 (sessenta) parcelas mensais e sucessivas, com redução de 50% (cinquenta por cento) do valor remanescente da dívida; ou</h6>
+ <h6>b) parcelado em até 84 (oitenta e quatro) parcelas mensais e sucessivas, com redução de 35% 	(trinta e cinco por cento) do valor remanescente da dívida.</h6>
+ <h4>§ 4º No caso de créditos que sejam objeto de inscrição em dívida ativa, de ação judicial, de embargos à execução fiscal ou de reclamação ou recurso administrativo, a transação contemplará os processos pendentes de julgamento definitivo até o dia 31 de maio de 2024.</h4>
+ <h4>§ 5º Em qualquer caso, a adesão à transação especial prevista neste artigo implicará a renúncia ao direito em que se fundar o contencioso administrativo e judicial, com encerramento do litígio.</h4>
+ <h3>Art. 14. Os débitos tributários apurados em virtude de exclusões em desacordo com o art. 30 da Lei nº 12.973, de 13 de maio de 2014 , não lançados poderão ser objeto de autorregularização específica pelo contribuinte antes do lançamento.</h3>
+ <h4>§ 1º A adesão à 	autorregularização prevista no caput deste artigo implicará a conformação do contribuinte ao disposto nesta Lei, em especial quanto às condições para habilitação e aos limites de aproveitamento do crédito fiscal, sob pena de rescisão.</h4>
+ <h4>§ 2º Os créditos envolvidos na autorregularização de que trata o caput deste artigo poderão ser pagos da seguinte forma:</h4>
+ <h5>I - pagamento em espécie do valor do débito consolidado, com redução de 80% (oitenta por cento), em até 12 (doze) parcelas mensais e sucessivas; ou</h5>
+ <h5>II - pagamento em espécie de, no mínimo, 5% (cinco por cento) do valor do débito consolidado, 	sem reduções, em até 5 (cinco) parcelas mensais e sucessivas, com a possibilidade de o pagamento de eventual saldo remanescente ser:</h5>
+ <h6>a) parcelado em até 60 (sessenta) parcelas mensais e sucessivas, com redução de 50% (cinquenta por cento) do valor remanescente do débito; ou</h6>
+ <h6>b) parcelado em até 84 (oitenta e quatro) parcelas mensais e sucessivas, com redução de 35% 	(trinta e cinco por cento) do valor remanescente do débito.</h6>
+ <h4>§ 3º Em qualquer caso, a adesão à autorregularização prevista neste artigo implicará 	confissão irrevogável e irretratável dos débitos indicados em nome do sujeito passivo, na condição de contribuinte ou responsável, nos termos dos arts. 389 e 395 da Lei nº 13.105, de 16 de março de 2015 (Código de Processo Civil).</h4>
+ <h4>§ 4º No caso de não pagamento nos termos do § 2º deste artigo ou de inadimplemento de qualquer das parcelas previstas, serão retomados o lançamento e a cobrança do crédito tributário pelo seu valor originário acrescido dos consectários legais, abatidos eventuais pagamentos realizados.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 15. A Secretaria Especial da Receita Federal do Brasil poderá 	disciplinar o disposto nesta Lei.</h3>
+ <h3>Art. 16. Os valores registrados na reserva a que se refere o art. 195-A da Lei nº 6.404, de 15 de dezembro de 1976 , em razão da aplicação do disposto no art. 30 da Lei nº 12.973, de 13 de maio de 2014 , ou no § 2º do art. 38 do 	Decreto-Lei nº 1.598, de 26 de dezembro de 1977 , somente poderão ser utilizados para:</h3>
+ <h5>I - absorção de prejuízos, desde que anteriormente já tenham sido totalmente absorvidas as demais reservas de lucros, com exceção da reserva legal; ou</h5>
+ <h5>II - aumento do capital social.</h5>
+ <h4>§ 1º Na hipótese do inciso I do caput deste artigo, a pessoa jurídica deverá recompor a reserva à medida que forem apurados lucros nos períodos subsequentes.</h4>
+ <h4>§ 2º Os valores de que trata o caput serão tributados caso não seja observado o disposto no § 1º ou seja dada destinação diversa da prevista no caput deste artigo, inclusive nas hipóteses de:</h4>
+ <h5>I - capitalização do valor e posterior restituição de capital aos sócios ou ao titular, 	mediante redução do capital social, hipótese em que a base para a incidência será o valor restituído, limitado ao valor total das exclusões decorrentes de doações ou de subvenções governamentais para investimentos;</h5>
+ <h5>II - restituição de capital aos sócios ou ao titular, mediante redução do capital social, nos 	5 (cinco) anos anteriores à data da doação ou da subvenção, com posterior capitalização do valor da doação ou da subvenção, hipótese em que a base para a incidência será o valor restituído, limitada ao valor total das exclusões decorrentes de doações ou de subvenções governamentais para investimentos; ou</h5>
+ <h5>III - integração 	à base de cálculo dos dividendos obrigatórios.</h5>
+ <h3>Art. 17. O disposto nesta Lei não impedirá a fruição de incentivos fiscais federais relativos ao IRPJ, à CSLL, à Contribuição para o PIS/Pasep e à Cofins, concedidos por lei específica, inclusive os benefícios concedidos à Zona Franca de Manaus e às áreas de atuação da Superintendência do Desenvolvimento do Nordeste (Sudene) e da Superintendência do 	Desenvolvimento da Amazônia (Sudam).</h3>
+ <h3>Art. 18. O 	art. 9º da Lei nº 9.249, de 26 de dezembro de 1995 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 9º ...................................................................................</h3>
+ <p>................................................................................................</p>
+ <h4>§ 8º .........................................................................................</h4>
+ <h5>I - capital social integralizado;</h5>
+ <h5>II - reservas de capital de que tratam o § 2º do art. 13 e o parágrafo único do art. 14 da Lei nº 6.404, de 15 de dezembro de 1976;</h5>
+ <h5>III - reservas de lucros, exceto a reserva de incentivo fiscal de que trata o art. 195-A da Lei nº 6.404, de 15 de dezembro de 1976;</h5>
+ <p>..................................................................................................</p>
+ <h5>V - lucros ou prejuízos acumulados.</h5>
+ <h4>§ 8º-A. Para fins de apuração da base de cálculo dos juros sobre capital próprio:</h4>
+ <h5>I - não serão consideradas as variações positivas no patrimônio líquido decorrentes de atos societários entre partes dependentes que não envolvam efetivo ingresso de ativos à pessoa jurídica, com aumento patrimonial em caráter definitivo, independentemente do disposto nas normas contábeis; e</h5>
+ <h5>II - deverão ser considerados, salvo os casos em que for aplicado o disposto no inciso I deste parágrafo:</h5>
+ <h6>a) eventuais lançamentos contábeis redutores efetuados em rubricas de patrimônio líquido que não estiverem previstas no § 8º deste artigo, quando decorrerem dos mesmos fatos que deram origem a lançamentos contábeis positivos efetuados em rubricas previstas no referido parágrafo; e</h6>
+ <h6>b) valores negativos registrados em conta de ajuste de avaliação patrimonial decorrentes de atos societários entre partes dependentes.</h6>
+ <h4>§ 8º-B. Para fins do disposto no § 8º-A deste artigo, aplicar-se-á a definição de parte dependente prevista nos incisos I e II do caput do art. 25 da Lei nº 12.973, de 13 de maio de 2014.</h4>
+ <h4>§ 8º-C. O disposto nos §§ 8º, 8º-A e 8º-B deste artigo aplicar-se-á ao cômputo da base de cálculo dos juros sobre capital próprio a partir de 1º de janeiro de 2024.</h4>
+ <p>...............................................................................................” (NR)</p>
+ <h3>Art. 19. A Lei nº 14.592, de 30 de maio de 2023, passa a vigorar acrescida do seguinte art. 2º-A:</h3>
+ <p>“</p>
+ <h3>Art. 2º-A. No período de 1º de janeiro de 2024 a 31 de dezembro de 2026, a pessoa jurídica poderá descontar da Contribuição para o PIS/Pasep e da Cofins devidas em cada período de apuração crédito presumido calculado sobre a receita decorrente da prestação de serviços de transporte rodoviário regular de passageiros intermunicipal, exceto metropolitano, e de transporte rodoviário regular de passageiros interestadual.</h3>
+ <h4>Parágrafo único. O valor dos créditos presumidos da Contribuição para o PIS/Pasep e da Cofins será obtido pela multiplicação dos percentuais correspondentes às alíquotas das referidas contribuições sobre a receita de que trata o caput deste artigo, reduzido em:</h4>
+ <h5>I - 33,33% (trinta e três inteiros e trinta e três centésimos por cento) de 1º de janeiro a 31 de dezembro de 2024; e</h5>
+ <h5>II - 50% (cinquenta por cento) de 1º de janeiro de 2025 a 31 de dezembro de 2026.”</h5>
+ <h3>Art. 20. A Lei nº 14.754, de 12 de dezembro de 2023 , 	passa vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 6º-A. As pessoas físicas residentes no País com entidades controladas no exterior que não se enquadrarem nas hipóteses previstas no § 5º do art. 5º poderão optar por tributar os lucros apurados por essas entidades a partir de 1º de janeiro de 2024 de acordo com o disposto no art. 5º desta Lei.”</h3>
+ <p>“</p>
+ <h3>Art. 26. .............................................................................................</h3>
+ <p>............................................................................................................</p>
+ <h4>§ 6º A subconta será revertida e o seu saldo comporá a base de cálculo do IRRF no momento da alienação do investimento pelo fundo, ou no momento em que houver a distribuição dos rendimentos pelo fundo aos cotistas, sob qualquer forma, inclusive na amortização ou resgate de cotas do fundo.</h4>
+ <h4>§ 6º-A. Os valores recebidos pelo FIP de suas empresas investidas, inclusive na forma de dividendos e juros sobre o capital próprio ou em virtude de baixa ou liquidação de investimento, não comporão a base de cálculo do IRRF, desde que o fundo reinvista esses valores em ativos autorizados no prazo estabelecido para a verificação do enquadramento da sua carteira, conforme regulamentação da Comissão de Valores Mobiliários, hipótese em que o valor correspondente será transferido da subconta do investimento original para a subconta do novo investimento.</h4>
+ <p>................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 40. ............................................................................................</h3>
+ <h4>Parágrafo único . Caso o limite referido no caput deste artigo deixe de ser observado, o fundo passará a se sujeitar ao tratamento tributário do art. 17 desta Lei a partir do momento de desenquadramento da carteira, salvo se a situação for regularizada no prazo máximo de 30 (trinta) dias.” (NR)</h4>
+ <h3>Art. 21. Ficam revogados os seguintes dispositivos:</h3>
+ <h5>I - inciso V do caput do art. 19 e § 2º do art. 38 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977;</h5>
+ <h5>II - inciso X do § 3º do art. 1º da Lei nº 10.637, de 30 de dezembro de 2002;</h5>
+ <h5>III - inciso IX do § 3º do art. 1º da Lei nº 10.833, de 29 de dezembro de 2003; e</h5>
+ <h5>IV - art. 30 da Lei nº 12.973, de 13 de maio de 2014.</h5>
+ <h3>Art. 22. Esta Lei entra em vigor na data de sua publicação e produzirá efeitos a partir de 1º de janeiro de 2024.</h3>
+ <p>Brasília, 29 de dezembro de 2023; 202º da Independência e 	135º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 	29.12.2023 - Edição extra e republicado no DOU de 29.12.2023</p>
+ <p>Provisória nº 1.185, de 2023Produção de efeitos(Vide Lei Complementar nº 214, de 2025)Produção de efeitos | Dispõe sobre o crédito fiscal decorrente de subvenção para implantação ou expansão de empreendimento econômico; altera as Leis nºs 9.249, de 26 de dezembro de 1995, 14.592,</p>
+ <p>de 30 de maio de 2023, e 14.754, de 12 de dezembro de 2023; e revoga dispositivos do Decreto-Lei nº 1.598, de 26 de dezembro de 1977, e das</p>
+ <p>Leis nºs 10.637, de 30 de dezembro de 2002, 10.833, de 29 de dezembro de</p>
+ <p>2003, e 12.973, de 13 de maio de 2014.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14789.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

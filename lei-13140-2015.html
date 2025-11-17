@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 13.140, DE 26 DE JUNHO DE 2015 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2015" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 13.140, DE 26 DE JUNHO DE 2015</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 07:16:17 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13140.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 25.858 caracteres | espelho: 26.130 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 13.140, DE 26 DE JUNHO DE 2015.</p>
+ <p>Dispõe sobre a mediação entre particulares como meio de solução de controvérsias e sobre a autocomposição de conflitos no âmbito da administração pública; altera a Lei nº 9.469, de 10 de julho de 1997, e o Decreto nº 70.235, de 6 de março de 1972; e revoga o § 2º do art. 6º da Lei nº 9.469, de 10 de julho de 1997.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre a mediação como meio de solução de controvérsias entre particulares e sobre a autocomposição de conflitos no âmbito da administração pública.</h3>
+ <h4>Parágrafo único. Considera-se mediação a atividade técnica exercida por terceiro imparcial sem poder decisório, que, escolhido ou aceito pelas partes, as auxilia e estimula a identificar ou desenvolver soluções consensuais para a controvérsia.</h4>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA MEDIAÇÃO</h3>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 2º A mediação será orientada pelos seguintes princípios:</h3>
+ <h5>I - imparcialidade do mediador;</h5>
+ <h5>II - isonomia entre as partes;</h5>
+ <h5>III - oralidade;</h5>
+ <h5>IV - informalidade;</h5>
+ <h5>V - autonomia da vontade das partes;</h5>
+ <h5>VI - busca do consenso;</h5>
+ <h5>VII - confidencialidade;</h5>
+ <h5>VIII - boa-fé.</h5>
+ <h4>§ 1º Na hipótese de existir previsão contratual de cláusula de mediação, as partes deverão comparecer à primeira reunião de mediação.</h4>
+ <h4>§ 2º Ninguém será obrigado a permanecer em procedimento de mediação.</h4>
+ <h3>Art. 3º Pode ser objeto de mediação o conflito que verse sobre direitos disponíveis ou sobre direitos indisponíveis que admitam transação.</h3>
+ <h4>§ 1º A mediação pode versar sobre todo o conflito ou parte dele.</h4>
+ <h4>§ 2º O consenso das partes envolvendo direitos indisponíveis, mas transigíveis, deve ser homologado em juízo, exigida a oitiva do Ministério Público.</h4>
+ <p>Seção II</p>
+ <p>Dos Mediadores</p>
+ <p>Subseção I</p>
+ <p>Disposições C omuns</p>
+ <h3>Art. 4º O mediador será designado pelo tribunal ou escolhido pelas partes.</h3>
+ <h4>§ 1º O mediador conduzirá o procedimento de comunicação entre as partes, buscando o entendimento e o consenso e facilitando a resolução do conflito.</h4>
+ <h4>§ 2º Aos necessitados será assegurada a gratuidade da mediação.</h4>
+ <h3>Art. 5º Aplicam-se ao mediador as mesmas hipóteses legais de impedimento e suspeição do juiz.</h3>
+ <h4>Parágrafo único. A pessoa designada para atuar como mediador tem o dever de revelar às partes, antes da aceitação da função, qualquer fato ou circunstância que possa suscitar dúvida justificada em relação à sua imparcialidade para mediar o conflito, oportunidade em que poderá ser recusado por qualquer delas.</h4>
+ <h3>Art. 6º O mediador fica impedido, pelo prazo de um ano, contado do término da última audiência em que atuou, de assessorar, representar ou patrocinar qualquer das partes.</h3>
+ <h3>Art. 7º O mediador não poderá atuar como árbitro nem funcionar como testemunha em processos judiciais ou arbitrais pertinentes a conflito em que tenha atuado como mediador.</h3>
+ <h3>Art. 8º O mediador e todos aqueles que o assessoram no procedimento de mediação, quando no exercício de suas funções ou em razão delas, são equiparados a servidor público, para os efeitos da legislação penal.</h3>
+ <p>Subseção II</p>
+ <p>Dos Mediadores Extrajudiciais</p>
+ <h3>Art. 9º Poderá funcionar como mediador extrajudicial qualquer pessoa capaz que tenha a confiança das partes e seja capacitada para fazer mediação, independentemente de integrar qualquer tipo de conselho, entidade de classe ou associação, ou nele inscrever-se.</h3>
+ <h3>Art. 10. As partes poderão ser assistidas por advogados ou defensores públicos.</h3>
+ <h4>Parágrafo único. Comparecendo uma das partes acompanhada de advogado ou defensor público, o mediador suspenderá o procedimento, até que todas estejam devidamente assistidas.</h4>
+ <p>Subseção III</p>
+ <p>Dos Mediadores Judiciais</p>
+ <h3>Art. 11. Poderá atuar como mediador judicial a pessoa capaz, graduada há pelo menos dois anos em curso de ensino superior de instituição reconhecida pelo Ministério da Educação e que tenha obtido capacitação em escola ou instituição de formação de mediadores, reconhecida pela Escola Nacional de Formação e Aperfeiçoamento de Magistrados - ENFAM ou pelos tribunais, observados os requisitos mínimos estabelecidos pelo Conselho Nacional de Justiça em conjunto com o Ministério da Justiça.</h3>
+ <h3>Art. 12. Os tribunais criarão e manterão cadastros atualizados dos mediadores habilitados e autorizados a atuar em mediação judicial.</h3>
+ <h4>§ 1º A inscrição no cadastro de mediadores judiciais será requerida pelo interessado ao tribunal com jurisdição na área em que pretenda exercer a mediação.</h4>
+ <h4>§ 2º Os tribunais regulamentarão o processo de inscrição e desligamento de seus mediadores.</h4>
+ <h3>Art. 13. A remuneração devida aos mediadores judiciais será fixada pelos tribunais e custeada pelas partes, observado o disposto no § 2º do art. 4º desta Lei.</h3>
+ <p>Seção III</p>
+ <p>Do Procedimento de Mediação</p>
+ <p>Subseção I</p>
+ <p>Disposições Comuns</p>
+ <h3>Art. 14. No início da primeira reunião de mediação, e sempre que julgar necessário, o mediador deverá alertar as partes acerca das regras de confidencialidade aplicáveis ao procedimento.</h3>
+ <h3>Art. 15. A requerimento das partes ou do mediador, e com anuência daquelas, poderão ser admitidos outros mediadores para funcionarem no mesmo procedimento, quando isso for recomendável em razão da natureza e da complexidade do conflito.</h3>
+ <h3>Art. 16. Ainda que haja processo arbitral ou judicial em curso, as partes poderão submeter-se à mediação, hipótese em que requererão ao juiz ou árbitro a suspensão do processo por prazo suficiente para a solução consensual do litígio.</h3>
+ <h4>§ 1º É irrecorrível a decisão que suspende o processo nos termos requeridos de comum acordo pelas partes.</h4>
+ <h4>§ 2º A suspensão do processo não obsta a concessão de medidas de urgência pelo juiz ou pelo árbitro.</h4>
+ <h3>Art. 17. Considera-se instituída a mediação na data para a qual for marcada a primeira reunião de mediação.</h3>
+ <h4>Parágrafo único. Enquanto transcorrer o procedimento de mediação, ficará suspenso o prazo prescricional.</h4>
+ <h3>Art. 18. Iniciada a mediação, as reuniões posteriores com a presença das partes somente poderão ser marcadas com a sua anuência.</h3>
+ <h3>Art. 19. No desempenho de sua função, o mediador poderá reunir-se com as partes, em conjunto ou separadamente, bem como solicitar das partes as informações que entender necessárias para facilitar o entendimento entre aquelas.</h3>
+ <h3>Art. 20. O procedimento de mediação será encerrado com a lavratura do seu termo final, quando for celebrado acordo ou quando não se justificarem novos esforços para a obtenção de consenso, seja por declaração do mediador nesse sentido ou por manifestação de qualquer das partes.</h3>
+ <h4>Parágrafo único. O termo final de mediação, na hipótese de celebração de acordo, constitui título executivo extrajudicial e, quando homologado judicialmente, título executivo judicial.</h4>
+ <p>Subseção II</p>
+ <p>Da Mediação Extrajudicial</p>
+ <h3>Art. 21. O convite para iniciar o procedimento de mediação extrajudicial poderá ser feito por qualquer meio de comunicação e deverá estipular o escopo proposto para a negociação, a data e o local da primeira reunião.</h3>
+ <h4>Parágrafo único. O convite formulado por uma parte à outra considerar-se-á rejeitado se não for respondido em até trinta dias da data de seu recebimento.</h4>
+ <h3>Art. 22. A previsão contratual de mediação deverá conter, no mínimo:</h3>
+ <h5>I - prazo mínimo e máximo para a realização da primeira reunião de mediação, contado a partir da data de recebimento do convite;</h5>
+ <h5>II - local da primeira reunião de mediação;</h5>
+ <h5>III - critérios de escolha do mediador ou equipe de mediação;</h5>
+ <h5>IV - penalidade em caso de não comparecimento da parte convidada à primeira reunião de mediação.</h5>
+ <h4>§ 1º A previsão contratual pode substituir a especificação dos itens acima enumerados pela indicação de regulamento, publicado por instituição idônea prestadora de serviços de mediação, no qual constem critérios claros para a escolha do mediador e realização da primeira reunião de mediação.</h4>
+ <h4>§ 2º Não havendo previsão contratual completa, deverão ser observados os seguintes critérios para a realização da primeira reunião de mediação:</h4>
+ <h5>I - prazo mínimo de dez dias úteis e prazo máximo de três meses, contados a partir do recebimento do convite;</h5>
+ <h5>II - local adequado a uma reunião que possa envolver informações confidenciais;</h5>
+ <h5>III - lista de cinco nomes, informações de contato e referências profissionais de mediadores capacitados; a parte convidada poderá escolher, expressamente, qualquer um dos cinco mediadores e, caso a parte convidada não se manifeste, considerar-se-á aceito o primeiro nome da lista;</h5>
+ <h5>IV - o não comparecimento da parte convidada à primeira reunião de mediação acarretará a assunção por parte desta de cinquenta por cento das custas e honorários sucumbenciais caso venha a ser vencedora em procedimento arbitral ou judicial posterior, que envolva o escopo da mediação para a qual foi convidada.</h5>
+ <h4>§ 3º Nos litígios decorrentes de contratos comerciais ou societários que não contenham cláusula de mediação, o mediador extrajudicial somente cobrará por seus serviços caso as partes decidam assinar o termo inicial de mediação e permanecer, voluntariamente, no procedimento de mediação.</h4>
+ <h3>Art. 23. Se, em previsão contratual de cláusula de mediação, as partes se comprometerem a não iniciar procedimento arbitral ou processo judicial durante certo prazo ou até o implemento de determinada condição, o árbitro ou o juiz suspenderá o curso da arbitragem ou da ação pelo prazo previamente acordado ou até o implemento dessa condição.</h3>
+ <h4>Parágrafo único. O disposto no caput não se aplica às medidas de urgência em que o acesso ao Poder Judiciário seja necessário para evitar o perecimento de direito.</h4>
+ <p>Subseção III</p>
+ <p>Da Mediaçã o Judicial</p>
+ <h3>Art. 24. Os tribunais criarão centros judiciários de solução consensual de conflitos, responsáveis pela realização de sessões e audiências de conciliação e mediação, pré-processuais e processuais, e pelo desenvolvimento de programas destinados a auxiliar, orientar e estimular a autocomposição.</h3>
+ <h4>Parágrafo único. A composição e a organização do centro serão definidas pelo respectivo tribunal, observadas as normas do Conselho Nacional de Justiça.</h4>
+ <h3>Art. 25. Na mediação judicial, os mediadores não estarão sujeitos à prévia aceitação das partes, observado o disposto no art. 5º desta Lei.</h3>
+ <h3>Art. 26. As partes deverão ser assistidas por advogados ou defensores públicos, ressalvadas as hipóteses previstas nas Leis n º 9.099, de 26 de setembro de 1995 , e 10.259, de 12 de julho de 2001 .</h3>
+ <h4>Parágrafo único. Aos que comprovarem insuficiência de recursos será assegurada assistência pela Defensoria Pública.</h4>
+ <h3>Art. 27. Se a petição inicial preencher os requisitos essenciais e não for o caso de improcedência liminar do pedido, o juiz designará audiência de mediação.</h3>
+ <h3>Art. 28. O procedimento de mediação judicial deverá ser concluído em até sessenta dias, contados da primeira sessão, salvo quando as partes, de comum acordo, requererem sua prorrogação.</h3>
+ <h4>Parágrafo único. Se houver acordo, os autos serão encaminhados ao juiz, que determinará o arquivamento do processo e, desde que requerido pelas partes, homologará o acordo, por sentença, e o termo final da mediação e determinará o arquivamento do processo.</h4>
+ <h3>Art. 29. Solucionado o conflito pela mediação antes da citação do réu, não serão devidas custas judiciais finais.</h3>
+ <p>S eção IV</p>
+ <p>Da Confi dencialidade e suas Exceções</p>
+ <h3>Art. 30. Toda e qualquer informação relativa ao procedimento de mediação será confidencial em relação a terceiros, não podendo ser revelada sequer em processo arbitral ou judicial salvo se as partes expressamente decidirem de forma diversa ou quando sua divulgação for exigida por lei ou necessária para cumprimento de acordo obtido pela mediação.</h3>
+ <h4>§ 1º O dever de confidencialidade aplica-se ao mediador, às partes, a seus prepostos, advogados, assessores técnicos e a outras pessoas de sua confiança que tenham, direta ou indiretamente, participado do procedimento de mediação, alcançando:</h4>
+ <h5>I - declaração, opinião, sugestão, promessa ou proposta formulada por uma parte à outra na busca de entendimento para o conflito;</h5>
+ <h5>II - reconhecimento de fato por qualquer das partes no curso do procedimento de mediação;</h5>
+ <h5>III - manifestação de aceitação de proposta de acordo apresentada pelo mediador;</h5>
+ <h5>IV - documento preparado unicamente para os fins do procedimento de mediação.</h5>
+ <h4>§ 2º A prova apresentada em desacordo com o disposto neste artigo não será admitida em processo arbitral ou judicial.</h4>
+ <h4>§ 3º Não está abrigada pela regra de confidencialidade a informação relativa à ocorrência de crime de ação pública.</h4>
+ <h4>§ 4º A regra da confidencialidade não afasta o dever de as pessoas discriminadas no caput prestarem informações à administração tributária após o termo final da mediação, aplicando-se aos seus servidores a obrigação de manterem sigilo das informações compartilhadas nos termos do art. 198 da Lei nº 5.172, de 25 de outubro de 1966 - Código Tributário Nacional.</h4>
+ <h3>Art. 31. Será confidencial a informação prestada por uma parte em sessão privada, não podendo o mediador revelá-la às demais, exceto se expressamente autorizado.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>DA AUTOCOMPOSIÇÃO DE CONFLITOS EM QUE FOR PARTE PESSOA JURÍDICA DE DIREITO PÚBLICO</p>
+ <p>Seção I</p>
+ <p>Disposiç ões Comuns</p>
+ <h3>Art. 32. A União, os Estados, o Distrito Federal e os Municípios poderão criar câmaras de prevenção e resolução administrativa de conflitos, no âmbito dos respectivos órgãos da Advocacia Pública, onde houver, com competência para:</h3>
+ <h5>I - dirimir conflitos entre órgãos e entidades da administração pública;</h5>
+ <h5>II - avaliar a admissibilidade dos pedidos de resolução de conflitos, por meio de composição, no caso de controvérsia entre particular e pessoa jurídica de direito público;</h5>
+ <h5>III - promover, quando couber, a celebração de termo de ajustamento de conduta.</h5>
+ <h4>§ 1º O modo de composição e funcionamento das câmaras de que trata o caput será estabelecido em regulamento de cada ente federado.</h4>
+ <h4>§ 2º A submissão do conflito às câmaras de que trata o caput é facultativa e será cabível apenas nos casos previstos no regulamento do respectivo ente federado.</h4>
+ <h4>§ 3º Se houver consenso entre as partes, o acordo será reduzido a termo e constituirá título executivo extrajudicial.</h4>
+ <h4>§ 4º Não se incluem na competência dos órgãos mencionados no caput deste artigo as controvérsias que somente possam ser resolvidas por atos ou concessão de direitos sujeitos a autorização do Poder Legislativo.</h4>
+ <h4>§ 5º Compreendem-se na competência das câmaras de que trata o caput a prevenção e a resolução de conflitos que envolvam equilíbrio econômico-financeiro de contratos celebrados pela administração com particulares.</h4>
+ <h3>Art. 33. Enquanto não forem criadas as câmaras de mediação, os conflitos poderão ser dirimidos nos termos do procedimento de mediação previsto na Subseção I da Seção III do Capítulo I desta Lei.</h3>
+ <h4>Parágrafo único. A Advocacia Pública da União, dos Estados, do Distrito Federal e dos Municípios, onde houver, poderá instaurar, de ofício ou mediante provocação, procedimento de mediação coletiva de conflitos relacionados à prestação de serviços públicos.</h4>
+ <h3>Art. 34. A instauração de procedimento administrativo para a resolução consensual de conflito no âmbito da administração pública suspende a prescrição.</h3>
+ <h4>§ 1º Considera-se instaurado o procedimento quando o órgão ou entidade pública emitir juízo de admissibilidade, retroagindo a suspensão da prescrição à data de formalização do pedido de resolução consensual do conflito.</h4>
+ <h4>§ 2º Em se tratando de matéria tributária, a suspensão da prescrição deverá observar o disposto na Lei nº 5.172, de 25 de outubro de 1966 - Código Tributário Nacional.</h4>
+ <p>Seção II</p>
+ <p>Dos Conflitos Envolvendo a Administração Pública Federal Direta, suas Autarquias e Fundações</p>
+ <h3>Art. 35. As controvérsias jurídicas que envolvam a administração pública federal direta, suas autarquias e fundações poderão ser objeto de transação por adesão, com fundamento em:</h3>
+ <h5>I - autorização do Advogado-Geral da União, com base na jurisprudência pacífica do Supremo Tribunal Federal ou de tribunais superiores; ou</h5>
+ <h5>II - parecer do Advogado-Geral da União, aprovado pelo Presidente da República.</h5>
+ <h4>§ 1º Os requisitos e as condições da transação por adesão serão definidos em resolução administrativa própria.</h4>
+ <h4>§ 2º Ao fazer o pedido de adesão, o interessado deverá juntar prova de atendimento aos requisitos e às condições estabelecidos na resolução administrativa.</h4>
+ <h4>§ 3º A resolução administrativa terá efeitos gerais e será aplicada aos casos idênticos, tempestivamente habilitados mediante pedido de adesão, ainda que solucione apenas parte da controvérsia.</h4>
+ <h4>§ 4º A adesão implicará renúncia do interessado ao direito sobre o qual se fundamenta a ação ou o recurso, eventualmente pendentes, de natureza administrativa ou judicial, no que tange aos pontos compreendidos pelo objeto da resolução administrativa.</h4>
+ <h4>§ 5º Se o interessado for parte em processo judicial inaugurado por ação coletiva, a renúncia ao direito sobre o qual se fundamenta a ação deverá ser expressa, mediante petição dirigida ao juiz da causa.</h4>
+ <h4>§ 6º A formalização de resolução administrativa destinada à transação por adesão não implica a renúncia tácita à prescrição nem sua interrupção ou suspensão.</h4>
+ <h3>Art. 36. No caso de conflitos que envolvam controvérsia jurídica entre órgãos ou entidades de direito público que integram a administração pública federal, a Advocacia-Geral da União deverá realizar composição extrajudicial do conflito, observados os procedimentos previstos em ato do Advogado-Geral da União.</h3>
+ <h4>§ 1º Na hipótese do caput , se não houver acordo quanto à controvérsia jurídica, caberá ao Advogado-Geral da União dirimi-la, com fundamento na legislação afeta.</h4>
+ <h4>§ 2º Nos casos em que a resolução da controvérsia implicar o reconhecimento da existência de créditos da União, de suas autarquias e fundações em face de pessoas jurídicas de direito público federais, a Advocacia-Geral da União poderá solicitar ao Ministério do Planejamento, Orçamento e Gestão a adequação orçamentária para quitação das dívidas reconhecidas como legítimas.</h4>
+ <h4>§ 3º A composição extrajudicial do conflito não afasta a apuração de responsabilidade do agente público que deu causa à dívida, sempre que se verificar que sua ação ou omissão constitui, em tese, infração disciplinar.</h4>
+ <h4>§ 4º Nas hipóteses em que a matéria objeto do litígio esteja sendo discutida em ação de improbidade administrativa ou sobre ela haja decisão do Tribunal de Contas da União, a conciliação de que trata o caput dependerá da anuência expressa do juiz da causa ou do Ministro Relator.</h4>
+ <h3>Art. 37. É facultado aos Estados, ao Distrito Federal e aos Municípios, suas autarquias e fundações públicas, bem como às empresas públicas e sociedades de economia mista federais, submeter seus litígios com órgãos ou entidades da administração pública federal à Advocacia-Geral da União, para fins de composição extrajudicial do conflito.</h3>
+ <h3>Art. 38. Nos casos em que a controvérsia jurídica seja relativa a tributos administrados pela Secretaria da Receita Federal do Brasil ou a créditos inscritos em dívida ativa da União:</h3>
+ <h5>I - não se aplicam as disposições dos incisos II e III do caput do art. 32;</h5>
+ <h5>II - as empresas públicas, sociedades de economia mista e suas subsidiárias que explorem atividade econômica de produção ou comercialização de bens ou de prestação de serviços em regime de concorrência não poderão exercer a faculdade prevista no art. 37;</h5>
+ <h5>III - quando forem partes as pessoas a que alude o caput do art. 36:</h5>
+ <h6>a) a submissão do conflito à composição extrajudicial pela Advocacia-Geral da União implica renúncia do direito de recorrer ao Conselho Administrativo de Recursos Fiscais;</h6>
+ <h6>b) a redução ou o cancelamento do crédito dependerá de manifestação conjunta do Advogado-Geral da União e do Ministro de Estado da Fazenda.</h6>
+ <h4>Parágrafo único. O disposto no inciso II e na alínea a do inciso III não afasta a competência do Advogado-Geral da União prevista nos incisos X e XI do art. 4º da Lei Complementar nº 73, de 10 de fevereiro de 1993 .</h4>
+ <h4>Parágrafo único. O disposto neste artigo não afasta a competência do Advogado-Geral da União prevista nos incisos VI , X e XI do art. 4º da Lei Complementar nº 73, de 10 de fevereiro de 1993 , e na Lei nº 9.469, de 10 de julho de 1997 . (Redação dada pela Lei nº 13.327, de 2016) (Produção de efeito)</h4>
+ <h3>Art. 39. A propositura de ação judicial em que figurem concomitantemente nos polos ativo e passivo órgãos ou entidades de direito público que integrem a administração pública federal deverá ser previamente autorizada pelo Advogado-Geral da União.</h3>
+ <h3>Art. 40. Os servidores e empregados públicos que participarem do processo de composição extrajudicial do conflito, somente poderão ser responsabilizados civil, administrativa ou criminalmente quando, mediante dolo ou fraude, receberem qualquer vantagem patrimonial indevida, permitirem ou facilitarem sua recepção por terceiro, ou para tal concorrerem.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 41. A Escola Nacional de Mediação e Conciliação, no âmbito do Ministério da Justiça, poderá criar banco de dados sobre boas práticas em mediação, bem como manter relação de mediadores e de instituições de mediação.</h3>
+ <h3>Art. 42. Aplica-se esta Lei, no que couber, às outras formas consensuais de resolução de conflitos, tais como mediações comunitárias e escolares, e àquelas levadas a efeito nas serventias extrajudiciais, desde que no âmbito de suas competências.</h3>
+ <h4>Parágrafo único. A mediação nas relações de trabalho será regulada por lei própria.</h4>
+ <h3>Art. 43. Os órgãos e entidades da administração pública poderão criar câmaras para a resolução de conflitos entre particulares, que versem sobre atividades por eles reguladas ou supervisionadas.</h3>
+ <h3>Art. 44. Os arts. 1º e 2º da Lei nº 9.469, de 10 de julho de 1997 , passam a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 1º O Advogado-Geral da União, diretamente ou mediante delegação, e os dirigentes máximos das empresas públicas federais, em conjunto com o dirigente estatutário da área afeta ao assunto, poderão autorizar a realização de acordos ou transações para prevenir ou terminar litígios, inclusive os judiciais.</h3>
+ <h4>§ 1º Poderão ser criadas câmaras especializadas, compostas por servidores públicos ou empregados públicos efetivos, com o objetivo de analisar e formular propostas de acordos ou transações.</h4>
+ <h4>§ 3º Regulamento disporá sobre a forma de composição das câmaras de que trata o § 1º, que deverão ter como integrante pelo menos um membro efetivo da Advocacia-Geral da União ou, no caso das empresas públicas, um assistente jurídico ou ocupante de função equivalente.</h4>
+ <h4>§ 4º Quando o litígio envolver valores superiores aos fixados em regulamento, o acordo ou a transação, sob pena de nulidade, dependerá de prévia e expressa autorização do Advogado-Geral da União e do Ministro de Estado a cuja área de competência estiver afeto o assunto, ou ainda do Presidente da Câmara dos Deputados, do Senado Federal, do Tribunal de Contas da União, de Tribunal ou Conselho, ou do Procurador-Geral da República, no caso de interesse dos órgãos dos Poderes Legislativo e Judiciário ou do Ministério Público da União, excluídas as empresas públicas federais não dependentes, que necessitarão apenas de prévia e expressa autorização dos dirigentes de que trata o caput .</h4>
+ <h4>§ 5º Na transação ou acordo celebrado diretamente pela parte ou por intermédio de procurador para extinguir ou encerrar processo judicial, inclusive os casos de extensão administrativa de pagamentos postulados em juízo, as partes poderão definir a responsabilidade de cada uma pelo pagamento dos honorários dos respectivos advogados.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 2º O Procurador-Geral da União, o Procurador-Geral Federal, o Procurador-Geral do Banco Central do Brasil e os dirigentes das empresas públicas federais mencionadas no caput do art. 1º poderão autorizar, diretamente ou mediante delegação, a realização de acordos para prevenir ou terminar, judicial ou extrajudicialmente, litígio que envolver valores inferiores aos fixados em regulamento.</h3>
+ <h4>§ 1º No caso das empresas públicas federais, a delegação é restrita a órgão colegiado formalmente constituído, composto por pelo menos um dirigente estatutário.</h4>
+ <h4>§ 2º O acordo de que trata o caput poderá consistir no pagamento do débito em parcelas mensais e sucessivas, até o limite máximo de sessenta.</h4>
+ <h4>§ 3º O valor de cada prestação mensal, por ocasião do pagamento, será acrescido de juros equivalentes à taxa referencial do Sistema Especial de Liquidação e de Custódia - SELIC para títulos federais, acumulada mensalmente, calculados a partir do mês subsequente ao da consolidação até o mês anterior ao do pagamento e de um por cento relativamente ao mês em que o pagamento estiver sendo efetuado.</h4>
+ <h4>§ 4º Inadimplida qualquer parcela, após trinta dias, instaurar-se-á o processo de execução ou nele prosseguir-se-á, pelo saldo.” (NR)</h4>
+ <h3>Art. 45. O Decreto nº 70.235, de 6 de março de 1972 , passa a vigorar acrescido do seguinte art. 14-A:</h3>
+ <p>“</p>
+ <h3>Art. 14-A. No caso de determinação e exigência de créditos tributários da União cujo sujeito passivo seja órgão ou entidade de direito público da administração pública federal, a submissão do litígio à composição extrajudicial pela Advocacia-Geral da União é considerada reclamação, para fins do disposto no inciso III do art. 151 da Lei nº 5.172, de 25 de outubro de 1966 - Código Tributário Nacional.”</h3>
+ <h3>Art. 46. A mediação poderá ser feita pela internet ou por outro meio de comunicação que permita a transação à distância, desde que as partes estejam de acordo.</h3>
+ <h4>Parágrafo único. É facultado à parte domiciliada no exterior submeter-se à mediação segundo as regras estabelecidas nesta Lei.</h4>
+ <h3>Art. 47. Esta Lei entra em vigor após decorridos cento e oitenta dias de sua publicação oficial.</h3>
+ <h3>Art. 48. Revoga-se o § 2º do art. 6º da Lei nº 9.469, de 10 de julho de 1997 .</h3>
+ <p>Brasília, 26 de junho de 2015; 194º da Independência e 127º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Joaquim Vieira Ferreira Levy</p>
+ <p>Luís Inácio Lucena Adams</p>
+ <p>Este texto não substitui o publicado no DOU de 29.6.2015</p>
+ <p>Presidência da RepúblicaSecretaria-GeralSubchefia para Assuntos Jurídicos</p>
+ <p>Dispõe sobre a mediação entre particulares como meio de solução de controvérsias e sobre a autocomposição de conflitos no âmbito da administração pública; altera a Lei nº 9.469, de 10 de julho de 1997, e o Decreto nº 70.235, de 6 de março de 1972; e revoga o § 2º do art. 6º da Lei nº 9.469, de 10 de julho de 1997.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13140.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

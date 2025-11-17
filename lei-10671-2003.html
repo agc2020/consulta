@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 10.671, DE 15 DE MAIO DE 2003 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2003" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 10.671, DE 15 DE MAIO DE 2003</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 07:25:40 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/2003/L10.671compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 36.852 caracteres | espelho: 36.800 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 10.671, DE 15 DE MAIO DE 2003.</p>
+ <p>Dispõe sobre o Estatuto de Defesa do Torcedor e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>DISPOSIÇÕES Gerais</p>
+ <h3>Art. 1º Este Estatuto estabelece normas de proteção e defesa do torcedor.</h3>
+ <h3>Art. 1º -A. A prevenção da violência nos esportes é de responsabilidade do poder público, das confederações, federações, ligas, clubes, associações ou entidades esportivas, entidades recreativas e associações de torcedores, inclusive de seus respectivos dirigentes, bem como daqueles que, de qualquer forma, promovem, organizam, coordenam ou participam dos eventos esportivos. (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <h3>Art. 2º Torcedor é toda pessoa que aprecie, apóie ou se associe a qualquer entidade de prática desportiva do País e acompanhe a prática de determinada modalidade esportiva.</h3>
+ <h4>Parágrafo único. Salvo prova em contrário, presumem-se a apreciação, o apoio ou o acompanhamento de que trata o caput deste artigo.</h4>
+ <h3>Art. 2º -A. Considera-se torcida organizada, para os efeitos desta Lei, a pessoa jurídica de direito privado ou existente de fato, que se organize para o fim de torcer e apoiar entidade de prática esportiva de qualquer natureza ou modalidade. (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <h4>Parágrafo único. A torcida organizada deverá manter cadastro atualizado de seus associados ou membros, o qual deverá conter, pelo menos, as seguintes informações: (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h5>I - nome completo; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>II - fotografia; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>III - filiação; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>IV - número do registro civil; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>V - número do CPF; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VI - data de nascimento; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VII - estado civil; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VIII - profissão; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>IX - endereço completo; e (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>X - escolaridade. (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h3>Art. 3º Para todos os efeitos legais, equiparam-se a fornecedor, nos termos da Lei Nº 8.078, de 11 de setembro de 1990 , a entidade responsável pela organização da competição, bem como a entidade de prática desportiva detentora do mando de jogo.</h3>
+ <h3>Art. 4º (VETADO)</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA TRANSPARÊNCIA NA ORGANIZAÇÃO</h3>
+ <h3>Art. 5º São asseguradas ao torcedor a publicidade e transparência na organização das competições administradas pelas entidades de administração do desporto, bem como pelas ligas de que trata o art. 20 da Lei Nº 9.615, de 24 de março de 1998.</h3>
+ <h4>§ 1º As entidades de que trata o caput farão publicar na internet, em sítio da entidade responsável pela organização do evento: (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h5>I - a íntegra do regulamento da competição; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>II - as tabelas da competição, contendo as partidas que serão realizadas, com especificação de sua data, local e horário; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>III - o nome e as formas de contato do Ouvidor da Competição de que trata o art. 6º ; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>IV - os borderôs completos das partidas; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>V - a escalação dos árbitros imediatamente após sua definição; e (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VI - a relação dos nomes dos torcedores impedidos de comparecer ao local do evento desportivo. (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h4>§ 2º Os dados contidos nos itens V e VI também deverão ser afixados ostensivamente em local visível, em caracteres facilmente legíveis, do lado externo de todas as entradas do local onde se realiza o evento esportivo. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 3º O juiz deve comunicar às entidades de que trata o caput decisão judicial ou aceitação de proposta de transação penal ou suspensão do processo que implique o impedimento do torcedor de frequentar estádios desportivos. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h3>Art. 6º A entidade responsável pela organização da competição, previamente ao seu início, designará o Ouvidor da Competição, fornecendo-lhe os meios de comunicação necessários ao amplo acesso dos torcedores.</h3>
+ <h4>§ 1º São deveres do Ouvidor da Competição recolher as sugestões, propostas e reclamações que receber dos torcedores, examiná-las e propor à respectiva entidade medidas necessárias ao aperfeiçoamento da competição e ao benefício do torcedor.</h4>
+ <h4>§ 2º É assegurado ao torcedor:</h4>
+ <h5>I - o amplo acesso ao Ouvidor da Competição, mediante comunicação postal ou mensagem eletrônica; e</h5>
+ <h5>II - o direito de receber do Ouvidor da Competição as respostas às sugestões, propostas e reclamações, que encaminhou, no prazo de trinta dias.</h5>
+ <h4>§ 3º Na hipótese de que trata o inciso II do § 2º , o Ouvidor da Competição utilizará, prioritariamente, o mesmo meio de comunicação utilizado pelo torcedor para o encaminhamento de sua mensagem.</h4>
+ <h4>§ 4º O sítio da internet em que forem publicadas as informações de que trata o § 1º do art. 5º conterá, também, as manifestações e propostas do Ouvidor da Competição. (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 5º A função de Ouvidor da Competição poderá ser remunerada pelas entidades de prática desportiva participantes da competição.</h4>
+ <h3>Art. 7º É direito do torcedor a divulgação, durante a realização da partida, da renda obtida pelo pagamento de ingressos e do número de espectadores pagantes e não-pagantes, por intermédio dos serviços de som e imagem instalados no estádio em que se realiza a partida, pela entidade responsável pela organização da competição.</h3>
+ <h3>Art. 8º As competições de atletas profissionais de que participem entidades integrantes da organização desportiva do País deverão ser promovidas de acordo com calendário anual de eventos oficiais que:</h3>
+ <h5>I - garanta às entidades de prática desportiva participação em competições durante pelo menos dez meses do ano;</h5>
+ <h5>II - adote, em pelo menos uma competição de âmbito nacional, sistema de disputa em que as equipes participantes conheçam, previamente ao seu início, a quantidade de partidas que disputarão, bem como seus adversários.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO REGULAMENTO DA COMPETIÇÃO</h3>
+ <h3>Art. 9º É direito do torcedor que o regulamento, as tabelas da competição e o nome do Ouvidor da Competição sejam divulgados até 60 (sessenta) dias antes de seu início, na forma do § 1º do art. 5º . (Redação dada pela Lei nº 12.299, de 2010).</h3>
+ <h4>§ 1º Nos dez dias subseqüentes à divulgação de que trata o caput , qualquer interessado poderá manifestar-se sobre o regulamento diretamente ao Ouvidor da Competição.</h4>
+ <h4>§ 2º O Ouvidor da Competição elaborará, em setenta e duas horas, relatório contendo as principais propostas e sugestões encaminhadas.</h4>
+ <h4>§ 3º Após o exame do relatório, a entidade responsável pela organização da competição decidirá, em quarenta e oito horas, motivadamente, sobre a conveniência da aceitação das propostas e sugestões relatadas.</h4>
+ <h4>§ 4º O regulamento definitivo da competição será divulgado, na forma do § 1º do art. 5º , 45 (quarenta e cinco) dias antes de seu início. (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 5º É vedado proceder alterações no regulamento da competição desde sua divulgação definitiva, salvo nas hipóteses de:</h4>
+ <h5>I - apresentação de novo calendário anual de eventos oficiais para o ano subseqüente, desde que aprovado pelo Conselho Nacional do Esporte – CNE;</h5>
+ <h5>II - após dois anos de vigência do mesmo regulamento, observado o procedimento de que trata este artigo.</h5>
+ <h5>III - interrupção das competições por motivo de surtos, epidemias e pandemias que possam comprometer a integridade física e o bem-estar dos atletas, desde que aprovada pela maioria das agremiações partícipes do evento. (Incluído pela Lei nº 14.117, de 2021)</h5>
+ <h4>§ 6º A competição que vier a substituir outra, segundo o novo calendário anual de eventos oficiais apresentado para o ano subseqüente, deverá ter âmbito territorial diverso da competição a ser substituída.</h4>
+ <h3>Art. 10. É direito do torcedor que a participação das entidades de prática desportiva em competições organizadas pelas entidades de que trata o art. 5º seja exclusivamente em virtude de critério técnico previamente definido.</h3>
+ <h4>§ 1º Para os fins do disposto neste artigo, considera-se critério técnico a habilitação de entidade de prática desportiva em razão de: (Redação dada pela Lei nº 13.155, de 2015)</h4>
+ <h5>I - colocação obtida em competição anterior; e (Incluído pela Lei nº 13.155, de 2015)</h5>
+ <h5>II - cumprimento dos seguintes requisitos: (Incluído pela Lei nº 13.155, de 2015)</h5>
+ <h6>a) regularidade fiscal, atestada por meio de apresentação de Certidão Negativa de Débitos relativos a Créditos Tributários Federais e à Dívida Ativa da União - CND; (Incluído pela Lei nº 13.155, de 2015)</h6>
+ <h6>b) apresentação de certificado de regularidade do Fundo de Garantia do Tempo de Serviço - FGTS; e (Incluído pela Lei nº 13.155, de 2015)</h6>
+ <h6>c) comprovação de pagamento dos vencimentos acertados em contratos de trabalho e dos contratos de imagem dos atletas. (Incluído pela Lei nº 13.155, de 2015)</h6>
+ <h4>§ 2º Fica vedada a adoção de qualquer outro critério, especialmente o convite, observado o disposto no art. 89 da Lei nº 9.615, de 24 de março de 1998.</h4>
+ <h4>§ 3º Em campeonatos ou torneios regulares com mais de uma divisão, serão observados o princípio do acesso e do descenso e as seguintes determinações, sem prejuízo da perda de pontos, na forma do regulamento: (Redação dada pela Lei nº 13.155, de 2015)</h4>
+ <h5>I - a entidade de prática desportiva que não cumprir todos os requisitos estabelecidos no inciso II do § 1º deste artigo participará da divisão imediatamente inferior à que se encontra classificada; (Incluído pela Lei nº 13.155, de 2015)</h5>
+ <h5>II - a vaga desocupada pela entidade de prática desportiva rebaixada nos termos do inciso I deste parágrafo será ocupada por entidade de prática desportiva participante da divisão que receberá a entidade rebaixada nos termos do inciso I deste parágrafo, obedecida a ordem de classificação do campeonato do ano anterior e desde que cumpridos os requisitos exigidos no inciso II do § 1º deste artigo. (Incluído pela Lei nº 13.155, de 2015)</h5>
+ <h4>§ 4º Serão desconsideradas as partidas disputadas pela entidade de prática desportiva que não tenham atendido ao critério técnico previamente definido, inclusive para efeito de pontuação na competição.</h4>
+ <h4>§ 5º A comprovação da regularidade fiscal de que trata a alínea a do inciso II do § 1º deste artigo poderá ser feita mediante a apresentação de Certidão Positiva com Efeitos de Negativa de Débitos relativos a Créditos Tributários Federais e à Dívida Ativa da União - CPEND. (Incluído pela Lei nº 13.155, de 2015)</h4>
+ <h4>§ 6º (VETADO). (Incluído pela Lei nº 13.155, de 2015)</h4>
+ <h4>§ 7º (VETADO). (Incluído pela Lei nº 13.155, de 2015)</h4>
+ <h4>§ 8º (VETADO). (Incluído pela Lei nº 13.155, de 2015)</h4>
+ <h3>Art. 11. É direito do torcedor que o árbitro e seus auxiliares entreguem, em até quatro horas contadas do término da partida, a súmula e os relatórios da partida ao representante da entidade responsável pela organização da competição.</h3>
+ <h4>§ 1º Em casos excepcionais, de grave tumulto ou necessidade de laudo médico, os relatórios da partida poderão ser complementados em até vinte e quatro horas após o seu término.</h4>
+ <h4>§ 2º A súmula e os relatórios da partida serão elaborados em três vias, de igual teor e forma, devidamente assinadas pelo árbitro, auxiliares e pelo representante da entidade responsável pela organização da competição.</h4>
+ <h4>§ 3º A primeira via será acondicionada em envelope lacrado e ficará na posse de representante da entidade responsável pela organização da competição, que a encaminhará ao setor competente da respectiva entidade até as treze horas do primeiro dia útil subseqüente.</h4>
+ <h4>§ 4º O lacre de que trata o § 3º será assinado pelo árbitro e seus auxiliares.</h4>
+ <h4>§ 5º A segunda via ficará na posse do árbitro da partida, servindo-lhe como recibo.</h4>
+ <h4>§ 6º A terceira via ficará na posse do representante da entidade responsável pela organização da competição, que a encaminhará ao Ouvidor da Competição até as treze horas do primeiro dia útil subseqüente, para imediata divulgação.</h4>
+ <h3>Art. 12. A entidade responsável pela organização da competição dará publicidade à súmula e aos relatórios da partida no sítio de que trata o § 1º do art. 5º até as 14 (quatorze) horas do 3º (terceiro) dia útil subsequente ao da realização da partida. (Redação dada pela Lei nº 12.299, de 2010).</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA SEGURANÇA DO TORCEDOR PARTÍCIPE DO EVENTO ESPORTIVO</h3>
+ <h3>Art. 13. O torcedor tem direito a segurança nos locais onde são realizados os eventos esportivos antes, durante e após a realização das partidas. (Vigência)</h3>
+ <h4>Parágrafo único. Será assegurado acessibilidade ao torcedor portador de deficiência ou com mobilidade reduzida.</h4>
+ <h3>Art. 13-A. São condições de acesso e permanência do torcedor no recinto esportivo, sem prejuízo de outras condições previstas em lei: (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <h5>I - estar na posse de ingresso válido; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>II - não portar objetos, bebidas ou substâncias proibidas ou suscetíveis de gerar ou possibilitar a prática de atos de violência; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>III - consentir com a revista pessoal de prevenção e segurança; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>IV - não portar ou ostentar cartazes, bandeiras, símbolos ou outros sinais com mensagens ofensivas, inclusive de caráter racista ou xenófobo; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>V - não entoar cânticos discriminatórios, racistas ou xenófobos; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VI - não arremessar objetos, de qualquer natureza, no interior do recinto esportivo; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VII - não portar ou utilizar fogos de artifício ou quaisquer outros engenhos pirotécnicos ou produtores de efeitos análogos; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>VIII - não incitar e não praticar atos de violência no estádio, qualquer que seja a sua natureza; e (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>IX - não invadir e não incitar a invasão, de qualquer forma, da área restrita aos competidores. (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>X - não utilizar bandeiras, inclusive com mastro de bambu ou similares, para outros fins que não o da manifestação festiva e amigável. (Incluído pela Lei nº 12.663, de 2012).</h5>
+ <h4>Parágrafo único. O não cumprimento das condições estabelecidas neste artigo implicará a impossibilidade de ingresso do torcedor ao recinto esportivo, ou, se for o caso, o seu afastamento imediato do recinto, sem prejuízo de outras sanções administrativas, civis ou penais eventualmente cabíveis. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h3>Art. 14. Sem prejuízo do disposto nos arts. 12 a 14 da Lei nº 8.078, de 11 de setembro de 199 0, a responsabilidade pela segurança do torcedor em evento esportivo é da entidade de prática desportiva detentora do mando de jogo e de seus dirigentes, que deverão:</h3>
+ <h5>I – solicitar ao Poder Público competente a presença de agentes públicos de segurança, devidamente identificados, responsáveis pela segurança dos torcedores dentro e fora dos estádios e demais locais de realização de eventos esportivos;</h5>
+ <h5>II - informar imediatamente após a decisão acerca da realização da partida, dentre outros, aos órgãos públicos de segurança, transporte e higiene, os dados necessários à segurança da partida, especialmente:</h5>
+ <h6>a) o local;</h6>
+ <h6>b) o horário de abertura do estádio;</h6>
+ <h6>c) a capacidade de público do estádio; e</h6>
+ <h6>d) a expectativa de público;</h6>
+ <h5>III - colocar à disposição do torcedor orientadores e serviço de atendimento para que aquele encaminhe suas reclamações no momento da partida, em local:</h5>
+ <h6>a) amplamente divulgado e de fácil acesso; e</h6>
+ <h6>b) situado no estádio.</h6>
+ <h4>§ 1º É dever da entidade de prática desportiva detentora do mando de jogo solucionar imediatamente, sempre que possível, as reclamações dirigidas ao serviço de atendimento referido no inciso III, bem como reportá-las ao Ouvidor da Competição e, nos casos relacionados à violação de direitos e interesses de consumidores, aos órgãos de defesa e proteção do consumidor.</h4>
+ <p><del>§ 2º (Revogado pela Lei nº 12.299, de 2010).</del></p>
+ <h3>Art. 15. O detentor do mando de jogo será uma das entidades de prática desportiva envolvidas na partida, de acordo com os critérios definidos no regulamento da competição.</h3>
+ <h3>Art. 16. É dever da entidade responsável pela organização da competição:</h3>
+ <h5>I - confirmar, com até quarenta e oito horas de antecedência, o horário e o local da realização das partidas em que a definição das equipes dependa de resultado anterior;</h5>
+ <h5>II - contratar seguro de acidentes pessoais, tendo como beneficiário o torcedor portador de ingresso, válido a partir do momento em que ingressar no estádio;</h5>
+ <h5>III – disponibilizar um médico e dois enfermeiros-padrão para cada dez mil torcedores presentes à partida;</h5>
+ <h5>IV – disponibilizar uma ambulância para cada dez mil torcedores presentes à partida; e</h5>
+ <h5>V – comunicar previamente à autoridade de saúde a realização do evento.</h5>
+ <h3>Art. 17. É direito do torcedor a implementação de planos de ação referentes a segurança, transporte e contingências que possam ocorrer durante a realização de eventos esportivos.</h3>
+ <h4>§ 1º Os planos de ação de que trata o caput serão elaborados pela entidade responsável pela organização da competição, com a participação das entidades de prática desportiva que a disputarão e dos órgãos responsáveis pela segurança pública, transporte e demais contingências que possam ocorrer, das localidades em que se realizarão as partidas da competição. (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 2º Planos de ação especiais poderão ser apresentados em relação a eventos esportivos com excepcional expectativa de público.</h4>
+ <h4>§ 3º Os planos de ação serão divulgados no sítio dedicado à competição de que trata o parágrafo único do art. 5º no mesmo prazo de publicação do regulamento definitivo da competição.</h4>
+ <h3>Art. 18. Os estádios com capacidade superior a 10.000 (dez mil) pessoas deverão manter central técnica de informações, com infraestrutura suficiente para viabilizar o monitoramento por imagem do público presente. (Redação dada pela Lei nº 12.299, de 2010).</h3>
+ <h3>Art. 19. As entidades responsáveis pela organização da competição, bem como seus dirigentes respondem solidariamente com as entidades de que trata o art. 15 e seus dirigentes, independentemente da existência de culpa, pelos prejuízos causados a torcedor que decorram de falhas de segurança nos estádios ou da inobservância do disposto neste capítulo.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DOS INGRESSOS</h3>
+ <h3>Art. 20. É direito do torcedor partícipe que os ingressos para as partidas integrantes de competições profissionais sejam colocados à venda até setenta e duas horas antes do início da partida correspondente.</h3>
+ <h4>§ 1º O prazo referido no caput será de quarenta e oito horas nas partidas em que:</h4>
+ <h5>I - as equipes sejam definidas a partir de jogos eliminatórios; e</h5>
+ <h5>II - a realização não seja possível prever com antecedência de quatro dias.</h5>
+ <h4>§ 2º A venda deverá ser realizada por sistema que assegure a sua agilidade e amplo acesso à informação.</h4>
+ <h4>§ 3º É assegurado ao torcedor partícipe o fornecimento de comprovante de pagamento, logo após a aquisição dos ingressos.</h4>
+ <h4>§ 4º Não será exigida, em qualquer hipótese, a devolução do comprovante de que trata o § 3º .</h4>
+ <h4>§ 5º Nas partidas que compõem as competições de âmbito nacional ou regional de primeira e segunda divisão, a venda de ingressos será realizada em, pelo menos, cinco postos de venda localizados em distritos diferentes da cidade.</h4>
+ <h3>Art. 21. A entidade detentora do mando de jogo implementará, na organização da emissão e venda de ingressos, sistema de segurança contra falsificações, fraudes e outras práticas que contribuam para a evasão da receita decorrente do evento esportivo.</h3>
+ <h3>Art. 22. São direitos do torcedor partícipe:</h3>
+ <h5>I - que todos os ingressos emitidos sejam numerados; e</h5>
+ <h5>II - ocupar o local correspondente ao número constante do ingresso.</h5>
+ <h4>§ 1º O disposto no inciso II não se aplica aos locais já existentes para assistência em pé, nas competições que o permitirem, limitando-se, nesses locais, o número de pessoas, de acordo com critérios de saúde, segurança e bem-estar.</h4>
+ <h4>§ 2º A emissão de ingressos e o acesso ao estádio nas primeira e segunda divisões da principal competição nacional e nas partidas finais das competições eliminatórias de âmbito nacional deverão ser realizados por meio de sistema eletrônico que viabilize a fiscalização e o controle da quantidade de público e do movimento financeiro da partida. (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 3º O disposto no § 2º não se aplica aos eventos esportivos realizados em estádios com capacidade inferior a 10.000 (dez mil) pessoas. (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h3>Art. 23. A entidade responsável pela organização da competição apresentará ao Ministério Público dos Estados e do Distrito Federal, previamente à sua realização, os laudos técnicos expedidos pelos órgãos e autoridades competentes pela vistoria das condições de segurança dos estádios a serem utilizados na competição. (Regulamento)</h3>
+ <h4>§ 1º Os laudos atestarão a real capacidade de público dos estádios, bem como suas condições de segurança.</h4>
+ <h4>§ 2º Perderá o mando de jogo por, no mínimo, seis meses, sem prejuízo das demais sanções cabíveis, a entidade de prática desportiva detentora do mando do jogo em que:</h4>
+ <h5>I - tenha sido colocado à venda número de ingressos maior do que a capacidade de público do estádio; ou</h5>
+ <h5>II - tenham entrado pessoas em número maior do que a capacidade de público do estádio.</h5>
+ <h5>III - tenham sido disponibilizados portões de acesso ao estádio em número inferior ao recomendado pela autoridade pública. (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h3>Art. 24. É direito do torcedor partícipe que conste no ingresso o preço pago por ele.</h3>
+ <h4>§ 1º Os valores estampados nos ingressos destinados a um mesmo setor do estádio não poderão ser diferentes entre si, nem daqueles divulgados antes da partida pela entidade detentora do mando de jogo.</h4>
+ <h4>§ 2º O disposto no § 1º não se aplica aos casos de venda antecipada de carnê para um conjunto de, no mínimo, três partidas de uma mesma equipe, bem como na venda de ingresso com redução de preço decorrente de previsão legal.</h4>
+ <h3>Art. 25. O controle e a fiscalização do acesso do público ao estádio com capacidade para mais de 10.000 (dez mil) pessoas deverão contar com meio de monitoramento por imagem das catracas, sem prejuízo do disposto no art. 18 desta Lei. (Redação dada pela Lei nº 12.299, de 2010).</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DO TRANSPORTE</h3>
+ <h3>Art. 26. Em relação ao transporte de torcedores para eventos esportivos, fica assegurado ao torcedor partícipe:</h3>
+ <h5>I - o acesso a transporte seguro e organizado;</h5>
+ <h5>II - a ampla divulgação das providências tomadas em relação ao acesso ao local da partida, seja em transporte público ou privado; e</h5>
+ <h5>III - a organização das imediações do estádio em que será disputada a partida, bem como suas entradas e saídas, de modo a viabilizar, sempre que possível, o acesso seguro e rápido ao evento, na entrada, e aos meios de transporte, na saída.</h5>
+ <h3>Art. 27. A entidade responsável pela organização da competição e a entidade de prática desportiva detentora do mando de jogo solicitarão formalmente, direto ou mediante convênio, ao Poder Público competente:</h3>
+ <h5>I - serviços de estacionamento para uso por torcedores partícipes durante a realização de eventos esportivos, assegurando a estes acesso a serviço organizado de transporte para o estádio, ainda que oneroso; e</h5>
+ <h5>II - meio de transporte, ainda que oneroso, para condução de idosos, crianças e pessoas portadoras de deficiência física aos estádios, partindo de locais de fácil acesso, previamente determinados.</h5>
+ <h4>Parágrafo único. O cumprimento do disposto neste artigo fica dispensado na hipótese de evento esportivo realizado em estádio com capacidade inferior a 10.000 (dez mil) pessoas. (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DA ALIMENTAÇÃO E DA HIGIENE</h3>
+ <h3>Art. 28. O torcedor partícipe tem direito à higiene e à qualidade das instalações físicas dos estádios e dos produtos alimentícios vendidos no local.</h3>
+ <h4>§ 1º O Poder Público, por meio de seus órgãos de vigilância sanitária, verificará o cumprimento do disposto neste artigo, na forma da legislação em vigor.</h4>
+ <h4>§ 2º É vedado impor preços excessivos ou aumentar sem justa causa os preços dos produtos alimentícios comercializados no local de realização do evento esportivo.</h4>
+ <h3>Art. 29. É direito do torcedor partícipe que os estádios possuam sanitários em número compatível com sua capacidade de público, em plenas condições de limpeza e funcionamento.</h3>
+ <h4>Parágrafo único. Os laudos de que trata o art. 23 deverão aferir o número de sanitários em condições de uso e emitir parecer sobre a sua compatibilidade com a capacidade de público do estádio.</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DA RELAÇÃO COM A ARBITRAGEM ESPORTIVA</h3>
+ <h3>Art. 30. É direito do torcedor que a arbitragem das competições desportivas seja independente, imparcial, previamente remunerada e isenta de pressões.</h3>
+ <h4>Parágrafo único. A remuneração do árbitro e de seus auxiliares será de responsabilidade da entidade de administração do desporto ou da liga organizadora do evento esportivo.</h4>
+ <h3>Art. 31. A entidade detentora do mando do jogo e seus dirigentes deverão convocar os agentes públicos de segurança visando a garantia da integridade física do árbitro e de seus auxiliares.</h3>
+ <h3>Art. 31-A. É dever das entidades de administração do desporto contratar seguro de vida e acidentes pessoais, tendo como beneficiária a equipe de arbitragem, quando exclusivamente no exercício dessa atividade. (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <h3>Art. 32. É direito do torcedor que os árbitros de cada partida sejam escolhidos mediante sorteio, dentre aqueles previamente selecionados, ou audiência pública transmitida ao vivo pela rede mundial de computadores, sob pena de nulidade. (Redação dada pela Lei nº 13.155, de 2015)</h3>
+ <h4>§ 1º O sorteio ou audiência pública serão realizados no mínimo quarenta e oito horas antes de cada rodada, em local e data previamente definidos. (Redação dada pela Lei nº 13.155, de 2015)</h4>
+ <h4>§ 2º O sorteio será aberto ao público, garantida sua ampla divulgação.</h4>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DA RELAÇÃO COM A ENTIDADE DE PRÁTICA DESPORTIVA</h3>
+ <h3>Art. 33. Sem prejuízo do disposto nesta Lei, cada entidade de prática desportiva fará publicar documento que contemple as diretrizes básicas de seu relacionamento com os torcedores, disciplinando, obrigatoriamente:</h3>
+ <h5>I - o acesso ao estádio e aos locais de venda dos ingressos;</h5>
+ <h5>II - mecanismos de transparência financeira da entidade, inclusive com disposições relativas à realização de auditorias independentes, observado o disposto no art. 46-A da Lei nº 9.615, de 24 de março de 1998 ; e</h5>
+ <h5>III - a comunicação entre o torcedor e a entidade de prática desportiva.</h5>
+ <h4>Parágrafo único. A comunicação entre o torcedor e a entidade de prática desportiva de que trata o inciso III do caput poderá, dentre outras medidas, ocorrer mediante:</h4>
+ <h5>I - a instalação de uma ouvidoria estável;</h5>
+ <h5>II - a constituição de um órgão consultivo formado por torcedores não-sócios; ou</h5>
+ <h5>III - reconhecimento da figura do sócio-torcedor, com direitos mais restritos que os dos demais sócios.</h5>
+ <h2>CAPÍTULO X</h2>
+ <h3>DA RELAÇÃO COM A JUSTIÇA DESPORTIVA</h3>
+ <h3>Art. 34. É direito do torcedor que os órgãos da Justiça Desportiva, no exercício de suas funções, observem os princípios da impessoalidade, da moralidade, da celeridade, da publicidade e da independência.</h3>
+ <h3>Art. 35. As decisões proferidas pelos órgãos da Justiça Desportiva devem ser, em qualquer hipótese, motivadas e ter a mesma publicidade que as decisões dos tribunais federais.</h3>
+ <h4>§ 1º Não correm em segredo de justiça os processos em curso perante a Justiça Desportiva.</h4>
+ <h4>§ 2º As decisões de que trata o caput serão disponibilizadas no sítio de que trata o § 1º do art. 5º . (Redação dada pela Lei nº 12.299, de 2010).</h4>
+ <h3>Art. 36. São nulas as decisões proferidas que não observarem o disposto nos arts. 34 e 35.</h3>
+ <h2>CAPÍTULO XI</h2>
+ <h3>DAS PENALIDADES</h3>
+ <h3>Art. 37. Sem prejuízo das demais sanções cabíveis, a entidade de administração do desporto, a liga ou a entidade de prática desportiva que violar ou de qualquer forma concorrer para a violação do disposto nesta Lei, observado o devido processo legal, incidirá nas seguintes sanções:</h3>
+ <h5>I – destituição de seus dirigentes, na hipótese de violação das regras de que tratam os Capítulos II, IV e V desta Lei;</h5>
+ <h5>II - suspensão por seis meses dos seus dirigentes, por violação dos dispositivos desta Lei não referidos no inciso I;</h5>
+ <h5>III - impedimento de gozar de qualquer benefício fiscal em âmbito federal; e</h5>
+ <h5>IV - suspensão por seis meses dos repasses de recursos públicos federais da administração direta e indireta, sem prejuízo do disposto no art. 18 da Lei Nº 9.615, de 24 de março de 1998.</h5>
+ <h4>§ 1º Os dirigentes de que tratam os incisos I e II do caput deste artigo serão sempre:</h4>
+ <h5>I - o presidente da entidade, ou aquele que lhe faça as vezes; e</h5>
+ <h5>II - o dirigente que praticou a infração, ainda que por omissão.</h5>
+ <h4>§ 2º A União, os Estados, o Distrito Federal e os Municípios poderão instituir, no âmbito de suas competências, multas em razão do descumprimento do disposto nesta Lei, observado o valor mínimo de R$ 100,00 (cem reais) e o valor máximo de R$ 2.000.000,00 (dois milhões de reais). (Redação dada pela Lei nº 13.155, de 2015)</h4>
+ <h4>§ 3º A instauração do processo apuratório acarretará adoção cautelar do afastamento compulsório dos dirigentes e demais pessoas que, de forma direta ou indiretamente, puderem interferir prejudicialmente na completa elucidação dos fatos, além da suspensão dos repasses de verbas públicas, até a decisão final.</h4>
+ <h3>Art. 38. (VETADO)</h3>
+ <p><del></p>
+ <h3>Art. 39 (Revogado pela Lei nº 12.299, de 2010).</del></h3>
+ <h3>Art. 39-A. A torcida organizada que, em evento esportivo, promover tumulto, praticar ou incitar a violência ou invadir local restrito aos competidores, árbitros, fiscais, dirigentes, organizadores ou jornalistas será impedida, assim como seus associados ou membros, de comparecer a eventos esportivos pelo prazo de até 5 (cinco) anos. (Redação dada pela Lei nº 13.912, de 2019)</h3>
+ <h3>Art. 39-B. A torcida organizada responde civilmente, de forma objetiva e solidária, pelos danos causados por qualquer dos seus associados ou membros no local do evento esportivo, em suas imediações ou no trajeto de ida e volta para o evento. (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <h3>Art. 39-C. Aplica-se o disposto nos arts. 39-A e 39-B à torcida organizada e a seus associados ou membros envolvidos, mesmo que em local ou data distintos dos relativos à competição esportiva, nos casos de: (Incluído pela Lei nº 13.912, de 2019)</h3>
+ <h5>I - invasão de local de treinamento;</h5>
+ <h5>II - confronto, ou induzimento ou auxílio a confronto, entre torcedores;</h5>
+ <h5>III - ilícitos praticados contra esportistas, competidores, árbitros, fiscais ou organizadores de eventos esportivos e jornalistas voltados principal ou exclusivamente à cobertura de competições esportivas, mesmo que, no momento, não estejam atuando na competição ou diretamente envolvidos com o evento.</h5>
+ <h3>Art. 40. A defesa dos interesses e direitos dos torcedores em juízo observará, no que couber, a mesma disciplina da defesa dos consumidores em juízo de que trata o</h3>
+ <p>TÍTULO III da Lei no 8.078, de 11 de setembro de 1990 .</p>
+ <h3>Art. 41. A União, os Estados, o Distrito Federal e os Municípios promoverão a defesa do torcedor, e, com a finalidade de fiscalizar o cumprimento do disposto nesta Lei, poderão:</h3>
+ <h5>I - constituir órgão especializado de defesa do torcedor; ou</h5>
+ <h5>II - atribuir a promoção e defesa do torcedor aos órgãos de defesa do consumidor.</h5>
+ <h3>Art. 41-A. Os juizados do torcedor, órgãos da Justiça Ordinária com competência cível e criminal, poderão ser criados pelos Estados e pelo Distrito Federal para o processo, o julgamento e a execução das causas decorrentes das atividades reguladas nesta Lei. (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <h2>CAPÍTULO XI-A</h2>
+ <h3>DOS CRIMES</h3>
+ <p>(Incluído pela Lei nº 12.299, de 2010).</p>
+ <h3>Art. 41-B. Promover tumulto, praticar ou incitar a violência, ou invadir local restrito aos competidores em eventos esportivos: (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <p>Pena - reclusão de 1 (um) a 2 (dois) anos e multa. (Incluído pela Lei nº 12.299, de 2010).</p>
+ <h4>§ 1º Incorrerá nas mesmas penas o torcedor que: (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h5>I - promover tumulto, praticar ou incitar a violência num raio de 5.000 (cinco mil) metros ao redor do local de realização do evento esportivo, ou durante o trajeto de ida e volta do local da realização do evento; (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h5>II - portar, deter ou transportar, no interior do estádio, em suas imediações ou no seu trajeto, em dia de realização de evento esportivo, quaisquer instrumentos que possam servir para a prática de violência. (Incluído pela Lei nº 12.299, de 2010).</h5>
+ <h4>§ 2º Na sentença penal condenatória, o juiz deverá converter a pena de reclusão em pena impeditiva de comparecimento às proximidades do estádio, bem como a qualquer local em que se realize evento esportivo, pelo prazo de 3 (três) meses a 3 (três) anos, de acordo com a gravidade da conduta, na hipótese de o agente ser primário, ter bons antecedentes e não ter sido punido anteriormente pela prática de condutas previstas neste artigo. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 3º A pena impeditiva de comparecimento às proximidades do estádio, bem como a qualquer local em que se realize evento esportivo, converter-se-á em privativa de liberdade quando ocorrer o descumprimento injustificado da restrição imposta. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 4º Na conversão de pena prevista no § 2º , a sentença deverá determinar, ainda, a obrigatoriedade suplementar de o agente permanecer em estabelecimento indicado pelo juiz, no período compreendido entre as 2 (duas) horas antecedentes e as 2 (duas) horas posteriores à realização de partidas de entidade de prática desportiva ou de competição determinada. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h4>§ 5º Na hipótese de o representante do Ministério Público propor aplicação da pena restritiva de direito prevista no art. 76 da Lei Nº 9.099, de 26 de setembro de 1995, o juiz aplicará a sanção prevista no § 2º . (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h3>Art. 41-C. Solicitar ou aceitar, para si ou para outrem, vantagem ou promessa de vantagem patrimonial ou não patrimonial para qualquer ato ou omissão destinado a alterar ou falsear o resultado de competição esportiva ou evento a ela associado: (Redação dada pela Lei nº 13.155, de 2015)</h3>
+ <p>Pena - reclusão de 2 (dois) a 6 (seis) anos e multa. (Incluído pela Lei nº 12.299, de 2010).</p>
+ <h3>Art. 41-D. Dar ou prometer vantagem patrimonial ou não patrimonial com o fim de alterar ou falsear o resultado de uma competição desportiva ou evento a ela associado: (Redação dada pela Lei nº 13.155, de 2015)</h3>
+ <p>Pena - reclusão de 2 (dois) a 6 (seis) anos e multa. (Incluído pela Lei nº 12.299, de 2010).</p>
+ <h3>Art. 41-E. Fraudar, por qualquer meio, ou contribuir para que se fraude, de qualquer forma, o resultado de competição esportiva ou evento a ela associado: (Redação dada pela Lei nº 13.155, de 2015)</h3>
+ <p>Pena - reclusão de 2 (dois) a 6 (seis) anos e multa. (Incluído pela Lei nº 12.299, de 2010).</p>
+ <h3>Art. 41-F. Vender ingressos de evento esportivo, por preço superior ao estampado no bilhete: (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <p>Pena - reclusão de 1 (um) a 2 (dois) anos e multa. (Incluído pela Lei nº 12.299, de 2010).</p>
+ <h3>Art. 41-G. Fornecer, desviar ou facilitar a distribuição de ingressos para venda por preço superior ao estampado no bilhete: (Incluído pela Lei nº 12.299, de 2010).</h3>
+ <p>Pena - reclusão de 2 (dois) a 4 (quatro) anos e multa. (Incluído pela Lei nº 12.299, de 2010).</p>
+ <h4>Parágrafo único. A pena será aumentada de 1/3 (um terço) até a metade se o agente for servidor público, dirigente ou funcionário de entidade de prática desportiva, entidade responsável pela organização da competição, empresa contratada para o processo de emissão, distribuição e venda de ingressos ou torcida organizada e se utilizar desta condição para os fins previstos neste artigo. (Incluído pela Lei nº 12.299, de 2010).</h4>
+ <h2>CAPÍTULO XII</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 42. O Conselho Nacional de Esportes – CNE promoverá, no prazo de seis meses, contado da publicação desta Lei, a adequação do Código de Justiça Desportiva ao disposto na Lei Nº 9.615, de 24 de março de 1998 , nesta Lei e em seus respectivos regulamentos.</h3>
+ <h3>Art. 43. Esta Lei aplica-se apenas ao desporto profissional.</h3>
+ <h3>Art. 44. O disposto no parágrafo único do art. 13 , e nos arts. 18 , 22 , 25 e 33 entrará em vigor após seis meses da publicação desta Lei.</h3>
+ <h3>Art. 45. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 15 de maio de 2003; 182º da Independência e 115º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Agnelo Santos Queiroz Filho</p>
+ <p>Álvaro Augusto Ribeiro Costa</p>
+ <p>Este texto não substitui o publicado no DOU de 16.5.2003</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Dispõe sobre o Estatuto de Defesa do Torcedor e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/2003/L10.671compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

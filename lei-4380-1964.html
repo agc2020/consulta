@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 4.380, DE 21 DE AGOSTO DE 1964 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1964" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 4.380, DE 21 DE AGOSTO DE 1964</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:44:45 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L4380.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 85.689 caracteres | espelho: 74.756 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 4.380, DE 21 DE AGOSTO DE 1964.</p>
+ <p>Vide Decreto nº 91.152, de 1985</p>
+ <p>Vide Lei 8.692, de 	1993</p>
+ <p>Institui a correção monetária nos contratos imobiliários de interêsse social, o sistema financeiro para aquisição da casa própria, cria o Banco Nacional da Habitação (BNH), e Sociedades de Crédito Imobiliário, as Letras Imobiliárias, o Serviço Federal de Habitação e Urbanismo e dá outras providências.</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Da Coordenação dos Órgãos Públicos e da Iniciativa Privada</p>
+ <h3>Art. 1° O Govêrno Federal, através do Ministro de Planejamento, formulará a política nacional de habitação e de planejamento territorial, coordenando a ação dos órgãos públicos e orientando a iniciativa privada no sentido de estimular a construção de habitações de interêsse social e o financiamento da aquisição da casa própria, especialmente pelas classes da população de menor renda.</h3>
+ <h3>Art. 2º O Govêrno Federal intervirá no setor habitacional por intermédio:</h3>
+ <h5>I - do Banco Nacional da Habitação;</h5>
+ <h5>II - do Serviço Federal de Habitação e Urbanismo;</h5>
+ <h5>III - das Caixas Econômicas Federais, IPASE, das Caixas Militares, dos órgãos federais de desenvolvimento regional e das sociedades de economia mista.</h5>
+ <h3>Art. 3º Os órgãos federais enumerados no artigo anterior exercerão de preferência atividades de coordenação, orientação e assistência técnica e financeira, ficando reservados:</h3>
+ <h5>I - aos Estados e Municípios, com a assistência dos órgãos federais, a elaboração e execução de planos diretores, projetos e orçamentos para a solução dos seus problemas habitacionais;</h5>
+ <h5>II - à iniciativa privada, a promoção e execução de projetos de construção de habitações segundo as diretrizes urbanísticas locais.</h5>
+ <h4>§ 1° Será estimulada a coordenação dos esforços, na mesma área ou local, dos órgãos públicos federais, estaduais e municipais, bem como das iniciativas privadas, de modo que se obtenha a concentração e melhor utilização dos recursos disponíveis.</h4>
+ <h4>§ 2º A execução dos projetos sòmente caberá aos órgãos federais para suprir a falta de iniciativa local, pública ou privada.</h4>
+ <h3>Art. 4º Terão prioridade na aplicação dos recursos:</h3>
+ <h5>I - a construção de conjuntos habitacionais destinados à eliminação de favelas, mocambos e outras aglomerações em condições sub-humanas de habitação;</h5>
+ <h5>II - os projetos municipais ou estaduais que com as ofertas de terrenos já urbanizados e dotados dos necessários melhoramentos, permitirem o início imediato da construção de habitações;</h5>
+ <h5>III - os projetos de cooperativas e outras formas associativas de construção de casa própria;</h5>
+ <h5>IV - os projetos da iniciativa privada que contribuam para a solução de problemas habitacionais ... (Vetado);</h5>
+ <h5>V - (Vetado) .</h5>
+ <h5>V - a construção de moradia a população rural. (Parte mantida pelo Congresso Nacional)</h5>
+ <h2>CAPÍTULO II</h2>
+ <p>Da Correção Monetária dos Contratos Imobiliários</p>
+ <h3>Art. 5º Observado o disposto na presente lei, os contratos de vendas ou construção de habitações para pagamento a prazo ou de empréstimos para aquisição ou construção de habitações poderão prever o reajustamento das prestações mensais de amortização e juros, com a conseqüente correção do valor monetário da dívida tôda a vez que o salário mínimo legal fôr alterado.</h3>
+ <h4>§ 1° O reajustamento será baseado em índice geral de preços mensalmente apurado ou adotado pelo Conselho Nacional de Economia que reflita adequadamente as variações no poder aquisitivo da moeda nacional.</h4>
+ <h4>§ 2º O reajustamento contratual será efetuado ... (Vetado) ... na mesma proporção da variação do índice referido no parágrafo anterior:</h4>
+ <h6>a) desde o mês da data do contrato até o mês da entrada em vigor do nôvo nível de salário-mínimo, no primeiro reajustamento após a data do contrato;</h6>
+ <h6>b) entre os meses de duas alterações sucessivas do nível de salário-mínimo nos reajustamentos subseqüentes ao primeiro.</h6>
+ <h4>§ 3º Cada reajustamento entrará em vigor após 60 (sessenta) dias da data de vigência da alteração do salário-mínimo que o autorizar e a prestação mensal reajustada vigorará até nôvo reajustamento.</h4>
+ <h4>§ 4º Do contrato constará, obrigatòriamente, na hipótese de adotada a cláusula de reajustamento, a relação original entre a prestação mensal de amortização e juros e o salário-mínimo em vigor na data do contrato.</h4>
+ <h4>§ 5º Durante a vigência do contrato, a prestação mensal reajustada não poderá exceder em relação ao salário-mínimo em vigor, a percentagem nêle estabelecida.</h4>
+ <h4>§ 6º Para o efeito de determinar a data do reajustamento e a percentagem referida no parágrafo anterior, tomar-se-á por base o salário-mínimo da região onde se acha situado o imóvel.</h4>
+ <h4>§ 7º (Vetado) .</h4>
+ <h4>§ 8º (Vetado) .</h4>
+ <h4>§ 9º O disposto neste artigo, quando o adquirente fôr servidor público ou autárquico poderá ser aplicado tomando como base a vigência da lei que lhes altere os vencimentos.</h4>
+ <h3>Art. 6° O disposto no artigo anterior sòmente se aplicará aos contratos de venda, promessa de venda, cessão ou promessa de cessão, ou empréstimo que satisfaçam às seguintes condições:</h3>
+ <h6>a) tenham por objeto imóveis construídos, em construção, ou cuja construção, seja simultâneamente contratada, cuja área total de construção, entendida como a que inclua paredes e quotas-partes comuns, quando se tratar de apartamento, de habitação coletiva ou vila, não ultrapasse 100 (cem) metros quadrados;</h6>
+ <h6>b) o valor da transação não ultrapasse 200 (duzentas) vêzes o maior salário-mínimo vigente no país;</h6>
+ <h6>c) ao menos parte do financiamento, ou do preço a ser pago, seja amortizado em prestações mensais sucessivas, de igual valor, antes do reajustamento, que incluam amortizações e juros;</h6>
+ <h6>d) além das prestações mensais referidas na alínea anterior, quando convencionadas prestações intermediárias, fica vedado o reajustamento das mesmas, e do saldo devedor a elas correspondente;</h6>
+ <h6>e) os juros convencionais não excedem de 10% ao ano;</h6>
+ <h6>f) se assegure ao devedor, comprador, promitente comprador, cessionário ou promitente cessionário o direito a liquidar antecipadamente a dívida em forma obrigatòriamente prevista no contrato, a qual poderá prever a correção monetária do saldo devedor, de acôrdo com os índices previstos no § 1° do artigo anterior.</h6>
+ <h4>Parágrafo único. As restrições dos incisos a e b não obrigam as entidades integrantes do sistema financeiro da habitação, cujas aplicações, a êste respeito, são regidas pelos artigos 11 e 12.</h4>
+ <h3>Art. 7º Após 180 dias da concessão do "habite-se", caracterizando a conclusão da construção, nenhuma unidade residencial pode ser vendida, ou prometida vender ou ceder, com o benefício de pagamentos regidos pelos artigos 5º e 6º desta Lei.</h3>
+ <h4>§ 1° Para os efeitos dêsse artigo equipara-se ao "habite-se" das autoridades municipais a ocupação efetiva da unidade residencial.</h4>
+ <h4>§ 2º O disposto neste artigo não se aplica os imóveis já construídos, cuja alienação seja contratada, nos têrmos dos artigos 5º e 6º, pelos respectivos titulares, desde que êstes incorporem ao capital de Sociedade de Crédito Imobiliário o preço da transação.</h4>
+ <h4>§ 3º Aos imóveis de propriedade das pessoas jurídicas de direito público ou de sociedade de economia mista, de que o Poder Público seja majoritário, não se aplica o disposto neste artigo.</h4>
+ <h4>§ 4º A restrição dêste artigo não se aplicará àquele que, não sendo proprietário, promitente comprador ou promitente cessionário de mais de uma habitação, desejar aliená-la de modo a adquirir outra, na forma dos artigos 5º e 6º desta lei, desde que a aquisição seja de qualquer forma contratada simultâneamente com a alienação.</h4>
+ <h4>§ 5º Não se aplicam as restrições dêste artigo aos imóveis ocupados há mais de 2 (dois) anos pelo locatário que pretender adquiri-lo mediante financiamento de qualquer dos agentes financeiros do Sistema Financeiro de Habitação, desde que os recursos obtidos pelo locador sejam utilizados na construção de novas habitações, conforme normas regulamentares a serem baixadas pelo Banco Nacional de Habitação ou que permaneçam depositados no Sistema Financeiro de Habitação, pelo prazo mínimo de 5 (cinco) anos. (Incluído pela Lei nº 5.455, de 1968)</h4>
+ <h2>CAPÍTULO III</h2>
+ <p>Do Sistema Financeiro, da Habitação de Interêsse Social</p>
+ <p>Seção I</p>
+ <p>Órgãos Componentes do Sistema</p>
+ <h3>Art. 8º O sistema financeiro da habitação, destinado a facilitar e promover a construção e a aquisição da casa própria, especialmente pelas classes de menor renda da população, será integrado:</h3>
+ <h3>Art. 8° O sistema financeiro da habitação, destinado a facilitar e promover a construção e a aquisição da casa própria ou moradia, especialmente pelas classes de menor renda da população, será integrado. (Redação dada pela Lei nº 8.245, de 1991)</h3>
+ <h5>I - pelo Banco Nacional da Habitação;</h5>
+ <h5>II - pelos órgãos federais, estaduais e municipais, inclusive sociedades de economia mista em que haja participação majoritária do Poder Público, que operem, de acôrdo com o disposto nesta lei, no financiamento ... (Vetado) ... de habitações e obras conexas;</h5>
+ <h5>III - pelas sociedades de crédito imobiliário;</h5>
+ <h5>IV - pelas fundações, cooperativas, mútuas e outras formas associativas para construção ou aquisição da casa própria, sem finalidade de lucro, que se constituirão de acôrdo com as diretrizes desta lei, as normas que forem baixadas pelo Conselho de Administração do Banco Nacional da Habitação e serão registradas, autorizadas a funcionar e fiscalizadas pelo Banco Nacional da Habitação.</h5>
+ <h5>I - pelos bancos múltiplos; (Redação dada pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>II - pelos bancos comerciais; (Redação dada pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>III - pelas caixas econômicas; (Redação dada pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>IV - pelas sociedades de crédito imobiliário; (Redação dada pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>V - pelas associações de poupança e empréstimo; (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>VI - pelas companhias hipotecárias; (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>VII - pelos órgãos federais, estaduais e municipais, inclusive sociedades de economia mista em que haja participação majoritária do Poder Público, que operem, de acordo com o disposto nesta Lei, no financiamento de habitações e obras conexas; (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>VIII - pelas fundações, cooperativas e outras formas associativas para construção ou aquisição da casa própria, sem finalidade de lucro, que se constituirão de acordo com as diretrizes desta Lei; (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>IX - pelas caixas militares; (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>X - pelas entidades abertas de previdência complementar; (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>XI - pelas companhias securitizadoras de crédito imobiliário; e (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>XII - por outras instituições que venham a ser consideradas pelo Conselho Monetário Nacional como integrantes do Sistema Financeiro da Habitação. (Incluído pela Medida Provisória nº 459, de 2009)</h5>
+ <h5>I – pelos bancos múltiplos; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>II – pelos bancos comerciais; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>III – pelas caixas econômicas; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>IV – pelas sociedades de crédito imobiliário; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>V – pelas associações de poupança e empréstimo; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>VI – pelas companhias hipotecárias; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>VII – pelos órgãos federais, estaduais e municipais, inclusive sociedades de economia mista em que haja participação majoritária do poder público, que operem, de acordo com o disposto nesta Lei, no financiamento de habitações e obras conexas; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>VIII – pelas fundações, cooperativas e outras formas associativas para construção ou aquisição da casa própria sem finalidade de lucro, que se constituirão de acordo com as diretrizes desta Lei; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>IX – pelas caixas militares; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>X – pelas entidades abertas de previdência complementar; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>XI – pelas companhias securitizadoras de crédito imobiliário; e (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>XII – por outras instituições que venham a ser consideradas pelo Conselho Monetário Nacional como integrantes do Sistema Financeiro da Habitação. (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h4>Parágrafo único. O Conselho da Superintendência da Moeda e do Crédito fixará as normas que regulam as relações entre o sistema financeiro da habitação e o restante do sistema financeiro nacional, especialmente quanto à possibilidade, às condições e aos limites de aplicação de recursos da rêde bancária em letras imobiliárias, emitidas, nos têrmos desta lei, pelo Banco Nacional da Habitação.</h4>
+ <p>Seção II</p>
+ <p>Das Aplicações do Sistema Financeiro da Habitação</p>
+ <h3>Art. 9º Tôdas as aplicações do sistema, terão por objeto, fundamentalmente a aquisição de casa para residência do adquirente, sua família e seus dependentes, vedadas quaisquer aplicações em terrenos não construídos, salvo como parte de operação financeira destinada à construção da mesma.</h3>
+ <h4>§ 1º As pessoas que já forem proprietários, promitentes compradoras ou cessionárias de imóvel residencial na mesma localidade ... (Vetado) ... não poderão adquirir imóveis objeto de aplicação pelo sistema financeiro da habitação. (Revogado pela Medida Provisória nº 2.197-43, de 2001)</h4>
+ <h4>§ 2º Após 180 dias da concessão do "habite-se", caracterizando a conclusão da construção, nenhuma unidade residencial pode ser objeto de aplicação pelo sistema financeiro da habitação, equiparando-se ao "habite-se" das autoridades municipais a ocupação efetiva da unidade residencial.</h4>
+ <h4>§ 3º O disposto no parágrafo anterior não se aplicará aos imóveis já construídos, que sejam alienados a partir desta lei por seus proprietários ou promitentes compradores por motivo de aquisição de outro imóvel que satisfaça às condições desta lei para ser objeto de aplicação pelo sistema financeiro de habitação.</h4>
+ <h3>Art. 10. Tôdas as aplicações do sistema financeiro da habitação revestirão a forma de créditos reajustáveis de acôrdo com os artigos 5º e 6º desta Lei.</h3>
+ <h4>§ 1° Os financiamentos para aquisição ou construção de habitações e as vendas a prazo de habitações, efetuadas pelas Caixas Econômicas ... (Vetado) ... e outras autarquias ... (Vetado) ... ou por sociedades de economia mista ... (Vetado) ... estabelecerão, obrigatòriamente, o reajustamento do saldo devedor e das prestações de amortização e juros, obedecidas as disposições dos artigos 5º e 6º.</h4>
+ <h4>§ 2º As entidades estatais, inclusive as sociedades de economia mista, em que o Poder Público seja majoritário, adotarão, nos seus financiamentos, critérios e classificação dos candidatos aprovados pelo Banco Nacional de Habitação, ouvido o Serviço Federal de Habitação e Urbanismo, e darão, obrigatòriamente, ampla publicidade das inscrições e dos financiamentos concedidos.</h4>
+ <h4>§ 3º Os órgãos federais deverão aplicar os recursos por êles arrecadados para o sistema financeiro da habitação, até 50% no Estado de origem dos recursos, redistribuindo o restante pelas unidades federativas compreendidas em regiões de menor desenvolvimento econômico.</h4>
+ <h3>Art. 11. Os recursos destinados ao setor habitacional pelas entidades estatais, inclusive sociedades de economia mista de que o Poder Público seja majoritário, distribuir-se-ão, permanentemente, da seguinte forma:</h3>
+ <h5>I - no mínimo 70% deverão estar aplicados em habitações de valor unitário inferior a 60 vêzes o maior salário-mínimo mensal vigente no país;</h5>
+ <h5>II - no máximo 15% poderão estar aplicados em habitações de valor unitário compreendido entre 200 e 300 vêzes o maior salário-mínimo mensal vigente no país, vedadas as aplicações em habitações de valor unitário superior a 300 vêzes o maior salário-mínimo mensal citado.</h5>
+ <h4>§ 1° Dentro do limite de recursos obrigatòriamente aplicados em habitações de valor unitário inferior a 60 vêzes o maior salário-mínimo do país, o Banco Nacional da Habitação fixará, para cada região ou localidade, a percentagem mínima de recursos que devem ser aplicados no financiamento de projetos destinados à eliminação de favelas, mocambos e outras aglomerações em condições sub-humanas de habitações.</h4>
+ <h4>§ 2º Nas aplicações a que se refere o inciso II, a parcela financiada do valor do imóvel não poderá ultrapassar 80% do mesmo.</h4>
+ <h4>§ 3º Os recursos aplicados, ou com aplicação contratada, no setor habitacional, na data da publicação desta lei, pela entidades estatais, inclusive sociedades de economia mista, não serão computados nas percentagens de aplicação a que se refere êste artigo.</h4>
+ <h4>§ 4º O disposto neste artigo não se aplica aos processos das Caixas Econômicas Federais, Caixas Militares e IPASE, já deferidos pelos órgãos e autoridades competentes, na data da publicação desta Lei.</h4>
+ <h3>Art. 11. Os recursos destinados ao setor habitacional pelas entidades estatais, inclusive sociedades de economia mista de que o Poder Público seja majoritário, distribuir-se-ão, permanentemente, da seguinte forma: (Redação dada pela Lei nº 4.864, de 1965).</h3>
+ <h5>I - em habitações de valor unitário inferior a 100 (cem) vêzes o maior salário-mínimo mensal, vigente no País, uma percentagem mínima dos recursos a ser fixada, bienalmente, pelo Banco Nacional de Habitação, em função das condições do mercado e das regiões, e por instituição ou tipo de instituição. (Redação dada pela Lei nº 4.864, de 1965).</h5>
+ <h5>II - em habitações de valor unitário compreendido entre 300 (trezentas) e 400 (quatrocentas) vêzes o maior salário-mínimo, vigente no País, no máximo, 20% (vinte por cento) dos recursos, vedadas as aplicações em habitações de valor unitário superior a 400 (quatrocentas) vêzes o maior salário-mínimo citado. (Redação dada pela Lei nº 4.864, de 1965).</h5>
+ <h4>§ 1º Dentro do limite de recursos obrigatòriamente aplicados em habitações de valor unitário inferior a 100 (cem) vêzes o maior salário-mínimo do País, o Banco Nacional de Habitação fixará, para cada região ou localidade, a percentagem mínima de recursos que devem ser aplicados no financiamento de projetos destinados à eliminação de favelas, mocambos e outras aglomerações em condições sub-humanas de habitação. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h4>§ 2º Nas aplicações a que se refere o inciso II, a parcela financiada do valor do imóvel não poderá ultrapassar 80% (oitenta por cento) do mesmo. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h4>§ 3º Os recursos aplicados ou com aplicação contratada, no setor habitacional, na data da publicação desta Lei, pelas entidades estatais, inclusive sociedades de economia mista, não serão computadas nas percentagens de aplicação a que se refere êste artigo. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h4>§ 4º O disposto neste artigo não se aplica aos processos das Caixas Econômicas Federais, Caixas Militares e IPASE, já deferidos pelos órgãos e autoridades competentes, na data da publicação desta Lei. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h4>§ 5º Em função das condições de mercado e das regiões, o Banco Nacional de Habitação poderá alterar os critérios de distribuição das aplicações previstas no inciso II dêste artigo. (Incluído pela Lei nº 4.864, de 1965).</h4>
+ <h3>Art. 12. Os recursos aplicados pelas entidades privadas integrantes do sistema financeiro da habitação se distribuirão permanentemente da seguinte forma:</h3>
+ <h5>I - no mínimo 60% dos recursos deverão estar aplicados em habitações de valor unitário inferior a 100 vêzes o maior salário-mínimo mensal vigente no país;</h5>
+ <h5>I - no mínimo 60% (sessenta por cento) dos recursos deverão estar aplicados em habitações de valor unitário inferior a 300 (trezentas) vêzes o maior salário-mínimo mensal vigente no País; (Redação dada pela Lei nº 4.864, de 1965).</h5>
+ <h5>II - no máximo 20% dos recursos poderão estar aplicados em habitações de valor unitário superior a 250 vêzes o maior salário-mínimo mensal vigente no país;</h5>
+ <h5>II - no máximo 20% (vinte por cento) dos recursos poderão estar aplicados em habitações de valor unitário superior a 400 (quatrocentas) vêzes o maior salário-mínimo mensal vigente no País; (Redação dada pela Lei nº 4.864, de 1965).</h5>
+ <h5>III - serão vedadas as aplicações em habitações de valor unitário superior a 400 vêzes o maior salário-mínimo mensal vigente no país.</h5>
+ <h5>III - serão vedadas as aplicações em habitações de valor unitário superior a 500 (quinhentas) vêzes o maior salário-mínimo mensal vigente no País. (Redação dada pela Lei nº 4.864, de 1965).</h5>
+ <h4>Parágrafo único. Nas aplicações a que se refere o inciso II, a parcela financiada do valor do imóvel não poderá ultrapassar de 80% do mesmo.</h4>
+ <h3>Art. 13 A partir do 3º ano da aplicação da presente lei, o Banco Nacional da Habitação poderá alterar os critérios de distribuição das aplicações previstas nos artigos anteriores.</h3>
+ <h3>Art. 14. Os adquirentes de habitações financiadas pelo Sistema Financeiro da Habitação contratarão seguro de vida de renda temporária, que integrará, obrigatòriamente, o contrato de financiamento, nas condições fixadas pelo Banco Nacional da Habitação. (Revogado pela Medida Provisória nº 2.197-43, de 2001)</h3>
+ <p>Seção III</p>
+ <p>Dos Recursos do Sistema Financeiro da Habitação</p>
+ <h3>Art. 15. As entidades integrantes do sistema financeiro da Habitação poderão assegurar reajustamento monetário nas condições previstas no artigo 5º:</h3>
+ <h5>I - aos depósitos no sistema que obedeça às normas gerais fixadas pelo Banco Nacional da Habitação cujo prazo não poderá ser inferior a um ano, e que não poderão ser movimentados com cheques;</h5>
+ <h5>II - aos financiamentos contraídos no país ou no exterior para a execução de projetos de habitações, desde que observem os limites e as normas gerais estabelecidas pelo Banco Nacional da Habitação;</h5>
+ <h5>III - as letras imobiliárias emitidas nos têrmos desta Lei pelo Banco Nacional da Habitação ou pelas sociedades de crédito imobiliário.</h5>
+ <h4>§ 1° Em relação às Caixas Econômicas Federais e a outras entidades do sistema, que não operem exclusivamente no setor habitacional, o reajustamento previsto neste artigo sòmente poderá ser assegurado aos depósitos e empréstimos das suas carteiras especializadas no setor habitacional.</h4>
+ <h4>§ 2º O sistema manterá depósitos especiais de acumulação de poupanças para os pretendentes a financiamento de casa própria, cujos titulares terão preferência na obtenção dêsses financiamentos, obedecidas as condições gerais estabelecidas pelo Banco Nacional da Habitação.</h4>
+ <h4>§ 3º Todos os financiamentos externos e acôrdos de assistência técnica relacionados com a habitação, dependerão da aprovação prévia do Banco Nacional da Habitação e não poderão estar condicionados à utilização de patentes, licenças e materiais de procedência estrangeira.</h4>
+ <h3>Art. 15-A. É permitida a pactuação de capitalização de juros com periodicidade mensal nas operações realizadas pelas entidades integrantes do Sistema Financeiro da Habitação - SFH. (Incluído pela Lei nº 11.977, de 2009)</h3>
+ <h4>§ 1º No ato da contratação e sempre que solicitado pelo devedor será apresentado pelo credor, por meio de planilha de cálculo que evidencie de modo claro e preciso, e de fácil entendimento e compreensão, o seguinte conjunto de informações: (Incluído pela Lei nº 11.977, de 2009)</h4>
+ <h5>I – saldo devedor e prazo remanescente do contrato; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>II – taxa de juros contratual, nominal e efetiva, nas periodicidades mensal e anual; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>III – valores repassados pela instituição credora às seguradoras, a título de pagamento de prêmio de seguro pelo mutuário, por tipo de seguro ; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>IV – taxas, custas e demais despesas cobradas juntamente com a prestação, discriminadas uma a uma; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>V – somatório dos valores já pagos ou repassados relativos a: (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h6>a) juros; (Incluído pela Lei nº 11.977, de 2009)</h6>
+ <h6>b) amortização; (Incluído pela Lei nº 11.977, de 2009)</h6>
+ <h6>c) prêmio de seguro por tipo de seguro; (Incluído pela Lei nº 11.977, de 2009)</h6>
+ <h6>d) taxas, custas e demais despesas, discriminando por tipo; (Incluído pela Lei nº 11.977, de 2009)</h6>
+ <h5>VI – valor mensal projetado das prestações ainda não pagas, pelo prazo remanescente do contrato, e o respectivo somatório, decompostos em juros e amortizações; (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h5>VII – valor devido em multas e demais penalidades contratuais quando houver atraso no pagamento da prestação. (Incluído pela Lei nº 11.977, de 2009)</h5>
+ <h4>§ 2º No cômputo dos valores de que trata o inciso VI do § 1º , a instituição credora deve desconsiderar os efeitos de eventual previsão contratual de atualização monetária do saldo devedor ou das prestações. (Incluído pela Lei nº 11.977, de 2009)</h4>
+ <h3>Art. 15-B. Nas operações de empréstimo ou financiamento realizadas por instituições integrantes do Sistema Financeiro da Habitação que prevejam pagamentos por meio de prestações periódicas, os sistemas de amortização do saldo devedor poderão ser livremente pactuados entre as partes. (Incluído pela Lei nº 11.977, de 2009)</h3>
+ <h4>§ 1º O valor presente do fluxo futuro das prestações, compostas de amortização do principal e juros, geradas pelas operações de que trata o caput , deve ser calculado com a utilização da taxa de juros pactuada no contrato, não podendo resultar em valor diferente ao do empréstimo ou do financiamento concedido. (Incluído pela Lei nº 11.977, de 2009)</h4>
+ <h4>§ 2º No caso de empréstimos e financiamentos com previsão de atualização monetária do saldo devedor ou das prestações, para fins de apuração do valor presente de que trata o § 1º , não serão considerados os efeitos da referida atualização monetária . (Incluído pela Lei nº 11.977, de 2009)</h4>
+ <h4>§ 3º Nas operações de empréstimo ou financiamento de que dispõe o caput é obrigatório o oferecimento ao mutuário do Sistema de Amortização Constante - SAC e de, no mínimo, outro sistema de amortização que atenda o disposto nos §§ 1º e 2º , entre eles o Sistema de Amortização Crescente - SACRE e o Sistema Francês de Amortização (Tabela Price). (Incluído pela Lei nº 11.977, de 2009)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Do Banco Nacional da Habitação</p>
+ <h3>Art. 16. Fica criado, vinculado ao Ministério da Fazenda, o Banco Nacional da Habitação (BNH), que terá personalidade jurídica de Direito Público, patrimônio próprio e autonomia administrativa, gozando de imunidade tributária.</h3>
+ <h4>§ 1° O Banco Nacional da Habitação poderá instalar agências em todo o território nacional, mas operará de preferência, usando como agentes e representantes as Caixas Econômicas Federais e Estaduais, os bancos oficiais e de economia mista e as demais entidades integrantes do sistema financeiro da habitação.</h4>
+ <h4>§ 2º O Banco Nacional da Habitação poderá utilizar-se da rêde bancária comercial nas localidades em que não haja agentes ou representantes das entidades referidas no parágrafo anterior.</h4>
+ <h3>Art. 17. O Banco Nacional da Habitação terá por finalidade:</h3>
+ <h5>I - orientar, disciplinar e controlar o sistema financeiro da habitação;</h5>
+ <h5>II - incentivar a formação de poupanças e sua canalização para o sistema financeiro da habitação;</h5>
+ <h5>III - disciplinar o acesso das sociedades de crédito imobiliário ao mercado nacional de capitais;</h5>
+ <h5>IV - manter serviços de redesconto e de seguro para garantia das aplicações do sistema financeiro da habitação e dos recursos a êle entregues;</h5>
+ <h5>V - manter serviços de seguro de vida de renda temporária para os compradores de imóveis objeto de aplicações do sistema;</h5>
+ <h5>VI - financiar ou refinanciar a elaboração e execução de projetos promovidos por entidades locais ... (Vetado) ... de conjuntos habitacionais, obras e serviços correlatos;</h5>
+ <h5>VII - refinanciar as operações das sociedades de crédito imobiliário;</h5>
+ <h5>VIII - financiar ou refinanciar projetos relativos a ... (Vetado) ... instalação e desenvolvimento da indústria ... (Vetado) ... de materiais de construção e pesquisas tecnológicas, necessárias à melhoria das condições habitacionais do país ... (Vetado) ..</h5>
+ <h4>Parágrafo único. O Banco Nacional da Habitação operará exclusivamente como órgão orientador, disciplinador e de assistência financeira, sendo-lhe vedado operar diretamente em financiamento, compra e venda ou construção de habitações, salvo para a venda dos terrenos referidos no artigo 26 ou para realização de bens recebidos em liquidação de garantias.</h4>
+ <h3>Art. 18. Compete ao Banco Nacional da Habitação:</h3>
+ <h5>I - autorizar e fiscalizar o funcionamento das sociedades de crédito imobiliário;</h5>
+ <h5>II - fixar as condições gerais quanto a limites, prazos, retiradas, juros e seguro obrigatório das contas de depósito no sistema financeiro da habitação;</h5>
+ <h5>III - estabelecer as condições gerais a que deverão satisfazer as aplicações do sistema financeiro da habitação quanto a limites de risco, prazo, condições de pagamento, seguro, juros e garantias;</h5>
+ <h5>III - estabelecer as condições gerais a que deverão satisfazer as aplicações do Sistema Financeiro da Habitação quanto a garantias, juros, prazos, limites de risco e valores máximos de financiamento e de aquisição dos imóveis financiados no âmbito do Sistema Financeiro da Habitação (Redação dada pela Medida Provisória nº 2.197-43, de 2001)</h5>
+ <h5>IV - fixar os limites, em relação ao capital e reservas, dos depósitos recebidos e dos empréstimos tomados pelas Sociedades de Crédito Imobiliário;</h5>
+ <h5>V - fixar os limites mínimos de diversificações de aplicações a serem observados pelas entidades integrantes do sistema financeiro da habitação;</h5>
+ <h5>VI - fixar os limites de emissão e as condições de colocação, vencimento e juros das Letras Imobiliárias, bem como as condições dos seguros de suas emissões;</h5>
+ <h5>VII - fixar as condições e os prêmios dos seguros de depósitos e de aplicações a que serão obrigadas as entidades integrantes do sistema financeiro da habitação;</h5>
+ <h5>VIII - fixar as condições gerais de operação da sua carteira de redesconto das aplicações do sistema financeiro da habitação;</h5>
+ <h5>IX - determinar as condições em que a rêde seguradora privada nacional operará nas várias modalidades de seguro previstas na presente lei;</h5>
+ <h5>X - (Vetado);</h5>
+ <h5>XI - exercer as demais atribuições previstas nesta lei.</h5>
+ <h4>Parágrafo único No exercício de suas atribuições, o Banco Nacional da Habitação obedecerá aos limites globais e as condições gerais fixadas pelo Conselho da Superintendência da Moeda e do Crédito, com o objetivo de subordinar o sistema financeiro de habitação à política financeira, monetária e econômica em execução pelo Govêrno Federal.</h4>
+ <h3>Art. 19. O Banco Nacional da Habitação ... (Vetado) ... poderá receber depósitos:</h3>
+ <h6>a) de entidades governamentais, autárquicas, para estatais e de economia mista;</h6>
+ <h6>b) das entidades integrantes do sistema financeiro da habitação;</h6>
+ <h6>c) que resultarem de operações realizadas pelo Banco ou que a elas estejam diretamente vinculadas.</h6>
+ <h3>Art. 20. Mediante autorização do Ministro da Fazenda, o Banco Nacional da Habitação poderá tomar empréstimos, no país ou no exterior, a fim de obter recursos para a realização das suas finalidades.</h3>
+ <h4>§ 1° Os empréstimos internos referidos neste artigo poderão ser corrigidos de acôrdo com o artigo 5° ou revestir a forma de Letras Imobiliárias.</h4>
+ <h4>§ 2° O Ministro da Fazenda poderá dar a garantia do Tesouro Nacional aos empréstimos referidos neste artigo, até um saldo devedor total, em cada momento, de um trilhão de cruzeiros para os empréstimos internos e US$300 milhões, o equivalente em outras moedas, para os empréstimos em moeda estrangeira.</h4>
+ <h4>§ 3° O limite em cruzeiros constante do parágrafo anterior será anualmente reajustado pelos índices referidos no artigo 5°.</h4>
+ <h3>Art. 21. O Serviço Social da Indústria (SESI) e o Serviço Social do Comércio (SESC) inclusive os Departamentos Regionais, aplicarão anualmente na aquisição de Letras Imobiliárias de emissão do Banco Nacional da Habitação, a partir do exercício de 1965, 20% (vinte por cento) das receitas compulsórias a êles vinculadas. (Vide Lei nº 5.107, de 1966)</h3>
+ <h4>§ 1° (Vetado) .</h4>
+ <h4>§ 2° O Ministro do Trabalho e da Previdência Social fixará, anualmente a percentagem dos recursos dos Institutos de Aposentadoria e Pensões, que será obrigatòriamente aplicada em depósitos no Banco Nacional da Habitação, e que não poderá ser inferior a 20% do orçamento anual de aplicações de cada Instituto, excetuadas as aplicações em serviços próprios e em material permanente. (Suprimido pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 2° O Ministro da Fazenda fixará periòdicamente a percentagem dos depósitos das Caixas Econômicas Federais, que deverá ser obrigatòriamente aplicada em depósitos no BNH. (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h3>Art. 22. Tôdas as emprêsas do país que mantenham empregados sujeitos a desconto para Institutos de Aposentadorias e Pensões são obrigadas a contribuir com a percentagem de 1% mensal sôbre o montante das suas fôlhas de pagamento para a constituição do capital do Banco Nacional da Habitação. (Vide Lei nº 4.380, de 1965)</h3>
+ <h4>§ 1° A cobrança dessa percentagem obedecerá aos dispositivos da legislação vigente sôbre as contribuições previdenciárias.</h4>
+ <h4>§ 2° Os Institutos de Aposentadoria e Pensões recolherão, mensalmente, ao Banco Nacional da Habitação o produto da arrecadação prevista neste artigo, descontada a taxa correspondente às despesas de administração fixada de comum acôrdo entre o DNPS e o Banco Nacional da Habitação.</h4>
+ <h4>§ 3° O recolhimento a que se refere o presente artigo será devido a partir do segundo mês após a promulgação desta Lei.</h4>
+ <h4>§ 4° Na forma a ser estabelecida em regulamento a ser baixado pelo BNH, as emprêsas abrangidas por êste artigo poderão deduzir a importância correspondente a 50% do valor das aplicações que façam em planos de habitação destinados à casa própria de seus empregados, da contribuição prevista neste artigo.</h4>
+ <h4>§ 5° Os planos a que se refere o parágrafo anterior dependem de prévia aprovação e execução, controlada pelo BNH, diretamente ou por delegação.</h4>
+ <h4>§ 6º Não estão obrigados ao recolhimento da contribuição prevista neste artigo as instituições de educação e de assistência social, amparadas pela Lei nº 3.193, de 4 de julho de 1957 , e Lei nº 3.577, de 4 de julho de 1959 , bem como pelo Decreto número 1.117, de 1º de junho de 1962 . (Incluído pela Lei nº 5.127, de 1966)</h4>
+ <h3>Art. 23. A emissão de licença para construção de prédios residenciais de custo de construção superior a 500 vêzes o maior salário-mínimo do país, considerado êsse custo para cada unidade residencial, seja em prédio individual, seja em edifícios de apartamentos ou vilas, será precedida da subscrição, pelo proprietário, promitente comprador ou promitente cessionário do respectivo terreno, de Letras Imobiliárias emitidas pelo BNH.</h3>
+ <h4>§ 1° O montante dessa subscrição será de 5% sôbre o valor da construção, quando êste estiver entre os limites de quinhentos e mil e quinhentas vêzes aquêle salário-mínimo, e de mais 10% sôbre o que exceder a mil e quinhentas vêzes.</h4>
+ <h4>§ 2° As letras imobiliárias referidas neste artigo terão as características referidas no artigo 45 desta Lei.</h4>
+ <h4>§ 3° As autoridades municipais, ao examinarem projetos de construção de habitações nas condições referidas neste artigo, verificarão se a subscrição nêle criada corresponde ao custo da construção fixado pelo profissional responsável pela obra à base de preços unitários então vigente e, com fundamento nesse custo exigirão prova da subscrição prevista neste artigo. Antes da concessão do "habite-se" deverá o construtor prestar nova declaração do custo efetivo do prédio sujeita a verificação do Poder Público, e se fôr apurado excesso sôbre a previsão inicial, antes da concessão do "habite-se", o titular do imóvel fará prova de ter sido feita a subscrição relativa ao excesso de custo.</h4>
+ <h4>§ 4° Só poderão gozar dos benefícios e vantagens previstos na presente lei os municípios que obedecerem ao disposto neste artigo.</h4>
+ <h3>Art. 23. A construção de prédios residenciais, cujo custo seja superior a 850 vêzes o maior salário-mínimo vigente no País, considerado êsse custo para cada unidade residencial, seja em prédio individual, seja em edifícios de apartamentos ou vilas, fica sujeita ao pagamento de uma subscrição pelo proprietário, promitente comprador ou promitente cessionário do respectivo terreno, de letras imobiliárias emitidas pelo Banco Nacional de Habitação, com as características do art. 45 desta Lei. (Redação dada pela Lei nº 4.864, de 1965).</h3>
+ <h4>§ 1º O montante dessa subscrição será de 5% (cinco por cento) sôbre o valor da construção, quando esta estiver entre os limites de 850 e 1.150 vêzes o maior salário-mínimo vigente no País à época da concessão do respectivo "habite-se" e de 10% (dez por cento) sôbre a que exceder de tal limite. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h4>§ 2º As autoridades municipais, antes de concederem o "habite-se" para os prédios residenciais, exigirão do construtor uma declaração do seu custo efetivo e, quando fôr o caso, do proprietário comprovação de cumprimento do disposto no presente artigo. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h4>§ 3º Só poderão gozar dos benefícios e vantagens previstos na presente Lei os municípios que obedecerem ao disposto neste artigo. (Redação dada pela Lei nº 4.864, de 1965).</h4>
+ <h3>Art. 24. O Banco Nacional da Habitação poderá operar em:</h3>
+ <h5>I - prestação de garantia em financiamento obtido, no país ou no exterior, pelas entidades integrantes do sistema financeiro da habitação destinados a execução de projetos de habitação de interêsse social;</h5>
+ <h5>II - carteira de seguro dos créditos resultantes da venda ou construção de habitação a prazo ou de empréstimos para aquisição ou construção de habitações;</h5>
+ <h5>III - carteira de seguro dos depósitos nas entidades integrantes do sistema financeiro da habitação;</h5>
+ <h5>IV - carteira de redesconto para assegurar a liquidez do sistema financeiro da habitação;</h5>
+ <h5>V - carteira de seguro de vida de renda temporária dos adquirentes, financiados pelo sistema financeiro da habitação;</h5>
+ <h5>VI - carteira de seguro de resgate e pagamento de juros das Letras Imobiliárias emitidas pelas sociedades de crédito imobiliário;</h5>
+ <h5>VII - financiamento ou refinanciamento da elaboração ou execução de projetos de construção de conjuntos habitacionais ... (Vetado) ... instalação e desenvolvimento da indústria ... (Vetado) ... de materiais de construção e pesquisas tecnológicas;</h5>
+ <h5>VIII - refinanciamento parcial dos créditos concedidos pelas sociedades de crédito imobiliário.</h5>
+ <h4>§ 1° O Banco Nacional da Habitação sòmente operará ... (Vetado) ... para aplicação dos recursos disponíveis, depois de asseguradas as reservas técnicas necessárias às operações referidas nos incisos I a VI, inclusive.</h4>
+ <h4>§ 2° Os recursos disponíveis do Banco Nacional da Habitação serão mantidos em depósito no Banco do Brasil S.A. ... (Vetado) .</h4>
+ <h4>§ 3° Dos recursos recolhidos ao Banco Nacional da Habitação, serão destinadas anualmente as verbas necessárias ao custeio das atividades do Serviço Federal da Habitação e Urbanismo ... (Vetado) .</h4>
+ <h3>Art. 25. O capital do Banco Nacional de Habitação pertencerá integralmente à União Federal.</h3>
+ <h4>Parágrafo único. O capital inicial do Banco Nacional da Habitação será de Cr$1 bilhão de cruzeiros.</h4>
+ <h3>Art. 26. O Poder Executivo transferirá, dentro de um ano, para o patrimônio do Banco Nacional da Habitação, terrenos de propriedade da União Federal que não sejam necessários aos serviços públicos federais ou que possam ser vendidos, para realizar recursos líquidos destinados ao aumento do Capital do Banco, desde que se prestem à construção de conjuntos residenciais de interêsse social.</h3>
+ <h4>§ 1° O Banco poderá igualmente receber dos Governos Estaduais, Municipais e particulares ou de entidades de direito privado, êstes sob a forma de doações, terras ou terrenos rurais ou urbanos, apropriados para a construção de imóveis.</h4>
+ <h4>§ 2° No caso de doações previstas no parágrafo anterior nenhum ônus recairá sôbre o doador de terras ou terrenos recebidos pelo Banco.</h4>
+ <h3>Art. 27. O Banco Nacional da Habitação será administrado por um Conselho de Administração e uma Diretoria, cujos membros serão nomeados pelo Presidente da República e aprovados pelo Senado Federal.</h3>
+ <h4>§ 1° O Conselho de Administração será composto de:</h4>
+ <h6>a) o Presidente do Banco Nacional da Habitação, como seu Presidente, e com voto de qualidade;</h6>
+ <h6>b) de seis a nove Conselheiros, com mandato de 3 anos cada um;</h6>
+ <h6>c) os Diretores do Banco.</h6>
+ <h4>§ 2° A Diretoria será composta de:</h4>
+ <h6>a) o Presidente do Banco Nacional da Habitação, demissível ad nutum;</h6>
+ <h6>b) o Diretor-Superintendente com mandato de 4 anos;</h6>
+ <h6>c) dois a cinco Diretores com mandato de 4 anos.</h6>
+ <h3>Art. 28. Os membros da Diretoria e três dos membros do Conselho de Administração serão escolhidos dentre cidadãos de reconhecida idoneidade moral e comprovada capacidade em assuntos econômico-financeiros, sendo dois outros membros do Conselho de Administração escolhidos dentre os especialistas, respectivamente, em assuntos de saúde pública, de previdência social, e o sexto, o Superintendente do Serviço Federal de Habitação e Urbanismo.</h3>
+ <h4>§ 1° (Vetado) .</h4>
+ <h4>§ 2° Os Conselheiros serão anualmente renovados pelo têrço e na composição inicial, 1/3 terá mandato de um ano, 1/3 mandato de dois anos e 1/3 mandato de três anos.</h4>
+ <h4>§ 3° Na composição inicial da Diretoria, metade dos diretores terá mandato de dois anos.</h4>
+ <h3>Art. 29. Compete ao Conselho de Administração:</h3>
+ <h5>I - organizar e modificar o regimento interno do Banco, que será aprovado por ato do Ministro da Fazenda;</h5>
+ <h5>II - decidir sôbre a orientação geral das operações do Banco;</h5>
+ <h5>III - exercer as atribuições normativas do Banco, como órgão da orientação, disciplina e contrôle do sistema financeiro da habitação;</h5>
+ <h5>IV - aprovar os orçamentos de custeio, recursos e aplicações do Banco e as normas gerais a serem observadas nos seus serviços;</h5>
+ <h5>V - distribuir os serviços do Banco entre os Diretores, observado o disposto nesta Lei;</h5>
+ <h5>VI - criar ou extingüir cargo e funções, fixando os respectivos vencimentos e vantagens, mediante proposta do Diretor-Superintendente, bem como dirimir dúvidas quanto aos direitos, vantagens e deveres dos servidores, podendo ainda baixar o Regulamento do Pessoal do Banco;</h5>
+ <h5>VII - examinar e aprovar os balancetes e balanços do Banco, financeiros e patrimoniais;</h5>
+ <h5>VIII - escolher substitutos no caso de vaga ou impedimento dos Diretores, até que o Presidente da República o faça em caráter efetivo;</h5>
+ <h5>IX - examinar e dar parecer sôbre a prestação anual das contas do Banco;</h5>
+ <h5>X - deliberar sôbre os assuntos que lhe forem submetidos pela Diretoria.</h5>
+ <h3>Art. 30. Compete à Diretoria:</h3>
+ <h5>I - decidir sôbre todos os assuntos da direção executiva do Banco, de acôrdo com o seu Regimento Interno;</h5>
+ <h5>II - aprovar as operações do Banco, que excedam os limites fixados pelo Regimento Interno para cada Diretor.</h5>
+ <h3>Art. 31. Compete ao Presidente do Banco:</h3>
+ <h5>I - representar o Banco em suas relações com terceiros em juízo ou fora dêle, sem prejuízo do disposto no artigo 29;</h5>
+ <h5>II - convocar extraordinàriamente o Conselho e a Diretoria, sempre que necessário;</h5>
+ <h5>III - enviar ao Tribunal de Contas, até 31 de janeiro de cada ano, as contas dos administradores do Banco relativas ao exercício anterior, para os fins do artigo 77, II, da Constituição ;</h5>
+ <h5>IV - enviar ao Tribunal de Contas, até 31 de janeiro de cada ano as contas gerais do Banco relativas ao exercício anterior.</h5>
+ <h3>Art. 32. Compete ao Diretor-Superintendente:</h3>
+ <h5>I - substituir o Presidente nos seus impedimentos ocasionais, sem prejuízo do exercício normal de suas funções;</h5>
+ <h5>II - administrar e dirigir os negócios ordinários do Banco decidindo das operações que se contiverem no limite da sua competência, de acôrdo com o Regimento Interno;</h5>
+ <h5>III - outorgar e aceitar escrituras, ou assinar contratos, conjuntamente com o Presidente ou outro Diretor;</h5>
+ <h5>IV - designar, conjuntamente com o Presidente, procuradores com poderes especiais, agentes ou representantes do Banco;</h5>
+ <h5>V - praticar os atos referentes à administração do pessoal, podendo delegar poderes, salvo quando se tratar de nomeação, promoção ou demissão;</h5>
+ <h5>VI - superintender e coordenar os serviços dos diferentes setôres do Banco e zelar pelo fiel cumprimento das deliberações do Conselho de Administração e da Diretoria;</h5>
+ <h5>VII - prover, interinamente, até que o Presidente da República o faça em caráter efetivo, as vagas dos membros do Conselho de Administração, cuja substituição não esteja prevista no Regulamento do Banco.</h5>
+ <h3>Art. 33. Os Diretores referidos no artigo 27, § 2°, alínea c terão as atribuições que forem determinadas no Regimento Interno.</h3>
+ <h3>Art. 34. O pessoal contratado pelo Banco será regido pela Consolidação das Leis do Trabalho e legislação complementar e admitido mediante concurso de provas ou de provas e títulos.</h3>
+ <h4>§ 1° Poderão ser requisitados pelo Banco servidores dos quadros do serviço público federal, das autarquias federais, ou de sociedades de economia mista, controladas pelo Govêrno Federal.</h4>
+ <h4>§ 2° (Vetado) .</h4>
+ <h2>CAPÍTULO V</h2>
+ <p>Das Sociedades de Crédito Imobiliário</p>
+ <h3>Art. 35. As Sociedades de crédito imobiliário são instituições de crédito especializado, dependem de autorização do Banco Nacional da Habitação para funcionar, e estão sujeitas a permanente fiscalização do Govêrno Federal, através do referido Banco e da Superintendência da Moeda e do Crédito.</h3>
+ <h4>§ 1° As sociedades de crédito imobiliário se organizarão sob a forma anônima de ações nominativas, observando nos atos de sua constituição todos os dispositivos legais aplicáveis, mas só poderão dar início às suas atividades após publicação, no Diário Oficial da União, da autorização do Banco Nacional da Habitação.</h4>
+ <h4>§ 2° As sociedades de crédito imobiliário serão constituídas com o capital mínimo de 100 milhões de cruzeiros em moeda corrente, na forma da legislação que rege as sociedades anônimas, mas a emissão de autorização para funcionar dependerá da integralização mínima de 50%, mediante débito do BNH.</h4>
+ <h4>§ 3° O limite mínimo referido no parágrafo anterior será anualmente atualizado, com base nos índices de que trata o artigo 5°, § 1°.</h4>
+ <h3>Art. 36. A autorização para funcionar será concedida por tempo indeterminado, enquanto a sociedade observar as disposições legais e regulamentares em vigor.</h3>
+ <h4>§ 1° Sòmente poderão ser membros dos órgãos da administração e do Conselho Fiscal das sociedades de crédito imobiliário, pessoas de reconhecida idoneidade moral e comercial, sendo que dois diretores deverão comprovar capacidade financeira e técnica.</h4>
+ <h4>§ 2° Os diretores sòmente poderão ser investidos nos seus cargos depois da aprovação pelo Banco Nacional da Habitação, à vista das provas exigidas pela SUMOC para investimento de diretores de estabelecimento bancário em geral.</h4>
+ <h4>§ 3° A responsabilidade dos administradores de sociedade de crédito imobiliário é a mesma prevista na lei para os diretores de bancos.</h4>
+ <h4>§ 4° A expressão "crédito imobiliário", constará obrigatòriamente da denominação das sociedades referidas neste artigo.</h4>
+ <h4>§ 5° As sociedades de crédito imobiliário enviarão para publicação até o 10° dia de cada mês, no Diário Oficial do estado onde funcionarem, os balancetes mensais.</h4>
+ <h3>Art. 37. Ficarão sujeitos à prévia aprovação do Banco Nacional da Habitação:</h3>
+ <h5>I - as alterações dos estatutos sociais das sociedades de crédito imobiliário;</h5>
+ <h5>II - a abertura de agências ou escritórios das referidas sociedades;</h5>
+ <h5>III - a cessação de operações da matriz ou das dependências das referidas sociedades.</h5>
+ <h3>Art. 38. Os pedidos de autorização para funcionamento, alteração estatutária, abertura ou fechamento de agências ou dependências e aprovação de administradores deverão ser decididos pelo Banco Nacional da Habitação, dentro de 120 dias da sua apresentação e das decisões do Banco caberá recurso voluntário para o Ministro da Fazenda.</h3>
+ <h4>Parágrafo único. O regulamento discriminará a documentação a ser apresentada, com os requerimentos referidos neste artigo, podendo o Banco Nacional da Habitação fazer as exigências que considerar de interêsse para a apreciação do pedido e fixar prazo razoável para o seu atendimento.</h4>
+ <h3>Art. 39. As sociedades de crédito imobiliário sómente poderão operar em financiamentos para construção, venda ou aquisição de habitações, mediante:</h3>
+ <h5>I - abertura de crédito a favor de empresários que promovam projetos de construção de habitações para venda a prazo;</h5>
+ <h5>II - abertura de crédito para a compra ou construção de casa própria com liquidação a prazo de crédito utilizado;</h5>
+ <h5>III - desconto, mediante cessão de direitos de receber a prazo o preço da construção ou venda de habitações;</h5>
+ <h5>IV - outras modalidades de operações autorizadas pelo Banco Nacional da Habitação.</h5>
+ <h4>§ 1° Cada sociedade de crédito imobiliário sòmente poderá operar com imóveis situados na área geográfica para a qual fôr autorizada a funcionar.</h4>
+ <h4>§ 2° As sociedades de crédito imobiliário não poderão operar em compra e venda ou construção de imóveis, salvo para liquidação de bens que tenham recebido em pagamento dos seus créditos ou no caso dos imóveis necessários a instalação de seus serviços.</h4>
+ <h4>§ 3° Nas suas operações as sociedades de crédito imobiliário observarão as normas desta lei e as expedidas pelo Banco Nacional da Habitação, com relação aos limites do valor unitário, prazo, condições de pagamento, juros, garantias, seguro, ágio e deságios na colocação de Letras Imobiliárias e diversificação de aplicações.</h4>
+ <h4>§ 4° As disponibilidades das sociedades de crédito imobiliário serão mantidas em depósito no Banco Nacional da Habitação, no Banco do Brasil S.A., nos demais bancos oficiais da União e dos Estados e nas Caixas Econômicas ... (Vetado) .</h4>
+ <h3>Art. 40. As sociedades de crédito imobiliário não poderão:</h3>
+ <h6>a) receber depósitos de terceiros que não sejam proprietários de ações nominativas, a não ser nas condições e nos limites autorizados pelo Banco Nacional da Habitação;</h6>
+ <h6>b) tomar empréstimos em moeda nacional ou estrangeira, a não ser nas condições mínimas de prazo e nos limites máximos, em relação ao capital e reservas, estabelecidos pelo Banco Nacional da Habitação;</h6>
+ <h6>c) emitir Letras Imobiliárias em valor superior aos limites máximos aprovados pelo Banco Nacional da Habitação em relação ao capital e reservas e ao montante dos créditos em carteira;</h6>
+ <h6>d) admitir a movimentação de suas contas por meio de cheques contra ela girados ou emitir cheques na forma do Decreto n. 24.777, de 14 de junho de 1934 ;</h6>
+ <h6>e) possuir participação em outras emprêsas.</h6>
+ <h4>§ 1° O Banco Nacional da Habitação fixará o limite de recursos de terceiros que as sociedades poderão receber, até o máximo de 15 vêzes os recursos próprios.</h4>
+ <h4>§ 2° O Banco Nacional da Habitação fixará também os limites mínimos de prazo dos vencimentos dos recursos de terceiros recebidos pela sociedade em relação aos prazos de suas aplicações.</h4>
+ <h3>Art. 41. O Banco Nacional de Habitação e a SUMOC manterão fiscalização permanente e ampla das Sociedades de Crédito Imobiliário podendo para isso, a qualquer tempo, examinar livros de registros, papéis e documentação de qualquer natureza, atos e contratos.</h3>
+ <h4>§ 1° As sociedades são obrigadas a prestar tôda e qualquer informação que lhes fôr solicitada pelo Banco Nacional da Habitação ou pela SUMOC.</h4>
+ <h4>§ 2° A recusa, a criação de embaraços, a divulgação ou fornecimento de informações falsas sôbre as operações e as condições financeiras da sociedade serão punidas na forma da lei.</h4>
+ <h4>§ 3° O Banco Nacional da Habitação e a SUMOC manterão sigilo com relação a documentos e informações que as sociedades de crédito imobiliário lhe fornecerem.</h4>
+ <h3>Art. 42. As sociedades de crédito imobiliário são obrigadas a observar o plano de contas e as normas de contabilização aprovadas pelo Banco Nacional da Habitação, bem como a divulgar, em seus relatórios semestrais, as informações mínimas exigidas pelo Banco Nacional da Habitação, quanto às suas condições financeiras.</h3>
+ <h4>§ 1° As sociedades de crédito imobiliário são obrigadas a enviar ao Banco Nacional de Habilitação, até o último dia do mês seguinte, cópia do balancete do mês anterior, do balanço semestral e da demonstração de lucros e perdas, bem como prova de envio para publicação das atas de assembléias gerais, dentro de 30 dias da realização destas.</h4>
+ <h4>§ 2° O BNH poderá exigir quando a seu critério, considerar necessário, que Sociedades de Crédito Imobiliário se sujeitem à auditoria externa por emprêsas especializadas por êle aprovadas.</h4>
+ <h4>§ 3° As sociedades de crédito imobiliário mencionarão em sua publicidade os respectivos capitais realizados, suas reservas e o total de recursos mutuados aplicados, constantes de seu último balancete mensal.</h4>
+ <p><del></p>
+ <h3>Art. 43 (Revogado pela Lei nº 13.506, de 2017)</del></h3>
+ <p><del>a) (Revogado pela Lei nº 13.506, de 2017)</del></p>
+ <p><del>b) (Revogado pela Lei nº 13.506, de 2017)</del></p>
+ <p><del>c (Revogado pela Lei nº 13.506, de 2017)</del></p>
+ <p><del>§ 1 (Revogado pela Lei nº 13.506, de 2017)</del></p>
+ <p><del>§ 2 (Revogado pela Lei nº 13.506, de 2017)</del></p>
+ <h2>CAPÍTULO VI</h2>
+ <p>Letras Imobiliárias</p>
+ <p><del></p>
+ <h3>Art. 44 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>§ 1 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 2 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 3 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 4 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 45 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>a) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>b) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>c (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>d (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>e) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>f) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>g) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>Parágrafo único (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 46 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>Parágrafo único (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 47 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>a) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>b) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 1 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 2 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 3 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 48 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>Parágrafo único (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 49 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>§ 1 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 2 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 3 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 4 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 50 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del></p>
+ <h3>Art. 51 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del></p>
+ <h3>Art. 52 (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <p><del>§ 1 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <h4>§ 2° O valor em cruzeiros corrente da Unidade-Padrão de Capital será reajustado tôda vez que o salário-mínimo legal fôr alterado, com base no índice geral de preços referidos no artigo 5°, parágrafo 1° desta lei.</h4>
+ <p><del>§ 2º O valor em cruzeiros correntes da Unidade-Padrão do capital será reajustado semestralmente, com base nos índices do Conselho 	Nacional de Economia, referidos no art. 5º, § 1º (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <h4>§ 3° Os reajustamentos serão feitos 60 dias depois da entrada em vigor de cada alteração do salário-mínimo após a vigência desta lei, na proporção da variação do índice referido no parágrafo anterior:</h4>
+ <h6>a) desde fevereiro de 1964 até o mês de entrada em vigor da primeira alteração do salário-mínimo, após a data desta lei;</h6>
+ <h6>b) entre os meses de duas alterações sucessivas do nível de salário-mínimo, nos reajustamentos subseqüentes ao primeiro, após a vigência desta lei.</h6>
+ <p><del>§ 3º Os reajustamentos entrarão em vigor 60 (sessenta) (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 4 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del>§ 5 (Revogado pela Lei nº 13.137, de 2015)</del></p>
+ <p><del></p>
+ <h3>Art. 53. As letras imobiliárias vencerão o juro de, no máximo 8% (oito por cento) ao ano, e não poderão ter prazo de resgate inferior a 2 (dois) (Revogado pela Lei nº 13.137, de 2015)</del></h3>
+ <h2>CAPÍTULO VII</h2>
+ <p>Do Serviço Federal de Habitação e Urbanismo</p>
+ <h3>Art. 54. A Fundação da Casa Popular, criada pelo Decreto-lei n. 9.218, de 1° de maio de 1946 , passa a constituir com o seu patrimônio, revogada a legislação que lhe concerne, o "Serviço Federal de Habitação e Urbanismo", entidade autárquica ... (Vetado) .</h3>
+ <h4>§ 1° O Serviço Federal de Habitação e Urbanismo será dirigido por um Superintendente ..... (Vetado) .</h4>
+ <h4>§ 2° O Superintendente, de notória competência em matéria de habitação e urbanismo, será nomeado ... (Vetado) ... pelo Conselho de Administração do Banco Nacional de Habitação.</h4>
+ <h4>§ 3° (Vetado) .</h4>
+ <h4>§ 4° Ficam extintos o Conselho Central, o Conselho Técnico e a Junta de Contrôle da Fundação da Casa Popular.</h4>
+ <h4>§ 5° Os servidores do Serviço Nacional de Habitação e Urbanismo serão admitidos no regime da legislação trabalhista ... (Vetado) .</h4>
+ <h4>§ 6° (Vetado) .</h4>
+ <h4>§ 6º - Os servidores da atual Fundação da Casa Popular serão aproveitados no Serviço Nacional de Habitação e Urbanismo ou em outros serviços de igual regime. (Parte mantida pelo Congresso Nacional)</h4>
+ <h3>Art. 55. O Serviço Federal de Habitação e Urbanismo terá as seguintes atribuições:</h3>
+ <h6>a) promover pesquisas e estudos relativos ao deficit habitacional, aspectos do planejamento físico, técnico e sócio-econômico da habitação;</h6>
+ <h6>b) promover, coordenar e prestar assistência técnica a programas regionais e municipais de habitação de interêsse social, os quais deverão necessàriamente ser acompanhados de programas educativos e de desenvolvimento e organização de comunidade;</h6>
+ <h6>c) fomentar o desenvolvimento da indústria de construção, através de pesquisas e assistência técnica, estimulando a iniciativa regional e local;</h6>
+ <h6>d) incentivar o aproveitamento de mão-de-obra e dos materiais característicos de cada região;</h6>
+ <h6>e) estimular a organização de fundações, cooperativas, mútuas e outras formas associativas em programas habitacionais, propiciando-lhes assistência técnica;</h6>
+ <h6>f) incentivar a investigação tecnológica, a formação de técnicos, em qualquer nível, relacionadas com habitação e urbanismo;</h6>
+ <h6>g) prestar assistência técnica aos Estados e Municípios na elaboração dos planos diretores, bem como no planejamento da desapropriação por interêsse social, de áreas urbanas adequadas a construção de conjuntos habitacionais;</h6>
+ <h6>h) promover, em colaboração com o Instituto Brasileiro de Geografia e Estatística, a realização de estatísticas sôbre a habitação no país;</h6>
+ <p>i) (Vetado);</p>
+ <h6>j) prestar assistência técnica aos Estados, aos Municípios e às emprêsas do país para constituição, organização e implantação de entidades de caráter público, de economia mista ou privadas, que terão por objetivo promover a execução de planos habitacionais ou financiá-los, inclusive assistí-los para se candidatarem aos empréstimos do Banco Nacional da Habitação ou das sociedades de crédito imobiliário;</h6>
+ <p>l) prestar assistência técnica na elaboração de planos de emergência, intervindo na normalização de situações provocadas por calamidades públicas;</p>
+ <h6>m) estabelecer normas técnicas para a elaboração de Planos Diretores, de acôrdo com as peculiaridades das diversas regiões do país;</h6>
+ <h6>n) assistir aos municípios na elaboração ou adaptação de seus Planos Diretores às normas técnicas a que se refere o item anterior.</h6>
+ <h4>§ 1° Os municípios que não tiverem códigos de obras adaptados às normas técnicas do Serviço Federal de Habitação e Urbanismo ou que aprovarem projetos e planos habitacionais em desacôrdo com as mesmas normas, não poderão receber recursos provenientes de entidades governamentais, destinados a programas de habitação e urbanismo.</h4>
+ <h4>§ 2° (Vetado) .</h4>
+ <h3>Art. 56. A organização administrativa do Serviço Federal de Habitação e Urbanismo será estabelecida em decreto, devendo ser prevista a sua descentralização regional.</h3>
+ <h4>Parágrafo único. (Vetado) .</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <p>Disposições Gerais e Transitórias</p>
+ <h3>Art. 57. Não constitui rendimento tributável, para efeitos do impôsto de renda, o reajustamento monetário: (Revogado pelo Decreto-Lei nº 1.338, de 1974).</h3>
+ <h6>a) do saldo devedor de contratos imobiliários corrigidos nos têrmos dos artigos 5° e 6° desta lei; (Revogado pelo Decreto-Lei nº 1.338, de 1974).</h6>
+ <h6>b) do saldo devedor de empréstimos contraídos ou dos depósitos recebidos nos têrmos desta lei, pelas entidades integrantes do sistema financeiro da habitação; (Revogado pelo Decreto-Lei nº 1.338, de 1974).</h6>
+ <h6>c) do valor nominal das letras imobiliária. (Revogado pelo Decreto-Lei nº 1.338, de 1974).</h6>
+ <h3>Art. 58. Ficam isentos do Impôsto de Renda, até 31 de dezembro de 1970, os lucros e rendimentos auferidos pelas pessoas físicas ou jurídicas, resultantes de operações de construção e primeira transação, inclusive alienação e locação, relativos aos prédios residenciais que vierem a ser construídos no Distrito Federal, cujo valor não ultrapasse 60 (sessenta) vêzes o salário-mínimo da região.</h3>
+ <h4>Parágrafo único. Ficam igualmente isentos os mesmos imóveis, pelo mesmo prazo, dos impostos de transmissão, "causa mortis" e "inter vivos" relativos à primeira transferência de propriedade.</h4>
+ <h3>Art. 59. São isentos de impôsto de sêlo:</h3>
+ <h6>a) a emissão, colocação, transferência, cessão, endôsso, inscrição ou averbação de letras imobiliárias;</h6>
+ <h6>b) os atos e contratos, de qualquer natureza, entre as entidades que integram o sistema financeiro da habitação;</h6>
+ <h6>c) os contratos de que participem entidades integrantes do sistema financeiro da habitação, e que tenham por objeto habitações de menos de 50 metros quadrados, não incluídas as partes comuns, se fôr o caso, e de valor inferior a 60 vêzes o maior salário-mínimo legal vigente no país;</h6>
+ <h6>d) os contratos de construção, venda, ou promessa de venda a prazo, promessa de cessão e hipoteca, de habitações que satisfaçam aos requisitos da alínea anterior.</h6>
+ <h3>Art. 60. A aplicação da presente lei, pelo seu sentido social, far-se-á de modo a que sejam simplificados todos os processo e métodos pertinentes às respectivas transações, objetivando principalmente:</h3>
+ <h5>I - o maior rendimento dos serviços e a segurança e rapidez na tramitação dos processos e papéis;</h5>
+ <h5>II - economia de tempo e de emolumentos devidos aos Cartórios;</h5>
+ <h5>III - simplificação das escrituras e dos critérios para efeito do Registro de Imóveis.</h5>
+ <h3>Art. 61. Para plena consecução do disposto no artigo anterior, as escrituras deverão consignar exclusivamente as cláusulas, têrmos ou condições variáveis ou específicas.</h3>
+ <h4>§ 1° As cláusulas legais, regulamentares, regimentais ou, ainda, quaisquer normas administrativas ou técnicas e, portanto, comuns a todos os mutuários não figurarão expressamente nas respectivas escrituras.</h4>
+ <h4>§ 2° As escrituras, no entanto, consignarão obrigatòriamente que as partes contratantes adotam e se comprometem a cumprir as cláusulas, têrmos e condições a que se refere o parágrafo anterior, sempre transcritas, verbum ad verbum, no respectivo Cartório ou Ofício, mencionado inclusive o número do Livro e das fôlhas do competente registro.</h4>
+ <h4>§ 3° Aos mutuários, ao receberem os respectivos traslados de escritura, será obrigatòriamente entregue cópia, impressa ou mimeografada, autenticada, do contrato padrão constante das cláusulas, têrmos e condições referidas no parágrafo 1° dêste artigo.</h4>
+ <h4>§ 4° Os Cartórios de Registro de Imóveis, obrigatòriamente, para os devidos efeitos legais e jurídicos, receberão, autenticadamente, das pessoas jurídicas mencionadas na presente Lei, o instrumento a que se refere o parágrafo anterior, tudo de modo a facilitar os competentes registros.</h4>
+ <h4>§ 5º Os contratos de que forem parte o Banco Nacional de Habitação ou entidades que integrem o Sistema Financeiro da Habitação, bem como as operações efetuadas por determinação da presente Lei, poderão ser celebrados por instrumento particular, os quais poderão ser impressos, não se aplicando aos mesmos as disposições do art. 134, II, do Código Civil, atribuindo-se o caráter de escritura pública, para todos os fins de direito, aos contratos particulares firmados pelas entidades acima citados até a data da publicação desta Lei. (Incluído pela Lei nº 5.049, de 1966).</h4>
+ <h4>§ 6º Os contratos de que trata o parágrafo anterior serão obrigatòriamente rubricados por tôdas as partes em tôdas as suas fôlhas. (Incluído pela Lei nº 5.049, de 1966).</h4>
+ <h4>§ 7º Todos os contratos, públicos ou particulares, serão obrigatòriamente transcritos no Cartório de Registro de Imóveis competente, dentro do prazo de 15 (quinze) dias, a contar da data de sua assinatura, devendo tal obrigação figurar como cláusula contratual. (Incluído pela Lei nº 5.049, de 1966).</h4>
+ <h3>Art. 62. Os oficiais do Registro de Imóveis inscreverão obrigatòriamente, os contratos de promessa de venda, promessa de cessão ou de hipoteca celebrados de acôrdo com a presente Lei, declarando expressamente que os valôres dêles constantes são meramente estimativos, estando sujeitos os saldos devedores, assim como as prestações mensais, às correções do valor, determinadas nesta Lei.</h3>
+ <h4>§ 1° Mediante simples requerimento, firmado por ambas as partes contratantes, os Oficiais do Registro de Imóveis averbarão, à margem das respectivas inscrições, as correções de valôres determinados por esta Lei, com indicação do nôvo valor do preço ou da dívida e do saldo respectivo, bem como da nova prestação contratual.</h4>
+ <h4>§ 2° Se o promitente comprador, promitente cessionário ou mutuário se recusar a assinar o requerimento de averbação das correções verificadas, ficará, não obstante, obrigado ao pagamento da nova prestação, podendo a entidade financiadora, se lhe convier, rescindir o contrato, com notificação prévia no prazo de 90 dias.</h4>
+ <h3>Art. 63. Os órgãos da administração federal, centralizada ou descentralizada ficam autorizados a firmar acôrdos ou convênios com as entidades estaduais e municipais, buscando sempre a plena execução da presente Lei e o máximo de cooperação inter-administrativa.</h3>
+ <h3>Art. 64. O Banco Nacional da Habitação poderá promover desapropriações por utilidade pública ou por interêsse social.</h3>
+ <h3>Art. 65. A partir da data da vigência desta Lei as Carteiras Imobiliárias dos Institutos de Aposentadoria e Pensões não poderão iniciar novas operações imobiliárias e seus segurados passarão a ser atendidos de conformidade com êste diploma legal.</h3>
+ <h4>§ 1° Os Institutos de Aposentadoria e Pensões efetuarão, no prazo máximo de doze meses, a venda dos seus conjuntos e unidades residenciais em consonância com sistema financeiro da habitação de que trata esta Lei, de acôrdo com as instruções expedidas, no prazo de noventa dias, conjuntamente pelo Serviço Federal de Habitação e o Departamento Nacional da Previdência Social.</h4>
+ <h4>§ 1º - Institutos de Aposentadoria e Pensões, as Autarquias em geral, as Fundações e as Sociedades de Economia Mista, inclusive a Petrobrás S.A e o Banco do Brasil S.A ., efetuarão, no prazo máximo de 12 (doze) meses, a venda de seus conjuntos e unidades residenciais, em consonância com o Sistema Financeiro da Habitação de que trata esta Lei, de acôrdo com as instruções expedidas, no prazo de 90 (noventa) dias, conjuntamente, pelo Banco Nacional de Habitação e Departamento Nacional da Previdência Social. (Redação dada pela Lei nº 5.049, de 1996).</h4>
+ <h4>§ 2° Os recursos provenientes da alienação a que se refere o parágrafo anterior serão obrigatòriamente aplicados em Letras Imobiliárias emitidas pelo BNH, de prazo de vencimento não inferior a 10 (dez) anos.</h4>
+ <h4>§ 2º Os recursos provenientes da alienação de que trata o parágrafo anterior serão aplicados na aquisição ou construção de imóveis destinados à instalação de órgãos do Instituto. (Redação dada pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 3° Os órgãos referidos no parágrafo 1°, bem como o IPASE, as autarquias em geral ... (Vetado) ... e as Sociedades de Economia Mista, excluído o Banco do Brasil, que possuam unidades residenciais ... (Vetado) ... conjuntamente com a Caixa Econômica Federal ... (Vetado) ... submeterão à aprovação do Presidente da República, por intermédio do Ministro do Planejamento, no prazo de 90 dias, sugestões e normas em consonância com o sistema financeiro da habitação referentes à alienação das unidades residenciais de sua propriedade ... (Vetado) .</h4>
+ <h4>§ 3º Não sendo oportuna a aplicação prevista no parágrafo anterior, os recursos serão aplicados em Letras Imobiliárias, cuja liquidação se fará em 24 (vinte e quatro) parcelas mensais consecutivas, para a aquisição ou construção de edifícios-sede. (Incluído pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 4º - Os órgãos referidos no § 1º dêste artigo que possuam unidades residenciais em Brasília, conjuntamente com a Caixa Econômica Federal de Brasília, submeterão à aprovação do Presidente da República, por intermédio do Ministro do Planejamento e Coordenação Econômica, no prazo de 90 (noventa) dias, sugestões e normas, em consonância com o sistema Financeiro da Habitação, referentes à sua alienação. (Redação dada pela Lei nº 5.049, de 1996). (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 5° Os órgãos de que trata o parágrafo anterior, celebrarão convênio com a Caixa Econômica Federal de Brasília, incumbindo-a da alienação, aos respectivos ocupantes, dos imóveis residenciais que possuírem no Distrito Federal, devendo o produto da operação constituir fundo rotativo destinado a novos investimentos em construções residenciais em Brasília, assegurado às entidades convenientes rateio financeiro anual, que lhes permita a retirada de valôres correspondentes no mínimo, a cinqüenta por cento (50%) da renda líquida atual, efetivamente realizada, com a locação de tais imóveis. (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 6° Os imóveis residenciais que deixarem de ser alienados aos ocupantes, por desinterêsse ou impossibilidade legal dos mesmos, serão objeto de aquisição pela União que poderá para resgatá-los, solicitar a abertura de crédito especial, dar em pagamento imóveis não necessários aos seus serviços ou ações de sua propriedade em emprêsas de economia mista, mantida, nesta hipótese, a situação majoritária da União. (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 7° A administração dos imóveis adquiridos pela União, na forma do parágrafo anterior, será feita pelo Serviço do Patrimônio da União. (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 8° Realizadas as operações previstas no parágrafo primeiro, extingüir-se-ão as Carteiras Imobiliárias dos IAPs. (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h4>§ 9° Os atuais inquilinos ou ocupantes de imóveis residenciais dos IAPs e, sucessivamente, os seus contribuintes, êstes inscritos e classificados de acôrdo com a legislação vigente, terão preferência no atendimento pelos órgãos estatais integrantes do sistema financeiro da habitação (Renumerado pela Lei nº 5.455, de 1968)</h4>
+ <h3>Art. 66. O Ministro do Planejamento adotará as medidas necessárias para a criação de um Fundo de Assistência Habitacional objetivando o financiamento às populações de renda insuficiente, destinando-lhes recursos próprios.</h3>
+ <h3>Art. 67. O Banco Nacional da Habitação e o Serviço Federal de Habitação e Urbanismo deverão publicar mensalmente a relação dos servidores admitidos ao seu serviço, a qualquer título, no mês anterior à publicação.</h3>
+ <h3>Art. 68. O Poder Executivo baixará os regulamentos necessários à execução desta Lei, inclusive os relativos à extinção dos órgãos federais que vêm exercendo funções e atividades que possam ser por elas reguladas, podendo incorporar serviços, órgãos e departamentos, dispondo sôbre a situação dos respectivos servidores e objetivando o enquadramento dos órgãos federais que integram o sistema financeiro da habitação.</h3>
+ <h4>Parágrafo único. Dentro do prazo de noventa (90) dias, o Poder Executivo baixará os atos necessários à adaptação do funcionamento das Caixas Econômicas Federais, Caixas Militares e IPASE aos dispositivos desta Lei.</h4>
+ <h3>Art. 69. O contrato de promessa de cessão de direitos relativos a imóveis não loteados, sem cláusula de arrependimento e com emissão de posse, uma vez inscrita no Registro Geral de Imóveis, atribui ao promitente cessionário direito real oponível a terceiro e confere direito a obtenção compulsória da escritura definitiva de cessão, aplicando-se, neste caso, no que couber, o disposto no artigo 16 do Decreto-lei n. 58, de 10 de dezembro de 1937, e no artigo 346 do Código do Processo Civil.</h3>
+ <h4>Parágrafo único. O disposto neste artigo se aplica aos contratos em via de execução compulsória, em qualquer instância.</h4>
+ <h3>Art. 70. Fica assegurada às Caixas Econômicas Federais, na forma em que o Poder Executivo regulamentar, dentro do prazo previsto no parágrafo único do artigo 68, a exploração da Loteria Federal.</h3>
+ <h4>Parágrafo único. Setenta por cento da renda líquida da exploração da Loteria Federal destinar-se-ão à construção de habitações de valor unitário inferior a 60 vêzes o maior salário-mínimo vigente no País . (Revogado pelo Decreto-lei nº 204, de 1967)</h4>
+ <h3>Art. 71. Fica o Poder Executivo autorizado a abrir, pelo Ministério da Fazenda, crédito especial no montante de Cr$1 bilhão, com vigência durante três anos, destinado à integralização gradativa do capital do Banco Nacional da Habitação.</h3>
+ <h3>Art. 72. Esta lei entrará em vigor na data da sua publicação, revogadas as disposições em contrário.</h3>
+ <p>Brasília, 21 de agosto de 1964; 143º da Independência e 76º da República.</p>
+ <h3>H. CASTELLO BRANCO</h3>
+ <p>Milton Campos</p>
+ <p>Erneto de Mello Baptista</p>
+ <p>Arthur da Costa e Silva</p>
+ <p>Vasvo da Cunha</p>
+ <p>Octavio Gouveia de Bulhões</p>
+ <p>Juarez Távora</p>
+ <p>Hugo de Almeida Leme</p>
+ <p>Flávio Suplicy de Lacerda</p>
+ <p>Arnaldo Susselcind</p>
+ <p>Nelson Lavenére Wanderley</p>
+ <p>Raynundo de Brito</p>
+ <p>Mauro Thibau</p>
+ <p>Daniel Faraco</p>
+ <p>Roberto Campos</p>
+ <p>Osvaldo Cordeiro de Farias</p>
+ <p>Este texto não substitui o publicado no DOU de 11.9.1964</p>
+ <p>LEI Nº 4.380, DE 21 DE AGOSTO DE 1964.</p>
+ <p>Partes mantidas pelo Congresso 	Nacional, após veto presidencial, do Projeto que se transformou na Lei nº 4.380, de 21 de agosto de 1964, que institui a correção monetária nos contratos imobiliários de interesse social, o sistema financeiro para aquisição da casa própria, cria o Banco Nacional da Habitação (BNH), as sociedades de crédito imobiliário, as letras imobiliárias, o Serviço Federal de Habitação e Urbanismo e dá outras providências</p>
+ <p>O PRESIDENTE DA REPÚBLICA , Faço saber que o Congresso Nacional manteve e eu promulgo, nos termos do parágrafo 3º, do Artigo 70, da Constituição Federal, a seguinte Lei:</p>
+ <h3>Art. 4º. .....................................................................................................</h3>
+ <p>.................................................................................................................</p>
+ <h5>V - a construção da moradia para a população rural.</h5>
+ <h3>Art. 54. ...................................................................................................</h3>
+ <p>..............................................................................................................</p>
+ <h4>§ 6º. Os servidores da atual Fundação da Casa Popular serão aproveitados no Serviço Nacional de Habitação e urbanisbo ou em outros servições de igual regime.</h4>
+ <p>Brasília, 29 de setembro de 1964; 143º da Indenpendência e 76º da República.</p>
+ <h3>H CASTELLO BRANCO</h3>
+ <p>Este texto não substitui o publicado no DOU de 30.9.1964 e retificado em 12.10.1964</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Vide Decreto nº 91.152, de 1985</p>
+ <p>1993 | Institui a correção monetária nos contratos imobiliários de interêsse social, o sistema financeiro para aquisição da casa própria, cria o Banco Nacional da Habitação (BNH),</p>
+ <p>e Sociedades de Crédito Imobiliário, as Letras Imobiliárias, o Serviço Federal de</p>
+ <p>Habitação e Urbanismo e dá outras providências.</p>
+ <p>Partes mantidas pelo Congresso</p>
+ <p>Nacional, após veto presidencial, do Projeto que se transformou na Lei nº 4.380, de 21 de agosto de 1964, que institui a correção monetária nos contratos imobiliários de interesse social, o sistema financeiro para aquisição da casa própria, cria o Banco Nacional da Habitação (BNH), as sociedades de crédito imobiliário, as letras imobiliárias, o Serviço Federal de Habitação e Urbanismo e dá outras providências</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L4380.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

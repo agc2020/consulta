@@ -10,6 +10,38 @@
 <meta content="TJPR" data-pagefind-filter="orgao[content]"/>
 <meta content="2025" data-pagefind-filter="ano[content]"/>
 <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -19,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -28,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -67,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -84,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -104,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -114,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -124,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -134,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -144,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -159,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -202,6 +315,24 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
@@ -211,16 +342,57 @@
 <h1>Ofício Circular TJPR Nº 60/2025</h1>
 <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
 </header>
+<!-- Toggle de Tema -->
+<div class="theme-toggle-container">
+<div class="theme-toggle-label">Tema</div>
+<div class="theme-options">
+<label class="theme-option" data-theme="auto">
+<input checked="" name="theme" type="radio" value="auto"/>
+<span class="theme-icon">🌓</span>
+<span>Sistema</span>
+</label>
+<label class="theme-option" data-theme="light">
+<input name="theme" type="radio" value="light"/>
+<span class="theme-icon">☀️</span>
+<span>Claro</span>
+</label>
+<label class="theme-option" data-theme="dark">
+<input name="theme" type="radio" value="dark"/>
+<span class="theme-icon">🌙</span>
+<span>Escuro</span>
+</label>
+</div>
+</div>
 <div class="meta">
-<div><strong>Última sincronização:</strong> 14/11/2025 15:17:53 (processado via snapshot.py)</div>
+<div><strong>Última sincronização:</strong> 16/11/2025 21:59:40 (processado via snapshot.py)</div>
 <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4741922" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
 <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
-<div><strong>Tamanho do conteúdo:</strong> origem: 65.526 caracteres | espelho: 12.818 caracteres</div>
+<div><strong>Tamanho do conteúdo:</strong> origem: 28.267 caracteres | espelho: 16.981 caracteres</div>
 <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
 </div>
 <article>
 <p>Ofício Circular TJPR Nº 60/2025</p>
-<p>Provimento nº 165/2024 da Corregedoria Nacional de Justiça;</p>
+<p>Resolução nº 330/2020-CNJ 18.Sistema de Garantia dos Direitos da Criança e do Adolescente 19.Sistema Nacional de Atendimento Socioeducativo 20.Defensoria Pública 21.Poder Executivo Municipal 22.Poder Executivo Estadual</p>
+<p>Ementa: Recomenda às autoridades judiciárias paranaenses competentes a adoção de diretrizes e procedimentos para realização de audiências concentradas para reavaliar as medidas socioeducativas de internação e semiliberdade.</p>
+<p>Situação: VIGENTE</p>
+<p>Data do diário: 18/07/2025</p>
+<p>Diário: 3942</p>
+<p>Referências: LEI: Lei nº 12.594/2012</p>
+<p>Documento citado: Resolução nº 330/2020-CNJ</p>
+<p>Imprimir Voltar</p>
+<p>RECOMENDAÇÃO CONJUNTA Nº 01/2025</p>
+<p>GCJ/ P-SEP-GEP-GMF-PR/P-CONSIJ-CIJ</p>
+<p>Recomenda às autoridades judiciárias paranaenses competentes a adoção de diretrizes e procedimentos para realização de audiências concentradas para reavaliar as medidas socioeducativas de internação e semiliberdade.</p>
+<p>O CONSELHO DE SUPERVISÃO DOS JUÍZOS DA INFÂNCIA E DA JUVENTUDE, A COORDENADORIA DA INFÂNCIA E DA JUVENTUDE, o GRUPO DE MONITORAMENTO E FISCALIZAÇÃO DO SISTEMA CARCERÁRIO E DE MEDIDAS SOCIOEDUCATIVAS DO TRIBUNAL DE JUSTIÇA DO ESTADO DO PARANÁ e a CORREGEDORIA-GERAL DA JUSTIÇA, no uso de suas atribuições legais e regimentais,</p>
+<p>CONSIDERANDO a prioridade absoluta atribuída aos processos que tratam de direitos das crianças e adolescentes, nos termos do art. 227 da Constituição Federal e dos arts. 4º, caput e parágrafo único, alínea 'b', e 152, parágrafo único, da Lei nº 8.069/1990 (Estatuto da Criança e do Adolescente);</p>
+<p>CONSIDERANDO as disposições do art. 19 da Convenção Americana sobre Direitos Humanos, no sentido de que a proteção de crianças e adolescentes requer a adoção de medidas especiais, conforme entendimento da Corte Interamericana de Direitos Humanos na Opinião Consultiva nº 17/2002, parágrafo 60;</p>
+<p>CONSIDERANDO o disposto nos arts. 12, 37 e 40 da Convenção sobre os Direitos da Criança, que contemplam o direito das crianças e adolescentes de serem ouvidos em todos os procedimentos que lhes afetem, bem como estabelecem que os adolescentes privados de liberdade sejam tratados com humanidade e respeito inerentes à dignidade da pessoa humana, bem como tenham assegurados os direitos à presunção de inocência, à assistência jurídica adequada e à presença de seus pais ou representantes nas etapas processuais;</p>
+<p>CONSIDERANDO os itens 56 e 58 dos Princípios Orientadores da Organização das Nações Unidas para Prevenção da Delinquência Juvenil (Princípios de Riad), que dispõem sobre a colaboração entre os órgãos de Justiça e os distintos setores e serviços dedicados ao(à) adolescente, com vistas à prevenção da prática de atos infracionais;</p>
+<p>CONSIDERANDO os itens 1, 2, 17 e 18 das Regras Mínimas da Organização das Nações Unidas para Proteção de Jovens Privados de Liberdade (Regras de Havana), que dispõem sobre a obrigação do sistema de Justiça de garantir os direitos e a segurança de adolescentes, notadamente o acesso à assistência jurídica;</p>
+<p>CONSIDERANDO que a Observação Geral nº 24/2019 do Comitê das Nações Unidas sobre os Direitos da Criança preconiza que os Estados devem assegurar os princípios inerentes ao devido processo legal e a realização dos procedimentos judiciais de forma a permitir que o(a) adolescente participe efetivamente, compreenda todas as suas etapas e tenha garantida a presença de seus pais ou responsáveis em todos os momentos dos atos processuais (parágrafos 46 e 56);</p>
+<p>CONSIDERANDO o art. 121, caput e § 2º , do Estatuto da Criança e do Adolescente, que dispõe ser imprescindível a reavaliação das medidas socioeducativas privativas de liberdade no máximo a cada 6 (seis) meses;</p>
+<p>CONSIDERANDO o disposto na Lei nº 12.594/2012, que institui o Sistema Nacional de Atendimento Socioeducativo (Sinase) e prevê os princípios que regem a execução das medidas socioeducativas, bem como os prazos e procedimentos para reavaliação, manutenção, substituição ou suspensão das medidas de meio aberto ou de restrição e privação da liberdade;</p>
+<p>CONSIDERANDO os bons resultados obtidos nas reavaliações periódicas das medidas protetivas de acolhimento realizadas nas Varas da Infância e Juventude por meio das audiências concentradas, previstas no Provimento nº 165/2024 da Corregedoria Nacional de Justiça;</p>
 <p>CONSIDERANDO a Resolução CNJ nº 367/2021, que estabelece as diretrizes e normas gerais para a criação da Central de Vagas no Sistema Estadual de Atendimento Socioeducativo, no âmbito do Poder Judiciário, e define a audiência concentrada socioeducativa;</p>
 <p>CONSIDERANDO o acórdão exarado no Habeas Corpus nº 143.988/ES, pelo qual o Supremo Tribunal Federal determinou que as unidades de execução da medida socioeducativa de internação não ultrapassem a capacidade projetada de internação prevista para cada qual, propondo critérios e parâmetros a serem observados pelos magistrados nas unidades de internação que operam com a taxa de ocupação dos adolescentes superior à capacidade projetada;</p>
 <p>CONSIDERANDO as decisões de urgência proferidas pela Comissão e pela Corte Interamericana de Direitos Humanos em relação ao Sistema Nacional de Atendimento Socioeducativo;</p>
@@ -308,5 +480,79 @@
  </p>
 </footer>
 </main>
+<!-- Script de Controle de Tema -->
+<script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
 </body>
 </html>

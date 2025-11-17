@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 9.506, DE 30 DE OUTUBRO DE 1997 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1997" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 9.506, DE 30 DE OUTUBRO DE 1997</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:36:33 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L9506.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.698 caracteres | espelho: 12.779 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 9.506, DE 30 DE OUTUBRO DE 1997.</p>
+ <p>Regulamento</p>
+ <p>Extingue o Instituto de Previdência dos Congressistas - IPC, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica extinto o Instituto de Previdência dos Congressistas - IPC, criado pela Lei nº 4.284, de 20 de novembro de 1963 , e regido pela Lei nº 7.087, de 29 de dezembro de 1982 , sendo sucedido, em todos os direitos e obrigações, pela União, por intermédio da Câmara dos Deputados e do Senado Federal, os quais assumirão, mediante recursos orçamentários próprios, a concessão e manutenção dos benefícios, na forma estabelecida nesta Lei, preservados os direitos adquiridos em relação às pensões concedidas, atualizadas com base na legislação vigente à data da publicação desta Lei, bem como às pensões a conceder, no regime das Leis nº 4.284, de 20 de novembro de 1963 , nº 4.937, de 18 de março de 1966 , e nº 7.087, de 29 de dezembro de 1982.</h3>
+ <h4>§ 1º A liquidação do Instituto ocorrerá em 1º de fevereiro de 1999 e será conduzida por liquidante nomeado pela Mesa do Congresso Nacional, competindo-lhe administrar o patrimônio deste, recolher ao Tesouro Nacional os saldos bancários ao final subsistentes e transferir para a Câmara dos Deputados e para o Senado Federal o acervo patrimonial.</h4>
+ <h4>§ 2º São assegurados os direitos que venham a ser adquiridos, na forma da Lei nº 7.087, de 29 de dezembro de 1982 , até a liquidação do IPC, pelos segurados facultativos.</h4>
+ <h4>§ 3º Os atuais segurados obrigatórios do IPC, ao término do exercício do presente mandato, poderão se inscrever como segurados do Plano de Seguridade Social dos Congressistas, independentemente de idade e de exame de saúde.</h4>
+ <h4>§ 4º Os benefícios referidos no caput serão pagos pela última Casa Legislativa ou órgão a que se vinculou o segurado.</h4>
+ <h4>§ 5º A Casa Legislativa ou órgão a que se vinculou o segurado ressarcirá as contribuições por este recolhidas ao IPC, atualizadas monetariamente, mês a mês, pelos índices de remuneração das cadernetas de poupança, no prazo de sessenta dias:</h4>
+ <h5>I - a partir de 1º de fevereiro de 1999, aos atuais congressistas que o requererem;</h5>
+ <h5>II - a partir de 1º de fevereiro de 1999, aos atuais segurados facultativos que não tiverem adquirido direito a pensão, na forma da legislação vigente até a data de publicação desta Lei;</h5>
+ <h5>III - a partir de 1º de fevereiro de 1999, aos ex-segurados que, embora tendo adquirido o direito a pensão, não o tenham exercido, e desde que optem, em detrimento deste, pelo ressarcimento previsto neste parágrafo.</h5>
+ <h4>§ 6º Ao atual segurado obrigatório do IPC que renunciar à devolução prevista no parágrafo anterior aplicar-se-á o seguinte:</h4>
+ <h5>I - àquele que, ao término do exercício do atual mandato, preencher os requisitos previstos na legislação vigente à data de publicação desta Lei, fica assegurado o direito à aposentadoria;</h5>
+ <h5>II - àquele que, ao término do exercício do atual mandato, houver cumprido o período de carência correspondente a oito anos de contribuição, fica garantido o direito a percepção da aposentadoria proporcional, após cumprir os demais requisitos previstos na legislação vigente à data de publicação desta Lei;</h5>
+ <h5>III - aquele que, ao término do exercício do atual mandato, não tiver cumprido o período de carência correspondente a oito anos de contribuição, e, naquela data, tornar-se segurado do Plano instituído por esta Lei, poderá averbar seu tempo de contribuição à razão de um trinta avos do valor da aposentadoria integral por ano de contribuição;</h5>
+ <h5>IV - aquele que teve garantido o direito a pensão, na forma da legislação vigente à data de publicação desta Lei, e se inscrever no Plano de Seguridade Social dos Congressistas, incorporará aos seus proventos, a cada ano de exercício de mandato, o valor correspondente a um trinta e cinco avos da remuneração fixada na forma do § 1º do art. 2º.</h5>
+ <h4>§ 7º O segurado facultativo poderá requerer que sua inscrição no IPC seja cancelada antes de 1º de fevereiro de 1999, ficando-lhe assegurado o direito ao ressarcimento a que se refere o inciso II do § 5º.</h4>
+ <h4>§ 8º Com a liquidação do IPC precluirá o prazo para aquisição de direitos com base na satisfação das condições instituídas nas Leis nº 4.284, de 20 de novembro de 1963 , e nº 4.937, de 18 de março de 1966 .</h4>
+ <h4>§ 9º Precluirá no momento da liquidação do IPC o direito ao recolhimento previsto no caput do art. 24 da Lei nº 7.087, de 29 de dezembro de 1982, permitindo-se ao segurado obrigatório a antecipação do recolhimento correspondente ao tempo de até doze meses de contribuição.</h4>
+ <h3>Art. 2º O Senador, Deputado Federal ou suplente que assim o requerer, no prazo de trinta dias do início do exercício do mandato, participará do Plano de Seguridade Social dos Congressistas, fazendo jus à aposentadoria:</h3>
+ <h5>I - com proventos correspondentes à totalidade do valor obtido na forma do § 1º:</h5>
+ <h6>a) por invalidez permanente, quando esta ocorrer durante o exercício do mandato e decorrer de acidente, moléstia profissional ou doença grave, contagiosa ou incurável, especificadas em lei;</h6>
+ <h6>b) aos trinta e cinco anos de exercício de mandato e sessenta anos de idade;</h6>
+ <h5>II - com proventos proporcionais, observado o disposto no § 2º, ao valor obtido na forma do § 1º:</h5>
+ <h6>a) por invalidez permanente, nos casos não previstos na alínea a do inciso anterior, não podendo os proventos ser inferiores a vinte e seis por cento da remuneração fixada para os membros do Congresso Nacional;</h6>
+ <h6>b) aos trinta e cinco anos de contribuição e sessenta anos de idade.</h6>
+ <h4>§ 1º O valor dos proventos das aposentadorias previstas nos incisos I e II do caput será calculado tomando por base percentual da remuneração fixada para os membros do Congresso Nacional, idêntico ao adotado para cálculo dos benefícios dos servidores públicos civis federais de mesma remuneração.</h4>
+ <h4>§ 2º O valor da aposentadoria prevista no inciso II do caput corresponderá a um trinta e cinco avos, por ano de exercício de mandato, do valor obtido na forma do § 1º.</h4>
+ <h3>Art. 3º Em caso de morte do segurado, seus dependentes perceberão pensão correspondente ao valor dos proventos de aposentadoria que o segurado recebia ou a que teria direito.</h3>
+ <h4>§ 1º O valor mínimo da pensão corresponderá a treze por cento da remuneração fixada para os membros do Congresso Nacional.</h4>
+ <h4>§ 2º Não é devida pensão ao dependente do segurado que tiver falecido posteriormente ao cancelamento de sua inscrição.</h4>
+ <h3>Art. 4º Para os fins do disposto nesta Lei considerar-se-á:</h3>
+ <h5>I - tempo de contribuição, aquele reconhecido pelos sistemas de previdência social do serviço público, civil ou militar, e da atividade privada, rural e urbana;</h5>
+ <h5>II - tempo de exercício de mandato, o tempo de contribuição ao Plano de Seguridade Social dos Congressistas ou ao Instituto de Previdência dos Congressistas.</h5>
+ <h4>§ 1º A apuração do tempo de exercício de mandato e do tempo de serviço será feita em dias, que serão convertidos em anos, considerado o ano como de trezentos e sessenta e cinco dias.</h4>
+ <h4>§ 2º Para a concessão dos benefícios do Plano de Seguridade Social dos Congressistas, serão desconsiderados os períodos de tempo excedentes a trinta e cinco anos, bem como os concomitantes ou já considerados para a concessão de outro benefício, em qualquer regime de previdência social.</h4>
+ <h3>Art. 5º Para fins de contagem de tempo de exercício de mandato é facultada ao segurado a averbação do tempo correspondente aos mandatos eletivos municipais, estaduais ou federais.</h3>
+ <h4>§ 1º A averbação somente produzirá efeitos após o recolhimento das contribuições ao Plano de Seguridade Social dos Congressistas, diretamente pelo interessado ou mediante repasse dos recursos correspondentes por entidade conveniada na forma do art. 6º.</h4>
+ <h4>§ 2º O valor do recolhimento a que se refere o parágrafo anterior corresponderá à soma das contribuições prevista nos incisos I e II do art. 12 e tomará por base a remuneração dos membros do Congresso Nacional vigente à época do recolhimento.</h4>
+ <h3>Art. 6º A Câmara dos Deputados e o Senado Federal poderão celebrar convênios com entidades estaduais e municipais de seguridade parlamentar para a implantação de sistema de compensação financeira das contribuições do segurado por tempo de exercício de mandato, tanto àquelas entidades quanto ao Plano instituído por esta Lei, mediante repasse, para habilitação à aposentadoria, dos recursos correspondentes.</h3>
+ <h3>Art. 7º O ex-segurado poderá reinscrever-se, quando titular de novo mandato, bem como, ao completar os requisitos exigidos para aposentadoria, optar entre o plano instituído por esta Lei e o regime de previdência social a que estiver vinculado.</h3>
+ <h4>Parágrafo único. O segurado aposentado na forma desta Lei terá revisto o valor da aposentadoria ao término do exercício de novo mandato, observado o disposto no § 2º do art. 4º.</h4>
+ <h3>Art. 8º Em nenhuma hipótese o valor mensal dos benefícios a que se refere esta Lei poderá exceder ao da remuneração dos membros do Congresso Nacional.</h3>
+ <h3>Art. 9º Os benefícios previstos nesta Lei serão atualizados no índice e na data do reajuste da remuneração mensal dos membros do Congresso Nacional.</h3>
+ <h3>Art. 10. Não é devido o pagamento dos proventos da aposentadoria a que se refere esta Lei enquanto o beneficiário estiver investido em mandato eletivo federal, estadual, distrital ou municipal, salvo quando optar por este benefício, renunciando à remuneração do cargo.</h3>
+ <h3>Art. 11. Fica vedada, a partir da liquidação do IPC, a acumulação da aposentadoria pelo Plano previsto nesta Lei com a do regime de previdência social do servidor público, civil ou militar.</h3>
+ <h3>Art. 12. O Plano de Seguridade Social dos Congressistas será custeado com o produto de contribuições mensais:</h3>
+ <h5>I - dos segurados, incidentes sobre a remuneração mensal fixada para os membros do Congresso Nacional e calculadas mediante aplicação de alíquota igual à exigida dos servidores públicos civis federais para o custeio de suas aposentadorias e pensões;</h5>
+ <h5>II - da Câmara dos Deputados e do Senado Federal, de valor idêntico à contribuição de cada segurado, fixada no inciso anterior;</h5>
+ <h5>III - dos beneficiários das aposentadorias e pensões incidentes sobre o valor das mesmas que exceda o limite máximo estabelecido para os benefícios do regime geral de previdência social de que trata a Lei nº 8.213, de 24 de julho de 1991 , e calculadas mediante a aplicação da mesma alíquota a que se refere o inciso I.</h5>
+ <h3>Art. 13. O Deputado Federal, Senador ou suplente em exercício de mandato que não estiver vinculado ao Plano instituído por esta Lei ou a outro regime de previdência participará, obrigatoriamente, do regime geral de previdência social a que se refere a Lei nº 8.213, de 24 de julho de 1991 .</h3>
+ <h4>§ 1º O inciso I do art. 12 da Lei nº 8.212, de 24 de julho de 1991 , passa a vigorar acrescido da seguinte alínea h :</h4>
+ <p>"</p>
+ <h3>Art. 12. ........................................................................</h3>
+ <h5>I - ..................................................................................</h5>
+ <p>.......................................................................................</p>
+ <h6>h) o exercente de mandato eletivo federal, estadual ou municipal, desde que não vinculado a regime próprio de previdência social;"</h6>
+ <h4>§ 2º O inciso I do art. 11 da Lei nº 8.213, de 24 de julho de 1991 , passa a vigorar acrescido da seguinte alínea h :</h4>
+ <p>"</p>
+ <h3>Art. 11. .............................................................................</h3>
+ <h5>I - .......................................................................................</h5>
+ <p>...........................................................................................</p>
+ <h6>h) o exercente de mandato eletivo federal, estadual ou municipal, desde que não vinculado a regime próprio de previdência social;"</h6>
+ <h4>§ 3º O inciso IV do art. 55 da Lei nº 8.213, de 24 de julho de 1991, passa a vigorar com a seguinte redação:</h4>
+ <p>"</p>
+ <h3>Art. 55. .............................................................................</h3>
+ <p>..........................................................................................</p>
+ <h5>IV - o tempo de serviço referente ao exercício de mandato eletivo federal, estadual ou municipal, desde que não tenha sido contado para efeito de aposentadoria por outro regime de previdência social;</h5>
+ <p>..........................................................................................."</p>
+ <h3>Art. 14. O Congresso Nacional regulamentará esta Lei, mediante resolução, no prazo de sessenta dias da data de publicação.</h3>
+ <h3>Art. 15. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 16. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 30 de outubro de 1997; 176º da Independência e 109º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Este texto não substitui o publicado no DOU de 31.10.1997</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Regulamento | Extingue o</p>
+ <p>Instituto de Previdência dos Congressistas - IPC, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L9506.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

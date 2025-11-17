@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 10.205, DE 21 DE MARÇO DE 2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 10.205, DE 21 DE MARÇO DE 2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 07:20:58 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10205.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 20.496 caracteres | espelho: 20.675 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 10.205, DE 21 DE MARÇO DE 2001.</p>
+ <p>Regulamenta o § 4º do art. 199 da Constituição Federal, relativo à coleta, processamento, estocagem, distribuição e aplicação do sangue, seus componentes e derivados, estabelece o ordenamento institucional indispensável à execução adequada dessas atividades, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <p>TÍTULO I</p>
+ <p>DISPOSIÇÕES PRELIMINARES</p>
+ <h3>Art. 1º Esta Lei dispõe sobre a captação, proteção ao doador e ao receptor, coleta, processamento, estocagem, distribuição e transfusão do sangue, de seus componentes e derivados, vedada a compra, venda ou qualquer outro tipo de comercialização do sangue, componentes e hemoderivados, em todo o território nacional, seja por pessoas físicas ou jurídicas, em caráter eventual ou permanente, que estejam em desacordo com o ordenamento institucional estabelecido nesta Lei.</h3>
+ <h3>Art. 2º Para efeitos desta Lei, entende-se por sangue, componentes e hemoderivados os produtos e subprodutos originados do sangue humano venoso, placentário ou de cordão umbilical, indicados para diagnóstico, prevenção e tratamento de doenças, assim definidos:</h3>
+ <h5>I - sangue: a quantidade total de tecido obtido na doação;</h5>
+ <h5>II - componentes: os produtos oriundos do sangue total ou do plasma, obtidos por meio de processamento físico;</h5>
+ <h5>III - hemoderivados: os produtos oriundos do sangue total ou do plasma, obtidos por meio de processamento físico-químico ou biotecnológico.</h5>
+ <h4>Parágrafo único. Não se considera como comercialização a cobrança de valores referentes a insumos, materiais, exames sorológicos, imunoematológicos e demais exames laboratoriais definidos pela legislação competente, realizados para a seleção do sangue, componentes ou derivados, bem como honorários por serviços médicos prestados na assistência aos pacientes e aos doadores.</h4>
+ <h3>Art. 3º São atividades hemoterápicas, para os fins desta Lei, todo conjunto de ações referentes ao exercício das especialidades previstas em Normas Técnicas ou regulamentos do Ministério da Saúde, além da proteção específica ao doador, ao receptor e aos profissionais envolvidos, compreendendo:</h3>
+ <h5>I - captação, triagem clínica, laboratorial, sorológica, imunoematológica e demais exames laboratoriais do doador e do receptor, coleta, identificação, processamento, estocagem, distribuição, orientação e transfusão de sangue, componentes e hemoderivados, com finalidade terapêutica ou de pesquisa;</h5>
+ <h5>II - orientação, supervisão e indicação da transfusão do sangue, seus componentes e hemoderivados;</h5>
+ <h5>III - procedimentos hemoterápicos especiais, como aféreses, transfusões autólogas, de substituição e intra-uterina, criobiologia e outros que advenham de desenvolvimento científico e tecnológico, desde que validados pelas Normas Técnicas ou regulamentos do Ministério da Saúde;</h5>
+ <h5>IV - controle e garantia de qualidade dos procedimentos, equipamentos reagentes e correlatos;</h5>
+ <h5>V - prevenção, diagnóstico e atendimento imediato das reações transfusionais e adversas;</h5>
+ <h5>VI - prevenção, triagem, diagnóstico e aconselhamento das doenças hemotransmissíveis;</h5>
+ <h5>VII - proteção e orientação do doador inapto e seu encaminhamento às unidades que promovam sua reabilitação ou promovam o suporte clínico, terapêutico e laboratorial necessário ao seu bem-estar físico e emocional.</h5>
+ <h4>§ 1º A hemoterapia é uma especialidade médica, estruturada e subsidiária de diversas ações médico-sanitárias corretivas e preventivas de agravo ao bem-estar individual e coletivo, integrando, indissoluvelmente, o processo de assistência à saúde.</h4>
+ <h4>§ 2º Os órgãos e entidades que executam ou venham a executar atividades hemoterápicas estão sujeitos, obrigatoriamente, a autorização anual concedida, em cada nível de governo, pelo Órgão de Vigilância Sanitária, obedecidas as normas estabelecidas pelo Ministério da Saúde.</h4>
+ <h3>Art. 4º Integram o conjunto referido no caput do art. 2º desta Lei os reagentes e insumos para diagnóstico que são produtos e subprodutos de uso laboratorial oriundos do sangue total e de outras fontes.</h3>
+ <h3>Art. 5º O Ministério da Saúde, por intermédio do órgão definido no regulamento, elaborará as Normas Técnicas e demais atos regulamentares que disciplinarão as atividades hemoterápicas conforme disposições desta Lei.</h3>
+ <h3>Art. 6º Todos os materiais e substâncias ou correlatos que entrem diretamente em contato com o sangue coletado para fins transfusionais, bem como os reagentes e insumos para laboratório utilizados para o cumprimento das Normas Técnicas devem ser registrados ou autorizados pelo Órgão de Vigilância Sanitária competente do Ministério da Saúde.</h3>
+ <h3>Art. 7º As atividades hemoterápicas devem estar sob responsabilidade de um médico hemoterapeuta ou hematologista, admitindo-se, entretanto, nos locais onde não haja esses especialistas, sua substituição por outro médico devidamente treinado para bem desempenhar suas responsabilidades, em hemocentros ou outros estabelecimentos devidamente credenciados pelo Ministério da Saúde.</h3>
+ <h3>TÍTULO II</h3>
+ <h3>DA POLÍTICA NACIONAL DE SANGUE, COMPONENTES E HEMODERIVADOS</h3>
+ <h2>CAPÍTULO I</h2>
+ <h3>DO ORDENAMENTO INSTITUCIONAL</h3>
+ <h3>Art. 8º A Política Nacional de Sangue, Componentes e Hemoderivados terá por finalidade garantir a auto-suficiência do País nesse setor e harmonizar as ações do poder público em todos os níveis de governo, e será implementada, no âmbito do Sistema Único de Saúde, pelo Sistema Nacional de Sangue, Componentes e Derivados - SINASAN, composto por:</h3>
+ <h5>I - organismos operacionais de captação e obtenção de doação, coleta, processamento, controle e garantia de qualidade, estocagem, distribuição e transfusão de sangue, seus componentes e hemoderivados;</h5>
+ <h5>II - centros de produção de hemoderivados e de quaisquer produtos industrializados a partir do sangue venoso e placentário, ou outros obtidos por novas tecnologias, indicados para o diagnóstico, prevenção e tratamento de doenças.</h5>
+ <h4>§ 1º O Ministério da Saúde editará planos e programas quadrienais voltados para a Política Nacional de Sangue, Componentes e Hemoderivados, como parte integrante e específica do Plano Plurianual da União.</h4>
+ <h4>§ 2º Para atingir essas finalidades, o Ministério da Saúde promoverá as medidas indispensáveis ao desenvolvimento institucional e à capacitação gerencial e técnica da rede de unidades que integram o SINASAN.</h4>
+ <h3>Art. 9º São órgãos de apoio do SINASAN:</h3>
+ <h5>I - órgãos de vigilância sanitária e epidemiológica, que visem ao controle da qualidade do sangue, componentes e hemoderivados e de todo insumo indispensável para ações de hemoterapia;</h5>
+ <h5>II - laboratórios de referência para controle e garantia de qualidade do sangue, componentes e hemoderivados, bem como de insumos básicos utilizados nos processos hemoterápicos, e confirmação de doadores e amostras reativas, e dos reativos e insumos diagnósticos utilizados para a proteção das atividades hemoterápicas;</h5>
+ <h5>III - outros órgãos e entidades que envolvam ações pertinentes à mencionada política.</h5>
+ <h3>Art. 10. A Política Nacional de Sangue, Componentes e Hemoderivados observará os princípios e diretrizes do Sistema Único de Saúde.</h3>
+ <h4>Parágrafo único. Os serviços privados, com ou sem fins lucrativos, assim como os serviços públicos, em qualquer nível de governo, que desenvolvam atividades hemoterápicas, subordinam-se tecnicamente às normas emanadas dos poderes competentes.</h4>
+ <h3>Art. 11. A Política Nacional de Sangue, Componentes e Hemoderivados será desenvolvida por meio da rede nacional de Serviços de Hemoterapia, públicos e/ou privados, com ou sem fins lucrativos, de forma hierárquica e integrada, de acordo com regulamento emanado do Ministério da Saúde.</h3>
+ <h4>§ 1º Os serviços integrantes da rede nacional, vinculados ou não à União, Estados, Municípios e Distrito Federal, reger-se-ão segundo os respectivos regulamentos e normas técnicas pertinentes, observadas as disposições desta Lei.</h4>
+ <h4>§ 2º Os serviços integrantes da rede nacional serão de abrangência nacional, regional, interestadual, estadual, municipal ou local, conforme seu âmbito de atuação.</h4>
+ <h3>Art. 12. O Ministério da Saúde promoverá as medidas indispensáveis ao desenvolvimento institucional, modernização administrativa, capacitação gerencial e consolidação física, tecnológica, econômica e financeira da rede pública de unidades que integram o SINASAN.</h3>
+ <h3>Art. 13. Cada unidade federativa implantará, obrigatoriamente, no prazo de cento e oitenta dias, contados da publicação do regulamento desta Lei, o Sistema Estadual de Sangue, Componentes e Derivados, obedecidos os princípios e diretrizes desta Lei.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS PRINCÍPIOS E DIRETRIZES</h3>
+ <h3>Art. 14. A Política Nacional de Sangue, Componentes e Hemoderivados rege-se pelos seguintes princípios e diretrizes:</h3>
+ <h5>I - universalização do atendimento à população;</h5>
+ <h5>II - utilização exclusiva da doação voluntária, não remunerada, do sangue, cabendo ao poder público estimulá-la como ato relevante de solidariedade humana e compromisso social;</h5>
+ <h5>III - proibição de remuneração ao doador pela doação de sangue;</h5>
+ <h5>IV - proibição da comercialização da coleta, processamento, estocagem, distribuição e transfusão do sangue, componentes e hemoderivados;</h5>
+ <h5>V - permissão de remuneração dos custos dos insumos, reagentes, materiais descartáveis e da mão-de-obra especializada, inclusive honorários médicos, na forma do regulamento desta Lei e das Normas Técnicas do Ministério da Saúde;</h5>
+ <h5>VI - proteção da saúde do doador e do receptor mediante informação ao candidato à doação sobre os procedimentos a que será submetido, os cuidados que deverá tomar e as possíveis reações adversas decorrentes da doação, bem como qualquer anomalia importante identificada quando dos testes laboratoriais, garantindo-lhe o sigilo dos resultados;</h5>
+ <h5>VII - obrigatoriedade de responsabilidade, supervisão e assistência médica na triagem de doadores, que avaliará seu estado de saúde, na coleta de sangue e durante o ato transfusional, assim como no pré e pós-transfusional imediatos;</h5>
+ <h5>VIII - direito a informação sobre a origem e procedência do sangue, componentes e hemoderivados, bem como sobre o serviço de hemoterapia responsável pela origem destes;</h5>
+ <h5>IX - participação de entidades civis brasileiras no processo de fiscalização, vigilância e controle das ações desenvolvidas no âmbito dos Sistemas Nacional e Estaduais de Sangue, Componentes e Hemoderivados;</h5>
+ <h5>X - obrigatoriedade para que todos os materiais ou substâncias que entrem em contato com o sangue coletado, com finalidade transfusional, bem como seus componentes e derivados, sejam estéreis, apirogênicos e descartáveis;</h5>
+ <h5>XI - segurança na estocagem e transporte do sangue, componentes e hemoderivados, na forma das Normas Técnicas editadas pelo SINASAN; e</h5>
+ <h5>XII - obrigatoriedade de testagem individualizada de cada amostra ou unidade de sangue coletado, sendo proibida a testagem de amostras ou unidades de sangue em conjunto, a menos que novos avanços tecnológicos a justifiquem, ficando a sua execução subordinada a portaria específica do Ministério da Saúde, proposta pelo SINASAN.</h5>
+ <h4>§ 1º É vedada a doação ou exportação de sangue, componentes e hemoderivados, exceto em casos de solidariedade internacional ou quando houver excedentes nas necessidades nacionais em produtos acabados, ou por indicação médica com finalidade de elucidação diagnóstica, ou ainda nos acordos autorizados pelo órgão gestor do SINASAN para processamento ou obtenção de derivados por meio de alta tecnologia, não acessível ou disponível no País.</h4>
+ <h4>§ 2º Periodicamente, os serviços integrantes ou vinculados ao SINASAN deverão transferir para os Centros de Produção de Hemoterápicos governamentais as quantidades excedentes de plasma.</h4>
+ <h4>§ 3º Caso haja excedente de matéria-prima que supere a capacidade de absorção dos centros governamentais, este poderá ser encaminhado a outros centros, resguardado o caráter da não-comercialização.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO CAMPO DE ATUAÇÃO</h3>
+ <h3>Art. 15. A Política Nacional de Sangue, Componentes e Hemoderivados objetivará, entre outras coisas:</h3>
+ <h5>I - incentivo às campanhas educativas de estímulo à doação regular de sangue;</h5>
+ <h5>II - recrutamento, triagem clínica e laboratorial do doador, coleta, fracionamento, processamento, estocagem, distribuição, provas imunoematológicas, utilização e descarte de sangue, componentes e hemoderivados;</h5>
+ <h5>III - verificação e aplicação permanente de métodos e ações de controle de qualidade do sangue, componentes e hemoderivados;</h5>
+ <h5>IV - instituição de mecanismos de controle do descarte de todo o material utilizado na atividade hemoterápica, para que se evite a contaminação ambiental, devendo todos os materiais e substâncias que entrem em contato com o sangue coletado, seus componentes e hemoderivados, ser esterilizados ou incinerados após seu uso;</h5>
+ <h5>V - fiscalização da utilização ou estocagem do sangue, componentes e hemoderivados em todas as instituições públicas ou privadas que exerçam atividade hemoterápica;</h5>
+ <h5>VI - implementação, acompanhamento e verificação da observância das normas relativas à manutenção de equipamentos e instalações físicas dos órgãos que integram a Rede Nacional dos Serviços de Hemoterapia;</h5>
+ <h5>VII - orientação e apoio aos casos de reações transfusionais e doenças pós-transfusionais do sangue, seus componentes e hemoderivados;</h5>
+ <h5>VIII - participação na formação e aperfeiçoamento de recursos humanos em Hemoterapia e Hematologia;</h5>
+ <h5>IX - ensino, pesquisa e desenvolvimento tecnológico em Hemoterapia e Hematologia;</h5>
+ <h5>X - a implementação de sistemas informatizados com vistas à formação e estruturação de banco de dados e disseminação de informações tecnológicas, operacionais e epidemiológicas;</h5>
+ <h5>XI - produção de derivados industrializados de plasma e reagentes, para uso laboratorial em Hemoterapia e em Hematologia e autorização para aquisição de anti-soros ou outros produtos derivados do sangue, essenciais para a pesquisa e diagnóstico.</h5>
+ <h4>Parágrafo único. Para fins de incentivo à doação regular de sangue, os doadores terão direito a atendimento prioritário, nos termos da Lei nº 10.048, de 8 de novembro de 2000 , mediante apresentação de comprovante de doação, com validade de 120 (cento e vinte) dias. (Incluído pela Lei nº 14.626, de 2023)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA DIREÇÃO E GESTÃO</h3>
+ <h3>Art. 16. A Política Nacional de Sangue, Componentes e Hemoderivados, cuja execução estará a cargo do SINASAN, será dirigida, em nível nacional, por órgão específico do Ministério da Saúde, que atuará observando os seguintes postulados:</h3>
+ <h5>I - coordenar as ações do SINASAN;</h5>
+ <h5>II - fixar e atualizar normas gerais relativas ao sangue, componentes e hemoderivados para a sua obtenção, controle, processamento e utilização, assim como aos insumos e equipamentos necessários à atividade hemoterápica;</h5>
+ <h5>III - propor, em integração com a vigilância sanitária, normas gerais para o funcionamento dos órgãos que integram o Sistema, obedecidas as Normas Técnicas;</h5>
+ <h5>IV - integrar-se com os órgãos de vigilância sanitária e epidemiológica e laboratórios oficiais, para assegurar a qualidade do sangue, componentes e hemoderivados e dos respectivos insumos básicos;</h5>
+ <h5>V - propor às esferas do poder público os instrumentos legais que se fizerem necessários ao funcionamento do SINASAN;</h5>
+ <h5>VI - organizar e manter atualizado cadastro nacional de órgãos que compõem o SINASAN;</h5>
+ <h5>VII - propor aos órgãos competentes da área de educação critérios para a formação de recursos humanos especializados necessários à realização de atividades hemoterápicas e à obtenção, controle, processamento, estocagem, distribuição, transfusão e descarte de sangue, componentes e hemoderivados, inclusive a implementação da disciplina de Hemoterapia nos cursos de graduação médica;</h5>
+ <h5>VIII - estabelecer critérios e conceder autorização para importação e exportação de sangue, componentes e hemoderivados, observado o disposto no § 1º do art. 14 e no parágrafo único do art. 22 desta Lei;</h5>
+ <h5>IX - estimular a pesquisa científica e tecnológica relacionada com sangue, seus componentes e hemoderivados, de reagentes e insumos para diagnóstico, assim como nas áreas de hemoterapia e hematologia;</h5>
+ <h5>X - fixar requisitos para a caracterização de competência dos órgãos que compõem o SINASAN, de acordo com seu ordenamento institucional estabelecido no art. 15 desta Lei;</h5>
+ <h5>XI - estabelecer critérios de articulação do SINASAN com órgãos e entidades nacionais e estrangeiras de cooperação técnico-científica;</h5>
+ <h5>XII - avaliar a necessidade nacional de sangue humano, seus componentes e hemoderivados de uso terapêutico, bem como produtos de uso laboratorial e propor investimentos para a sua obtenção e produção;</h5>
+ <h5>XIII - estabelecer mecanismos que garantam reserva de sangue, componentes e hemoderivados e sua mobilização em caso de calamidade pública;</h5>
+ <h5>XIV - incentivar e colaborar com a regulamentação da atividade industrial e sua operacionalização para produção de equipamentos e insumos indispensáveis à atividade hemoterápica, e inclusive com os Centros de Produção de Hemoderivados;</h5>
+ <h5>XV - estabelecer prioridades, analisar projetos e planos operativos dos órgãos que compõem a Rede Nacional de Serviços de Hemoterapia e acompanhar sua execução;</h5>
+ <h5>XVI - avaliar e acompanhar o desempenho técnico das atividades dos Sistemas Estaduais de Sangue, Componentes e Hemoderivados;</h5>
+ <h5>XVII - auxiliar na elaboração de verbetes da Farmacopéia Brasileira, relativos aos hemoterápicos e reagentes utilizados em Hemoterapia e Hematologia;</h5>
+ <h5>XVIII - propor normas gerais sobre higiene e segurança do trabalho nas atividades hemoterápicas, assim como sobre o descarte de produtos e rejeitos oriundos das atividades hemoterápicas.</h5>
+ <h3>Art. 17. Os Estados, Distrito Federal e Municípios, por meio de suas Secretarias de Saúde ou equivalentes, coordenarão a execução das ações correspondentes do SINASAN no seu âmbito de atuação, em articulação com o Ministério da Saúde.</h3>
+ <h3>Art. 18. O Conselho Nacional de Saúde atuará na definição da política do SINASAN e acompanhará o cumprimento das disposições constantes desta Lei.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO FINANCIAMENTO</h3>
+ <h3>Art. 19. (VETADO)</h3>
+ <h3>TÍTULO III</h3>
+ <h3>DISPOSIÇÕES GERAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 20. O SINASAN promoverá a estruturação da Rede Nacional de Serviços de Hemoterapia e Laboratórios de Referência Estadual e/ou Municipal para controle de qualidade, a fim de garantir a auto-suficiência nacional em sangue, componentes e hemoderivados.</h3>
+ <h4>Parágrafo único. A implantação do SINASAN será acompanhada pelo Conselho Nacional de Saúde.</h4>
+ <h3>Art. 21. Os Centros de Produção de Derivados do Plasma, públicos e privados, informarão aos órgãos de vigilância sanitária a origem e quantidade de matéria-prima, que deverá ser testada obrigatoriamente, bem como a expedição de produtos acabados ou semi-acabados.</h3>
+ <h3>Art. 22. A distribuição e/ou produção de derivados de sangue produzidos no País ou importados será objeto de regulamentação por parte do Ministério da Saúde.</h3>
+ <h4>Parágrafo único.</h4>
+ <p>O SINASAN coordenará, controlará e fiscalizará a utilização de hemoderivados importados ou produzidos no País, estabelecendo regras que atendam os interesses e as necessidades nacionais, bem como a defesa da produção brasileira.</p>
+ <h3>Art. 23. A aférese não terapêutica para fins de obtenção de hemoderivados é atividade exclusiva do setor público, regulada por norma específica.</h3>
+ <h3>Art. 24. O processamento do sangue, componentes e hemoderivados, bem como o controle sorológico e imunoematológico, poderá ser da responsabilidade de profissional farmacêutico, médico hemoterapeuta, biomédico ou de profissional da área de saúde com nível universitário, com habilitação em processos produtivos e de garantia e certificação de qualidade em saúde.</h3>
+ <h3>Art. 25. O Poder Executivo encaminhará ao Congresso Nacional, no prazo de cento e oitenta dias, a contar da data de publicação desta Lei, projeto de lei disciplinando as sanções penais, cíveis e administrativas decorrentes do descumprimento das normas contidas nesta Lei.</h3>
+ <h3>Art. 26. O Poder Executivo, por intermédio do Ministério da Saúde, regulamentará no prazo de cento e oitenta dias, contados a partir da promulgação desta Lei, mediante Decreto, a organização e funcionamento do SINASAN, ficando autorizado a editar os demais atos que se fizerem necessários para disciplinar as atividades hemoterápicas e a plena execução desta Lei. (Regulamento)</h3>
+ <h3>Art. 27. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 28. Revoga-se a Lei Nº 4.701, de 28 de junho de 1965.</h3>
+ <p>Brasília, 21 de março de 2001; 180º da Independência e 113º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Este texto não substitui o publicado no DOU de 22.3.2001</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para Assuntos Jurídicos</p>
+ <p>Regulamenta o § 4odo art. 199 da Constituição Federal, relativo à coleta, processamento, estocagem,</p>
+ <p>distribuição e aplicação do sangue, seus componentes e derivados, estabelece o ordenamento institucional indispensável à execução adequada dessas atividades, e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10205.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

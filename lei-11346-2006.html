@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI Nº 11.346, DE 15 DE SETEMBRO DE 2006 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2006" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI Nº 11.346, DE 15 DE SETEMBRO DE 2006</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 16/11/2025 06:35:10 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11346.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 16.014 caracteres | espelho: 16.135 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI Nº 11.346, DE 15 DE SETEMBRO DE 2006.</p>
+ <p>Regulamento</p>
+ <p>Cria o Sistema Nacional de Segurança Alimentar e Nutricional – SISAN com vistas em assegurar o direito humano à alimentação adequada e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º Esta Lei estabelece as definições, princípios, diretrizes, objetivos e composição do Sistema Nacional de Segurança Alimentar e Nutricional – SISAN, por meio do qual o poder público, com a participação da sociedade civil organizada, formulará e implementará políticas, planos, programas e ações com vistas em assegurar o direito humano à alimentação adequada.</h3>
+ <h3>Art. 2º A alimentação adequada é direito fundamental do ser humano, inerente à dignidade da pessoa humana e indispensável à realização dos direitos consagrados na Constituição Federal, devendo o poder público adotar as políticas e ações que se façam necessárias para promover e garantir a segurança alimentar e nutricional da população.</h3>
+ <h4>§ 1º A adoção dessas políticas e ações deverá levar em conta as dimensões ambientais, culturais, econômicas, regionais e sociais.</h4>
+ <h4>§ 2º É dever do poder público respeitar, proteger, promover, prover, informar, monitorar, fiscalizar e avaliar a realização do direito humano à alimentação adequada, bem como garantir os mecanismos para sua exigibilidade.</h4>
+ <h3>Art. 3º A segurança alimentar e nutricional consiste na realização do direito de todos ao acesso regular e permanente a alimentos de qualidade, em quantidade suficiente, sem comprometer o acesso a outras necessidades essenciais, tendo como base práticas alimentares promotoras de saúde que respeitem a diversidade cultural e que sejam ambiental, cultural, econômica e socialmente sustentáveis.</h3>
+ <h3>Art. 4º A segurança alimentar e nutricional abrange:</h3>
+ <h5>I – a ampliação das condições de acesso aos alimentos por meio da produção, em especial da agricultura tradicional e familiar, do processamento, da industrialização, da comercialização, incluindo-se os acordos internacionais, do abastecimento e da distribuição dos alimentos, incluindo-se a água, bem como da geração de emprego e da redistribuição da renda;</h5>
+ <h5>I - a ampliação das condições de acesso aos alimentos por meio da produção, em especial da agricultura tradicional e familiar, do processamento, da industrialização, da comercialização, incluindo-se os acordos internacionais, do abastecimento e da distribuição de alimentos, incluindo-se a água, bem como das medidas que mitiguem o risco de escassez de água potável, da geração de emprego e da redistribuição da renda; (Redação dada pela Lei nº 13.839, de 2019)</h5>
+ <h5>II – a conservação da biodiversidade e a utilização sustentável dos recursos;</h5>
+ <h5>III – a promoção da saúde, da nutrição e da alimentação da população, incluindo-se grupos populacionais específicos e populações em situação de vulnerabilidade social;</h5>
+ <h5>IV – a garantia da qualidade biológica, sanitária, nutricional e tecnológica dos alimentos, bem como seu aproveitamento, estimulando práticas alimentares e estilos de vida saudáveis que respeitem a diversidade étnica e racial e cultural da população;</h5>
+ <h5>V – a produção de conhecimento e o acesso à informação; e</h5>
+ <h5>VI – a implementação de políticas públicas e estratégias sustentáveis e participativas de produção, comercialização e consumo de alimentos, respeitando-se as múltiplas características culturais do País.</h5>
+ <h5>VII - a formação de estoques reguladores e estratégicos de alimentos. (Incluído pela Lei nº 13.839, de 2019)</h5>
+ <h4>Parágrafo único. As cestas básicas entregues no âmbito do Sisan deverão conter como item essencial o absorvente higiênico feminino, conforme as determinações previstas na lei que institui o Programa de Proteção e Promoção da Saúde Menstrual. (Incluído pela Lei nº 14.214, de 2021)</h4>
+ <h4>§ 1º As cestas básicas entregues no âmbito do Sisan deverão conter como item essencial o absorvente higiênico feminino, conforme as determinações previstas na lei que institui o Programa de Proteção e Promoção da Saúde Menstrual. (Redação dada pela Lei nº 15.225, de 2025)</h4>
+ <h4>§ 2º Para os fins de que trata o inciso I deste artigo, serão utilizados indicadores de segurança alimentar e nutricional aferidos com base em pesquisas oficiais realizadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE) e em dados dos cadastros administrativos de políticas e programas sociais, sem prejuízo do uso complementar de outras fontes de informação, tais como o Índice de Desenvolvimento Humano (IDH) e o Índice de Desenvolvimento Humano Municipal (IDHM). (Incluído pela Lei nº 15.225, de 2025)</h4>
+ <h3>Art. 5º A consecução do direito humano à alimentação adequada e da segurança alimentar e nutricional requer o respeito à soberania, que confere aos países a primazia de suas decisões sobre a produção e o consumo de alimentos.</h3>
+ <h3>Art. 6º O Estado brasileiro deve empenhar-se na promoção de cooperação técnica com países estrangeiros, contribuindo assim para a realização do direito humano à alimentação adequada no plano internacional.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO SISTEMA NACIONAL DE SEGURANÇA</h3>
+ <h3>ALIMENTAR E NUTRICIONAL</h3>
+ <h3>Art. 7º A consecução do direito humano à alimentação adequada e da segurança alimentar e nutricional da população far-se-á por meio do SISAN, integrado por um conjunto de órgãos e entidades da União, dos Estados, do Distrito Federal e dos Municípios e pelas instituições privadas, com ou sem fins lucrativos, afetas à segurança alimentar e nutricional e que manifestem interesse em integrar o Sistema, respeitada a legislação aplicável.</h3>
+ <h4>§ 1º A participação no SISAN de que trata este artigo deverá obedecer aos princípios e diretrizes do Sistema e será definida a partir de critérios estabelecidos pelo Conselho Nacional de Segurança Alimentar e Nutricional – CONSEA e pela Câmara Interministerial de Segurança Alimentar e Nutricional, a ser criada em ato do Poder Executivo Federal.</h4>
+ <h4>§ 2º Os órgãos responsáveis pela definição dos critérios de que trata o § 1º deste artigo poderão estabelecer requisitos distintos e específicos para os setores público e privado.</h4>
+ <h4>§ 3º Os órgãos e entidades públicos ou privados que integram o SISAN o farão em caráter interdependente, assegurada a autonomia dos seus processos decisórios.</h4>
+ <h4>§ 4º O dever do poder público não exclui a responsabilidade das entidades da sociedade civil integrantes do SISAN.</h4>
+ <h4>§ 5º Como forma de garantir o direito humano à alimentação adequada, os critérios referidos no § 1º deste artigo serão determinados a partir de indicadores de segurança alimentar e nutricional aferidos com base em pesquisas oficiais realizadas pelo IBGE e em dados dos cadastros administrativos de políticas e programas sociais, sem prejuízo do uso complementar de outras fontes de informação, tais como o Índice de Desenvolvimento Humano (IDH) e o Índice de Desenvolvimento Humano Municipal (IDHM). (Incluído pela Lei nº 15.225, de 2025)</h4>
+ <h3>Art. 8º O SISAN reger-se-á pelos seguintes princípios:</h3>
+ <h5>I – universalidade e eqüidade no acesso à alimentação adequada, sem qualquer espécie de discriminação;</h5>
+ <h5>II – preservação da autonomia e respeito à dignidade das pessoas;</h5>
+ <h5>III – participação social na formulação, execução, acompanhamento, monitoramento e controle das políticas e dos planos de segurança alimentar e nutricional em todas as esferas de governo; e</h5>
+ <h5>IV – transparência dos programas, das ações e dos recursos públicos e privados e dos critérios para sua concessão.</h5>
+ <h3>Art. 9º O SISAN tem como base as seguintes diretrizes:</h3>
+ <h5>I – promoção da intersetorialidade das políticas, programas e ações governamentais e não-governamentais;</h5>
+ <h5>II – descentralização das ações e articulação, em regime de colaboração, entre as esferas de governo;</h5>
+ <h5>III – monitoramento da situação alimentar e nutricional, visando a subsidiar o ciclo de gestão das políticas para a área nas diferentes esferas de governo;</h5>
+ <h5>IV – conjugação de medidas diretas e imediatas de garantia de acesso à alimentação adequada, com ações que ampliem a capacidade de subsistência autônoma da população;</h5>
+ <h5>V – articulação entre orçamento e gestão; e</h5>
+ <h5>VI – estímulo ao desenvolvimento de pesquisas e à capacitação de recursos humanos.</h5>
+ <h3>Art. 10. O SISAN tem por objetivos formular e implementar políticas e planos de segurança alimentar e nutricional, estimular a integração dos esforços entre governo e sociedade civil, bem como promover o acompanhamento, o monitoramento e a avaliação da segurança alimentar e nutricional do País.</h3>
+ <h3>Art. 11. Integram o SISAN:</h3>
+ <h5>I – a Conferência Nacional de Segurança Alimentar e Nutricional, instância responsável pela indicação ao CONSEA das diretrizes e prioridades da Política e do Plano Nacional de Segurança Alimentar, bem como pela avaliação do SISAN;</h5>
+ <h5>II – o CONSEA, órgão de assessoramento imediato ao Presidente da República, responsável pelas seguintes atribuições: (Revogado pela Medida Provisória nº 870, de 2019)</h5>
+ <h6>a) convocar a Conferência Nacional de Segurança Alimentar e Nutricional, com periodicidade não superior a 4 (quatro) anos, bem como definir seus parâmetros de composição, organização e funcionamento, por meio de regulamento próprio; (Revogada pela Medida Provisória nº 870, de 2019)</h6>
+ <h6>b) propor ao Poder Executivo Federal, considerando as deliberações da Conferência Nacional de Segurança Alimentar e Nutricional, as diretrizes e prioridades da Política e do Plano Nacional de Segurança Alimentar e Nutricional, incluindo-se requisitos orçamentários para sua consecução; (Revogada pela Medida Provisória nº 870, de 2019)</h6>
+ <h6>c) articular, acompanhar e monitorar, em regime de colaboração com os demais integrantes do Sistema, a implementação e a convergência de ações inerentes à Política e ao Plano Nacional de Segurança Alimentar e Nutricional; (Revogada pela Medida Provisória nº 870, de 2019)</h6>
+ <h6>d) definir, em regime de colaboração com a Câmara Interministerial de Segurança Alimentar e Nutricional, os critérios e procedimentos de adesão ao SISAN; (Revogada pela Medida Provisória nº 870, de 2019)</h6>
+ <h6>e) instituir mecanismos permanentes de articulação com órgãos e entidades congêneres de segurança alimentar e nutricional nos Estados, no Distrito Federal e nos Municípios, com a finalidade de promover o diálogo e a convergência das ações que integram o SISAN; (Revogada pela Medida Provisória nº 870, de 2019)</h6>
+ <h6>f) mobilizar e apoiar entidades da sociedade civil na discussão e na implementação de ações públicas de segurança alimentar e nutricional; (Revogada pela Medida Provisória nº 870, de 2019)</h6>
+ <h5>II – o CONSEA, órgão de assessoramento imediato ao Presidente da República, responsável pelas seguintes atribuições:</h5>
+ <h6>a) convocar a Conferência Nacional de Segurança Alimentar e Nutricional, com periodicidade não superior a 4 (quatro) anos, bem como definir seus parâmetros de composição, organização e funcionamento, por meio de regulamento próprio;</h6>
+ <h6>b) propor ao Poder Executivo Federal, considerando as deliberações da Conferência Nacional de Segurança Alimentar e Nutricional, as diretrizes e prioridades da Política e do Plano Nacional de Segurança Alimentar e Nutricional, incluindo-se requisitos orçamentários para sua consecução;</h6>
+ <h6>c) articular, acompanhar e monitorar, em regime de colaboração com os demais integrantes do Sistema, a implementação e a convergência de ações inerentes à Política e ao Plano Nacional de Segurança Alimentar e Nutricional;</h6>
+ <h6>d) definir, em regime de colaboração com a Câmara Interministerial de Segurança Alimentar e Nutricional, os critérios e procedimentos de adesão ao SISAN;</h6>
+ <h6>e) instituir mecanismos permanentes de articulação com órgãos e entidades congêneres de segurança alimentar e nutricional nos Estados, no Distrito Federal e nos Municípios, com a finalidade de promover o diálogo e a convergência das ações que integram o SISAN;</h6>
+ <h6>f) mobilizar e apoiar entidades da sociedade civil na discussão e na implementação de ações públicas de segurança alimentar e nutricional;</h6>
+ <h5>III – a Câmara Interministerial de Segurança Alimentar e Nutricional, integrada por Ministros de Estado e Secretários Especiais responsáveis pelas pastas afetas à consecução da segurança alimentar e nutricional, com as seguintes atribuições, dentre outras:</h5>
+ <h6>a) elaborar, a partir das diretrizes emanadas do CONSEA, a Política e o Plano Nacional de Segurança Alimentar e Nutricional, indicando diretrizes, metas, fontes de recursos e instrumentos de acompanhamento, monitoramento e avaliação de sua implementação;</h6>
+ <h6>b) coordenar a execução da Política e do Plano;</h6>
+ <h6>c) articular as políticas e planos de suas congêneres estaduais e do Distrito Federal;</h6>
+ <h5>IV – os órgãos e entidades de segurança alimentar e nutricional da União, dos Estados, do Distrito Federal e dos Municípios; e</h5>
+ <h5>V – as instituições privadas, com ou sem fins lucrativos, que manifestem interesse na adesão e que respeitem os critérios, princípios e diretrizes do SISAN.</h5>
+ <h4>§ 1º A Conferência Nacional de Segurança Alimentar e Nutricional será precedida de conferências estaduais, distrital e municipais, que deverão ser convocadas e organizadas pelos órgãos e entidades congêneres nos Estados, no Distrito Federal e nos Municípios, nas quais serão escolhidos os delegados à Conferência Nacional.</h4>
+ <h4>§ 2º O CONSEA será composto a partir dos seguintes critérios: (Revogado pela Medida Provisória nº 870, de 2019)</h4>
+ <h5>I – 1/3 (um terço) de representantes governamentais constituído pelos Ministros de Estado e Secretários Especiais responsáveis pelas pastas afetas à consecução da segurança alimentar e nutricional; (Revogado pela Medida Provisória nº 870, de 2019)</h5>
+ <h5>II – 2/3 (dois terços) de representantes da sociedade civil escolhidos a partir de critérios de indicação aprovados na Conferência Nacional de Segurança Alimentar e Nutricional; e (Revogado pela Medida Provisória nº 870, de 2019)</h5>
+ <h5>III – observadores, incluindo-se representantes dos conselhos de âmbito federal afins, de organismos internacionais e do Ministério Público Federal. (Revogado pela Medida Provisória nº 870, de 2019)</h5>
+ <h4>§ 3º O CONSEA será presidido por um de seus integrantes, representante da sociedade civil, indicado pelo plenário do colegiado, na forma do regulamento, e designado pelo Presidente da República. (Revogado pela Medida Provisória nº 870, de 2019)</h4>
+ <h4>§ 4º A atuação dos conselheiros, efetivos e suplentes, no CONSEA, será considerada serviço de relevante interesse público e não remunerada. (Revogado pela Medida Provisória nº 870, de 2019)</h4>
+ <h4>§ 2º O CONSEA será composto a partir dos seguintes critérios:</h4>
+ <h5>I – 1/3 (um terço) de representantes governamentais constituído pelos Ministros de Estado e Secretários Especiais responsáveis pelas pastas afetas à consecução da segurança alimentar e nutricional;</h5>
+ <h5>II – 2/3 (dois terços) de representantes da sociedade civil escolhidos a partir de critérios de indicação aprovados na Conferência Nacional de Segurança Alimentar e Nutricional; e</h5>
+ <h5>III – observadores, incluindo-se representantes dos conselhos de âmbito federal afins, de organismos internacionais e do Ministério Público Federal.</h5>
+ <h4>§ 3º O CONSEA será presidido por um de seus integrantes, representante da sociedade civil, indicado pelo plenário do colegiado, na forma do regulamento, e designado pelo Presidente da República.</h4>
+ <h4>§ 4º A atuação dos conselheiros, efetivos e suplentes, no CONSEA, será considerada serviço de relevante interesse público e não remunerada.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 12. Ficam mantidas as atuais designações dos membros do CONSEA com seus respectivos mandatos.</h3>
+ <h4>Parágrafo único.</h4>
+ <p>O CONSEA deverá, no prazo do mandato de seus atuais membros, definir a realização da próxima Conferência Nacional de Segurança Alimentar e Nutricional, a composição dos delegados, bem como os procedimentos para sua indicação, conforme o disposto no § 2º do art. 11 desta Lei.</p>
+ <h3>Art. 13. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 15 de setembro de 2006; 185º da Independência e 118º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 18.9.2006.</p>
+ <p>Presidência da RepúblicaCasa CivilSubchefia para</p>
+ <p>Regulamento | Cria o Sistema Nacional de Segurança Alimentar e Nutricional – SISAN com vistas em assegurar o direito humano à alimentação adequada e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11346.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
