@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
  <meta charset="utf-8" />
- <title>Instrução Normativa TJPR Nº 23, de 9 de NOVEMBRO de 2018 - Presidência – Espelho</title>
+ <title>Instrução Normativa TJPR N° 23, de 9 de NOVEMBRO de 2018 - Presidência – Espelho</title>
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <meta name="robots" content="noindex" />
  <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
@@ -10,6 +10,38 @@
  <meta data-pagefind-filter="tipo[content]" content="Instrução Normativa" />
  <meta data-pagefind-filter="ano[content]" content="2018" />
  <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
  * {
  margin: 0;
  padding: 0;
@@ -19,8 +51,9 @@
  body {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  line-height: 1.6;
- color: #333;
- background-color: #f8f9fa;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  .container {
@@ -28,37 +61,108 @@
  margin: 0 auto;
  /* increase horizontal padding to give more breathing room on the left and right */
  padding: 20px 40px;
- background-color: white;
- box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
  min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
  }
 
  header {
- border-bottom: 3px solid #0066cc;
+ border-bottom: 3px solid var(--border-header);
  padding-bottom: 20px;
- margin-bottom: 30px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
  }
 
  header h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.8em;
  margin-bottom: 10px;
  font-weight: 600;
+ transition: color 0.3s ease;
  }
 
  .subtitle {
- color: #666;
+ color: var(--text-muted);
  font-size: 1.1em;
  font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
  }
 
  .meta {
- background-color: #f8f9fa;
- border: 1px solid #e9ecef;
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
  border-radius: 5px;
  padding: 15px;
  margin-bottom: 30px;
  font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
  }
 
  .meta div {
@@ -67,12 +171,14 @@
  }
 
  .meta strong {
- color: #495057;
+ color: var(--text-color);
+ transition: color 0.3s ease;
  }
 
  .meta a {
- color: #0066cc;
+ color: var(--primary-color);
  text-decoration: none;
+ transition: color 0.3s ease;
  }
 
  .meta a:hover {
@@ -84,17 +190,18 @@
  }
 
  article h1 {
- color: #0066cc;
+ color: var(--primary-color);
  font-size: 1.4em;
  margin: 20px 0 12px 0;
  /* use a real font weight instead of the invalid 'justify' keyword */
  font-weight: 600;
  text-align: justify;
+ transition: color 0.3s ease;
  }
 
  article h2 {
  /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -104,7 +211,7 @@
 
  article h3 {
  /* Estilo unificado para artigos e demais níveis normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -114,7 +221,7 @@
 
  article h4 {
  /* Aplicar mesmo estilo de h3 para parágrafos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -124,7 +231,7 @@
 
  article h5 {
  /* Aplicar mesmo estilo de h3 para incisos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -134,7 +241,7 @@
 
  article h6 {
  /* Aplicar mesmo estilo de h3 para alíneas */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -144,7 +251,7 @@
 
  article p {
  /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
- color: #333;
+ color: var(--text-color);
  font-size: 1.4rem;
  font-weight: normal;
  text-align: justify;
@@ -159,33 +266,39 @@
  line-height: 1.4;
  font-weight: 700;
  text-align: center;
- color: #0066cc;
+ color: var(--primary-color);
  margin: 24px 0;
+ transition: color 0.3s ease;
  }
 
  footer {
  margin-top: 40px;
  padding-top: 20px;
- border-top: 1px solid #e9ecef;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
  }
 
  .disclaimer {
- background-color: #fff3cd;
- border: 1px solid #ffeaa7;
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
  padding: 15px;
  border-radius: 5px;
  font-size: 1.2em;
- color: #856404;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
  text-align: justify;
  }
 
  .disclaimer strong {
- color: #856404;
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
  }
 
  .disclaimer a {
- color: #856404;
+ color: var(--disclaimer-text);
  text-decoration: underline;
+ transition: color 0.3s ease;
  }
 
  @media (max-width: 768px) {
@@ -202,29 +315,66 @@
  article h1 {
  font-size: 1.3em;
  }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
  }
  </style>
 </head>
 <body>
  <main class="container">
  <header>
- <h1>Instrução Normativa TJPR Nº 23, de 9 de NOVEMBRO de 2018 - Presidência</h1>
+ <h1>Instrução Normativa TJPR N° 23, de 9 de NOVEMBRO de 2018 - Presidência</h1>
  <p class="subtitle">Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
  </header>
 
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
  <div class="meta">
- <div><strong>Última sincronização:</strong> 14/11/2025 18:00:25 (processado via snapshot.py)</div>
+ <div><strong>Última sincronização:</strong> 19/11/2025 16:22:59 (processado via snapshot.py)</div>
  <div><strong>Fonte oficial:</strong> <a href="https://www.tjpr.jus.br/legislacao-atos-normativos/-/atos/documento/4586586" rel="nofollow" target="_blank">TJPR – Atos Normativos</a></div>
  <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
- <div><strong>Tamanho do conteúdo:</strong> origem: 58.534 caracteres | espelho: 8.273 caracteres</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 58.534 caracteres | espelho: 8.006 caracteres</div>
  <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
  </div>
 
  <article>
- <p>Instrução Normativa TJPR Nº 23/2018 -</p>
- <p>INSTRUÇÃO NORMATIVA Nº 23/2018</p>
- <p>-</p>
- <p>Assunto: 1.Regulamentação 2.Corregedoria da Justiça 3.Foro Extrajudicial 4.Registro de Imóveis 5.Sistema de Financiamento Imobiliário 6.Alienação Fiduciária 7.Dispensa 8.Reconhecimento de Firma 9.Intimação 10.Devedor 11.Revogação 12.</p>
+ <p>Instrução Normativa TJPR N° 23/2018 -</p>
  <p>Instrução Normativa nº 8/2017</p>
  <p>13.</p>
  <p>Instrução Normativa nº 17/2017</p>
@@ -239,13 +389,13 @@
  <p>Dispõe sobre os procedimentos a serem adotados pelos registradores imobiliários nas hipóteses de intimação de devedor fiduciário, expedição de edital de intimação, falecimento do fiduciário, dispensa de reconhecimento de firma, dispensa de averbação antes da consolidação da propriedade e custas para o ato.</p>
  <p>O CORREGEDOR DA JUSTIÇA DO ESTADO DO PARANÁ, DESEMBARGADOR MARIO HELTON JORGE , no uso de suas atribuições legais e,</p>
  <h2>CONSIDERANDO que compete ao Poder Judiciário, por meio da Corregedoria-Geral da Justiça, disciplinar, aprimorar e fiscalizar a prática de atos notariais e de registro;</h2>
- <h2>CONSIDERANDO o disposto no art. 26 e §§ da Lei nº 9.514/1997 e no art. 629 e §§ do CÓDIGO DE NORMAS DO FORO JUDICIAL - CNFJxtrajudicial da E. Corregedoria-Geral da Justiça do Paraná;</h2>
- <h2>CONSIDERANDO as alterações efetuadas na Lei nº 9.514/1997, por meio da Lei nº 13.465/2017; e</h2>
+ <h2>CONSIDERANDO o disposto no art. 26 e §§ da Lei n° 9.514/1997 e no art. 629 e §§ do CÓDIGO DE NORMAS DO FORO JUDICIAL - CNFJxtrajudicial da E. Corregedoria-Geral da Justiça do Paraná;</h2>
+ <h2>CONSIDERANDO as alterações efetuadas na Lei n° 9.514/1997, por meio da Lei n° 13.465/2017; e</h2>
  <h2>CONSIDERANDO o decidido nos expedientes SEI! nº 0029917-95.2017.8.1.6000 e nº 0048037-55.2018.8.16.6000;</h2>
  <h2>RESOLVE :</h2>
  <h3>Art. 1º Salvo a existência de dúvida fundada ou exigência normativa específica, dispensa-se a necessidade de reconhecimento de firma no requerimento de intimação do devedor nas hipóteses de alienação fiduciária de bens imóveis, nos termos da legislação em vigor.</h3>
  <h3>Art. 2º O mero requerimento de intimação do devedor fiduciário não enseja o registro desse fato na matrícula do imóvel.</h3>
- <h3>Art. 3º O requerimento relativo aos atos indicados no art. 26-A da Lei nº 9514/97 será objeto de registro no Livro 1 do Serviço de Registro de Imóveis (art. 174 da LRP).</h3>
+ <h3>Art. 3º O requerimento relativo aos atos indicados no art. 26-A da Lei n° 9514/97 será objeto de registro no Livro 1 do Serviço de Registro de Imóveis (art. 174 da LRP).</h3>
  <h3>Art. 4º Caso o oficial do registro imobiliário opte pela faculdade conferida pelo art. 26, §3º, da Lei 9.514/97, nenhum valor lhe será devido a título de emolumentos em relação à intimação ou notificação do devedor, inclusive a título de prenotação, ressalvado o disposto no art. 3º. (Revogado o artigo pela I nstrução Normativa nº 03/2019, de 20 de maio de 2019)</h3>
  <h4>§ 1º Os emolumentos incidentes na intimação efetivada na forma do caput são os previstos no item III da Tabela XIV da Tabela de Emolumentos em vigor, devidos ao oficial do Serviço de Registro de Títulos e Documentos.</h4>
  <h4>§ 2º Eventuais certidões solicitadas ao registrador se referirão ao registro mencionado no art. 3º e, na hipótese do caput , certidões acerca da intimação deverão ser requeridas ao oficial do Serviço de Registro de Títulos e Documentos, enquanto em curso a diligência que lhe foi repassada.</h4>
@@ -256,7 +406,7 @@
  <h3>Art. 7º A expedição de edital de intimação do devedor fiduciário, nos termos do artigo 26, § 4º, da Lei 9514/97, somente ocorrerá após o esgotamento das tentativas de sua localização, tudo devidamente certificado pelo registrador de imóveis ou pelo oficial do Serviço de Registro de Títulos e Documentos, na hipótese do art. 4º deste Instrução.</h3>
  <h3>Art. 8º Na hipótese de falecimento do devedor fiduciário, a intimação será feita na pessoa do inventariante, devendo ser apresentadas cópias autenticadas da certidão de óbito e do termo de compromisso de inventariante, ou certidão emitida pelo ofício judicial ou, ainda, tabelião de notas (inventário extrajudicial).</h3>
  <h4>Parágrafo único. Não havendo abertura de inventário, serão intimados todos os herdeiros e legatários do devedor, os quais serão indicados pelo credor-fiduciário. Neste caso, serão apresentadas cópias autênticas da certidão de óbito e do testamento, quando houver, ou declaração de inexistência de testamento emitida pelo Registro Central de Testamentos On-line - RCTO.</h4>
- <h3>Art. 9º Para os casos de financiamento habitacional, inclusive operações do Minha Casa Minha Vida, instituído pela Lei nº 11.977, de 7 de julho de 2009, com recursos advindos da integralização de cotas no Fundo de Arrendamento Residencial (FAR), a consolidação da propriedade deverá ser averbada trinta dias após a expiração do prazo para purgação da mora , nos termos da legislação de regência.</h3>
+ <h3>Art. 9º Para os casos de financiamento habitacional, inclusive operações do Minha Casa Minha Vida, instituído pela Lei n° 11.977, de 7 de julho de 2009, com recursos advindos da integralização de cotas no Fundo de Arrendamento Residencial (FAR), a consolidação da propriedade deverá ser averbada trinta dias após a expiração do prazo para purgação da mora , nos termos da legislação de regência.</h3>
  <h4>§ 1º Em qualquer hipótese de financiamento imobiliário, é de 120 (cento e vinte) dias o prazo máximo para a consolidação da plena propriedade, à vista da prova do pagamento do imposto de transmissão inter vivos e, se for o caso, do laudêmio.</h4>
  <h4>§ 2º Em qualquer dos casos, decorrido o prazo sem a prova, pelo credor fiduciário, do pagamento do imposto de transmissão inter vivos e, se for o caso, do laudêmio, proceder-se-á ao arquivamento do requerimento e o cancelamento da prenotação (art. 3º), exigindo-se um novo requerimento para a consolidação da propriedade fiduciária.</h4>
  <h3>Art. 10. Os emolumentos devidos ao registrador imobiliário para o ato de consolidação da propriedade efetuado no Registro de Imóveis são os previstos no item XIII da Tabela XIII da Tabela de Emolumentos em vigor, reduzidos em 50%, tendo por base o valor do imóvel para fins de incidência do ITBI, ficando vedada a cobrança por procedimento ou, como ato independente, pela baixa ou cancelamento da alienação, em caso de consolidação.</h3>
@@ -283,5 +433,81 @@
  </p>
  </footer>
  </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
 </body>
 </html>
