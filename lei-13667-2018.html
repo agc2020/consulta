@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.667, DE 17 DE MAIO DE 2018 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2018" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.667, DE 17 DE MAIO DE 2018</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 26/11/2025 22:32:24 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13667.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 17.382 caracteres | espelho: 17.390 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.667, DE 17 DE MAIO DE 2018.</p>
+ <p>Dispõe sobre o Sistema Nacional de Emprego (Sine), criado pelo Decreto nº 76.403, de 8 de outubro de 1975.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre o Sistema Nacional de Emprego (Sine), nos termos do inciso XVI do caput do art. 22 da Constituição Federal .</h3>
+ <h4>Parágrafo único. O Sine será financiado e gerido pela União e pelas esferas de governo que a ele aderirem, observado o disposto nesta Lei.</h4>
+ <h2>CAPÍTULO I</h2>
+ <h3>DAS DIRETRIZES DO SISTEMA NACIONAL DE EMPREGO</h3>
+ <h3>Art. 2º São diretrizes do Sine:</h3>
+ <h5>I - a otimização do acesso ao trabalho decente, exercido em condições de liberdade, equidade, dignidade e segurança, e a sistemas de educação e de qualificação profissional e tecnológica;</h5>
+ <h5>II - a integração de suas ações e de seus serviços nas distintas esferas de governo em que se fizer presente;</h5>
+ <h5>III - a execução descentralizada das ações e dos serviços referidos no inciso II do caput deste artigo, em consonância com normas e diretrizes editadas em âmbito nacional;</h5>
+ <h5>IV - o compartilhamento da gestão, do financiamento e de recursos técnicos entre as esferas de governo que o integrem;</h5>
+ <h5>V - a participação de representantes da sociedade civil em sua gestão;</h5>
+ <h5>VI - a integração e a sistematização das informações e pesquisas sobre o mercado formal e informal de trabalho, com vistas a subsidiar a operacionalização de suas ações e de seus serviços no âmbito da União e das esferas de governo que dele participem;</h5>
+ <h5>VII - a adequação entre a oferta e a demanda de força de trabalho em todos os níveis de ocupação e qualificação;</h5>
+ <h5>VIII - a integração técnica e estatística com os sistemas de educação e de qualificação profissional e tecnológica, com vistas à elaboração, à implementação e à avaliação das respectivas políticas;</h5>
+ <h5>IX - a padronização do atendimento, da organização e da oferta de suas ações e de seus serviços no âmbito das esferas de governo participantes, respeitadas as especificidades regionais e locais;</h5>
+ <h5>X - a melhoria contínua da qualidade dos serviços ofertados, de forma eficiente, eficaz, efetiva e sustentável, especialmente por meio do desenvolvimento de aplicativos e de soluções tecnológicas a serem ofertados aos trabalhadores;</h5>
+ <h5>XI - a articulação permanente com a implementação das demais políticas públicas, com ênfase nas destinadas à população em condições de vulnerabilidade social.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA ORGANIZAÇÃO</h3>
+ <h3>Art. 3º O Sine será gerido e financiado, e suas ações e serviços serão executados, conjuntamente pelo Ministério do Trabalho e por órgãos específicos integrados à estrutura administrativa das esferas de governo que dele participem, na forma estabelecida por esta Lei.</h3>
+ <h4>§ 1º O Conselho Deliberativo do Fundo de Amparo ao Trabalhador (Codefat), instituído pela Lei n° 7.998, de 11 de janeiro de 1990 , constitui instância regulamentadora do Sine, sem prejuízo do disposto no § 2º deste artigo.</h4>
+ <h4>§ 2º O Codefat e os Conselhos do Trabalho, Emprego e Renda instituídos pelas esferas de governo que aderirem ao Sine constituirão instâncias deliberativas do Sistema.</h4>
+ <h3>Art. 4º São unidades de atendimento do Sine, de funcionamento contínuo:</h3>
+ <h5>I - as Superintendências Regionais do Trabalho e as unidades implantadas por instituições federais autorizadas pelo Codefat;</h5>
+ <h5>II - as unidades instituídas pelas esferas de governo que integrarem o Sine.</h5>
+ <h4>§ 1º O Codefat poderá autorizar outras unidades, de funcionamento contínuo ou não, para atendimento do Sine.</h4>
+ <h4>§ 2º O atendimento ao trabalhador, requerente ou não requerente do seguro-desemprego, será obrigatoriamente realizado por meio de ações e serviços integrados de orientação, recolocação e qualificação profissional, para auxiliá-lo na busca ou preservação do emprego ou estimular seu empreendedorismo, podendo o Codefat dispor sobre a exceção de oferta básica não integrada de ações e serviços.</h4>
+ <h4>§ 3º As unidades de atendimento integrantes do Sine deverão ser objeto de padronização de acordo com os níveis de abrangência das ações e dos serviços nelas prestados, observados os critérios estabelecidos pelo Codefat.</h4>
+ <h3>Art. 5º Nos termos estabelecidos pelo Codefat, os Conselhos do Trabalho, Emprego e Renda poderão autorizar a constituição de consórcios públicos para executar as ações e os serviços do Sine, devendo os consórcios ser submetidos à prévia avaliação do Ministério do Trabalho.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS COMPETÊNCIAS</h3>
+ <h3>Art. 6º Compete simultaneamente à União e às esferas de governo que aderirem ao Sine:</h3>
+ <h5>I - prover o pessoal e a infraestrutura necessários à execução das ações e dos serviços do Sine, bem como financiá-lo, por meio de repasses fundo a fundo;</h5>
+ <h5>I - prover o pessoal e a infraestrutura necessários à execução das ações e dos serviços do Sine, com observância das normas técnicas de acessibilidade da Associação Brasileira de Normas Técnicas (ABNT), bem como financiá-lo, 	por meio de repasses fundo a fundo; (Redação dada pela Lei n° 14.992, de 2024)</h5>
+ <h5>II - acompanhar e controlar a rede de atendimento aos trabalhadores;</h5>
+ <h5>III - administrar os recursos orçamentários e financeiros de seus fundos do trabalho;</h5>
+ <h5>IV - acompanhar, avaliar e divulgar informações sobre o mercado formal e informal de trabalho;</h5>
+ <h5>V - alimentar sistemas integrados e informatizados destinados a colher dados relacionados ao mercado formal e informal de trabalho;</h5>
+ <h5>VI - subsidiar a elaboração de normas técnicas e o estabelecimento de padrões de qualidade e parâmetros de custos destinados a nortear as ações e os serviços abrangidos pelo Sine;</h5>
+ <h5>VII - elaborar plano de ações e serviços do Sine, bem como a respectiva proposta orçamentária, os quais deverão ser submetidos, conforme a esfera de governo, à aprovação do Codefat ou do respectivo Conselho do Trabalho, Emprego e Renda;</h5>
+ <h5>VIII - participar da formulação e da execução da política de formação e desenvolvimento de pessoal especificamente voltado a prestar serviços no âmbito do Sine;</h5>
+ <h5>IX - disponibilizar informações referentes às ações e aos serviços executados;</h5>
+ <h5>X - propor medidas para aperfeiçoamento e modernização do Sine à coordenação nacional do Sistema.</h5>
+ <h3>Art. 7º Compete à União:</h3>
+ <h5>I - exercer, por intermédio do Ministério do Trabalho, a coordenação nacional do Sine, com supervisão, monitoramento e avaliação das ações e dos serviços do Sistema executados por ela e pelas esferas de governo que a ele aderirem;</h5>
+ <h5>II - executar, em caráter privativo, os seguintes serviços e ações integrados ao Sine:</h5>
+ <h6>a) concessão do seguro-desemprego e do abono salarial;</h6>
+ <h6>b) identificação dos trabalhadores;</h6>
+ <h6>c) coordenação da certificação profissional;</h6>
+ <h6>d) manutenção de cadastro de instituições habilitadas a qualificar os trabalhadores;</h6>
+ <h5>III - apoiar e assessorar tecnicamente as esferas de Governo que aderirem ao Sine;</h5>
+ <h5>IV - estimular a constituição de consórcios públicos municipais e fornecer-lhes suporte técnico, para viabilização das ações e serviços do Sine.</h5>
+ <h5>V - integrar ao Sine a base de dados do Sistema Nacional de Cadastro da 	Pessoa com Transtorno do Espectro Autista (SisTEA), previsto no Decreto nº 12.115, de 17 de julho de 2024 , sob a responsabilidade do Ministério dos 	Direitos Humanos e da Cidadania, com vistas à intermediação de vagas de emprego e contratos de aprendizagem, nos termos da Lei n° 10.097, de 19 de dezembro de 2000 . (Incluído pela Lei n° 14.992, de 2024)</h5>
+ <h4>Parágrafo único. A União poderá executar, em caráter suplementar, as ações e os serviços do Sine de competência das demais esferas de governo, tenham ou não a ele aderido.</h4>
+ <h3>Art. 8º Compete aos Estados que aderirem ao Sine:</h3>
+ <h5>I - exercer, por intermédio de órgão específico integrado à sua estrutura administrativa, a coordenação estadual do Sine, com supervisão, monitoramento e avaliação das ações e dos serviços a eles atribuídos;</h5>
+ <h5>II - executar as ações e os serviços do Sine na ausência de atuação dos Municípios ou de consórcios públicos municipais;</h5>
+ <h5>III - estimular os Municípios e os consórcios que eles venham a constituir, e fornecer-lhes suporte técnico e financeiro, para viabilização das ações e serviços do Sine.</h5>
+ <h4>Parágrafo único. Os Estados poderão executar, em caráter suplementar, as ações e os serviços do Sine de competência dos Municípios.</h4>
+ <h3>Art. 9º Compete aos Municípios que aderirem ao Sine, sem prejuízo de outras atividades que lhes sejam distribuídas pelo Codefat:</h3>
+ <h5>I - exercer, por intermédio de órgão específico integrado à sua estrutura administrativa, a coordenação municipal do Sine, com supervisão, monitoramento e avaliação das ações e dos serviços a eles atribuídos;</h5>
+ <h5>II - habilitar o trabalhador à percepção de seguro-desemprego;</h5>
+ <h5>III - intermediar o aproveitamento da mão de obra;</h5>
+ <h5>IV - cadastrar os trabalhadores desempregados em sistema informatizado acessível ao conjunto das unidades do Sine;</h5>
+ <h5>V - prestar apoio à certificação profissional;</h5>
+ <h5>VI - promover a orientação e a qualificação profissional;</h5>
+ <h5>VII - prestar assistência a trabalhadores resgatados de situação análoga à de escravo;</h5>
+ <h5>VII – prestar assistência a trabalhadores resgatados de situação análoga à de escravo e às mulheres em situação de violência doméstica e familiar; (Redação dada pela Lei n° 14.542, de 2023)</h5>
+ <h5>VIII - fomentar o empreendedorismo, o crédito para a geração de trabalho, emprego e renda, o microcrédito produtivo orientado e o assessoramento técnico ao trabalho autônomo, autogestionário ou associado.</h5>
+ <h5>IX – fomentar iniciativas para a inclusão de pessoas com deficiência no mercado de trabalho, incluindo a realização de feiras de emprego e a sensibilização de empregadores para a contratação de pessoas com deficiência. (Incluído pela Lei n° 14.992, de 2024)</h5>
+ <h4>§ 1º As mulheres em situação de violência doméstica e familiar terão prioridade no atendimento pelo Sine, às quais serão reservadas 10% (dez por cento) das vagas ofertadas para intermediação. (Incluído pela Lei n° 14.542, de 2023)</h4>
+ <h4>§ 2º Na hipótese de não preenchimento das vagas reservadas nos termos previstos no § 	1º deste artigo por ausência de mulheres em situação de violência doméstica e familiar, as vagas remanescentes poderão ser preenchidas por mulheres e, 	se não houver, pelo público em geral. (Incluído pela Lei n° 14.542, de 2023)</h4>
+ <h3>Art. 10. O Distrito Federal, se aderir ao Sine, exercerá, cumulativamente, no âmbito de seu território, as competências dos Estados e dos Municípios.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO FINANCIAMENTO E DA FISCALIZAÇÃO</h3>
+ <h3>Art. 11. As despesas com a organização, a implementação, a manutenção, a modernização e a gestão do Sine correrão por conta dos seguintes recursos:</h3>
+ <h5>I - provenientes do Fundo de Amparo ao Trabalhador (FAT);</h5>
+ <h5>II - aportados pelas esferas de governo que aderirem ao Sine;</h5>
+ <h5>III - outros que lhe sejam destinados.</h5>
+ <h4>Parágrafo único. A União e as esferas de governo que aderirem ao Sine poderão realizar operações externas de natureza financeira, autorizadas pelo Senado Federal, para captação de recursos direcionados aos respectivos fundos do trabalho.</h4>
+ <h3>Art. 12. As esferas de governo que aderirem ao Sine deverão instituir fundos do trabalho próprios para financiamento e transferências automáticas de recursos no âmbito do Sistema, observada a regulamentação do Codefat.</h3>
+ <h4>§ 1º Constituem condição para as transferências automáticas dos recursos de que trata esta Lei às esferas de governo que aderirem ao Sine a instituição e o funcionamento efetivo de:</h4>
+ <h5>I - Conselho do Trabalho, Emprego e Renda, constituído de forma tripartite e paritária por representantes dos trabalhadores, dos empregadores e do governo, observadas as disposições desta Lei;</h5>
+ <h5>II - fundo do trabalho, orientado e controlado pelo respectivo Conselho do Trabalho, Emprego e Renda;</h5>
+ <h5>III - plano de ações e serviços, aprovado na forma estabelecida pelo Codefat.</h5>
+ <h4>§ 2º Constitui condição para a transferência de recursos do FAT às esferas de governo que aderirem ao Sine a comprovação orçamentária da existência de recursos próprios destinados à área do trabalho e alocados aos respectivos fundos, adicionados aos recebidos do FAT.</h4>
+ <h4>§ 3º As despesas com o funcionamento dos Conselhos do Trabalho, Emprego e Renda, exceto as de pessoal, poderão ser custeadas por recursos alocados ao fundo do trabalho, observadas as deliberações do Codefat.</h4>
+ <h3>Art. 13. O financiamento de programas, projetos, ações e serviços do Sine será efetivado por meio de transferências automáticas entre os fundos do trabalho ou mediante a alocação de recursos próprios nesses fundos por parte da União e das esferas de governo que aderirem ao Sistema.</h3>
+ <h4>Parágrafo único. (VETADO).</h4>
+ <h3>Art. 14. Para a definição dos valores a serem repassados pela União às esferas de governo que aderirem ao Sine, serão observados os critérios aprovados pelo Codefat e as disponibilidades orçamentárias e financeiras.</h3>
+ <h4>§ 1º Caberá ao Ministério do Trabalho, na qualidade de coordenador nacional do Sine, propor ao Codefat os critérios de que trata o caput deste artigo.</h4>
+ <h4>§ 2º Caberá ao Codefat estabelecer as condições de financiamento do Sine e de aplicação de seus recursos.</h4>
+ <h3>Art. 15. (VETADO).</h3>
+ <h3>Art. 16. O Ministério do Trabalho, na forma estabelecida pelo Codefat, apoiará financeiramente, com as dotações orçamentárias existentes, o aprimoramento da gestão descentralizada das ações e dos serviços do Sine, por meio do Índice de Gestão Descentralizada do Sine (IGD-Sine), destinado ao custeio de despesas correntes e de capital.</h3>
+ <h4>Parágrafo único. É vedada a utilização dos recursos repassados a título de IGD-Sine para pagamento de pessoal efetivo e de gratificações de qualquer natureza a servidor público federal, estadual, municipal ou do Distrito Federal.</h4>
+ <h3>Art. 17. Os recursos financeiros destinados ao Sine serão depositados em conta especial de titularidade do fundo do trabalho e movimentados com a fiscalização do respectivo Conselho do Trabalho, Emprego e Renda.</h3>
+ <h4>§ 1º O Ministério do Trabalho acompanhará a conformidade da aplicação dos recursos do FAT transferidos automaticamente às esferas de governo que aderirem ao Sine, observada a programação orçamentária aprovada para cada ente federativo.</h4>
+ <h4>§ 2º Sem prejuízo de outras sanções cabíveis em decorrência da legislação, constitui crime, sujeito à pena de reclusão de 3 (três) meses a 1 (um) ano, o emprego irregular, ou em finalidades diversas das previstas nesta Lei, de verbas, de rendas públicas ou de recursos do Sine.</h4>
+ <h3>Art. 18. Caberá à esfera de governo que aderir ao Sine a responsabilidade pela correta utilização dos recursos de seu fundo do trabalho, bem como pelo controle e pelo acompanhamento dos programas, dos projetos, dos benefícios, das ações e dos serviços vinculados ao Sistema, independentemente de ações do órgão repassador dos recursos.</h3>
+ <h3>Art. 19. A utilização dos recursos federais descentralizados para os fundos do trabalho das esferas de governo que aderirem ao Sine será anualmente declarada pelos entes recebedores ao ente responsável pela transferência automática, mediante relatório de gestão que comprove a execução das ações, na forma do regulamento, a ser submetido à apreciação do respectivo Conselho do Trabalho, Emprego e Renda.</h3>
+ <h4>Parágrafo único. O ente responsável pela transferência automática poderá requisitar informações referentes à aplicação dos recursos transferidos, para fins de análise e acompanhamento de sua utilização.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 20. A denominação Sistema Nacional de Emprego, a sigla Sine e as suas marcas ou logomarcas, utilizadas separada ou conjuntamente, são consideradas bens públicos nacionais e não poderão ser objeto de nenhum tipo de registro de propriedade ou de domínio, por pessoas físicas ou jurídicas.</h3>
+ <h3>Art. 21. É garantida, às esferas de governo que aderirem ao Sine, a participação no Codefat, mediante a indicação de representantes - titular e suplente –, efetivada, conforme o caso, pelo Fórum Nacional de Secretarias Estaduais do Trabalho (Fonset) ou pelo Fórum Nacional de Secretarias Municipais do Trabalho (Fonsemt).</h3>
+ <h4>Parágrafo único. A participação de representantes - titular e suplente - das Superintendências Regionais do Trabalho nos Conselhos de Trabalho, Emprego e Renda instituídos pelos Estados e pelo Distrito Federal é condição para a adesão dessas esferas de governo ao Sine.</h4>
+ <h3>Art. 22. Os entes públicos que tenham Convênio Plurianual do Sine (CP-Sine) e Convênio Plurianual de Qualificação Social e Profissional (CP-QSP) vigentes à data de publicação desta Lei terão o prazo de 12 (doze) meses para se adaptar à nova organização do Sine e constituir os seus fundos do trabalho.</h3>
+ <h4>§ 1º Durante o período previsto no caput deste artigo, as transferências de recursos relacionados ao Sine observarão, em caráter transitório, os termos dos convênios vigentes, os quais poderão ser objeto de termos aditivos para garantir a continuidade da execução das ações e serviços do Sistema durante esse período.</h4>
+ <h4>§ 2º A adesão de novos entes públicos ao Sine somente poderá ocorrer 12 (doze) meses após a data de entrada em vigor desta Lei, de acordo com cronograma aprovado pelo Codefat.</h4>
+ <h3>Art. 23. O Sine, criado pelo Decreto nº 76.403, de 8 de outubro de 1975 , passa a ser regido pelas disposições desta Lei e pela regulamentação do Codefat.</h3>
+ <h3>Art. 24. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 17 de maio de 2018; 197º da Independência e 130º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Eduardo Refinetti Guardia</p>
+ <p>Esteves Pedro Colnago Junior</p>
+ <p>Este texto não substitui o publicado no DOU de 18.5.2018</p>
+ <p>Dispõe sobre o Sistema Nacional de Emprego (Sine), criado pelo Decreto nº 76.403, de 8 de outubro de 1975.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13667.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

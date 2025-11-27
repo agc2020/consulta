@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Lei Complementar Nº 105/2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei Complementar" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Lei Complementar Nº 105/2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 26/11/2025 23:05:15 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp105.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 13.969 caracteres | espelho: 13.888 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI COMPLEMENTAR Nº 105, DE 10 DE JANEIRO DE 2001.</p>
+ <p>Dispõe sobre o sigilo das operações de instituições financeiras e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei Complementar:</p>
+ <h3>Art. 1º As instituições financeiras conservarão sigilo em suas operações ativas e passivas e serviços prestados.</h3>
+ <h4>§ 1º São consideradas instituições financeiras, para os efeitos desta Lei Complementar:</h4>
+ <h5>I – os bancos de qualquer espécie;</h5>
+ <h5>II – distribuidoras de valores mobiliários;</h5>
+ <h5>III – corretoras de câmbio e de valores mobiliários;</h5>
+ <h5>IV – sociedades de crédito, financiamento e investimentos;</h5>
+ <h5>V – sociedades de crédito imobiliário;</h5>
+ <h5>VI – administradoras de cartões de crédito;</h5>
+ <h5>VII – sociedades de arrendamento mercantil;</h5>
+ <h5>VIII – administradoras de mercado de balcão organizado;</h5>
+ <h5>IX – cooperativas de crédito;</h5>
+ <h5>X – associações de poupança e empréstimo;</h5>
+ <h5>XI – bolsas de valores e de mercadorias e futuros;</h5>
+ <h5>XII – entidades de liquidação e compensação;</h5>
+ <h5>XIII – outras sociedades que, em razão da natureza de suas operações, assim venham a ser consideradas pelo Conselho Monetário Nacional.</h5>
+ <h4>§ 2º As empresas de fomento comercial ou factoring, para os efeitos desta Lei Complementar, obedecerão às normas aplicáveis às instituições financeiras previstas no § 1º .</h4>
+ <h4>§ 3º Não constitui violação do dever de sigilo:</h4>
+ <h5>I – a troca de informações entre instituições financeiras, para fins cadastrais, inclusive por intermédio de centrais de risco, observadas as normas baixadas pelo Conselho Monetário Nacional e pelo Banco Central do Brasil;</h5>
+ <h5>II - o fornecimento de informações constantes de cadastro de emitentes de cheques sem provisão de fundos e de devedores inadimplentes, a entidades de proteção ao crédito, observadas as normas baixadas pelo Conselho Monetário Nacional e pelo Banco Central do Brasil;</h5>
+ <h5>III – o fornecimento das informações de que trata o § 2º do art. 11 da Lei N° 9.311, de 24 de outubro de 1996;</h5>
+ <h5>IV – a comunicação, às autoridades competentes, da prática de ilícitos penais ou administrativos, abrangendo o fornecimento de informações sobre operações que envolvam recursos provenientes de qualquer prática criminosa;</h5>
+ <h5>V – a revelação de informações sigilosas com o consentimento expresso dos interessados;</h5>
+ <h5>VI – a prestação de informações nos termos e condições estabelecidos nos artigos 2º , 3º , 4º , 5º , 6º , 7º e 9 desta Lei Complementar.</h5>
+ <h5>VII - o fornecimento de dados financeiros e de pagamentos, relativos a operações de crédito e obrigações de pagamento adimplidas ou em andamento de pessoas naturais ou jurídicas, a gestores de bancos de dados, para formação de histórico de crédito, nos termos de lei específica. (Incluído pela Lei Complementar nº 166, de 2019)</h5>
+ <h4>§ 4º A quebra de sigilo poderá ser decretada, quando necessária para apuração de ocorrência de qualquer ilícito, em qualquer fase do inquérito ou do processo judicial, e especialmente nos seguintes crimes:</h4>
+ <h5>I – de terrorismo;</h5>
+ <h5>II – de tráfico ilícito de substâncias entorpecentes ou drogas afins;</h5>
+ <h5>III – de contrabando ou tráfico de armas, munições ou material destinado a sua produção;</h5>
+ <h5>IV – de extorsão mediante seqüestro;</h5>
+ <h5>V – contra o sistema financeiro nacional;</h5>
+ <h5>VI – contra a Administração Pública;</h5>
+ <h5>VII – contra a ordem tributária e a previdência social;</h5>
+ <h5>VIII – lavagem de dinheiro ou ocultação de bens, direitos e valores;</h5>
+ <h5>IX – praticado por organização criminosa.</h5>
+ <h3>Art. 2º O dever de sigilo é extensivo ao Banco Central do Brasil, em relação às operações que realizar e às informações que obtiver no exercício de suas atribuições.</h3>
+ <h4>§ 1º O sigilo, inclusive quanto a contas de depósitos, aplicações e investimentos mantidos em instituições financeiras, não pode ser oposto ao Banco Central do Brasil:</h4>
+ <h5>I – no desempenho de suas funções de fiscalização, compreendendo a apuração, a qualquer tempo, de ilícitos praticados por controladores, administradores, membros de conselhos estatutários, gerentes, mandatários e prepostos de instituições financeiras;</h5>
+ <h5>II – ao proceder a inquérito em instituição financeira submetida a regime especial.</h5>
+ <h4>§ 2º As comissões encarregadas dos inquéritos a que se refere o inciso II do § 1º poderão examinar quaisquer documentos relativos a bens, direitos e obrigações das instituições financeiras, de seus controladores, administradores, membros de conselhos estatutários, gerentes, mandatários e prepostos, inclusive contas correntes e operações com outras instituições financeiras.</h4>
+ <h4>§ 3º O disposto neste artigo aplica-se à Comissão de Valores Mobiliários, quando se tratar de fiscalização de operações e serviços no mercado de valores mobiliários, inclusive nas instituições financeiras que sejam companhias abertas.</h4>
+ <h4>§ 4º O Banco Central do Brasil e a Comissão de Valores Mobiliários, em suas áreas de competência, poderão firmar convênios:</h4>
+ <h5>I - com outros órgãos públicos fiscalizadores de instituições financeiras, objetivando a realização de fiscalizações conjuntas, observadas as respectivas competências;</h5>
+ <h5>II - com bancos centrais ou entidades fiscalizadoras de outros países, objetivando:</h5>
+ <h6>a) a fiscalização de filiais e subsidiárias de instituições financeiras estrangeiras, em funcionamento no Brasil e de filiais e subsidiárias, no exterior, de instituições financeiras brasileiras;</h6>
+ <h6>b) a cooperação mútua e o intercâmbio de informações para a investigação de atividades ou operações que impliquem aplicação, negociação, ocultação ou transferência de ativos financeiros e de valores mobiliários relacionados com a prática de condutas ilícitas.</h6>
+ <h4>§ 5º O dever de sigilo de que trata esta Lei Complementar estende-se aos órgãos fiscalizadores mencionados no § 4º e a seus agentes.</h4>
+ <h4>§ 6º O Banco Central do Brasil, a Comissão de Valores Mobiliários e os demais órgãos de fiscalização, nas áreas de suas atribuições, fornecerão ao Conselho de Controle de Atividades Financeiras – COAF, de que trata o art. 14 da Lei N° 9.613, de 3 de março de 1998 , as informações cadastrais e de movimento de valores relativos às operações previstas no inciso I do art. 11 da referida Lei.</h4>
+ <h3>Art. 3º Serão prestadas pelo Banco Central do Brasil, pela Comissão de Valores Mobiliários e pelas instituições financeiras as informações ordenadas pelo Poder Judiciário, preservado o seu caráter sigiloso mediante acesso restrito às partes, que delas não poderão servir-se para fins estranhos à lide.</h3>
+ <h4>§ 1º Dependem de prévia autorização do Poder Judiciário a prestação de informações e o fornecimento de documentos sigilosos solicitados por comissão de inquérito administrativo destinada a apurar responsabilidade de servidor público por infração praticada no exercício de suas atribuições, ou que tenha relação com as atribuições do cargo em que se encontre investido.</h4>
+ <h4>§ 2º Nas hipóteses do § 1º , o requerimento de quebra de sigilo independe da existência de processo judicial em curso.</h4>
+ <h4>§ 3º Além dos casos previstos neste artigo o Banco Central do Brasil e a Comissão de Valores Mobiliários fornecerão à Advocacia-Geral da União as informações e os documentos necessários à defesa da União nas ações em que seja parte.</h4>
+ <h3>Art. 4º O Banco Central do Brasil e a Comissão de Valores Mobiliários, nas áreas de suas atribuições, e as instituições financeiras fornecerão ao Poder Legislativo Federal as informações e os documentos sigilosos que, fundamentadamente, se fizerem necessários ao exercício de suas respectivas competências constitucionais e legais.</h3>
+ <h4>§ 1º As comissões parlamentares de inquérito, no exercício de sua competência constitucional e legal de ampla investigação, obterão as informações e documentos sigilosos de que necessitarem, diretamente das instituições financeiras, ou por intermédio do Banco Central do Brasil ou da Comissão de Valores Mobiliários.</h4>
+ <h4>§ 2º As solicitações de que trata este artigo deverão ser previamente aprovadas pelo Plenário da Câmara dos Deputados, do Senado Federal, ou do plenário de suas respectivas comissões parlamentares de inquérito.</h4>
+ <h3>Art. 5º O Poder Executivo disciplinará, inclusive quanto à periodicidade e aos limites de valor, os critérios segundo os quais as instituições financeiras informarão à administração tributária da União, as operações financeiras efetuadas pelos usuários de seus serviços. (Regulamento)</h3>
+ <h4>§ 1º Consideram-se operações financeiras, para os efeitos deste artigo:</h4>
+ <h5>I – depósitos à vista e a prazo, inclusive em conta de poupança;</h5>
+ <h5>II – pagamentos efetuados em moeda corrente ou em cheques;</h5>
+ <h5>III – emissão de ordens de crédito ou documentos assemelhados;</h5>
+ <h5>IV – resgates em contas de depósitos à vista ou a prazo, inclusive de poupança;</h5>
+ <h5>V – contratos de mútuo;</h5>
+ <h5>VI – descontos de duplicatas, notas promissórias e outros títulos de crédito;</h5>
+ <h5>VII – aquisições e vendas de títulos de renda fixa ou variável;</h5>
+ <h5>VIII – aplicações em fundos de investimentos;</h5>
+ <h5>IX – aquisições de moeda estrangeira;</h5>
+ <h5>X – conversões de moeda estrangeira em moeda nacional;</h5>
+ <h5>XI – transferências de moeda e outros valores para o exterior;</h5>
+ <h5>XII – operações com ouro, ativo financeiro;</h5>
+ <h5>XIII - operações com cartão de crédito;</h5>
+ <h5>XIV - operações de arrendamento mercantil; e</h5>
+ <h5>XV – quaisquer outras operações de natureza semelhante que venham a ser autorizadas pelo Banco Central do Brasil, Comissão de Valores Mobiliários ou outro órgão competente.</h5>
+ <h4>§ 2º As informações transferidas na forma do caput deste artigo restringir-se-ão a informes relacionados com a identificação dos titulares das operações e os montantes globais mensalmente movimentados, vedada a inserção de qualquer elemento que permita identificar a sua origem ou a natureza dos gastos a partir deles efetuados.</h4>
+ <h4>§ 3º Não se incluem entre as informações de que trata este artigo as operações financeiras efetuadas pelas administrações direta e indireta da União, dos Estados, do Distrito Federal e dos Municípios.</h4>
+ <h4>§ 4º Recebidas as informações de que trata este artigo, se detectados indícios de falhas, incorreções ou omissões, ou de cometimento de ilícito fiscal, a autoridade interessada poderá requisitar as informações e os documentos de que necessitar, bem como realizar fiscalização ou auditoria para a adequada apuração dos fatos.</h4>
+ <h4>§ 5º As informações a que refere este artigo serão conservadas sob sigilo fiscal, na forma da legislação em vigor.</h4>
+ <h3>Art. 6º As autoridades e os agentes fiscais tributários da União, dos Estados, do Distrito Federal e dos Municípios somente poderão examinar documentos, livros e registros de instituições financeiras, inclusive os referentes a contas de depósitos e aplicações financeiras, quando houver processo administrativo instaurado ou procedimento fiscal em curso e tais exames sejam considerados indispensáveis pela autoridade administrativa competente. (Regulamento)</h3>
+ <h4>Parágrafo único. O resultado dos exames, as informações e os documentos a que se refere este artigo serão conservados em sigilo, observada a legislação tributária.</h4>
+ <h3>Art. 7º Sem prejuízo do disposto no § 3º do art. 2º , a Comissão de Valores Mobiliários, instaurado inquérito administrativo, poderá solicitar à autoridade judiciária competente o levantamento do sigilo junto às instituições financeiras de informações e documentos relativos a bens, direitos e obrigações de pessoa física ou jurídica submetida ao seu poder disciplinar.</h3>
+ <h4>Parágrafo único. O Banco Central do Brasil e a Comissão de Valores Mobiliários, manterão permanente intercâmbio de informações acerca dos resultados das inspeções que realizarem, dos inquéritos que instaurarem e das penalidades que aplicarem, sempre que as informações forem necessárias ao desempenho de suas atividades.</h4>
+ <h3>Art. 8º O cumprimento das exigências e formalidades previstas nos artigos 4º , 6º e 7º , será expressamente declarado pelas autoridades competentes nas solicitações dirigidas ao Banco Central do Brasil, à Comissão de Valores Mobiliários ou às instituições financeiras.</h3>
+ <h3>Art. 9º Quando, no exercício de suas atribuições, o Banco Central do Brasil e a Comissão de Valores Mobiliários verificarem a ocorrência de crime definido em lei como de ação pública, ou indícios da prática de tais crimes, informarão ao Ministério Público, juntando à comunicação os documentos necessários à apuração ou comprovação dos fatos.</h3>
+ <h4>§ 1º A comunicação de que trata este artigo será efetuada pelos Presidentes do Banco Central do Brasil e da Comissão de Valores Mobiliários, admitida delegação de competência, no prazo máximo de quinze dias, a contar do recebimento do processo, com manifestação dos respectivos serviços jurídicos.</h4>
+ <h4>§ 2º Independentemente do disposto no caput deste artigo, o Banco Central do Brasil e a Comissão de Valores Mobiliários comunicarão aos órgãos públicos competentes as irregularidades e os ilícitos administrativos de que tenham conhecimento, ou indícios de sua prática, anexando os documentos pertinentes.</h4>
+ <h3>Art. 10. A quebra de sigilo, fora das hipóteses autorizadas nesta Lei Complementar, constitui crime e sujeita os responsáveis à pena de reclusão, de um a quatro anos, e multa, aplicando-se, no que couber, o Código Penal, sem prejuízo de outras sanções cabíveis.</h3>
+ <h4>Parágrafo único. Incorre nas mesmas penas quem omitir, retardar injustificadamente ou prestar falsamente as informações requeridas nos termos desta Lei Complementar.</h4>
+ <h3>Art. 11. O servidor público que utilizar ou viabilizar a utilização de qualquer informação obtida em decorrência da quebra de sigilo de que trata esta Lei Complementar responde pessoal e diretamente pelos danos decorrentes, sem prejuízo da responsabilidade objetiva da entidade pública, quando comprovado que o servidor agiu de acordo com orientação oficial.</h3>
+ <h3>Art. 12. Esta Lei Complementar entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 13. Revoga-se o art. 38 da Lei N° 4.595, de 31 de dezembro de 1964.</h3>
+ <p>Brasília, 10 de janeiro de 2001; 180º da Independência e 113º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Este texto não substitui o publicado no DOU de 11.1.2001</p>
+ <p>Dispõe sobre o sigilo das operações de instituições financeiras e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp105.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

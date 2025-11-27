@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.076, DE 30 DE DEZEMBRO DE 2004 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2004" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.076, DE 30 DE DEZEMBRO DE 2004</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 26/11/2025 22:57:01 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/L11076compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 41.627 caracteres | espelho: 43.089 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.076, DE 30 DE DEZEMBRO DE 2004 Conversão da MPv nº 221, de 2004</p>
+ <p>Produção de efeito</p>
+ <p>Dispõe sobre o Certificado de Depósito Agropecuário – CDA, o Warrant Agropecuário – WA, o Certificado de Direitos Creditórios do Agronegócio – CDCA, a Letra de Crédito do Agronegócio – LCA e o Certificado de Recebíveis do Agronegócio – CRA, dá nova redação a dispositivos das Leis nºs 9.973, de 29 de maio de 2000, que dispõe sobre o sistema de armazenagem dos produtos agropecuários, 8.427, de 27 de maio de 1992, que dispõe sobre a concessão de subvenção econômica nas operações de crédito rural, 8.929, de 22 de agosto de 1994, que institui a Cédula de Produto Rural – CPR, 9.514, de 20 de novembro de 1997, que dispõe sobre o Sistema de Financiamento Imobiliário e institui a alienação fiduciária de coisa imóvel, e altera a Taxa de Fiscalização de que trata a Lei n° 7.940, de 20 de dezembro de 1989, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DO CDA E DO WA</h3>
+ <p>Seção I</p>
+ <p>Disposições Iniciais</p>
+ <h3>Art. 1º Ficam instituídos o Certificado de Depósito Agropecuário - CDA e o Warrant Agropecuário - WA.</h3>
+ <h4>§ 1º O CDA é título de crédito representativo de promessa de entrega de produtos agropecuários, seus derivados, subprodutos e resíduos de valor econômico, depositados em conformidade com a Lei n° 9.973, de 29 de maio de 2000.</h4>
+ <h4>§ 2º O WA é título de crédito representativo de promessa de pagamento em dinheiro que confere direito de penhor sobre o CDA correspondente, assim como sobre o produto nele descrito. (Redação dada pela Lei n° 11.524, de 2007)</h4>
+ <h4>§ 3º O CDA e o WA são títulos unidos, emitidos simultaneamente pelo depositário, a pedido do depositante, podendo ser transmitidos unidos ou separadamente, mediante endosso.</h4>
+ <h4>§ 4º O CDA e o WA são títulos executivos extrajudiciais.</h4>
+ <h3>Art. 2º Aplicam-se ao CDA e ao WA as normas de direito cambial no que forem cabíveis e o seguinte:</h3>
+ <h5>I - os endossos devem ser completos;</h5>
+ <h5>II - os endossantes não respondem pela entrega do produto, mas, tão-somente, pela existência da obrigação;</h5>
+ <h5>III - é dispensado o protesto cambial para assegurar o direito de regresso contra endossantes e avalistas.</h5>
+ <h3>Art. 3º O CDA e o WA poderão ser emitidos sob a forma cartular ou escritural. (Redação da pela Lei n° 13.986, de 2020</h3>
+ <h5>I - (revogado); (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h5>II - (revogado). (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h4>§ 1º A emissão na forma escritural ocorrerá por meio do lançamento em sistema eletrônico de escrituração gerido por entidade autorizada pelo Banco 	Central do Brasil a exercer atividade de escrituração. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 2º O CDA e o WA emitidos sob a forma cartular assumirão a forma escritural enquanto permanecerem depositados em depositário central. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 3º-A. Compete ao Banco Central do Brasil: (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h5>I - estabelecer as condições para o exercício da atividade de escrituração de que trata o § 1º do art. 3º desta Lei; e (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>II - autorizar e supervisionar o exercício da atividade prevista no inciso I 	do caput deste artigo. (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h4>§ 1º A autorização de que trata o inciso II do caput deste artigo poderá, a critério do Banco Central do Brasil, ser concedida por segmento, 	por espécie ou por grupos de entidades que atendam a critérios específicos, 	dispensada a autorização individualizada. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 2º A entidade responsável pela escrituração de que trata o inciso I do caput deste artigo expedirá, mediante solicitação, certidão de inteiro teor do título, inclusive para fins de protesto e de execução. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 3º A certidão de que trata o § 2º deste artigo poderá ser emitida na forma eletrônica, observados os requisitos de segurança que garantam a autenticidade e a integridade do documento. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 3º-B A liquidação do pagamento em favor do legítimo credor, por qualquer meio de pagamento existente no âmbito do Sistema de Pagamentos 	Brasileiro, constituirá prova de pagamento total ou parcial do WA emitido sob a forma escritural. (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h4>Parágrafo único. A prova de pagamento de que trata o caput deste artigo será informada no sistema eletrônico de escrituração de que trata o § 	1º do art. 3º desta Lei, com referência expressa ao WA amortizado ou liquidado (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 3º-C. O sistema eletrônico de escrituração a que se refere o § 1º do art. 3º desta Lei fará constar: (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h5>I - os requisitos essenciais do título; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>II - o endosso e a cadeia de endossos, se houver; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>III - os aditamentos, as ratificações e as retificações; e (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>IV - a inclusão de notificações, de cláusulas contratuais e de outras informações. (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h4>Parágrafo único. Na hipótese de serem constituídos gravames e ônus, tal ocorrência será informada no sistema eletrônico de escrituração de que trata o § 1º do art. 3º desta Lei. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 4º Para efeito desta Lei, entende-se como:</h3>
+ <h5>I - depositário: pessoa jurídica apta a exercer as atividades de guarda e conservação dos produtos especificados no § 1º do art. 1º desta Lei, de terceiros e, no caso de cooperativas, de terceiros e de associados, sem prejuízo do disposto nos arts. 82 e 83 da Lei n° 5.764, de 16 de dezembro de 1971;</h5>
+ <h5>II - depositante: pessoa física ou jurídica responsável legal pelos produtos especificados no § 1º do art. 1º desta Lei entregues a um depositário para guarda e conservação;</h5>
+ <h5>III - entidade registradora autorizada: entidade autorizada pelo Banco 	Central do Brasil ou pela Comissão de Valores Mobiliários, no âmbito de suas competências, a exercer a atividade de registro de ativos financeiros e de valores mobiliários de que trata a Lei n° 12.810, de 15 de maio de 2013 ; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>IV - depositário central: entidade autorizada pelo Banco Central do Brasil ou pela Comissão de Valores Mobiliários, no âmbito de suas competências, a exercer a atividade de depósito centralizado de ativos financeiros e de valores mobiliários de que trata a Lei n° 12.810, de 15 de maio de 2013 ; e (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>V - produtos agropecuários: produtos agropecuários, seus derivados, 	subprodutos e resíduos de valor econômico de que trata a Lei n° 9.973, de 29 	de maio de 2000 . (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h3>Art. 5º O CDA e o WA devem conter as seguintes informações:</h3>
+ <h5>I - denominação do título;</h5>
+ <h5>II - número de controle, que deve ser idêntico para cada conjunto de CDA e WA;</h5>
+ <h5>III - menção de que o depósito do produto sujeita-se à Lei n° 9.973, de 29 de maio de 2000, a esta Lei e, no caso de cooperativas, à Lei n° 5.764, de 16 de dezembro de 1971;</h5>
+ <h5>IV - identificação, qualificação e endereços do depositante e do depositário;</h5>
+ <h5>V - identificação comercial do depositário;</h5>
+ <h5>VI - cláusula à ordem;</h5>
+ <h5>VII - endereço completo do local do armazenamento;</h5>
+ <h5>VIII - descrição e especificação do produto;</h5>
+ <h5>IX - peso bruto e líquido;</h5>
+ <h5>X - forma de acondicionamento;</h5>
+ <h5>XI - número de volumes, quando cabível;</h5>
+ <h5>XII - valor dos serviços de armazenagem, conservação e expedição, a periodicidade de sua cobrança e a indicação do responsável pelo seu pagamento;</h5>
+ <h5>XIII - identificação do segurador do produto e do valor do seguro;</h5>
+ <h5>XIV - qualificação da garantia oferecida pelo depositário, quando for o caso;</h5>
+ <h5>XV - data do recebimento do produto e prazo do depósito;</h5>
+ <h5>XVI - data de emissão do título;</h5>
+ <h5>XVII - identificação, qualificação e assinatura dos representantes legais do depositário, que poderá ser feita de forma eletrônica, conforme legislação aplicável; (Redação dada pela Lei n° 14.421, de 2022)</h5>
+ <h5>XVIII - identificação precisa dos direitos que conferem.</h5>
+ <h4>Parágrafo único. O depositante e o depositário poderão acordar que a responsabilidade pelo pagamento do valor dos serviços a que se refere o inciso XII do caput deste artigo será do endossatário do CDA.</h4>
+ <p>Seção II</p>
+ <p>Da Emissão, do Depósito Centralizado e da Circulação dos Títulos</p>
+ <p>(Redação dada pela Lei n° 13.986, de 2020</p>
+ <p>Subseção I</p>
+ <p>Da Emissão</p>
+ <h3>Art. 6º A solicitação de emissão do CDA e do WA será feita pelo depositante ao depositário.</h3>
+ <h4>§ 1º Na solicitação, o depositante:</h4>
+ <h5>I - declarará, sob as penas da lei, que o produto é de sua propriedade e está livre e desembaraçado de quaisquer ônus;</h5>
+ <h5>II - outorgará, em caráter irrevogável, poderes ao depositário para transferir a propriedade do produto ao endossatário do CDA.</h5>
+ <h4>§ 2º Os documentos mencionados no § 1º deste artigo serão arquivados pelo depositário junto com as suas respectivas vias do CDA e do WA. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h4>§ 3º Emitidos o CDA e o WA, fica dispensada a entrega de recibo de depósito.</h4>
+ <h3>Art. 7º É facultada a formalização do contrato de depósito, nos termos do art. 3º da Lei n° 9.973, de 29 de maio de 2000, quando forem emitidos o CDA e o WA.</h3>
+ <h3>Art. 8º O CDA e o WA, quando emitidos sob a forma cartular, o serão em, no mínimo, 2 (duas) vias, com as seguintes destinações: (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <h5>I - primeiras vias, ao depositante;</h5>
+ <h5>II - segundas vias, ao depositário, nas quais constarão os recibos de entrega dos originais ao depositante.</h5>
+ <h4>Parágrafo único. Os títulos terão numeração seqüencial, idêntica em ambos os documentos, em série única, vedada a subsérie.</h4>
+ <h3>Art. 9º O depositário que emitir o CDA e o WA é responsável, civil e criminalmente, inclusive perante terceiros, pelas irregularidades e inexatidões neles lançadas.</h3>
+ <h4>§ 1º O emitente é responsável pela existência, liquidez, certeza e exigibilidade dos direitos indicados no CDA e no WA. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 2º Fica vedado ao emitente opor ao terceiro titular do CDA ou do WA as exceções pessoais oponíveis ao depositante. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 10. O depositante tem o direito de pedir ao depositário a divisão do produto em tantos lotes quantos lhe convenha e solicitar a emissão do CDA e do WA correspondentes a cada um dos lotes.</h3>
+ <h3>Art. 11. O depositário assume a obrigação de guardar, conservar, manter a qualidade e a quantidade do produto recebido em depósito e de entregá-lo ao credor na quantidade e qualidade consignadas no CDA e no WA.</h3>
+ <h3>Art. 12. Emitidos o CDA e o WA, o produto a que se referem não poderá sofrer embargo, penhora, seqüestro ou qualquer outro embaraço que prejudique a sua livre e plena disposição.</h3>
+ <h4>Parágrafo único. Na hipótese de o titular do CDA e do correspondente WA 	diferir do depositante, o produto objeto desses títulos não poderá ser confundido com bem de propriedade do depositante ou sujeitar-se aos efeitos de sua recuperação judicial ou falência, prevalecendo os direitos de propriedade sobre a coisa ao endossatário final que se apresentar ao depositário, nos termos do inciso II do § 1º do art. 6º e do § 5º do art. 21 	desta Lei. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 13. O prazo do depósito a ser consignado no CDA e no WA será de até 1 (um) ano, contado da data de sua emissão, podendo ser prorrogado pelo depositário a pedido do credor, os quais, na oportunidade, ajustarão, se for necessário, as condições de depósito do produto.</h3>
+ <h4>Parágrafo único. As prorrogações serão anotadas nas segundas vias em poder do depositário do produto agropecuário e eletronicamente nos registros do depositário central. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h3>Art. 14. Incorre na pena prevista no art. 178 do Decreto-Lei n° 2.848, de 7 de dezembro de 1940 – Código Penal aquele que emitir o CDA e o WA em desacordo com as disposições desta Lei.</h3>
+ <p>Subseção II</p>
+ <p>(Redação dada pela Lei n° 13.986, de 2020</p>
+ <p>Do Depósito Centralizado</p>
+ <h3>Art. 15. É obrigatório o depósito do CDA e do WA em depositário central autorizado pelo Banco Central do Brasil, no prazo de 30 (trinta) dias, 	contado da data de emissão dos títulos, do qual constará o número de controle do título de que trata o inciso II do caput do art. 5º desta 	Lei. (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <h4>§ 1º O depósito de CDA e de WA emitidos sob a forma cartular em depositário central será precedido da entrega dos títulos à custódia de instituição legalmente autorizada para esse fim, por meio de endosso-mandato. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h4>§ 2º A instituição custodiante é responsável por efetuar o endosso do CDA e do WA ao credor por ocasião da baixa do depósito no depositário central. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h4>§ 3º Vencido o prazo de 30 (trinta) dias sem o cumprimento da providência a que se refere o caput deste artigo, deverá o depositante solicitar ao depositário o cancelamento dos títulos e sua substituição por novos ou por recibo de depósito, em seu nome. (Redação dada pela Lei n° 11.524, de 2007)</h4>
+ <h4>§ 4º O Conselho Monetário Nacional poderá estabelecer outras condições para o depósito do CDA e do WA de que trata este artigo. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <p>Subseção III</p>
+ <p>Da Circulação</p>
+ <h3>Art. 16. O CDA e o WA serão negociados nos mercados de bolsa e de balcão como ativos financeiros.</h3>
+ <h3>Art. 17. Por ocasião da primeira negociação do WA separado do CDA, o depositário central consignará em seus registros o valor da negociação do 	WA, a taxa de juros e a data de vencimento ou, ainda, o valor a ser pago no vencimento ou o indicador que será utilizado para o cálculo do valor da dívida. (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <h4>§ 1º Os lançamentos dos negócios realizados com o CDA e com o WA unidos ou separados serão atualizados em meio eletrônico pelo depositário central. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h4>§ 2º Se, na data de vencimento do WA, o CDA e o WA não estiverem em nome do mesmo credor e o credor do CDA não houver consignado o valor da dívida, na forma do inciso II do § 1º do art. 21 desta Lei, o titular do WA poderá, a seu critério, promover a execução do penhor sobre: (Incluído pela Lei n° 11.524, de 2007)</h4>
+ <h5>I - o produto, mediante sua venda em leilão a ser realizado em bolsa de mercadorias; ou (Incluído pela Lei n° 11.524, de 2007)</h5>
+ <h5>II - o CDA correspondente, mediante a venda do título, em conjunto com o WA, em bolsa de mercadorias ou de futuros, ou em mercado de balcão organizado. (Incluído pela Lei n° 11.524, de 2007)</h5>
+ <h4>§ 3º Nas hipóteses referidas nos incisos I e II do § 2º deste artigo, o produto da venda da mercadoria ou dos títulos, conforme o caso, será utilizado para pagamento imediato do crédito representado pelo WA ao seu respectivo titular na data do vencimento, devendo o saldo remanescente ser entregue ao titular do CDA, após debitadas as despesas comprovadamente incorridas com a realização do leilão da mercadoria ou dos títulos. (Incluído pela Lei n° 11.524, de 2007)</h4>
+ <h4>§ 4º O adquirente dos títulos no leilão poderá colocá-los novamente em circulação, observando-se o disposto no caput deste artigo, no caso de negociação do WA separado do CDA. (Incluído pela Lei n° 11.524, de 2007)</h4>
+ <h3>Art. 18. As negociações do CDA e do WA são isentas do Imposto sobre Operações de Crédito, Câmbio e Seguro ou relativas a Títulos ou Valores Mobiliários.</h3>
+ <h3>Art. 19. Os negócios ocorridos durante período em que o CDA e o WA emitidos sob a forma cartular estiverem depositados em depositário central não serão transcritos no verso dos títulos. (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <p><del></p>
+ <h3>Art. 20 (Revogado pela Lei n° 13.986, de 2020</del></h3>
+ <p>Seção III</p>
+ <p>Da Retirada do Produto</p>
+ <h3>Art. 21. Para a retirada do produto, o credor do CDA providenciará a baixa do registro eletrônico do CDA e requererá à instituição custodiante o endosso na cártula e a sua entrega.</h3>
+ <h4>§ 1º A baixa do registro eletrônico ocorrerá somente se:</h4>
+ <h5>I - o CDA e o WA estiverem em nome do mesmo credor; ou</h5>
+ <h5>II - o credor do CDA consignar, em dinheiro, na instituição custodiante, o valor do principal e dos juros devidos até a data do vencimento do WA.</h5>
+ <h4>§ 2º A consignação do valor da dívida do WA, na forma do inciso II do § 1º deste artigo, equivale ao real e efetivo pagamento da dívida, devendo a quantia consignada ser entregue ao credor do WA pela instituição custodiante.</h4>
+ <h4>§ 3º Na hipótese do inciso I do § 1º deste artigo, a instituição custodiante entregará ao credor, junto com a cártula do CDA, a cártula do WA.</h4>
+ <h4>§ 4º Na hipótese do inciso II do § 1º deste artigo, a instituição custodiante entregará, junto com a cártula do CDA, documento comprobatório do depósito consignado.</h4>
+ <h4>§ 5º Com a entrega do CDA ao depositário, juntamente com o respectivo WA ou com o documento de que trata o § 4º, extingue-se o mandato a que se refere o inciso II do § 1º do art. 6º. (Redação dada pela Medida Provisória nº 897, de 2019)</h4>
+ <h4>§ 6º São condições para a retirada do produto: (Redação dada pela Medida Provisória nº 897, de 2019)</h4>
+ <h5>I - o pagamento dos serviços de armazenagem, conservação e expedição, na forma do inciso XII e do parágrafo único do art. 5º desta Lei;</h5>
+ <h5>II - o cumprimento das obrigações tributárias, principais e acessórias, relativas à operação.</h5>
+ <p>Seção IV</p>
+ <p>Do Seguro</p>
+ <h3>Art. 22. Para emissão de CDA e WA, o seguro obrigatório de que trata o § 6º do art. 6º da Lei n° 9.973, de 29 de maio de 2000 , deverá ter cobertura contra incêndio, raio, explosão de qualquer natureza, danos elétricos, 	vendaval, alagamento, inundação, furacão, ciclone, tornado, granizo, quedas de aeronaves, impacto de veículos terrestres e fumaça. (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <h4>Parágrafo único. No caso de armazéns públicos, o seguro obrigatório de que trata o caput deste artigo também conterá cláusula contra roubo e furto.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO CDCA, DA LCA E DO CRA</h3>
+ <p>Seção I</p>
+ <p>Disposições Iniciais</p>
+ <h3>Art. 23. Ficam instituídos os seguintes títulos de crédito:</h3>
+ <h5>I - Certificado de Direitos Creditórios do Agronegócio - CDCA;</h5>
+ <h5>II - Letra de Crédito do Agronegócio - LCA;</h5>
+ <h5>III - Certificado de Recebíveis do Agronegócio - CRA.</h5>
+ <h4>§ 1º Os títulos de crédito de que trata este artigo são vinculados a direitos creditórios originários de negócios realizados entre produtores rurais, ou suas cooperativas, e terceiros, inclusive financiamentos ou empréstimos, relacionados com a produção, a comercialização, o beneficiamento ou a industrialização de produtos ou insumos agropecuários ou de máquinas e implementos utilizados na atividade agropecuária. (Incluído pela Lei n° 13.331, de 2016)</h4>
+ <p><del>§ 2º (Revogado pela Lei n° 14.937, de 2024)</del></p>
+ <h4>§ 3º Os títulos de crédito de que trata este artigo poderão ser emitidos com cláusula de correção pela variação cambial desde que integralmente vinculados a direitos creditórios com cláusula de correção na mesma moeda. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 4º O Conselho Monetário Nacional poderá dispor acerca da emissão dos títulos de crédito de que trata este artigo com cláusula de correção pela variação cambial. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 5º (VETADO). (Redação dada pela Lei n° 14.421, de 2022)</h4>
+ <p>Seção II</p>
+ <p>Certificado de Direitos Creditórios do Agronegócio</p>
+ <h3>Art. 24. O Certificado de Direitos Creditórios do Agronegócio - CDCA é título de crédito nominativo, de livre negociação, representativo de promessa de pagamento em dinheiro e constitui título executivo extrajudicial.</h3>
+ <h4>§ 1º O CDCA é de emissão exclusiva de cooperativas agropecuárias e de outras pessoas jurídicas que exerçam a atividade de comercialização, beneficiamento ou industrialização de produtos, insumos, máquinas e implementos agrícolas, 	pecuários, florestais, aquícolas e extrativos. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h4>§ 2º (Revogado) . (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h4>§ 3º (Revogado) . (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h3>Art. 25. O CDCA terá os seguintes requisitos, lançados em seu contexto:</h3>
+ <h5>I - o nome do emitente e a assinatura de seus representantes legais;</h5>
+ <h5>II - o número de ordem, local e data da emissão;</h5>
+ <h5>III - a denominação "Certificado de Direitos Creditórios do Agronegócio";</h5>
+ <h5>IV - o valor nominal;</h5>
+ <h5>V - a identificação dos direitos creditórios a ele vinculados e seus respectivos valores, ressalvado o disposto no art. 30 desta Lei;</h5>
+ <h5>VI - data de vencimento ou, se emitido para pagamento parcelado, discriminação dos valores e das datas de vencimento das diversas parcelas;</h5>
+ <h5>VII - taxa de juros, fixa ou flutuante, admitida a capitalização;</h5>
+ <h5>VIII - o nome da instituição responsável pela custódia dos direitos creditórios a ele vinculados;</h5>
+ <h5>IX - o nome do titular;</h5>
+ <h5>X - cláusula "à ordem", ressalvado o disposto no inciso II do art. 35 desta Lei.</h5>
+ <h4>§ 1º Os direitos creditórios vinculados ao CDCA: (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h5>I - serão registrados ou depositados em entidade autorizada pelo Banco 	Central do Brasil ou pela Comissão de Valores Mobiliários a exercer a atividade de registro ou de depósito centralizado de ativos financeiros e de valores mobiliários; (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <p><del>II (Revogado pela Lei n° 14.421, de 2022)</del></p>
+ <h5>III - poderão ser formalizados em meio físico ou eletrônico e, quando correspondentes a títulos de crédito, sob a forma cartular ou escritural. (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h4>§ 2º Caberá à instituição custodiante a que se refere o § 1º deste artigo:</h4>
+ <h5>I - manter sob sua guarda documentação que evidencie a regular constituição dos direitos creditórios vinculados ao CDCA;</h5>
+ <h5>II - realizar a liquidação física e financeira dos direitos creditórios custodiados, devendo, para tanto, estar munida de poderes suficientes para efetuar sua cobrança e recebimento, por conta e ordem do emitente do CDCA;</h5>
+ <h5>III - prestar quaisquer outros serviços contratados pelo emitente do CDCA.</h5>
+ <h4>§ 3º Será admitida a emissão de CDCA em série, em que os CDCA serão vinculados a um mesmo conjunto de direitos creditórios, devendo ter igual valor nominal e conferir a seus titulares os mesmos direitos.</h4>
+ <p><del>§ 4º (Revogado pela Lei n° 14.421, de 2022)</del></p>
+ <p><del>§ 5º (Revogado pela Lei n° 14.421, de 2022)</del></p>
+ <p>Seção III</p>
+ <p>Letra de Crédito do Agronegócio</p>
+ <h3>Art. 26. A Letra de Crédito do Agronegócio – LCA é título de crédito nominativo, de livre negociação, representativo de promessa de pagamento em dinheiro e constitui título executivo extrajudicial.</h3>
+ <h4>Parágrafo único. A LCA é de emissão exclusiva de instituições financeiras públicas ou privadas.</h4>
+ <h3>Art. 27. A LCA terá os seguintes requisitos, lançados em seu contexto:</h3>
+ <h5>I - o nome da instituição emitente e a assinatura de seus representantes legais;</h5>
+ <h5>II - o número de ordem, o local e a data de emissão;</h5>
+ <h5>III - a denominação "Letra de Crédito do Agronegócio";</h5>
+ <h5>IV - o valor nominal;</h5>
+ <h5>V - a identificação dos direitos creditórios a ela vinculados e seus respectivos valores, ressalvado o disposto no art. 30 desta Lei;</h5>
+ <h5>VI - taxa de juros, fixa ou flutuante, admitida a capitalização;</h5>
+ <h5>VII - data de vencimento ou, se emitido para pagamento parcelado, 	discriminação dos valores e das datas de vencimento das diversas parcelas;</h5>
+ <h5>VIII - o nome do titular;</h5>
+ <h5>IX - cláusula "à ordem", ressalvado o disposto no inciso II do art. 35 desta 	Lei.</h5>
+ <h4>§ 1º Os direitos creditórios vinculados à LCA: (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h5>I - deverão ser registrados ou depositados em entidade autorizada pelo Banco 	Central do Brasil ou pela Comissão de Valores Mobiliários a exercer a atividade de registro ou de depósito centralizado de ativos financeiros e de valores mobiliários; e (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h5>II - poderão ser mantidos em custódia, hipótese em que se aplica o disposto no inciso II do § 1º e no § 2º do art. 25 desta Lei. (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h4>§ 2º Observadas as condições estabelecidas pelo Conselho Monetário Nacional, 	poderão ser utilizados para o cumprimento do direcionamento de recursos da 	LCA para o crédito rural, de que trata o art. 21 da Lei n° 4.829, de 5 de novembro de 1965 : (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h5>I - Cédula de Produto Rural (CPR) emitida por produtor rural, inclusive as adquiridas por instituições financeiras de terceiros; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>II - quotas de fundos garantidores de operações de crédito com produtores rurais, pelo valor da integralização, desde que as operações de crédito garantidas sejam crédito rural; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>III - CDCA e CRA, desde que os direitos creditórios vinculados sejam integralmente originados de negócios em que o produtor rural seja parte direta; e (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>IV - CDA e WA, desde que tenham sido emitidos em favor de produtor rural. (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h4>§ 3º As instituições financeiras poderão utilizar instrumento de repasse interfinanceiro para operações de crédito rural como substituto aos direitos creditórios de que trata o § 1º do art. 23 desta Lei, para fins de emissão de LCA, considerado o disposto no § 2º deste artigo e observado que: (Incluído pela Lei n° 14.937, de 2024)</h4>
+ <h5>I - os instrumentos de repasse interfinanceiro e de crédito rural deverão ter idênticas datas de vencimento e indicação de sua mútua vinculação, e os recursos de cada repasse deverão destinar-se a apenas uma operação de crédito rural; (Incluído pela Lei n° 14.937, de 2024)</h5>
+ <h5>II - o direito creditório representativo da operação de crédito rural deverá ser dado em garantia à instituição financeira repassadora dos recursos ou ser objeto de cláusula de sub-rogação em favor desta; e (Incluído pela Lei n° 14.937, de 2024)</h5>
+ <h5>III - o título de crédito representativo de repasse interfinanceiro deverá ser realizado em favor de cooperativa singular de crédito integrante do próprio sistema, quando se tratar de bancos cooperativos, confederações de cooperativas de crédito e cooperativas centrais de crédito integrantes de sistemas cooperativos de crédito constituídos nos termos da Lei Complementar nº 130, de 17 de abril de 2009. (Incluído pela Lei n° 14.937, de 2024)</h5>
+ <h4>§ 4º A concessão dos benefícios tributários associados às operações de emissão de LCA observará o disposto na legislação orçamentária. (Incluído pela Lei n° 14.937, de 2024)</h4>
+ <p>Seção IV</p>
+ <p>Disposições Comuns ao CDCA e à LCA</p>
+ <h3>Art. 28. O valor do CDCA e da LCA não poderá exceder o valor total dos direitos creditórios do agronegócio a eles vinculados.</h3>
+ <h3>Art. 29. Os emitentes de CDCA e de LCA respondem pela origem e autenticidade dos direitos creditórios a eles vinculados.</h3>
+ <h3>Art. 30. A identificação dos direitos creditórios vinculados ao CDCA e à LCA poderá ser feita em documento à parte, do qual conste a assinatura dos representantes legais do emitente, fazendo-se menção a essa circunstância no certificado ou nos registros da instituição responsável pela manutenção dos sistemas de escrituração.</h3>
+ <h4>Parágrafo único. A identificação dos direitos creditórios vinculados ao CDCA e à LCA poderá ser feita pelos correspondentes números de registro no sistema a que se refere o inciso I do § 1º do art. 25 desta Lei.</h4>
+ <h3>Art. 31. O CDCA e a LCA poderão conter outras cláusulas, que constarão de documento à parte, com a assinatura dos representantes legais do emitente, fazendo-se menção a essa circunstância em seu contexto.</h3>
+ <h3>Art. 32. O CDCA e a LCA conferem direito de penhor sobre os direitos creditórios a eles vinculados, independentemente de convenção, não se aplicando o disposto nos arts. 1.452, caput, e 1.453 da Lei n° 10.406, de 10 de janeiro de 2002 – Código Civil.</h3>
+ <h4>§ 1º A substituição dos direitos creditórios vinculados ao CDCA e à LCA, mediante acordo entre o emitente e o titular, importará na extinção do penhor sobre os direitos substituídos, constituindo-se automaticamente novo penhor sobre os direitos creditórios dados em substituição.</h4>
+ <h4>§ 2º Na hipótese de emissão de CDCA em série, o direito de penhor a que se refere o caput deste artigo incidirá sobre fração ideal do conjunto de direitos creditórios vinculados, proporcionalmente ao crédito do titular dos CDCA da mesma série.</h4>
+ <h3>Art. 33. Além do penhor constituído na forma do art. 32 desta Lei, o CDCA e a LCA poderão contar com quaisquer garantias adicionais previstas na legislação e livremente pactuadas entre as partes, podendo ser constituídas no próprio título ou em documento à parte. (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <h4>Parágrafo único. Se a garantia for constituída no próprio título, a descrição dos bens poderá ser feita em documento à parte, assinado pelos representantes legais do emitente, com menção a essa circunstância no contexto dos títulos. (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h3>Art. 34. Os direitos creditórios vinculados ao CDCA e à LCA não serão penhorados, seqüestrados ou arrestados em decorrência de outras dívidas do emitente desses títulos, a quem caberá informar ao juízo, que tenha determinado tal medida, a respeito da vinculação de tais direitos aos respectivos títulos, sob pena de responder pelos prejuízos resultantes de sua omissão.</h3>
+ <h3>Art. 35. O CDCA e a LCA poderão ser emitidos sob a forma escritural, 	hipótese em que tais títulos deverão ser registrados ou depositados em entidade autorizada a exercer a atividade de registro ou de depósito centralizado de ativos financeiros e de valores mobiliários. (Redação dada pela Lei n° 13.986, de 2020</h3>
+ <h5>I - (revogado); (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei n° 13.986, de 2020</h5>
+ <h4>Parágrafo único. (Revogado). (Redação dada pela Lei n° 13.986, de 2020</h4>
+ <h3>Art. 35-A. A emissão escritural do CDCA poderá, alternativamente, ocorrer por meio do lançamento em sistema eletrônico de escrituração gerido por entidade autorizada pelo Banco Central do Brasil a exercer a atividade de escrituração. (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h3>Art. 35-B. Compete ao Banco Central do Brasil: (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h5>I - estabelecer as condições para o exercício da atividade de escrituração de que trata o art. 35-A desta Lei; e (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>II - autorizar e supervisionar o exercício da atividade prevista no inciso I 	do caput deste artigo. (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h4>§ 1º A autorização de que trata o inciso II do caput deste artigo poderá, a critério do Banco Central do Brasil, ser concedida por segmento, 	por espécie ou por grupos de entidades que atendam a critérios específicos, 	sendo dispensável a autorização individualizada. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 2º A entidade responsável pela escrituração de que trata o art. 35-A desta 	Lei expedirá, mediante solicitação, certidão de inteiro teor do título, 	inclusive para fins de protesto e de execução. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h4>§ 3º A certidão de que trata o § 2º deste artigo poderá ser emitida na forma eletrônica, observados os requisitos de segurança que garantam a autenticidade e a integridade do documento. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 35-C. A liquidação do pagamento em favor do legítimo credor, por qualquer meio de pagamento existente no âmbito do Sistema de Pagamentos 	Brasileiro, constituirá prova de pagamento, total ou parcial, do CDCA 	emitido sob a forma escritural. (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h4>Parágrafo único. A prova de pagamento de que trata o caput deste artigo será informada no sistema eletrônico de escrituração de que trata o art. 35-A desta Lei, com referência expressa ao CDCA amortizado ou liquidado. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <h3>Art. 35-D. O sistema eletrônico de escrituração de que trata o art. 35-A 	desta Lei fará constar: (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h5>I - os requisitos essenciais do título; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>II - o endosso e a cadeia de endossos, se houver; (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>III - os aditamentos, as ratificações e as retificações; e (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h5>IV - a inclusão de notificações, de cláusulas contratuais e de outras informações. (Incluído pela Lei n° 13.986, de 2020) .</h5>
+ <h4>Parágrafo único. Na hipótese de serem constituídos gravames e ônus, tal ocorrência será informada no sistema de que trata o art. 35-A desta Lei. (Incluído pela Lei n° 13.986, de 2020) .</h4>
+ <p>Seção V</p>
+ <p>Securitização de Direitos Creditórios do Agronegócio</p>
+ <p>Subseção I</p>
+ <p>Do Certificado de Recebíveis do Agronegócio</p>
+ <h3>Art. 36. O Certificado de Recebíveis do Agronegócio – CRA é título de crédito nominativo, de livre negociação, representativo de promessa de pagamento em dinheiro e constitui título executivo extrajudicial.</h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 14.430, de 2022)</del></p>
+ <p><del></p>
+ <h3>Art. 37 (Revogado pela Lei n° 14.430, de 2022)</del></h3>
+ <p>Subseção II</p>
+ <p>Das Companhias Securitizadoras de Direitos Creditórios do Agronegócio e do Regime Fiduciário</p>
+ <p><del></p>
+ <h3>Art. 38 (Revogado pela Lei n° 14.430, de 2022)</del></h3>
+ <p><del></p>
+ <h3>Art. 39 (Revogado pela Lei n° 14.430, de 2022)</del></h3>
+ <p>Subseção III</p>
+ <p>Da Securitização de Direitos Creditórios do Agronegócio</p>
+ <p><del></p>
+ <h3>Art. 40 (Revogado pela Lei n° 14.430, de 2022)</del></h3>
+ <p>Seção VI</p>
+ <p>Disposições Comuns ao CDCA, à LCA e ao CRA</p>
+ <h3>Art. 41. É facultada a cessão fiduciária em garantia de direitos creditórios do agronegócio, em favor dos adquirentes do CDCA, da LCA e do CRA, nos termos do disposto nos arts. 18 a 20 da Lei n° 9.514, de 20 de novembro de 1997.</h3>
+ <h3>Art. 42. O CDCA, a LCA e o CRA poderão conter cláusula expressa de variação do seu valor nominal, desde que seja a mesma dos direitos creditórios a eles vinculados.</h3>
+ <h3>Art. 43. O CDCA, a LCA e o CRA poderão ser distribuídos publicamente e negociados em Bolsas de Valores e de Mercadorias e Futuros e em mercados de balcão organizados autorizados a funcionar pela Comissão de Valores Mobiliários.</h3>
+ <h4>Parágrafo único. Na hipótese do caput deste artigo, será observado o disposto na Lei n° 6.385, de 7 de dezembro de 1976.</h4>
+ <h3>Art. 44. Aplicam-se ao CDCA, à LCA e ao CRA, no que forem cabíveis, as normas de direito cambial, com as seguintes modificações:</h3>
+ <h5>I - os endossos devem ser completos;</h5>
+ <h5>II - é dispensado o protesto cambial para assegurar o direito de regresso contra endossantes e avalistas.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DISPOSIÇÕES TRANSITÓRIAS E FINAIS</h3>
+ <h3>Art. 45. Fica autorizada a emissão do CDA e do WA até 31 de dezembro de 2009 por armazéns que não detenham a certificação prevista no art. 2º da Lei n° 9.973, de 29 de maio de 2000, mas que atendam a requisitos mínimos a serem definidos pelo Ministério da Agricultura, Pecuária e Abastecimento. (Redação dada pela Lei n° 11.524, de 2007)</h3>
+ <h3>Art. 46. Para os produtos especificados no § 1º do art. 1º desta Lei, fica vedada a emissão do Conhecimento de Depósito e do Warrant previstos no Decreto nº 1.102, de 21 de novembro de 1903, observado o disposto no art. 55, II, desta Lei. (Produção de efeito)</h3>
+ <h3>Art. 47. O caput do art. 82 da Lei n° 5.764, de 16 de dezembro de 1971, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 82. A cooperativa que se dedicar a vendas em comum poderá registrar-se como</h3>
+ <p>armazém geral, podendo também desenvolver as atividades previstas na Lei n° 9.973, de 29 de maio de 2000, e nessa condição expedir Conhecimento de Depósito, Warrant, Certificado de Depósito Agropecuário - CDA e Warrant Agropecuário - WA para os produtos de seus associados conservados em seus armazéns, próprios ou arrendados, sem prejuízo da emissão de outros títulos decorrentes de suas atividades normais, aplicando-se, no que couber, a legislação específica.</p>
+ <h3>...................................................................." (NR)</h3>
+ <h3>Art. 48. O art. 6º da Lei n° 9.973, de 29 de maio de 2000, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 6º ............................................................</h3>
+ <p>........................................................................</p>
+ <h4>§ 3º O depositário e o depositante poderão definir, de comum acordo, a constituição de garantias, as quais deverão estar registradas no contrato de depósito ou no Certificado de Depósito Agropecuário - CDA.</h4>
+ <p>..........................................................................</p>
+ <h4>§ 7º O disposto no § 3º deste artigo não se aplica à relação entre cooperativa e seus associados de que trata o art. 83 da Lei n° 5.764, de 16 de dezembro de 1971. " (NR)</h4>
+ <h3>Art. 49. Cabe ao Conselho Monetário Nacional regulamentar as disposições desta Lei referentes ao CDA, ao WA, ao CDCA, à LCA e ao CRA, podendo inclusive estabelecer prazos mínimos e outras condições para emissão e resgate e diferenciar tais condições de acordo com o tipo de indexador adotado contratualmente. (Redação dada pela Lei n° 13.097, de 2015)</h3>
+ <h3>Art. 50. O art. 2º da Lei n° 8.427, de 27 de maio de 1992, passa a vigorar com as seguintes alterações:</h3>
+ <p>"</p>
+ <h3>Art. 2º .................................................................................</h3>
+ <h4>§ 1º ......................................................................................</h4>
+ <p>.............................................................................................</p>
+ <h5>II – no máximo, a diferença entre o preço de exercício em contratos de opções de venda de produtos agropecuários lançados pelo Poder Executivo ou pelo setor privado e o valor de mercado desses produtos.</h5>
+ <p>..............................................................................................</p>
+ <h4>§ 3º A subvenção a que se refere este artigo será concedida mediante a observância das condições, critérios, limites e normas estabelecidas no âmbito do Ministério da Agricultura, Pecuária e Abastecimento, de acordo com as disponibilidades orçamentárias e financeiras existentes para a finalidade." (NR)</h4>
+ <h3>Art. 51. O art. 19 da Lei n° 8.929, de 22 de agosto de 1994, passa a vigorar acrescido dos seguintes §§ 3º e 4º :</h3>
+ <p>"</p>
+ <h3>Art. 19. .........................................................................</h3>
+ <p>......................................................................................</p>
+ <h4>§ 3º A CPR registrada em sistema de registro e de liquidação financeira de ativos autorizado pelo Banco Central do Brasil terá as seguintes características:</h4>
+ <h5>I - será cartular antes do seu registro e após a sua baixa e escritural ou eletrônica enquanto permanecer registrada em sistema de registro e de liquidação financeira;</h5>
+ <h5>II - os negócios ocorridos durante o período em que a CPR estiver registrada em sistema de registro e de liquidação financeira não serão transcritos no verso dos títulos;</h5>
+ <h5>III - a entidade registradora é responsável pela manutenção do registro da cadeia de negócios ocorridos no período em que os títulos estiverem registrados.</h5>
+ <h4>§ 4º Na hipótese de contar com garantia de instituição financeira ou seguradora, a CPR poderá ser emitida em favor do garantidor, devendo o emitente entregá-la a este, por meio de endosso-mandato com poderes para negociá-la, custodiá-la, registrá-la em sistema de registro e liquidação financeira de ativos autorizado pelo Banco Central do Brasil e endossá-la ao credor informado pelo sistema de registro." (NR)</h4>
+ <p><del></p>
+ <h3>Art. 52 (Revogado pela Lei n° 14.317, de 2022) Produção de efeitos</del></h3>
+ <h3>Art. 52-A. As infrações às normas legais e regulamentares que regem a atividade de escrituração eletrônica sujeitam a entidade responsável pelo sistema eletrônico de escrituração, os seus administradores e os membros de seus órgãos estatutários ou contratuais ao disposto na Lei n° 13.506, de 13 	de novembro de 2017 . (Incluído pela Lei n° 13.986, de 2020) .</h3>
+ <h3>Art. 53. Os arts. 22, parágrafo único, e 38 da Lei n° 9.514, de 20 de novembro de 1997, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 22. ......................................................................................</h3>
+ <h4>Parágrafo único. A alienação fiduciária poderá ser contratada por pessoa física ou jurídica, não sendo privativa das entidades que operam no SFI, podendo ter como objeto bens enfitêuticos, hipótese em que será exigível o pagamento do laudêmio, se houver a consolidação do domínio útil no fiduciário." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 38. Os atos e contratos referidos nesta Lei ou resultantes da sua aplicação, mesmo aqueles que visem à constituição, transferência, modificação ou renúncia de direitos reais sobre imóveis, poderão ser celebrados por escritura pública ou por instrumento particular com efeitos de escritura pública." (NR)</h3>
+ <h3>Art. 54. Revoga-se o art. 4º da Lei n° 9.973, de 29 de maio de 2000.</h3>
+ <h3>Art. 55. Esta Lei entra em vigor na data de sua publicação, produzindo efeitos:</h3>
+ <h5>I - quanto ao art. 52 e aos Anexos I e II, a partir de 3 de janeiro de 2005;</h5>
+ <h5>II – quanto ao art. 46, a partir de 365 (trezentos e sessenta e cinco) dias após a data de publicação desta Lei.</h5>
+ <p>Brasília, 30 de dezembro de 2004; 183º da Independência e 116º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no D.O.U. de 31.12.2004.</p>
+ <p>ANEXO I (Produção de efeito)</p>
+ <p>Valor da Taxa de Fiscalização devida pelos Fundos de Investimento</p>
+ <p>Classe de Patrimônio Líquido Médio</p>
+ <p>Valor da Taxa de Fiscalização</p>
+ <p>De 2.500.000,01 a 5.000.000,00</p>
+ <p>De 5.000.000,01 a 10.000.000,00</p>
+ <p>De 10.000.000,01 a 20.000.000,00</p>
+ <p>De 20.000.000,01 a 40.000.000,00</p>
+ <p>De 40.000.000,01 a 80.000.000,00</p>
+ <p>De 80.000.000,01 a 160.000.000,00</p>
+ <p>De 160.000.000,01 a 320.000.000,00</p>
+ <p>De 320.000.000,01 a 640.000.000,00</p>
+ <p>Acima de 640.000.000,00</p>
+ <p>ANEXO II (Produção de efeito)</p>
+ <p>Valor da Taxa de Fiscalização devida pelos Fundos de Investimento</p>
+ <p>em Quotas de Fundos de Investimento</p>
+ <p>Classe de Patrimônio Líquido Médio Valor da Taxa de Fiscalização</p>
+ <p>De 2.500.000,01 a 5.000.000,00</p>
+ <p>De 5.000.000,01 a 10.000.000,00</p>
+ <p>De 10.000.000,01 a 20.000.000,00</p>
+ <p>De 20.000.000,01 a 40.000.000,00</p>
+ <p>De 40.000.000,01 a 80.000.000,00</p>
+ <p>De 80.000.000,01 a 160.000.000,00</p>
+ <p>De 160.000.000,01 a 320.000.000,00</p>
+ <p>De 320.000.000,01 a 640.000.000,00</p>
+ <p>Acima de 640.000.000,00</p>
+ <p>Conversão da MPv nº 221, de 2004Produção de efeito | Dispõe sobre o Certificado de Depósito Agropecuário – CDA, o Warrant Agropecuário – WA, o Certificado de Direitos Creditórios do Agronegócio – CDCA, a Letra de Crédito do Agronegócio – LCA e o Certificado de Recebíveis do Agronegócio – CRA, dá nova redação a dispositivos das Leis nºs 9.973, de 29 de maio de 2000, que dispõe sobre o sistema de armazenagem dos produtos agropecuários, 8.427, de 27 de maio de 1992, que dispõe sobre a concessão de subvenção econômica nas operações de crédito rural, 8.929, de 22 de agosto de 1994, que institui a Cédula de Produto Rural – CPR, 9.514, de 20 de novembro de 1997, que dispõe sobre o Sistema de Financiamento Imobiliário e institui a alienação fiduciária de coisa imóvel, e altera a Taxa de Fiscalização de que trata a Lei n° 7.940, de 20 de dezembro de 1989, e dá outras providências.</p>
+ <p>Classe de Patrimônio Líquido Médio | Valor da Taxa de Fiscalização</p>
+ <p>Até 2.500.000,00 | 600,00</p>
+ <p>De 2.500.000,01 a 5.000.000,00 | 900,00</p>
+ <p>De 5.000.000,01 a 10.000.000,00 | 1.350,00</p>
+ <p>De 10.000.000,01 a 20.000.000,00 | 1.800,00</p>
+ <p>De 20.000.000,01 a 40.000.000,00 | 2.400,00</p>
+ <p>De 40.000.000,01 a 80.000.000,00 | 3.840,00</p>
+ <p>De 80.000.000,01 a 160.000.000,00 | 5.760,00</p>
+ <p>De 160.000.000,01 a 320.000.000,00 | 7.680,00</p>
+ <p>De 320.000.000,01 a 640.000.000,00 | 9.600,00</p>
+ <p>Acima de 640.000.000,00 | 10.800,00</p>
+ <p>Classe de Patrimônio Líquido Médio | Valor da Taxa de Fiscalização</p>
+ <p>Até 2.500.000,00 | 300,00</p>
+ <p>De 2.500.000,01 a 5.000.000,00 | 450,00</p>
+ <p>De 5.000.000,01 a 10.000.000,00 | 675,00</p>
+ <p>De 10.000.000,01 a 20.000.000,00 | 900,00</p>
+ <p>De 20.000.000,01 a 40.000.000,00 | 1.200,00</p>
+ <p>De 40.000.000,01 a 80.000.000,00 | 1.920,00</p>
+ <p>De 80.000.000,01 a 160.000.000,00 | 2.880,00</p>
+ <p>De 160.000.000,01 a 320.000.000,00 | 3.840,00</p>
+ <p>De 320.000.000,01 a 640.000.000,00 | 4.800,00</p>
+ <p>Acima de 640.000.000,00 | 5.400,00</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/L11076compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.300, DE 23 DE JUNHO DE 2016 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2016" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.300, DE 23 DE JUNHO DE 2016</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 26/11/2025 23:02:27 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13300.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 7.418 caracteres | espelho: 7.403 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.300, DE 23 DE JUNHO DE 2016.</p>
+ <p>Disciplina o processo e o julgamento dos mandados de injunção individual e coletivo e dá outras providências.</p>
+ <p>O VICE - PRESIDENTE DA REPÚBLICA, no exercício do cargo de PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei disciplina o processo e o julgamento dos mandados de injunção individual e coletivo, nos termos do inciso LXXI do art. 5º da Constituição Federa l.</h3>
+ <h3>Art. 2º Conceder-se-á mandado de injunção sempre que a falta total ou parcial de norma regulamentadora torne inviável o exercício dos direitos e liberdades constitucionais e das prerrogativas inerentes à nacionalidade, à soberania e à cidadania.</h3>
+ <h4>Parágrafo único. Considera-se parcial a regulamentação quando forem insuficientes as normas editadas pelo órgão legislador competente.</h4>
+ <h3>Art. 3º São legitimados para o mandado de injunção, como impetrantes, as pessoas naturais ou jurídicas que se afirmam titulares dos direitos, das liberdades ou das prerrogativas referidos no art. 2º e, como impetrado, o Poder, o órgão ou a autoridade com atribuição para editar a norma regulamentadora.</h3>
+ <h3>Art. 4º A petição inicial deverá preencher os requisitos estabelecidos pela lei processual e indicará, além do órgão impetrado, a pessoa jurídica que ele integra ou aquela a que está vinculado.</h3>
+ <h4>§ 1º Quando não for transmitida por meio eletrônico, a petição inicial e os documentos que a instruem serão acompanhados de tantas vias quantos forem os impetrados.</h4>
+ <h4>§ 2º Quando o documento necessário à prova do alegado encontrar-se em repartição ou estabelecimento público, em poder de autoridade ou de terceiro, havendo recusa em fornecê-lo por certidão, no original, ou em cópia autêntica, será ordenada, a pedido do impetrante, a exibição do documento no prazo de 10 (dez) dias, devendo, nesse caso, ser juntada cópia à segunda via da petição.</h4>
+ <h4>§ 3º Se a recusa em fornecer o documento for do impetrado, a ordem será feita no próprio instrumento da notificação.</h4>
+ <h3>Art. 5º Recebida a petição inicial, será ordenada:</h3>
+ <h5>I - a notificação do impetrado sobre o conteúdo da petição inicial, devendo-lhe ser enviada a segunda via apresentada com as cópias dos documentos, a fim de que, no prazo de 10 (dez) dias, preste informações;</h5>
+ <h5>II - a ciência do ajuizamento da ação ao órgão de representação judicial da pessoa jurídica interessada, devendo-lhe ser enviada cópia da petição inicial, para que, querendo, ingresse no feito.</h5>
+ <h3>Art. 6º A petição inicial será desde logo indeferida quando a impetração for manifestamente incabível ou manifestamente improcedente.</h3>
+ <h4>Parágrafo único. Da decisão de relator que indeferir a petição inicial, caberá agravo, em 5 (cinco) dias, para o órgão colegiado competente para o julgamento da impetração.</h4>
+ <h3>Art. 7º Findo o prazo para apresentação das informações, será ouvido o Ministério Público, que opinará em 10 (dez) dias, após o que, com ou sem parecer, os autos serão conclusos para decisão.</h3>
+ <h3>Art. 8º Reconhecido o estado de mora legislativa, será deferida a injunção para:</h3>
+ <h5>I - determinar prazo razoável para que o impetrado promova a edição da norma regulamentadora;</h5>
+ <h5>II - estabelecer as condições em que se dará o exercício dos direitos, das liberdades ou das prerrogativas reclamados ou, se for o caso, as condições em que poderá o interessado promover ação própria visando a exercê-los, caso não seja suprida a mora legislativa no prazo determinado.</h5>
+ <h4>Parágrafo único. Será dispensada a determinação a que se refere o inciso I do caput quando comprovado que o impetrado deixou de atender, em mandado de injunção anterior, ao prazo estabelecido para a edição da norma.</h4>
+ <h3>Art. 9º A decisão terá eficácia subjetiva limitada às partes e produzirá efeitos até o advento da norma regulamentadora.</h3>
+ <h4>§ 1º Poderá ser conferida eficácia ultra partes ou erga omnes à decisão, quando isso for inerente ou indispensável ao exercício do direito, da liberdade ou da prerrogativa objeto da impetração.</h4>
+ <h4>§ 2º Transitada em julgado a decisão, seus efeitos poderão ser estendidos aos casos análogos por decisão monocrática do relator.</h4>
+ <h4>§ 3º O indeferimento do pedido por insuficiência de prova não impede a renovação da impetração fundada em outros elementos probatórios.</h4>
+ <h3>Art. 10. Sem prejuízo dos efeitos já produzidos, a decisão poderá ser revista, a pedido de qualquer interessado, quando sobrevierem relevantes modificações das circunstâncias de fato ou de direito.</h3>
+ <h4>Parágrafo único. A ação de revisão observará, no que couber, o procedimento estabelecido nesta Lei.</h4>
+ <h3>Art. 11. A norma regulamentadora superveniente produzirá efeitos ex nunc em relação aos beneficiados por decisão transitada em julgado, salvo se a aplicação da norma editada lhes for mais favorável.</h3>
+ <h4>Parágrafo único. Estará prejudicada a impetração se a norma regulamentadora for editada antes da decisão, caso em que o processo será extinto sem resolução de mérito.</h4>
+ <h3>Art. 12. O mandado de injunção coletivo pode ser promovido:</h3>
+ <h5>I - pelo Ministério Público, quando a tutela requerida for especialmente relevante para a defesa da ordem jurídica, do regime democrático ou dos interesses sociais ou individuais indisponíveis;</h5>
+ <h5>II - por partido político com representação no Congresso Nacional, para assegurar o exercício de direitos, liberdades e prerrogativas de seus integrantes ou relacionados com a finalidade partidária;</h5>
+ <h5>III - por organização sindical, entidade de classe ou associação legalmente constituída e em funcionamento há pelo menos 1 (um) ano, para assegurar o exercício de direitos, liberdades e prerrogativas em favor da totalidade ou de parte de seus membros ou associados, na forma de seus estatutos e desde que pertinentes a suas finalidades, dispensada, para tanto, autorização especial;</h5>
+ <h5>IV - pela Defensoria Pública, quando a tutela requerida for especialmente relevante para a promoção dos direitos humanos e a defesa dos direitos individuais e coletivos dos necessitados, na forma do inciso LXXIV do art. 5º da Constituição Federal .</h5>
+ <h4>Parágrafo único. Os direitos, as liberdades e as prerrogativas protegidos por mandado de injunção coletivo são os pertencentes, indistintamente, a uma coletividade indeterminada de pessoas ou determinada por grupo, classe ou categoria.</h4>
+ <h3>Art. 13. No mandado de injunção coletivo, a sentença fará coisa julgada limitadamente às pessoas integrantes da coletividade, do grupo, da classe ou da categoria substituídos pelo impetrante, sem prejuízo do disposto nos §§ 1º e 2º do art. 9º.</h3>
+ <h4>Parágrafo único. O mandado de injunção coletivo não induz litispendência em relação aos individuais, mas os efeitos da coisa julgada não beneficiarão o impetrante que não requerer a desistência da demanda individual no prazo de 30 (trinta) dias a contar da ciência comprovada da impetração coletiva.</h4>
+ <h3>Art. 14. Aplicam-se subsidiariamente ao mandado de injunção as normas do mandado de segurança, disciplinado pela Lei n° 12.016, de 7 de agosto de 2009 , e do Código de Processo Civil, instituído pela Lei n° 5.869, de 11 de janeiro de 1973 , e pela Lei n° 13.105, de 16 de março de 2015 , observado o disposto em seus arts. 1.045 e 1.046 .</h3>
+ <h3>Art. 15. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 23 de junho de 2016; 195º da Independência e 128º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Este texto não substitui o publicado no DOU de 24.6.2016</p>
+ <p>Disciplina o processo e o julgamento dos mandados de injunção individual e coletivo e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13300.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

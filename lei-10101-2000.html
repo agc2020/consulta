@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.101, DE 19 DE DEZEMBRO DE 2000 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2000" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.101, DE 19 DE DEZEMBRO DE 2000</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 26/11/2025 22:54:16 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L10101compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.441 caracteres | espelho: 12.579 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.101, DE 19 DE DEZEMBRO DE 2000. Conversão da MPv nº 1.982-77, de 2000</p>
+ <p>Dispõe sobre a participação dos trabalhadores nos lucros ou resultados da empresa e dá outras providências.</p>
+ <p>Faço saber que o PRESIDENTE DA REPÚBLICA adotou a Medida Provisória nº 1.982-77, de 2000, que o Congresso Nacional aprovou, e eu, Antonio Carlos Magalhães, Presidente, para os efeitos do disposto no parágrafo único do art. 62 da Constituição Federal, promulgo a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei regula a participação dos trabalhadores nos lucros ou resultados da empresa como instrumento de integração entre o capital e o trabalho e como incentivo à produtividade, nos termos do art. 7º , inciso XI, da Constituição.</h3>
+ <p>Participação nos lucros e prêmios</p>
+ <h3>Art. 2º A participação nos lucros ou resultados será objeto de negociação entre a empresa e seus empregados, mediante um dos procedimentos a seguir descritos, escolhidos pelas partes de comum acordo:</h3>
+ <h5>I - comissão paritária escolhida pelas partes, integrada, também, por um representante indicado pelo sindicato da respectiva categoria; (Redação dada pela Lei n° 12.832, de 2013) (Produção de efeito)</h5>
+ <h5>II - convenção ou acordo coletivo.</h5>
+ <h4>§ 1º Dos instrumentos decorrentes da negociação deverão constar regras claras e objetivas quanto à fixação dos direitos substantivos da participação e das regras adjetivas, inclusive mecanismos de aferição das informações pertinentes ao cumprimento do acordado, periodicidade da distribuição, período de vigência e prazos para revisão do acordo, podendo ser considerados, entre outros, os seguintes critérios e condições:</h4>
+ <h5>I - índices de produtividade, qualidade ou lucratividade da empresa;</h5>
+ <h5>II - programas de metas, resultados e prazos, pactuados previamente.</h5>
+ <h4>§ 2º O instrumento de acordo celebrado será arquivado na entidade sindical dos trabalhadores.</h4>
+ <h4>§ 3º Não se equipara a empresa, para os fins desta Lei:</h4>
+ <h5>I - a pessoa física;</h5>
+ <h5>II - a entidade sem fins lucrativos que, cumulativamente:</h5>
+ <h6>a) não distribua resultados, a qualquer título, ainda que indiretamente, a dirigentes, administradores ou empresas vinculadas;</h6>
+ <h6>b) aplique integralmente os seus recursos em sua atividade institucional e no País;</h6>
+ <h6>c) destine o seu patrimônio a entidade congênere ou ao poder público, em caso de encerramento de suas atividades;</h6>
+ <h6>d) mantenha escrituração contábil capaz de comprovar a observância dos demais requisitos deste inciso, e das normas fiscais, comerciais e de direito econômico que lhe sejam aplicáveis.</h6>
+ <h4>§ 3º-A. A não equiparação de que trata o inciso II do § 3º deste artigo não é aplicável às hipóteses em que tenham sido utilizados índices de produtividade ou qualidade ou programas de metas, resultados e prazos. (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h4>§ 4º Quando forem considerados os critérios e condições definidos nos incisos I e II do § 1º deste artigo: (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h5>I - a empresa deverá prestar aos representantes dos trabalhadores na comissão paritária informações que colaborem para a negociação; (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h5>
+ <h5>II - não se aplicam as metas referentes à saúde e segurança no trabalho. (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h5>
+ <h4>§ 5º As partes podem: (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h5>I - adotar os procedimentos de negociação estabelecidos nos incisos I e II do caput deste artigo, simultaneamente; e (Incluído pela Lei n° 14.020, de 2020)</h5>
+ <h5>II - estabelecer múltiplos programas de participação nos lucros ou nos resultados, observada a periodicidade estabelecida pelo § 2º do art. 3º desta Lei. (Incluído pela Lei n° 14.020, de 2020)</h5>
+ <h4>§ 6º Na fixação dos direitos substantivos e das regras adjetivas, inclusive no que se refere à fixação dos valores e à utilização exclusiva de metas individuais, a autonomia da vontade das partes contratantes será respeitada e prevalecerá em face do interesse de terceiros. (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h4>§ 7º Consideram-se previamente estabelecidas as regras fixadas em instrumento assinado: (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h5>I - anteriormente ao pagamento da antecipação, quando prevista; e (Incluído pela Lei n° 14.020, de 2020)</h5>
+ <h5>II - com antecedência de, no mínimo, 90 (noventa) dias da data do pagamento da parcela única ou da parcela final, caso haja pagamento de antecipação. (Incluído pela Lei n° 14.020, de 2020)</h5>
+ <h4>§ 8º A inobservância à periodicidade estabelecida no § 2º do art. 3º desta Lei invalida exclusivamente os pagamentos feitos em desacordo com a norma, assim entendidos: (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h5>I - os pagamentos excedentes ao segundo, feitos a um mesmo empregado, no mesmo ano civil; e (Incluído pela Lei n° 14.020, de 2020)</h5>
+ <h5>II - os pagamentos efetuados a um mesmo empregado, em periodicidade inferior a 1 (um) trimestre civil do pagamento anterior. (Incluído pela Lei n° 14.020, de 2020)</h5>
+ <h4>§ 9º Na hipótese do inciso II do § 8º deste artigo, mantém-se a validade dos demais pagamentos. (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h4>§ 10. Uma vez composta, a comissão paritária de que trata o inciso I do caput deste artigo dará ciência por escrito ao ente sindical para que indique seu representante no prazo máximo de 10 (dez) dias corridos, findo o qual a comissão poderá iniciar e concluir suas tratativas. (Incluído pela Lei n° 14.020, de 2020)</h4>
+ <h3>Art. 3º A participação de que trata o art. 2º não substitui ou complementa a remuneração devida a qualquer empregado, nem constitui base de incidência de qualquer encargo trabalhista, não se lhe aplicando o princípio da habitualidade.</h3>
+ <h4>§ 1º Para efeito de apuração do lucro real, a pessoa jurídica poderá deduzir como despesa operacional as participações atribuídas aos empregados nos lucros ou resultados, nos termos da presente Lei, dentro do próprio exercício de sua constituição.</h4>
+ <h4>§ 2º É vedado o pagamento de qualquer antecipação ou distribuição de valores a título de participação nos lucros ou resultados da empresa em mais de 2 (duas) vezes no mesmo ano civil e em periodicidade inferior a 1 (um) trimestre civil. (Redação dada pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 3º Todos os pagamentos efetuados em decorrência de planos de participação nos lucros ou resultados, mantidos espontaneamente pela empresa, poderão ser compensados com as obrigações decorrentes de acordos ou convenções coletivas de trabalho atinentes à participação nos lucros ou resultados.</h4>
+ <h4>§ 4º A periodicidade semestral mínima referida no § 2º poderá ser alterada pelo Poder Executivo, até 31 de dezembro de 2000, em função de eventuais impactos nas receitas tributárias.</h4>
+ <h4>§ 5º A participação de que trata este artigo será tributada pelo imposto sobre a renda exclusivamente na fonte, em separado dos demais rendimentos recebidos, no ano do recebimento ou crédito, com base na tabela progressiva anual constante do Anexo e não integrará a base de cálculo do imposto devido pelo beneficiário na Declaração de Ajuste Anual. (Redação dada pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 6º Para efeito da apuração do imposto sobre a renda, a participação dos trabalhadores nos lucros ou resultados da empresa será integralmente tributada com base na tabela progressiva constante do Anexo. (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 7º Na hipótese de pagamento de mais de 1 (uma) parcela referente a um mesmo ano-calendário, o imposto deve ser recalculado, com base no total da participação nos lucros recebida no ano-calendário, mediante a utilização da tabela constante do Anexo, deduzindo-se do imposto assim apurado o valor retido anteriormente. (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 8º Os rendimentos pagos acumuladamente a título de participação dos trabalhadores nos lucros ou resultados da empresa serão tributados exclusivamente na fonte, em separado dos demais rendimentos recebidos, sujeitando-se, também de forma acumulada, ao imposto sobre a renda com base na tabela progressiva constante do Anexo. (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 9º Considera-se pagamento acumulado, para fins do § 8º , o pagamento da participação nos lucros relativa a mais de um ano-calendário. (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 10. Na determinação da base de cálculo da participação dos trabalhadores nos lucros ou resultados, poderão ser deduzidas as importâncias pagas em dinheiro a título de pensão alimentícia em face das normas do Direito de Família, quando em cumprimento de decisão judicial, de acordo homologado judicialmente ou de separação ou divórcio consensual realizado por escritura pública, desde que correspondentes a esse rendimento, não podendo ser utilizada a mesma parcela para a determinação da base de cálculo dos demais rendimentos. (Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h4>§ 11. A partir do ano-calendário de 2014, inclusive, os valores da tabela progressiva anual constante do Anexo serão reajustados no mesmo percentual de reajuste da Tabela Progressiva Mensal do imposto de renda incidente sobre os rendimentos das pessoas físicas. (Incluído dada pela Lei n° 12.832, de 2013) (Produção de efeito)</h4>
+ <h3>Art. 4º Caso a negociação visando à participação nos lucros ou resultados da empresa resulte em impasse, as partes poderão utilizar-se dos seguintes mecanismos de solução do litígio:</h3>
+ <h5>I - mediação;</h5>
+ <h5>II - arbitragem de ofertas finais, utilizando-se, no que couber, os termos da Lei N° 9.307, de 23 de setembro de 1996 . (Redação dada pela Lei n° 12.832, de 2013) (Produção de efeito)</h5>
+ <h4>§ 1º Considera-se arbitragem de ofertas finais aquela em que o árbitro deve restringir-se a optar pela proposta apresentada, em caráter definitivo, por uma das partes.</h4>
+ <h4>§ 2º O mediador ou o árbitro será escolhido de comum acordo entre as partes.</h4>
+ <h4>§ 3º Firmado o compromisso arbitral, não será admitida a desistência unilateral de qualquer das partes.</h4>
+ <h4>§ 4º O laudo arbitral terá força normativa, independentemente de homologação judicial.</h4>
+ <h3>Art. 5º A participação de que trata o art. 1º desta Lei, relativamente aos trabalhadores em empresas estatais, observará diretrizes específicas fixadas pelo Poder Executivo.</h3>
+ <h4>Parágrafo único. Consideram-se empresas estatais as empresas públicas, sociedades de economia mista, suas subsidiárias e controladas e demais empresas em que a União, direta ou indiretamente, detenha a maioria do capital social com direito a voto.</h4>
+ <h3>Art. 6º Fica autorizado o trabalho aos domingos nas atividades do comércio em geral, observada a legislação municipal, nos termos do art. 30, inciso I, da Constituição . (Redação dada pela Lei n° 11.603, de 2007)</h3>
+ <h4>Parágrafo único. O repouso semanal remunerado deverá coincidir, pelo menos uma vez no período máximo de três semanas, com o domingo, respeitadas as demais normas de proteção ao trabalho e outras a serem estipuladas em negociação coletiva. (Redação dada pela Lei n° 11.603, de 2007)</h4>
+ <h3>Art. 6º -A. É permitido o trabalho em feriados nas atividades do comércio em geral, desde que autorizado em convenção coletiva de trabalho e observada a legislação municipal, nos termos do art. 30, inciso I, da Constituição . (Incluído pela Lei n° 11.603, de 2007)</h3>
+ <h3>Art. 6º -B. As infrações ao disposto nos arts. 6º e 6º -A desta Lei serão punidas com a multa prevista no art. 75 da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei N° 5.452, de 1º de maio de 1943 . (Incluído pela Lei n° 11.603, de 2007</h3>
+ <h4>Parágrafo único. O processo de fiscalização, de autuação e de imposição de multas reger-se-á pelo disposto no Título VII da Consolidação das Leis do Trabalho . (Incluído pela Lei n° 11.603, de 2007)</h4>
+ <h3>Art. 7º Ficam convalidados os atos praticados com base na Medida Provisória Nº 1.982-76, de 26 de outubro de 2000.</h3>
+ <h3>Art. 8º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Congresso Nacional, em 19 de dezembro de 2000; 179º da Independência e 112º da República.</p>
+ <p>Senador ANTONIO CARLOS MAGALHÃES</p>
+ <p>Presidente</p>
+ <p>Este texto não substitui o publicado no DOU de 20.12.2000</p>
+ <p>( Incluído pela Lei n° 12.832, de 2013) (Produção de efeito)</p>
+ <h3>PARTICIPAÇÃO NOS LUCROS</h3>
+ <h3>TABELA DE TRIBUTAÇÃO EXCLUSIVA NA FONTE</h3>
+ <h3>VALOR DO PLR ANUAL (EM R$)</h3>
+ <h3>PARCELA A DEDUZIR DO IR (EM R$)</h3>
+ <p>de 6.000,01 a 9.000,00</p>
+ <p>de 9.000,01 a 12.000,00</p>
+ <p>de 12.000,01 a 15.000,00</p>
+ <p>Conversão da MPv nº 1.982-77, de 2000 | Dispõe sobre a participação dos trabalhadores nos lucros ou resultados da empresa e dá outras providências.</p>
+ <h3>VALOR DO PLR</h3>
+ <h3>ANUAL (EM R$) | ALÍQUOTA | PARCELA A</h3>
+ <h3>DEDUZIR DO IR (EM R$)</h3>
+ <p>de 0,00 a 6.000,00 | 0% | -</p>
+ <p>de 6.000,01 a 9.000,00 | 7,5% | 450,00</p>
+ <p>12.000,00 | 15% | 1.125,00</p>
+ <p>15.000,00 | 22,5% | 2.025,00</p>
+ <p>acima de 15.000,00 | 27,5% | 2.775,00</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L10101compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

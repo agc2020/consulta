@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.675, DE 11 DE JUNHO DE 2018 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2018" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.675, DE 11 DE JUNHO DE 2018</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 26/11/2025 23:04:13 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13675.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 66.932 caracteres | espelho: 67.296 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.675, DE 11 DE JUNHO DE 2018.</p>
+ <p>Regulamento</p>
+ <p>Disciplina a organização e o funcionamento dos órgãos responsáveis pela segurança pública, nos termos do § 7º do art. 144 da Constituição Federal; cria a Política Nacional de Segurança Pública e Defesa Social (PNSPDS); institui o Sistema Único de Segurança Pública (Susp); altera a Lei Complementar nº 79, de 7 de janeiro de 1994, a Lei n° 10.201, de 14 de fevereiro de 2001, e a Lei n° 11.530, de 24 de outubro de 2007; e revoga dispositivos da Lei n° 12.681, de 4 de julho de 2012.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei institui o Sistema Único de Segurança Pública (Susp) e cria a Política Nacional de Segurança Pública e Defesa Social (PNSPDS), com a finalidade de preservação da ordem pública e da incolumidade das pessoas e do patrimônio, por meio de atuação conjunta, coordenada, sistêmica e integrada dos órgãos de segurança pública e defesa social da União, dos Estados, do Distrito Federal e dos Municípios, em articulação com a sociedade.</h3>
+ <h3>Art. 2º A segurança pública é dever do Estado e responsabilidade de todos, compreendendo a União, os Estados, o Distrito Federal e os Munícipios, no âmbito das competências e atribuições legais de cada um.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA POLÍTICA NACIONAL DE SEGURANÇA PÚBLICA E DEFESA SOCIAL (PNSPDS)</h3>
+ <p>Seção I</p>
+ <p>Da Competência para Estabelecimento das Políticas de Segurança Pública e Defesa Social</p>
+ <h3>Art. 3º Compete à União estabelecer a Política Nacional de Segurança Pública e Defesa Social (PNSPDS) e aos Estados, ao Distrito Federal e aos Municípios estabelecer suas respectivas políticas, observadas as diretrizes da política nacional, especialmente para análise e enfrentamento dos riscos à harmonia da convivência social, com destaque às situações de emergência e aos crimes interestaduais e transnacionais.</h3>
+ <p>Seção II</p>
+ <p>Dos Princípios</p>
+ <h3>Art. 4º São princípios da PNSPDS:</h3>
+ <h5>I - respeito ao ordenamento jurídico e aos direitos e garantias individuais e coletivos;</h5>
+ <h5>II - proteção, valorização e reconhecimento dos profissionais de segurança pública;</h5>
+ <h5>III - proteção dos direitos humanos, respeito aos direitos fundamentais e promoção da cidadania e da dignidade da pessoa humana;</h5>
+ <h5>IV - eficiência na prevenção e no controle das infrações penais;</h5>
+ <h5>V - eficiência na repressão e na apuração das infrações penais;</h5>
+ <h5>VI - eficiência na prevenção e na redução de riscos em situações de emergência e desastres que afetam a vida, o patrimônio e o meio ambiente;</h5>
+ <h5>VII - participação e controle social;</h5>
+ <h5>VIII - resolução pacífica de conflitos;</h5>
+ <h5>IX - uso comedido e proporcional da força;</h5>
+ <h5>IX - uso comedido e proporcional da força pelos agentes da segurança pública, pautado nos documentos internacionais de proteção aos direitos humanos de que o Brasil seja signatário; (Redação dada pela Lei n° 14.751, de 2023)</h5>
+ <h5>X - proteção da vida, do patrimônio e do meio ambiente;</h5>
+ <h5>XI - publicidade das informações não sigilosas;</h5>
+ <h5>XII - promoção da produção de conhecimento sobre segurança pública;</h5>
+ <h5>XIII - otimização dos recursos materiais, humanos e financeiros das instituições;</h5>
+ <h5>XIV - simplicidade, informalidade, economia procedimental e celeridade no serviço prestado à sociedade;</h5>
+ <h5>XV - relação harmônica e colaborativa entre os Poderes;</h5>
+ <h5>XVI - transparência, responsabilização e prestação de contas.</h5>
+ <h3>Art. 4º-A. A lei do ente federado deverá conter como critério para ingresso na instituição ser aprovado em exame de saúde e exame toxicológico com larga janela de detecção. (Incluído pela Lei n° 14.751, de 2023)</h3>
+ <h4>Parágrafo único. Além dos exames do caput deste artigo, o regulamento desta Lei estabelecerá as regras do exame toxicológico aleatório. (Incluído pela Lei n° 14.751, de 2023)</h4>
+ <p>Seção III</p>
+ <p>Das Diretrizes</p>
+ <h3>Art. 5º São diretrizes da PNSPDS:</h3>
+ <h5>I - atendimento imediato ao cidadão;</h5>
+ <h5>II - planejamento estratégico e sistêmico;</h5>
+ <h5>III - fortalecimento das ações de prevenção e resolução pacífica de conflitos, priorizando políticas de redução da letalidade violenta, com ênfase para os grupos vulneráveis;</h5>
+ <h5>IV - atuação integrada entre a União, os Estados, o Distrito Federal e os Municípios em ações de segurança pública e políticas transversais para a preservação da vida, do meio ambiente e da dignidade da pessoa humana;</h5>
+ <h5>V - coordenação, cooperação e colaboração dos órgãos e instituições de segurança pública nas fases de planejamento, execução, monitoramento e avaliação das ações, respeitando-se as respectivas atribuições legais e promovendo-se a racionalização de meios com base nas melhores práticas;</h5>
+ <h5>VI - formação e capacitação continuada e qualificada dos profissionais de segurança pública, em consonância com a matriz curricular nacional;</h5>
+ <h5>VII - fortalecimento das instituições de segurança pública por meio de investimentos e do desenvolvimento de projetos estruturantes e de inovação tecnológica;</h5>
+ <h5>VIII - sistematização e compartilhamento das informações de segurança pública, prisionais e sobre drogas, em âmbito nacional;</h5>
+ <h5>IX - atuação com base em pesquisas, estudos e diagnósticos em áreas de interesse da segurança pública;</h5>
+ <h5>X - atendimento prioritário, qualificado e humanizado às pessoas em situação de vulnerabilidade;</h5>
+ <h5>XI - padronização de estruturas, de capacitação, de tecnologia e de equipamentos de interesse da segurança pública;</h5>
+ <h5>XII - ênfase nas ações de policiamento de proximidade, com foco na resolução de problemas;</h5>
+ <h5>XIII - modernização do sistema e da legislação de acordo com a evolução social;</h5>
+ <h5>XIV - participação social nas questões de segurança pública;</h5>
+ <h5>XV - integração entre os Poderes Legislativo, Executivo e Judiciário no aprimoramento e na aplicação da legislação penal;</h5>
+ <h5>XVI - colaboração do Poder Judiciário, do Ministério Público e da Defensoria Pública na elaboração de estratégias e metas para alcançar os objetivos desta Política;</h5>
+ <h5>XVII - fomento de políticas públicas voltadas à reinserção social dos egressos do sistema prisional;</h5>
+ <h5>XVIII - (VETADO);</h5>
+ <h5>XIX - incentivo ao desenvolvimento de programas e projetos com foco na promoção da cultura de paz, na segurança comunitária e na integração das políticas de segurança com as políticas sociais existentes em outros órgãos e entidades não pertencentes ao sistema de segurança pública;</h5>
+ <h5>XX - distribuição do efetivo de acordo com critérios técnicos;</h5>
+ <h5>XXI - deontologia policial e de bombeiro militar comuns, respeitados os regimes jurídicos e as peculiaridades de cada instituição;</h5>
+ <h5>XXII - unidade de registro de ocorrência policial;</h5>
+ <h5>XXIII - uso de sistema integrado de informações e dados eletrônicos;</h5>
+ <h5>XXIV – (VETADO);</h5>
+ <h5>XXV - incentivo à designação de servidores da carreira para os cargos de chefia, levando em consideração a graduação, a capacitação, o mérito e a experiência do servidor na atividade policial específica;</h5>
+ <h5>XXVI - celebração de termo de parceria e protocolos com agências de vigilância privada, respeitada a lei de licitações.</h5>
+ <p>Seção IV</p>
+ <p>Dos Objetivos</p>
+ <h3>Art. 6º São objetivos da PNSPDS:</h3>
+ <h5>I - fomentar a integração em ações estratégicas e operacionais, em atividades de inteligência de segurança pública e em gerenciamento de crises e incidentes;</h5>
+ <h5>II - apoiar as ações de manutenção da ordem pública e da incolumidade das pessoas, do patrimônio, do meio ambiente e de bens e direitos;</h5>
+ <h5>III - incentivar medidas para a modernização de equipamentos, da investigação e da perícia e para a padronização de tecnologia dos órgãos e das instituições de segurança pública;</h5>
+ <h5>IV - estimular e apoiar a realização de ações de prevenção à violência e à criminalidade, com prioridade para aquelas relacionadas à letalidade da população jovem negra, das mulheres e de outros grupos vulneráveis;</h5>
+ <h5>V - promover a participação social nos Conselhos de segurança pública;</h5>
+ <h5>VI - estimular a produção e a publicação de estudos e diagnósticos para a formulação e a avaliação de políticas públicas;</h5>
+ <h5>VII - promover a interoperabilidade dos sistemas de segurança pública;</h5>
+ <h5>VIII - incentivar e ampliar as ações de prevenção, controle e fiscalização para a repressão aos crimes transfronteiriços;</h5>
+ <h5>IX - estimular o intercâmbio de informações de inteligência de segurança pública com instituições estrangeiras congêneres;</h5>
+ <h5>X - integrar e compartilhar as informações de segurança pública, prisionais e sobre drogas;</h5>
+ <h5>XI - estimular a padronização da formação, da capacitação e da qualificação dos profissionais de segurança pública, respeitadas as especificidades e as diversidades regionais, em consonância com esta Política, nos âmbitos federal, estadual, distrital e municipal;</h5>
+ <h5>XII - fomentar o aperfeiçoamento da aplicação e do cumprimento de medidas restritivas de direito e de penas alternativas à prisão;</h5>
+ <h5>XIII - fomentar o aperfeiçoamento dos regimes de cumprimento de pena restritiva de liberdade em relação à gravidade dos crimes cometidos;</h5>
+ <h5>XIV - (VETADO);</h5>
+ <h5>XV - racionalizar e humanizar o sistema penitenciário e outros ambientes de encarceramento;</h5>
+ <h5>XVI - fomentar estudos, pesquisas e publicações sobre a política de enfrentamento às drogas e de redução de danos relacionados aos seus usuários e aos grupos sociais com os quais convivem;</h5>
+ <h5>XVII - fomentar ações permanentes para o combate ao crime organizado e à corrupção;</h5>
+ <h5>XVIII - estabelecer mecanismos de monitoramento e de avaliação das ações implementadas;</h5>
+ <h5>XIX - promover uma relação colaborativa entre os órgãos de segurança pública e os integrantes do sistema judiciário para a construção das estratégias e o desenvolvimento das ações necessárias ao alcance das metas estabelecidas;</h5>
+ <h5>XX - estimular a concessão de medidas protetivas em favor de pessoas em situação de vulnerabilidade;</h5>
+ <h5>XXI - estimular a criação de mecanismos de proteção dos agentes públicos que compõem o sistema nacional de segurança pública e de seus familiares;</h5>
+ <h5>XXII - estimular e incentivar a elaboração, a execução e o monitoramento de ações nas áreas de valorização profissional, de saúde, de qualidade de vida e de segurança dos servidores que compõem o sistema nacional de segurança pública;</h5>
+ <h5>XXIII - priorizar políticas de redução da letalidade violenta;</h5>
+ <h5>XXIV - fortalecer os mecanismos de investigação de crimes hediondos e de homicídios;</h5>
+ <h5>XXV - fortalecer as ações de fiscalização de armas de fogo e munições, com vistas à redução da violência armada;</h5>
+ <h5>XXVI - fortalecer as ações de prevenção e repressão aos crimes cibernéticos.</h5>
+ <h4>Parágrafo único. Os objetivos estabelecidos direcionarão a formulação do Plano Nacional de Segurança Pública e Defesa Social, documento que estabelecerá as estratégias, as metas, os indicadores e as ações para o alcance desses objetivos.</h4>
+ <p>Seção V</p>
+ <p>Das Estratégias</p>
+ <h3>Art. 7º A PNSPDS será implementada por estratégias que garantam integração, coordenação e cooperação federativa, interoperabilidade, liderança situacional, modernização da gestão das instituições de segurança pública, valorização e proteção dos profissionais, complementaridade, dotação de recursos humanos, diagnóstico dos problemas a serem enfrentados, excelência técnica, avaliação continuada dos resultados e garantia da regularidade orçamentária para execução de planos e programas de segurança pública.</h3>
+ <p>Seção VI</p>
+ <p>Dos Meios e Instrumentos</p>
+ <h3>Art. 8º São meios e instrumentos para a implementação da PNSPDS:</h3>
+ <h5>I - os planos de segurança pública e defesa social;</h5>
+ <h5>II - o Sistema Nacional de Informações e de Gestão de Segurança Pública e Defesa Social, que inclui:</h5>
+ <h6>a) o Sistema Nacional de Acompanhamento e Avaliação das Políticas de Segurança Pública e Defesa Social (Sinaped);</h6>
+ <h6>b) o Sistema Nacional de Informações de Segurança Pública, Prisionais e de Rastreabilidade de Armas e Munições, e sobre Material Genético, Digitais e Drogas (Sinesp);</h6>
+ <h6>b) o Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp); (Redação dada pela Lei n° 13.756, de 2018)</h6>
+ <h6>c) o Sistema Integrado de Educação e Valorização Profissional (Sievap);</h6>
+ <h6>d) a Rede Nacional de Altos Estudos em Segurança Pública (Renaesp);</h6>
+ <h6>e) o Programa Nacional de Qualidade de Vida para Profissionais de Segurança Pública (Pró-Vida);</h6>
+ <h5>III - (VETADO);</h5>
+ <h5>IV - o Plano Nacional de Enfrentamento de Homicídios de Jovens;</h5>
+ <h5>V - os mecanismos formados por órgãos de prevenção e controle de atos ilícitos contra a Administração Pública e referentes a ocultação ou dissimulação de bens, direitos e valores.</h5>
+ <h5>VI – o Plano Nacional de Prevenção e Enfrentamento à 	Violência contra a Mulher, nas ações pertinentes às políticas de segurança, 	implementadas em conjunto com os órgãos e instâncias estaduais, municipais e do Distrito Federal responsáveis pela rede de prevenção e de atendimento das mulheres em situação de violência. (Incluído pela Lei n° 14.330, de 2022)</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO SISTEMA ÚNICO DE SEGURANÇA PÚBLICA</h3>
+ <p>Seção I</p>
+ <p>Da Comp osição do Sistema</p>
+ <h3>Art. 9º É instituído o Sistema Único de Segurança Pública (Susp), que tem como órgão central o Ministério Extraordinário da Segurança Pública e é integrado pelos órgãos de que trata o art. 144 da Constituição Federal , pelos agentes penitenciários, pelas guardas municipais e pelos demais integrantes estratégicos e operacionais, que atuarão nos limites de suas competências, de forma cooperativa, sistêmica e harmônica. (Vide ADPF 	995)</h3>
+ <h4>§ 1º São integrantes estratégicos do Susp:</h4>
+ <h5>I - a União, os Estados, o Distrito Federal e os Municípios, por intermédio dos respectivos Poderes Executivos;</h5>
+ <h5>II - os Conselhos de Segurança Pública e Defesa Social dos três entes federados.</h5>
+ <h4>§ 2º São integrantes operacionais do Susp:</h4>
+ <h5>I - polícia federal;</h5>
+ <h5>II - polícia rodoviária federal;</h5>
+ <h5>III – (VETADO);</h5>
+ <h5>IV - polícias civis;</h5>
+ <h5>V - polícias militares;</h5>
+ <h5>VI - corpos de bombeiros militares;</h5>
+ <h5>VII - guardas municipais;</h5>
+ <h5>VIII - órgãos do sistema penitenciário;</h5>
+ <h5>IX - (VETADO);</h5>
+ <h5>X - institutos oficiais de criminalística, medicina legal e identificação;</h5>
+ <h5>XI - Secretaria Nacional de Segurança Pública (Senasp);</h5>
+ <h5>XII - secretarias estaduais de segurança pública ou congêneres;</h5>
+ <h5>XIII - Secretaria Nacional de Proteção e Defesa Civil (Sedec);</h5>
+ <h5>XIV - Secretaria Nacional de Política Sobre Drogas (Senad);</h5>
+ <h5>XV - agentes de trânsito;</h5>
+ <h5>XVI - guarda portuária.</h5>
+ <h5>XVII - polícia legislativa, prevista no § 3º do art. 27, no inciso IV do caput do art. 51 e no inciso XIII do caput do art. 52 da Constituição Federal. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h4>§ 3º (VETADO).</h4>
+ <h4>§ 4º Os sistemas estaduais, distrital e municipais serão responsáveis pela implementação dos respectivos programas, ações e projetos de segurança pública, com liberdade de organização e funcionamento, respeitado o disposto nesta Lei.</h4>
+ <p>Seção II</p>
+ <p>Do Funcionamento</p>
+ <h3>Art. 10. A integração e a coordenação dos órgãos integrantes do Susp dar-se-ão nos limites das respectivas competências, por meio de:</h3>
+ <h5>I - operações com planejamento e execução integrados;</h5>
+ <h5>II - estratégias comuns para atuação na prevenção e no controle qualificado de infrações penais;</h5>
+ <h5>III - aceitação mútua de registro de ocorrência policial;</h5>
+ <h5>IV - compartilhamento de informações, inclusive com o Sistema Brasileiro de Inteligência (Sisbin);</h5>
+ <h5>V - intercâmbio de conhecimentos técnicos e científicos;</h5>
+ <h5>VI - integração das informações e dos dados de segurança pública por meio do Sinesp.</h5>
+ <h4>§ 1º O Susp será coordenado pelo Ministério Extraordinário da Segurança Pública.</h4>
+ <h4>§ 2º As operações combinadas, planejadas e desencadeadas em equipe poderão ser ostensivas, investigativas, de inteligência ou mistas, e contar com a participação de órgãos integrantes do Susp e, nos limites de suas competências, com o Sisbin e outros órgãos dos sistemas federal, estadual, distrital ou municipal, não necessariamente vinculados diretamente aos órgãos de segurança pública e defesa social, especialmente quando se tratar de enfrentamento a organizações criminosas.</h4>
+ <h4>§ 3º O planejamento e a coordenação das operações referidas no § 2º deste artigo serão exercidos conjuntamente pelos participantes.</h4>
+ <h4>§ 4º O compartilhamento de informações será feito preferencialmente por meio eletrônico, com acesso recíproco aos bancos de dados, nos termos estabelecidos pelo Ministério Extraordinário da Segurança Pública.</h4>
+ <h4>§ 5º O intercâmbio de conhecimentos técnicos e científicos para qualificação dos profissionais de segurança pública e defesa social dar-se-á, entre outras formas, pela reciprocidade na abertura de vagas nos cursos de especialização, aperfeiçoamento e estudos estratégicos, respeitadas as peculiaridades e o regime jurídico de cada instituição, e observada, sempre que possível, a matriz curricular nacional.</h4>
+ <h3>Art. 11. O Ministério Extraordinário da Segurança Pública fixará, anualmente, metas de excelência no âmbito das respectivas competências, visando à prevenção e à repressão das infrações penais e administrativas e à prevenção dos desastres, e utilizará indicadores públicos que demonstrem de forma objetiva os resultados pretendidos.</h3>
+ <h3>Art. 12 . A aferição anual de metas deverá observar os seguintes parâmetros:</h3>
+ <h5>I - as atividades de polícia judiciária e de apuração das infrações penais serão aferidas, entre outros fatores, pelos índices de elucidação dos delitos, a partir dos registros de ocorrências policiais, especialmente os de crimes dolosos com resultado em morte e de roubo, pela identificação, prisão dos autores e cumprimento de mandados de prisão de condenados a crimes com penas de reclusão, e pela recuperação do produto de crime em determinada circunscrição;</h5>
+ <h5>II - as atividades periciais serão aferidas mediante critérios técnicos emitidos pelo órgão responsável pela coordenação das perícias oficiais, considerando os laudos periciais e o resultado na produção qualificada das provas relevantes à instrução criminal;</h5>
+ <h5>III - as atividades de polícia ostensiva e de preservação da ordem pública serão aferidas, entre outros fatores, pela maior ou menor incidência de infrações penais e administrativas em determinada área, seguindo os parâmetros do Sinesp;</h5>
+ <h5>IV - as atividades dos corpos de bombeiros militares serão aferidas, entre outros fatores, pelas ações de prevenção, preparação para emergências e desastres, índices de tempo de resposta aos desastres e de recuperação de locais atingidos, considerando-se áreas determinadas;</h5>
+ <h5>V - a eficiência do sistema prisional será aferida com base nos seguintes fatores, entre outros:</h5>
+ <h6>a) o número de vagas ofertadas no sistema;</h6>
+ <h6>b) a relação existente entre o número de presos e a quantidade de vagas ofertadas;</h6>
+ <h6>c) o índice de reiteração criminal dos egressos;</h6>
+ <h6>d) a quantidade de presos condenados atendidos de acordo com os parâmetros estabelecidos pelos incisos do caput deste artigo, com observância de critérios objetivos e transparentes.</h6>
+ <h4>§ 1º A aferição considerará aspectos relativos à estrutura de trabalho físico e de equipamentos, bem como de efetivo.</h4>
+ <h4>§ 2º A aferição de que trata o inciso I do caput deste artigo deverá distinguir as autorias definidas em razão de prisão em flagrante das autorias resultantes de diligências investigatórias.</h4>
+ <h3>Art. 13. O Ministério Extraordinário da Segurança Pública, responsável pela gestão do Susp, deverá orientar e acompanhar as atividades dos órgãos integrados ao Sistema, além de promover as seguintes ações:</h3>
+ <h5>I - apoiar os programas de aparelhamento e modernização dos órgãos de segurança pública e defesa social do País;</h5>
+ <h5>II - implementar, manter e expandir, observadas as restrições previstas em lei quanto a sigilo, o Sistema Nacional de Informações e de Gestão de Segurança Pública e Defesa Social;</h5>
+ <h5>III - efetivar o intercâmbio de experiências técnicas e operacionais entre os órgãos policiais federais, estaduais, distrital e as guardas municipais;</h5>
+ <h5>IV - valorizar a autonomia técnica, científica e funcional dos institutos oficiais de criminalística, medicina legal e identificação, garantindo-lhes condições plenas para o exercício de suas funções;</h5>
+ <h5>V - promover a qualificação profissional dos integrantes da segurança pública e defesa social, especialmente nas dimensões operacional, ética e técnico-científica;</h5>
+ <h5>VI - realizar estudos e pesquisas nacionais e consolidar dados e informações estatísticas sobre criminalidade e vitimização;</h5>
+ <h5>VII - coordenar as atividades de inteligência da segurança pública e defesa social integradas ao Sisbin;</h5>
+ <h5>VIII - desenvolver a doutrina de inteligência policial.</h5>
+ <h3>Art. 14. É de responsabilidade do Ministério Extraordinário da Segurança Pública:</h3>
+ <h5>I - disponibilizar sistema padronizado, informatizado e seguro que permita o intercâmbio de informações entre os integrantes do Susp;</h5>
+ <h5>II - apoiar e avaliar periodicamente a infraestrutura tecnológica e a segurança dos processos, das redes e dos sistemas;</h5>
+ <h5>III - estabelecer cronograma para adequação dos integrantes do Susp às normas e aos procedimentos de funcionamento do Sistema.</h5>
+ <h3>Art. 15. A União poderá apoiar os Estados, o Distrito Federal e os Municípios, quando não dispuserem de condições técnicas e operacionais necessárias à implementação do Susp.</h3>
+ <h3>Art. 16. Os órgãos integrantes do Susp poderão atuar em vias urbanas, rodovias, terminais rodoviários, ferrovias e hidrovias federais, estaduais, distrital ou municipais, portos e aeroportos, no âmbito das respectivas competências, em efetiva integração com o órgão cujo local de atuação esteja sob sua circunscrição, ressalvado o sigilo das investigações policiais.</h3>
+ <h3>Art. 17. Regulamento disciplinará os critérios de aplicação de recursos do Fundo Nacional de Segurança Pública (FNSP) e do Fundo Penitenciário Nacional (Funpen), respeitando-se a atribuição constitucional dos órgãos que integram o Susp, os aspectos geográficos, populacionais e socioeconômicos dos entes federados, bem como o estabelecimento de metas e resultados a serem alcançados.</h3>
+ <h4>Parágrafo único. Entre os critérios de aplicação dos recursos do FNSP serão incluídos metas e resultados relativos à prevenção e ao combate à violência contra a mulher. (Incluído pela Lei n° 14.316, de 2022) Produção de efeitos</h4>
+ <h3>Art. 18. As aquisições de bens e serviços para os órgãos integrantes do Susp terão por objetivo a eficácia de suas atividades e obedecerão a critérios técnicos de qualidade, modernidade, eficiência e resistência, observadas as normas de licitação e contratos.</h3>
+ <h4>Parágrafo único. (VETADO).</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DOS CONSELHOS DE SEGURANÇA PÚBLICA E DEFESA SOCIAL</h3>
+ <p>Seção I</p>
+ <p>Da Composição</p>
+ <h3>Art. 19. A estrutura formal do Susp dar-se-á pela formação de Conselhos permanentes a serem criados na forma do art. 21 desta Lei.</h3>
+ <h3>Art. 20. Serão criados Conselhos de Segurança Pública e Defesa Social, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios, mediante proposta dos chefes dos Poderes Executivos, encaminhadas aos respectivos Poderes Legislativos.</h3>
+ <h4>§ 1º O Conselho Nacional de Segurança Pública e Defesa Social, com atribuições, funcionamento e composição estabelecidos em regulamento, terá a participação de representantes da União, dos Estados, do Distrito Federal e dos Municípios.</h4>
+ <h4>§ 2º Os Conselhos de Segurança Pública e Defesa Social congregarão representantes com poder de decisão dentro de suas estruturas governamentais e terão natureza de colegiado, com competência consultiva, sugestiva e de acompanhamento social das atividades de segurança pública e defesa social, respeitadas as instâncias decisórias e as normas de organização da Administração Pública.</h4>
+ <h4>§ 3º Os Conselhos de Segurança Pública e Defesa Social exercerão o acompanhamento das instituições referidas no § 2º do art. 9º desta Lei e poderão recomendar providências legais às autoridades competentes.</h4>
+ <h4>§ 4º O acompanhamento de que trata o § 3º deste artigo considerará, entre outros, os seguintes aspectos:</h4>
+ <h5>I - as condições de trabalho, a valorização e o respeito pela integridade física e moral dos seus integrantes;</h5>
+ <h5>II - o atingimento das metas previstas nesta Lei;</h5>
+ <h5>III - o resultado célere na apuração das denúncias em tramitação nas respectivas corregedorias;</h5>
+ <h5>IV - o grau de confiabilidade e aceitabilidade do órgão pela população por ele atendida.</h5>
+ <h4>§ 5º Caberá aos Conselhos propor diretrizes para as políticas públicas de segurança pública e defesa social, com vistas à prevenção e à repressão da violência e da criminalidade.</h4>
+ <h4>§ 6º A organização, o funcionamento e as demais competências dos Conselhos serão regulamentados por ato do Poder Executivo, nos limites estabelecidos por esta Lei.</h4>
+ <h4>§ 7º Os Conselhos Estaduais, Distrital e Municipais de Segurança Pública e Defesa Social, que contarão também com representantes da sociedade civil organizada e de representantes dos trabalhadores, poderão ser descentralizados ou congregados por região para melhor atuação e intercâmbio comunitário.</h4>
+ <p>Seção II</p>
+ <p>Dos Conselheiros</p>
+ <h3>Art. 21. Os Conselhos serão compostos por:</h3>
+ <h5>I - representantes de cada órgão ou entidade integrante do Susp;</h5>
+ <h5>II - representante do Poder Judiciário;</h5>
+ <h5>III - representante do Ministério Público;</h5>
+ <h5>IV - representante da Ordem dos Advogados do Brasil (OAB);</h5>
+ <h5>V - representante da Defensoria Pública;</h5>
+ <h5>VI - representantes de entidades e organizações da sociedade cuja finalidade esteja relacionada com políticas de segurança pública e defesa social;</h5>
+ <h5>VII - representantes de entidades de profissionais de segurança pública.</h5>
+ <h4>§ 1º Os representantes das entidades e organizações referidas nos incisos VI e VII do caput deste artigo serão eleitos por meio de processo aberto a todas as entidades e organizações cuja finalidade seja relacionada com as políticas de segurança pública, conforme convocação pública e critérios objetivos previamente definidos pelos Conselhos.</h4>
+ <h4>§ 2º Cada conselheiro terá 1 (um) suplente, que substituirá o titular em sua ausência.</h4>
+ <h4>§ 3º Os mandatos eletivos dos membros referidos nos incisos VI e VII do caput deste artigo e a designação dos demais membros terão a duração de 2 (dois) anos, permitida apenas uma recondução ou reeleição.</h4>
+ <h4>§ 4º Na ausência de representantes dos órgãos ou entidades referidos no caput deste artigo, aplica-se o disposto no § 7º do art. 20 desta Lei.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA FORMULAÇÃO DOS PLANOS DE SEGURANÇA PÚBLICA E DEFESA SOCIAL</h3>
+ <p>Seção I</p>
+ <p>Dos Planos</p>
+ <h3>Art. 22. A União instituirá Plano Nacional de Segurança Pública e Defesa Social, destinado a articular as ações do poder público, com a finalidade de:</h3>
+ <h5>I - promover a melhora da qualidade da gestão das políticas sobre segurança pública e defesa social;</h5>
+ <h5>II - contribuir para a organização dos Conselhos de Segurança Pública e Defesa Social;</h5>
+ <h5>III - assegurar a produção de conhecimento no tema, a definição de metas e a avaliação dos resultados das políticas de segurança pública e defesa social;</h5>
+ <h5>IV - priorizar ações preventivas e fiscalizatórias de segurança interna nas divisas, fronteiras, portos e aeroportos.</h5>
+ <h4>§ 1º As políticas públicas de segurança não se restringem aos integrantes do Susp, pois devem considerar um contexto social amplo, com abrangência de outras áreas do serviço público, como educação, saúde, lazer e cultura, respeitadas as atribuições e as finalidades de cada área do serviço público.</h4>
+ <h4>§ 2º O Plano de que trata o caput deste artigo terá duração de 10 (dez) anos a contar de sua publicação.</h4>
+ <h4>§ 3º As ações de prevenção à criminalidade devem ser consideradas prioritárias na elaboração do Plano de que trata o caput deste artigo.</h4>
+ <h4>§ 4º A União, por intermédio do Ministério Extraordinário da Segurança Pública, deverá elaborar os objetivos, as ações estratégicas, as metas, as prioridades, os indicadores e as formas de financiamento e gestão das Políticas de Segurança Pública e Defesa Social.</h4>
+ <h4>§ 5º Os Estados, o Distrito Federal e os Municípios deverão, com base no Plano Nacional de Segurança Pública e Defesa Social, elaborar e implantar seus planos correspondentes em até 2 (dois) anos a partir da publicação do documento nacional, sob pena de não poderem receber recursos da União para a execução de programas ou ações de segurança pública e defesa social.</h4>
+ <h4>§ 6º O poder público deverá dar ampla divulgação ao conteúdo das Políticas e dos Planos de segurança pública e defesa social.</h4>
+ <h3>Art. 23. A União, em articulação com os Estados, o Distrito Federal e os Municípios, realizará avaliações anuais sobre a implementação do Plano Nacional de Segurança Pública e Defesa Social, com o objetivo de verificar o cumprimento das metas estabelecidas e elaborar recomendações aos gestores e operadores das políticas públicas.</h3>
+ <h4>Parágrafo único. A primeira avaliação do Plano Nacional de Segurança Pública e Defesa Social realizar-se-á no segundo ano de vigência desta Lei, cabendo ao Poder Legislativo Federal acompanhá-la.</h4>
+ <p>Seção II</p>
+ <p>Das Diretrizes Gerais</p>
+ <h3>Art. 24. Os agentes públicos deverão observar as seguintes diretrizes na elaboração e na execução dos planos:</h3>
+ <h5>I - adotar estratégias de articulação entre órgãos públicos, entidades privadas, corporações policiais e organismos internacionais, a fim de implantar parcerias para a execução de políticas de segurança pública e defesa social;</h5>
+ <h5>II - realizar a integração de programas, ações, atividades e projetos dos órgãos e entidades públicas e privadas nas áreas de saúde, planejamento familiar, educação, trabalho, assistência social, previdência social, cultura, desporto e lazer, visando à prevenção da criminalidade e à prevenção de desastres;</h5>
+ <h5>III - viabilizar ampla participação social na formulação, na implementação e na avaliação das políticas de segurança pública e defesa social;</h5>
+ <h5>IV - desenvolver programas, ações, atividades e projetos articulados com os estabelecimentos de ensino, com a sociedade e com a família para a prevenção da criminalidade e a prevenção de desastres;</h5>
+ <h5>V - incentivar a inclusão das disciplinas de prevenção da violência e de prevenção de desastres nos conteúdos curriculares dos diversos níveis de ensino;</h5>
+ <h5>VI - ampliar as alternativas de inserção econômica e social dos egressos do sistema prisional, promovendo programas que priorizem a melhoria de sua escolarização e a qualificação profissional;</h5>
+ <h5>VII - garantir a efetividade dos programas, ações, atividades e projetos das políticas de segurança pública e defesa social;</h5>
+ <h5>VIII - promover o monitoramento e a avaliação das políticas de segurança pública e defesa social;</h5>
+ <h5>IX - fomentar a criação de grupos de estudos formados por agentes públicos dos órgãos integrantes do Susp, professores e pesquisadores, para produção de conhecimento e reflexão sobre o fenômeno da criminalidade, com o apoio e a coordenação dos órgãos públicos de cada unidade da Federação;</h5>
+ <h5>X - fomentar a harmonização e o trabalho conjunto dos integrantes do Susp;</h5>
+ <h5>XI - garantir o planejamento e a execução de políticas de segurança pública e defesa social;</h5>
+ <h5>XII - fomentar estudos de planejamento urbano para que medidas de prevenção da criminalidade façam parte do plano diretor das cidades, de forma a estimular, entre outras ações, o reforço na iluminação pública e a verificação de pessoas e de famílias em situação de risco social e criminal.</h5>
+ <p>S eção III</p>
+ <p>Das Metas para Acompanhamento e Avaliação das Políticas de Segurança Pública e Defesa Social</p>
+ <h3>Art. 25. Os integrantes do Susp fixarão, anualmente, metas de excelência no âmbito das respectivas competências, visando à prevenção e à repressão de infrações penais e administrativas e à prevenção de desastres, que tenham como finalidade:</h3>
+ <h5>I - planejar, pactuar, implementar, coordenar e supervisionar as atividades de educação gerencial, técnica e operacional, em cooperação com as unidades da Federação;</h5>
+ <h5>II - apoiar e promover educação qualificada, continuada e integrada;</h5>
+ <h5>III - identificar e propor novas metodologias e técnicas de educação voltadas ao aprimoramento de suas atividades;</h5>
+ <h5>IV - identificar e propor mecanismos de valorização profissional;</h5>
+ <h5>V - apoiar e promover o sistema de saúde para os profissionais de segurança pública e defesa social;</h5>
+ <h5>VI - apoiar e promover o sistema habitacional para os profissionais de segurança pública e defesa social.</h5>
+ <p>Seção IV</p>
+ <p>Da Cooperação, da Integração e do Funcionamento Harmônico dos Membros do Susp</p>
+ <h3>Art. 26. É instituído, no âmbito do Susp, o Sistema Nacional de Acompanhamento e Avaliação das Políticas de Segurança Pública e Defesa Social (Sinaped), com os seguintes objetivos:</h3>
+ <h5>I - contribuir para organização e integração dos membros do Susp, dos projetos das políticas de segurança pública e defesa social e dos respectivos diagnósticos, planos de ação, resultados e avaliações;</h5>
+ <h5>II - assegurar o conhecimento sobre os programas, ações e atividades e promover a melhora da qualidade da gestão dos programas, ações, atividades e projetos de segurança pública e defesa social;</h5>
+ <h5>III - garantir que as políticas de segurança pública e defesa social abranjam, no mínimo, o adequado diagnóstico, a gestão e os resultados das políticas e dos programas de prevenção e de controle da violência, com o objetivo de verificar:</h5>
+ <h6>a) a compatibilidade da forma de processamento do planejamento orçamentário e de sua execução com as necessidades do respectivo sistema de segurança pública e defesa social;</h6>
+ <h6>b) a eficácia da utilização dos recursos públicos;</h6>
+ <h6>c) a manutenção do fluxo financeiro, consideradas as necessidades operacionais dos programas, as normas de referência e as condições previstas nos instrumentos jurídicos celebrados entre os entes federados, os órgãos gestores e os integrantes do Susp;</h6>
+ <h6>d) a implementação dos demais compromissos assumidos por ocasião da celebração dos instrumentos jurídicos relativos à efetivação das políticas de segurança pública e defesa social;</h6>
+ <h6>e) a articulação interinstitucional e intersetorial das políticas.</h6>
+ <h3>Art. 27. Ao final da avaliação do Plano Nacional de Segurança Pública e Defesa Social, será elaborado relatório com o histórico e a caracterização do trabalho, as recomendações e os prazos para que elas sejam cumpridas, além de outros elementos a serem definidos em regulamento.</h3>
+ <h4>§ 1º Os resultados da avaliação das políticas serão utilizados para:</h4>
+ <h5>I - planejar as metas e eleger as prioridades para execução e financiamento;</h5>
+ <h5>II - reestruturar ou ampliar os programas de prevenção e controle;</h5>
+ <h5>III - adequar os objetivos e a natureza dos programas, ações e projetos;</h5>
+ <h5>IV - celebrar instrumentos de cooperação com vistas à correção de problemas constatados na avaliação;</h5>
+ <h5>V - aumentar o financiamento para fortalecer o sistema de segurança pública e defesa social;</h5>
+ <h5>VI - melhorar e ampliar a capacitação dos operadores do Susp.</h5>
+ <h4>§ 2º O relatório da avaliação deverá ser encaminhado aos respectivos Conselhos de Segurança Pública e Defesa Social.</h4>
+ <h3>Art. 28. As autoridades, os gestores, as entidades e os órgãos envolvidos com a segurança pública e defesa social têm o dever de colaborar com o processo de avaliação, facilitando o acesso às suas instalações, à documentação e a todos os elementos necessários ao seu efetivo cumprimento.</h3>
+ <h3>Art. 29. O processo de avaliação das políticas de segurança pública e defesa social deverá contar com a participação de representantes dos Poderes Legislativo, Executivo e Judiciário, do Ministério Público, da Defensoria Pública e dos Conselhos de Segurança Pública e Defesa Social, observados os parâmetros estabelecidos nesta Lei.</h3>
+ <h3>Art. 30. Cabe ao Poder Legislativo acompanhar as avaliações do respectivo ente federado.</h3>
+ <h3>Art. 31. O Sinaped assegurará, na metodologia a ser empregada:</h3>
+ <h5>I - a realização da autoavaliação dos gestores e das corporações;</h5>
+ <h5>II - a avaliação institucional externa, contemplando a análise global e integrada das instalações físicas, relações institucionais, compromisso social, atividades e finalidades das corporações;</h5>
+ <h5>III - a análise global e integrada dos diagnósticos, estruturas, compromissos, finalidades e resultados das políticas de segurança pública e defesa social;</h5>
+ <h5>IV - o caráter público de todos os procedimentos, dados e resultados dos processos de avaliação.</h5>
+ <h3>Art. 32. A avaliação dos objetivos e das metas do Plano Nacional de Segurança Pública e Defesa Social será coordenada por comissão permanente e realizada por comissões temporárias, essas compostas, no mínimo, por 3 (três) membros, na forma do regulamento próprio.</h3>
+ <h4>Parágrafo único. É vedado à comissão permanente designar avaliadores que sejam titulares ou servidores dos órgãos gestores avaliados, caso:</h4>
+ <h5>I - tenham relação de parentesco até terceiro grau com titulares ou servidores dos órgãos gestores avaliados;</h5>
+ <h5>II - estejam respondendo a processo criminal ou administrativo.</h5>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DO CONTROLE E DA TRANSPARÊNCIA</h3>
+ <p>Seção I</p>
+ <p>Do Controle Interno</p>
+ <h3>Art. 33. Aos órgãos de correição, dotados de autonomia no exercício de suas competências, caberá o gerenciamento e a realização dos processos e procedimentos de apuração de responsabilidade funcional, por meio de sindicância e processo administrativo disciplinar, e a proposição de subsídios para o aperfeiçoamento das atividades dos órgãos de segurança pública e defesa social.</h3>
+ <p>Seção II</p>
+ <p>Do Acompanhamento Público da Atividade Policial</p>
+ <h3>Art. 34. A União, os Estados, o Distrito Federal e os Municípios deverão instituir órgãos de ouvidoria dotados de autonomia e independência no exercício de suas atribuições.</h3>
+ <h4>Parágrafo único. À ouvidoria competirá o recebimento e tratamento de representações, elogios e sugestões de qualquer pessoa sobre as ações e atividades dos profissionais e membros integrantes do Susp, devendo encaminhá-los ao órgão com atribuição para as providências legais e a resposta ao requerente.</h4>
+ <p>Seção III</p>
+ <p>Da Transparência e da Integração de Dados e Informações</p>
+ <h3>Art. 35. É instituído o Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp), com a finalidade de armazenar, tratar e integrar dados e informações para auxiliar na formulação, implementação, execução, acompanhamento e avaliação das políticas relacionadas com:</h3>
+ <h5>I - segurança pública e defesa social;</h5>
+ <h5>II - sistema prisional e execução penal;</h5>
+ <h5>III - rastreabilidade de armas e munições;</h5>
+ <h5>IV - banco de dados de perfil genético e digitais;</h5>
+ <h5>V - enfrentamento do tráfico de drogas ilícitas.</h5>
+ <h5>VI - enfrentamento da violência doméstica e familiar contra a mulher. (Incluído pela Lei n° 14.899, de 2024)</h5>
+ <h4>Parágrafo único. Para fins de ampliação da integração dos dados e informações relacionados ao disposto no inciso VI do caput deste artigo, será garantida a interoperabilidade, no que couber, do Sinesp com o 	Registro Unificado de Dados e Informações sobre Violência contra as 	Mulheres, de que trata a Lei n° 14.232, de 28 de outubro de 2021 , observadas as restrições de publicidade disciplinadas na legislação. (Incluído pela Lei n° 14.899, de 2024)</h4>
+ <h3>Art. 36. O Sinesp tem por objetivos:</h3>
+ <h5>I - proceder à coleta, análise, atualização, sistematização, integração e interpretação de dados e informações relativos às políticas de segurança pública e defesa social;</h5>
+ <h5>II - disponibilizar estudos, estatísticas, indicadores e outras informações para auxiliar na formulação, implementação, execução, monitoramento e avaliação de políticas públicas;</h5>
+ <h5>III - promover a integração das redes e sistemas de dados e informações de segurança pública e defesa social, criminais, do sistema prisional e sobre drogas;</h5>
+ <h5>IV - garantir a interoperabilidade dos sistemas de dados e informações, conforme os padrões definidos pelo conselho gestor.</h5>
+ <h5>V - produzir dados sobre a qualidade de vida e a saúde dos profissionais de segurança pública e defesa social; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - produzir dados sobre a vitimização dos profissionais de segurança pública e defesa social, inclusive fora do horário de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - produzir dados sobre os profissionais de segurança pública e defesa social com deficiência em decorrência de vitimização na atividade; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VIII - produzir dados sobre os profissionais de segurança pública e defesa social que sejam dependentes químicos em decorrência da atividade; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IX - produzir dados sobre transtornos mentais e comportamento suicida dos profissionais de segurança pública e defesa social. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h4>Parágrafo único. O Sinesp adotará os padrões de integridade, disponibilidade, confidencialidade, confiabilidade e tempestividade dos sistemas informatizados do governo federal.</h4>
+ <h3>Art. 37. Integram o Sinesp todos os entes federados, por intermédio de órgãos criados ou designados para esse fim.</h3>
+ <h4>§ 1º Os dados e as informações de que trata esta Lei deverão ser padronizados e categorizados e serão fornecidos e atualizados pelos integrantes do Sinesp.</h4>
+ <h4>§ 2º O integrante que deixar de fornecer ou atualizar seus dados e informações no Sinesp poderá não receber recursos nem celebrar parcerias com a União para financiamento de programas, projetos ou ações de segurança pública e defesa social e do sistema prisional, na forma do regulamento.</h4>
+ <h4>§ 3º O Ministério Extraordinário da Segurança Pública é autorizado a celebrar convênios com órgãos do Poder Executivo que não integrem o Susp, com o Poder Judiciário e com o Ministério Público, para compatibilização de sistemas de informação e integração de dados, ressalvadas as vedações constitucionais de sigilo e desde que o objeto fundamental dos acordos seja a prevenção e a repressão da violência.</h4>
+ <h4>§ 4º A omissão no fornecimento das informações legais implica responsabilidade administrativa do agente público.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <p>DA CAPACITAÇÃO E DA VALORIZAÇÃO DO PROFISSIONAL EM SEGURANÇA PÚBLICA E DEFESA SOCIAL</p>
+ <p>Seção I</p>
+ <p>Do Sistema Integrado de Educação e Valorização Profissional (Sievap)</p>
+ <h3>Art. 38. É instituído o Sistema Integrado de Educação e Valorização Profissional (Sievap), com a finalidade de:</h3>
+ <h5>I - planejar, pactuar, implementar, coordenar e supervisionar as atividades de educação gerencial, técnica e operacional, em cooperação com as unidades da Federação;</h5>
+ <h5>II - identificar e propor novas metodologias e técnicas de educação voltadas ao aprimoramento de suas atividades;</h5>
+ <h5>III - apoiar e promover educação qualificada, continuada e integrada;</h5>
+ <h5>IV - identificar e propor mecanismos de valorização profissional.</h5>
+ <h4>§ 1º O Sievap é constituído, entre outros, pelos seguintes programas:</h4>
+ <h5>I - matriz curricular nacional;</h5>
+ <h5>II - Rede Nacional de Altos Estudos em Segurança Pública (Renaesp);</h5>
+ <h5>III - Rede Nacional de Educação a Distância em Segurança Pública (Rede EaD-Senasp);</h5>
+ <h5>IV - programa nacional de qualidade de vida para segurança pública e defesa social.</h5>
+ <h4>§ 2º Os órgãos integrantes do Susp terão acesso às ações de educação do Sievap, conforme política definida pelo Ministério Extraordinário da Segurança Pública.</h4>
+ <h3>Art. 39. A matriz curricular nacional constitui-se em referencial teórico, metodológico e avaliativo para as ações de educação aos profissionais de segurança pública e defesa social e deverá ser observada nas atividades formativas de ingresso, aperfeiçoamento, atualização, capacitação e especialização na área de segurança pública e defesa social, nas modalidades presencial e a distância, respeitados o regime jurídico e as peculiaridades de cada instituição.</h3>
+ <h4>§ 1º A matriz curricular é pautada nos direitos humanos, nos princípios da andragogia e nas teorias que enfocam o processo de construção do conhecimento.</h4>
+ <h4>§ 2º Os programas de educação deverão estar em consonância com os princípios da matriz curricular nacional.</h4>
+ <h3>Art. 40. A Renaesp, integrada por instituições de ensino superior, observadas as normas de licitação e contratos, tem como objetivo:</h3>
+ <h5>I - promover cursos de graduação, extensão e pós-graduação em segurança pública e defesa social;</h5>
+ <h5>II - fomentar a integração entre as ações dos profissionais, em conformidade com as políticas nacionais de segurança pública e defesa social;</h5>
+ <h5>III - promover a compreensão do fenômeno da violência;</h5>
+ <h5>IV - difundir a cidadania, os direitos humanos e a educação para a paz;</h5>
+ <h5>V - articular o conhecimento prático dos profissionais de segurança pública e defesa social com os conhecimentos acadêmicos;</h5>
+ <h5>VI - difundir e reforçar a construção de cultura de segurança pública e defesa social fundada nos paradigmas da contemporaneidade, da inteligência, da informação e do exercício de atribuições estratégicas, técnicas e científicas;</h5>
+ <h5>VII - incentivar produção técnico-científica que contribua para as atividades desenvolvidas pelo Susp.</h5>
+ <h3>Art. 41. A Rede EaD-Senasp é escola virtual destinada aos profissionais de segurança pública e defesa social e tem como objetivo viabilizar o acesso aos processos de aprendizagem, independentemente das limitações geográficas e sociais existentes, com o propósito de democratizar a educação em segurança pública e defesa social.</h3>
+ <p>Seção II</p>
+ <p>Do Programa Nacional de Qualidade de Vida para Profissionais de Segurança Pública (Pró-Vida)</p>
+ <h3>Art. 42. O Programa Nacional de Qualidade de Vida para Profissionais de Segurança Pública (Pró-Vida) tem por objetivo elaborar, implementar, apoiar, monitorar e avaliar, entre outros, os projetos de programas de atenção psicossocial e de saúde no trabalho dos profissionais de segurança pública e defesa social, bem como a integração sistêmica das unidades de saúde dos órgãos que compõem o Susp.</h3>
+ <h4>§ 1º O Pró-Vida desenvolverá durante todo o ano ações direcionadas à saúde biopsicossocial, à saúde ocupacional e à segurança do trabalho e mecanismos de proteção e de valorização dos profissionais de segurança pública e defesa social. (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h4>§ 2º O Pró-Vida publicará, anualmente, as informações de que tratam os incisos V, VI, VII, VIII e IX do caput do art. 36 desta Lei, de todo o território nacional, conforme regulamentação a ser editada pelo Poder Executivo federal. (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h4>§ 3º O Pró-Vida também deverá desenvolver ações de prevenção e de enfrentamento a todas as formas de violência sofrida pelos profissionais de segurança pública e defesa social, a fim de promover uma cultura de respeito aos seus direitos humanos. (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h4>§ 4º A implementação das ações de que trata o § 1º deste artigo será 	pactuada, nos termos dos respectivos planos de segurança pública, entre: (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h5>I - a União; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - os Estados; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - o Distrito Federal; e (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - os Municípios. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h3>Art. 42-A. O Pró-Vida produzirá diretrizes direcionadas 	à prevenção da violência autoprovocada e do suicídio. (Incluído pela Lei n° 14.531, de 2023)</h3>
+ <h4>§ 1º O Ministério da Justiça e Segurança Pública divulgará, no âmbito do 	Pró-Vida, em conjunto com a Rede Nacional de Qualidade de Vida para os 	Profissionais de Segurança Pública (Rede Pró-Vida), diretrizes de prevenção e de atendimento dos casos de emergência psiquiátrica que envolvam violência autoprovocada e comportamento suicida dos profissionais de segurança pública e defesa social, a ser adaptadas aos contextos e às competências de cada 	órgão. (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h4>§ 2º As políticas e as ações de prevenção da violência autoprovocada e do comportamento suicida dos profissionais de segurança pública e defesa social desenvolvidas pelas instituições de segurança pública e defesa social deverão observar, no momento da pactuação de que trata o § 4º do art. 42 	desta Lei, as seguintes diretrizes: (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h5>I - perspectiva multiprofissional na abordagem; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - atendimento e escuta multidisciplinar e de proximidade; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - discrição e respeito à intimidade nos atendimentos; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - integração e intersetorialidade das ações; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - ações baseadas em evidências científicas; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - atendimento não compulsório; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - respeito à dignidade humana; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VIII - ações de sensibilização dos agentes; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IX - articulação com a rede de saúde pública e outros parceiros; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>X - realização de ações diversificadas ou cumprimento de disciplinas curriculares específicas durante os cursos de formação; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XI - desenvolvimento de ações integradas de assistência social e promoção da saúde mental de forma preventiva e inclusiva para a família; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XII - melhoria da infraestrutura das unidades; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XIII - incentivo ao estabelecimento de carga horária de trabalho humanizada; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XIV - incentivo ao estabelecimento de política remuneratória condizente com a responsabilidade do trabalho policial; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XV - incentivo à gestão administrativa humanizada. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h4>§ 3º As políticas e as ações de prevenção institucional da violência autoprovocada, nos termos dos §§ 1º e 2º deste artigo, serão executadas por meio de estratégias de prevenção primária, secundária e terciária. (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h4>§ 4º A prevenção primária referida no § 3º deste artigo destina-se a todos os profissionais da segurança pública e defesa social e deve ser executada por meio de estratégias como: (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h5>I - estímulo ao convívio social, proporcionando a aproximação da família de seu local de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - promoção da qualidade de vida do profissional de segurança pública e defesa social; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - elaboração e/ou divulgação de programas de conscientização, de informação e de sensibilização sobre o suicídio; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - realização de ciclos de palestras e de campanhas que sensibilizem e relacionem qualidade de vida e ambiente de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - abordagem do tema referente a saúde mental em todos os níveis de formação e de qualificação profissional; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - capacitação dos profissionais de segurança pública e defesa social no que se refere à identificação e ao encaminhamento dos casos de risco; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - criação de espaços de escuta destinados a ouvir o profissional de segurança pública e defesa social, para que ele se sinta seguro a expor suas questões. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h4>§ 5º A prevenção secundária referida no § 3º deste artigo destina-se aos profissionais de segurança pública e defesa social que já se encontram em situação de risco de prática de violência autoprovocada, por meio de estratégias como: (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h5>I - criação de programas de atenção para o uso e abuso de álcool e outras drogas; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - organização de rede de cuidado como fluxo assistencial que permita o diagnóstico precoce dos profissionais de segurança pública e defesa social em situação de risco, com o envolvimento de todo o corpo da instituição, de modo a sinalizar a mudança de comportamento ou a preocupação com o colega de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - incorporação da notificação dos casos de ideação e de tentativa de suicídio no Sistema Nacional de Vigilância Epidemiológica, resguardada a identidade do profissional; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - acompanhamento psicológico regular; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - acompanhamento psicológico para profissionais de segurança pública e defesa social que tenham se envolvido em ocorrência de risco e em experiências traumáticas; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - acompanhamento psicológico para profissionais de segurança pública e defesa social que estejam presos ou respondendo a processos administrativos ou judiciais. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h4>§ 6º A prevenção terciária referida no § 3º deste artigo destina-se aos cuidados dos profissionais de segurança pública e defesa social que tenham comunicado ideação suicida ou que tenham histórico de violência autoprovocada, por meio de estratégias como: (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h5>I - aproximação da família para envolvimento e acompanhamento no processo de tratamento; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - enfrentamento a toda forma de isolamento ou de desqualificação ou a qualquer forma de violência eventualmente sofrida pelo profissional em seu ambiente de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - restrição do porte e uso de arma de fogo; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - acompanhamento psicológico e, sempre que for o caso, médico, regular; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - outras ações de apoio institucional ao profissional. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h4>§ 7º O 	disposto neste artigo aplica-se aos integrantes das carreiras policiais previstas no § 3º do art. 27 , no inciso IV do caput do art. 51 e no inciso XIII do caput do art. 52 da Constituição Federal , conforme regulamentação das respectivas Casas Legislativas. (Incluído pela Lei n° 14.531, de 2023)</h4>
+ <h3>Art. 42-B. Os mecanismos de proteção de que trata o § 	1º do art. 42 desta Lei quanto à proteção, à promoção e à defesa dos direitos humanos dos profissionais de segurança pública e defesa social observarão: (Incluído pela Lei n° 14.531, de 2023)</h3>
+ <h5>I - adequação das leis e dos regulamentos disciplinares que versam sobre direitos e deveres dos profissionais de segurança pública e defesa social à 	Constituição Federal e aos instrumentos internacionais de direitos humanos; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - valorização da participação dos profissionais de segurança pública e defesa social nos processos de formulação das políticas públicas relacionadas com a área; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - (VETADO); (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - acesso a equipamentos de proteção individual e coletiva, em quantidade e qualidade adequadas, garantindo a instrução e o treinamento continuado quanto ao uso correto dos equipamentos e a sua reposição permanente, 	considerados o desgaste e os prazos de validade; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - zelo pela adequação, pela manutenção e pela permanente renovação de todos os veículos utilizados no exercício profissional, bem como garantia de instalações dignas em todas as instituições, com ênfase nas condições de segurança, de higiene, de saúde e de ambiente de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - adoção de orientações, de medidas e de práticas concretas direcionadas 	à prevenção, à identificação e ao enfrentamento de qualquer modalidade de discriminação; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - salvaguarda do respeito integral aos direitos constitucionais das profissionais de segurança pública, consideradas as especificidades relativas à gestação e à amamentação, bem como as exigências permanentes de cuidado com os filhos que sejam crianças e adolescentes, assegurando a elas instalações físicas e equipamentos individuais específicos sempre que necessário; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VIII - estímulo e valorização do conhecimento e da vivência dos profissionais de segurança pública e defesa social idosos, impulsionando a criação de espaços institucionais para transmissão de experiências, bem como a formação de equipes de trabalho compostas de profissionais de diferentes faixas etárias para exercitar a integração intergeracional; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IX - estabelecimento de rotinas e de serviços internos que contemplem a preparação para o período de aposentadoria dos profissionais de segurança pública e defesa social, de forma a estimular o prosseguimento em atividades de participação cidadã após a fase de serviço ativo; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>X - incentivo à acessibilidade e à empregabilidade das pessoas com deficiência em instalações e equipamentos do sistema de segurança pública, 	assegurada a reserva constitucional de vagas nos concursos públicos; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XI - promoção do aperfeiçoamento profissional e da formação continuada como direitos do profissional de segurança pública e defesa social, estabelecendo como objetivo a universalização da graduação universitária; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XII - utilização dos dados sobre os processos disciplinares e administrativos movidos contra profissionais de segurança pública e defesa social para identificar vulnerabilidades dos treinamentos e inadequações na gestão de recursos humanos; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XIII - garantia a assistência jurídica para fins de recebimento de seguro, 	de pensão, de auxílio ou de outro direito de familiares, em caso de morte do profissional de segurança pública e defesa social; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XIV - amparo aos profissionais de segurança pública e defesa social que tenham sido vitimados ou que tenham ficado com deficiência ou sequela; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XV - critérios de promoção estabelecidos na legislação do respectivo ente federado, sendo a promoção por merecimento com critérios objetivos previamente definidos, de acesso universal e em percentual da antiguidade. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h3>Art. 42-C. As ações de saúde ocupacional e de segurança no trabalho de que trata o § 1º do art. 42 desta Lei observarão: (Incluído pela Lei n° 14.531, de 2023)</h3>
+ <h5>I - a atuação preventiva em relação aos acidentes ou doenças relacionados aos processos laborais por meio de mapeamento de riscos inerentes à 	atividade; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - o aprofundamento e a sistematização dos conhecimentos epidemiológicos de doenças ocupacionais entre profissionais de segurança pública e defesa social; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - a mitigação dos riscos e dos danos à saúde e à segurança; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - a melhoria das condições de trabalho dos profissionais de segurança pública e defesa social, para prevenir ou evitar a morte prematura do profissional ou a incapacidade total ou parcial para o trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - a criação de dispositivos de transmissão e de formação em temas referentes a segurança, a saúde e a higiene, com periodicidade regular, por meio de eventos de sensibilização, de palestras e de inclusão de disciplinas nos cursos regulares das instituições; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - a adoção de orientações, de medidas e de práticas concretas direcionadas à prevenção, à identificação e ao enfrentamento de qualquer discriminação nas instituições de segurança pública e defesa social; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - a implementação de paradigmas de acessibilidade e de empregabilidade das pessoas com deficiência em instalações e equipamentos do sistema de segurança pública e defesa social, assegurada a reserva constitucional de vagas nos concursos públicos; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VIII - a promoção de reabilitação e a reintegração dos profissionais ao trabalho, em casos de lesões, de traumas, de deficiências ou de doenças ocupacionais, em decorrência do exercício de suas atividades; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IX - a viabilidade de mecanismos de readaptação dos profissionais de segurança pública e defesa social e de deslocamento para novas funções ou postos de trabalho como alternativa ao afastamento definitivo e à 	inatividade em decorrência de acidente de trabalho e de ferimento ou sequela; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>X - a garantia aos profissionais de segurança pública e defesa social de acesso ágil e permanente a toda informação necessária para o correto desempenho de suas funções, especialmente quanto à legislação a ser observada; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XI - a erradicação de todas as formas de punição que envolvam maus-tratos ou tratamento cruel, desumano ou degradante contra os profissionais de segurança pública e defesa social tanto no cotidiano funcional quanto em atividades de formação e treinamento; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XII - o combate ao assédio sexual e moral nas instituições, por meio de veiculação de campanhas internas de educação e de garantia de canais para o recebimento e a apuração de denúncias; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XIII - a garantia de que todos os atos decisórios de superiores hierárquicos que disponham sobre punições, escalas, lotação e transferências sejam devidamente motivados, fundamentados e publicados; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XIV - a regulamentação da jornada de trabalho dos profissionais de segurança pública e defesa social, de forma a garantir o exercício do direito à 	convivência familiar e comunitária; e (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>XV - a adoção de Comissão Interna de Prevenção de Acidentes e de Assédio (Cipa) 	com composição paritária de representação dos profissionais e da direção das instituições. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h3>Art. 42-D. São objeto da atenção especial das diretrizes de saúde ocupacional e de segurança no trabalho dos profissionais de segurança pública e defesa social: (Incluído pela Lei n° 14.531, de 2023)</h3>
+ <h5>I - as jornadas de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - a proteção à maternidade; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - o trabalho noturno; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - os equipamentos de proteção individual; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - o trabalho em ambiente de risco e/ou insalubre; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - a higiene de alojamentos, de banheiros e de unidades de conforto e descanso para os profissionais; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - a política remuneratória com negociação coletiva para recomposição do poder aquisitivo da remuneração, com a participação de entidades representativas; e (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VIII - segurança no processo de trabalho. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h3>Art. 42-E. As ações de saúde biopsicossocial de que trata o § 1º do art. 42 desta Lei observarão as seguintes diretrizes: (Incluído pela Lei n° 14.531, de 2023)</h3>
+ <h5>I - a realização de avaliação em saúde multidisciplinar periódica, 	consideradas as especificidades das atividades realizadas por cada profissional, incluídos exames clínicos e laboratoriais; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>II - o acesso ao atendimento em saúde mental, de forma a viabilizar o enfrentamento da depressão, do estresse e de outras alterações psíquicas; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>III - o desenvolvimento de programas de acompanhamento e de tratamento dos profissionais envolvidos em ações com resultado letal ou com alto nível de estresse; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>IV - a implementação de políticas de prevenção, de apoio e de tratamento do alcoolismo, do tabagismo ou de outras formas de drogadição e de dependência química; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>V - o desenvolvimento de programas de prevenção do suicídio, por meio de atendimento psiquiátrico, de núcleos terapêuticos de apoio e de divulgação de informações sobre o assunto; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VI - o estímulo à prática regular de exercícios físicos, garantindo a adoção de mecanismos que permitam o cômputo de horas de atividade física como parte da jornada semanal de trabalho; (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VII - a implementação de política que permita o cômputo das horas presenciais em audiência judicial ou policial em decorrência da atividade; e (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h5>VIII - a elaboração de cartilhas direcionadas à reeducação alimentar como forma de diminuição de condições de risco à saúde e como fator de bem-estar profissional e de autoestima. (Incluído pela Lei n° 14.531, de 2023)</h5>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 43. Os documentos de identificação funcional dos profissionais da área de segurança pública e defesa social serão padronizados mediante ato do Ministro de Estado Extraordinário da Segurança Pública e terão fé pública e validade em todo o território nacional.</h3>
+ <h3>Art. 44. (VETADO).</h3>
+ <h3>Art. 45. Deverão ser realizadas conferências a cada 5 (cinco) anos para debater as diretrizes dos planos nacional, estaduais e municipais de segurança pública e defesa social.</h3>
+ <h3>Art. 46. O art. 3º da Lei Complementar nº 79, de 7 de janeiro de 1994 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 3º ........................................................................</h3>
+ <p>......................................................................................</p>
+ <h4>§ 1º (VETADO).</h4>
+ <p>......................................................................................</p>
+ <h4>§ 4º Os entes federados integrantes do Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp) que deixarem de fornecer ou atualizar seus dados no Sistema não poderão receber recursos do Funpen.</h4>
+ <p>............................................................................” (NR)</p>
+ <h3>Art. 47. O inciso II do § 3º e o § 5º do art. 4º da Lei n° 10.201, de 14 de fevereiro de 2001 , passam a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 4º ..........................................................................</h3>
+ <p>........................................................................................</p>
+ <h4>§ 3º ................................................................................</h4>
+ <p>........................................................................................</p>
+ <h5>II - os integrantes do Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp) que cumprirem os prazos estabelecidos pelo órgão competente para o fornecimento de dados e informações ao Sistema;</h5>
+ <p>.......................................................................................</p>
+ <h4>§ 5º (VETADO)</h4>
+ <p>.............................................................................” (NR)</p>
+ <h3>Art. 48. O § 2º do art. 9º da Lei n° 11.530, de 24 de outubro de 2007 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 9º ..........................................................................</h3>
+ <p>........................................................................................</p>
+ <h4>§ 2º Os entes federados integrantes do Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp) que deixarem de fornecer ou de atualizar seus dados e informações no Sistema não poderão receber recursos do Pronasci.” (NR)</h4>
+ <h3>Art. 49. Revogam-se os arts. 1º a 8º da Lei n° 12.681, de 4 de julho de 2012.</h3>
+ <h3>Art. 50. Esta Lei entra em vigor após decorridos 30 (trinta) dias de sua publicação oficial.</h3>
+ <p>Brasília, 11 de junho de 2018; 197º da Independência e 130º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Eduardo Refinetti Guardia</p>
+ <p>Esteves Pedro Colnago Junior</p>
+ <p>Gustavo do Vale Rocha</p>
+ <p>Grace Maria Fernandes Mendonça</p>
+ <p>Este texto não substitui o publicado no DOU de 12.6.2018</p>
+ <p>Regulamento | Disciplina a organização e o funcionamento dos órgãos responsáveis pela segurança pública, nos termos do § 7º do art. 144 da Constituição Federal; cria a Política Nacional de Segurança Pública e Defesa Social (PNSPDS); institui o Sistema Único de Segurança Pública (Susp); altera a Lei Complementar nº 79, de 7 de janeiro de 1994, a Lei n° 10.201, de 14 de fevereiro de 2001, e a Lei n° 11.530, de 24 de outubro de 2007; e revoga dispositivos da Lei n° 12.681, de 4 de julho de 2012.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13675.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
