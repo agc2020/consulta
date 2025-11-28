@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.473, DE 10 DE MAIO DE 2007 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2007" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.473, DE 10 DE MAIO DE 2007</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:30:14 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2007/Lei/L11473compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 11.074 caracteres | espelho: 11.065 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.473, DE 10 DE MAIO DE 2007. Conversão da MPv nº 345, de 2007.</p>
+ <p>Dispõe sobre cooperação federativa no âmbito da segurança pública e revoga a Lei N° 10.277, de 10 de setembro de 2001.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º A União poderá firmar convênio com os Estados e o Distrito Federal para executar atividades e serviços imprescindíveis à preservação da ordem pública e da incolumidade das pessoas e do patrimônio.</h3>
+ <h3>Art. 2º A cooperação federativa de que trata o art. 1º desta Lei, para os fins nela dispostos, compreende operações conjuntas, transferências de recursos e desenvolvimento de atividades de capacitação e qualificação de profissionais, no âmbito do Ministério da Justiça e Segurança Pública. (Redação dada pela Lei n° 13.844, de 2019)</h3>
+ <h4>Parágrafo único. As atividades de cooperação federativa têm caráter consensual e serão desenvolvidas sob a coordenação conjunta da União e do Ente convenente.</h4>
+ <h3>Art. 3º Consideram-se atividades e serviços imprescindíveis à preservação da ordem pública e da incolumidade das pessoas e do patrimônio, para os fins desta Lei:</h3>
+ <h5>I - o policiamento ostensivo;</h5>
+ <h5>II - o cumprimento de mandados de prisão;</h5>
+ <h5>III - o cumprimento de alvarás de soltura;</h5>
+ <h5>IV - a guarda, a vigilância e a custódia de presos;</h5>
+ <h5>V - os serviços técnico-periciais, qualquer que seja sua modalidade;</h5>
+ <h5>VI - o registro e a investigação de ocorrências policiais; (Incluído pela Lei n° 13.500, de 2017)</h5>
+ <h5>VII - as atividades relacionadas à segurança dos grandes eventos. (Redação dada pela Lei n° 13.173, de 2015)</h5>
+ <h5>VIII - as atividades de inteligência de segurança pública; (Redação dada pela Lei n° 13.500, de 2017)</h5>
+ <h5>IX - a coordenação de ações e operações integradas de segurança pública; (Redação dada pela Lei n° 13.756, de 2018)</h5>
+ <h5>X - o auxílio na ocorrência de catástrofes ou desastres coletivos, inclusive para reconhecimento de vitimados; e (Redação dada pela Lei n° 13.756, de 2018)</h5>
+ <h5>XI - o apoio às atividades de conservação e policiamento ambiental. (Redação dada pela Lei n° 13.756, de 2018)</h5>
+ <p><del>§ 1º (Revogado pela Lei n° 13.844, de 2019)</del></p>
+ <h4>§ 2º A cooperação federativa no âmbito do Ministério da Segurança Pública também ocorrerá para fins de desenvolvimento de atividades de apoio administrativo e de projetos na área de segurança pública. (Incluído pela Lei n° 13.756, de 2018)</h4>
+ <h3>Art. 4º Os ajustes celebrados na forma do art. 1º desta Lei deverão conter, essencialmente:</h3>
+ <h5>I - identificação do objeto;</h5>
+ <h5>II - identificação de metas;</h5>
+ <h5>III - definição das etapas ou fases de execução;</h5>
+ <h5>IV - plano de aplicação dos recursos financeiros;</h5>
+ <h5>V - cronograma de desembolso;</h5>
+ <h5>VI - previsão de início e fim da execução do objeto; e</h5>
+ <h5>VII - especificação do aporte de recursos, quando for o caso.</h5>
+ <h4>Parágrafo único. A União, por intermédio do Ministério da Justiça, poderá colocar à disposição dos Estados e do Distrito Federal, em caráter emergencial e provisório, servidores públicos federais, ocupantes de cargos congêneres e de formação técnica compatível, para execução do convênio de cooperação federativa de que trata esta Lei, sem ônus.</h4>
+ <h3>Art. 5º As atividades de cooperação federativa no âmbito do Ministério da Justiça e Segurança Pública serão desempenhadas por militares dos Estados e do Distrito Federal e por servidores das atividades-fim dos órgãos de segurança pública, do sistema prisional e de perícia criminal dos entes federativos que celebrarem convênio, na forma do art. 1º desta Lei. (Redação dada pela Lei n° 13.844, de 2019)</h3>
+ <h4>§ 1º Se forem insuficientes os convênios firmados entre a União e os entes federados para suprir a previsão do efetivo da Força Nacional de Segurança Pública (FNSP), e em face da necessidade de excepcional interesse público, as atividades previstas no caput deste artigo poderão ser desempenhadas em caráter voluntário: (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h5>I - por militares e por servidores das atividades-fim dos órgãos de segurança pública e dos órgãos de perícia criminal da União, dos Estados e do Distrito Federal que tenham passado para a inatividade há menos de cinco anos; (Redação dada pela Lei n° 13.500, de 2017)</h5>
+ <h5>II - por reservistas que tenham servido como militares temporários das Forças Armadas e passado para a reserva há menos de cinco anos, nos termos de convênio celebrado entre o Ministério da Defesa e o Ministério da Justiça e Segurança Pública. (Redação dada pela Lei n° 13.500, de 2017)</h5>
+ <h4>§ 2º (VETADO): (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 3º Os militares, os servidores e os reservistas de que trata o § 1º deste artigo serão mobilizados na FNSP, no mesmo posto, graduação ou cargo que exerciam nas respectivas instituições quando estavam no serviço ativo. (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 4º O disposto no § 1º deste artigo aplica-se às hipóteses em que a condição de inatividade não tenha ocorrido em razão de doença, acidente, invalidez, incapacidade, idade-limite, aposentadoria compulsória, licenciamento ou exclusão a bem da disciplina, condenação judicial transitada em julgado ou expulsão. (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 5º Aos militares, aos servidores e aos reservistas de que trata o § 1º deste artigo aplica-se o regime disciplinar a que estão submetidos nas respectivas instituições de origem. (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 6º O disposto nos arts. 6º e 7º desta Lei aplica-se aos militares, aos servidores e aos reservistas de que trata o § 1º deste artigo. (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 7º Anualmente, será realizada a previsão do efetivo da FNSP pelo Ministério da Justiça e Segurança Pública, com prioridade para a convocação, na seguinte ordem: (Redação dada pela Lei n° 13.500, de 2017)</h4>
+ <h5>I - dos militares e dos servidores referidos no caput deste artigo; (Incluído pela Lei n° 13.500, de 2017)</h5>
+ <h5>II - dos militares, dos servidores e dos reservistas referidos no § 1º deste artigo que já possuírem o curso de formação da FNSP na data de publicação desta Lei. (Incluído pela Lei n° 13.500, de 2017)</h5>
+ <h4>§ 8º A convocação dos voluntários dar-se-á por processo seletivo cujos critérios serão definidos em regulamento. (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 9º Os militares e os servidores referidos no caput e no § 1º deste artigo, mobilizados para a Senasp, inclusive para a FNSP, poderão nela permanecer pelo prazo máximo de dois anos, prorrogável por ato do Ministro de Estado da Justiça e Segurança Pública, mediante anuência específica do respectivo ente federado convenente. (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 10. A permanência, até o dia 31 de janeiro de 2020, dos reservistas referidos no inciso II do § 1º deste artigo que, na data da publicação desta Lei, estiverem mobilizados pela FNSP, está condicionada à previsão orçamentária a que se refere o § 7º deste artigo e sua situação será definida por regulamento do Ministério da Justiça e Segurança Pública. (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 11. Os integrantes da Secretaria Nacional de Segurança Pública, incluídos os da Força Nacional de Segurança Pública, os da Secretaria de Operações Integradas e os do Departamento Penitenciário Nacional que venham a responder a inquérito policial ou a processo judicial em função do seu emprego nas atividades e nos serviços referidos no art. 3º desta Lei serão representados judicialmente pela Advocacia-Geral da União. (Redação dada pela Lei n° 13.844, de 2019)</h4>
+ <h4>§ 12. (VETADO). (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 13. A mobilização para a FNSP dos reservistas a que se refere o inciso II do § 1º deste artigo será restrita àqueles que contarem mais de um ano de serviço militar e menos de nove anos de serviço público e que atenderem às demais condições estabelecidas por esta Lei e pelo Ministério da Justiça e Segurança Pública, considerando, ainda, que a eventual prorrogação de sua permanência na FNSP só será concedida se não implicar estabilidade. (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 14. As despesas com a convocação e com a manutenção dos reservistas a que se refere o inciso II do § 1º deste artigo serão custeadas com dotações orçamentárias do Ministério da Justiça e Segurança Pública, nos termos do convênio estabelecido com o Ministério da Defesa, no período em que integrarem os quadros da Força Nacional de Segurança Pública. (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h4>§ 15. O disposto no inciso II do caput do art. 6º da Lei N° 10.826, de 22 de dezembro de 2003 , aplica-se aos militares da reserva remunerada dos Estados e do Distrito Federal que exerçam cargo ou função em Gabinete Militar, em Casa Militar ou em órgão equivalente dos governos dos Estados e do Distrito Federal. (Incluído pela Lei n° 13.500, de 2017)</h4>
+ <h3>Art. 6º Os servidores civis e militares dos Estados e do Distrito Federal que participarem de atividades desenvolvidas em decorrência de convênio de cooperação de que trata esta Lei farão jus ao recebimento de diária a ser paga na forma prevista no art. 4º da Lei N° 8.162, de 8 de janeiro de 1991.</h3>
+ <h4>§ 1º A diária de que trata o caput deste artigo será concedida aos servidores enquanto mobilizados no âmbito do programa da Força Nacional de Segurança Pública em razão de deslocamento da sede em caráter eventual ou transitório para outro ponto do território nacional e não será computada para efeito de adicional de férias e do 13º (décimo terceiro) salário, nem integrará os salários, remunerações, subsídios, proventos ou pensões, inclusive alimentícias.</h4>
+ <h4>§ 2º A diária de que trata o caput deste artigo será custeada pelo Fundo Nacional de Segurança Pública, instituído pela Lei N° 10.201, de 14 de fevereiro de 2001 , e, excepcionalmente, à conta de dotação orçamentária da União.</h4>
+ <h3>Art. 7º O servidor civil ou militar vitimado durante as atividades de cooperação federativa de que trata esta Lei, bem como o Policial Federal, o Policial Rodoviário Federal, o Policial Civil e o Policial Militar, em ação operacional conjunta com a Força Nacional de Segurança Pública, farão jus, no caso de invalidez incapacitante para o trabalho, à indenização no valor de R$ 100.000,00 (cem mil reais), e seus dependentes, ao mesmo valor, no caso de morte.</h3>
+ <h4>Parágrafo único. A indenização de que trata o caput deste artigo correrá à conta do Fundo Nacional de Segurança Pública.</h4>
+ <h3>Art. 8º As indenizações previstas nesta Lei não excluem outros direitos e vantagens previstos em legislação específica.</h3>
+ <h3>Art. 9º Ficam criados, no âmbito do Poder Executivo Federal, para atender às necessidades do Programa da Força Nacional de Segurança Pública, 9 (nove) cargos em comissão do Grupo Direção e Assessoramento Superiores DAS, sendo 1 (um) DAS-5, 3 (três) DAS-4 e 5 (cinco) DAS-3.</h3>
+ <h3>Art. 10. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 11. Fica revogada a Lei N° 10.277, de 10 de setembro de 2001.</h3>
+ <p>Brasília, 10 de maio de 2007; 186º da Independência e 119º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 11.5.2007</p>
+ <p>Conversão da MPv nº 345, de 2007. | Dispõe sobre cooperação federativa no âmbito da segurança pública e revoga a Lei n° 10.277, de 10 de setembro de 2001.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2007/Lei/L11473compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

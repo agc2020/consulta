@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.267, DE 6 DE ABRIL DE 2016 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2016" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.267, DE 6 DE ABRIL DE 2016</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:32:26 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/L13267.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 8.667 caracteres | espelho: 8.691 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.267, DE 6 DE ABRIL DE 2016.</p>
+ <p>Disciplina a criação e a organização das associações denominadas empresas juniores, com funcionamento perante instituições de ensino superior.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei disciplina a criação e a organização das associações denominadas empresas juniores, com funcionamento perante instituições de ensino superior.</h3>
+ <h3>Art. 2º Considera-se empresa júnior a entidade organizada nos termos desta Lei, sob a forma de associação civil gerida por estudantes matriculados em cursos de graduação de instituições de ensino superior, com o propósito de realizar projetos e serviços que contribuam para o desenvolvimento acadêmico e profissional dos associados, capacitando-os para o mercado de trabalho.</h3>
+ <h4>§ 1º A empresa júnior será inscrita como associação civil no Registro Civil das Pessoas Jurídicas e no Cadastro Nacional da Pessoa Jurídica.</h4>
+ <h4>§ 2º A empresa júnior vincular-se-á a instituição de ensino superior e desenvolverá atividades relacionadas ao campo de abrangência de pelo menos um curso de graduação indicado no estatuto da empresa júnior, nos termos do estatuto ou do regimento interno da instituição de ensino superior, vedada qualquer forma de ligação partidária.</h4>
+ <h3>Art. 3º Poderão integrar a empresa júnior estudantes regularmente matriculados na instituição de ensino superior e no curso de graduação a que a entidade seja vinculada, desde que manifestem interesse, observados os procedimentos estabelecidos no estatuto.</h3>
+ <h4>§ 1º (VETADO).</h4>
+ <h4>§ 2º Os estudantes matriculados em curso de graduação e associados à respectiva empresa júnior exercem trabalho voluntário, nos termos da Lei n° 9.608, de 18 de fevereiro de 1998.</h4>
+ <h3>Art. 4º A empresa júnior somente poderá desenvolver atividades que atendam a pelo menos uma das seguintes condições:</h3>
+ <h5>I - relacionem-se aos conteúdos programáticos do curso de graduação ou dos cursos de graduação a que se vinculem;</h5>
+ <h5>II - constituam atribuição da categoria profissional correspondente à formação superior dos estudantes associados à entidade.</h5>
+ <h4>§ 1º As atividades desenvolvidas pela empresa júnior deverão ser orientadas e supervisionadas por professores e profissionais especializados, e a empresa, desde que devidamente reconhecida nos termos do art. 9º, terá gestão autônoma em relação à direção da faculdade, ao centro acadêmico e a qualquer outra entidade acadêmica.</h4>
+ <h4>§ 2º A empresa júnior poderá cobrar pela elaboração de produtos e pela prestação de serviços independentemente de autorização do conselho profissional regulamentador de sua área de atuação profissional, ainda que esse seja regido por legislação específica, desde que essas atividades sejam acompanhadas por professores orientadores da instituição de ensino superior ou supervisionadas por profissionais habilitados.</h4>
+ <h3>Art. 5º A empresa júnior, cujos fins são educacionais e não lucrativos, terá, além de outros específicos, os seguintes objetivos:</h3>
+ <h5>I - proporcionar a seus membros as condições necessárias para a aplicação prática dos conhecimentos teóricos referentes à respectiva área de formação profissional, dando-lhes oportunidade de vivenciar o mercado de trabalho em caráter de formação para o exercício da futura profissão e aguçando-lhes o espírito crítico, analítico e empreendedor;</h5>
+ <h5>II - aperfeiçoar o processo de formação dos profissionais em nível superior;</h5>
+ <h5>III - estimular o espírito empreendedor e promover o desenvolvimento técnico, acadêmico, pessoal e profissional de seus membros associados por meio de contato direto com a realidade do mercado de trabalho, desenvolvendo atividades de consultoria e de assessoria a empresários e empreendedores, com a orientação de professores e profissionais especializados;</h5>
+ <h5>IV - melhorar as condições de aprendizado em nível superior, mediante a aplicação da teoria dada em sala de aula na prática do mercado de trabalho no âmbito dessa atividade de extensão;</h5>
+ <h5>V - proporcionar aos estudantes a preparação e a valorização profissionais por meio da adequada assistência de professores e especialistas;</h5>
+ <h5>VI - intensificar o relacionamento entre as instituições de ensino superior e o meio empresarial;</h5>
+ <h5>VII - promover o desenvolvimento econômico e social da comunidade ao mesmo tempo em que fomenta o empreendedorismo de seus associados.</h5>
+ <h3>Art. 6º Para atingir seus objetivos, caberá à empresa júnior:</h3>
+ <h5>I - promover o recrutamento, a seleção e o aperfeiçoamento de seu pessoal com base em critérios técnicos;</h5>
+ <h5>II - realizar estudos e elaborar diagnósticos e relatórios sobre assuntos específicos inseridos em sua área de atuação;</h5>
+ <h5>III - assessorar a implantação das soluções indicadas para os problemas diagnosticados;</h5>
+ <h5>IV - promover o treinamento, a capacitação e o aprimoramento de graduandos em suas áreas de atuação;</h5>
+ <h5>V - buscar a capacitação contínua nas atividades de gerenciamento e desenvolvimento de projetos;</h5>
+ <h5>VI - desenvolver projetos, pesquisas e estudos, em nível de consultoria, assessoramento, planejamento e desenvolvimento, elevando o grau de qualificação dos futuros profissionais e colaborando, assim, para aproximar o ensino superior da realidade do mercado de trabalho;</h5>
+ <h5>VII - fomentar, na instituição a que seja vinculada, cultura voltada para o estímulo ao surgimento de empreendedores, com base em política de desenvolvimento econômico sustentável;</h5>
+ <h5>VIII - promover e difundir o conhecimento por meio de intercâmbio com outras associações, no Brasil e no exterior.</h5>
+ <h3>Art. 7º É vedado à empresa júnior:</h3>
+ <h5>I - captar recursos financeiros para seus integrantes por intermédio da realização de seus projetos ou de qualquer outra atividade;</h5>
+ <h5>II - propagar qualquer forma de ideologia ou pensamento político-partidário.</h5>
+ <h4>§ 1º A renda obtida com os projetos e serviços prestados pela empresa júnior deverá ser revertida exclusivamente para o incremento das atividades-fim da empresa.</h4>
+ <h4>§ 2º É permitida a contratação de empresa júnior por partidos políticos para a prestação de serviços de consultoria e de publicidade.</h4>
+ <h3>Art. 8º A empresa júnior deverá comprometer-se a:</h3>
+ <h5>I - exercer suas atividades em regime de livre e leal concorrência;</h5>
+ <h5>II - exercer suas atividades segundo a legislação específica aplicável a sua área de atuação e segundo os acordos e as convenções da categoria profissional correspondente;</h5>
+ <h5>III - promover, com outras empresas juniores, o intercâmbio de informações de natureza comercial, profissional e técnica sobre estrutura e projetos;</h5>
+ <h5>IV - cuidar para que não se faça publicidade ou propaganda comparativa, por qualquer meio de divulgação, que deprecie, desabone ou desacredite a concorrência;</h5>
+ <h5>V - integrar os novos membros por meio de política previamente definida, com períodos destinados à qualificação e à avaliação;</h5>
+ <h5>VI - captar clientela com base na qualidade dos serviços e na competitividade dos preços, vedado o aliciamento ou o desvio desleal de clientes da concorrência, bem como o pagamento de comissões e outras benesses a quem os promova.</h5>
+ <h3>Art. 9º O reconhecimento de empresa júnior por instituição de ensino superior dar-se-á conforme as normas internas dessa instituição e nos termos deste artigo.</h3>
+ <h4>§ 1º Competirá ao órgão colegiado da unidade de ensino da instituição de ensino superior a aprovação do plano acadêmico da empresa júnior, cuja elaboração deverá contar com a participação do professor orientador e dos estudantes envolvidos na iniciativa júnior.</h4>
+ <h4>§ 2º O plano acadêmico indicará, entre outros, os seguintes aspectos educacionais e estruturais da empresa júnior e da instituição de ensino superior:</h4>
+ <h5>I - reconhecimento da carga horária dedicada pelo professor orientador;</h5>
+ <h5>II - suporte institucional, técnico e material necessário ao início das atividades da empresa júnior.</h5>
+ <h4>§ 3º A instituição de ensino superior é autorizada a ceder espaço físico a título gratuito, dentro da própria instituição, que servirá de sede para as atividades de assessoria e consultoria geridas pelos estudantes empresários juniores.</h4>
+ <h4>§ 4º As atividades da empresa júnior serão inseridas no conteúdo acadêmico da instituição de ensino superior preferencialmente como atividade de extensão.</h4>
+ <h4>§ 5º Competirá ao órgão colegiado da instituição de ensino superior criar normas para disciplinar sua relação com a empresa júnior, assegurada a participação de representantes das empresas juniores na elaboração desse regramento.</h4>
+ <h3>Art. 10. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 6 de abril de 2016; 195º da Independência e 128º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Este texto não substitui o publicado no DOU de 7.4.2016 e retificado em 8.4.2016</p>
+ <p>Disciplina a criação e a organização das associações denominadas empresas juniores, com funcionamento perante instituições de ensino superior.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/L13267.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

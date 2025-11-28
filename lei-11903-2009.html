@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.903, DE 14 DE JANEIRO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.903, DE 14 DE JANEIRO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:29:30 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L11903.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.382 caracteres | espelho: 9.646 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.903, DE 14 DE JANEIRO DE 2009.</p>
+ <p>Dispõe sobre o rastreamento da produção e do consumo de medicamentos por meio de tecnologia de captura, armazenamento e transmissão eletrônica de dados.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º É criado o Sistema Nacional de Controle de Medicamentos, envolvendo a produção, comercialização, dispensação e a prescrição médica, odontológica e veterinária, assim como os demais tipos de movimentação previstos pelos controles sanitários.</h3>
+ <h3>Art. 1º É criado o Sistema Nacional de Controle de Medicamentos, visando a controlar a produção, a distribuição, a comercialização, a dispensação e a prescrição médica, odontológica e, caso contenha medicamento de uso humano, veterinária, assim como os demais tipos de movimentação previstos pelos controles sanitários. (Redação dada pela Lei n° 13.410, de 2016)</h3>
+ <h3>Art. 2º Todo e qualquer medicamento produzido, dispensado ou vendido no território nacional será controlado por meio do Sistema Nacional de Controle de Medicamentos.</h3>
+ <h3>Art. 2º O órgão de vigilância sanitária federal competente determinará, em normativa própria, as categorias de medicamentos produzidos, distribuídos, comercializados, dispensados ou prescritos no território nacional sujeitos ao Sistema Nacional de Controle de Medicamentos. (Redação dada pela Lei n° 13.410, de 2016)</h3>
+ <h4>Parágrafo único. O controle aplica-se igualmente às prescrições médicas, odontológicas e veterinárias.</h4>
+ <h4>Parágrafo único. (Revogado). (Redação dada pela Lei n° 13.410, de 2016)</h4>
+ <h3>Art. 3º O controle será realizado por meio de sistema de identificação exclusivo dos produtos, prestadores de serviços e usuários, com o emprego de tecnologias de captura, armazenamento e transmissão eletrônica de dados.</h3>
+ <h3>Art. 3º O controle será realizado por meio de sistema de identificação individualizado de medicamentos, com o emprego de tecnologias de captura, armazenamento e transmissão eletrônica de dados. (Redação dada pela Lei n° 13.410, de 2016)</h3>
+ <h3>Art. 3º O controle será realizado por meio do sistema de identificação de medicamentos, com o emprego de tecnologias de captura, armazenamento e transmissão eletrônica de dados. (Redação dada pela Lei n° 14.338, de 2022)</h3>
+ <h4>§ 1º Os produtos e seus distribuidores receberão identificação específica baseada em sistema de captura de dados por via eletrônica, para os seguintes componentes do Sistema Nacional de Controle de Medicamentos:</h4>
+ <h4>§ 1º As embalagens de todos os medicamentos registrados receberão identificação específica baseada em sistema de captura, armazenamento e transmissão eletrônica de dados, contendo minimamente as seguintes informações: (Redação dada pela Lei n° 13.410, de 2016)</h4>
+ <h5>I – fabricante (autorização de funcionamento, licença estadual e alvará sanitário municipal dos estabelecimentos fabricantes);</h5>
+ <h5>I - número de registro do medicamento no órgão de vigilância sanitária federal competente; (Redação dada pela Lei n° 13.410, de 2016)</h5>
+ <h5>II – fornecedor (atacadistas, varejistas, exportadores e importadores de medicamentos);</h5>
+ <p><del>II - (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <h5>II - (revogado); (Redação dada pela Lei n° 14.338, de 2022)</h5>
+ <h5>III – comprador (inclusive estabelecimentos requisitantes de produtos não aviados em receitas com múltiplos produtos);</h5>
+ <h5>III - número do lote ou da partida do medicamento; (Redação dada pela Lei n° 13.410, de 2016)</h5>
+ <h5>IV – produto (produto aviado ou dispensado e sua quantidade);</h5>
+ <h5>IV - data de validade do medicamento; (Redação dada pela Lei n° 13.410, de 2016)</h5>
+ <h5>V – unidades de transporte/logísticas;</h5>
+ <h5>V - (revogado); (Redação dada pela Lei n° 13.410, de 2016)
+(Vide Lei n° 13.410, de 2016)</h5>
+ <h5>VI – consumidor/paciente;</h5>
+ <h5>VI - (revogado); (Redação dada pela Lei n° 13.410, de 2016)
+(Vide Lei n° 13.410, de 2016)</h5>
+ <h5>VII – prescrição (inclusive produtos não aviados numa receita com múltiplos produtos);</h5>
+ <h5>VII - (revogado); (Redação dada pela Lei n° 13.410, de 2016)
+(Vide Lei n° 13.410, de 2016)</h5>
+ <h5>VIII – médico, odontólogo e veterinário (inscrição no conselho de classe dos profissionais prescritores).</h5>
+ <h5>VIII - (revogado). (Redação dada pela Lei n° 13.410, de 2016)
+(Vide Lei n° 13.410, de 2016)</h5>
+ <h5>IX - código de barras bidimensional de leitura rápida que direcione a endereço na internet que dê acesso à bula digital do medicamento em questão. (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h4>§ 2º Além dos listados nos incisos do § 1º deste artigo, poderão ser incluídos pelo órgão de vigilância sanitária federal outros componentes ligados à produção, distribuição, importação, exportação, comercialização, prescrição e uso de medicamentos.</h4>
+ <h4>§ 2º O órgão de vigilância sanitária federal competente e o detentor do registro do produto poderão incluir outras informações, além das apresentadas nos incisos I, II, III e IV do § 1º . (Redação dada pela Lei n° 13.410, de 2016)</h4>
+ <h4>§ 2º O detentor do registro do produto poderá incluir outras informações, além das referidas nos incisos do § 1º deste artigo. (Redação dada pela Lei n° 14.338, de 2022)</h4>
+ <h4>§ 3º As bulas digitais de que trata o inciso IX deste artigo devem ser hospedadas em links autorizados pelo órgão de vigilância sanitária federal competente. (Incluído pela Lei n° 14.338, de 2022)</h4>
+ <h4>§ 4º A inclusão de informações em formato digital pelo órgão de vigilância sanitária federal competente ou pelo detentor do registro do produto em formato único não substituirá a necessidade da sua apresentação também em formato de bula impressa, com todas as informações necessárias em conformidade com a regulamentação do órgão de vigilância sanitária federal, observado idêntico conteúdo disponível digitalmente, inclusive em relação às normas de acessibilidade para as pessoas com deficiência. (Incluído pela Lei n° 14.338, de 2022)</h4>
+ <h4>§ 5º A autoridade sanitária poderá definir quais medicamentos terão apenas um formato de bula. (Incluído pela Lei n° 14.338, de 2022)</h4>
+ <h4>§ 6º A bula digital a que se refere o inciso IX do § 1º deste artigo terá, no mínimo, as seguintes características: (Incluído pela Lei n° 14.338, de 2022)</h4>
+ <h5>I - conteúdo completo e atualizado, idêntico ao da bula impressa; (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h5>II - formato que facilite a leitura e a compreensão; (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h5>III - possibilidade de conversão do texto em áudio e/ou vídeo mediante o uso de aplicativo adequado. (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h3>Art. 3º-A. O detentor de registro de medicamento deverá possuir sistema que permita a elaboração de mapa de distribuição de medicamentos, com identificação dos quantitativos comercializados e distribuídos para cada lote, bem como dos destinatários das remessas. (Incluído pela Lei n° 14.338, de 2022)</h3>
+ <h4>§ 1º O mapa de distribuição de medicamentos, bem como as embalagens, devem conter, obrigatoriamente: (Incluído pela Lei n° 14.338, de 2022)</h4>
+ <h5>I - número de lote do medicamento; (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h5>II - data de fabricação do lote; (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h5>III - data de validade do lote. (Incluído pela Lei n° 14.338, de 2022)</h5>
+ <h4>§ 2º Após a conclusão da regulamentação do disposto no caput deste artigo, as demais etapas do sistema deverão ser implantadas em até 12 (doze) meses. (Incluído pela Lei n° 14.338, de 2022)</h4>
+ <p><del></p>
+ <h3>Art. 4º (Revogado pela Lei n° 14.338, de 2022)</del></h3>
+ <p><del>Parágrafo único. O órgão definirá o conteúdo, a periodicidade e a responsabilidade pelo recebimento e auditoria dos balanços das transações comerciais necessários para o controle de que trata o art. 3º (Revogado pela Lei n° 13.410, de 2016)</del></p>
+ <p><del></p>
+ <h3>Art. 4º (Revogado pela Lei n° 14.338, de 2022)</del></h3>
+ <p><del>§ 1º (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>§ 2º (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>§ 3º (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>§ 4º (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>§ 5º (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <h3>Art. 5º O órgão de vigilância sanitária federal competente implantará o sistema no prazo gradual de 3 (três) anos, sendo a inclusão dos componentes referentes ao art. 3º desta Lei feita da seguinte forma:</h3>
+ <p><del></p>
+ <h3>Art. 5º (Revogado pela Lei n° 14.338, de 2022)</del></h3>
+ <h5>I – no primeiro ano, os referentes aos incisos I e II do § 1º ;</h5>
+ <p><del>I (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <h5>II – no segundo ano, os referentes aos incisos III, IV e V do § 1º ;</h5>
+ <p><del>II (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <h5>III – no terceiro ano, os referentes aos incisos VI, VII e VIII do § 1º .</h5>
+ <p><del>III (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>Parágrafo único (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>I - até um ano, para que a indústria, os importadores e os representantes da distribuição e do varejo escolhidos pelo órgão de vigilância sanitária federal competente possam, em caráter experimental, receber e transmitir dados referentes a, no mínimo, três lotes de medicamentos que contenham as informações previstas nos incisos I, II, III e IV do § 1º do art. 3º (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>II - até oito meses após o término da etapa estabelecida no inciso I (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <p><del>III - até três anos após o término da etapa estabelecida no inciso II (Revogado pela Lei n° 14.338, de 2022)</del></p>
+ <h3>Art. 6º O órgão de vigilância sanitária federal competente estabelecerá as listas de medicamentos de venda livre, de venda sob prescrição e retenção de receita e de venda sob responsabilidade do farmacêutico, sem retenção de receita.</h3>
+ <h3>Art. 7º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 14 de janeiro de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Márcia Bassit Lameiro Costa Mazzoli</p>
+ <p>Este texto não substitui o publicado no DOU de 15.1.2009</p>
+ <p>Dispõe sobre o rastreamento da produção e do consumo de medicamentos por meio de tecnologia de captura, armazenamento e transmissão eletrônica de dados.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L11903.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

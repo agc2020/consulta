@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.189, DE 19 DE NOVEMBRO DE 2015 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2015" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.189, DE 19 DE NOVEMBRO DE 2015</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:38:03 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/L13189.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 30.982 caracteres | espelho: 31.072 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.189, DE 19 DE NOVEMBRO DE 2015. Conversão da Medida Provisória nº 680, de 2015</p>
+ <p>Institui o Programa de Proteção ao Emprego - PPE.</p>
+ <p>Institui o Programa Seguro-Emprego - PSE. (Redação dada pela Medida Provisória nº 761, de 2016) (Redação dada pela Lei n° 13.456, de 2017)</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica instituído o Programa de Proteção ao Emprego - PPE, com os seguintes objetivos:</h3>
+ <h3>Art. 1º Fica instituído o Programa Seguro-Emprego - PSE, com os seguintes objetivos: (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 1º Fica instituído o Programa Seguro-Emprego (PSE), com os seguintes objetivos: (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h5>I - possibilitar a preservação dos empregos em momentos de retração da atividade econômica;</h5>
+ <h5>II - favorecer a recuperação econômico - financeira das empresas;</h5>
+ <h5>III - sustentar a demanda agregada durante momentos de adversidade, para facilitar a recuperação da economia;</h5>
+ <h5>IV - estimular a produtividade do trabalho por meio do aumento da duração do vínculo empregatício; e</h5>
+ <h5>V - fomentar a negociação coletiva e aperfeiçoar as relações de emprego.</h5>
+ <h4>Parágrafo único. O PPE consiste em ação para auxiliar os trabalhadores na preservação do emprego, nos termos do inciso II do caput do art. 2º da Lei n° 7.998, de 11 de janeiro de 1990 .</h4>
+ <h4>Parágrafo único. O PSE consiste em ação para auxiliar os trabalhadores na preservação do emprego, nos termos do inciso II do caput do art. 2º da Lei n° 7.998, de 11 de janeiro de 1990. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>Parágrafo único. O PSE consiste em ação para auxiliar os trabalhadores na preservação do emprego, nos termos do inciso II do caput do art. 2º da Lei n° 7.998, de 11 de janeiro de 1990 . (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 2º Podem aderir ao PPE as empresas de todos os setores em situação de dificuldade econômico-financeira que celebrarem acordo coletivo de trabalho específico de redução de jornada e de salário.</h3>
+ <h4>§ 1º A adesão ao PPE pode ser feita até 31 de dezembro de 2016, e o prazo máximo de permanência no programa é de vinte e quatro meses, respeitada a data de extinção do programa.</h4>
+ <h4>§ 2º Tem prioridade de adesão a empresa que demonstre observar a cota de pessoas com deficiência.</h4>
+ <h3>Art. 2º Podem aderir ao PSE as empresas de todos os setores em situação de dificuldade econômico-financeira que celebrarem acordo coletivo de trabalho específico de redução de jornada e de salário. (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h4>§ 1º A adesão ao PSE pode ser feita junto ao Ministério do Trabalho, até o dia 31 de dezembro de 2017, observado o prazo máximo de permanência de vinte e quatro meses, na forma definida em regulamento, respeitada a data de extinção do Programa. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 2º Tem prioridade de adesão a empresa que demonstre observar a cota de pessoas com deficiência, as microempresas e empresas de pequeno porte, observados os critérios definidos pelo Poder Executivo federal. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 3º As microempresas e as empresas de pequeno porte que aderirem ao PSE poderão contar com o apoio técnico do Serviço Brasileiro de Apoio às Micro e Pequenas Empresas - Sebrae. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h3>Art. 2º Podem aderir ao PSE as empresas de todos os setores em situação de dificuldade econômico-financeira que celebrarem acordo coletivo de trabalho específico de redução de jornada e de salário. (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h4>§ 1º A adesão ao PSE pode ser feita perante o Ministério do Trabalho até o dia 31 de dezembro de 2017, observado o prazo máximo de permanência de vinte e quatro meses, na forma definida em regulamento, respeitada a data de extinção do programa. (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 2º Têm prioridade de adesão ao PSE, observados os critérios definidos pelo Poder Executivo federal: (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h5>I - a empresa que demonstre observar a cota de pessoas com deficiência; (Incluído pela Lei n° 13.456, de 2017)</h5>
+ <h5>II - as microempresas e empresas de pequeno porte; e (Incluído pela Lei n° 13.456, de 2017)</h5>
+ <h5>III - a empresa que possua em seus quadros programa de reinserção profissional de egressos do sistema penitenciário. (Incluído pela Lei n° 13.456, de 2017)</h5>
+ <h4>§ 3º As microempresas e as empresas de pequeno porte poderão contar com o apoio técnico do Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae), conforme disposto em regulamento. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 3º Poderão aderir ao PPE as empresas, independentemente do setor econômico, nas condições estabelecidas em ato do Poder Executivo e que cumprirem os seguintes requisitos:</h3>
+ <h3>Art. 3º Poderão aderir ao PSE as empresas que se enquadrem nas condições estabelecidas pelo Comitê do Programa de Proteção ao Emprego, criado pelo Decreto nº 8.479, de 6 de julho de 2015 , independentemente do setor econômico, e que cumprirem os seguintes requisitos: (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 3º Poderão aderir ao PSE as empresas que se enquadrem nas condições estabelecidas pelo Comitê do Programa de Proteção ao Emprego, criado pelo Decreto nº 8.479, de 6 de julho de 2015, independentemente do setor econômico, e que cumprirem os seguintes requisitos: (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h5>I - celebrar e apresentar acordo coletivo de trabalho específico, nos termos do art. 5º ;</h5>
+ <h5>II - apresentar solicitação de adesão ao PPE ao órgão definido pelo Poder Executivo;</h5>
+ <h5>II - apresentar, ao Ministério do Trabalho, solicitação de adesão ao PSE; (Redação dada pela Medida Provisória nº 761, de 2016)</h5>
+ <h5>II - apresentar ao Ministério do Trabalho solicitação de adesão ao PSE; (Redação dada pela Lei n° 13.456, de 2017)</h5>
+ <h5>III - apresentar a relação dos empregados abrangidos, especificando o salário individual;</h5>
+ <h5>IV - ter registro no Cadastro Nacional da Pessoa Jurídica - CNPJ há, no mínimo, dois anos;</h5>
+ <h5>V - comprovar a regularidade fiscal, previdenciária e relativa ao Fundo de Garantia do Tempo de Serviço - FGTS; e</h5>
+ <h5>VI - comprovar a situação de dificuldade econômico-financeira, fundamentada no Indicador Líquido de Empregos - ILE, considerando-se nesta situação a empresa cujo ILE for igual ou inferior a 1% (um por cento), apurado com base nas informações disponíveis no Cadastro Geral de Empregados e Desempregados - CAGED, sendo que o ILE consiste no percentual representado pela diferença entre admissões e demissões acumulada nos doze meses anteriores ao da solicitação de adesão ao PPE dividida pelo número de empregados no mês anterior ao início desse período.</h5>
+ <h5>VI - comprovar a situação de dificuldade econômico-financeira, fundamentada no Indicador Líquido de Empregos - ILE, considerando-se nesta situação a empresa cujo ILE seja igual ou inferior ao percentual a ser definido em ato do Poder Executivo federal, apurado com base nas informações disponíveis no Cadastro Geral de Empregados e Desempregados - CAGED, consistindo o ILE no percentual representado pela diferença entre admissões e demissões acumulada nos doze meses anteriores ao da solicitação de adesão ao PSE dividida pelo número de empregados no mês anterior ao início desse período. (Redação dada pela Medida Provisória nº 761, de 2016)</h5>
+ <h5>VI - comprovar a situação de dificuldade econômico-financeira, fundamentada no Indicador Líquido de Empregos (ILE), considerando-se nesta situação a empresa cujo ILE seja igual ou inferior ao percentual a ser definido em ato do Poder Executivo federal, apurado com base nas informações disponíveis no Cadastro Geral de Empregados e Desempregados (CAGED), consistindo o ILE no percentual representado pela diferença entre admissões e demissões acumulada nos doze meses anteriores ao da solicitação de adesão ao PSE dividida pelo número de empregados no mês anterior ao início desse período. (Redação dada pela Lei n° 13.456, de 2017)</h5>
+ <h4>§ 1º Para fins do disposto no inciso IV do caput , em caso de solicitação de adesão por filial de empresa, pode ser considerado o tempo de registro no CNPJ da matriz.</h4>
+ <h4>§ 2º A regularidade de que trata o inciso V do caput deve ser observada durante todo o período de adesão ao PPE, como condição para permanência no programa.</h4>
+ <h4>§ 2º A regularidade de que trata o inciso V do caput deverá ser observada durante o período de adesão ao PSE, como condição para permanência no Programa. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 2º A regularidade de que trata o inciso V do caput deste artigo deverá ser observada durante o período de adesão do PSE, como condição para permanência no Programa. (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 3º No cálculo do indicador de que trata o inciso VI do caput , não serão computados os eventos de transferência por entrada, de transferência por saída e de admissão ou desligamento de aprendizes. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 3º No cálculo do indicador de que trata o inciso VI do caput deste artigo, não serão computados os eventos de transferência por entrada, de transferência por saída e de admissão ou desligamento de aprendizes. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 4º Os empregados de empresas que aderirem ao PPE e que tiverem seu salário reduzido, nos termos do art. 5º, fazem jus a uma compensação pecuniária equivalente a 50% (cinquenta por cento) do valor da redução salarial e limitada a 65% (sessenta e cinco por cento) do valor máximo da parcela do seguro-desemprego, enquanto perdurar o período de redução temporária da jornada de trabalho.</h3>
+ <h3>Art. 4º Os empregados de empresas que aderirem ao PSE e que tiverem o seu salário reduzido, nos termos do art. 5º , fazem jus à compensação pecuniária equivalente a cinquenta por cento do valor da redução salarial e limitada a sessenta e cinco por cento do valor máximo da parcela do seguro-desemprego, enquanto perdurar o período de redução temporária da jornada de trabalho. (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 4º Os empregados de empresas que aderirem ao PSE e que tiverem o seu salário reduzido, nos termos do art. 5º desta Lei, fazem jus à compensação pecuniária equivalente a 50% (cinquenta por cento) do valor da redução salarial e limitada a 65% (sessenta e cinco por cento) do valor máximo da parcela do seguro-desemprego, enquanto perdurar o período de redução temporária da jornada de trabalho. (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h4>§ 1º Ato do Poder Executivo federal deve dispor sobre a forma de pagamento da compensação pecuniária de que trata o caput , custeada pelo Fundo de Amparo ao Trabalhador - FAT.</h4>
+ <h4>§ 2º O valor do salário pago pelo empregador, após a redução de que trata o caput do art. 5º, não pode ser inferior ao valor do salário mínimo.</h4>
+ <h3>Art. 5º O acordo coletivo de trabalho específico para adesão ao PPE, celebrado entre a empresa e o sindicato de trabalhadores representativo da categoria da atividade econômica preponderante da empresa, pode reduzir em até 30% (trinta por cento) a jornada e o salário.</h3>
+ <h3>Art. 5º O acordo coletivo de trabalho específico para adesão ao PSE, celebrado entre a empresa e o sindicato de trabalhadores representativo da categoria da atividade econômica preponderante da empresa, pode reduzir em até trinta por cento a jornada e o salário. (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 5º O acordo coletivo de trabalho específico para adesão ao PSE, celebrado entre a empresa e o sindicato de trabalhadores representativo da categoria da atividade econômica preponderante da empresa, pode reduzir em até 30% (trinta por cento) a jornada e o salário. (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h4>§ 1º O acordo deve ser aprovado em assembleia dos trabalhadores abrangidos pelo programa e deve dispor sobre:</h4>
+ <h5>I - número total de empregados abrangidos pela redução e sua identificação;</h5>
+ <h5>II - estabelecimentos ou setores específicos da empresa abrangidos;</h5>
+ <h5>III - percentual de redução da jornada e redução proporcional ou menor do salário;</h5>
+ <h5>IV - período pretendido de adesão ao PPE e de redução temporária da jornada de trabalho, que deve ter duração de até seis meses, podendo ser prorrogado por períodos de seis meses, desde que o período total não ultrapasse vinte e quatro meses;</h5>
+ <h5>IV - período pretendido de adesão ao PSE e de redução temporária da jornada de trabalho, que deve ter duração de até seis meses, podendo ser prorrogado por períodos de seis meses, desde que o período total não ultrapasse vinte e quatro meses; (Redação dada pela Medida Provisória nº 761, de 2016)</h5>
+ <h5>IV - período pretendido de adesão ao PSE e de redução temporária da jornada de trabalho, que deve ter duração de até seis meses, podendo ser prorrogado por períodos de seis meses, desde que o período total não ultrapasse vinte e quatro meses; (Redação dada pela Lei n° 13.456, de 2017)</h5>
+ <h5>V - período de garantia no emprego, que deve ser equivalente, no mínimo, ao período de redução de jornada acrescido de um terço;</h5>
+ <h5>VI - constituição de comissão paritária, composta por representantes do empregador e dos empregados abrangidos pelo PPE, para acompanhar e fiscalizar o cumprimento do acordo e do programa, exceto nas microempresas e empresas de pequeno porte.</h5>
+ <h5>VI - constituição de comissão paritária, composta por representantes do empregador e dos empregados abrangidos pelo PSE, para acompanhar e fiscalizar o cumprimento do acordo e do Programa, exceto nas microempresas e empresas de pequeno porte. (Redação dada pela Medida Provisória nº 761, de 2016)</h5>
+ <h5>VI - constituição de comissão paritária, composta por representantes do empregador e dos empregados abrangidos pelo PSE, para acompanhar e fiscalizar o cumprimento do acordo e do Programa, exceto nas microempresas e empresas de pequeno porte. (Redação dada pela Lei n° 13.456, de 2017)</h5>
+ <h4>§ 2º O acordo coletivo de trabalho específico de que trata este artigo não disporá sobre outras condições de trabalho.</h4>
+ <h4>§ 2º O acordo coletivo de trabalho específico de que trata este artigo não disporá sobre outras condições de trabalho que não aquelas decorrentes da adesão ao PSE. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 2º O acordo coletivo de trabalho específico de que trata este artigo não disporá sobre outras condições de trabalho que não aquelas decorrentes da adesão ao PSE. (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 3º A empresa deve demonstrar ao sindicato que foram esgotados os bancos de horas, além de fornecer as informações econômico-financeiras.</h4>
+ <h4>§ 4º É facultada a celebração de acordo coletivo múltiplo de trabalho específico a grupo de microempresas e empresas de pequeno porte, do mesmo setor econômico, com o sindicato de trabalhadores representativo da categoria da atividade econômica preponderante.</h4>
+ <h4>§ 5º Na hipótese do § 4º, a comissão paritária de que trata o inciso VI do § 1º será composta por representantes do empregador e do sindicato de trabalhadores que celebrar o acordo coletivo múltiplo de trabalho específico.</h4>
+ <h4>§ 6º Para fins dos incisos I e II do § 1º, o acordo deve abranger todos os empregados da empresa ou, no mínimo, os empregados de setor ou estabelecimento específico.</h4>
+ <h4>§ 7º Para fins do disposto no § 4º, cada microempresa ou empresa de pequeno porte deverá demonstrar individualmente o cumprimento dos requisitos exigidos para adesão ao PPE.</h4>
+ <h4>§ 7º Para fins do disposto no § 4º , cada microempresa ou empresa de pequeno porte deverá demonstrar individualmente o cumprimento dos requisitos exigidos para adesão ao PSE. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 7º Para fins do disposto no § 4º deste artigo, cada microempresa ou empresa de pequeno porte deverá demonstrar individualmente o cumprimento dos requisitos exigidos para adesão ao PSE, com o apoio técnico do Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae). (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 8º A redução de que trata o caput está condicionada à celebração de acordo coletivo de trabalho específico com o sindicato de trabalhadores representativo da categoria, observado o disposto no art. 511 da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 .</h4>
+ <h4>§ 9º O número total de trabalhadores e de setores abrangidos pelo Programa de que tratam os incisos I e II do § 1º e a redução do percentual de que trata o inciso III do § 1º poderão ser alterados durante o período de adesão ao Programa, dispensada a formalização de termo aditivo ao acordo, observados os critérios a serem estabelecidos em ato do Poder Executivo federal. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 9º O número total de trabalhadores e de setores abrangidos pelo Programa de que tratam os incisos I e II do § 1º deste artigo e a redução do percentual de que trata o inciso III do § 1º deste artigo poderão ser alterados durante o período de adesão ao Programa, desde que aprovados em assembleia dos trabalhadores abrangidos pelo Programa, dispensada a formalização de termo aditivo ao acordo, observados os critérios a serem estabelecidos em ato do Poder Executivo federal. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 6º A empresa que aderir ao PPE fica proibida de:</h3>
+ <h3>Art. 6º A empresa que aderir ao PSE fica proibida de: (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 6º A empresa que aderir ao PSE fica proibida de: (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h5>I - dispensar arbitrariamente ou sem justa causa os empregados que tiverem sua jornada de trabalho temporariamente reduzida enquanto vigorar a adesão ao PPE e, após o seu término, durante o prazo equivalente a um terço do período de adesão;</h5>
+ <h5>I - dispensar arbitrariamente ou sem justa causa os empregados que tiverem sua jornada de trabalho temporariamente reduzida enquanto vigorar a adesão ao PSE e, após o seu término, durante o prazo equivalente a um terço do período de adesão; e (Redação dada pela Medida Provisória nº 761, de 2016)</h5>
+ <h5>I - dispensar arbitrariamente ou sem justa causa os empregados que tiverem sua jornada de trabalho temporariamente reduzida enquanto vigorar a adesão ao PSE e, após o seu término, durante o prazo equivalente a um terço do período de adesão; e (Redação dada pela Lei n° 13.456, de 2017)</h5>
+ <h5>II - contratar empregado para executar, total ou parcialmente, as mesmas atividades exercidas por empregado abrangido pelo programa, exceto nas hipóteses de:</h5>
+ <h6>a) reposição;</h6>
+ <h6>b) aproveitamento de concluinte de curso de aprendizagem na empresa, nos termos do art. 429 da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 .</h6>
+ <h6>c) efetivação de estagiário; (Incluído pela Medida Provisória nº 761, de 2016)</h6>
+ <h6>c) efetivação de estagiário; (Incluído pela Lei n° 13.456, de 2017)</h6>
+ <h6>d) contratação de pessoas com deficiência; e (Incluído pela Medida Provisória nº 761, de 2016)</h6>
+ <h6>d) contratação de pessoas com deficiência ou idosas; e (Incluído pela Lei n° 13.456, de 2017)</h6>
+ <h6>e) contratação de egresso dos sistemas prisional e de medidas socioeducativas. (Incluído pela Medida Provisória nº 761, de 2016)</h6>
+ <h6>e) contratação de egresso dos sistemas prisional e de medidas socioeducativas. (Incluído pela Lei n° 13.456, de 2017)</h6>
+ <h4>§ 1º Nas hipóteses de contratação previstas nas alíneas a e b do inciso II do caput , o empregado deve ser abrangido pelo acordo coletivo de trabalho específico.</h4>
+ <h4>§ 1º Nas hipóteses de contratação previstas no inciso II do caput , o empregado deve ser abrangido pelo acordo coletivo de trabalho específico. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 1º Nas hipóteses de contratação previstas no inciso II do caput deste artigo, o empregado deve ser abrangido pelo acordo coletivo de trabalho específico. (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 2º Durante o período de adesão, é proibida a realização de horas extraordinárias pelos empregados abrangidos pelo programa.</h4>
+ <h3>Art. 7º A empresa pode denunciar o PPE a qualquer momento desde que comunique o ato ao sindicato que celebrou o acordo coletivo de trabalho específico, aos seus trabalhadores e ao Poder Executivo, com antecedência mínima de trinta dias, demonstrando as razões e a superação da situação de dificuldade econômico-financeira.</h3>
+ <h3>Art. 7º A empresa pode denunciar o PSE a qualquer momento, desde que comunique o ato ao sindicato que celebrou o acordo coletivo de trabalho específico, aos seus trabalhadores e ao Poder Executivo federal, com antecedência mínima de trinta dias, demonstrando as razões e a superação da situação de dificuldade econômico-financeira. (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 7º A empresa pode denunciar o PSE a qualquer momento, desde que comunique o ato ao sindicato que celebrou o acordo coletivo de trabalho específico, aos seus trabalhadores e ao Poder Executivo federal, com antecedência mínima de trinta dias, demonstrando as razões e a superação da situação de dificuldade econômico-financeira. (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h4>§ 1º Somente após o prazo de trinta dias, pode a empresa exigir o cumprimento da jornada integral de trabalho.</h4>
+ <h4>§ 2º Deve ser mantida a garantia de emprego, nos termos da adesão original ao PPE e seus acréscimos.</h4>
+ <h4>§ 2º Deve ser mantida a garantia de emprego, nos termos da adesão original ao PSE e aos seus acréscimos. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 2º Deve ser mantida a garantia de emprego, nos termos da adesão original ao PSE e aos seus acréscimos. (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 3º Somente após seis meses da denúncia, pode a empresa aderir novamente ao PPE, caso demonstre que enfrenta nova situação de dificuldade econômico-financeira.</h4>
+ <h4>§ 3º Somente após seis meses da denúncia, pode a empresa aderir novamente ao PSE, caso demonstre que enfrenta nova situação de dificuldade econômico-financeira. (Redação dada pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 3º Somente após seis meses da denúncia, pode a empresa aderir novamente ao PSE, caso demonstre que enfrenta nova situação de dificuldade econômico-financeira. (Redação dada pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 8º Fica excluída do PPE e impedida de aderir ao programa novamente a empresa que:</h3>
+ <h3>Art. 8º Fica excluída do PSE e impedida de aderir ao Programa novamente a empresa que: (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 8º Fica excluída do PSE e impedida de aderir ao Programa novamente a empresa que: (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h5>I - descumprir os termos do acordo coletivo de trabalho específico relativo à redução temporária da jornada de trabalho ou qualquer outro dispositivo desta Lei ou de sua regulamentação;</h5>
+ <h5>II - cometer fraude no âmbito do PPE; ou</h5>
+ <h5>II - cometer fraude no âmbito do PSE, assim entendida como a situação em que empresa obtiver, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil ou qualquer outro meio fraudulento, relativamente ao Programa, como atos praticados quanto à burla das condições e dos critérios para adesão e permanência no Programa, fornecimento de informações não verídicas, apresentação de documentos falsos ou desvio dos recursos da compensação financeira do Programa destinada aos empregados abrangidos; ou (Redação dada pela Medida Provisória nº 761, de 2016)</h5>
+ <h5>II - cometer fraude no âmbito do PSE, assim entendida como a situação em que empresa obtiver, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil ou qualquer outro meio fraudulento, relativamente ao Programa, como atos praticados quanto à burla das condições e dos critérios para adesão e permanência no Programa, fornecimento de informações não verídicas, apresentação de documentos falsos ou desvio dos recursos da compensação financeira do Programa destinada aos empregados abrangidos; ou (Redação dada pela Lei n° 13.456, de 2017)</h5>
+ <h5>III - for condenada por decisão judicial transitada em julgado ou autuada administrativamente após decisão final no processo administrativo por prática de trabalho análogo ao de escravo, trabalho infantil ou degradante.</h5>
+ <h4>§ 1º A empresa que descumprir o acordo coletivo ou as normas relativas ao PPE fica obrigada a restituir ao FAT os recursos recebidos, devidamente corrigidos, e a pagar multa administrativa correspondente a 100% (cem por cento) desse valor, calculada em dobro no caso de fraude, a ser aplicada conforme o</h4>
+ <p>TÍTULO VII da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e revertida ao FAT.</p>
+ <h4>§ 1º A empresa que descumprir o acordo coletivo ou as normas relativas ao PSE fica obrigada a restituir ao FAT os recursos recebidos, devidamente corrigidos, e a pagar multa administrativa correspondente a cem por cento desse valor, calculada em dobro no caso de fraude, a ser aplicada conforme o</h4>
+ <p>TÍTULO VII da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943, e revertida ao FAT. (Redação dada pela Medida Provisória nº 761, de 2016)</p>
+ <h4>§ 1º A empresa que descumprir o acordo coletivo ou as normas relativas ao PSE fica obrigada a restituir ao FAT os recursos recebidos, devidamente corrigidos, e a pagar multa administrativa correspondente a 100% (cem por cento) desse valor, calculada em dobro no caso de fraude, a ser aplicada conforme o</h4>
+ <p>TÍTULO VII da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943, , e revertida ao FAT. (Redação dada pela Lei n° 13.456, de 2017)</p>
+ <h4>§ 2º Para fins do disposto no inciso I do caput , a denúncia de que trata o art. 7º não é considerada descumprimento dos termos do acordo coletivo de trabalho específico.</h4>
+ <h4>§ 3º Para fins da correção dos recursos de que trata o § 1º , o valor a ser restituído ao FAT, por ocasião do pagamento, será acrescido de juros equivalentes à taxa referencial do Sistema Especial de Liquidação e de Custódia - Selic para títulos federais, calculada na forma de capitalização simples, ou seja, pela soma aritmética dos valores mensais da taxa Selic, adicionando-se um por cento no último mês de atualização e utilizando-se para o cálculo do débito o Sistema Débito Web disponibilizado no sítio eletrônico do Tribunal de Contas da União. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 3º Para fins da correção dos recursos de que trata o § 1º deste artigo, o valor a ser restituído ao FAT, por ocasião do pagamento, será acrescido de juros equivalentes à taxa referencial do Sistema Especial de Liquidação e de Custódia (Selic) para títulos federais, calculada na forma de capitalização simples, ou seja, pela soma aritmética dos valores mensais da taxa Selic, adicionando-se 1% (um por cento) no último mês de atualização e utilizando-se para o cálculo do débito o Sistema Débito Web disponibilizado no sítio eletrônico do Tribunal de Contas da União. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 9º A compensação pecuniária integra as parcelas remuneratórias para efeito do disposto no inciso I do art. 22 e no § 8º do art. 28 da Lei n° 8.212, de 24 de julho de 1991 , e do disposto no art. 15 da Lei n° 8.036, de 11 de maio de 1990 . (Vigência)</h3>
+ <h3>Art. 10. Permanecem regidas pela Medida Provisória nº 680, de 6 de julho de 2015 , as adesões ao PPE já aprovadas, aplicando-se esta Lei às solicitações de adesão ou de prorrogação em tramitação na data de sua publicação ou protocoladas a partir dessa data, sendo facultadas às empresas a prorrogação dos prazos e a adoção das demais condições previstas nesta Lei mediante aditivo ao acordo coletivo de trabalho específico.</h3>
+ <h3>Art. 11. O PPE extingue-se em 31 de dezembro de 2017.</h3>
+ <h3>Art. 11. O PSE extingue-se em 31 de dezembro de 2018. (Redação dada pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 11. O PSE extingue-se em 31 de dezembro de 2018. (Redação dada pela Lei n° 13.456, de 2017)</h3>
+ <h3>Art. 11-A. Até o final do mês de fevereiro dos anos de 2017 e de 2018, o Poder Executivo federal estabelecerá o limite máximo anual para as despesas totais do PSE, observados os parâmetros econômicos oficiais utilizados na gestão fiscal. (Incluído pela Medida Provisória nº 761, de 2016)</h3>
+ <h4>§ 1º Para fins de estimativa do cálculo das despesas totais referidas no caput , será considerado o somatório do estoque de benefícios concedidos com os novos benefícios a serem desembolsados no exercício. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 2º A gestão fiscal de que trata o caput compreende a elaboração dos orçamentos anuais e as avaliações de receitas e despesas para cumprimento do art. 9º da Lei Complementar n º 101, de 4 de maio de 2000. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h4>§ 3º O Poder Executivo federal, por meio de regulamento, poderá fixar orçamento do PSE dedicado exclusivamente a microempresas e empresas de pequeno porte. (Incluído pela Medida Provisória nº 761, de 2016)</h4>
+ <h3>Art. 11-A. Até o final do mês de fevereiro de cada exercício, o Poder Executivo federal estabelecerá o limite máximo anual para as despesas totais do PSE, observados os parâmetros econômicos oficiais utilizados na gestão fiscal. (Incluído pela Lei n° 13.456, de 2017)</h3>
+ <h4>§ 1º Para fins de estimativa do cálculo das despesas totais referidas no caput deste artigo, será considerado o somatório do estoque de benefícios concedidos com os novos benefícios a serem desembolsados no exercício. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 2º A gestão fiscal de que trata o caput deste artigo compreende a elaboração dos orçamentos anuais e as avaliações de receitas e despesas para cumprimento do disposto no art. 9º da Lei Complementar nº 101, de 4 de maio de 2000. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h4>§ 3º O Poder Executivo federal, por meio de regulamento, poderá fixar orçamento do PSE dedicado exclusivamente a microempresas e empresas de pequeno porte. (Incluído pela Lei n° 13.456, de 2017)</h4>
+ <h3>Art. 11-B. O Ministério do Trabalho enviará semestralmente, pelo período de duração do PSE, aos Ministérios da Fazenda e do Planejamento, Desenvolvimento e Gestão e à Casa Civil da Presidência da República, informações que permitam avaliar a efetividade do PSE como política pública em relação aos objetivos pretendidos. (Incluído pela Medida Provisória nº 761, de 2016)</h3>
+ <h3>Art. 11-B. O Ministério do Trabalho enviará semestralmente, pelo período de duração do PSE, aos Ministérios da Fazenda e do Planejamento, Desenvolvimento e Gestão e à Casa Civil da Presidência da República, informações que permitam avaliar a efetividade do PSE como política pública em relação aos objetivos pretendidos. (Incluído pela Lei n° 13.456, de 2017)</h3>
+ <h3>Art. 12. Esta Lei entra em vigor na data de sua publicação, com exceção do disposto no art. 9º , quanto à Lei n° 8.212, de 24 de julho de 1991 , que entra em vigor no dia 1º de novembro de 2015.</h3>
+ <p>Brasília, 19 de novembro de 2015; 194º da Independência e 127º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Este texto não substitui o publicado no DOU de 20.11.2015</p>
+ <p>Conversão da Medida Provisória nº 680, de 2015 | Institui o Programa de Proteção ao Emprego-PPE.Institui o Programa Seguro-Emprego - PSE.(Redação dada pela Medida Provisória nº 761, de 2016)(Redação dada pela Lei n° 13.456, de 2017)</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/L13189.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

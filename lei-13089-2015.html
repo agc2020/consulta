@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.089, DE 12 DE JANEIRO DE 2015 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2015" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.089, DE 12 DE JANEIRO DE 2015</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:40:36 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/L13089.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 27.536 caracteres | espelho: 26.162 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.089, DE 12 DE JANEIRO DE 2015.</p>
+ <p>Institui o Estatuto da Metrópole, altera a Lei n° 10.257, de 10 de julho de 2001, e dá outras providências.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei, denominada Estatuto da Metrópole, estabelece diretrizes gerais para o planejamento, a gestão e a execução das funções públicas de interesse comum em regiões metropolitanas e em aglomerações urbanas instituídas pelos Estados, normas gerais sobre o plano de desenvolvimento urbano integrado e outros instrumentos de governança interfederativa, e critérios para o apoio da União a ações que envolvam governança interfederativa no campo do desenvolvimento urbano, com base nos i ncisos XX do art. 21 , IX do art. 23 e I do art. 24 , no § 3º do art. 25 e no art. 182 da Constituição Federal .</h3>
+ <h4>§ 1º Além das regiões metropolitanas e das aglomerações urbanas, as disposições desta Lei aplicam-se, no que couber:</h4>
+ <h5>I – às microrregiões instituídas pelos Estados com fundamento em funções públicas de interesse comum com características predominantemente urbanas;</h5>
+ <h5>II – (VETADO).</h5>
+ <h5>III - às unidades regionais de saneamento básico definidas pela Lei n° 11.445, de 5 de janeiro de 2007. (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h4>§ 2º Na aplicação das disposições desta Lei, serão observadas as normas gerais de direito urbanístico estabelecidas na Lei n° 10.257, de 10 de julho de 2001 - Estatuto da Cidade , que regulamenta os arts. 182 e 183 da Constituição Federal, estabelece diretrizes gerais da política urbana e dá outras providências, e em outras leis federais, bem como as regras que disciplinam a política nacional de desenvolvimento urbano, a política nacional de desenvolvimento regional e as políticas setoriais de habitação, saneamento básico, mobilidade urbana e meio ambiente.</h4>
+ <h4>§ 2º Na aplicação das disposições desta Lei, serão observadas as normas gerais de direito urbanístico estabelecidas na Lei n° 10.257, de 10 de julho de 2001 (Estatuto da Cidade) . (Redação dada pela Lei n° 13.683, de 2018)</h4>
+ <h3>Art. 2º Para os efeitos desta Lei, consideram-se:</h3>
+ <h5>I – aglomeração urbana: unidade territorial urbana constituída pelo agrupamento de 2 (dois) ou mais Municípios limítrofes, caracterizada por complementaridade funcional e integração das dinâmicas geográficas, ambientais, políticas e socioeconômicas;</h5>
+ <h5>II – função pública de interesse comum: política pública ou ação nela inserida cuja realização por parte de um Município, isoladamente, seja inviável ou cause impacto em Municípios limítrofes;</h5>
+ <h5>III – gestão plena: condição de região metropolitana ou de aglomeração urbana que possui:</h5>
+ <h6>a) formalização e delimitação mediante lei complementar estadual;</h6>
+ <h6>b) estrutura de governança interfederativa própria, nos termos do art. 8º desta Lei; e</h6>
+ <h6>c) plano de desenvolvimento urbano integrado aprovado mediante lei estadual;</h6>
+ <h5>IV – governança interfederativa: compartilhamento de responsabilidades e ações entre entes da Federação em termos de organização, planejamento e execução de funções públicas de interesse comum;</h5>
+ <h5>V – metrópole: espaço urbano com continuidade territorial que, em razão de sua população e relevância política e socioeconômica, tem influência nacional ou sobre uma região que configure, no mínimo, a área de influência de uma capital regional, conforme os critérios adotados pela Fundação Instituto Brasileiro de Geografia e Estatística - IBGE;</h5>
+ <h5>VI – plano de desenvolvimento urbano integrado: instrumento que estabelece, com base em processo permanente de planejamento, as diretrizes para o desenvolvimento urbano da região metropolitana ou da aglomeração urbana;</h5>
+ <h5>VI - plano de desenvolvimento urbano integrado: instrumento que estabelece, com base em processo permanente de planejamento, viabilização econômico-financeira e gestão, as diretrizes para o desenvolvimento territorial estratégico e os projetos estruturantes da região metropolitana e aglomeração urbana; (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>VII – região metropolitana: aglomeração urbana que configure uma metrópole.</h5>
+ <h5>VII - região metropolitana: unidade regional instituída pelos Estados, mediante lei complementar, constituída por agrupamento de Municípios limítrofes para integrar a organização, o planejamento e a execução de funções públicas de interesse comum; (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>VII - região metropolitana: unidade regional instituída pelos Estados e integrada, conforme o caso, pelo Distrito Federal, por meio de lei complementar, constituída por agrupamento de Municípios limítrofes para integrar a organização, o planejamento e a execução de funções públicas de interesse comum; (Redação dada pelo Medida Provisória nº 862, de 2018) (Vigência encerrada)</h5>
+ <h5>VII - região metropolitana: unidade regional instituída pelos Estados, mediante lei complementar, constituída por agrupamento de Municípios limítrofes para integrar a organização, o planejamento e a execução de funções públicas de interesse comum; (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>VIII - área metropolitana: representação da expansão contínua da malha urbana da metrópole, conurbada pela integração dos sistemas viários, abrangendo, especialmente, áreas habitacionais, de serviços e industriais com a presença de deslocamentos pendulares no território; (Incluído pela Lei n° 13.683, de 2018)</h5>
+ <h5>IX - governança interfederativa das funções públicas de interesse comum: compartilhamento de responsabilidades e ações entre entes da Federação em termos de organização, planejamento e execução de funções públicas de interesse comum, mediante a execução de um sistema integrado e articulado de planejamento, de projetos, de estruturação financeira, de implantação, de operação e de gestão. (Incluído pela Lei n° 13.683, de 2018)</h5>
+ <h4>Parágrafo único. Os critérios para a delimitação da região de influência de uma capital regional, previstos no inciso V do caput deste artigo considerarão os bens e serviços fornecidos pela cidade à região, abrangendo produtos industriais, educação, saúde, serviços bancários, comércio, empregos e outros itens pertinentes, e serão disponibilizados pelo IBGE na rede mundial de computadores.</h4>
+ <h4>Parágrafo único. Cabe ao colegiado da microrregião decidir sobre a adoção do Plano de Desenvolvimento Urbano ou quaisquer matérias de impacto. (Incluído pela Lei n° 13.683, de 2018)</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA INSTITUIÇÃO DE REGIÕES METROPOLITANAS E DE AGLOMERAÇÕES URBANAS</h3>
+ <h3>Art. 3º Os Estados, mediante lei complementar, poderão instituir regiões metropolitanas e aglomerações urbanas, constituídas por agrupamento de Municípios limítrofes, para integrar a organização, o planejamento e a execução de funções públicas de interesse comum.</h3>
+ <h4>Parágrafo único. Estado e Municípios inclusos em região metropolitana ou em aglomeração urbana formalizada e delimitada na forma do caput deste artigo deverão promover a governança interfederativa, sem prejuízo de outras determinações desta Lei.</h4>
+ <h4>§ 1º O Estado e os Municípios inclusos em região metropolitana ou em aglomeração urbana formalizada e delimitada na forma do caput deste artigo deverão promover a governança interfederativa, sem prejuízo de outras determinações desta Lei. (Redação dada pela Lei n° 13.683, de 2018)</h4>
+ <h4>§ 2º A criação de uma região metropolitana, de aglomeração urbana ou de microrregião deve ser precedida de estudos técnicos e audiências públicas que envolvam todos os Municípios pertencentes à unidade territorial. (Incluído pela Lei n° 13.683, de 2018)</h4>
+ <h4>§ 3º O Distrito Federal poderá integrar região metropolitana com Municípios limítrofes ao seu território, observadas as regras estabelecidas neste Capítulo para a sua instituição. (Incluído pelo Medida Provisória nº 862, de 2018) (Vigência encerrada)</h4>
+ <h3>Art. 4º A instituição de região metropolitana ou de aglomeração urbana que envolva Municípios pertencentes a mais de um Estado será formalizada mediante a aprovação de leis complementares pelas assembleias legislativas de cada um dos Estados envolvidos.</h3>
+ <h4>Parágrafo único. Até a aprovação das leis complementares previstas no caput deste artigo por todos os Estados envolvidos, a região metropolitana ou a aglomeração urbana terá validade apenas para os Municípios dos Estados que já houverem aprovado a respectiva lei.</h4>
+ <h4>§ 1º Até a aprovação das leis complementares previstas no caput por todos os Estados envolvidos, a região metropolitana ou a aglomeração urbana terá validade apenas para os Municípios dos Estados que já houverem aprovado a respectiva lei. (Incluído pelo Medida Provisória nº 862, de 2018) (Vigência encerrada)</h4>
+ <h4>§ 2º A instituição de região metropolitana ou de aglomeração urbana que envolva municípios limítrofes ao Distrito Federal será formalizada por meio da aprovação de lei complementar pela assembleia legislativa do Estado envolvido e pela Câmara Legislativa do Distrito Federal. (Incluído pelo Medida Provisória nº 862, de 2018) (Vigência encerrada)</h4>
+ <h4>§ 3º Poderão ser incluídos na região metropolitana ou na aglomeração urbana, criadas nos termos estabelecidos no caput do art. 3º, Municípios que sejam limítrofes a, no mínimo, um daqueles que já a integrem ou ao Distrito Federal, quando for o caso. (Incluído pelo Medida Provisória nº 862, de 2018) (Vigência encerrada)</h4>
+ <h4>Parágrafo único. Até a aprovação das leis complementares previstas no caput deste artigo por todos os Estados envolvidos, a região metropolitana ou a aglomeração urbana terá validade apenas para os Municípios dos Estados que já houverem aprovado a respectiva lei.</h4>
+ <h3>Art. 5º As leis complementares estaduais referidas nos arts. 3º e 4º desta Lei definirão, no mínimo:</h3>
+ <h5>I – os Municípios que integram a unidade territorial urbana;</h5>
+ <h5>II – os campos funcionais ou funções públicas de interesse comum que justificam a instituição da unidade territorial urbana;</h5>
+ <h5>III – a conformação da estrutura de governança interfederativa, incluindo a organização administrativa e o sistema integrado de alocação de recursos e de prestação de contas; e</h5>
+ <h5>IV – os meios de controle social da organização, do planejamento e da execução de funções públicas de interesse comum.</h5>
+ <h4>§ 1º No processo de elaboração da lei complementar, serão explicitados os critérios técnicos adotados para a definição do conteúdo previsto nos incisos I e II do caput deste artigo.</h4>
+ <h4>§ 2º Respeitadas as unidades territoriais urbanas criadas mediante lei complementar estadual até a data de entrada em vigor desta Lei, a instituição de região metropolitana impõe a observância do conceito estabelecido no inciso VII do caput do art. 2º.</h4>
+ <h2>CAPÍTULO III</h2>
+ <p>DA GOVERNANÇA INTERFEDERATIVA DE REGIÕES METROPOLITANAS E DE AGLOMERAÇÕES URBANAS</p>
+ <h3>Art. 6º A governança interfederativa das regiões metropolitanas e das aglomerações urbanas respeitará os seguintes princípios:</h3>
+ <h5>I – prevalência do interesse comum sobre o local;</h5>
+ <h5>II – compartilhamento de responsabilidades para a promoção do desenvolvimento urbano integrado;</h5>
+ <h5>II - compartilhamento de responsabilidades e de gestão para a promoção do desenvolvimento urbano integrado; (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>III – autonomia dos entes da Federação;</h5>
+ <h5>IV – observância das peculiaridades regionais e locais;</h5>
+ <h5>V – gestão democrática da cidade, consoante os arts. 43 a 45 da Lei n° 10.257, de 10 de julho de 2001 ;</h5>
+ <h5>VI – efetividade no uso dos recursos públicos;</h5>
+ <h5>VII – busca do desenvolvimento sustentável.</h5>
+ <h3>Art. 7º Além das diretrizes gerais estabelecidas no art. 2º da Lei n° 10.257, de 10 de julho de 2001 , a governança interfederativa das regiões metropolitanas e das aglomerações urbanas observará as seguintes diretrizes específicas:</h3>
+ <h5>I – implantação de processo permanente e compartilhado de planejamento e de tomada de decisão quanto ao desenvolvimento urbano e às políticas setoriais afetas às funções públicas de interesse comum;</h5>
+ <h5>II – estabelecimento de meios compartilhados de organização administrativa das funções públicas de interesse comum;</h5>
+ <h5>III – estabelecimento de sistema integrado de alocação de recursos e de prestação de contas;</h5>
+ <h5>IV – execução compartilhada das funções públicas de interesse comum, mediante rateio de custos previamente pactuado no âmbito da estrutura de governança interfederativa;</h5>
+ <h5>V – participação de representantes da sociedade civil nos processos de planejamento e de tomada de decisão, no acompanhamento da prestação de serviços e na realização de obras afetas às funções públicas de interesse comum;</h5>
+ <h5>V - participação de representantes da sociedade civil nos processos de planejamento e de tomada de decisão; (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>VI – compatibilização dos planos plurianuais, leis de diretrizes orçamentárias e orçamentos anuais dos entes envolvidos na governança interfederativa;</h5>
+ <h5>VII – compensação por serviços ambientais ou outros serviços prestados pelo Município à unidade territorial urbana, na forma da lei e dos acordos firmados no âmbito da estrutura de governança interfederativa.</h5>
+ <h4>Parágrafo único. Na aplicação das diretrizes estabelecidas neste artigo, devem ser consideradas as especificidades dos Municípios integrantes da unidade territorial urbana quanto à população, à renda, ao território e às características ambientais.</h4>
+ <h3>Art. 7º-A. No exercício da governança das funções públicas de interesse comum, o Estado e os Municípios da unidade territorial deverão observar as seguintes diretrizes gerais: (Incluído pela Lei n° 13.683, de 2018)</h3>
+ <h5>I - compartilhamento da tomada de decisões com vistas à implantação de processo relativo ao planejamento, à elaboração de projetos, à sua estruturação econômico-financeira, à operação e à gestão do serviço ou da atividade; e (Incluído pela Lei n° 13.683, de 2018)</h5>
+ <h5>II - compartilhamento de responsabilidades na gestão de ações e projetos relacionados às funções públicas de interesse comum, os quais deverão ser executados mediante a articulação de órgãos e entidades dos entes federados. (Incluído pela Lei n° 13.683, de 2018)</h5>
+ <h3>Art. 8º A governança interfederativa das regiões metropolitanas e das aglomerações urbanas compreenderá em sua estrutura básica:</h3>
+ <h5>I – instância executiva composta pelos representantes do Poder Executivo dos entes federativos integrantes das unidades territoriais urbanas;</h5>
+ <h5>II – instância colegiada deliberativa com representação da sociedade civil;</h5>
+ <h5>III – organização pública com funções técnico-consultivas; e</h5>
+ <h5>IV – sistema integrado de alocação de recursos e de prestação de contas.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DOS INSTRUMENTOS DE DESENVOLVIMENTO URBANO INTEGRADO</h3>
+ <h3>Art. 9º Sem prejuízo da lista apresentada no art. 4º da Lei n° 10.257, de 10 de julho 2001 , no desenvolvimento urbano integrado de regiões metropolitanas e de aglomerações urbanas serão utilizados, entre outros, os seguintes instrumentos:</h3>
+ <h5>I – plano de desenvolvimento urbano integrado;</h5>
+ <h5>II – planos setoriais interfederativos;</h5>
+ <h5>III – fundos públicos;</h5>
+ <h5>IV – operações urbanas consorciadas interfederativas;</h5>
+ <h5>V – zonas para aplicação compartilhada dos instrumentos urbanísticos previstos na Lei n° 10.257, de 10 de julho de 2001 ;</h5>
+ <h5>VI – consórcios públicos, observada a Lei n° 11.107, de 6 de abril de 2005 ;</h5>
+ <h5>VII – convênios de cooperação;</h5>
+ <h5>VIII – contratos de gestão;</h5>
+ <h5>IX – compensação por serviços ambientais ou outros serviços prestados pelo Município à unidade territorial urbana, conforme o inciso VII do caput do art. 7º desta Lei;</h5>
+ <h5>X – parcerias público-privadas interfederativas.</h5>
+ <h3>Art. 10. As regiões metropolitanas e as aglomerações urbanas deverão contar com plano de desenvolvimento urbano integrado, aprovado mediante lei estadual.</h3>
+ <h4>§ 1º Respeitadas as disposições do plano previsto no caput deste artigo, poderão ser formulados planos setoriais interfederativos para políticas públicas direcionadas à região metropolitana ou à aglomeração urbana.</h4>
+ <h4>§ 2º A elaboração do plano previsto no caput deste artigo não exime o Município integrante da região metropolitana ou aglomeração urbana da formulação do respectivo plano diretor, nos termos do § 1º do art. 182 da Constituição Federal e da Lei n° 10.257, de 10 de julho de 2001 .</h4>
+ <h4>§ 3º Nas regiões metropolitanas e nas aglomerações urbanas instituídas mediante lei complementar estadual, o Município deverá compatibilizar seu plano diretor com o plano de desenvolvimento urbano integrado da unidade territorial urbana.</h4>
+ <h4>§ 4º O plano previsto no caput deste artigo será elaborado no âmbito da estrutura de governança interfederativa e aprovado pela instância colegiada deliberativa a que se refere o inciso II do caput do art. 8º desta Lei, antes do envio à respectiva assembleia legislativa estadual.</h4>
+ <h4>§ 4º O plano previsto no caput deste artigo será elaborado de forma conjunta e cooperada por representantes do Estado, dos Municípios integrantes da unidade regional e da sociedade civil organizada e será aprovado pela instância colegiada a que se refere o art. 8º desta Lei, antes de seu encaminhamento à apreciação da Assembleia Legislativa. (Redação dada pela Lei n° 13.683, de 2018)</h4>
+ <h3>Art. 11. A lei estadual que instituir o plano de desenvolvimento urbano integrado de região metropolitana ou de aglomeração urbana deverá ser revista, pelo menos, a cada 10 (dez) anos.</h3>
+ <h3>Art. 12. O plano de desenvolvimento urbano integrado de região metropolitana ou de aglomeração urbana deverá considerar o conjunto de Municípios que compõem a unidade territorial urbana e abranger áreas urbanas e rurais.</h3>
+ <h4>§ 1º O plano previsto no caput deste artigo deverá contemplar, no mínimo:</h4>
+ <h5>I – as diretrizes para as funções públicas de interesse comum, incluindo projetos estratégicos e ações prioritárias para investimentos;</h5>
+ <h5>II – o macrozoneamento da unidade territorial urbana;</h5>
+ <h5>III – as diretrizes quanto à articulação dos Municípios no parcelamento, uso e ocupação no solo urbano;</h5>
+ <h5>IV – as diretrizes quanto à articulação intersetorial das políticas públicas afetas à unidade territorial urbana;</h5>
+ <h5>V – a delimitação das áreas com restrições à urbanização visando à proteção do patrimônio ambiental ou cultural, bem como das áreas sujeitas a controle especial pelo risco de desastres naturais, se existirem; e</h5>
+ <h5>V - a delimitação das áreas com restrições à urbanização visando à proteção do patrimônio ambiental ou cultural, bem como das áreas sujeitas a controle especial pelo risco de desastres naturais, se existirem; (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>VI – o sistema de acompanhamento e controle de suas disposições.</h5>
+ <h5>VI - o sistema de acompanhamento e controle de suas disposições; e (Redação dada pela Lei n° 13.683, de 2018)</h5>
+ <h5>VII - as diretrizes mínimas para implementação de efetiva política pública de regularização fundiária urbana, nos termos da Lei n° 13.465, de 11 de julho de 2017 . (Incluído pela Lei n° 13.683, de 2018)</h5>
+ <h4>§ 2º No processo de elaboração do plano previsto no caput deste artigo e na fiscalização de sua aplicação, serão assegurados:</h4>
+ <h5>I – a promoção de audiências públicas e debates com a participação de representantes da sociedade civil e da população, em todos os Municípios integrantes da unidade territorial urbana;</h5>
+ <h5>I - a promoção de audiências públicas com a participação de representantes da sociedade civil e da população; (Redação dada pela Medida Provisória nº 818, de 2018)</h5>
+ <h5>I – a promoção de audiências públicas e debates com a participação de representantes da sociedade civil e da população, em todos os Municípios integrantes da unidade territorial urbana;</h5>
+ <h5>II – a publicidade quanto aos documentos e informações produzidos; e</h5>
+ <h5>III – o acompanhamento pelo Ministério Público.</h5>
+ <h4>§ 3º As audiências públicas a que se referem o inciso I do § 2º serão precedidas de ampla divulgação em todos os Municípios integrantes da unidade territorial urbana. (Incluído pela Medida Provisória nº 818, de 2018)</h4>
+ <h4>§ 3º As audiências públicas a que se refere o inciso I do § 2º deste artigo serão precedidas de ampla divulgação em todos os Municípios integrantes da unidade territorial urbana. (Incluído pela Lei n° 13.683, de 2018)</h4>
+ <h4>§ 4º A realização de audiências públicas ocorrerá segundo os critérios estabelecidos pela instância colegiada deliberativa a que se refere o inciso II do caput do art. 8º , respeitadas as disposições desta Lei e das leis complementares que instituírem as unidades territoriais. (Incluído pela Medida Provisória nº 818, de 2018)</h4>
+ <h4>§ 4º A realização de audiências públicas ocorrerá segundo os critérios estabelecidos pela instância colegiada deliberativa a que se refere o art. 8º desta Lei, respeitadas as disposições desta Lei e das leis complementares que instituírem as unidades territoriais. (Incluído pela Lei n° 13.683, de 2018)</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA ATUAÇÃO DA UNIÃO</h3>
+ <p>Seção I</p>
+ <p>Do Apoio da União ao Desenvolvimento Urbano Integrado</p>
+ <h3>Art. 13. Em suas ações inclusas na política nacional de desenvolvimento urbano, a União apoiará as iniciativas dos Estados e dos Municípios voltadas à governança interfederativa, observados as diretrizes e os objetivos do plano plurianual, as metas e as prioridades fixadas pelas leis de diretrizes orçamentárias e o limite das disponibilidades propiciadas pelas leis orçamentárias anuais.</h3>
+ <h3>Art. 14. Para o apoio da União à governança interfederativa em região metropolitana ou em aglomeração urbana, será exigido que a unidade territorial urbana possua gestão plena, nos termos do inciso III do caput do art. 2º desta Lei.</h3>
+ <h4>§ 1º Além do disposto no caput deste artigo, o apoio da União à governança interfederativa em região metropolitana impõe a observância do inciso VII do caput do art. 2º desta Lei.</h4>
+ <h4>§ 2º Admite-se o apoio da União para a elaboração e a revisão do plano de desenvolvimento urbano integrado de que tratam os arts. 10 a 12 desta Lei.</h4>
+ <h4>§ 2º Admite-se o apoio da União para a elaboração e a revisão do plano de desenvolvimento urbano integrado de que tratam os arts. 10, 11 e 12 desta Lei, dispensado, na primeira hipótese, o cumprimento da exigência constante da alínea c do inciso III do art. 2º desta Lei. (Redação dada pela Lei n° 13.683, de 2018)</h4>
+ <h4>§ 3º Serão estabelecidos em regulamento requisitos adicionais para o apoio da União à governança interfederativa, bem como para as microrregiões e cidades referidas no § 1º do art. 1º desta Lei e para os consórcios públicos constituídos para atuação em funções públicas de interesse comum no campo do desenvolvimento urbano.</h4>
+ <h3>Art. 15. A região metropolitana instituída mediante lei complementar estadual que não atenda o disposto no inciso VII do caput do art. 2º desta Lei será enquadrada como aglomeração urbana para efeito das políticas públicas a cargo do Governo Federal, independentemente de as ações nesse sentido envolverem ou não transferência de recursos financeiros.</h3>
+ <h3>Art. 16. A União manterá ações voltadas à integração entre cidades gêmeas localizadas na faixa de fronteira com outros países, em relação à mobilidade urbana, como previsto na Lei n° 12.587, de 3 de janeiro de 2012 , e a outras políticas públicas afetas ao desenvolvimento urbano.</h3>
+ <h3>Art. 16-A. A União apoiará as iniciativas dos Estados e dos Municípios voltadas à governança interfederativa e promoverá a instituição de um sistema nacional de informações urbanas e metropolitanas, observadas as diretrizes do plano plurianual, as metas e as prioridades fixadas pela leis orçamentárias anuais. (Incluído pela Lei n° 13.683, de 2018)</h3>
+ <p>Seção II</p>
+ <p>Do Fundo Nacional de Desenvolvimento Urbano Integrado</p>
+ <h3>Art. 17. (VETADO).</h3>
+ <h3>Art. 18. (VETADO).</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 19. (VETADO).</h3>
+ <p><del></p>
+ <h3>Art. 20. A aplicação das disposições desta Lei será coordenada pelos entes públicos que integram o Sistema Nacional de Desenvolvimento Urbano - SNDU, assegurando-se a participação da sociedade civil (Revogado pela Lei n° 13.683, de 2018)</del></h3>
+ <p><del>§ 1º (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <p><del>§ 2º (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <p><del>§ 3º As informações referidas no § 2º (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <p><del></p>
+ <h3>Art. 21 (Revogado pela Lei n° 13.683, de 2018)</del></h3>
+ <p><del>I – (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <h6>a) garantir o cumprimento do disposto no caput do art. 10 desta Lei, no prazo de 3 (três) anos da instituição da região metropolitana ou da aglomeração urbana mediante lei complementar estadual;</h6>
+ <h6>b) elaborar e aprovar, no prazo de 3 (três) anos, o plano de desenvolvimento urbano integrado das regiões metropolitanas ou das aglomerações urbanas instituídas até a data de entrada em vigor desta Lei mediante lei complementar estadual;</h6>
+ <p><del>a) garantir o cumprimento do disposto no caput do art. 10 (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <p><del>b) (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <p><del>II – o prefeito que deixar de tomar as providências necessárias para garantir o cumprimento do disposto no § 3º do art. 10 (Revogado pela Lei n° 13.683, de 2018)</del></p>
+ <h3>Art. 22. As disposições desta Lei aplicam-se, no que couber, às regiões integradas de desenvolvimento que tenham características de região metropolitana ou de aglomeração urbana, criadas mediante lei complementar federal, com base no art. 43 da Constituição Federal , até a data de entrada em vigor desta Lei.</h3>
+ <h4>Parágrafo único. A partir da data de entrada em vigor desta Lei, a instituição de unidades territoriais urbanas que envolvam Municípios pertencentes a mais de um Estado deve ocorrer na forma prevista no art. 4º, sem prejuízo da possibilidade de constituição de consórcios intermunicipais.</h4>
+ <h3>Art. 23. Independentemente das disposições desta Lei, os Municípios podem formalizar convênios de cooperação e constituir consórcios públicos para atuação em funções públicas de interesse comum no campo do desenvolvimento urbano, observada a Lei n° 11.107, de 6 de abril de 2005 .</h3>
+ <h3>Art. 24. A Lei n° 10.257, de 10 de julho de 2001 , passa a vigorar acrescida do seguinte art. 34-A:</h3>
+ <p>“</p>
+ <h3>Art. 34-A. Nas regiões metropolitanas ou nas aglomerações urbanas instituídas por lei complementar estadual, poderão ser realizadas operações urbanas consorciadas interfederativas, aprovadas por leis estaduais específicas.</h3>
+ <h4>Parágrafo único. As disposições dos arts. 32 a 34 desta Lei aplicam-se às operações urbanas consorciadas interfederativas previstas no caput deste artigo, no que couber.”</h4>
+ <h3>Art. 25. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 12 de janeiro de 2015; 194º da Independência e 127º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Este texto não substitui o publicado no DOU de 13.1.2015</p>
+ <p>Institui o Estatuto da Metrópole, altera a Lei n° 10.257, de 10 de julho de 2001, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/L13089.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

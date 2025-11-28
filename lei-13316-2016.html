@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.316, DE 20 DE JULHO DE 2016 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2016" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.316, DE 20 DE JULHO DE 2016</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:30:51 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/L13316.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 28.736 caracteres | espelho: 26.079 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.316, DE 20 DE JULHO DE 2016.</p>
+ <p>Dispõe sobre as carreiras dos servidores do Ministério Público da União e as carreiras dos servidores do Conselho Nacional do Ministério Público; fixa valores de sua remuneração; e revoga a Lei N° 11.415, de 15 de dezembro de 2006.</p>
+ <p>O VICE - PRESIDENTE DA REPÚBLICA, no exercício do cargo de PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º As carreiras dos servidores dos quadros de pessoal do Ministério Público da União passam a ser regidas por esta Lei.</h3>
+ <h4>Parágrafo único. Cada ramo do Ministério Público da União tem seu próprio quadro de pessoal.</h4>
+ <h3>Art. 2º Os quadros de pessoal efetivo do Ministério Público da União são compostos pelas seguintes carreiras, constituídas pelos respectivos cargos de provimento efetivo:</h3>
+ <h5>I - Analista do Ministério Público da União, de nível superior; e</h5>
+ <h5>II - Técnico do Ministério Público da União, de nível médio.</h5>
+ <h5>II - Técnico do Ministério Público da União, de nível superior. (Redação dada pela Lei n° 14.591, de 2021)</h5>
+ <h4>Parágrafo único. Extingue-se a carreira de Auxiliar do Ministério Público da União.</h4>
+ <h3>Art. 3º Os cargos efetivos das carreiras referidas no art. 2º desta Lei são estruturados em classes e padrões, na forma do Anexo I desta Lei , nas diversas áreas de atividades.</h3>
+ <h4>Parágrafo único. As atribuições dos cargos de que trata esta Lei, as áreas de atividades e as suas especialidades serão fixadas em regulamento, nos termos do art. 28 desta Lei.</h4>
+ <h3>Art. 4º Integram o quadro de pessoal do Ministério Público da União as funções de confiança FC-1 a FC-3, os cargos em comissão CC-1 a CC-7 e os cargos de natureza especial, para o exercício de atribuições de direção, chefia e assessoramento, nos termos dos Anexos IV , V e VI .</h3>
+ <h4>§ 1º Cada ramo do Ministério Público da União destinará, no mínimo, 50% (cinquenta por cento) dos cargos em comissão aos integrantes das carreiras do Ministério Público da União, observados os requisitos de qualificação e de experiência previstos em regulamento.</h4>
+ <h4>§ 2º Será publicado semestralmente no Diário Oficial da União quadro-resumo contendo informações sobre a ocupação das funções de confiança e dos cargos em comissão.</h4>
+ <h3>Art. 5º No âmbito do Ministério Público da União, é vedada a designação ou a nomeação para funções de confiança e cargos em comissão de cônjuge, companheiro ou parente em linha reta, colateral ou por afinidade, até o terceiro grau, inclusive, dos respectivos membros ou de servidor ocupante, no âmbito do mesmo ramo do Ministério Público, de cargo de direção, chefia ou assessoramento, compreendido o ajuste mediante designações ou cessões recíprocas em qualquer órgão da administração pública direta e indireta dos poderes da União, dos Estados, do Distrito Federal e dos Municípios, salvo de servidor ocupante de cargo de provimento efetivo das carreiras dos servidores do Ministério Público da União, caso em que a vedação é restrita à designação ou nomeação para exercício perante o membro ou servidor determinante da incompatibilidade.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO INGRESSO NA CARREIRA</h3>
+ <h3>Art. 6º O ingresso nos cargos das carreiras dos servidores do Ministério Público da União far-se-á no padrão inicial da classe inicial do respectivo cargo, mediante concurso público de provas, inclusive prova prática e prova de capacidade física, se for o caso, ou de provas e títulos.</h3>
+ <h4>Parágrafo único. O Ministério Público da União poderá incluir, como etapa do concurso público, programa de formação de caráter eliminatório ou eliminatório e classificatório, bem como exame psicotécnico de caráter eliminatório, na forma prevista em regulamento e em edital do concurso público.</h4>
+ <h3>Art. 7º São requisitos de escolaridade para ingresso:</h3>
+ <h5>I - para o cargo de Analista, diploma de conclusão de curso superior, em nível de graduação, com habilitação legal específica, observada a disposição do parágrafo único do art. 3º desta Lei;</h5>
+ <h5>II - para o cargo de Técnico, certificado de conclusão do ensino médio e, se for o caso, habilitação legal específica, observada a disposição do parágrafo único do art. 3º desta Lei.</h5>
+ <h5>II - para o cargo de Técnico, diploma de conclusão de curso superior, em nível de graduação, observada a disposição do parágrafo único do art. 3º desta Lei. (Redação dada pela Lei n° 14.591, de 2021)</h5>
+ <h4>Parágrafo único. Além dos requisitos previstos neste artigo, poderão ser exigidos formação especializada, experiência ou registro profissional previstos em regulamento e constantes de edital do concurso público.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO DESENVOLVIMENTO NA CARREIRA</h3>
+ <h3>Art. 8º O desenvolvimento do servidor na carreira ocorrerá mediante progressão funcional e promoção.</h3>
+ <h4>§ 1º A progressão funcional é a movimentação do servidor de um padrão para o seguinte dentro de uma mesma classe, observado o interstício de um ano, de acordo com os critérios fixados em regulamento e com o resultado de avaliação formal de desempenho.</h4>
+ <h4>§ 2º A promoção é a movimentação do servidor do último padrão de uma classe para o primeiro padrão da classe seguinte, observado o interstício de um ano em relação à progressão funcional imediatamente anterior, dependendo, cumulativamente, do resultado de avaliação formal de desempenho e da participação em curso de aperfeiçoamento ou em ação ou programa de capacitação oferecidos, preferencialmente, pelo órgão, na forma prevista em regulamento.</h4>
+ <h4>§ 3º A progressão funcional e a promoção não acarretarão mudança de cargo.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA MOVIMENTAÇÃO</h3>
+ <h3>Art. 9º Ao servidor integrante das carreiras dos servidores do Ministério Público da União será permitida movimentação, a critério do chefe do Ministério Público da União, para ocupação de vagas nas diversas unidades administrativas, consoante os seguintes critérios:</h3>
+ <h5>I - concurso de remoção, a ser realizado de forma a atender a conveniência e oportunidade da administração;</h5>
+ <h5>II - permuta, em qualquer período do ano, entre dois ou mais servidores das carreiras dos servidores do Ministério Público da União.</h5>
+ <h4>§ 1º O servidor cuja lotação for determinada em provimento inicial de cargo da carreira deverá permanecer na unidade administrativa em que foi lotado pelo prazo mínimo de um ano, só podendo ser removido nesse período no interesse da administração.</h4>
+ <h4>§ 2º O servidor removido por concurso de remoção ou por permuta deverá permanecer na unidade administrativa em que foi lotado pelo prazo mínimo de um ano.</h4>
+ <h4>§ 3º O Procurador-Geral da República regulamentará a movimentação de servidores no âmbito do Ministério Público da União.</h4>
+ <h4>§ 4º É vedada a movimentação de servidores, na forma deste artigo, entre o Ministério Público da União e o Conselho Nacional do Ministério Público.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA REMUNERAÇÃO</h3>
+ <h3>Art. 10. A remuneração dos cargos de provimento efetivo das carreiras dos servidores do Ministério Público da União é composta pelo vencimento básico do cargo e pela Gratificação de Atividade do Ministério Público da União - GAMPU, acrescidos das vantagens pecuniárias permanentes estabelecidas em lei.</h3>
+ <h3>Art. 11. Os vencimentos básicos das carreiras dos servidores do Ministério Público da União são os constantes do Anexo II desta Lei .</h3>
+ <p><del></p>
+ <h3>Art. 12. A diferença entre o vencimento fixado por esta Lei e o decorrente da Lei n° 11.415, de 15 de dezembro de 2006 , será implementada em parcelas sucessivas, não cumulativas, conforme o Anexo III (Revogado pela Lei n° 14.524, de 2023)</del></h3>
+ <p><del>I - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>II - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>III - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>IV - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>V - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>VI - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>VII - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>VIII - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <h3>Art. 13. A Gampu será calculada mediante aplicação do percentual de 140% (cento e quarenta por cento) sobre o vencimento básico estabelecido no Anexo II desta Lei .</h3>
+ <p><del>§ 1º O percentual previsto no caput será implementado gradativamente sobre os valores fixados no Anexo III (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>I - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>II - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>III - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>IV - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>V - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>VI - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>VII - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <p><del>VIII - (Revogado pela Lei n° 14.524, de 2023)</del></p>
+ <h4>§ 2º O integrante das carreiras dos servidores do Ministério Público da União que perceber integralmente a retribuição de cargo em comissão ou de cargo de natureza especial, constantes dos Anexos V e VI desta Lei , não perceberá a gratificação de que trata este artigo.</h4>
+ <h4>§ 3º O servidor ocupante de cargo em comissão sem vínculo efetivo com a administração pública e o servidor requisitado não perceberão a gratificação de que trata este artigo.</h4>
+ <h4>§ 4º O integrante das carreiras dos servidores do Ministério Público da União cedido com fundamento nos incisos I e II do caput do art. 93 da Lei n° 8.112, de 11 de dezembro de 1990 , não perceberá, durante o afastamento, a gratificação de que trata este artigo, salvo na hipótese de cessão para órgão da União ou para a Fundação de Previdência Complementar do Servidor Público Federal, na condição de optante pela remuneração do cargo efetivo.</h4>
+ <h3>Art. 14. O Adicional de Qualificação - AQ é destinado ao integrante das carreiras dos servidores do Ministério Público da União portador de título, diploma ou certificado de ação de treinamento, de graduação ou de pós-graduação, em sentido amplo ou estrito, nos termos de regulamento próprio.</h3>
+ <h4>§ 1º O adicional de que trata este artigo não será concedido quando o curso constituir requisito para ingresso no cargo.</h4>
+ <h4>§ 2º Para efeito do disposto neste artigo, só serão considerados os cursos reconhecidos ou ministrados por instituições de ensino credenciadas e reconhecidas pelo Ministério da Educação, na forma da legislação específica, ou fornecidos pela Escola Superior do Ministério Público da União, ressalvadas as ações de treinamento.</h4>
+ <h4>§ 3º Os cursos de pós-graduação lato sensu serão admitidos desde que com duração mínima de trezentas e sessenta horas.</h4>
+ <h4>§ 4º O AQ somente será considerado no cálculo dos proventos e das pensões se o título ou o diploma forem anteriores à data da inativação, excetuado, ainda, do cômputo o disposto no inciso V do art. 15 desta Lei.</h4>
+ <h3>Art. 15. O AQ incidirá sobre o vencimento básico do cargo efetivo do servidor, observados os seguintes percentuais:</h3>
+ <h5>I - 12,5% (doze inteiros e cinco décimos por cento), ao portador de título de doutor;</h5>
+ <h5>II - 10% (dez por cento), ao portador de título de mestre;</h5>
+ <h5>III - 7,5% (sete inteiros e cinco décimos por cento), ao portador de certificado de especialização;</h5>
+ <h5>IV - 5% (cinco por cento), ao portador de diploma de curso superior;</h5>
+ <h5>V - 2,5% (dois inteiros e cinco décimos por cento), para cada conjunto de ações de treinamento que totalize pelo menos cento e vinte horas, observado o limite máximo de 5% (cinco por cento).</h5>
+ <h4>§ 1º Em nenhuma hipótese o servidor perceberá cumulativamente mais de um percentual dentre os previstos nos incisos I a IV do caput deste artigo.</h4>
+ <h4>§ 2º Os coeficientes relativos às ações de treinamento previstas no inciso V do caput deste artigo serão aplicados pelo prazo de quatro anos, a contar da data de conclusão da última ação que totalizou o mínimo de cento e vinte horas.</h4>
+ <h4>§ 3º O AQ será devido a partir do dia da apresentação do título, diploma ou certificado.</h4>
+ <h4>§ 4º O integrante das carreiras dos servidores do Ministério Público da União cedido com fundamento nos incisos I e II do caput do art. 93 da Lei n° 8.112, de 11 de dezembro de 1990 , não perceberá, durante o afastamento, o adicional de que trata este artigo, salvo na hipótese de cessão para órgão da União na condição de optante pela remuneração do cargo efetivo.</h4>
+ <h4>§ 5º Os Técnicos do Ministério Público da União e do Conselho 	Nacional do Ministério Público que fizerem jus ao AQ em razão da aplicação do inciso IV do caput deste artigo terão a parcela automaticamente transformada em Vantagem Pessoal Nominalmente Identificada (VPNI), no valor de 5% (cinco por cento) sobre o vencimento básico do cargo efetivo do servidor. (Incluído pela Lei n° 14.591, de 2021)</h4>
+ <h4>§ 6º A VPNI a que se refere o § 5º deste artigo será 	absorvida quando o servidor que a perceber enquadrar-se nos incisos I, II e 	III do caput deste artigo. (Incluído pela Lei n° 14.591, de 2021)</h4>
+ <h3>Art. 16. A Gratificação de Perícia e a Gratificação de Projeto, ambas no valor de 35% (trinta e cinco por cento) do vencimento básico mensal, são devidas, respectivamente, ao servidor:</h3>
+ <h5>I - integrante da carreira de Analista, durante o período em que desenvolver perícia, mediante designação do Procurador-Geral de cada ramo do Ministério Público da União ou do órgão colegiado de coordenação e revisão, com o objetivo de subsidiar a atuação institucional em procedimento extrajudicial ou em processo judicial;</h5>
+ <h5>II - designado pela autoridade superior da entidade para desenvolver e implementar projeto de especial interesse da administração.</h5>
+ <h4>§ 1º As gratificações previstas neste artigo não poderão ser percebidas cumulativamente entre si nem acumuladas com o pagamento de hora extra.</h4>
+ <h4>§ 2º O servidor efetivo de outro órgão da administração pública e o exclusivamente ocupante de cargo em comissão farão jus à Gratificação de Projeto, na hipótese do inciso II deste artigo, no valor de 35% (trinta e cinco por cento) do primeiro padrão do vencimento básico mensal da carreira de Analista, caso ocupante de cargo em comissão, ou da carreira de Técnico, caso designado para função de confiança.</h4>
+ <h4>§ 3º O Procurador-Geral da República regulamentará as gratificações de que trata este artigo, podendo estabelecer limite de tempo de percepção e condições para a concessão.</h4>
+ <h3>Art. 17. A Gratificação de Atividade de Segurança - GAS é devida ao servidor que exerça funções de segurança e esteja em efetivo exercício em órgão ou unidade de segurança institucional.</h3>
+ <h4>§ 1º A gratificação de que trata o caput deste artigo corresponde a 35% (trinta e cinco por cento) do vencimento básico mensal do servidor.</h4>
+ <h4>§ 2º A gratificação de que trata este artigo é devida, no percentual de 25% (vinte e cinco por cento) do vencimento básico mensal, ao servidor que, sob designação do Procurador-Geral da República ou de autoridade delegada, atue em órgão ou unidade de pesquisa e análise de informação para subsidiar a atuação institucional dos membros do Ministério Público da União.</h4>
+ <h4>§ 3º Os servidores efetivos de outros órgãos da administração pública e os exclusivamente ocupantes de cargo em comissão farão jus à gratificação de que trata o caput deste artigo no valor de 35% (trinta e cinco por cento) do primeiro padrão do vencimento básico mensal da carreira de Analista, caso ocupantes de cargo em comissão, ou da carreira de Técnico, caso designados para função de confiança.</h4>
+ <h4>§ 4º A percepção da gratificação de que trata este artigo poderá ser condicionada à aprovação do servidor em teste de aptidão e em curso de atualização, com periodicidade e critérios definidos em regulamento.</h4>
+ <h3>Art. 18. A retribuição pelo exercício de função de confiança, de cargo em comissão e de cargo de natureza especial é a constante, respectivamente, dos Anexos IV , V e VI desta Lei .</h3>
+ <h4>§ 1º Os valores fixados nos Anexos IV , V e VI desta Lei terão efeitos financeiros a partir de 1º de junho de 2016.</h4>
+ <h4>§ 2º Ao servidor integrante das carreiras de que trata esta Lei e ao cedido ao Ministério Público da União, investidos em cargo em comissão ou em cargo de natureza especial, é facultado optar pela remuneração de seu cargo efetivo ou emprego permanente, acrescida de 65% (sessenta e cinco por cento) dos valores fixados no Anexo V ou no Anexo VI desta Lei .</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA JORNADA DE TRABALHO</h3>
+ <h3>Art. 19. O servidor cumprirá jornada de trabalho fixada em regulamento, respeitada a duração máxima do trabalho semanal de quarenta horas, ressalvado, sem prejuízo da remuneração, o ocupante de:</h3>
+ <h5>I - cargo privativo de médico, que tem jornada semanal de vinte horas;</h5>
+ <h5>II - cargo da área de saúde, que tem jornada semanal de trinta horas.</h5>
+ <h4>Parágrafo único. O Procurador-Geral da República regulamentará o controle da jornada de trabalho, a ser realizado preferencialmente por meio eletrônico, com utilização do regime de banco de horas, sobreaviso e escala, assim como estabelecerá os limites de horas extras mensais e anuais relativos aos servidores do Ministério Público da União, observada a disponibilidade orçamentária.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 20. Os quadros de pessoal dos ramos do Ministério Público da União corresponderão ao número de cargos efetivos das carreiras dos servidores do Ministério Público da União e de funções de confiança e cargos comissionados, providos e vagos, criados por lei e existentes na data da publicação desta Lei.</h3>
+ <h4>§ 1º Criam-se, no quadro do Ministério Público da União, os cargos de natureza especial de Secretário-Geral do Ministério Público da União e de Chefe de Gabinete do Procurador-Geral da República, com a retribuição constante do Anexo VI desta Lei .</h4>
+ <h4>§ 2º Cria-se, no quadro do Conselho Nacional do Ministério Público, o cargo de natureza especial de Secretário-Geral do Conselho Nacional do Ministério Público, com a retribuição constante do Anexo VI desta Lei .</h4>
+ <h3>Art. 21. Aos servidores efetivos, requisitados e sem vínculo do Ministério Público da União é vedado o exercício da advocacia e de consultoria técnica, ressalvado o disposto no art. 29 da Lei n° 8.906, de 4 de julho de 1994 .</h3>
+ <h3>Art. 22. Os ramos do Ministério Público da União fixarão em ato próprio a distribuição dos cargos efetivos, funções de confiança e cargos em comissão nas unidades componentes de sua estrutura.</h3>
+ <h4>§ 1º Os Procuradores-Gerais de cada ramo de que trata este artigo são autorizados a transformar, sem aumento de despesa e sem majoração de quantitativos físicos previstos em lei, no âmbito de suas competências, as funções de confiança e os cargos em comissão de seu quadro de pessoal, bem como alterar-lhes a denominação específica, vedada a transformação de função em cargo ou vice-versa.</h4>
+ <h4>§ 2º A transformação prevista no § 1º somente produzirá efeitos após sua comunicação formal ao Procurador-Geral da República.</h4>
+ <h3>Art. 23. A vantagem pecuniária individual, instituída pela Lei n° 10.698, de 2 de julho de 2003 , e outras parcelas que tenham por origem a citada vantagem concedidas por decisão administrativa ou judicial, ainda que decorrente de sentença transitada ou não em julgado, incidentes sobre os cargos efetivos e em comissão de que trata esta Lei, ficam absorvidas a partir da implementação dos novos valores constantes dos Anexos II e V desta Lei .</h3>
+ <h3>Art. 24. Nenhuma redução de remuneração poderá resultar da aplicação desta Lei, assegurada ao servidor a percepção da diferença como vantagem pessoal nominalmente identificada, a ser absorvida por quaisquer reajustes subsequentes.</h3>
+ <h3>Art. 24. As VPNIs de caráter permanente, incorporadas aos vencimentos, aos proventos e às pensões dos servidores do Ministério 	Público da União e do Conselho Nacional do Ministério Público, inclusive aquelas derivadas da incorporação de quintos ou décimos de função comissionada entre abril de 1998 e setembro de 2001, não serão reduzidas, 	absorvidas ou compensadas pelo reajuste dos anexos desta Lei. (Redação dada pela Lei n° 14.591, de 2021)</h3>
+ <h3>Art. 25. O servidor afastado para cursar pós-graduação, no País ou no exterior, com ônus total ou parcial para a instituição, só poderá desligar-se do Ministério Público da União transcorrido o dobro do prazo do afastamento, salvo se ressarcir a remuneração percebida no período e as despesas decorrentes.</h3>
+ <h3>Art. 26. Caberá a cada ramo do Ministério Público da União, no âmbito de sua competência, instituir programa permanente de capacitação destinado à formação, à qualificação e ao aperfeiçoamento profissional, bem como ao desenvolvimento gerencial, visando à preparação dos servidores para desempenharem de modo mais efetivo suas atribuições.</h3>
+ <h3>Art. 27. As carteiras de identidade funcional emitidas pelos ramos do Ministério Público da União têm fé pública em todo o território nacional.</h3>
+ <h4>§ 1º Aos servidores do Ministério Público da União cujas atribuições estejam relacionadas às funções de segurança será conferida a denominação de Inspetor e Agente de Segurança Institucional, para fins de identificação funcional, nos termos do regulamento.</h4>
+ <h4>§ 2º Aos servidores do Ministério Público da União cujas atribuições estejam relacionadas ao desenvolvimento de perícia será conferida a denominação de Perito, para fins de identificação funcional, nos termos do regulamento.</h4>
+ <h3>Art. 28. O Procurador-Geral da República regulamentará o disposto nesta Lei, ouvidas as entidades sindicais, cabendo a cada ramo do Ministério Público da União expedir instruções complementares necessárias à sua aplicação.</h3>
+ <h3>Art. 29. Aplica-se o disposto nesta Lei às carreiras dos servidores do Conselho Nacional do Ministério Público, correndo as despesas resultantes de sua aplicação à conta das dotações orçamentárias próprias do órgão.</h3>
+ <h4>§ 1º O quadro de pessoal efetivo do Conselho Nacional do Ministério Público é composto pelas seguintes carreiras, constituídas pelos respectivos cargos de provimento efetivo:</h4>
+ <h5>I - Analista do Conselho Nacional do Ministério Público, de nível superior; e</h5>
+ <h5>II - Técnico do Conselho Nacional do Ministério Público, de nível médio.</h5>
+ <h5>II - Técnico do Conselho Nacional do Ministério Público, de nível superior. (Redação dada pela Lei n° 14.591, de 2021)</h5>
+ <h4>§ 2º O Procurador-Geral da República submeterá ao Congresso Nacional projeto de lei para dispor sobre as carreiras do quadro de pessoal do Conselho Nacional do Ministério Público.</h4>
+ <h4>§ 3º A Gratificação de Perícia, prevista no art. 16, é devida ao Analista designado pelo Conselho Nacional do Ministério Público para realização de atividade de controle externo fora do ambiente da sede de trabalho, na forma prevista em regulamento.</h4>
+ <h4>§ 4º Os servidores do Conselho Nacional do Ministério Público poderão aderir a plano de saúde gerido pelos ramos do Ministério Público da União, mediante transferência de valores descontados em folha e descentralização de recursos, pelo Conselho, para a cobertura das despesas correspondentes.</h4>
+ <h3>Art. 30. O disposto nesta Lei aplica-se aos aposentados e pensionistas, nos termos do art. 7º da Emenda Constitucional nº 41, de 19 de dezembro de 2003 .</h3>
+ <h3>Art. 31. Os cargos em comissão de Assessor Nível II - CC-2, criados pelas Leis n º 12.931, de 26 de dezembro de 2013 , 12.883, de 21 de novembro de 2013 , e 12.321, de 8 de setembro de 2010 , destinados ao assessoramento de membros do Ministério Público da União, são transformados em Assessor Nível IV - CC-4.</h3>
+ <h4>§ 1º A eficácia do disposto neste artigo é condicionada à publicação de quadro de distribuição dos cargos transformados, por ato do Procurador-Geral da República, observada a disponibilidade orçamentária e financeira e obedecido o seguinte escalonamento:</h4>
+ <h5>I - a partir de julho de 2016, de até setecentos cargos providos, preferencialmente alocados nos Ofícios de Subprocuradores-Gerais, Procuradores Regionais, Procuradores de Justiça e Procuradores da Justiça Militar;</h5>
+ <h5>II - a partir de julho de 2017, de setecentos cargos providos, alocados nos demais ofícios.</h5>
+ <h4>§ 2º Os cargos transformados e ainda não providos deverão observar, para seu primeiro provimento, os demais requisitos previstos pelas respectivas leis de criação referidas no caput .</h4>
+ <h3>Art. 32. As despesas resultantes da execução desta Lei correm à conta das dotações consignadas ao Ministério Público da União e ao Conselho Nacional do Ministério Público.</h3>
+ <h3>Art. 33. A eficácia do disposto nesta Lei é condicionada à expressa autorização em anexo próprio da lei orçamentária anual, com a respectiva dotação prévia, nos termos do § 1º do art. 169 da Constituição Federal , e ao atendimento das normas pertinentes da Lei Complementar nº 101, de 4 de maio de 2000 .</h3>
+ <h3>Art. 34. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 35. Fica revogada a Lei n° 11.415, de 15 de dezembro de 2006 .</h3>
+ <p>Brasília, 20 de julho de 2016; 195º da Independência e 128º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Guilherme Estrada Rodrigues</p>
+ <p>Este texto não substitui o publicado no DOU de 21.7.2016</p>
+ <p>(Vide Lei n° 14.524, de 2023)</p>
+ <h3>A PARTIR DE</h3>
+ <p>(Vide Lei n° 14.524, de 2023)</p>
+ <h3>FUNÇÃO DE CONFIANÇA</h3>
+ <h3>A PARTIR DE</h3>
+ <p>(Vide Lei n° 14.524, de 2023)</p>
+ <h3>CARGO EM COMISSÃO</h3>
+ <h3>A PARTIR DE</h3>
+ <p>(Vide Lei n° 14.524, de 2023)</p>
+ <h3>CARGO DE NATUREZA ESPECIAL</h3>
+ <p>A PARTIR DE 1º /6/2016</p>
+ <p>Secretário-Geral do Ministério Público da União</p>
+ <p>Chefe de Gabinete do Procurador-Geral da República</p>
+ <p>Secretário-Geral do Conselho Nacional do Ministério Público</p>
+ <p>Dispõe sobre as carreiras dos servidores do Ministério Público da União e as carreiras dos servidores do Conselho Nacional do Ministério Público; fixa valores de sua remuneração; e revoga a Lei n° 11.415, de 15 de dezembro de 2006.</p>
+ <h3>CARGO | CLASSE | PADRÃO</h3>
+ <h3>ANALISTA | B | 7</h3>
+ <h3>TÉCNICO | | 7</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VALOR (R$)</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>| C | 11 | 7.344,99</h3>
+ <h3>ANALISTA | B | 6 | 6.174,01</h3>
+ <h3>| A | 2 | 5.345,40</h3>
+ <h3>| C | 11 | 4.476,70</h3>
+ <h3>TÉCNICO | | 7 | 3.875,88</h3>
+ <h3>| B | 6 | 3.763,00</h3>
+ <h3>| A | 2 | 3.257,97</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VALOR (R$)A PARTIR DE</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>| C | 11 | 6.656,40</h3>
+ <h3>ANALISTA | | 7 | 5.763,05</h3>
+ <h3>| B | 6 | 5.595,20</h3>
+ <h3>| A | 2 | 4.844,27</h3>
+ <h3>| C | 11 | 4.057,01</h3>
+ <h3>TÉCNICO | B | 6 | 3.410,22</h3>
+ <h3>| A | 2 | 2.952,53</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VALOR (R$)A PARTIR DE</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>| C | 11 | 7.017,09</h3>
+ <h3>ANALISTA | | 7 | 6.075,33</h3>
+ <h3>| B | 6 | 5.898,39</h3>
+ <h3>| A | 2 | 5.106,77</h3>
+ <h3>| C | 11 | 4.276,84</h3>
+ <h3>TÉCNICO | B | 6 | 3.595,01</h3>
+ <h3>| A | 2 | 3.112,52</h3>
+ <p>FUNÇÃO DE CONFIANÇA | VALOR (R$)A PARTIR DE1º /6/2016</p>
+ <h3>FC-3 | 1.690,32</h3>
+ <h3>FC-2 | 1.185,05</h3>
+ <h3>FC-1 | 1.019,17</h3>
+ <p>CARGO EM COMISSÃO | VALOR (R$)A PARTIR DE1º /6/2016</p>
+ <h5>CC-7 | 14.607,74</h5>
+ <h5>CC-6 | 12.940,02</h5>
+ <h5>CC-5 | 11.382,88</h5>
+ <h5>CC-4 | 9.216,74</h5>
+ <h5>CC-3 | 5.482,97</h5>
+ <h5>CC-2 | 4.962,19</h5>
+ <h5>CC-1 | 3.461,96</h5>
+ <p>CARGO DE NATUREZA ESPECIAL | VALOR (R$)A PARTIR DE 1º /6/2016</p>
+ <p>Secretário-Geral do Ministério Público da União | 15.338,13</p>
+ <p>Chefe de Gabinete do Procurador-Geral da República | 15.338,13</p>
+ <p>Secretário-Geral do Conselho Nacional do Ministério Público | 15.338,13</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/L13316.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

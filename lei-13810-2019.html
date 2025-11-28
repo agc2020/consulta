@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.810, DE 8 DE MARÇO DE 2019 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2019" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.810, DE 8 DE MARÇO DE 2019</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:39:37 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2019/Lei/L13810.htm#art35" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 19.950 caracteres | espelho: 20.242 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.810, DE 8 DE MARÇO DE 2019</p>
+ <p>Regulamento</p>
+ <p>Dispõe sobre o cumprimento de sanções impostas por resoluções do Conselho de Segurança das Nações Unidas, incluída a indisponibilidade de ativos de pessoas naturais e jurídicas e de entidades, e a designação nacional de pessoas investigadas ou acusadas de terrorismo, de seu financiamento ou de atos a ele correlacionados; e revoga a Lei n° 13.170, de 16 de outubro de 2015.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre o cumprimento de sanções impostas por resoluções do Conselho de Segurança das Nações Unidas, incluída a indisponibilidade de ativos de pessoas naturais e jurídicas e de entidades, e a designação nacional de pessoas investigadas ou acusadas de terrorismo, de seu financiamento ou de atos a ele correlacionados.</h3>
+ <h3>Art. 2º Para fins do disposto nesta Lei, considera-se:</h3>
+ <h5>I - ativos: bens, direitos, valores, fundos, recursos ou serviços, de qualquer natureza, financeiros ou não;</h5>
+ <h5>II - indisponibilidade de ativos: proibição de transferir, converter, trasladar, disponibilizar ativos, ou deles dispor, direta ou indiretamente;</h5>
+ <h5>III - fundamentos objetivos: existência de indícios ou provas da prática de terrorismo, de seu financiamento ou de atos a ele correlacionados, por pessoa natural ou por intermédio de pessoa jurídica ou entidade, conforme disposto na Lei n° 13.260, de 16 de março de 2016 ;</h5>
+ <h5>IV - entidades: arranjos ou estruturas legais que não possuem personalidade jurídica, tais como fundos ou clubes de investimento; e</h5>
+ <h5>V - sem demora: imediatamente ou dentro de algumas horas.</h5>
+ <h3>Art. 3º A indisponibilidade de ativos de que trata esta Lei ocorrerá nas seguintes hipóteses:</h3>
+ <h5>I - por execução de resoluções do Conselho de Segurança das Nações Unidas ou por designações de seus comitês de sanções; ou</h5>
+ <h5>II - a requerimento de autoridade central estrangeira, desde que o pedido de indisponibilidade esteja de acordo com os princípios legais aplicáveis e apresente fundamentos objetivos para exclusivamente atender aos critérios de designação estabelecidos em resoluções do Conselho de Segurança das Nações Unidas ou de seus comitês de sanções.</h5>
+ <h3>Art. 4º A indisponibilidade de ativos não constitui a perda do direito de propriedade.</h3>
+ <h3>Art. 5º São nulos e ineficazes atos de disposição relacionados aos ativos indisponibilizados com fundamento nesta Lei, ressalvados os direitos de terceiro de boafé.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>DA EXECUÇÃO DE RESOLUÇÕES DO CONSELHO DE SEGURANÇA DAS NAÇÕES UNIDAS OU DE DESIGNAÇÕES DE SEUS COMITÊS DE SANÇÕES</p>
+ <p>Seção I</p>
+ <p>Do Cumprimento Imediato</p>
+ <h3>Art. 6º As resoluções sancionatórias do Conselho de Segurança das Nações Unidas e as designações de seus comitês de sanções são dotadas de executoriedade imediata na República Federativa do Brasil.</h3>
+ <h4>Parágrafo único. (VETADO).</h4>
+ <h3>Art. 7º Sem prejuízo da obrigação de cumprimento imediato das resoluções sancionatórias do Conselho de Segurança das Nações Unidas e das designações de seus comitês de sanções, as resoluções e as designações de que trata este Capítulo, ou seus extratos, serão publicadas no Diário Oficial da União pelo Ministério das Relações Exteriores, em língua portuguesa, para fins de publicidade.</h3>
+ <h3>Art. 8º É vedado a todos os brasileiros, residentes ou não, ou a pessoas naturais, pessoas jurídicas ou entidades em território brasileiro, descumprir, por ação ou omissão, sanções impostas por resoluções do Conselho de Segurança das Nações Unidas ou por designações de seus comitês de sanções, em benefício de pessoas naturais, pessoas jurídicas ou entidades sancionadas, inclusive para disponibilizar ativos, direta ou indiretamente, em favor dessas pessoas ou entidades.</h3>
+ <h4>Parágrafo único. A vedação de que trata o caput deste artigo aplica-se aos órgãos dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios e às entidades da administração pública indireta.</h4>
+ <h3>Art. 9º As pessoas naturais e jurídicas de que trata o art. 9º da Lei n° 9.613, de 3 de março de 1998 , cumprirão, sem demora e sem prévio aviso aos sancionados, as resoluções do Conselho de Segurança das Nações Unidas ou as designações de seus comitês de sanções que determinem a indisponibilidade de ativos de titularidade, direta ou indireta, de pessoas físicas, de pessoas jurídicas ou de entidades submetidas a sanções decorrentes de tais resoluções, na forma e nas condições definidas por seu órgão regulador ou fiscalizador.</h3>
+ <h3>Art. 10. Sem prejuízo da obrigação de cumprimento imediato, o Ministério da Justiça e Segurança Pública comunicará, sem demora, as sanções de:</h3>
+ <h5>I - indisponibilidade de ativos aos órgãos reguladores ou fiscalizadores, para que comuniquem imediatamente às pessoas naturais ou jurídicas de que trata o art. 9º da Lei n° 9.613, de 3 março de 1998.</h5>
+ <h5>II - restrições à entrada de pessoas no território nacional, ou à saída dele, à Polícia Federal, para que adote providências imediatas de comunicação às empresas de transporte internacional; e</h5>
+ <h5>III - restrições à importação ou à exportação de bens à Secretaria Especial da Receita Federal do Ministério da Economia, à Polícia Federal e às Capitanias dos Portos, para que adotem providências imediatas de comunicação às administrações aeroportuárias, às empresas aéreas e às autoridades e operadores portuários.</h5>
+ <h4>§ 1º A comunicação a que se refere o inciso I do caput deste artigo será dirigida pelo Ministério da Justiça e Segurança Pública, também, para cumprimento sem demora:</h4>
+ <h5>I - às corregedorias de justiça dos Estados e do Distrito Federal;</h5>
+ <h5>II - à Agência Nacional de Aviação Civil;</h5>
+ <h5>III - ao Departamento Nacional de Trânsito do Ministério do Desenvolvimento Regional;</h5>
+ <h5>IV - às Capitanias dos Portos;</h5>
+ <h5>V - à Agência Nacional de Telecomunicações; e</h5>
+ <h5>VI - aos outros órgãos de registro público competentes.</h5>
+ <h4>§ 2º As comunicações de que trata este artigo poderão ser feitas por via eletrônica, com confirmação de recebimento.</h4>
+ <h3>Art. 11. A indisponibilidade de ativos e as tentativas de sua transferência relacionadas às pessoas naturais, às pessoas jurídicas ou às entidades sancionadas por resolução do Conselho de Segurança das Nações Unidas ou por designações de seus comitês de sanções serão comunicadas ao Ministério da Justiça e Segurança Pública, aos órgãos reguladores ou fiscalizadores das pessoas naturais ou das pessoas jurídicas de que trata o art. 9º da Lei n° 9.613, de 3 de março de 1998 , e ao Conselho de Controle de Atividades Financeiras.</h3>
+ <p>Seção II</p>
+ <p>Do Auxílio Direto Judicial</p>
+ <h3>Art. 12. Na hipótese de haver informações sobre a existência de ativos sujeitos à indisponibilidade ou de pessoas e bens sujeitos a outra espécie de sanção determinada em resoluções do Conselho de Segurança das Nações Unidas ou em designações de seus comitês de sanções, sem que tenha ocorrido seu cumprimento na forma da Seção I deste Capítulo, a União ingressará, sem demora, com auxílio direto judicial para obtê-la. Parágrafo único. As pessoas naturais e as pessoas jurídicas de que trata o art. 9º da Lei n° 9.613, de 3 de março de 1998 , na forma e nas condições definidas por seu órgão regulador ou fiscalizador, e os órgãos e as entidades referidos no art. 10 desta Lei informarão, sem demora, ao Ministério da Justiça e Segurança Pública, a existência de pessoas e ativos sujeitos à sanção e as razões pelas quais deixaram de cumpri-la.</h3>
+ <h3>Art. 13. O Ministério da Justiça e Segurança Pública comunicará, sem demora, a existência de ativos sujeitos à indisponibilidade ou de pessoas e bens sujeitos a outra espécie de sanção à Advocacia-Geral da União, para que promova, sem demora, o auxílio direto judicial.</h3>
+ <h3>Art. 14. Instruído o pedido com os elementos a que se refere o art. 12 desta Lei, o juiz determinará, no prazo de 24 (vinte e quatro) horas, contado da data do recebimento dos autos, e sem a prévia oitiva do requerido, as medidas pertinentes para cumprimento da sanção. Parágrafo único. Da determinação de que trata o caput deste artigo serão intimados para ciência e cumprimento da decisão as partes, os órgãos e as entidades referidos no art. 10 desta Lei e, caso seja necessário, a pessoa natural ou jurídica que informou a existência de pessoas ou de ativos sujeitos à sanção.</h3>
+ <h3>Art. 15. O juiz ordenará a citação do requerido para, caso deseje, impugnar a determinação no prazo de 15 (quinze) dias, contado da data da citação.</h3>
+ <h4>§ 1º A impugnação de que trata o caput deste artigo não terá efeito suspensivo e versará somente sobre:</h4>
+ <h5>I - homonímia;</h5>
+ <h5>II - erro na identificação do requerido ou dos ativos que sejam objeto de sanção;</h5>
+ <h5>III - exclusão do requerido da lista de sanções, por força de resolução proferida pelo Conselho de Segurança das Nações Unidas ou por designação de seus comitês de sanções; ou</h5>
+ <h5>IV - expiração do prazo de vigência do regime de sanções.</h5>
+ <h4>§ 2º A União será ouvida sobre a impugnação no prazo de 15 (quinze) dias, contado da data da intimação.</h4>
+ <h3>Art. 16. Havendo ou não a impugnação, o juiz proferirá sentença. Parágrafo único. Intimados as partes, os órgãos e as entidades referidos no art. 10 desta Lei e, caso seja necessário, a pessoa natural ou jurídica que informou a existência dos ativos sujeitos à sanção, e se não houver interposição de recurso, os autos serão arquivados.</h3>
+ <h3>Art. 17. Na hipótese de sobrevir a exclusão posterior do requerido da ação originária da lista de pessoas sujeitas ao regime de sanções ou qualquer outra razão que, segundo o Conselho de Segurança das Nações Unidas ou seus comitês de sanções, fundamente a revogação da sanção, as partes poderão ingressar com ação revisional do que foi estatuído na sentença.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO AUXÍLIO DIRETO JUDICIAL A REQUERIMENTO DE AUTORIDADE CENTRAL ESTRANGEIRA</h3>
+ <h3>Art. 18. A União poderá ingressar com auxílio direto judicial para indisponibilidade de ativos, a requerimento de autoridade central estrangeira, de modo a assegurar o resultado de investigações administrativas ou criminais e ações em curso em jurisdição estrangeira em face de terrorismo, de seu financiamento ou de atos a ele correlacionados.</h3>
+ <h4>§ 1º O Ministério da Justiça e Segurança Pública, em coordenação com o Ministério das Relações Exteriores, verificará, sem demora, se o requerimento de indisponibilidade de ativos formulado por autoridade central estrangeira está de acordo com os princípios legais aplicáveis e apresenta fundamentos objetivos para o seu atendimento.</h4>
+ <h4>§ 2º Verificado que o requerimento da autoridade central estrangeira está de acordo com os princípios legais aplicáveis e apresenta fundamentos objetivos para o seu atendimento, o Ministério da Justiça e Segurança Pública encaminhará, sem demora, o requerimento à Advocacia-Geral da União, para que promova, sem demora, o auxílio direto judicial, se houver elementos que demonstrem a existência, na República Federativa do Brasil, de ativos sujeitos à medida de indisponibilidade.</h4>
+ <h3>Art. 19. Aplica-se o disposto no art. 14, nos incisos I e II do § 1º e no § 2º do art. 15 e no art. 16 desta Lei ao auxílio direto judicial. Parágrafo único. A impugnação de que trata o art. 15 desta Lei poderá versar também sobre a ausência de fundamentos objetivos para estabelecer a relação entre os ativos e os fatos investigados.</h3>
+ <h3>Art. 20. Compete ao Ministério da Justiça e Segurança Pública, em consulta com a autoridade central estrangeira, informar a Advocacia-Geral da União sobre a situação da investigação ou da ação.</h3>
+ <h3>Art. 21. Na hipótese de a autoridade central estrangeira informar que não é mais necessária a indisponibilidade de ativos, as partes poderão ingressar com ação revisional do que foi estatuído na sentença.</h3>
+ <h3>Art. 22. Aplica-se, no que couber, o auxílio direto judicial para atender a requerimento de autoridade central estrangeira que tenha por objetivo promover comunicações de atos processuais e obter outras medidas cautelares ou provas necessárias à investigação criminal ou às ações criminais em curso em outro país relativas ao financiamento ou apoio a atos terroristas, nos termos das alíneas "e" e "f" do item 2 da Resolução 1373 (2001) do Conselho de Segurança das Nações Unidas, de que trata o Decreto nº 3.976, de 18 de outubro de 2001.</h3>
+ <h4>Parágrafo único. No caso de auxílio direto para a prática de atos que não necessitem de prestação jurisdicional, o Ministério da Justiça e Segurança Pública adotará as providências necessárias para seu cumprimento.</h4>
+ <h3>Art. 23. O Ministério da Justiça e Segurança Pública informará à autoridade central estrangeira requerente:</h3>
+ <h5>I - as medidas adotadas; ou</h5>
+ <h5>II - a ausência de fundamentos objetivos para possibilitar o atendimento do requerimento.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DAS DESIGNAÇÕES NACIONAIS</h3>
+ <h3>Art. 24. A União será intimada pelo juiz, de ofício, de decisões que decretem medidas assecuratórias de bens, direitos ou valores de pessoas investigadas ou acusadas, ou existentes em nome de pessoas interpostas, que sejam instrumento, produto ou proveito dos crimes de terrorismo, nos termos do art. 12 da Lei n° 13.260, de 16 de março de 2016 , para que adote, caso seja necessário, as providências de designação nacional perante o Conselho de Segurança das Nações Unidas ou seu comitê de sanções pertinente.</h3>
+ <h4>§ 1º A Advocacia-Geral da União comunicará a decisão ao Ministério da Justiça e Segurança Pública e ao Ministério das Relações Exteriores, para que deliberem sobre a designação nacional e, caso seja necessário, comuniquem-na, sem demora, ao Conselho de Segurança das Nações Unidas ou ao seu comitê de sanções pertinente.</h4>
+ <h4>§ 2º A designação nacional será acompanhada dos elementos que a fundamentem, de acordo com o procedimento estabelecido na resolução correspondente do Conselho de Segurança das Nações Unidas.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 25. Os órgãos reguladores ou fiscalizadores das pessoas naturais ou jurídicas a que se refere o art. 9º da Lei n° 9.613, de 3 de março de 1998 , editarão as normas necessárias ao cumprimento das disposições desta Lei. Parágrafo único. Cabe aos órgãos reguladores ou fiscalizadores orientar, supervisionar e fiscalizar o cumprimento das medidas de indisponibilidade de ativos pelas pessoas naturais ou pelas pessoas jurídicas de que trata o art. 9º da Lei n° 9.613, de 3 de março de 1998 , e aplicar as penalidades administrativas cabíveis.</h3>
+ <h3>Art. 26. O Ministério da Justiça e Segurança Pública manterá lista de pessoas naturais e jurídicas e entidades cujos ativos estão sujeitos à indisponibilidade em decorrência de resoluções do Conselho de Segurança das Nações Unidas ou de designação de seus comitês de sanções, de requerimento de outro país ou de designação nacional.</h3>
+ <h3>Art. 27. Qualquer pessoa natural ou jurídica ou entidade sancionada em decorrência de resoluções do Conselho de Segurança das Nações Unidas ou de designação de seus comitês de sanções poderá solicitar a sua exclusão das listas de sanções.</h3>
+ <h4>§ 1º A solicitação de exclusão será fundamentada, com vistas a atender aos critérios estabelecidos na resolução pertinente do Conselho de Segurança das Nações Unidas ou de designação de seus comitês de sanções, e encaminhada ao Ministério da Justiça e Segurança Pública.</h4>
+ <h4>§ 2º Analisada a solicitação de exclusão, o Ministério da Justiça e Segurança Pública deverá encaminhá-la ao Ministério das Relações Exteriores, que a transmitirá ao Conselho de Segurança das Nações Unidas ou ao comitê de sanções pertinente para sua deliberação.</h4>
+ <h3>Art. 28. Os ativos indisponibilizados poderão ser parcialmente liberados, caso necessário, para o custeio de despesas ordinárias ou extraordinárias.</h3>
+ <h4>§ 1º Para fins do disposto neste artigo, consideram-se despesas ordinárias, entre outras:</h4>
+ <h5>I - despesas básicas com alimentos, aluguéis, hipotecas, medicamentos, tratamentos médicos, impostos, seguros e tarifas de serviços públicos;</h5>
+ <h5>II - pagamento de honorários profissionais de montante razoável e reembolso de gastos efetuados com a prestação de serviços jurídicos; e</h5>
+ <h5>III - pagamento de taxas ou encargos relacionados com a administração e a manutenção ordinárias de fundos ou de outros ativos ou recursos indisponíveis.</h5>
+ <h4>§ 2º Na hipótese de pessoas naturais, pessoas jurídicas ou entidades incluídas nas listas de sanções do Conselho de Segurança das Nações Unidas ou de designação de seus comitês de sanções, a liberação parcial dos ativos bloqueados será autorizada:</h4>
+ <h5>I - para o custeio de despesas ordinárias, após notificação do Conselho de Segurança das Nações Unidas ou do seu comitê de sanções competente, sem que tenha havido objeção no prazo de 48 (quarenta e oito) horas, contado da data da notificação; e</h5>
+ <h5>II - para o custeio de despesas extraordinárias, após notificação e aprovação pelo Conselho de Segurança das Nações Unidas ou pelo seu comitê de sanções competente.</h5>
+ <h4>§ 3º Nas hipóteses de indisponibilidade de ativos decorrente de requerimento de autoridade central estrangeira ou de ordem judicial brasileira, a liberação parcial compete ao juiz que decidiu sobre a indisponibilidade, do que será intimada a União, com vistas à comunicação ao Conselho de Segurança das Nações Unidas ou a seu comitê de sanções competente.</h4>
+ <h3>Art. 29. As medidas de auxílio direto judicial previstas nesta Lei tramitarão sob segredo de justiça.</h3>
+ <h3>Art. 30. Nas hipóteses de os ativos estarem sujeitos a qualquer grau de deterioração ou depreciação ou de haver dificuldade para sua manutenção, poderá ser requerida ao juízo competente a alienação antecipada dos ativos declarados indisponíveis para a preservação de seus valores.</h3>
+ <h4>§ 1º O interessado será intimado da avaliação dos ativos para, caso deseje, manifestar-se no prazo de 10 (dez) dias, contado da data da intimação.</h4>
+ <h4>§ 2º Feita a avaliação dos ativos e dirimidas eventuais divergências sobre o valor a eles atribuído, será determinada a sua alienação em leilão ou pregão, preferencialmente eletrônico, por valor não inferior a 75% (setenta e cinco por cento) do valor atribuído pela avaliação.</h4>
+ <h4>§ 3º Realizado o leilão ou o pregão, a quantia apurada será depositada em conta bancária remunerada.</h4>
+ <h4>§ 4º Serão deduzidos da quantia apurada no leilão ou no pregão os tributos e as multas incidentes sobre o ativo alienado.</h4>
+ <h3>Art. 31. Será designada pessoa qualificada para a administração, a guarda ou a custódia dos ativos indisponibilizados, caso necessário.</h3>
+ <h4>§ 1º Aplicam-se à pessoa designada para os fins do disposto no caput deste artigo, no que couber, as disposições legais relativas ao administrador judicial.</h4>
+ <h4>§ 2º No caso de ativos financeiros, a sua administração caberá às instituições em que se encontrem, com incidência do bloqueio dos juros e de outros frutos civis e rendimentos decorrentes do contrato.</h4>
+ <h3>Art. 32. O Ministério da Justiça e Segurança Pública comunicará:</h3>
+ <h5>I - ao Ministério Público Federal e à Polícia Federal as medidas de indisponibilidade de ativos adotadas e as tentativas de transferência relacionadas às pessoas naturais, às pessoas jurídicas ou às entidades designadas, para avaliação de abertura ou não de investigação criminal; e</h5>
+ <h5>II - ao Ministério das Relações Exteriores as medidas de indisponibilidade de ativos adotadas em cumprimento das resoluções do Conselho de Segurança das Nações Unidas ou de designações de seus comitês de sanções, para conhecimento e comunicação ao respectivo organismo internacional.</h5>
+ <h3>Art. 33. Aplicam-se subsidiariamente a esta Lei, no que couber, as disposições da Lei n° 13.105, de 16 de março de 2015 (Código de Processo Civil) , e do Decreto-Lei n° 3.689, de 3 de outubro de 1941 (Código de Processo Penal) .</h3>
+ <h3>Art. 34. O Poder Executivo federal regulamentará esta Lei no prazo de 90 (noventa) dias, contado da data de sua publicação.</h3>
+ <h3>Art. 35. Revoga-se a Lei n° 13.170, de 16 de outubro de 2015</h3>
+ <h3>Art. 36. Esta Lei entra em vigor após decorridos 90 (noventa) dias de sua publicação oficial.</h3>
+ <p>Brasília, 8 de março de 2019; 198º08a Independência e 131º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Ernesto Henrique Fraga Araújo</p>
+ <p>André Luiz de Almeida Mendonça</p>
+ <p>Este texto não substitui o publicado no DOU de 8.3.2019 - Edição extra</p>
+ <p>Regulamento | Dispõe sobre o cumprimento de sanções impostas por resoluções do Conselho de</p>
+ <p>Segurança das Nações Unidas, incluída a indisponibilidade de ativos de pessoas naturais e jurídicas e de entidades, e a designação nacional de pessoas investigadas ou acusadas de terrorismo, de seu financiamento ou de atos a ele correlacionados; e revoga a Lei n° 13.170, de 16 de outubro de 2015.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2019/Lei/L13810.htm#art35" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

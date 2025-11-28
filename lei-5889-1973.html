@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 5.889, DE 8 DE JUNHO DE 1973 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1973" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 5.889, DE 8 DE JUNHO DE 1973</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 19:40:02 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L5889.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 18.451 caracteres | espelho: 18.484 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 5.889, DE 8 DE JUNHO DE 1973.</p>
+ <p>(Vide Medida Provisória nº 927, de 2020)</p>
+ <p>(Vide Medida Provisória nº 1.046, de 2021)</p>
+ <p>(Vide Medida Provisória nº 1.109, de 	2022)</p>
+ <p>(Vide Lei n° 14.437, de 2022)</p>
+ <p>Estatui normas reguladoras do trabalho rural.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º As relações de trabalho rural serão reguladas por esta Lei e, no que com ela não colidirem, pelas normas da Consolidação das Leis do Trabalho, aprovada pelo Decreto-lei n° 5.452, de 01/05/1943 .</h3>
+ <h4>Parágrafo único. Observadas as peculiaridades do trabalho rural, a ele também se aplicam as leis nºs 605, de 05/01/1949 , 4090, de 13/07/1962 ; 4725, de 13/07/1965 , com as alterações da Lei n° 4903, de 16/12/1965 e os Decretos-Leis nºs 15, de 29/07/1966 ; 17, de 22/08/1966 e 368, de 19/12/1968 .</h4>
+ <h3>Art. 2º Empregado rural é toda pessoa física que, em propriedade rural ou prédio rústico, presta serviços de natureza não eventual a empregador rural, sob a dependência deste e mediante salário.</h3>
+ <h3>Art. 3º - Considera-se empregador, rural, para os efeitos desta Lei, a pessoa física ou jurídica, proprietário ou não, que explore atividade agro-econômica, em caráter permanente ou temporário, diretamente ou através de prepostos e com auxílio de empregados.</h3>
+ <h4>§ 1º Inclui-se na atividade econômica, referida no "caput" deste artigo, a exploração industrial em estabelecimento agrário não compreendido na Consolidação das Leis do Trabalho.</h4>
+ <h4>§ 1º Inclui-se na atividade econômica referida no caput deste artigo, além da exploração industrial em estabelecimento agrário não compreendido na Consolidação das 	Leis do Trabalho - CLT, aprovada pelo Decreto-Lei N° 5.452, de 1º de maio de 1943 , a exploração do turismo rural ancilar à exploração agroeconômica. (Redação dada pela Lei n° 13.171, de 	2015)</h4>
+ <h4>§ 2º Sempre que uma ou mais empresas, embora tendo cada uma delas personalidade jurídica própria, estiverem sob direção, controle ou administração de outra, ou ainda quando, mesmo guardando cada uma sua autonomia, integrem grupo econômico ou financeiro rural, serão responsáveis solidariamente nas obrigações decorrentes da relação de emprego.</h4>
+ <h3>Art. 4º - Equipara-se ao empregador rural, a pessoa física ou jurídica que, habitualmente, em caráter profissional, e por conta de terceiros, execute serviços de natureza agrária, mediante utilização do trabalho de outrem. (Vide Lei n° 6.260, de 1975)</h3>
+ <h3>Art. 5º Em qualquer trabalho contínuo de duração superior a seis horas, será obrigatória a concessão de um intervalo para repouso ou alimentação observados os usos e costumes da região, não se computando este intervalo na duração do trabalho. Entre duas jornadas de trabalho haverá um período mínimo de onze horas consecutivas para descanso.</h3>
+ <h3>Art. 6º Nos serviços, caracteristicamente intermitentes, não serão computados, como de efeito exercício, os intervalos entre uma e outra parte da execução da tarefa diária, desde que tal hipótese seja expressamente ressalvada na Carteira de Trabalho e Previdência Social.</h3>
+ <h3>Art. 7º - Para os efeitos desta Lei, considera-se trabalho noturno o executado entre as vinte e uma horas de um dia e as cinco horas do dia seguinte, na lavoura, e entre as vinte horas de um dia e as quatro horas do dia seguinte, na atividade pecuária.</h3>
+ <h4>Parágrafo único. Todo trabalho noturno será acrescido de 25% (vinte e cinco por cento) sobre a remuneração normal.</h4>
+ <h3>Art. 8º Ao menor de 18 anos é vedado o trabalho noturno.</h3>
+ <h3>Art. 9º Salvo as hipóteses de autorização legal ou decisão judiciária, só poderão ser descontadas do empregado rural as seguintes parcelas, calculadas sobre o salário mínimo:</h3>
+ <h6>a) até o limite de 20% (vinte por cento) pela ocupação da morada;</h6>
+ <h6>b)até o limite de 25% (vinte por cento) pelo fornecimento de alimentação sadia e farta, atendidos os preços vigentes na região;</h6>
+ <h6>c) adiantamentos em dinheiro.</h6>
+ <h4>§ 1º As deduções acima especificadas deverão ser previamente autorizadas, sem o que serão nulas de pleno direito.</h4>
+ <h4>§ 2º Sempre que mais de um empregado residir na mesma morada, o desconto, previsto na letra "a" deste artigo, será dividido proporcionalmente ao número de empregados, vedada, em qualquer hipótese, a moradia coletiva de famílias.</h4>
+ <h4>§ 3º Rescindido ou findo o contrato de trabalho, o empregado será obrigado a desocupar a casa dentro de trinta dias.</h4>
+ <h4>§ 4º O Regulamento desta Lei especificará os tipos de morada para fins de dedução.</h4>
+ <h4>§ 5º A cessão pelo empregador, de moradia e de sua infra estrutura básica, assim, como, bens destinados à produção para sua subsistência e de sua família, não integram o salário do trabalhador rural, desde que caracterizados como tais, em contrato escrito celebrado entre as partes, com testemunhas e notificação obrigatória ao respectivo sindicato de trabalhadores rurais. (Incluído pela Lei n° 9.300, de 29/08/96)</h4>
+ <h3>Art. 10. A prescrição dos direitos assegurados por esta Lei aos trabalhadores rurais só ocorrerá após dois anos de cessação do contrato de trabalho.</h3>
+ <h4>Parágrafo único. Contra o menor de dezoito anos não corre qualquer prescrição.</h4>
+ <h3>Art. 11. Ao empregado rural maior de dezesseis anos é assegurado salário mínimo igual ao de empregado adulto.</h3>
+ <h4>Parágrafo único. Ao empregado menor de dezesseis anos é assegurado salário mínimo fixado em valor correspondente à metade do salário mínimo estabelecido para o adulto.</h4>
+ <h3>Art. 12. Na regiões em que se adota a plantação subsidiária ou intercalar (cultura secundária), a cargo do empregado rural, quando autorizada ou permitida, será objeto de contrato em separado.</h3>
+ <h4>Parágrafo único. Embora devendo integrar o resultado anual a que tiver direito o empregado rural, a plantação subsidiária ou intercalar não poderá compor a parte correspondente ao salário mínimo na remuneração geral do empregado, durante o ano agrícola.</h4>
+ <h3>Art. 13. Nos locais de trabalho rural serão observadas as normas de segurança e higiene estabelecidas em portaria do ministro do Trabalho e Previdência Social.</h3>
+ <h3>Art. 14. Expirado normalmente o contrato, a empresa pagará ao safrista, a título de indenização do tempo de serviço, importância correspondente a 1/12 (um doze avos) do salário mensal, por mês de serviço ou fração superior a 14 (quatorze) dias.</h3>
+ <h4>Parágrafo único. Considera-se contrato de safra o que tenha sua duração dependente de variações estacionais da atividade agrária.</h4>
+ <h3>Art. 14-A. O produtor rural pessoa física poderá realizar contratação de trabalhador rural por pequeno prazo para o exercício de atividades de natureza temporária. (Incluído pela Medida Provisória nº 410, de 2007).</h3>
+ <h4>§ 1º O contrato de trabalhador rural por pequeno prazo que superar dois meses dentro do período de um ano fica convertido em contrato de trabalho por prazo indeterminado. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 2º A filiação e a inscrição do trabalhador de que trata este artigo na Previdência Social decorre, automaticamente, da sua inclusão, pelo empregador, na Guia de Recolhimento do Fundo de Garantia do Tempo de Serviço e Informações à Previdência Social - GFIP, cabendo à Previdência Social instituir mecanismo que permita a sua identificação. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 3º O contrato de trabalhador rural por pequeno prazo não necessita ser anotado na Carteira de Trabalho e Previdência Social ou em Livro ou Ficha de Registro de Empregados, mas, se não houver outro registro documental, é obrigatória a existência de contrato escrito com o fim específico de comprovação para a fiscalização trabalhista da situação do trabalhador. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 4º A contribuição do segurado trabalhador rural contratado para prestar serviço na forma deste artigo é de oito por cento sobre o respectivo salário-de-contribuição definido no inciso I do art. 28 da Lei N° 8.212, de 24 de julho de 1991 . (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 5º A não-inclusão do trabalhador na GFIP pressupõe a inexistência de contratação na forma deste artigo, sem prejuízo de comprovação, por qualquer meio admitido em direito, da existência de relação jurídica diversa. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 6º O recolhimento das contribuições previdenciárias far-se-á nos termos da legislação da Previdência Social. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 7º São assegurados ao trabalhador rural contratado por pequeno prazo, além de remuneração equivalente à do trabalhador rural permanente, os demais direitos de natureza trabalhista. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 8º Todas as parcelas devidas ao trabalhador de que trata este artigo serão calculadas dia-a-dia e pagas diretamente a ele mediante recibo. (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h4>§ 9º O Fundo de Garantia do Tempo de Serviço - FGTS deverá ser recolhido nos termos da Lei N° 8.036, de 11 de maio de 1990 . (Incluído pela Medida Provisória nº 410, de 2007).</h4>
+ <h3>Art. 14-A. O produtor rural pessoa física poderá realizar contratação de trabalhador rural por pequeno prazo para o exercício de atividades de natureza temporária. (Incluído pela Lei n° 11.718, de 2008)</h3>
+ <h4>§ 1º A contratação de trabalhador rural por pequeno prazo que, dentro do período de 1 (um) ano, superar 2 (dois) meses fica convertida em contrato de trabalho por prazo indeterminado, observando-se os termos da legislação aplicável. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 2º A filiação e a inscrição do trabalhador de que trata este artigo na Previdência Social decorrem, automaticamente, da sua inclusão pelo empregador na Guia de Recolhimento do Fundo de Garantia do Tempo de Serviço e Informações à Previdência Social – GFIP, cabendo à Previdência Social instituir mecanismo que permita a sua identificação. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 3º O contrato de trabalho por pequeno prazo deverá ser formalizado mediante a inclusão do trabalhador na GFIP, na forma do disposto no § 2º deste artigo, e : (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h5>I – mediante a anotação na Carteira de Trabalho e Previdência Social e em Livro ou Ficha de Registro de Empregados; ou</h5>
+ <h5>II – mediante contrato escrito, em 2 (duas) vias, uma para cada parte, onde conste, no mínimo: (Incluído pela Lei n° 11.718, de 2008)</h5>
+ <h6>a) expressa autorização em acordo coletivo ou convenção coletiva; (Incluído pela Lei n° 11.718, de 2008)</h6>
+ <h6>b) identificação do produtor rural e do imóvel rural onde o trabalho será realizado e indicação da respectiva matrícula; (Incluído pela Lei n° 11.718, de 2008)</h6>
+ <h6>c) identificação do trabalhador, com indicação do respectivo Número de Inscrição do Trabalhador – NIT. (Incluído pela Lei n° 11.718, de 2008)</h6>
+ <h4>§ 4º A contratação de trabalhador rural por pequeno prazo só poderá ser realizada por produtor rural pessoa física, proprietário ou não, que explore diretamente atividade agroeconômica. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 5º A contribuição do segurado trabalhador rural contratado para prestar serviço na forma deste artigo é de 8% (oito por cento) sobre o respectivo salário-de-contribuição definido no inciso I do caput do art. 28 da Lei N° 8.212, de 24 de julho de 1991 . (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 6º A não inclusão do trabalhador na GFIP pressupõe a inexistência de contratação na forma deste artigo, sem prejuízo de comprovação, por qualquer meio admitido em direito, da existência de relação jurídica diversa. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 7º Compete ao empregador fazer o recolhimento das contribuições previdenciárias nos termos da legislação vigente, cabendo à Previdência Social e à Receita Federal do Brasil instituir mecanismos que facilitem o acesso do trabalhador e da entidade sindical que o representa às informações sobre as contribuições recolhidas. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 8º São assegurados ao trabalhador rural contratado por pequeno prazo, além de remuneração equivalente à do trabalhador rural permanente, os demais direitos de natureza trabalhista. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 9º Todas as parcelas devidas ao trabalhador de que trata este artigo serão calculadas dia a dia e pagas diretamente a ele mediante recibo. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 10. O Fundo de Garantia do Tempo de Serviço – FGTS deverá ser recolhido e poderá ser levantado nos termos da Lei N° 8.036, de 11 de maio de 1990 . (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h3>Art. 15. Durante o prazo do aviso prévio, se a rescisão tiver sido promovida pelo empregador, o empregado rural terá direito a um dia por semana, sem prejuízo do salário integral, para procurar outro trabalho.</h3>
+ <h3>Art. 16. Toda propriedade rural, que mantenha a seu serviço ou trabalhando em seus limites mais de cinqüenta famílias de trabalhadores de qualquer natureza, é obrigada a possuir e conservar em funcionamento escola primária, inteiramente gratuita, para os filhos destes, com tantas classes quantos sejam os filhos destes, com tantas classes quantos sejam os grupos de quarenta crianças em idade escolar.</h3>
+ <h4>Parágrafo único. A matrícula da população em idade escolar será obrigatória, sem qualquer outra exigência, além da certidão de nascimento, para cuja obtenção o empregador proporcionará todas as facilidades aos responsáveis pelas crianças.</h4>
+ <h3>Art. 17. As normas da presente Lei são aplicáveis, no que couber, aos trabalhadores rurais não compreendidos na definição do art. 2º, que prestem serviços a empregador rural.</h3>
+ <h3>Art. 18. As infrações aos dispositivos desta Lei e aos da Consolidação das Leis do Trabalho , salvo as do Título IV, Capítulos I, III, IV, VIII e IX serão punidas com multa de 1/10 (um décimo) a 10 (dez) salários mínimos regionais, segundo a natureza da infração e sua gravidade, aplicada em dobro, nos casos de reincidência, oposição à fiscalização ou desacato à autoridade.</h3>
+ <h4>§ 1º A falta de registro de empregados ou o seu registro em livros ou fichas não rubricadas e legalizadas, na forma do art. 42, da Consolidação das Leis do Trabalho , sujeitará a empresa infratora à multa de 1 (um) salário mínimo regional por empregado em situação irregular.</h4>
+ <h4>§ 2º Tratando-se de infrator primário, a penalidade, prevista neste artigo, não excederá de 04 (quatro) salários mínimos regionais.</h4>
+ <h4>§ 3º As penalidades serão aplicadas pela autoridade competente do Ministério do Trabalho e da Previdência Social, de acordo com o disposto no Título VII, da Consolidação das Leis do Trabalho.</h4>
+ <h3>Art. 18. As infrações aos dispositivos desta Lei serão punidas com multa de R$ 380,00 (trezentos e oitenta reais) por empregado em situação irregular. (Redação dada pela Medida Provisória nº 2.164-41, de 2001)</h3>
+ <h3>Art. 18. As infrações aos dispositivos desta Lei acarretarão a aplicação da multa prevista no inciso II do caput do art. 634-A da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , exceto na hipótese do art. 13 desta Lei, em que será aplicada a multa prevista no inciso I do caput do art. 634-A da referida Consolidação. (Redação dada pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h3>Art. 18. As infrações aos dispositivos desta Lei acarretarão a aplicação da multa prevista no inciso II do caput do art. 634-A da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , exceto na hipótese do art. 13 desta Lei, em que será aplicada a multa prevista no inciso I do caput do art. 634-A da referida Consolidação. (Redação dada pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h3>Art. 18. As infrações aos dispositivos desta Lei serão punidas com multa de R$ 380,00 (trezentos e oitenta reais) por empregado em situação irregular. (Redação dada pela Medida Provisória nº 2.164-41, de 2001)</h3>
+ <h4>§ 1º As infrações aos dispositivos da Consolidação das Leis do Trabalho - CLT e legislação esparsa, cometidas contra o trabalhador rural, serão punidas com as multas nelas previstas. (Redação dada pela Medida Provisória nº 2.164-41, de 2001)</h4>
+ <h4>§ 2º As penalidades serão aplicadas pela autoridade competente do Ministério do Trabalho e Emprego, de acordo com o disposto no Título VII da CLT. (Redação dada pela Medida Provisória nº 2.164-41, de 2001)</h4>
+ <h4>§ 3º A fiscalização do Ministério do Trabalho e Emprego exigirá dos empregadores rurais ou produtores equiparados a comprovação do recolhimento da Contribuição Sindical Rural das categorias econômica e profissional. (Redação dada pela Medida Provisória nº 2.164-41, de 2001)</h4>
+ <h4>§ 3º A fiscalização do Ministério da Economia exigirá dos empregadores rurais ou produtores equiparados a comprovação do recolhimento da Contribuição Sindical Rural das categorias econômica e profissional, observada a exigência da autorização prévia e expressa de que trata o art. 579 da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1943 . (Redação dada pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h4>
+ <h4>§ 3º A fiscalização do Ministério da Economia exigirá dos empregadores rurais ou produtores equiparados a comprovação do recolhimento da Contribuição Sindical Rural das categorias econômica e profissional, observada a exigência da autorização prévia e expressa de que trata o art. 579 da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1943 . (Redação dada pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h4>
+ <h4>§ 3º A fiscalização do Ministério do Trabalho e Emprego exigirá dos empregadores rurais ou produtores equiparados a comprovação do recolhimento da Contribuição Sindical Rural das categorias econômica e profissional. (Redação dada pela Medida Provisória nº 2.164-41, de 2001)</h4>
+ <h3>Art. 19 O enquadramento e a contribuição sindical rurais continuam regidos pela legislação ora em vigor; o seguro social e o seguro contra acidente do trabalho rurais serão regulados por lei especial. (Vide Lei n° 6.195, de 1974)</h3>
+ <h3>Art. 20. Lei especial disporá sobre a aplicação ao trabalhador rural, no que couber, do regime do Fundo de Garantia do Tempo de Serviço.</h3>
+ <h3>Art. 21. Esta Lei entra em vigor na data de sua publicação, revogadas as disposições em contrário, em especial a Lei n° 4.214, de 02/03/1963 , e o Decreto-lei n° 761, de 14/08/1969 .</h3>
+ <p>Brasília, 8 de junho de 1973; 152º da Independência e 85º da República.</p>
+ <p>Este texto não substitui o publicado no DOU. de 11.6.1973 e retificado em 30.10.1973</p>
+ <p>Provisória nº 927, de 2020)(Vide Medida</p>
+ <p>Provisória nº 1.046, de 2021)(Vide Medida Provisória nº 1.109, de</p>
+ <p>2022)(Vide Lei n° 14.437, de 2022) | Estatui normas reguladoras do trabalho rural.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L5889.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
