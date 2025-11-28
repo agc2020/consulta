@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.768, DE 19 DE NOVEMBRO DE 2003 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2003" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.768, DE 19 DE NOVEMBRO DE 2003</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 13:56:19 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.768.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 59.451 caracteres | espelho: 58.858 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.768, DE 19 DE NOVEMBRO DE 2003.</p>
+ <p>Dispõe sobre o Quadro de Pessoal da Agência Nacional de Águas - ANA, e dá outras providências.</p>
+ <p>Dispõe sobre o Quadro de Pessoal da Agência Nacional de Águas e 	Saneamento Básico (ANA) e dá outras providências. (Redação dada pela Lei n° 14.026, de 2020)</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Ficam criados, no Quadro de Pessoal da Agência Nacional de Águas - ANA, os seguintes cargos efetivos e respectivos quantitativos:</h3>
+ <h3>Art. 1º São criados, no quadro de pessoal da Agência Nacional de Águas (ANA), os seguintes cargos efetivos, integrantes de carreiras de mesmo nome, e respectivos quantitativos: ( Redação dada pela Lei n° 13.326, de 2016) (Produção de efeito)</h3>
+ <h3>Art. 1º Ficam criados, no quadro de pessoal da Agência Nacional de Águas e Saneamento Básico (ANA), os seguintes cargos efetivos, integrantes de carreiras de mesmo nome, e respectivos quantitativos: (Redação dada pela Lei n° 14.026, de 2020)</h3>
+ <h5>I - duzentos e trinta e nove cargos de Especialista em Recursos Hídricos;</h5>
+ <h5>I - 239 (duzentos e trinta e nove) cargos de Especialista em Regulação de Recursos Hídricos e Saneamento Básico; (Redação dada pela Lei n° 14.026, de 2020)</h5>
+ <h5>II - vinte e sete cargos de Especialista em Geoprocessamento; e</h5>
+ <h5>III - oitenta e quatro cargos de Analista Administrativo.</h5>
+ <h3>Art. 2º Os cargos efetivos a que se referem os incisos I e II do art. 1º desta Lei são decorrentes da transformação de duzentos e sessenta e seis cargos de Regulador e aqueles a que se refere o inciso III do art. 1º desta Lei, da transformação de oitenta e quatro cargos de Analista de Suporte à Regulação, criados pela Lei N° 10.410, de 11 de janeiro de 2002.</h3>
+ <h3>Art. 3º São atribuições do cargo de Especialista em Recursos Hídricos o exercício de atividades de nível superior de elevada complexidade e responsabilidade, relativas à gestão de recursos hídricos, envolvendo a regulação, outorga e fiscalização do uso de recursos hídricos, à implementação, operacionalização e avaliação dos instrumentos da política nacional de recursos hídricos, à análise e desenvolvimento de programas e projetos de despoluição de bacias hidrográficas, eventos críticos em recursos hídricos e promoção do uso integrado de solo e água, entre outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA, referentes à gestão de recursos hídricos.</h3>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em Recursos Hídricos a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas, voltadas para o conhecimento, o uso sustentado, a conservação e a gestão de recursos hídricos, e a promoção de cooperação e divulgação técnico-científica, bem como a transferência de tecnologia na área.</h4>
+ <h3>Art. 3º São atribuições do cargo de Especialista em Recursos Hídricos o exercício de atividades de nível superior de elevada complexidade e responsabilidade relativas: (Redação dada pela Medida Provisória nº 844, de 2018) (Vigência encerrada)</h3>
+ <h5>I - à gestão de recursos hídricos, que envolvam a regulação, a outorga e a fiscalização do uso de recursos hídricos ; (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h5>
+ <h5>II - à elaboração e à proposição de normas de referência nacionais para a regulação da prestação dos serviços públicos de saneamento básico; (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h5>
+ <h5>III - à implementação, à operacionalização e à avaliação dos instrumentos da 	Política Nacional de Recursos Hídricos; (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h5>
+ <h5>IV - à análise e ao desenvolvimento de programas e projetos sobre: (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h5>
+ <h6>a) despoluição de bacias hidrográficas; (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h6>
+ <h6>b) eventos críticos em recursos hídricos; e (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h6>
+ <h6>c) promoção do uso integrado de solo e água; (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h6>
+ <h5>V - à promoção de ações educacionais em recursos hídricos e à regulação do saneamento básico; e (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h5>
+ <h5>VI - a outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA. (Incluído pela Medida 	Provisória nº 844, de 2018) (Vigência encerrada)</h5>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em Recursos Hídricos a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas, voltadas para o conhecimento, o uso sustentado, a conservação e a gestão de recursos hídricos, e a promoção de cooperação e divulgação técnico-científica, bem como a transferência de tecnologia na área.</h4>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em 	Recursos Hídricos a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas destinadas ao conhecimento, ao uso sustentável, à 	conservação e à gestão de recursos hídricos, além da instituição de normas de referência nacionais para a regulação da prestação dos serviços públicos de saneamento básico, da promoção de cooperação e da divulgação técnico-científica, e a transferência de tecnologia nas áreas. (Redação dada pela Medida Provisória nº 844, de 2018) (Vigência encerrada)</h4>
+ <h3>Art. 3º São atribuições do cargo de Especialista em Recursos Hídricos o exercício de atividades de nível superior de elevada complexidade e responsabilidade, relativas à gestão de recursos hídricos, envolvendo a regulação, outorga e fiscalização do uso de recursos hídricos, à implementação, operacionalização e avaliação dos instrumentos da política nacional de recursos hídricos, à análise e desenvolvimento de programas e projetos de despoluição de bacias hidrográficas, eventos críticos em recursos hídricos e promoção do uso integrado de solo e água, entre outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA, referentes à gestão de recursos hídricos.</h3>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em Recursos Hídricos a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas, voltadas para o conhecimento, o uso sustentado, a conservação e a gestão de recursos hídricos, e a promoção de cooperação e divulgação técnico-científica, bem como a transferência de tecnologia na área.</h4>
+ <h3>Art. 3º São atribuições do cargo de 	Especialista em Recursos Hídricos o exercício de atividades de nível superior de elevada complexidade e responsabilidade relativas: (Redação dada pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h3>
+ <h5>I-A - à gestão de recursos hídricos, que envolvam a regulação, a outorga e a fiscalização do uso de recursos hídricos; (Incluído pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h5>
+ <h5>II-A - à elaboração e à proposição de normas de referência nacionais para a regulação da prestação dos serviços públicos de saneamento básico; (Incluído pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h5>
+ <h5>III-A - à implementação, à operacionalização e à 	avaliação dos instrumentos da Política Nacional de Recursos Hídricos; (Incluído pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h5>
+ <h5>IV-A - à análise e ao desenvolvimento de programas e projetos sobre: (Incluído pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h5>
+ <h6>a) despoluição de bacias hidrográficas; (Incluída pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h6>
+ <h6>b) eventos críticos em recursos hídricos; e (Incluída pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h6>
+ <h6>c) promoção do uso integrado de solo e água; (Incluída pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h6>
+ <h5>V-A - à promoção de ações educacionais em recursos hídricos e à regulação do saneamento básico; e (Incluído pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h5>
+ <h5>VI-A - a outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA. (Incluído pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h5>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em Recursos Hídricos a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas destinadas ao conhecimento, ao uso sustentável, à conservação e à gestão de recursos hídricos, além da instituição de normas de referência nacionais para a regulação da prestação dos serviços públicos de saneamento básico, da promoção de cooperação e da divulgação técnico-científica, e a transferência de tecnologia nas áreas. (Redação dada pela Medida Provisória nº 868, de 2018) (Vigência encerrada)</h4>
+ <h3>Art. 3º São atribuições do cargo de Especialista em Recursos Hídricos o exercício de atividades de nível superior de elevada complexidade e responsabilidade, relativas à gestão de recursos hídricos, envolvendo a regulação, outorga e fiscalização do uso de recursos hídricos, à implementação, operacionalização e avaliação dos instrumentos da política nacional de recursos hídricos, à análise e desenvolvimento de programas e projetos de despoluição de bacias hidrográficas, eventos críticos em recursos hídricos e promoção do uso integrado de solo e água, entre outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA, referentes à gestão de recursos hídricos.</h3>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em Recursos Hídricos a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas, voltadas para o conhecimento, o uso sustentado, a conservação e a gestão de recursos hídricos, e a promoção de cooperação e divulgação técnico-científica, bem como a transferência de tecnologia na área</h4>
+ <h3>Art. 3º É atribuição do cargo de Especialista em Regulação de Recursos Hídricos e Saneamento Básico o exercício de atividades de nível superior de elevada complexidade relativas à gestão de recursos hídricos, que envolvam: (Redação dada pela Lei n° 14.026, de 2020)</h3>
+ <h5>I - regulação, outorga, inspeção, fiscalização e controle do uso de recursos hídricos e da prestação de serviços públicos na área de saneamento básico; (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h5>II - elaboração de normas de referência para a regulação do uso de recursos hídricos e da prestação dos serviços públicos de saneamento básico; (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h5>III - implementação e avaliação dos instrumentos da Política Nacional de Recursos Hídricos; (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h5>IV - análise e desenvolvimento de programas e projetos sobre: (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h6>a) despoluição de bacias hidrográficas; (Incluído pela Lei n° 14.026, de 2020)</h6>
+ <h6>b) eventos críticos em recursos hídricos; e (Incluído pela Lei n° 14.026, de 2020)</h6>
+ <h6>c) promoção do uso integrado de solo e água; (Incluído pela Lei n° 14.026, de 2020)</h6>
+ <h5>V - promoção de ações educacionais em recursos hídricos; (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h5>VI - promoção e fomento de pesquisas científicas e tecnológicas nas áreas de desenvolvimento sustentável, conservação e gestão de recursos hídricos e saneamento básico, envolvendo a promoção de cooperação e a divulgação técnico-científica, bem como a transferência de tecnologia nas áreas; e (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h5>VII - outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA. (Incluído pela Lei n° 14.026, de 2020)</h5>
+ <h4>§ 1º ( Revogado ). (Redação dada pela Lei n° 14.026, de 2020)</h4>
+ <h4>§ 2º No exercício das atribuições de natureza fiscal ou decorrentes do poder de polícia, são asseguradas aos ocupantes do cargo efetivo de que trata o caput deste artigo as prerrogativas de promover a interdição de estabelecimentos, instalações ou equipamentos, assim como a apreensão de bens ou produtos, e de requisitar, quando necessário, o auxílio de força policial federal ou estadual, em caso de desacato ou embaraço ao exercício de suas funções. (Redação dada pela Lei n° 14.026, de 2020)</h4>
+ <h3>Art. 4º São atribuições do cargo de Especialista em Geoprocessamento o exercício de atividades de nível superior de elevada complexidade e responsabilidade, relativas a operação de sistemas de geoprocessamento e de tratamento de informações geográficas, referentes à regulação, outorga e fiscalização do uso de recursos hídricos, à implementação, operacionalização e avaliação dos instrumentos da política nacional de recursos hídricos, à análise e desenvolvimento de programas e projetos de despoluição de bacias hidrográficas, eventos críticos em recursos hídricos e promoção do uso integrado de solo e água, entre outras ações e atividades análogas decorrentes do cumprimento das atribuições institucionais da ANA, referentes ao geoprocessamento e tratamento de informações geográficas.</h3>
+ <h4>Parágrafo único. Integram as atribuições do cargo de Especialista em Geoprocessamento a promoção e o fomento ao desenvolvimento de pesquisas científicas e tecnológicas relativas ao geoprocessamento, voltadas para o conhecimento, o uso sustentado, a conservação e a gestão de recursos hídricos, e a promoção de cooperação e divulgação técnico-científica, bem como a transferência de tecnologia na área.</h4>
+ <h3>Art. 5º É atribuição do cargo de Analista Administrativo o exercício de todas as atividades administrativas e logísticas relativas ao exercício das competências constitucionais e legais a cargo da ANA, fazendo uso de todos os equipamentos e recursos disponíveis para a consecução dessas atividades.</h3>
+ <h3>Art. 6º O ingresso nos cargos referidos nos incisos I a III do art. 1º desta Lei far-se-á mediante prévia aprovação em concurso público específico, de provas ou de provas e títulos.</h3>
+ <h4>§ 1º O concurso referido no caput incluirá a etapa de curso de formação, conforme dispuser o edital de abertura do certame, observada a legislação pertinente.</h4>
+ <h4>§ 2º O concurso para ingresso no cargo referido no inciso III do art. 1º desta Lei poderá ser realizado por áreas de especialização.</h4>
+ <h4>§ 3º São requisitos de escolaridade para ingresso nos cargos referidos nos incisos I a III do art. 1º desta Lei:</h4>
+ <h5>I - curso superior completo ou habilitação legal equivalente; e</h5>
+ <h5>II - diploma de conclusão de curso superior, com habilitação legal específica, conforme definido no edital do concurso, para os cargos de Analista Administrativo.</h5>
+ <h4>§ 4º Para acesso às áreas de especialização a que se refere o § 2º do art. 6º , poderão ser estabelecidos, no ato que as delimitar, requisitos específicos de formação e titulação.</h4>
+ <h3>Art. 7º Os ocupantes dos cargos referidos nos incisos I a III do art. 1º desta Lei cumprirão jornada de trabalho de quarenta horas semanais.</h3>
+ <h3>Art. 8º Os padrões de vencimento básico dos cargos de que tratam os incisos I a III do art. 1º desta Lei são os constantes do Anexo I. (Vide Lei n° 13.326, de 2016)</h3>
+ <h4>Parágrafo único. A investidura em cargo de Especialista em Recursos Hídricos, Especialista em Geoprocessamento e Analista Administrativo ocorrerá, exclusivamente, no padrão inicial da classe inicial da respectiva tabela.</h4>
+ <h4>Parágrafo único. A investidura nos cargos de Especialista em Regulação de Recursos Hídricos e Saneamento Básico, Especialista em Geoprocessamento e Analista Administrativo ocorrerá, exclusivamente, no padrão inicial da classe inicial da respectiva tabela. (Redação dada pela Lei n° 14.026, de 2020)</h4>
+ <h3>Art. 8º -A Os vencimentos dos servidores titulares dos cargos a que se refere o art. 1º desta Lei constituem-se de: (Incluído pela Medida Provisória nº 441, de 2008)</h3>
+ <h5>I - no caso dos servidores titulares dos cargos de que tratam os incisos I e II do art. 1º : (Incluído pela Medida Provisória nº 441, de 2008)</h5>
+ <h6>a) Vencimento Básico; (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH; e (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h6>c) Gratificação de Qualificação, de que trata o art. 22 da Lei n° 10.871 de 20 de maio de 2004 ; e (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h5>II - no caso dos servidores titulares dos cargos de que trata o inciso III do art. 1º : (Incluído pela Medida Provisória nº 441, de 2008)</h5>
+ <h6>a) Vencimento Básico; (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade de Regulação - GDATR; e (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h6>c) Gratificação de Qualificação, de que tratam os arts. 20-A e 22 da Lei n° 10.871 de 2004 . (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h4>Parágrafo único. Os servidores de que trata o caput não fazem jus à percepção da Vantagem Pecuniária Individual - VPI, de que trata a Lei N° 10.698, de 2 de julho de 2003 . (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h3>Art. 8º -A. Os vencimentos dos servidores titulares dos cargos a que se refere o art. 1º desta Lei constituem-se de: (Incluído pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h5>I - no caso dos servidores titulares dos cargos de que tratam os incisos I e II do caput do art. 1º desta Lei: (Incluído pela Lei n° 11.907, de 2009)</h5>
+ <h6>a) Vencimento Básico; (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH; e (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <p><del>c) Gratificação de Qualificação, de que trata o art. 22 da Lei n° 10.871, de 20 de maio de 2004 ; e (Incluído pela Lei n° 11.907, de 2009) (Revogado pela Medida Provisória nº 632, de 2013) (Produção de efeito financeiro) Revogado pela Lei n° 12.998, de 2014</del></p>
+ <h5>II - no caso dos servidores titulares dos cargos de que trata o inciso III do caput do art. 1º desta Lei: (Incluído pela Lei n° 11.907, de 2009)</h5>
+ <h6>a) Vencimento Básico; (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade de Regulação – GDATR de que trata o art. 20-A da Lei n° 10.871, de 20 de maio de 2004 ; e (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <p><del>c) Gratificação de Qualificação, de que trata o art. 22 da Lei n° 10.871, de 20 de maio de 2004 . (Incluído pela Lei n° 11.907, de 2009) (Revogado pela Medida Provisória nº 632, de 2013) (Produção de efeito financeiro) Revogado pela Lei n° 12.998, de 2014</del></p>
+ <h4>Parágrafo único. Os servidores de que trata o caput deste artigo não fazem jus à percepção da Vantagem Pecuniária Individual - VPI, de que trata a Lei n° 10.698, de 2 de julho de 2003 . (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h3>Art. 8º -B. A partir de 1º de janeiro de 2014, a estrutura remuneratória dos cargos a que se refere o art. 1º constitui-se de: (Incluído pela Medida Provisória nº 632, de 2013)</h3>
+ <h5>I - nos casos de que tratam os incisos I e II do caput : (Incluído pela Medida Provisória nº 632, de 2013)</h5>
+ <h6>a) vencimento básico; e (Incluído pela Medida Provisória nº 632, de 2013)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH; e (Incluído pela Medida Provisória nº 632, de 2013)</h6>
+ <h5>II - nos casos dos cargos de que trata o inciso III do caput : (Incluído pela Medida Provisória nº 632, de 2013)</h5>
+ <h6>a) vencimento básico; e (Incluído pela Medida Provisória nº 632, de 2013)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade Técnico-Administrativa em Regulação - GDATR, de que trata o art. 20-A da Lei n° 10.871, de 20 de maio de 2004 . (Incluído pela Medida Provisória nº 632, de 2013)</h6>
+ <h4>Parágrafo único. A partir de 1º de janeiro de 2014, fica extinta a Gratificação de Qualificação - GQ. (Incluído pela Medida Provisória nº 632, de 2013)</h4>
+ <h3>Art. 8º -B. A partir de 1º de janeiro de 2014, a estrutura remuneratória dos cargos a que se refere o art. 1º constitui-se de: (Incluído pela Lei n° 12.998, de 2014)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h5>I - nos casos de que tratam os incisos I e II do caput do art. 1º : (Incluído pela Lei n° 12.998, de 2014)</h5>
+ <h6>a) vencimento básico; e (Incluído pela Lei n° 12.998, de 2014)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH; e (Incluído pela Lei n° 12.998, de 2014)</h6>
+ <h5>II - nos casos dos cargos de que trata o inciso III do caput do art. 1º : (Incluído pela Lei n° 12.998, de 2014)</h5>
+ <h6>a) vencimento básico; e (Incluído pela Lei n° 12.998, de 2014)</h6>
+ <h6>b) Gratificação de Desempenho de Atividade Técnico-Administrativa em Regulação - GDATR, de que trata o art. 20-A da Lei n° 10.871, de 20 de maio de 2004 . (Incluído pela Lei n° 12.998, de 2014)</h6>
+ <h4>Parágrafo único. A partir de 1º de janeiro de 2014, fica extinta a Gratificação de Qualificação - GQ. (Incluído pela Lei n° 12.998, de 2014)</h4>
+ <h3>Art. 8º -C. A partir de 1º de janeiro de 2017, os ocupantes dos cargos a que se refere o art. 1º passam a ser remunerados exclusivamente por subsídio, fixado em lei, em parcela única. ( Incluído pela pela Lei n° 13.326, de 2016) (Produção de efeito)</h3>
+ <h3>Art. 8º-D A partir de 1º de janeiro de 2025, a estrutura dos cargos a que se refere o art. 1º passa a ser a constante do Anexo III, observada a correlação estabelecida na forma do Anexo IV. (Incluído pela Medida Provisória nº 1.286, de 2024)</h3>
+ <h3>Art. 8º-D. A partir de 1º de janeiro de 2025, a estrutura dos cargos a que se refere o art. 1º passa a ser a constante do Anexo III, observada a correlação estabelecida na forma do Anexo IV. (Incluído pela Lei n° 15.141, de 2025)</h3>
+ <h3>Art. 9º A movimentação do servidor na tabela constante do Anexo I a esta Lei ocorrerá mediante progressão funcional e promoção.</h3>
+ <h3>Art. 9º O avanço de nível do servidor na carreira correspondente ao seu cargo efetivo ocorrerá por meio de progressão funcional e de promoção. (Redação dada pela Medida Provisória nº 1.286, de 2024)</h3>
+ <h3>Art. 9º O avanço de nível do servidor na carreira correspondente ao seu cargo efetivo ocorrerá por meio de progressão funcional e de promoção. (Redação dada pela Lei n° 15.141, de 2025)</h3>
+ <h4>§ 1º Para fins do disposto neste artigo, progressão é a passagem do servidor para o padrão de vencimento imediatamente superior dentro de uma mesma classe, e promoção, a passagem do servidor do último padrão de uma classe para o primeiro padrão da classe imediatamente superior.</h4>
+ <h4>§ 2º O regulamento disporá sobre os requisitos e critérios a serem observados na movimentação do servidor, observado, para fins de progressão funcional, o interstício mínimo de um ano em cada padrão e, para a promoção, a participação em curso de aperfeiçoamento.</h4>
+ <h4>§ 3º Mediante resultado de avaliação de desempenho ou da participação em programas de capacitação, o interstício mínimo, a que se refere o § 2º deste artigo, poderá sofrer redução de até 50% (cinqüenta por cento) conforme disciplinado em regulamento específico da ANA. (Incluído pela Lei n° 10.871, de 2004)</h4>
+ <h3>Art. 10. Os ocupantes dos cargos referidos nos incisos I a III do art. 1º desta Lei serão submetidos a avaliação de desempenho funcional, que terá seus resultados apurados mensalmente e consolidados a cada doze meses, obedecendo ao disposto nesta Lei.</h3>
+ <h4>§ 1º A avaliação anual de desempenho terá como finalidade a verificação da observância dos seguintes critérios:</h4>
+ <h5>I - produtividade no trabalho, com base em padrões previamente estabelecidos de qualidade e economicidade;</h5>
+ <h5>II - capacidade de iniciativa;</h5>
+ <h5>III - cumprimento das normas de procedimentos e de conduta no desempenho das atribuições do cargo;</h5>
+ <h5>IV - assiduidade;</h5>
+ <h5>V - pontualidade; e</h5>
+ <h5>VI - disciplina.</h5>
+ <h4>§ 2º Os critérios de avaliação serão aplicados e ponderados em conformidade com as características das funções exercidas, sendo considerado insuficiente, para obtenção de progressão ou promoção por merecimento, o desempenho apurado em avaliação que comprove o desatendimento, de forma habitual, de qualquer dos requisitos previstos no § 1º deste artigo.</h4>
+ <h4>§ 3º Será dado conhecimento prévio aos servidores dos critérios, das normas e dos padrões a serem utilizados para a avaliação de seu desempenho.</h4>
+ <h4>§ 4º É assegurado ao servidor o direito de acompanhar todos os atos de instrução do procedimento que tenha por objeto a avaliação de seu desempenho.</h4>
+ <h3>Art. 11. Os ocupantes dos cargos de Especialista em Recursos Hídricos e Especialista em Geoprocessamento farão jus à Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH, no percentual de até trinta e cinco por cento incidente sobre o respectivo vencimento básico.</h3>
+ <h3>Art. 11. Os ocupantes dos cargos de Especialista em Recursos Hídricos e Especialista em Geoprocessamento farão jus à Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH, no percentual de até 35% (trinta e cinco por cento), observando-se a seguinte composição e limites: (Redação dada pela Lei n° 11.094, 2005) (Vide Medida Provisória nº 269, de 2005)</h3>
+ <h5>I - o percentual de até 20% (vinte por cento), incidente sobre o vencimento básico do servidor, em decorrência dos resultados da avaliação de desempenho individual; e (Incluído pela Lei n° 11.094, 2005) (Vide Medida Provisória nº 269, de 2005)</h5>
+ <h5>II - o percentual de até 15% (quinze por cento), incidente sobre o maior vencimento básico do cargo, em decorrência dos resultados da avaliação institucional. (Incluído pela Lei n° 11.094, 2005) (Vide Medida Provisória nº 269, de 2005)</h5>
+ <h3>Art. 11. Os ocupantes dos cargos de Especialista em Recursos Hídricos e Especialista em Geoprocessamento farão jus à Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH, observando-se a seguinte composição e limites: (Redação dada pela Lei n° 11.292, de 2006)</h3>
+ <h5>I - a partir de 1º de dezembro de 2005 até 31 de dezembro de 2005: (Redação dada pela Lei n° 11.292, de 2006)</h5>
+ <h6>a) até 22% (vinte e dois por cento) incidentes sobre o vencimento básico do servidor, em decorrência dos resultados da avaliação de desempenho individual; e (Incluída pela Lei n° 11.292, de 2006)</h6>
+ <h6>b) até 29% (vinte e nove por cento) incidentes sobre o maior vencimento básico do cargo, em decorrência dos resultados da avaliação institucional; (Incluída pela Lei n° 11.292, de 2006)</h6>
+ <h5>II - a partir de 1º de janeiro de 2006: (Redação dada pela Lei n° 11.292, de 2006)</h5>
+ <h6>a) até 35% (trinta e cinco por cento) incidentes sobre o vencimento básico do servidor, em decorrência dos resultados da avaliação de desempenho individual; e (Incluída pela Lei n° 11.292, de 2006)</h6>
+ <h6>b) até 40% (quarenta por cento) incidentes sobre o maior vencimento básico do cargo, em decorrência dos resultados da avaliação institucional. (Incluída pela Lei n° 11.292, de 2006)</h6>
+ <h5>I - até vinte pontos serão atribuídos em função dos resultados obtidos na avaliação de desempenho individual; e (Redação dada pela Medida Provisória nº 441, de 2008)</h5>
+ <h5>II - até oitenta pontos serão atribuídos em função dos resultados obtidos na avaliação de desempenho institucional. (Redação dada pela Medida Provisória nº 441, de 2008)</h5>
+ <h4>§ 1º A GDRH será paga observado o limite máximo de cem pontos e o mínimo de trinta pontos por servidor, correspondendo cada ponto ao valor estabelecido no Anexo I-A; (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h4>§ 2º Os valores a serem pagos a título de GDRH serão calculados multiplicando-se o somatório dos pontos auferidos nas avaliações de desempenho individual e institucional pelo valor do ponto constante do Anexo I-A, observados o nível, a classe e o padrão em que se encontra posicionado o servidor. (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h3>Art. 11. Os ocupantes dos cargos de Especialista em Recursos Hídricos e Especialista em Geoprocessamento farão jus à Gratificação de Desempenho de Atividade de Recursos Hídricos - GDRH, quando em exercício de atividades inerentes às atribuições do respectivo cargo na ANA, observando-se a seguinte composição e limites: (Redação dada pela Medida Provisória nº 568, de 2012)</h3>
+ <h3>Art. 11. Os ocupantes dos cargos de Especialista em Recursos Hídricos e Especialista em Geoprocessamento farão jus à Gratificação de Desempenho de Atividade de 	Recursos Hídricos - GDRH, quando em exercício de atividades inerentes às atribuições do respectivo cargo na ANA, observando-se a seguinte composição e limites: (Redação dada pela Lei n° 12.702, de 2012)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h5>I - até 20 (vinte) pontos serão atribuídos em função dos resultados obtidos na avaliação de desempenho individual; e (Redação dada pela Lei n° 11.907, de 2009)</h5>
+ <h5>II - até 80 (oitenta) pontos serão atribuídos em função dos resultados obtidos na avaliação de desempenho institucional. (Redação dada pela Lei n° 11.907, de 2009)</h5>
+ <h4>§ 1º A GDRH será paga observado o limite máximo de 100 (cem) pontos e o mínimo de 30 (trinta) pontos por servidor, correspondendo cada ponto ao valor estabelecido no Anexo I-A desta Lei. (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h4>§ 2º Os valores a serem pagos a título de GDRH serão calculados multiplicando-se o somatório dos pontos auferidos nas avaliações de desempenho individual e institucional pelo valor do ponto constante do Anexo I-A desta Lei, observados o nível, a classe e o padrão em que se encontra posicionado o servidor. (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h3>Art. 12. A GDRH será atribuída em função do efetivo desempenho do servidor, bem como do alcance de metas de desempenho institucional fixadas, na forma estabelecida em ato da Diretoria Colegiada da ANA.</h3>
+ <h3>Art. 12. A GDRH será atribuída aos servidores que a ela fazem jus em função do alcance das metas de desempenho individual e do alcance das metas de desempenho institucional da Agência Nacional de Águas - ANA. (Redação dada pela Medida Provisória nº 441, de 2008)</h3>
+ <h3>Art. 12. A GDRH será atribuída aos servidores que a ela fazem jus em função do alcance das metas de desempenho individual e do alcance das metas de desempenho institucional da Agência Nacional de Águas - ANA. (Redação dada pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <p><del>§ 1º (Revogado pela Lei n° 11.292, de 2006)</del></p>
+ <h4>§ 2º Enquanto não forem regulamentadas e até que sejam processados os resultados da primeira avaliação de desempenho, a GDRH será atribuída aos servidores no percentual de vinte por cento do vencimento básico do servidor.</h4>
+ <h4>§ 2º Até que seja publicado o ato a que se refere o art. 12-B e processados os resultados da primeira avaliação individual e institucional, considerando a distribuição dos pontos constante dos incisos I e II do caput do art. 11, conforme disposto nesta Lei, todos os servidores que fizerem jus à GDRH, inclusive os ocupantes de cargos ou funções comissionadas, deverão percebê-la em valor correspondente ao último percentual recebido a título de GDRH, convertido em pontos que serão multiplicados pelo valor constante do Anexo I-A, conforme disposto no § 2º do art. 11. (Redação dada pela Medida Provisória nº 441, de 2008)</h4>
+ <h4>§ 2º Até que seja publicado o ato a que se refere o art. 12-A desta Lei e processados os resultados da primeira avaliação individual e institucional, considerando a distribuição dos pontos constante dos incisos I e II do caput do art. 11 desta Lei, conforme disposto nesta Lei, todos os servidores que fizerem jus à GDRH, inclusive os ocupantes de cargos ou funções comissionadas, deverão percebê-la em valor correspondente ao último percentual recebido a título de GDRH, convertido em pontos que serão multiplicados pelo valor constante do Anexo I-A desta Lei, conforme disposto no § 2º do art. 11 desta Lei. (Redação dada pela Lei n° 11.907, de 2009)</h4>
+ <h4>§ 3º O resultado da primeira avaliação gera efeitos financeiros a partir do início do período de avaliação, devendo ser compensadas eventuais diferenças pagas a maior ou a menor.</h4>
+ <h4>§ 3º O resultado da primeira avaliação gera efeitos financeiros a partir da data de publicação do ato a que se refere o caput, devendo ser compensadas eventuais diferenças pagas a maior ou a menor. (Redação dada pela Medida Provisória nº 441, de 2008)</h4>
+ <h4>§ 3º O resultado da primeira avaliação gera efeitos financeiros a partir da data de publicação do ato a que se refere este artigo, devendo ser compensadas eventuais diferenças pagas a maior ou a menor. (Redação dada pela Lei n° 11.907, de 2009)</h4>
+ <h4>§ 4º O titular de um dos cargos efetivos referidos nos incisos I e II do art. 1º desta Lei, quando investido em cargo em comissão de Natureza Especial, DAS-6 e DAS-5, ou equivalentes, em órgãos ou entidades do Governo Federal, fará jus à GDRH calculada com base no limite máximo dos pontos fixados para a avaliação de desempenho.</h4>
+ <h4>§ 4º O titular de cargo efetivo referidos nos incisos I e II do art. 1º desta Lei, em exercício na ANA, quando investido em cargo em comissão ou função de confiança fará jus à GDRH, nas seguintes condições: (Redação dada pela Medida Provisória nº 441, de 2008)</h4>
+ <h5>I - os ocupantes de cargos comissionados CCT I, II, III, IV e V, CAS I e II e CA III, ou cargos equivalentes, perceberão a GDRH calculada conforme disposto no § 2º do art. 11; e (Incluído pela Medida Provisória nº 441, de 2008)</h5>
+ <h5>II - os ocupantes de cargos comissionados CGE I a IV, CA I e II e CD I e II, ou cargos equivalentes, perceberão a GDRH calculada com base no valor máximo da parcela individual, somado ao resultado da avaliação institucional da ANA no período. (Incluído pela Medida Provisória nº 441, de 2008)</h5>
+ <h4>§ 4º O titular de cargo efetivo referido nos incisos I e II do caput do art. 1º desta Lei, em exercício na ANA, quando investido em cargo em comissão ou função de confiança fará jus à GDRH, nas seguintes condições: (Redação dada pela Lei n° 11.907, de 2009)</h4>
+ <h5>I - os ocupantes de cargos comissionados CCT I, II, III, IV e V, CAS I e II e CA III, ou cargos equivalentes, perceberão a GDRH calculada conforme disposto no § 2º do art. 11 desta Lei; e (Incluído pela Lei n° 11.907, de 2009)</h5>
+ <h5>II - os ocupantes de cargos comissionados CGE I a IV, CA I e II e CD I e II, ou cargos equivalentes, perceberão a GDRH calculada com base no valor máximo da parcela individual, somado ao resultado da avaliação institucional da ANA no período. (Incluído pela Lei n° 11.907, de 2009)</h5>
+ <h4>§ 5º O titular de um dos cargos efetivos referidos nos incisos I e II do art. 1º desta Lei, que não se encontre em exercício na ANA, somente fará jus à GDRH:</h4>
+ <h5>I - quando cedido para a Presidência ou Vice-Presidência da República, situação na qual perceberá a GDRH calculada com base nas mesmas regras válidas para os servidores que se encontram em exercício na ANA; ou</h5>
+ <h5>I - quando requisitado pela Presidência ou Vice-Presidência da República ou nas hipóteses de requisição previstas em lei, situação na qual perceberá a GDRH com base nas regras aplicáveis como se estivesse em efetivo exercício na ANA; e (Redação dada pela Medida Provisória nº 441, de 2008)</h5>
+ <h5>I - quando requisitado pela Presidência ou Vice-Presidência da República ou nas hipóteses de requisição previstas em lei, situação na qual perceberá a GDRH com base nas regras aplicáveis como se estivesse em efetivo exercício na ANA; e (Redação dada pela Lei n° 11.907, de 2009)</h5>
+ <h5>II - quando cedido para órgãos e entidade do Governo Federal distintos dos indicados no inciso I deste parágrafo, situação na qual perceberá a GDRH da seguinte forma:</h5>
+ <h6>a) o servidor investido em cargo em comissão de Natureza Especial, DAS-6, DAS-5, ou equivalentes, perceberá a GDRH em valor calculado com base no disposto no § 4º ;</h6>
+ <h6>b) o servidor investido em cargo em comissão DAS-4, ou equivalente, perceberá a GDRH em valor calculado com base em setenta e cinco por cento do limite máximo de pontos fixados para a avaliação de desempenho.</h6>
+ <h5>II - quando cedido para órgãos ou entidades da União distintos dos indicados no inciso I e investido em cargos de Natureza Especial, de provimento em comissão do Grupo-Direção e Assessoramento Superiores, DAS-6, DAS-5, DAS-4, ou equivalentes, perceberá a GDRH calculada com base no resultado da avaliação institucional da ANA no período. (Redação dada pela Medida Provisória nº 441, de 2008)</h5>
+ <h5>II - quando cedido para órgãos ou entidades da União distintos dos indicados no inciso I deste parágrafo e investido em cargos de Natureza Especial, de provimento em comissão do Grupo-Direção e Assessoramento Superiores, DAS-6, DAS-5, DAS-4 ou equivalentes, e perceberá a GDRH calculada com base no resultado da avaliação institucional da ANA no período. (Redação dada pela Lei n° 11.907, de 2009)</h5>
+ <h5>II - quando cedido para órgão ou entidade da União distinto dos indicados no inciso I deste parágrafo e investido em cargo de natureza especial ou em comissão do Grupo-Direção e Assessoramento Superiores (DAS) nível 6, 5 ou 4, ou equivalente, situação na qual perceberá a GDRH calculada com base no resultado da avaliação institucional do período. (Redação dada pela Lei n° 13.328, de 2016)</h5>
+ <h4>§ 6º O regulamento disporá sobre a periodicidade da avaliação de desempenho a ser efetivada para os fins deste artigo.</h4>
+ <h4>§ 6º A avaliação institucional considerada para o servidor alcançado pelo § 5º será: (Redação dada pela Lei n° 13.328, de 2016)</h4>
+ <h5>I - a do órgão ou entidade onde o servidor permaneceu em exercício por mais tempo; (Incluído pela Lei n° 13.328, de 2016)</h5>
+ <h5>II - a do órgão ou entidade onde o servidor se encontrar em exercício ao término do ciclo, caso ele tenha permanecido o mesmo número de dias em diferentes órgãos ou entidades; ou (Incluído pela Lei n° 13.328, de 2016)</h5>
+ <h5>III - a do órgão de origem, quando requisitado ou cedido para órgão diverso da administração pública federal direta, autárquica ou fundacional. (Incluído pela Lei n° 13.328, de 2016)</h5>
+ <h4>§ 7º A avaliação individual do servidor alcançado pelo inciso I do § 5º será realizada somente pela chefia imediata quando a regulamentação da sistemática para avaliação de desempenho a que se refere o caput do art. 12-A não for igual à aplicável ao órgão ou entidade de exercício do servidor. (Incluído pela Lei n° 13.328, de 2016)</h4>
+ <h3>Art. 12-A. Ato do Poder Executivo disporá sobre os critérios gerais a serem observados para a realização das avaliações de desempenho individual e institucional da GDRH. (Incluído pela Medida Provisória nº 441, de 2008)</h3>
+ <h4>Parágrafo único. Os procedimentos de avaliação individual e institucional e de atribuição da GDRH e as metas anuais referentes à avaliação de desempenho institucional serão estabelecidos em ato da Diretoria Colegiada da ANA. (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h3>Art. 12-A. Ato do Poder Executivo disporá sobre os critérios gerais a serem observados para a realização das avaliações de desempenho individual e institucional da GDRH. (Incluído pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h4>Parágrafo único. Os procedimentos de avaliação individual e institucional e de atribuição da GDRH e as metas anuais referentes à avaliação de desempenho institucional serão estabelecidos em ato da Diretoria Colegiada da ANA. (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h4>Parágrafo único. Os procedimentos de avaliação individual e institucional e de atribuição da GDRH e as metas referentes à avaliação de desempenho institucional serão estabelecidos em ato da diretoria colegiada da ANA. (Redação dada pela Lei n° 13.328, de 2016)</h4>
+ <h3>Art. 12-B. Em caso de afastamentos e licenças considerados como de efetivo exercício, sem prejuízo da remuneração e com direito à percepção de gratificação de desempenho, o servidor continuará percebendo a GDRH em valor correspondente ao da última pontuação obtida, até que seja processada a sua primeira avaliação após o retorno. (Incluído pela Medida Provisória nº 441, de 2008)</h3>
+ <h4>§ 1º O disposto no caput não se aplica aos casos de cessão. (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h4>§ 2º Até que seja processada a primeira avaliação de desempenho individual que venha a surtir efeito financeiro, o servidor recém nomeado para cargo efetivo e aquele que tenha retornado de licença sem vencimento ou cessão sem direito à percepção da GDRH no decurso do ciclo de avaliação receberá a gratificação no valor correspondente a oitenta pontos. (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h3>Art. 12-B. Em caso de afastamentos e licenças considerados como de efetivo exercício, sem prejuízo da remuneração e com direito à percepção de gratificação de desempenho, o servidor continuará percebendo a GDRH em valor correspondente ao da última pontuação obtida, até que seja processada a sua primeira avaliação após o retorno. (Incluído pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h4>§ 1º O disposto no caput deste artigo não se aplica aos casos de cessão. (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h4>§ 2º Até que seja processada a primeira avaliação de desempenho individual que venha a surtir efeito financeiro, o servidor recém nomeado para cargo efetivo e aquele que tenha retornado de licença sem vencimento ou cessão sem direito à percepção da GDRH no decurso do ciclo de avaliação receberão a gratificação no valor correspondente a 80 (oitenta) pontos . (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h3>Art. 12-C. Ocorrendo exoneração do cargo em comissão, com manutenção do cargo efetivo, o servidor que faça jus à GDRH continuará a percebê-la em valor correspondente à da última pontuação que lhe foi atribuída, na condição de ocupante de cargo em comissão, até que seja processada a sua primeira avaliação após a exoneração. (Incluído pela Medida Provisória nº 441, de 2008)</h3>
+ <h3>Art. 12-C. Ocorrendo exoneração do cargo em comissão com manutenção do cargo efetivo, o servidor que faça jus à GDRH continuará a percebê-la em valor correspondente ao da última pontuação que lhe foi atribuída, na condição de ocupante de cargo em comissão, até que seja processada a sua primeira avaliação após a exoneração. (Incluído pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h3>Art. 12-D. O servidor ativo beneficiário da GDRH que obtiver na avaliação de desempenho individual pontuação inferior a cinqüenta por cento da pontuação máxima estabelecida para esta parcela será imediatamente submetido a processo de capacitação ou de análise da adequação funcional, conforme o caso, sob responsabilidade do seu órgão ou entidade de lotação. (Incluído pela Medida Provisória nº 441, de 2008)</h3>
+ <h4>Parágrafo único. A análise de adequação funcional visa a identificar as causas dos resultados obtidos na avaliação do desempenho e servir de subsídio para a adoção de medidas que possam propiciar a melhoria do desempenho do servidor. (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h3>Art. 12-D. O servidor ativo beneficiário da GDRH que obtiver na avaliação de desempenho individual pontuação inferior a 50% (cinqüenta por cento) da pontuação máxima estabelecida para essa parcela será imediatamente submetido a processo de capacitação ou de análise da adequação funcional, conforme o caso, sob responsabilidade do seu órgão ou entidade de lotação. (Incluído pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h4>Parágrafo único. A análise de adequação funcional visa a identificar as causas dos resultados obtidos na avaliação do desempenho e a servir de subsídio para a adoção de medidas que possam propiciar a melhoria do desempenho do servidor. (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h3>Art. 12-E. A GDRH não poderá ser paga cumulativamente com qualquer outra gratificação de desempenho de atividade ou de produtividade, independentemente da sua denominação ou base de cálculo. (Incluído pela Medida Provisória nº 441, de 2008)</h3>
+ <h3>Art. 12-E. A GDRH não poderá ser paga cumulativamente com qualquer outra gratificação de desempenho de atividade ou de produtividade, independentemente da sua denominação ou base de cálculo. (Incluído pela Lei n° 11.907, de 2009)
+(Vide Lei n° 13.326, de 2016)</h3>
+ <h3>Art. 13. Para fins de incorporação aos proventos da aposentadoria ou às pensões, a GDRH: (Vide Lei n° 13.326, de 2016)</h3>
+ <h5>I - somente será devida, se percebida há pelo menos cinco anos; e</h5>
+ <h5>II - será calculada pela média aritmética dos percentuais de gratificação percebidos nos últimos sessenta meses anteriores à aposentadoria ou instituição da pensão.</h5>
+ <h4>Parágrafo único. Quando percebida por período inferior a sessenta meses, a GDRH será incorporada observando-se as seguintes situações: (Incluído pela Medida Provisória nº 441, de 2008)</h4>
+ <h5>I - para as aposentadorias concedidas e pensões instituídas até 19 de fevereiro de 2004: (Incluído pela Medida Provisória nº 441, de 2008)</h5>
+ <h6>a) a partir de 1º de julho de 2008, em valor correspondente a quarenta pontos, observado o nível, classe e padrão do servidor; e (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h6>b) a partir de 1º de julho de 2009, em valor correspondente a cinqüenta pontos, observado o nível, classe e padrão do servidor; (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h5>II - para as aposentadorias concedidas e pensões instituídas após 19 de fevereiro de 2004: (Incluído pela Medida Provisória nº 441, de 2008)</h5>
+ <h6>a) quando ao servidor que deu origem à aposentadoria ou à pensão se aplicar o disposto nos arts. 3º e 6º da Emenda Constitucional Nº 41, de 19 de dezembro de 2003 , e no art. 3º da Emenda Constitucional Nº 47, de 5 de julho de 2005 , aplicar-se-ão os percentuais constantes das alíneas “a” e “b” do inciso I; e (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h6>b) aos demais aplicar-se-á, para fins de cálculo das aposentadorias e pensões, o disposto na Lei N° 10.887, de 18 de junho de 2004 . (Incluído pela Medida Provisória nº 441, de 2008)</h6>
+ <h4>Parágrafo único. Quando percebida por período inferior a 60 (sessenta) meses, a GDRH será incorporada observando-se as seguintes situações: (Incluído pela Lei n° 11.907, de 2009)</h4>
+ <h5>I - para as aposentadorias concedidas e pensões instituídas até 19 de fevereiro de 2004: (Incluído pela Lei n° 11.907, de 2009)</h5>
+ <h6>a) a partir de 1º de julho de 2008, em valor correspondente a 40 (quarenta) pontos, observados o nível, a classe e o padrão do servidor; e (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <h6>b) a partir de 1º de julho de 2009, em valor correspondente a 50 (cinqüenta) pontos, observados o nível, a classe e o padrão do servidor; (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <h5>II - para as aposentadorias concedidas e pensões instituídas após 19 de fevereiro de 2004: (Incluído pela Lei n° 11.907, de 2009)</h5>
+ <h6>a) quando ao servidor que deu origem à aposentadoria ou à pensão se aplicar o disposto nos arts. 3º e 6º da Emenda Constitucional Nº 41, de 19 de dezembro de 2003 , e no art. 3º da Emenda Constitucional Nº 47, de 5 de julho de 2005 , aplicar-se-ão os pontos constantes das alíneas a e b do inciso I do parágrafo único deste artigo; e (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <h6>b) aos demais aplicar-se-á, para fins de cálculo das aposentadorias e pensões, o disposto na Lei n° 10.887, de 18 de junho de 2004 . (Incluído pela Lei n° 11.907, de 2009)</h6>
+ <h3>Art. 14. Os servidores ocupantes dos cargos referidos nos incisos I a III do art. 1º desta Lei não fazem jus à percepção da Gratificação de Atividade - GAE de que trata a Lei Delegada Nº 13, de 27 de agosto de 1992.</h3>
+ <h3>Art. 15. Aplica-se, excepcionalmente, aos candidatos aprovados na primeira etapa do concurso público realizado pela ANA, convocado por meio do Edital Nº 1, de 2002, e suas retificações, para provimento de cargos de Regulador, o disposto nesta Lei, relativamente aos cargos referidos nos incisos I e II do art. 1º desta Lei.</h3>
+ <h4>§ 1º (VETADO)</h4>
+ <h4>§ 2º (VETADO)</h4>
+ <h3>Art. 16. A remuneração dos cargos da Carreira de Agente Penitenciário Federal, criada pela Lei N° 10.693, de 25 de junho de 2003, é composta pelo vencimento básico constante do Anexo II a esta Lei, pela gratificação de atividade de que trata o art. 3º da Lei Delegada Nº 13, de 27 de agosto de 1992 , por gratificação de Atividade Penitenciária Federal no percentual de duzentos por cento, Gratificação de Compensação Orgânica no percentual de duzentos por cento, Gratificação de Atividade de Risco no percentual de duzentos por cento, Gratificação de Atividade de Custódia Prisional, no percentual de duzentos por cento, e Indenização de Habilitação de Custódia Prisional, calculada no percentual de dez por cento, e outras vantagens de caráter pessoal definidas em lei.</h3>
+ <h4>Parágrafo único. As Gratificações e a indenização a que alude este artigo:</h4>
+ <h5>I - serão calculadas, de modo não cumulativo, sobre o vencimento básico do cargo do servidor; e</h5>
+ <h5>II - não se incorporam ao vencimento, nem serão computadas ou acumuladas para fins de concessão de acréscimos ulteriores, sob o mesmo título ou idêntico fundamento.</h5>
+ <h3>Art. 17. Aplica-se aos servidores ocupantes dos cargos de que tratam os incisos I a III do art. 1º e o art. 16 desta Lei a vantagem pecuniária individual instituída pela Lei N° 10.698, de 2 de julho de 2003.</h3>
+ <h3>Art. 18. A partir da vigência desta Lei, o valor do auxílio-financeiro de que trata o art. 14 da Lei N° 9.624, de 2 de abril de 1998 , será calculado com base no vencimento básico do cargo a ser provido, acrescido das demais vantagens de caráter geral e permanente instituídas por lei, inclusive gratificações de desempenho ou de produtividade, observados os seus percentuais ou valores máximos.</h3>
+ <h3>Art. 19. Ficam criados, no âmbito do Poder Executivo Federal, sem aumento de despesa, cento e trinta e um cargos em comissão do Grupo-Direção e Assessoramento Superiores - DAS e cento e trinta e uma Funções Gratificadas - FG, assim distribuídos: vinte e nove DAS-5; cinqüenta e um DAS-4; cinqüenta e um DAS-3; cento e oito FG-1; e vinte e três FG-2.</h3>
+ <h3>Art. 20. São extintos, no âmbito do Poder Executivo Federal, para compensação dos cargos criados no art. 19 desta Lei, um cargo de Natureza Especial, bem como, duzentos e noventa e seis cargos em comissão do Grupo-Direção e Assessoramento Superiores - DAS e cinqüenta e duas Funções Gratificadas - FG, assim distribuídos: vinte e dois DAS-6; cento e cinqüenta DAS-2; cento e vinte e quatro DAS-1; e cinqüenta e duas FG-3.</h3>
+ <h3>Art. 21. Ficam criados, no Quadro de Pessoal do Instituto Nacional do Seguro Social - INSS, na Carreira Previdenciária de que trata a Lei N° 10.355, de 26 de dezembro de 2001 , seiscentos cargos efetivos, sendo duzentos de Analista Previdenciário, de nível superior, e quatrocentos de Técnico Previdenciário, de nível médio.</h3>
+ <h3>Art. 22. Ficam convalidados os atos praticados com fundamento na Medida Provisória Nº 124, de 11 de julho de 2003, e os dela decorrentes, inclusive a realização da segunda etapa do concurso público para o provimento de cargos de Especialista em Recursos Hídricos e em Geoprocessamento.</h3>
+ <h3>Art. 23. Esta Lei entra em vigor na data da sua publicação, surtindo efeitos a partir de 14 de julho de 2003.</h3>
+ <h3>Art. 24. Revoga-se o art. 4º da Lei N° 10.693, de 25 de junho de 2003 .</h3>
+ <p>Brasília, 19 de novembro de 2003; 182º da Independência e 115º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 20.11.2003 e retificado em 21.11.2003</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <p>Analista Administrativo – Agência Nacional de Águas</p>
+ <p>(Redação dada pela 	Medida Provisória nº 441, de 2008)</p>
+ <h3>TABELA DE 	VENCIMENTO BÁSICO</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <p>Analista Administrativo – Agência Nacional de Águas</p>
+ <p>(Incluído pela Medida 	Provisória nº 441, de 2008)</p>
+ <p>VALOR DO 	PONTO DA GRATIFICAÇÃO DE DESEMPENHO DE ATIVIDADE DE 	RECURSOS HÍDRICOS - GDRH</p>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <p>(Redação dada pela Lei n° 11.907, de 2009)</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Especialista em Recursos</p>
+ <p>Analista Administrativo –</p>
+ <p>Agência Nacional de Águas</p>
+ <p>(Incluído pela Lei n° 11.907, de 2009)</p>
+ <h3>VALOR DO PONTO DA GRATIFICAÇÃO DE DESEMPENHO DE</h3>
+ <h3>ATIVIDADE DE RECURSOS HÍDRICOS - GDRH</h3>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Especialista em Recursos</p>
+ <p>(Redação dada pela Medida Provisória nº 632, de 2013)</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Analista Administrativo –</p>
+ <p>Agência Nacional de Águas</p>
+ <p>(Redação dada pela Lei n° 12.998, de 2014)</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Especialista em rRRRecursos</p>
+ <p>Analista Administrativo –</p>
+ <p>Agência Nacional de Águas</p>
+ <p>(Redação dada pela Lei n° 13.326, de 2016) (Produção de efeito) (Vide Lei n° 13.326, de 2016)</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º de janeiro de 2015</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <p>Analista Administrativo - Agência Nacional de Águas</p>
+ <p>(Redação dada pela Medida Provisória nº 632, de 2013)</p>
+ <p>VALOR DO PONTO DA GRATIFICAÇÃO DE DESEMPENHO DE ATIVIDADE DE RECURSOS HÍDRICOS - GDRH</p>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>(Redação dada pela Lei n° 12.998, de 2014)</p>
+ <p>VALOR DO PONTO DA GRATIFICAÇÃO DE DESEMPENHO DE ATIVIDADE DE RECURSOS HÍDRICOS – GDRH</p>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>Especialista em Recursos</p>
+ <p>(Redação dada pela Lei n° 13.326, de 2016) (Produção de efeito) (Vide Lei n° 13.326, de 2016)</p>
+ <p>VALOR DO PONTO DA GRATIFICAÇÃO DE DESEMPENHO DE ATIVIDADE DE RECURSOS HÍDRICOS - GDRH</p>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º de janeiro de 2015</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <p>Agente Penitenciário Federal</p>
+ <p>(Incluído pela Medida Provisória nº 1.286, de 2024)</p>
+ <p>ESTRUTURA DE CLASSES E PADRÕES DOS CARGOS DE QUE 	TRATA O ART. 1º CARGOS</p>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo</p>
+ <p>(Incluído pela Lei n° 15.141, de 2025)</p>
+ <p>ESTRUTURA DE CLASSES E PADRÕES DOS CARGOS DE QUE TRATA O ART. 1º CARGOS</p>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo</p>
+ <p>(Incluído pela Medida Provisória nº 1.286, de 2024)</p>
+ <p>TABELA DE CORRELAÇÃO DOS CARGOS DE QUE TRATA O ART. 1º SITUAÇÃO ATUAL</p>
+ <p>SITUAÇÃO A PARTIR DE 1º DE JANEIRO DE 2025</p>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo</p>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo</p>
+ <p>(Incluído pela Lei n° 15.141, de 2025)</p>
+ <p>TABELA DE CORRELAÇÃO DOS CARGOS DE QUE TRATA O ART. 1º SITUAÇÃO ATUAL</p>
+ <p>SITUAÇÃO A PARTIR DE 1º DE JANEIRO DE 2025</p>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo</p>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo</p>
+ <p>| Dispõe sobre o Quadro de Pessoal da Agência Nacional de</p>
+ <p>Águas - ANA, e dá outras providências.Dispõe sobre o Quadro de Pessoal da Agência Nacional de Águas e</p>
+ <p>Saneamento Básico (ANA) e dá outras providências.(Redação dada pela Lei n° 14.026, de 2020)</p>
+ <p>CARGO | CLASSE | PADRÃO | VALOR(em R$)</p>
+ <p>--- | --- | --- | ---</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <p>Analista Administrativo – Agência</p>
+ <p>Nacional de Águas | Especial | III | 5.151,00</p>
+ <h3>II | 4.970,41 | |</h3>
+ <h3>I | 4.790,03 | |</h3>
+ <h3>B | V | 4.403,49 |</h3>
+ <h3>IV | 4.223,10 | |</h3>
+ <h3>III | 4.042,72 | |</h3>
+ <h3>II | 3.862,33 | |</h3>
+ <h3>I | 3.681,94 | |</h3>
+ <h3>A | V | 3.295,41 |</h3>
+ <h3>IV | 3.115,02 | |</h3>
+ <h3>III | 2.934,64 | |</h3>
+ <h3>II | 2.754,25 | |</h3>
+ <h3>I | 2.573,86 | |</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VENCIMENTO BÁSICO</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE | | |</h3>
+ <p>1o JUL 2008 | 1o JUL 2009 | 1o JUL 2010 |</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos</p>
+ <p>Analista Administrativo – Agência Nacional de Águas | Especial | III | 6.700,00</p>
+ <h3>II | 6.453,33 | 7.187,50 | 7.666,25</h3>
+ <h3>I | 6.206,67 | 6.925,00 | 7.387,50</h3>
+ <h3>B | V | 5.960,00 | 6.662,50</h3>
+ <h3>IV | 5.713,33 | 6.400,00 | 6.830,00</h3>
+ <h3>III | 5.466,67 | 6.137,50 | 6.551,25</h3>
+ <h3>II | 5.220,00 | 5.875,00 | 6.272,50</h3>
+ <h3>I | 4.973,33 | 5.612,50 | 5.993,75</h3>
+ <h3>A | V | 4.726,67 | 5.350,00</h3>
+ <h3>IV | 4.480,00 | 5.087,50 | 5.436,25</h3>
+ <h3>III | 4.233,33 | 4.825,00 | 5.157,50</h3>
+ <h3>II | 3.986,67 | 4.562,50 | 4.878,75</h3>
+ <h3>I | 3.740,00 | 4.300,00 | 4.600,00</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VALOR DO PONTO DA GDRH</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE | | |</h3>
+ <p>1o JUL 2008 | 1o JUL 2009 | 1o JUL 2010 |</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Especialista em Recursos Hídricos | Especial | III | 67,00</p>
+ <h3>II | 66,26 | 73,58 | 78,47</h3>
+ <h3>I | 65,52 | 72,66 | 77,50</h3>
+ <h3>B | V | 64,78 | 71,74</h3>
+ <h3>IV | 64,04 | 70,83 | 75,55</h3>
+ <h3>III | 63,30 | 69,91 | 74,57</h3>
+ <h3>II | 62,56 | 68,99 | 73,60</h3>
+ <h3>I | 61,82 | 68,07 | 72,62</h3>
+ <h3>A | V | 61,08 | 67,15</h3>
+ <h3>IV | 60,34 | 66,23 | 70,67</h3>
+ <h3>III | 59,60 | 65,31 | 69,69</h3>
+ <h3>II | 58,86 | 64,39 | 68,72</h3>
+ <h3>I | 58,12 | 63,48 | 67,74</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <p>Especialista em Recursos</p>
+ <p>Analista Administrativo –</p>
+ <p>Agência Nacional de Águas</p>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <p>Especialista em Recursos</p>
+ <h3>CARGO | CLASSE | PADRÃO | VENCIMENTO BÁSICO</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>EFEITOS FINANCEIROS A</h3>
+ <h3>PARTIR DE | | |</h3>
+ <p>Águas | Especial | III | 7.945,00</p>
+ <h3>II | 7.666,25 | 8.726,02 | 9.162,32</h3>
+ <h3>I | 7.387,50 | 8.408,74 | 8.829,18</h3>
+ <h3>B | V | 7.108,75 | 8.091,45</h3>
+ <h3>IV | 6.830,00 | 7.774,17 | 8.162,88</h3>
+ <h3>III | 6.551,25 | 7.456,89 | 7.829,73</h3>
+ <h3>II | 6.272,50 | 7.139,60 | 7.496,58</h3>
+ <h3>I | 5.993,75 | 6.822,32 | 7.163,43</h3>
+ <h3>A | V | 5.715,00 | 6.505,03</h3>
+ <h3>IV | 5.436,25 | 6.187,75 | 6.497,14</h3>
+ <h3>III | 5.157,50 | 5.870,47 | 6.163,99</h3>
+ <h3>II | 4.878,75 | 5.553,18 | 5.830,84</h3>
+ <h3>I | 4.600,00 | 5.235,90 | 5.497,69</h3>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <p>Especialista em rRRRecursos</p>
+ <h3>CARGO | CLASSE | PADRÃO | VENCIMENTO BÁSICO</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>FINANCEIROS A PARTIR DE | | |</h3>
+ <p>de janeiro de 2015 | 1o</p>
+ <p>de agosto de 2016 | |</p>
+ <p>Administrativo - Agência Nacional de Águas | Especial | III | 9.495,47</p>
+ <h3>II | 9.162,32 | 9.666,25 |</h3>
+ <h3>I | 8.829,18 | 9.314,78 |</h3>
+ <h3>B | V | 8.496,03 | 8.963,31</h3>
+ <h3>IV | 8.162,88 | 8.611,84 |</h3>
+ <h3>III | 7.829,73 | 8.260,37 |</h3>
+ <h3>II | 7.496,58 | 7.908,89 |</h3>
+ <h3>I | 7.163,43 | 7.557,42 |</h3>
+ <h3>A | V | 6.830,29 | 7.205,96</h3>
+ <h3>IV | 6.497,14 | 6.854,48 |</h3>
+ <h3>III | 6.163,99 | 6.503,01 |</h3>
+ <h3>II | 5.830,84 | 6.151,54 |</h3>
+ <h3>I | 5.497,69 | 5.800,06 |</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VALOR DO PONTO DA GDRH</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>EFEITOS FINANCEIROS A</h3>
+ <h3>PARTIR DE | | |</h3>
+ <p>Recursos Hídricos | Especial | III | 79,45</p>
+ <h3>II | 78,47 | 89,32 | 93,78</h3>
+ <h3>I | 77,50 | 88,21 | 92,62</h3>
+ <h3>B | V | 76,52 | 87,10</h3>
+ <h3>IV | 75,55 | 85,99 | 90,29</h3>
+ <h3>III | 74,57 | 84,88 | 89,12</h3>
+ <h3>II | 73,60 | 83,77 | 87,96</h3>
+ <h3>I | 72,62 | 82,66 | 86,79</h3>
+ <h3>A | V | 71,65 | 81,55</h3>
+ <h3>IV | 70,67 | 80,44 | 84,46</h3>
+ <h3>III | 69,69 | 79,32 | 83,29</h3>
+ <h3>II | 68,72 | 78,22 | 82,13</h3>
+ <h3>I | 67,74 | 77,10 | 80,96</h3>
+ <h3>VALOR DO PONTO DA GDRH</h3>
+ <h3>CARGO | CLASSE | PADRÃO | VALOR DO PONTO DA</h3>
+ <p>--- | --- | --- | ---</p>
+ <h3>FINANCEIROS A PARTIR DE | | |</h3>
+ <p>de janeiro de 2015 | 1o</p>
+ <p>de agosto de 2016 | |</p>
+ <p>Recursos Hídricos | Especial | III | 94,95</p>
+ <h3>II | 93,78 | 98,94 |</h3>
+ <h3>I | 92,62 | 97,71 |</h3>
+ <h3>B | V | 91,45 | 96,48</h3>
+ <h3>IV | 90,29 | 95,26 |</h3>
+ <h3>III | 89,12 | 94,02 |</h3>
+ <h3>II | 87,96 | 92,8 |</h3>
+ <h3>I | 86,79 | 91,56 |</h3>
+ <h3>A | V | 85,63 | 90,34</h3>
+ <h3>IV | 84,46 | 89,11 |</h3>
+ <h3>III | 83,29 | 87,87 |</h3>
+ <h3>II | 82,13 | 86,65 |</h3>
+ <h3>I | 80,96 | 85,41 |</h3>
+ <p>CARGO | CLASSE | VALOR(em R$)</p>
+ <p>Penitenciário Federal | Especial | 306,72</p>
+ <h3>CARGOS | CLASSE | PADRÃO</h3>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo | ESPECIAL | V</p>
+ <h3>CARGOS | CLASSE | PADRÃO</h3>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Administrativo | ESPECIAL | V</p>
+ <p>SITUAÇÃO ATUAL | SITUAÇÃO A PARTIR DE 1º DE JANEIRO DE 2025</p>
+ <h3>CARGOS | CLASSE</h3>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Analista Administrativo | ESPECIAL</p>
+ <h3>ATUAL | SITUAÇÃO</h3>
+ <p>A PARTIR DE 1º DE JANEIRO DE 2025</p>
+ <h3>CARGOS | CLASSE</h3>
+ <p>Especialista em Regulação de Recursos Hídricos e Saneamento Básico</p>
+ <p>Especialista em Geoprocessamento</p>
+ <p>Administrativo | ESPECIAL</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.768.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

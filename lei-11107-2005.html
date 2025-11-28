@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.107, DE 6 DE ABRIL DE 2005 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2005" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.107, DE 6 DE ABRIL DE 2005</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 13:56:36 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11107.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 20.951 caracteres | espelho: 20.754 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.107, DE 6 DE ABRIL DE 2005.</p>
+ <p>(Vide Decreto nº 6.017, de 2007)</p>
+ <p>Dispõe sobre normas gerais de contratação de consórcios públicos e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre normas gerais para a União, os Estados, o Distrito Federal e os Municípios contratarem consórcios públicos para a realização de objetivos de interesse comum e dá outras providências.</h3>
+ <h4>§ 1º O consórcio público constituirá associação pública ou pessoa jurídica de direito privado.</h4>
+ <h4>§ 2º A União somente participará de consórcios públicos em que também façam parte todos os Estados em cujos territórios estejam situados os Municípios consorciados.</h4>
+ <h4>§ 3º Os consórcios públicos, na área de saúde, deverão obedecer aos princípios, diretrizes e normas que regulam o Sistema Único de Saúde – SUS.</h4>
+ <h4>§ 4º Aplicam-se aos convênios de cooperação, no que couber, as disposições desta Lei relativas aos consórcios públicos. (Incluído pela Lei n° 14.026, de 2020)</h4>
+ <h3>Art. 2º Os objetivos dos consórcios públicos serão determinados pelos entes da Federação que se consorciarem, observados os limites constitucionais.</h3>
+ <h4>§ 1º Para o cumprimento de seus objetivos, o consórcio público poderá:</h4>
+ <h5>I – firmar convênios, contratos, acordos de qualquer natureza, receber auxílios, contribuições e subvenções sociais ou econômicas de outras entidades e órgãos do governo;</h5>
+ <h5>II – nos termos do contrato de consórcio de direito público, promover desapropriações e instituir servidões nos termos de declaração de utilidade ou necessidade pública, ou interesse social, realizada pelo Poder Público; e</h5>
+ <h5>III – ser contratado pela administração direta ou indireta dos entes da Federação consorciados, dispensada a licitação.</h5>
+ <h4>§ 2º Os consórcios públicos poderão emitir documentos de cobrança e exercer atividades de arrecadação de tarifas e outros preços públicos pela prestação de serviços ou pelo uso ou outorga de uso de bens públicos por eles administrados ou, mediante autorização específica, pelo ente da Federação consorciado.</h4>
+ <h4>§ 3º Os consórcios públicos poderão outorgar concessão, permissão ou autorização de obras ou serviços públicos mediante autorização prevista no contrato de consórcio público, que deverá indicar de forma específica o objeto da concessão, permissão ou autorização e as condições a que deverá atender, observada a legislação de normas gerais em vigor.</h4>
+ <h3>Art. 3º O consórcio público será constituído por contrato cuja celebração dependerá da prévia subscrição de protocolo de intenções.</h3>
+ <h3>Art. 4º São cláusulas necessárias do protocolo de intenções as que estabeleçam:</h3>
+ <h5>I – a denominação, a finalidade, o prazo de duração e a sede do consórcio;</h5>
+ <h5>II – a identificação dos entes da Federação consorciados;</h5>
+ <h5>III – a indicação da área de atuação do consórcio;</h5>
+ <h5>IV – a previsão de que o consórcio público é associação pública ou pessoa jurídica de direito privado sem fins econômicos;</h5>
+ <h5>V – os critérios para, em assuntos de interesse comum, autorizar o consórcio público a representar os entes da Federação consorciados perante outras esferas de governo;</h5>
+ <h5>VI – as normas de convocação e funcionamento da assembléia geral, inclusive para a elaboração, aprovação e modificação dos estatutos do consórcio público;</h5>
+ <h5>VII – a previsão de que a assembléia geral é a instância máxima do consórcio público e o número de votos para as suas deliberações;</h5>
+ <h5>VIII – a forma de eleição e a duração do mandato do representante legal do consórcio público que, obrigatoriamente, deverá ser Chefe do Poder Executivo de ente da Federação consorciado;</h5>
+ <h5>IX – o número, as formas de provimento e a remuneração dos empregados públicos, bem como os casos de contratação por tempo determinado para atender a necessidade temporária de excepcional interesse público;</h5>
+ <h5>X – as condições para que o consórcio público celebre contrato de gestão ou termo de parceria;</h5>
+ <h5>XI – a autorização para a gestão associada de serviços públicos, explicitando:</h5>
+ <h6>a) as competências cujo exercício se transferiu ao consórcio público;</h6>
+ <h6>b) os serviços públicos objeto da gestão associada e a área em que serão prestados;</h6>
+ <h6>c) a autorização para licitar ou outorgar concessão, permissão ou autorização da prestação dos serviços;</h6>
+ <h6>d) as condições a que deve obedecer o contrato de programa, no caso de a gestão associada envolver também a prestação de serviços por órgão ou entidade de um dos entes da Federação consorciados;</h6>
+ <h6>e) os critérios técnicos para cálculo do valor das tarifas e de outros preços públicos, bem como para seu reajuste ou revisão; e</h6>
+ <h5>XII – o direito de qualquer dos contratantes, quando adimplente com suas obrigações, de exigir o pleno cumprimento das cláusulas do contrato de consórcio público.</h5>
+ <h4>§ 1º Para os fins do inciso III do caput deste artigo, considera-se como área de atuação do consórcio público, independentemente de figurar a União como consorciada, a que corresponde à soma dos territórios:</h4>
+ <h5>I – dos Municípios, quando o consórcio público for constituído somente por Municípios ou por um Estado e Municípios com territórios nele contidos;</h5>
+ <h5>II – dos Estados ou dos Estados e do Distrito Federal, quando o consórcio público for, respectivamente, constituído por mais de 1 (um) Estado ou por 1 (um) ou mais Estados e o Distrito Federal;</h5>
+ <h5>III – (VETADO)</h5>
+ <h5>IV – dos Municípios e do Distrito Federal, quando o consórcio for constituído pelo Distrito Federal e os Municípios; e</h5>
+ <h5>V – (VETADO)</h5>
+ <h4>§ 2º O protocolo de intenções deve definir o número de votos que cada ente da Federação consorciado possui na assembléia geral, sendo assegurado 1 (um) voto a cada ente consorciado.</h4>
+ <h4>§ 3º É nula a cláusula do contrato de consórcio que preveja determinadas contribuições financeiras ou econômicas de ente da Federação ao consórcio público, salvo a doação, destinação ou cessão do uso de bens móveis ou imóveis e as transferências ou cessões de direitos operadas por força de gestão associada de serviços públicos.</h4>
+ <h4>§ 4º Os entes da Federação consorciados, ou os com eles conveniados, poderão ceder-lhe servidores, na forma e condições da legislação de cada um.</h4>
+ <h4>§ 5º O protocolo de intenções deverá ser publicado na imprensa oficial.</h4>
+ <h3>Art. 5º O contrato de consórcio público será celebrado com a ratificação, mediante lei, do protocolo de intenções.</h3>
+ <h4>§ 1º O contrato de consórcio público, caso assim preveja cláusula, pode ser celebrado por apenas 1 (uma) parcela dos entes da Federação que subscreveram o protocolo de intenções.</h4>
+ <h4>§ 2º A ratificação pode ser realizada com reserva que, aceita pelos demais entes subscritores, implicará consorciamento parcial ou condicional.</h4>
+ <h4>§ 3º A ratificação realizada após 2 (dois) anos da subscrição do protocolo de intenções dependerá de homologação da assembléia geral do consórcio público.</h4>
+ <h4>§ 4º É dispensado da ratificação prevista no caput deste artigo o ente da Federação que, antes de subscrever o protocolo de intenções, disciplinar por lei a sua participação no consórcio público.</h4>
+ <h3>Art. 6º O consórcio público adquirirá personalidade jurídica:</h3>
+ <h5>I – de direito público, no caso de constituir associação pública, mediante a vigência das leis de ratificação do protocolo de intenções;</h5>
+ <h5>II – de direito privado, mediante o atendimento dos requisitos da legislação civil.</h5>
+ <h4>§ 1º O consórcio público com personalidade jurídica de direito público integra a administração indireta de todos os entes da Federação consorciados.</h4>
+ <h4>§ 2º No caso de se revestir de personalidade jurídica de direito privado, o consórcio público observará as normas de direito público no que concerne à realização de licitação, celebração de contratos, prestação de contas e admissão de pessoal, que será regido pela Consolidação das Leis do Trabalho - CLT.</h4>
+ <h4>§ 2º O consórcio público, com personalidade jurídica de direito público ou privado, observará as normas de direito público no que concerne à realização de licitação, à celebração de contratos, à prestação de contas e à admissão de pessoal, que será regido pela Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943. (Redação dada pela Lei n° 13.822, de 2019)</h4>
+ <h3>Art. 7º Os estatutos disporão sobre a organização e o funcionamento de cada um dos órgãos constitutivos do consórcio público.</h3>
+ <h3>Art. 8º Os entes consorciados somente entregarão recursos ao consórcio público mediante contrato de rateio.</h3>
+ <h4>§ 1º O contrato de rateio será formalizado em cada exercício financeiro e seu prazo de vigência não será superior ao das dotações que o suportam, com exceção dos contratos que tenham por objeto exclusivamente projetos consistentes em programas e ações contemplados em plano plurianual ou a gestão associada de serviços públicos custeados por tarifas ou outros preços públicos.</h4>
+ <h4>§ 1º O contrato de rateio será formalizado em cada exercício financeiro, e seu prazo de vigência não será superior ao das dotações que o suportam, com exceção dos contratos que tenham por objeto exclusivamente projetos consistentes em programas e ações contemplados em plano plurianual. (Redação dada pela Lei n° 14.026, de 2020)</h4>
+ <h4>§ 2º É vedada a aplicação dos recursos entregues por meio de contrato de rateio para o atendimento de despesas genéricas, inclusive transferências ou operações de crédito.</h4>
+ <h4>§ 3º Os entes consorciados, isolados ou em conjunto, bem como o consórcio público, são partes legítimas para exigir o cumprimento das obrigações previstas no contrato de rateio.</h4>
+ <h4>§ 4º Com o objetivo de permitir o atendimento dos dispositivos da Lei Complementar nº 101, de 4 de maio de 2000, o consórcio público deve fornecer as informações necessárias para que sejam consolidadas, nas contas dos entes consorciados, todas as despesas realizadas com os recursos entregues em virtude de contrato de rateio, de forma que possam ser contabilizadas nas contas de cada ente da Federação na conformidade dos elementos econômicos e das atividades ou projetos atendidos.</h4>
+ <h4>§ 5º Poderá ser excluído do consórcio público, após prévia suspensão, o ente consorciado que não consignar, em sua lei orçamentária ou em créditos adicionais, as dotações suficientes para suportar as despesas assumidas por meio de contrato de rateio.</h4>
+ <h3>Art. 9º A execução das receitas e despesas do consórcio público deverá obedecer às normas de direito financeiro aplicáveis às entidades públicas.</h3>
+ <h4>Parágrafo único. O consórcio público está sujeito à fiscalização contábil, operacional e patrimonial pelo Tribunal de Contas competente para apreciar as contas do Chefe do Poder Executivo representante legal do consórcio, inclusive quanto à legalidade, legitimidade e economicidade das despesas, atos, contratos e renúncia de receitas, sem prejuízo do controle externo a ser exercido em razão de cada um dos contratos de rateio.</h4>
+ <h3>Art. 10. (VETADO)</h3>
+ <h4>Parágrafo único. Os agentes públicos incumbidos da gestão de consórcio não responderão pessoalmente pelas obrigações contraídas pelo consórcio público, mas responderão pelos atos praticados em desconformidade com a lei ou com as disposições dos respectivos estatutos.</h4>
+ <h3>Art. 11. A retirada do ente da Federação do consórcio público dependerá de ato formal de seu representante na assembléia geral, na forma previamente disciplinada por lei.</h3>
+ <h4>§ 1º Os bens destinados ao consórcio público pelo consorciado que se retira somente serão revertidos ou retrocedidos no caso de expressa previsão no contrato de consórcio público ou no instrumento de transferência ou de alienação.</h4>
+ <h4>§ 2º A retirada ou a extinção do consórcio público não prejudicará as obrigações já constituídas, inclusive os contratos de programa, cuja extinção dependerá do prévio pagamento das indenizações eventualmente devidas.</h4>
+ <h4>§ 2º A retirada ou a extinção de consórcio público ou convênio de cooperação não prejudicará as obrigações já constituídas, inclusive os contratos, cuja extinção dependerá do pagamento das indenizações eventualmente devidas. (Redação dada pela Lei n° 14.026, de 2020)</h4>
+ <h3>Art. 12. A alteração ou a extinção de contrato de consórcio público dependerá de instrumento aprovado pela assembléia geral, ratificado mediante lei por todos os entes consorciados.</h3>
+ <h3>Art. 12. A extinção de contrato de consórcio público dependerá de instrumento aprovado pela assembleia geral, ratificado mediante lei por todos os entes consorciados. (Redação dada pela Lei n° 14.662, de 2023)</h3>
+ <p><del>§ 1º (Revogado pela Lei n° 14.026, de 2020)</del></p>
+ <h4>§ 2º Até que haja decisão que indique os responsáveis por cada obrigação, os entes consorciados responderão solidariamente pelas obrigações remanescentes, garantindo o direito de regresso em face dos entes beneficiados ou dos que deram causa à obrigação.</h4>
+ <h3>Art. 12-A. A alteração de contrato de consórcio público dependerá de instrumento aprovado pela assembleia geral, ratificado mediante lei pela maioria dos entes consorciados. (Incluído pela Lei n° 14.662, de 2023)</h3>
+ <h3>Art. 13. Deverão ser constituídas e reguladas por contrato de programa, como condição de sua validade, as obrigações que um ente da Federação constituir para com outro ente da Federação ou para com consórcio público no âmbito de gestão associada em que haja a prestação de serviços públicos ou a transferência total ou parcial de encargos, serviços, pessoal ou de bens necessários à continuidade dos serviços transferidos.</h3>
+ <h4>§ 1º O contrato de programa deverá:</h4>
+ <h5>I – atender à legislação de concessões e permissões de serviços públicos e, especialmente no que se refere ao cálculo de tarifas e de outros preços públicos, à de regulação dos serviços a serem prestados; e</h5>
+ <h5>II – prever procedimentos que garantam a transparência da gestão econômica e financeira de cada serviço em relação a cada um de seus titulares.</h5>
+ <h4>§ 2º No caso de a gestão associada originar a transferência total ou parcial de encargos, serviços, pessoal e bens essenciais à continuidade dos serviços transferidos, o contrato de programa, sob pena de nulidade, deverá conter cláusulas que estabeleçam:</h4>
+ <h5>I – os encargos transferidos e a responsabilidade subsidiária da entidade que os transferiu;</h5>
+ <h5>II – as penalidades no caso de inadimplência em relação aos encargos transferidos;</h5>
+ <h5>III – o momento de transferência dos serviços e os deveres relativos a sua continuidade;</h5>
+ <h5>IV – a indicação de quem arcará com o ônus e os passivos do pessoal transferido;</h5>
+ <h5>V – a identificação dos bens que terão apenas a sua gestão e administração transferidas e o preço dos que sejam efetivamente alienados ao contratado;</h5>
+ <h5>VI – o procedimento para o levantamento, cadastro e avaliação dos bens reversíveis que vierem a ser amortizados mediante receitas de tarifas ou outras emergentes da prestação dos serviços.</h5>
+ <h4>§ 3º É nula a cláusula de contrato de programa que atribuir ao contratado o exercício dos poderes de planejamento, regulação e fiscalização dos serviços por ele próprio prestados.</h4>
+ <h4>§ 4º O contrato de programa continuará vigente mesmo quando extinto o consórcio público ou o convênio de cooperação que autorizou a gestão associada de serviços públicos.</h4>
+ <h4>§ 5º Mediante previsão do contrato de consórcio público, ou de convênio de cooperação, o contrato de programa poderá ser celebrado por entidades de direito público ou privado que integrem a administração indireta de qualquer dos entes da Federação consorciados ou conveniados.</h4>
+ <h4>§ 6º O contrato celebrado na forma prevista no § 5º deste artigo será automaticamente extinto no caso de o contratado não mais integrar a administração indireta do ente da Federação que autorizou a gestão associada de serviços públicos por meio de consórcio público ou de convênio de cooperação .</h4>
+ <h4>§ 6º ( Revogado ). (Redação dada pela Lei n° 14.026, de 2020)</h4>
+ <h4>§ 7º Excluem-se do previsto no caput deste artigo as obrigações cujo descumprimento não acarrete qualquer ônus, inclusive financeiro, a ente da Federação ou a consórcio público.</h4>
+ <h4>§ 8º Os contratos de prestação de serviços públicos de saneamento básico deverão observar o art. 175 da Constituição Federal, vedada a formalização de novos contratos de programa para esse fim. (Incluído pela Lei n° 14.026, de 2020)</h4>
+ <h3>Art. 14. A União poderá celebrar convênios com os consórcios públicos, com o objetivo de viabilizar a descentralização e a prestação de políticas públicas em escalas adequadas.</h3>
+ <h4>Parágrafo único. Para a celebração dos convênios de que trata o caput deste artigo, as exigências legais de regularidade aplicar-se-ão ao próprio consórcio público envolvido, e não aos entes federativos nele consorciados. (Incluído pela Lei n° 13.821, de 2019)</h4>
+ <h3>Art. 15. No que não contrariar esta Lei, a organização e funcionamento dos consórcios públicos serão disciplinados pela legislação que rege as associações civis.</h3>
+ <h3>Art. 16. O inciso IV do art. 41 da Lei n° 10.406, de 10 de janeiro de 2002 - Código Civil, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 41. ...................................................................................</h3>
+ <p>................................................................................................</p>
+ <h5>IV – as autarquias, inclusive as associações públicas;</h5>
+ <p>........................................................................................" (NR)</p>
+ <h3>Art. 17. Os arts. 23, 24, 26 e 112 da Lei n° 8.666, de 21 de junho de 1993, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 23. ...................................................................................</h3>
+ <p>................................................................................................</p>
+ <h4>§ 8º No caso de consórcios públicos, aplicar-se-á o dobro dos valores mencionados no caput deste artigo quando formado por até 3 (três) entes da Federação, e o triplo, quando formado por maior número." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 24. ...................................................................................</h3>
+ <p>................................................................................................</p>
+ <h5>XXVI – na celebração de contrato de programa com ente da Federação ou com entidade de sua administração indireta, para a prestação de serviços públicos de forma associada nos termos do autorizado em contrato de consórcio público ou em convênio de cooperação.</h5>
+ <h4>Parágrafo único. Os percentuais referidos nos incisos I e II do caput deste artigo serão 20% (vinte por cento) para compras, obras e serviços contratados por consórcios públicos, sociedade de economia mista, empresa pública e por autarquia ou fundação qualificadas, na forma da lei, como Agências Executivas." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 26. As dispensas previstas nos §§ 2º e 4º do art. 17 e no inciso III e seguintes do art. 24, as situações de inexigibilidade referidas no art. 25, necessariamente justificadas, e o retardamento previsto no final do parágrafo único do art. 8º desta Lei deverão ser comunicados, dentro de 3 (três) dias, à autoridade superior, para ratificação e publicação na imprensa oficial, no prazo de 5 (cinco) dias, como condição para a eficácia dos atos.</h3>
+ <p>......................................................................................" (NR)</p>
+ <p>"</p>
+ <h3>Art. 112. ................................................................................</h3>
+ <h4>§ 1º Os consórcios públicos poderão realizar licitação da qual, nos termos do edital, decorram contratos administrativos celebrados por órgãos ou entidades dos entes da Federação consorciados.</h4>
+ <h4>§ 2º É facultado à entidade interessada o acompanhamento da licitação e da execução do contrato." (NR)</h4>
+ <h3>Art. 18. O art. 10 da Lei n° 8.429, de 2 de junho de 1992, passa a vigorar acrescido dos seguintes incisos:</h3>
+ <p>"</p>
+ <h3>Art. 10. ...................................................................................</h3>
+ <p>................................................................................................</p>
+ <h5>XIV – celebrar contrato ou outro instrumento que tenha por objeto a prestação de serviços públicos por meio da gestão associada sem observar as formalidades previstas na lei;</h5>
+ <h5>XV – celebrar contrato de rateio de consórcio público sem suficiente e prévia dotação orçamentária, ou sem observar as formalidades previstas na lei." (NR)</h5>
+ <h3>Art. 19. O disposto nesta Lei não se aplica aos convênios de cooperação, contratos de programa para gestão associada de serviços públicos ou instrumentos congêneres, que tenham sido celebrados anteriormente a sua vigência.</h3>
+ <h3>Art. 20. O Poder Executivo da União regulamentará o disposto nesta Lei, inclusive as normas gerais de contabilidade pública que serão observadas pelos consórcios públicos para que sua gestão financeira e orçamentária se realize na conformidade dos pressupostos da responsabilidade fiscal.</h3>
+ <h3>Art. 21. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 6 de abril de 2005; 184º da Independência e 117º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Antonio Palocci Filho</p>
+ <p>Humberto Sérgio Costa Lima</p>
+ <p>José Dirceu de Oliveira e Silva</p>
+ <p>Este texto não substitui o publicado no DOU de 7.4.2005.</p>
+ <p>(Vide Decreto nº 6.017, de 2007) | Dispõe sobre normas gerais de contratação de consórcios públicos e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11107.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

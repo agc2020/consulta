@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.129, DE 29 DE MARÇO DE 2021 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2021" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.129, DE 29 DE MARÇO DE 2021</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 13:53:08 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 45.941 caracteres | espelho: 46.411 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.129, DE 	29 DE MARÇO DE 2021</p>
+ <p>Dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública e altera a Lei n° 7.116, de 29 de agosto de 1983, a Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), a Lei n° 12.682, de 9 de julho de 2012, e a Lei n° 13.460, de 26 de junho de 2017.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte 	Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre princípios, regras e instrumentos para o aumento da eficiência da administração pública, especialmente por meio da desburocratização, da inovação, da transformação digital e da participação do cidadão.</h3>
+ <h4>Parágrafo único. Na aplicação desta Lei deverá ser observado o disposto nas Leis nºs 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), 13.460, de 26 de junho de 2017, 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), e 5.172, de 25 de outubro de 1966 (Código 	Tributário Nacional), e na Lei Complementar nº 105, de 10 de janeiro de 	2001.</h4>
+ <h3>Art. 2º Esta Lei aplica-se:</h3>
+ <h5>I - aos órgãos da administração pública direta federal, abrangendo os 	Poderes Executivo, Judiciário e Legislativo, incluído o Tribunal de Contas da União, e o Ministério Público da União;</h5>
+ <h5>II - às entidades da administração pública indireta federal, incluídas as empresas públicas e sociedades de economia mista, suas subsidiárias e controladas, que prestem serviço público, autarquias e fundações públicas; e</h5>
+ <h5>III - às administrações diretas e indiretas dos demais entes federados, nos termos dos incisos I e II do caput deste artigo, desde que adotem os comandos desta Lei por meio de atos normativos próprios.</h5>
+ <h4>§ 1º Esta Lei não se aplica a empresas públicas e sociedades de economia mista, suas subsidiárias e controladas, que não prestem serviço público.</h4>
+ <h4>§ 2º As referências feitas nesta Lei, direta ou indiretamente, a Estados, 	Municípios e ao Distrito Federal são cabíveis somente na hipótese de ter sido cumprido o requisito previsto no inciso III do caput deste artigo.</h4>
+ <h3>Art. 3º São princípios e diretrizes do Governo Digital e da eficiência pública:</h3>
+ <h5>I - a desburocratização, a modernização, o fortalecimento e a simplificação da relação do poder público com a sociedade, mediante serviços digitais, 	acessíveis inclusive por dispositivos móveis;</h5>
+ <h5>II - a disponibilização em plataforma única do acesso às informações e aos serviços públicos, observadas as restrições legalmente previstas e sem prejuízo, quando indispensável, da prestação de caráter presencial;</h5>
+ <h5>III - a possibilidade aos cidadãos, às pessoas jurídicas e aos outros entes públicos de demandar e de acessar serviços públicos por meio digital, sem necessidade de solicitação presencial;</h5>
+ <h5>IV - a transparência na execução dos serviços públicos e o monitoramento da qualidade desses serviços;</h5>
+ <h5>V - o incentivo à participação social no controle e na fiscalização da administração pública;</h5>
+ <h5>VI - o dever do gestor público de prestar contas diretamente à população sobre a gestão dos recursos públicos;</h5>
+ <h5>VII - o uso de linguagem clara e compreensível a qualquer cidadão;</h5>
+ <h5>VIII - o uso da tecnologia para otimizar processos de trabalho da administração pública;</h5>
+ <h5>IX - a atuação integrada entre os órgãos e as entidades envolvidos na prestação e no controle dos serviços públicos, com o compartilhamento de dados pessoais em ambiente seguro quando for indispensável para a prestação do serviço, nos termos da Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), e, quando couber, com a transferência de sigilo, nos termos do art. 198 da Lei n° 5.172, de 25 de outubro de 1966 (Código Tributário Nacional), e da Lei Complementar nº 105, de 10 de janeiro de 2001;</h5>
+ <h5>X - a simplificação dos procedimentos de solicitação, oferta e acompanhamento dos serviços públicos, com foco na universalização do acesso e no autosserviço;</h5>
+ <h5>XI - a eliminação de formalidades e de exigências cujo custo econômico ou social seja superior ao risco envolvido;</h5>
+ <h5>XII - a imposição imediata e de uma única vez ao interessado das exigências necessárias à prestação dos serviços públicos, justificada exigência posterior apenas em caso de dúvida superveniente;</h5>
+ <h5>XIII - a vedação de exigência de prova de fato já comprovado pela apresentação de documento ou de informação válida;</h5>
+ <h5>XIV - a interoperabilidade de sistemas e a promoção de dados abertos;</h5>
+ <h5>XV - a presunção de boa-fé do usuário dos serviços públicos;</h5>
+ <h5>XVI - a permanência da possibilidade de atendimento presencial, de acordo com as características, a relevância e o público-alvo do serviço;</h5>
+ <h5>XVII - a proteção de dados pessoais, nos termos da Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais);</h5>
+ <h5>XVIII - o cumprimento de compromissos e de padrões de qualidade divulgados na Carta de Serviços ao Usuário;</h5>
+ <h5>XIX - a acessibilidade da pessoa com deficiência ou com mobilidade reduzida, 	nos termos da Lei n° 13.146, de 6 de julho de 2015 (Estatuto da Pessoa com 	Deficiência);</h5>
+ <h5>XX - o estímulo a ações educativas para qualificação dos servidores públicos para o uso das tecnologias digitais e para a inclusão digital da população;</h5>
+ <h5>XXI - o apoio técnico aos entes federados para implantação e adoção de estratégias que visem à transformação digital da administração pública;</h5>
+ <h5>XXII - o estímulo ao uso das assinaturas eletrônicas nas interações e nas comunicações entre órgãos públicos e entre estes e os cidadãos;</h5>
+ <h5>XXIII - a implantação do governo como plataforma e a promoção do uso de dados, preferencialmente anonimizados, por pessoas físicas e jurídicas de diferentes setores da sociedade, resguardado o disposto nos arts. 7º e 11 da 	Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados 	Pessoais), com vistas, especialmente, à formulação de políticas públicas, de pesquisas científicas, de geração de negócios e de controle social;</h5>
+ <h5>XXIV - o tratamento adequado a idosos, nos termos da Lei n° 10.741, de 1º de outubro de 2003 (Estatuto do Idoso);</h5>
+ <h5>XXV - a adoção preferencial, no uso da internet e de suas aplicações, de tecnologias, de padrões e de formatos abertos e livres, conforme disposto no inciso V do caput do art. 24 e no art. 25 da Lei n° 12.965, de 23 de abril de 2014 (Marco 	Civil da Internet); e</h5>
+ <h5>XXVI - a promoção do desenvolvimento tecnológico e da inovação no setor público.</h5>
+ <h3>Art. 4º Para os fins desta Lei, considera-se:</h3>
+ <h5>I - (VETADO);</h5>
+ <h5>II - autosserviço: acesso pelo cidadão a serviço público prestado por meio digital, sem necessidade de mediação humana;</h5>
+ <h5>III - base nacional de serviços públicos: base de dados que contém as informações necessárias sobre a oferta de serviços públicos de todos os prestadores desses serviços;</h5>
+ <h5>IV - dados abertos: dados acessíveis ao público, representados em meio digital, estruturados em formato aberto, processáveis por máquina, 	referenciados na internet e disponibilizados sob licença aberta que permita sua livre utilização, consumo ou tratamento por qualquer pessoa, física ou jurídica;</h5>
+ <h5>V - dado acessível ao público: qualquer dado gerado ou acumulado pelos entes públicos que não esteja sob sigilo ou sob restrição de acesso nos termos da Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação);</h5>
+ <h5>VI - formato aberto: formato de arquivo não proprietário, cuja especificação esteja documentada publicamente e seja de livre conhecimento e implementação, livre de patentes ou de qualquer outra restrição legal quanto 	à sua utilização;</h5>
+ <h5>VII - governo como plataforma: infraestrutura tecnológica que facilite o uso de dados de acesso público e promova a interação entre diversos agentes, de forma segura, eficiente e responsável, para estímulo à inovação, à 	exploração de atividade econômica e à prestação de serviços à população;</h5>
+ <h5>VIII - laboratório de inovação: espaço aberto à participação e à colaboração da sociedade para o desenvolvimento de ideias, de ferramentas e de métodos inovadores para a gestão pública, a prestação de serviços públicos e a participação do cidadão para o exercício do controle sobre a administração pública;</h5>
+ <h5>IX - plataformas de governo digital: ferramentas digitais e serviços comuns aos órgãos, normalmente ofertados de forma centralizada e compartilhada, 	necessárias para a oferta digital de serviços e de políticas públicas;</h5>
+ <h5>X - registros de referência: informação íntegra e precisa oriunda de uma ou mais fontes de dados, centralizadas ou descentralizadas, sobre elementos fundamentais para a prestação de serviços e para a gestão de políticas públicas; e</h5>
+ <h5>XI - transparência ativa: disponibilização de dados pela administração pública independentemente de solicitações.</h5>
+ <h4>Parágrafo único. Aplicam-se a esta Lei os conceitos da Lei n° 13.709, de 14 	de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais).</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>DA DIGITALIZAÇÃO DA ADMINISTRAÇÃO PÚBLICA E DA PRESTAÇÃO DIGITAL DE SERVIÇOS 	PÚBLICOS - GOVERNO DIGITAL</p>
+ <p>Seção I</p>
+ <p>Da 	Digitalização</p>
+ <h3>Art. 5º A administração pública utilizará soluções digitais para a gestão de suas políticas finalísticas e administrativas e para o trâmite de processos administrativos eletrônicos.</h3>
+ <h4>Parágrafo único. Entes públicos que emitem atestados, certidões, diplomas ou outros documentos comprobatórios com validade legal poderão fazê-lo em meio digital, assinados eletronicamente na forma do art. 7º desta Lei e da Lei n° 14.063, de 23 de setembro de 2020 .</h4>
+ <h3>Art. 6º Nos processos administrativos eletrônicos, os atos processuais deverão ser realizados em meio eletrônico, exceto se o usuário solicitar de forma diversa, nas situações em que esse procedimento for inviável, nos casos de indisponibilidade do meio eletrônico ou diante de risco de dano relevante à celeridade do processo.</h3>
+ <h4>Parágrafo único. No caso das exceções previstas no caput deste artigo, os atos processuais poderão ser praticados conforme as regras aplicáveis aos processos em papel, desde que posteriormente o documento-base correspondente seja digitalizado.</h4>
+ <h3>Art. 7º Os documentos e os atos processuais serão válidos em meio digital mediante o uso de assinatura eletrônica, desde que respeitados parâmetros de autenticidade, de integridade e de segurança adequados para os níveis de risco em relação à criticidade da decisão, da informação ou do serviço específico, nos termos da lei.</h3>
+ <h4>§ 1º Regulamento poderá dispor sobre o uso de assinatura avançada para os fins de que tratam os seguintes dispositivos:</h4>
+ <h5>I - art. 2º-A da Lei n° 12.682, de 9 de julho de 2012 ;</h5>
+ <h5>II - art. 289 da Lei n° 6.404, de 15 de dezembro de 1976 ;</h5>
+ <h5>III - art. 2º da Lei n° 13.787, de 27 de dezembro de 2018;</h5>
+ <h5>IV - art. 282-A da Lei n° 9.503, de 23 de setembro de 1997 (Código de 	Trânsito Brasileiro);</h5>
+ <h5>V - (VETADO);</h5>
+ <h5>VI - art. 8º da Lei n° 12.618, de 30 de abril de 2012;</h5>
+ <h5>VII - art. 38 da Lei n° 11.977, de 7 de julho de 2009 .</h5>
+ <h4>§ 2º O disposto neste artigo não se aplica às hipóteses legais de anonimato.</h4>
+ <h3>Art. 8º Os atos processuais em meio eletrônico consideram-se realizados no dia e na hora do recebimento pelo sistema informatizado de gestão de processo administrativo eletrônico do órgão ou da entidade, o qual deverá 	fornecer recibo eletrônico de protocolo que os identifique.</h3>
+ <h4>§ 1º Quando o ato processual tiver que ser praticado em determinado prazo, 	por meio eletrônico, serão considerados tempestivos os efetivados, salvo disposição em contrário, até as 23h59 (vinte e três horas e cinquenta e nove minutos) do último dia do prazo, no horário de Brasília.</h4>
+ <h4>§ 2º A regulamentação deverá dispor sobre os casos e as condições de prorrogação de prazos em virtude da indisponibilidade de sistemas informatizados.</h4>
+ <h3>Art. 9º O acesso à íntegra do processo para vista pessoal do interessado poderá ocorrer por intermédio da disponibilização de sistema informatizado de gestão ou por acesso à cópia do documento, preferencialmente em meio eletrônico.</h3>
+ <h3>Art. 10. A classificação da informação quanto ao grau de sigilo e a possibilidade de limitação do acesso aos servidores autorizados e aos interessados no processo observarão os termos da Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), e das demais normas vigentes.</h3>
+ <h3>Art. 11. Os documentos nato-digitais assinados eletronicamente na forma do art. 7º desta Lei são considerados originais para todos os efeitos legais.</h3>
+ <h3>Art. 12. O formato e o armazenamento dos documentos digitais deverão garantir o acesso e a preservação das informações, nos termos da legislação arquivística nacional.</h3>
+ <h3>Art. 13. A guarda dos documentos digitais e dos processos administrativos eletrônicos considerados de valor permanente deverá estar de acordo com as normas previstas pela instituição arquivística pública responsável por sua custódia.</h3>
+ <p>Seção II</p>
+ <p>Do Governo 	Digital</p>
+ <h3>Art. 14. A prestação digital dos serviços públicos deverá ocorrer por meio de tecnologias de amplo acesso pela população, inclusive pela de baixa renda ou residente em áreas rurais e isoladas, sem prejuízo do direito do cidadão a atendimento presencial.</h3>
+ <h4>Parágrafo único. O acesso à prestação digital dos serviços públicos será 	realizado, preferencialmente, por meio do autosserviço.</h4>
+ <h3>Art. 15. A administração pública participará, de maneira integrada e cooperativa, da consolidação da Estratégia Nacional de Governo Digital, 	editada pelo Poder Executivo federal, que observará os princípios e as diretrizes de que trata o art. 3º desta Lei.</h3>
+ <h3>Art. 16. A administração pública de cada ente federado poderá editar estratégia de governo digital, no âmbito de sua competência, buscando a sua compatibilização com a estratégia federal e a de outros entes.</h3>
+ <p>Seção III</p>
+ <p>Das Redes de 	Conhecimento</p>
+ <h3>Art. 17. O Poder Executivo federal poderá criar redes de conhecimento, com o objetivo de:</h3>
+ <h5>I - gerar, compartilhar e disseminar conhecimento e experiências;</h5>
+ <h5>II - formular propostas de padrões, políticas, guias e manuais;</h5>
+ <h5>III - discutir sobre os desafios enfrentados e as possibilidades de ação quanto ao Governo Digital e à eficiência pública;</h5>
+ <h5>IV - prospectar novas tecnologias para facilitar a prestação de serviços públicos disponibilizados em meio digital, o fornecimento de informações e a participação social por meios digitais.</h5>
+ <h4>§ 1º Poderão participar das redes de conhecimento todos os órgãos e as entidades referidos no art. 2º desta Lei, inclusive dos entes federados.</h4>
+ <h4>§ 2º Serão assegurados às instituições científicas, tecnológicas e de inovação o acesso às redes de conhecimento e o estabelecimento de canal de comunicação permanente com o órgão federal a quem couber a coordenação das atividades previstas neste artigo.</h4>
+ <p>Seção IV</p>
+ <p>Dos 	Componentes do Governo Digital</p>
+ <p>Subseção I</p>
+ <p>Da Definição</p>
+ <h3>Art. 18. São componentes essenciais para a prestação digital dos serviços públicos na administração pública:</h3>
+ <h5>I - a Base Nacional de Serviços Públicos;</h5>
+ <h5>II - as Cartas de Serviços ao Usuário, de que trata a Lei n° 13.460, de 26 	de junho de 2017 ; e</h5>
+ <h5>III - as Plataformas de Governo Digital.</h5>
+ <p>Subseção II</p>
+ <p>Da Base 	Nacional de Serviços Públicos</p>
+ <h3>Art. 19. Poderá o Poder Executivo federal estabelecer Base Nacional de 	Serviços Públicos, que reunirá informações necessárias sobre a oferta de serviços públicos em cada ente federado.</h3>
+ <h4>Parágrafo único. Cada ente federado poderá disponibilizar as informações sobre a prestação de serviços públicos, conforme disposto nas suas Cartas de 	Serviços ao Usuário, na Base Nacional de Serviços Públicos, em formato aberto e interoperável e em padrão comum a todos os entes.</h4>
+ <p>Subseção III</p>
+ <p>Das 	Plataformas de Governo Digital</p>
+ <h3>Art. 20. As Plataformas de Governo Digital, instrumentos necessários para a oferta e a prestação digital dos serviços públicos de cada ente federativo, 	deverão ter pelo menos as seguintes funcionalidades:</h3>
+ <h5>I - ferramenta digital de solicitação de atendimento e de acompanhamento da entrega dos serviços públicos; e</h5>
+ <h5>II - painel de monitoramento do desempenho dos serviços públicos.</h5>
+ <h4>§ 1º As Plataformas de Governo Digital deverão ser acessadas por meio de portal, de aplicativo ou de outro canal digital único e oficial, para a disponibilização de informações institucionais, notícias e prestação de serviços públicos.</h4>
+ <h4>§ 2º As funcionalidades de que trata o caput deste artigo deverão observar padrões de interoperabilidade e a necessidade de integração de dados como formas de simplificação e de eficiência nos processos e no atendimento aos usuários.</h4>
+ <h3>Art. 21. A ferramenta digital de atendimento e de acompanhamento da entrega dos serviços públicos de que trata o inciso I do caput do art. 20 desta Lei deve apresentar, no mínimo, as seguintes características e funcionalidades:</h3>
+ <h5>I - identificação do serviço público e de suas principais etapas;</h5>
+ <h5>II - solicitação digital do serviço;</h5>
+ <h5>III - agendamento digital, quando couber;</h5>
+ <h5>IV - acompanhamento das solicitações por etapas;</h5>
+ <h5>V - avaliação continuada da satisfação dos usuários em relação aos serviços públicos prestados;</h5>
+ <h5>VI - identificação, quando necessária, e gestão do perfil pelo usuário;</h5>
+ <h5>VII - notificação do usuário;</h5>
+ <h5>VIII - possibilidade de pagamento digital de serviços públicos e de outras cobranças, quando necessário;</h5>
+ <h5>IX - nível de segurança compatível com o grau de exigência, a natureza e a criticidade dos serviços públicos e dos dados utilizados;</h5>
+ <h5>X - funcionalidade para solicitar acesso a informações acerca do tratamento de dados pessoais, nos termos das Leis nºs 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), e 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais); e</h5>
+ <h5>XI - implementação de sistema de ouvidoria, nos termos da Lei n° 13.460, de 	26 de junho de 2017.</h5>
+ <h3>Art. 22. O painel de monitoramento do desempenho dos serviços públicos de que trata o inciso II do caput do art. 20 desta Lei deverá conter, no mínimo, as seguintes informações, 	para cada serviço público ofertado:</h3>
+ <h5>I - quantidade de solicitações em andamento e concluídas anualmente;</h5>
+ <h5>II - tempo médio de atendimento; e</h5>
+ <h5>III - grau de satisfação dos usuários.</h5>
+ <h4>Parágrafo único. Deverá ser assegurada interoperabilidade e padronização mínima do painel a que se refere o caput deste artigo, de modo a permitir a comparação entre as avaliações e os desempenhos dos serviços públicos prestados pelos diversos entes.</h4>
+ <h3>Art. 23. Poderá o Poder Executivo federal:</h3>
+ <h5>I - estabelecer padrões nacionais para as soluções previstas nesta Seção;</h5>
+ <h5>II - disponibilizar soluções para outros entes que atendam ao disposto nesta 	Seção.</h5>
+ <p>Seção V</p>
+ <p>Da Prestação 	Digital dos Serviços Públicos</p>
+ <h3>Art. 24. Os órgãos e as entidades responsáveis pela prestação digital de serviços públicos deverão, no âmbito de suas competências:</h3>
+ <h5>I - manter atualizadas:</h5>
+ <h6>a) as Cartas de Serviços ao Usuário, a Base Nacional de Serviços Públicos e as Plataformas de Governo Digital;</h6>
+ <h6>b) as informações institucionais e as comunicações de interesse público;</h6>
+ <h5>II - monitorar e implementar ações de melhoria dos serviços públicos prestados, com base nos resultados da avaliação de satisfação dos usuários dos serviços;</h5>
+ <h5>III - integrar os serviços públicos às ferramentas de notificação aos usuários, de assinatura eletrônica e de meios de pagamento digitais, quando aplicáveis;</h5>
+ <h5>IV - eliminar, inclusive por meio da interoperabilidade de dados, as exigências desnecessárias ao usuário quanto à apresentação de informações e de documentos comprobatórios prescindíveis;</h5>
+ <h5>V - eliminar a replicação de registros de dados, exceto por razões de desempenho ou de segurança;</h5>
+ <h5>VI - tornar os dados da prestação dos serviços públicos sob sua responsabilidade interoperáveis para composição dos indicadores do painel de monitoramento do desempenho dos serviços públicos;</h5>
+ <h5>VII - realizar a gestão das suas políticas públicas com base em dados e em evidências por meio da aplicação de inteligência de dados em plataforma digital; e</h5>
+ <h5>VIII - realizar testes e pesquisas com os usuários para subsidiar a oferta de serviços simples, intuitivos, acessíveis e personalizados.</h5>
+ <h3>Art. 25. As Plataformas de Governo Digital devem dispor de ferramentas de transparência e de controle do tratamento de dados pessoais que sejam claras e facilmente acessíveis e que permitam ao cidadão o exercício dos direitos previstos na Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais).</h3>
+ <h4>§ 1º As ferramentas previstas no caput deste artigo devem:</h4>
+ <h5>I - disponibilizar, entre outras, as fontes dos dados pessoais, a finalidade específica do seu tratamento pelo respectivo órgão ou ente e a indicação de outros órgãos ou entes com os quais é realizado o uso compartilhado de dados pessoais, incluído o histórico de acesso ou uso compartilhado, ressalvados os casos previstos no inciso III do caput do art. 4º da Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de 	Proteção de Dados Pessoais);</h5>
+ <h5>II - permitir que o cidadão efetue requisições ao órgão ou à entidade controladora dos seus dados, especialmente aquelas previstas no art. 18 da 	Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados 	Pessoais).</h5>
+ <h4>§ 2º A Autoridade Nacional de Proteção de Dados (ANPD) poderá editar normas complementares para regulamentar o disposto neste artigo.</h4>
+ <h3>Art. 26. Presume-se a autenticidade de documentos apresentados por usuários dos serviços públicos ofertados por meios digitais, desde que o envio seja assinado eletronicamente.</h3>
+ <p>Seção VI</p>
+ <p>Dos Direitos dos Usuários da Prestação Digital de Serviços Públicos</p>
+ <h3>Art. 27. São garantidos os seguintes direitos aos usuários da prestação digital de serviços públicos, além daqueles constantes das Leis nºs 13.460, 	de 26 de junho de 2017 , e 13.709, de 14 de agosto de 2018 (Lei Geral de 	Proteção de Dados Pessoais):</h3>
+ <h5>I - gratuidade no acesso às Plataformas de Governo Digital;</h5>
+ <h5>II - atendimento nos termos da respectiva Carta de Serviços ao Usuário;</h5>
+ <h5>III - padronização de procedimentos referentes à utilização de formulários, 	de guias e de outros documentos congêneres, incluídos os de formato digital;</h5>
+ <h5>IV - recebimento de protocolo, físico ou digital, das solicitações apresentadas; e</h5>
+ <h5>V - indicação de canal preferencial de comunicação com o prestador público para o recebimento de notificações, de mensagens, de avisos e de outras comunicações relativas à prestação de serviços públicos e a assuntos de interesse público.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO NÚMERO SUFICIENTE PARA IDENTIFICAÇÃO</h3>
+ <h3>Art. 28. Fica estabelecido o número de inscrição no Cadastro de Pessoas 	Físicas (CPF) ou no Cadastro Nacional da Pessoa Jurídica (CNPJ) como número suficiente para identificação do cidadão ou da pessoa jurídica, conforme o caso, nos bancos de dados de serviços públicos, garantida a gratuidade da inscrição e das alterações nesses cadastros.</h3>
+ <h4>§ 1º O número de inscrição no CPF deverá constar dos cadastros e dos documentos de órgãos públicos, do registro civil de pessoas naturais, dos documentos de identificação de conselhos profissionais e, especialmente, dos seguintes cadastros e documentos:</h4>
+ <h5>I - certidão de nascimento;</h5>
+ <h5>II - certidão de casamento;</h5>
+ <h5>III - certidão de óbito;</h5>
+ <h5>IV - Documento Nacional de Identificação (DNI);</h5>
+ <h5>V - Número de Identificação do Trabalhador (NIT);</h5>
+ <h5>VI - registro no Programa de Integração Social (PIS) ou no Programa de 	Formação do Patrimônio do Servidor Público (Pasep);</h5>
+ <h5>VII - Cartão Nacional de Saúde;</h5>
+ <h5>VIII - título de eleitor;</h5>
+ <h5>IX - Carteira de Trabalho e Previdência Social (CTPS);</h5>
+ <h5>X - Carteira Nacional de Habilitação (CNH) ou Permissão para Dirigir;</h5>
+ <h5>XI - certificado militar;</h5>
+ <h5>XII - carteira profissional expedida pelos conselhos de fiscalização de profissão regulamentada;</h5>
+ <h5>XIII - passaporte;</h5>
+ <h5>XIV - carteiras de identidade de que trata a Lei n° 7.116, de 29 de agosto de 1983 ; e</h5>
+ <h5>XV - outros certificados de registro e números de inscrição existentes em bases de dados públicas federais, estaduais, distritais e municipais.</h5>
+ <h4>§ 2º A inclusão do número de inscrição no CPF nos cadastros e nos documentos de que trata o § 1º deste artigo ocorrerá sempre que a instituição responsável pelos cadastros e pelos documentos tiver acesso a documento comprobatório ou à base de dados administrada pela Secretaria 	Especial da Receita Federal do Brasil do Ministério da Economia.</h4>
+ <h4>§ 3º A incorporação do número de inscrição no CPF à carteira de identidade será precedida de consulta à base de dados administrada pela Secretaria 	Especial da Receita Federal do Brasil do Ministério da Economia e de validação de acordo com essa base de dados.</h4>
+ <h4>§ 4º Na hipótese de o requerente da carteira de identidade não estar inscrito no CPF, o órgão de identificação realizará a sua inscrição, caso tenha integração com a base de dados da Secretaria Especial da Receita 	Federal do Brasil do Ministério Economia.</h4>
+ <h4>§ 5º (VETADO).</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO GOVERNO COMO PLATAFORMA</h3>
+ <p>Seção I</p>
+ <p>Da Abertura dos Dados</p>
+ <h3>Art. 29. Os dados disponibilizados pelos prestadores de serviços públicos, 	bem como qualquer informação de transparência ativa, são de livre utilização pela sociedade, observados os princípios dispostos no art. 6º da Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais).</h3>
+ <h4>§ 1º Na promoção da transparência ativa de dados, o poder público deverá 	observar os seguintes requisitos:</h4>
+ <h5>I - observância da publicidade das bases de dados não pessoais como preceito geral e do sigilo como exceção;</h5>
+ <h5>II - garantia de acesso irrestrito aos dados, os quais devem ser legíveis por máquina e estar disponíveis em formato aberto, respeitadas as Leis nºs 	12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), e 13.709, de 	14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais);</h5>
+ <h5>III - descrição das bases de dados com informação suficiente sobre estrutura e semântica dos dados, inclusive quanto à sua qualidade e à sua integridade;</h5>
+ <h5>IV - permissão irrestrita de uso de bases de dados publicadas em formato aberto;</h5>
+ <h5>V - completude de bases de dados, as quais devem ser disponibilizadas em sua forma primária, com o maior grau de granularidade possível, ou referenciar bases primárias, quando disponibilizadas de forma agregada;</h5>
+ <h5>VI - atualização periódica, mantido o histórico, de forma a garantir a perenidade de dados, a padronização de estruturas de informação e o valor dos dados à sociedade e a atender às necessidades de seus usuários;</h5>
+ <h5>VII - (VETADO);</h5>
+ <h5>VIII - respeito à privacidade dos dados pessoais e dos dados sensíveis, sem prejuízo dos demais requisitos elencados, conforme a Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais);</h5>
+ <h5>IX - intercâmbio de dados entre órgãos e entidades dos diferentes Poderes e esferas da Federação, respeitado o disposto no art. 26 da Lei n° 13.709, de 	14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais); e</h5>
+ <h5>X - fomento ao desenvolvimento de novas tecnologias destinadas à construção de ambiente de gestão pública participativa e democrática e à melhor oferta de serviços públicos.</h5>
+ <h4>§ 2º Sem prejuízo da legislação em vigor, os órgãos e as entidades previstos no art. 2º desta Lei deverão divulgar na internet:</h4>
+ <h5>I - o orçamento anual de despesas e receitas públicas do Poder ou órgão independente;</h5>
+ <h5>II - a execução das despesas e receitas públicas, nos termos dos arts. 48 e 48-A da Lei Complementar nº 101, de 4 de maio de 2000;</h5>
+ <h5>III - os repasses de recursos federais aos Estados, aos Municípios e ao 	Distrito Federal;</h5>
+ <h5>IV - os convênios e as operações de descentralização de recursos orçamentários em favor de pessoas naturais e de organizações não governamentais de qualquer natureza;</h5>
+ <h5>V - as licitações e as contratações realizadas pelo Poder ou órgão independente;</h5>
+ <h5>VI - as notas fiscais eletrônicas relativas às compras públicas;</h5>
+ <h5>VII - as informações sobre os servidores e os empregados públicos federais, 	bem como sobre os militares da União, incluídos nome e detalhamento dos vínculos profissionais e de remuneração;</h5>
+ <h5>VIII - as viagens a serviço custeadas pelo Poder ou órgão independente;</h5>
+ <h5>IX - as sanções administrativas aplicadas a pessoas, a empresas, a organizações não governamentais e a servidores públicos;</h5>
+ <h5>X - os currículos dos ocupantes de cargos de chefia e direção;</h5>
+ <h5>XI - o inventário de bases de dados produzidos ou geridos no âmbito do órgão ou instituição, bem como catálogo de dados abertos disponíveis;</h5>
+ <h5>XII - as concessões de recursos financeiros ou as renúncias de receitas para pessoas físicas ou jurídicas, com vistas ao desenvolvimento político, 	econômico, social e cultural, incluída a divulgação dos valores recebidos, 	da contrapartida e dos objetivos a serem alcançados por meio da utilização desses recursos e, no caso das renúncias individualizadas, dos dados dos beneficiários.</h5>
+ <h4>§ 3º (VETADO).</h4>
+ <h3>Art. 30. Qualquer interessado poderá apresentar pedido de abertura de bases de dados da administração pública, que deverá conter os dados de contato do requerente e a especificação da base de dados requerida.</h3>
+ <h4>§ 1º O requerente poderá solicitar a preservação de sua identidade quando entender que sua identificação prejudicará o princípio da impessoalidade, 	caso em que o canal responsável deverá resguardar os dados sem repassá-los ao setor, ao órgão ou à entidade responsável pela resposta.</h4>
+ <h4>§ 2º Os procedimentos e os prazos previstos para o processamento de pedidos de acesso à informação, nos termos da Lei n° 12.527, de 18 de novembro de 	2011 (Lei de Acesso à Informação), aplicam-se às solicitações de abertura de bases de dados da administração pública.</h4>
+ <h4>§ 3º Para a abertura de base de dados de interesse público, as informações para identificação do requerente não podem conter exigências que inviabilizem o exercício de seu direito.</h4>
+ <h4>§ 4º São vedadas quaisquer exigências relativas aos motivos determinantes da solicitação de abertura de base de dados públicos.</h4>
+ <h4>§ 5º Os pedidos de abertura de base de dados públicos, bem como as respectivas respostas, deverão compor base de dados aberta de livre consulta.</h4>
+ <h4>§ 6º Consideram-se automaticamente passíveis de abertura as bases de dados que não contenham informações protegidas por lei.</h4>
+ <h3>Art. 31. Compete a cada ente federado monitorar a aplicação, o cumprimento dos prazos e os procedimentos para abertura dos dados sob seu controle.</h3>
+ <h3>Art. 32. (VETADO).</h3>
+ <h3>Art. 32. A existência de inconsistências na base de dados não poderá obstar o atendimento da solicitação de abertura.</h3>
+ <h3>Art. 33. A solicitação de abertura da base de dados será considerada atendida a partir da notificação ao requerente sobre a disponibilização e a catalogação da base de dados para acesso público no site oficial do órgão ou da entidade na internet.</h3>
+ <h3>Art. 34. É direito do requerente obter o inteiro teor da decisão negativa de abertura de base de dados.</h3>
+ <h4>Parágrafo único. Eventual decisão negativa à solicitação de abertura de base de dados ou decisão de prorrogação de prazo, em razão de custos desproporcionais ou não previstos pelo órgão ou pela entidade da administração pública, deverá ser acompanhada da devida análise técnica que conclua pela inviabilidade orçamentária da solicitação.</h4>
+ <h3>Art. 35. (VETADO).</h3>
+ <h3>Art. 35. No caso de indeferimento de abertura de base de dados, poderá o interessado interpor recurso contra a decisão no prazo de 10 	(dez) dias, contado de sua ciência.</h3>
+ <h4>Parágrafo único. 	O recurso será dirigido à autoridade hierarquicamente superior à que exarou a decisão impugnada, que deverá manifestar-se no prazo de 5 (cinco) dias.</h4>
+ <h3>Art. 36. Os órgãos gestores de dados poderão disponibilizar em transparência ativa dados de pessoas físicas e jurídicas para fins de pesquisa acadêmica e de monitoramento e de avaliação de políticas públicas, 	desde que anonimizados antes de sua disponibilização os dados protegidos por sigilo ou com restrição de acesso prevista, nos termos da Lei n° 12.527, de 	18 de novembro de 2011 (Lei de Acesso à Informação).</h3>
+ <h3>Art. 37. Aplica-se subsidiariamente, no que couber, as disposições da Lei n° 9.784, de 29 de janeiro de 1999 , ao procedimento de que trata este 	Capítulo.</h3>
+ <p>Seção II</p>
+ <p>Da 	Interoperabilidade de Dados entre Órgãos Públicos</p>
+ <h3>Art. 38. Os órgãos e as entidades responsáveis pela prestação digital de serviços públicos detentores ou gestores de bases de dados, inclusive os controladores de dados pessoais, conforme estabelecido pela Lei n° 13.709, 	de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), deverão gerir suas ferramentas digitais, considerando:</h3>
+ <h5>I - a interoperabilidade de informações e de dados sob gestão dos órgãos e das entidades referidos no art. 2º desta Lei, respeitados as restrições legais, os requisitos de segurança da informação e das comunicações, as limitações tecnológicas e a relação custo-benefício da interoperabilidade;</h5>
+ <h5>II - a otimização dos custos de acesso a dados e o reaproveitamento, sempre que possível, de recursos de infraestrutura de acesso a dados por múltiplos 	órgãos e entidades;</h5>
+ <h5>III - a proteção de dados pessoais, observada a legislação vigente, 	especialmente a Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de 	Proteção de Dados Pessoais).</h5>
+ <h3>Art. 39. Será instituído mecanismo de interoperabilidade com a finalidade de:</h3>
+ <h5>I - aprimorar a gestão de políticas públicas;</h5>
+ <h5>II - aumentar a confiabilidade dos cadastros de cidadãos existentes na administração pública, por meio de mecanismos de manutenção da integridade e da segurança da informação no tratamento das bases de dados, tornando-as devidamente qualificadas e consistentes;</h5>
+ <h5>III - viabilizar a criação de meios unificados de identificação do cidadão para a prestação de serviços públicos;</h5>
+ <h5>IV - facilitar a interoperabilidade de dados entre os órgãos de governo;</h5>
+ <h5>V - realizar o tratamento de informações das bases de dados a partir do número de inscrição do cidadão no CPF, conforme previsto no art. 11 da Lei n° 13.444, de 11 de maio de 2017.</h5>
+ <h4>Parágrafo único. Aplicam-se aos dados pessoais tratados por meio de mecanismos de interoperabilidade as disposições da Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais).</h4>
+ <h3>Art. 40. Os órgãos abrangidos por esta Lei serão responsáveis pela publicidade de seus registros de referência e pelos mecanismos de interoperabilidade de que trata esta Seção.</h3>
+ <h4>§ 1º As pessoas físicas e jurídicas poderão verificar a exatidão, a correção e a completude de qualquer um dos seus dados contidos nos registros de referência, bem como monitorar o acesso a esses dados.</h4>
+ <h4>§ 2º Nova base de dados somente poderá ser criada quando forem esgotadas as possibilidades de utilização dos registros de referência existentes.</h4>
+ <h3>Art. 41. É de responsabilidade dos órgãos e das entidades referidos no art. 2º desta Lei os custos de adaptação de seus sistemas e de suas bases de dados para a implementação da interoperabilidade.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO DOMICÍLIO ELETRÔNICO</h3>
+ <h3>Art. 42. Os órgãos e as entidades referidos no art. 2º desta Lei, mediante opção do usuário, poderão realizar todas as comunicações, as notificações e as intimações por meio eletrônico.</h3>
+ <h4>§ 1º O disposto no caput deste artigo não gera direito subjetivo à opção pelo administrado caso os meios não estejam disponíveis.</h4>
+ <h4>§ 2º O administrado poderá, a qualquer momento e independentemente de fundamentação, optar pelo fim das comunicações, das notificações e das intimações por meio eletrônico.</h4>
+ <h4>§ 3º O ente público poderá realizar as comunicações, as notificações e as intimações por meio de ferramenta mantida por outro ente público.</h4>
+ <h3>Art. 43. As ferramentas usadas para os atos de que trata o art. 42 desta 	Lei:</h3>
+ <h5>I - disporão de meios que permitam comprovar a autoria das comunicações, das notificações e das intimações;</h5>
+ <h5>II - terão meios de comprovação de emissão e de recebimento, ainda que não de leitura, das comunicações, das notificações e das intimações;</h5>
+ <h5>III - poderão ser utilizadas mesmo que legislação especial preveja apenas as comunicações, as notificações e as intimações pessoais ou por via postal;</h5>
+ <h5>IV - serão passíveis de auditoria;</h5>
+ <h5>V - conservarão os dados de envio e de recebimento por, pelo menos, 5 	(cinco) anos.</h5>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DOS LABORATÓRIOS DE INOVAÇÃO</h3>
+ <h3>Art. 44. Os entes públicos poderão instituir laboratórios de inovação, 	abertos à participação e à colaboração da sociedade para o desenvolvimento e a experimentação de conceitos, de ferramentas e de métodos inovadores para a gestão pública, a prestação de serviços públicos, o tratamento de dados produzidos pelo poder público e a participação do cidadão no controle da administração pública.</h3>
+ <h3>Art. 45. Os laboratórios de inovação terão como diretrizes:</h3>
+ <h5>I - colaboração interinstitucional e com a sociedade;</h5>
+ <h5>II - promoção e experimentação de tecnologias abertas e livres;</h5>
+ <h5>III - uso de práticas de desenvolvimento e prototipação de softwares e de métodos ágeis para formulação e implementação de políticas públicas;</h5>
+ <h5>IV - foco na sociedade e no cidadão;</h5>
+ <h5>V - fomento à participação social e à transparência pública;</h5>
+ <h5>VI - incentivo à inovação;</h5>
+ <h5>VII - apoio ao empreendedorismo inovador e fomento a ecossistema de inovação tecnológica direcionado ao setor público;</h5>
+ <h5>VIII - apoio a políticas públicas orientadas por dados e com base em evidências, a fim de subsidiar a tomada de decisão e de melhorar a gestão pública;</h5>
+ <h5>IX - estímulo à participação de servidores, de estagiários e de colaboradores em suas atividades;</h5>
+ <h5>X - difusão de conhecimento no âmbito da administração pública.</h5>
+ <h3>Art. 46. (VETADO).</h3>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DA GOVERNANÇA, DA GESTÃO DE RISCOS, DO CONTROLE E DA AUDITORIA</h3>
+ <h3>Art. 47. Caberá à autoridade competente dos órgãos e das entidades referidos no art. 2º desta Lei, observados as normas e os procedimentos específicos aplicáveis, implementar e manter mecanismos, instâncias e práticas de governança, em consonância com os princípios e as diretrizes estabelecidos nesta Lei.</h3>
+ <h4>Parágrafo único. Os mecanismos, as instâncias e as práticas de governança referidos no caput deste artigo incluirão, no mínimo:</h4>
+ <h5>I - formas de acompanhamento de resultados;</h5>
+ <h5>II - soluções para a melhoria do desempenho das organizações;</h5>
+ <h5>III - instrumentos de promoção do processo decisório fundamentado em evidências.</h5>
+ <h3>Art. 48. Os órgãos e as entidades a que se refere o art. 2º desta Lei deverão estabelecer, manter, monitorar e aprimorar sistema de gestão de riscos e de controle interno com vistas à identificação, à avaliação, ao tratamento, ao monitoramento e à análise crítica de riscos da prestação digital de serviços públicos que possam impactar a consecução dos objetivos da organização no cumprimento de sua missão institucional e na proteção dos usuários, observados os seguintes princípios:</h3>
+ <h5>I - integração da gestão de riscos ao processo de planejamento estratégico e aos seus desdobramentos, às atividades, aos processos de trabalho e aos projetos em todos os níveis da organização, relevantes para a execução da estratégia e o alcance dos objetivos institucionais;</h5>
+ <h5>II - estabelecimento de controles internos proporcionais aos riscos, de modo a considerar suas causas, fontes, consequências e impactos, observada a relação custo-benefício;</h5>
+ <h5>III - utilização dos resultados da gestão de riscos para apoio à melhoria contínua do desempenho e dos processos de governança, de gestão de riscos e de controle;</h5>
+ <h5>IV - proteção às liberdades civis e aos direitos fundamentais.</h5>
+ <h3>Art. 49. A auditoria interna governamental deverá adicionar valor e melhorar as operações das organizações para o alcance de seus objetivos, 	mediante a abordagem sistemática e disciplinada para avaliar e melhorar a eficácia dos processos de governança, de gestão de riscos e de controle, por meio da:</h3>
+ <h5>I - realização de trabalhos de avaliação e consultoria de forma independente, conforme os padrões de auditoria e de ética profissional reconhecidos internacionalmente;</h5>
+ <h5>II - adoção de abordagem baseada em risco para o planejamento de suas atividades e para a definição do escopo, da natureza, da época e da extensão dos procedimentos de auditoria;</h5>
+ <h5>III - promoção da prevenção, da detecção e da investigação de fraudes praticadas por agentes públicos ou privados na utilização de recursos públicos federais.</h5>
+ <h3>CAPÍTULO VIII</h3>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 50. O acesso e a conexão para o uso de serviços públicos poderão ser garantidos total ou parcialmente pelo governo, com o objetivo de promover o acesso universal à prestação digital dos serviços públicos e a redução de custos aos usuários, nos termos da lei.</h3>
+ <h3>Art. 51. O art. 3º da Lei n° 7.116, de 29 de agosto de 1983 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 3º . 	..............................................................................................................</h3>
+ <p>.............................................................................................................................</p>
+ <h6>g) assinatura do dirigente do órgão expedidor;</h6>
+ <h6>h) número de inscrição no Cadastro de Pessoas Físicas (CPF).</h6>
+ <h4>§ 1º A inclusão do número de inscrição no CPF na Carteira de Identidade, 	conforme disposto na alínea “h” do caput deste artigo, ocorrerá sempre que o órgão de identificação tiver acesso a documento comprobatório ou à base de dados administrada pela Secretaria 	Especial da Receita Federal do Brasil.</h4>
+ <h4>§ 2º A incorporação do número de inscrição no CPF à Carteira de Identidade será precedida de consulta e de validação com a base de dados administrada pela Secretaria Especial da Receita Federal do Brasil.</h4>
+ <h4>§ 3º Na hipótese de o requerente da Carteira de Identidade não estar inscrito no CPF, o órgão de identificação realizará a sua inscrição, caso tenha autorização da Secretaria Especial da Receita Federal do Brasil.” (NR)</h4>
+ <h3>Art. 52. O art. 12 da Lei n° 12.527, de 18 de novembro de 2011 (Lei de 	Acesso à Informação) , passa vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 12. O serviço de busca e de fornecimento de informação é gratuito.</h3>
+ <h4>§ 1º O órgão ou a entidade poderá cobrar exclusivamente o valor necessário ao ressarcimento dos custos dos serviços e dos materiais utilizados, quando o serviço de busca e de fornecimento da informação exigir reprodução de documentos pelo órgão ou pela entidade pública consultada.</h4>
+ <h4>§ 2º Estará isento de ressarcir os custos previstos no § 1º deste artigo aquele cuja situação econômica não lhe permita fazê-lo sem prejuízo do sustento próprio ou da família, declarada nos termos da Lei n° 7.115, de 29 	de agosto de 1983 .” (NR)</h4>
+ <h3>Art. 53. O caput do art. 3º da Lei n° 12.682, de 9 de julho de 2012 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 3º O processo de digitalização deverá ser realizado de forma a manter a integridade, a autenticidade e, se necessário, a confidencialidade do documento digital, com o emprego de assinatura eletrônica.</h3>
+ <p>...............................................................................................................” 	(NR)</p>
+ <h3>Art. 54. A Lei n° 13.460, de 26 de junho de 2017 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 7º . 	.................................................................................................................</h3>
+ <p>.................................................................................................................................</p>
+ <h4>§ 6º Compete a cada ente federado disponibilizar as informações dos serviços prestados, conforme disposto nas suas Cartas de Serviços ao 	Usuário, na Base Nacional de Serviços Públicos, mantida pelo Poder Executivo federal, em formato aberto e interoperável, nos termos do regulamento do 	Poder Executivo federal.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 10-A. Para fins de acesso a informações e serviços, de exercício de direitos e obrigações ou de obtenção de benefícios perante os órgãos e as entidades federais, estaduais, distritais e municipais ou os serviços públicos delegados, a apresentação de documento de identificação com fé 	pública em que conste o número de inscrição no Cadastro de Pessoas Físicas (CPF) 	será suficiente para identificação do cidadão, dispensada a apresentação de qualquer outro documento.</h3>
+ <h4>§ 1º Os cadastros, os formulários, os sistemas e outros instrumentos exigidos dos usuários para a prestação de serviço público deverão disponibilizar campo para registro do número de inscrição no CPF, de preenchimento obrigatório para cidadãos brasileiros e estrangeiros residentes no Brasil, que será suficiente para sua identificação, vedada a exigência de apresentação de qualquer outro número para esse fim.</h4>
+ <h4>§ 2º O número de inscrição no CPF poderá ser declarado pelo usuário do serviço público, desde que acompanhado de documento de identificação com fé 	pública, nos termos da lei.</h4>
+ <h4>§ 3º Ato de cada ente federativo ou Poder poderá dispor sobre casos excepcionais ao previsto no caput deste artigo.”</h4>
+ <h3>Art. 55. Esta Lei entra em vigor após decorridos:</h3>
+ <h5>I - 90 (noventa) dias de sua publicação oficial, para a União;</h5>
+ <h5>II - 120 (cento e vinte) dias de sua publicação oficial, para os Estados e o 	Distrito Federal;</h5>
+ <h5>III - 180 (cento e oitenta) dias de sua publicação oficial, para os 	Municípios.</h5>
+ <p>Brasília, 29 de março de 2021; 200º da Independência e 133º da República.</p>
+ <h3>JAIR MESSIAS 	BOLSONARO</h3>
+ <p>André Luiz de Almeida 	Mendonça</p>
+ <p>Paulo Guedes</p>
+ <p>Marcos César Pontes</p>
+ <p>Wagner de Campos 	Rosário</p>
+ <p>Onyx Lorenzoni</p>
+ <p>Este texto não substitui o publicado no DOU de 	30.3.2021 e republicado em 14.4.2021</p>
+ <h3>LEI N° 14.129, DE 	29 DE MARÇO DE 2021</h3>
+ <p>Dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública e altera a Lei n° 7.116, de 29 de agosto de 1983, a Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), a Lei n° 12.682, de 9 de julho de 2012, e a Lei n° 13.460, de 26 de junho de 2017.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, as seguintes partes vetadas da Lei N° 14.129, de 29 de março de 2021:</p>
+ <p>“</p>
+ <h3>Art. 32. A existência de inconsistências na base de dados não poderá obstar o atendimento da solicitação de abertura.”</h3>
+ <p>“</p>
+ <h3>Art. 35. No caso de indeferimento de abertura de base de dados, poderá o interessado interpor recurso contra a decisão no prazo de 10 (dez) dias, contado de sua ciência.</h3>
+ <h4>Parágrafo único. 	O recurso será dirigido à autoridade hierarquicamente superior à que exarou a decisão impugnada, que deverá manifestar-se no prazo de 5 (cinco) dias.”</h4>
+ <p>Brasília, 10 de junho de 2021; 200º da Independência e 	133º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Este texto não substitui o publicado no DOU de 11.6.2021</p>
+ <p>Dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública e altera a Lei n° 7.116, de 29 de agosto de 1983, a Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), a Lei n° 12.682, de 9 de julho de 2012, e a Lei n° 13.460, de 26 de junho de 2017.</p>
+ <p>Dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública e altera a Lei n° 7.116, de 29 de agosto de 1983, a Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), a Lei n° 12.682, de 9 de julho de 2012, e a Lei n° 13.460, de 26 de junho de 2017.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
