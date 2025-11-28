@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.022, DE 8 DE AGOSTO DE 2014 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2014" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.022, DE 8 DE AGOSTO DE 2014</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 20:06:58 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/CCIVIL_03/_Ato2011-2014/2014/Lei/L13022.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.152 caracteres | espelho: 12.090 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.022, DE 8 DE AGOSTO DE 2014.</p>
+ <p>Dispõe sobre o Estatuto Geral das Guardas Municipais.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei institui normas gerais para as guardas municipais, disciplinando o § 8º do art. 144 da Constituição Federal.</h3>
+ <h3>Art. 2º Incumbe às guardas municipais, instituições de caráter civil, uniformizadas e armadas conforme previsto em lei, a função de proteção municipal preventiva, ressalvadas as competências da União, dos Estados e do Distrito Federal.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS PRINCÍPIOS</h3>
+ <h3>Art. 3º São princípios mínimos de atuação das guardas municipais:</h3>
+ <h5>I - proteção dos direitos humanos fundamentais, do exercício da cidadania e das liberdades públicas;</h5>
+ <h5>II - preservação da vida, redução do sofrimento e diminuição das perdas;</h5>
+ <h5>III - patrulhamento preventivo;</h5>
+ <h5>IV - compromisso com a evolução social da comunidade; e</h5>
+ <h5>V - uso progressivo da força.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS COMPETÉNCIAS</h3>
+ <h3>Art. 4º É competência geral das guardas municipais a proteção de bens, serviços, logradouros públicos municipais e instalações do Município. (Vide ADPF 	995)</h3>
+ <h4>Parágrafo único. Os bens mencionados no caput abrangem os de uso comum, os de uso especial e os dominiais.</h4>
+ <h3>Art. 5º São competências específicas das guardas municipais, respeitadas as competências dos órgãos federais e estaduais:</h3>
+ <h5>I - zelar pelos bens, equipamentos e prédios públicos do Município;</h5>
+ <h5>II - prevenir e inibir, pela presença e vigilância, bem como coibir, infrações penais ou administrativas e atos infracionais que atentem contra os bens, serviços e instalações municipais;</h5>
+ <h5>III - atuar, preventiva e permanentemente, no território do Município, para a proteção sistêmica da população que utiliza os bens, serviços e instalações municipais;</h5>
+ <h5>IV - colaborar, de forma integrada com os órgãos de segurança pública, em ações conjuntas que contribuam com a paz social; Regulamento</h5>
+ <h5>V - colaborar com a pacificação de conflitos que seus integrantes presenciarem, atentando para o respeito aos direitos fundamentais das pessoas;</h5>
+ <h5>VI - exercer as competências de trânsito que lhes forem conferidas, nas vias e logradouros municipais, nos termos da Lei n° 9.503, de 23 de setembro de 1997 (Código de Trânsito Brasileiro), ou de forma concorrente, mediante convênio celebrado com órgão de trânsito estadual ou municipal;</h5>
+ <h5>VII - proteger o patrimônio ecológico, histórico, cultural, arquitetônico e ambiental do Município, inclusive adotando medidas educativas e preventivas;</h5>
+ <h5>VIII - cooperar com os demais órgãos de defesa civil em suas atividades;</h5>
+ <h5>IX - interagir com a sociedade civil para discussão de soluções de problemas e projetos locais voltados à melhoria das condições de segurança das comunidades;</h5>
+ <h5>X - estabelecer parcerias com os órgãos estaduais e da União, ou de Municípios vizinhos, por meio da celebração de convênios ou consórcios, com vistas ao desenvolvimento de ações preventivas integradas;</h5>
+ <h5>XI - articular-se com os órgãos municipais de políticas sociais, visando à adoção de ações interdisciplinares de segurança no Município;</h5>
+ <h5>XII - integrar-se com os demais órgãos de poder de polícia administrativa, visando a contribuir para a normatização e a fiscalização das posturas e ordenamento urbano municipal;</h5>
+ <h5>XIII - garantir o atendimento de ocorrências emergenciais, ou prestá-lo direta e imediatamente quando deparar-se com elas; Regulamento</h5>
+ <h5>XIV - encaminhar ao delegado de polícia, diante de flagrante delito, o autor da infração, preservando o local do crime, quando possível e sempre que necessário; Regulamento</h5>
+ <h5>XV - contribuir no estudo de impacto na segurança local, conforme plano diretor municipal, por ocasião da construção de empreendimentos de grande porte;</h5>
+ <h5>XVI - desenvolver ações de prevenção primária à violência, isoladamente ou em conjunto com os demais órgãos da própria municipalidade, de outros Municípios ou das esferas estadual e federal;</h5>
+ <h5>XVII - auxiliar na segurança de grandes eventos e na proteção de autoridades e dignatários; e</h5>
+ <h5>XVIII - atuar mediante ações preventivas na segurança escolar, zelando pelo entorno e participando de ações educativas com o corpo discente e docente das unidades de ensino municipal, de forma a colaborar com a implantação da cultura de paz na comunidade local.</h5>
+ <h4>Parágrafo único. No exercício de suas competências, a guarda municipal poderá colaborar ou atuar conjuntamente com órgãos de segurança pública da União, dos Estados e do Distrito Federal ou de congêneres de Municípios vizinhos e, nas hipóteses previstas nos incisos XIII e XIV deste artigo, diante do comparecimento de órgão descrito nos incisos do caput do art. 144 da Constituição Federal , deverá a guarda municipal prestar todo o apoio à continuidade do atendimento. Regulamento</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA CRIAÇÃO</h3>
+ <h3>Art. 6º O Município pode criar, por lei, sua guarda municipal.</h3>
+ <h4>Parágrafo único. A guarda municipal é subordinada ao chefe do Poder Executivo municipal.</h4>
+ <h3>Art. 7º As guardas municipais não poderão ter efetivo superior a:</h3>
+ <h5>I - 0,4% (quatro décimos por cento) da população, em Municípios com até 50.000 (cinquenta mil) habitantes;</h5>
+ <h5>II - 0,3% (três décimos por cento) da população, em Municípios com mais de 50.000 (cinquenta mil) e menos de 500.000 (quinhentos mil) habitantes, desde que o efetivo não seja inferior ao disposto no inciso I;</h5>
+ <h5>III - 0,2% (dois décimos por cento) da população, em Municípios com mais de 500.000 (quinhentos mil) habitantes, desde que o efetivo não seja inferior ao disposto no inciso II.</h5>
+ <h4>Parágrafo único. Se houver redução da população referida em censo ou estimativa oficial da Fundação Instituto Brasileiro de Geografia e Estatística (IBGE), é garantida a preservação do efetivo existente, o qual deverá ser ajustado à variação populacional, nos termos de lei municipal.</h4>
+ <h3>Art. 8º Municípios limítrofes podem, mediante consórcio público, utilizar, reciprocamente, os serviços da guarda municipal de maneira compartilhada.</h3>
+ <h3>Art. 9º A guarda municipal é formada por servidores públicos integrantes de carreira única e plano de cargos e salários, conforme disposto em lei municipal.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DAS EXIGÊNCIAS PARA INVESTIDURA</h3>
+ <h3>Art. 10. São requisitos básicos para investidura em cargo público na guarda municipal:</h3>
+ <h5>I - nacionalidade brasileira;</h5>
+ <h5>II - gozo dos direitos políticos;</h5>
+ <h5>III - quitação com as obrigações militares e eleitorais;</h5>
+ <h5>IV - nível médio completo de escolaridade;</h5>
+ <h5>V - idade mínima de 18 (dezoito) anos;</h5>
+ <h5>VI - aptidão física, mental e psicológica; e</h5>
+ <h5>VII - idoneidade moral comprovada por investigação social e certidões expedidas perante o Poder Judiciário estadual, federal e distrital.</h5>
+ <h4>Parágrafo único. Outros requisitos poderão ser estabelecidos em lei municipal.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA CAPACITAÇÃO</h3>
+ <h3>Art. 11. O exercício das atribuições dos cargos da guarda municipal requer capacitação específica, com matriz curricular compatível com suas atividades.</h3>
+ <h4>Parágrafo único. Para fins do disposto no caput , poderá ser adaptada a matriz curricular nacional para formação em segurança pública, elaborada pela Secretaria Nacional de Segurança Pública (Senasp) do Ministério da Justiça.</h4>
+ <h3>Art. 12. É facultada ao Município a criação de órgão de formação, treinamento e aperfeiçoamento dos integrantes da guarda municipal, tendo como princípios norteadores os mencionados no art. 3º .</h3>
+ <h4>§ 1º Os Municípios poderão firmar convênios ou consorciar-se, visando ao atendimento do disposto no caput deste artigo.</h4>
+ <h4>§ 2º O Estado poderá, mediante convênio com os Municípios interessados, manter órgão de formação e aperfeiçoamento centralizado, em cujo conselho gestor seja assegurada a participação dos Municípios conveniados.</h4>
+ <h4>§ 3º O órgão referido no § 2º não pode ser o mesmo destinado a formação, treinamento ou aperfeiçoamento de forças militares.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DO CONTROLE</h3>
+ <h3>Art. 13. O funcionamento das guardas municipais será acompanhado por órgãos próprios, permanentes, autônomos e com atribuições de fiscalização, investigação e auditoria, mediante:</h3>
+ <h5>I - controle interno, exercido por corregedoria, naquelas com efetivo superior a 50 (cinquenta) servidores da guarda e em todas as que utilizam arma de fogo, para apurar as infrações disciplinares atribuídas aos integrantes de seu quadro; e</h5>
+ <h5>II - controle externo, exercido por ouvidoria, independente em relação à direção da respectiva guarda, qualquer que seja o número de servidores da guarda municipal, para receber, examinar e encaminhar reclamações, sugestões, elogios e denúncias acerca da conduta de seus dirigentes e integrantes e das atividades do órgão, propor soluções, oferecer recomendações e informar os resultados aos interessados, garantindo-lhes orientação, informação e resposta.</h5>
+ <h4>§ 1º O Poder Executivo municipal poderá criar órgão colegiado para exercer o controle social das atividades de segurança do Município, analisar a alocação e aplicação dos recursos públicos e monitorar os objetivos e metas da política municipal de segurança e, posteriormente, a adequação e eventual necessidade de adaptação das medidas adotadas face aos resultados obtidos.</h4>
+ <h4>§ 2º Os corregedores e ouvidores terão mandato cuja perda será decidida pela maioria absoluta da Câmara Municipal, fundada em razão relevante e específica prevista em lei municipal.</h4>
+ <h3>Art. 14. Para efeito do disposto no inciso I do caput do art. 13, a guarda municipal terá código de conduta próprio, conforme dispuser lei municipal.</h3>
+ <h4>Parágrafo único. As guardas municipais não podem ficar sujeitas a regulamentos disciplinares de natureza militar.</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DAS PRERROGATIVAS</h3>
+ <h3>Art. 15. Os cargos em comissão das guardas municipais deverão ser providos por membros efetivos do quadro de carreira do órgão ou entidade.</h3>
+ <h4>§ 1º Nos primeiros 4 (quatro) anos de funcionamento, a guarda municipal poderá ser dirigida por profissional estranho a seus quadros, preferencialmente com experiência ou formação na área de segurança ou defesa social, atendido o disposto no caput .</h4>
+ <h4>§ 2º Para ocupação dos cargos em todos os níveis da carreira da guarda municipal, deverá ser observado o percentual mínimo para o sexo feminino, definido em lei municipal.</h4>
+ <h4>§ 3º Deverá ser garantida a progressão funcional da carreira em todos os níveis.</h4>
+ <h3>Art. 16. Aos guardas municipais é autorizado o porte de arma de fogo, conforme previsto em lei.</h3>
+ <h4>Parágrafo único. Suspende-se o direito ao porte de arma de fogo em razão de restrição médica, decisão judicial ou justificativa da adoção da medida pelo respectivo dirigente.</h4>
+ <h3>Art. 17. A Agência Nacional de Telecomunicações (Anatel) destinará linha telefônica de número 153 e faixa exclusiva de frequência de rádio aos Municípios que possuam guarda municipal.</h3>
+ <h3>Art. 18. É assegurado ao guarda municipal o recolhimento à cela, isoladamente dos demais presos, quando sujeito à prisão antes de condenação definitiva.</h3>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DAS VEDAÇÕES</h3>
+ <h3>Art. 19. A estrutura hierárquica da guarda municipal não pode utilizar denominação idêntica à das forças militares, quanto aos postos e graduações, títulos, uniformes, distintivos e condecorações.</h3>
+ <h2>CAPÍTULO X</h2>
+ <h3>DA REPRESENTATIVIDADE</h3>
+ <h3>Art. 20. É reconhecida a representatividade das guardas municipais no Conselho Nacional de Segurança Pública, no Conselho Nacional das Guardas Municipais e, no interesse dos Municípios, no Conselho Nacional de Secretários e Gestores Municipais de Segurança Pública.</h3>
+ <h2>CAPÍTULO XI</h2>
+ <h3>DISPOSIÇÕES DIVERSAS E TRANSITÓRIAS</h3>
+ <h3>Art. 21. As guardas municipais utilizarão uniforme e equipamentos padronizados, preferencialmente, na cor azul-marinho.</h3>
+ <h3>Art. 22. Aplica-se esta Lei a todas as guardas municipais existentes na data de sua publicação, a cujas disposições devem adaptar-se no prazo de 2 (dois) anos.</h3>
+ <h4>Parágrafo único. É assegurada a utilização de outras denominações consagradas pelo uso, como guarda civil, guarda civil municipal, guarda metropolitana e guarda civil metropolitana.</h4>
+ <h3>Art. 23. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 8 de agosto de 2014; 193º da Independência e 126º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Gilberto Magalhães Occhi</p>
+ <p>Este texto não substitui o publicado no DOU de 11.8.2014 - Edição extra</p>
+ <p>Dispõe sobre o Estatuto Geral das Guardas Municipais.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/CCIVIL_03/_Ato2011-2014/2014/Lei/L13022.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
