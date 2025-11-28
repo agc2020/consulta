@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 12.468, DE 26 DE AGOSTO DE 2011 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2011" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 12.468, DE 26 DE AGOSTO DE 2011</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 14:24:11 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2011/Lei/L12468.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 7.696 caracteres | espelho: 7.726 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 12.468, DE 26 DE AGOSTO DE 2011</p>
+ <p>( Vide Leis nº 6.094, de 1974)</p>
+ <p>Regulamenta a profissão de taxista; altera a Lei n° 6.094, de 30 de agosto de 1974; e dá outras providências.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica reconhecida, em todo o território nacional, a profissão de taxista, observados os preceitos desta Lei.</h3>
+ <h3>Art. 2º É atividade privativa dos profissionais taxistas a utilização de veículo automotor, próprio ou de terceiros, para o transporte público individual remunerado de passageiros, cuja capacidade será de, no máximo, 7 (sete) passageiros.</h3>
+ <h3>Art. 3º A atividade profissional de que trata o art. 1º somente será exercida por profissional que atenda integralmente aos requisitos e às condições abaixo estabelecidos:</h3>
+ <h5>I - habilitação para conduzir veículo automotor, em uma das categorias B, C, D ou E, assim definidas no art. 143 da Lei n° 9.503, de 23 de setembro de 1997 ;</h5>
+ <h5>II - curso de relações humanas, direção defensiva, primeiros socorros, mecânica e elétrica básica de veículos, promovido por entidade reconhecida pelo respectivo órgão autorizatário;</h5>
+ <h5>II – 	curso de relações humanas, direção defensiva, primeiros socorros, mecânica e elétrica básica de veículos, promovido por entidade reconhecida pelo respectivo órgão autorizatário, inclusive na modalidade a distância; (Redação dada pela Lei n° 15.271, de 2025)</h5>
+ <h5>III - veículo com as características exigidas pela autoridade de trânsito;</h5>
+ <h5>IV - certificação específica para exercer a profissão, emitida pelo órgão competente da localidade da prestação do serviço;</h5>
+ <h5>V - inscrição como segurado do Instituto Nacional de Seguridade Social - INSS, ainda que exerça a profissão na condição de taxista autônomo, taxista auxiliar de condutor autônomo ou taxista locatário; e</h5>
+ <h5>VI - Carteira de Trabalho e Previdência Social - CTPS, para o profissional taxista empregado.</h5>
+ <h3>Art. 4º (VETADO).</h3>
+ <h3>Art. 5º São deveres dos profissionais taxistas:</h3>
+ <h5>I - atender ao cliente com presteza e polidez;</h5>
+ <h5>II - trajar-se adequadamente para a função;</h5>
+ <h5>III - manter o veículo em boas condições de funcionamento e higiene;</h5>
+ <h5>IV - manter em dia a documentação do veículo exigida pelas autoridades competentes;</h5>
+ <h5>V - obedecer à Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro, bem como à legislação da localidade da prestação do serviço.</h5>
+ <h5>VI – 	manter a continuidade da prestação do serviço de táxi, salvo impossibilidade justificada ou autorização expressa do poder público outorgante. (Incluído pela Lei n° 15.271, de 2025)</h5>
+ <h3>Art. 6º São direitos do profissional taxista empregado:</h3>
+ <h5>I - piso remuneratório ajustado entre os sindicatos da categoria;</h5>
+ <h5>II - aplicação, no que couber, da legislação que regula o direito trabalhista e da do regime geral da previdência social.</h5>
+ <h3>Art. 7º (VETADO).</h3>
+ <h3>Art. 8º Em Municípios com mais de 50.000 (cinquenta mil) habitantes é obrigatório o uso de taxímetro, anualmente auferido pelo órgão metrológico competente, conforme legislação em vigor.</h3>
+ <h3>Art. 8º Em 	Municípios com mais de cinquenta mil habitantes, é obrigatório o uso de taxímetro, verificado, a cada dois anos, pelo órgão metrológico competente, 	conforme legislação em vigor. (Redação dada pela Medida Provisória nº 1.305, de 2025)</h3>
+ <h3>Art. 8º Em Municípios com mais de 50.000 (cinquenta mil) habitantes, é obrigatório o uso de taxímetro, a ser verificado, a cada 	2 (dois) anos, pelo órgão metrológico competente, conforme legislação em vigor. (Redação dada pela Lei n° 15.271, de 2025)</h3>
+ <h3>Art. 9º Os profissionais taxistas poderão constituir entidades nacionais, estaduais ou municipais que os representem, as quais poderão cobrar taxa de contribuição de seus associados.</h3>
+ <h4>Parágrafo único. (VETADO).</h4>
+ <h3>Art. 10. (VETADO).</h3>
+ <h3>Art. 11. (VETADO).</h3>
+ <h3>Art. 12. (VETADO).</h3>
+ <h3>Art. 13. (VETADO).</h3>
+ <h3>Art. 14. (VETADO).</h3>
+ <h3>Art. 15. (VETADO).</h3>
+ <h3>Art. 16. A cessão de direitos decorrentes da outorga concedida para exploração do serviço de táxi é admitida, sub-rogado o cessionário nos mesmos termos e condições estabelecidos na outorga original, pelo prazo remanescente. (Incluído pela Lei n° 15.271, de 2025)</h3>
+ <h4>§ 1º A efetivação da cessão prevista no caput deste artigo dependerá da comprovação, pelo cessionário, do atendimento dos requisitos e condições estabelecidos na legislação específica, e, verificada a regularidade da documentação apresentada, o consequente reconhecimento da substituição do titular constituirá ato vinculado do poder público. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h4>§ 2º Violado o disposto no inciso VI do caput do art. 5º desta Lei e constatada a outorga ociosa por culpa de seu detentor, incidirão multa, 	perda da outorga e impedimento de obter nova outorga pelo prazo de 3 (três) 	anos. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h4>§ 3º Para fins do inciso VI do caput do art. 5º desta Lei, não serão configuradas como descontinuação da prestação do serviço, as seguintes situações: (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h5>I – 	período de férias, folga ou licença regular do titular da outorga; (Incluído pela Lei n° 15.271, de 2025)</h5>
+ <h5>II – 	licença ou afastamento previstos em legislação ou em regulamento, abrangidas situações de saúde do titular ou de seus dependentes diretos; (Incluído pela Lei n° 15.271, de 2025)</h5>
+ <h5>III 	– necessidade de reparo, de manutenção ou de substituição de veículo ou sinistro que impossibilite a operação; (Incluído pela Lei n° 15.271, de 2025)</h5>
+ <h5>IV – 	participação em movimentos coletivos da categoria, desde que previamente comunicados ao órgão ou entidade competente do poder público; (Incluído pela Lei n° 15.271, de 2025)</h5>
+ <h5>V – 	ocorrência de força maior ou de caso fortuito, devidamente comprovada e formalmente comunicada ao poder público outorgante. (Incluído pela Lei n° 15.271, de 2025)</h5>
+ <h4>§ 4º Para fins desta Lei, considerar-se-á caracterizada a descontinuidade da prestação do serviço ou a ociosidade da autorização quando o taxista deixar de cumprir as exigências de vistoria ou de renovação da licença por 2 (dois) 	anos, observada a legislação local. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h4>§ 5º Considerado o disposto no inciso VI do caput do art. 5º desta Lei, o outorgado poderá, no ato da celebração ou da renovação da outorga, indicar terceiro que poderá assumir a exploração do serviço em caso de impossibilidade absoluta de continuidade, aplicado, nessa hipótese, o disposto no § 1º deste artigo. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h4>§ 6º Em caso de falecimento do outorgado, o cônjuge, o companheiro ou os filhos sobreviventes poderão requerer, no prazo de 1 (um) ano, contado da data do 	óbito, a cessão da outorga em seu favor, desde que atendidos os requisitos legais, ou indicar terceiro que os atenda, hipótese em que se aplicará o disposto no § 1º deste artigo. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h4>§ 7º O taxista que, na data de entrada em vigor desta Lei, estiver em atraso com a realização de vistoria ou com a renovação da licença terá o prazo de 6 	(seis) meses para regularizar a situação. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h4>§ 8º A cessão de que trata este artigo deverá observar os dispositivos constitucionais, em especial o art. 37 da Constituição Federal, bem como a legislação do poder competente. (Incluído pela Lei n° 15.271, de 2025)</h4>
+ <h3>Art. 17. Ao outorgante incumbirá realizar as atividades de fiscalização da prestação dos serviços em conformidade com as disposições previstas na legislação. (Incluído pela Lei n° 15.271, de 2025)</h3>
+ <p>Brasília, 26 de agosto de 2011; 190º da Independência e 123º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Garibaldi Alves Filho</p>
+ <p>Luís Inácio Lucena Adams</p>
+ <p>Este texto não substitui o publicado no DOU de 29.8.2011</p>
+ <p>(Vide Leis nº 6.094, de 1974) | Regulamenta a profissão de taxista; altera a Lei n° 6.094, de 30 de agosto de 1974; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2011/Lei/L12468.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 15.047, DE 17 DE DEZEMBRO DE 2024 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2024" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 15.047, DE 17 DE DEZEMBRO DE 2024</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 14:59:28 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L15047.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 52.861 caracteres | espelho: 52.925 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 15.047, DE 17 DE DEZEMBRO DE 2024 Institui o regime disciplinar da Polícia Federal e da Polícia Civil do Distrito Federal e revoga dispositivos da Lei n° 4.878, de 3 de dezembro de 1965.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre o regime disciplinar aplicável aos servidores ocupantes de cargo efetivo de natureza policial ou de cargo em comissão na Polícia Federal e na Polícia Civil do Distrito 	Federal.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DAS 	SANÇÕES E DAS INFRAÇÕES DISCIPLINARES</h3>
+ <p>Seção I</p>
+ <p>Das Sanções Disciplinares</p>
+ <h3>Art. 2º São sanções disciplinares:</h3>
+ <h5>I - advertência;</h5>
+ <h5>II - suspensão;</h5>
+ <h5>III 	- demissão;</h5>
+ <h5>IV - cassação de aposentadoria.</h5>
+ <p>Seção II</p>
+ <p>Das Infrações Punidas com Advertência</p>
+ <h3>Art. 3º São infrações disciplinares praticadas por servidor puníveis com advertência:</h3>
+ <h5>I - deixar de atuar em expediente ou em procedimento que lhe tenha sido encaminhado;</h5>
+ <h5>II - deixar de levar ao conhecimento de autoridade competente, por via hierárquica, representação, petição, recurso ou documento que houver recebido, se não estiver na sua alçada resolvê-lo;</h5>
+ <h5>III 	- retirar, indevidamente, documento ou objeto da instituição policial;</h5>
+ <h5>IV - permutar o serviço sem autorização ou justificativa;</h5>
+ <h5>V - deixar de tratar as pessoas com respeito;</h5>
+ <h5>VI - deixar de atualizar, regularmente, dados cadastrais que possam levar à sua imediata localização, em prejuízo do serviço;</h5>
+ <h5>VII 	- deixar, quando acusado de prática de infração, de comunicar ao órgão correcional decisão judicial da qual tenha conhecimento que afete o andamento de seu processo administrativo disciplinar.</h5>
+ <p>Seção III</p>
+ <p>Das Infrações Punidas com Suspensão</p>
+ <p>Subseção I</p>
+ <p>Das Infrações relacionadas ao Serviço Público em Geral</p>
+ <h3>Art. 4º São infrações disciplinares praticadas por servidor puníveis com suspensão de 1 (um) a 15 (quinze) dias:</h3>
+ <h5>I - negligenciar a guarda de objeto pertencente ao órgão e que, em decorrência da função ou para o seu exercício, lhe tenha sido confiado, possibilitando que se danifique ou extravie;</h5>
+ <h5>II - apresentar-se ao trabalho com sinais de embriaguez ou sob a influência de drogas ilícitas, exceto no caso de patologia comprovada;</h5>
+ <h5>III 	- deixar de identificar-se quando solicitado, nos termos da lei, e as circunstâncias o exigirem;</h5>
+ <h5>IV - opor resistência injustificada ao andamento de documento, processo ou execução de serviço;</h5>
+ <h5>V - manifestar-se de forma discriminatória em ambiente de trabalho ou no exercício da função ou em razão dela.</h5>
+ <h3>Art. 5º São infrações disciplinares praticadas por servidor puníveis com suspensão de 16 (dezesseis) a 30 (trinta) dias:</h3>
+ <h5>I - deixar de cumprir ou de fazer cumprir, na esfera de suas atribuições, ato normativo ou obrigações assumidas em Termo de Ajustamento de Conduta (TAC);</h5>
+ <h5>II - deixar, sem justa causa, de submeter-se a inspeção médica determinada por lei ou pela autoridade competente;</h5>
+ <h5>III 	- desrespeitar ou procrastinar, injustificadamente, o cumprimento de decisão ou ordem judicial;</h5>
+ <h5>IV - deixar de apurar, injustificadamente, fatos caracterizados como infração disciplinar que tenham chegado ao seu conhecimento cometidos por servidores da instituição.</h5>
+ <p>Subseção II</p>
+ <p>Das Infrações relacionadas ao Serviço Policial</p>
+ <h3>Art. 6º São infrações disciplinares praticadas por servidor puníveis com suspensão de 16 (dezesseis) a 30 (trinta) dias:</h3>
+ <h5>I - dar causa, culposamente, a fuga de pessoa presa ou submetida a medida de segurança;</h5>
+ <h5>II - disparar acidentalmente arma de fogo ou acionar munição, em desconformidade com as técnicas de manuseio;</h5>
+ <h5>III 	- deixar de comunicar ao juiz competente a prisão em flagrante de qualquer pessoa no prazo legal;</h5>
+ <h5>IV - permitir ou concorrer para que preso tenha acesso ou conserve em seu poder instrumento com o qual possa causar lesão em si ou em terceiros;</h5>
+ <h5>V - praticar injúria, vias de fato ou lesão corporal de natureza leve fora do local de serviço, por motivo relacionado ao exercício das funções;</h5>
+ <h5>VI - dar causa, injustificadamente, a acidente na condução de viatura policial ou de veículo apreendido ou com autorização de uso.</h5>
+ <h4>§ 1º Se da conduta prevista no inciso II do caput deste artigo resultar risco à integridade física de alguém, a pena será aumentada de 1/3 (um terço).</h4>
+ <h4>§ 2º Na hipótese da conduta prevista no inciso VI do caput deste artigo, 	quando não houver indícios de dolo, a reparação do dano isentará o servidor de responsabilidade disciplinar.</h4>
+ <h3>Art. 7º São infrações disciplinares praticadas por servidor puníveis com suspensão de 31 (trinta e um) a 45 (quarenta e cinco) 	dias:</h3>
+ <h5>I - cometer a pessoa estranha à instituição, fora dos casos previstos em lei ou de forma injustificada, o desempenho de encargo que competir a si ou a seus subordinados;</h5>
+ <h5>II - permitir ou concorrer para que preso tenha acesso a qualquer meio de comunicação fora dos casos previstos em lei;</h5>
+ <h5>III 	- ceder ou emprestar dispositivo de identificação ou de uso estritamente policial a pessoas estranhas à atividade policial;</h5>
+ <h5>IV - usar ou permitir que outrem use ou se sirva de qualquer bem pertencente à 	instituição ou sob sua guarda, cuja posse ou utilização lhe esteja confiada, 	para fim diverso daquele a que se destina.</h5>
+ <h3>Art. 8º São infrações disciplinares praticadas por servidor puníveis com suspensão de 46 (quarenta e seis) a 60 (sessenta) 	dias:</h3>
+ <h5>I - impedir ou prejudicar o andamento do serviço, deliberadamente, no exercício de suas atribuições;</h5>
+ <h5>II - faltar com a verdade no exercício de suas funções, em prejuízo do serviço;</h5>
+ <h5>III 	- simular doença para esquivar-se do cumprimento de obrigação relacionada às atribuições do cargo;</h5>
+ <h5>IV - dar causa, intencionalmente, a extravio ou danificação de objeto ou bem pertencente à instituição policial ou sob a sua guarda e que, em decorrência da função ou para o seu exercício, esteja confiado à sua guarda.</h5>
+ <p>Subseção III</p>
+ <p>Das Infrações relacionadas à Hierarquia e à Disciplina</p>
+ <h3>Art. 9º São infrações disciplinares praticadas por servidor puníveis com suspensão de 16 (dezesseis) a 30 (trinta) dias:</h3>
+ <h5>I - negligenciar ou descumprir ordem legítima;</h5>
+ <h5>II - faltar ao serviço ou deixar de comunicar, com antecedência, à respectiva chefia a impossibilidade do comparecimento, salvo motivo justo;</h5>
+ <h5>III 	- levar ao conhecimento de outro órgão assunto relacionado com a sua atividade sem antes submetê-lo a superior hierárquico, salvo motivo justo.</h5>
+ <h3>Art. 10. São infrações disciplinares praticadas por servidor puníveis com suspensão de 31 (trinta e um) a 45 (quarenta e cinco) 	dias:</h3>
+ <h5>I - induzir ou concorrer para não ser cumprida, injustificadamente, ordem legítima ou concorrer para que seja retardada a sua execução;</h5>
+ <h5>II - deixar de atender a convocação para missão ou operação policial da qual tenha sido comunicado, bem como delas se ausentar sem expressa autorização da autoridade competente, salvo motivo justo;</h5>
+ <h5>III 	- abandonar o serviço para o qual tenha sido designado.</h5>
+ <p>Subseção IV</p>
+ <p>Das Infrações relacionadas à Imagem da Instituição Policial</p>
+ <h3>Art. 11. São infrações disciplinares praticadas por servidor puníveis com suspensão de 16 (dezesseis) a 30 (trinta) dias:</h3>
+ <h5>I - manter relações de amizade ou exibir-se em público com pessoa de notórios antecedentes criminais, salvo motivo de serviço ou em razão de vínculos familiares;</h5>
+ <h5>II - usar indevidamente a identificação funcional, em benefício próprio ou de terceiro;</h5>
+ <h5>III 	- indicar ou insinuar nome de advogado ou de escritório de advocacia para atuar em procedimento administrativo ou inquérito policial em trâmite no 	órgão a que pertença.</h5>
+ <h3>Art. 12. São infrações disciplinares praticadas por servidor puníveis com suspensão de 31 (trinta e um) a 45 (quarenta e cinco) 	dias:</h3>
+ <h5>I - divulgar, sem estar autorizado, informação de caráter restrito de que tenha ciência em razão da função policial ou propiciar a sua divulgação, em prejuízo do serviço;</h5>
+ <h5>II - divulgar, sem estar autorizado, investigação que esteja sob a sua responsabilidade, ou que dela tenha conhecimento, bem como meios ou técnicas investigativas, ou propiciar a sua divulgação, em prejuízo do serviço;</h5>
+ <h5>III 	- praticar, em serviço ou fora dele, ato lesivo à imagem da instituição ou que concorra para comprometer a função policial;</h5>
+ <h5>IV - manter sob sua chefia imediata, em cargo ou em função de confiança, cônjuge, 	companheiro ou parente até o segundo grau;</h5>
+ <h5>V - 	(VETADO);</h5>
+ <h5>VI - 	(VETADO);</h5>
+ <h5>VII 	- difundir informação ou notícia relacionadas às atribuições da instituição que saiba ou deveria saber inverídica.</h5>
+ <p>Subseção V</p>
+ <p>Das Infrações relacionadas à Prática de Atos com Abuso de Poder</p>
+ <h3>Art. 13. São infrações disciplinares praticadas por servidor puníveis com suspensão de 61 (sessenta e um) a 75 (setenta e cinco) 	dias:</h3>
+ <h5>I - praticar vias de fato contra alguém ou lesão corporal de natureza leve no local de trabalho;</h5>
+ <h5>II - expor pessoa a situações humilhantes e constrangedoras no ambiente de trabalho de forma habitual no exercício de suas atividades.</h5>
+ <h3>Art. 14. São infrações disciplinares praticadas por servidor puníveis com suspensão de 76 (setenta e seis) a 90 (noventa) dias:</h3>
+ <h5>I - atentar, com abuso de autoridade ou prevalecendo-se dela, contra a inviolabilidade de domicílio;</h5>
+ <h5>II - ordenar ou executar medida privativa da liberdade individual, com abuso de poder;</h5>
+ <h5>III 	- levar à prisão ou nela conservar pessoa que se proponha a prestar fiança permitida em lei;</h5>
+ <h5>IV - fazer uso indevido de arma de fogo, ameaçando ou colocando em risco a integridade física ou a vida de terceiros;</h5>
+ <h5>V - 	(VETADO);</h5>
+ <h5>VI - praticar ato lesivo à honra ou ao patrimônio da pessoa, natural ou jurídica, 	com abuso ou desvio de poder.</h5>
+ <p>Seção IV</p>
+ <p>Das Infrações Punidas com Demissão</p>
+ <h3>Art. 15. São infrações disciplinares praticadas por servidor puníveis com demissão:</h3>
+ <h5>I - acumular cargos, empregos e funções públicas, salvo as hipóteses previstas na Constituição Federal e na lei;</h5>
+ <h5>II - participar da gerência ou da administração de empresa, de fato ou de direito, qualquer que seja a sua natureza;</h5>
+ <h5>III 	- exercer, a qualquer título, atividade remunerada incompatível com a atividade policial;</h5>
+ <h5>IV - 	(VETADO);</h5>
+ <h5>V - apresentar-se ao trabalho habitualmente com sinais de embriaguez ou sob a influência de drogas ilícitas, exceto no caso de patologia comprovada;</h5>
+ <h5>VI - prevalecer-se abusivamente da condição de servidor policial com vistas a obter proveito para si ou para outrem;</h5>
+ <h5>VII 	- prevalecer-se abusivamente da condição de superior hierárquico ou da ascendência inerente ao exercício de emprego, de cargo ou de função para obter vantagem ou favorecimento sexual;</h5>
+ <h5>VIII 	- (VETADO);</h5>
+ <h5>IX - faltar ao serviço injustificadamente pelo período de 30 (trinta) dias consecutivos ou 60 (sessenta) dias intercalados, no período de 12 (doze) 	meses;</h5>
+ <h5>X - solicitar, receber, exigir ou aceitar comissões ou auferir vantagens e proveitos pessoais de qualquer espécie e sob qualquer pretexto em razão das atribuições que exerce;</h5>
+ <h5>XI - revelar, indevidamente, fato ou informação de natureza sigilosa de que tenha ciência em razão do cargo ou da função, em prejuízo da investigação policial ou da imagem da instituição;</h5>
+ <h5>XII 	- promover ou facilitar, intencionalmente, a fuga de pessoa presa ou submetida a medida de segurança;</h5>
+ <h5>XIII 	- praticar ato definido em lei como improbidade administrativa;</h5>
+ <h5>XIV 	- praticar crime hediondo ou equiparado.</h5>
+ <h4>§ 1º Será aplicada a penalidade de demissão por contumácia em razão da prática de nova infração disciplinar punível com suspensão, nos casos em que forem praticadas 4 (quatro) ou mais infrações administrativas punidas com essa penalidade, no período de 10 (dez) anos, contado da data da primeira condenação.</h4>
+ <h4>§ 2º O disposto no inciso XIII aplica-se a atos que, por sua natureza, 	comprometam o exercício da função policial.</h4>
+ <p>Seção V</p>
+ <p>Da Aplicação da Sanção Disciplinar</p>
+ <h3>Art. 16. Para a fixação da sanção-base, serão considerados:</h3>
+ <h5>I - a natureza da infração, sua gravidade e as circunstâncias em que foi praticada;</h5>
+ <h5>II - os danos para o serviço público decorrentes da infração cometida;</h5>
+ <h5>III 	- a repercussão do fato, interna e externamente;</h5>
+ <h5>IV - os antecedentes do servidor.</h5>
+ <h4>Parágrafo único. Após a fixação da sanção-base, serão consideradas as circunstâncias agravantes e atenuantes, vedada a fixação da penalidade além do máximo ou aquém do mínimo estabelecido, e as causas de aumento e diminuição de pena.</h4>
+ <h3>Art. 17. Quando o servidor, mediante mais de 1 (uma) 	ação ou omissão, infringir mais de 1 (um) dispositivo disciplinar, será 	punido com as respectivas sanções, cumulativamente.</h3>
+ <h3>Art. 18. Se o servidor, mediante 1 (uma) só ação ou omissão, praticar 2 (duas) ou mais infrações, idênticas ou não, aplicar-se-á 	a mais grave das sanções cabíveis ou, se iguais, somente 1 (uma) delas, 	aumentada, em qualquer caso, de 1/6 (um sexto) até metade.</h3>
+ <h3>Art. 19. Quando o servidor, mediante mais de 1 (uma) 	ação ou omissão, praticar 2 (duas) ou mais infrações e, pelas condições de tempo, lugar, maneira de execução e outras semelhantes, as subsequentes tiverem sido reconhecidas como continuação da primeira, aplicar-se-á a sanção de 1 (uma) só delas, se idênticas, ou da mais grave, se diversas, 	aumentada, em qualquer caso, de 1/6 (um sexto) a 2/3 (dois terços).</h3>
+ <p>Seção VI</p>
+ <p>Das Circunstâncias Agravantes e Atenuantes</p>
+ <h3>Art. 20. São circunstâncias que sempre agravam a penalidade, quando não constituem ou qualificam a infração:</h3>
+ <h5>I - a reincidência; e</h5>
+ <h5>II - o cometimento da infração:</h5>
+ <h6>a) 	com abuso de autoridade; ou</h6>
+ <h6>b) 	em concurso de pessoas.</h6>
+ <h4>§ 1º Opera-se a reincidência quando o servidor comete nova infração depois de transitar em julgado a decisão que o tenha condenado por infração anterior.</h4>
+ <h4>§ 2º Para efeito de reincidência, não prevalece a condenação anterior se, entre a data do cumprimento da sanção e a infração posterior, tenha decorrido o prazo de cancelamento previsto no art. 123 desta Lei.</h4>
+ <h3>Art. 21. São circunstâncias que sempre atenuam a penalidade:</h3>
+ <h5>I - primariedade;</h5>
+ <h5>II - elogio registrado em assentamento funcional;</h5>
+ <h5>III 	- desconhecimento justificável de norma administrativa;</h5>
+ <h5>IV - motivo de relevante valor social ou moral;</h5>
+ <h5>V - estado físico, psicológico, mental ou emocional abalado que influencie ou seja decisivo para a prática da infração disciplinar; e</h5>
+ <h5>VI - o servidor haver:</h5>
+ <h6>a) 	procurado, espontaneamente e com eficiência, evitar ou minimizar as consequências do ato ou haver, antes do julgamento, reparado o dano;</h6>
+ <h6>b) 	confessado espontaneamente, perante a autoridade processante, a autoria da infração;</h6>
+ <h6>c) 	colaborado, de forma espontânea, para a elucidação do fato objeto da apuração, com indicação dos envolvidos e das circunstâncias em que foi praticada a suposta infração disciplinar; ou</h6>
+ <h6>d) 	cometido a infração disciplinar sob coação a que podia resistir ou em cumprimento a ordem de autoridade superior.</h6>
+ <h3>Art. 22. No concurso de agravantes e atenuantes, a sanção deve aproximar-se do limite indicado pelas circunstâncias preponderantes, entendidas como tais as consequências do ato, a colaboração espontânea e a reincidência.</h3>
+ <p>Seção VII</p>
+ <p>Da Forma, das Condições e das Consequências da Aplicação da Sanção</p>
+ <h3>Art. 23. A advertência será aplicada por escrito e deverá constar do assentamento individual do servidor, inclusive se ele estiver aposentado na ocasião da aplicação.</h3>
+ <h4>Parágrafo único. No caso de reincidência específica, poderá ser aplicada a pena de suspensão de 1 (um) a 15 (quinze) dias.</h4>
+ <h3>Art. 24. A suspensão, que não excederá a 90 (noventa) 	dias, consiste no afastamento do exercício do cargo e na perda da remuneração equivalente aos dias de cumprimento da sanção, período durante o qual não haverá contagem de tempo de serviço.</h3>
+ <h4>§ 1º Cada dia de suspensão aplicada acarretará a perda de 1 (um) dia para fins de progressão funcional.</h4>
+ <h4>§ 2º O afastamento preventivo e a aplicação da suspensão não causarão a interrupção do interstício para a progressão funcional dos policiais abrangidos por esta Lei.</h4>
+ <h4>§ 3º O servidor aposentado somente responderá a procedimento administrativo disciplinar por condutas praticadas anteriormente à aposentadoria.</h4>
+ <h4>§ 4º A suspensão aplicada ao servidor aposentado será registrada nos assentamentos funcionais e implicará o desconto nos proventos de aposentadoria de valor equivalente a 50% (cinquenta por cento) dos dias da sanção imposta.</h4>
+ <h3>Art. 25. A demissão consistirá na perda do vínculo funcional.</h3>
+ <h3>Art. 26. A cassação de aposentadoria será aplicada ao servidor que, em atividade, praticar infração disciplinar sujeita à 	penalidade de demissão.</h3>
+ <h3>Art. 27. (VETADO).</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO 	PROCEDIMENTO DISCIPLINAR</h3>
+ <p>Seção I</p>
+ <p>Do Juízo de Admissibilidade</p>
+ <h3>Art. 28. O juízo de admissibilidade é o ato administrativo por meio do qual a autoridade competente para instauração do procedimento disciplinar decide, de forma fundamentada:</h3>
+ <h5>I - pelo arquivamento de denúncia, de representação ou de relato de irregularidade;</h5>
+ <h5>II - pela celebração de TAC;</h5>
+ <h5>III 	- pela instauração de procedimento investigativo, no caso de falta de informações ou de impossibilidade de obtê-las; ou</h5>
+ <h5>IV - pela instauração de processo administrativo disciplinar.</h5>
+ <h3>Art. 29. As denúncias, as representações ou os relatos que noticiem a ocorrência de suposta infração disciplinar deverão ser objeto de juízo de admissibilidade que avalie a existência de indícios que justifiquem a sua apuração, bem como a espécie de procedimento investigativo ou processo disciplinar cabível.</h3>
+ <h4>§ 1º A denúncia ou a representação que não contiver os indícios mínimos que possibilitem sua apuração será motivadamente arquivada.</h4>
+ <h4>§ 2º A autoridade competente poderá, motivadamente, deixar de deflagrar processo administrativo disciplinar, caso verifique a ocorrência de prescrição antes de sua instauração.</h4>
+ <p>Seção II</p>
+ <p>Da Competência para Instauração</p>
+ <h3>Art. 30. Compete ao Diretor-Geral, ao Corregedor-Geral, 	aos superintendentes regionais, aos corregedores regionais e aos chefes de delegacias descentralizadas instaurar procedimento disciplinar que envolva servidores da Polícia Federal, conforme estabelecido em normativo da instituição.</h3>
+ <h3>Art. 31. A competência para instauração de procedimento disciplinar no âmbito da Polícia Civil do Distrito Federal obedecerá ao disposto em legislação própria.</h3>
+ <h3>Art. 32. O servidor que tomar conhecimento de infração disciplinar deverá providenciar o imediato encaminhamento da notícia, pelas vias adequadas, à autoridade competente para apuração.</h3>
+ <p>Seção III</p>
+ <p>Do Termo de Ajustamento de Conduta</p>
+ <h3>Art. 33. O Termo de Ajustamento de Conduta (TAC) é um instrumento de resolução consensual de conflitos em casos de infração disciplinar de menor potencial ofensivo.</h3>
+ <h4>Parágrafo único. Dever-se-á optar pela celebração do TAC, com vistas à 	eficiência, à efetividade e à racionalização de recursos públicos, desde que atendidos os requisitos previstos nesta Lei.</h4>
+ <h3>Art. 34. Considera-se infração disciplinar de menor potencial ofensivo a conduta punível com advertência ou com suspensão de até 	30 (trinta) dias.</h3>
+ <h3>Art. 35. O TAC somente será celebrado quando o investigado:</h3>
+ <h5>I - encontrar-se no exercício de suas funções;</h5>
+ <h5>II - não tiver registro vigente de penalidade disciplinar em seus assentamentos funcionais;</h5>
+ <h5>III 	- não tiver firmado TAC nos últimos 2 (dois) anos, contados a partir da publicação do instrumento; e</h5>
+ <h5>IV - tiver ressarcido ou se comprometido a ressarcir eventual dano causado à 	administração pública.</h5>
+ <h4>§ 1º Não incidirá a restrição prevista no inciso II do caput deste artigo quando a infração de menor potencial ofensivo tiver sido cometida em momento prévio ao TAC anteriormente celebrado.</h4>
+ <h4>§ 2º O eventual ressarcimento ou o compromisso de ressarcimento de dano causado à 	administração pública deverá ser comunicado à área de gestão de pessoas da instituição para aplicação, se for o caso, da possibilidade de parcelamento, 	a pedido do interessado.</h4>
+ <h3>Art. 36. Por meio do TAC, o servidor interessado compromete-se a ajustar sua conduta e a observar os deveres e as proibições previstos na legislação vigente, bem como a cumprir outros compromissos eventualmente propostos pelo órgão ou entidade e com os quais voluntariamente tenha concordado.</h3>
+ <h4>Parágrafo único. A assinatura do TAC não configura reconhecimento pelo servidor de sua responsabilidade sobre os fatos.</h4>
+ <h3>Art. 37. A celebração do TAC será realizada pela autoridade competente para instauração do procedimento disciplinar.</h3>
+ <h3>Art. 38. A proposta de TAC poderá:</h3>
+ <h5>I - ser oferecida de ofício pela autoridade competente para sua celebração;</h5>
+ <h5>II - ser sugerida pela comissão ou pelo servidor responsável pela condução do procedimento disciplinar; ou</h5>
+ <h5>III 	- ser apresentada pelo servidor interessado, a qualquer tempo, até o julgamento do processo administrativo disciplinar.</h5>
+ <h4>§ 1º A proposta de TAC poderá ser sugerida pelo responsável pelo procedimento disciplinar, a qualquer tempo, nos casos em que as provas produzidas indicarem a necessidade de reenquadramento da conduta do acusado como de menor potencial ofensivo.</h4>
+ <h4>§ 2º A proposta de TAC sugerida por comissão ou pelo servidor responsável pela condução de procedimento disciplinar ou apresentada pelo interessado poderá 	ser indeferida quando ausente alguma das condições para sua celebração.</h4>
+ <h3>Art. 39. O TAC deverá conter:</h3>
+ <h5>I - a qualificação do servidor envolvido;</h5>
+ <h5>II - os fundamentos de fato e de direito para sua celebração;</h5>
+ <h5>III 	- a descrição das obrigações assumidas;</h5>
+ <h5>IV - o prazo e o modo para o cumprimento das obrigações;</h5>
+ <h5>V - a forma de fiscalização das obrigações assumidas.</h5>
+ <h3>Art. 40. As obrigações estabelecidas pela administração pública deverão ser proporcionais e adequadas à conduta praticada, com vistas a prevenir a ocorrência de nova infração e a compensar eventual dano.</h3>
+ <h4>§ 1º As obrigações estabelecidas no TAC poderão compreender, entre outras:</h4>
+ <h5>I - a reparação do dano causado;</h5>
+ <h5>II - a participação em cursos com vistas à correta compreensão de seus deveres e proibições ou à melhoria da qualidade do serviço desempenhado;</h5>
+ <h5>III 	- o acordo relativo ao cumprimento de horário de trabalho e à compensação de horas não trabalhadas;</h5>
+ <h5>IV - o cumprimento de metas de desempenho;</h5>
+ <h5>V - a sujeição a controles específicos relativos à conduta irregular praticada.</h5>
+ <h4>§ 2º O prazo de cumprimento das obrigações previstas no TAC não poderá ser superior a 2 (dois) anos.</h4>
+ <h4>§ 3º A inobservância das obrigações estabelecidas no TAC caracteriza a infração prevista no inciso I do caput do art. 5º desta Lei.</h4>
+ <h3>Art. 41. Após a celebração do TAC, será publicado extrato do termo no veículo oficial de publicação de atos da instituição ou no diário oficial, com:</h3>
+ <h5>I - o número do processo;</h5>
+ <h5>II - o nome do servidor celebrante;</h5>
+ <h5>III 	- a descrição genérica do fato.</h5>
+ <h4>Parágrafo único. A chefia imediata do servidor celebrante do TAC será a responsável pelo acompanhamento do efetivo cumprimento das obrigações por ele assumidas.</h4>
+ <h3>Art. 42. O TAC será registrado nos assentamentos funcionais do servidor celebrante e não contará como antecedente.</h3>
+ <h4>§ 1º Declarado o cumprimento das condições do TAC pela chefia imediata do servidor, não será instaurado nenhum procedimento disciplinar relacionado aos mesmos fatos objeto do ajuste.</h4>
+ <h4>§ 2º No caso de descumprimento do TAC, a chefia imediata comunicará de imediato o 	órgão correcional, que adotará as providências necessárias à instauração ou 	à continuidade do respectivo procedimento disciplinar, sem prejuízo da apuração relativa à inobservância das obrigações previstas no TAC.</h4>
+ <h4>§ 3º A celebração do TAC suspenderá a prescrição até o recebimento pela autoridade celebrante da declaração a que se refere o § 1º deste artigo.</h4>
+ <p>Seção IV</p>
+ <p>Dos Procedimentos Disciplinares</p>
+ <p>Subseção I</p>
+ <p>Das Espécies de Procedimentos Disciplinares</p>
+ <h3>Art. 43. Constituem procedimentos disciplinares:</h3>
+ <h5>I - Investigação Preliminar Sumária (IPS);</h5>
+ <h5>II - Sindicância Patrimonial (Sinpa);</h5>
+ <h5>III 	- Processo Administrativo Disciplinar (PAD);</h5>
+ <h5>IV - Processo Administrativo Disciplinar Sumário (PADS).</h5>
+ <p>Subseção II</p>
+ <p>Da Investigação Preliminar Sumária</p>
+ <h3>Art. 44. A Investigação Preliminar Sumária (IPS) é 	procedimento investigativo de caráter preparatório, não contraditório e não punitivo que objetiva a coleta de informações para a análise acerca da existência dos elementos de autoria e de materialidade.</h3>
+ <h3>Art. 45. A IPS será instaurada de ofício ou com fundamento em representação ou denúncia, por meio de despacho, dispensada a sua publicação.</h3>
+ <h3>Art. 46. A IPS será processada por servidor designado pela autoridade instauradora, observados, pelo menos, os seguintes atos de instrução:</h3>
+ <h5>I - exame inicial das informações e das provas existentes no momento da ciência dos fatos pela autoridade instauradora;</h5>
+ <h5>II - realização de diligências e oitivas;</h5>
+ <h5>III 	- produção de informações necessárias para averiguar a procedência da representação ou da denúncia;</h5>
+ <h5>IV - manifestação conclusiva e fundamentada que indique o cabimento de instauração de processo administrativo disciplinar, a possibilidade de celebração de TAC ou o arquivamento da representação ou da denúncia.</h5>
+ <h3>Art. 47. O prazo para a conclusão da IPS não excederá a 	90 (noventa) dias.</h3>
+ <h3>Art. 48. Ao final da IPS, o responsável pela sua condução deverá recomendar:</h3>
+ <h5>I - o arquivamento, caso não haja indícios de autoria e de materialidade da infração e não sejam aplicáveis penalidades administrativas;</h5>
+ <h5>II - a instauração de processo administrativo disciplinar, caso conclua pela existência de indícios de autoria e de prova de materialidade e pela viabilidade da aplicação de penalidades administrativas; ou</h5>
+ <h5>III 	- a celebração de TAC.</h5>
+ <p>Subseção III</p>
+ <p>Da Sindicância Patrimonial</p>
+ <h3>Art. 49. A Sindicância Patrimonial (Sinpa) constitui procedimento investigativo de caráter preparatório, não contraditório e não punitivo destinado a avaliar indícios de enriquecimento ilícito de servidor, 	inclusive evolução patrimonial incompatível com seus recursos e suas disponibilidades.</h3>
+ <h3>Art. 50. A Sinpa será instaurada por meio de despacho, 	dispensada a sua publicação, e processada por comissão permanente.</h3>
+ <h3>Art. 51. O prazo para a conclusão da Sinpa será de 90 	(noventa) dias, prorrogável por igual período.</h3>
+ <h3>Art. 52. A comissão da Sinpa poderá requisitar a quaisquer órgãos e entidades detentores de dados, tais como cartórios, 	departamentos estaduais de trânsito e juntas comerciais, informações relativas ao patrimônio do servidor sindicado, bem como de outras pessoas físicas e jurídicas que possam guardar relação com o fato sob apuração.</h3>
+ <h3>Art. 53. A apresentação de informações e de documentos fiscais ou bancários pelo servidor sindicado ou pelas demais pessoas que possam guardar relação com o fato sob apuração, independentemente de solicitação da comissão, implicará renúncia aos sigilos fiscal e bancário das informações apresentadas para fins da apuração disciplinar, nos termos da legislação vigente.</h3>
+ <h3>Art. 54. O relatório final da Sinpa deverá ser conclusivo quanto à existência ou não de indícios de enriquecimento ilícito e deverá recomendar:</h3>
+ <h5>I - o arquivamento, caso não haja indícios de autoria e de materialidade da infração e não sejam aplicáveis penalidades administrativas; ou</h5>
+ <h5>II - a instauração de processo administrativo disciplinar, caso conclua pela existência de indícios de autoria e de prova de materialidade e pela viabilidade da aplicação de penalidades administrativas.</h5>
+ <h3>Art. 55. Confirmados os indícios de enriquecimento ilícito, a autoridade julgadora dará imediato conhecimento do fato:</h3>
+ <h5>I - no caso da União, ao Ministério Público Federal, ao Tribunal de Contas da 	União, à Controladoria-Geral da União, à Secretaria Especial da Receita 	Federal do Brasil, ao Conselho de Controle de Atividades Financeiras (Coaf) 	e à Advocacia-Geral da União;</h5>
+ <h5>II - no caso do Distrito Federal, ao Ministério Público do Distrito Federal e 	Territórios, ao Tribunal de Contas do Distrito Federal e à 	Procuradoria-Geral do Distrito Federal.</h5>
+ <p>Subseção IV</p>
+ <p>Do Processo Administrativo Disciplinar</p>
+ <h3>Art. 56. O Processo Administrativo Disciplinar (PAD) é o instrumento destinado a apurar responsabilidade de servidor por infração disciplinar praticada no exercício de suas atribuições ou que tenha relação com as atribuições do cargo em que se encontre investido, observados os princípios do contraditório e da ampla defesa.</h3>
+ <h4>Parágrafo único. Poderão ser aplicadas por meio do PAD as penalidades de advertência, de suspensão até 90 (noventa) dias, de demissão ou de cassação de aposentadoria.</h4>
+ <p>Subseção V</p>
+ <p>Do Processo Administrativo Disciplinar Sumário</p>
+ <h3>Art. 57. O Processo Administrativo Disciplinar Sumário (PADS) 	destina-se a apurar responsabilidade de servidor no caso das infrações de acúmulo ilegal de cargos públicos, de inassiduidade habitual ou de abandono de cargo, observados os princípios do contraditório e da ampla defesa.</h3>
+ <h4>§ 1º Poderão ser aplicadas por meio do PADS as penalidades de demissão ou de cassação de aposentadoria.</h4>
+ <h4>§ 2º Quando houver dúvida acerca da natureza da infração disciplinar a ser apurada, a autoridade competente deverá decidir pela instauração de PAD.</h4>
+ <h3>Art. 58. O PADS será instaurado por meio de portaria, 	que deverá ser publicada no veículo oficial de publicação de atos da instituição, e processado por comissão permanente para a condução de processos administrativos disciplinares.</h3>
+ <h4>§ 1º O PADS deverá ser instruído previamente à sua instauração com as provas que caracterizam a autoria e a materialidade da falta disciplinar sob apuração.</h4>
+ <h4>§ 2º O prazo para conclusão do PADS não excederá a 45 (quarenta e cinco) dias e poderá ser prorrogado por 30 (trinta) dias.</h4>
+ <h4>§ 3º A notificação prévia do acusado não é cabível no PADS.</h4>
+ <h4>§ 4º Quando houver necessidade justificada de produção de atos instrutórios não consubstanciados em prova documental, deverá, preferencialmente, ocorrer a conversão do rito sumário em ordinário.</h4>
+ <h3>Art. 59. O ato instaurador do PADS descreverá os fatos que caracterizam a autoria e a materialidade da suposta infração disciplinar.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO 	PROCESSO ADMINISTRATIVO DISCIPLINAR</h3>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 60. A autoridade que tiver ciência de irregularidade no serviço público é obrigada a promover a sua apuração imediata, mediante processo administrativo disciplinar, assegurados ao acusado a ampla defesa e o contraditório, observado o disposto no Capítulo 	III desta Lei.</h3>
+ <h3>Art. 61. O processo administrativo disciplinar será 	instaurado por meio de portaria, cujo extrato deverá ser publicado no veículo oficial de publicação de atos da instituição, e processado por comissão permanente.</h3>
+ <h3>Art. 62. O processo administrativo disciplinar será 	conduzido por comissão permanente composta de 3 (três) servidores estáveis.</h3>
+ <h4>§ 1º O presidente da comissão permanente e seus membros deverão ser ocupantes de cargo efetivo superior ao do acusado ou de mesmo nível.</h4>
+ <h4>§ 2º A comissão terá como secretário servidor designado pelo seu presidente, e a indicação poderá recair em um de seus membros.</h4>
+ <h4>§ 3º Não poderão participar da comissão cônjuge, companheiro ou parente do acusado, consanguíneo ou afim, em linha reta ou colateral, até o terceiro grau.</h4>
+ <h3>Art. 63. O acusado deverá ser notificado pela comissão sobre a instauração do processo administrativo disciplinar, facultado a ele o direito de acompanhar todos os atos instrutórios, pessoalmente ou por meio de procurador.</h3>
+ <h3>Art. 64. Em quaisquer atos de comunicação processual, no caso de recusa de seu recebimento, deverá ser lavrado termo próprio por membro ou secretário da comissão do processo administrativo disciplinar, com assinatura de 2 (duas) testemunhas, o que implicará a presunção de ciência do destinatário.</h3>
+ <h3>Art. 65. O prazo para a conclusão do processo administrativo disciplinar não excederá a 90 (noventa) dias, contado da publicação do extrato da portaria instauradora, admitida a sua prorrogação por igual prazo, quando as circunstâncias o exigirem.</h3>
+ <h4>Parágrafo único. As reuniões da comissão serão registradas em atas, que deverão detalhar as deliberações adotadas.</h4>
+ <p>Seção II</p>
+ <p>Do Afastamento Preventivo</p>
+ <h3>Art. 66. Como medida cautelar e a fim de que o servidor policial não venha a influir na apuração da irregularidade, a autoridade instauradora do processo administrativo disciplinar poderá determinar o seu afastamento do exercício do cargo, pelo prazo de até 90 (noventa) dias, sem prejuízo da remuneração.</h3>
+ <h4>§ 1º O afastamento preventivo poderá ser prorrogado por igual prazo, findo o qual cessarão os seus efeitos, ainda que não concluído o processo.</h4>
+ <h4>§ 2º Durante o período de afastamento preventivo, será exigida do servidor policial a entrega, ao chefe imediato, da carteira funcional e da arma de fogo de propriedade da instituição, salvo decisão fundamentada da autoridade instauradora em sentido contrário, consideradas a natureza da infração ou suas circunstâncias.</h4>
+ <h4>§ 3º A autoridade instauradora do processo administrativo disciplinar determinará 	o afastamento preventivo quando o acusado estiver respondendo a procedimento disciplinar pela prática, em tese, das infrações previstas nos incisos IV, 	VI, VII, IX, X, XI e XIII do caput do art. 15 desta Lei, bem como que possam vir a configurar os crimes de peculato, de peculato mediante erro de outrem, de concussão, de corrupção passiva e de facilitação de contrabando ou descaminho.</h4>
+ <h4>§ 4º No caso do § 3º deste artigo, a comissão deverá, na primeira oportunidade, 	manifestar-se pela necessidade de manutenção do afastamento preventivo e, a qualquer tempo, por sua revogação.</h4>
+ <h4>§ 5º Se não for revogado, o afastamento preventivo será mantido até decisão final do processo administrativo disciplinar.</h4>
+ <p>Seção III</p>
+ <p>Das Fases do Processo Administrativo Disciplinar</p>
+ <p>Subseção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 67. A comissão permanente exercerá suas atividades com independência e imparcialidade, assegurado o sigilo necessário à 	elucidação do fato ou exigido pelo interesse da administração pública.</h3>
+ <h4>Parágrafo único. As reuniões e as audiências das comissões terão caráter reservado.</h4>
+ <h3>Art. 68. O processo administrativo disciplinar desenvolver-se-á nas seguintes fases:</h3>
+ <h5>I - instauração, com a publicação do extrato da portaria instauradora;</h5>
+ <h5>II - instrução, que compreende apuração, defesa e relatório;</h5>
+ <h5>III 	- julgamento.</h5>
+ <p>Subseção II</p>
+ <p>Da Instauração</p>
+ <h3>Art. 69. O ato de instauração do processo administrativo disciplinar conterá a exposição do fato a ser apurado, com todas as suas circunstâncias até então conhecidas, a qualificação do acusado, a classificação provisória da infração e o número do procedimento que lhe deu causa.</h3>
+ <h3>Art. 70. O extrato do ato de instauração, que será 	publicado em veículo de comunicação interna, indicará o número do protocolo ou outro elemento identificador do expediente que noticiou o fato.</h3>
+ <h3>Art. 71. O gozo, pelo acusado, de licença ou de outro afastamento previsto em lei não obsta a instauração de procedimento disciplinar.</h3>
+ <p>Subseção III</p>
+ <p>Da Instrução</p>
+ <h3>Art. 72. Na fase de instrução, que compreende apuração, 	defesa e relatório, serão assegurados ao acusado o contraditório e a ampla defesa, com a utilização dos meios e dos recursos admitidos em direito.</h3>
+ <h3>Art. 73. Os autos de eventual procedimento preliminar integrarão o processo administrativo disciplinar como peça informativa da instrução.</h3>
+ <h4>Parágrafo único. Na hipótese de o procedimento preliminar concluir que a infração está caracterizada como ilícito penal, a autoridade competente encaminhará à autoridade instauradora as peças necessárias à abertura de inquérito policial e fará consignar nos autos essa providência, 	independentemente da imediata instauração do processo administrativo disciplinar.</h4>
+ <h3>Art. 74. Na fase de instrução, a comissão permanente promoverá a tomada de depoimentos, acareações, investigações e diligências cabíveis, com vistas à coleta de prova, recorrendo, quando necessário, a técnicos e a peritos, de modo a permitir a completa elucidação dos fatos.</h3>
+ <h3>Art. 75. É assegurado ao servidor, pessoalmente ou por intermédio de procurador, arrolar e solicitar a reinquirição de testemunhas, 	produzir provas e contraprovas e formular quesitos, quando se tratar de prova pericial.</h3>
+ <h4>§ 1º O presidente da comissão permanente poderá denegar pedidos considerados impertinentes, meramente protelatórios ou de nenhum interesse para o esclarecimento dos fatos.</h4>
+ <h4>§ 2º Será indeferido o pedido de prova pericial, quando a comprovação do fato independer de conhecimento especial de perito.</h4>
+ <h3>Art. 76. As testemunhas serão intimadas a depor mediante mandado expedido pelo presidente da comissão, cuja segunda via, com o ciente do interessado, deverá ser anexada aos autos.</h3>
+ <h4>Parágrafo único. Se a testemunha for servidor público, a expedição do mandado será imediatamente comunicada ao chefe do local de trabalho onde servir, com a indicação de dia e hora marcados para inquirição.</h4>
+ <h3>Art. 77. O depoimento será prestado oralmente, 	preferencialmente por videoconferência, e poderá ser reduzido a termo por decisão do presidente da comissão, não permitido à testemunha levá-lo por escrito.</h3>
+ <h4>§ 1º As testemunhas serão inquiridas separadamente.</h4>
+ <h4>§ 2º Na hipótese de depoimentos contraditórios ou que se infirmem, proceder-se-á 	à acareação entre os depoentes.</h4>
+ <h3>Art. 78. Concluída a inquirição das testemunhas, a comissão permanente promoverá o interrogatório do acusado.</h3>
+ <h4>§ 1º No caso de haver mais de um acusado, cada um deles será ouvido separadamente, e, sempre que divergirem em suas declarações sobre fatos ou circunstâncias, poderá ser promovida a acareação entre eles.</h4>
+ <h4>§ 2º O procurador do acusado poderá assistir ao interrogatório, bem como à 	inquirição das testemunhas, vedado a ele interferir nas perguntas e nas respostas, facultando-se-lhe, porém, reinquiri-las, por intermédio do presidente da comissão.</h4>
+ <h3>Art. 79. Quando houver dúvida sobre a sanidade mental do acusado, a comissão permanente proporá à autoridade competente que ele seja submetido a exame por junta médica oficial, da qual deverá participar pelo menos 1 (um) médico psiquiatra.</h3>
+ <h4>Parágrafo único. O incidente de sanidade mental será processado em auto apartado e apensado ao processo principal.</h4>
+ <h3>Art. 80. Tipificada a infração disciplinar, será 	formulada a indiciação do servidor, com a especificação dos fatos a ele imputados e das respectivas provas.</h3>
+ <h4>§ 1º Não caberá a indiciação do servidor se, com as provas colhidas, ficar comprovado:</h4>
+ <h5>I - não haver infração disciplinar;</h5>
+ <h5>II - não ter sido ele o autor da infração disciplinar;</h5>
+ <h5>III 	- estar extinta a punibilidade.</h5>
+ <h4>§ 2º Nas hipóteses do § 1º deste artigo, a comissão permanente deverá elaborar o seu relatório, que concluirá pelo arquivamento dos autos.</h4>
+ <h4>§ 3º O indiciado será citado, por mandado expedido pelo presidente da comissão, 	para apresentar defesa escrita, no prazo de 10 (dez) dias, 	assegurando-se-lhe vista do processo.</h4>
+ <h4>§ 4º Se houver 2 (dois) ou mais indiciados, o prazo será comum e de 20 (vinte) 	dias.</h4>
+ <h4>§ 5º O prazo de defesa poderá ser prorrogado pelo dobro, para diligências reputadas indispensáveis.</h4>
+ <h4>§ 6º No caso de recusa do indiciado em apor o ciente na cópia da citação, o prazo para defesa contar-se-á da data declarada, em termo próprio, pelo membro da comissão que tiver feito a citação, com a assinatura de 2 (duas) 	testemunhas.</h4>
+ <h3>Art. 81. O indiciado que mudar de residência ficará 	obrigado a comunicar à comissão o lugar onde poderá ser encontrado.</h3>
+ <h3>Art. 82. Se o indiciado estiver em lugar incerto e não sabido, será citado por edital, publicado no Diário Oficial da União e em jornal de grande circulação na localidade do último domicílio conhecido, 	para apresentar defesa.</h3>
+ <h4>Parágrafo único. Na hipótese deste artigo, o prazo para defesa será de 15 	(quinze) dias, contado da última publicação do edital.</h4>
+ <h3>Art. 83. Considerar-se-á revel o indiciado que, 	regularmente citado, não apresentar defesa no prazo legal.</h3>
+ <h4>§ 1º A revelia será declarada, por termo, nos autos do processo e devolverá o prazo para a defesa.</h4>
+ <h4>§ 2º Para defender o indiciado revel, a autoridade instauradora do processo administrativo disciplinar designará servidor como defensor dativo, que deverá ser ocupante de cargo efetivo superior ou de mesmo nível.</h4>
+ <h3>Art. 84. Apreciada a defesa, a comissão permanente elaborará relatório minucioso, no qual resumirá as peças principais dos autos e mencionará as provas em que se tiver baseado para formar sua convicção.</h3>
+ <h4>§ 1º O relatório será sempre conclusivo quanto à inocência ou à responsabilidade do servidor.</h4>
+ <h4>§ 2º Reconhecida a responsabilidade do servidor, a comissão indicará o dispositivo legal ou regulamentar transgredido, bem como as circunstâncias agravantes ou atenuantes.</h4>
+ <h3>Art. 85. O processo administrativo disciplinar, com o relatório da comissão, será remetido à autoridade que tiver determinado a sua instauração, para julgamento.</h3>
+ <p>Subseção IV</p>
+ <p>Do Julgamento</p>
+ <h3>Art. 86. No prazo de 20 (vinte) dias corridos, contado do recebimento do processo administrativo disciplinar, a autoridade julgadora proferirá a sua decisão.</h3>
+ <h4>§ 1º Se a penalidade a ser aplicada exceder a alçada da autoridade instauradora do processo administrativo disciplinar, este será encaminhado à autoridade competente, que decidirá em igual prazo.</h4>
+ <h4>§ 2º Se houver mais de 1 (um) indiciado e diversidade de sanções, o julgamento caberá à autoridade competente para a imposição da pena mais grave.</h4>
+ <h3>Art. 87. O julgamento acatará o relatório da comissão permanente, salvo quando contrário às provas dos autos.</h3>
+ <h4>Parágrafo único. Quando o relatório da comissão permanente contrariar as provas dos autos, a autoridade julgadora poderá, motivadamente, agravar a penalidade proposta ou abrandá-la ou isentar o servidor de responsabilidade.</h4>
+ <h3>Art. 88. Verificada a ocorrência de vício insanável, a autoridade que tiver determinado a instauração do processo administrativo disciplinar ou outra de hierarquia superior declarará a sua nulidade, total ou parcial, e ordenará, no mesmo ato, a reabertura ou a instauração de novo processo.</h3>
+ <h4>Parágrafo único. O julgamento fora do prazo legal não implicará nulidade do processo.</h4>
+ <h3>Art. 89. São competentes para imposição de sanção disciplinar ao servidor da Polícia Federal:</h3>
+ <h5>I - o Presidente da República, nos casos de demissão e de cassação de aposentadoria;</h5>
+ <h5>II - o Diretor-Geral, no caso de suspensão de 61 (sessenta e um) até 90 (noventa) 	dias;</h5>
+ <h5>III 	- o Corregedor-Geral e os superintendentes regionais, no caso de suspensão de até 60 (sessenta) dias;</h5>
+ <h5>IV - os chefes de delegacia descentralizada, no caso de suspensão de até 30 	(trinta) dias, em processos instaurados na respectiva delegacia.</h5>
+ <h4>Parágrafo único. Será permitida a delegação da competência para imposição de sanção disciplinar.</h4>
+ <h3>Art. 90. (VETADO).</h3>
+ <p>Seção IV</p>
+ <p>Do Recurso Administrativo e da Revisão</p>
+ <h3>Art. 91. Da decisão da autoridade julgadora caberá 	recurso, em face de razões de legalidade e de mérito.</h3>
+ <h4>§ 1º O recurso será dirigido à autoridade julgadora a qual tiver proferido a decisão, que, se não a reconsiderar no prazo de 5 (cinco) dias, 	encaminhá-lo-á à autoridade superior.</h4>
+ <h4>§ 2º Se o recorrente alegar que a decisão administrativa contraria enunciado de súmula vinculante, caberá à autoridade prolatora da decisão impugnada, se não a reconsiderar, explicitar, antes de encaminhar o recurso à autoridade superior, as razões da aplicabilidade ou da inaplicabilidade da súmula, 	conforme o caso.</h4>
+ <h3>Art. 92. O recurso tramitará por, no máximo, 3 (três) 	instâncias administrativas.</h3>
+ <h3>Art. 93. O acusado tem legitimidade para interpor recurso, pessoalmente ou por intermédio de seu procurador.</h3>
+ <h3>Art. 94. O prazo para interposição de recurso é de 10 	(dez) dias, contado da ciência ou da divulgação oficial da decisão recorrida.</h3>
+ <h4>§ 1º O recurso deverá ser decidido no prazo máximo de 30 (trinta) dias, contado do recebimento dos autos pelo órgão competente.</h4>
+ <h4>§ 2º O prazo referido no § 1º deste artigo poderá ser prorrogado por igual período, exigida justificativa explícita.</h4>
+ <h3>Art. 95. O recurso será interposto por meio de requerimento no qual o recorrente deverá expor os fundamentos do pedido de reexame, podendo juntar os documentos que julgar convenientes.</h3>
+ <h3>Art. 96. Salvo disposição em sentido contrário, o recurso não tem efeito suspensivo.</h3>
+ <h4>Parágrafo único. Se houver justo receio de prejuízo de difícil ou incerta reparação decorrente da execução da decisão, a autoridade recorrida ou a imediatamente superior poderá, de ofício ou a pedido, dar efeito suspensivo ao recurso.</h4>
+ <h3>Art. 97. O recurso não será conhecido quando interposto:</h3>
+ <h5>I - fora do prazo;</h5>
+ <h5>II - perante órgão incompetente;</h5>
+ <h5>III 	- por quem não seja legitimado;</h5>
+ <h5>IV - após exaurida a esfera administrativa.</h5>
+ <h4>§ 1º Na hipótese do inciso II do caput deste artigo, será indicada ao recorrente a autoridade competente, e a ele devolvido o prazo para recurso.</h4>
+ <h4>§ 2º O não conhecimento do recurso não impedirá a administração pública de rever de ofício o ato ilegal, desde que não ocorrida preclusão administrativa.</h4>
+ <h4>§ 3º Na hipótese de interposição de recurso perante órgão incompetente, não caracterizado erro grosseiro, a administração pública promoverá a correção de fluxo e o encaminhará à autoridade competente.</h4>
+ <h3>Art. 98. O órgão competente para decidir o recurso poderá confirmar, modificar, anular ou revogar, total ou parcialmente, a decisão recorrida, se a matéria for de sua competência.</h3>
+ <h4>Parágrafo único. Se da aplicação do disposto neste artigo puder decorrer gravame à situação do recorrente, este deverá ser cientificado para formular suas alegações antes da decisão.</h4>
+ <h3>Art. 99. Se o recorrente alegar violação de enunciado de súmula vinculante, o órgão competente para decidir o recurso explicitará as razões da aplicabilidade ou da inaplicabilidade da súmula, conforme o caso.</h3>
+ <h3>Art. 100. Acolhida pelo Supremo Tribunal Federal a reclamação fundada em violação de enunciado da súmula vinculante, dar-se-á 	ciência à autoridade prolatora e ao órgão competente para o julgamento do recurso, que deverão adequar as futuras decisões administrativas em casos semelhantes, sob pena de responsabilização pessoal nas esferas civil, 	administrativa e penal.</h3>
+ <h3>Art. 101. Os processos administrativos disciplinares dos quais resultem sanções poderão ser revistos, a qualquer tempo, a pedido ou de ofício, quando surgirem fatos novos ou circunstâncias relevantes suscetíveis de justificar a inadequação da sanção aplicada.</h3>
+ <h4>§ 1º Da revisão do processo não poderá resultar agravamento da sanção.</h4>
+ <h4>§ 2º Em caso de falecimento, de ausência ou de desaparecimento do servidor, 	qualquer pessoa da família poderá requerer a revisão do processo administrativo disciplinar.</h4>
+ <h4>§ 3º No caso de incapacidade mental do servidor, a revisão será requerida por seu curador.</h4>
+ <h3>Art. 102. No processo revisional, o ônus da prova caberá ao requerente.</h3>
+ <h3>Art. 103. A simples alegação de injustiça da penalidade não constitui fundamento para a revisão, que requer elementos novos, ainda não apreciados no processo originário.</h3>
+ <h3>Art. 104. O requerimento de revisão do processo será 	dirigido ao Ministro de Estado ou à autoridade equivalente, que, se autorizar a revisão, encaminhará o pedido ao dirigente do órgão ou da entidade no qual se tenha originado o processo disciplinar.</h3>
+ <h3>Art. 105. A revisão correrá em apenso ao processo originário.</h3>
+ <h4>Parágrafo único. Na petição inicial, o requerente pedirá dia e hora para a produção de provas e a inquirição das testemunhas que arrolar.</h4>
+ <h3>Art. 106. A comissão permanente revisora terá o prazo de 60 (sessenta) dias para a conclusão dos trabalhos.</h3>
+ <h3>Art. 107. Aplicam-se aos trabalhos da comissão permanente revisora, no que couber, as normas e os procedimentos próprios da comissão do processo administrativo disciplinar.</h3>
+ <h3>Art. 108. O julgamento da revisão caberá à autoridade que tiver aplicado a penalidade.</h3>
+ <h4>Parágrafo único. O prazo para julgamento da revisão será de 20 (vinte) dias, 	contado do recebimento do processo, no curso do qual a autoridade julgadora poderá determinar diligências.</h4>
+ <h3>Art. 109. Julgada procedente a revisão, será declarada sem efeito a penalidade aplicada e serão restabelecidos todos os direitos do servidor, exceto em relação à destituição do cargo em comissão, que será 	convertida em exoneração.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA 	EXTINÇÃO DA PUNIBILIDADE</h3>
+ <h3>Art. 110. Extingue-se a punibilidade:</h3>
+ <h5>I - pela morte do servidor;</h5>
+ <h5>II - pela retroatividade da lei que não mais considera o fato como infração disciplinar; ou</h5>
+ <h5>III 	- pela prescrição.</h5>
+ <h3>Art. 111. A ação disciplinar prescreve:</h3>
+ <h5>I - em 5 (cinco) anos, quanto a infrações puníveis com demissão, cassação de aposentadoria ou disponibilidade e destituição de cargo em comissão;</h5>
+ <h5>II - em 2 (dois) anos, quanto a infrações puníveis com suspensão; e</h5>
+ <h5>III 	- em 180 (cento e oitenta) dias, quanto a infrações puníveis com advertência.</h5>
+ <h4>§ 1º O prazo de prescrição começa a correr da data em que o fato se tenha tornado conhecido pela autoridade competente para a instauração de procedimento disciplinar.</h4>
+ <h4>§ 2º Os prazos de prescrição previstos na lei penal aplicam-se às infrações disciplinares tipificadas como crime.</h4>
+ <h3>Art. 112. A instauração de processo administrativo disciplinar acusatório interrompe a contagem do prazo prescricional, que voltará a fluir decorridos:</h3>
+ <h5>I - 	200 (duzentos) dias no PAD; e</h5>
+ <h5>II - 	95 (noventa e cinco) dias no PADS.</h5>
+ <h4>Parágrafo único. A interrupção do prazo prescricional ocorre apenas 1 (uma) 	vez, a partir da data de publicação da portaria de instauração do primeiro processo administrativo disciplinar acusatório.</h4>
+ <h3>Art. 113. Na hipótese de decisão judicial que determine a suspensão do andamento de processo administrativo disciplinar, o prazo de prescrição será suspenso enquanto perdurarem os efeitos da decisão.</h3>
+ <h4>Parágrafo único. Os órgãos correcionais deverão realizar o acompanhamento dos processos judiciais que determinarem a suspensão do andamento do processo administrativo disciplinar.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 114. A responsabilidade administrativa é 	independente da civil e da criminal.</h3>
+ <h3>Art. 115. A sentença penal que reconhecer a inexistência do fato ou de sua autoria tem força vinculante no processo administrativo disciplinar.</h3>
+ <h3>Art. 116. Se no curso do procedimento disciplinar surgirem indícios da prática de crime, o presidente do feito encaminhará à 	autoridade instauradora as peças necessárias à abertura de inquérito policial e fará consignar nos autos essa providência.</h3>
+ <h3>Art. 117. Encerrado o processo administrativo disciplinar, se for verificado que a infração constitui crime, o processo será remetido ao Ministério Público para eventual promoção da ação penal.</h3>
+ <h3>Art. 118. Se houver indícios de ato de improbidade, a autoridade que conhecer dos fatos os levará ao conhecimento do Ministério 	Público.</h3>
+ <h3>Art. 119. É dever do servidor acusado comunicar aos 	órgãos correcionais todas as decisões judiciais relacionadas a seu processo administrativo disciplinar.</h3>
+ <h3>Art. 120. Serão assegurados transporte e diárias:</h3>
+ <h5>I - ao servidor convocado para prestar depoimento fora da sede de seu local de trabalho, na condição de testemunha, denunciado ou indiciado, quando não for possível a realização do ato por meio eletrônico;</h5>
+ <h5>II - aos membros da comissão e ao secretário, quando obrigados a se deslocarem da sede dos trabalhos para a realização de missão essencial ao esclarecimento dos fatos.</h5>
+ <h3>Art. 121. Publicada a decisão do processo administrativo disciplinar, o órgão de pessoal, após promover as anotações cabíveis nos assentamentos funcionais, notificará o servidor para o imediato cumprimento da penalidade.</h3>
+ <h3>Art. 122. A aplicação de penalidade em razão das infrações disciplinares constantes desta Lei não exime o servidor da obrigação de indenizar os prejuízos causados ao erário.</h3>
+ <h3>Art. 123. As penalidades de advertência e de suspensão terão seus registros cancelados, após o decurso de 3 (três) e 5 (cinco) 	anos, respectivamente, se o servidor não houver, nesse período, praticado nova infração disciplinar.</h3>
+ <h4>Parágrafo único. O cancelamento da penalidade não surtirá efeitos retroativos.</h4>
+ <h3>Art. 124. Os atos e os procedimentos previstos nesta 	Lei serão realizados preferencialmente em meio eletrônico, assegurado o atendimento dos requisitos de autenticidade, de integridade e de validade jurídica das informações e dos documentos.</h3>
+ <h3>Art. 125. Para fins processuais, os prazos desta Lei fixados em dias serão contados apenas em dias úteis, iniciada a contagem no dia útil seguinte ao da notificação ou da publicação, e os prazos fixados em meses e anos serão contados de mês a mês e de ano a ano.</h3>
+ <h3>Art. 126. As disposições do Capítulo IV desta Lei aplicam-se aos processos administrativos disciplinares cuja instrução já 	estiver iniciada.</h3>
+ <h4>Parágrafo único. As demais disposições desta Lei aplicam-se imediatamente, 	sem prejuízo da validade dos atos realizados na vigência da legislação anterior.</h4>
+ <h3>Art. 127. Serão adaptados os procedimentos em curso na data de entrada em vigor desta Lei, cabendo ao presidente do feito tomar as providências necessárias, ouvido o acusado.</h3>
+ <h3>Art. 128. Aplicam-se às infrações disciplinares as excludentes de ilicitude previstas no Decreto-Lei n° 2.848, de 7 de dezembro de 1940 (Código Penal).</h3>
+ <h4>Parágrafo único. Considera-se estrito cumprimento do dever legal o uso progressivo da força na atuação policial.</h4>
+ <h3>Art. 129. Revogam-se os arts. 41 a 60 da Lei n° 4.878, de 3 	de dezembro de 1965.</h3>
+ <h3>Art. 130. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 17 de dezembro de 	2024; 203º da Independência e 136º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Manoel 	Carlos de Almeida Neto</p>
+ <p>Vinícius 	Marques de Carvalho</p>
+ <p>Este texto não substitui o publicado no DOU de 	18.12.2024.</p>
+ <p>Institui o regime disciplinar da Polícia Federal e da Polícia Civil do</p>
+ <p>Distrito Federal e revoga dispositivos da Lei n° 4.878, de 3 de dezembro de 1965.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L15047.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

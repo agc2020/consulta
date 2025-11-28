@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.165, DE 10 DE JUNHO DE 2021 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2021" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.165, DE 10 DE JUNHO DE 2021</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:08:05 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14165.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 16.556 caracteres | espelho: 16.738 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.165, DE 	10 DE JUNHO DE 2021</p>
+ <p>Conversão da Medida Provisória nº 1.017, de 2020</p>
+ <p>Define as diretrizes para a quitação e para a renegociação das dívidas relativas às debêntures emitidas por empresas e subscritas pelos fundos de investimentos regionais e para o desinvestimento, a liquidação e a extinção dos fundos.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre a possibilidade de quitação e de renegociação das dívidas em debêntures do 	Fundo de Investimentos da Amazônia (Finam) e do Fundo de Investimentos do 	Nordeste (Finor), criados pelo Decreto-Lei n° 1.376, de 12 de dezembro de 	1974 , e de desinvestimento e posterior liquidação dessas dívidas.</h3>
+ <h4>Parágrafo único. A quitação e a renegociação das dívidas de que trata esta Lei deverão ser autorizadas pela instância de governança dos fundos de que trata o caput deste artigo, na forma dos seus regimentos, e somente poderão ser assentidas caso:</h4>
+ <h5>I - exista vantagem econômica para o fundo;</h5>
+ <h5>II – permitam que os empréstimos realizados por meio dos referidos fundos sejam recuperados administrativamente e de forma mais célere; e</h5>
+ <h5>III - tenham sido integralmente provisionadas há, pelo menos, 	1 (um) ano ou lançadas totalmente em prejuízo.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA QUITAÇÃO DAS DÍVIDAS EM DEBÊNTURES</h3>
+ <h3>Art. 2º Os fundos de que trata o art. 1º desta Lei poderão dar rebates para o recebimento e a quitação em moeda corrente do saldo das dívidas relativas a quaisquer debêntures, conversíveis ou não conversíveis em ações, vencidas ou vincendas, emitidas em seu favor até a data de publicação desta Lei, inclusive as provenientes de dívidas renegociadas, da seguinte forma:</h3>
+ <h5>I - rebate de 80% (oitenta por cento) para a quitação das dívidas relativas às empresas que receberam o Certificado de Empreendimento 	Implantado (CEI); ou</h5>
+ <h5>II - rebate de 75% (setenta e cinco por cento) para a quitação das dívidas relativas às empresas cujos projetos se encontrarem em implantação regular ou às empresas cujos projetos tiverem seus incentivos financeiros cancelados por fatores supervenientes, na forma do disposto nos incisos II, III ou IV do § 4º do art. 12 da Lei n° 8.167, de 16 de janeiro de 1991 .</h5>
+ <h4>§ 1º A apuração do saldo para quitação de que trata o caput deste artigo será realizada a partir da soma dos valores de emissão das debêntures ao respectivo fundo, atualizados pelo Índice Nacional de Preços ao Consumidor Amplo (IPCA), excluídos quaisquer bônus, multas, 	juros de mora e outros encargos por inadimplemento, admitida a cobrança de honorários advocatícios máximos de 1% (um por cento) do valor original da dívida para operações que se encontrem em cobrança judicial, mesmo que outros encargos tenham sido incorporados ou pactuados por meio de aditivos contratuais ou escrituras públicas de confissão, de assunção e de repactuação de dívidas.</h4>
+ <h4>§ 2º A quitação de que trata este artigo será realizada mediante pagamento à vista e em dinheiro a crédito do fundo perante o respectivo banco operador e extinguirá toda a dívida.</h4>
+ <h4>§ 3º A atualização prevista no § 1º deste artigo poderá ser feita por meio da Taxa Referencial (TR), mediante solicitação do devedor.</h4>
+ <h4>§ 4º A liquidação da dívida ocorrerá por ocasião do efetivo pagamento integral do débito, vedada a quitação parcial, para fins do disposto neste Capítulo.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA RENEGOCIAÇÃO DAS DÍVIDAS EM DEBÊNTURES</h3>
+ <h3>Art. 3º Os fundos de que trata o art. 1º desta Lei poderão dar rebates para a renegociação do saldo das dívidas relativas a quaisquer debêntures, conversíveis ou não conversíveis em ações, 	vencidas ou vincendas, inclusive as provenientes de dívidas renegociadas, 	emitidas em seu favor até a data de publicação desta Lei, da seguinte forma:</h3>
+ <h5>I - rebate de 75% (setenta e cinco por cento) para a renegociação das dívidas relativas às empresas que receberam o CEI; ou</h5>
+ <h5>II - rebate de 70% (setenta por cento) para a renegociação das dívidas relativas às empresas cujos projetos se encontrarem em implantação regular ou às empresas cujos projetos tiverem seus incentivos financeiros cancelados por fatores supervenientes, na forma do disposto nos incisos II, III ou IV do § 4º do art. 12 da Lei n° 8.167, de 16 de janeiro de 1991 .</h5>
+ <h4>§ 1º A renegociação de que trata este artigo poderá ser realizada perante o respectivo banco operador, desde que autorizada pelo respectivo fundo e estará sujeita às seguintes condições:</h4>
+ <h5>I - amortização prévia do saldo devedor das debêntures, após os rebates estabelecidos nos incisos I e II do caput deste artigo, de 	5% (cinco por cento) para as empresas que receberam o CEI, para as empresas cujos projetos se encontrarem em implantação regular e para as empresas cujos projetos tiverem seus incentivos financeiros cancelados por fatores supervenientes, na forma do disposto nos incisos II, III ou IV do § 4º do art. 12 da Lei n° 8.167, de 16 de janeiro de 1991 ;</h5>
+ <h5>II - carência de 2 (dois) anos, contados da data de publicação desta Lei, independentemente da data de formalização da renegociação;</h5>
+ <h5>III - amortização em parcelas semestrais, com vencimento da primeira parcela 6 (seis) meses após o encerramento da carência e da última parcela no prazo de até 5 (cinco) anos, contado do vencimento da primeira parcela; e</h5>
+ <h5>IV - encargos financeiros equivalentes à Taxa de Longo Prazo 	(TLP), com aplicação do Coeficiente de Desequilíbrio Regional (CDR).</h5>
+ <h4>§ 2º Para a garantia da renegociação de que trata este artigo, o respectivo fundo não poderá exigir a constituição de garantia além daquela prevista no instrumento original de escritura de emissão de debêntures.</h4>
+ <h4>§ 3º A renegociação somente será confirmada por ocasião do efetivo pagamento da amortização prévia a que se refere o inciso I do § 1º deste artigo.</h4>
+ <h4>§ 4º A mora ou o inadimplemento, por parte do devedor, no pagamento de quaisquer parcelas das dívidas em debêntures renegociadas ao amparo deste artigo acarretará o impedimento para a contratação de novos financiamentos com instituições financeiras federais, enquanto permanecer a situação de mora ou inadimplemento.</h4>
+ <h4>§ 5º A apuração do saldo devido para a renegociação de que trata o caput deste artigo será realizada a partir da soma dos valores de emissão das debêntures ao respectivo fundo, atualizados pelo 	IPCA, excluídos quaisquer percentuais de bônus, multas, juros de mora e outros encargos por inadimplemento atualizados desde a data em que ocorreram, admitida a cobrança de honorários advocatícios máximos de 1% (um por cento) do valor original da dívida para operações que se encontrem em cobrança judicial, mesmo que outros encargos tenham sido incorporados ou pactuados por meio de aditivos contratuais ou escrituras públicas de confissão, de assunção e de repactuação de dívidas.</h4>
+ <h4>§ 6º A liquidação da dívida ocorrerá por ocasião do efetivo pagamento integral do débito renegociado.</h4>
+ <h4>§ 7º A mora ou o inadimplemento de quaisquer parcelas pelo devedor acarretará o vencimento antecipado de toda a dívida e possibilitará 	a execução integral do débito pelo banco operador, e o rebate concedido por ocasião da renegociação, proporcional ao saldo devedor, será excluído.</h4>
+ <h4>§ 8º Na hipótese do § 7º deste artigo, se o devedor não quitar a dívida remanescente no prazo de 30 (trinta) dias, contado do vencimento antecipado, o saldo devedor será acrescido de multa moratória de 	10% (dez por cento), correção monetária pelo IPCA e juros simples de 6% a.a. 	(seis por cento ao ano), computados dia a dia.</h4>
+ <h4>§ 9º A correção monetária prevista nos §§ 5º e 8º deste artigo poderá ser feita utilizando-se a TR, mediante solicitação do devedor.</h4>
+ <h4>§ 10. Como parte da renegociação, o fundo credor poderá 	aceitar a substituição das debêntures originais pela emissão de novas debêntures, não conversíveis em ações, se essa medida se mostrar financeiramente vantajosa.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 4º O disposto nos arts. 2º e 3º desta 	Lei não se aplica às operações contratadas por empresas que tiverem os incentivos financeiros cancelados por desvio de recursos, por fraude, por ato de improbidade administrativa ou por conduta criminosa.</h3>
+ <h3>Art. 5º Os rebates nas operações de quitação e de renegociação de que tratam esta Lei serão custeados pelos fundos de que trata o art. 1º desta Lei e somente serão concedidos se vantajosos aos fundos credores e necessários à recuperação mais célere dos referidos ativos.</h3>
+ <h4>§ 1º As operações de que trata esta Lei não abrangem créditos tributários ou créditos de titularidade da União ou das suas autarquias e fundações.</h4>
+ <h4>§ 2º Não haverá aporte de recursos do Tesouro Nacional para o financiamento das operações de que trata esta Lei, a qualquer título.</h4>
+ <h3>Art. 6º O requerimento para a realização das operações previstas nos arts. 2º e 3º desta Lei deverá ser apresentado ao respectivo banco operador, no prazo de até 1 (um) ano, contado da data de publicação desta Lei.</h3>
+ <h4>Parágrafo único. É facultado a terceiro assumir a obrigação do devedor, com o consentimento expresso do credor e do devedor, e fica exonerado o devedor primitivo, considerando-se extintas, a partir da assunção da dívida, as garantias especiais originariamente dadas ao credor.</h4>
+ <h3>Art. 7º Será concedida Autorização de 	Encerramento do Projeto (Adep) às empresas devedoras que se encontram em fase de implantação regular e que venham a realizar a quitação ou a firmar a renegociação da dívida na forma do disposto nesta Lei, e restará tacitamente renunciado qualquer direito a eventual saldo de recursos a liberar.</h3>
+ <h3>Art. 8º As empresas devedoras que responderem a processo administrativo apuratório poderão requerer a realização das operações previstas nos arts. 2º e 3º desta Lei no prazo de 	180 (cento e oitenta) dias, contado da ciência do arquivamento do processo ou do cancelamento do projeto por fatores supervenientes, na forma do disposto nos incisos II, III ou IV do § 4º do art. 12 da Lei n° 8.167, de 16 	de janeiro de 1991 .</h3>
+ <h3>Art. 9º As empresas que requererem as operações de que tratam os arts. 2º e 3º desta Lei terão prazo de 1 (um) 	ano, contado da ciência da decisão favorável, para realizar a quitação ou firmar a renegociação.</h3>
+ <h4>Parágrafo único. Decorrido o prazo de que trata o caput deste artigo, as empresas deverão cumprir as obrigações originalmente assumidas nas respectivas escrituras de emissão de debêntures.</h4>
+ <h3>Art. 10. A quitação e a renegociação de que tratam os arts. 2º e 3º desta Lei poderão ser realizadas em relação a débito ajuizado, desde que haja renúncia do direito objeto da ação correspondente ou transação homologada judicialmente, que abranja a integralidade da lide.</h3>
+ <h4>Parágrafo único. As despesas com custas processuais são de responsabilidade de cada parte, e a falta de seu pagamento não obsta a liquidação ou a repactuação da dívida, conforme o caso.</h4>
+ <h3>Art. 11. Os títulos e os valores mobiliários subscritos pelos fundos poderão ser comercializados pelos bancos operadores em mercado secundário, mediante instrumento particular, 	respeitados os prazos e as prerrogativas estabelecidos em lei e o direito de preferência à quitação e à renegociação de que tratam os arts. 2º e 3º desta 	Lei.</h3>
+ <h4>§ 1º Para fins de avaliação, os títulos integrantes da carteira dos fundos de investimentos serão computados:</h4>
+ <h5>I - pela cotação média do último dia em que foram negociados, 	na hipótese de ações cotadas em bolsa;</h5>
+ <h5>II - pelo valor patrimonial, com base no balanço da empresa no último exercício, na hipótese de ações não cotadas em bolsa; ou</h5>
+ <h5>III - pelo valor constante da escritura de emissão, corrigido na forma do § 1º do art. 2º desta Lei, em moeda corrente, na hipótese de debêntures.</h5>
+ <h4>§ 2º Não havendo interesse em se beneficiar das prerrogativas constantes dos arts. 2º e 3º desta Lei, as empresas titulares de projetos que tenham obtido o CEI e que não tenham promovido a conversão em ações no prazo delimitado na Medida Provisória nº 2.199-14, de 24 de agosto de 2001 , 	poderão efetivar a conversão em ações das debêntures conversíveis, desde que respeitados os demais requisitos previstos na referida Medida Provisória e o prazo limite de 1 (um) ano da publicação desta Lei para que ocorra a conversão.</h4>
+ <h3>Art. 12. Compete ao Ministério do 	Desenvolvimento Regional:</h3>
+ <h5>I - disciplinar o disposto nesta Lei;</h5>
+ <h5>II - dispor sobre as condições gerais de implementação das operações previstas nesta Lei;</h5>
+ <h5>III - estabelecer, em articulação com os bancos operadores, 	os procedimentos, os prazos e as metas para desinvestimento, liquidação e extinção da carteira de títulos e valores mobiliários dos fundos de investimentos regionais, observadas as normas estabelecidas pela Comissão de 	Valores Mobiliários (CVM), no que couber;</h5>
+ <h5>IV - exercer outras atribuições necessárias à administração dos fundos na forma prevista na legislação específica, como:</h5>
+ <h6>a) aprovar a aplicação dos recursos disponíveis;</h6>
+ <h6>b) autorizar a liberação de recursos pelos bancos operadores;</h6>
+ <h6>c) fiscalizar os projetos e acompanhar as carteiras de títulos; e</h6>
+ <h6>d) cancelar os contratos de aplicação de recursos; e</h6>
+ <h5>V – estabelecer os procedimentos para recompra de cotas com vistas à liquidação dos fundos de que trata o art. 1º desta Lei, bem como para destinação dos saldos resultantes, que deverão ser doados, de forma gratuita e desimpedida, ao Fundo de Arrendamento Residencial (FAR).</h5>
+ <h5>V – 	autorizar a realização da recompra das cotas pelos fundos de que trata o art. 1º desta Lei, via leilão em bolsa de valores, mediante estabelecimento de deságio sobre o patrimônio líquido por cota em circulação, sendo o primeiro leilão realizado pelo valor da cotação de fechamento do dia 28 de junho de 2024, divulgado pela B3 S.A. – Brasil, Bolsa, Balcão, conforme regulamentação do Ministério da Integração e do Desenvolvimento Regional, 	cujos saldos resultantes da aplicação do deságio deverão ser doados, de forma gratuita e desimpedida, ao Fundo de Desenvolvimento da Amazônia (FDA), 	instituído pela Medida Provisória nº 2.157-5, 	de 24 de agosto de 2001 , quanto aos saldos do Fundo de Investimentos da 	Amazônia (Finam), e ao Fundo de Desenvolvimento do Nordeste (FDNE), 	instituído pela Medida Provisória nº 2.156-5, 	de 24 de agosto de 2001 , quanto aos saldos do Fundo de Investimentos do 	Nordeste (Finor), para aquisição de participações societárias preferenciais, 	sem direito a voto, de companhias concessionárias de serviços públicos abrangidas no Decreto nº 11.632, 	de 11 de agosto de 2023 (Programa de Aceleração do Crescimento – Novo 	PAC), mediante requisição dessas, caso tenham projetos aprovados no âmbito dos respectivos Fundos, independentemente de aditivo contratual. (Redação dada pela Lei n° 15.102, de 2025)</h5>
+ <h4>§ 1º Os recursos provenientes do inciso V que integralizarem o patrimônio do FDNE 	serão aplicados em companhias concessionárias de serviços públicos do setor de logística ferroviária, em projetos que já tenham recebido aportes oriundos do FDNE, instituído pela Medida 	Provisória nº 2.156-5, de 24 de agosto de 2001. (Incluído pela Lei n° 15.102, de 2025)</h4>
+ <h4>§ 2º Finalizados os procedimentos de desinvestimento e de liquidação dos fundos, 	conforme regulamentação ministerial, o Finam e o Finor encerrarão suas atividades, e os saldos patrimoniais restantes não resgatados pelos cotistas, incluídas as disponibilidades financeiras, serão doados, de forma gratuita e desimpedida, ao FDA e ao FDNE, respectivamente, passando a integralizar o patrimônio desses. (Incluído pela Lei n° 15.102, de 2025)</h4>
+ <h3>Art. 13. O Ministério do Desenvolvimento 	Regional disporá sobre a instituição, a composição e o funcionamento de instância colegiada de governança para os fundos de que trata o art. 1º desta Lei.</h3>
+ <h3>Art. 14. O Ministério do Desenvolvimento 	Regional estabelecerá e acompanhará o cronograma com os termos finais para a recuperação do capital devido, o desinvestimento e a liquidação dos instrumentos financeiros dos fundos de que trata o art. 1º desta Lei.</h3>
+ <h4>Parágrafo único. Após a liquidação dos instrumentos financeiros, o Ministério do Desenvolvimento Regional fica autorizado a extinguir os fundos de que trata o art. 1º desta Lei e a estabelecer os procedimentos e o cronograma necessários a esse fim.</h4>
+ <h3>Art. 15. Os fundos referidos no art. 1º desta Lei terão o prazo de 90 (noventa) dias, contado da publicação desta 	Lei, para adotar a forma de governança estabelecida no art. 13 desta Lei.</h3>
+ <h3>Art. 16. Esta Lei entra em vigor na data de sua publicação</h3>
+ <p>Brasília, 10 de junho de 2021; 200º da Independência e 	133º da República.</p>
+ <h3>JAIR 	MESSIAS BOLSONARO</h3>
+ <p>Este texto não substitui o publicado no DOU de 11.6.2021</p>
+ <p>Conversão da Medida Provisória nº 1.017, de 2020 | Define as diretrizes para a quitação e para a renegociação das dívidas relativas às debêntures emitidas por empresas e subscritas pelos fundos de investimentos regionais e para o desinvestimento, a liquidação e a extinção dos fundos.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14165.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.995, DE 10 DE OUTUBRO DE 2024 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2024" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.995, DE 10 DE OUTUBRO DE 2024</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 15:00:11 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14995.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 57.363 caracteres | espelho: 58.273 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.995, DE 10 DE OUTUBRO DE 2024</p>
+ <p>Institui o Programa Acredita no Primeiro 	Passo e o Programa de Mobilização de Capital Privado Externo e Proteção 	Cambial – Programa Eco Invest Brasil; altera a Lei n° 13.999, de 18 de maio de 2020, para instituir o Programa de Crédito e Financiamento de Dívidas de 	Microempreendedores Individuais e Microempresas – Procred 360; institui o 	Programa de Renegociação de Dívidas de Microempreendedores Individuais, 	Microempresas, Empresas de Pequeno Porte e Sociedades Cooperativas 	–Desenrola Pequenos Negócios; cria linha de crédito especial para financiar a aquisição de veículos destinados à renovação da frota utilizada na prestação de serviços de táxi; altera a Medida Provisória nº 2.196-3, de 24 	de agosto de 2001, e as Leis nºs 7.827, de 27 de setembro de 1989, 10.735, 	de 11 de setembro de 2003, 12.087, de 11 de novembro de 2009, 13.340, de 28 	de setembro de 2016, 13.606, de 9 de janeiro de 2018, 14.042, de 19 de agosto de 2020, 14.165, de 10 de junho de 2021, e 14.166, de 10 de junho de 	2021; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DO PROGRAMA ACREDITA NO 	PRIMEIRO PASSO</h3>
+ <p>Seção I</p>
+ <p>Disposições Preliminares</p>
+ <h3>Art. 1º É instituído o Programa Acredita no Primeiro Passo, no âmbito do Ministério do 	Desenvolvimento e Assistência Social, Família e Combate à Fome, com a finalidade de gerar oportunidades de inclusão produtiva, aumento da renda pelo trabalho, qualidade de vida e participação social para as famílias em situação de vulnerabilidade socioeconômica inscritas no Cadastro Único para 	Programas Sociais do Governo Federal (CadÚnico).</h3>
+ <h3>Art. 2º O Programa Acredita no Primeiro Passo terá foco em territórios de alta vulnerabilidade socioeconômica e priorizará sua atuação junto a pessoas com deficiência, 	mulheres, jovens, negros e membros de populações tradicionais e ribeirinhas inscritos no CadÚnico.</h3>
+ <h4>§ 1º Ato do Poder Executivo federal disporá sobre os objetivos, os eixos estruturantes, as ações, a governança, a execução e a avaliação do Programa 	Acredita no Primeiro Passo.</h4>
+ <h4>§ 2º O Programa Acredita no Primeiro Passo deverá ter seus objetivos definidos de forma clara, objetiva e mensurável, com especificação de meta anual de inclusão produtiva, aumento de renda, qualidade de vida e participação social das famílias em situação de vulnerabilidade socioeconômica inscritas no CadÚnico.</h4>
+ <h4>§ 3º Os objetivos do Programa Acredita no Primeiro Passo para o ano subsequente serão definidos e publicados até o dia 31 de dezembro de cada ano.</h4>
+ <h4>§ 4º No primeiro ano de vigência desta Lei, deverá ser publicado diagnóstico detalhado do problema, com utilização de indicadores numéricos que reflitam a inclusão produtiva, a renda, a qualidade de vida e a participação social do público-alvo, explicitando a situação atual que servirá de base para a construção dos objetivos referidos no § 2º deste artigo.</h4>
+ <h4>§ 5º O diagnóstico previsto no § 4º deste artigo deverá incluir a metodologia utilizada para coleta de dados e cálculo dos indicadores, de forma a garantir a transparência do processo.</h4>
+ <h4>§ 6º Até o final de cada ano, será publicado o resultado da avaliação da política pública realizada no ano anterior, incluída, entre outros aspectos, 	análise de impacto econômico e social, de eficiência e de efetividade.</h4>
+ <h4>§ 7º A avaliação da política pública referida no § 6º deste artigo será 	realizada pelo Tribunal de Contas da União, e o seu resultado deverá ser encaminhado ao Congresso Nacional.</h4>
+ <h4>§ 8º Deverão ser publicados, em página da internet de acesso público, os critérios objetivos de seleção dos beneficiários, incluídos as informações detalhadas sobre o processo de seleção e os requisitos necessários para participação no Programa Acredita no Primeiro Passo.</h4>
+ <h3>Art. 3º Para a execução do 	Programa Acredita no Primeiro Passo, poderão ser firmados contratos, 	convênios, acordos de cooperação, termos de execução descentralizada, 	instrumentos de transferência fundo a fundo, ajustes ou outros instrumentos congêneres com a União, os Estados, o Distrito Federal e os Municípios e os seus respectivos órgãos e entidades, inclusive consórcios públicos, e com instituições privadas, na forma estabelecida na legislação pertinente.</h3>
+ <h3>Art. 4º As eventuais despesas do Programa Acredita no Primeiro Passo serão de natureza discricionária e ficarão sujeitas à disponibilidade orçamentária e financeira.</h3>
+ <h4>§ 1º As despesas decorrentes da implementação e da execução do Programa 	Acredita no Primeiro Passo, nos termos desta Lei, serão custeadas por aporte da União nas dotações orçamentárias relacionadas, observados os limites de movimentação, de empenho e de pagamento da programação orçamentária e financeira anual.</h4>
+ <h4>§ 2º O Programa Acredita no Primeiro Passo poderá ser custeado por outras fontes de recursos destinadas pelos Estados, pelo Distrito Federal, pelos 	Municípios ou por instituições privadas, inclusive por meio de captação de doações para essa finalidade.</h4>
+ <h4>§ 3º É a União autorizada a estabelecer mecanismos de mobilização de capital externo e proteção cambial nas captações de recursos pelas instituições financeiras destinadas a operações de microcrédito produtivo orientado no 	âmbito do Programa Acredita no Primeiro Passo.</h4>
+ <p>Seção II</p>
+ <p>Da Garantia a Operações de 	Crédito no âmbito do Programa Acredita no Primeiro Passo</p>
+ <h3>Art. 5º A garantia a operações de crédito no âmbito do Programa Acredita no Primeiro Passo terá a finalidade de garantir, direta ou indiretamente, o risco de operações de crédito concedidas por instituições financeiras ou pelas entidades autorizadas de que trata o art. 3º da Lei n° 13.636, 	de 20 de março de 2018 , para os beneficiários do Programa 	Nacional de Microcrédito Produtivo Orientado (PNMPO), nos termos do § 1º do art. 1º da referida Lei, inscritos no CadÚnico.</h3>
+ <h3>Art. 6º A garantia de operações de crédito no âmbito do Programa Acredita no 	Primeiro Passo:</h3>
+ <h5>I – será operacionalizada por meio do Fundo Garantidor de Operações (FGO), 	de que trata a Lei n° 12.087, de 11 de novembro de 2009 , administrado pelo Banco do Brasil 	S.A.;</h5>
+ <h5>II – incidirá sobre operações de financiamento de investimento e de capital de giro isolado e associado, observados os prazos das operações, as carências, os valores e as demais condições das operações no âmbito do PNMPO.</h5>
+ <h4>Parágrafo único. O Conselho Monetário Nacional poderá estabelecer outras linhas de crédito que poderão ser contempladas com garantia no âmbito do 	Programa Acredita no Primeiro Passo.</h4>
+ <h3>Art. 7º É a União autorizada a aumentar sua participação no FGO, no limite de até 	R$ 1.000.000.000,00 (um bilhão de reais), exclusivamente para cobertura das operações contratadas no âmbito do Programa Acredita no Primeiro Passo.</h3>
+ <h4>§ 1º A integralização adicional de cotas pela União de que trata este artigo será realizada por ato do Ministro de Estado do Desenvolvimento e 	Assistência Social, Família e Combate à Fome.</h4>
+ <h4>§ 2º A representação da União na assembleia de cotistas do FGO, inclusive quanto às cotas vinculadas ao Programa Acredita no Primeiro Passo, ocorrerá 	na forma estabelecida no inciso V do caput do art. 10 do Decreto-Lei n° 147, de 3 de fevereiro de 1967.</h4>
+ <h4>§ 3º Nas operações de crédito concedidas no âmbito do Programa Acredita no 	Primeiro Passo, o FGO:</h4>
+ <h5>I – responderá por suas obrigações até o limite do valor dos bens e direitos integrantes de seu patrimônio alocados para essa finalidade no subprograma de garantia a operações de créditos no âmbito do Programa Acredita no 	Primeiro Passo;</h5>
+ <h5>II – não contará com qualquer tipo de garantia ou aval por parte do poder público;</h5>
+ <h5>III – deverá conter previsão para a participação de outros cotistas, pessoas físicas ou jurídicas, inclusive de direito público.</h5>
+ <h4>§ 4º Os cotistas do FGO ou seus agentes públicos não responderão por qualquer obrigação ou eventual prejuízo do Fundo, exceto o cotista pela integralização das cotas que subscrever.</h4>
+ <h4>§ 5º As cotas vinculadas ao Programa Acredita no Primeiro Passo poderão ser adquiridas, nos termos do estatuto do FGO, por pessoas físicas ou jurídicas, 	de direito privado ou público, nacionais ou internacionais.</h4>
+ <h3>Art. 8º É autorizada a transferência de recursos para o FGO, nos termos da legislação, na modalidade do Programa Acredita no Primeiro Passo, com o resgate de cotas referente a valores não utilizados para garantia de operações com recursos do FGO a que se refere o caput do art. 10 da Lei n° 14.690, de 3 de outubro de 2023 , não se aplicando o disposto no § 2º do art. 10 	da referida Lei.</h3>
+ <h4>Parágrafo único. Os recursos previstos no caput deste artigo não incluem aqueles:</h4>
+ <h5>I – comprometidos para honrar as operações de crédito de que trata a Lei n° 14.690, 	de 3 de outubro de 2023 , contratadas até a data de entrada em vigor da Medida 	Provisória nº 1.213, de 22 de abril de 2024;</h5>
+ <h5>II – necessários para cobrir os custos de operacionalização do FGO Desenrola até o seu encerramento.</h5>
+ <h3>Art. 9º Poderão aderir ao 	Programa Acredita no Primeiro Passo e requerer a garantia do FGO as instituições financeiras e as entidades autorizadas de que trata o art. 3º da Lei n° 13.636, 	de 20 de março de 2018.</h3>
+ <h4>§ 1º As instituições financeiras e as entidades autorizadas a que se refere o caput deste artigo operarão com recursos próprios, ou por elas administrados, e poderão contar com garantia a ser prestada pelo FGO de até 	100% (cem por cento) do valor de cada operação garantida, com cobertura, 	pelo FGO, da inadimplência limitada a 20% (vinte por cento) da carteira garantida de cada instituição financeira ou entidade autorizada, na forma estabelecida no estatuto do FGO.</h4>
+ <h4>§ 2º Nas operações de que trata o § 1º deste artigo, o limite global a ser ressarcido às instituições financeiras e às entidades autorizadas é limitado ao montante destinado pela União e pelos demais cotistas ao FGO para o atendimento dos objetivos do Programa Acredita no Primeiro Passo.</h4>
+ <h4>§ 3º O FGO somente prestará garantia a operações de crédito se, no mínimo, 	50% (cinquenta por cento) das operações de que trata o § 1º deste artigo, no 	âmbito de cada instituição financeira ou entidade autorizada, forem contratadas por mulheres ou por empreendimentos individuais de mulheres.</h4>
+ <h3>Art. 10. Para contar com a garantia do FGO, a contratação de operação de crédito no âmbito do Programa Acredita no Primeiro Passo deverá ocorrer na modalidade de crédito orientado, conforme o disposto no § 3º do art. 1º da Lei n° 13.636, de 20 de março de 2018 , respeitados os limites aprovados pelo Conselho Monetário Nacional.</h3>
+ <h4>§ 1º O Ministério do Desenvolvimento e Assistência Social, Família e Combate 	à Fome poderá firmar instrumento jurídico com as instituições financeiras e as entidades autorizadas de que trata o art. 5º desta Lei para subvencionar a contratação de agentes estruturadores de negócio para atendimento do público do Programa Acredita no Primeiro Passo, de acordo com critérios a serem estabelecidos em ato do Ministro de Estado do referido Ministério.</h4>
+ <h4>§ 2º O custeio das despesas de serviços de agente estruturador de negócio para o crédito orientado de que trata o § 1º deste artigo ocorrerá à conta do Ministério do Desenvolvimento e Assistência Social, Família e Combate à 	Fome, observada a disponibilidade orçamentária e financeira do órgão.</h4>
+ <h3>Art. 11. Os contratantes das operações de crédito no âmbito do Programa 	Acredita no Primeiro Passo serão isentos do pagamento de comissão pecuniária pela concessão da garantia do FGO.</h3>
+ <h3>Art. 12. Na hipótese de inadimplemento do contratante, as instituições financeiras e as entidades autorizadas de que trata o art. 5º desta Lei participantes do Programa Acredita no Primeiro Passo cobrarão a dívida em nome próprio e custearão as despesas necessárias para a recuperação dos créditos inadimplidos.</h3>
+ <h4>§ 1º Para fins de recuperação dos créditos no âmbito do Programa Acredita no 	Primeiro Passo, as instituições financeiras e as entidades autorizadas de que trata o art. 5º desta Lei:</h4>
+ <h5>I – deverão, em conformidade com as suas políticas de crédito, envidar os melhores esforços e adotar os procedimentos necessários para a recuperação dos créditos, vedada a adoção de procedimento menos rigoroso do que aquele usualmente empregado para a recuperação de créditos próprios;</h5>
+ <h5>II – serão responsáveis pela veracidade das informações fornecidas e pela exatidão dos valores a serem eventualmente reembolsados;</h5>
+ <h5>III – adotarão, após honrada a garantia pelo FGO, estratégia de renegociação semelhante à usualmente utilizada para créditos próprios, inclusive com a possibilidade de concessão de descontos, observados os limites estabelecidos no estatuto do Fundo.</h5>
+ <h4>§ 2º Os créditos não recuperados após a adoção dos procedimentos previstos no § 1º deste artigo serão:</h4>
+ <h5>I – leiloados pelas instituições financeiras ou pelas entidades autorizadas no prazo de até 24 (vinte e quatro) meses, contado da data em que honrada a garantia, observadas as condições estabelecidas no estatuto do FGO; e</h5>
+ <h5>II – quando não arrematados, oferecidos novamente em leilão, no prazo de até 	12 (doze) meses, com a possibilidade de serem alienados àquele que oferecer o maior lance, independentemente do valor de avaliação.</h5>
+ <h4>§ 3º A parcela do crédito sub-rogada pelo FGO que eventualmente não seja alienada no leilão de que trata o inciso II do § 2º deste artigo poderá ser considerada extinta de pleno direito, nos termos estabelecidos no estatuto do Fundo.</h4>
+ <h4>§ 4º O estatuto do FGO estabelecerá os limites, as condições e os prazos para a realização de leilão dos créditos de que trata o § 2º deste artigo, 	bem como os mecanismos de controle e de aferição de seus resultados.</h4>
+ <h3>Art. 13. Os valores não utilizados para garantia das operações contratadas no âmbito do disposto neste Capítulo e os valores recuperados pelas instituições financeiras e pelas entidades autorizadas de que trata o art. 5º desta Lei, na hipótese de inadimplência, serão destinados à garantia das operações de crédito do Programa Acredita no Primeiro Passo, observados os termos estabelecidos em ato conjunto dos respectivos Ministérios supervisores de cada programa.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>DO APRIMORAMENTO DO PROGRAMA 	NACIONAL DE APOIO ÀS MICROEMPRESAS E EMPRESAS DE PEQUENO PORTE E DA 	INSTITUIÇÃO DO PROGRAMA DE CRÉDITO E FINANCIAMENTO DE DÍVIDAS DE 	MICROEMPREENDEDORES INDIVIDUAIS E MICROEMPRESAS – PROCRED 360</p>
+ <h3>Art. 14. A Lei n° 13.999, de 18 de maio de 2020 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 1º É instituído o Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte (Pronampe), vinculado ao Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte, cujo objeto é o desenvolvimento e o fortalecimento dos pequenos negócios.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 3º As instituições financeiras participantes do Pronampe poderão formalizar e prorrogar operações de crédito em seu âmbito nos períodos e nas condições estabelecidos em ato do Ministro de Estado do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte, observados o prazo total máximo de 72 (setenta e dois) meses para pagamento das operações e os seguintes parâmetros:</h3>
+ <p>...................................................................</p>
+ <h5>IV – carência de até 12 (doze) meses para o início do pagamento das parcelas do financiamento, nos termos de regulamento.</h5>
+ <p>....................................................................</p>
+ <h4>§ 4º O ato do Ministro de Estado do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte de que trata o caput deste artigo definirá também a taxa de juros aplicável à linha de crédito concedida no âmbito do Pronampe, observado o máximo previsto no inciso I do caput deste artigo.</h4>
+ <h4>§ 5º Nos casos em que a empresa contratante tenha sido reconhecida pelo Poder Executivo federal com o Selo Emprega + Mulher ou tenha como sócia majoritária ou sócia-administradora uma mulher, aplicam-se os seguintes parâmetros:</h4>
+ <h3>..............................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 5º .......................................................</h3>
+ <p>.......................................................................</p>
+ <h4>§ 5º Os créditos honrados eventualmente não recuperados poderão ser cedidos ou leiloados pelas instituições financeiras participantes do Pronampe, no prazo de até 60 (sessenta) meses, contado da data da amortização da última parcela passível de vencimento, observadas as condições estabelecidas no estatuto do Fundo.</h4>
+ <p>.......................................................................</p>
+ <h4>§ 9º No caso de inadimplência de operações de crédito do Pronampe, após serem honradas pelo FGO, os agentes financeiros deverão adotar estratégia de renegociação semelhante à usualmente utilizada para créditos próprios, inclusive com a possibilidade de concessão de descontos, observadas as condições estabelecidas no estatuto do Fundo.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 6º .........................................................</h3>
+ <p>......................................................................</p>
+ <h4>§ 2º O valor não utilizado para garantia das operações contratadas nos períodos a que se refere o caput do art. 3º desta Lei, assim como os valores recuperados, inclusive no caso de inadimplência, poderão ser utilizados no fundo destinado à concessão de incentivo financeiro-educacional, na modalidade de poupança, à permanência e à conclusão escolar de estudantes matriculados no ensino médio público ou devolvidos à União, a partir de 1º de janeiro de 2025, nos termos em que dispuser o Poder Executivo federal, para serem integralmente utilizados para pagamento da dívida pública de responsabilidade do Tesouro Nacional.</h4>
+ <h3>...............................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 6º-C. Os valores referentes à participação adicional da União no FGO para a cobertura das operações contratadas até 31 de dezembro de 2023, no âmbito do Pronampe, com beneficiários que tiveram perdas materiais decorrentes dos eventos climáticos extremos ocorridos em setembro de 2023 e que estejam situados em Municípios do Estado do Rio Grande do Sul que tiveram estado de calamidade pública reconhecido pelo Poder Executivo federal, não utilizados até 31 de dezembro de 2023, serão destinados à garantia de novas operações no âmbito do Pronampe.</h3>
+ <h4>Parágrafo único. Os valores de que trata o caput deste artigo não comprometidos com garantias concedidas poderão ser utilizados para a concessão de novas garantias no âmbito do Pronampe.”</h4>
+ <p>“</p>
+ <h2>CAPÍTULO VI-A</h2>
+ <p>do Programa de Crédito e Financiamento de Dívidas de Microempreendedores Individuais e Microempresas – PROCRED 360</p>
+ <h3>Art. 12-A. É instituído o Programa de Crédito e Financiamento de Dívidas de Microempreendedores Individuais e Microempresas – Procred 360, vinculado ao Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte, cujo objeto é o desenvolvimento e o fortalecimento das microempresas, em especial dos Microempreendedores Individuais (MEIs) e dos taxistas autônomos.</h3>
+ <h4>§ 1º O Procred 360 é destinado às pessoas a que se referem o inciso I do caput do art. 3º e o art. 18-A da Lei Complementar nº 123, de 14 de dezembro de 2006 (Lei do Simples Nacional), considerada a receita bruta auferida no exercício imediatamente anterior ao da contratação, bem como aos taxistas autônomos.</h4>
+ <h4>§ 2º Para a cobertura das operações contratadas no âmbito do Procred 360, o FGO utilizará recursos não utilizados para a garantia das operações a que se refere o art. 10 da Lei n° 14.690, de 3 de outubro de 2023 , na forma de regulamento, não se aplicando, nesse caso, o disposto no § 2º do art. 10 da referida Lei.</h4>
+ <h4>§ 3º As instituições participantes do Procred 360 operarão com recursos próprios e poderão contar com garantia a ser prestada pelo FGO Procred 360 de até 100% (cem por cento) do valor de cada operação garantida, com cobertura, pelo Fundo, da inadimplência limitada ao valor máximo segregado pelo administrador do FGO para a garantia da carteira da instituição participante do Procred 360, vedado ultrapassar 60% (sessenta por cento) da carteira à qual esteja vinculada, observado o disposto no estatuto do Fundo.</h4>
+ <h4>§ 4º O estatuto do FGO poderá:</h4>
+ <h5>I – estabelecer as demais condições para as operações de crédito no âmbito do Procred 360, incluído o prazo máximo para pagamento das operações;</h5>
+ <h5>II – permitir o pagamento dos juros durante o período de carência;</h5>
+ <h5>III – estabelecer as contrapartidas para as instituições financeiras interessadas em aderir ao Procred 360 e em requerer a garantia do FGO.</h5>
+ <h4>§ 5º Ato do Ministro de Estado do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte definirá a taxa de juros aplicável à linha de crédito concedida no âmbito do Procred 360, observado o máximo previsto no inciso I do caput do art. 3º desta Lei.</h4>
+ <h4>§ 6º Aplicam-se ao Procred 360 as demais disposições aplicáveis ao Pronampe.”</h4>
+ <p>“</p>
+ <h3>Art. 13. É o Poder Executivo federal autorizado a adotar o Pronampe como política oficial de crédito de caráter permanente com tratamento diferenciado e favorecido, nas mesmas condições estabelecidas nesta Lei, com o objetivo de consolidar os pequenos negócios como agentes de sustentação, de transformação e de desenvolvimento da economia nacional.” (NR)</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>DO APRIMORAMENTO DO PROGRAMA 	EMERGENCIAL DE ACESSO A CRÉDITO NA MODALIDADE DE GARANTIA (PEAC-FGI)</p>
+ <h3>Art. 15. A Lei n° 14.042, de 19 de agosto de 2020 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 3º O Programa Emergencial de Acesso a Crédito na modalidade de garantia (Peac-FGI) é destinado a microempreendedores individuais, microempresas, empresas de pequeno e médio porte, associações, fundações de direito privado e sociedades cooperativas, excetuadas as sociedades de crédito, que tenham sede ou estabelecimento no País e que tenham auferido no ano-calendário imediatamente anterior ao da contratação da operação receita bruta inferior ou igual a R$ 300.000.000,00 (trezentos milhões de reais) e, nos termos de regulamentação específica, a beneficiários do Programa Nacional de Microcrédito Produtivo Orientado (PNMPO), em microcrédito concedido por instituições financeiras ou pelas entidades autorizadas de que trata o art. 3º da Lei n° 13.636, de 20 de março de 2018.</h3>
+ <p>.......................................................................</p>
+ <h4>§ 2º ..............................................................</h4>
+ <h5>I – prazo de carência de, no máximo, 24 (vinte e quatro) meses;</h5>
+ <h5>II – prazo total da operação de, no mínimo, 12 (doze) meses e, no máximo, 84 (oitenta e quatro) meses;</h5>
+ <h3>..............................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 6º ..........................................................</h3>
+ <p>.......................................................................</p>
+ <h4>§ 5º Para as garantias concedidas no âmbito do Peac-FGI, a comissão pecuniária a que se refere o § 3º do art. 9º da Lei n° 12.087, de 11 de novembro de 2009, será cobrada de forma progressiva e limitada aos seguintes percentuais da comissão pecuniária vigente para o FGI Tradicional:</h4>
+ <h5>I – no ano de 2024, 20% (vinte por cento);</h5>
+ <h5>II – no ano de 2025, 40% (quarenta por cento);</h5>
+ <h5>III – no ano de 2026, 60% (sessenta por cento);</h5>
+ <h5>IV – no ano de 2027, 80% (oitenta por cento);</h5>
+ <h5>V – a partir de 2028, 100% (cem por cento).</h5>
+ <h3>................................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 8º .........................................................</h3>
+ <p>......................................................................</p>
+ <h4>§ 5º Os créditos honrados e não recuperados contratados no mesmo ano serão leiloados pelos agentes financeiros, em nome do Peac-FGI e do Peac-FGI Crédito Solidário RS, no prazo de até 60 (sessenta) meses, contado da data prevista para a última parcela de amortização dentre todas as operações de crédito da carteira do agente financeiro com garantia do Peac-FGI ou do Peac-FGI Crédito Solidário RS contratadas no mesmo ano, observadas as condições estabelecidas no regulamento de operações do Peac-FGI.</h4>
+ <h3>..................................................................” (NR)</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DOS INCENTIVOS AO MERCADO DE 	CRÉDITO IMOBILIÁRIO</h3>
+ <h3>Art. 16. A Medida Provisória nº 2.196-3, 	de 24 de agosto de 2001 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 7º ..........................................................</h3>
+ <h4>§ 1º A EMGEA tem por objetivos:</h4>
+ <h5>I – adquirir e gerir bens e direitos da União, dos Estados, do Distrito Federal, dos Municípios, das entidades da administração pública indireta de todos os entes federativos, bem como de fundos públicos ou privados em que a União aporte recursos, podendo, em contrapartida, assumir obrigações deles;</h5>
+ <h5>II – fomentar o crescimento do mercado imobiliário nacional, provendo maior liquidez aos ativos com base em crédito imobiliário.</h5>
+ <h4>§ 1º-A . A EMGEA poderá criar ou participar de estruturas organizacionais, na forma de fundos de investimentos, de sociedades de propósitos específicos ou de parcerias público-privadas, desde que elas tenham como finalidade o desenvolvimento social de interesse público, conforme previsto nos respectivos instrumentos de criação.</h4>
+ <h4>§ 1º-B . De forma a cumprir o objetivo de que trata o inciso II do § 1º deste artigo, a EMGEA poderá:</h4>
+ <h5>I – adquirir créditos imobiliários concedidos por instituições financeiras, públicas ou privadas, para incorporação em carteira ou para posterior venda ao mercado;</h5>
+ <h5>II – adquirir, no mercado financeiro, títulos e valores mobiliários lastreados em crédito imobiliário;</h5>
+ <h5>III – ofertar instrumentos financeiros que permitam a proteção de instituições financeiras, públicas ou privadas, a exposições de remuneração e prazos oriundos de concessão de crédito imobiliário.</h5>
+ <h4>§ 1º-C . A EMGEA poderá atuar como securitizadora, securitizando os créditos imobiliários adquiridos conforme o inciso I do § 1º-B deste artigo em títulos e valores mobiliários, que poderão ter remuneração, prazos e montantes diferentes dos créditos imobiliários originais.</h4>
+ <p>................................................................................</p>
+ <h4>§ 3º O estatuto da EMGEA será aprovado por sua assembleia geral.</h4>
+ <h3>.......................................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 9º A transferência das operações de crédito imobiliário e de seus acessórios, em especial as hipotecas a elas vinculadas, ocorrerá por instrumento particular, com força de escritura pública.” (NR)</h3>
+ <h3>Art. 17. (VETADO).</h3>
+ <h3>Art. 18. (VETADO).</h3>
+ <h2>CAPÍTULO V</h2>
+ <p>DO Programa de Renegociação de 	Dívidas de Microempreendedores Individuais, Microempresas, Empresas de 	Pequeno Porte E SOCIEDADES COOPERATIVAS – Desenrola Pequenos Negócios</p>
+ <p>Seção I</p>
+ <p>Disposições Preliminares</p>
+ <h3>Art. 19. É instituído o 	Programa de Renegociação de Dívidas de Microempreendedores Individuais, 	Microempresas, Empresas de Pequeno Porte e Sociedades Cooperativas – 	Desenrola Pequenos Negócios, destinado aos microempreendedores individuais, 	às microempresas, às empresas de pequeno porte e às sociedades cooperativas que tenham auferido, no ano-calendário anterior, receita bruta até o limite definido no inciso II do caput do art. 3º da Lei Complementar nº 123, de 14 de dezembro de 2006 (Lei do Simples 	Nacional), com o objetivo de incentivar a renegociação de dívidas de empresas com faturamento bruto anual igual ou inferior a R$ 4.800.000,00 	(quatro milhões e oitocentos mil reais).</h3>
+ <p>Seção II</p>
+ <p>Dos Incentivos aos Agentes 	Financeiros</p>
+ <p>Subseção I</p>
+ <p>Do Crédito Presumido</p>
+ <h3>Art. 20. As instituições financeiras e as demais instituições autorizadas a funcionar pelo Banco 	Central do Brasil, exceto as cooperativas de crédito e as administradoras de consórcio, que renegociarem, até 31 de dezembro de 2024, dívidas de empresas com faturamento igual ou inferior a R$ 4.800.000,00 (quatro milhões e oitocentos mil reais), apurado por agente financeiro, poderão ter direito à 	apuração de crédito presumido na forma prevista nesta Lei, em montante total limitado ao menor dos seguintes valores:</h3>
+ <h5>I – o saldo contábil bruto das operações de crédito para renegociação de dívidas; ou</h5>
+ <h5>II – o saldo contábil dos créditos decorrentes de diferenças temporárias.</h5>
+ <h4>§ 1º O disposto neste artigo não se aplica aos créditos decorrentes de diferenças temporárias referentes a provisões para créditos de liquidação duvidosa e a provisões passivas relacionadas a ações fiscais e previdenciárias.</h4>
+ <h4>§ 2º Para os fins do disposto neste artigo:</h4>
+ <h5>I – as despesas ou as perdas apropriadas contabilmente ainda não dedutíveis na apuração do Imposto sobre a Renda das Pessoas Jurídicas (IRPJ) e da 	Contribuição Social sobre o Lucro Líquido (CSLL) cujo aproveitamento futuro seja autorizado pela legislação tributária caracterizam-se como diferenças temporárias;</h5>
+ <h5>II – os créditos decorrentes das diferenças temporárias devem ser apurados por meio da aplicação das alíquotas do IRPJ e da CSLL sobre as diferenças entre as despesas ou as perdas decorrentes das atividades das instituições a que se refere o caput deste artigo, reconhecidas de acordo com a legislação contábil societária, e as despesas ou as perdas autorizadas como dedução para determinação da base de cálculo desses tributos, na forma estabelecida na legislação.</h5>
+ <h4>§ 3º O disposto neste artigo aplica-se somente às dívidas inadimplidas até a data de publicação da Medida Provisória nº 1.213, de 22 de abril de 	2024 , nos termos estabelecidos no regulamento editado por ato do 	Ministro de Estado da Fazenda.</h4>
+ <p>Subseção II</p>
+ <p>Da Apuração do Crédito 	Presumido</p>
+ <h3>Art. 21. A apuração do crédito presumido poderá ser realizada a partir do ano-calendário de 2025 até o ano-calendário de 2029 pelos agentes financeiros a que se refere o caput do art. 20 desta Lei que apresentarem, de forma cumulativa:</h3>
+ <h5>I – créditos decorrentes de diferenças temporárias oriundos de registros existentes no ano-calendário anterior; e</h5>
+ <h5>II – prejuízo fiscal apurado no ano-calendário anterior.</h5>
+ <h3>Art. 22. O valor do crédito presumido de que trata o art. 21 desta Lei será 	apurado com base na fórmula constante do Anexo I da Lei n° 14.257, de 1º de dezembro de 2021.</h3>
+ <h4>§ 1º O crédito decorrente de diferença temporária que houver originado o crédito presumido apurado na forma prevista no caput deste artigo não poderá ser aproveitado em outros períodos de apuração.</h4>
+ <h4>§ 2º O crédito presumido referido no caput deste artigo fica limitado ao menor dos seguintes valores:</h4>
+ <h5>I – o saldo dos créditos decorrentes de diferenças temporárias existentes no ano-calendário anterior; ou</h5>
+ <h5>II – o valor do prejuízo fiscal apurado no ano-calendário anterior.</h5>
+ <h4>§ 3º Os agentes financeiros a que se refere o caput do art. 20 desta 	Lei que tenham participado do Programa de Capital de Giro para Preservação de Empresas (CGPE), do Programa de Estímulo ao Crédito (PEC) ou do Programa 	Emergencial de Renegociação de Dívidas de Pessoas Físicas Inadimplentes – 	Desenrola Brasil deduzirão o valor calculado na forma prevista, 	respectivamente, no art. 3º da Medida 	Provisória nº 992, de 16 de julho de 2020 , no art. 3º da Lei n° 14.257, 	de 1º de dezembro de 2021 , e no art. 18 da Lei n° 14.690, de 3 de outubro de 2023 , do valor estabelecido no inciso II do caput do art. 20 desta Lei.</h4>
+ <h3>Art. 23. Na hipótese de falência ou de liquidação extrajudicial do agente financeiro a que se refere o caput do art. 20 desta Lei, o valor do crédito presumido corresponderá ao saldo total dos créditos decorrentes de diferenças temporárias existente na data de decretação da falência ou da liquidação extrajudicial, observado o disposto nos arts. 20, 21 e 22 desta Lei.</h3>
+ <h4>Parágrafo único. O disposto no caput deste artigo aplica-se somente 	às pessoas jurídicas cuja falência ou liquidação extrajudicial tenha sido decretada após a data de entrada em vigor da Medida Provisória nº 1.213, de 22 de abril de 	2024.</h4>
+ <h3>Art. 24. Os saldos contábeis a que se referem os arts. 20, 21, 22 e 23 desta 	Lei serão fornecidos pelo Banco Central do Brasil à Secretaria Especial da 	Receita Federal do Brasil do Ministério da Fazenda, quando solicitados, com base nos dados disponíveis em seus sistemas de informação, para fins de apuração dos créditos presumidos.</h3>
+ <h3>Art. 25. O disposto no art. 21 desta Lei fica sujeito à previsão nas respectivas leis orçamentárias anuais.</h3>
+ <p>Subseção III</p>
+ <p>Do Ressarcimento do Crédito 	Presumido</p>
+ <h3>Art. 26. O crédito presumido de que trata esta Lei poderá ser objeto de pedido de ressarcimento pelo agente financeiro a que se refere o caput do art. 20.</h3>
+ <h4>§ 1º O ressarcimento em espécie será precedido da dedução de ofício de valores de natureza tributária ou não tributária devidos à Fazenda Nacional pelos agentes financeiros beneficiários.</h4>
+ <h4>§ 2º O disposto no art. 74 da Lei n° 9.430, de 27 de dezembro de 1996 (Lei do Ajuste Tributário), não se aplica ao crédito presumido de que trata esta Lei.</h4>
+ <h3>Art. 27. A partir da dedução de ofício dos débitos com a Fazenda Nacional ou do ressarcimento a que se refere o art. 26 desta Lei, os agentes financeiros beneficiários observarão o disposto no art. 6º da Lei n° 14.257, 	de 1º de dezembro de 2021.</h3>
+ <h3>Art. 28. Será aplicada multa de 20% (vinte por cento) sobre o valor deduzido de ofício dos débitos com a 	Fazenda Nacional ou ressarcido às instituições de que trata o art. 20 desta 	Lei que solicitarem o ressarcimento de crédito presumido de que trata o art. 26 nas hipóteses em que a dedução ou o ressarcimento seja obtido com falsidade no pedido por elas apresentado, sem prejuízo da devolução do valor deduzido ou ressarcido indevidamente e das sanções cíveis e penais cabíveis pela falsidade apresentada.</h3>
+ <h4>Parágrafo único. Os créditos de multa e de valor deduzido ou ressarcido indevidamente de que trata o caput deste artigo serão inscritos em dívida ativa pela Procuradoria-Geral da Fazenda Nacional após a constituição definitiva de crédito, observados os princípios do contraditório e da ampla defesa.</h4>
+ <h3>Art. 29. A dedução de ofício poderá ser objeto de revisão pela autoridade administrativa, a pedido, 	quando o sujeito passivo alegar inexistência do débito deduzido.</h3>
+ <h3>Art. 30. A Fazenda Nacional poderá verificar a exatidão dos créditos presumidos apurados de acordo com o disposto nos arts. 20, 21, 22 e 23 pelo prazo de 5 (cinco) anos, contado da data do pedido de ressarcimento de que trata o art. 26 desta Lei.</h3>
+ <h3>Art. 31. As instituições de que trata o art. 20 desta Lei manterão os controles contábeis e a documentação necessários para identificar:</h3>
+ <h5>I – os saldos dos créditos decorrentes de diferenças temporárias de que trata esta Lei;</h5>
+ <h5>II – os créditos concedidos no âmbito do Programa a que se refere o art. 19 	desta Lei.</h5>
+ <h3>Art. 32. O Banco Central do Brasil deverá, em relação às instituições e às operações de crédito referidas no art. 20 desta Lei:</h3>
+ <h5>I – fiscalizar o cumprimento pelas instituições das condições estabelecidas para as operações de crédito;</h5>
+ <h5>II – acompanhar e divulgar mensalmente os dados e as estatísticas relativos 	às operações de crédito;</h5>
+ <h5>III – prestar subsídios ao Ministério da Fazenda para avaliação dos resultados obtidos, mediante encaminhamento de dados, de informações e de estatísticas relativos às operações de crédito.</h5>
+ <h2>CAPÍTULO VI</h2>
+ <p>DO PROGRAMA DE MOBILIZAÇÃO DE 	CAPITAL PRIVADO EXTERNO E PROTEÇÃO CAMBIAL – PROGRAMA ECO INVEST BRASIL</p>
+ <h3>Art. 33. É instituído o 	Programa de Mobilização de Capital Privado Externo e Proteção Cambial – 	Programa Eco Invest Brasil, no âmbito do Fundo Nacional sobre Mudança do 	Clima (FNMC), instituído pela Lei n° 12.114, de 9 de dezembro de 2009 , com os seguintes objetivos:</h3>
+ <h5>I – fomentar e incentivar investimentos em projetos que promovam a transformação ecológica, sobretudo nos eixos da transição para práticas e tecnologias sustentáveis, do adensamento tecnológico, da bioeconomia, da economia circular, da transição energética e da infraestrutura e adaptação à 	mudança do clima, entre outros;</h5>
+ <h5>II – atrair investimentos externos ao País;</h5>
+ <h5>III – viabilizar operações no mercado de capitais com vistas à captação de recursos no exterior por empresas, investidores e instituições financeiras sediados no País, para fins de financiamento de projetos que atendam ao disposto no inciso I do caput deste artigo;</h5>
+ <h5>IV – apoiar o desenvolvimento, a liquidez e a eficiência do mercado de proteção ( hedge ) de longo prazo em moeda estrangeira no País.</h5>
+ <h4>§ 1º O Programa Eco Invest Brasil oferecerá linha de mobilização de capital privado externo e proteção cambial, no âmbito do FNMC, que contará, nos termos da regulamentação do Conselho Monetário Nacional, com as seguintes sublinhas para empresas ou investidores nacionais e estrangeiros, entre outras:</h4>
+ <h5>I – de financiamento parcial ( blended finance );</h5>
+ <h5>II – de liquidez;</h5>
+ <h5>III – destinada à oferta de derivativos cambiais ou outros ativos financeiros;</h5>
+ <h5>IV – destinada à estruturação de projetos.</h5>
+ <h4>§ 2º A linha de mobilização de capital privado externo e proteção cambial de que trata o § 1º deste artigo terá contabilidade e governança próprias e contará com recursos segregados e apartados dos demais recursos do FNMC.</h4>
+ <h4>§ 3º Excepcionalmente ao disposto no caput do art. 7º da Lei n° 12.114, 	de 9 de dezembro de 2009 , a linha de mobilização de capital privado externo e proteção cambial de que trata o § 1º deste artigo poderá 	ser diretamente acessada e operada por instituições financeiras autorizadas a operar pelo Banco Central do Brasil, desde que assumam o risco de crédito das operações.</h4>
+ <h4>§ 4º Ato do Ministro de Estado da Fazenda estabelecerá os critérios para:</h4>
+ <h5>I – a elegibilidade dos investimentos ao Programa Eco Invest Brasil;</h5>
+ <h5>II – a demonstração da efetiva captação ou atração de recursos externos por parte das instituições financeiras que acessarem os recursos do Programa Eco 	Invest Brasil.</h5>
+ <h3>Art. 34. As instituições financeiras que acessarem a linha de mobilização de capital privado externo e proteção cambial poderão utilizá-la, nos termos da regulamentação do 	Conselho Monetário Nacional, para oferecer ou viabilizar a oferta de:</h3>
+ <h5>I – operações de crédito em montante parcial dos recursos demandados pelo projeto de investimento apoiado ( blended finance );</h5>
+ <h5>II – operações de crédito para casos relacionados a eventos de volatilidade cambial que possam comprometer a liquidez da empresa ou do investidor;</h5>
+ <h5>III – instrumentos derivativos cambiais, incluídos opções, forwards , 	futuros e swaps , com o objetivo de mitigar, parcial ou integralmente, 	o risco cambial do investidor ( hedge cambial);</h5>
+ <h5>IV – operações de crédito para financiar estudos e projetos direcionados à 	exportação de produtos e serviços, à disponibilização de infraestrutura de suporte à exportação de produtos e serviços ou à oferta de infraestrutura e serviços para a atração de turismo sustentável internacional ao País.</h5>
+ <h4>Parágrafo único. No caso das operações de que trata o inciso I do caput deste artigo, a empresa, o investidor ou a instituição financeira deverá, 	preferencialmente, realizar operação de captação de recursos no mercado externo, correspondentes à parcela restante do montante de capitais de terceiros necessária à execução do projeto de investimento.</h4>
+ <h3>Art. 35. Para fins de implementação do Programa Eco Invest Brasil, é a União autorizada a:</h3>
+ <h5>I – repassar às instituições financeiras, por meio do FNMC, os recursos para a linha de mobilização de capital privado externo e proteção cambial e demais instrumentos oferecidos pelo Programa;</h5>
+ <h5>II – celebrar acordos de cooperação, operações de crédito e outros instrumentos afins com organismos multilaterais, observado o disposto no inciso V do caput do art. 52 da Constituição Federal , para, entre outros fins, destinar os recursos ao FNMC com vistas a apoiar os objetivos do Programa;</h5>
+ <h5>III – abrir conta bancária, no País ou no exterior, em moeda estrangeira, 	exclusivamente nas instituições financeiras oficiais federais.</h5>
+ <h3>Art. 36. A linha de mobilização de capital privado externo e proteção cambial será administrada pelo comitê executivo do Programa Eco Invest Brasil, vinculado ao Ministério da Fazenda, que o coordenará.</h3>
+ <h4>§ 1º As competências e a composição do comitê executivo serão estabelecidas em ato do Ministro de Estado da Fazenda, que poderá prever a participação de outros órgãos do Poder Executivo federal.</h4>
+ <h4>§ 2º O comitê executivo poderá propor mecanismos, a serem estabelecidos em ato do Ministério da Fazenda, para incentivar a competição entre os agentes financeiros com vistas a atingir os objetivos do Programa Eco Invest Brasil.</h4>
+ <h4>§ 3º Para fins do disposto no § 3º do art. 33 desta Lei, para terem acesso 	às linhas e aos recursos do Programa Eco Invest Brasil, instituições financeiras, públicas ou privadas, poderão ser habilitadas como agentes financeiros da linha de mobilização de capital privado externo e proteção cambial, desde que os riscos da atuação sejam suportados por esses agentes financeiros.</h4>
+ <h4>§ 4º Caberá ao comitê executivo homologar a habilitação das instituições financeiras como agentes financeiros da linha de mobilização de capital privado externo e proteção cambial, com detalhamento do volume e da alocação dos recursos para cada instituição habilitada.</h4>
+ <h4>§ 5º O comitê executivo submeterá ao comitê gestor do FNMC relatório anual consolidado com seus atos e atividades e com a síntese dos relatórios de que trata o art. 37 desta Lei.</h4>
+ <h3>Art. 37. Cada agente financeiro apresentará ao comitê executivo do Programa Eco Invest Brasil relatório circunstanciado sobre as operações realizadas, com parecer de auditoria independente, que conterá informe de alocação dos recursos disponibilizados no âmbito do Programa, demonstrativo de repasse das condições financeiras obtidas aos projetos elegíveis e levantamento do total de recursos captados em moeda estrangeira com uso dos instrumentos de proteção em comparação com o valor utilizado da linha de mobilização de capital privado externo e proteção cambial.</h3>
+ <h3>Art. 38. Ato do Ministro de 	Estado da Fazenda estabelecerá normas regulamentadoras para o Programa Eco 	Invest Brasil e para as operações a ele associadas, inclusive quanto:</h3>
+ <h5>I – às condições, aos critérios e ao processo de seleção e habilitação de instituições financeiras como agentes financeiros da linha de mobilização de capital privado externo e proteção cambial;</h5>
+ <h5>II – aos volumes e aos limites de alocação dos recursos;</h5>
+ <h5>III – à forma e à periodicidade da prestação de contas, da publicização de informações sobre a utilização dos recursos e dos relatórios de avaliação de impacto do Programa com vistas a seu aperfeiçoamento;</h5>
+ <h5>IV – a outras definições, critérios e aspectos operacionais relevantes para o funcionamento e a operacionalização da linha de mobilização de capital privado externo e proteção cambial.</h5>
+ <h4>Parágrafo único. Sem prejuízo do disposto no caput deste artigo, o 	Banco do Brasil S.A. poderá ser contratado, mediante dispensa de licitação, 	para dar apoio operacional ao Programa Eco Invest Brasil.</h4>
+ <h3>Art. 39. O Banco Central do 	Brasil, com os objetivos de mitigar o risco cambial e de aumentar a eficiência do mercado de proteção ( hedge cambial) de longo prazo em moeda estrangeira no País, é autorizado a adquirir derivativos cambiais ou outros ativos financeiros de organismos financeiros multilaterais e a repassá-los, por meio de instrumento contratual pertinente, para instituições financeiras autorizadas a operar em câmbio pelo Banco Central do Brasil, mediante requerimento de garantias de crédito.</h3>
+ <h4>§ 1º Aplica-se às operações de que trata o caput deste artigo o disposto nos §§ 2º , 3º e 4º do art. 1º e no art. 1º-A da Lei n° 11.882, de 23 de dezembro de 2008.</h4>
+ <h4>§ 2º O Banco Central do Brasil disciplinará o disposto neste artigo e poderá 	dispor, inclusive, sobre remuneração, limites, prazos, requisitos para a escolha de contrapartes e outras condições para a celebração das operações.</h4>
+ <h4>§ 3º As operações de que trata o caput deste artigo, bem como as ofertas diretas de swaps e de outros derivativos financeiros pelo 	Banco Central do Brasil, poderão ser realizadas independentemente do prazo das respectivas operações.</h4>
+ <h3>Art. 40. O Conselho 	Monetário Nacional, sem prejuízo de suas demais competências, estabelecerá 	normas regulamentadoras da linha de mobilização de capital privado externo e proteção cambial e de demais operações a serem oferecidas no âmbito do 	Programa Eco Invest Brasil, inclusive quanto:</h3>
+ <h5>I – aos encargos financeiros e aos prazos;</h5>
+ <h5>II – às comissões devidas pelo tomador de recursos da linha de mobilização de capital privado externo e proteção cambial, a título de administração e risco das operações;</h5>
+ <h5>III – aos custos, aos descontos, às remunerações e aos demais critérios necessários para a operacionalização dos recursos da linha de mobilização de capital privado externo e proteção cambial, inclusive no caso de aplicação irregular ou em finalidades distintas dos objetivos do Programa;</h5>
+ <h5>IV – às penalidades, aos impedimentos e às demais medidas aplicáveis às instituições financeiras ou ao tomador final, conforme o caso, em caso de aplicação irregular dos recursos provenientes da linha de mobilização de capital privado externo e proteção cambial ou em finalidades distintas dos objetivos do Programa.</h5>
+ <h3>Art. 41. O Banco Central do 	Brasil acompanhará e fiscalizará, nos termos da regulamentação do Conselho 	Monetário Nacional, os atos das instituições financeiras no acesso e na operação da linha de mobilização de capital privado externo e proteção cambial.</h3>
+ <h4>Parágrafo único. Quando, no exercício de suas competências, entidades e 	órgãos da administração pública federal verificarem a ocorrência de aplicação irregular dos recursos provenientes da linha de mobilização de capital privado externo e proteção cambial ou em finalidades distintas dos objetivos do Programa Eco Invest Brasil, deverão comunicar a irregularidade ao Banco Central do Brasil, que informará a ocorrência à instituição financeira que houver concedido o financiamento, para fins de cumprimento do disposto nas normas do Conselho Monetário Nacional de que trata o art. 40 	desta Lei.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <p>da criação de linha de crédito especial para financiamento da aquisição de veículos destinados à renovação da frota utilizada na prestação de serviços de táxi</p>
+ <h3>Art. 42. É criada linha de crédito especial para financiar a aquisição de veículos destinados à 	renovação da frota utilizada na prestação de serviços de táxi.</h3>
+ <h4>§ 1º Poderão ter direito à linha de crédito de que trata o caput deste artigo as pessoas físicas, titulares de autorização, permissão ou concessão do poder público para exercer, comprovadamente, em veículo de sua propriedade, a atividade de condutor autônomo de passageiros, na categoria táxi, devidamente registrado nos órgãos competentes que regulam a atividade de taxista.</h4>
+ <h4>§ 2º A linha de crédito será operacionalizada por meio do FGO, de que trata a Lei n° 12.087, de 11 de novembro de 2009 , administrado pelo Banco do Brasil S.A., além da alienação fiduciária do veículo financiado.</h4>
+ <h4>§ 2º A linha de crédito poderá requerer garantia do 	FGO, de que trata a Lei n° 12.087, de 11 de novembro de 2009 , bem como alienação fiduciária do veículo financiado. (Redação dada pela Lei n° 15.077, de 2024)</h4>
+ <h4>§ 3º Poderão ser financiados com a linha de crédito de que trata o caput deste artigo os veículos de passageiros ou de uso misto, de fabricação nacional, novos, movidos a combustível de origem fóssil ou renovável, 	inclusive os veículos híbridos e elétricos, destinados à comprovada utilização na prestação de serviços inerentes à atividade de taxista, que se enquadrem nas condições estabelecidas na legislação vigente, podendo também ser financiados o seguro inicial dos bens e os itens para carregamento da bateria dos veículos movidos por energia elétrica.</h4>
+ <h4>§ 4º A habilitação ao crédito dar-se-á mediante apresentação de documentação hábil que comprove o exercício da atividade de taxista por parte do interessado no financiamento, respeitada a política de crédito de cada agente financeiro.</h4>
+ <h4>§ 5º Poderão operacionalizar a linha de crédito de que trata o caput deste artigo e requerer a garantia do FGO, de que trata a Lei n° 12.087, de 11 de novembro de 2009 , o Banco do Brasil S.A., a Caixa Econômica 	Federal, o Banco do Nordeste do Brasil S.A., o Banco da Amazônia S.A., os bancos estaduais, as agências de fomento estaduais, as cooperativas de crédito, os bancos cooperativos, as instituições integrantes do sistema de pagamentos brasileiro, as plataformas tecnológicas de serviços financeiros ( fintechs ), 	as organizações da sociedade civil de interesse público de crédito e as demais instituições financeiras públicas e privadas autorizadas a funcionar pelo Banco Central do Brasil, atendida a disciplina do Conselho Monetário 	Nacional e do Banco Central do Brasil a elas aplicável.</h4>
+ <h4>§ 6º Os limites de financiamento, os prazos e as demais condições negociais serão regulamentados pelo Conselho Monetário Nacional.</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <p>DA DILAÇÃO DE PRAZOS PARA 	RENEGOCIAÇÃO DE DÍVIDAS NO ÂMBITO DOS FUNDOS CONSTITUCIONAIS E OUTROS</p>
+ <h3>Art. 43. A Lei n° 13.340, de 28 de setembro de 2016 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 1º-B. É autorizada a concessão de rebate para liquidação, até 31 de dezembro de 2025, nos termos dos arts. 1º e 1º-A desta Lei, de débitos de responsabilidade de miniprodutores rurais e de pequenos produtores rurais, conforme definição constante da Proposição nº 041/2011, aprovada pela Resolução Condel/Sudene nº 43, de 10 de novembro de 2011, e de agricultores familiares que atendem aos requisitos da Lei n° 11.326, de 24 de julho de 2006 , conforme regulamento do fundo e disponibilidade orçamentária e financeira.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 2º-B. É autorizada a repactuação, até 31 de dezembro de 2025, nos termos dos arts. 2º e 2º-A desta Lei, de débitos de responsabilidade de miniprodutores rurais e de pequenos produtores rurais, conforme definição constante da Proposição nº 041/2011, aprovada pela Resolução Condel/Sudene nº 43, de 10 de novembro de 2011, e de agricultores familiares que atendem aos requisitos da Lei n° 11.326, de 24 de julho de 2006, conforme regulamento do fundo e disponibilidade orçamentária e financeira.</h3>
+ <h4>§ 1º Para fins do disposto neste artigo:</h4>
+ <h5>I – a amortização da dívida a ser repactuada será em prestações anuais, iguais e sucessivas, fixado o vencimento da primeira parcela para 2024 e o vencimento da última parcela para 30 de novembro de 2033, estabelecido novo cronograma de amortização, sem a necessidade de estudo de capacidade de pagamento;</h5>
+ <h5>II – a carência será até 2025, independentemente da data de formalização da renegociação.</h5>
+ <h4>§ 2º A critério e por solicitação do devedor, é autorizada a adequação das operações renegociadas com base neste artigo, vencidas e vincendas, às condições estabelecidas no § 1º.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 3º-C. (VETADO).” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 4º (VETADO).</h3>
+ <p>...........................................................................</p>
+ <h4>§ 5º (VETADO).</h4>
+ <h3>..................................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 10-A. (VETADO)” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 12-A. Para os fins do disposto nos arts. 1º-B, 2º-B e 3º-C desta Lei, os honorários advocatícios e as despesas com custas processuais são de responsabilidade de cada parte, e a falta de seu pagamento não obsta a liquidação ou a repactuação da dívida, conforme o caso.”</h3>
+ <p>“</p>
+ <h3>Art. 13-A. Até 31 de dezembro de 2025, são a Codevasf e o DNOCS autorizados a adotar os procedimentos previstos no art. 1º desta Lei para a liquidação das dívidas vencidas de responsabilidade de pessoas físicas e jurídicas relativas a vendas de lotes para titulação e ao uso da infraestrutura de irrigação de uso comum nos perímetros públicos de irrigação, conforme disponibilidade orçamentária e financeira.</h3>
+ <h4>Parágrafo único. A liquidação e a renegociação de dívidas vencidas disciplinadas neste artigo aplicam-se a todos os imóveis rurais ou urbanos localizados nos perímetros públicos de irrigação administrados pela Codevasf e pelo DNOCS.”</h4>
+ <h3>Art. 44. A Lei n° 13.606, de 9 de janeiro de 2018 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 20. (VETADO).</h3>
+ <p>...........................................................................</p>
+ <h4>§ 4º (VETADO).” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 36. (VETADO):</h3>
+ <p>............................................................................</p>
+ <h5>II - (VETADO);</h5>
+ <p>............................................................................</p>
+ <h5>V - (VETADO);</h5>
+ <h3>....................................................................” (NR)</h3>
+ <h3>Art. 45. (VETADO).</h3>
+ <h3>Art. 46. O art. 15-E da Lei n° 7.827, de 27 de setembro de 1989 , 	passa a vigorar acrescido do seguinte § 15:</h3>
+ <p>“</p>
+ <h3>Art. 15-E. ....................................................</h3>
+ <p>.......................................................................</p>
+ <h4>§ 15. Fica o Banco Nacional de Desenvolvimento Econômico e Social (BNDES) autorizado a realizar acordos de renegociação extraordinária de operações de créditos de microprodutores e pequenos e médios produtores rurais na zona de abrangência da Sudene e da Superintendência do Desenvolvimento da Amazônia (Sudam) inadimplidas sob sua gestão, até o prazo máximo de 31 de dezembro de 2025, nas mesmas condições previstas neste artigo, conforme disponibilidade orçamentária e financeira.” (NR)</h4>
+ <h3>Art. 47. A Lei n° 14.166, de 10 de junho de 2021, passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 3º Para as renegociações extraordinárias de que trata o art. 15-E da Lei n° 7.827, de 27 de setembro de 1989 , realizadas em até 3 (três) anos após a entrada em vigor da nova redação deste caput e sua regulamentação, aplicam-se as disposições deste artigo, conforme regulamento do fundo e disponibilidade orçamentária e financeira.</h3>
+ <p>..........................................................................</p>
+ <h4>§ 2º ..................................................................</h4>
+ <p>..........................................................................</p>
+ <h5>III – as operações contratadas exclusivamente com microempreendedores individuais, microempresas e empresas de pequeno porte que, nas demonstrações financeiras dos fundos constitucionais, tenham sido integralmente provisionadas ou totalmente lançadas em prejuízo.</h5>
+ <h3>.................................................................” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 4º Os bancos administradores dos fundos constitucionais de financiamento ficam autorizados a realizar, uma única vez, até 3 (três) anos após a entrada em vigor da nova redação deste caput e sua regulamentação, por solicitação dos beneficiários, substituição de encargos das operações de crédito rural e não rural contratadas até 31 de dezembro de 2018 pelos encargos correntemente utilizados para contratação de nova operação, nos termos da Lei n° 10.177, de 12 de janeiro de 2001 , e os novos encargos passarão a ter validade a partir da data de sua formalização por meio de aditivo ao contrato, conforme regulamento do fundo e disponibilidade orçamentária e financeira.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 6º (VETADO).</h3>
+ <h3>................................................................” (NR)</h3>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 48. O art. 7º da Lei n° 12.087, de 11 de novembro de 2009 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 7º ...............................................................</h3>
+ <h5>I – ........................................................................</h5>
+ <p>............................................................................</p>
+ <h6>f) pessoas físicas e empreendimentos de pessoas físicas inscritas no Cadastro Único para Programas Sociais do Governo Federal (CadÚnico), previsto na Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), nos termos e nos limites estabelecidos em ato do Ministro de Estado do Desenvolvimento e Assistência Social, Família e Combate à Fome e no estatuto do fundo;</h6>
+ <p>..........................................................................</p>
+ <h4>§ 6º-A. O fundo de que trata o inciso III do caput deste artigo terá também como finalidade destinar recursos financeiros para a concessão de incentivo financeiro-educacional de que trata a Lei n° 14.818, de 16 de janeiro de 2024 (Programa Pé de Meia).</h4>
+ <h4>§ 6º-B. Para cumprimento do disposto no § 6º-A, o fundo de que trata o inciso III do caput deste artigo integralizará cotas no Fundo de Incentivo à Permanência no Ensino Médio (Fipem), no montante de até R$ 6.000.000.000,00 (seis bilhões de reais), observado, no Fundo de Garantia de Operações de Crédito Educativo (FGEDUC), o montante de recursos financeiros disponíveis ainda não vinculados às garantias já contratadas.</h4>
+ <p>...........................................................................” (NR)</p>
+ <h3>Art. 49. O inciso I do caput do art. 1º da Lei n° 10.735, de 11 de setembro de 	2003 , passa a vigorar acrescido da seguinte alínea “d”:</h3>
+ <p>“</p>
+ <h3>Art. 1º ............................................................</h3>
+ <h5>I – .....................................................................</h5>
+ <p>...........................................................................</p>
+ <h6>d) pessoas físicas e empreendimentos de pessoas físicas inscritas no Cadastro Único para Programas Sociais do Governo Federal (CadÚnico), previsto na Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social); e</h6>
+ <h3>.................................................................” (NR)</h3>
+ <h3>Art. 50. Convalidam-se os atos praticados com base na Medida Provisória nº 1.213, de 22 de abril de 	2024.</h3>
+ <h3>Art. 51. (VETADO).</h3>
+ <h3>Art. 52. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 10 de outubro de 2024; 203º da Independência e 	136º da República.</p>
+ <h3>LUIZ 	INÁCIO LULA DA SILVA</h3>
+ <p>Carlos Henrique Baqueta Fávaro</p>
+ <p>Luiz Paulo Teixeira Ferreira</p>
+ <p>Antônio Waldez Góes da Silva</p>
+ <p>José Wellington Barroso de Araujo Dias</p>
+ <p>Macaé Maria Evaristo dos Santos</p>
+ <p>Márcio Luiz França Gomes</p>
+ <p>Maria Osmarina Marina da Silva Vaz de Lima</p>
+ <p>Este texto não substitui o publicado no DOU de 	10.10.2024 - Edição extra</p>
+ <p>Institui o Programa Acredita no Primeiro</p>
+ <p>Passo e o Programa de Mobilização de Capital Privado Externo e Proteção</p>
+ <p>Cambial – Programa Eco Invest Brasil; altera a Lei n° 13.999, de 18 de maio de 2020, para instituir o Programa de Crédito e Financiamento de Dívidas de</p>
+ <p>Microempreendedores Individuais e Microempresas – Procred 360; institui o</p>
+ <p>Programa de Renegociação de Dívidas de Microempreendedores Individuais,</p>
+ <p>Microempresas, Empresas de Pequeno Porte e Sociedades Cooperativas</p>
+ <p>–Desenrola Pequenos Negócios; cria linha de crédito especial para financiar a aquisição de veículos destinados à renovação da frota utilizada na prestação de serviços de táxi; altera a Medida Provisória nº 2.196-3, de 24</p>
+ <p>de agosto de 2001, e as Leis nºs 7.827, de 27 de setembro de 1989, 10.735,</p>
+ <p>de 11 de setembro de 2003, 12.087, de 11 de novembro de 2009, 13.340, de 28</p>
+ <p>de setembro de 2016, 13.606, de 9 de janeiro de 2018, 14.042, de 19 de agosto de 2020, 14.165, de 10 de junho de 2021, e 14.166, de 10 de junho de</p>
+ <p>2021; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14995.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

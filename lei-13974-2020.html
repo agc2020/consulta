@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.974, DE 7 DE JANEIRO DE 2020 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2020" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.974, DE 7 DE JANEIRO DE 2020</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:31:59 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/L13974.htm#view" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 13.027 caracteres | espelho: 12.717 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.974, DE 7 DE JANEIRO DE 2020</p>
+ <p>Dispõe sobre o Conselho de Controle de Atividades Financeiras (Coaf), de que trata o art. 14 da Lei n° 9.613, de 3 de março de 1998.</p>
+ <p>Não remover Down Up Texto para impressão</p>
+ <p>Conversão da Medida Provisória nº 893, de 2019</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei reestrutura o Conselho de Controle de Atividades Financeiras (Coaf), de que trata o art. 14 da Lei n° 9.613, de 3 de março de 1998 .</h3>
+ <h3>Art. 2º O Coaf dispõe de autonomia técnica e operacional, atua em todo o território nacional e vincula-se administrativamente ao Banco Central do Brasil.</h3>
+ <h3>Art. 2º O Coaf dispõe de autonomia técnica e operacional, atua em todo o território nacional e vincula-se administrativamente ao Ministério da 	Fazenda. (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h3>Art. 2º O Coaf dispõe de autonomia técnica e operacional, atua em todo o território nacional e vincula-se administrativamente ao Banco Central do Brasil.</h3>
+ <h3>Art. 3º Compete ao Coaf, em todo o território nacional, sem prejuízo das atribuições estabelecidas na legislação em vigor:</h3>
+ <h5>I - produzir e gerir informações de inteligência financeira para a prevenção e o combate à lavagem de dinheiro;</h5>
+ <h5>I - produzir e gerir informações de inteligência financeira; e (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h5>
+ <h5>I - produzir e gerir informações de inteligência financeira para a prevenção e o combate à lavagem de dinheiro;</h5>
+ <h5>II - promover a interlocução institucional com órgãos e entidades nacionais, estrangeiros e internacionais que tenham conexão com suas atividades.</h5>
+ <h3>Art. 4º A estrutura organizacional do Coaf compreende:</h3>
+ <h5>I - Presidência;</h5>
+ <h5>II - Plenário; e</h5>
+ <h5>III - Quadro Técnico.</h5>
+ <h4>§ 1º O Plenário é composto do Presidente do Coaf e de 12 (doze) servidores ocupantes de cargo efetivos, de reputação ilibada e reconhecidos conhecimentos em matéria de prevenção e combate à lavagem de dinheiro, escolhidos dentre integrantes dos quadros de pessoal dos seguintes órgãos e entidades:</h4>
+ <h5>I - Banco Central do Brasil;</h5>
+ <h5>II - Comissão de Valores Mobiliários;</h5>
+ <h5>III - Superintendência de Seguros Privados;</h5>
+ <h5>IV - Procuradoria-Geral da Fazenda Nacional;</h5>
+ <h5>V - Secretaria Especial da Receita Federal do Brasil;</h5>
+ <h5>VI - Agência Brasileira de Inteligência;</h5>
+ <h5>VII - Ministério das Relações Exteriores;</h5>
+ <h5>VIII - Ministério da Justiça e Segurança Pública;</h5>
+ <h5>IX - Polícia Federal;</h5>
+ <h5>X - Superintendência Nacional de Previdência Complementar;</h5>
+ <h5>XI - Controladoria-Geral da União;</h5>
+ <h5>XII - Advocacia-Geral da União.</h5>
+ <h4>§ 2º Compete ao Plenário, sem prejuízo de outras atribuições previstas no Regimento Interno do Coaf:</h4>
+ <h5>I - decidir sobre as orientações e as diretrizes estratégicas de atuação propostas pelo Presidente do Coaf;</h5>
+ <h5>II - decidir sobre infrações e aplicar as penalidades administrativas previstas no art. 12 da Lei n° 9.613, de 3 de março de 1998 , em relação a pessoas físicas e pessoas jurídicas abrangidas pelo disposto no art. 9º da Lei n° 9.613, de 3 de março de 1998 , para as quais não exista órgão próprio fiscalizador ou regulador;</h5>
+ <h5>III - convidar especialistas em matéria correlacionada à atuação do Coaf, oriundos de órgãos e entidades públicas ou de entes privados, com o intuito de contribuir para o aperfeiçoamento de seus processos de gestão e inovação tecnológica, observada pelo convidado a preservação do sigilo de informações de caráter reservado às quais tenha acesso.</h5>
+ <h4>§ 3º A participação dos membros do Plenário em suas sessões deliberativas será considerada prestação de serviço público relevante não remunerado.</h4>
+ <h4>§ 4º O Quadro Técnico compreende o Gabinete da Presidência, a Secretaria-Executiva e as Diretorias Especializadas definidas no Regimento Interno do Coaf.</h4>
+ <h4>§ 5º Compete ao Presidente do Banco Central do Brasil escolher e nomear o Presidente do Coaf e os membros do Plenário.</h4>
+ <h4>§ 5º Compete ao Ministro de Estado da Fazenda escolher e nomear o Presidente do 	Coaf e os membros do Plenário. (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h4>
+ <h4>§ 5º Compete ao Presidente do Banco Central do Brasil escolher e nomear o Presidente do Coaf e os membros do Plenário.</h4>
+ <h4>§ 6º Compete ao Presidente do Coaf escolher e nomear, observadas as exigências de qualificação profissional e formação acadêmica previstas em ato do Poder Executivo:</h4>
+ <h5>I - o Secretário-Executivo e os titulares das Diretorias Especializadas referidas no § 4º deste artigo;</h5>
+ <h5>II - os servidores, os militares e os empregados públicos cedidos ao Coaf ou por ele requisitados;</h5>
+ <h5>III - os ocupantes de cargos em comissão e funções de confiança.</h5>
+ <h3>Art. 5º A organização e o funcionamento do Coaf, incluídas a sua estrutura e as competências e as atribuições no âmbito da Presidência, do Plenário e do Quadro Técnico, serão definidos em seu Regimento Interno, aprovado pela Diretoria Colegiada do Banco Central do Brasil.</h3>
+ <h3>Art. 5º A organização e o funcionamento do Coaf serão estabelecidos em seu regimento interno, inclusive quanto: (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h5>I - a sua estrutura e as suas competências; e (Incluído pela Medida Provisória nº 1.158, de 2023) encerrada</h5>
+ <h5>II - as atribuições de seus membros no âmbito da Presidência, do Plenário e do 	Quadro Técnico. (Incluído pela Medida Provisória nº 1.158, de 2023) encerrada</h5>
+ <h4>Parágrafo único. O regimento interno do Coaf será aprovado pelo Ministro de 	Estado da Fazenda. (Incluído pela Medida Provisória nº 1.158, de 2023) encerrada</h4>
+ <h3>Art. 5º A organização e o funcionamento do Coaf, incluídas a sua estrutura e as competências e as atribuições no âmbito da Presidência, do Plenário e do Quadro Técnico, serão definidos em seu Regimento Interno, aprovado pela Diretoria Colegiada do Banco Central do Brasil.</h3>
+ <h3>Art. 6º O processo administrativo sancionador no âmbito do Coaf será disciplinado pela Diretoria Colegiada do Banco Central do Brasil, à qual incumbe dispor, entre outros aspectos, sobre o rito, os prazos e os critérios para gradação das penalidades previstas na Lei n° 9.613, de 3 de março 1998 , assegurados o contraditório e a ampla defesa.</h3>
+ <h3>Art. 6º O processo administrativo sancionador no âmbito do Coaf: (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h5>I - será disciplinado por ato do Ministro de Estado da Fazenda, mediante apresentação de proposta do Plenário do Coaf; e (Incluído pela Medida Provisória nº 1.158, de 2023) encerrada</h5>
+ <h5>II - disporá, entre outros aspectos, sobre o rito, os prazos e os critérios para gradação das penalidades previstas na Lei n° 9.613, de 3 de março 1998 , assegurados os princípios do contraditório e da ampla defesa. (Incluído pela Medida Provisória nº 1.158, de 2023) encerrada</h5>
+ <h3>Art. 6º O processo administrativo sancionador no âmbito do Coaf será disciplinado pela Diretoria Colegiada do Banco Central do Brasil, à qual incumbe dispor, entre outros aspectos, sobre o rito, os prazos e os critérios para gradação das penalidades previstas na Lei n° 9.613, de 3 de março 1998 , assegurados o contraditório e a ampla defesa.</h3>
+ <h4>§ 1º Caberá recurso das decisões do Plenário relacionadas ao processo administrativo de que trata o caput deste artigo ao Conselho de Recursos do Sistema Financeiro Nacional.</h4>
+ <h4>§ 2º O disposto na Lei n° 9.784, de 29 de janeiro de 1999 , aplica-se subsidiariamente aos processos administrativos sancionadores instituídos no âmbito do Coaf.</h4>
+ <h3>Art. 7º É aplicável ao Coaf o disposto no art. 2º da Lei n° 9.007, de 17 de março de 1995 . (Revogado pela 	Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h4>Parágrafo único. É vedada a redistribuição para os quadros de pessoal do Banco Central do Brasil de servidor oriundo de outros órgãos e entidades, em razão do exercício no Coaf. (Revogado pela 	Medida Provisória nº 1.158, de 2023) encerrada</h4>
+ <h3>Art. 8º Aos integrantes da estrutura do Coaf é vedado:</h3>
+ <h5>I - participar, na forma de controlador, administrador, gerente preposto ou mandatário, de pessoas jurídicas com atividades relacionadas no caput e no parágrafo único do art. 9º da Lei n° 9.613, de 3 de março de 1998 ;</h5>
+ <h5>II - emitir parecer sobre matéria de sua especialização, fora de suas atribuições funcionais, ainda que em tese, ou atuar como consultor das pessoas jurídicas a que se refere o inciso I do caput deste artigo;</h5>
+ <h5>III - manifestar, em qualquer meio de comunicação, opinião sobre processo pendente de julgamento no Coaf;</h5>
+ <h5>IV - fornecer ou divulgar informações conhecidas ou obtidas em decorrência do exercício de suas funções a pessoas que não disponham de autorização legal ou judicial para acessá-las.</h5>
+ <h4>§ 1º À infração decorrente do descumprimento do inciso IV do caput deste artigo aplica-se o disposto no art. 10 da Lei Complementar nº 105, de 10 de janeiro de 2001 .</h4>
+ <h4>§ 2º O Presidente do Coaf adotará as diligências necessárias para apuração de responsabilidade dos servidores e demais pessoas que possam ter contribuído para o descumprimento do disposto no caput deste artigo e encaminhará relatório circunstanciado à autoridade policial ou ao Ministério Público para adoção das medidas cabíveis.</h4>
+ <h4>§ 3º As providências previstas no § 2º deste artigo serão adotadas pelo Presidente do Banco Central do Brasil caso haja indícios de autoria ou de participação do Presidente do Coaf.</h4>
+ <h4>§ 3º As providências previstas no § 2º serão adotadas pelo Ministro de Estado da 	Fazenda na hipótese de indícios de autoria ou de participação do Presidente do Coaf. (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h4>
+ <h4>§ 3º As providências previstas no § 2º deste artigo serão adotadas pelo Presidente do Banco Central do Brasil caso haja indícios de autoria ou de participação do Presidente do Coaf.</h4>
+ <h3>Art. 9º Constituem Dívida Ativa do Banco Central do Brasil os créditos decorrentes da atuação do Coaf inscritos a partir de 20 de agosto de 2019.</h3>
+ <h4>§ 1º Continuam integrando a Dívida Ativa da União as multas pecuniárias e seus acréscimos legais relativos à ação fiscalizadora do Coaf nela inscritos até 19 de agosto de 2019.</h4>
+ <h4>§ 2º Compete aos titulares do cargo de Procurador do Banco Central do Brasil o exercício das atribuições previstas no art. 4º da Lei n° 9.650, de 27 de maio de 1998 , em relação ao Coaf.</h4>
+ <h3>Art. 9º Constituem dívida ativa da União os créditos decorrentes da atuação do Coaf inscritos até 19 de agosto de 2019 e a partir da data de publicação da Medida Provisória nº 1.158, de 12 de janeiro de 2023 . (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h4>§ 1º Integram a dívida ativa do Banco Central do Brasil as multas pecuniárias e os seus acréscimos legais relativos à ação fiscalizadora do Coaf nela inscritos entre 20 de agosto de 2019 e o dia anterior à data de publicação da Medida Provisória nº 1.158, de 12 de janeiro 2023. (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h4>
+ <h4>§ 2º A representação judicial e extrajudicial do Coaf compete aos membros da 	Advocacia-Geral da União. (Redação dada pela Medida Provisória nº 1.158, de 2023) encerrada</h4>
+ <h3>Art. 9º Constituem Dívida Ativa do Banco Central do Brasil os créditos decorrentes da atuação do Coaf inscritos a partir de 20 de agosto de 2019.</h3>
+ <h4>§ 1º Continuam integrando a Dívida Ativa da União as multas pecuniárias e seus acréscimos legais relativos à ação fiscalizadora do Coaf nela inscritos até 19 de agosto de 2019.</h4>
+ <h4>§ 2º Compete aos titulares do cargo de Procurador do Banco Central do Brasil o exercício das atribuições previstas no art. 4º da Lei n° 9.650, de 27 de maio de 1998 , em relação ao Coaf.</h4>
+ <h3>Art. 10. Ficam mantidos os cargos em comissão e as funções de confiança integrantes da estrutura do Coaf em 19 de agosto de 2019. (Revogado pela 	Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h3>Art. 11. Ficam mantidos os efeitos dos atos de cessão, requisição e movimentação de pessoal destinado ao Coaf editados até 19 de agosto de 2019. (Revogado pela 	Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h3>Art. 12. O Ministério da Economia e o Ministério da Justiça e Segurança Pública prestarão, até 31 de dezembro de 2020, o apoio técnico e administrativo necessário para o funcionamento e a operação do Coaf. (Revogado pela 	Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h3>Art. 13. Ato conjunto do Ministério da Economia, do Ministério da Justiça e Segurança Pública e do Banco Central do Brasil disporá sobre a transferência progressiva de processos e contratos administrativos. (Revogado pela 	Medida Provisória nº 1.158, de 2023) encerrada</h3>
+ <h3>Art. 14. Ficam revogados os arts. 13 , 16 e 17 da Lei n° 9.613, de 3 de março de 1998.</h3>
+ <h3>Art. 15. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 7 de janeiro de 2020; 199º da Independência e 132º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Marcelo Pacheco dos Guaranys</p>
+ <p>Roberto de Oliveira Campos Neto</p>
+ <p>Este texto não substitui o publicado no DOU de 8.1.2020</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/L13974.htm#view" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.514, DE 29 DE DEZEMBRO DE 2022 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2022" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.514, DE 29 DE DEZEMBRO DE 2022</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 15:36:27 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14514.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 33.427 caracteres | espelho: 35.787 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.514, DE 29 DE DEZEMBRO DE 2022</p>
+ <p>Conversão da Medida 	Provisória nº 1.133, de 2022</p>
+ <p>Dispõe sobre a empresa Indústrias Nucleares do Brasil S.A. (INB), sobre a pesquisa, a lavra e a comercialização de minérios nucleares, de seus concentrados e derivados, e de materiais nucleares, e sobre a atividade de mineração; altera as Leis nºs 4.118, de 27 de agosto de 1962, 8.001, de 13 de março de 1990, 9.991, de 24 de julho de 2000, 10.438, de 26 de abril de 2002, 13.575, de 26 de dezembro de 2017, 13.848, de 25 de junho de 2019, e 14.222, de 15 de outubro de 2021, e o Decreto-Lei n° 227, de 28 de fevereiro de 1967 (Código de Mineração); e revoga a Lei n° 5.740, de 1º de dezembro de 1971, e dispositivos das Leis nºs 4.118, de 27 de agosto de 1962, 6.189, de 16 de dezembro de 1974, 7.781, de 27 de junho de 1989, 13.575, de 26 de dezembro de 2017, e 14.222, de 15 de outubro de 2021, e do Decreto-Lei n° 1.038, de 21 de outubro de 1969.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Para fins do disposto nesta Lei, consideram-se:</h3>
+ <h5>I - concentrado de minério nuclear: concentrado de elemento nuclear que seja produto final da lavra de minério nuclear, de minérios que contenham elementos nucleares associados ou de matérias-primas que contenham elementos nucleares associados;</h5>
+ <h5>II - instalação mínero-industrial nuclear: local no qual minérios nucleares, 	minérios que contenham elementos nucleares associados ou matérias-primas que contenham elementos nucleares associados são lavrados e processados para a obtenção do concentrado de minério nuclear;</h5>
+ <h5>III - instalação nuclear: local no qual o material nuclear é produzido, 	processado, reprocessado, utilizado, manuseado ou estocado;</h5>
+ <h5>IV - lavra de minério nuclear: conjunto de operações coordenadas para a extração dos elementos nucleares de um depósito de minério nuclear, incluído o processamento físico e químico para a produção do concentrado de minério nuclear; e</h5>
+ <h5>V - recurso estratégico de minério nuclear: recurso mineral constituído por minério nuclear, incluídas jazidas e minas, localizado em região geográfica delimitada, considerado bem imprescritível e essencial à segurança do País e destinado ao atendimento da demanda do Programa Nuclear Brasileiro.</h5>
+ <h3>Art. 2º A Indústrias Nucleares do Brasil S.A. (INB) é 	empresa pública com a finalidade principal de executar o monopólio da União sobre as atividades previstas no inciso XXIII 	do caput 	do art. 21 e no inciso V do caput do art. 177 da Constituição Federal .</h3>
+ <h4>Parágrafo único. A INB, criada nos termos da Lei n° 5.740, de 1º de dezembro de 1971 , sob a denominação Companhia Brasileira de Tecnologia Nuclear (CBTN), 	será regida pelo disposto nesta Lei e na legislação aplicável às empresas estatais.</h4>
+ <h3>Art. 3º A INB tem por objeto:</h3>
+ <h5>I - executar:</h5>
+ <h6>a) a pesquisa, a lavra e o comércio de minérios nucleares e de seus concentrados, associados e derivados;</h6>
+ <h6>b) o tratamento de minérios nucleares e de seus associados e derivados;</h6>
+ <h6>c) o desenvolvimento de tecnologias para o aproveitamento de minérios nucleares e de seus associados e derivados;</h6>
+ <h6>d) a conversão, o enriquecimento, a reconversão, a produção e o comércio de materiais nucleares; e</h6>
+ <h6>e) a produção e o comércio de outros equipamentos e materiais de interesse da energia nuclear;</h6>
+ <h5>II - construir e operar:</h5>
+ <h6>a) instalações de tratamento, concentração e beneficiamento de minérios nucleares e de seus concentrados, associados e derivados;</h6>
+ <h6>b) instalações de industrialização, conversão e reconversão de material nuclear; e</h6>
+ <h6>c) instalações destinadas ao enriquecimento de urânio, ao reprocessamento de elementos combustíveis irradiados e à produção de elementos combustíveis e de outros materiais de interesse do setor nuclear;</h6>
+ <h5>III - negociar e comercializar, nos mercados interno e externo, bens e serviços de seu interesse; e</h5>
+ <h5>IV - gerenciar o aproveitamento do recurso estratégico de minério nuclear.</h5>
+ <h4>Parágrafo único. A INB poderá prestar serviços para entidades nacionais e estrangeiras, públicas ou privadas, no País ou no exterior.</h4>
+ <h3>Art. 4º Para a execução das atividades a que se refere o art. 3º desta Lei, a INB poderá firmar contratos com pessoas jurídicas e remunerá-las por meio de:</h3>
+ <h5>I - pagamento de valor em moeda corrente por aquisições de bens e serviços;</h5>
+ <h5>II - direito a percentual do valor arrecadado na comercialização do produto da lavra, conforme definido em contrato;</h5>
+ <h5>III - direito de comercialização do minério associado;</h5>
+ <h5>IV - direito de compra do produto da lavra com exportação previamente autorizada, conforme definido em contrato e regulamento; ou</h5>
+ <h5>V - outras formas estabelecidas entre as partes em contrato.</h5>
+ <h3>Art. 5º Constituem receitas da INB:</h3>
+ <h5>I - recursos consignados no orçamento geral da União e em créditos adicionais, transferências e repasses que lhe forem destinados;</h5>
+ <h5>II - receitas oriundas da:</h5>
+ <h6>a) alienação de bens e direitos;</h6>
+ <h6>b) comercialização de minérios nucleares e de seus associados, concentrados e derivados; e</h6>
+ <h6>c) comercialização de materiais nucleares e de outros equipamentos e materiais de interesse da energia nuclear;</h6>
+ <h5>III - produtos de operações de crédito, juros e venda de bens patrimoniais ou de materiais inservíveis;</h5>
+ <h5>IV - doações, legados, subvenções e outros recursos que lhe forem destinados por pessoas físicas ou jurídicas de direito público ou privado, a título oneroso ou gratuito;</h5>
+ <h5>V - receitas e recursos oriundos de:</h5>
+ <h6>a) acordos, contratos e convênios firmados com entidades nacionais e estrangeiras, públicas ou privadas; e</h6>
+ <h6>b) inovações tecnológicas desenvolvidas pela INB; e</h6>
+ <h5>VI - outras receitas e recursos que forem captados pela INB ou que lhe forem destinados.</h5>
+ <h3>Art. 6º O regime jurídico do pessoal da INB é o da 	Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e de sua legislação complementar.</h3>
+ <h4>Parágrafo único. A contratação de pessoal para a INB é efetuada por meio de concurso público de provas ou de provas e títulos.</h4>
+ <h3>Art. 7º Fica a União autorizada a aumentar o capital social da Empresa Brasileira de Participações em Energia Nuclear e 	Binacional S.A. (ENBPar), nos termos da Lei n° 6.404, de 15 de dezembro de 	1976 , por meio do aporte das ações que a União detém no capital social da INB.</h3>
+ <h4>Parágrafo único. A efetivação do aumento do capital social a que se refere o caput deste artigo implicará a assunção do controle da INB pela ENBPar.</h4>
+ <h3>Art. 8º Comunicada a ocorrência de elementos nucleares, 	nos termos do art. 4º da Lei n° 6.189, de 16 de dezembro de 1974 , a INB 	realizará estudos de viabilidade técnica e econômica para a definição da forma de aproveitamento dos recursos minerais nucleares.</h3>
+ <h4>§ 1º Os estudos de que trata o caput deste artigo incluirão a apuração do valor econômico do elemento nuclear e da substância mineral pesquisada ou lavrada na jazida.</h4>
+ <h4>§ 2º Na hipótese de os estudos de que trata o caput deste artigo indicarem a ocorrência de elementos nucleares em quantidade cujo valor econômico seja superior ao valor da substância mineral pesquisada ou lavrada, o aproveitamento dos recursos minerais presentes na jazida somente ocorrerá por meio de:</h4>
+ <h5>I - associação entre a INB e o titular da autorização de pesquisa mineral ou da concessão de lavra, com o controle da INB sobre o aproveitamento dos elementos nucleares; ou</h5>
+ <h5>II - encampação do direito minerário pela INB.</h5>
+ <h4>§ 3º A encampação referida no inciso II do § 2º deste artigo implicará a transferência, pela Agência Nacional de Mineração (ANM), do direito minerário do titular para a INB, mediante indenização prévia.</h4>
+ <h4>§ 4º A indenização de que trata o § 3º deste artigo será custeada pela INB e considerará, na forma prevista em regulamento, o estudo de viabilidade técnica e econômica para a definição do prêmio pela descoberta e o reembolso das despesas efetivamente realizadas e ainda não amortizadas, atualizadas monetariamente.</h4>
+ <h4>§ 5º Na hipótese de os estudos de que trata o caput deste artigo indicarem a ocorrência de elementos nucleares em quantidade cujo valor econômico seja inferior ao valor da substância mineral pesquisada ou lavrada, a autorização para pesquisa ou a concessão de lavra será mantida, 	observado o seguinte:</h4>
+ <h5>I - quando o aproveitamento do elemento nuclear de interesse for considerado viável técnica e economicamente, as partes estabelecerão a forma de disponibilização ou entrega à INB do elemento nuclear contido no minério extraído, na forma prevista em regulamento; ou</h5>
+ <h5>II - quando o aproveitamento do elemento nuclear de interesse for considerado inviável técnica ou economicamente, o titular da concessão de lavra dará a destinação e a disposição final ambientalmente adequadas aos rejeitos, na forma prevista na legislação.</h5>
+ <h4>§ 6º Na hipótese prevista no inciso I do § 5º deste artigo, o titular da concessão de lavra será remunerado pela INB caso a disponibilização ou a entrega do elemento nuclear implique despesas adicionais, conforme valor a ser acordado entre as partes.</h4>
+ <h3>Art. 9º Compete ao Ministro de Estado de Minas e Energia definir o recurso estratégico de minério nuclear e delimitar a sua região geográfica, para fins do disposto no inciso V do caput do art. 1º desta Lei, de acordo com a Política Nuclear Brasileira.</h3>
+ <h3>Art. 10. (VETADO).</h3>
+ <h3>Art. 11. O art. 2º da Lei n° 4.118, de 27 de agosto de 	1962 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 2º Para fins do disposto nesta Lei, consideram-se:</h3>
+ <h5>I - elemento nuclear: elemento químico que possa ser utilizado na libertação de energia em reatores nucleares ou que possa dar origem a elementos químicos que possam ser utilizados para esse fim;</h5>
+ <h5>II - mineral nuclear: mineral que contenha em sua composição um ou mais elementos nucleares;</h5>
+ <h5>III - minério nuclear: concentração natural de mineral nuclear na qual o elemento ou os elementos nucleares ocorrem em proporção e condições que permitam a sua exploração econômica;</h5>
+ <h5>IV - urânio enriquecido nos isótopos 235 ou 233: o urânio que contém o isótopo 235 ou o isótopo 233, ou ambos, em quantidade em que a razão entre a soma das quantidades desses isótopos e a do isótopo 238 seja superior à razão entre a quantidade do isótopo 235 e a do isótopo 238 existente no urânio natural;</h5>
+ <h5>V - material nuclear: material que contenha elemento nuclear e que seja produto de transformação do concentrado de minério nuclear;</h5>
+ <h5>VI - material fértil:</h5>
+ <h6>a) o urânio natural;</h6>
+ <h6>b) o urânio cujo teor em isótopo 235 seja inferior ao que se encontra na natureza;</h6>
+ <h6>c) o tório;</h6>
+ <h6>d) quaisquer dos materiais de que tratam as alíneas “a”, “b” e “c” deste inciso sob a forma de metal, liga, composto químico ou concentrado;</h6>
+ <h6>e) qualquer outro material que contenha um ou mais dos materiais de que tratam as alíneas “a”, “b” e “c” deste inciso em concentração que venha a ser estabelecida pela entidade competente; e</h6>
+ <h6>f) qualquer outro material que venha a ser considerado como material fértil pela entidade competente;</h6>
+ <h5>VII - material físsil especial:</h5>
+ <h6>a) o plutônio 239;</h6>
+ <h6>b) o urânio 233;</h6>
+ <h6>c) o urânio enriquecido nos isótopos 235 ou 233;</h6>
+ <h6>d) qualquer material que contenha um ou mais dos materiais de que tratam as alíneas “a”, “b” e “c” deste inciso; e</h6>
+ <h6>e) qualquer material físsil que venha a ser classificado como material físsil especial pela entidade competente; e</h6>
+ <h5>VIII - subproduto nuclear:</h5>
+ <h6>a) material radioativo ou não radioativo resultante de processo destinado à produção ou à utilização de material físsil especial; ou</h6>
+ <h6>b) todo material, exceto o material físsil especial, formado por exposição de quaisquer elementos químicos à radiação libertada nos processos de produção ou de utilização de materiais físseis especiais.</h6>
+ <h4>Parágrafo único. São elementos nucleares de que trata o inciso I do caput deste artigo o urânio, o tório e o plutônio, além de outros que venham a ser especificados pela entidade competente.” (NR)</h4>
+ <h3>Art. 12. O art. 6º da Lei n° 14.222, de 15 de outubro de 	2021 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 6º .........................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h5>II - .................................................................................................................</h5>
+ <h6>a) os estoques de compostos químicos de elementos nucleares;</h6>
+ <p>......................................................................................................................</p>
+ <h5>V - .................................................................................................................</h5>
+ <p>......................................................................................................................</p>
+ <h6>b) posse, produção, utilização, processamento, armazenamento, transporte, transferência, comércio, importação e exportação de minérios, de minerais e de materiais nucleares, inclusive de forma associada a outros minérios e minerais, observadas as competências de outros órgãos ou entidades da administração pública federal;</h6>
+ <p>......................................................................................................................</p>
+ <h5>VI - ................................................................................................................</h5>
+ <p>......................................................................................................................</p>
+ <h6>c) (revogada);</h6>
+ <p>......................................................................................................................</p>
+ <h6>e) (revogada);</h6>
+ <p>......................................................................................................................</p>
+ <h5>VIII - (revogado);</h5>
+ <p>......................................................................................................................</p>
+ <h5>XVIII - criar e manter cadastro nacional do histórico de doses de radiação dos indivíduos ocupacionalmente expostos nas atividades reguladas;</h5>
+ <h5>XIX - atuar, em conjunto com outros órgãos e entidades, na segurança nuclear, física e radiológica de grandes eventos realizados no País;</h5>
+ <h5>XX - regular, normatizar, licenciar, autorizar e fiscalizar a segurança nuclear e a proteção radiológica da atividade de lavra de minério nuclear, além dos depósitos de rejeitos e dos locais de armazenamento de resíduos; e</h5>
+ <h5>XXI - fiscalizar os titulares de concessões de lavra quanto à proteção radiológica da lavra de minério que contenha elementos nucleares.” (NR)</h5>
+ <h3>Art. 13. A Lei n° 13.575, de 26 de dezembro de 2017 , 	passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 2º .........................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h5>XXXVII - regulamentar a aplicação de recursos de pesquisa, desenvolvimento tecnológico e inovação do setor mineral;</h5>
+ <h5>XXXVIII - regular, normatizar, autorizar, controlar e fiscalizar as atividades de pesquisa e lavra de minérios nucleares no País, exceto em relação às questões de segurança nuclear e proteção radiológica, observado o disposto no art. 6º da Lei n° 14.222, de 15 de outubro de 2021;</h5>
+ <h5>XXXIX - fiscalizar os titulares de concessões de lavra quanto à ocorrência de elementos nucleares;</h5>
+ <h5>XL - (VETADO).</h5>
+ <p>......................................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 21. (VETADO),”</h3>
+ <p>‘</p>
+ <h3>Art. 21. 	........................................................................................................................</h3>
+ <p>..........................................................................................................................................</p>
+ <h5>II-A - 	11 (onze) CGE-I;</h5>
+ <h5>III - 10 (dez) CGE-II;</h5>
+ <h5>III-A 	- 11 (onze) CGE-III;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>V - 60 	(sessenta) CGE-IV;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>VII - 11 (onze) CA-II;</h5>
+ <h5>VIII - 22 (vinte e dois) CA-III;</h5>
+ <h5>IX - 2 	(dois) CAS-I;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>XI - 3 	(três) CCT-I;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>XIII - 9 (nove) CCT-III;</h5>
+ <h5>XIII-A 	- 109 (cento e nove) CCT-IV;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>XV - 96 (noventa e seis) CCT-V.</h5>
+ <p>................................................................................................................................’ 	(NR)”</p>
+ <h3>Art. 14. A Lei n° 8.001, de 13 de março de 1990 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 2º .........................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h4>§ 2º ...............................................................................................................</h4>
+ <p>......................................................................................................................</p>
+ <h5>VII - 15% (quinze por cento) para o Distrito Federal e os Municípios, quando a produção ocorrer em seus territórios, mas essa parcela for superior ao que for distribuído referente à parcela de que trata o inciso VI deste parágrafo, ou quando afetados pela atividade de mineração e a produção não ocorrer em seus territórios, caso seus territórios sejam: (Produção de efeito)</h5>
+ <h6>a) cortados pelas infraestruturas utilizadas para o transporte ferroviário ou dutoviário de substâncias minerais;</h6>
+ <h6>b) afetados pelas operações portuárias e de embarque e desembarque de substâncias minerais;</h6>
+ <h6>c) onde se localizem as pilhas de estéril, as barragens de rejeitos e as instalações de beneficiamento de substâncias minerais, bem como as demais instalações previstas no plano de aproveitamento econômico; e</h6>
+ <p>......................................................................................................................</p>
+ <h4>§ 3º Na inexistência das hipóteses previstas no inciso VII do § 2º deste artigo, decreto do Presidente da República estabelecerá a distribuição das parcelas para:</h4>
+ <h5>I - os Municípios limítrofes com o Distrito Federal ou com os Municípios onde ocorrer a produção; ou</h5>
+ <h5>II - o Distrito Federal e os Estados onde ocorrer a produção.</h5>
+ <p>......................................................................................................................</p>
+ <h4>§ 5º Decreto do Presidente da República estabelecerá o percentual de distribuição entre as hipóteses previstas da parcela de que trata o inciso VII do § 2º deste artigo, facultada delegação à Agência Nacional de Mineração (ANM) da definição da forma e dos critérios de cálculo da parcela.</h4>
+ <p>......................................................................................................................</p>
+ <h4>§ 16 . A ANM deverá instituir e gerir o cadastro nacional de estruturas de mineração, que registrará as pilhas de estéril, as barragens de rejeitos e as instalações de beneficiamento de substâncias minerais, bem como as demais instalações previstas no plano de aproveitamento econômico.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 2º-A. .....................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h4>§ 5º A entrega pelo contribuinte de declaração que reconhece débito da CFEM constitui o crédito.</h4>
+ <h4>§ 6º (VETADO).” (NR)</h4>
+ <h3>Art. 15. (VETADO).</h3>
+ <h3>Art. 16. (VETADO).</h3>
+ <h3>Art. 17. (VETADO).</h3>
+ <h3>Art. 18. (VETADO).</h3>
+ <h3>Art. 19. (VETADO).</h3>
+ <h3>Art. 20. (VETADO).</h3>
+ <h3>Art. 21. O art. 1º da Lei n° 9.991, de 24 de julho de 	2000 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 1º ..........................................................................................................</h3>
+ <h5>I - (VETADO);</h5>
+ <h5>I - até 31 de dezembro de 	2025, os percentuais mínimos definidos no caput deste artigo serão de 	0,50% (cinquenta centésimos por cento), tanto para pesquisa e desenvolvimento como para programas de eficiência energética na oferta e no uso final da energia;</h5>
+ <p>......................................................................................................................</p>
+ <h5>III - a partir de 1º de janeiro de 2026, para as concessionárias e permissionárias cuja energia vendida seja inferior a 1.000 GWh (mil gigawatts-hora) por ano, o percentual mínimo a ser aplicado em programas de eficiência energética no uso final poderá ser ampliado de 0,25% (vinte e cinco centésimos por cento) para até 0,50% (cinquenta centésimos por cento);</h5>
+ <p>......................................................................................................................” (NR)</p>
+ <h3>Art. 22. O art. 14 da Lei n° 10.438, de 26 de abril de 	2002 , passa a vigorar acrescido do seguinte § 14:</h3>
+ <p>“</p>
+ <h3>Art. 14. ........................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h4>§ 14 . Para o atendimento dos pedidos de nova ligação de unidade consumidora rural em Municípios cuja universalização já seja considerada atingida, a Aneel deverá regular os prazos, as condições e os procedimentos para essas ligações, observado o seguinte:</h4>
+ <h5>I - o solicitante deverá apresentar documento, com data, que comprove a propriedade ou a posse do imóvel, observado que a Aneel poderá tratar situações excepcionais mediante justificativa; e</h5>
+ <h5>II - a distribuidora poderá, no caso de assentamento ou ocupação irregular com predominância de população de baixa renda, realizar o atendimento temporário da unidade consumidora, com necessária solicitação ou anuência expressa do poder público competente.” (NR)</h5>
+ <h3>Art. 23. O Decreto-Lei n° 227, de 28 de fevereiro de 	1967 (Código de Mineração), passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 22. ........................................................................................................</h3>
+ <h5>I - o título poderá ser objeto de cessão ou transferência, desde que o cessionário satisfaça os requisitos legais exigidos;</h5>
+ <h5>I-A - os atos de cessão e transferência somente terão validade depois de devidamente averbados na Agência Nacional de Mineração (ANM);</h5>
+ <h5>II - a renúncia total ou parcial à autorização é admitida, sem prejuízo do cumprimento, pelo titular, das obrigações decorrentes deste Código, observado o disposto na parte final do inciso V deste caput , tornando-se operante o efeito da extinção do título autorizativo na data da protocolização do instrumento de renúncia, com a desoneração da área, na forma do art. 26 deste Código;</h5>
+ <h5>III - o prazo de validade da autorização será de até 4 (quatro) anos, conforme solicitação do interessado, consideradas as características especiais da situação da área e da pesquisa mineral objetivada, conforme estabelecido em resolução pela ANM, observado que:</h5>
+ <h6>a) o prazo de validade da autorização será prorrogável, por igual período, admitida mais de uma prorrogação exclusivamente nas hipóteses previstas em regulamento;</h6>
+ <p>......................................................................................................................</p>
+ <h5>V - o titular da autorização fica obrigado a realizar os respectivos trabalhos de pesquisa e deverá submeter à ANM, dentro do prazo de vigência do alvará ou de sua renovação, relatório circunstanciado dos trabalhos que contenha os estudos geológicos e tecnológicos quantificativos da jazida e demonstrativos da exequibilidade técnico-econômica da lavra, elaborado sob a responsabilidade técnica de profissional legalmente habilitado.</h5>
+ <p>......................................................................................................................</p>
+ <h4>§ 2º É admitida, em caráter excepcional, a extração de substâncias minerais em área titulada, antes da outorga da concessão de lavra, mediante prévia autorização da ANM, observada a legislação ambiental pertinente.</h4>
+ <h4>§ 3º Na hipótese de renúncia à autorização de que trata o inciso II do caput deste artigo, excepcionalmente poderá ser dispensada a apresentação do relatório de que trata o inciso V do caput deste artigo, conforme critérios fixados pela ANM.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 38. ........................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h5>VII - declaração de disponibilidade de recursos ou compromisso de buscar os financiamentos necessários para execução do plano de aproveitamento econômico e operação da mina, conforme dispuser resolução da ANM.</h5>
+ <p>......................................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 92-A . Os títulos e direitos minerários, inclusive o alvará de autorização de pesquisa, a concessão de lavra, o licenciamento, a permissão de lavra garimpeira, bem como o direito persistente após a vigência da autorização de pesquisa e antes da outorga da concessão de lavra, reconhecido com base neste Código, podem ser onerados e oferecidos em garantia.</h3>
+ <h4>Parágrafo único. O órgão regulador da atividade minerária, em consonância com o disposto no inciso XXXI do caput do art. 2º da Lei n° 13.575, de 26 de dezembro de 2017 , efetuará as averbações decorrentes do uso previsto no caput deste artigo.”</h4>
+ <h3>Art. 24. Revogam-se:</h3>
+ <h5>I - o</h5>
+ <h2>CAPÍTULO III da Lei n° 4.118, de 27 de agosto de 1962 ;</h2>
+ <h5>II - a Lei n° 5.740, de 1º dezembro de 1971 ;</h5>
+ <h5>III - os seguintes dispositivos da Lei n° 6.189, de 16 de dezembro de 1974 :</h5>
+ <h6>a) alínea “d” do inciso IV do caput do art. 2º ;</h6>
+ <h6>b) §§ 1º e 2º do art. 4º ; 	e</h6>
+ <h6>c) arts. 20 , 21 , 22 , 23 , 24 e 25 ;</h6>
+ <h5>IV - o art. 1º da Lei n° 7.781, de 27 de junho de 1989 , na parte em que altera a alínea “d” do inciso IV do caput do art. 2º da Lei n° 6.189, de 16 de dezembro de 1974;</h5>
+ <h5>V - os seguintes dispositivos da Lei n° 13.575, de 26 de dezembro de 2017:</h5>
+ <h6>a) (VETADO); e</h6>
+ <h6>b) (VETADO);</h6>
+ <h6>b) incisos X e XII do caput do art. 21 ;</h6>
+ <h5>VI - os seguintes dispositivos da Lei n° 14.222, de 15 de outubro de 2021 :</h5>
+ <h6>a) do caput do art. 6º:</h6>
+ <p>1. alíneas “c ” e “e” do inciso VI ; 	e</p>
+ <p>2. inciso VIII ; 	e</p>
+ <h6>b) art. 34, na parte em que altera os §§ 1º e 2º do art. 4º da Lei n° 6.189, 	de 16 de dezembro de 1974; e</h6>
+ <h5>VII - os arts. 18 e 19 do Decreto-Lei n° 1.038, de 21 de outubro de 1969 .</h5>
+ <h3>Art. 25. Esta Lei entra em vigor:</h3>
+ <h5>I - (VETADO);</h5>
+ <h5>I - em 	1º de fevereiro de 2023, quanto às alterações efetuadas pelo art. 13 no art. 21 da Lei n° 13.575, de 26 de dezembro de 2017;</h5>
+ <h5>II - na data de sua publicação, com produção de efeitos a partir da apuração do próximo ciclo de distribuição de compensação financeira para os 	Municípios afetados pelas hipóteses previstas da parcela de que trata o inciso VII do § 2º do art. 2º da Lei n° 8.001, de 13 de março de 1990; e</h5>
+ <h5>III - na data de sua publicação, quanto aos demais dispositivos.</h5>
+ <p>Brasília, 29 de dezembro de 2022; 201º da Independência e 134º da República.</p>
+ <h3>JAIR 	MESSIAS BOLSONARO</h3>
+ <p>Marcelo Pacheco dos Guaranys</p>
+ <p>Adolfo Sachsida</p>
+ <p>Luiz Eduardo Ramos Baptista Pereira</p>
+ <p>Bruno Bianco Leal</p>
+ <p>Este texto não substitui o publicado no DOU de 	30.12.2022.</p>
+ <p>*</p>
+ <h3>LEI N° 14.514, DE 29 DE DEZEMBRO DE 2022</h3>
+ <p>Dispõe sobre a empresa Indústrias Nucleares do Brasil S.A. (INB), sobre a pesquisa, a lavra e a comercialização de minérios nucleares, de seus concentrados e derivados, e de materiais nucleares, e sobre a atividade de mineração; altera as Leis nºs 4.118, de 27 de agosto de 1962, 8.001, de 13 de março de 1990, 9.991, de 24 de julho de 2000, 10.438, de 26 de abril de 2002, 13.575, de 26 de dezembro de 2017, 13.848, de 25 de junho de 2019, e 14.222, de 15 de outubro de 2021, e o Decreto-Lei n° 227, de 28 de fevereiro de 1967 (Código de Mineração); e revoga a Lei n° 5.740, de 1º de dezembro de 1971, e dispositivos das Leis nºs 4.118, de 27 de agosto de 1962, 6.189, de 16 de dezembro de 1974, 7.781, de 27 de junho de 1989, 13.575, de 26 de dezembro de 2017, e 14.222, de 15 de outubro de 2021, e do Decreto-Lei n° 1.038, de 21 de outubro de 1969.</p>
+ <p>O VICE–PRESIDENTE 	DA REPÚBLICA, no exercício do cargo de PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, a seguinte parte vetada da Lei N° 14.514, de 29 de dezembro de 2022:</p>
+ <p>“</p>
+ <h3>Art. 21. O art. 1º da Lei n° 9.991, de 24 de julho de 2000, passa a vigorar com as seguintes alterações:</h3>
+ <p>‘</p>
+ <h3>Art. 1º 	.........................................................................................................................</h3>
+ <h5>I - até 31 de dezembro de 	2025, os percentuais mínimos definidos no caput deste artigo serão de 	0,50% (cinquenta centésimos por cento), tanto para pesquisa e desenvolvimento como para programas de eficiência energética na oferta e no uso final da energia;</h5>
+ <p>..............................................................................................................................................’”</p>
+ <p>Brasília, 18 de julho de 	2023; 202º da Independência e 135º da 	República.</p>
+ <h3>GERALDO JOSÉ RODRIGUES ALCKMIN FILHO</h3>
+ <p>Este texto não substitui o publicado no DOU de 	19.7.2023</p>
+ <h3>LEI N° 14.514, DE 29 DE DEZEMBRO DE 2022</h3>
+ <p>Dispõe sobre a empresa Indústrias Nucleares do Brasil S.A. (INB), sobre a pesquisa, a lavra e a comercialização de minérios nucleares, de seus concentrados e derivados, e de materiais nucleares, e sobre a atividade de mineração; altera as Leis nºs 4.118, de 27 de agosto de 1962, 8.001, de 13 de março de 1990, 9.991, de 24 de julho de 2000, 10.438, de 26 de abril de 2002, 13.575, de 26 de dezembro de 2017, 13.848, de 25 de junho de 2019, e 14.222, de 15 de outubro de 2021, e o Decreto-Lei n° 227, de 28 de fevereiro de 1967 (Código de Mineração); e revoga a Lei n° 5.740, de 1º de dezembro de 1971, e dispositivos das Leis nºs 4.118, de 27 de agosto de 1962, 6.189, de 16 de dezembro de 1974, 7.781, de 27 de junho de 1989, 13.575, de 26 de dezembro de 2017, e 14.222, de 15 de outubro de 2021, e do Decreto-Lei n° 1.038, de 21 de outubro de 1969.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, Faço saber que o Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, as seguintes partes vetadas da Lei N° 14.514, de 29 de dezembro de 2022:</p>
+ <p>“</p>
+ <h3>Art. 13. A Lei n° 13.575, de 26 de dezembro de 2017, passa a vigorar com as seguintes alterações:</h3>
+ <p>..................................................................................................................................................</p>
+ <p>‘</p>
+ <h3>Art. 21. 	........................................................................................................................</h3>
+ <p>..........................................................................................................................................</p>
+ <h5>II-A - 	11 (onze) CGE-I;</h5>
+ <h5>III - 	10 (dez) CGE-II;</h5>
+ <h5>III-A 	- 11 (onze) CGE-III;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>V - 60 	(sessenta) CGE-IV;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>VII - 	11 (onze) CA-II;</h5>
+ <h5>VIII - 	22 (vinte e dois) CA-III;</h5>
+ <h5>IX - 2 	(dois) CAS-I;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>XI - 3 	(três) CCT-I;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>XIII - 	9 (nove) CCT-III;</h5>
+ <h5>XIII-A 	- 109 (cento e nove) CCT-IV;</h5>
+ <p>..........................................................................................................................................</p>
+ <h5>XV - 	96 (noventa e seis) CCT-V.</h5>
+ <p>................................................................................................................................’ 	(NR)”</p>
+ <p>“</p>
+ <h3>Art. 24. Revogam-se:</h3>
+ <p>..................................................................................................................................................</p>
+ <h5>V - 	.................................................................................................................................</h5>
+ <p>..................................................................................................................................................</p>
+ <h6>b) 	incisos X e XII do caput do art. 21;</h6>
+ <p>................................................................................................................................................”</p>
+ <p>“</p>
+ <h3>Art. 25. Esta Lei entra em vigor:</h3>
+ <h5>I - em 	1º de fevereiro de 2023, quanto às alterações efetuadas pelo art. 13 no art. 21 da Lei n° 13.575, de 26 de dezembro de 2017;</h5>
+ <p>................................................................................................................................................”</p>
+ <p>Brasília, 21 de maio de 2024; 203º da Independência e 136º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 	22.5.2024</p>
+ <p>Provisória nº 1.133, de 2022 | Dispõe sobre a empresa Indústrias</p>
+ <p>Nucleares do Brasil S.A. (INB), sobre a pesquisa, a lavra e a comercialização de minérios nucleares, de seus concentrados e derivados,</p>
+ <p>e de materiais nucleares, e sobre a atividade de mineração; altera as</p>
+ <p>Leis nºs 4.118, de 27 de agosto de 1962, 8.001, de 13 de março de 1990,</p>
+ <p>9.991, de 24 de julho de 2000, 10.438, de 26 de abril de 2002, 13.575,</p>
+ <p>de 26 de dezembro de 2017, 13.848, de 25 de junho de 2019, e 14.222, de</p>
+ <p>15 de outubro de 2021, e o Decreto-Lei n° 227, de 28 de fevereiro de</p>
+ <p>1967 (Código de Mineração); e revoga a Lei n° 5.740, de 1º de dezembro de 1971, e dispositivos das Leis nºs 4.118, de 27 de agosto de 1962,</p>
+ <p>6.189, de 16 de dezembro de 1974, 7.781, de 27 de junho de 1989, 13.575,</p>
+ <p>de 26 de dezembro de 2017, e 14.222, de 15 de outubro de 2021, e do</p>
+ <p>Decreto-Lei n° 1.038, de 21 de outubro de 1969.</p>
+ <p>Dispõe sobre a empresa Indústrias</p>
+ <p>Nucleares do Brasil S.A. (INB), sobre a pesquisa, a lavra e a comercialização de minérios nucleares, de seus concentrados e derivados,</p>
+ <p>e de materiais nucleares, e sobre a atividade de mineração; altera as</p>
+ <p>Leis nºs 4.118, de 27 de agosto de 1962, 8.001, de 13 de março de 1990,</p>
+ <p>9.991, de 24 de julho de 2000, 10.438, de 26 de abril de 2002, 13.575,</p>
+ <p>de 26 de dezembro de 2017, 13.848, de 25 de junho de 2019, e 14.222, de</p>
+ <p>15 de outubro de 2021, e o Decreto-Lei n° 227, de 28 de fevereiro de</p>
+ <p>1967 (Código de Mineração); e revoga a Lei n° 5.740, de 1º de dezembro de 1971, e dispositivos das Leis nºs 4.118, de 27 de agosto de 1962,</p>
+ <p>6.189, de 16 de dezembro de 1974, 7.781, de 27 de junho de 1989, 13.575,</p>
+ <p>de 26 de dezembro de 2017, e 14.222, de 15 de outubro de 2021, e do</p>
+ <p>Decreto-Lei n° 1.038, de 21 de outubro de 1969.</p>
+ <p>Dispõe sobre a empresa Indústrias</p>
+ <p>Nucleares do Brasil S.A. (INB), sobre a pesquisa, a lavra e a comercialização de minérios nucleares, de seus concentrados e derivados,</p>
+ <p>e de materiais nucleares, e sobre a atividade de mineração; altera as</p>
+ <p>Leis nºs 4.118, de 27 de agosto de 1962, 8.001, de 13 de março de 1990,</p>
+ <p>9.991, de 24 de julho de 2000, 10.438, de 26 de abril de 2002, 13.575,</p>
+ <p>de 26 de dezembro de 2017, 13.848, de 25 de junho de 2019, e 14.222, de</p>
+ <p>15 de outubro de 2021, e o Decreto-Lei n° 227, de 28 de fevereiro de</p>
+ <p>1967 (Código de Mineração); e revoga a Lei n° 5.740, de 1º de dezembro de 1971, e dispositivos das Leis nºs 4.118, de 27 de agosto de 1962,</p>
+ <p>6.189, de 16 de dezembro de 1974, 7.781, de 27 de junho de 1989, 13.575,</p>
+ <p>de 26 de dezembro de 2017, e 14.222, de 15 de outubro de 2021, e do</p>
+ <p>Decreto-Lei n° 1.038, de 21 de outubro de 1969.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14514.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.098, DE 19 DE DEZEMBRO DE 2000 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2000" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.098, DE 19 DE DEZEMBRO DE 2000</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:40:47 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L10098.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 22.465 caracteres | espelho: 22.509 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.098, DE 19 DE DEZEMBRO DE 2000. Estabelece normas gerais e critérios básicos para a promoção da acessibilidade das pessoas portadoras de deficiência ou com mobilidade reduzida, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>disposições gerais</p>
+ <h3>Art. 1º Esta Lei estabelece normas gerais e critérios básicos para a promoção da acessibilidade das pessoas portadoras de deficiência ou com mobilidade reduzida, mediante a supressão de barreiras e de obstáculos nas vias e espaços públicos, no mobiliário urbano, na construção e reforma de edifícios e nos meios de transporte e de comunicação.</h3>
+ <h3>Art. 2º Para os fins desta Lei são estabelecidas as seguintes definições:</h3>
+ <h5>I – acessibilidade: possibilidade e condição de alcance para utilização, com segurança e autonomia, dos espaços, mobiliários e equipamentos urbanos, das edificações, dos transportes e dos sistemas e meios de comunicação, por pessoa portadora de deficiência ou com mobilidade reduzida;</h5>
+ <h5>II – barreiras: qualquer entrave ou obstáculo que limite ou impeça o acesso, a liberdade de movimento e a circulação com segurança das pessoas, classificadas em:</h5>
+ <h6>a) barreiras arquitetônicas urbanísticas: as existentes nas vias públicas e nos espaços de uso público;</h6>
+ <h6>b) barreiras arquitetônicas na edificação: as existentes no interior dos edifícios públicos e privados;</h6>
+ <h6>c) barreiras arquitetônicas nos transportes: as existentes nos meios de transportes;</h6>
+ <h6>d) barreiras nas comunicações: qualquer entrave ou obstáculo que dificulte ou impossibilite a expressão ou o recebimento de mensagens por intermédio dos meios ou sistemas de comunicação, sejam ou não de massa;</h6>
+ <h5>III – pessoa portadora de deficiência ou com mobilidade reduzida: a que temporária ou permanentemente tem limitada sua capacidade de relacionar-se com o meio e de utilizá-lo;</h5>
+ <h5>IV – elemento da urbanização: qualquer componente das obras de urbanização, tais como os referentes a pavimentação, saneamento, encanamentos para esgotos, distribuição de energia elétrica, iluminação pública, abastecimento e distribuição de água, paisagismo e os que materializam as indicações do planejamento urbanístico;</h5>
+ <h5>V – mobiliário urbano: o conjunto de objetos existentes nas vias e espaços públicos, superpostos ou adicionados aos elementos da urbanização ou da edificação, de forma que sua modificação ou traslado não provoque alterações substanciais nestes elementos, tais como semáforos, postes de sinalização e similares, cabines telefônicas, fontes públicas, lixeiras, toldos, marquises, quiosques e quaisquer outros de natureza análoga;</h5>
+ <h5>VI – ajuda técnica: qualquer elemento que facilite a autonomia pessoal ou possibilite o acesso e o uso de meio físico .</h5>
+ <h5>I - acessibilidade: possibilidade e condição de alcance para utilização, com segurança e autonomia, de espaços, mobiliários, equipamentos urbanos, edificações, transportes, informação e comunicação, inclusive seus sistemas e tecnologias, bem como de outros serviços e instalações abertos ao público, de uso público ou privados de uso coletivo, tanto na zona urbana como na rural, por pessoa com deficiência ou com mobilidade reduzida; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>II - barreiras: qualquer entrave, obstáculo, atitude ou comportamento que limite ou impeça a participação social da pessoa, bem como o gozo, a fruição e o exercício de seus direitos à acessibilidade, à liberdade de movimento e de expressão, à comunicação, ao acesso à informação, à compreensão, à circulação com segurança, entre outros, classificadas em: (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h6>a) barreiras urbanísticas: as existentes nas vias e nos espaços públicos e privados abertos ao público ou de uso coletivo; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h6>
+ <h6>b) barreiras arquitetônicas: as existentes nos edifícios públicos e privados; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h6>
+ <h6>c) barreiras nos transportes: as existentes nos sistemas e meios de transportes; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h6>
+ <h6>d) barreiras nas comunicações e na informação: qualquer entrave, obstáculo, atitude ou comportamento que dificulte ou impossibilite a expressão ou o recebimento de mensagens e de informações por intermédio de sistemas de comunicação e de tecnologia da informação; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h6>
+ <h5>III - pessoa com deficiência: aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>IV - pessoa com mobilidade reduzida: aquela que tenha, por qualquer motivo, dificuldade de movimentação, permanente ou temporária, gerando redução efetiva da mobilidade, da flexibilidade, da coordenação motora ou da percepção, incluindo idoso, gestante, lactante, pessoa com criança de colo e obeso; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>V - acompanhante: aquele que acompanha a pessoa com deficiência, podendo ou não desempenhar as funções de atendente pessoal; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>VI - elemento de urbanização: quaisquer componentes de obras de urbanização, tais como os referentes a pavimentação, saneamento, encanamento para esgotos, distribuição de energia elétrica e de gás, iluminação pública, serviços de comunicação, abastecimento e distribuição de água, paisagismo e os que materializam as indicações do planejamento urbanístico; (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>VII - mobiliário urbano: conjunto de objetos existentes nas vias e nos espaços públicos, superpostos ou adicionados aos elementos de urbanização ou de edificação, de forma que sua modificação ou seu traslado não provoque alterações substanciais nesses elementos, tais como semáforos, postes de sinalização e similares, terminais e pontos de acesso coletivo às telecomunicações, fontes de água, lixeiras, toldos, marquises, bancos, quiosques e quaisquer outros de natureza análoga; (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>VIII - tecnologia assistiva ou ajuda técnica: produtos, equipamentos, dispositivos, recursos, metodologias, estratégias, práticas e serviços que objetivem promover a funcionalidade, relacionada à atividade e à participação da pessoa com deficiência ou com mobilidade reduzida, visando à sua autonomia, independência, qualidade de vida e inclusão social; (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>IX - comunicação: forma de interação dos cidadãos que abrange, entre outras opções, as línguas, inclusive a Língua Brasileira de Sinais (Libras), a visualização de textos, o Braille, o sistema de sinalização ou de comunicação tátil, os caracteres ampliados, os dispositivos multimídia, assim como a linguagem simples, escrita e oral, os sistemas auditivos e os meios de voz digitalizados e os modos, meios e formatos aumentativos e alternativos de comunicação, incluindo as tecnologias da informação e das comunicações; (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>X - desenho universal: concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva. (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h5>
+ <h5>XI – pessoa com necessidades complexas de comunicação: aquela que, por qualquer motivo, tem dificuldades significativas para compreender ou expressar mensagens de forma oral, escrita, gestual ou por meio de outras formas convencionais de comunicação, necessitando de recursos e estratégias alternativas ou aumentativas para viabilizar a interação social, o acesso à informação e a participação em atividades da vida cotidiana. (Incluído pela Lei n° 15.249, de 2025)</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS ELEMENTOS DA URBANIZAÇÃO</h3>
+ <h3>Art. 3º O planejamento e a urbanização das vias públicas, dos parques e dos demais espaços de uso público deverão ser concebidos e executados de forma a torná-los acessíveis para as pessoas portadoras de deficiência ou com mobilidade reduzida.</h3>
+ <h3>Art. 3º O planejamento e a urbanização das vias públicas, dos parques e dos demais espaços de uso público deverão ser concebidos e executados de forma a torná-los acessíveis para todas as pessoas, inclusive para aquelas com deficiência ou com mobilidade reduzida. (Redação dada pela Lei n° 13.146, de 2015) (Vigência)</h3>
+ <h4>Parágrafo único. O passeio público, elemento obrigatório de urbanização e parte da via pública, normalmente segregado e em nível diferente, destina-se somente à circulação de pedestres e, quando possível, à implantação de mobiliário urbano e de vegetação. (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h4>
+ <h3>Art. 4º As vias públicas, os parques e os demais espaços de uso público existentes, assim como as respectivas instalações de serviços e mobiliários urbanos deverão ser adaptados, obedecendo-se ordem de prioridade que vise à maior eficiência das modificações, no sentido de promover mais ampla acessibilidade às pessoas portadoras de deficiência ou com mobilidade reduzida.</h3>
+ <h4>Parágrafo único. Os parques de diversões, públicos e privados, devem adaptar, no mínimo, 5% (cinco por cento) de cada brinquedo e equipamento e identificá-lo para possibilitar sua utilização por pessoas com deficiência ou com mobilidade reduzida, tanto quanto tecnicamente possível. (Incluído pela Lei n° 11.982, de 2009)</h4>
+ <h4>Parágrafo único. No mínimo 5% (cinco por cento) de cada brinquedo e equipamento de lazer existentes nos locais referidos no caput devem ser adaptados e identificados, tanto quanto tecnicamente possível, para possibilitar sua utilização por pessoas com deficiência, inclusive visual, ou com mobilidade reduzida. (Redação dada pela Lei n° 13.443, de 2017)</h4>
+ <h3>Art. 5º O projeto e o traçado dos elementos de urbanização públicos e privados de uso comunitário, nestes compreendidos os itinerários e as passagens de pedestres, os percursos de entrada e de saída de veículos, as escadas e rampas, deverão observar os parâmetros estabelecidos pelas normas técnicas de acessibilidade da Associação Brasileira de Normas Técnicas – ABNT.</h3>
+ <h3>Art. 6º Os banheiros de uso público existentes ou a construir em parques, praças, jardins e espaços livres públicos deverão ser acessíveis e dispor, pelo menos, de um sanitário e um lavatório que atendam às especificações das normas técnicas da ABNT.</h3>
+ <h4>§ 1º Os eventos organizados em espaços públicos e privados em que haja instalação de banheiros químicos deverão contar com unidades acessíveis a pessoas com deficiência ou com mobilidade reduzida. (Incluído pela Lei n° 13.825, de 2019)</h4>
+ <h4>§ 2º O número mínimo de banheiros químicos acessíveis corresponderá a 10% (dez por cento) do total, garantindo-se pelo menos 1 (uma) unidade acessível caso a aplicação do percentual resulte em fração inferior a 1 (um). (Incluído pela Lei n° 13.825, de 2019)</h4>
+ <h3>Art. 7º Em todas as áreas de estacionamento de veículos, localizadas em vias ou em espaços públicos, deverão ser reservadas vagas próximas dos acessos de circulação de pedestres, devidamente sinalizadas, para veículos que transportem pessoas portadoras de deficiência com dificuldade de locomoção.</h3>
+ <h4>Parágrafo único. As vagas a que se refere o caput deste artigo deverão ser em número equivalente a dois por cento do total, garantida, no mínimo, uma vaga, devidamente sinalizada e com as especificações técnicas de desenho e traçado de acordo com as normas técnicas vigentes.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO DESENHO E DA LOCALIZAÇÃO DO MOBILIÁRIO URBANO</h3>
+ <h3>Art. 8º Os sinais de tráfego, semáforos, postes de iluminação ou quaisquer outros elementos verticais de sinalização que devam ser instalados em itinerário ou espaço de acesso para pedestres deverão ser dispostos de forma a não dificultar ou impedir a circulação, e de modo que possam ser utilizados com a máxima comodidade.</h3>
+ <h3>Art. 9º Os semáforos para pedestres instalados nas vias públicas deverão estar equipados com mecanismo que emita sinal sonoro suave, intermitente e sem estridência, ou com mecanismo alternativo, que sirva de guia ou orientação para a travessia de pessoas portadoras de deficiência visual, se a intensidade do fluxo de veículos e a periculosidade da via assim determinarem.</h3>
+ <h4>Parágrafo único. Os semáforos para pedestres instalados em vias públicas de grande circulação, ou que deem acesso aos serviços de reabilitação, devem obrigatoriamente estar equipados com mecanismo que emita sinal sonoro suave para orientação do pedestre. (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h4>
+ <h3>Art. 10. Os elementos do mobiliário urbano deverão ser projetados e instalados em locais que permitam sejam eles utilizados pelas pessoas portadoras de deficiência ou com mobilidade reduzida.</h3>
+ <h3>Art. 10-A. A instalação de qualquer mobiliário urbano em área de circulação comum para pedestre que ofereça risco de acidente à pessoa com deficiência deverá ser indicada mediante sinalização tátil de alerta no piso, de acordo com as normas técnicas pertinentes. (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA ACESSIBILIDADE NOS EDIFÍCIOS PÚBLICOS OU DE USO COLETIVO</h3>
+ <h3>Art. 11. A construção, ampliação ou reforma de edifícios públicos ou privados destinados ao uso coletivo deverão ser executadas de modo que sejam ou se tornem acessíveis às pessoas portadoras de deficiência ou com mobilidade reduzida.</h3>
+ <h4>Parágrafo único. Para os fins do disposto neste artigo, na construção, ampliação ou reforma de edifícios públicos ou privados destinados ao uso coletivo deverão ser observados, pelo menos, os seguintes requisitos de acessibilidade:</h4>
+ <h5>I – nas áreas externas ou internas da edificação, destinadas a garagem e a estacionamento de uso público, deverão ser reservadas vagas próximas dos acessos de circulação de pedestres, devidamente sinalizadas, para veículos que transportem pessoas portadoras de deficiência com dificuldade de locomoção permanente;</h5>
+ <h5>II – pelo menos um dos acessos ao interior da edificação deverá estar livre de barreiras arquitetônicas e de obstáculos que impeçam ou dificultem a acessibilidade de pessoa portadora de deficiência ou com mobilidade reduzida;</h5>
+ <h5>III – pelo menos um dos itinerários que comuniquem horizontal e verticalmente todas as dependências e serviços do edifício, entre si e com o exterior, deverá cumprir os requisitos de acessibilidade de que trata esta Lei; e</h5>
+ <h5>IV – os edifícios deverão dispor, pelo menos, de um banheiro acessível, distribuindo-se seus equipamentos e acessórios de maneira que possam ser utilizados por pessoa portadora de deficiência ou com mobilidade reduzida.</h5>
+ <h3>Art. 12. Os locais de espetáculos, conferências, aulas e outros de natureza similar deverão dispor de espaços reservados para pessoas que utilizam cadeira de rodas, e de lugares específicos para pessoas com deficiência auditiva e visual, inclusive acompanhante, de acordo com a ABNT, de modo a facilitar-lhes as condições de acesso, circulação e comunicação.</h3>
+ <h3>Art. 12-A. Os centros comerciais e os estabelecimentos congêneres devem fornecer carros e cadeiras de rodas, motorizados ou não, para o atendimento da pessoa com deficiência ou com mobilidade reduzida. (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA ACESSIBILIDADE NOS EDIFÍCIOS DE USO PRIVADO</h3>
+ <h3>Art. 13. Os edifícios de uso privado em que seja obrigatória a instalação de elevadores deverão ser construídos atendendo aos seguintes requisitos mínimos de acessibilidade:</h3>
+ <h5>I – percurso acessível que una as unidades habitacionais com o exterior e com as dependências de uso comum;</h5>
+ <h5>II – percurso acessível que una a edificação à via pública, às edificações e aos serviços anexos de uso comum e aos edifícios vizinhos;</h5>
+ <h5>III – cabine do elevador e respectiva porta de entrada acessíveis para pessoas portadoras de deficiência ou com mobilidade reduzida.</h5>
+ <h3>Art. 14. Os edifícios a serem construídos com mais de um pavimento além do pavimento de acesso, à exceção das habitações unifamiliares, e que não estejam obrigados à instalação de elevador, deverão dispor de especificações técnicas e de projeto que facilitem a instalação de um elevador adaptado, devendo os demais elementos de uso comum destes edifícios atender aos requisitos de acessibilidade.</h3>
+ <h3>Art. 15. Caberá ao órgão federal responsável pela coordenação da política habitacional regulamentar a reserva de um percentual mínimo do total das habitações, conforme a característica da população local, para o atendimento da demanda de pessoas portadoras de deficiência ou com mobilidade reduzida.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA ACESSIBILIDADE NOS VEÍCULOS DE TRANSPORTE COLETIVO</h3>
+ <h3>Art. 16. Os veículos de transporte coletivo deverão cumprir os requisitos de acessibilidade estabelecidos nas normas técnicas específicas.</h3>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DA ACESSIBILIDADE NOS SISTEMAS DE COMUNICAÇÃO E SINALIZAÇÃO</h3>
+ <h3>Art. 17. O Poder Público promoverá a eliminação de barreiras na comunicação e estabelecerá mecanismos e alternativas técnicas que tornem acessíveis os sistemas de comunicação e sinalização às pessoas portadoras de deficiência sensorial e com dificuldade de comunicação, para garantir-lhes o direito de acesso à informação, à comunicação, ao trabalho, à educação, ao transporte, à cultura, ao esporte e ao lazer.</h3>
+ <h3>Art. 17. O poder público promoverá a eliminação de barreiras na comunicação e estabelecerá mecanismos e alternativas técnicas que tornem acessíveis os sistemas de comunicação e sinalização às pessoas com deficiência sensorial e com necessidades complexas de comunicação, para garantir-lhes o direito de acesso à informação, à comunicação, ao trabalho, à educação, ao transporte, à cultura, ao esporte e ao lazer. (Redação dada pela Lei n° 15.249, de 2025)</h3>
+ <h4>Parágrafo único. As ações previstas no caput deste artigo incluirão a instalação, em espaços públicos e abertos ao público, de sistemas de comunicação aumentativa e alternativa compostos de pranchas de baixa tecnologia com pictogramas, para atender às necessidades comunicativas específicas de cada contexto. (Incluído pela Lei n° 15.249, de 2025)</h4>
+ <h3>Art. 18. O Poder Público implementará a formação de profissionais intérpretes de escrita em braile, linguagem de sinais e de guias-intérpretes, para facilitar qualquer tipo de comunicação direta à pessoa portadora de deficiência sensorial e com dificuldade de comunicação. Regulamento</h3>
+ <h3>Art. 19. Os serviços de radiodifusão sonora e de sons e imagens adotarão plano de medidas técnicas com o objetivo de permitir o uso da linguagem de sinais ou outra subtitulação, para garantir o direito de acesso à informação às pessoas portadoras de deficiência auditiva, na forma e no prazo previstos em regulamento.</h3>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DISPOSIÇÕES SOBRE AJUDAS TÉCNICAS</h3>
+ <h3>Art. 20. O Poder Público promoverá a supressão de barreiras urbanísticas, arquitetônicas, de transporte e de comunicação, mediante ajudas técnicas.</h3>
+ <h3>Art. 21. O Poder Público, por meio dos organismos de apoio à pesquisa e das agências de financiamento, fomentará programas destinados:</h3>
+ <h5>I – à promoção de pesquisas científicas voltadas ao tratamento e prevenção de deficiências;</h5>
+ <h5>II – ao desenvolvimento tecnológico orientado à produção de ajudas técnicas para as pessoas portadoras de deficiência;</h5>
+ <h5>III – à especialização de recursos humanos em acessibilidade.</h5>
+ <h3>Art. 21-A. Às pessoas com deficiência visual será garantido, sem custo adicional, quando por elas solicitado, um kit que conterá, no mínimo: (Incluído pela Lei n° 13.835, de 2019)</h3>
+ <h5>I - etiqueta em braile: filme transparente fixo ao cartão com informações em braile, com a identificação do tipo do cartão e os 6 (seis) dígitos finais do número do cartão; (Incluído pela Lei n° 13.835, de 2019)</h5>
+ <h5>II - identificação do tipo de cartão em braile: primeiro dígito, da esquerda para a direita, identificador do tipo de cartão; (Incluído pela Lei n° 13.835, de 2019)</h5>
+ <h5>III - fita adesiva: fita para fixar a etiqueta em braile de dados no cartão; (Incluído pela Lei n° 13.835, de 2019)</h5>
+ <h5>IV - porta-cartão: objeto para armazenar o cartão e possibilitar ao portador acesso às informações necessárias ao pleno uso do cartão, com identificação, em braile, do número completo do cartão, do tipo de cartão, da bandeira, do nome do emissor, da data de validade, do código de segurança e do nome do portador do cartão. (Incluído pela Lei n° 13.835, de 2019)</h5>
+ <h4>Parágrafo único. O porta-cartão de que trata o inciso IV do caput deste artigo deverá possuir tamanho suficiente para que constem todas as informações descritas no referido inciso e deverá ser conveniente ao transporte pela pessoa com deficiência visual. (Incluído pela Lei n° 13.835, de 2019)</h4>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DAS MEDIDAS DE FOMENTO À ELIMINAÇÃO DE BARREIRAS</h3>
+ <h3>Art. 22. É instituído, no âmbito da Secretaria de Estado de Direitos Humanos do Ministério da Justiça, o Programa Nacional de Acessibilidade, com dotação orçamentária específica, cuja execução será disciplinada em regulamento.</h3>
+ <h2>CAPÍTULO X</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 23. A Administração Pública federal direta e indireta destinará, anualmente, dotação orçamentária para as adaptações, eliminações e supressões de barreiras arquitetônicas existentes nos edifícios de uso público de sua propriedade e naqueles que estejam sob sua administração ou uso.</h3>
+ <h4>Parágrafo único. A implementação das adaptações, eliminações e supressões de barreiras arquitetônicas referidas no caput deste artigo deverá ser iniciada a partir do primeiro ano de vigência desta Lei.</h4>
+ <h3>Art. 24. O Poder Público promoverá campanhas informativas e educativas dirigidas à população em geral, com a finalidade de conscientizá-la e sensibilizá-la quanto à acessibilidade e à integração social da pessoa portadora de deficiência ou com mobilidade reduzida.</h3>
+ <h3>Art. 25. As disposições desta Lei aplicam-se aos edifícios ou imóveis declarados bens de interesse cultural ou de valor histórico-artístico, desde que as modificações necessárias observem as normas específicas reguladoras destes bens.</h3>
+ <h3>Art. 26. As organizações representativas de pessoas portadoras de deficiência terão legitimidade para acompanhar o cumprimento dos requisitos de acessibilidade estabelecidos nesta Lei.</h3>
+ <h3>Art. 27. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 19 de dezembro de 2000; 179º da Independência e 112º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Este texto não substitui o publicado no DOU de 20.12.2000</p>
+ <p>| Estabelece normas gerais e critérios básicos para a promoção da acessibilidade das pessoas portadoras de deficiência ou com mobilidade reduzida, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L10098.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

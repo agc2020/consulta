@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.438, DE 24 DE AGOSTO DE 2022 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2022" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.438, DE 24 DE AGOSTO DE 2022</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:10:10 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14438.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 42.317 caracteres | espelho: 42.821 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.438, 	DE 24 DE AGOSTO DE 2022 Conversão da Medida 	Provisória nº 1.107, de 2022</p>
+ <p>Produção de efeitos</p>
+ <p>Institui o Programa de Simplificação do Microcrédito Digital para Empreendedores (SIM Digital); promove alterações na gestão e nos procedimentos de recolhimento do Fundo de Garantia do Tempo de Serviço (FGTS); altera a Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943, e as Leis nºs 8.212, de 24 de julho de 1991, 11.196, de 21 de novembro de 2005, 8.036, de 11 de maio de 1990, 13.636, de 20 de março de 2018, e 14.118, de 12 de janeiro de 2021; e revoga dispositivo da Lei n° 8.213, de 24 de julho de 1991.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei institui o Programa de Simplificação do Microcrédito Digital para 	Empreendedores (SIM Digital) e promove alterações na gestão e nos procedimentos de recolhimento do Fundo de Garantia do Tempo de Serviço 	(FGTS), bem como altera a Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e as Leis nºs 8.212, de 24 	de julho de 1991 , 11.196, de 21 de novembro de 2005 , 8.036, de 11 de maio de 	1990 , 13.636, de 20 de março de 2018 , e 14.118, de 12 de janeiro de 2021 , 	para estabelecer medidas de estímulo ao empreendedorismo popular e à 	formalização dos pequenos negócios.</h3>
+ <h2>CAPÍTULO I</h2>
+ <p>DO 	PROGRAMA DE SIMPLIFICAÇÃO DO MICROCRÉDITO DIGITAL PARA EMPREENDEDORES (SIM 	DIGITAL)</p>
+ <h3>Art. 2º Fica instituído o Programa de Simplificação do Microcrédito Digital para 	Empreendedores (SIM Digital), vinculado ao Ministério do Trabalho e 	Previdência, com os seguintes objetivos:</h3>
+ <h5>I - criar incentivos à formalização do trabalho e ao empreendedorismo;</h5>
+ <h5>II - incentivar a inclusão financeira e o acesso ao crédito para empreendedores excluídos do sistema financeiro; e</h5>
+ <h5>III - ampliar os mecanismos de garantia para a concessão de microcrédito produtivo para empreendedores, 	inclusive por meio do Programa Nacional de Microcrédito Produtivo Orientado 	(PNMPO), instituído pela Lei n° 13.636, de 20 de março de 2018.</h5>
+ <h3>Art. 3º As operações de microcrédito no âmbito do SIM Digital serão concedidas exclusivamente a pessoas naturais e a microempreendedores individuais que não tenham, em 31 de janeiro de 2022, operações de crédito ativas na pesquisa disponível no Sistema de Informações de Créditos disponibilizado pelo Banco Central do Brasil, na forma estabelecida em ato do Ministro de 	Estado do Trabalho e Previdência.</h3>
+ <h4>§ 1º As operações de microcrédito concedidas no âmbito do SIM Digital serão destinadas a:</h4>
+ <h5>I - pessoas naturais que exerçam alguma atividade produtiva ou de prestação de serviços, urbana ou rural, de forma individual ou coletiva;</h5>
+ <h5>II - pessoas naturais e microempreendedores individuais no âmbito do PNMPO; e</h5>
+ <h5>III - mulheres, em caráter preferencial, até que se atinja a proporção de, no mínimo, 50% (cinquenta por cento).</h5>
+ <h4>§ 2º A primeira linha de crédito a ser concedida ao beneficiário pessoa natural corresponderá ao valor máximo de R$ 	1.500,00 (mil e quinhentos reais) e, aos microempreendedores individuais, de 	R$ 4.500,00 (quatro mil e quinhentos reais), considerada a soma de todos os contratos de operação, ativos e inativos, efetuados no âmbito do SIM 	Digital.</h4>
+ <h4>§ 3º As linhas de créditos subsequentes somente poderão ser concedidas para microempreendedores individuais que tenham recebido qualificação técnico-profissional, na forma estabelecida em ato do Ministro de Estado do Trabalho e Previdência.</h4>
+ <h3>Art. 4º As carteiras comerciais de operações de crédito contratadas por meio das instituições financeiras participantes do SIM Digital poderão dispor de instrumentos de garantia mantidos por fundos garantidores de operações de microfinanças, observado o disposto nesta Lei e nos regulamentos dos fundos.</h3>
+ <h4>§ 1º O disposto nos §§ 3º e 6º do art. 9º da Lei n° 12.087, de 11 de novembro de 2009, não se aplica aos fundos garantidores nas contratações realizadas no âmbito do SIM Digital.</h4>
+ <h4>§ 2º O valor não utilizado para garantia das operações contratadas no âmbito do SIM Digital e os valores recuperados e a recuperar, na hipótese de inadimplência, para os quais houver sido concedida a honra, constituem direitos dos cotistas, na forma estabelecida no regulamento e no estatuto dos fundos garantidores.</h4>
+ <h4>§ 3º Os fundos garantidores responderão por suas obrigações com os bens e direitos alocados para a finalidade do SIM Digital.</h4>
+ <h4>§ 4º O cotista ou os seus agentes públicos não responderão por qualquer obrigação ou eventual prejuízo do fundo garantidor, exceto o cotista pela integralização das cotas que subscrever.</h4>
+ <h4>§ 5º Os estatutos dos fundos garantidores que oferecerem garantias no âmbito do SIM Digital deverão prever:</h4>
+ <h5>I - as operações passíveis de honra de garantia;</h5>
+ <h5>II - a exigência ou não de garantias mínimas para operações às quais dará cobertura;</h5>
+ <h5>III - a competência para a instituição administradora do fundo deliberar sobre a gestão e a alienação dos bens e direitos do fundo e zelar pela manutenção de sua rentabilidade e liquidez;</h5>
+ <h5>IV - a remuneração da instituição administradora do fundo;</h5>
+ <h5>V - os limites máximos de garantia prestada pelo fundo, respeitados os parâmetros estabelecidos nesta Lei;</h5>
+ <h5>VI - a instituição de taxas de concessão de garantia e a sua forma de custeio; e</h5>
+ <h5>VII - os limites máximos de cobertura de inadimplência, por agente financeiro, que poderão ser segregados por carteiras de operação, conforme os diferentes níveis de risco consolidados, 	considerados os fatores e as atenuantes aplicáveis, tais como garantias associadas, modalidades de aplicação, faixas de faturamento, renda bruta e tempo de experiência.</h5>
+ <h3>Art. 5º Fica autorizado o uso de recursos do FGTS para a aquisição de cotas em fundo garantidor de microfinanças, destinado a mitigar os riscos das operações de microcrédito concedidas a pessoas naturais e a microempreendedores individuais, na forma prevista na Lei n° 8.036, de 11 de maio de 1990.</h3>
+ <h4>§ 1º Os aportes de recursos oriundos do FGTS para utilização no SIM Digital serão efetuados exclusivamente no 	Fundo Garantidor de Microfinanças (FGM), constituído pela Caixa Econômica 	Federal, observado o disposto nos regulamentos aplicáveis.</h4>
+ <h4>§ 2º Em relação aos recursos aportados pelo FGTS, o FGM não disporá de qualquer tipo de garantia ou aval por parte da União e responderá por suas obrigações contraídas no âmbito do SIM 	Digital até o limite do valor dos bens e direitos integrantes do seu patrimônio alocados para o Programa.</h4>
+ <h4>§ 3º Em relação aos valores aportados pelo FGTS, a remuneração da Caixa Econômica Federal pela administração do 	FGM, calculada e cobrada mensalmente sobre os valores médios do saldo aportado no período de apuração, com pagamento no mês subsequente ao de referência, não poderá exceder o percentual de 1% (um por cento) ao ano.</h4>
+ <h4>§ 4º O Presidente do Conselho Curador do FGTS designará representante para atuar em nome do FGTS perante o FGM.</h4>
+ <h4>§ 5º Nas carteiras de operações de microcrédito garantidas com recursos do FGTS, não serão incluídas novas operações de crédito com devedores inadimplentes para os quais já houver sido concedida a honra no âmbito do SIM Digital.</h4>
+ <h3>Art. 6º Poderão aderir ao SIM Digital as instituições financeiras públicas e privadas autorizadas a funcionar pelo Banco Central do Brasil, as quais poderão realizar operações de crédito no âmbito do Programa, observados os seguintes requisitos:</h3>
+ <h5>I - taxa de juros correspondente a 90% 	(noventa por cento) da taxa máxima permitida pelo Conselho Monetário 	Nacional (CMN) para operações de microcrédito; e</h5>
+ <h5>II - prazo de até 24 (vinte e quatro) 	meses para o pagamento.</h5>
+ <h4>§ 1º Os créditos concedidos no âmbito do SIM Digital são destinados ao financiamento das atividades produtivas, 	nos termos do art. 3º desta Lei, vedada a sua destinação para a liquidação de operações de crédito preexistentes na instituição financeira.</h4>
+ <h4>§ 2º É vedada a celebração do contrato de empréstimo de que trata esta Lei com pessoas naturais ou microempreendedores individuais que possuam condenação relacionada a trabalho em condições análogas às de escravo ou a trabalho infantil.</h4>
+ <h4>§ 3º É permitida às instituições financeiras participantes do SIM Digital a vinculação de garantias às operações de crédito, inclusive o aval de terceiros, na forma individual ou solidária.</h4>
+ <h4>§ 4º Fica autorizada a vinculação do direito previsto no inciso XX do caput do art. 20 da Lei n° 8.036, de 	11 de maio de 1990 , do tomador de crédito ou de seu avalista direto ou solidário como garantia acessória nas operações de microcrédito que compõem as carteiras garantidas pelo FGM com recursos do FGTS, na forma estabelecida na referida Lei.</h4>
+ <h4>§ 5º É permitida às instituições financeiras participantes do SIM Digital a cobrança de comissão de concessão de garantias, em nome dos fundos garantidores com os quais firmarem contratos de cobertura, inclusive mediante a sua inclusão no valor total da operação.</h4>
+ <h3>Art. 7º As instituições financeiras que aderirem ao SIM Digital e cumprirem as condições estabelecidas nesta Lei e nos atos complementares editados pelo 	Ministro de Estado do Trabalho e Previdência poderão requerer a garantia dos fundos garantidores, observado o disposto nos regulamentos aplicáveis.</h3>
+ <h4>§ 1º Para fins de monitoramento e avaliação da consecução dos objetivos do SIM Digital e de efetividade da política pública, observado o disposto na Lei n° 13.709, de 14 de agosto de 	2018 , as instituições financeiras participantes disponibilizarão ao 	Ministério do Trabalho e Previdência as bases de dados dos beneficiários do 	SIM Digital com, no mínimo, as seguintes informações:</h4>
+ <h5>I - o número de inscrição no:</h5>
+ <h6>a) Cadastro de Pessoas Físicas (CPF); 	ou</h6>
+ <h6>b) Cadastro Nacional da Pessoa 	Jurídica (CNPJ); e</h6>
+ <h5>II - a discriminação dos montantes contratados nas operações vinculadas às carteiras garantidas com recursos do 	FGTS.</h5>
+ <h4>§ 2º As instituições financeiras participantes do SIM Digital poderão solicitar a cobertura da garantia a ser prestada pelos fundos garantidores, observados o disposto nesta Lei e os seguintes parâmetros:</h4>
+ <h5>I - cobertura de até 80% (oitenta por cento) do valor desembolsado em cada operação incluída nas carteiras garantidas;</h5>
+ <h5>II - limite de cobertura de 75% 	(setenta e cinco por cento) do valor total de desembolsos efetuados nas operações da carteira à qual a garantia esteja vinculada, observadas as atenuantes de risco aplicadas; e</h5>
+ <h5>III - segregação de carteiras de operações com agrupamento conforme os diferentes níveis de risco consolidados, na forma estabelecida nos regulamentos dos fundos.</h5>
+ <h4>§ 3º As instituições financeiras participantes do SIM Digital solicitarão o limite individual de cobertura e o de garantia do principal da carteira em parâmetros de cobertura inferiores ao estabelecido no § 2º deste artigo sempre que a composição de preço e risco da carteira, em função da segregação aplicável, indicar essa possibilidade, na forma estabelecida nos estatutos e nos regulamentos dos fundos.</h4>
+ <h4>§ 4º Nas garantias prestadas pelos fundos garantidores, o limite global a ser honrado às instituições financeiras no âmbito do SIM Digital fica limitado ao montante aportado pelos cotistas para o atendimento do Programa, acrescido de eventual saldo positivo entre receitas e despesas do fundo, distribuídas na proporção de suas cotas.</h4>
+ <h4>§ 5º No cálculo de aplicação dos parâmetros estabelecidos nos incisos I e II do § 2º deste artigo, os fundos garantidores:</h4>
+ <h5>I - considerarão apenas o valor do saldo principal referente às parcelas não quitadas;</h5>
+ <h5>II - desconsiderarão os valores de juros, multas e mora que tenham incidido sobre o saldo inadimplente; e</h5>
+ <h5>III - observarão o disposto no art. 4º desta Lei.</h5>
+ <h3>Art. 8º Para fins de concessão de crédito no âmbito do SIM Digital, as instituições financeiras participantes ficam dispensadas de observar, até 31 de dezembro de 2022, em relação aos tomadores das operações de microcrédito, as seguintes disposições:</h3>
+ <h5>I - inciso IV do § 1º do art. 7º da 	Lei n° 4.737, de 15 de julho de 1965 (Código Eleitoral);</h5>
+ <h5>II - art. 10 da Lei n° 8.870, de 15 de abril de 1994 ;</h5>
+ <h5>III - art. 1º da Lei n° 9.012, de 30 	de março de 1995 ; e</h5>
+ <h5>IV - art. 6º da Lei n° 10.522, de 19 	de julho de 2002.</h5>
+ <h4>§ 1º A dispensa de que trata o caput deste artigo aplica-se às instituições financeiras públicas federais, observado o disposto na Lei n° 14.194, de 20 de agosto de 2021.</h4>
+ <h4>§ 2º Na concessão de crédito no âmbito do SIM Digital, somente poderá ser exigida a garantia pessoal do proponente em montante igual ao empréstimo contratado acrescido dos encargos, permitida a apresentação, pelo tomador, de garantias de aval de terceiros.</h4>
+ <h4>§ 3º Na hipótese de inadimplência, as garantias acessórias vinculadas às operações, tais como aval de terceiros ou liquidez, deverão ser acionadas anteriormente às solicitações de honra aos fundos garantidores.</h4>
+ <h3>Art. 9º Na hipótese de inadimplemento do contratante, as instituições financeiras participantes do SIM Digital farão a cobrança da dívida, em conformidade com as suas políticas de crédito e com as normas dos fundos garantidores, em benefício dos quais recolherão os valores recuperados, relativos a cada operação, na proporção do saldo devedor honrado pelos fundos.</h3>
+ <h4>§ 1º Na cobrança do crédito inadimplido, não será admitida, por parte das instituições financeiras participantes do SIM Digital, a adoção de procedimentos para recuperação de crédito menos rigorosos do que aqueles usualmente empregados em suas políticas de cobrança e recuperação de crédito.</h4>
+ <h4>§ 2º As despesas necessárias à 	recuperação dos créditos inadimplidos correrão à conta das instituições financeiras participantes do SIM Digital.</h4>
+ <h4>§ 3º As instituições financeiras participantes do SIM Digital, em conformidade com as suas políticas de crédito, deverão empregar os melhores esforços e adotar os procedimentos necessários à recuperação dos créditos no âmbito do Programa e não poderão interromper ou negligenciar o seu acompanhamento.</h4>
+ <h4>§ 4º As instituições financeiras participantes do SIM Digital serão responsáveis pela veracidade das informações fornecidas e pela exatidão dos valores a serem eventualmente reembolsados.</h4>
+ <h4>§ 5º Observado o disposto nos regulamentos dos fundos garantidores, as instituições financeiras participantes do SIM Digital poderão, após comprovadamente envidados os esforços de cobrança dos créditos inadimplidos e decorrido o prazo mínimo de 	350 (trezentos e cinquenta) dias, contado da data da ocorrência do não pagamento, solicitar a honra ao fundo garantidor.</h4>
+ <h4>§ 6º Os créditos honrados e eventualmente não recuperados serão leiloados pelos agentes financeiros no prazo de até 18 (dezoito) meses, contado da data da prestação da garantia, 	observadas as condições estabelecidas nos regulamentos dos fundos garantidores.</h4>
+ <h4>§ 7º Decorrido o prazo previsto no § 	6º deste artigo, os créditos não arrematados serão oferecidos novamente em leilão no prazo de até 4 (quatro) meses e poderão ser alienados àquele que oferecer o maior lance, independentemente do valor de avaliação.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>DO 	APRIMORAMENTO DA GESTÃO E DOS PROCEDIMENTOS DE RECOLHIMENTO DO FUNDO DE 	GARANTIA DO TEMPO DE SERVIÇO (FGTS) E DO EMPREGO DOS RECURSOS DO FUNDO PARA 	A AQUISIÇÃO DE COTAS DE FUNDOS GARANTIDORES DE CRÉDITO</p>
+ <h3>Art. 10. Fica o empregador doméstico obrigado a:</h3>
+ <h5>I - pagar a remuneração devida ao empregado doméstico até o sétimo dia do mês seguinte ao da competência; e</h5>
+ <h5>II - arrecadar e recolher a contribuição prevista no inciso I do caput do art. 34 da Lei 	Complementar nº 150, de 1º de junho de 2015 , e a arrecadar e recolher as contribuições, os depósitos e o imposto a seu cargo de que tratam os incisos 	II, III , IV , V e VI do caput do art. 34 da Lei Complementar nº 150, 	de 1º de junho de 2015 , até o vigésimo dia do mês seguinte ao da competência.</h5>
+ <h4>§ 1º Os valores previstos nos incisos 	I , II , III e VI do caput do art. 34 da Lei Complementar nº 150, de 1º de junho de 2015 , não recolhidos até a data de vencimento ficarão sujeitos à 	incidência de encargos legais na forma prevista na legislação do imposto sobre a renda.</h4>
+ <h4>§ 2º Os valores previstos nos incisos 	IV e V do caput do art. 34 da Lei Complementar nº 150, de 1º de junho de 2015 , referentes ao FGTS não recolhidos até a data de vencimento serão corrigidos e terão a incidência de multa, conforme disposto na Lei n° 8.036, 	de 11 de maio de 1990.</h4>
+ <h3>Art. 11. A Lei n° 8.212, de 24 de julho de 1991 , 	passa a vigorar com as seguintes alterações: Produção de efeitos</h3>
+ <p>“</p>
+ <h3>Art. 30........................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h5>V - o empregador doméstico fica obrigado a arrecadar e a recolher a contribuição do segurado empregado a seu serviço e a parcela a seu cargo, até o vigésimo dia do mês seguinte ao da competência;</h5>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 32-C. ...................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h4>§ 3º O segurado especial de que trata o caput deste artigo fica obrigado a arrecadar, até o vigésimo dia do mês seguinte ao da competência:</h4>
+ <h5>I - as contribuições previstas nos incisos X, XII e XIII do caput do art. 30 desta Lei;</h5>
+ <h5>II - os valores referentes ao FGTS; e</h5>
+ <h5>III - os encargos trabalhistas sob a sua responsabilidade.</h5>
+ <p>...........................................................................................................” (NR)</p>
+ <h3>Art. 12. O 	art. 70 da Lei n° 11.196, de 21 de novembro de 2005 , passa a vigorar com a seguinte alteração: Produção de efeitos</h3>
+ <p>“</p>
+ <h3>Art. 70. ......................................................................................................</h3>
+ <h5>I - .................................................................................................................</h5>
+ <p>.....................................................................................................................</p>
+ <h6>d) até o vigésimo dia do mês subsequente ao mês de ocorrência dos fatos geradores, no caso de pagamento de rendimentos provenientes do trabalho assalariado a empregado doméstico; e</h6>
+ <p>...........................................................................................................” (NR)</p>
+ <h3>Art. 13. A 	Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , passa a vigorar com as seguintes alterações: Produção de efeitos</h3>
+ <p>“</p>
+ <h3>Art. 29-A. O empregador que infringir o disposto no caput e no § 1º do art. 29 desta Consolidação ficará sujeito a multa no valor de R$ 3.000,00 (três mil reais) por empregado prejudicado, acrescido de igual valor em cada reincidência.</h3>
+ <h4>§ 1º No caso de microempresa ou de empresa de pequeno porte, o valor final da multa aplicada será de R$ 800,00 (oitocentos reais) por empregado prejudicado.</h4>
+ <h4>§ 2º A infração de que trata o caput deste artigo constitui exceção ao critério da dupla visita.”</h4>
+ <p>“</p>
+ <h3>Art. 29-B . Na hipótese de não serem realizadas as anotações a que se refere o § 2º do art. 29 desta Consolidação, o empregador ficará sujeito a multa no valor de R$ 600,00 (seiscentos reais) por empregado prejudicado.”</h3>
+ <h3>Art. 14. A Lei n° 8.036, de 11 de maio de 1990 , 	passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 5º ........................................................................................................</h3>
+ <h5>I - estabelecer as diretrizes e os programas de alocação dos recursos do FGTS, de acordo com os critérios definidos nesta Lei, em conformidade com a política nacional de desenvolvimento urbano e as políticas setoriais de habitação popular, saneamento básico, microcrédito e infraestrutura urbana estabelecidas pelo governo federal;</h5>
+ <p>.....................................................................................................................</p>
+ <h5>XVII - estabelecer, em relação à autorização de aplicação de recursos do FGTS em fundos garantidores de crédito e sua regulamentação quanto às formas e condições:</h5>
+ <h6>a) o valor da aplicação com fundamento em proposta elaborada pelo gestor da aplicação; e</h6>
+ <h6>b) a cada 3 (três) anos, percentual mínimo do valor proposto para aplicação na política setorial do microcrédito, respeitado o piso de 30% (trinta por cento).</h6>
+ <p>.....................................................................................................................</p>
+ <h4>§ 7º O limite de que trata o § 3º deste artigo será, em cada exercício, de até 0,06% (seis centésimos por cento) do valor dos ativos do FGTS ao final do exercício anterior e, até a publicação das demonstrações financeiras, esse limite será calculado a partir de estimativas divulgadas pelo Conselho Curador para o valor dos ativos do FGTS ao final daquele exercício.</h4>
+ <p>.....................................................................................................................</p>
+ <h4>§ 10. O piso de que trata a alínea “b” do inciso XVII do caput deste artigo poderá ser revisto pelo Conselho Curador a cada 3 (três) anos.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 6º-B. Caberá ao Ministério do Trabalho e Previdência regulamentar, acompanhar a execução e subsidiar o Conselho Curador com os estudos técnicos necessários ao seu aprimoramento operacional e estabelecer as metas a serem alcançadas nas operações de microcrédito.”</h3>
+ <p>“</p>
+ <h3>Art. 7º ........................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h5>VI - elaborar as demonstrações financeiras do FGTS, incluídos o Balanço Patrimonial, a Demonstração do Resultado do Exercício e a Demonstração de Fluxo de Caixa, em conformidade com as Normas Contábeis Brasileiras, e encaminhá-las, até 30 de junho do exercício subsequente, ao gestor de aplicação;</h5>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 9º ........................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h5>IV - prazo máximo de 35 (trinta e cinco) anos.</h5>
+ <p>.....................................................................................................................</p>
+ <h4>§ 2º Os recursos do FGTS deverão ser aplicados em habitação, saneamento básico, infraestrutura urbana, operações de microcrédito e operações de crédito destinadas às entidades hospitalares filantrópicas, às instituições que atuem com pessoas com deficiência e às entidades sem fins lucrativos que participem do SUS de forma complementar, desde que as disponibilidades financeiras sejam mantidas em volume que satisfaça as condições de liquidez e de remuneração mínima necessárias à preservação do poder aquisitivo da moeda.</h4>
+ <h4>§ 3º ..............................................................................................................</h4>
+ <p>.....................................................................................................................</p>
+ <h5>III - no mínimo, 5% (cinco por cento) para instituições financeiras autorizadas pelo Banco Central do Brasil a operar com microcrédito.</h5>
+ <p>.....................................................................................................................</p>
+ <h4>§ 3º-B. Os recursos de que trata o inciso III do § 3º deste artigo terão o seu limite mínimo revisto pelo Conselho Curador a cada 3 (três) anos.</h4>
+ <h4>§ 3º-C. Na hipótese prevista no § 3º-B deste artigo, o montante não utilizado pelas instituições autorizadas pelo Banco Central do Brasil a operar com microcrédito poderá ser destinado a aplicações em habitação, saneamento básico e infraestrutura urbana.</h4>
+ <h4>§ 4º Os projetos de saneamento básico e infraestrutura urbana financiados com recursos do FGTS serão, preferencialmente, complementares aos programas habitacionais.</h4>
+ <p>.....................................................................................................................</p>
+ <h4>§ 12. Nas operações de crédito destinadas à aplicação de recursos em microcrédito, a taxa de juros efetiva não será superior àquela cobrada para o financiamento habitacional na área da habitação popular.</h4>
+ <h4>§ 13. Para garantir o risco em operações de microcrédito e em operações de crédito de habitação popular para famílias com renda mensal de até 2 (dois) salários mínimos, o FGTS poderá destinar, na forma estabelecida por seu Conselho Curador, observado o disposto no inciso XVII do caput do art. 5º desta Lei, parte dos recursos de que trata o § 7º deste artigo para a aquisição de cotas de fundos garantidores que observem o seguinte:</h4>
+ <h5>I - tenham natureza privada e patrimônio segregado do patrimônio dos cotistas e da própria administradora do fundo garantidor e estejam sujeitos a direitos e obrigações próprios;</h5>
+ <h5>II - respondam por suas obrigações até o limite dos bens e direitos que integram o seu patrimônio, vedado qualquer tipo de garantia ou aval por parte do FGTS; e</h5>
+ <h5>III - não paguem rendimentos a seus cotistas, assegurado o direito de resgate total ou parcial das cotas com base na situação patrimonial dos fundos em valor não superior ao montante de recursos financeiros ainda não vinculados às garantias contratadas.</h5>
+ <h4>§ 14. Aos recursos do FGTS destinados à aquisição de cota de fundos garantidores de que trata o § 13 deste artigo não se aplicam os requisitos de correção monetária, taxa de juros mínima e prazo máximo previstos nos incisos II, III e IV do caput deste artigo e de rentabilidade prevista no § 1º deste artigo.</h4>
+ <h4>§ 15. Fica autorizada a destinação do montante de R$ 3.000.000.000,00 (três bilhões de reais) do patrimônio líquido do FGTS para aquisição de cotas em fundo garantidor de microfinanças, para mitigar os riscos das operações de microcrédito concedidas a pessoas naturais e a microempreendedores individuais, na forma prevista no § 14 deste artigo, permitida a ampliação posterior desse montante por meio de ato do Conselho Curador.</h4>
+ <h4>§ 16. Na hipótese prevista no § 15 deste artigo, o aporte será destinado ao Programa de Simplificação do Microcrédito Digital para Empreendedores (SIM Digital), na forma da legislação própria, e a representação do FGTS na assembleia de cotistas ocorrerá por indicação do Presidente do Conselho Curador.</h4>
+ <h4>§ 17. Os contratos ativos formalizados sob a vigência do prazo máximo de amortização fixado em 30 (trinta) anos que forem objeto de renegociação pelas instituições financeiras poderão ser beneficiados com o prazo máximo de que trata o inciso IV do caput deste artigo.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 11. Os recolhimentos efetuados na rede arrecadadora relativos ao FGTS serão transferidos à Caixa Econômica Federal até o primeiro dia útil subsequente à data do recolhimento, observada a regra do meio de pagamento utilizado, data em que os respectivos valores serão incorporados ao FGTS.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 13. ....................................................................................................... Produção de efeitos</h3>
+ <h4>§ 1º A atualização monetária e a capitalização de juros nas contas vinculadas correrão à conta do FGTS, e a Caixa Econômica Federal efetuará o crédito respectivo no vigésimo primeiro dia de cada mês, com base no saldo existente no vigésimo primeiro dia do mês anterior, deduzidos os débitos ocorridos no período. Produção de efeitos</h4>
+ <h4>§ 1º-A. Para fins do disposto no § 1º deste artigo, o depósito realizado no prazo legal será contabilizado no saldo da conta vinculada no vigésimo primeiro dia do mês de sua ocorrência. Produção de efeitos</h4>
+ <h4>§ 1º-B. Na hipótese de depósito realizado intempestivamente, a atualização monetária e a parcela de juros devida ao empregado comporão o saldo-base no vigésimo primeiro dia do mês imediatamente anterior, ou comporão o saldo no vigésimo primeiro dia do mês do depósito, se o depósito ocorrer nesta data. Produção de efeitos</h4>
+ <h4>§ 2º No primeiro mês em que for exigível o recolhimento do FGTS no vigésimo dia, na forma prevista no art. 15 desta Lei, a atualização monetária e os juros correspondentes da conta vinculada serão realizados: Produção de efeitos</h4>
+ <h5>I - no décimo dia, com base no saldo existente no décimo dia do mês anterior, deduzidos os débitos ocorridos no período; e Produção de efeitos</h5>
+ <h5>II - no vigésimo primeiro dia, com base no saldo existente no décimo dia do mesmo mês, atualizado na forma prevista no inciso I deste parágrafo, deduzidos os débitos ocorridos no período, com a atualização monetária pro rata die e os juros correspondentes. Produção de efeitos</h5>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 15 . Para os fins previstos nesta Lei, todos os empregadores ficam obrigados a depositar, até o vigésimo dia de cada mês, em conta vinculada, a importância correspondente a 8% (oito por cento) da remuneração paga ou devida, no mês anterior, a cada trabalhador, incluídas na remuneração as parcelas de que tratam os arts. 457 e 458 da Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e a Gratificação de Natal de que trata a Lei n° 4.090, de 13 de julho de 1962 . Produção de efeitos</h3>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 17-A. O empregador ou o responsável fica obrigado a elaborar folha de pagamento e a declarar os dados relacionados aos valores do FGTS e outras informações de interesse do poder público por meio de sistema de escrituração digital, na forma, no prazo e nas condições estabelecidos em ato do Ministro de Estado do Trabalho e Previdência.</h3>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 20. ......................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h4>§ 27. A critério do titular da conta vinculada do FGTS, em ato formalizado no momento da contratação do financiamento habitacional, os direitos aos saques de que trata o caput deste artigo poderão ser objeto de alienação ou cessão fiduciária para pagamento de parte das prestações decorrentes de financiamento habitacional concedido no âmbito do SFH, observadas as condições estabelecidas pelo Conselho Curador, mediante caucionamento dos depósitos a serem realizados na conta vinculada do trabalhador, exceto o previsto no art. 18 desta Lei.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 20-D. ...................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h4>§ 3º-A. A critério do titular da conta vinculada do FGTS, os direitos aos saques anuais de que trata o caput deste artigo poderão ser objeto de caução para operações de microcrédito, nos termos da legislação do SIM Digital, em favor de qualquer instituição financeira do Sistema Financeiro Nacional.</h4>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 22. O empregador que não realizar os depósitos nos termos dos arts. 15 e 18 desta Lei responderá pela incidência da Taxa Referencial (TR) sobre a importância correspondente.</h3>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 23. Compete ao Ministério do Trabalho e Previdência a verificação do cumprimento do disposto nesta Lei, especialmente quanto à apuração dos débitos e das infrações praticadas pelos empregadores ou tomadores de serviço, que serão notificados para efetuar e comprovar os depósitos correspondentes e cumprir as demais determinações legais. Produção de efeitos</h3>
+ <h4>§ 1º .............................................................................................................</h4>
+ <p>.....................................................................................................................</p>
+ <h5>II - (revogado);</h5>
+ <h5>III - (revogado);</h5>
+ <p>.....................................................................................................................</p>
+ <h5>V - deixar de efetuar os depósitos e os acréscimos legais do FGTS constituído em notificação de débito, no prazo concedido pelo ato de notificação da decisão definitiva exarada no processo administrativo; Produção de efeitos</h5>
+ <h5>VI - deixar de apresentar, ou apresentar com erros ou omissões, as informações de que trata o art. 17-A desta Lei e as demais informações legalmente exigíveis; e Produção de efeitos</h5>
+ <h5>VII - deixar de apresentar ou de promover a retificação das informações de que trata o art. 17-A desta Lei no prazo concedido na notificação da decisão definitiva exarada no processo administrativo que reconheceu a procedência da notificação de débito decorrente de omissão, de erro, de fraude ou de sonegação constatados. Produção de efeitos</h5>
+ <h4>§ 1º-A. A formalização de parcelamento da integralidade do débito suspende a ação punitiva da infração prevista: Produção de efeitos</h4>
+ <h5>I - no inciso I do § 1º deste artigo, quando realizada anteriormente ao início de qualquer processo administrativo ou medida de fiscalização; e Produção de efeitos</h5>
+ <h5>II - no inciso V do § 1º deste artigo, quando realizada no prazo nele referido. Produção de efeitos</h5>
+ <h4>§ 1º-B. A suspensão da ação punitiva prevista no § 1º-A deste artigo será mantida durante a vigência do parcelamento, e a quitação integral dos valores parcelados extinguirá a infração. Produção de efeitos</h4>
+ <h4>§ 2º Pela infração ao disposto no § 1º deste artigo, o infrator estará sujeito às seguintes multas: Produção de efeitos</h4>
+ <h6>a) (revogada); Produção de efeitos</h6>
+ <h6>b) 30% (trinta por cento) sobre o débito atualizado apurado pela inspeção do trabalho, confessado pelo empregador ou lançado de ofício, nas hipóteses previstas nos incisos I, IV e V do § 1º deste artigo; e Produção de efeitos</h6>
+ <h6>c) de R$ 100,00 (cem reais) a R$ 300,00 (trezentos reais) por trabalhador prejudicado, nas hipóteses previstas nos incisos VI e VII do § 1º deste artigo. Produção de efeitos</h6>
+ <p>.....................................................................................................................</p>
+ <h4>§ 3º-A. Estabelecidas a multa-base e a majoração na forma prevista nos §§ 2º e 3º deste artigo, o valor final será reduzido pela metade quando o infrator for empregador doméstico, microempresa ou empresa de pequeno porte. Produção de efeitos</h4>
+ <p>...........................................................................................................” (NR)</p>
+ <h2>CAPÍTULO III</h2>
+ <p>DAS 	ALTERAÇÕES NO PROGRAMA NACIONAL DE MICROCRÉDITO PRODUTIVO ORIENTADO (PNMPO)</p>
+ <h3>Art. 15. A Lei n° 13.636, de 20 de março de 2018 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 1º Fica instituído, no âmbito do Ministério do Trabalho e Previdência, o Programa Nacional de Microcrédito Produtivo Orientado (PNMPO), com o objetivo de fomentar, apoiar e financiar atividades produtivas de empreendedores, principalmente por meio da disponibilização de recursos para o microcrédito produtivo orientado.</h3>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 3º ........................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h4>§ 4º As organizações da sociedade civil de interesse público, os agentes de crédito constituídos como pessoas jurídicas e as pessoas jurídicas especializadas de que tratam os incisos X, XI, XIII, XIV e XV do caput deste artigo deverão observar as diretrizes estabelecidas pelo Ministério do Trabalho e Previdência para realizar operações de crédito no âmbito do PNMPO, na forma prevista no inciso II do caput do art. 6º desta Lei.</h4>
+ <p>...........................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 6º Ao Ministério do Trabalho e Previdência compete:</h3>
+ <p>.....................................................................................................................</p>
+ <h5>II - estabelecer requisitos para cadastro das entidades de que trata o caput do art. 3º desta Lei, entre os quais a exigência de inscrição dos agentes de crédito de que trata o inciso XI do caput do referido artigo como contribuintes individuais do Regime Geral de Previdência Social, na forma prevista nas alíneas “g” e “h” do inciso V do caput do art. 11 da Lei n° 8.213, de 24 de julho de 1991 ;</h5>
+ <p>.....................................................................................................................</p>
+ <h5>V - editar as normas complementares necessárias ao cumprimento do disposto neste artigo.</h5>
+ <h4>Parágrafo único. As normas de que trata o inciso V do caput deste artigo poderão estabelecer critérios de priorização para públicos específicos.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 7º Fica criado o Fórum Nacional de Microcrédito, com o objetivo de promover o debate contínuo entre as entidades vinculadas ao segmento.</h3>
+ <h5>I - (revogado);</h5>
+ <h5>II - (revogado).</h5>
+ <h4>§ 1º O Fórum Nacional de Microcrédito é composto por representantes dos seguintes órgãos e entidades:</h4>
+ <h5>I - 1 (um) do Ministério do Trabalho e Previdência, que o presidirá;</h5>
+ <h5>II - 2 (dois) do Ministério da Economia, dos quais:</h5>
+ <h6>a) 1 (um) da Secretaria Especial de Produtividade e Competitividade; e</h6>
+ <h6>b) 1 (um) da Secretaria Especial do Tesouro e Orçamento;</h6>
+ <h5>III - 1 (um) do Ministério da Cidadania;</h5>
+ <h5>IV - (revogado);</h5>
+ <h5>V - (revogado);</h5>
+ <h5>VI - 1 (um) do Ministério do Desenvolvimento Regional;</h5>
+ <h5>VII - (revogado);</h5>
+ <h5>VIII - (revogado);</h5>
+ <h5>IX - 1 (um) do Banco Nacional de Desenvolvimento Econômico e Social (BNDES);</h5>
+ <h5>X - 1 (um) da Caixa Econômica Federal;</h5>
+ <h5>XI - 1 (um) do Banco do Brasil S.A.;</h5>
+ <h5>XII - 1 (um) do Banco do Nordeste do Brasil S.A.;</h5>
+ <h5>XIII - 1 (um) do Banco da Amazônia S.A.;</h5>
+ <h5>XIV - 1 (um) da Casa Civil da Presidência da República;</h5>
+ <h5>XV - (revogado).</h5>
+ <h4>§ 1º-A. Cada membro do Fórum Nacional de Microcrédito terá 1 (um) suplente, que o substituirá em suas ausências e seus impedimentos.</h4>
+ <h4>§ 2º O Presidente do Fórum Nacional de Microcrédito poderá convidar especialistas e representantes de outros órgãos e entidades, públicos e privados, para participar de suas reuniões, sem direito a voto, entre os quais:</h4>
+ <h5>I - Fórum Nacional de Secretarias Estaduais do Trabalho;</h5>
+ <p>.....................................................................................................................</p>
+ <h5>III - Associação Brasileira de Entidades Operadoras de Microcrédito e Microfinanças;</h5>
+ <h5>IV - Organização das Cooperativas Brasileiras;</h5>
+ <h5>V - Associação Brasileira das Sociedades de Microcrédito;</h5>
+ <h5>VI - Associação Brasileira de Desenvolvimento;</h5>
+ <p>......................................................................................................................</p>
+ <h5>VIII - (revogado);</h5>
+ <h5>IX - Fórum Brasileiro de Economia Solidária;</h5>
+ <h5>X - Associação Brasileira de Crédito Digital;</h5>
+ <h5>XI - Associação Brasileira de Fintechs.</h5>
+ <h4>§ 3º Ato do Poder Executivo federal poderá acrescentar outros integrantes à composição do Fórum Nacional de Microcrédito.</h4>
+ <h4>§ 3º-A. Ao Fórum Nacional de Microcrédito compete:</h4>
+ <h5>I - propor e apoiar a elaboração de estudos e o desenvolvimento de ferramentas que possibilitem o monitoramento e a avaliação do PNMPO;</h5>
+ <h5>II - propor a adoção de medidas para o aperfeiçoamento da legislação e o fortalecimento do PNMPO;</h5>
+ <h5>III - estimular a formação de parcerias entre as entidades operadoras do PNMPO; e</h5>
+ <h5>IV - estimular a integração entre o PNMPO e as demais políticas públicas de desenvolvimento e de combate ao desemprego.</h5>
+ <h4>§ 4º As proposições do Fórum Nacional de Microcrédito não vinculam a atuação do CMN, do Codefat, do Conselho Curador do Fundo de Garantia do Tempo de Serviço (CCFGTS) e dos conselhos dos fundos constitucionais de financiamento.</h4>
+ <h4>§ 5º (Revogado).</h4>
+ <h4>§ 6º A Secretaria-Executiva do Fórum Nacional de Microcrédito será exercida pela Secretaria de Trabalho do Ministério do Trabalho e Previdência.” (NR)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 16. O 	Ministro de Estado do Trabalho e Previdência editará as normas complementares necessárias ao cumprimento do disposto nesta Lei.</h3>
+ <h3>Art. 17. O 	art. 6º da Lei n° 14.118, de 12 de janeiro de 2021 , passa a vigorar acrescido do seguinte § 8º:</h3>
+ <p>“</p>
+ <h3>Art. 6º ........................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h4>§ 8º A gestão operacional dos recursos de que trata o inciso I do caput deste artigo será efetuada pela Caixa Econômica Federal, quando destinados a:</h4>
+ <h5>I - complementar os descontos concedidos pelo FGTS;</h5>
+ <h5>II - atender às famílias residentes em áreas rurais; ou</h5>
+ <h5>III - atender ao disposto no inciso II do § 1º deste artigo.” (NR)</h5>
+ <h3>Art. 18. Ficam revogados:</h3>
+ <h5>I - os seguintes dispositivos da Lei n° 8.036, de 11 de maio de 1990 :</h5>
+ <h6>a) § 5º do art. 12 ; e</h6>
+ <h6>b) do art. 23:</h6>
+ <p>1. incisos II e III do 	§ 1º ; e</p>
+ <p>2. alínea “a” do § 2º ;</p>
+ <h5>II - os seguintes dispositivos do art. 7º da Lei n° 13.636, de 20 de março de 2018 :</h5>
+ <h6>a) incisos I e II do caput ;</h6>
+ <h6>b) incisos IV , V, VII , VIII e XV do § 1º ;</h6>
+ <h6>c) inciso VIII 	do § 2º ; e</h6>
+ <h6>d) § 5º ; e</h6>
+ <h5>III - o § 6º do art. 115 da Lei n° 8.213, de 24 de julho de 1991.</h5>
+ <h3>Art. 19. Esta Lei entra em vigor na data de sua publicação e produzirá efeitos:</h3>
+ <h5>I - a partir da data de início da arrecadação por meio da prestação dos serviços digitais de geração de guias a que se refere o inciso II do caput do art. 17 da Lei n° 8.036, de 	11 de maio de 1990:</h5>
+ <h6>a) quanto às alterações promovidas no art. 13 da Lei n° 8.036, de 11 de maio de 1990; e</h6>
+ <h6>b) para fatos geradores ocorridos a partir da data prevista neste inciso:</h6>
+ <p>1. quanto às alterações promovidas nos arts. 15 e 23 , exceto em relação ao caput , da Lei n° 8.036, de 11 de maio de 1990; e</p>
+ <p>2. quanto aos arts. 	10 , 11 e 12 desta Lei ; e</p>
+ <h5>II - na data de sua publicação, quanto aos demais dispositivos .</h5>
+ <p>Brasília, 24 de agosto de 2022; 201º da Independência e 134º da República.</p>
+ <h3>JAIR 	MESSIAS BOLSONARO</h3>
+ <p>Este texto não substitui o publicado no DOU de 	25.8.2022</p>
+ <p>Provisória nº 1.107, de 2022Produção de efeitos | Institui o Programa de Simplificação do Microcrédito Digital para Empreendedores (SIM Digital); promove alterações na gestão e nos procedimentos de recolhimento do Fundo de</p>
+ <p>Garantia do Tempo de Serviço (FGTS); altera a Consolidação das Leis do</p>
+ <p>Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de</p>
+ <p>1943, e as Leis nºs 8.212, de 24 de julho de 1991, 11.196, de 21 de novembro de 2005, 8.036, de 11 de maio de 1990, 13.636, de 20 de março de 2018, e 14.118, de 12 de janeiro de 2021; e revoga dispositivo da Lei n° 8.213, de 24 de julho de 1991.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14438.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.063, DE 23 DE SETEMBRO DE 2020 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2020" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.063, DE 23 DE SETEMBRO DE 2020</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 18:20:50 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/L14063.htm#view" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 16.174 caracteres | espelho: 15.975 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.063, DE 23 DE SETEMBRO DE 2020</p>
+ <p>Dispõe sobre o uso de assinaturas eletrônicas em interações com entes públicos, em atos de pessoas jurídicas e em questões de saúde e sobre as licenças de softwares desenvolvidos por entes públicos; e altera a Lei n° 9.096, de 19 de setembro de 1995, a Lei n° 5.991, de 17 de dezembro de 1973, e a Medida Provisória nº 2.200-2, de 24 de agosto de 2001.</p>
+ <p>Conversão da Medida Provisória nº 983, de 2020</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÃO PRELIMINAR</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre o uso de assinaturas eletrônicas em interações com entes públicos, em atos de pessoas jurídicas e em questões de saúde e sobre as licenças de softwares desenvolvidos por entes públicos, com o objetivo de proteger as informações pessoais e sensíveis dos cidadãos, com base nos incisos X e XII do caput do art. 5º da Constituição Federal e na Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), bem como de atribuir eficiência e segurança aos serviços públicos prestados sobretudo em ambiente eletrônico.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA ASSINATURA ELETRÔNICA EM INTERAÇÕES COM ENTES PÚBLICOS</h3>
+ <p>Seção I</p>
+ <p>Do Objeto, do Âmbito de Aplicação e das Definições</p>
+ <h3>Art. 2º Este Capítulo estabelece regras e procedimentos sobre o uso de assinaturas eletrônicas no âmbito da:</h3>
+ <h5>I - interação interna dos órgãos e entidades da administração direta, autárquica e fundacional dos Poderes e órgãos constitucionalmente autônomos dos entes federativos;</h5>
+ <h5>II - interação entre pessoas naturais ou pessoas jurídicas de direito privado e os entes públicos de que trata o inciso I do caput deste artigo;</h5>
+ <h5>III - interação entre os entes públicos de que trata o inciso I do caput deste artigo.</h5>
+ <h4>Parágrafo único. O disposto neste Capítulo não se aplica:</h4>
+ <h5>I - aos processos judiciais;</h5>
+ <h5>II - à interação:</h5>
+ <h6>a) entre pessoas naturais ou entre pessoas jurídicas de direito privado;</h6>
+ <h6>b) na qual seja permitido o anonimato;</h6>
+ <h6>c) na qual seja dispensada a identificação do particular;</h6>
+ <h5>III - aos sistemas de ouvidoria de entes públicos;</h5>
+ <h5>IV - aos programas de assistência a vítimas e a testemunhas ameaçadas;</h5>
+ <h5>V - às outras hipóteses nas quais deva ser dada garantia de preservação de sigilo da identidade do particular na atuação perante o ente público.</h5>
+ <h3>Art. 3º Para os fins desta Lei, considera-se:</h3>
+ <h5>I - autenticação: o processo eletrônico que permite a identificação eletrônica de uma pessoa natural ou jurídica;</h5>
+ <h5>II - assinatura eletrônica: os dados em formato eletrônico que se ligam ou estão logicamente associados a outros dados em formato eletrônico e que são utilizados pelo signatário para assinar, observados os níveis de assinaturas apropriados para os atos previstos nesta Lei;</h5>
+ <h5>III - certificado digital: atestado eletrônico que associa os dados de validação da assinatura eletrônica a uma pessoa natural ou jurídica;</h5>
+ <h5>IV - certificado digital ICP-Brasil: certificado digital emitido por uma Autoridade Certificadora (AC) credenciada na Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil), na forma da legislação vigente.</h5>
+ <p>Seção II</p>
+ <p>Da Classificação das Assinaturas Eletrônicas</p>
+ <h3>Art. 4º Para efeitos desta Lei, as assinaturas eletrônicas são classificadas em:</h3>
+ <h5>I - assinatura eletrônica simples:</h5>
+ <h6>a) a que permite identificar o seu signatário;</h6>
+ <h6>b) a que anexa ou associa dados a outros dados em formato eletrônico do signatário;</h6>
+ <h5>II - assinatura eletrônica avançada: a que utiliza certificados não emitidos pela ICP-Brasil ou outro meio de comprovação da autoria e da integridade de documentos em forma eletrônica, desde que admitido pelas partes como válido ou aceito pela pessoa a quem for oposto o documento, com as seguintes características:</h5>
+ <h6>a) está associada ao signatário de maneira unívoca;</h6>
+ <h6>b) utiliza dados para a criação de assinatura eletrônica cujo signatário pode, com elevado nível de confiança, operar sob o seu controle exclusivo;</h6>
+ <h6>c) está relacionada aos dados a ela associados de tal modo que qualquer modificação posterior é detectável;</h6>
+ <h5>III - assinatura eletrônica qualificada: a que utiliza certificado digital, nos termos do § 1º do art. 10 da Medida Provisória nº 2.200-2, de 24 de agosto de 2001.</h5>
+ <h4>§ 1º Os 3 (três) tipos de assinatura referidos nos incisos I, II e III do caput deste artigo caracterizam o nível de confiança sobre a identidade e a manifestação de vontade de seu titular, e a assinatura eletrônica qualificada é a que possui nível mais elevado de confiabilidade a partir de suas normas, de seus padrões e de seus procedimentos específicos.</h4>
+ <h4>§ 2º Devem ser asseguradas formas de revogação ou de cancelamento definitivo do meio utilizado para as assinaturas previstas nesta Lei, sobretudo em casos de comprometimento de sua segurança ou de vazamento de dados.</h4>
+ <p>Seção III</p>
+ <p>Da Aceitação e da Utilização de Assinaturas Eletrônicas pelos Entes Públicos</p>
+ <h3>Art. 5º No âmbito de suas competências, ato do titular do Poder ou do órgão constitucionalmente autônomo de cada ente federativo estabelecerá o nível mínimo exigido para a assinatura eletrônica em documentos e em interações com o ente público. (Regulamento)</h3>
+ <h4>§ 1º O ato de que trata o caput deste artigo observará o seguinte:</h4>
+ <h5>I - a assinatura eletrônica simples poderá ser admitida nas interações com ente público de menor impacto e que não envolvam informações protegidas por grau de sigilo;</h5>
+ <h5>II - a assinatura eletrônica avançada poderá ser admitida, inclusive:</h5>
+ <h6>a) nas hipóteses de que trata o inciso I deste parágrafo;</h6>
+ <h6>b) (VETADO);</h6>
+ <h6>c) no registro de atos perante as juntas comerciais;</h6>
+ <h5>III - a assinatura eletrônica qualificada será admitida em qualquer interação eletrônica com ente público, independentemente de cadastramento prévio, inclusive nas hipóteses mencionadas nos incisos I e II deste parágrafo.</h5>
+ <h4>§ 2º É obrigatório o uso de assinatura eletrônica qualificada:</h4>
+ <h5>I - nos atos assinados por chefes de Poder, por Ministros de Estado ou por titulares de Poder ou de órgão constitucionalmente autônomo de ente federativo;</h5>
+ <h5>II - (VETADO);</h5>
+ <h5>III - nas emissões de notas fiscais eletrônicas, com exceção daquelas cujos emitentes sejam pessoas físicas ou Microempreendedores Individuais (MEIs), situações em que o uso torna-se facultativo;</h5>
+ <h5>IV - nos atos de transferência e de registro de bens imóveis, ressalvado o disposto na alínea “c” do inciso II do § 1º deste artigo;</h5>
+ <h5>V – (VETADO);</h5>
+ <h5>VI - nas demais hipóteses previstas em lei.</h5>
+ <h4>§ 3º (VETADO).</h4>
+ <h4>§ 4º O ente público informará em seu site os requisitos e os mecanismos estabelecidos internamente para reconhecimento de assinatura eletrônica avançada.</h4>
+ <h4>§ 5º No caso de conflito entre normas vigentes ou de conflito entre normas editadas por entes distintos, prevalecerá o uso de assinaturas eletrônicas qualificadas.</h4>
+ <h4>§ 6º As certidões emitidas por sistema eletrônico da Justiça Eleitoral possuem fé pública e, nos casos dos órgãos partidários, substituem os cartórios de registro de pessoas jurídicas para constituição dos órgãos partidários estaduais e municipais, dispensados quaisquer registros em cartórios da circunscrição do respectivo órgão partidário.</h4>
+ <h3>Art. 6º O art. 7º da Medida Provisória nº 2.200-2, de 24 de agosto de 2001, passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 7º Compete às AR, entidades operacionalmente vinculadas a determinada AC, identificar e cadastrar usuários, encaminhar solicitações de certificados às AC e manter registros de suas operações.</h3>
+ <h4>Parágrafo único. A identificação a que se refere o caput deste artigo será feita presencialmente, mediante comparecimento pessoal do usuário, ou por outra forma que garanta nível de segurança equivalente, observadas as normas técnicas da ICP-Brasil.” (NR)</h4>
+ <h3>Art. 7º O § 2º do art. 10 e o § 6º do art. 32 da Lei n° 9.096, de 19 de setembro de 1995 , passam a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 10. .......................................................................................................</h3>
+ <p>..........................................................................................................................</p>
+ <h4>§ 2º Após o recebimento da comunicação de constituição dos órgãos de direção regionais e municipais, definitivos ou provisórios, o Tribunal Superior Eleitoral, na condição de unidade cadastradora, deverá proceder à inscrição, ao restabelecimento e à alteração de dados cadastrais e da situação cadastral perante o CNPJ na Secretaria Especial da Receita Federal do Brasil.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 32. .......................................................................................................</h3>
+ <p>.........................................................................................................................</p>
+ <h4>§ 6º O Tribunal Superior Eleitoral, na condição de unidade cadastradora, deverá proceder à reativação da inscrição perante o CNPJ na Secretaria Especial da Receita Federal do Brasil dos órgãos partidários municipais referidos no § 4º deste artigo que estejam com a inscrição baixada ou inativada, após o recebimento da comunicação de constituição de seus órgãos de direção regionais e municipais, definitivos ou provisórios.</h4>
+ <p>................................................................................................................” (NR)</p>
+ <p>Seção IV</p>
+ <p>Dos Atos Praticados por Particulares perante Entes Públicos</p>
+ <h3>Art. 8º As assinaturas eletrônicas qualificadas contidas em atas deliberativas de assembleias, de convenções e de reuniões das pessoas jurídicas de direito privado constantes do art. 44 da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), devem ser aceitas pelas pessoas jurídicas de direito público e pela administração pública direta e indireta pertencentes aos Poderes Executivo, Legislativo e Judiciário.</h3>
+ <h3>Art. 9º (VETADO).</h3>
+ <p>Seção V</p>
+ <p>Dos Atos Realizados durante a Pandemia</p>
+ <h3>Art. 10. O ato de que trata o caput do art. 5º desta Lei poderá prever nível de assinatura eletrônica incompatível com o previsto no § 1º do art. 5º para os atos realizados durante o período da emergência de saúde pública de importância internacional decorrente da pandemia da Covid-19, de que trata a Lei n° 13.979, de 6 de fevereiro de 2020 , com vistas à redução de contatos presenciais ou para a realização de atos que, de outro modo, ficariam impossibilitados.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>DA ATUAÇÃO DO COMITÊ GESTOR E DO INSTITUTO NACIONAL DE TECNOLOGIA DA INFORMAÇÃO PERANTE ENTES PÚBLICOS</p>
+ <h3>Art. 11. (VETADO).</h3>
+ <h3>Art. 12. (VETADO).</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA ASSINATURA ELETRÔNICA EM QUESTÃO DE SAÚDE PÚBLICA</h3>
+ <h3>Art. 13. Os receituários de medicamentos sujeitos a controle especial e os atestados médicos em meio eletrônico, previstos em ato do Ministério da Saúde, somente serão válidos quando subscritos com assinatura eletrônica qualificada do profissional de saúde.</h3>
+ <h4>Parágrafo único. As exigências de nível mínimo de assinatura eletrônica previstas no caput deste artigo e no art. 14 desta Lei não se aplicam aos atos internos do ambiente hospitalar.</h4>
+ <h3>Art. 14. Com exceção do disposto no art. 13 desta Lei, os documentos eletrônicos subscritos por profissionais de saúde e relacionados à sua área de atuação são válidos para todos os fins quando assinados por meio de:</h3>
+ <h5>I - assinatura eletrônica avançada; ou</h5>
+ <h5>II - assinatura eletrônica qualificada.</h5>
+ <h4>Parágrafo único. Observada a legislação específica, o art. 13 desta Lei e o caput deste artigo, ato do Ministro de Estado da Saúde ou da Diretoria Colegiada da Agência Nacional de Vigilância Sanitária (Anvisa), no âmbito de suas competências, especificará as hipóteses e os critérios para a validação dos documentos de que trata o caput deste artigo.</h4>
+ <h3>Art. 15. O art. 35 da Lei n° 5.991, de 17 de dezembro de 1973 , passa vigorar com as seguintes alterações, numerando-se o atual parágrafo único como § 1º:</h3>
+ <p>“</p>
+ <h3>Art. 35. ......................................................................................................</h3>
+ <h6>a) (revogada);</h6>
+ <h6>b) (revogada);</h6>
+ <h6>c) (revogada).</h6>
+ <h5>I - que seja escrita no vernáculo, redigida sem abreviações e de forma legível e que observe a nomenclatura e o sistema de pesos e medidas oficiais;</h5>
+ <h5>II - que contenha o nome e o endereço residencial do paciente e, expressamente, o modo de usar a medicação; e</h5>
+ <h5>III - que contenha a data e a assinatura do profissional de saúde, o endereço do seu consultório ou da sua residência e o seu número de inscrição no conselho profissional.</h5>
+ <h4>§ 1º O receituário de medicamentos terá validade em todo o território nacional, independentemente do ente federativo em que tenha sido emitido, inclusive o de medicamentos sujeitos ao controle sanitário especial, nos termos da regulação.</h4>
+ <h4>§ 2º As receitas em meio eletrônico, ressalvados os atos internos no ambiente hospitalar, somente serão válidas se contiverem a assinatura eletrônica avançada ou qualificada do profissional e atenderem aos requisitos de ato da Diretoria Colegiada da Agência Nacional de Vigilância Sanitária (Anvisa) ou do Ministro de Estado da Saúde, conforme as respectivas competências.</h4>
+ <h4>§ 3º É obrigatória a utilização de assinaturas eletrônicas qualificadas para receituários de medicamentos sujeitos a controle especial e para atestados médicos em meio eletrônico.” (NR)</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DOS SISTEMAS DE INFORMAÇÃO E DE COMUNICAÇÃO DOS ENTES PÚBLICOS</h3>
+ <h3>Art. 16. Os sistemas de informação e de comunicação desenvolvidos exclusivamente por órgãos e entidades da administração direta, autárquica e fundacional dos Poderes e órgãos constitucionalmente autônomos dos entes federativos são regidos por licença de código aberto, permitida a sua utilização, cópia, alteração e distribuição sem restrições por todos os órgãos e entidades abrangidos por este artigo.</h3>
+ <h4>§ 1º O disposto no caput deste artigo aplica-se, inclusive, aos sistemas de informação e de comunicação em operação na data de entrada em vigor desta Lei.</h4>
+ <h4>§ 2º Não estão sujeitos ao disposto neste artigo:</h4>
+ <h5>I - os sistemas de informação e de comunicação cujo código-fonte possua restrição de acesso à informação, nos termos do Capítulo IV da Lei n° 12.527, de 18 de novembro de 2011;</h5>
+ <h5>II - os dados armazenados pelos sistemas de informação e de comunicação;</h5>
+ <h5>III - os componentes de propriedade de terceiros; e</h5>
+ <h5>IV - os contratos de desenvolvimento de sistemas de informação e de comunicação que tenham sido firmados com terceiros antes da data de entrada em vigor desta Lei e que contenham cláusula de propriedade intelectual divergente do disposto no caput deste artigo.</h5>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 17. O disposto nesta Lei não estabelece obrigação aos órgãos e entidades da administração direta, indireta, autárquica e fundacional dos Poderes e órgãos constitucionalmente autônomos dos entes federativos de disponibilizarem mecanismos de comunicação eletrônica em todas as hipóteses de interação com pessoas naturais ou jurídicas.</h3>
+ <h3>Art. 17-A. As instituições financeiras que atuem com crédito imobiliário autorizadas a celebrar instrumentos particulares com caráter de escritura pública e os partícipes dos contratos correspondentes poderão fazer uso das assinaturas eletrônicas nas modalidades avançada e qualificada de que trata esta Lei. (Incluído pela 	Medida Provisória nº 1.162, de 2023)</h3>
+ <h3>Art. 17-A. As instituições financeiras que atuem com crédito imobiliário autorizadas a celebrar instrumentos particulares com caráter de escritura pública e os partícipes dos contratos correspondentes poderão fazer uso das assinaturas eletrônicas nas modalidades avançada e qualificada de que trata esta Lei. (Incluído pela Lei n° 14.620, de 2023)</h3>
+ <h4>Parágrafo único. (VETADO). (Incluído pela Lei n° 14.620, de 2023)</h4>
+ <h3>Art. 18. Os sistemas em uso na data de entrada em vigor desta Lei que utilizem assinaturas eletrônicas e que não atendam ao disposto no art. 5º desta Lei serão adaptados até 1º de julho de 2021.</h3>
+ <h3>Art. 19. Revogam-se as alíneas “a” , “b” e “c” do caput do art. 35 da Lei n° 5.991, de 17 de dezembro de 1973.</h3>
+ <h3>Art. 20. Esta Lei entra em vigor na data de sua publicação .</h3>
+ <p>Brasília, 23 de setembro de 2020; 199º da Independência e 132º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Walter Souza Braga Netto</p>
+ <p>Este texto não substitui o publicado no DOU de 24.9.2020.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/L14063.htm#view" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

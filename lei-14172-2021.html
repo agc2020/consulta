@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.172, DE 10 DE JUNHO DE 2021 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2021" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.172, DE 10 DE JUNHO DE 2021</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:07:46 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14172.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 15.089 caracteres | espelho: 14.952 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.172, DE 	10 DE JUNHO DE 2021</p>
+ <p>Vide Mensagem de Veto Total nº 81, de 2021</p>
+ <p>Regulamento</p>
+ <p>(Vide Decreto nº 11.713, de 2023)</p>
+ <p>Dispõe sobre a garantia de acesso à internet, com fins educacionais, a alunos e a professores da educação básica pública.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o 	Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre a assistência da União aos 	Estados e ao Distrito Federal para a garantia de acesso à internet, com fins educacionais, aos alunos e aos professores da educação básica pública, nos termos do inciso III do caput do art. 9º da Lei n° 9.394, de 20 de dezembro de 1996 (Lei de 	Diretrizes e Bases da Educação Nacional).</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre a assistência da União aos Estados e ao Distrito Federal para a garantia de acesso à internet, com fins educacionais, aos estabelecimentos de ensino, aos alunos e aos professores da educação básica pública, nos termos do inciso III do caput do art. 9º da 	Lei n° 9.394, de 20 de dezembro de 1996 (Lei de Diretrizes e Bases da 	Educação Nacional). (Redação dada pela Lei n° 14.640, de 2023)</h3>
+ <h3>Art. 2º A União entregará aos Estados e ao Distrito Federal o valor de R$ 3.501.597.083,20 (três bilhões, quinhentos e um milhões, quinhentos e noventa e sete mil e oitenta e três reais e vinte centavos) para aplicação, 	pelos Poderes Executivos estaduais e do Distrito Federal, em ações para a garantia do acesso à internet, com fins educacionais, aos alunos e aos professores da rede pública de ensino dos Estados, do Distrito Federal e dos 	Municípios, em virtude da calamidade pública decorrente da Covid-19.</h3>
+ <h3>Art. 2º A 	União entregará aos Estados e ao Distrito Federal o valor de R$ 	3.501.597.083,20 (três bilhões, quinhentos e um milhões, quinhentos e noventa e sete mil e oitenta e três reais e vinte centavos) para aplicação, 	pelos Poderes Executivos estaduais e do Distrito Federal, em ações para a garantia do acesso à internet, com fins educacionais, aos estabelecimentos de ensino, aos alunos e aos professores da rede pública de ensino dos 	Estados, do Distrito Federal e dos Municípios, em virtude da calamidade pública decorrente da Covid-19. (Redação dada pela Lei n° 14.640, de 2023)</h3>
+ <h4>§ 1º Serão beneficiários das ações de que trata o caput deste artigo os alunos da rede pública de ensino dos Estados, 	do Distrito Federal e dos Municípios pertencentes a famílias inscritas no 	Cadastro Único para Programas Sociais do Governo Federal (CadÚnico) e os matriculados nas escolas das comunidades indígenas e quilombolas, bem como os professores da educação básica da rede pública de ensino dos Estados, do 	Distrito Federal e dos Municípios.</h4>
+ <h4>§ 1º Serão prioritariamente atendidos pelas ações de que trata o caput deste artigo os estabelecimentos de ensino com alunos pertencentes a famílias inscritas no Cadastro Único para Programas Sociais do Governo Federal (CadÚnico) 	e os localizados nas comunidades indígenas e quilombolas. (Redação dada pela Lei n° 14.640, de 2023)</h4>
+ <h4>§ 2º Os recursos destinados ao cumprimento do disposto no caput deste artigo serão aplicados de forma descentralizada, mediante transferências da União aos Estados e ao Distrito 	Federal em parcela única, a ser paga até 30 (trinta) dias após a publicação desta Lei, de acordo com o número de professores e de matrículas que cumpram os requisitos previstos no § 1º deste artigo e o atendimento às finalidades, 	às proporções e às prioridades definidas no art. 3º desta Lei.</h4>
+ <h4>§ 2º Os recursos destinados ao cumprimento do disposto no caput serão aplicados de forma descentralizada, mediante transferências da União aos Estados e ao Distrito Federal, de acordo com o número de professores e de matrículas que cumpram os requisitos previstos no § 1º e com o atendimento às finalidades, às proporções e às prioridades definidas no art. 3º. (Redação dada pela Medida Provisória nº 1.060, de 2021) (Vigência encerrada)</h4>
+ <h4>§ 2º Os recursos destinados ao cumprimento do disposto no caput deste artigo serão aplicados de forma descentralizada, mediante transferências da União aos Estados e ao Distrito 	Federal em parcela única, a ser paga até 30 (trinta) dias após a publicação desta Lei, de acordo com o número de professores e de matrículas que cumpram os requisitos previstos no § 1º deste artigo e o atendimento às finalidades, 	às proporções e às prioridades definidas no art. 3º desta Lei.</h4>
+ <h4>§ 3º Os recursos a que se refere o caput deste artigo, transferidos pela União aos Estados e ao Distrito Federal, que não forem aplicados até 31 de dezembro de 2021, após atendidas as finalidades e as prioridades previstas no art. 3º desta Lei, ou que forem aplicados em desconformidade com o disposto nesta Lei, serão restituídos, na forma de regulamento, aos cofres da União, até o dia 31 de março de 2022.</h4>
+ <h4>§ 3º Os recursos a que se refere o caput , transferidos pela União aos Estados e ao Distrito Federal, que não forem aplicados de acordo com as finalidades e as prioridades previstas no art. 3º serão restituídos, na forma de regulamento, aos cofres da União. (Redação dada pela Medida Provisória nº 1.060, de 2021) (Vigência encerrada)</h4>
+ <h4>§ 3º Os recursos a que se refere o caput deste artigo, transferidos pela União aos Estados e ao Distrito Federal, que não forem aplicados até 31 de dezembro de 2021, após atendidas as finalidades e as prioridades previstas no art. 3º desta Lei, ou que forem aplicados em desconformidade com o disposto nesta Lei, serão restituídos, na forma de regulamento, aos cofres da União, até o dia 31 de março de 2022.</h4>
+ <h4>§ 3º Os recursos a que se refere o caput deste artigo, transferidos pela União aos Estados e ao Distrito Federal, que não forem aplicados até 31 de dezembro de 2023, após atendidas as finalidades e as prioridades previstas no art. 3º desta Lei, ou que forem aplicados em desconformidade com o disposto nesta Lei, serão restituídos, na forma de regulamento, aos cofres da União, até o dia 31 de março de 2024. (Redação dada pela Lei n° 14.351, 	de 2022)</h4>
+ <h4>§ 3º Os recursos a que se refere o caput deste artigo, transferidos pela 	União aos Estados e ao Distrito Federal, que não forem aplicados até 31 de dezembro de 2026, após atendidas as finalidades previstas no art. 3º desta 	Lei, ou que forem aplicados em desconformidade com o disposto nesta Lei, 	serão restituídos, na forma de regulamento, aos cofres da União até o dia 31 	de março de 2027. (Redação dada pela Lei n° 14.640, de 2023)</h4>
+ <h4>§ 4º Ato do Poder Executivo federal disciplinará o disposto no caput , inclusive quanto aos prazos, à forma de repasse dos recursos e à prestação de contas de sua aplicação. (Incluído pela Medida Provisória nº 1.060, 	de 2021) (Vigência encerrada)</h4>
+ <h3>Art. 3º Os recursos de que trata o art. 2º desta Lei deverão atender às seguintes finalidades, proporções e prioridades:</h3>
+ <h3>Art. 3º Os recursos de que trata o art. 2º desta Lei deverão atender às seguintes finalidades: (Redação dada pela Lei n° 14.640, de 2023)</h3>
+ <h5>I - contratação de soluções de conectividade móvel para a realização e o acompanhamento de atividades pedagógicas não presenciais, vinculadas aos conteúdos curriculares, por meio do uso de tecnologias da informação e da comunicação, pelos beneficiários desta Lei, 	com prioridade para os alunos do ensino médio, os alunos do ensino fundamental, os professores do ensino médio e os professores do ensino fundamental, nessa ordem;</h5>
+ <h5>II - utilização de, no máximo, 50% ( cinquenta por cento) para aquisição de terminais portáteis que possibilitem acesso a rede de dados móveis para uso pelos beneficiários desta Lei, com prioridade para os alunos do ensino médio e os professores do ensino médio, nessa ordem.</h5>
+ <h5>II – aquisição de dispositivos eletrônicos e terminais portáteis que possibilitem acesso a rede de dados móveis ou a rede sem fio para uso pelos beneficiários desta Lei nos estabelecimentos públicos de ensino ou fora deles; (Redação dada pela Lei n° 14.640, de 2023)</h5>
+ <h5>III – contratação de serviços de acesso à internet em banda larga, por prestadoras autorizadas, e de conexão de espaços dos estabelecimentos públicos de ensino a uma rede sem fio; (Incluído pela Lei n° 14.640, de 2023)</h5>
+ <h5>IV – aquisição de equipamentos necessários para a conexão de ambientes de estabelecimentos públicos de ensino a redes sem fio. (Incluído pela Lei n° 14.640, de 2023)</h5>
+ <h4>§ 1º A critério dos Estados e do Distrito Federal, 	os terminais de que trata o inciso II do caput deste artigo poderão ser cedidos para os professores e os alunos em caráter permanente ou para uso temporário, individual e intransferível, hipótese em que deverão ser devolvidos às autoridades competentes em bom funcionamento no prazo estabelecido em termo de compromisso firmado entre o poder público e o beneficiário ou o seu responsável.</h4>
+ <h4>§ 2º O valor das contratações e das aquisições previstas no caput deste artigo deverá considerar os critérios e os valores praticados em processos de compras similares realizados pela 	Administração Pública.</h4>
+ <h4>§ 3º As contratações e as aquisições realizadas nos termos deste artigo caracterizam iniciativa de uso das tecnologias de conectividade para a promoção do desenvolvimento econômico e social, 	tornando suas contratadas potencialmente elegíveis ao recebimento dos recursos do Fundo de Universalização dos Serviços de Telecomunicações (Fust), 	instituído pela Lei n° 9.998, de 17 de agosto de 2000.</h4>
+ <h4>§ 4º Os Estados poderão atuar em regime de colaboração com seus Municípios.</h4>
+ <h4>§ 4º Os Estados atuarão em regime de colaboração com seus Municípios, na forma do regulamento de que trata o § 4º do art. 2º. (Redação dada pela Medida Provisória nº 1.060, de 2021) (Vigência encerrada)</h4>
+ <h4>§ 4º Os Estados poderão atuar em regime de colaboração com seus Municípios.</h4>
+ <h4>§ 4º Os 	Estados poderão atuar em regime de colaboração com seus Municípios, com prestação de apoio técnico e financeiro para o atendimento dos beneficiários previstos no art. 2º desta Lei. (Redação dada pela Lei n° 14.640, de 2023)</h4>
+ <h4>§ 5º Para o cumprimento da obrigação de que trata o inciso I do caput deste artigo, os Estados e o Distrito Federal poderão alternativamente contratar soluções de conexão na modalidade fixa para conexão de domicílios ou de comunidades quando for comprovado custo-efetividade ou quando não houver oferta de dados móveis na localidade de moradia dos estudantes.</h4>
+ <p><del>§ 6º Os Estados e o Distrito Federal poderão, 	excepcionalmente, utilizar os recursos de que trata o inciso I (Revogado pela Lei n° 14.640, de 2023)</del></p>
+ <h3>Art. 4º As autoridades competentes das secretarias de educação dos Estados, do Distrito Federal e dos Municípios deverão fornecer 	às empresas contratadas para o fornecimento das soluções de conectividade de que trata o inciso I do caput do art. 3º desta Lei os dados pessoais de professores e de pais ou responsáveis pelos alunos de instituições públicas de educação básica que manifestarem interesse no acesso ao benefício de que trata o inciso I do caput do art. 3º desta Lei, com informações suficientes para identificar os terminais de acesso à internet por eles utilizados.</h3>
+ <h4>§ 1º As secretarias de educação dos Estados, do 	Distrito Federal e dos Municípios deverão manter atualizadas as informações de que trata o caput deste artigo.</h4>
+ <h4>§ 2º A omissão em informar ou processar os dados de que trata este artigo ou o fornecimento de dados inverídicos importa em responsabilidade dos agentes públicos referidos no caput deste artigo.</h4>
+ <h4>§ 3º O acesso dos professores e dos alunos ao beneficio de que trata o inciso I do caput do art. 3º desta Lei estará condicionado ao fornecimento das informações de que trata o caput deste artigo.</h4>
+ <h4>§ 4º O tratamento dos dados pessoais referentes às informações de que trata este artigo deverá observar o disposto na Lei n° 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), e nas demais normas pertinentes à matéria, vedada a sua comercialização ou compartilhamento pelas contratadas.</h4>
+ <h4>§ 5º Os dados pessoais fornecidos às empresas contratadas serão limitados ao mínimo necessário para o cumprimento das finalidades previstas no art. 3º desta Lei.</h4>
+ <h3>Art. 5º As pessoas jurídicas de direito privado, nacionais ou estrangeiras, que estejam em situação regular no País poderão doar terminais portáteis de acesso a rede de dados móveis com vistas à implementação das ações de que trata o caput do art. 2º desta Lei.</h3>
+ <h4>Parágrafo único. As doações de que trata este artigo, nos termos de regulamento, serão realizadas por meio de chamamento público ou de manifestação de interesse.</h4>
+ <h3>Art. 6º Para o cumprimento das medidas de que trata esta Lei, poderão ser utilizados como fontes de recursos:</h3>
+ <h5>I - dotações orçamentárias da União, observados os termos de quaisquer normas de regime extraordinário fiscal, financeiro e de contratações para enfrentamento de calamidade pública nacional decorrente de pandemia;</h5>
+ <h5>I - dotações orçamentárias consignadas nos Orçamentos Fiscal e da Seguridade Social da União relacionadas à finalidade de que trata o caput do art. 2º, observados os termos de quaisquer normas de regime extraordinário fiscal, financeiro e de contratações para enfrentamento de calamidade pública nacional decorrente de pandemia; (Redação dada pela Medida Provisória nº 1.060, de 2021) (Vigência encerrada)</h5>
+ <h5>I - dotações orçamentárias da União, observados os termos de quaisquer normas de regime extraordinário fiscal, financeiro e de contratações para enfrentamento de calamidade pública nacional decorrente de pandemia;</h5>
+ <h5>II - o Fust, instituído pela Lei n° 9.998, de 17 de agosto de 2000 , 	observados os termos de quaisquer normas de regime extraordinário fiscal, 	financeiro e de contratações para enfrentamento de calamidade pública nacional decorrente de pandemia;</h5>
+ <h5>III- saldo correspondente a metas não cumpridas dos planos gerais de metas de universalização firmados entre o poder concedente dos serviços de telecomunicações e as concessionárias do Serviço Telefônico 	Fixo Comutado (STFC);</h5>
+ <h5>IV- outras fontes de recursos.</h5>
+ <h3>Art. 6º-A. Os planos de ação referentes aos recursos de que trata esta Lei repassados e não executados pelos Estados e pelo Distrito 	Federal, incluídos os rendimentos financeiros, deverão ser repactuados com o 	Fundo Nacional de Desenvolvimento da Educação (FNDE) para adequação aos termos dos arts. 2º e 3º desta Lei, consideradas as necessidades dos 	Municípios daqueles Estados. (Incluído pela Lei n° 14.640, de 2023)</h3>
+ <h4>Parágrafo 	único. Os termos da repactuação referida no caput deste artigo serão previamente analisados pelo Ministério da Educação e pelo FNDE. (Incluído pela Lei n° 14.640, de 2023)</h4>
+ <h3>Art. 7º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 10 de junho de 2021; 200º da Independência e 133º da República.</p>
+ <h3>JAIR 	MESSIAS BOLSONARO</h3>
+ <p>Este texto não substitui o publicado no DOU de 11.6.2021</p>
+ <p>Vide Mensagem de Veto Total nº 81, de 2021</p>
+ <p>Decreto nº 11.713, de 2023) | Dispõe sobre a garantia de acesso à internet, com fins educacionais, a alunos e a professores da educação básica pública.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14172.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

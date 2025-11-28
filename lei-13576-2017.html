@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.576, DE 26 DE DEZEMBRO DE 2017 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2017" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.576, DE 26 DE DEZEMBRO DE 2017</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 14:58:14 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2017/Lei/L13576.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 35.297 caracteres | espelho: 35.318 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.576, DE 26 DE DEZEMBRO DE 2017.</p>
+ <p>(Vide Decreto nº 9.308, de 2018)</p>
+ <p>Dispõe sobre a Política Nacional de Biocombustíveis (RenovaBio) e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA POLÍTICA NACIONAL DE BIOCOMBUSTÍVEIS</h3>
+ <h3>Art. 1º Fica instituída a Política Nacional de Biocombustíveis (RenovaBio), parte integrante da política energética nacional de que trata o art. 1º da Lei n° 9.478, de 6 de agosto de 1997 , com os seguintes objetivos:</h3>
+ <h5>I - contribuir para o atendimento aos compromissos do País no âmbito do Acordo de Paris sob a Convenção-Quadro das Nações Unidas sobre Mudança do Clima;</h5>
+ <h5>II - contribuir com a adequada relação de eficiência energética e de redução de emissões de gases causadores do efeito estufa na produção, na comercialização e no uso de biocombustíveis, inclusive com mecanismos de avaliação de ciclo de vida;</h5>
+ <h5>III - promover a adequada expansão da produção e do uso de biocombustíveis na matriz energética nacional, com ênfase na regularidade do abastecimento de combustíveis; e</h5>
+ <h5>IV - contribuir com previsibilidade para a participação competitiva dos diversos biocombustíveis no mercado nacional de combustíveis.</h5>
+ <h3>Art. 2º São fundamentos da Política Nacional de Biocombustíveis (RenovaBio):</h3>
+ <h5>I - a contribuição dos biocombustíveis para a segurança do abastecimento nacional de combustíveis, da preservação ambiental e para a promoção do desenvolvimento e da inclusão econômica e social;</h5>
+ <h5>II - a promoção da livre concorrência no mercado de biocombustíveis;</h5>
+ <h5>III - a importância da agregação de valor à biomassa brasileira; e</h5>
+ <h5>III - a importância da agregação de valor à 	matéria-prima destinada à produção de biocombustível e à biomassa brasileira; e (Redação dada pela Lei n° 15.082, de 2024)</h5>
+ <h5>IV - o papel estratégico dos biocombustíveis na matriz energética nacional.</h5>
+ <h3>Art. 3º A Política Nacional de Biocombustíveis (RenovaBio), composta por ações, atividades, projetos e programas, deverá viabilizar oferta de energia cada vez mais sustentável, competitiva e segura, observados os seguintes princípios:</h3>
+ <h5>I - previsibilidade para a participação dos biocombustíveis, com ênfase na sustentabilidade da indústria de biocombustíveis e na segurança do abastecimento;</h5>
+ <h5>I - previsibilidade para a participação dos biocombustíveis, com ênfase na sustentabilidade da cadeia produtiva de biocombustíveis e na segurança do abastecimento; (Redação dada pela Lei n° 15.082, de 2024)</h5>
+ <h5>II - proteção dos interesses do consumidor quanto a preço, qualidade e oferta de produtos;</h5>
+ <h5>III - eficácia dos biocombustíveis em contribuir para a mitigação efetiva de emissões de gases causadores do efeito estufa e de poluentes locais;</h5>
+ <h5>IV - potencial de contribuição do mercado de biocombustíveis para a geração de emprego e de renda e para o desenvolvimento regional, bem como para a promoção de cadeias de valor relacionadas à bioeconomia sustentável;</h5>
+ <h5>V - avanço da eficiência energética, com o uso de biocombustíveis em veículos, em máquinas e em equipamentos; e</h5>
+ <h5>VI - impulso ao desenvolvimento tecnológico e à inovação, visando a consolidar a base tecnológica, a aumentar a competitividade dos biocombustíveis na matriz energética nacional e a acelerar o desenvolvimento e a inserção comercial de biocombustíveis avançados e de novos biocombustíveis.</h5>
+ <h3>Art. 4º São instrumentos da Política Nacional de Biocombustíveis (RenovaBio), entre outros:</h3>
+ <h5>I - as metas de redução de emissões de gases causadores do efeito estufa na matriz de combustíveis de que trata o</h5>
+ <h2>CAPÍTULO III desta Lei;</h2>
+ <h5>II - os Créditos de Descarbonização de que trata o</h5>
+ <h2>CAPÍTULO V desta Lei;</h2>
+ <h5>III - a Certificação de Biocombustíveis de que trata o</h5>
+ <h2>CAPÍTULO VI desta Lei;</h2>
+ <h5>IV - as adições compulsórias de biocombustíveis aos combustíveis fósseis;</h5>
+ <h5>V - os incentivos fiscais, financeiros e creditícios; e</h5>
+ <h5>VI - as ações no âmbito do Acordo de Paris sob a Convenção-Quadro das Nações Unidas sobre Mudança do Clima.</h5>
+ <h4>Parágrafo único. Os instrumentos previstos neste artigo, em relação às metas de redução das emissões mencionadas no inciso II do caput do art. 1º desta Lei, guardarão compatibilidade com as metas previstas para os demais setores.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DAS DEFINIÇÕES</h3>
+ <h3>Art. 5º Ficam estabelecidas as seguintes definições:</h3>
+ <h5>I - Certificação de Biocombustíveis: conjunto de procedimentos e critérios em um processo, no qual a firma inspetora avalia a conformidade da mensuração de aspectos relativos à produção ou à importação de biocombustíveis, em função da eficiência energética e das emissões de gases do efeito estufa, com base em avaliação do ciclo de vida;</h5>
+ <h5>II - Certificado da Produção Eficiente de Biocombustíveis: documento emitido exclusivamente por firma inspetora como resultado do processo de Certificação de Biocombustíveis;</h5>
+ <h5>III - ciclo de vida: estágios consecutivos e encadeados de um sistema de produto, desde a matéria-prima ou de sua geração a partir de recursos naturais até a disposição final, conforme definido em regulamento;</h5>
+ <h5>IV - credenciamento: procedimento pelo qual se avalia, qualifica, credencia e registra a habilitação de uma firma inspetora para realizar a certificação e emitir o Certificado da Produção Eficiente de Biocombustíveis;</h5>
+ <h5>V - Crédito de Descarbonização (CBIO): instrumento registrado sob a forma escritural, para fins de comprovação da meta individual do distribuidor de combustíveis de que trata o art. 7º desta Lei;</h5>
+ <h5>VI - distribuidor de combustíveis: agente econômico autorizado pela Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP) a exercer a atividade de distribuição de combustíveis, nos termos do regulamento próprio da ANP;</h5>
+ <h5>VII - emissor primário: produtor ou importador de biocombustível, autorizado pela ANP, habilitado a solicitar a emissão de Crédito de Descarbonização em quantidade proporcional ao volume de biocombustível produzido ou importado e comercializado, relativamente à Nota de Eficiência Energético-Ambiental constante do Certificado da Produção Eficiente de Biocombustíveis, nos termos definidos em regulamento;</h5>
+ <h5>VIII - escriturador: banco ou instituição financeira contratada pelo produtor ou pelo importador de biocombustível responsável pela emissão de Créditos de Descarbonização escriturais em nome do emissor primário;</h5>
+ <h5>IX - firma inspetora: organismo credenciado para realizar a Certificação de Biocombustíveis e emitir o Certificado da Produção Eficiente de Biocombustíveis e a Nota de Eficiência Energético-Ambiental;</h5>
+ <h5>X - importador de biocombustível: agente econômico autorizado pela ANP a exercer a atividade de importação de biocombustível, nos termos do regulamento;</h5>
+ <h5>XI - intensidade de carbono: relação da emissão de gases causadores do efeito estufa, com base em avaliação do ciclo de vida, computada no processo produtivo do combustível, por unidade de energia;</h5>
+ <h5>XII - meta de descarbonização: meta fixada para assegurar menor intensidade de carbono na matriz nacional de combustíveis;</h5>
+ <h5>XIII - Nota de Eficiência Energético-Ambiental: valor atribuído no Certificado da Produção Eficiente de Biocombustíveis, individualmente, por emissor primário, que representa a diferença entre a intensidade de carbono de seu combustível fóssil substituto e sua intensidade de carbono estabelecida no processo de certificação;</h5>
+ <h5>XIV - produtor de biocombustível: agente econômico, nos termos do art. 68-A da Lei n° 9.478, de 6 de agosto de 1997 , autorizado pela ANP a exercer a atividade de produção de biocombustível, conforme o regulamento próprio da ANP; e</h5>
+ <h5>XV - sistema de produto: coleção de processos unitários, com fluxos elementares e de produtos, que realizam uma ou mais funções definidas e que modelam o ciclo de vida de um produto.</h5>
+ <h5>XVI - biomassa: todo recurso renovável oriundo de matéria biológica de origem vegetal ou animal que pode ser utilizado para a produção de biocombustíveis; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XVII - produtor de biomassa destinada à produção de biocombustível: pessoa física ou jurídica produtora de matérias-primas elegíveis à fabricação de biocombustíveis que, cultivando terras próprias ou de terceiros, exerce diretamente a atividade agropecuária e destina sua produção a produtor de biocombustível; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XVIII - produtor de cana-de-açúcar destinada à produção de biocombustível: 	pessoa física ou jurídica que, cultivando cana-de-açúcar em terras próprias ou de terceiros, exerce diretamente a atividade agrícola e destina sua produção a produtor de biocombustível; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XIX - extrator de óleos vegetais: pessoa jurídica responsável pela extração de óleos vegetais de grãos oleaginosos; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XX - agente intermediário: pessoa jurídica responsável pela comercialização de biomassa; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XXI - perfil padrão ou penalizado agrícola: opção de preenchimento da ferramenta para cálculo da intensidade de carbono do biocombustível e de geração da nota de eficiência energético-ambiental a ser utilizada pelo produtor ou importador de biocombustível em que são incluídos os parâmetros técnicos referentes à produção de biomassa energética requeridos com os dados previamente alimentados, correspondentes ao perfil médio de produção no Brasil acrescido de penalização, conforme definido em regulamento; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XXII - perfil específico ou primário agrícola: opção de preenchimento da ferramenta para cálculo da intensidade de carbono do biocombustível e de geração da nota de eficiência energético-ambiental a ser utilizada pelo produtor ou importador de biocombustível em que são incluídos os parâmetros técnicos requeridos com os dados obtidos nos respectivos processos produtivos e nos processos dos produtores de biomassa energética; (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>XXIII - aposentadoria de CBIO: processo realizado por solicitação do detentor do Crédito de Descarbonização ao escriturador que visa à retirada definitiva de circulação do CBIO, impedindo qualquer negociação futura do crédito aposentado, conforme regulamento. (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS METAS DE REDUÇÃO DE EMISSÕES NA MATRIZ DE COMBUSTÍVEIS</h3>
+ <h3>Art. 6º As metas compulsórias anuais de redução de emissões de gases causadores do efeito estufa para a comercialização de combustíveis serão definidas em regulamento, considerada a melhoria da intensidade de carbono da matriz brasileira de combustíveis ao longo do tempo, para um período mínimo de dez anos, observados: (Vigência)</h3>
+ <h5>I - a proteção dos interesses do consumidor quanto a preço, qualidade e oferta de combustíveis;</h5>
+ <h5>II - a disponibilidade de oferta de biocombustíveis por produtores e por importadores detentores do Certificado da Produção Eficiente de Biocombustíveis;</h5>
+ <h5>III - (VETADO);</h5>
+ <h5>IV - a valorização dos recursos energéticos;</h5>
+ <h5>V - a evolução do consumo nacional de combustíveis e das importações;</h5>
+ <h5>VI - os compromissos internacionais de redução de emissões de gases causadores do efeito estufa assumidos pelo Brasil e ações setoriais no âmbito desses compromissos; e</h5>
+ <h5>VII - o impacto de preços de combustíveis em índices de inflação.</h5>
+ <h3>Art. 7º A meta compulsória anual de que trata o art. 6º desta Lei será desdobrada, para cada ano corrente, em metas individuais, aplicadas a todos os distribuidores de combustíveis, proporcionais à respectiva participação de mercado na comercialização de combustíveis fósseis no ano anterior.</h3>
+ <h4>§ 1º As metas individuais de cada distribuidor de combustíveis deverão ser tornadas públicas, preferencialmente por meio eletrônico.</h4>
+ <h4>§ 2º A comprovação de atendimento à meta individual por cada distribuidor de combustíveis será realizada a partir da quantidade de Créditos de Descarbonização em sua propriedade, na data definida em regulamento.</h4>
+ <h4>§ 2º A comprovação de atendimento à meta individual por cada distribuidor de combustíveis será realizada, anualmente, a partir da aposentadoria dos Créditos de Descarbonização em sua propriedade até 31 de dezembro de cada ano. (Redação dada pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 3º Cada distribuidor de combustíveis comprovará ter alcançado sua meta individual de acordo com sua estratégia, sem prejuízo às adições volumétricas previstas em lei específica, como de etanol à gasolina e de biodiesel ao óleo diesel.</h4>
+ <h4>§ 4º Até 15% (quinze por cento) da meta individual de um ano poderá ser comprovada pelo distribuidor de combustíveis no ano subsequente, desde que tenha comprovado cumprimento integral da meta no ano anterior.</h4>
+ <h4>§ 5º A meta do distribuidor de combustíveis em seu primeiro ano de atuação será calculada por estimativa a partir do início de suas atividades de maneira proporcional ao número de meses restantes até o fim do correspondente ano, consideradas sua movimentação autorizada de produtos e a proporção de combustíveis fósseis observadas na região de sua atuação, e estará sujeita a comprovação parcial ao final de cada trimestre, 	conforme previsto em regulamento, vedada a aplicação do disposto no § 4º deste artigo. (Incluído pela Lei n° 15.082, de 2024) (Vigência)</h4>
+ <h4>§ 6º A meta do distribuidor de combustíveis em seu segundo ano de atuação será calculada na forma do caput deste artigo, mas estará 	sujeita a comprovação parcial ao final de cada semestre, conforme previsto em regulamento. (Incluído pela Lei n° 15.082, de 2024) (Vigência)</h4>
+ <h3>Art. 8º O regulamento poderá autorizar a redução da meta individual do distribuidor de combustíveis nos seguintes casos:</h3>
+ <h5>I - aquisição de biocombustíveis mediante:</h5>
+ <h6>a) contratos de fornecimento com prazo superior a um ano, firmados com produtor de biocombustível detentor do Certificado da Produção Eficiente de Biocombustíveis;</h6>
+ <h6>c) contratos de fornecimento com prazo superior a 1 	(um) ano, firmados com empresa comercializadora de etanol, desde que o produto seja oriundo de produtor de biocombustível detentor do Certificado da Produção Eficiente de Biocombustíveis; (Incluído pela Lei n° 14.592, de 2023)</h6>
+ <h6>b) (VETADO);</h6>
+ <h5>II - (VETADO).</h5>
+ <h3>Art. 9º O não atendimento à meta individual sujeitará o distribuidor de combustíveis à multa, proporcional à quantidade de Crédito de Descarbonização que deixou de ser comprovada, sem prejuízo das demais sanções administrativas e pecuniárias previstas nesta Lei e na Lei n° 9.847, de 26 de outubro de 1999 , e de outras de natureza civil e penal cabíveis.</h3>
+ <h4>Parágrafo único. A multa a que se refere o caput deste artigo poderá variar, nos termos do regulamento, entre R$ 100.000,00 (cem mil reais) e R$ 50.000.000,00 (cinquenta milhões de reais).</h4>
+ <h3>Art. 9º O não atendimento à meta individual constitui crime ambiental previsto no art. 68 	da Lei n° 9.605, de 12 de fevereiro de 1998 , e sujeitará o distribuidor e seus dirigentes às penas previstas no referido dispositivo, além de multa proporcional à quantidade de Créditos de Descarbonização que deixou de ser comprovadamente adquirida e aposentada, sem prejuízo das demais sanções administrativas e pecuniárias previstas na Lei n° 9.847, de 26 de outubro de 1999 , e de outras de natureza civil e penal cabíveis. (Redação dada pela Lei n° 15.082, de 2024)</h3>
+ <h4>§ 1º A multa a que se refere o caput deste artigo deverá variar, nos termos do regulamento, entre R$ 100.000,00 (cem mil reais) e R$ 	500.000.000,00 (quinhentos milhões de reais). (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 2º A proporcionalidade da multa de que trata o caput deste artigo deverá ter como preço de referência o maior preço médio mensal do Crédito de 	Descarbonização observado no período previsto para o cumprimento da respectiva meta individual. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h3>Art. 9º-A. O não pagamento da participação do produtor de cana-de-açúcar destinada à produção de biocombustível prevista no art. 15-B desta Lei sujeitará o produtor de biocombustível a multa proporcional à 	quantidade de Crédito de Descarbonização que deixou de ser paga, sem prejuízo das demais sanções administrativas e pecuniárias previstas nesta Lei e na Lei n° 9.847, de 26 de outubro de 	1999 , e de outras de natureza civil e penal cabíveis. (Incluído pela Lei n° 15.082, de 2024)</h3>
+ <h4>Parágrafo único. A multa a que se refere o caput deste artigo deverá variar, nos termos do regulamento, entre R$ 100.000,00 (cem mil reais) e R$ 50.000.000,00 (cinquenta milhões de reais). (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h3>Art. 9º-B. O produtor, a central petroquímica e o formulador de combustíveis fósseis, bem como a cooperativa de produtores, a empresa comercializadora de etanol, o produtor e os demais fornecedores de biocombustíveis, além do importador, da empresa de comércio exterior e do distribuidor, ficam vedados de comercializar qualquer combustível com o distribuidor inadimplente com sua meta individual, a partir da inclusão do nome deste em lista de sanções a ser publicada e mantida atualizada pela ANP em seu sítio eletrônico. (Incluído pela Lei n° 15.082, de 2024) (Vigência)</h3>
+ <h4>§ 1º Fica também vedada a importação direta de quaisquer produtos pelo distribuidor inadimplente enquanto sua meta individual não for cumprida. (Incluído pela Lei n° 15.082, de 2024) (Vigência)</h4>
+ <h4>§ 2º O agente regulado que infringir o disposto neste artigo ficará sujeito a multa, que poderá variar entre R$ 100.000,00 (cem mil reais) e R$ 500.000.000,00 (quinhentos milhões de reais). (Incluído pela Lei n° 15.082, de 2024) (Vigência)</h4>
+ <h3>Art. 9º-C. O não cumprimento, integral ou parcial, da meta individual por mais de 1 (um) exercício ensejará a revogação da autorização para o exercício da atividade do distribuidor de combustíveis. (Incluído pela Lei n° 15.082, de 2024)</h3>
+ <h4>Parágrafo único. No caso de um distribuidor com autorização revogada ser sucedido total ou parcialmente por outra empresa ou ter seus ativos transferidos a outra pessoa jurídica, ficam os seus sucessores obrigados ao cumprimento da meta individual inadimplida e não regularizada pelos sucedidos, previamente à emissão de nova autorização da atividade pela ANP. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h3>Art. 10. Serão anualmente publicados o percentual de atendimento à meta individual por cada distribuidor de combustíveis e, quando for o caso, as respectivas sanções administrativas e pecuniárias aplicadas.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO MONITORAMENTO DE BIOCOMBUSTÍVEIS E COMBUSTÍVEIS</h3>
+ <h3>Art. 11. O monitoramento do abastecimento nacional de biocombustíveis será realizado nos termos de regulamento, e servirá de base para a definição:</h3>
+ <h5>I - das metas compulsórias anuais de redução de emissões de gases causadores do efeito estufa para a comercialização de combustíveis, nos termos do art. 6º desta Lei, e dos respectivos intervalos de tolerância; (Vigência)</h5>
+ <h5>II - dos critérios, diretrizes e parâmetros para o credenciamento de firmas inspetoras e a Certificação de Biocombustíveis; e</h5>
+ <h5>III - dos requisitos para regulação técnica e econômica do Crédito de Descarbonização.</h5>
+ <h3>Art. 12. Previamente à sua aprovação, as metas compulsórias a que se refere o inciso I do caput do art. 11 desta Lei deverão ser submetidas a consulta pública.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO CRÉDITO DE DESCARBONIZAÇÃO (CBIO)</h3>
+ <h3>Art. 13. A emissão primária de Créditos de Descarbonização será efetuada, sob a forma escritural, nos livros ou registros do escriturador, mediante solicitação do emissor primário, em quantidade proporcional ao volume de biocombustível produzido, importado e comercializado.</h3>
+ <h4>§ 1º A definição da quantidade de Créditos de Descarbonização a serem emitidos considerará o volume de biocombustível produzido, importado e comercializado pelo emissor primário, observada a respectiva Nota de Eficiência Energético-Ambiental constante do Certificado da Produção Eficiente de Biocombustíveis do emissor primário.</h4>
+ <h4>§ 2º A solicitação de que trata o caput deste artigo deverá ser efetuada em até sessenta dias pelo emissor primário da nota fiscal de compra e venda do biocombustível, extinguindo-se, para todos os efeitos, o direito de emissão de Crédito de Descarbonização após esse período.</h4>
+ <h3>Art. 14. O Crédito de Descarbonização deve conter as seguintes informações:</h3>
+ <h5>I - denominação “Crédito de Descarbonização - CBIO”;</h5>
+ <h5>II - número de controle;</h5>
+ <h5>III - data de emissão do Crédito de Descarbonização;</h5>
+ <h5>IV - identificação, qualificação e endereços das empresas destacadas na nota fiscal de compra e venda do biocombustível que servirão de lastro ao Crédito de Descarbonização;</h5>
+ <h5>V - data de emissão da nota fiscal que servirá de lastro ao Crédito de Descarbonização;</h5>
+ <h5>VI - descrição e código do produto constantes da nota fiscal que servirão de lastro ao Crédito de Descarbonização; e</h5>
+ <h5>VII - peso bruto e volume comercializado constantes da nota fiscal que servirão de lastro ao Crédito de Descarbonização.</h5>
+ <h3>Art. 15. A negociação dos Créditos de Descarbonização será feita em mercados organizados, inclusive em leilões.</h3>
+ <h3>Art. 15-A. A receita das pessoas jurídicas qualificadas conforme o inciso VII do caput do art. 5º desta Lei auferida até 31 	de dezembro de 2030 nas operações de que trata o art. 15 desta Lei fica sujeita à incidência do imposto sobre a renda exclusivamente na fonte à 	alíquota de 15% (quinze por cento). (Incluído pela Lei n° 13.986, de 2020)</h3>
+ <h4>§ 1º A receita referida no caput deste artigo será excluída na determinação do lucro real ou presumido e no valor do resultado do exercício, mas as eventuais perdas apuradas naquelas operações não serão dedutíveis na apuração do lucro real. (Incluído pela Lei n° 13.986, de 2020)</h4>
+ <h4>§ 2º O 	disposto no § 1º deste artigo não impede o regular aproveitamento, na apuração do lucro real das pessoas jurídicas referidas no caput deste artigo, das despesas administrativas ou financeiras necessárias à emissão, 	ao registro e à negociação dos créditos de que trata o inciso V do caput do art. 5º desta Lei, inclusive aquelas referentes à certificação ou às atividades do escriturador de que tratam os incisos I e VIII do caput do art. 5º e os arts. 15 e 18 desta Lei. (Incluído pela Lei n° 13.986, de 2020)</h4>
+ <h4>§ 3º O 	disposto no caput e no § 1º deste artigo aplica-se por igual a todas as demais pessoas físicas ou jurídicas que realizem, sucessivamente, 	operações de aquisição e alienação na forma do art. 15 e com o registro de que trata o art. 16 desta Lei, salvo quando aquelas pessoas se caracterizarem legalmente como ‘distribuidor de combustíveis. (Incluído pela Lei n° 13.986, de 2020)</h4>
+ <h3>Art. 15-B. O produtor de cana-de-açúcar destinada à 	produção de biocombustível que for elegível com dados padrão ou primário fará jus à participação nas receitas oriundas da negociação dos Créditos de 	Descarbonização emitidos e comercializados a partir da biomassa por ele entregue, nas seguintes proporções: (Incluído pela Lei n° 15.082, de 2024)</h3>
+ <h5>I - o produtor de cana-de-açúcar destinada à produção de biocombustível fará 	jus à participação de, no mínimo, 60% (sessenta por cento) das receitas oriundas da comercialização dos Créditos de Descarbonização gerados a partir da cana-de-açúcar por ele entregue com o uso do perfil padrão agrícola; e (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h5>II - o produtor de cana-de-açúcar destinada à produção de biocombustível que fornecer ao produtor de biocombustível os dados primários necessários ao cálculo da nota de eficiência energético-ambiental utilizando o perfil específico agrícola e que for inserido na certificação do produtor de biocombustível com esse perfil, além da participação de que trata o inciso I 	deste caput , fará jus a, no mínimo, 85% (oitenta e cinco por cento) 	da receita adicional oriunda da comercialização dos Créditos de 	Descarbonização gerados, considerando a nota de eficiência energético-ambiental utilizando o perfil específico agrícola associado à 	cana-de-açúcar por ele entregue. (Incluído pela Lei n° 15.082, de 2024)</h5>
+ <h4>§ 1º A receita adicional de que trata o inciso II do caput deste artigo corresponde à diferença entre a receita oriunda da comercialização dos Créditos de Descarbonização gerados com a nota de eficiência energético-ambiental utilizando o perfil específico agrícola e aquela que seria obtida com a nota de eficiência energético-ambiental utilizando o perfil padrão para a área agrícola. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 2º Somente fará jus às participações de que trata este artigo o produtor de cana-de-açúcar que atender aos critérios de elegibilidade da RenovaBio previstos em regulamento. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 3º Somente fará jus às participações de que tratam os incisos I e II do caput deste artigo o produtor de cana-de-açúcar que fornecer os dados necessários ao monitoramento exigido referente ao produtor de biocombustível, 	conforme previsto em regulamento. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 4º A participação do produtor de cana-de-açúcar destinada à produção de biocombustíveis deverá ser paga até o mês subsequente ao término da safra em que os Créditos de Descarbonização foram emitidos, respeitados acordos distintos estabelecidos entre as partes. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 5º A participação do produtor de cana-de-açúcar destinada à produção de biocombustível prevista neste artigo respeitará o potencial de geração de 	Créditos de Descarbonização identificado na certificação do produtor de biocombustível na qual ele foi inserido, assim como a proporcionalidade entre os créditos gerados pela biomassa por ele entregue e a totalidade de créditos gerados pelo emissor primário, respeitados acordos distintos estabelecidos entre as partes. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 6º Os tributos incidentes sobre a venda dos Créditos de Descarbonização e os custos de emissão, de custódia, de negociação e de operacionalização das transações com os referidos créditos serão descontados proporcionalmente do montante a ser partilhado com os produtores de cana-de-açúcar destinada à 	produção de biocombustível. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 7º É facultado à entidade de classe indicada voluntariamente pelo produtor de cana-de-açúcar acompanhar e conferir os parâmetros técnicos, negociais e econômicos necessários à sua participação nas receitas oriundas da comercialização dos Créditos de Descarbonização emitidos e comercializados a partir da biomassa por ele entregue. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 8º O descumprimento do disposto neste artigo impedirá o produtor de biocombustível de emitir novos Créditos de Descarbonização relacionados à 	biomassa entregue pelo respectivo produtor de cana-de-açúcar. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 9º Para fins do disposto neste artigo, o imposto de renda devido considera-se recolhido por ocasião do repasse das receitas decorrentes da negociação dos Créditos de Descarbonização ao emissor primário, no momento da tributação exclusiva na fonte a que se refere o dispositivo, e não se sujeitará a nova incidência por ocasião do repasse ao produtor de biomassa destinada à produção de biocombustível. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 10. O produtor de cana-de-açúcar destinada à produção de biocombustível poderá, mediante instrumento contratual escrito, ceder ao emissor primário, 	gratuita ou onerosamente, o seu direito de participação nas receitas oriundas da negociação dos Créditos de Descarbonização. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h3>Art. 15-C. Os produtores de biomassas, com exceção da cana-de-açúcar, destinadas à produção de biocombustíveis que sejam elegíveis e inseridos na certificação do produtor de biocombustível com dados padrão ou primário farão jus a parcela da receita oriunda da comercialização dos 	Créditos de Descarbonização auferida pelo produtor de biocombustível, 	observados o tipo da biomassa e os dados fornecidos. (Incluído pela Lei n° 15.082, de 2024)</h3>
+ <h4>§ 1º A parcela da receita de que trata o caput deste artigo será 	livremente pactuada em âmbito privado e poderá ser repassada em forma de prêmio ao produtor de biomassa por ocasião da aquisição da matéria-prima. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h4>§ 2º As receitas auferidas pelos produtores de biomassa decorrentes dos repasses das receitas com Créditos de Descarbonização na forma de prêmio ficam isentas de tributação. (Incluído pela Lei n° 15.082, de 2024)</h4>
+ <h3>Art. 15-D. (VETADO). (Incluído pela Lei n° 15.082, de 2024)</h3>
+ <h3>Art. 15-E. (VETADO). (Incluído pela Lei n° 15.082, de 2024)</h3>
+ <h3>Art. 16. O escriturador será o responsável pela manutenção do registro da cadeia de negócios ocorridos no período em que os títulos estiverem registrados.</h3>
+ <h3>Art. 17. Regulamento disporá sobre a emissão, o vencimento, a distribuição, a intermediação, a custódia, a negociação e os demais aspectos relacionados aos Créditos de Descarbonização.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA CERTIFICAÇÃO DE BIOCOMBUSTÍVEIS</h3>
+ <h3>Art. 18. A certificação da produção ou importação eficiente de biocombustíveis, para os fins desta Lei, terá como prioridade o aumento da eficiência, com base em avaliação do ciclo de vida, em termos de conteúdo energético com menor emissão de gases causadores do efeito estufa em comparação às emissões auferidas pelo combustível fóssil.</h3>
+ <h4>Parágrafo único. Regulamento estabelecerá os critérios, os procedimentos e as responsabilidades para concessão, renovação, suspensão e cancelamento do Certificado da Produção Eficiente de Biocombustíveis.</h4>
+ <h3>Art. 19. O Certificado da Produção Eficiente de Biocombustíveis será concedido ao produtor ou ao importador de biocombustível que atender individualmente aos parâmetros definidos em regulamento.</h3>
+ <h4>§ 1º O Certificado de que trata o caput deste artigo terá validade de até quatro anos, renovável sucessivamente por igual período.</h4>
+ <h4>§ 2º (VETADO).</h4>
+ <h3>Art. 20. Para a emissão do Certificado da Produção Eficiente de Biocombustíveis, poderão ser exigidos garantias, seguro e capital mínimo integralizado, para o fiel cumprimento de suas obrigações.</h3>
+ <h3>Art. 21. O Certificado da Produção Eficiente de Biocombustíveis incluirá expressamente a Nota de Eficiência Energético-Ambiental do emissor primário.</h3>
+ <h3>Art. 22. No âmbito do credenciamento de firma inspetora referente à certificação da produção ou importação eficiente de biocombustíveis, cabe ao órgão competente, nos termos de regulamento:</h3>
+ <h5>I - estabelecer os procedimentos e responsabilidades para o credenciamento da firma inspetora;</h5>
+ <h5>II - proceder ao credenciamento, por ato administrativo próprio ou mediante instrumento específico, com órgãos da Administração Pública direta e indireta da União;</h5>
+ <h5>III - manter atualizada na internet a relação das Firmas Inspetoras credenciadas;</h5>
+ <h5>IV - fiscalizar as firmas inspetoras credenciadas e aplicar as sanções administrativas e pecuniárias, quanto ao cumprimento dos requisitos previstos nesta Lei e em atos relacionados;</h5>
+ <h5>V - solicitar dados e informações das firmas inspetoras e estabelecer prazos de atendimento, para fins de avaliação, monitoramento e fiscalização; e</h5>
+ <h5>VI - auditar o processo de emissão ou de renovação do Certificado da Produção Eficiente de Biocombustíveis.</h5>
+ <h4>Parágrafo único. Anualmente, deverá ser publicado na internet relatório com o resultado das ações de fiscalização e com as eventuais sanções administrativas e pecuniárias aplicadas às firmas inspetoras.</h4>
+ <h3>Art. 23. No âmbito da certificação da produção ou importação eficiente de biocombustíveis, será realizada, nos termos de regulamento, fiscalização da movimentação de combustíveis comercializados, de forma a verificar sua adequação com os Créditos de Descarbonização emitidos e o cumprimento das metas individuais compulsórias.</h3>
+ <h4>§ 1º Para atendimento ao disposto no caput deste artigo, serão requisitados dados e informações dos produtores de biocombustíveis, dos importadores de biocombustíveis e dos distribuidores de combustíveis, sem prejuízo de outras ações de monitoramento e fiscalização definidas na Lei n° 9.478, de 6 de agosto de 1997 , e na Lei n° 9.847, de 26 de outubro de 1999 .</h4>
+ <h4>§ 2º Será publicada na internet lista atualizada dos Certificados da Produção ou Importação Eficiente de Biocombustíveis emitidos, renovados, suspensos, cancelados ou expirados, em base mensal, com informações do produtor ou do importador de biocombustível, da Nota de Eficiência Energético-Ambiental, da validade do certificado, do volume produzido e do volume comercializado, sem prejuízo de demais dados previstos no regulamento.</h4>
+ <h4>§ 3º (VETADO).</h4>
+ <h3>Art. 24. Previamente à emissão ou à renovação do Certificado da Produção Eficiente de Biocombustíveis, a firma inspetora submeterá a consulta pública, por no mínimo trinta dias, proposta de certificação, com indicação expressa da proposição da Nota de Eficiência Energético-Ambiental a ser atribuída, cabendo-lhe dar ampla divulgação ao processo.</h3>
+ <h4>§ 1º A proposta de certificação incluirá os valores e os dados utilizados para a proposição da Nota de Eficiência Energético-Ambiental.</h4>
+ <h4>§ 2º As sugestões e os comentários apresentados durante a consulta pública serão considerados pela firma inspetora:</h4>
+ <h5>I - com incorporação ao processo daqueles que forem pertinentes; e</h5>
+ <h5>II - com recusa motivada dos demais.</h5>
+ <h4>§ 3º A firma inspetora deverá dar ciência aos órgãos federais competentes acerca do resultado da consulta pública, que incluirá as sugestões e os comentários apresentados e sua avaliação.</h4>
+ <h4>§ 4º É assegurado, mediante prévia solicitação, amplo acesso à integralidade do processo de certificação.</h4>
+ <h3>Art. 25. Durante o período de suspensão ou de cancelamento do Certificado da Produção Eficiente de Biocombustíveis, a quantidade de biocombustível produzido, importado, comercializado, negociado, despachado ou entregue não surtirá efeito para fins de emissão de Créditos de Descarbonização.</h3>
+ <h3>Art. 26. (VETADO).</h3>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 27. Na comercialização de biodiesel por meio de leilões públicos, deverão ser estabelecidos mecanismos e metas para assegurar a participação prioritária de produtores de biodiesel de pequeno porte e de agricultores familiares.</h3>
+ <h4>§ 1º Regulamento estabelecerá as condições para a participação dos produtores de biodiesel de pequeno porte de que trata o caput deste artigo. (Regulamento)</h4>
+ <h4>§ 2º Para a definição de produtores de pequeno porte, aplica-se o disposto na Lei n° 11.326, de 24 de julho de 2006 .</h4>
+ <h3>Art. 28. Será aplicado um bônus sobre a Nota de Eficiência Energético-Ambiental do produtor ou do importador de biocombustível cuja Certificação de Biocombustíveis comprove a emissão negativa de gases causadores do efeito estufa no ciclo de vida em relação ao seu substituto de origem fóssil.</h3>
+ <h4>Parágrafo único. Será de até 20% (vinte por cento) sobre o valor da Nota de Eficiência Energético-Ambiental mencionada no caput deste artigo o valor do bônus previsto neste artigo.</h4>
+ <h3>Art. 29. Os infratores às disposições desta Lei e às demais normas pertinentes ficarão sujeitos, nos termos de regulamento, às sanções administrativas e pecuniárias previstas na Lei n° 9.847, de 26 de outubro de 1999 , sem prejuízo de outras de natureza civil e penal cabíveis.</h3>
+ <h3>Art. 30. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h4>Parágrafo único. As metas compulsórias a que se refere o art. 6º desta Lei entrarão em vigor em cento e oitenta dias, contados a partir da data de sanção, e as metas a que se refere o inciso I do caput do art. 11 desta Lei entrarão em vigor dezoito meses após a entrada em vigor das metas previstas no art. 6º desta Lei.</h4>
+ <p>Brasília, 26 de dezembro de 2017; 196º da Independência e 129º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Esteves Pedro Colnago Junior</p>
+ <p>Este texto não substitui o publicado no DOU de 27.12.2017</p>
+ <p>(Vide Decreto nº 9.308, de 2018) | Dispõe sobre a Política Nacional de Biocombustíveis (RenovaBio) e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2017/Lei/L13576.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.735, DE 23 DE NOVEMBRO DE 2023 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2023" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.735, DE 23 DE NOVEMBRO DE 2023</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 15:10:34 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14735.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 46.316 caracteres | espelho: 46.360 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.735, DE 23 DE NOVEMBRO DE 2023</p>
+ <p>Institui a Lei Orgânica Nacional das Polícias Civis, dispõe sobre suas normas gerais de funcionamento e dá 	outras providências .</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte 	Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º As polícias civis, dirigidas por delegado de polícia em atividade e de classe mais elevada nomeado pelos governadores dos Estados e do Distrito Federal, 	são instituições permanentes, com funções exclusivas e típicas de Estado, 	essenciais à justiça criminal e imprescindíveis à segurança pública e à 	garantia dos direitos fundamentais no âmbito da investigação criminal.</h3>
+ <h4>Parágrafo 	único. A função de polícia civil sujeita-se à prestação de serviços em condições adversas de segurança, com risco à vida, e de serviços noturnos e a chamados a qualquer hora, inclusive com a realização de diligências em todo o território nacional.</h4>
+ <h3>Art. 2º As polícias civis são integrantes operacionais do Sistema Único de Segurança 	Pública (Susp) e compõem o sistema de governança da política de segurança pública dos Estados, do Distrito Federal e dos Territórios.</h3>
+ <h3>Art. 3º A lei orgânica da polícia civil de cada Estado, do Distrito Federal e de cada 	Território, cuja iniciativa cabe ao respectivo governador, deve estabelecer, 	observadas as normas gerais previstas nesta Lei, regras específicas sobre:</h3>
+ <h5>I - estrutura, organização, competências específicas e funcionamento de unidades;</h5>
+ <h5>II - requisitos para investidura em cada cargo, com as devidas promoções e progressões;</h5>
+ <h5>III - atribuições funcionais de cada cargo;</h5>
+ <h5>IV - direitos, prerrogativas, garantias, deveres e vedações;</h5>
+ <h5>V - Código de 	Ética e Disciplina; e</h5>
+ <h5>VI - diretrizes para a elaboração da proposta orçamentária.</h5>
+ <h4>Parágrafo 	único. Os entes federativos podem editar suas próprias leis sobre as matérias disciplinadas nesta Lei, de forma suplementar, bem como exercer competência legislativa plena em relação às não disciplinadas, nos termos do inciso XVI do caput e dos §§ 2º e 3º do art. 24 e do art. 25 da 	Constituição Federal.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS 	PRINCÍPIOS, DAS DIRETRIZES E DAS COMPETÊNCIAS</h3>
+ <p>Seção I</p>
+ <p>Dos Princípios Institucionais Básicos</p>
+ <h3>Art. 4º São princípios institucionais básicos a serem observados pela polícia civil, além de outros previstos em legislação ou regulamentos:</h3>
+ <h5>I - proteção da dignidade humana e dos direitos fundamentais no âmbito da investigação criminal;</h5>
+ <h5>II - discrição e preservação do sigilo necessário à efetividade da investigação e 	à salvaguarda da intimidade das pessoas;</h5>
+ <h5>III - hierarquia e disciplina;</h5>
+ <h5>IV - participação e interação comunitária;</h5>
+ <h5>V - resolução pacífica de conflitos;</h5>
+ <h5>VI - lealdade e ética;</h5>
+ <h5>VII - busca da verdade real;</h5>
+ <h5>VIII - livre convencimento técnico-jurídico do delegado de polícia;</h5>
+ <h5>IX - controle de legalidade dos atos policiais civis;</h5>
+ <h5>X - uso diferenciado da força para preservação da vida, redução do sofrimento e redução de danos;</h5>
+ <h5>XI - continuidade investigativa criminal;</h5>
+ <h5>XII - atuação imparcial na condução da atividade investigativa e de polícia judiciária;</h5>
+ <h5>XIII - política de gestão direcionada à proteção e à valorização dos seus integrantes;</h5>
+ <h5>XIV - unidade de doutrina e uniformidade de procedimento;</h5>
+ <h5>XV - autonomia, imparcialidade, tecnicidade e cientificidade investigativa, 	indiciatória, inquisitória, notarial e pericial;</h5>
+ <h5>XVI - essencialidade da investigação policial para a persecução penal;</h5>
+ <h5>XVII - natureza técnica e imparcial das funções de polícia judiciária civil e de apuração de infrações penais, sob a presidência e mediante análise técnico-jurídica do delegado de polícia;</h5>
+ <h5>XVIII - identidade de nomenclatura para unidades policiais, serviços e cargos de igual natureza; e</h5>
+ <h5>XIX - transição da gestão da Delegacia-Geral de Polícia Civil, de forma a não prejudicar a continuidade dos serviços.</h5>
+ <p>Seção II</p>
+ <p>Das Diretrizes</p>
+ <h3>Art. 5º São diretrizes a serem observadas pela polícia civil, além de outras previstas em legislação ou regulamentos:</h3>
+ <h5>I - planejamento e distribuição do efetivo policial, por resolução do Conselho 	Superior de Polícia Civil, proporcionalmente ao número de habitantes, à 	extensão territorial e aos índices de criminalidade da circunscrição;</h5>
+ <h5>II - observância de caráter técnico, científico e jurídico na análise criminal da investigação policial;</h5>
+ <h5>III - promoção da produção de conhecimento sobre segurança pública com base técnica e científica;</h5>
+ <h5>IV - atuação especializada e qualificada direcionada à eficiência na repressão e na apuração das infrações penais;</h5>
+ <h5>V - ênfase na repressão qualificada aos crimes hediondos e equiparados, à corrupção, à 	lavagem de dinheiro, ao tráfico de drogas, ao crime organizado, aos crimes cibernéticos e aos crimes contra a vida, a administração pública e a liberdade;</h5>
+ <h5>VI - cooperação e compartilhamento das experiências entre os órgãos de segurança pública, mediante instrumentos próprios, na forma da lei;</h5>
+ <h5>VII - integração ao sistema de segurança pública com instituição de mecanismos de governança;</h5>
+ <h5>VIII - gestão da proteção e compartilhamento de seus bancos de dados e demais sistemas de informação;</h5>
+ <h5>IX - 	(VETADO);</h5>
+ <h5>X - utilização dos meios tecnológicos disponíveis e atualização e melhorias permanentes das metodologias de trabalho, para aprimoramento nos processos de investigação;</h5>
+ <h5>XI - atendimento imediato e permanente ao cidadão e à sociedade;</h5>
+ <h5>XII - planejamento estratégico e sistêmico;</h5>
+ <h5>XIII - cooperação com a sociedade e com os órgãos do sistema de segurança pública e de justiça criminal;</h5>
+ <h5>XIV - padronização da doutrina, dos procedimentos operacionais, formais e administrativos, da comunicação social e da identidade visual e funcional;</h5>
+ <h5>XV - 	(VETADO);</h5>
+ <h5>XVI - fomento 	à divulgação, de caráter educativo ou informativo, por todos os seus integrantes, das missões, das atribuições e dos valores da polícia civil, a fim de promover aproximação com a população, observado, em quaisquer situações, o decoro na exposição de emblemas, brasões, patrimônio ou insígnias institucionais;</h5>
+ <h5>XVII - instituição de programas e de projetos vinculados às políticas públicas e aos planos nacional e estadual de segurança pública, no âmbito de suas competências;</h5>
+ <h5>XVIII - capacitação profissional continuada, integrada e isonômica, com os custos sob a responsabilidade do órgão policial;</h5>
+ <h5>XIX - atuação direcionada à identificação e à recuperação de bens, valores e direitos;</h5>
+ <h5>XX - avaliação anual de desempenho individual e de produtividade institucional; e</h5>
+ <h5>XXI - edição de atos administrativos normativos no âmbito de suas atribuições constitucionais e legais.</h5>
+ <p>Seção III</p>
+ <p>Das Competências</p>
+ <h3>Art. 6º Compete à polícia civil, ressalvadas a competência da União e as infrações penais militares, executar privativamente as funções de polícia judiciária civil e de apuração de infrações penais, a serem materializadas em inquérito policial ou em outro procedimento de investigação, e, especificamente:</h3>
+ <h5>I - cumprir mandados de prisão, mandados de busca e apreensão e demais medidas cautelares, bem como ordens judiciais expedidas no interesse da investigação criminal;</h5>
+ <h5>II - garantir a preservação dos locais de ocorrência da infração penal e controlar o acesso de pessoas a eles, sem prejuízo da atuação de outros órgãos policiais, no âmbito de suas atribuições legais, nas situações de flagrante delito;</h5>
+ <h5>III - organizar e executar os serviços de identificação civil e criminal;</h5>
+ <h5>IV - organizar e executar a atividade pericial oficial, se o órgão central de perícia oficial de natureza criminal estiver integrado em sua estrutura;</h5>
+ <h5>V - garantir a adequada coleta, a preservação e a integridade da cadeia de custódia de dados, informações e materiais que constituam insumos, indícios ou provas;</h5>
+ <h5>VI - produzir, difundir, planejar, orientar, coordenar, supervisionar e executar ações de inteligência e de contrainteligência destinadas à execução e ao acompanhamento de assuntos de segurança pública, da polícia judiciária civil e de apuração de infração penal, de forma a subsidiar ações para prever, 	prevenir e neutralizar ilícitos e ameaças de qualquer natureza que possam afetar a ordem pública e a incolumidade das pessoas e do patrimônio, na esfera de sua competência, observados os direitos e as garantias individuais;</h5>
+ <h5>VII - realizar inspeções, correições e demais atos de controle interno, em caráter ordinário e extraordinário;</h5>
+ <h5>VIII - organizar e realizar tratamento de dados e pesquisas jurídicas, técnicas e científicas relacionadas às funções de investigação criminal e de apuração das infrações penais, além de outras que sejam relevantes para o exercício de suas atribuições legais;</h5>
+ <h5>IX - estimular o processo de integração dos bancos de dados existentes no âmbito do poder público e dele participar, preservando as informações sujeitas a sigilo legal, classificadas na forma do art. 23 da Lei n° 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), ou que interessarem à 	apuração criminal;</h5>
+ <h5>X - apoiar, 	contribuir e cooperar com o Poder Judiciário e com o Ministério Público, 	mediante acordos de cooperação mútua, nos limites de suas competências constitucionais e legais;</h5>
+ <h5>XI - participar do planejamento das políticas públicas e desenvolver políticas de repressão qualificada às infrações penais;</h5>
+ <h5>XII - exercer o poder hierárquico e o poder disciplinar;</h5>
+ <h5>XIII - atuar de forma cooperada com outros órgãos de segurança pública, nos limites de suas competências constitucionais e legais;</h5>
+ <h5>XIV - custodiar o policial civil condenado ou preso provisório à disposição da autoridade competente, na hipótese de ausência de unidade de custódia de caráter exclusivo, por meio de órgão próprio e na forma da lei;</h5>
+ <h5>XV - produzir, na forma da lei e no âmbito das atribuições dos cargos, relatórios de interesse da apuração penal, recognição visuográfica e laudo investigativo;</h5>
+ <h5>XVI - produzir, na forma da lei, laudo de exame pericial, elaborado por perito oficial criminal, se o órgão central de perícia oficial de natureza criminal estiver integrado na estrutura das polícias civis;</h5>
+ <h5>XVII - selecionar, formar e desenvolver as atividades de educação continuada dos seus servidores, em seus órgãos de ensino ou instituições congêneres, na forma prevista em lei;</h5>
+ <h5>XVIII - exercer outras atribuições previstas na legislação, obedecidos os limites e a capacidade de auto-organização dos Estados, do Distrito Federal, dos 	Territórios e dos Municípios, decorrentes do art. 144 da Constituição 	Federal;</h5>
+ <h5>XIX - fiscalizar, avaliar e auditar os contratos, os convênios e as despesas efetivadas no âmbito da instituição;</h5>
+ <h5>XX - vistoriar e fiscalizar produtos controlados e emitir alvarás no âmbito de suas competências constitucionais e legais;</h5>
+ <h5>XXI - prestar suporte técnico aos órgãos de controle;</h5>
+ <h5>XXII - estabelecer assessorias técnicas, funcionais e institucionais de relacionamento com os demais órgãos e poderes;</h5>
+ <h5>XXIII - administrar privativamente as tecnologias da instituição, tais como sistemas, aplicações, aplicativos, bancos de dados, sítios na rede mundial de computadores, rede lógica, segurança da informação, entre outros recursos de suporte;</h5>
+ <h5>XXIV - exercer todas as prerrogativas inerentes ao poder de polícia judiciária e de apuração das infrações penais para o cumprimento de suas missões e finalidades;</h5>
+ <h5>XXV - participar do planejamento e da elaboração das políticas públicas, dos planos, dos programas, dos projetos, das ações e das suas avaliações que envolvam a atuação conjunta entre os órgãos de segurança pública ou de persecução penal, observadas as respectivas competências constitucionais e legais;</h5>
+ <h5>XXVI - exercer outras funções relacionadas às suas finalidades, obedecidos os limites e a capacidade de auto-organização do respectivo ente federativo, 	decorrentes de suas competências constitucionais e legais; e</h5>
+ <h5>XXVII - executar com autonomia, imparcialidade, técnica e cientificidade os seus atos procedimentais no âmbito das atribuições dos respectivos cargos.</h5>
+ <h4>§ 1º As atribuições relativas às competências da polícia civil são exercidas exclusivamente por policiais civis em atividade, na forma da lei.</h4>
+ <h4>§ 2º É 	admitida a celebração de convênios, de acordos de cooperação técnica, de ajustes ou de instrumentos congêneres com órgãos ou entidades públicas e privadas nacionais ou estrangeiras para a execução e o aperfeiçoamento de suas atividades, com inclusão, de forma paritária, de representantes de todos os cargos policiais, ressalvadas as atribuições próprias de cada cargo.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA 	ORGANIZAÇÃO E DO FUNCIONAMENTO</h3>
+ <p>Seção I</p>
+ <p>Da Estrutura Organizacional Básica</p>
+ <h3>Art. 7º A 	polícia civil tem sua estrutura organizacional básica composta dos seguintes 	órgãos essenciais:</h3>
+ <h5>I - Delegacia-Geral de Polícia Civil;</h5>
+ <h5>II - Conselho 	Superior de Polícia Civil;</h5>
+ <h5>III - Corregedoria-Geral de Polícia Civil;</h5>
+ <h5>IV - Escola 	Superior de Polícia Civil;</h5>
+ <h5>V - unidades de execução;</h5>
+ <h5>VI - unidades de inteligência;</h5>
+ <h5>VII - unidades técnico-científicas;</h5>
+ <h5>VIII - unidades de apoio administrativo e estratégico;</h5>
+ <h5>IX - unidades de saúde da polícia civil; e</h5>
+ <h5>X - unidades de tecnologia.</h5>
+ <p>Seção II</p>
+ <p>Da Delegacia-Geral de Polícia Civil</p>
+ <h3>Art. 8º A 	polícia civil tem como chefe o Delegado-Geral de Polícia Civil, nomeado pelo governador e escolhido dentre os delegados de polícia em atividade da classe mais elevada do cargo.</h3>
+ <h4>Parágrafo 	único. Os Delegados-Gerais das Polícias Civis devem apresentar, até 30 	(trinta) dias após sua nomeação, planejamento estratégico de gestão que contenha:</h4>
+ <h5>I - metas qualitativas e quantitativas de produtividade e de redução de índices de criminalidade;</h5>
+ <h5>II - medidas de otimização e de busca de eficiência, incluído o planejamento das ações específicas direcionadas ao melhor exercício das competências do órgão;</h5>
+ <h5>III - diagnóstico da necessidade de recursos humanos e de materiais;</h5>
+ <h5>IV - programas de capacitação do efetivo; e</h5>
+ <h5>V - proposta de estrutura organizacional, inclusive com previsão de criação ou de extinção de unidades policiais, caso necessário, a ser implementada por lei específica.</h5>
+ <p>Seção III</p>
+ <p>Do Conselho Superior de Polícia Civil</p>
+ <h3>Art. 9º O 	Conselho Superior de Polícia Civil, presidido pelo Delegado–Geral e integrado por policiais civis, é composto por representantes de todos os cargos efetivos da corporação, com a possibilidade de eleição de seus membros e participação paritária, respeitada a lei do respectivo ente federativo.</h3>
+ <p>Seção IV</p>
+ <p>Da Corregedoria-Geral de Polícia Civil</p>
+ <h3>Art. 10. A 	Corregedoria-Geral de Polícia Civil, dotada de autonomia em suas atividades, 	tem por finalidade praticar os atos de controle interno, correição, 	orientação e zelo pela qualidade e avaliação do serviço policial, com atuação preventiva e repressiva, nas ocorrências de infrações disciplinares e penais praticadas por seus servidores no exercício da função.</h3>
+ <h4>§ 1º O 	Corregedor-Geral de Polícia Civil deve ser designado pelo Delegado-Geral de 	Polícia Civil dentre os delegados de polícia da classe mais elevada.</h4>
+ <h4>§ 2º Aos policiais civis que tenham sido lotados em quaisquer unidades da 	Corregedoria-Geral de Polícia Civil é facultada lotação subsequente em unidade administrativa por, no mínimo, 1 (um) ano.</h4>
+ <h4>§ 3º É 	garantido o duplo grau de revisão do julgamento nos processos disciplinares na hipótese de penalidade de demissão, mediante recurso ao Conselho Superior de Polícia Civil e, em última instância, ao Chefe do Poder Executivo.</h4>
+ <p>Seção V</p>
+ <p>Da Escola Superior de Polícia Civil</p>
+ <h3>Art. 11. A Escola Superior de Polícia Civil, órgão de formação, capacitação, 	pesquisa e extensão, é responsável pelo desenvolvimento dos recursos humanos da polícia civil e é dirigida por delegado de polícia da classe mais elevada do cargo, preferencialmente com especialização nas áreas de administração ou educação.</h3>
+ <h4>§ 1º A Escola 	Superior de Polícia Civil pode realizar cursos de graduação ou de pós-graduação lato sensu ou stricto sensu , os quais, desde que observadas as exigências do Ministério da Educação, terão integração e plena equivalência com os cursos de universidades públicas.</h4>
+ <h4>§ 2º O curso de formação profissional pode ser considerado como de pós-graduação para fins de titulação, observadas as normas do Ministério da Educação.</h4>
+ <h4>§ 3º O corpo docente da Escola Superior de Polícia Civil, designado pelo respectivo diretor, pode ser preenchido preferencialmente por integrantes da instituição dentre os policiais civis que detenham notório saber, 	habilitação técnica ou formação pedagógica comprovadas, selecionados por meio de edital publicado na imprensa oficial que contemple requisitos de habilitação a serem comprovados mediante apresentação de títulos e aptidões certificadas tecnicamente e em unidades acadêmicas, observadas as disciplinas que integram as grades curriculares dos cursos estruturados pela coordenação pedagógica.</h4>
+ <h4>§ 4º A Escola 	Superior de Polícia Civil terá participação nos processos seletivos dos concursos públicos para os cargos integrantes da estrutura da polícia civil.</h4>
+ <p>Seção VI</p>
+ <p>Das Unidades de Execução</p>
+ <h3>Art. 12. 	Constituem unidades de execução da polícia civil, sem prejuízo de outras definidas na lei do respectivo ente federativo:</h3>
+ <h5>I - unidades policiais circunscricionais, distritais ou regionais;</h5>
+ <h5>II - unidades policiais especializadas;</h5>
+ <h5>III - Coordenadoria de Recursos e Operações Especiais; e</h5>
+ <h5>IV - Departamento de Identificação Civil.</h5>
+ <h4>§ 1º A 	polícia civil pode criar unidades especializadas em combate à corrupção, ao crime organizado, a crimes contra a vida, à lavagem de dinheiro, a crimes cibernéticos, a crimes ambientais, a crimes de violência doméstica e familiar e a crimes contra vulneráveis, bem como em proteção animal, em interceptação de comunicação telefônica, de informática e telemática, entre outras unidades policiais especializadas.</h4>
+ <h4>§ 2º O 	efetivo das unidades especializadas em combate à lavagem de dinheiro e em interceptação de comunicação telefônica, de informática e telemática deve ser composto exclusivamente de policiais civis.</h4>
+ <h4>§ 3º O 	Departamento de Identificação Civil abrange, sem prejuízo de outras atividades, a emissão e o controle de documentos oficiais de identificação civil, a gestão de dados relacionados a registros fotográficos e de sinais característicos corporais, coleta de impressão digital, palmar e plantar, 	boletim de vida pregressa, formulários de risco de vida e outros documentos necessários ao arquivo e à documentação de informações de relevância para a apuração, respeitada a preservação da intimidade, da vida privada e da honra das pessoas cadastradas.</h4>
+ <h4>§ 4º O 	Departamento de Identificação Civil deve ser coordenado por policial civil designado pelo Delegado-Geral de Polícia Civil dentre os que detenham habilitação específica e sejam da classe mais elevada.</h4>
+ <h4>§ 5º Os bancos de dados oriundos das atividades de identificação civil, criminal e funcional das polícias civis são de responsabilidade dessas.</h4>
+ <h3>Art. 13. A criação de unidades e a distribuição dos cargos da polícia civil devem observar, preferencialmente, os seguintes fatores:</h3>
+ <h5>I - índice analítico de criminalidade e de violência regionais;</h5>
+ <h5>II - especialização da atividade investigativa por natureza dos delitos; e</h5>
+ <h5>III - população, extensão territorial e densidade demográfica.</h5>
+ <p>Seção VII</p>
+ <p>Das Unidades de Inteligência</p>
+ <h3>Art. 14. 	Constituem unidades de inteligência da polícia civil, sem prejuízo de outras definidas na lei do respectivo ente federativo:</h3>
+ <h5>I - Diretoria de Inteligência Policial;</h5>
+ <h5>II - Coordenadorias Regionais de Inteligência;</h5>
+ <h5>III - Núcleos de Inteligência em unidades especializadas definidas em estrutura organizacional específica;</h5>
+ <h5>IV - Coordenadoria de Doutrina de Inteligência Policial e Treinamento; e</h5>
+ <h5>V - Coordenadoria de Contrainteligência Policial.</h5>
+ <p>Seção VIII</p>
+ <p>Das Unidades Técnico-Científicas</p>
+ <h3>Art. 15. Constituem unidades técnico-científicas da polícia civil as unidades responsáveis pela perícia oficial criminal, nos casos em que o órgão central de perícia oficial de natureza criminal estiver integrado em sua estrutura, 	cujos chefes devem ser designados pelo Delegado-Geral de Polícia Civil, 	dentre outras:</h3>
+ <h5>I - Instituto de Criminalística;</h5>
+ <h5>II - Instituto de Medicina Legal; e</h5>
+ <h5>III - Instituto de Identificação.</h5>
+ <h4>§ 1º As unidades técnico-científicas são responsáveis pelas atividades de perícia oficial de natureza criminal e técnico-científicas relativas às ciências forenses.</h4>
+ <h4>§ 2º Os 	Institutos de Criminalística, de Medicina Legal e de Identificação devem ser coordenados por peritos oficiais criminais das respectivas áreas que estejam na ativa e sejam da classe mais elevada.</h4>
+ <h4>§ 3º Fica garantido, mediante requisição fundamentada, o livre acesso das polícias civis aos bancos de dados de unidades técnico-científicas não integradas à 	instituição.</h4>
+ <p>Seção IX</p>
+ <p>Das Unidades de Apoio Administrativo e Estratégico</p>
+ <h3>Art. 16. Às unidades de apoio administrativo, vinculadas diretamente ao Delegado-Geral de Polícia Civil e dirigidas preferencialmente por policiais civis com habilitação técnica comprovada na respectiva área de atuação, incumbem os atos de suporte administrativo e estratégico de gestão.</h3>
+ <p>Seção X</p>
+ <p>Das Unidades de Saúde</p>
+ <h3>Art. 17. Os 	Estados, o Distrito Federal e os Territórios ficam autorizados a instituir, 	em benefício dos policiais civis e dos seus dependentes e pensionistas, no exercício de suas competências orçamentárias, unidades de saúde destinadas a dar assistência ambulatorial, clínica, psicológica, psiquiátrica e terapêutica e a encaminhar cirurgias de maior complexidade a outras unidades de saúde especializadas.</h3>
+ <h4>Parágrafo 	único. (VETADO).</h4>
+ <p>Seção XI</p>
+ <p>Das Unidades de Tecnologia</p>
+ <h3>Art. 18. As polícias civis podem constituir unidade centralizada de tecnologia para fins de estudo, de desenvolvimento, de implantação, de pesquisa e de organização de instrumentos e mecanismos tecnológicos.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DOS POLICIAIS 	CIVIS</h3>
+ <p>Seção I</p>
+ <p>Do Quadro Policial</p>
+ <h3>Art. 19. O 	quadro de servidores da polícia civil, cujas atribuições são de nível superior, é integrado pelos seguintes cargos:</h3>
+ <h5>I - delegado de polícia;</h5>
+ <h5>II - oficial investigador de polícia; e</h5>
+ <h5>III - perito oficial criminal, se o órgão central de perícia oficial de natureza criminal estiver integrado na estrutura da polícia civil.</h5>
+ <h4>§ 1º Os cargos efetivos da polícia civil são considerados permanentes, típicos de 	Estado e essenciais ao funcionamento da instituição para todos os efeitos legais, e suas atividades devem ser exercidas exclusivamente pelos ocupantes dos cargos previstos nesta Lei ou em lei do respectivo ente federativo.</h4>
+ <h4>§ 2º Os cargos efetivos da polícia civil têm suas atribuições definidas na Constituição Federal , no Decreto-Lei n° 3.689, de 3 de outubro de 1941 (Código de Processo Penal), e na legislação extravagante, sem prejuízo de outras definidas em leis e regulamentos.</h4>
+ <h4>§ 3º Os ocupantes dos cargos da polícia civil exercem autoridade nos limites de suas atribuições legais.</h4>
+ <p>Seção II</p>
+ <p>Do Concurso, da Investidura e da Promoção</p>
+ <h3>Art. 20. O 	quadro de servidores efetivos das polícias civis é composto por cargos de nível superior, em função da complexidade de suas atribuições, nos quais o ingresso depende de aprovação em concurso público de provas ou de provas e títulos, observados os seguintes requisitos:</h3>
+ <h5>I - ser brasileiro;</h5>
+ <h5>II - ter, no mínimo, 18 (dezoito) anos;</h5>
+ <h5>III - estar quite com as obrigações eleitorais e militares; e</h5>
+ <h5>IV - gozar de capacidade física e mental para o exercício do cargo.</h5>
+ <h4>§ 1º Para o cargo de oficial investigador de polícia é exigido diploma de ensino superior completo, em nível de graduação, em qualquer área, reconhecido pelo 	Ministério da Educação.</h4>
+ <h4>§ 2º Para o cargo de perito oficial criminal é exigido diploma de nível superior completo, em nível de graduação, reconhecido pelo Ministério da Educação, 	observado que os editais dos concursos públicos podem prever seleção por 	área de conhecimento e exigir habilitação legal específica, na forma da lei do respectivo ente federativo.</h4>
+ <h4>§ 3º Para o cargo de delegado de polícia são exigidos curso de bacharelado em Direito reconhecido pelo órgão competente e 3 (três) anos de atividade jurídica ou policial, cabendo ao Conselho Superior de Polícia Civil definir os requisitos para classificação como atividade jurídica.</h4>
+ <h4>§ 4º Para a investidura no cargo de delegado de polícia é exigida aprovação em concurso público de provas e títulos, com a participação da Ordem dos Advogados do 	Brasil em todas as fases do certame, vedada a participação na comissão do concurso de servidor da segurança pública que não integre os quadros da polícia civil.</h4>
+ <h4>§ 5º A 	comprovação de formação superior e atividade jurídica ou policial de que trata este artigo deve ocorrer no ato da posse.</h4>
+ <h4>§ 6º Lei do respectivo ente federativo pode estabelecer critérios para a realização e a seleção das etapas do concurso público destinado aos cargos efetivos das polícias civis, como as etapas de prova física, de exame psicotécnico, de avaliação médica e de investigação social.</h4>
+ <h3>Art. 21. O tempo de atividade policial civil deve ser considerado para pontuação em prova de títulos no concurso público para o cargo de delegado de polícia, 	valorado em 30% (trinta por cento) da pontuação máxima da prova de títulos, 	na proporção mínima de 0,5 (meio ponto) e máxima de 2 (dois) pontos percentuais por ano de serviço, podendo os pontos ser escalonados ou não, de acordo com o respectivo edital.</h3>
+ <h4>§ 1º O edital do concurso para delegado de polícia pode prever pontuação, na prova de títulos, de tempo de atividade nos órgãos previstos no caput do art. 144 da Constituição Federal, conforme legislação do respectivo ente federativo.</h4>
+ <h4>§ 2º A 	pontuação da prova de títulos deve corresponder a, no mínimo, 10% (dez por cento) do total da nota do certame.</h4>
+ <h4>§ 3º Os concursos públicos para o cargo de delegado de polícia devem adotar a prova oral como etapa do certame, assegurados critérios objetivos para aferição da nota, sistema de auditoria e recurso individualizado dos candidatos quanto ao gabarito apresentado pela banca examinadora e ao resultado provisório da nota.</h4>
+ <h4>§ 4º Os entes federativos podem adotar o critério referido no caput deste artigo nos concursos públicos para os demais cargos efetivos da polícia civil.</h4>
+ <h3>Art. 22. 	Durante o curso de formação profissional, de caráter eliminatório, pode ser concedida ajuda de custo não inferior a 50% (cinquenta por cento) do valor da remuneração prevista em lei para a classe inicial do respectivo cargo, na forma da lei do respectivo ente federativo.</h3>
+ <h3>Art. 23. Os editais dos concursos públicos para provimento dos cargos efetivos das polícias civis podem impor tempo mínimo de permanência na unidade policial de lotação inicial, de acordo com indicadores de criminalidade e necessidades de interesse público.</h3>
+ <h4>Parágrafo 	único. A investidura em cargo da polícia civil é feita na classe inicial.</h4>
+ <h3>Art. 24. A 	lei do respectivo ente federativo deve dispor sobre o fluxo regular e o equilíbrio quantitativo dos servidores nos cargos da polícia civil, com a previsão de realização periódica de concursos públicos.</h3>
+ <h4>§ 1º O 	servidor que pedir exoneração antes de completar 3 (três) anos de exercício deve ressarcir ao erário competente os gastos com sua formação, 	proporcionalmente ao tempo de serviço.</h4>
+ <h4>§ 2º As promoções dos policiais civis ocorrerão com base nos critérios de antiguidade, de tempo de serviço na carreira e de merecimento e podem, 	inclusive, ser realizadas post mortem , conforme disposto em lei específica do respectivo ente federativo.</h4>
+ <h4>§ 3º Em situações específicas, lei do respectivo ente federativo disporá sobre a regulamentação da promoção dos policiais civis independentemente da existência de vagas.</h4>
+ <h4>§ 4º As promoções de classes nos cargos da polícia civil devem ser estabelecidas pelos critérios definidos em lei específica, como tempo na carreira, 	aperfeiçoamento e merecimento.</h4>
+ <h4>§ 5º Para promoção à classe mais elevada dos cargos efetivos da polícia civil, pode ser exigida a realização de curso de gestão pública ou equivalente, 	disponibilizado pela Escola Superior de Polícia Civil ou por outras instituições oficiais de ensino superior.</h4>
+ <h4>§ 6º A lei do respectivo ente federativo pode dispor sobre outros critérios de promoção mais benéficos que os previstos nesta Lei.</h4>
+ <h3>Art. 25. A requerimento dos interessados, os ocupantes dos cargos efetivos da polícia civil podem exercer funções no âmbito de outro ente federativo, 	mediante permuta ou cessão, condicionada à autorização expressa dos respectivos governadores ou mediante delegação desses, atendida a legislação aplicável, sem qualquer prejuízo e asseguradas todas as prerrogativas, os direitos e as vantagens, bem como os deveres e as vedações estabelecidos pelo ente federativo de origem.</h3>
+ <h4>Parágrafo 	único. (VETADO).</h4>
+ <p>Seção III</p>
+ <p>Das Prerrogativas, das Garantias, dos Direitos, 	dos Deveres e das Vedações</p>
+ <h3>Art. 26. O 	delegado de polícia, além do que dispõem as normas constitucionais e legais, 	detém a prerrogativa de direção das atividades da polícia civil, bem como a presidência, a determinação legal, o comando e o controle de apurações, de procedimentos e de atividades de investigação.</h3>
+ <h4>Parágrafo 	único. Cabe ao delegado de polícia presidir o inquérito policial, no qual deve atuar com isenção, com autonomia funcional e no interesse da efetividade da tutela penal, respeitados os direitos e as garantias fundamentais e assegurada a análise técnico-jurídica do fato.</h4>
+ <h3>Art. 27. O oficial investigador de polícia, além do que dispõem as normas constitucionais e legais, exerce atribuições apuratórias, cartorárias, 	procedimentais, de obtenção de dados, de operações de inteligência e de execução de ações investigativas, sob determinação ou coordenação do delegado de polícia, assegurada atuação técnica e científica nos limites de suas atribuições.</h3>
+ <h4>Parágrafo 	único. O oficial investigador de polícia e os demais cargos da polícia civil, nos limites de suas atribuições, devem produzir, com objetividade, 	técnica e cientificidade, o laudo investigativo e as demais peças procedimentais, os quais devem ser encaminhados ao delegado de polícia para apreciação.</h4>
+ <h3>Art. 28. O 	perito oficial criminal, além do que dispõem a Constituição Federal, o Decreto-Lei n° 3.689, de 3 de outubro de 1941 (Código de Processo Penal), e a legislação extravagante, sem prejuízo de outras previsões constantes de leis e regulamentos, exerce atribuições de perícia oficial de natureza criminal, sob requisição do delegado de polícia, assegurada a ele autonomia técnica, científica e funcional.</h3>
+ <h3>Art. 29. 	Todos os ocupantes de cargos efetivos da polícia civil, nos limites de suas atribuições legais e respeitada a hierarquia e a disciplina, devem atuar com imparcialidade, objetividade, técnica e cientificidade.</h3>
+ <h3>Art. 30. São assegurados aos policiais civis em atividade os seguintes direitos e garantias, sem prejuízo de outros estabelecidos em lei:</h3>
+ <h5>I - documento de identidade funcional com validade em todo o território nacional, 	padronizado pelo Poder Executivo federal e expedido pela própria instituição;</h5>
+ <h5>II - registro e livre porte de arma de fogo com validade em todo o território nacional;</h5>
+ <h5>III - ingresso e trânsito livre em qualquer recinto público ou privado em razão da função, respeitadas as garantias constitucionais e legais;</h5>
+ <h5>IV - recolhimento em unidade prisional da própria instituição para fins de cumprimento de prisão provisória ou de sentença penal condenatória transitada em julgado;</h5>
+ <h5>V - pronta comunicação de sua prisão ao seu chefe imediato;</h5>
+ <h5>VI - prioridade nos serviços de transporte e de comunicação públicos e privados, 	quando em cumprimento de missão de caráter emergencial;</h5>
+ <h5>VII - traslado por órgão público competente, caso seja vítima de acidente que dificulte sua atividade de locomoção ou ocorra sua morte durante atividade policial;</h5>
+ <h5>VIII - atendimento prioritário e imediato pelo Ministério Público, pela Defensoria 	Pública, pelo Poder Judiciário e pelos órgãos de perícia oficial de natureza criminal, se em atividade ou no interesse do serviço;</h5>
+ <h5>IX - precedência em audiências judiciais quando comparecer na qualidade de testemunha de fato decorrente do serviço;</h5>
+ <h5>X - (VETADO);</h5>
+ <h5>X - licença remunerada para o desempenho de mandato classista concedida a, no mínimo, 3 (três) dirigentes por Estado para cada confederação, federação e sindicatos, sem prejuízo de outros direitos e vantagens, de aposentadoria policial especial, de promoções e progressões funcionais, de prerrogativas da função ou de benefícios do cargo efetivo enquanto perdurar a licença;</h5>
+ <h5>XI - 	(VETADO);</h5>
+ <h5>XI 	- licença remunerada para o desempenho de mandato classista concedida a, no mínimo, 3 (três) dirigentes em associação nacional ou de abrangência territorial do respectivo ente federativo dentre as de maior representatividade e antiguidade por cargo, sem prejuízo de outros direitos e vantagens, de aposentadoria policial especial, de promoções e progressões funcionais, de prerrogativas da função ou de benefícios do cargo efetivo enquanto perdurar a licença;</h5>
+ <h5>XII - 	(VETADO);</h5>
+ <h5>XIII - 	(VETADO);</h5>
+ <h5>XIV - garantia à policial civil gestante e lactante de indicação para escalas de serviço e rotinas de trabalho compatíveis com sua condição;</h5>
+ <h5>XV - garantia de retorno e de permanência na mesma lotação durante 6 (seis) meses após o retorno da licença maternidade;</h5>
+ <h5>XVI - 	(VETADO);</h5>
+ <h5>XVII - 	(VETADO);</h5>
+ <h5>XVIII - 	(VETADO);</h5>
+ <h5>XIX - 	(VETADO);</h5>
+ <h5>XIX - carga horária mensal de efetivo labor com duração máxima estabelecida na legislação do respectivo ente federativo, não superior a 40 (quarenta) horas semanais, garantidos os direitos remuneratórios e indenizatórios e as horas extraordinárias;</h5>
+ <h5>XX - 	(VETADO);</h5>
+ <h5>XXI - 	(VETADO);</h5>
+ <h5>XXII - 	(VETADO);</h5>
+ <h5>XXIII - 	(VETADO);</h5>
+ <h5>XXIV - 	(VETADO);</h5>
+ <h5>XXV - 	(VETADO);</h5>
+ <h5>XXVI - 	(VETADO);</h5>
+ <h5>XXVII - 	(VETADO); e</h5>
+ <h5>XXVIII - 	(VETADO).</h5>
+ <h5>XXVIII 	- auxílio-saúde, de caráter indenizatório, nos termos da legislação do respectivo ente federativo.</h5>
+ <h4>§ 1º 	(VETADO).</h4>
+ <h4>§ 2º Aos policiais civis aposentados são assegurados os direitos previstos nos incisos I, II, IV, V, XVII e XXVIII do caput deste artigo, e a comunicação prevista no inciso V deve ser feita ao setor de veteranos ou por intermédio do sindicato ou associação representativa da categoria.</h4>
+ <h4>§ 3º Os policiais civis, por ocasião de sua aposentadoria, conservarão a autorização do livre porte de arma de fogo válido em todo o território nacional, na forma da legislação em vigor.</h4>
+ <h4>§ 4º Fica assegurada a possibilidade de doação de armas de fogo institucionais aos policiais civis aposentados.</h4>
+ <h4>§ 5º Deve ser garantida a participação do poder público em mediação judicial proposta pelos órgãos classistas da polícia civil para a negociação dos interesses de seus representados, como forma alternativa ao exercício do direito de greve.</h4>
+ <h4>§ 6º Observado o interesse da administração pública, ao policial civil que tenha satisfeito as condições para se aposentar, fica facultada a opção de exercer suas funções no âmbito interno e administrativo em seções, grupos, núcleos e departamentos, bem como no assessoramento a chefias, o que poderá ser revisto a qualquer momento.</h4>
+ <h4>§ 7º O 	policial civil, ao responder pelo expediente administrativo em unidade diversa da de sua lotação, terá direito a adicional na forma de verba indenizatória, se houver previsão em lei do respectivo ente federativo.</h4>
+ <h4>§ 8º 	(VETADO).</h4>
+ <h4>§ 8º O 	policial civil, ao assumir cargo ou função de confiança de caráter administrativo, de assessoramento, de coordenação e de direção, bem como chefia de investigação, de cartório ou de plantão, terá direito a adicional na forma de verba indenizatória, nos termos da legislação do respectivo ente federativo.</h4>
+ <h4>§ 9º Na forma da lei do respectivo ente federativo, em caso de morte de servidor policial civil decorrente de agressão, de contaminação por moléstia grave, de doença ocupacional ou em razão da função policial, os dependentes farão jus a pensão equivalente à remuneração do cargo da classe mais elevada e nível à 	época do falecimento, que será vitalícia para o cônjuge ou companheiro.</h4>
+ <h4>§ 10. O 	policial civil afastado para mandato eletivo ou classista ou cedido para outro órgão de natureza de segurança pública ou institucional, parlamentar ou de gestão pública em outro ente federativo deve ter seu tempo contado como efetivo exercício no serviço policial, bem como ter mantidos os seus direitos para efeitos de promoção e de progressão no cargo e na carreira.</h4>
+ <h4>§ 11. 	(VETADO).</h4>
+ <h4>§ 12. Em virtude da atividade de risco exercida, o policial civil pode ser promovido, 	de forma póstuma, à classe superior, independentemente da existência de vagas.</h4>
+ <h4>§ 13. Lei do respectivo ente federativo poderá criar critérios de promoção por bravura fundamentados em indicadores avaliados por comissão específica do Conselho 	Superior de Polícia Civil.</h4>
+ <h4>§ 14. O 	policial civil não pode ser promovido nos casos de condenação judicial transitada em julgado e de condenação definitiva em processo administrativo disciplinar de que não caiba recurso ou revisão, enquanto perdurarem os efeitos da condenação.</h4>
+ <h4>§ 15. A 	estabilidade do policial civil dar-se-á após 3 (três) anos de efetivo exercício no cargo.</h4>
+ <h4>§ 16. 	(VETADO).</h4>
+ <h4>§ 17. Lei complementar do respectivo ente federativo poderá dispor sobre regras diferenciadas de aposentadoria quanto ao tempo de contribuição, de atividade policial e, de forma mais benéfica, quanto ao sexo feminino.</h4>
+ <h4>§ 18. 	Aplica-se ao policial civil aposentado o disposto no art. 17 desta Lei.</h4>
+ <h4>§ 19. 	(VETADO).</h4>
+ <h4>§ 20. É 	garantido direito à promoção na carreira de classe a classe, admitida a promoção extraordinária em casos excepcionais e diferenciados, conforme a lei do respectivo ente federativo.</h4>
+ <h3>Art. 31. (VETADO).</h3>
+ <h3>Art. 32. A remuneração dos servidores policiais civis, em qualquer regime remuneratório, não exclui os direitos previstos no § 3º do art. 39 e nos incisos XXIII e XXIV do caput do art. 7º da Constituição Federal nem outros direitos sociais e laborais previstos na legislação.</h3>
+ <h3>Art. 33. São deveres dos policiais civis:</h3>
+ <h5>I - observar os valores, as diretrizes e os princípios da instituição;</h5>
+ <h5>II - obedecer prontamente às determinações legais do superior hierárquico;</h5>
+ <h5>III - exercer com zelo, disciplina e dedicação suas atribuições;</h5>
+ <h5>IV - cumprir as normas legais e regulamentares;</h5>
+ <h5>V - respeitar e atender com presteza os demais servidores e o público em geral; 0</h5>
+ <h5>VI - manter conduta compatível com a moralidade e a probidade administrativa;</h5>
+ <h5>VII - ser proativo e colaborar para a eficiência da polícia civil;</h5>
+ <h5>VIII - buscar o aperfeiçoamento profissional;</h5>
+ <h5>IX - zelar pela economia do material e a conservação do patrimônio público;</h5>
+ <h5>X - colaborar com a administração da justiça; e</h5>
+ <h5>XI - respeitar a imagem, os valores e os preceitos da instituição, na forma do respectivo estatuto disciplinar.</h5>
+ <h4>§ 1º A 	hierarquia e a disciplina são valores de integração e de otimização das atribuições dos cargos e das competências organizacionais das polícias civis, direcionadas a assegurar a unidade da investigação criminal.</h4>
+ <h4>§ 2º As polícias civis devem adotar medidas para assegurar a harmonia e o respeito entre os policiais de todas as classes e categorias, prevenindo e reprimindo quaisquer condutas ofensivas, insubordinação legal e assédio de qualquer natureza.</h4>
+ <h3>Art. 34. É 	vedada a divulgação, a qualquer tempo e fora da esfera policial, de técnicas de investigação utilizadas pelas polícias civis e de qualquer dado ou informação obtidos por meio de medida cautelar judicial, ressalvadas as hipóteses legais, e o infrator deve responder civil, administrativa e criminalmente pela divulgação não baseada na lei.</h3>
+ <h4>§ 1º A 	vedação disposta neste artigo não se aplica aos cursos de formação, de aperfeiçoamento, de atualização e outros, exclusivamente ministrados aos profissionais das instituições previstas no art. 144 da Constituição 	Federal.</h4>
+ <h4>§ 2º Em audiências, inclusive judiciais, o policial civil deve resguardar o máximo possível a sigilosidade das técnicas e das ferramentas de investigação.</h4>
+ <h4>§ 3º A lei do respectivo ente federativo pode estabelecer outras vedações ao policial civil além das previstas neste artigo.</h4>
+ <h3>Art. 35. São vedadas a aplicação de critérios de tratamento diferenciado para fins de promoção, de progressão, de aposentadoria, de lotação e de designação ou qualquer outra discriminação da atividade funcional dos cargos efetivos, 	ressalvados aqueles dispostos em lei.</h3>
+ <h4>Parágrafo 	único. É igualmente vedado o tratamento diferenciado pautado em sexo, em cargo e em limitação física ou para o gozo de direitos previstos em lei, a exemplo da cessão ou das licenças previstas nesta Lei.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES 	FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 36. O 	poder público deve assegurar as condições necessárias à segurança e ao funcionamento das instalações físicas das unidades policiais, bem como o número adequado de servidores para o atendimento eficiente ao usuário.</h3>
+ <h3>Art. 37. O 	ente federativo pode criar o Fundo Especial da Polícia Civil, destinado preferencialmente a valorização remuneratória dos policiais civis, bem como a investimentos com aparelhamento, infraestrutura, tecnologia, capacitação e modernização da instituição, entre outros.</h3>
+ <h3>Art. 38. Na criação do cargo de oficial investigador de polícia, os cargos efetivos atualmente existentes na estrutura da polícia civil serão transformados, 	renomeados ou aproveitados nos termos da lei do respectivo ente federativo, 	respeitadas a similitude e a equivalência de atribuições nas suas atividades funcionais.</h3>
+ <h4>§ 1º 	(VETADO).</h4>
+ <h4>§ 2º 	(VETADO).</h4>
+ <h4>§ 3º 	(VETADO).</h4>
+ <h4>§ 4º 	(VETADO).</h4>
+ <h4>§ 5º 	(VETADO).</h4>
+ <h4>§ 6º 	(VETADO).</h4>
+ <h3>Art. 39. A estrutura de cargos e as respectivas atribuições relativas à atividade pericial oficial prevista no inciso IV do caput do art. 6º desta Lei e relacionadas às unidades técnico-científicas da polícia civil, observada a lei federal que estabelece normas gerais para as perícias oficiais de natureza criminal, serão definidas em lei específica, aplicadas as normas gerais desta Lei no que couber, sem prejuízo do disposto nas legislações vigentes dos entes federativos que disponham sobre organização dos serviços de perícias oficiais.</h3>
+ <h3>Art. 40. Fica vedada a custódia de preso e de adolescente infrator, ainda que em caráter provisório, em dependências de prédios e unidades das polícias civis, salvo interesse fundamentado na investigação policial.</h3>
+ <h3>Art. 41. As funções gratificadas de assessoramento e de chefia da polícia civil são privativas de policiais civis.</h3>
+ <h3>Art. 42. 	(VETADO).</h3>
+ <h3>Art. 43. 	(VETADO).</h3>
+ <h3>Art. 44. Fica instituído o Conselho Nacional da Polícia Civil, com competência consultiva e deliberativa sobre as políticas públicas institucionais de padronização e intercâmbio nas áreas de competências constitucionais e legais das polícias civis.</h3>
+ <h4>§ 1º O 	Conselho Nacional da Polícia Civil deve ter sua composição e regimento definidos em decreto específico.</h4>
+ <h4>§ 2º 	(VETADO).</h4>
+ <h3>Art. 45. Para maior celeridade e veracidade dos registros cartorários, podem ser adotadas plataformas tecnológicas para registros dos procedimentos, respeitadas as circunstâncias de atuação presencial das equipes envolvidas.</h3>
+ <h3>Art. 46. A 	lei do respectivo ente federativo deve dispor sobre a aplicação de data-base para recomposição salarial dos servidores da polícia civil.</h3>
+ <h3>Art. 47. A 	polícia civil tem como dia nacional a data de 5 de abril.</h3>
+ <h3>Art. 48. 	(VETADO).</h3>
+ <h3>Art. 49. 	Permanecem válidas as leis locais naquilo que não sejam incompatíveis com esta Lei.</h3>
+ <h3>Art. 50. Esta 	Lei entra em vigor na data de sua publicação .</h3>
+ <p>Brasília, 23 de novembro de 2023; 202º da Independência e 135º da República.</p>
+ <h3>LUIZ 	INÁCIO LULA DA SILVA</h3>
+ <p>Silvio Luiz de Almeida</p>
+ <p>Cristina Kiomi Mori</p>
+ <p>Flávio Dino de Castro e Costa</p>
+ <p>Simone Nassar Tebet</p>
+ <p>Carlos Roberto Lupi</p>
+ <p>Rui Costa dos Santos</p>
+ <p>Jorge Rodrigo Araújo Messias</p>
+ <p>Este texto não substitui o publicado no DOU de 	23.11.2023 - Edição extra</p>
+ <h3>LEI N° 14.735, DE 23 DE NOVEMBRO DE 2023</h3>
+ <p>Institui a Lei Orgânica Nacional das Polícias Civis, dispõe sobre suas normas gerais de funcionamento e dá 	outras providências .</p>
+ <p>O VICE–PRESIDENTE DA REPÚBLICA, no exercício do cargo de PRESIDENTE DA REPÚBLICA Faço saber que o 	Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, as seguintes partes vetadas da Lei n° 14.735, de 	23 de novembro de 2023:</p>
+ <p>“</p>
+ <h3>Art. 30. 	.......................................................................................................</h3>
+ <p>......................................................................................................................</p>
+ <h5>X 	- licença remunerada para o desempenho de mandato classista concedida a, no mínimo, 3 (três) dirigentes por Estado para cada confederação, federação e sindicatos, sem prejuízo de outros direitos e vantagens, de aposentadoria policial especial, de promoções e progressões funcionais, de prerrogativas da função ou de benefícios do cargo efetivo enquanto perdurar a licença;</h5>
+ <h5>XI 	- licença remunerada para o desempenho de mandato classista concedida a, no mínimo, 3 (três) dirigentes em associação nacional ou de abrangência territorial do respectivo ente federativo dentre as de maior representatividade e antiguidade por cargo, sem prejuízo de outros direitos e vantagens, de aposentadoria policial especial, de promoções e progressões funcionais, de prerrogativas da função ou de benefícios do cargo efetivo enquanto perdurar a licença;</h5>
+ <p>.....................................................................................................................</p>
+ <h5>XIX - carga horária mensal de efetivo labor com duração máxima estabelecida na legislação do respectivo ente federativo, não superior a 40 (quarenta) 	horas semanais, garantidos os direitos remuneratórios e indenizatórios e as horas extraordinárias;</h5>
+ <p>......................................................................................................................</p>
+ <h5>XXVIII - auxílio-saúde, de caráter indenizatório, nos termos da legislação do respectivo ente federativo.</h5>
+ <p>......................................................................................................................</p>
+ <h4>§ 	8º O policial civil, ao assumir cargo ou função de confiança de caráter administrativo, de assessoramento, de coordenação e de direção, bem como chefia de investigação, de cartório ou de plantão, terá direito a adicional na forma de verba indenizatória, nos termos da legislação do respectivo ente federativo.</h4>
+ <p>....................................................................................................................”</p>
+ <p>Brasília, 12 de junho de 2024; 203º da Independência e 136º da República.</p>
+ <h3>GERALDO JOSÉ RODRIGUES ALCKMIN FILHO</h3>
+ <p>Este texto não substitui o publicado no DOU de 13.6.2024</p>
+ <p>Institui a Lei Orgânica Nacional das Polícias Civis, dispõe sobre suas normas gerais de funcionamento e dá</p>
+ <p>Institui a Lei Orgânica Nacional das Polícias Civis, dispõe sobre suas normas gerais de funcionamento e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14735.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

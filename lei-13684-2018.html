@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.684, DE 21 DE JUNHO DE 2018 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2018" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.684, DE 21 DE JUNHO DE 2018</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:49:59 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13684.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 10.110 caracteres | espelho: 10.234 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.684, DE 21 DE JUNHO DE 2018.</p>
+ <p>Conversão da Medida Provisória nº 820, de 2018</p>
+ <p>Dispõe sobre medidas de assistência emergencial para acolhimento a pessoas em situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre as medidas de assistência emergencial para acolhimento a pessoas em situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária.</h3>
+ <h3>Art. 2º As ações desenvolvidas no âmbito desta Lei observarão os acordos internacionais concernentes à matéria, dos quais a República Federativa do Brasil seja parte, bem como os dispositivos das Leis n º 9.474, de 22 de julho de 1997 , e 13.445, de 24 de maio de 2017 .</h3>
+ <h3>Art. 3º Para os fins do disposto nesta Lei, considera-se:</h3>
+ <h5>I – situação de vulnerabilidade: condição emergencial e urgente que evidencie a fragilidade da pessoa no âmbito da proteção social, decorrente de fluxo migratório desordenado provocado por crise humanitária;</h5>
+ <h5>II – proteção social: conjunto de políticas públicas estruturadas para prevenir e remediar situações de vulnerabilidade social e de risco pessoal que impliquem violação dos direitos humanos; e</h5>
+ <h5>III – crise humanitária: situação de grave ou iminente instabilidade institucional, de conflito armado, de calamidade de grande proporção, de desastre ambiental ou de grave e generalizada violação de direitos humanos ou de direito internacional humanitário que cause fluxo migratório desordenado em direção a região do território nacional.</h5>
+ <h4>Parágrafo único. A situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária, no território nacional, será reconhecida por ato do Presidente da República.</h4>
+ <h3>Art. 4º As medidas de assistência emergencial para acolhimento a pessoas em situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária têm o objetivo de articular ações integradas a serem desempenhadas pelos governos federal, estaduais, distrital e municipais, por meio de adesão a instrumento de cooperação federativa, no qual serão estabelecidas as responsabilidades dos entes federativos envolvidos.</h3>
+ <h3>Art. 5º As medidas de assistência emergencial para acolhimento a pessoas em situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária visam à ampliação das políticas de:</h3>
+ <h5>I – proteção social;</h5>
+ <h5>II – atenção à saúde;</h5>
+ <h5>III – oferta de atividades educacionais;</h5>
+ <h5>IV – formação e qualificação profissional;</h5>
+ <h5>V – garantia dos direitos humanos;</h5>
+ <h5>VI – proteção dos direitos das mulheres, das crianças, dos adolescentes, dos idosos, das pessoas com deficiência, da população indígena, das comunidades tradicionais atingidas e de outros grupos sociais vulneráveis;</h5>
+ <h5>VII – oferta de infraestrutura e saneamento;</h5>
+ <h5>VIII – segurança pública e fortalecimento do controle de fronteiras;</h5>
+ <h5>IX – logística e distribuição de insumos; e</h5>
+ <h5>X – mobilidade, contemplados a distribuição e a interiorização no território nacional, o repatriamento e o reassentamento das pessoas mencionadas no caput deste artigo.</h5>
+ <h4>§ 1º Caberá à Comissão Intergestores Tripartite de que trata a Lei n° 8.080, de 19 de setembro de 1990 , no tocante à ampliação das políticas de que trata o inciso II do caput deste artigo, pactuar as diretrizes, o financiamento e as questões operacionais que envolvam a ampliação da demanda por serviços de saúde, mediante proposta ao Ministério da Saúde de valores per capita em cada bloco de financiamento do Sistema Único de Saúde compatíveis com as necessidades dos Estados e dos Municípios receptores do fluxo migratório.</h4>
+ <h4>§ 2º Caberá à Comissão Intergovernamental de Financiamento para a Educação Básica de Qualidade de que trata a Lei n° 11.494, de 20 de junho de 2007 , no tocante à ampliação das políticas de que trata o inciso III do caput deste artigo, revisar as ponderações aplicáveis entre diferentes etapas, modalidades e tipos de estabelecimento de ensino da educação básica, o limite proporcional de apropriação de recursos pelas diferentes etapas, modalidades e tipos de estabelecimento de ensino da educação básica e a parcela da complementação da União a ser distribuída para os fundos por meio de programas direcionados à melhoria da qualidade da educação básica, bem como respectivos critérios de distribuição.</h4>
+ <h4>§ 3º No âmbito da administração pública federal, a promoção das políticas de que trata o caput deste artigo ocorrerá de forma integrada entre os Ministérios competentes, que poderão valer-se, para isso, da celebração de:</h4>
+ <h5>I – acordos de cooperação ou instrumentos congêneres com organismos internacionais; e</h5>
+ <h5>II – acordos de cooperação, termos de fomento ou termos de colaboração com organizações da sociedade civil que desenvolvam atividades relevantes na defesa dos direitos dos migrantes, em especial dos imigrantes e refugiados, observado o disposto na Lei n° 13.019, de 31 de julho de 2014 .</h5>
+ <h4>§ 4º A implantação das medidas relacionadas à política de mobilidade de que trata o inciso X do caput deste artigo observará a necessidade da anuência prévia das pessoas atingidas em estabelecer-se em outro ponto do território nacional, retornar ao seu país de origem ou estabelecer-se em um terceiro país, conforme o caso.</h4>
+ <h4>§ 5º (VETADO).</h4>
+ <h3>Art. 6º Fica instituído o Comitê Federal de Assistência Emergencial para acolhimento a pessoas em situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária, e sua composição, suas competências e seu funcionamento serão definidos em regulamento.</h3>
+ <h4>§ 1º Além das competências definidas em regulamento, caberá ao Comitê de que trata o caput deste artigo:</h4>
+ <h5>I – estabelecer as diretrizes e as ações prioritárias da administração pública federal para a execução das medidas de assistência emergencial;</h5>
+ <h5>II – representar a União na assinatura do instrumento de cooperação federativa de que trata o art. 4º desta Lei, a ser firmado com os entes federativos que queiram aderir às medidas de assistência emergencial previstas nesta Lei; e</h5>
+ <h5>III – promover e articular a participação das entidades e organizações da sociedade civil na execução das medidas de assistência emergencial.</h5>
+ <h4>§ 2º Os órgãos e as entidades da administração pública federal obedecerão às diretrizes e priorizarão as ações definidas pelo Comitê de que trata o caput deste artigo.</h4>
+ <h4>§ 3º O Estado ou o Município receptor de fluxo migratório poderá, quando for convidado, enviar representante para participar, com direito a voz, das reuniões do Comitê de que trata o caput deste artigo destinadas a discutir medidas de assistência emergencial a serem implementadas em seu território.</h4>
+ <h4>§ 4º As organizações da sociedade civil que desenvolvam atividades relevantes na defesa dos direitos dos migrantes, em especial dos imigrantes e refugiados, poderão participar, com direito a voz, das reuniões do Comitê de que trata o caput deste artigo.</h4>
+ <h3>Art. 7º Em razão do caráter emergencial das medidas de assistência de que trata esta Lei, os órgãos do governo federal priorizarão os procedimentos e as formas de transferências de recursos e de contratação mais céleres previstos em lei.</h3>
+ <h4>§ 1º As transferências de que trata o caput deste artigo serão realizadas para conta específica do instrumento de cooperação firmado, e os recursos correspondentes somente poderão ser utilizados para pagamento de despesas relacionadas às medidas de assistência emergencial previstas nesta Lei.</h4>
+ <h4>§ 2º As contratações a serem realizadas por Estados e Municípios receptores de fluxo migratório poderão ocorrer de forma direta, nos termos do inciso IV do art. 24 da Lei n° 8.666, de 21 de junho de 1993 .</h4>
+ <h3>Art. 8º As ações realizadas em razão das medidas de assistência emergencial, enquanto durar a situação que desencadeou a emergência, correrão à conta dos orçamentos dos órgãos e das entidades participantes.</h3>
+ <h4>§ 1º A execução das ações previstas no caput deste artigo fica sujeita às disponibilidades orçamentárias e financeiras anuais.</h4>
+ <h4>§ 2º Os créditos adicionais abertos em razão do disposto no § 1º deste artigo serão exclusivamente destinados à execução das medidas de assistência emergencial e das ações descritas no art. 5º desta Lei.</h4>
+ <h4>§ 3º Os recursos de que trata este artigo deverão ser aplicados prioritariamente nas ações e serviços de saúde e segurança pública.</h4>
+ <h4>§ 4º Fica a União autorizada a aumentar o repasse de recursos para os fundos estaduais e municipais de saúde, de educação e de assistência social dos entes afetados, na forma fixada pelo Poder Executivo federal, após a aprovação do crédito orçamentário para essa finalidade.</h4>
+ <h3>Art. 9º As informações relativas à execução de recursos destinados a medidas de assistência emergencial previstas nesta Lei receberão ampla transparência, com obrigatoriedade de sua divulgação em sítios oficiais da rede mundial de computadores.</h3>
+ <h3>Art. 10. Qualquer cidadão poderá representar aos órgãos de controle interno e externo e ao Ministério Público contra irregularidades relacionadas a medidas de assistência emergencial previstas nesta Lei.</h3>
+ <h3>Art. 11. A União poderá prestar cooperação humanitária, sob a coordenação do Ministério das Relações Exteriores, a fim de apoiar países ou populações que se encontrem em estado de conflito armado, de desastre natural, de calamidade pública, de insegurança alimentar e nutricional ou em outra situação de emergência ou de vulnerabilidade, inclusive grave ameaça à vida, à saúde e aos direitos humanos ou humanitários de sua população.</h3>
+ <h4>Parágrafo único. O Poder Executivo regulamentará a prestação de cooperação humanitária, inclusive a participação dos órgãos da administração pública federal em suas ações.</h4>
+ <h3>Art. 12. Esta Lei entra em vigor na data de sua publicação .</h3>
+ <p>Brasília, 21 de junho de 2018; 197º da Independência e 130º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Gilson Libório de Oliveira Mendes</p>
+ <p>Gustavo do Vale Rocha</p>
+ <p>Sergio Westphalen Etchegoyen</p>
+ <p>Este texto não substitui o publicado no DOU de 22.6.2018</p>
+ <p>Conversão da Medida Provisória nº 820, de 2018 | Dispõe sobre medidas de assistência emergencial para acolhimento a pessoas em situação de vulnerabilidade decorrente de fluxo migratório provocado por crise humanitária; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13684.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

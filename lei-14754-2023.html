@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.754, DE 12 DE DEZEMBRO DE 2023 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2023" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.754, DE 12 DE DEZEMBRO DE 2023</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 15:10:03 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14754.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 67.377 caracteres | espelho: 68.119 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.754, DE 12 DE DEZEMBRO DE 2023</p>
+ <p>Produção de efeitos</p>
+ <p>(Vide 	Medida Provisória nº 1.303, de 2025) Produção de efeitos Vigência encerrada</p>
+ <p>Dispõe sobre a tributação de aplicações em fundos de investimento no País e da renda auferida por pessoas físicas residentes no País em aplicações financeiras, entidades controladas e trusts no exterior; altera as Leis nºs 11.033, de 21 de dezembro de 2004, 8.668, de 25 de junho de 1993, e 10.406, de 10 de janeiro de 2002 (Código Civil); revoga dispositivos das Leis nºs 4.728, de 14 de julho de 1965, 9.250, de 26 de dezembro de 1995, 9.532, de 10 de dezembro de 1997, 10.426, de 24 de abril de 2002, 10.892, de 13 de julho de 2004, e 11.033, de 21 de dezembro de 2004, do Decreto-Lei n° 2.287, de 23 de julho de 1986, e das Medidas Provisórias nºs 2.189-49, de 23 de agosto de 2001, e 2.158-35, de 24 de agosto de 2001; e dá outras providências .</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre a tributação de aplicações em fundos de investimento no País e da renda auferida por pessoas físicas residentes no 	País em aplicações financeiras, entidades controladas e trusts no exterior.</h3>
+ <h2>CAPÍTULO I</h2>
+ <p>DA TRIBUTAÇÃO DE RENDIMENTOS NO 	EXTERIOR DE PESSOAS FÍSICAS DOMICILIADAS NO PAÍS</p>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 2º A pessoa física residente no País declarará, de forma separada dos demais rendimentos e dos ganhos de capital, na Declaração de Ajuste Anual (DAA), 	os rendimentos do capital aplicado no exterior, nas modalidades de aplicações financeiras e de lucros e dividendos de entidades controladas.</h3>
+ <h4>§ 1º Os rendimentos de que trata o caput deste artigo ficarão sujeitos à incidência do Imposto sobre a Renda das Pessoas Físicas 	(IRPF), no ajuste anual, à alíquota de 15% (quinze por cento) sobre a parcela anual dos rendimentos, hipótese em que não será aplicada nenhuma dedução da base de cálculo.</h4>
+ <h4>§ 2º Os ganhos de capital percebidos pela pessoa física residente no País na alienação, na baixa ou na liquidação de bens e direitos localizados no exterior que não constituam aplicações financeiras no exterior nos termos desta Lei permanecem sujeitos às regras específicas de tributação previstas no art. 21 	da Lei n° 8.981, de 20 de janeiro de 1995 .</h4>
+ <h4>§ 3º A variação cambial de depósitos em conta-corrente ou em cartão de débito ou crédito no exterior não ficará sujeita à incidência do IRPF, desde que os depósitos não sejam remunerados e sejam mantidos em instituição financeira no exterior reconhecida e autorizada a funcionar pela autoridade monetária do país em que estiver situada.</h4>
+ <h4>§ 4º A variação cambial de moeda estrangeira em espécie não ficará sujeita à incidência do 	IRPF até o limite de alienação de moeda no ano-calendário equivalente a US$ 	5.000,00 (cinco mil dólares americanos).</h4>
+ <h4>§ 5º Os ganhos de variação cambial percebidos na alienação de moeda estrangeira em espécie cujo valor de alienação exceder o limite previsto no § 4º deste artigo ficarão sujeitos integralmente à incidência do IRPF conforme as regras previstas neste artigo.</h4>
+ <p>Seção II</p>
+ <p>Das Aplicações Financeiras no Exterior</p>
+ <h3>Art. 3º Os rendimentos auferidos em aplicações financeiras no exterior pelas pessoas físicas residentes no País serão tributados na forma prevista no art. 2º desta Lei.</h3>
+ <h4>§ 1º Para fins do disposto neste artigo, consideram-se:</h4>
+ <h5>I - aplicações financeiras no exterior: quaisquer operações financeiras fora do País, 	incluídos, de forma exemplificativa, depósitos bancários remunerados, 	certificados de depósitos remunerados, ativos virtuais, carteiras digitais ou contas-correntes com rendimentos, cotas de fundos de investimento, com exceção daqueles tratados como entidades controladas no exterior, 	instrumentos financeiros, apólices de seguro cujo principal e cujos rendimentos sejam resgatáveis pelo segurado ou pelos seus beneficiários, 	certificados de investimento ou operações de capitalização, fundos de aposentadoria ou pensão, títulos de renda fixa e de renda variável, 	operações de crédito, inclusive mútuo de recursos financeiros, em que o devedor seja residente ou domiciliado no exterior, derivativos e participações societárias, com exceção daquelas tratadas como entidades controladas no exterior, incluindo os direitos de aquisição;</h5>
+ <h5>II - rendimentos: 	remuneração produzida pelas aplicações financeiras no exterior, incluídos, 	de forma exemplificativa, variação cambial da moeda estrangeira ou variação da criptomoeda em relação à moeda nacional, rendimentos em depósitos em carteiras digitais ou contas-correntes remuneradas, juros, prêmios, 	comissões, ágio, deságio, participações nos lucros, dividendos e ganhos em negociações no mercado secundário, inclusive ganhos na venda de ações das entidades não controladas em bolsa de valores no exterior.</h5>
+ <h4>§ 2º Os rendimentos de que trata o caput deste artigo serão computados na DAA e submetidos à incidência do IRPF no período de apuração em que forem efetivamente percebidos pela pessoa física, 	como no recebimento de juros e outras espécies de remuneração e, em relação aos ganhos, inclusive de variação cambial sobre o principal, no resgate, na amortização, na alienação, no vencimento ou na liquidação das aplicações financeiras.</h4>
+ <h4>§ 3º O 	enquadramento de ativos virtuais e de carteiras digitais como aplicações financeiras no exterior constará da regulamentação da Secretaria Especial da 	Receita Federal do Brasil do Ministério da Fazenda.</h4>
+ <h3>Art. 4º As pessoas físicas que declararem rendimentos de que trata esta 	Seção poderão deduzir do IRPF devido, na ficha da DAA de que trata o art. 2º desta Lei, o imposto sobre a renda pago no país de origem dos rendimentos, 	desde que:</h3>
+ <h5>I - esteja prevista a compensação em acordo, tratado e convenção internacionais firmados com o país de origem dos rendimentos com a finalidade de evitar a dupla tributação; ou</h5>
+ <h5>II - haja reciprocidade de tratamento em relação aos rendimentos produzidos no País.</h5>
+ <h4>§ 1º A dedução não poderá exceder a diferença entre o IRPF calculado com a inclusão do respectivo rendimento e o IRPF devido sem a sua inclusão.</h4>
+ <h4>§ 2º O imposto pago no exterior será convertido de moeda estrangeira para moeda nacional por meio da utilização da cotação de fechamento da moeda estrangeira divulgada, 	para compra, pelo Banco Central do Brasil, para o dia do pagamento do imposto no exterior.</h4>
+ <h4>§ 3º Não poderá ser deduzido do IRPF devido o imposto sobre a renda pago no exterior que for passível de reembolso, de restituição, de ressarcimento ou de compensação, 	sob qualquer forma, no exterior.</h4>
+ <h4>§ 4º O imposto pago no exterior não deduzido no ano-calendário não poderá ser deduzido do IRPF 	devido em anos-calendários posteriores ou anteriores.</h4>
+ <p>Seção III</p>
+ <p>Das Entidades Controladas no Exterior</p>
+ <h3>Art. 5º Os lucros apurados pelas entidades controladas no exterior por pessoas físicas residentes no País, enquadradas nas hipóteses previstas neste artigo, serão tributados em 31 de dezembro de cada ano, na forma prevista no art. 2º desta Lei.</h3>
+ <h4>§ 1º Para fins do disposto nesta Lei, serão consideradas como controladas as sociedades e as demais entidades, personificadas ou não, incluídos os fundos de investimento e as fundações, em que a pessoa física:</h4>
+ <h5>I - detiver, direta ou indiretamente, de forma isolada ou em conjunto com outras partes, 	inclusive em razão da existência de acordos de votos, direitos que lhe assegurem preponderância nas deliberações sociais ou poder de eleger ou destituir a maioria dos seus administradores; ou</h5>
+ <h5>II - possuir, 	direta ou indiretamente, de forma isolada ou em conjunto com pessoas vinculadas, mais de 50% (cinquenta por cento) de participação no capital social, ou equivalente, ou nos direitos à percepção de seus lucros ou ao recebimento de seus ativos na hipótese de sua liquidação.</h5>
+ <h4>§ 2º No caso das sociedades, dos fundos de investimento e das demais entidades no exterior com classes de cotas ou ações com patrimônios segregados, cada classe será 	considerada como uma entidade separada, para fins do disposto nesta Lei, 	inclusive para efeitos de determinação da relação de controle de que trata o 	§ 1º deste artigo.</h4>
+ <h4>§ 3º Para fins do disposto no inciso II do § 1º deste artigo, será considerada pessoa vinculada à pessoa física residente no País:</h4>
+ <h5>I - a pessoa física que for cônjuge, companheiro ou parente, consanguíneo ou afim, até o terceiro grau, da pessoa física residente no País;</h5>
+ <h5>II - a pessoa jurídica cujo diretor ou administrador for cônjuge, companheiro ou parente, 	consanguíneo ou afim, até o terceiro grau, da pessoa física residente no 	País;</h5>
+ <h5>III - a pessoa jurídica da qual a pessoa física residente no País for sócia, titular ou cotista;</h5>
+ <h5>IV - a pessoa física que for sócia da pessoa jurídica da qual a pessoa física residente no 	País seja sócia, titular ou cotista.</h5>
+ <h4>§ 4º Para fins de aplicação do disposto nos incisos III e IV do § 3º deste artigo, serão consideradas as participações que representarem mais de 10% (dez por cento) 	do capital social votante.</h4>
+ <h4>§ 5º Sujeitam-se ao regime tributário previsto neste artigo somente as controladas, diretas ou indiretas, que se enquadrarem em uma ou mais das seguintes hipóteses:</h4>
+ <h5>I - estejam localizadas em país ou em dependência com tributação favorecida ou sejam beneficiárias de regime fiscal privilegiado de que tratam os arts. 24 e 24-A 	da Lei n° 9.430, de 27 de dezembro de 1996 ; ou</h5>
+ <h5>II - apurem renda ativa própria inferior a 60% (sessenta por cento) da renda total.</h5>
+ <h4>§ 6º Para fins do disposto neste artigo, considera-se:</h4>
+ <h5>I - renda ativa própria: as receitas obtidas diretamente pela entidade controlada mediante a exploração de atividade econômica própria, excluídas as receitas decorrentes exclusivamente de:</h5>
+ <h6>a) royalties ;</h6>
+ <h6>b) juros;</h6>
+ <h6>c) dividendos;</h6>
+ <h6>d) participações societárias;</h6>
+ <h6>e) aluguéis;</h6>
+ <h6>f) ganhos de capital, exceto na alienação de participações societárias ou ativos de caráter permanente adquiridos há mais de 2 (dois) anos;</h6>
+ <h6>g) aplicações financeiras;</h6>
+ <h6>h) intermediação financeira;</h6>
+ <h5>II - renda total: 	somatório de todas as receitas, incluídas as não operacionais.</h5>
+ <h4>§ 7º As alíneas 	“b”, “g” e “h” do inciso I do § 6º deste artigo não se aplicam às instituições financeiras reconhecidas e autorizadas a funcionar pela autoridade monetária do país em que estiverem situadas.</h4>
+ <h4>§ 8º As alíneas “c” 	e “d” do inciso I do § 6º deste artigo não se aplicam às participações diretas ou indiretas em entidades controladas ou coligadas que apurem renda ativa própria superior a 60% (sessenta por cento) da renda total.</h4>
+ <h4>§ 9º A alínea “e” 	do inciso I do § 6º deste artigo não se aplica às empresas que exerçam, 	efetivamente, como atividade principal, a atividade comercial de incorporação imobiliária ou construção civil no país em que estiverem situadas.</h4>
+ <h4>§ 10. Os lucros das controladas enquadradas nas hipóteses previstas no § 5º deste artigo serão:</h4>
+ <h5>I - apurados de forma individualizada, em balanço anual da controlada, direta ou indireta, 	no exterior, com exclusão dos resultados da controlada, direta ou indireta, 	da parcela relativa às participações desta controlada em outras controladas, 	inclusive quando a entidade for organizada como um fundo de investimento, o qual deverá ser elaborado com observância:</h5>
+ <h6>a) aos padrões internacionais de contabilidade (International Financial Reporting Standards 	- IFRS), ou aos padrões contábeis brasileiros, a critério do contribuinte; 	ou</h6>
+ <h6>b) aos padrões contábeis brasileiros, caso esteja localizada em país ou em dependência com tributação favorecida ou seja beneficiária de regime fiscal privilegiado de que tratam os arts. 24 e 24-A da Lei n° 9.430, de 27 de dezembro de 1996 ;</h6>
+ <h5>II - convertidos em moeda nacional pela cotação de fechamento da moeda estrangeira divulgada, 	para venda, pelo Banco Central do Brasil, para o último dia útil do mês de dezembro;</h5>
+ <h5>III - computados na 	DAA, em 31 de dezembro do ano em que forem apurados no balanço, 	independentemente de qualquer deliberação acerca da sua distribuição, na proporção da participação da pessoa física nos lucros da controlada, direta ou indireta, no exterior, e submetidos à incidência do IRPF no respectivo período de apuração; e</h5>
+ <h5>IV - incluídos na 	DAA, na ficha de bens e direitos, como custo de aquisição de crédito de dividendo a receber da controlada, direta ou indireta, com a indicação do respectivo ano de origem.</h5>
+ <h4>§ 11. Na distribuição dos lucros das controladas enquadradas nas hipóteses previstas no § 5º que já tiverem sido tributados na forma prevista no § 10 deste artigo para a pessoa física controladora, deverão ser indicados na DAA a controlada e o ano de origem dos lucros distribuídos, os quais deverão reduzir o custo de aquisição do crédito do dividendo a receber, pelo valor originalmente declarado em moeda nacional, e não serão tributados novamente.</h4>
+ <h4>§ 12. O ganho ou a perda decorrente de variação cambial entre o valor em moeda nacional do lucro tributado em 31 de dezembro e registrado como custo de aquisição do crédito do dividendo a receber, na forma prevista no § 10, e o valor em moeda nacional do dividendo percebido posteriormente, na forma prevista no § 	11 deste artigo, não será tributado ou deduzida, respectivamente, na apuração do IRPF.</h4>
+ <h4>§ 13. Poderão ser deduzidos do lucro da pessoa jurídica controlada, direta ou indireta, a parcela correspondente aos lucros e aos dividendos de suas investidas que forem pessoas jurídicas domiciliadas no País e os rendimentos e os ganhos de capital dos demais investimentos feitos no País, desde que sejam tributados pelo Imposto sobre a Renda Retido na Fonte (IRRF) à alíquota igual ou superior a 15% (quinze por cento), aplicado o disposto neste artigo também no momento da distribuição de dividendos pela entidade controlada para a pessoa física residente no País.</h4>
+ <h4>§ 14. Poderão ser deduzidos do lucro da controlada, direta ou indireta, os prejuízos apurados em balanço, pela própria controlada, a partir da data em que se enquadrar nas hipóteses de que trata o § 1º deste artigo, desde que sejam referentes a períodos a partir de 1º de janeiro de 2024 e anteriores à data da apuração dos lucros.</h4>
+ <h4>§ 15. Na determinação do imposto devido, a pessoa física poderá deduzir, na proporção de sua participação nos lucros da controlada, direta ou indireta, o imposto sobre a renda que:</h4>
+ <h5>I - seja devido no exterior pela controlada e pelas suas investidas não controladas;</h5>
+ <h5>II - incida sobre o lucro da controlada e das suas investidas não controladas ou sobre os rendimentos por elas apurados no exterior, quando tais lucros e rendimentos tenham sido computados no lucro da controlada tributado na forma prevista neste artigo;</h5>
+ <h5>III - tenha sido pago no país de domicílio da controlada ou em outro país no exterior;</h5>
+ <h5>IV - não supere o imposto devido no País sobre o lucro da entidade controlada que tenha sido computado na base de cálculo do IRPF; e</h5>
+ <h5>V - não se enquadre na vedação prevista no § 3º do art. 4º desta Lei.</h5>
+ <h4>§ 16. Caso a entidade controlada no exterior aufira rendimentos ou ganhos de capital no 	País que não tenham sido excluídos do lucro sujeito ao imposto sobre a renda nos termos do disposto no § 13, o IRRF pago no País sobre esses rendimentos e ganhos de capital poderá ser deduzido do imposto sobre a renda devido sobre o lucro da entidade controlada no exterior, observado o disposto no § 	15 deste artigo no que for aplicável.</h4>
+ <h3>Art. 6º Serão tributados no momento da efetiva disponibilização para a pessoa física residente no País, na forma prevista no art. 2º desta Lei: )</h3>
+ <h5>I - os lucros apurados até 31 de dezembro de 2023 pelas controladas no exterior de pessoas físicas residentes no País, enquadradas ou não nas hipóteses previstas no § 	5º do art. 5º desta Lei;</h5>
+ <h5>II - os lucros apurados a partir de 1º de janeiro de 2024 pelas controladas no exterior de pessoas físicas residentes no País que não se enquadrarem nas hipóteses previstas no § 5º do art. 5º desta Lei.</h5>
+ <h4>Parágrafo único. 	Para fins do disposto neste artigo, os lucros serão considerados efetivamente disponibilizados para a pessoa física residente no País:</h4>
+ <h5>I - no pagamento, 	no crédito, na entrega, no emprego ou na remessa dos lucros, o que ocorrer primeiro; ou</h5>
+ <h5>II - em quaisquer operações de crédito realizadas com a pessoa física ou com pessoa a ela vinculada, conforme o disposto no § 3º do art. 5º desta Lei, se a credora possuir lucros ou reservas de lucros.</h5>
+ <h3>Art. 6º-A. As pessoas físicas residentes no País com entidades controladas no exterior que não se enquadrarem nas hipóteses previstas no § 5º do art. 5º poderão optar por tributar os lucros apurados por essas entidades a partir de 1º de janeiro de 2024 de acordo com o disposto no art. 5º desta Lei. (Incluído pela Lei n° 14.789, de 2023) Produção de efeitos</h3>
+ <h3>Art. 7º A variação cambial do principal aplicado nas controladas no exterior, enquadradas ou não nas hipóteses previstas no § 5º do art. 5º desta Lei, comporá o ganho de capital percebido pela pessoa física no momento da alienação, da baixa ou da liquidação do investimento, inclusive por meio de devolução de capital, a ser tributado de acordo com o disposto no art. 21 da Lei n° 8.981, de 20 de janeiro de 1995 .</h3>
+ <h4>§ 1º O ganho de capital corresponderá à diferença positiva entre o valor percebido em moeda nacional e o custo de aquisição médio por cota ou ação alienada, baixada ou liquidada, em moeda nacional.</h4>
+ <h4>§ 2º Caso não haja cancelamento de cota ou de ação na devolução do capital, o custo de aquisição médio deverá ser calculado levando em consideração a proporção que o valor da devolução de capital representará do capital total aplicado na entidade.</h4>
+ <h3>Art. 8º Alternativamente ao disposto nos arts. 5º, 6º e 7º desta Lei, a pessoa física poderá optar por declarar os bens, direitos e obrigações detidos pela entidade controlada, direta ou indireta, no exterior como se fossem detidos diretamente pela pessoa física.</h3>
+ <h4>§ 1º A opção de que trata este artigo:</h4>
+ <h5>I - poderá ser exercida em relação a cada entidade controlada, direta ou indireta, 	separadamente;</h5>
+ <h5>II - será 	irrevogável e irretratável durante todo o prazo em que a pessoa física detiver aquela entidade controlada no exterior;</h5>
+ <h5>III - deverá ser exercida, quando houver mais de um sócio ou acionista, por todos aqueles que forem pessoas físicas residentes no País.</h5>
+ <h4>§ 2º A pessoa física que optar pelo regime tributário previsto neste artigo em relação às participações detidas em 31 de dezembro de 2023 deverá:</h4>
+ <h5>I - indicar a sua opção na DAA a ser entregue em 2024, dentro do prazo, relativa ao ano-calendário de 2023, para produzir efeitos a partir de 1º de janeiro de 	2024;</h5>
+ <h5>II - substituir, na ficha de bens e direitos da mesma DAA, a participação na entidade pelos bens e direitos subjacentes e alocar o custo de aquisição para cada um desses bens e direitos, considerada a proporção do valor de cada bem ou direito em relação ao valor total do ativo da entidade, em 31 de dezembro de 2023;</h5>
+ <h5>III - informar na ficha de dívidas e ônus reais da DAA as obrigações subjacentes, a valor 0 	(zero); e</h5>
+ <h5>IV - tributar a renda auferida a partir de 1º de janeiro de 2024 com os bens e direitos e aplicar as regras previstas na Seção II desta Lei, quando se tratar de aplicações financeiras no exterior, ou as disposições específicas previstas na legislação em conformidade com a natureza da renda.</h5>
+ <h4>§ 3º A pessoa física que optar pelo regime tributário previsto neste artigo em relação às participações em entidades controladas adquiridas a partir de 1º de janeiro de 2024 deverá exercer a sua opção na primeira DAA após a aquisição.</h4>
+ <h4>§ 4º Os bens e direitos transferidos a qualquer título pela pessoa física ou por entidade controlada detida pela pessoa física sob o regime tributário previsto neste artigo para outra entidade controlada enquadrada nas hipóteses previstas no 	§ 5º do art. 5º desta Lei em relação à qual a opção de que trata este artigo não tenha sido exercida deverão ser avaliados a valor de mercado no momento da transferência, e o valor da diferença apurada em relação ao seu custo de aquisição será considerado renda da pessoa física sujeito à tributação pelo 	IRPF no momento da transferência, hipótese em que será aplicada a alíquota prevista na legislação em conformidade com a natureza da renda.</h4>
+ <p>Seção IV</p>
+ <p>Da Compensação de Perdas</p>
+ <h3>Art. 9º A pessoa física residente no País poderá compensar as perdas realizadas em aplicações financeiras no exterior a que se refere o art. 3º, 	quando devidamente comprovadas por documentação hábil e idônea, com rendimentos auferidos em aplicações financeiras no exterior, na ficha da DAA 	de que trata o art. 2º desta Lei, no mesmo período de apuração.</h3>
+ <h4>§ 1º Caso o valor das perdas no período de apuração supere o dos ganhos, esta parcela das perdas poderá ser compensada com lucros e dividendos de entidades controladas no exterior, enquadradas ou não nas hipóteses previstas no § 5º do art. 5º desta Lei, que tenham sido computados na DAA no mesmo período de apuração.</h4>
+ <h4>§ 2º Caso no final do período de apuração haja acúmulo de perdas não compensadas, essas perdas poderão ser compensadas com rendimentos computados na ficha da DAA de que trata o art. 2º desta Lei em períodos de apuração posteriores.</h4>
+ <h4>§ 3º As perdas poderão ser compensadas uma única vez.</h4>
+ <p>Seção V</p>
+ <p>Dos Trusts no Exterior</p>
+ <h3>Art. 10. Para fins do disposto nesta Lei, os bens e direitos objeto de trust no exterior serão considerados da seguinte forma:</h3>
+ <h5>I - permanecerão sob titularidade do instituidor após a instituição do trust ; e</h5>
+ <h5>II - passarão à 	titularidade do beneficiário no momento da distribuição pelo trust para o beneficiário ou do falecimento do instituidor, o que ocorrer primeiro.</h5>
+ <h4>§ 1º A transmissão ao beneficiário poderá ser reputada ocorrida em momento anterior àquele previsto no inciso II do caput deste artigo caso o instituidor abdique, em caráter irrevogável, do direito sobre parcela do patrimônio do trust .</h4>
+ <h4>§ 2º Para fins do disposto nesta Lei, a mudança de titularidade sobre o patrimônio do trust será 	considerada como transmissão a título gratuito pelo instituidor para o beneficiário e consistirá em doação, se ocorrida durante a vida do instituidor, ou em transmissão causa mortis, se decorrente do falecimento do instituidor.</h4>
+ <h4>§ 3º Os rendimentos e os ganhos de capital relativos aos bens e direitos objeto do trust serão:</h4>
+ <h5>I - considerados auferidos pelo titular de tais bens e direitos na respectiva data, conforme o disposto nos incisos I e II do caput deste artigo; e</h5>
+ <h5>II - submetidos à 	incidência do IRPF, conforme as regras aplicáveis ao titular.</h5>
+ <h4>§ 4º Caso o trust detenha uma controlada no exterior, esta será considerada como detida diretamente pelo titular dos bens e direitos objeto do trust , hipótese em que serão aplicadas as regras de tributação de investimentos em controladas no exterior previstas na Seção III desta Lei.</h4>
+ <h4>§ 5º O instituidor ou o beneficiário deverá requisitar ao trustee a disponibilização dos recursos financeiros e das informações necessárias para viabilizar o pagamento do imposto e o cumprimento das demais obrigações tributárias no País.</h4>
+ <h4>§ 6º O instituidor do trust, caso esteja vivo, ou os beneficiários do trust , caso tenham conhecimento do trust , deverão providenciar, no prazo de até 180 (cento e oitenta) dias, contado da data de publicação desta Lei, a alteração da escritura do trust ou da respectiva carta de desejos, para fazer constar redação que obrigue, de forma irrevogável e irretratável, o atendimento, por parte do trustee , 	das disposições estabelecidas nesta Lei.</h4>
+ <h4>§ 7º Para os trusts em que o instituidor já tenha falecido ou perdido poderes em relação a alterações do trust e os beneficiários também não tenham poderes de alteração da escritura ou da carta de desejos, os beneficiários deverão enviar ao trustee comunicação formal a respeito da obrigatoriedade de observância ao disposto nesta Lei e requerer a disponibilização das informações e dos recursos financeiros necessários para o cumprimento do disposto nesta Lei.</h4>
+ <h4>§ 8º A 	inobservância ao disposto nos §§ 5º e 7º deste artigo ou o não atendimento da solicitação da requisição pelo trustee não afastam o dever de cumprimento das obrigações tributárias principais e acessórias pelo instituidor ou pelo beneficiário, conforme o caso.</h4>
+ <h3>Art. 11. Os bens e direitos objeto do trust , 	independentemente da data de sua aquisição, deverão, em relação à data-base de 31 de dezembro de 2023, ser declarados diretamente pelo titular na DAA, 	pelo custo de aquisição.</h3>
+ <h4>§ 1º Caso o titular tenha informado anteriormente o trust na sua DAA, o trust deverá ser substituído pelos bens e direitos subjacentes, de modo a se alocar o custo de aquisição para cada um desses bens e direitos, considerada a proporção do valor de cada bem ou direito em relação ao valor total do patrimônio objeto do trust .</h4>
+ <h4>§ 2º Caso a pessoa que tenha informado anteriormente o trust na sua DAA seja distinta do titular estabelecido por esta Lei, o declarante poderá, excepcionalmente, 	ser considerado como o titular para efeitos do IRPF.</h4>
+ <h3>Art. 12. Para fins do disposto nesta Lei, considera-se:</h3>
+ <h5>I - trust : figura contratual regida por lei estrangeira que dispõe sobre a relação jurídica entre o instituidor, o trustee e os beneficiários quanto aos bens e direitos indicados na escritura do trust ;</h5>
+ <h5>II - instituidor ( settlor ): pessoa física que, por meio da escritura do trust , 	destina bens e direitos de sua titularidade para formar o trust ;</h5>
+ <h5>III - administrador do trust ( trustee ): pessoa física ou jurídica com dever fiduciário sobre os bens e direitos objeto do trust , 	responsável por manter e administrar esses bens e direitos de acordo com as regras da escritura do trust e, se existente, da carta de desejos;</h5>
+ <h5>IV - beneficiário ( beneficiary ): uma ou mais pessoas indicadas para receber do trustee os bens e direitos objeto do trust , acrescidos dos seus frutos, de acordo com as regras estabelecidas na escritura do trust e, se existente, na carta de desejos;</h5>
+ <h5>V - distribuição ( distribution ): qualquer ato de disposição de bens e direitos objeto do trust em favor do beneficiário, tal como a disponibilização da posse, o usufruto e a propriedade de bens e direitos;</h5>
+ <h5>VI - escritura do trust ( trust 	deed ou declaration of trust ): ato escrito de manifestação de vontade do instituidor que rege a instituição e o funcionamento do trust e a atuação do trustee , incluídas as regras de manutenção, de administração e de distribuição dos bens e direitos aos beneficiários, além de eventuais encargos, termos e condições;</h5>
+ <h5>VII - carta de desejos ( letter of wishes ): ato suplementar que pode ser escrito pelo instituidor em relação às suas vontades que devem ser executadas pelo trustee e que pode prever regras de funcionamento do trust e de distribuição de bens e direitos para os beneficiários, entre outras disposições.</h5>
+ <h3>Art. 13. Para os fins desta Lei, as disposições desta Seção aplicam-se aos demais contratos regidos por lei estrangeira com características similares às do trust e que não forem enquadrados como entidades controladas.</h3>
+ <p>Seção VI</p>
+ <p>Da Atualização do Valor dos Bens e 	Direitos no Exterior</p>
+ <h3>Art. 14. A pessoa física residente no País poderá optar por atualizar o valor dos bens e direitos no exterior informados na sua DAA para o valor de mercado em 31 de dezembro de 2023 e tributar a diferença para o custo de aquisição, pelo IRPF, à alíquota definitiva de 8% (oito por cento).</h3>
+ <h4>§ 1º A opção de que trata o caput deste artigo aplica-se a:</h4>
+ <h5>I - aplicações financeiras de que trata o inciso I do § 1º do art. 3º desta Lei;</h5>
+ <h5>II - bens imóveis em geral ou ativos que representem direitos sobre bens imóveis;</h5>
+ <h5>III - veículos, 	aeronaves, embarcações e demais bens móveis sujeitos a registro em geral, 	ainda que em alienação fiduciária;</h5>
+ <h5>IV - participações em entidades controladas, nos termos do art. 5º desta Lei.</h5>
+ <h4>§ 2º Para fins da tributação de que trata o caput deste artigo, os bens e direitos serão atualizados para o seu valor de mercado em 31 de dezembro de 2023, observado:</h4>
+ <h5>I - quanto aos ativos de que trata o inciso I do § 1º deste artigo, o saldo existente na data-base, conforme documento disponibilizado pela instituição financeira custodiante;</h5>
+ <h5>II - quanto aos ativos de que tratam os incisos II e III do § 1º deste artigo, o valor de mercado na data-base conforme avaliação feita por entidade especializada; e</h5>
+ <h5>III - quanto aos ativos de que trata o inciso IV do § 1º deste artigo, o valor do patrimônio líquido proporcional à participação no capital social, ou equivalente, 	conforme demonstrações financeiras preparadas com observância aos padrões contábeis brasileiros, com suporte em documentação hábil e idônea, incluídos a identificação do capital social, ou equivalente, a reserva de capital, os lucros acumulados e as reservas de lucros.</h5>
+ <h4>§ 3º Para fins de apuração do valor dos bens e direitos em moeda nacional, o valor expresso em moeda estrangeira será convertido em moeda nacional pela cotação de fechamento da moeda estrangeira divulgada, para venda, pelo Banco Central do 	Brasil, para o último dia útil do mês de dezembro de 2023.</h4>
+ <h4>§ 4º Os valores decorrentes da atualização tributados na forma prevista neste artigo:</h4>
+ <h5>I - serão considerados como acréscimo patrimonial na data em que houver o pagamento do imposto;</h5>
+ <h5>II - serão incluídos na ficha de bens e direitos da DAA como custo de aquisição adicional do respectivo bem ou direito ou, no caso de lucros de controladas no exterior, de crédito de dividendo a receber; e</h5>
+ <h5>III - no caso de lucros de entidades controladas no exterior, quando forem disponibilizados para a pessoa física controladora, reduzirão o custo de aquisição do crédito de dividendo a receber, pelo valor originalmente declarado em moeda nacional, e não serão tributados novamente.</h5>
+ <h4>§ 5º O ganho ou a perda decorrente de variação cambial entre o valor em moeda nacional do lucro tributado em 31 de dezembro de 2023 e registrado como custo de aquisição do crédito do dividendo a receber, na forma prevista no inciso II 	do § 4º, e o valor em moeda nacional do dividendo percebido posteriormente, 	na forma prevista no inciso III do § 4º deste artigo, não será tributado ou deduzida, respectivamente, na apuração do IRPF.</h4>
+ <h4>§ 6º O contribuinte poderá optar, inclusive, pela atualização do valor de bens e direitos objeto de trust em relação aos quais a pessoa física seja definida como titular, nos termos desta Lei.</h4>
+ <h4>§ 7º A opção poderá 	ser exercida em conjunto ou separadamente para cada bem ou direito no exterior.</h4>
+ <h4>§ 8º O imposto deverá ser pago até 31 de maio de 2024.</h4>
+ <h4>§ 9º A opção deverá 	ser exercida na forma e no prazo estabelecidos pela Secretaria Especial da 	Receita Federal do Brasil do Ministério da Fazenda, por meio de declaração específica que deverá conter, no mínimo:</h4>
+ <h5>I - identificação do declarante;</h5>
+ <h5>II - identificação dos bens e direitos;</h5>
+ <h5>III - valor do bem ou direito constante da última DAA relativa ao ano-calendário de 2022; e</h5>
+ <h5>IV - valor atualizado do bem ou direito em moeda nacional.</h5>
+ <h4>§ 10. Não poderão ser objeto de atualização:</h4>
+ <h5>I - bens ou direitos que não tiverem sido declarados na DAA relativa ao ano-calendário de 2022, entregue até o dia 31 de maio de 2023, ou adquiridos no decorrer do ano-calendário de 2023;</h5>
+ <h5>II - bens ou direitos que tiverem sido alienados, baixados ou liquidados anteriormente à 	data da formalização da opção de que trata este artigo; e</h5>
+ <h5>III - moeda estrangeira em espécie, joias, pedras e metais preciosos, obras de arte, 	antiguidades de valor histórico ou arqueológico, animais de estimação ou esportivos e material genético de reprodução animal, sujeitos a registro em geral, ainda que em alienação fiduciária.</h5>
+ <h4>§ 11. A opção de que trata este artigo somente se consumará e se tornará definitiva com o pagamento integral do imposto.</h4>
+ <h4>§ 12. Não poderão ser aplicados quaisquer deduções, percentuais ou fatores de redução à base de cálculo, à alíquota ou ao montante devido do imposto de que trata este artigo.</h4>
+ <h4>§ 13. Para fins da opção de que trata este artigo, o custo de aquisição dos bens e direitos que tiverem sido adquiridos com rendimentos auferidos originariamente em moeda estrangeira, nos termos do § 5º do art. 24 da Medida Provisória nº 2.158-35, 	de 24 de agosto de 2001 , deverá ser calculado mediante a conversão do valor dos bens e direitos da moeda estrangeira em moeda nacional pela cotação de fechamento da moeda estrangeira divulgada, para venda, pelo Banco Central do 	Brasil, para o último dia útil do mês de dezembro de 2023.</h4>
+ <h4>§ 14. Caso o contribuinte declare que exerceu ou exercerá a opção por declarar os bens, 	direitos e obrigações da entidade controlada no exterior como se fossem detidos diretamente pela pessoa física na forma do art. 8º desta Lei, o contribuinte poderá optar por aplicar o critério de atualização do inciso 	III do § 2º deste artigo, ou de cada bem e direito subjacente.</h4>
+ <p>Seção VII</p>
+ <p>Da Conversão da Moeda Estrangeira em 	Moeda Nacional</p>
+ <h3>Art. 15. A cotação a ser utilizada para converter os valores em moeda estrangeira em moeda nacional é a cotação de fechamento da moeda estrangeira divulgada, para venda, pelo Banco Central do Brasil, para a data do fato gerador, ressalvadas as disposições específicas previstas nesta Lei.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA TRIBUTAÇÃO DOS RENDIMENTOS DE 	APLICAÇÕES EM FUNDOS DE INVESTIMENTO NO PAÍS</h3>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 16. Os rendimentos de aplicações em fundos de investimento no 	País constituídos na forma do art. 1.368-C da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), ficarão sujeitos à incidência do imposto sobre a renda de acordo com o disposto nesta Lei.</h3>
+ <h4>Parágrafo único. 	Ficam isentos do imposto sobre a renda os rendimentos, inclusive os ganhos líquidos, dos títulos e valores mobiliários e demais aplicações financeiras integrantes das carteiras dos fundos de investimento.</h4>
+ <p>Seção II</p>
+ <p>Do Regime Geral dos Fundos</p>
+ <h3>Art. 17. Os rendimentos das aplicações em fundos de investimento ficarão sujeitos à retenção na fonte do IRRF nas seguintes datas:</h3>
+ <h5>I - no último dia 	útil dos meses de maio e novembro; ou</h5>
+ <h5>II - na data da distribuição de rendimentos, da amortização ou do resgate de cotas, caso ocorra antes.</h5>
+ <h4>§ 1º A alíquota do 	IRRF será a seguinte:</h4>
+ <h5>I - como regra geral: (Vide Medida 	Provisória nº 1.303, de 2025) Produção de efeitos Vigência encerrada</h5>
+ <h6>a) 15% (quinze por cento), na data da tributação periódica de que trata o inciso I do caput deste artigo; e</h6>
+ <h6>b) o percentual complementar necessário para totalizar a alíquota prevista nos incisos I , II , III e IV do caput do art. 1º da Lei n° 11.033, de 21 de dezembro de 2004 , na data da distribuição de rendimentos, da amortização ou do resgate de cotas de que trata o inciso II do caput deste artigo; ou</h6>
+ <h5>II - nos fundos de que trata o art. 6º da Lei n° 11.053, de 29 de dezembro de 2004 : (Vide Medida 	Provisória nº 1.303, de 2025) Produção de efeitos Vigência encerrada</h5>
+ <h6>a) 20% (vinte por cento), na data da tributação periódica de que trata o inciso I do caput deste artigo; e</h6>
+ <h6>b) o percentual complementar necessário para totalizar a alíquota prevista nos incisos I e II do § 2º do art. 6º da Lei n° 11.053, de 29 de dezembro de 2004 , na data da distribuição de rendimentos, da amortização ou do resgate de cotas de que trata o inciso II do caput deste artigo.</h6>
+ <h4>§ 2º O custo de aquisição das cotas corresponderá ao valor:</h4>
+ <h5>I - do preço pago na aquisição das cotas, o qual consistirá no custo de aquisição inicial das cotas;</h5>
+ <h5>II - acrescido da parcela do valor patrimonial da cota que tiver sido tributada anteriormente, 	no que exceder o custo de aquisição inicial; e</h5>
+ <h5>III - diminuído das parcelas do custo de aquisição que tiverem sido computadas anteriormente em amortizações de cotas.</h5>
+ <h4>§ 3º O custo de aquisição total será dividido pela quantidade de cotas da mesma classe ou subclasse, quando houver, de titularidade do cotista, a fim de calcular o custo médio por cota.</h4>
+ <h4>§ 4º Opcionalmente, 	o administrador do fundo de investimento poderá computar o custo de aquisição por cota ou certificado.</h4>
+ <h4>§ 5º A base de cálculo do IRRF corresponderá:</h4>
+ <h5>I - na incidência periódica de que trata o inciso I do caput deste artigo, à diferença positiva entre o valor patrimonial da cota do dia imediatamente anterior e o custo de aquisição da cota;</h5>
+ <h5>II - nas hipóteses de que trata o inciso II do caput deste artigo:</h5>
+ <h6>a) no resgate, à 	diferença positiva entre o preço do resgate da cota e o custo de aquisição da cota;</h6>
+ <h6>b) na amortização, 	à diferença positiva entre o preço da amortização e a parcela do custo de aquisição da cota calculada com base na proporção que o preço da amortização representar do valor patrimonial da cota.</h6>
+ <h4>§ 6º As perdas apuradas na amortização ou no resgate de cotas poderão ser compensadas, 	exclusivamente, com ganhos apurados nas incidências posteriores e na distribuição de rendimentos, na amortização ou no resgate de cotas do mesmo fundo de investimento, ou de outro fundo de investimento administrado pela mesma pessoa jurídica, desde que este fundo esteja sujeito ao mesmo regime de tributação.</h4>
+ <h4>§ 7º A compensação de perdas de que trata o § 6º deste artigo somente será admitida se a perda constar de sistema de controle e registro mantido pelo administrador que permita a identificação, em relação a cada cotista, dos valores compensáveis.</h4>
+ <h4>§ 8º A incidência do IRRF de que trata este artigo abrangerá todos os fundos de investimento constituídos sob a forma de condomínio aberto ou fechado, ressalvadas as hipóteses previstas nesta Lei e na legislação a que se refere o art. 39 	desta Lei.</h4>
+ <p>Seção III</p>
+ <p>Do Regime Específico dos Fundos Não 	Sujeitos à Tributação Periódica</p>
+ <h3>Art. 18. Quando forem enquadrados como entidades de investimento e cumprirem os demais requisitos previstos nesta Seção, ficarão sujeitos ao regime de tributação de que trata esta Seção os seguintes fundos de investimento:</h3>
+ <h5>I - Fundo de 	Investimento em Participações (FIP);</h5>
+ <h5>II - Fundo de 	Investimento em Índice de Mercado ( Exchange 	Traded Fund - ETF ), com exceção dos ETFs de Renda Fixa; e</h5>
+ <h5>III - Fundo de 	Investimento em Direitos Creditórios (FIDC).</h5>
+ <h4>Parágrafo único. 	Ficarão também sujeitos ao regime de tributação de que trata esta Seção, 	ainda que não sejam enquadrados como entidades de investimento, os Fundos de 	Investimento em Ações (FIAs) que cumpram os demais requisitos previstos nesta Seção.</h4>
+ <h3>Art. 19. Para fins do disposto nesta Lei, serão considerados como 	FIDCs os fundos que possuírem carteira composta de, no mínimo, 67% (sessenta e sete por cento) de direitos creditórios.</h3>
+ <h4>§ 1º Para fins do disposto no caput deste artigo, a definição de direitos creditórios obedecerá à regulamentação do Conselho Monetário Nacional.</h4>
+ <h4>§ 2º O FIDC terá 	prazo de até 180 (cento e oitenta) dias, contado da data da primeira integralização de cotas, para se enquadrar no disposto no caput deste artigo.</h4>
+ <h4>§ 3º O FIDC já 	constituído em 31 de dezembro de 2023 terá prazo até o dia 30 de junho de 	2024 para se enquadrar no disposto no caput deste artigo.</h4>
+ <h4>§ 4º Aplicam-se aos 	FIDCs as regras de desenquadramento previstas nos §§ 3º e 4º do art. 21 	desta Lei.</h4>
+ <h3>Art. 20. Para fins do disposto nesta Lei, serão considerados como FIPs os fundos que cumprirem os requisitos de alocação, de enquadramento e de reenquadramento de carteira previstos na regulamentação da Comissão de 	Valores Mobiliários.</h3>
+ <h3>Art. 21. Para fins do disposto nesta Lei, serão considerados como 	FIAs os fundos que possuírem carteira composta de, no mínimo, 67% (sessenta e sete por cento) dos seguintes ativos financeiros, quando forem admitidos à 	negociação no mercado à vista de bolsa de valores, no País ou no exterior, 	ou no mercado de balcão organizado no País:</h3>
+ <h5>I - no País:</h5>
+ <h6>a) as ações;</h6>
+ <h6>b) os recibos de subscrição;</h6>
+ <h6>c) os certificados de depósito de ações;</h6>
+ <h6>d) os Certificados de Depósito de Valores Mobiliários ( Brazilian Depositary Receipts - BDRs);</h6>
+ <h6>e) as cotas de FIAs;</h6>
+ <h6>f) as cotas negociadas em bolsa de valores ou em mercado de balcão organizado no País de fundos de índice de ações;</h6>
+ <h6>g) as representações digitais ( tokens ) dos ativos previstos nas alíneas “a” a “f” deste inciso;</h6>
+ <h5>II - no exterior:</h5>
+ <h6>a) as ações;</h6>
+ <h6>b) os Global Depositary 	Receipts (GDRs);</h6>
+ <h6>c) os American Depositary Receipts (ADRs);</h6>
+ <h6>d) as cotas negociadas em bolsa de valores no exterior de fundos de índice de ações;</h6>
+ <h6>e) as cotas dos 	FIAs no exterior, na forma permitida pela regulamentação da Comissão de 	Valores Mobiliários;</h6>
+ <h6>f) as representações digitais ( tokens ) dos ativos previstos nas alíneas “a” a “e” deste inciso.</h6>
+ <h4>§ 1º Para fins de enquadramento no limite mínimo de que trata o caput deste artigo, as operações de empréstimo de ações realizadas pelo fundo de investimento serão:</h4>
+ <h5>I - computadas no limite de que trata o caput deste artigo, quando o fundo for o emprestador; ou</h5>
+ <h5>II - excluídas do limite de que trata o caput deste artigo, quando o fundo for o tomador.</h5>
+ <h4>§ 2º Para fins de cálculo do limite de que trata o caput deste artigo, não integrarão a parcela da carteira aplicada em ações as operações conjugadas realizadas nos mercados de opções de compra e de venda em bolsas de valores, 	de mercadorias e de futuros ( box ), 	no mercado a termo nas bolsas de valores, de mercadorias e de futuros, em operações de venda coberta e sem ajustes diários, e no mercado de balcão organizado.</h4>
+ <h4>§ 3º O cotista do 	FIA cuja carteira deixar de observar o limite de que trata o caput deste artigo ficará sujeito às regras de tributação de que trata o art. 17 desta Lei a partir do momento do desenquadramento da carteira, salvo se, cumulativamente:</h4>
+ <h5>I - a proporção de que trata o caput deste artigo não for reduzida para menos de 50% (cinquenta por cento) do total da carteira de investimento;</h5>
+ <h5>II - a situação for regularizada no prazo máximo de 30 (trinta) dias; e</h5>
+ <h5>III - o fundo não incorrer em nova hipótese de desenquadramento no período de 12 (doze) meses subsequentes.</h5>
+ <h4>§ 4º Na hipótese de desenquadramento de que trata o § 3º deste artigo, os rendimentos produzidos até a data da alteração ficarão sujeitos à incidência do IRRF de acordo com a regra prevista no art. 24 desta Lei na data do desenquadramento.</h4>
+ <h4>§ 5º Para efeitos do disposto neste artigo, consideram-se como bolsas de valores e mercados de balcão organizado no País os sistemas centralizados de negociação que possibilitem o encontro e a interação de ofertas de compra e venda de valores mobiliários e garantam a formação pública de preços, administrados por entidade autorizada pela Comissão de Valores Mobiliários.</h4>
+ <h4>§ 6º Os ativos financeiros referidos na alínea “e” do inciso I e na alínea “e” do inciso II 	do caput deste artigo e as suas representações digitais ( tokens ) ficam dispensados de serem admitidos à negociação no mercado à vista de bolsa de valores ou no mercado de balcão organizado, no 	País, ou em bolsa de valores, no exterior.</h4>
+ <h4>§ 7º (VETADO).</h4>
+ <h3>Art. 22. Para fins do disposto nesta Lei, serão considerados como ETFs os fundos que cumprirem os requisitos de alocação, de enquadramento e de reenquadramento de carteira previstos na regulamentação da Comissão de 	Valores Mobiliários e possuírem cotas efetivamente negociadas em bolsa de valores ou em mercado de balcão organizado no País, com exceção dos ETFs de 	Renda Fixa, de que trata o art. 2º da Lei n° 13.043, de 13 de novembro de 	2014.</h3>
+ <h3>Art. 23. Para fins do disposto nesta Lei, serão classificados como entidades de investimento os fundos que tiverem estrutura de gestão profissional, no nível do fundo ou de seus cotistas quando organizados como fundos de investimento no País ou como fundos ou veículos de investimentos no exterior, representada por agentes ou prestadores de serviços com poderes para tomar decisões de investimento e de desinvestimento de forma discricionária, com o propósito de obter retorno por meio de apreciação do capital investido ou de renda, ou de ambos, na forma a ser regulamentada pelo Conselho Monetário Nacional.</h3>
+ <h3>Art. 24. Os rendimentos nas aplicações nos fundos de que trata o art. 18 desta Lei ficarão sujeitos à retenção na fonte do IRRF à alíquota de 15% 	(quinze por cento), na data da distribuição de rendimentos, da amortização ou do resgate de cotas.</h3>
+ <h4>§ 1º Os fundos de que trata este artigo não ficarão sujeitos à tributação periódica nas datas previstas no inciso I do caput do art. 17 desta 	Lei.</h4>
+ <h4>§ 2º Aplica-se aos rendimentos de que trata este artigo o disposto nos §§ 2º, 3º e 4º, no inciso II do § 5º e nos §§ 6º e 7º do art. 17 desta Lei.</h4>
+ <h3>Art. 25. Ficarão sujeitos ao tratamento tributário de que trata o art. 24 os fundos de investimento que investirem, no mínimo, 95% (noventa e cinco por cento) de seu patrimônio líquido nos fundos de que trata o art. 18 	desta Lei. (Vide Medida 	Provisória nº 1.303, de 2025) Produção de efeitos Vigência encerrada</h3>
+ <p>Seção IV</p>
+ <p>Do Regime Específico de Fundos 	Sujeitos à Tributação Periódica com Subconta de Avaliação de Participações 	Societárias</p>
+ <h3>Art. 26. Os rendimentos das aplicações nos FIPs, nos ETFs e nos FIDCs que não forem classificados como entidades de investimentos ficarão sujeitos 	à retenção na fonte do IRRF à alíquota de 15% (quinze por cento), nas datas previstas nos incisos I e II do caput do art. 17 desta Lei.</h3>
+ <h4>§ 1º Aplica-se aos rendimentos de que trata este artigo o disposto nos §§ 2º a 7º do art. 17 	desta Lei.</h4>
+ <h4>§ 2º Para fins de apuração da base de cálculo do imposto, não será computada a contrapartida positiva ou negativa decorrente da avaliação, pelo valor patrimonial ou pelo valor justo, de cotas ou de ações de emissão de pessoas jurídicas domiciliadas no País representativas de controle ou de coligação integrantes da carteira dos fundos, nos termos do art. 243 da Lei n° 6.404, de 15 de dezembro de 1976 (Lei das Sociedades por Ações).</h4>
+ <h4>§ 3º O ganho ou a perda da avaliação dos ativos na forma do § 2º deste artigo deverão ser evidenciados em subconta nas demonstrações contábeis do fundo.</h4>
+ <h4>§ 4º Os FIPs, os 	ETFs e os FIDCs que forem titulares de cotas de outros FIPs, ETFs e FIDCs de que trata o caput deste artigo deverão registrar no patrimônio uma subconta reflexa equivalente à subconta registrada no patrimônio do fundo investido.</h4>
+ <h4>§ 5º Aplica-se o disposto no § 4º na hipótese de outros fundos que possuam na carteira cotas de FIPs, de ETFs e de FIDCs de que trata o caput deste artigo.</h4>
+ <h4>§ 6º A subconta será revertida e o seu saldo comporá a base de cálculo do IRRF no momento da realização do investimento pelo fundo, inclusive por meio da alienação, da baixa, da liquidação, da amortização ou do resgate da cota ou da ação, ou do registro de valores a receber a título de dividendos e juros sobre capital próprio, ou no momento em que houver a distribuição de rendimentos pelo fundo aos cotistas, sob qualquer forma, inclusive na amortização ou no resgate de cotas.</h4>
+ <h4>§ 6º A subconta será revertida e o seu saldo comporá a base de cálculo do IRRF no momento da alienação do investimento pelo fundo, ou no momento em que houver a distribuição dos rendimentos pelo fundo aos cotistas, sob qualquer forma, inclusive na amortização ou resgate de cotas do fundo. (Redação dada pela Lei n° 14.789, de 2023) Produção de efeitos</h4>
+ <h4>§ 6º-A. Os valores recebidos pelo FIP de suas empresas investidas, inclusive na forma de dividendos e juros sobre o capital próprio ou em virtude de baixa ou liquidação de investimento, não comporão a base de cálculo do IRRF, desde que o fundo reinvista esses valores em ativos autorizados no prazo estabelecido para a verificação do enquadramento da sua carteira, conforme regulamentação da Comissão de Valores Mobiliários, hipótese em que o valor correspondente será transferido da subconta do investimento original para a subconta do novo investimento. (Incluído pela Lei n° 14.789, de 2023) Produção de efeitos</h4>
+ <h4>§ 7º A ausência de controle em subconta para qualquer ativo do fundo enquadrado no § 2º deste artigo implicará a tributação dos rendimentos da aplicação na cota do fundo integralmente.</h4>
+ <h4>§ 8º Caso seja apurada uma perda de ativo enquadrado no § 2º deste artigo sem controle em subconta, essa perda não poderá ser deduzida do rendimento bruto submetido à 	incidência do IRRF.</h4>
+ <p>Seção V</p>
+ <p>Das Regras de Transição</p>
+ <h3>Art. 27. Os rendimentos apurados até 31 de dezembro de 2023 nas aplicações nos fundos de investimento que não estavam sujeitos até o ano de 	2023 à tributação periódica nos meses de maio e novembro de cada ano e que estarão sujeitos à tributação periódica a partir do ano de 2024, com base nos arts. 17 ou 26 desta Lei, serão apropriados pro rata tempore até 31 de dezembro de 2023 e ficarão sujeitos à incidência do IRRF à 	alíquota de 15% (quinze por cento).</h3>
+ <h4>§ 1º Os rendimentos de que trata o caput deste artigo corresponderão à diferença positiva entre o valor patrimonial da cota em 31 de dezembro de 2023, incluídos os rendimentos apropriados a cada cotista, e o custo de aquisição calculado de acordo com as regras previstas nos §§ 2º, 3º e 4º do art. 17 desta Lei.</h4>
+ <h4>§ 2º No caso dos fundos sujeitos ao regime específico de que trata o art. 26, o cotista poderá optar por não computar na base de cálculo do IRRF os valores controlados nas subcontas de que trata o § 3º do art. 26 desta Lei.</h4>
+ <h4>§ 3º O cotista deverá prover previamente ao administrador do fundo de investimento os recursos financeiros necessários para o recolhimento do imposto, podendo o administrador do fundo dispensar o aporte de novos recursos.</h4>
+ <h4>§ 4º A parcela do valor patrimonial da cota tributada na forma deste artigo passará a compor o custo de aquisição da cota, nos termos do inciso II do § 2º do art. 17 desta 	Lei.</h4>
+ <h4>§ 5º O imposto de que trata o caput deste artigo deverá ser retido pelo administrador do fundo de investimento e recolhido à vista até 31 de maio de 2024.</h4>
+ <h4>§ 6º O imposto de que trata o caput deste artigo poderá ser recolhido em até 24 (vinte e quatro) parcelas mensais e sucessivas, com pagamento da primeira parcela até 31 de maio de 	2024.</h4>
+ <h4>§ 7º Na hipótese de que trata o § 6º deste artigo, o valor de cada prestação mensal:</h4>
+ <h5>I - será acrescido, 	por ocasião do pagamento, de juros equivalentes à taxa referencial do 	Sistema Especial de Liquidação e de Custódia (Selic) para títulos federais, 	acumulada mensalmente, calculados a partir do mês de junho de 2024, e de 1% 	(um por cento) relativamente ao mês em que o pagamento estiver sendo efetuado; e</h5>
+ <h5>II - não poderá ser inferior a 1/24 (um vinte e quatro avos) do imposto apurado nos termos do caput deste artigo.</h5>
+ <h4>§ 8º Caso o cotista realize o investimento no fundo de investimento por meio de amortização, de resgate ou de alienação de cotas antes do decurso do prazo do pagamento do 	IRRF, o vencimento do IRRF será antecipado para a data da realização.</h4>
+ <h4>§ 9º Caso o imposto não seja pago no prazo de que trata este artigo, o fundo não poderá efetuar distribuições ou repasses de recursos aos cotistas nem realizar novos investimentos até que haja a quitação integral do imposto, com eventuais acréscimos legais.</h4>
+ <h4>§ 10. Caso o imposto não seja pago no prazo de que trata este artigo em decorrência da falta de provimento de recursos pelo cotista, nos termos do § 3º deste artigo, o administrador deverá encaminhar à Secretaria Especial da Receita 	Federal do Brasil do Ministério da Fazenda, na forma e no prazo por ela regulamentados, as seguintes informações, afastada a responsabilidade do administrador pela retenção e pelo recolhimento do imposto:</h4>
+ <h5>I - número de inscrição do contribuinte no Cadastro de Pessoas Físicas (CPF) ou no 	Cadastro Nacional da Pessoa Jurídica (CNPJ);</h5>
+ <h5>II - valor dos rendimentos que serviram de base de cálculo do imposto;</h5>
+ <h5>III - valor do imposto devido.</h5>
+ <h4>§ 11. Na hipótese de que trata o § 10 deste artigo, a responsabilidade pelo recolhimento do imposto será do cotista, que ficará sujeito ao seu lançamento de ofício.</h4>
+ <h3>Art. 28. Alternativamente ao disposto no art. 27 desta Lei, a pessoa física residente no País poderá optar por pagar o IRRF sobre os rendimentos das aplicações nos fundos de investimento de que trata o referido artigo à 	alíquota de 8% (oito por cento), em 2 (duas) etapas: Produção de efeitos</h3>
+ <h5>I - na primeira, 	pagamento do imposto sobre os rendimentos apurados até 30 de novembro de 	2023;</h5>
+ <h5>II - na segunda, 	pagamento do imposto sobre os rendimentos apurados de 1º de dezembro de 2023 	a 31 de dezembro de 2023.</h5>
+ <h4>§ 1º Caso ocorra amortização ou resgate de cotas, ou cisão do fundo, entre 1º de dezembro de 	2023 e 29 de dezembro de 2023, o efeito do evento deverá ser excluído do valor patrimonial da cota em 30 de novembro de 2023, para fins do disposto no inciso I do caput deste artigo.</h4>
+ <h4>§ 2º Caso seja exercida a opção de que trata este artigo, o imposto deverá ser recolhido:</h4>
+ <h5>I - sobre os rendimentos de que trata o inciso I do caput deste artigo, em 4 	(quatro) parcelas iguais, mensais e sucessivas, com vencimentos nos dias 29 	de dezembro de 2023, 31 de janeiro de 2024, 29 de fevereiro de 2024 e 29 de março de 2024;</h5>
+ <h5>II - sobre os rendimentos de que trata o inciso II do c aput deste artigo, à vista, no mesmo prazo de vencimento do IRRF devido na tributação periódica de que trata o inciso I do caput do art. 17 desta 	Lei relativa ao mês de maio de 2024.</h5>
+ <h4>§ 3º A opção de que trata este artigo somente se consumará e se tornará definitiva com o pagamento integral do imposto.</h4>
+ <h4>§ 4º Aplica-se à 	opção de que trata este artigo o disposto nos §§ 1º a 4º e nos §§ 8º a 10 do art. 27 desta Lei.</h4>
+ <h4>§ 5º Caso o imposto não seja pago nos prazos previstos no § 2º deste artigo, o cotista ficará 	sujeito ao cálculo e ao recolhimento do imposto na forma do art. 27 desta 	Lei, deduzidas as parcelas pagas até a data do inadimplemento.</h4>
+ <h3>Art. 29. Os fundos de investimento que, na data de publicação desta 	Lei, previrem expressamente em seu regulamento a sua extinção e liquidação improrrogável até 30 de novembro de 2024 não ficarão sujeitos à tributação periódica nas datas previstas no inciso I do caput do art. 17 desta Lei. Produção de efeitos</h3>
+ <p>Seção VI</p>
+ <p>Disposições Comuns</p>
+ <h3>Art. 30. Na hipótese de fusão, de cisão, de incorporação ou de transformação de fundo de investimento a partir de 1º de janeiro de 2024, os rendimentos correspondentes à diferença positiva entre o valor patrimonial da cota na data do evento e o custo de aquisição da cota ficarão sujeitos à 	retenção na fonte do IRRF à alíquota aplicável aos cotistas do fundo naquela data.</h3>
+ <h4>§ 1º Os rendimentos serão calculados de acordo com o disposto nos §§ 2º a 7º do art. 17 e, no caso dos fundos sujeitos ao regime específico previsto no art. 26 desta Lei, 	de acordo com as disposições dele constantes.</h4>
+ <h4>§ 2º Não haverá 	incidência do IRRF quando a fusão, a cisão, a incorporação ou a transformação:</h4>
+ <h5>I - envolverem, 	exclusivamente, fundos que estiverem sujeitos ao mesmo regime de tributação, 	segundo as regras dos arts. 17, 18 ou 26 desta Lei;</h5>
+ <h5>II - não implicarem mudança na titularidade das cotas; e</h5>
+ <h5>III - não implicarem disponibilização de ativo pelo fundo aos cotistas.</h5>
+ <h4>§ 3º A fusão, a cisão, a incorporação ou a transformação de fundo sujeito às regras de tributação do art. 17 desta Lei e que não se sujeitar ao IRRF não implicarão reinício da contagem do prazo de aplicação dos cotistas.</h4>
+ <h4>§ 4º Na cisão ou na transformação de fundo, será cancelada ou transformada quantidade de cotas de cada prazo de aplicação proporcional à quantidade de cotas do respectivo prazo de aplicação em relação à quantidade total de cotas. Produção de efeitos</h4>
+ <h4>§ 5º Não haverá 	incidência do IRRF na fusão, na cisão, na incorporação ou na transformação ocorrida até 31 de dezembro de 2023 quando: Produção de efeitos</h4>
+ <h5>I - o fundo objeto da operação não estiver sujeito à tributação periódica nos meses de maio e novembro no ano de 2023; e</h5>
+ <h5>II - a alíquota a que seus cotistas estiverem sujeitos no fundo resultante da operação for igual ou maior do que a alíquota a que estavam sujeitos na data imediatamente anterior à operação.</h5>
+ <h4>§ 6º Em caso de fundo objeto do § 5º deste artigo com titulares de cotas com prazos distintos de aplicação, haverá a incidência do IRRF somente sobre os rendimentos apurados pelos titulares das cotas que estarão sujeitos a uma alíquota menor após a operação. Produção de efeitos</h4>
+ <h3>Art. 31. É responsável pela retenção e pelo recolhimento do IRRF 	sobre rendimentos de aplicações em cotas de fundos de investimento:</h3>
+ <h5>I - o administrador do fundo de investimento; ou</h5>
+ <h5>II - a instituição que intermediar recursos por conta e ordem de seus clientes, para aplicações em fundos de investimento administrados por outra instituição, na forma prevista em normas expedidas pelo Conselho Monetário Nacional ou pela 	Comissão de Valores Mobiliários.</h5>
+ <h4>§ 1º Para fins do disposto no inciso II do caput deste artigo, a instituição intermediadora de recursos deverá:</h4>
+ <h5>I - ser também responsável pela retenção e pelo recolhimento dos demais impostos incidentes sobre as aplicações que intermediar;</h5>
+ <h5>II - manter sistema de registro e controle que permita a identificação de cada cliente e dos elementos necessários à apuração dos impostos por ele devidos;</h5>
+ <h5>III - fornecer à 	instituição administradora do fundo de investimento, individualizado por código de cliente, o valor das aplicações, dos resgates e dos impostos retidos; e</h5>
+ <h5>IV - prestar à 	Secretaria Especial da Receita Federal do Brasil do Ministério da Fazenda todas as informações decorrentes da responsabilidade prevista neste artigo.</h5>
+ <h4>§ 2º Em caso de mudança de administrador do fundo de investimento, cada administrador será 	responsável pela retenção e pelo recolhimento do IRRF referente aos fatos geradores ocorridos no período relativo à sua administração.</h4>
+ <h3>Art. 32. O IRRF incidente sobre rendimentos de aplicações em fundos de investimento será:</h3>
+ <h5>I - definitivo, no caso de pessoa física residente no País e de pessoa jurídica isenta ou optante pelo Regime Especial Unificado de Arrecadação de Tributos e 	Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte 	(Simples Nacional); ou</h5>
+ <h5>II - antecipação do 	Imposto sobre a Renda das Pessoas Jurídicas (IRPJ) devido no encerramento do período de apuração, no caso de pessoa jurídica tributada com base no lucro real, presumido ou arbitrado.</h5>
+ <h3>Art. 33. São dispensadas da retenção na fonte do IRRF incidente sobre os rendimentos de aplicações em fundos de investimento as pessoas jurídicas domiciliadas no País de que trata o inciso I do caput do art. 77 da Lei n° 8.981, de 20 de janeiro de 1995 .</h3>
+ <h3>Art. 34. Os rendimentos de aplicações em fundos de investimento no 	País apurados por investidores residentes ou domiciliados no exterior nos termos da regulamentação do Conselho Monetário Nacional ficarão sujeitos à 	incidência do IRRF à alíquota de 15% (quinze por cento), na data da distribuição de rendimentos, da amortização ou do resgate de cotas.</h3>
+ <h4>§ 1º A alíquota do 	IRRF incidente sobre rendimentos apurados na amortização ou no resgate de cotas de FIAs, nos termos do art. 21 desta Lei, de investidor residente ou domiciliado no exterior de que trata este artigo será de 10% (dez por cento).</h4>
+ <h4>§ 2º Não se aplica aos investidores residentes ou domiciliados no exterior de que trata este artigo a tributação periódica na data prevista no inciso I do caput do art. 17 desta Lei.</h4>
+ <h4>§ 3º Aplica-se aos rendimentos de que trata este artigo o disposto nos §§ 2º, 3º e 4º, no inciso II do § 5º e nos §§ 6º e 7º do art. 17 desta Lei.</h4>
+ <h4>§ 4º O regime de tributação deste artigo não se aplica a investidor residente ou domiciliado em jurisdição de tributação favorecida de que trata o art. 24 da Lei n° 9.430, de 27 de dezembro de 1996 .</h4>
+ <h3>Art. 35. O IRRF incidente sobre os rendimentos de aplicações em cotas de fundos de investimento, salvo quando previsto de forma diversa nesta Lei, 	deverá ser recolhido em cota única, no prazo previsto no art. 70 da Lei n° 11.196, de 21 de novembro de 2005.</h3>
+ <h3>Art. 36. Para as cotas de fundos de investimento gravadas com usufruto, 	o tratamento tributável levará em consideração o beneficiário dos rendimentos, ainda que esse não seja o proprietário da cota.</h3>
+ <h3>Art. 37. Nos casos em que o regulamento do fundo de investimento previr diferentes classes de cotas, com direitos e obrigações distintos e patrimônio segregado para cada classe, nos termos do inciso III do caput do art. 1.368-D da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), observada a regulamentação da Comissão de Valores 	Mobiliários, cada classe de cotas será considerada como um fundo de investimento para fins de aplicação das regras de tributação previstas na legislação.</h3>
+ <h4>Parágrafo único. A 	transferência de cotas entre subclasses de uma mesma classe não é hipótese de incidência do imposto de renda, desde que não haja mudança na titularidade das cotas e não haja disponibilização de ativo pelo fundo aos cotistas.</h4>
+ <h3>Art. 38. Aplicam-se aos clubes de investimento as regras de tributação de fundos de investimento previstas nesta Lei.</h3>
+ <h3>Art. 39. Ficam ressalvadas do disposto nesta Lei as regras aplicáveis aos seguintes fundos de investimento:</h3>
+ <h5>I - os Fundos de 	Investimento Imobiliário (FII) e os Fundos de Investimento nas Cadeias 	Produtivas do Agronegócio (Fiagro), de que trata a Lei n° 8.668, de 25 de junho de 1993;</h5>
+ <h5>II - os investimentos de residentes ou domiciliados no exterior em fundos de investimento em títulos públicos de que trata o art. 1º da Lei n° 11.312, de 	27 de junho de 2006;</h5>
+ <h5>III - os investimentos de residentes ou domiciliados no exterior em FIPs e em Fundos de Investimento em Empresas Emergentes (FIEE) de que trata o art. 3º da Lei n° 11.312, de 27 de junho de 2006 ;</h5>
+ <h5>IV - os Fundos de 	Investimento em Participações em Infraestrutura (FIPs-IE) e os Fundos de 	Investimento em Participação na Produção Econômica Intensiva em Pesquisa, 	Desenvolvimento e Inovação (FIPs-PD&I) de que trata a Lei n° 11.478, de 29 	de maio de 2007 ;</h5>
+ <h5>V - os fundos de investimento de que trata a Lei n° 12.431, de 24 de junho de 2011 ;</h5>
+ <h5>VI - os fundos de investimento com cotistas exclusivamente residentes ou domiciliados no exterior, nos termos do art. 97 da Lei n° 12.973, de 13 de maio de 2014 ; e</h5>
+ <h5>VII - os ETFs de 	Renda Fixa de que trata o art. 2º da Lei n° 13.043, de 13 de novembro de 	2014 .</h5>
+ <h3>Art. 40. Os fundos de investimento que investirem, direta ou indiretamente, pelo menos, 95% (noventa e cinco por cento) do seu patrimônio líquido nos fundos de que tratam os incisos I, IV e V do art. 39 e o art. 18 	ficarão sujeitos ao tratamento tributário do art. 24 desta Lei.</h3>
+ <h4>Parágrafo único. Caso o limite referido no caput deste artigo deixe de ser observado, o fundo passará a se sujeitar ao tratamento tributário do art. 17 desta Lei a partir do momento de desenquadramento da carteira, salvo se a situação for regularizada no prazo máximo de 30 (trinta) dias. (Incluído pela Lei n° 14.789, de 2023) Produção de efeitos</h4>
+ <p>Seção VII</p>
+ <p>Das Isenções do Imposto sobre a Renda</p>
+ <h3>Art. 41. O art. 3º da Lei n° 11.033, de 21 de dezembro de 2004 , passa a vigorar com a seguinte redação, numerando-se o atual parágrafo único como 	§ 1º:</h3>
+ <p>“</p>
+ <h3>Art. 3º ..................................................................................</h3>
+ <p>.........................................................................................................</p>
+ <h4>§ 1º .......................................................................................</h4>
+ <h5>I - será concedido somente nos casos em que os Fundos de Investimento Imobiliário ou os Fiagro possuam, no mínimo, 100 (cem) cotistas;</h5>
+ <p>.........................................................................................................</p>
+ <h5>III - não será concedido ao conjunto de cotistas pessoas físicas ligadas, definidas na forma da alínea “a” do inciso I do parágrafo único do art. 2º da Lei n° 9.779, de 19 de janeiro de 1999 , titulares de cotas que representem 30% (trinta por cento) ou mais da totalidade das cotas emitidas pelos Fundos de Investimento Imobiliário ou pelos Fiagro, ou ainda cujas cotas lhes derem direito ao recebimento de rendimento superior a 30% (trinta por cento) do total de rendimentos auferidos pelo fundo.</h5>
+ <h4>§ 2º O fundo de investimento terá prazo de até 180 (cento e oitenta) dias, contado da data da primeira integralização de cotas, para se enquadrar no disposto no inciso I do § 1º deste artigo.</h4>
+ <h4>§ 3º O fundo de investimento já constituído em 31 de dezembro de 2023 terá prazo até o dia 30 de junho de 2024 para se enquadrar no disposto no inciso I do § 1º deste artigo.</h4>
+ <h4>§ 4º Caso o fundo deixe de se enquadrar no disposto no inciso I do § 1º deste artigo, o fundo poderá manter o tratamento tributário deste artigo desde que retome a quantidade mínima de cotistas dentro de 30 (trinta) dias.” (NR)</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 42. A Lei n° 8.668, de 25 de junho de 1993 , passa a vigorar com as seguintes alterações: Produção de efeitos</h3>
+ <p>“</p>
+ <h3>Art. 7º ..................................................................................</h3>
+ <p>.........................................................................................................</p>
+ <h5>VI - não possam ser constituídos quaisquer ônus reais sobre os imóveis, exceto para garantir obrigações assumidas pelo Fundo ou por seus cotistas.</h5>
+ <p>................................................................................................ ” (NR)</p>
+ <p>“</p>
+ <h3>Art. 12. .................................................................................</h3>
+ <p>.........................................................................................................</p>
+ <h5>II - prestar fiança, aval, aceite ou coobrigar-se sob qualquer forma, exceto para garantir obrigações assumidas pelo Fundo ou por seus cotistas;</h5>
+ <p>................................................................................................ ” (NR)</p>
+ <h3>Art. 43. O art. 1.368-E da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), passa a vigorar acrescido do seguinte § 3º: Produção de efeitos</h3>
+ <p>“</p>
+ <h3>Art. 1.368-E. .........................................................................</h3>
+ <p>.........................................................................................................</p>
+ <h4>§ 3º Caso o regulamento do fundo estabeleça classes de cotas com direitos e obrigações distintos, nos termos do inciso III do caput do art. 1.368-D deste Código, aplica-se o disposto neste artigo a cada classe de cotas, individualmente considerada.” (NR)</h4>
+ <h3>Art. 44. As empresas que operarem no País com ativos virtuais, 	independentemente de seu domicílio, ficam obrigadas a fornecer informações periódicas de suas atividades e de seus clientes à Secretaria Especial da 	Receita Federal do Brasil do Ministério da Fazenda e ao Conselho de Controle de Atividades Financeiras (Coaf).</h3>
+ <h3>Art. 45. A Secretaria Especial da Receita Federal do Brasil do 	Ministério da Fazenda regulamentará o disposto nesta Lei.</h3>
+ <h3>Art. 46. Revogam-se :</h3>
+ <h5>I - os arts. 49 e 50 da Lei n° 4.728, de 14 de julho de 1965;</h5>
+ <h5>II - o § 4º do art. 25 da Lei n° 9.250, de 26 de dezembro de 1995 ;</h5>
+ <h5>III - os arts. 28 a 	35 da Lei n° 9.532, de 10 de dezembro de 1997;</h5>
+ <h5>IV - os arts. 3º e 6º da Lei n° 10.426, de 24 de abril de 2002 ;</h5>
+ <h5>V - o art. 3º da Lei n° 10.892, de 13 de julho de 2004;</h5>
+ <h5>VI - os §§ 2º a 7º do art. 1º da Lei n° 11.033, de 21 de dezembro de 2004 ;</h5>
+ <h5>VII - o art. 24 do Decreto-Lei n° 2.287, de 23 de julho de 1986;</h5>
+ <h5>VIII - os seguintes dispositivos da Medida Provisória nº 2.189-49, de 23 de agosto de 2001:</h5>
+ <h6>a) arts. 1º a 6º; e</h6>
+ <h6>b) inciso II do caput do art. 10; e</h6>
+ <h5>IX - os seguintes dispositivos da Medida Provisória nº 2.158-35, de 24 de agosto de 2001 :</h5>
+ <h6>a) art. 24; e</h6>
+ <h6>b) art. 28.</h6>
+ <h3>Art. 47. Esta Lei entra em vigor na data de sua publicação e produzirá efeitos:</h3>
+ <h5>I - imediatamente, 	quanto aos arts. 28 e 29 , aos §§ 4º, 5º e 6º do art. 30 e aos arts. 42 e 43 ; 	e</h5>
+ <h5>II - a partir de 1º de janeiro de 2024, quanto aos demais dispositivos.</h5>
+ <p>Brasília, 12 de dezembro de 2023; 202º da Independência e 	135º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 	13.12.2023.</p>
+ <p>Produção de efeitos(Vide</p>
+ <p>Medida Provisória nº 1.303, de 2025)Produção de efeitosVigência encerrada | Dispõe sobre a tributação de aplicações em fundos de investimento no</p>
+ <p>País e da renda auferida por pessoas físicas residentes no País em aplicações financeiras, entidades controladas etrustsno exterior; altera as Leis nºs 11.033, de 21 de dezembro de 2004, 8.668, de 25 de junho de</p>
+ <p>1993, e 10.406, de 10 de janeiro de 2002 (Código Civil); revoga dispositivos das Leis nºs 4.728, de 14 de julho de 1965, 9.250, de 26 de dezembro de 1995, 9.532, de 10 de dezembro de 1997, 10.426, de 24 de abril de 2002, 10.892, de 13 de julho de 2004, e 11.033, de 21 de dezembro de 2004, do Decreto-Lei n° 2.287, de 23 de julho de 1986, e das</p>
+ <p>Medidas Provisórias nºs 2.189-49, de 23 de agosto de 2001, e 2.158-35,</p>
+ <p>de 24 de agosto de 2001; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14754.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.475, DE 28 DE AGOSTO DE 2017 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2017" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.475, DE 28 DE AGOSTO DE 2017</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:08:30 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2017/Lei/L13475.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 53.686 caracteres | espelho: 53.706 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.475, DE 28 DE AGOSTO DE 2017.</p>
+ <p>Dispõe sobre o exercício da profissão de tripulante de aeronave, denominado aeronauta; e revoga a Lei n° 7.183, de 5 de abril de 1984.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <p>Seção I</p>
+ <p>Dos Tripulantes de Aeronaves e da sua Classificação</p>
+ <h3>Art. 1º Esta Lei regula o exercício das profissões de piloto de aeronave, comissário de voo e mecânico de voo, denominados aeronautas.</h3>
+ <h4>§ 1º Para o desempenho das profissões descritas no caput , o profissional deve obrigatoriamente ser detentor de licença e certificados emitidos pela autoridade de aviação civil brasileira.</h4>
+ <h4>§ 2º Esta Lei aplica-se também aos pilotos de aeronave, comissários de voo e mecânicos de voos brasileiros que exerçam suas funções a bordo de aeronave estrangeira em virtude de contrato de trabalho regido pela legislação brasileira.</h4>
+ <h3>Art. 2º O piloto de aeronave e o mecânico de voo, no exercício de função específica a bordo de aeronave, de acordo com as prerrogativas da licença de que são titulares, têm a designação de tripulante de voo.</h3>
+ <h3>Art. 3º O comissário de voo, no exercício de função específica a bordo de aeronave, de acordo com as prerrogativas da licença de que é titular, tem a designação de tripulante de cabine.</h3>
+ <h3>Art. 4º O tripulante de voo ou de cabine que se deslocar a serviço do empregador, em aeronave própria ou não, sem exercer função a bordo de aeronave, tem a designação de tripulante extra a serviço.</h3>
+ <h4>§ 1º O tripulante extra a serviço será considerado tripulante a serviço no que diz respeito aos limites da jornada de trabalho, ao repouso e à remuneração.</h4>
+ <h4>§ 2º Ao tripulante extra a serviço será disponibilizado assento na cabine de passageiros, salvo em aeronaves no transporte exclusivo de cargas.</h4>
+ <h3>Art. 5º Os tripulantes de voo e de cabine exercem suas funções profissionais nos seguintes serviços aéreos:</h3>
+ <h5>I - serviço de transporte aéreo público regular e não regular, exceto na modalidade de táxi aéreo;</h5>
+ <h5>II - serviço de transporte aéreo público não regular na modalidade de táxi aéreo;</h5>
+ <h5>III - serviço aéreo especializado (SAE), prestado por organização de ensino, na modalidade de instrução de voo;</h5>
+ <h5>IV - demais serviços aéreos especializados, abrangendo as atividades definidas pela Lei n° 7.565, de 19 de dezembro de 1986 (Código Brasileiro de Aeronáutica) e pela autoridade de aviação civil brasileira;</h5>
+ <h5>V - serviço aéreo privado, entendido como aquele realizado, sem fins lucrativos, a serviço do operador da aeronave.</h5>
+ <h4>§ 1º É denominado instrutor de voo o piloto de aeronave contratado para ministrar treinamento em voo em aeronave empregada no serviço aéreo especializado referido no inciso III do caput deste artigo.</h4>
+ <h4>§ 2º Para os efeitos do disposto em convenção ou acordo coletivo de trabalho:</h4>
+ <h5>I - os tripulantes empregados nos serviços aéreos definidos nos incisos III e V do caput deste artigo são equiparados aos tripulantes que exercem suas funções nos serviços de transporte aéreo público não regular na modalidade de táxi aéreo;</h5>
+ <h5>II - os tripulantes empregados no serviço aéreo definido no inciso V do caput deste artigo, quando em atividade de fomento ou proteção à agricultura, são equiparados aos tripulantes de voo que operam os serviços aéreos especializados na modalidade de atividade de fomento ou proteção à agricultura.</h5>
+ <h3>Art. 6º O exercício das profissões de piloto de aeronave, mecânico de voo e comissário de voo, previstas nesta Lei, é privativo de brasileiros natos ou naturalizados.</h3>
+ <h4>§ 1º As empresas brasileiras, quando estiverem prestando serviço aéreo internacional, poderão utilizar comissários de voo estrangeiros, desde que o número destes não exceda a 1/3 (um terço) dos comissários de voo a bordo da mesma aeronave.</h4>
+ <h4>§ 2º Todas as empresas de transporte aéreo público, salvo empresas estrangeiras de transporte aéreo público não regular na modalidade de táxi aéreo, quando estiverem operando voos domésticos em território brasileiro, terão obrigatoriamente seu quadro de tripulantes composto por brasileiros natos ou naturalizados, com contrato de trabalho regido pela legislação brasileira.</h4>
+ <h4>§ 3º Na falta de tripulantes de voo brasileiros, instrutores estrangeiros poderão ser admitidos em caráter provisório, por período restrito ao da instrução, de acordo com regulamento exarado pela autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 7º Os tripulantes de voo exercem as seguintes funções a bordo da aeronave:</h3>
+ <h5>I - comandante: piloto responsável pela operação e pela segurança da aeronave, exercendo a autoridade que a legislação lhe atribui;</h5>
+ <h5>II - copiloto: piloto que auxilia o comandante na operação da aeronave; e</h5>
+ <h5>III - mecânico de voo: auxiliar do comandante, encarregado da operação e do controle de sistemas diversos, conforme especificação dos manuais técnicos da aeronave.</h5>
+ <h4>§ 1º Sem prejuízo das atribuições originalmente designadas, o comandante e o mecânico de voo poderão exercer cumulativamente outras prerrogativas decorrentes de qualificação ou credenciamento, previstas nos regulamentos aeronáuticos, desde que autorizados pela autoridade de aviação civil brasileira.</h4>
+ <h4>§ 2º O comandante será designado pelo operador da aeronave e será seu preposto durante toda a viagem.</h4>
+ <h4>§ 3º O copiloto é o substituto eventual do comandante nas tripulações simples, não o sendo nos casos de tripulação composta ou de revezamento.</h4>
+ <h3>Art. 8º Os tripulantes de cabine, na função de comissários de voo, são auxiliares do comandante encarregados do cumprimento das normas relativas à segurança e ao atendimento dos passageiros a bordo, da guarda de bagagens, documentos, valores e malas postais e de outras tarefas que lhes tenham sido delegadas pelo comandante.</h3>
+ <h4>§ 1º Sem prejuízo das atribuições originalmente designadas, os comissários de voo poderão exercer cumulativamente outras prerrogativas decorrentes de qualificação ou credenciamento, previstas nos regulamentos aeronáuticos, desde que autorizados pela autoridade de aviação civil brasileira.</h4>
+ <h4>§ 2º A guarda de valores é condicionada à existência de local apropriado e seguro na aeronave, sendo responsabilidade do empregador atestar a segurança do local.</h4>
+ <h4>§ 3º A guarda de cargas e malas postais em terra somente será confiada aos comissários de voo quando no local inexistir serviço próprio para essa finalidade.</h4>
+ <p>Seção II</p>
+ <p>Das Tripulações</p>
+ <h3>Art. 9º Tripulação é o conjunto de tripulantes de voo e de cabine que exercem função a bordo de aeronave.</h3>
+ <h3>Art. 10. O tripulante, sem prejuízo das atribuições originalmente designadas, não poderá exercer, simultaneamente, mais de uma função a bordo de aeronave, mesmo que seja titular de licenças correspondentes.</h3>
+ <h3>Art. 11. Os membros de uma tripulação são subordinados técnica e disciplinarmente ao comandante, durante todo o tempo em que transcorrer a viagem.</h3>
+ <h3>Art. 12. O comandante exerce a autoridade inerente à função desde o momento em que se apresenta para o voo até o momento em que, concluída a viagem, entrega a aeronave.</h3>
+ <h3>Art. 13. Uma tripulação pode ser classificada como mínima, simples, composta ou de revezamento.</h3>
+ <h4>Parágrafo único. A autoridade de aviação civil brasileira, considerando o interesse da segurança operacional, as características da rota e do voo e a programação a ser cumprida, poderá determinar a composição da tripulação ou as modificações necessárias para a realização do voo.</h4>
+ <h3>Art. 14. Tripulação mínima é a determinada na forma da certificação de tipo da aeronave, homologada pela autoridade de aviação civil brasileira, sendo permitida sua utilização em voos locais de instrução, de experiência, de vistoria e de traslado.</h3>
+ <h3>Art. 15. Tripulação simples é a constituída de uma tripulação mínima acrescida, quando for o caso, dos tripulantes necessários à realização do voo.</h3>
+ <h3>Art. 16. Tripulação composta é a constituída de uma tripulação simples acrescida de um comandante, de um mecânico de voo, quando o equipamento assim o exigir, e de, no mínimo, 25% (vinte e cinco por cento) do número de comissários de voo.</h3>
+ <h4>Parágrafo único. A tripulação composta somente poderá ser utilizada em voos internacionais, exceto nas seguintes situações, quando poderá ser utilizada em voos domésticos:</h4>
+ <h5>I - para atender a atrasos ocasionados por condições meteorológicas desfavoráveis ou por trabalhos de manutenção não programados;</h5>
+ <h5>II - quando os critérios de utilização dos tripulantes de voo e de cabine empregados no serviço aéreo definido no inciso I do caput do art. 5º estiverem definidos em convenção ou acordo coletivo de trabalho;</h5>
+ <h5>III - para atendimento de missão humanitária, transportando ou destinada ao transporte de enfermos ou órgãos para transplante, no caso de tripulantes de voo e de cabine empregados nos serviços aéreos definidos no inciso II do caput do art. 5º desta Lei.</h5>
+ <h3>Art. 17. Tripulação de revezamento é a constituída de uma tripulação simples acrescida de um comandante, de um piloto, de um mecânico de voo, quando o equipamento assim o exigir, e de 50% (cinquenta por cento) do número de comissários de voo.</h3>
+ <h4>Parágrafo único. A tripulação de revezamento só poderá ser empregada em voos internacionais.</h4>
+ <h3>Art. 18. Um tipo de tripulação só poderá ser transformado na origem do voo e até o limite de 3 (três) horas, contadas a partir da apresentação da tripulação previamente escalada.</h3>
+ <h4>Parágrafo único. A contagem de tempo para limite da jornada será a partir da hora de apresentação da tripulação original ou do tripulante de reforço, considerando o que ocorrer primeiro.</h4>
+ <p>Seção III</p>
+ <p>Do Sistema de Gerenciamento de Risco de Fadiga Humana</p>
+ <h3>Art. 19. As limitações operacionais estabelecidas nesta Lei poderão ser alteradas pela autoridade de aviação civil brasileira com base nos preceitos do Sistema de Gerenciamento de Risco de Fadiga Humana.</h3>
+ <h4>§ 1º As limitações operacionais referidas no caput deste artigo compreendem quaisquer prescrições temporais relativas aos tripulantes de voo e de cabine no que tange a limites de voo, de pouso, de jornada de trabalho, de sobreaviso, de reserva e de períodos de repouso, bem como a outros fatores que possam reduzir o estado de alerta da tripulação ou comprometer o seu desempenho operacional.</h4>
+ <h4>§ 2º O Sistema de Gerenciamento de Risco de Fadiga Humana será regulamentado pela autoridade de aviação civil brasileira com base nas normas e recomendações internacionais de aviação civil.</h4>
+ <h4>§ 3º A implantação e a atualização do Sistema de Gerenciamento de Risco de Fadiga Humana serão acompanhadas pelo sindicato da categoria profissional.</h4>
+ <h4>§ 4º Nos casos em que o Sistema de Gerenciamento de Risco de Fadiga Humana autorizar a superação das 12 (doze) horas de jornada de trabalho e a diminuição do período de 12 (doze) horas de repouso, em tripulação simples, tais alterações deverão ser implementadas por meio de convenção ou acordo coletivo de trabalho entre o operador da aeronave e o sindicato da categoria profissional.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO REGIME DE TRABALHO</h3>
+ <p>Seção I</p>
+ <p>Do Contrato de Trabalho</p>
+ <h3>Art. 20. A função remunerada dos tripulantes a bordo de aeronave deverá, obrigatoriamente, ser formalizada por meio de contrato de trabalho firmado diretamente com o operador da aeronave.</h3>
+ <h4>§ 1º O tripulante de voo ou de cabine só poderá exercer função remunerada a bordo de aeronave de um operador ao qual não esteja diretamente vinculado por contrato de trabalho quando o serviço aéreo não constituir atividade fim, e desde que por prazo não superior a 30 (trinta) dias consecutivos, contado da data de início da prestação dos serviços.</h4>
+ <h4>§ 2º A prestação de serviço remunerado conforme prevê o § 1º deste artigo não poderá ocorrer por mais de uma vez ao ano e deverá ser formalizada por contrato escrito, sob pena de presunção de vínculo empregatício do tripulante diretamente com o operador da aeronave.</h4>
+ <h4>§ 3º O disposto neste artigo não se aplica quando o operador da aeronave for órgão ou entidade da administração pública, no exercício de missões institucionais ou de poder de polícia. (Incluído pela Medida Provisória nº 964, de 2020) (Vigência encerrada)</h4>
+ <h4>§ 4º O disposto neste artigo não se aplica quando o operador da aeronave for órgão ou entidade da administração pública, no exercício de missões institucionais ou de poder de polícia. (Incluído pela Medida Provisória nº 1.029, de 2021)</h4>
+ <h4>§ 3º O disposto neste artigo não se aplica quando o operador da aeronave for órgão ou entidade da administração pública, no exercício de missões institucionais ou de poder de polícia. (Incluído pela Lei n° 14.163, de 2021)</h4>
+ <h3>Art. 21. O operador da aeronave poderá utilizar-se de tripulantes instrutores que não estejam a ele vinculados por contrato de trabalho quando em seu quadro de tripulantes não existirem instrutores habilitados no equipamento em que se pretende operar, desde que por período restrito ao da instrução e mediante autorização da autoridade de aviação civil brasileira.</h3>
+ <h3>Art. 22. O operador de aeronaves poderá, por meio de contrato de prestação de serviços, autorizar que seus instrutores ministrem instrução para tripulantes que não estejam a ele vinculados por contrato de trabalho quando os empregadores dos respectivos tripulantes não possuírem equipamento ou instrutores próprios para a específica instrução, desde que por período restrito ao da instrução e mediante autorização da autoridade de aviação civil brasileira.</h3>
+ <h4>Parágrafo único. Este artigo só é aplicável aos operadores de aeronaves que realizam os serviços aéreos referidos nos incisos I e II do caput do art. 5º.</h4>
+ <p>Seção II</p>
+ <p>Da Base Contratual</p>
+ <h3>Art. 23. Entende-se por base contratual a matriz ou filial onde o contrato de trabalho do tripulante estiver registrado.</h3>
+ <h3>Art. 24. Resguardados os direitos e as condições previstos nesta Lei, os demais direitos, condições de trabalho e obrigações do empregado estarão definidos no contrato de trabalho e poderão ser devidamente regulados em convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h3>
+ <h3>Art. 25. Será fornecido pelo empregador transporte gratuito aos tripulantes de voo e de cabine sempre que se iniciar ou finalizar uma programação de voo em aeroporto situado a mais de 50 (cinquenta) quilômetros de distância do aeroporto definido como base contratual.</h3>
+ <h4>§ 1º O tempo de deslocamento entre o aeroporto definido como base contratual e o aeroporto designado para o início do voo será computado na jornada de trabalho e não será remunerado.</h4>
+ <h4>§ 2º No caso de viagem que termine em aeroporto diferente do definido como base contratual e situado a mais de 50 (cinquenta) quilômetros de distância, a jornada de trabalho será encerrada conforme o disposto no art. 35, e o repouso mínimo regulamentar será acrescido de, no mínimo, 2 (duas) horas.</h4>
+ <p>Seção III</p>
+ <p>Da Escala de Serviço</p>
+ <h3>Art. 26. A prestação de serviço do tripulante empregado no serviço aéreo definido no inciso I do caput do art. 5º, respeitados os períodos de folgas e repousos regulamentares, será determinada por meio de:</h3>
+ <h5>I - escala, no mínimo mensal, divulgada com antecedência mínima de 5 (cinco) dias, determinando os horários de início e término de voos, serviços de reserva, sobreavisos e folgas, sendo vedada a consignação de situações de trabalho e horários não definidos;</h5>
+ <h5>II - escala ou convocação, para realização de cursos, reuniões, exames relacionados a treinamento e verificação de proficiência técnica.</h5>
+ <h4>§ 1º Em 4 (quatro) meses do ano, as empresas estão autorizadas, caso julguem necessário, a divulgar escala semanal para voos de horário, serviços de reserva, sobreavisos e folgas com antecedência mínima de 2 (dois) dias, para a primeira semana de cada mês, e de 7 (sete) dias, para as semanas subsequentes.</h4>
+ <h4>§ 2º Para voos exclusivamente cargueiros, é autorizada a divulgação de escala semanal para voos de horário, serviços de reserva, sobreavisos e folgas com antecedência mínima de 2 (dois) dias, para a primeira semana de cada mês, e 7 (sete) dias, para as semanas subsequentes.</h4>
+ <h4>§ 3º Os limites previstos no inciso I do caput deste artigo poderão ser alterados mediante convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 27. A determinação para a prestação de serviço do tripulante empregado nos serviços aéreos definidos nos incisos II, III, IV e V do caput do art. 5º, respeitados os períodos de folgas e repousos regulamentares, será feita por meio de:</h3>
+ <h5>I - escala, no mínimo semanal, divulgada com antecedência mínima de 2 (dois) dias, determinando os horários de início e término de voos, serviços de reserva, sobreavisos e folgas, sendo vedada a consignação de situações de trabalho e horários não definidos;</h5>
+ <h5>II - escala ou convocação, para realização de cursos, reuniões, exames relacionados a treinamento e verificação de proficiência técnica.</h5>
+ <h4>Parágrafo único. Outros critérios para a determinação da prestação de serviço dos tripulantes poderão ser estabelecidos em convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 28. Na escala de serviço, deverão ser observados regime de rodízio de tripulantes e turnos compatíveis com a saúde, a higiene e a segurança do trabalho.</h3>
+ <h4>Parágrafo único. A programação de rodízios e turnos obedecerá ao princípio da equidade na distribuição entre as diversas situações de trabalho para que não haja discriminação entre os tripulantes com qualificações idênticas, salvo em empresas que adotem critérios específicos estabelecidos em acordo coletivo de trabalho, desde que não ultrapassem os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <p>Seção IV</p>
+ <p>Das Acomodações para Descanso a Bordo de Aeronave</p>
+ <h3>Art. 29. Será assegurado aos tripulantes de voo e de cabine, quando estiverem em voo com tripulação composta ou de revezamento, descanso a bordo da aeronave, em acomodação adequada, de acordo com as especificações definidas em norma estabelecida pela autoridade de aviação civil brasileira.</h3>
+ <h4>§ 1º Aos tripulantes de voo e de cabine realizando voos em tripulação composta será assegurado número de acomodações para descanso a bordo igual ao número de tripulantes somados à tripulação simples.</h4>
+ <h4>§ 2º Aos tripulantes de voo e de cabine realizando voos em tripulação de revezamento será assegurado número de acomodações para descanso a bordo igual à metade do total de tripulantes.</h4>
+ <p>Seção V</p>
+ <p>Dos Limites de Voos e de Pousos</p>
+ <h3>Art. 30. Denomina-se hora de voo ou tempo de voo o período compreendido desde o início do deslocamento, quando se tratar de aeronave de asa fixa, ou desde a partida dos motores, quando se tratar de aeronave de asa rotativa, até o momento em que, respectivamente, se imobiliza a aeronave ou se efetua o corte dos motores, ao término do voo (“calço a calço”).</h3>
+ <h3>Art. 31. Aos tripulantes de voo ou de cabine empregados no serviço aéreo definido no inciso I do caput do art. 5º serão assegurados os seguintes limites de horas de voo e de pousos em uma mesma jornada de trabalho:</h3>
+ <h5>I - 8 (oito) horas de voo e 4 (quatro) pousos, na hipótese de integrante de tripulação mínima ou simples;</h5>
+ <h5>II - 11 (onze) horas de voo e 5 (cinco) pousos, na hipótese de integrante de tripulação composta;</h5>
+ <h5>III - 14 (catorze) horas de voo e 4 (quatro) pousos, na hipótese de integrante de tripulação de revezamento; e</h5>
+ <h5>IV - 7 (sete) horas sem limite de pousos, na hipótese de integrante de tripulação de helicópteros.</h5>
+ <h4>§ 1º O número de pousos na hipótese do inciso I deste artigo poderá ser aumentado em mais 1 (um), a critério do empregador, acrescendo-se, nesse caso, 2 (duas) horas ao repouso que precede a jornada.</h4>
+ <h4>§ 2º Não obstante o previsto no § 1º deste artigo, em caso de desvio para aeroporto de alternativa, será permitido o acréscimo de mais 1 (um) pouso aos limites estabelecidos nos incisos I, II e III deste artigo.</h4>
+ <h4>§ 3º Os tripulantes que operam aeronaves convencionais e turbo-hélice poderão ter o limite de pousos estabelecido no inciso I deste artigo aumentado em mais 2 (dois) pousos.</h4>
+ <h3>Art. 32. Aos tripulantes empregados nos serviços aéreos definidos nos incisos II, III, IV e V do caput do art. 5º são assegurados os seguintes limites de horas de voo em uma mesma jornada de trabalho:</h3>
+ <h5>I - 9 (nove) horas e 30 (trinta) minutos de voo, na hipótese de integrante de tripulação mínima ou simples;</h5>
+ <h5>II - 12 (doze) horas de voo, na hipótese de integrante de tripulação composta;</h5>
+ <h5>III - 16 (dezesseis) horas de voo, na hipótese de integrante de tripulação de revezamento;</h5>
+ <h5>IV - 8 (oito) horas de voo, na hipótese de integrante de tripulação de helicópteros.</h5>
+ <h4>§ 1º Aos tripulantes referidos neste artigo não serão assegurados limites de pousos em uma mesma jornada de trabalho.</h4>
+ <h4>§ 2º Os tripulantes empregados nos serviços aéreos definidos no inciso IV do caput do art. 5º, quando em atividade de fomento ou proteção à agricultura, poderão ter os limites previstos neste artigo estabelecidos em convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros de segurança de voo determinados na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 33. Aos tripulantes são assegurados os seguintes limites mensais e anuais de horas de voo:</h3>
+ <h5>I - 80 (oitenta) horas de voo por mês e 800 (oitocentas) horas por ano, em aviões a jato;</h5>
+ <h5>II - 85 (oitenta e cinco) horas de voo por mês e 850 (oitocentas e cinquenta) horas por ano, em aviões turbo-hélice;</h5>
+ <h5>III - 100 (cem) horas de voo por mês e 960 (novecentas e sessenta) horas por ano, em aviões convencionais;</h5>
+ <h5>IV - 90 (noventa) horas de voo por mês e 930 (novecentas e trinta) horas por ano, em helicópteros.</h5>
+ <h4>§ 1º Quando os tripulantes operarem diferentes tipos de aeronaves, o limite inferior será respeitado.</h4>
+ <h4>§ 2º Os tripulantes de voo empregados nos serviços aéreos especializados definidos no inciso IV do caput do art. 5º, quando em atividade de fomento ou proteção à agricultura, poderão ter os limites previstos neste artigo estabelecidos em convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros de segurança de voo determinados na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 34. O trabalho realizado como tripulante extra a serviço será computado para os limites da jornada de trabalho diária, semanal e mensal, não sendo considerado para o cômputo dos limites de horas de voo diários, mensais e anuais, previstos nos arts. 31, 32 e 33.</h3>
+ <p>Seção VI</p>
+ <p>Dos Limites da Jornada de Trabalho</p>
+ <h3>Art. 35. Jornada é a duração do trabalho do tripulante de voo ou de cabine, contada entre a hora da apresentação no local de trabalho e a hora em que ele é encerrado.</h3>
+ <h4>§ 1º A jornada na base contratual será contada a partir da hora de apresentação do tripulante no local de trabalho.</h4>
+ <h4>§ 2º Fora da base contratual, a jornada será contada a partir da hora de apresentação do tripulante no local estabelecido pelo empregador.</h4>
+ <h4>§ 3º Nas hipóteses previstas nos §§ 1º e 2º deste artigo, a apresentação no aeroporto ou em outro local estabelecido pelo empregador deverá ocorrer com antecedência mínima de 30 (trinta) minutos da hora prevista para o início do voo.</h4>
+ <h4>§ 4º A jornada será considerada encerrada 30 (trinta) minutos após a parada final dos motores, no caso de voos domésticos, e 45 (quarenta e cinco) minutos após a parada final dos motores, no caso de voos internacionais.</h4>
+ <h4>§ 5º Para atividades em terra, não se aplicam as disposições dos §§ 3º e 4º deste artigo.</h4>
+ <h4>§ 6º Os limites previstos no § 4º deste artigo podem ser alterados pelos operadores de aeronaves que possuírem Sistema de Gerenciamento de Risco de Fadiga Humana no planejamento e na execução das escalas de serviço de seus tripulantes, sendo o limite mínimo de 30 (trinta) minutos.</h4>
+ <h3>Art. 36. Aos tripulantes de voo ou de cabine empregados no serviço aéreo definido no inciso I do caput do art. 5º são assegurados os seguintes limites de jornada de trabalho:</h3>
+ <h5>I - 9 (nove) horas, se integrantes de uma tripulação mínima ou simples;</h5>
+ <h5>II - 12 (doze) horas, se integrantes de uma tripulação composta;</h5>
+ <h5>III - 16 (dezesseis) horas, se integrantes de uma tripulação de revezamento.</h5>
+ <h3>Art. 37. Aos tripulantes de voo ou de cabine empregados nos serviços aéreos definidos nos incisos II, III, IV e V do caput do art. 5º são assegurados os seguintes limites de jornada de trabalho:</h3>
+ <h5>I - 11 (onze) horas, se integrantes de uma tripulação mínima ou simples;</h5>
+ <h5>II - 14 (catorze) horas, se integrantes de uma tripulação composta;</h5>
+ <h5>III - 18 (dezoito) horas, se integrantes de uma tripulação de revezamento.</h5>
+ <h4>Parágrafo único. Os tripulantes de voo empregados nos serviços aéreos especializados definidos no inciso IV do caput do art. 5º, quando em atividade de fomento à agricultura, poderão ter os limites previstos neste artigo estabelecidos em convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros de segurança de voo determinados na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 38. Em caso de interrupção de jornada, os tripulantes de voo ou de cabine empregados nos serviços aéreos definidos nos incisos II, IV e V do caput do art. 5º, quando compondo tripulação mínima ou simples, poderão ter suas jornadas de trabalho acrescidas de até a metade do tempo da interrupção, nos seguintes casos:</h3>
+ <h5>I - quando houver interrupção da jornada fora da base contratual, superior a 3 (três) horas e inferior a 6 (seis) horas consecutivas, e for proporcionado pelo empregador local para descanso separado do público e com controle de temperatura e luminosidade;</h5>
+ <h5>II - quando houver interrupção da jornada fora da base contratual, superior a 6 (seis) horas e inferior a 10 (dez) horas consecutivas, e forem proporcionados pelo empregador quartos individuais com banheiro privativo, condições adequadas de higiene e segurança, mínimo ruído e controle de temperatura e luminosidade.</h5>
+ <h4>Parágrafo único. A condição prevista neste artigo deverá ser consignada no diário de bordo da aeronave, com assinatura do comandante.</h4>
+ <h3>Art. 39. A hora de trabalho noturno, para efeito de jornada, será computada como de 52 (cinquenta e dois) minutos e 30 (trinta) segundos.</h3>
+ <h4>Parágrafo único. Para efeitos desta Lei, considera-se noturno:</h4>
+ <h5>I - o trabalho executado em terra entre as 22 (vinte e duas) horas de um dia e as 5 (cinco) horas do dia seguinte, considerado o horário local;</h5>
+ <h5>II - o período de tempo de voo realizado entre as 18 (dezoito) horas de um dia e as 6 (seis) horas do dia seguinte, considerado o fuso horário oficial da base contratual do tripulante.</h5>
+ <h3>Art. 40. Os limites da jornada de trabalho poderão ser ampliados em 60 (sessenta) minutos, a critério exclusivo do comandante da aeronave, nos seguintes casos:</h3>
+ <h5>I - inexistência, em local de escala regular, de acomodações apropriadas para o repouso da tripulação e dos passageiros;</h5>
+ <h5>II - espera demasiadamente longa, fora da base contratual, em local de espera regular intermediária, ocasionada por condições meteorológicas desfavoráveis e trabalho de manutenção não programada;</h5>
+ <h5>III - por imperiosa necessidade, entendida como a decorrente de catástrofe ou problema de infraestrutura que não configure caso de falha ou falta administrativa da empresa.</h5>
+ <h4>Parágrafo único. Qualquer ampliação dos limites das horas de trabalho deverá ser comunicada, em no máximo 24 (vinte e quatro) horas após a viagem, pelo comandante ao empregador, que, no prazo de 15 (quinze) dias, comunicará a autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 41. A duração do trabalho dos tripulantes de voo ou de cabine não excederá a 44 (quarenta e quatro) horas semanais e 176 (cento e setenta e seis) horas mensais, computados os tempos de:</h3>
+ <h5>I - jornada e serviço em terra durante a viagem;</h5>
+ <h5>II - reserva e 1/3 (um terço) do sobreaviso;</h5>
+ <h5>III - deslocamento como tripulante extra a serviço;</h5>
+ <h5>IV - adestramento em simulador, cursos presenciais ou a distância, treinamentos e reuniões;</h5>
+ <h5>V - realização de outros serviços em terra, quando escalados pela empresa.</h5>
+ <h4>§ 1º O limite semanal de trabalho previsto neste artigo poderá ser alterado mediante convenção ou acordo coletivo de trabalho, desde que não ultrapasse os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira, sendo vedada, sob qualquer hipótese, a extrapolação do limite mensal de 176 (cento e setenta e seis) horas.</h4>
+ <h4>§ 2º Os tripulantes de voo ou de cabine empregados nos serviços aéreos definidos nos incisos II, III, IV e V do caput do art. 5º terão como período máximo de trabalho consecutivo 21 (vinte e um) dias, contados do dia de saída do tripulante de sua base contratual até o dia do regresso a ela.</h4>
+ <h4>§ 3º Para os tripulantes de voo ou de cabine empregados nos serviços aéreos definidos nos incisos II, III, IV e V do caput do art. 5º, o período consecutivo de trabalho, no local de operação, não poderá exceder a 17 (dezessete) dias.</h4>
+ <h4>§ 4º Quando prestarem serviço fora da base contratual por período superior a 6 (seis) dias, os tripulantes referidos no § 3º deste artigo terão, no retorno, folgas correspondentes a, no mínimo, o número de dias fora da base contratual menos 2 (dois) dias.</h4>
+ <h4>§ 5º Os tripulantes empregados no serviço aéreo definido no inciso I do caput do art. 5º que também exerçam atividades administrativas terão os limites de sua jornada de trabalho definidos em convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h4>§ 6º As disposições do caput e dos §§ 1º, 2º, 3º e 4º deste artigo não se aplicam aos tripulantes empregados nos serviços aéreos definidos no inciso IV do caput do art. 5º em atividade de fomento ou proteção à agricultura, que poderão ter os referidos limites reduzidos ou ampliados por convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros de segurança de voo determinados na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 42. Será observado o limite máximo de 2 (duas) madrugadas consecutivas de trabalho, e o de 4 (quatro) madrugadas totais no período de 168 (cento e sessenta e oito) horas consecutivas, contadas desde a apresentação do tripulante.</h3>
+ <h4>§ 1º O tripulante de voo ou de cabine poderá ser escalado para jornada de trabalho na terceira madrugada consecutiva desde que como tripulante extra, em voo de retorno à base contratual e encerrando sua jornada de trabalho, vedada, nessa hipótese, a escalação do tripulante para compor tripulação no período que antecede a terceira madrugada consecutiva na mesma jornada de trabalho.</h4>
+ <h4>§ 2º Sempre que for disponibilizado ao tripulante período mínimo de 48 (quarenta e oito) horas livre de qualquer atividade, poderá ser iniciada a contagem de novo período de 168 (cento e sessenta e oito) horas consecutivas referido no caput deste artigo.</h4>
+ <h4>§ 3º Os limites previstos neste artigo poderão ser reduzidos ou ampliados mediante convenção ou acordo coletivo de trabalho, desde que não ultrapassem os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h4>§ 4º Entende-se como madrugada o período transcorrido, total ou parcialmente, entre 0 (zero) hora e 6 (seis) horas, considerado o fuso horário oficial da base contratual do tripulante.</h4>
+ <p>Seção VII</p>
+ <p>Do Sobreaviso e da Reserva</p>
+ <h3>Art. 43. Sobreaviso é o período não inferior a 3 (três) horas e não excedente a 12 (doze) horas em que o tripulante permanece em local de sua escolha à disposição do empregador, devendo apresentar-se no aeroporto ou em outro local determinado, no prazo de até 90 (noventa) minutos, após receber comunicação para o início de nova tarefa.</h3>
+ <h4>§ 1º Em Município ou conurbação com 2 (dois) ou mais aeroportos, o tripulante designado para aeroporto diferente da base contratual terá prazo de 150 (cento e cinquenta) minutos para a apresentação, após receber comunicação para o início de nova tarefa.</h4>
+ <h4>§ 2º As horas de sobreaviso serão pagas à base de 1/3 (um terço) do valor da hora de voo.</h4>
+ <h4>§ 3º Caso o tripulante seja convocado para uma nova tarefa, o tempo remunerado será contabilizado entre o início do sobreaviso e o início do deslocamento.</h4>
+ <h4>§ 4º Caso o tripulante de voo ou de cabine não seja convocado para uma tarefa durante o período de sobreaviso, o tempo de repouso mínimo de 8 (oito) horas deverá ser respeitado antes do início de nova tarefa.</h4>
+ <h4>§ 5º O período de sobreaviso, contabilizado desde seu início até o início do deslocamento caso o tripulante seja acionado para nova tarefa, não poderá ser superior a 12 (doze) horas.</h4>
+ <h4>§ 6º No período de 12 (doze) horas previsto no § 5º, não serão computados os períodos de deslocamento de 90 (noventa) e 150 (cento e cinquenta) minutos previstos no caput e no § 1º deste artigo.</h4>
+ <h4>§ 7º O tripulante de voo ou de cabine empregado no serviço aéreo previsto no inciso I do caput do art. 5º terá a quantidade de sobreavisos limitada a 8 (oito) mensais, podendo ser reduzida ou ampliada por convenção ou acordo coletivo de trabalho, observados os limites estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 44. Reserva é o período em que o tripulante de voo ou de cabine permanece à disposição, por determinação do empregador, no local de trabalho.</h3>
+ <h4>§ 1º A hora de reserva será paga na mesma base da hora de voo.</h4>
+ <h4>§ 2º A reserva do tripulante empregado no serviço aéreo previsto no inciso I do caput do art. 5º terá duração mínima de 3 (três) horas e máxima de 6 (seis) horas.</h4>
+ <h4>§ 3º A reserva do tripulante empregado nos serviços aéreos previstos nos incisos II, III, IV e V do caput do art. 5º terá duração mínima de 3 (três) horas e máxima de 10 (dez) horas.</h4>
+ <h4>§ 4º Prevista a reserva por prazo superior a 3 (três) horas, o empregador deverá assegurar ao tripulante acomodação adequada para descanso.</h4>
+ <h4>§ 5º Entende-se por acomodação adequada para fins deste artigo poltronas em sala específica com controle de temperatura, em local diferente do destinado ao público e à apresentação das tripulações.</h4>
+ <h4>§ 6º Para efeito de remuneração, caso o tripulante seja acionado em reserva para assumir programação de voo, será considerado tempo de reserva o período compreendido entre o início da reserva e o início do voo.</h4>
+ <h4>§ 7º Os limites previstos neste artigo poderão ser reduzidos ou ampliados por convenção ou acordo coletivo de trabalho, observados os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <p>Seção VIII</p>
+ <p>Das Viagens</p>
+ <h3>Art. 45. Viagem é o trabalho realizado pelo tripulante de voo ou de cabine, contado desde a saída de sua base até o seu regresso.</h3>
+ <h4>§ 1º Uma viagem pode compreender uma ou mais jornadas.</h4>
+ <h4>§ 2º O tripulante de voo ou de cabine poderá cumprir uma combinação de voos, passando por sua base contratual sem ser dispensado do serviço, desde que a programação obedeça à escala previamente publicada.</h4>
+ <h4>§ 3º O empregador poderá exigir do tripulante de voo ou de cabine complementação de voo, quando fora da base contratual, para atender à realização de serviços inadiáveis.</h4>
+ <h4>§ 4º O empregador não poderá exigir do tripulante de voo ou de cabine complementação de voo ou qualquer outra atividade ao final da viagem, por ocasião do retorno à base contratual, sendo facultada ao tripulante a aceitação, não cabendo qualquer tipo de penalidade em caso de recusa.</h4>
+ <p>Seção IX</p>
+ <p>Dos Períodos de Repouso</p>
+ <h3>Art. 46. Repouso é o período ininterrupto, após uma jornada, em que o tripulante fica desobrigado da prestação de qualquer serviço.</h3>
+ <h3>Art. 47. É assegurada ao tripulante, fora de sua base contratual, acomodação adequada para repouso e transporte entre o aeroporto e o local de repouso, e vice-versa.</h3>
+ <h4>§ 1º O previsto neste artigo não será aplicado ao tripulante empregado nos serviços aéreos previstos nos incisos II, III, IV e V do caput do art. 5º quando o custeio do transporte e da hospedagem for ressarcido pelo empregador.</h4>
+ <h4>§ 2º O ressarcimento de que trata o § 1º deste artigo deverá ocorrer no máximo até 30 (trinta) dias após o pagamento.</h4>
+ <h4>§ 3º Entende-se por acomodação adequada para repouso do tripulante quarto individual com banheiro privativo e condições adequadas de higiene, segurança, ruído, controle de temperatura e luminosidade.</h4>
+ <h4>§ 4º Quando não houver disponibilidade de transporte ao término da jornada, o período de repouso será computado a partir da colocação de transporte à disposição da tripulação.</h4>
+ <h3>Art. 48. O tempo mínimo de repouso terá duração relacionada ao tempo da jornada anterior, observando-se os seguintes limites:</h3>
+ <h5>I - 12 (doze) horas de repouso, após jornada de até 12 (doze) horas;</h5>
+ <h5>II - 16 (dezesseis) horas de repouso, após jornada de mais de 12 (doze) horas e até 15 (quinze) horas;</h5>
+ <h5>III - 24 (vinte e quatro) horas de repouso, após jornada de mais de 15 (quinze) horas.</h5>
+ <h4>Parágrafo único. Os limites previstos neste artigo poderão ser alterados por convenção ou acordo coletivo de trabalho, observados os parâmetros de segurança de voo estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 49. Quando ocorrer o cruzamento de 3 (três) ou mais fusos horários em um dos sentidos da viagem, o tripulante terá, na base contratual, o repouso acrescido de 2 (duas) horas por cada fuso cruzado.</h3>
+ <p>Seção X</p>
+ <p>Da Folga Periódica</p>
+ <h3>Art. 50. Folga é o período não inferior a 24 (vinte e quatro) horas consecutivas em que o tripulante, em sua base contratual, sem prejuízo da remuneração, está desobrigado de qualquer atividade relacionada com seu trabalho.</h3>
+ <h4>§ 1º Salvo o previsto nos §§ 2º e 3º do art. 41, a folga deverá ter início, no máximo, após o 6º (sexto) período consecutivo de até 24 (vinte e quatro) horas, contada a partir da apresentação do tripulante, observados os limites da duração da jornada de trabalho e do repouso.</h4>
+ <h4>§ 2º Os períodos de repouso mínimo regulamentar deverão estar contidos nos 6 (seis) períodos consecutivos de até 24 (vinte e quatro) horas previstos no § 1º deste artigo.</h4>
+ <h4>§ 3º No caso de voos internacionais de longo curso, o limite previsto no § 1º deste artigo poderá ser ampliado em 36 (trinta e seis) horas, ficando o empregador obrigado a conceder ao tripulante mais 2 (dois) períodos de folga no mesmo mês em que o voo for realizado, além das folgas previstas neste artigo e no art. 51.</h4>
+ <h4>§ 4º Os limites previstos nos §§ 1º e 2º deste artigo poderão ser alterados por convenção ou acordo coletivo de trabalho, observados os parâmetros determinados na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 51. O tripulante empregado no serviço aéreo previsto no inciso I do caput do art. 5º terá número mensal de folgas não inferior a 10 (dez), das quais pelo menos 2 (duas) deverão compreender um sábado e um domingo consecutivos, devendo a primeira destas ter início até as 12 (doze) horas do sábado, no horário de Brasília.</h3>
+ <h4>§ 1º O número mensal de folgas previsto neste artigo poderá ser reduzido até 9 (nove), conforme critérios estabelecidos em convenção ou acordo coletivo de trabalho.</h4>
+ <h4>§ 2º Quando o tripulante concorrer parcialmente à escala de serviço do mês, por motivo de férias ou afastamento, aplicar-se-á a proporcionalidade do número de dias trabalhados ao número de folgas a serem concedidas, com aproximação para o inteiro superior.</h4>
+ <h3>Art. 52. O tripulante de voo ou de cabine empregado nos serviços aéreos previstos nos incisos II, III, IV e V do caput do art. 5º terá número de folgas mensal não inferior a 8 (oito), das quais pelo menos 2 (duas) deverão compreender um sábado e um domingo consecutivos.</h3>
+ <h4>Parágrafo único. O tripulante empregado nos serviços aéreos previstos no inciso IV do caput do art. 5º, quando em atividade de fomento ou proteção à agricultura, poderá ter os limites previstos neste artigo modificados por convenção ou acordo coletivo de trabalho, observados os parâmetros estabelecidos na regulamentação da autoridade de aviação civil brasileira.</h4>
+ <h3>Art. 53. A folga só terá início após a conclusão do repouso da jornada, e seus horários de início e término serão definidos em escala previamente publicada.</h3>
+ <h3>Art. 54. Quando o tripulante for designado para curso fora da base contratual, sua folga poderá ser gozada nesse local, devendo a empresa assegurar, no regresso, uma licença remunerada de 1 (um) dia para cada 15 (quinze) dias fora da base contratual.</h3>
+ <h4>Parágrafo único. A licença remunerada não deverá coincidir com sábado, domingo ou feriado se a permanência do tripulante fora da base for superior a 30 (trinta) dias.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA REMUNERAÇÃO E DAS CONCESSÕES</h3>
+ <p>Seção I</p>
+ <p>Da Remuneração</p>
+ <h3>Art. 55. Sem prejuízo da liberdade contratual, a remuneração do tripulante corresponderá à soma das quantias por ele percebidas da empresa.</h3>
+ <h4>Parágrafo único. Não integram a remuneração as importâncias pagas pela empresa a título de ajuda de custo, assim como as diárias de hospedagem, alimentação e transporte.</h4>
+ <h3>Art. 56. A remuneração dos tripulantes poderá ser fixa ou ser constituída por parcela fixa e parcela variável.</h3>
+ <h4>Parágrafo único. A parcela variável da remuneração será obrigatoriamente calculada com base nas horas de voo, salvo no caso:</h4>
+ <h5>I - do tripulante empregado no serviço de transporte aéreo público não regular na modalidade de táxi aéreo, previsto no inciso II do caput do art. 5º, que poderá ter a parcela variável de seu salário calculada com base na quilometragem entre a origem e o destino do voo, desde que estabelecido em convenção ou acordo coletivo de trabalho;</h5>
+ <h5>II - do tripulante empregado nos serviços aéreos previstos no inciso IV do caput do art. 5º em atividade de fomento ou proteção à agricultura, que poderá ter a parcela variável de seu salário calculada com base na área produzida ou aplicada ou conforme outros critérios estabelecidos em convenção ou acordo coletivo de trabalho.</h5>
+ <h3>Art. 57. O período de tempo em solo entre etapas de voo em uma mesma jornada será remunerado.</h3>
+ <h4>Parágrafo único. Os valores e critérios para remuneração do período de que trata o caput deste artigo serão estabelecidos no contrato de trabalho e em convenção ou acordo coletivo de trabalho.</h4>
+ <h3>Art. 58. A empresa pagará a remuneração do trabalho não realizado por motivo alheio à vontade do tripulante, se outra atividade equivalente não lhe for atribuída.</h3>
+ <h3>Art. 59. A remuneração da hora de voo noturno e das horas de voo como tripulante extra será calculada na forma da legislação em vigor, observadas as condições estabelecidas no contrato de trabalho e em convenção ou acordo coletivo de trabalho.</h3>
+ <h4>§ 1º Considera-se voo noturno, para efeitos deste artigo, o voo executado entre as 21 (vinte e uma) horas, Tempo Universal Coordenado, de um dia e as 9 (nove) horas, Tempo Universal Coordenado, do dia seguinte.</h4>
+ <h4>§ 2º A hora de voo noturno, para efeito de remuneração, é contada à razão de 52 (cinquenta e dois) minutos e 30 (trinta) segundos.</h4>
+ <h3>Art. 60. As frações de hora serão computadas para efeito de remuneração.</h3>
+ <p>Seção II</p>
+ <p>Da Alimentação</p>
+ <h3>Art. 61. Durante a viagem, o tripulante terá direito a alimentação, em terra ou em voo, de acordo com as instruções técnicas do Ministério do Trabalho e das autoridades competentes.</h3>
+ <h4>§ 1º O tripulante extra a serviço terá direito à alimentação.</h4>
+ <h4>§ 2º Quando em terra, o intervalo para a alimentação do tripulante deverá ter duração mínima de 45 (quarenta e cinco) minutos e máxima de 60 (sessenta) minutos.</h4>
+ <h4>§ 3º Quando em voo, a alimentação deverá ser servida em intervalos máximos de 4 (quatro) horas.</h4>
+ <h3>Art. 62. Para tripulante de helicópteros, a alimentação será servida em terra ou a bordo de unidades marítimas, com duração de 60 (sessenta) minutos, período este que não será computado na jornada de trabalho.</h3>
+ <h3>Art. 63. Nos voos realizados no período entre as 22 (vinte e duas) horas de um dia e as 6 (seis) horas do dia seguinte, deverá ser servida uma refeição se a duração do voo for igual ou superior a 3 (três) horas.</h3>
+ <h3>Art. 64. É assegurada alimentação ao tripulante que esteja em situação de reserva ou em cumprimento de uma programação de treinamento entre as 12 (doze) e as 14 (catorze) horas e entre as 19 (dezenove) e as 21 (vinte e uma) horas, em intervalo com duração de 60 (sessenta) minutos.</h3>
+ <h4>Parágrafo único. O intervalo para alimentação de que trata este artigo:</h4>
+ <h5>I - não será computado na duração da jornada de trabalho;</h5>
+ <h5>II - não será observado na hipótese de programação de treinamento em simulador.</h5>
+ <p>Seção III</p>
+ <p>Da Assistência Médica</p>
+ <h3>Art. 65. Ao tripulante em serviço fora da base contratual o empregador deverá assegurar e custear, em casos de urgência, assistência médica e remoção, por via aérea, para retorno à base ou ao local de tratamento.</h3>
+ <p>Seção IV</p>
+ <p>Do Uniforme</p>
+ <h3>Art. 66. O tripulante receberá gratuitamente da empresa, quando não forem de uso comum, as peças de uniforme e os equipamentos exigidos, por ato da autoridade competente, para o exercício de sua atividade profissional.</h3>
+ <h4>Parágrafo único. Não serão considerados como salário, para os efeitos previstos neste artigo, os vestuários, equipamentos e outros acessórios fornecidos ao tripulante para a realização dos respectivos serviços.</h4>
+ <p>Seção V</p>
+ <p>Das Férias</p>
+ <h3>Art. 67. As férias anuais do tripulante serão de 30 (trinta) dias consecutivos.</h3>
+ <h4>§ 1º Mediante acordo coletivo, as férias poderão ser fracionadas.</h4>
+ <h4>§ 2º A concessão de férias será comunicada ao tripulante, por escrito, com antecedência mínima de 30 (trinta) dias.</h4>
+ <h3>Art. 68. A empresa manterá quadro atualizado de concessão de férias, devendo existir rodízio entre os tripulantes do mesmo equipamento quando houver concessão nos meses de janeiro, fevereiro, julho e dezembro.</h3>
+ <h3>Art. 69. Ressalvados os casos de rescisão de contrato, as férias não serão convertidas em abono pecuniário.</h3>
+ <h3>Art. 70. Ressalvadas condições mais favoráveis, a remuneração das férias e o décimo terceiro salário do aeronauta serão calculados pela média das parcelas fixas e variáveis da remuneração no período aquisitivo.</h3>
+ <h3>Art. 71. O pagamento da remuneração das férias será realizado até 2 (dois) dias antes de seu início.</h3>
+ <p>Seção VI</p>
+ <p>Dos Certificados e das Habilitações</p>
+ <h3>Art. 72. É de responsabilidade do empregador o custeio do certificado médico e de habilitação técnica de seus tripulantes, sendo responsabilidade do tripulante manter em dia seu certificado médico, como estabelecido na legislação em vigor.</h3>
+ <h4>§ 1º Cabe ao empregador o controle de validade do certificado médico e da habilitação técnica para que sejam programadas, na escala de serviço do tripulante, as datas e, quando necessárias, as dispensas para realização dos exames necessários para a revalidação.</h4>
+ <h4>§ 2º É dever do empregador o pagamento ou o reembolso dos valores pagos pelo tripulante para a revalidação do certificado médico e de habilitação técnica, tendo como limite os valores definidos pelos órgãos públicos, bem como dos valores referentes a exames de proficiência linguística e a eventuais taxas relativas a documentos necessários ao exercício de suas funções contratuais.</h4>
+ <h4>§ 3º No caso dos tripulantes empregados nos serviços aéreos previstos no inciso IV do caput do art. 5º em atividade de fomento ou proteção à agricultura, o pagamento e o reembolso previstos neste artigo poderão observar valores e critérios estabelecidos em convenção ou acordo coletivo de trabalho.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DAS TRANSFERÊNCIAS</h3>
+ <h3>Art. 73. Para efeito de transferência, provisória ou permanente, considera-se base do tripulante a localidade onde ele está obrigado a prestar serviço.</h3>
+ <h4>§ 1º Entende-se como:</h4>
+ <h5>I - transferência provisória: o deslocamento do tripulante de sua base, por período mínimo de 30 (trinta) dias e não superior a 120 (cento e vinte) dias, para prestação de serviços temporários, sem mudança de domicílio, seguido de retorno à base tão logo cesse a incumbência que lhe foi atribuída; e</h5>
+ <h5>II - transferência permanente: o deslocamento do tripulante de sua base, por período superior a 120 (cento e vinte) dias, com mudança de domicílio.</h5>
+ <h4>§ 2º Após cada transferência provisória, o tripulante deverá permanecer na sua base por, pelo menos, 180 (cento e oitenta) dias.</h4>
+ <h4>§ 3º O interstício entre transferências permanentes será de 2 (dois) anos.</h4>
+ <h4>§ 4º Na transferência provisória, serão assegurados aos tripulantes acomodação, alimentação, transporte a serviço, transporte aéreo de ida e volta e, no regresso, licença remunerada de, considerada a duração da transferência, 2 (dois) dias para o primeiro mês mais 1 (um) dia para cada mês ou fração subsequente, sendo que, no mínimo, 2 (dois) dias não deverão coincidir com sábado, domingo ou feriado.</h4>
+ <h4>§ 5º Na transferência permanente, serão assegurados ao tripulante pelo empregador:</h4>
+ <h5>I - ajuda de custo, para fazer face às despesas de instalação na nova base, não inferior a 4 (quatro) vezes o valor do salário mensal, calculado o salário variável por sua taxa atual, multiplicada pela média do correspondente trabalho nos últimos 12 (doze) meses;</h5>
+ <h5>II - transporte aéreo para si e seus dependentes;</h5>
+ <h5>III - translação da respectiva bagagem; e</h5>
+ <h5>IV - dispensa de qualquer atividade relacionada com o trabalho pelo período de 8 (oito) dias, a ser fixado por sua opção, com aviso prévio de 8 (oito) dias ao empregador, dentro dos 60 (sessenta) dias seguintes à sua chegada à nova base.</h5>
+ <h4>§ 6º A transferência provisória poderá ser transformada em transferência permanente.</h4>
+ <h3>Art. 74. O tripulante deverá ser notificado pelo empregador com antecedência mínima de 60 (sessenta) dias na transferência permanente e de 15 (quinze) dias na provisória.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 75. Aos tripulantes de voo empregados nos serviços aéreos definidos no inciso IV do caput do art. 5º, quando em atividade de fomento ou proteção à agricultura, não se aplicam as seguintes disposições desta Lei:</h3>
+ <h5>I - a</h5>
+ <p>Seção II do Capítulo II;</p>
+ <h5>II - os arts. 27, 28, 43, 44 e 45;</h5>
+ <h5>III - o</h5>
+ <h2>CAPÍTULO IV;</h2>
+ <h5>IV - o regime de transição estabelecido no art. 80.</h5>
+ <h3>Art. 76. Além dos casos previstos nesta Lei, as responsabilidades dos tripulantes são definidas na Lei n° 7.565, de 19 de dezembro de 1986 (Código Brasileiro de Aeronáutica), nas leis e nos regulamentos em vigor e, no que decorrer do contrato de trabalho, em convenções e acordos coletivos.</h3>
+ <h3>Art. 77. Sem prejuízo do disposto no Capítulo III do Título IX da Lei n° 7.565, de 19 de dezembro de 1986 (Código Brasileiro de Aeronáutica), os infratores das disposições constantes nesta Lei ficam sujeitos às penalidades previstas no art. 351 da Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 .</h3>
+ <h3>Art. 77. Sem prejuízo do disposto no Capítulo III do Título IX da Lei n° 7.565, de 19 de dezembro de 1986 - Código Brasileiro de Aeronáutica, as infrações às disposições desta Lei acarreta a aplicação da multa prevista no inciso I do caput do art. 634-A da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 . (Redação dada pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h3>Art. 77. Sem prejuízo do disposto no Capítulo III do Título IX da Lei n° 7.565, de 19 de dezembro de 1986 - Código Brasileiro de Aeronáutica, as infrações às disposições desta Lei acarreta a aplicação da multa prevista no inciso I do caput do art. 634-A da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 . (Redação dada pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h3>Art. 77. Sem prejuízo do disposto no Capítulo III do Título IX da Lei n° 7.565, de 19 de dezembro de 1986 (Código Brasileiro de Aeronáutica), os infratores das disposições constantes nesta Lei ficam sujeitos às penalidades previstas no art. 351 da Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 .</h3>
+ <h4>Parágrafo único. O processo de multas administrativas será regido pelo disposto no Título VII da Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 .</h4>
+ <h3>Art. 78. Caberá à autoridade de aviação civil brasileira expedir as normas necessárias para a implantação do Sistema de Gerenciamento de Risco de Fadiga Humana de que trata a</h3>
+ <p>Seção III do Capítulo I.</p>
+ <h3>Art. 79. O art. 30 da Lei n° 7.183, de 5 de abril de 1984 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 30. Os limites de tempo de voo do tripulante não poderão exceder em cada mês ou ano, respectivamente:</h3>
+ <h5>I - em aviões convencionais, 100 (cem) e 1.000 (mil) horas;</h5>
+ <h5>II - em aviões turbo-hélice, 100 (cem) e 935 (novecentas e trinta e cinco) horas;</h5>
+ <h5>III - em aviões a jato, 85 (oitenta e cinco) e 850 (oitocentas e cinquenta) horas;</h5>
+ <h5>IV - em helicópteros, 90 (noventa) e 960 (novecentas e sessenta) horas.</h5>
+ <h4>§ 1º Quando o aeronauta tripular diferentes tipos de aeronave, será observado o menor limite.</h4>
+ <h4>§ 2º Os limites de tempo de voo para aeronautas de empresas de transporte aéreo regular, em intervalo inferior a 30 (trinta) dias, serão proporcionais ao limite mensal mais 10 (dez) horas.” (NR)</h4>
+ <h3>Art. 80. Aplicam-se aos tripulantes, desde a entrada em vigor desta Lei até que tenham decorrido 30 (trinta) meses de sua publicação, como regime de transição, os seguintes dispositivos da Lei n° 7.183, de 5 de abril de 1984 :</h3>
+ <h5>I - os arts. 12 , 13 e 20 ;</h5>
+ <h5>II - o caput, incluídas suas alíneas , e o § 1º, todos do art. 21 ;</h5>
+ <h5>III - os arts. 29 e 30 .</h5>
+ <h3>Art. 81. Revogam-se:</h3>
+ <h5>I - após decorridos 90 (noventa) dias da publicação oficial desta Lei, a Lei n° 7.183, de 5 de abril de 1984 , com exceção dos dispositivos referidos no art. 80;</h5>
+ <h5>II - após decorridos 30 (trinta) meses da publicação oficial desta Lei, os dispositivos da Lei n° 7.183, de 5 de abril de 1984 , referidos no art. 80.</h5>
+ <h3>Art. 82. Esta Lei entra em vigor após decorridos 90 (noventa) dias de sua publicação oficial, exceto os arts. 31 , 32 , 33 , 35 , 36 e 37 , que entram em vigor após decorridos 30 (trinta) meses da publicação oficial desta Lei.</h3>
+ <p>Brasília, 28 de agosto de 2017; 196º da Independência e 129º da República.</p>
+ <h3>MICHEL TEMER</h3>
+ <p>Ronaldo Nogueira de Oliveira</p>
+ <p>Este texto não substitui o publicado no DOU de 29.8.2017</p>
+ <p>Dispõe sobre o exercício da profissão de tripulante de aeronave, denominado aeronauta; e revoga a Lei n° 7.183, de 5 de abril de 1984.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2017/Lei/L13475.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

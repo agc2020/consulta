@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.874, DE 20 DE SETEMBRO DE 2019 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2019" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.874, DE 20 DE SETEMBRO DE 2019</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:39:39 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13874.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 53.003 caracteres | espelho: 53.131 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.874, DE 	20 DE SETEMBRO DE 2019</p>
+ <p>Conversão da Medida Provisória nº 881, de 2019</p>
+ <p>Regulamento</p>
+ <p>Institui a Declaração de Direitos de Liberdade Econômica; estabelece garantias de livre mercado; altera as Leis n os 10.406, de 10 de janeiro de 2002 (Código Civil), 6.404, de 15 de dezembro de 1976, 11.598, de 3 de dezembro de 2007, 12.682, de 9 de julho de 2012, 6.015, de 31 de dezembro de 1973, 10.522, de 19 de julho de 2002, 8.934, de 18 de novembro 1994, o Decreto-Lei n° 9.760, de 5 de setembro de 1946 e a Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943; revoga a Lei Delegada nº 4, de 26 de setembro de 1962, a Lei n° 11.887, de 24 de dezembro de 2008, e dispositivos do Decreto-Lei n° 73, de 21 de novembro de 1966; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º Fica instituída a Declaração de Direitos de Liberdade Econômica, que estabelece normas de proteção à livre iniciativa e ao livre exercício de atividade econômica e disposições sobre a atuação do Estado como agente normativo e regulador, nos termos do inciso IV do caput do art. 1º , 	do parágrafo único do art. 170 e do caput do art. 174 da Constituição Federal.</h3>
+ <h4>§ 1º O disposto nesta Lei será observado na aplicação e na interpretação do direito civil, empresarial, econômico, urbanístico e do trabalho nas relações jurídicas que se encontrem no seu âmbito de aplicação e na ordenação pública, inclusive sobre exercício das profissões, comércio, 	juntas comerciais, registros públicos, trânsito, transporte e proteção ao meio ambiente.</h4>
+ <h4>§ 2º Interpretam-se em favor da liberdade econômica, da boa-fé e do respeito aos contratos, aos investimentos e à propriedade todas as normas de ordenação pública sobre atividades econômicas privadas.</h4>
+ <h4>§ 3º O disposto nos arts. 1º, 2º, 3º e 4º desta Lei não se aplica ao direito tributário e ao direito financeiro, ressalvado o inciso X do caput do art. 3º.</h4>
+ <h4>§ 3º O disposto neste Capítulo e nos Capítulos II e III desta Lei não se aplica ao direito tributário e ao direito financeiro, ressalvado o disposto no inciso X do caput do art. 3º desta Lei. (Redação dada pela Lei n° 14.195, de 2021)</h4>
+ <h4>§ 4º O disposto nos arts. 1º, 2º, 3º e 4º desta Lei constitui norma geral de direito econômico, conforme o disposto no inciso I do caput e nos §§ 1º, 2º, 3º e 	4º do art. 24 da Constituição Federal, e será observado para todos os atos públicos de liberação da atividade econômica executados pelos Estados, pelo Distrito Federal e pelos 	Municípios, nos termos do § 2º deste artigo.</h4>
+ <h4>§ 5º O disposto no inciso IX do caput do art. 3º desta Lei não se aplica aos Estados, ao Distrito Federal e aos 	Municípios, exceto se:</h4>
+ <h5>I - o ato público de liberação da atividade econômica for derivado ou delegado por legislação ordinária federal; ou</h5>
+ <h5>II - o ente federativo ou o órgão responsável pelo ato decidir vincular-se ao disposto no inciso IX do caput do art. 3º desta Lei por meio de instrumento válido e próprio.</h5>
+ <h4>§ 6º Para fins do disposto nesta Lei, consideram-se atos públicos de liberação a licença, a autorização, a concessão, a inscrição, a permissão, o alvará, o cadastro, o credenciamento, o estudo, o plano, o registro e os demais atos exigidos, sob qualquer denominação, por órgão ou entidade da administração pública na aplicação de legislação, como condição para o exercício de atividade econômica, inclusive o início, a continuação e o fim para a instalação, a construção, a operação, a produção, o funcionamento, o uso, o exercício ou a realização, no âmbito público ou privado, de atividade, serviço, estabelecimento, profissão, instalação, operação, 	produto, equipamento, veículo, edificação e outros.</h4>
+ <h3>Art. 2º São princípios que norteiam o disposto nesta Lei:</h3>
+ <h5>I - a liberdade como uma garantia no exercício de atividades econômicas;</h5>
+ <h5>II - a boa-fé do particular perante o poder público;</h5>
+ <h5>III - a intervenção subsidiária e excepcional do Estado sobre o exercício de atividades econômicas; e</h5>
+ <h5>IV - o reconhecimento da vulnerabilidade do particular perante o Estado.</h5>
+ <h4>Parágrafo único. Regulamento disporá sobre os critérios de aferição para afastamento do inciso IV do caput deste artigo, limitados a questões de má-fé, hipersuficiência ou reincidência.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA DECLARAÇÃO DE DIREITOS DE LIBERDADE ECONÔMICA</h3>
+ <h3>Art. 3º São direitos de toda pessoa, natural ou jurídica, essenciais para o desenvolvimento e o crescimento econômicos do País, observado o disposto no parágrafo único do art. 170 da Constituição Federal :</h3>
+ <h5>I - desenvolver atividade econômica de baixo risco, para a qual se valha exclusivamente de propriedade privada própria ou de terceiros consensuais, 	sem a necessidade de quaisquer atos públicos de liberação da atividade econômica;</h5>
+ <h5>II - desenvolver atividade econômica em qualquer horário ou dia da semana, 	inclusive feriados, sem que para isso esteja sujeita a cobranças ou encargos adicionais, observadas:</h5>
+ <h6>a) as normas de proteção ao meio ambiente, incluídas as de repressão à 	poluição sonora e à perturbação do sossego público;</h6>
+ <h6>b) as restrições advindas de contrato, de regulamento condominial ou de outro negócio jurídico, bem como as decorrentes das normas de direito real, 	incluídas as de direito de vizinhança; e</h6>
+ <h6>c) a legislação trabalhista;</h6>
+ <h5>III - definir livremente, em mercados não regulados, o preço de produtos e de serviços como consequência de alterações da oferta e da demanda;</h5>
+ <h5>IV - receber tratamento isonômico de órgãos e de entidades da administração pública quanto ao exercício de atos de liberação da atividade econômica, 	hipótese em que o ato de liberação estará vinculado aos mesmos critérios de interpretação adotados em decisões administrativas análogas anteriores, 	observado o disposto em regulamento;</h5>
+ <h5>V - gozar de presunção de boa-fé nos atos praticados no exercício da atividade econômica, para os quais as dúvidas de interpretação do direito civil, empresarial, econômico e urbanístico serão resolvidas de forma a preservar a autonomia privada, exceto se houver expressa disposição legal em contrário;</h5>
+ <h5>VI - desenvolver, executar, operar ou comercializar novas modalidades de produtos e de serviços quando as normas infralegais se tornarem desatualizadas por força de desenvolvimento tecnológico consolidado internacionalmente, nos termos estabelecidos em regulamento, que disciplinará os requisitos para aferição da situação concreta, os procedimentos, o momento e as condições dos efeitos;</h5>
+ <h5>VII - (VETADO);</h5>
+ <h5>VIII - ter a garantia de que os negócios jurídicos empresariais paritários serão objeto de livre estipulação das partes pactuantes, de forma a aplicar todas as regras de direito empresarial apenas de maneira subsidiária ao avençado, exceto normas de ordem pública;</h5>
+ <h5>IX - ter a garantia de que, nas solicitações de atos públicos de liberação da atividade econômica que se sujeitam ao disposto nesta Lei, apresentados todos os elementos necessários à instrução do processo, o particular será 	cientificado expressa e imediatamente do prazo máximo estipulado para a análise de seu pedido e de que, transcorrido o prazo fixado, o silêncio da autoridade competente importará aprovação tácita para todos os efeitos, 	ressalvadas as hipóteses expressamente vedadas em lei; (Vide Decreto nº 10.178, de 	2019)</h5>
+ <h5>X - arquivar qualquer documento por meio de microfilme ou por meio digital, 	conforme técnica e requisitos estabelecidos em regulamento, hipótese em que se equiparará a documento físico para todos os efeitos legais e para a comprovação de qualquer ato de direito público; (Regulamento)</h5>
+ <h5>XI - não ser exigida medida ou prestação compensatória ou mitigatória abusiva, em sede de estudos de impacto ou outras liberações de atividade econômica no direito urbanístico, entendida como aquela que:</h5>
+ <h6>a) (VETADO);</h6>
+ <h6>b) requeira medida que já era planejada para execução antes da solicitação pelo particular, sem que a atividade econômica altere a demanda para execução da referida medida;</h6>
+ <h6>c) utilize-se do particular para realizar execuções que compensem impactos que existiriam independentemente do empreendimento ou da atividade econômica solicitada;</h6>
+ <h6>d) requeira a execução ou prestação de qualquer tipo para áreas ou situação além daquelas diretamente impactadas pela atividade econômica; ou</h6>
+ <h6>e) mostre-se sem razoabilidade ou desproporcional, inclusive utilizada como meio de coação ou intimidação; e</h6>
+ <h5>XII - não ser exigida pela administração pública direta ou indireta certidão sem previsão expressa em lei.</h5>
+ <h4>§ 1º Para fins do disposto no inciso I do caput deste artigo:</h4>
+ <h5>I - ato do Poder Executivo federal disporá sobre a classificação de atividades de baixo risco a ser observada na ausência de legislação estadual, distrital ou municipal específica;</h5>
+ <h5>II - na hipótese de ausência de ato do Poder Executivo federal de que trata o inciso I deste parágrafo, será aplicada resolução do Comitê para Gestão da 	Rede Nacional para a Simplificação do Registro e da Legalização de Empresas e Negócios (CGSIM), independentemente da aderência do ente federativo à Rede 	Nacional para a Simplificação do Registro e da Legalização de Empresas e 	Negócios (Redesim); e</h5>
+ <h5>III - na hipótese de existência de legislação estadual, distrital ou municipal sobre a classificação de atividades de baixo risco, o ente federativo que editar ou tiver editado norma específica encaminhará 	notificação ao Ministério da Economia sobre a edição de sua norma.</h5>
+ <h4>§ 2º A fiscalização do exercício do direito de que trata o inciso I do caput deste artigo será realizada posteriormente, de ofício ou como consequência de denúncia encaminhada à autoridade competente.</h4>
+ <h4>§ 3º O disposto no inciso III do caput deste artigo não se aplica:</h4>
+ <h5>I - às situações em que o preço de produtos e de serviços seja utilizado com a finalidade de reduzir o valor do tributo, de postergar a sua arrecadação ou de remeter lucros em forma de custos ao exterior; e</h5>
+ <h5>II - à legislação de defesa da concorrência, aos direitos do consumidor e às demais disposições protegidas por lei federal.</h5>
+ <p><del>§ 4º Para fins do disposto no inciso VII (Revogado pela Lei 14.011, de 2020)</del></p>
+ <h4>§ 5º O disposto no inciso VIII do caput deste artigo não se aplica à empresa pública e à sociedade de economia mista definidas nos arts. 3º e 4º da Lei n° 13.303, de 30 de junho de 2016 .</h4>
+ <h4>§ 6º O disposto no inciso IX do caput deste artigo não se aplica quando:</h4>
+ <h5>I - versar sobre questões tributárias de qualquer espécie ou de concessão de registro de marcas;</h5>
+ <h5>II - a decisão importar em compromisso financeiro da administração pública; 	e</h5>
+ <h5>III - houver objeção expressa em tratado em vigor no País.</h5>
+ <h4>§ 7º A aprovação tácita prevista no inciso IX do caput deste artigo não se aplica quando a titularidade da solicitação for de agente público ou de seu cônjuge, companheiro ou parente em linha reta ou colateral, por consanguinidade ou afinidade, até o 3º (terceiro) grau, 	dirigida a autoridade administrativa ou política do próprio órgão ou entidade da administração pública em que desenvolva suas atividades funcionais.</h4>
+ <h4>§ 8º O prazo a que se refere o inciso IX do caput deste artigo será definido pelo órgão ou pela entidade da administração pública solicitada, observados os princípios da impessoalidade e da eficiência e os limites máximos estabelecidos em regulamento.</h4>
+ <h4>§ 9º (VETADO).</h4>
+ <h4>§ 10. O disposto no inciso XI do caput deste artigo não se aplica às situações de acordo resultantes de ilicitude.</h4>
+ <h4>§ 11. Para os fins do inciso XII do caput deste artigo, é ilegal delimitar prazo de validade de certidão emitida sobre fato imutável, inclusive sobre óbito.</h4>
+ <h4>§ 12. O disposto no inciso IX do caput não se aplica às atividades com impacto significativo no meio ambiente, conforme estabelecido pelo órgão ambiental competente. (Incluído pela Medida Provisória nº 915, de 2019)</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS GARANTIAS DE LIVRE INICIATIVA</h3>
+ <h3>Art. 4º É dever da administração pública e das demais entidades que se vinculam a esta Lei, no exercício de regulamentação de norma pública pertencente à legislação sobre a qual esta Lei versa, exceto se em estrito cumprimento a previsão explícita em lei, evitar o abuso do poder regulatório de maneira a, indevidamente:</h3>
+ <h5>I - criar reserva de mercado ao favorecer, na regulação, grupo econômico, ou profissional, em prejuízo dos demais concorrentes;</h5>
+ <h5>II - redigir enunciados que impeçam a entrada de novos competidores nacionais ou estrangeiros no mercado;</h5>
+ <h5>III - exigir especificação técnica que não seja necessária para atingir o fim desejado;</h5>
+ <h5>IV - redigir enunciados que impeçam ou retardem a inovação e a adoção de novas tecnologias, processos ou modelos de negócios, ressalvadas as situações consideradas em regulamento como de alto risco;</h5>
+ <h5>V - aumentar os custos de transação sem demonstração de benefícios;</h5>
+ <h5>VI - criar demanda artificial ou compulsória de produto, serviço ou atividade profissional, inclusive de uso de cartórios, registros ou cadastros;</h5>
+ <h5>VII - introduzir limites à livre formação de sociedades empresariais ou de atividades econômicas;</h5>
+ <h5>VIII - restringir o uso e o exercício da publicidade e propaganda sobre um setor econômico, ressalvadas as hipóteses expressamente vedadas em lei federal; e</h5>
+ <h5>IX - exigir, sob o pretexto de inscrição tributária, requerimentos de outra natureza de maneira a mitigar os efeitos do inciso I do caput do art. 3º desta Lei.</h5>
+ <h3>Art. 4º-A É dever da administração pública e das demais entidades que se sujeitam a esta Lei, na aplicação da ordenação pública sobre atividades econômicas privadas: (Incluído pela Lei n° 14.195, de 2021)</h3>
+ <h5>I - dispensar tratamento justo, previsível e isonômico entre os agentes econômicos; (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h5>II - proceder à lavratura de autos de infração ou aplicar sanções com base em termos subjetivos ou abstratos somente quando estes forem propriamente regulamentados por meio de critérios claros, objetivos e previsíveis; e (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h5>III - observar o critério de dupla visita para lavratura de autos de infração decorrentes do exercício de atividade considerada de baixo ou médio risco. (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h4>§ 1º Os órgãos e as entidades competentes, na forma do inciso II do caput deste artigo, editarão atos normativos para definir a aplicação e a incidência de conceitos subjetivos ou abstratos por meio de critérios claros, objetivos e previsíveis, observado que: (Incluído pela Lei n° 14.195, de 2021)</h4>
+ <h5>I - nos casos de imprescindibilidade de juízo subjetivo para a aplicação da sanção, o ato normativo determinará o procedimento para sua aferição, de forma a garantir a maior previsibilidade e impessoalidade possível; (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h5>II - a competência da edição dos atos normativos infralegais equivalentes a que se refere este parágrafo poderá ser delegada pelo Poder competente conforme sua autonomia, bem como pelo órgão ou pela entidade responsável pela lavratura do auto de infração. (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h4>§ 2º Para os fins administrativos, controladores e judiciais, consideram-se plenamente atendidos pela administração pública os requisitos previstos no inciso II do caput deste artigo, quando a advocacia pública, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios, nos limites da respectiva competência, tiver previamente analisado o ato de que trata o § 1º deste artigo. (Incluído pela Lei n° 14.195, de 2021)</h4>
+ <h4>§ 3º Os órgãos e as entidades deverão editar os atos normativos previstos no § 1º deste artigo no prazo de 4 (quatro) anos, podendo o Poder Executivo estabelecer prazo inferior em regulamento. (Incluído pela Lei n° 14.195, de 2021)</h4>
+ <h4>§ 4º O disposto no inciso II do caput deste artigo aplica-se exclusivamente ao ato de lavratura decorrente de infrações referentes a matérias nas quais a atividade foi considerada de baixo ou médio risco, não se aplicando a órgãos e a entidades da administração pública que não a tenham assim classificado, de forma direta ou indireta, de acordo com os seguintes critérios: (Incluído pela Lei n° 14.195, de 2021)</h4>
+ <h5>I - direta, quando realizada pelo próprio órgão ou entidade da administração pública que procede à lavratura; e (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h5>II - indireta, quando o nível de risco aplicável decorre de norma hierarquicamente superior ou subsidiária, por força de lei, desde que a classificação refira-se explicitamente à matéria sobre a qual se procederá a lavratura. (Incluído pela Lei n° 14.195, de 2021)</h5>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA ANÁLISE DE IMPACTO REGULATÓRIO</h3>
+ <h3>Art. 5º As propostas de edição e de alteração de atos normativos de interesse geral de agentes econômicos ou de usuários dos serviços prestados, editadas por 	órgão ou entidade da administração pública federal, incluídas as autarquias e as fundações públicas, serão precedidas da realização de análise de impacto regulatório, que conterá informações e dados sobre os possíveis efeitos do ato normativo para verificar a razoabilidade do seu impacto econômico. (Regulamento)</h3>
+ <h4>Parágrafo único. Regulamento disporá sobre a data de início da exigência de que trata o caput deste artigo e sobre o conteúdo, a metodologia da análise de impacto regulatório, 	os quesitos mínimos a serem objeto de exame, as hipóteses em que será 	obrigatória sua realização e as hipóteses em que poderá ser dispensada.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DAS ALTERAÇÕES LEGISLATIVAS E DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 6º Fica extinto o Fundo Soberano do Brasil (FSB), 	fundo especial de natureza contábil e financeira, vinculado ao Ministério da 	Economia, criado pela Lei n° 11.887, de 24 de dezembro de 2008.</h3>
+ <h3>Art. 7º A Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 49-A . A pessoa jurídica não se confunde com os seus sócios, associados, instituidores ou administradores.</h3>
+ <h4>Parágrafo único. A autonomia patrimonial das pessoas jurídicas é um instrumento lícito de alocação e segregação de riscos, estabelecido pela lei com a finalidade de estimular empreendimentos, para a geração de empregos, tributo, renda e inovação em benefício de todos.”</h4>
+ <p>“</p>
+ <h3>Art. 50. Em caso de abuso da personalidade jurídica, caracterizado pelo desvio de finalidade ou pela confusão patrimonial, pode o juiz, a requerimento da parte, ou do Ministério Público quando lhe couber intervir no processo, desconsiderá-la para que os efeitos de certas e determinadas relações de obrigações sejam estendidos aos bens particulares de administradores ou de sócios da pessoa jurídica beneficiados direta ou indiretamente pelo abuso.</h3>
+ <h4>§ 1º Para os fins do disposto neste artigo, desvio de finalidade é a utilização da pessoa jurídica com o propósito de lesar credores e para a prática de atos ilícitos de qualquer natureza.</h4>
+ <h4>§ 2º Entende-se por confusão patrimonial a ausência de separação de fato entre os patrimônios, caracterizada por:</h4>
+ <h5>I - cumprimento repetitivo pela sociedade de obrigações do sócio ou do administrador ou vice-versa;</h5>
+ <h5>II - transferência de ativos ou de passivos sem efetivas contraprestações, exceto os de valor proporcionalmente insignificante; e</h5>
+ <h5>III - outros atos de descumprimento da autonomia patrimonial.</h5>
+ <h4>§ 3º O disposto no caput e nos §§ 1º e 2º deste artigo também se aplica à extensão das obrigações de sócios ou de administradores à pessoa jurídica.</h4>
+ <h4>§ 4º A mera existência de grupo econômico sem a presença dos requisitos de que trata o caput deste artigo não autoriza a desconsideração da personalidade da pessoa jurídica.</h4>
+ <h4>§ 5º Não constitui desvio de finalidade a mera expansão ou a alteração da finalidade original da atividade econômica específica da pessoa jurídica.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 113. ......................................................................................................................</h3>
+ <h4>§ 1º A interpretação do negócio jurídico deve lhe atribuir o sentido que:</h4>
+ <h5>I - for confirmado pelo comportamento das partes posterior à celebração do negócio;</h5>
+ <h5>II - corresponder aos usos, costumes e práticas do mercado relativas ao tipo de negócio;</h5>
+ <h5>III - corresponder à boa-fé;</h5>
+ <h5>IV - for mais benéfico à parte que não redigiu o dispositivo, se identificável; e</h5>
+ <h5>V - corresponder a qual seria a razoável negociação das partes sobre a questão discutida, inferida das demais disposições do negócio e da racionalidade econômica das partes, consideradas as informações disponíveis no momento de sua celebração.</h5>
+ <h4>§ 2º As partes poderão livremente pactuar regras de interpretação, de preenchimento de lacunas e de integração dos negócios jurídicos diversas daquelas previstas em lei.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 421 . A liberdade contratual será exercida nos limites da função social do contrato.</h3>
+ <h4>Parágrafo único. Nas relações contratuais privadas, prevalecerão o princípio da intervenção mínima e a excepcionalidade da revisão contratual.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 421-A. Os contratos civis e empresariais presumem-se paritários e simétricos até a presença de elementos concretos que justifiquem o afastamento dessa presunção, ressalvados os regimes jurídicos previstos em leis especiais, garantido também que:</h3>
+ <h5>I - as partes negociantes poderão estabelecer parâmetros objetivos para a interpretação das cláusulas negociais e de seus pressupostos de revisão ou de resolução;</h5>
+ <h5>II - a alocação de riscos definida pelas partes deve ser respeitada e observada; e</h5>
+ <h5>III - a revisão contratual somente ocorrerá de maneira excepcional e limitada.”</h5>
+ <p>“</p>
+ <h3>Art. 980-A. ...............................................................................................................</h3>
+ <p>....................................................................................................................................</p>
+ <h4>§ 7º Somente o patrimônio social da empresa responderá pelas dívidas da empresa individual de responsabilidade limitada, hipótese em que não se confundirá, em qualquer situação, com o patrimônio do titular que a constitui, ressalvados os casos de fraude.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 1.052. ..............................................................................................................</h3>
+ <h4>§ 1º A sociedade limitada pode ser constituída por 1 (uma) ou mais pessoas.</h4>
+ <h4>§ 2º Se for unipessoal, aplicar-se-ão ao documento de constituição do sócio único, no que couber, as disposições sobre o contrato social.” (NR)</h4>
+ <p>“</p>
+ <h2>CAPÍTULO X</h2>
+ <h3>DO FUNDO DE 	INVESTIMENTO</h3>
+ <p>‘</p>
+ <h3>Art. 1.368-C. O fundo de investimento é uma comunhão de recursos, constituído sob a forma de condomínio de natureza especial, destinado à aplicação em ativos financeiros, bens e direitos de qualquer natureza.</h3>
+ <h4>§ 1º Não se aplicam ao fundo de investimento as disposições constantes dos arts. 1.314 ao 1.358-A deste Código.</h4>
+ <h4>§ 2º Competirá à Comissão de Valores Mobiliários disciplinar o disposto no caput deste artigo.</h4>
+ <h4>§ 3º O registro dos regulamentos dos fundos de investimentos na Comissão de Valores Mobiliários é condição suficiente para garantir a sua publicidade e a oponibilidade de efeitos em relação a terceiros.’</h4>
+ <p>‘</p>
+ <h3>Art. 1.368-D . O regulamento do fundo de investimento poderá, observado o disposto na regulamentação a que se refere o § 2º do art. 1.368-C desta Lei, estabelecer:</h3>
+ <h5>I - a limitação da responsabilidade de cada investidor ao valor de suas cotas;</h5>
+ <h5>II - a limitação da responsabilidade, bem como parâmetros de sua aferição, dos prestadores de serviços do fundo de investimento, perante o condomínio e entre si, ao cumprimento dos deveres particulares de cada um, sem solidariedade; e</h5>
+ <h5>III - classes de cotas com direitos e obrigações distintos, com possibilidade de constituir patrimônio segregado para cada classe.</h5>
+ <h4>§ 1º A adoção da responsabilidade limitada por fundo de investimento constituído sem a limitação de responsabilidade somente abrangerá fatos ocorridos após a respectiva mudança em seu regulamento.</h4>
+ <h4>§ 2º A avaliação de responsabilidade dos prestadores de serviço deverá levar sempre em consideração os riscos inerentes às aplicações nos mercados de atuação do fundo de investimento e a natureza de obrigação de meio de seus serviços.</h4>
+ <h4>§ 3º O patrimônio segregado referido no inciso III do caput deste artigo só responderá por obrigações vinculadas à classe respectiva, nos termos do regulamento.’</h4>
+ <p>‘</p>
+ <h3>Art. 1.368-E . Os fundos de investimento respondem diretamente pelas obrigações legais e contratuais por eles assumidas, e os prestadores de serviço não respondem por essas obrigações, mas respondem pelos prejuízos que causarem quando procederem com dolo ou má-fé.</h3>
+ <h4>§ 1º Se o fundo de investimento com limitação de responsabilidade não possuir patrimônio suficiente para responder por suas dívidas, aplicam-se as regras de insolvência previstas nos arts. 955 a 965 deste Código.</h4>
+ <h4>§ 2º A insolvência pode ser requerida judicialmente por credores, por deliberação própria dos cotistas do fundo de investimento, nos termos de seu regulamento, ou pela Comissão de Valores Mobiliários.’</h4>
+ <p>‘</p>
+ <h3>Art. 1.368-F . O fundo de investimento constituído por lei específica e regulamentado pela Comissão de Valores Mobiliários deverá, no que couber, seguir as disposições deste Capítulo.’”</h3>
+ <h3>Art. 8º O art. 85 da Lei n° 6.404, de 15 de dezembro de 1976 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 85. .....................................................................................................</h3>
+ <h4>§ 1º A subscrição poderá ser feita, nas condições previstas no prospecto, por carta à instituição, acompanhada das declarações a que se refere este artigo e do pagamento da entrada.</h4>
+ <h4>§ 2º Será dispensada a assinatura de lista ou de boletim a que se refere o caput deste artigo na hipótese de oferta pública cuja liquidação ocorra por meio de sistema administrado por entidade administradora de mercados organizados de valores mobiliários.” (NR)</h4>
+ <h3>Art. 9º O art. 4º da Lei n° 11.598, de 3 de dezembro de 	2007 , passa a vigorar acrescido do seguinte § 5º:</h3>
+ <p>“</p>
+ <h3>Art. 4º ..........................................................................................................</h3>
+ <p>.........................................................................................................................</p>
+ <h4>§ 5º Ato do Poder Executivo federal disporá sobre a classificação mínima de atividades de baixo risco, válida para todos os integrantes da Redesim, observada a Classificação Nacional de Atividades Econômicas, hipótese em que a autodeclaração de enquadramento será requerimento suficiente, até que seja apresentada prova em contrário.” (NR)</h4>
+ <h3>Art. 10. A Lei n° 12.682, de 9 de julho de 2012 , passa a vigorar acrescida do seguinte art. 2º-A:</h3>
+ <p>“</p>
+ <h3>Art. 2º-A . Fica autorizado o armazenamento, em meio eletrônico, óptico ou equivalente, de documentos públicos ou privados, compostos por dados ou por imagens, observado o disposto nesta Lei, nas legislações específicas e no regulamento.</h3>
+ <h4>§ 1º Após a digitalização, constatada a integridade do documento digital nos termos estabelecidos no regulamento, o original poderá ser destruído, ressalvados os documentos de valor histórico, cuja preservação observará o disposto na legislação específica.</h4>
+ <h4>§ 2º O documento digital e a sua reprodução, em qualquer meio, realizada de acordo com o disposto nesta Lei e na legislação específica, terão o mesmo valor probatório do documento original, para todos os fins de direito, inclusive para atender ao poder fiscalizatório do Estado.</h4>
+ <h4>§ 3º Decorridos os respectivos prazos de decadência ou de prescrição, os documentos armazenados em meio eletrônico, óptico ou equivalente poderão ser eliminados.</h4>
+ <h4>§ 4º Os documentos digitalizados conforme o disposto neste artigo terão o mesmo efeito jurídico conferido aos documentos microfilmados, nos termos da Lei n° 5.433, de 8 de maio de 1968 , e de regulamentação posterior.</h4>
+ <h4>§ 5º Ato do Secretário de Governo Digital da Secretaria Especial de Desburocratização, Gestão e Governo Digital do Ministério da Economia estabelecerá os documentos cuja reprodução conterá código de autenticação verificável.</h4>
+ <h4>§ 6º Ato do Conselho Monetário Nacional disporá sobre o cumprimento do disposto no § 1º deste artigo, relativamente aos documentos referentes a operações e transações realizadas no sistema financeiro nacional.</h4>
+ <h4>§ 7º É lícita a reprodução de documento digital, em papel ou em qualquer outro meio físico, que contiver mecanismo de verificação de integridade e autenticidade, na maneira e com a técnica definidas pelo mercado, e cabe ao particular o ônus de demonstrar integralmente a presença de tais requisitos.</h4>
+ <h4>§ 8º Para a garantia de preservação da integridade, da autenticidade e da confidencialidade de documentos públicos será usada certificação digital no padrão da Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil).”</h4>
+ <h3>Art. 11. O Decreto-Lei n° 9.760, de 5 de setembro de 1946 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 14 . Da decisão proferida pelo Secretário de Coordenação e Governança do Patrimônio da União da Secretaria Especial de Desestatização, Desinvestimento e Mercados do Ministério da Economia será dado conhecimento aos recorrentes que, no prazo de 20 (vinte) dias, contado da data de sua ciência, poderão interpor recurso, sem efeito suspensivo, dirigido ao superior hierárquico, em última instância.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 100. ....................................................................................................................</h3>
+ <p>....................................................................................................................................</p>
+ <h4>§ 5º Considerada improcedente a impugnação, a autoridade submeterá o recurso à autoridade superior, nos termos estabelecidos em regulamento.</h4>
+ <p>.............................................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 216 . O Ministro de Estado da Economia, diretamente ou por ato do Secretário Especial de Desestatização, Desinvestimento e Mercados do Ministério da Economia, ouvido previamente o Secretário de Coordenação e Governança do Patrimônio da União, editará os atos necessários à execução do disposto neste Decreto-Lei.” (NR)</h3>
+ <h3>Art. 12. O art. 1º da Lei n° 6.015, de 31 de dezembro de 1973 , passa a vigorar acrescido do seguinte § 3º:</h3>
+ <p>“</p>
+ <h3>Art. 1º ........................................................................................................................</h3>
+ <p>......................................................................................................................................</p>
+ <h4>§ 3º Os registros poderão ser escriturados, publicitados e conservados em meio eletrônico, obedecidos os padrões tecnológicos estabelecidos em regulamento.” (NR)</h4>
+ <h3>Art. 13. A Lei n° 10.522, de 19 de julho de 2002 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 18-A . Comitê formado de integrantes do Conselho Administrativo de Recursos Fiscais, da Secretaria Especial da Receita Federal do Brasil do Ministério da Economia e da Procuradoria-Geral da Fazenda Nacional editará enunciados de súmula da administração tributária federal, conforme o disposto em ato do Ministro de Estado da Economia, que deverão ser observados nos atos administrativos, normativos e decisórios praticados pelos referidos órgãos.”</h3>
+ <p>“</p>
+ <h3>Art. 19. Fica a Procuradoria-Geral da Fazenda Nacional dispensada de contestar, de oferecer contrarrazões e de interpor recursos, e fica autorizada a desistir de recursos já interpostos, desde que inexista outro fundamento relevante, na hipótese em que a ação ou a decisão judicial ou administrativa versar sobre:</h3>
+ <p>.....................................................................................................................................</p>
+ <h5>II - tema que seja objeto de parecer, vigente e aprovado, pelo Procurador-Geral da Fazenda Nacional, que conclua no mesmo sentido do pleito do particular;</h5>
+ <p>......................................................................................................................................</p>
+ <h5>IV - tema sobre o qual exista súmula ou parecer do Advogado-Geral da União que conclua no mesmo sentido do pleito do particular;</h5>
+ <h5>V - tema fundado em dispositivo legal que tenha sido declarado inconstitucional pelo Supremo Tribunal Federal em sede de controle difuso e tenha tido sua execução suspensa por resolução do Senado Federal, ou tema sobre o qual exista enunciado de súmula vinculante ou que tenha sido definido pelo Supremo Tribunal Federal em sentido desfavorável à Fazenda Nacional em sede de controle concentrado de constitucionalidade;</h5>
+ <h5>VI - tema decidido pelo Supremo Tribunal Federal, em matéria constitucional, ou pelo Superior Tribunal de Justiça, pelo Tribunal Superior do Trabalho, pelo Tribunal Superior Eleitoral ou pela Turma Nacional de Uniformização de Jurisprudência, no âmbito de suas competências, quando:</h5>
+ <h6>a) for definido em sede de repercussão geral ou recurso repetitivo; ou</h6>
+ <h6>b) não houver viabilidade de reversão da tese firmada em sentido desfavorável à Fazenda Nacional, conforme critérios definidos em ato do Procurador-Geral da Fazenda Nacional; e</h6>
+ <h5>VII - tema que seja objeto de súmula da administração tributária federal de que trata o art. 18-A desta Lei.</h5>
+ <p>......................................................................................................................................</p>
+ <h4>§ 3º (Revogado);</h4>
+ <h4>§ 4º (Revogado);</h4>
+ <h4>§ 5º (Revogado);</h4>
+ <p>.......................................................................................................................................</p>
+ <h4>§ 7º (Revogado).</h4>
+ <h4>§ 8º O parecer da Procuradoria-Geral da Fazenda Nacional que examina a juridicidade de proposições normativas não se enquadra no disposto no inciso II do caput deste artigo.</h4>
+ <h4>§ 9º A dispensa de que tratam os incisos V e VI do caput deste artigo poderá ser estendida a tema não abrangido pelo julgado, quando a ele forem aplicáveis os fundamentos determinantes extraídos do julgamento paradigma ou da jurisprudência consolidada, desde que inexista outro fundamento relevante que justifique a impugnação em juízo.</h4>
+ <h4>§ 10. O disposto neste artigo estende-se, no que couber, aos demais meios de impugnação às decisões judiciais.</h4>
+ <h4>§ 11. O disposto neste artigo aplica-se a todas as causas em que as unidades da Procuradoria-Geral da Fazenda Nacional devam atuar na qualidade de representante judicial ou de autoridade coatora.</h4>
+ <h4>§ 12. Os órgãos do Poder Judiciário e as unidades da Procuradoria-Geral da Fazenda Nacional poderão, de comum acordo, realizar mutirões para análise do enquadramento de processos ou de recursos nas hipóteses previstas neste artigo e celebrar negócios processuais com fundamento no disposto no art. 190 da Lei n° 13.105, de 16 de março de 2015 (Código de Processo Civil).</h4>
+ <h4>§ 13. Sem prejuízo do disposto no § 12 deste artigo, a Procuradoria-Geral da Fazenda Nacional regulamentará a celebração de negócios jurídicos processuais em seu âmbito de atuação, inclusive na cobrança administrativa ou judicial da dívida ativa da União.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 19-A . Os Auditores-Fiscais da Secretaria Especial da Receita Federal do Brasil não constituirão os créditos tributários relativos aos temas de que trata o art. 19 desta Lei, observado:</h3>
+ <h5>I - o disposto no parecer a que se refere o inciso II do caput do art. 19 desta Lei, que será aprovado na forma do art. 42 da Lei Complementar nº 73, de 10 de fevereiro de 1993, ou que terá concordância com a sua aplicação pela Secretaria Especial da Receita Federal do Brasil do Ministério da Economia;</h5>
+ <h5>II - o parecer a que se refere o inciso IV do caput do art. 19 desta Lei, que será aprovado na forma do disposto no art. 40 da Lei Complementar nº 73, de 10 de fevereiro de 1993, ou que, quando não aprovado por despacho do Presidente da República, terá concordância com a sua aplicação pelo Ministro de Estado da Economia; ou</h5>
+ <h5>III - nas hipóteses de que tratam o inciso VI do caput e o § 9º do art. 19 desta Lei, a Procuradoria-Geral da Fazenda Nacional deverá manifestar-se sobre as matérias abrangidas por esses dispositivos.</h5>
+ <h4>§ 1º Os Auditores-Fiscais da Secretaria Especial da Receita Federal do Brasil do Ministério da Economia adotarão, em suas decisões, o entendimento a que estiverem vinculados, inclusive para fins de revisão de ofício do lançamento e de repetição de indébito administrativa.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se, no que couber, aos responsáveis pela retenção de tributos e, ao emitirem laudos periciais para atestar a existência de condições que gerem isenção de tributos, aos serviços médicos oficiais.”</h4>
+ <p>“</p>
+ <h3>Art. 19-B . Os demais órgãos da administração pública que administrem créditos tributários e não tributários passíveis de inscrição e de cobrança pela Procuradoria-Geral da Fazenda Nacional encontram-se dispensados de constituir e de promover a cobrança com fundamento nas hipóteses de dispensa de que trata o art. 19 desta Lei.</h3>
+ <h4>Parágrafo único. A aplicação do disposto no caput deste artigo observará, no que couber, as disposições do art. 19-A desta Lei.”</h4>
+ <p>“</p>
+ <h3>Art. 19-C . A Procuradoria-Geral da Fazenda Nacional poderá dispensar a prática de atos processuais, inclusive a desistência de recursos interpostos, quando o benefício patrimonial almejado com o ato não atender aos critérios de racionalidade, de economicidade e de eficiência.</h3>
+ <h4>§ 1º O disposto no caput deste artigo inclui o estabelecimento de parâmetros de valor para a dispensa da prática de atos processuais.</h4>
+ <h4>§ 2º A aplicação do disposto neste artigo não implicará o reconhecimento da procedência do pedido formulado pelo autor.</h4>
+ <h4>§ 3º O disposto neste artigo aplica-se, inclusive, à atuação da Procuradoria-Geral da Fazenda Nacional no âmbito do contencioso administrativo fiscal.”</h4>
+ <p><del>“</p>
+ <h3>Art. 19-D . À Procuradoria-Geral da União, à Procuradoria-Geral Federal e à Procuradoria-Geral do Banco Central do Brasil aplica-se, no que couber, o disposto nos arts. 19, 19-B e 19-C (Revogado pela Lei n° 14.375, de 2022)</del></h3>
+ <h4>§ 1º Aos órgãos da administração pública federal direta, representados pela Procuradoria-Geral da União, e às autarquias e fundações públicas, representadas pela Procuradoria-Geral Federal ou pela Procuradoria-Geral do Banco Central do Brasil, aplica-se, no que couber, o disposto no art. 19-B desta Lei.</h4>
+ <h4>§ 2º Ato do Advogado-Geral da União disciplinará o disposto neste artigo.”</h4>
+ <p>“</p>
+ <h3>Art. 20 . Serão arquivados, sem baixa na distribuição, por meio de requerimento do Procurador da Fazenda Nacional, os autos das execuções fiscais de débitos inscritos em dívida ativa da União pela Procuradoria-Geral da Fazenda Nacional ou por ela cobrados, de valor consolidado igual ou inferior àquele estabelecido em ato do Procurador-Geral da Fazenda Nacional.</h3>
+ <p>..............................................................................................................................” (NR)</p>
+ <h3>Art. 14. A Lei n° 8.934, de 18 de novembro de 1994 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 4º O Departamento Nacional de Registro Empresarial e Integração (Drei) da Secretaria de Governo Digital da Secretaria Especial de Desburocratização, Gestão e Governo Digital do Ministério da Economia tem por finalidade:</h3>
+ <p>.........................................................................................................................</p>
+ <h4>Parágrafo único. O cadastro nacional a que se refere o inciso IX do caput deste artigo será mantido com as informações originárias do cadastro estadual de empresas, vedados a exigência de preenchimento de formulário pelo empresário ou o fornecimento de novos dados ou informações, bem como a cobrança de preço pela inclusão das informações no cadastro nacional.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 31. Os atos decisórios serão publicados em sítio da rede mundial de computadores da junta comercial do respectivo ente federativo.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 32. ......................................................................................................................</h3>
+ <h4>§ 1º Os atos, os documentos e as declarações que contenham informações meramente cadastrais serão levados automaticamente a registro se puderem ser obtidos de outras bases de dados disponíveis em órgãos públicos.</h4>
+ <h4>§ 2º Ato do Departamento Nacional de Registro Empresarial e Integração definirá os atos, os documentos e as declarações que contenham informações meramente cadastrais.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 35. ......................................................................................................................</h3>
+ <p>......................................................................................................................................</p>
+ <h5>VIII - (revogado).</h5>
+ <h4>Parágrafo único. O registro dos atos constitutivos e de suas alterações e extinções ocorrerá independentemente de autorização governamental prévia, e os órgãos públicos deverão ser informados pela Rede Nacional para a Simplificação do Registro e da Legalização de Empresas e Negócios (Redesim) a respeito dos registros sobre os quais manifestarem interesse.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 41. .....................................................................................................................</h3>
+ <h5>I - ..................................................................................................................................</h5>
+ <h6>a) dos atos de constituição de sociedades anônimas;</h6>
+ <p>........................................................................................................................</p>
+ <h4>Parágrafo único . Os pedidos de arquivamento de que trata o inciso I do caput deste artigo serão decididos no prazo de 5 (cinco) dias úteis, contado da data de seu recebimento, sob pena de os atos serem considerados arquivados, mediante provocação dos interessados, sem prejuízo do exame das formalidades legais pela procuradoria.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 42. ......................................................................................................................</h3>
+ <h4>§ 1º ..............................................................................................................................</h4>
+ <h4>§ 2º Os pedidos de arquivamento não previstos no inciso I do caput do art. 41 desta Lei serão decididos no prazo de 2 (dois) dias úteis, contado da data de seu recebimento, sob pena de os atos serem considerados arquivados, mediante provocação dos interessados, sem prejuízo do exame das formalidades legais pela procuradoria.</h4>
+ <h4>§ 3º O arquivamento dos atos constitutivos e de alterações não previstos no inciso I do caput do art. 41 desta Lei terá o registro deferido automaticamente caso cumpridos os requisitos de:</h4>
+ <h5>I - aprovação da consulta prévia da viabilidade do nome empresarial e da viabilidade de localização, quando o ato exigir; e</h5>
+ <h5>II - utilização pelo requerente do instrumento padrão estabelecido pelo Departamento Nacional de Registro Empresarial e Integração (Drei) da Secretaria de Governo Digital da Secretaria Especial de Desburocratização, Gestão e Governo Digital do Ministério da Economia.</h5>
+ <h4>§ 4º O arquivamento dos atos de extinção não previstos no inciso I do caput do art. 41 desta Lei terá o registro deferido automaticamente no caso de utilização pelo requerente do instrumento padrão estabelecido pelo Drei.</h4>
+ <h4>§ 5º Nas hipóteses de que tratam os §§ 3º e 4º do caput deste artigo, a análise do cumprimento das formalidades legais será feita posteriormente, no prazo de 2 (dois) dias úteis, contado da data do deferimento automático do registro.</h4>
+ <h4>§ 6º Após a análise de que trata o § 5º deste artigo, a identificação da existência de vício acarretará:</h4>
+ <h5>I - o cancelamento do arquivamento, se o vício for insanável; ou</h5>
+ <h5>II - a observação do procedimento estabelecido pelo Drei, se o vício for sanável.” (NR)</h5>
+ <p>“</p>
+ <h3>Art. 44. ......................................................................................................................</h3>
+ <p>.....................................................................................................................................</p>
+ <h5>III - Recurso ao Departamento Nacional de Registro Empresarial e Integração.” (NR)</h5>
+ <p>“</p>
+ <h3>Art. 47 . Das decisões do plenário cabe recurso ao Departamento Nacional de Registro Empresarial e Integração como última instância administrativa.</h3>
+ <h4>Parágrafo único. (Revogado).” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 54 . A prova da publicidade de atos societários, quando exigida em lei, será feita mediante anotação nos registros da junta comercial à vista da apresentação da folha do Diário Oficial, em sua versão eletrônica, dispensada a juntada da mencionada folha.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 55. Compete ao Departamento Nacional de Registro Empresarial e Integração propor a elaboração da tabela de preços dos serviços pertinentes ao Registro Público de Empresas Mercantis, na parte relativa aos atos de natureza federal, bem como especificar os atos a serem observados pelas juntas comerciais na elaboração de suas tabelas locais.</h3>
+ <h4>§ 1º .................................................................................................................</h4>
+ <h4>§ 2º É vedada a cobrança de preço pelo serviço de arquivamento dos documentos relativos à extinção do registro do empresário individual, da empresa individual de responsabilidade limitada (Eireli) e da sociedade limitada.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 63. .........................................................................................................</h3>
+ <h4>§ 1º A cópia de documento, autenticada na forma prevista em lei, dispensará nova conferência com o documento original.</h4>
+ <h4>§ 2º A autenticação do documento poderá ser realizada por meio de comparação entre o documento original e a sua cópia pelo servidor a quem o documento seja apresentado.</h4>
+ <h4>§ 3º Fica dispensada a autenticação a que se refere o § 1º do caput deste artigo quando o advogado ou o contador da parte interessada declarar, sob sua responsabilidade pessoal, a autenticidade da cópia do documento.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 65-A . Os atos de constituição, alteração, transformação, incorporação, fusão, cisão, dissolução e extinção de registro de empresários e de pessoas jurídicas poderão ser realizados também por meio de sistema eletrônico criado e mantido pela administração pública federal.”</h3>
+ <h3>Art. 15. A Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 13. .........................................................................................................</h3>
+ <p>.......................................................................................................................</p>
+ <h4>§ 2º A Carteira de Trabalho e Previdência Social (CTPS) obedecerá aos modelos que o Ministério da Economia adotar.</h4>
+ <h4>§ 3º (Revogado).</h4>
+ <h4>§ 4º (Revogado).” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 14. A CTPS será emitida pelo Ministério da Economia preferencialmente em meio eletrônico.</h3>
+ <h4>Parágrafo único. Excepcionalmente, a CTPS poderá ser emitida em meio físico, desde que:</h4>
+ <h5>I - nas unidades descentralizadas do Ministério da Economia que forem habilitadas para a emissão;</h5>
+ <h5>II - mediante convênio, por órgãos federais, estaduais e municipais da administração direta ou indireta;</h5>
+ <h5>III - mediante convênio com serviços notariais e de registro, sem custos para a administração, garantidas as condições de segurança das informações.” (NR)</h5>
+ <p>“</p>
+ <h3>Art. 15. Os procedimentos para emissão da CTPS ao interessado serão estabelecidos pelo Ministério da Economia em regulamento próprio, privilegiada a emissão em formato eletrônico.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 16. A CTPS terá como identificação única do empregado o número de inscrição no Cadastro de Pessoas Físicas (CPF).</h3>
+ <h5>I - (revogado);</h5>
+ <h5>II - (revogado);</h5>
+ <h5>III - (revogado);</h5>
+ <h5>IV - (revogado).</h5>
+ <h4>Parágrafo único. (Revogado).</h4>
+ <h6>a) (revogada);</h6>
+ <h6>b) (revogada).” (NR)</h6>
+ <p>“</p>
+ <h3>Art. 29. O empregador terá o prazo de 5 (cinco) dias úteis para anotar na CTPS, em relação aos trabalhadores que admitir, a data de admissão, a remuneração e as condições especiais, se houver, facultada a adoção de sistema manual, mecânico ou eletrônico, conforme instruções a serem expedidas pelo Ministério da Economia.</h3>
+ <p>.......................................................................................................................................</p>
+ <h4>§ 6º A comunicação pelo trabalhador do número de inscrição no CPF ao empregador equivale à apresentação da CTPS em meio digital, dispensado o empregador da emissão de recibo.</h4>
+ <h4>§ 7º Os registros eletrônicos gerados pelo empregador nos sistemas informatizados da CTPS em meio digital equivalem às anotações a que se refere esta Lei.</h4>
+ <h4>§ 8º O trabalhador deverá ter acesso às informações da sua CTPS no prazo de até 48 (quarenta e oito) horas a partir de sua anotação.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 40. A CTPS regularmente emitida e anotada servirá de prova:</h3>
+ <p>...................................................................................................................................</p>
+ <h5>II - (revogado);</h5>
+ <p>.........................................................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 74. O horário de trabalho será anotado em registro de empregados.</h3>
+ <h4>§ 1º (Revogado).</h4>
+ <h4>§ 2º Para os estabelecimentos com mais de 20 (vinte) trabalhadores será obrigatória a anotação da hora de entrada e de saída, em registro manual, mecânico ou eletrônico, conforme instruções expedidas pela Secretaria Especial de Previdência e Trabalho do Ministério da Economia, permitida a pré-assinalação do período de repouso.</h4>
+ <h4>§ 3º Se o trabalho for executado fora do estabelecimento, o horário dos empregados constará do registro manual, mecânico ou eletrônico em seu poder, sem prejuízo do que dispõe o caput deste artigo.</h4>
+ <h4>§ 4º Fica permitida a utilização de registro de ponto por exceção à jornada regular de trabalho, mediante acordo individual escrito, convenção coletiva ou acordo coletivo de trabalho.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 135. ...................................................................................................................</h3>
+ <p>........................................................................................................................................</p>
+ <h4>§ 3º Nos casos em que o empregado possua a CTPS em meio digital, a anotação será feita nos sistemas a que se refere o § 7º do art. 29 desta Consolidação, na forma do regulamento, dispensadas as anotações de que tratam os §§ 1º e 2º deste artigo.” (NR)</h4>
+ <h3>Art. 16. O 	Sistema de Escrituração Digital das Obrigações Fiscais, Previdenciárias e 	Trabalhistas (eSocial) será substituído, em nível federal, por sistema simplificado de escrituração digital de obrigações previdenciárias, 	trabalhistas e fiscais.</h3>
+ <h4>Parágrafo único. Aplica-se o disposto no caput deste artigo às obrigações acessórias à versão digital gerenciadas pela Receita Federal do 	Brasil do Livro de Controle de Produção e Estoque da Secretaria Especial da 	Receita Federal do Brasil (Bloco K).</h4>
+ <h3>Art. 17. Ficam resguardados a vigência e a eficácia ou os efeitos dos atos declaratórios do Procurador-Geral da Fazenda Nacional, 	aprovados pelo Ministro de Estado respectivo e editados até a data de publicação desta Lei, nos termos do inciso II do caput do art. 19 da Lei n° 10.522, de 19 de julho de 2002.</h3>
+ <h3>Art. 18. A eficácia do disposto no inciso X do caput do art. 3º desta Lei fica condicionada à regulamentação em ato do Poder 	Executivo federal, observado que:</h3>
+ <h5>I - para documentos particulares, qualquer meio de comprovação da autoria, 	integridade e, se necessário, confidencialidade de documentos em forma eletrônica é válido, desde que escolhido de comum acordo pelas partes ou aceito pela pessoa a quem for oposto o documento; e</h5>
+ <h5>II - independentemente de aceitação, o processo de digitalização que empregar o uso da certificação no padrão da Infraestrutura de Chaves 	Públicas Brasileira (ICP-Brasil) terá garantia de integralidade, 	autenticidade e confidencialidade para documentos públicos e privados.</h5>
+ <h3>Art. 19. Ficam revogados:</h3>
+ <h5>I - a Lei Delegada nº 4, de 26 de setembro de 1962 ;</h5>
+ <h5>II - os seguintes dispositivos do Decreto-Lei n° 73, de 21 de novembro de 	1966:</h5>
+ <h6>a) inciso III do caput do art. 5º; e</h6>
+ <h6>b) inciso X do caput do art. 32 ;</h6>
+ <h5>III - a Lei n° 11.887, de 24 de dezembro de 2008;</h5>
+ <h5>IV - (VETADO);</h5>
+ <h5>V - os seguintes dispositivos da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943:</h5>
+ <h6>a) art. 17;</h6>
+ <h6>b) art. 20 ;</h6>
+ <h6>c) art. 21;</h6>
+ <h6>d) art. 25 ;</h6>
+ <h6>e) art. 26;</h6>
+ <h6>f) art. 30 ;</h6>
+ <h6>g) art. 31;</h6>
+ <h6>h) art. 32;</h6>
+ <p>i) art. 33 ;</p>
+ <h6>j) art. 34;</h6>
+ <h6>k) inciso II do art. 40;</h6>
+ <p>l) art. 53;</p>
+ <h6>m) art. 54;</h6>
+ <h6>n) art. 56;</h6>
+ <h6>o) art. 141 ;</h6>
+ <h6>p) parágrafo único do art. 415;</h6>
+ <h6>q) art. 417;</h6>
+ <h6>r) art. 419;</h6>
+ <h6>s) art. 420;</h6>
+ <h6>t) art. 421 ;</h6>
+ <h6>u) art. 422; e</h6>
+ <p>v) art. 633;</p>
+ <h5>VI - os seguintes dispositivos da Lei n° 8.934, de 18 de novembro de 1994:</h5>
+ <h6>a) parágrafo único do art. 2º;</h6>
+ <h6>b) inciso VIII do caput do art. 35 ;</h6>
+ <h6>c) art. 43 ; e</h6>
+ <h6>d) parágrafo único do art. 47.</h6>
+ <h3>Art. 20. Esta Lei entra em vigor:</h3>
+ <h5>I - (VETADO);</h5>
+ <h5>II - na data de sua publicação, para os demais artigos.</h5>
+ <p>Brasília, 20 de setembro de 2019; 198º da 	Independência e 131º da República .</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Luiz Henrique Mandetta</p>
+ <p>Este texto não substitui o publicado no DOU de 	20.9.2019 - Edição extra-B</p>
+ <p>Provisória nº 881, de 2019</p>
+ <p>Regulamento | Institui a Declaração de Direitos de Liberdade Econômica; estabelece garantias de livre mercado; altera as Leis nos10.406,</p>
+ <p>de 10 de janeiro de 2002 (Código Civil), 6.404, de 15 de dezembro de</p>
+ <p>1976, 11.598, de 3 de dezembro de 2007, 12.682, de 9 de julho de 2012,</p>
+ <p>6.015, de 31 de dezembro de 1973, 10.522, de 19 de julho de 2002, 8.934,</p>
+ <p>de 18 de novembro 1994, o Decreto-Lei n° 9.760, de 5 de setembro de 1946</p>
+ <p>e a Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943; revoga a Lei Delegada nº 4, de 26 de setembro de 1962, a Lei n° 11.887, de 24 de dezembro de 2008, e dispositivos do Decreto-Lei n° 73, de 21 de novembro de 1966; e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13874.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

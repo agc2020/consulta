@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.977, DE 7 DE JULHO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.977, DE 7 DE JULHO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 14:57:55 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L11977compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 82.982 caracteres | espelho: 83.099 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.977, DE 7 DE JULHO DE 2009</p>
+ <p>Conversão da Medida Provisória nº 459, de 2009</p>
+ <p>(Regulamento)</p>
+ <p>Dispõe sobre o Programa Minha Casa, Minha Vida – PMCMV e a regularização fundiária de assentamentos localizados em áreas urbanas; altera o Decreto-Lei N° 3.365, de 21 de junho de 1941, as Leis n os 4.380, de 21 de agosto de 1964, 6.015, de 31 de dezembro de 1973, 8.036, de 11 de maio de 1990, e 10.257, de 10 de julho de 2001, e a Medida Provisória Nº 2.197-43, de 24 de agosto de 2001; e dá outras providências.</p>
+ <p>O VICE–PRESIDENTE DA REPÚBLICA, no exercício do cargo de PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DO PROGRAMA MINHA CASA, MINHA VIDA – PMCMV</h3>
+ <p>Seção I</p>
+ <p>Regulamento</p>
+ <p>Da Estrutura e Finalidade do PMCMV</p>
+ <h3>Art. 1º O Programa Minha Casa, Minha Vida (PMCMV) tem por finalidade criar mecanismos de incentivo à produção e à aquisição de novas unidades habitacionais, à requalificação de imóveis urbanos, à regularização fundiária de assentamentos localizados em áreas urbanas e à produção ou reforma de habitações rurais, para famílias com renda mensal de até R$ 4.650,00 (quatro mil, seiscentos e cinquenta reais), e compreende os seguintes subprogramas: (Redação dada pela Lei n° 15.081, de 2024)</h3>
+ <h5>I - o Programa Nacional de Habitação Urbana (PNHU); (Redação dada pela Lei n° 13.173, de 2015)</h5>
+ <h5>II - o Programa Nacional de Habitação Rural (PNHR); 	e (Redação dada pela Lei n° 13.173, de 2015)</h5>
+ <h5>III - (VETADO). (Redação dada pela Lei n° 13.173, de 2015)</h5>
+ <h4>§ 1º Para os fins desta Lei, considera-se: (Redação dada pela Lei n° 13.173, de 2015)</h4>
+ <h5>I - grupo familiar: unidade nuclear composta por um ou mais indivíduos que contribuem para o seu rendimento ou têm suas despesas por ela atendidas e abrange todas as espécies reconhecidas pelo ordenamento jurídico brasileiro, incluindo-se nestas a família unipessoal; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - imóvel novo: unidade habitacional com até 180 (cento e oitenta) dias de “habite-se”, ou documento equivalente, expedido pelo órgão público municipal competente ou, nos casos de prazo superior, que não tenha sido habitada ou alienada; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - oferta pública de recursos: procedimento realizado pelo Poder Executivo federal destinado a prover recursos às instituições e agentes financeiros do Sistema Financeiro da Habitação - SFH para viabilizar as operações previstas no inciso III do art. 2º ; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>IV - requalificação de imóveis urbanos: aquisição de imóveis conjugada com a execução de obras e serviços voltados à recuperação e ocupação para fins habitacionais, admitida ainda a execução de obras e serviços necessários à modificação de uso; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>V - agricultor familiar: aquele definido no caput , nos seus incisos e no § 2º do art. 3º da Lei N° 11.326, de 24 de julho de 2006 ; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>VI - trabalhador rural: pessoa física que, em propriedade rural, presta serviços de natureza não eventual a empregador rural, sob a dependência deste e mediante salário. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 2º (VETADO). (Redação dada pela Lei n° 13.173, de 2015)</h4>
+ <h3>Art. 2º Para a implementação do PMCMV, a União, observada a disponibilidade orçamentária e financeira: (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - concederá subvenção econômica ao beneficiário pessoa física no ato da contratação de financiamento habitacional; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II – participará do Fundo de Arrendamento 	Residencial (FAR), mediante integralização de cotas e transferirá recursos ao Fundo de Desenvolvimento Social (FDS) de que tratam, respectivamente, a Lei N° 10.188, de 12 de fevereiro de 2001 , e a Lei N° 8.677, de 13 de julho de 1993 ; (Redação dada pela Lei n° 12.693, de 2012)</h5>
+ <h5>III - realizará oferta pública de recursos destinados à subvenção econômica ao beneficiário pessoa física de operações em Municípios com população de até 50.000 (cinquenta mil) habitantes; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>IV - participará do Fundo Garantidor da Habitação Popular - FGHab; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>V - concederá subvenção econômica por meio do Banco Nacional de Desenvolvimento Econômico e Social - BNDES, sob a modalidade de equalização de taxas de juros e outros encargos financeiros, especificamente nas operações de financiamento de linha especial para infraestrutura em projetos de habitação popular. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>VI – apoiará técnica e financeiramente as ações de regularização fundiária de assentamentos urbanos. (Incluído pela Lei n° 15.081, de 2024)</h5>
+ <h4>§ 1º A aplicação das condições previstas no inciso III do caput dar-se-á sem prejuízo da possibilidade de atendimento aos Municípios com população entre 20.000 (vinte mil) e 50.000 (cinquenta mil) habitantes por outras formas admissíveis no âmbito do PMCMV, nos termos do regulamento. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º O regulamento previsto no § 1o deverá prever, entre outras condições, atendimento aos Municípios com população urbana igual ou superior a 70% (setenta por cento) de sua população total e taxa de crescimento populacional, entre os anos 2000 e 2010, superior à taxa verificada no respectivo Estado. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 3º (VETADO). (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h3>Art. 3º Para a indicação dos beneficiários do PMCMV, deverão ser observados os seguintes requisitos: (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - comprovação de que o interessado integra família com renda mensal de até R$ 4.650,00 (quatro mil, seiscentos e cinquenta reais); (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - faixas de renda definidas pelo Poder Executivo federal para cada uma das modalidades de operações; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - prioridade de atendimento às famílias residentes em áreas de risco, insalubres, que tenham sido desabrigadas ou que perderam a moradia em razão de enchente, alagamento, transbordamento ou em decorrência de qualquer desastre natural do gênero; (Redação dada pela Lei n° 13.274, de 2016)</h5>
+ <h5>IV - prioridade de atendimento às famílias com mulheres responsáveis pela unidade familiar; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>V - prioridade de atendimento às famílias de que façam parte pessoas com deficiência. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 1º Em áreas urbanas, os critérios de prioridade para atendimento devem contemplar também:</h4>
+ <h5>I – a doação pelos Estados, pelo Distrito Federal e pelos Municípios de terrenos localizados em área urbana consolidada para implantação de empreendimentos vinculados ao programa;</h5>
+ <h5>II – a implementação pelos Estados, pelo Distrito Federal e pelos Municípios de medidas de desoneração tributária, para as construções destinadas à habitação de interesse social;</h5>
+ <h5>III – a implementação pelos Municípios dos instrumentos da Lei N° 10.257, de 10 de julho de 2001 , voltados ao controle da retenção das áreas urbanas em ociosidade.</h5>
+ <h4>§ 2º (VETADO)</h4>
+ <h4>§ 3º O Poder Executivo federal definirá: (Redação dada pela Lei n° 12.424, de 2011)</h4>
+ <h5>I - os parâmetros de priorização e enquadramento dos beneficiários do PMCMV; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - a periodicidade de atualização dos limites de renda familiar estabelecidos nesta Lei.</h5>
+ <h5>III – as regras específicas para os beneficiários do programa atendidos mediante ações de regularização fundiária de assentamentos localizados em áreas urbanas. (Incluído pela Lei n° 15.081, de 2024)</h5>
+ <h4>§ 4º Além dos critérios estabelecidos no caput , os Estados, Municípios e Distrito Federal poderão fixar outros critérios de seleção de beneficiários do PMCMV, previamente aprovados pelos respectivos conselhos locais de habitação, quando existentes, e em conformidade com as respectivas políticas habitacionais e as regras estabelecidas pelo Poder Executivo federal. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 5º Os Estados, os Municípios e o Distrito Federal que aderirem ao PMCMV, as entidades privadas sem fins lucrativos, na qualidade de entidades organizadoras, e as instituições financeiras oficiais federais serão responsáveis pela realização do trabalho social nos empreendimentos implantados, na forma estabelecida em termo de adesão a ser definido em regulamento. (Redação dada pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 6º Na atualização dos valores adotados como parâmetros de renda familiar estabelecidos nesta Lei deverão ser observados os seguintes critérios: (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h5>I - quando o teto previsto no dispositivo for de R$ 4.650,00 (quatro mil, seiscentos e cinquenta reais), o valor atualizado não poderá ultrapassar 10 (dez) salários mínimos; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - quando o teto previsto no dispositivo for de R$ 2.790,00 (dois mil, setecentos e noventa reais), o valor atualizado não poderá ultrapassar 6 (seis) salários mínimos; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - quando o teto previsto no dispositivo for de R$ 1.395,00 (mil, trezentos e noventa e cinco reais), o valor atualizado não poderá ultrapassar 3 (três) salários mínimos. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 7º Os requisitos dispostos no caput deste artigo, bem como aqueles definidos em regulamentos do Poder Executivo, relativos à situação econômica ou financeira dos beneficiários do PMCMV deverão ainda: (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h5>I - observar a exigência da qualificação pessoal completa do beneficiário para constar do respectivo contrato, incluindo seu número de inscrição no Cadastro de Pessoa Física - CPF, mantido na Secretaria da Receita Federal do Brasil; (Incluído pela Lei n° 13.274, de 2016)</h5>
+ <h5>II - ter sua veracidade verificada por meio do cruzamento de dados fiscais e bancários do beneficiário, assegurado o sigilo constitucional dos dados informados. (Incluído pela Lei n° 13.274, de 2016)</h5>
+ <h4>§ 8º O agente financeiro responsável pelo financiamento responderá pelo cumprimento do disposto no § 7º deste artigo. (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h4>§ 9º (VETADO). (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <p>Seção II</p>
+ <p>Regulamento</p>
+ <p>Do Programa Nacional de Habitação Urbana – PNHU</p>
+ <h3>Art. 4º O Programa Nacional de Habitação Urbana - PNHU tem por objetivo promover a produção ou aquisição de novas unidades habitacionais ou a requalificação de imóveis urbanos, desde 14 de abril de 2009. (Redação dada pela Lei n° 13.043, de 2014)</h3>
+ <h4>§ 1º Para a implementação do PNHU, a União disponibilizará recursos na forma prevista nos incisos I, II e III do art. 2º . (Redação dada pela Lei n° 12.424, de 2011)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h5>II – (VETADO);</h5>
+ <h5>III - (revogado); (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <p><del>§ 2º (Revogado pela Lei n° 14.620, de 2023)</del></p>
+ <p><del></p>
+ <h3>Art. 5º (Revogado pela Lei n° 12.424, de 2011)</del></h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <h3>Art. 5º -A. Para a implantação de empreendimentos no âmbito do PNHU, deverão ser observados: (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - localização do terreno na malha urbana ou em área de expansão que atenda aos requisitos estabelecidos pelo Poder Executivo federal, observado o respectivo plano diretor, quando existente; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - adequação ambiental do projeto; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - infraestrutura básica que inclua vias de acesso, iluminação pública e solução de esgotamento sanitário e de drenagem de águas pluviais e permita ligações domiciliares de abastecimento de água e energia elétrica; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>IV - a existência ou compromisso do poder público local de instalação ou de ampliação dos equipamentos e serviços relacionados a educação, saúde, lazer e transporte público. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h3>Art. 6º A subvenção econômica de que trata o inciso I do art. 2º será concedida no ato da contratação da operação de financiamento, com o objetivo de: (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - facilitar a aquisição, produção e requalificação do imóvel residencial; ou (Redação dada pela Lei n° 12.249, de 2010)</h5>
+ <h5>II – complementar o valor necessário a assegurar o equilíbrio econômico-financeiro das operações de financiamento realizadas pelas entidades integrantes do Sistema Financeiro da Habitação - SFH, compreendendo as despesas de contratação, de administração e cobrança e de custos de alocação, remuneração e perda de capital.</h5>
+ <h4>§ 1º A subvenção econômica de que trata o caput será concedida exclusivamente a mutuários com renda familiar mensal de até R$ 2.790,00 (dois mil, setecentos e noventa reais), uma única vez por imóvel e por beneficiário e será cumulativa, até o limite máximo a ser fixado em ato do Poder Executivo federal, com os descontos habitacionais concedidos nas operações de financiamento realizadas na forma do art. 9º da Lei n° 8.036, de 11 de maio de 1990 , com recursos do Fundo de Garantia do Tempo de Serviço - FGTS. (Redação dada pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º A subvenção poderá ser cumulativa com subsídios concedidos no âmbito de programas habitacionais dos Estados, do Distrito Federal ou dos Municípios.</h4>
+ <p><del>§ 3º (Revogado pela Lei n° 12.693, de 2012)</del></p>
+ <p><del>§ 4º (Revogado pela Lei n° 12.693, de 2012)</del></p>
+ <p><del>§ 5º (Revogado pela Lei n° 12.693, de 2012)</del></p>
+ <h4>§ 6º Serão estabelecidas em regulamento regras específicas sobre a contratação de financiamento nas ações de regularização fundiária de assentamentos localizados em áreas urbanas. (Incluído pela Lei n° 15.081, de 2024)</h4>
+ <h3>Art. 6º -A. As operações realizadas com recursos advindos da integralização de cotas no FAR e recursos transferidos ao FDS, 	conforme previsto no inciso II do caput do art. 2º , 	são limitadas a famílias com renda mensal de até R$ 1.395,00 (mil trezentos e noventa e cinco reais), e condicionadas a: (Redação dada pela Lei n° 12.693, de 2012)</h3>
+ <h5>I - exigência de participação financeira dos beneficiários, sob a forma de prestações mensais; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - quitação da operação, em casos de morte ou invalidez permanente do beneficiário, sem cobrança de contribuição do beneficiário; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - cobertura de danos físicos ao imóvel, sem cobrança de contribuição do beneficiário. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 1º Nos empreendimentos habitacionais em edificações multifamiliares produzidos com os recursos de que trata o caput , inclusive no caso de requalificação de imóveis urbanos, será admitida a produção de unidades destinadas à atividade comercial a eles vinculada. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 2º (Revogado) . (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 3º Serão dispensadas, na forma do regulamento, a participação financeira dos beneficiários de que trata o inciso I do caput e a cobertura a que se refere o inciso III 	do caput nas operações com recursos advindos da integralização de cotas no FAR, quando essas operações: (Redação dada pela Lei n° 12.693, de 2012)</h4>
+ <h5>I – forem vinculadas às programações orçamentárias do Programa de Aceleração do Crescimento (PAC) e demandarem reassentamento, 	remanejamento ou substituição de unidades habitacionais; (Redação dada pela Lei n° 12.693, de 2012)</h5>
+ <h5>II - forem vinculadas a intervenções financiadas por operações de crédito ao setor público, conforme hipóteses definidas no regulamento, e demandarem reassentamento, remanejamento ou substituição de unidades habitacionais; (Redação dada pela Lei n° 13.173, de 2015)</h5>
+ <h5>III - forem destinadas ao atendimento, nos casos de situação de emergência ou estado de calamidade pública reconhecidos pela 	União, a famílias desabrigadas que perderam seu único imóvel; ou (Redação dada pela Lei n° 13.173, de 2015)</h5>
+ <h5>IV - forem vinculadas a reassentamentos de famílias, indicadas pelo poder público municipal ou estadual, decorrentes de obras vinculadas à realização dos Jogos Rio 2016, de que trata a Lei n° 12.035, de 1º de outubro de 2009 . (Redação dada pela Lei n° 13.161, de 2015)</h5>
+ <h4>§ 4º Exclusivamente nas operações previstas no § 3º , será admitido atendimento a famílias com renda mensal de até R$ 2.790,00 (dois mil, setecentos e noventa reais). (Incluído pela Lei n° 12.693, de 2012)</h4>
+ <h4>§ 5º Nas operações com recursos previstos no caput : (Incluído pela Lei n° 12.693, de 2012)</h4>
+ <h5>I - a subvenção econômica será concedida nas prestações do financiamento, ao longo de 120 (cento e vinte) meses, ressalvada a hipótese de quitação antecipada de que trata o inciso II; (Redação dada pela Lei n° 14.620, de 2023)</h5>
+ <h5>II - poderá haver quitação antecipada do financiamento, conforme regulamentação do Ministério das Cidades; (Redação dada pela Lei n° 14.620, de 2023)</h5>
+ <h5>III – não se admite transferência inter vivos de imóveis sem a respectiva quitação. (Incluído pela Lei n° 12.693, de 2012)</h5>
+ <h4>§ 6º As cessões de direitos, 	promessas de cessões de direitos ou procurações que tenham por objeto a compra e venda, promessa de compra e venda ou cessão de imóveis adquiridos sob as regras do PMCMV, quando em desacordo com o inciso III do § 5º , 	serão consideradas nulas. (Incluído pela Lei n° 12.693, de 2012)</h4>
+ <h4>§ 7º Nas operações previstas no § 3º, a subvenção econômica será concedida no ato da contratação da unidade habitacional, conforme regulamentação do 	Ministério das Cidades. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 8º É vedada a concessão de subvenções econômicas lastreadas nos recursos do FAR ou do FDS a beneficiário que tenha recebido benefício de natureza habitacional oriundo de recursos orçamentários da União, do FAR, do FDS ou de descontos habitacionais concedidos com recursos do FGTS, excetuadas as subvenções ou descontos destinados à aquisição de material de construção e aquelas previstas no atendimento a famílias nas operações estabelecidas no § 3º , 	na forma do regulamento. (Incluído pela Lei n° 12.693, de 2012)</h4>
+ <h4>§ 9º O descumprimento contratual pela família beneficiária de operações financiadas pelo FAR e pelo FDS poderá ensejar a retomada do bem pelo fundo financiador correspondente, dispensada a realização de leilão, observada a regulamentação do Ministério das Cidades para a destinação da unidade habitacional. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 10. Nos casos das operações previstas no inciso IV do § 3º deste artigo, é dispensado o atendimento aos dispositivos estabelecidos no art. 3º , e caberá ao poder público municipal ou estadual restituir integralmente os recursos aportados pelo FAR no ato da alienação do imóvel a beneficiário final cuja renda familiar mensal exceda o limite estabelecido no caput deste artigo. (Redação dada pela Lei n° 13.173, de 2015)</h4>
+ <h4>§ 11. Serão disponibilizadas em sítio eletrônico informações relativas às operações previstas no inciso IV do § 3º deste artigo com a identificação do beneficiário final, os respectivos valores advindos da integralização de cotas do FAR e os valores restituídos ao FAR pelo poder público municipal ou estadual. (Incluído pela Lei n° 13.173, de 2015)</h4>
+ <h4>§ 12. O FAR poderá prestar garantia à instituição financeira em favor do beneficiário nos casos de operações de financiamento habitacional ao beneficiário com desconto concedido pelo FGTS para aquisição de imóveis construídos com recursos do FAR. (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h4>§ 13. No caso de execução da garantia de que trata o § 12, ficará o FAR sub-rogado nos direitos do credor. (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h4>§ 14. Para assegurar a expectativa trimestral de venda de imóveis estabelecida pelo FAR, as instituições financeiras executoras do PMCMV deverão repassar ao FAR o valor equivalente aos descontos do FGTS correspondente à referida expectativa trimestral. (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h4>§ 15. Caso os recursos de que trata o § 14 não sejam integralmente utilizados, o FAR devolverá o excedente às instituições financeiras ao final de cada trimestre, corrigido pela taxa do Sistema Especial de Liquidação e de Custódia - SELIC apurada no período. (Incluído pela Lei n° 13.274, de 2016)</h4>
+ <h4>§ 16. Os imóveis cuja viabilidade ou permanência no Programa restar prejudicada poderão ser objeto de desimobilização, pelo FAR ou pelo FDS, por meio de cessão, doação, locação, comodato, arrendamento, venda, ou outros negócios jurídicos compatíveis, em contrato subsidiado ou não, aos Estados, ao Distrito Federal, aos Municípios, aos órgãos de suas administrações diretas e indiretas, às pessoas físicas e às entidades com ou sem fins lucrativos, conforme ato do Ministério das Cidades. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 17. (Revogado) . (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 18. Compete ao Ministério das Cidades regulamentar a exigência de participação financeira dos beneficiários de que trata o inciso I do caput , inclusive por meio da ampliação do rol de dispensas de que trata o § 3º e da eventual renegociação de dívidas. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 19. A União fica autorizada a utilizar imóveis ociosos de sua propriedade, nas regiões urbanas centrais, objetivando a sua requalificação para a oferta de benefícios habitacionais, desde que o atendimento contemple exclusivamente famílias da Faixa Urbano 1, de forma a: (Incluído pela Lei n° 14.620, de 2023)</h4>
+ <h5>I - contribuir para a redução da ociosidade de edificações existentes e para o cumprimento da função social da propriedade, visando ao aumento da densidade demográfica e à qualificação do espaço público; (Incluído pela Lei n° 14.620, de 2023)</h5>
+ <h5>II - estimular a reabilitação do patrimônio arquitetônico, a partir de regras que facilitem a requalificação das edificações para novos usos; (Incluído pela Lei n° 14.620, de 2023)</h5>
+ <h5>III - favorecer a adequação de edificações existentes aos padrões de segurança, salubridade e acessibilidade, ampliando a oferta de áreas disponíveis ao adensamento populacional; (Incluído pela Lei n° 14.620, de 2023)</h5>
+ <h5>IV - adequar os procedimentos de análise de pedidos de licenciamento de intervenções de requalificação, quando associadas a pedido de reforma com aumento de área construída; (Incluído pela Lei n° 14.620, de 2023)</h5>
+ <h5>V - estimular a sustentabilidade ambiental em região urbana, com a maximização da utilização de materiais e infraestrutura existentes. (Incluído pela Lei n° 14.620, de 2023)</h5>
+ <h3>Art. 6º -B. Para a concessão de subvenção econômica nas operações de que trata o inciso III do art. 2º , fica estabelecido que a instituição ou agente financeiro participante só poderá receber recursos até o máximo de 15% (quinze por cento) do total ofertado em cada oferta pública, na forma do regulamento, considerado o limite de 100 (cem) unidades habitacionais por Município. (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h4>§ 1º O Poder Executivo federal disporá necessariamente sobre os seguintes aspectos: (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h5>I - valores e limites das subvenções individualizadas a serem destinadas a cada beneficiário; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - remuneração das instituições e agentes financeiros pelas operações realizadas; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - quantidade, condições e modalidades de ofertas públicas de cotas de subvenções; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>IV - tipologia e padrão das moradias e da infraestrutura urbana, com observância da legislação municipal pertinente. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 2º As operações de que trata o caput poderão ser realizadas pelos bancos múltiplos, pelos bancos comerciais, pelas sociedades de crédito imobiliário, pelas companhias hipotecárias, por órgãos federais, estaduais e municipais, inclusive sociedades de economia mista em que haja participação majoritária do poder público, que operem no financiamento de habitações e obras conexas, e pelas cooperativas de crédito que tenham entre seus objetivos o financiamento habitacional a seus cooperados, desde que tais instituições e agentes financeiros sejam especificamente autorizados a operar o programa pelo Banco Central do Brasil e pelo Ministério das Cidades, no âmbito de suas competências. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 3º Os Estados e os Municípios poderão complementar o valor das subvenções econômicas com créditos tributários, benefícios fiscais, bens ou serviços economicamente mensuráveis, assistência técnica ou recursos financeiros. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 4º É vedada a concessão de subvenções econômicas de que trata o inciso III do caput do art. 2º a beneficiário que tenha recebido benefício de natureza habitacional oriundo de recursos orçamentários da União, do FAR, do FDS ou de descontos habitacionais concedidos com recursos do FGTS, excetuadas as subvenções ou descontos destinados à aquisição de material de construção, na forma do regulamento. (Incluído pela Lei n° 12.693, de 2012)</h4>
+ <h3>Art. 6º-C. Em situação de emergência ou estado de calamidade pública reconhecidos pela União, será garantida a cobertura de danos físicos ao imóvel contratado com recursos advindos da integralização de cotas no Fundo de Arrendamento Residencial (FAR) e recursos transferidos ao Fundo de Desenvolvimento Social (FDS), para reparação dos danos decorrentes do desastre originador da emergência ou calamidade. (incluído pela Lei n° 15.164, de 2025)</h3>
+ <h4>§ 1º A cobertura de que trata o caput deste artigo: (incluído pela Lei n° 15.164, de 2025)</h4>
+ <h5>I – terá validade por 120 (cento e vinte) meses contados da data da assinatura do contrato, para contratos vigentes e quitados; (incluído pela Lei n° 15.164, de 2025)</h5>
+ <h5>II – será aplicada apenas no caso de acionamento da cobertura pelo beneficiário original da operação e não se estenderá a terceiros; (incluído pela Lei n° 15.164, de 2025)</h5>
+ <h5>III – não será aplicada aos contratos em que tenha havido reconhecimento, em procedimento administrativo, de utilização do imóvel para finalidade diversa da definida nesta Lei; (incluído pela Lei n° 15.164, de 2025)</h5>
+ <h5>IV – será estendida aos contratos a que se referem os incisos I, II, III e IV do § 3º do art. 6º-A desta Lei. (incluído pela Lei n° 15.164, de 2025)</h5>
+ <h3>Art. 7º Em casos de utilização dos recursos de que tratam os incisos I, II e III do art. 2º em finalidade diversa da definida nesta Lei, ou em desconformidade ao disposto nos arts. 6º , 6º -A e 6º -B, será exigida a devolução ao erário do valor da subvenção concedida, acrescido de juros e atualização monetária, com base na remuneração dos recursos que serviram de lastro à sua concessão, sem prejuízo das penalidades previstas em lei. (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h4>Parágrafo único. Para as operações com recursos de que trata o inciso III do art. 2º desta Lei, fica o Ministério das Cidades autorizado a fixar novas condições de pagamento e prazos para a conclusão das unidades habitacionais contratadas, obedecidos os seguintes parâmetros: (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h5>I - o prazo para conclusão das unidades habitacionais será de até doze meses, contados da entrada em vigor deste parágrafo; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>II - as instituições e agentes financeiros habilitados deverão declarar a viabilidade de execução das unidades habitacionais contratadas, dentro dos prazos fixados pelo Ministério das Cidades, observado o limite previsto no inciso I deste parágrafo; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>III - as instituições e agentes financeiros habilitados deverão declarar a viabilidade de execução das unidades habitacionais contratadas, dentro do valor originalmente previsto, sem custos adicionais para a União; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>IV - a aceitação e a adesão pelas instituições e agentes financeiros habilitados às novas condições e prazos fixados serão formalizadas em instrumento próprio a ser regulamentado pelo Ministério das Cidades; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>V - a liberação de recursos pela União às instituições e agentes financeiros habilitados dependerá da comprovação da correspondente parcela da obra executada, vedadas quaisquer formas de adiantamento; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>VI - o não atendimento das condições e prazos finais fixados pelo Ministério das Cidades ensejará imediata devolução ao erário do valor dos recursos liberados, acrescido de juros e atualização monetária, com base na remuneração dos recursos que serviram de lastro à sua concessão, sem prejuízo das penalidades previstas em lei; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>VII - nos casos de inadimplência pelas instituições e agentes financeiros habilitados das condições e prazos estabelecidos pelo Ministério das Cidades, fica autorizada a inscrição em dívida ativa da União dos valores previstos no inciso VI deste parágrafo; e (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>VIII - a definição dos procedimentos a serem adotados nos casos omissos caberá ao Ministério das Cidades. (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h3>Art. 7º-A. Os beneficiários de operações do PMCMV realizadas com recursos advindos da integralização de cotas do FAR obrigam-se a ocupar os imóveis adquiridos, em até 30 (trinta) dias, a contar da assinatura do contrato de compra e venda com cláusula de alienação fiduciária em garantia, firmado com o FAR, e não poderão ser impedidos de habitar com seus animais domésticos nessas residências, respeitando as normas vigentes e garantindo o bem-estar animal. (Redação dada pela Lei n° 14.620, de 2023)</h3>
+ <h4>Parágrafo único. Descumprido o prazo de que trata o caput deste artigo, fica o FAR automaticamente autorizado a declarar o contrato resolvido e a alienar o imóvel a beneficiário diverso, a ser indicado conforme a Política Nacional de Habitação. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h3>Art. 7º -B. Acarretam o vencimento antecipado da dívida decorrente de contrato de compra e venda com cláusula de alienação fiduciária em garantia firmado, no âmbito do PMCMV, com o FAR: (Incluído pela Lei n° 13.465, de 2017)</h3>
+ <h5>I - a alienação ou cessão, por qualquer meio, dos imóveis objeto de operações realizadas com recursos advindos da integralização de cotas no FAR antes da quitação de que trata o inciso III do § 5º do art. 6º -A desta Lei; (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <h5>II - a utilização dos imóveis objeto de operações realizadas com recursos advindos da integralização de cotas no FAR em finalidade diversa da moradia dos beneficiários da subvenção de que trata o inciso I do art. 2º desta Lei e das respectivas famílias; e (Incluído pela Lei n° 13.465, de 2017)</h5>
+ <p><del>III (Revogado pela Lei n° 14.620, de 2023)</del></p>
+ <h3>Art. 7º -C. Vencida antecipadamente a dívida, o FAR, na condição de credor fiduciário, munido de certidão comprobatória de processo administrativo que ateste a ocorrência de uma das hipóteses previstas no art. 7º -B desta Lei, deverá requerer, ao oficial do registro de imóveis competente, que intime o beneficiário, ou seu representante legal ou procurador regularmente constituído, para satisfazer, no prazo previsto no § 1º do art. 26 da Lei N° 9.514, de 20 de novembro de 1997, a integralidade da dívida, compreendendo a devolução da subvenção devidamente corrigida nos termos do art. 7º desta Lei. (Incluído pela Lei n° 13.465, de 2017)</h3>
+ <h4>§ 1º Decorrido o prazo de que trata o caput deste artigo sem o pagamento da dívida antecipadamente vencida, o contrato será reputado automaticamente resolvido de pleno direito, e o oficial do registro de imóveis competente, certificando esse fato, promoverá a averbação, na matrícula do imóvel, da consolidação da propriedade fiduciária em nome do FAR, respeitada a Lei N° 9.514, de 20 de novembro de 1997. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h4>§ 2º Uma vez consolidada a propriedade fiduciária em nome do FAR, proceder-se-á em conformidade com o disposto no § 9º do art. 6º -A desta Lei, e o imóvel deve ser-lhe imediatamente restituído, sob pena de esbulho possessório. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h4>§ 3º O FAR, em regulamento próprio, disporá sobre o processo administrativo de que trata o caput deste artigo. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h4>§ 4º A intimação de que trata o caput deste artigo poderá ser promovida, por solicitação do oficial do registro de imóveis, do oficial de registro de títulos e documentos da comarca da situação do imóvel ou do domicílio de quem deva recebê-la ou do serventuário por eles credenciado, ou pelo correio, com aviso de recebimento. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h4>§ 5º Quando, por duas vezes, o oficial de registro de imóveis ou de registro de títulos e documentos ou o serventuário por eles credenciado houver procurado o intimando em seu domicílio ou residência sem o encontrar, deverá, havendo suspeita motivada de ocultação, intimar qualquer pessoa da família ou, em sua falta, qualquer vizinho de que, no dia útil imediato, retornará ao imóvel, a fim de efetuar a intimação, na hora que designar, aplicando-se subsidiariamente o disposto nos arts. 252, 253 e 254 da Lei N° 13.105, de 16 de março de 2015 (Código de Processo Civil). (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h4>§ 6º Nos condomínios edilícios ou outras espécies de conjuntos imobiliários com controle de acesso, a intimação de que trata este artigo poderá ser feita ao funcionário da portaria responsável pelo recebimento de correspondência. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h4>§ 7º Caso não seja efetuada a intimação pessoal ou por hora certa, o oficial de registro de imóveis ou de registro de títulos e documentos ou o serventuário por eles credenciado promoverá a intimação do devedor fiduciante por edital, publicado por três dias, pelo menos, em um dos jornais de maior circulação ou em outro de comarca de fácil acesso, se no local não houver imprensa diária, contado o prazo para o pagamento antecipado da dívida da data da última publicação do edital. (Incluído pela Lei n° 13.465, de 2017)</h4>
+ <h3>Art. 7º-D. Para garantia da posse legítima dos empreendimentos produzidos pelo FAR ou pelo FDS ainda não alienados aos beneficiários finais que venham a sofrer turbação ou esbulho, poderão ser empregados atos de defesa ou de desforço diretos, inclusive por meio do auxílio de força policial. (Incluído pela Lei n° 14.118, de 2021)</h3>
+ <h4>§ 1º O auxílio de força policial a que se refere o caput deste artigo poderá estar previsto no instrumento firmado ou em outro que venha a ser estabelecido entre a União e os Estados, o Distrito Federal e os Municípios. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 2º Os atos de defesa ou de desforço a que se refere o caput deste artigo não poderão ir além do indispensável à manutenção ou à restituição da posse e deverão ocorrer no prazo máximo de 5 (cinco) dias, contado da data de ciência do ato de turbação ou de esbulho. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h3>Art. 7º-E. O disposto nos arts. 7º-A, 7º-B e 7º-C desta Lei aplica-se também aos empreendimentos executados com recursos provenientes do FDS. (Incluído pela Lei n° 14.118, de 2021)</h3>
+ <h3>Art. 8º Caberá ao Poder Executivo a regulamentação do PNHU, especialmente em relação:</h3>
+ <h5>I – à fixação das diretrizes e condições gerais;</h5>
+ <h5>II – à distribuição regional dos recursos e à fixação dos critérios complementares de distribuição desses recursos;</h5>
+ <h5>III – aos valores e limites máximos de subvenção;</h5>
+ <h5>IV – ao estabelecimento dos critérios adicionais de priorização da concessão da subvenção econômica; e</h5>
+ <h5>V – ao estabelecimento das condições operacionais para pagamento e controle da subvenção econômica.</h5>
+ <h3>Art. 8º-A. O Ministério das Cidades, nas situações enquadradas nos incisos VI e VII do parágrafo único do art. 7º, deverá notificar, no prazo de 60 (sessenta) dias, as instituições ou agentes financeiros para: (Redação dada pela Lei n° 14.620, de 2023)</h3>
+ <h5>I - efetuar a imediata devolução ao erário do valor dos recursos liberados, acrescido de juros e atualização monetária, com base na remuneração dos recursos que serviram de lastro à sua concessão, sem prejuízo das penalidades previstas em lei; ou (Incluído pela Lei n° 14.118, de 2021)</h5>
+ <h5>II - manifestar interesse na conclusão e entrega das unidades habitacionais. (Incluído pela Lei n° 14.118, de 2021)</h5>
+ <h4>§ 1º No caso de não atendimento à notificação a que se refere o caput deste artigo, caberá ao Ministério do Desenvolvimento Regional a adoção dos procedimentos necessários para inscrição das instituições ou agentes financeiros inadimplentes na dívida ativa da União. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 2º No caso previsto no inciso II do caput deste artigo, as instituições ou agentes financeiros poderão apresentar: (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h5>I - manifestação de interesse na conclusão e entrega das unidades habitacionais, dentro do valor originalmente previsto, sem custos adicionais para a União; ou (Incluído pela Lei n° 14.118, de 2021)</h5>
+ <h5>II - manifestação de interesse do Estado ou do Município, a ser firmada em conjunto com a instituição ou agente financeiro, na conclusão e entrega das unidades habitacionais com recursos provenientes do Estado ou do Município, vedada a liberação de recursos da União. (Incluído pela Lei n° 14.118, de 2021)</h5>
+ <h4>§ 3º Para cumprimento do disposto no § 2º deste artigo, as instituições ou agentes financeiros deverão declarar ao Ministério do Desenvolvimento Regional as unidades habitacionais que tenham viabilidade de execução para conclusão e entrega. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 4º A manifestação de interesse a que se refere o § 2º possibilitará a prorrogação dos compromissos assumidos pelas instituições ou pelos agentes financeiros pelo prazo de até 60 (sessenta) meses, contado a partir de 26 de agosto de 2020, para conclusão e entrega das unidades habitacionais. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 5º Nos casos enquadrados no inciso I do § 2º deste artigo, a liberação de recursos pela União às instituições ou agentes financeiros fica condicionada à comprovação da conclusão e entrega da unidade habitacional, vedadas quaisquer formas de adiantamento. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 6º Nos casos enquadrados no inciso II do § 2º deste artigo, no período de vigência dos compromissos, fica suspensa a exigibilidade do crédito das instituições ou agentes financeiros constituído em decorrência do disposto nos incisos VI e VII do parágrafo único do art. 7º desta Lei. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 7º O adimplemento do compromisso decorrente da manifestação a que se refere o inciso II do caput deste artigo pelas instituições ou agentes financeiros implica a extinção da obrigação. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h4>§ 8º O descumprimento do prazo-limite estabelecido no § 4º deste artigo implicará a aplicação do disposto nos incisos VI e VII do parágrafo único do art. 7º desta Lei. (Incluído pela Lei n° 14.118, de 2021)</h4>
+ <h3>Art. 9º A gestão operacional dos recursos destinados à concessão da subvenção do PNHU de que trata o inciso I do art. 2º desta Lei será efetuada pela Caixa Econômica Federal - CEF. (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h4>Parágrafo único. Os Ministros de Estado das Cidades e da Fazenda fixarão, em ato conjunto, a remuneração da Caixa Econômica Federal pelas atividades exercidas no âmbito do PNHU.</h4>
+ <h3>Art. 10. Competem aos Ministérios da Fazenda e das Cidades a regulamentação e a gestão do PNHU no âmbito das suas respectivas competências.</h3>
+ <p>Seção III</p>
+ <p>Regulamento</p>
+ <p>Do Programa Nacional de Habitação Rural – PNHR</p>
+ <h3>Art. 11. O PNHR tem como finalidade subsidiar a produção ou reforma de imóveis para agricultores familiares e trabalhadores rurais, por intermédio de operações de repasse de recursos do orçamento geral da União ou de financiamento habitacional com recursos do Fundo de Garantia do Tempo de Serviço - FGTS, desde 14 de abril de 2009. (Redação dada pela Lei n° 13.043, de 2014)</h3>
+ <h4>Parágrafo único. A assistência técnica pode fazer parte da composição de custos do PNHR. (Redação dada pela Lei n° 12.424, de 2011)</h4>
+ <p><del></p>
+ <h3>Art. 12 (Revogado pela Lei n° 12.424, de 2011)</del></h3>
+ <h4>Parágrafo único. Enquanto não efetivado o aporte de recursos de que trata o caput , caso o agente operador do Fundo de Garantia do Tempo de Serviço - FGTS tenha suportado ou venha a suportar, com recursos das disponibilidades atuais do referido fundo, a parcela da subvenção econômica de que trata o caput , terá direito ao ressarcimento das quantias desembolsadas, devidamente atualizadas pela taxa Selic. (Vide Lei n° 12.424, de 2011, Vigência)</h4>
+ <h3>Art. 13. Nas operações de que trata o art. 11, poderá ser concedido subvenção econômica, no ato da contratação do financiamento, com o objetivo de: (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - facilitar a produção ou reforma do imóvel residencial; (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h5>II – complementar o valor necessário a assegurar o equilíbrio econômico-financeiro das operações de financiamento realizadas pelos agentes financeiros; ou</h5>
+ <h5>III – complementar a remuneração do agente financeiro, nos casos em que o subsídio não esteja vinculado a financiamento.</h5>
+ <h4>§ 1º A subvenção econômica do PNHR será concedida uma única vez por imóvel e por beneficiário e, excetuados os casos previstos no inciso III deste artigo, será cumulativa, até o limite máximo a ser fixado em ato do Poder Executivo federal, com os descontos habitacionais concedidos nas operações de financiamento realizadas na forma do art. 9º da Lei N° 8.036, de 11 de maio de 1990 , com recursos do FGTS. (Redação dada pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º A subvenção poderá ser cumulativa com subsídios concedidos no âmbito de programas habitacionais dos Estados, Distrito Federal ou Municípios.</h4>
+ <h4>§ 3º Para definição dos beneficiários do PNHR, deverão ser respeitados o limite de renda definido para o PMCMV, as faixas de renda definidas pelo Poder Executivo federal e as demais regras estabelecidas na regulamentação do Programa. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h3>Art. 14. Em casos de utilização dos recursos de que trata o art. 11 em finalidade diversa da definida nesta Lei, ou em desconformidade ao disposto no art. 13, será exigida a devolução ao erário do valor da subvenção concedida, acrescido de juros e atualização monetária, com base na remuneração dos recursos que serviram de lastro à sua concessão, sem prejuízo das penalidades previstas em lei. (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h3>Art. 15. O Poder Executivo regulamentará o disposto nesta Seção, especialmente no que concerne à definição das diretrizes e condições gerais de operação, gestão, acompanhamento, controle e avaliação do PNHR.</h3>
+ <h3>Art. 16. A gestão operacional do PNHR será efetuada pela Caixa Econômica Federal.</h3>
+ <h4>Parágrafo único. Os Ministros de Estado das Cidades e da Fazenda fixarão, em ato conjunto, a remuneração da Caixa Econômica Federal pelas atividades exercidas no âmbito do PNHR.</h4>
+ <h3>Art. 17. Competem aos Ministérios da Fazenda e das Cidades a regulamentação e a gestão do PNHR no âmbito das suas respectivas competências.</h3>
+ <p>Seção IV</p>
+ <p>Regulamento</p>
+ <p>Das Transferências de Recursos por parte da União e da</p>
+ <p>Subvenção para Municípios de Pequeno Porte</p>
+ <p><del></p>
+ <h3>Art. 18 (Revogado pela Lei n° 12.424, de 2011)</del></h3>
+ <p><del>§ 1º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p><del>§ 2º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p><del></p>
+ <h3>Art. 19 (Revogado pela Lei n° 12.424, de 2011)</del></h3>
+ <p><del>§ 1º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p><del>§ 2º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p><del>§ 3º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p><del>§ 4º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p><del>§ 5º (Revogado pela Lei n° 12.424, de 2011)</del></p>
+ <p>Seção V</p>
+ <p>Do Fundo Garantidor da Habitação Popular – FGHab</p>
+ <h3>Art. 20. Fica a União autorizada a participar, observadas suas disponibilidades orçamentárias e financeiras consignadas nas dotações anuais, do Fundo Garantidor da Habitação Popular (FGHab), que terá por finalidades: (Redação dada pela Lei n° 14.620, de 2023)</h3>
+ <h5>I - garantir o pagamento aos agentes financeiros de prestação mensal de financiamento habitacional, no âmbito do Sistema Financeiro da Habitação, devida por mutuário final, em caso de desemprego e redução temporária da capacidade de pagamento, para famílias com renda mensal de até R$ 4.650,00 (quatro mil seiscentos e cinquenta reais); (Redação dada pela Lei n° 14.462, de 2022)</h5>
+ <h5>II - assumir o saldo devedor do financiamento imobiliário, em caso de morte ou invalidez permanente, e as despesas de recuperação relativas a danos físicos ao imóvel para mutuários com renda familiar mensal de até R$ 4.650,00 (quatro mil seiscentos e cinquenta reais); e (Redação dada pela Lei n° 14.462, de 2022)</h5>
+ <h5>III - garantir, direta ou indiretamente, parte do risco em operações de financiamento habitacional, no âmbito do Sistema Financeiro da Habitação, contratadas a partir de 1º de junho de 2022, para famílias com a renda mensal de que trata o inciso III do § 6º do art. 3º desta Lei, no âmbito dos programas habitacionais do governo federal estabelecidos em lei. (Redação dada pela Lei n° 14.462, de 2022)</h5>
+ <h5>IV – garantir, direta ou indiretamente, parte do risco em operações de crédito para melhorias habitacionais em áreas urbanas, com mutuários com a renda familiar mensal de que tratam as alíneas “a” e “b” do inciso I do caput do art. 5º da Lei n° 14.620, de 13 de julho de 2023 . (incluído pela Lei n° 15.164, de 2025)</h5>
+ <h4>§ 1º As condições e os limites das coberturas de que tratam os incisos I e II deste artigo serão definidos no estatuto do FGHab, que poderá estabelecer os casos em que será oferecida somente a cobertura de que trata o inciso II. (Redação dada pela Lei n° 12.249, de 2010)</h4>
+ <h4>§ 1º-A. As contratações realizadas a partir de 1º de junho de 2022 somente poderão contar com as coberturas de que tratam os incisos I, III e IV do caput deste artigo para as quais as condições e os limites tenham sido estabelecidos no estatuto do FGHab. (Redação dada pela Lei n° 15.164, de 2025)</h4>
+ <h4>§ 1º-B. (Revogado) . (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h4>§ 2º O FGHab terá natureza privada e patrimônio próprio dividido em cotas, separado do patrimônio dos cotistas.</h4>
+ <h4>§ 3º Constituem patrimônio do FGHab:</h4>
+ <h5>I - os recursos oriundos da integralização de cotas pela União e pelos agentes financeiros que optarem por aderir às coberturas previstas no caput deste artigo; (Redação dada pela Lei n° 14.462, de 2022)</h5>
+ <h5>II – os rendimentos obtidos com a aplicação das disponibilidades financeiras em títulos públicos federais e em ativos com lastro em créditos de base imobiliária, cuja aplicação esteja prevista no estatuto social;</h5>
+ <h5>III – os recursos provenientes da recuperação de prestações honradas com recursos do FGHab;</h5>
+ <h5>IV - as comissões cobradas com fundamento no caput deste artigo; e (Redação dada pela Lei n° 14.462, de 2022)</h5>
+ <h5>V – outras fontes de recursos definidas no estatuto do Fundo.</h5>
+ <h4>§ 4º Os agentes financeiros que optarem por aderir à cobertura do FGHab deverão integralizar cotas proporcionais ao valor do financiamento para o mutuário final, na forma definida pelo estatuto, podendo ser dispensados dessa obrigação nos casos de operações de crédito para melhorias habitacionais. (Redação dada pela Lei n° 15.164, de 2025)</h4>
+ <h4>§ 5º A integralização de cotas pela União será autorizada por decreto e poderá ser realizada, a critério do Ministério da Fazenda:</h4>
+ <h5>I – em moeda corrente;</h5>
+ <h5>II – em títulos públicos;</h5>
+ <h5>III – por meio de suas participações minoritárias; ou</h5>
+ <h5>IV – por meio de ações de sociedades de economia mista federais excedentes ao necessário para manutenção de seu controle acionário.</h5>
+ <h4>§ 6º O FGHab terá direitos e obrigações próprias, pelas quais responderá com seu patrimônio, não respondendo os cotistas por qualquer obrigação do Fundo, salvo pela integralização das cotas que subscreverem.</h4>
+ <h3>Art. 21. É facultada a constituição de patrimônio de afetação para a cobertura de que trata o inciso II do caput do art. 20, que não se comunicará com o restante do patrimônio do FGHab, ficando vinculado exclusivamente à garantia da respectiva cobertura, não podendo ser objeto de penhora, arresto, sequestro, busca e apreensão ou qualquer ato de constrição judicial decorrente de outras obrigações do Fundo.</h3>
+ <h4>Parágrafo único. A constituição do patrimônio de afetação será feita por registro em cartório de registro de títulos e documentos.</h4>
+ <h3>Art. 22. O FGHab não pagará rendimentos a seus cotistas, assegurando-se a qualquer deles o direito de requerer o resgate total ou parcial de suas cotas, correspondente ao montante de recursos financeiros disponíveis ainda não vinculados às garantias já contratadas, fazendo-se a liquidação com base na situação patrimonial do Fundo.</h3>
+ <h3>Art. 23. Os rendimentos auferidos pela carteira do FGHab não se sujeitam à incidência de imposto de renda na fonte, devendo integrar a base de cálculo dos impostos e contribuições devidos pela pessoa jurídica, na forma da legislação vigente, quando houver o resgate de cotas, total ou parcial, ou na dissolução do Fundo.</h3>
+ <h3>Art. 24. O FGHab será criado, administrado, gerido e representado judicial e extrajudicialmente por instituição financeira controlada direta ou indiretamente pela União, com observância das normas a que se refere o inciso XXII do art. 4º da Lei N° 4.595, de 31 de dezembro de 1964 .</h3>
+ <h4>§ 1º A representação da União na assembleia de cotistas dar-se-á na forma do inciso V do art. 10 do Decreto-Lei N° 147, de 3 de fevereiro de 1967 .</h4>
+ <h4>§ 2º Caberá à instituição financeira de que trata o caput deste artigo, na forma estabelecida no estatuto do Fundo:</h4>
+ <h5>I – deliberar sobre a gestão e a alienação dos bens e direitos do FGHab, zelando pela manutenção de sua rentabilidade e liquidez, após autorização dos cotistas;</h5>
+ <h5>II – receber comissão pecuniária, em cada operação, podendo ser dispensada nos casos de operações de crédito para melhorias habitacionais, do agente financeiro concedente do crédito, que poderá exigi-la do mutuário, desde que o valor cobrado do mutuário, somado a outras eventuais cobranças de caráter securitário, não ultrapasse 10% (dez por cento) da prestação mensal. (Redação dada pela Lei n° 15.164, de 2025)</h5>
+ <h4>§ 3º A instituição financeira a que se refere o caput deste artigo fará jus à remuneração pela administração do FGHab, a ser estabelecida no estatuto do Fundo.</h4>
+ <h4>§ 4º O estatuto do FGHab será proposto pela instituição financeira e aprovado em assembleia de cotistas.</h4>
+ <h3>Art. 25. Fica criado o Comitê de Participação no Fundo Garantidor da Habitação Popular - CPFGHab, órgão colegiado com composição e competência estabelecidas em ato do Poder Executivo.</h3>
+ <h4>§ 1º O CPFGHab contará com representantes do Ministério da Fazenda, que o presidirá, do Ministério do Planejamento, Orçamento e Gestão e da Casa Civil da Presidência da República.</h4>
+ <h4>§ 2º O estatuto do FGHab deverá ser examinado previamente pelo CPFGHab antes de sua aprovação na assembleia de cotistas.</h4>
+ <h3>Art. 26. O FGHab não contará com qualquer tipo de garantia ou aval por parte do setor público e responderá por suas obrigações até o limite dos bens e direitos integrantes de seu patrimônio.</h3>
+ <h3>Art. 27. A garantia de que trata o inciso I do caput do art. 20 será prestada mediante as seguintes condições:</h3>
+ <h5>I – limite de cobertura, incluindo o número de prestações cobertas, a depender da renda familiar do mutuário, verificada no ato da contratação;</h5>
+ <h5>II – período de carência definido pelo estatuto;</h5>
+ <h5>III – retorno das prestações honradas pelo Fundo na forma contratada com o mutuário final, imediatamente após o término de cada período de utilização da garantia, dentro do prazo remanescente do financiamento habitacional ou com prorrogação do prazo inicial, atualizadas pelos mesmos índices previstos no contrato de financiamento; e</h5>
+ <h5>IV – risco de crédito compartilhado entre o Fundo e os agentes financeiros nos percentuais, respectivamente, de 95% (noventa e cinco por cento) e 5% (cinco por cento), a ser absorvido após esgotadas medidas de cobrança e execução dos valores honrados pelo FGHab.</h5>
+ <h3>Art. 27-A. As garantias de que tratam os incisos III e IV do caput do art. 20 desta Lei serão prestadas por meio de condições e de limites a serem estabelecidos no estatuto do FGHab. (Redação dada pela Lei n° 15.164, de 2025)</h3>
+ <h3>Art. 28. Os financiamentos imobiliários garantidos pelo FGHab, na forma do inciso II do caput do art. 20, serão dispensados da contratação de seguro com cobertura de Morte, Invalidez Permanente - MIP e Danos Físicos ao Imóvel - DFI.</h3>
+ <p><del></p>
+ <h3>Art. 29 (Revogado pela Lei n° 14.462, de 2022)</del></h3>
+ <h3>Art. 30. As coberturas do FGHab de que trata o art. 20 desta Lei serão prestadas às operações de financiamento habitacional nas seguintes hipóteses: (Redação dada pela Lei n° 14.462, de 2022)</h3>
+ <h5>I - produção ou aquisição de imóveis em áreas urbanas; (Redação dada pela Lei n° 14.462, de 2022)</h5>
+ <h5>II - requalificação de imóveis já existentes em áreas consolidadas no âmbito do Programa Nacional de Habitação Urbana - PNHU; ou (Redação dada pela Lei n° 12.249, de 2010)</h5>
+ <h5>III - produção de moradia no âmbito do Programa Nacional de Habitação Rural - PNHR. (Redação dada pela Lei n° 12.249, de 2010)</h5>
+ <h4>§ 1º A contratação das coberturas de que trata o caput está sujeita às seguintes condições: (Incluído pela Lei n° 12.249, de 2010)</h4>
+ <h5>I - os valores de financiamento devem obedecer aos limites definidos no estatuto do Fundo; (Incluído pela Lei n° 12.249, de 2010)</h5>
+ <h5>II - a cobertura do FGHab está limitada a um único imóvel financiado por mutuário no âmbito do SFH; e (Incluído pela Lei n° 12.249, de 2010)</h5>
+ <h5>III - a previsão da cobertura pelo FGHab deve estar expressa em cláusula específica dos contratos celebrados entre os agentes financeiros e os mutuários. (Incluído pela Lei n° 12.249, de 2010)</h5>
+ <h4>§ 2º O estatuto do FGHab definirá o prazo das coberturas oferecidas pelo Fundo. (Renumerado pelo parágrafo único pela Lei n° 12.249, de 2010)</h4>
+ <h3>Art. 30-A. As coberturas do FGHab serão prestadas às operações de crédito para melhorias habitacionais, conforme estatuto do Fundo. (Redação dada pela Lei n° 15.164, de 2025)</h3>
+ <h3>Art. 31. A dissolução do FGHab ficará condicionada à prévia quitação da totalidade dos débitos garantidos.</h3>
+ <h3>Art. 32. Dissolvido o FGHab, o seu patrimônio será distribuído entre os cotistas, na proporção de suas cotas, com base na situação patrimonial à data da dissolução.</h3>
+ <p>Seção VI</p>
+ <p>Da Subvenção Econômica ao Banco Nacional de Desenvolvimento</p>
+ <p>Econômico e Social – BNDES</p>
+ <h3>Art. 33. Fica a União autorizada a conceder subvenção econômica ao BNDES, sob a modalidade de equalização de taxas de juros e outros encargos financeiros, especificamente nas operações de financiamento de linha especial para infraestrutura em projetos de habitação popular.</h3>
+ <h4>§ 1º O volume de recursos utilizado para a linha de que dispõe o caput deste artigo não pode superar R$ 5.000.000.000,00 (cinco bilhões de reais).</h4>
+ <h4>§ 2º A equalização de juros de que trata o caput deste artigo corresponderá ao diferencial entre o custo da fonte de captação do BNDES e o custo da linha para a instituição financeira oficial federal.</h4>
+ <h3>Art. 34. A concessão da subvenção de equalização de juros obedecerá aos limites e normas operacionais a serem estabelecidos pelo Conselho Monetário Nacional, especialmente no que diz respeito a custos de captação e de aplicação dos recursos.</h3>
+ <p>Seção VII</p>
+ <p>Disposições Complementares</p>
+ <h3>Art. 35. Os contratos e registros efetivados no âmbito do PMCMV serão formalizados, preferencialmente, em nome da mulher.</h3>
+ <h3>Art. 35-A. Nas hipóteses de dissolução de união estável, 	separação ou divórcio, o título de propriedade do imóvel adquirido no âmbito do PMCMV, na constância do casamento ou da união estável, com subvenções oriundas de recursos do orçamento geral da União, do FAR e do FDS, será 	registrado em nome da mulher ou a ela transferido, independentemente do regime de bens aplicável, excetuados os casos que envolvam recursos do 	FGTS. (Incluído pela Lei n° 12.693, de 2012)</h3>
+ <h4>Parágrafo único. Nos casos em que haja filhos do casal e a guarda seja atribuída exclusivamente ao marido ou companheiro, o título da propriedade do imóvel será registrado em seu nome ou a ele transferido. (Incluído pela Lei n° 12.693, de 2012)</h4>
+ <h3>Art. 36. Os lotes destinados à construção de moradias no âmbito do PMCMV não poderão ser objeto de remembramento, devendo tal proibição constar expressamente dos contratos celebrados.</h3>
+ <h4>Parágrafo único. A vedação estabelecida no caput perdurará pelo prazo de 15 (quinze) anos, contados a partir da celebração do contrato.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>Regulamento</p>
+ <h3>DO REGISTRO ELETRÔNICO E DAS CUSTAS E EMOLUMENTOS</h3>
+ <h3>Art. 37. Os serviços de registros públicos de que trata a Lei n° 6.015, de 31 de dezembro de 1973 (Lei de Registros Públicos) promoverão a implantação e o funcionamento adequado do Sistema Eletrônico dos Registros Públicos (Serp), nos termos da Medida Provisória nº 1.085, de 27 de dezembro de 2021 . (Redação dada pela Lei n° 14.382, de 2022)</h3>
+ <h3>Art. 38. Os documentos eletrônicos apresentados aos serviços de registros públicos ou por eles expedidos deverão atender aos requisitos estabelecidos pela Corregedoria Nacional de Justiça do Conselho Nacional de Justiça, com a utilização de assinatura eletrônica avançada ou qualificada, conforme definido no art. 4º da Lei n° 14.063, de 23 de setembro de 2020 . (Redação dada pela Lei n° 14.382, de 2022)</h3>
+ <h4>§ 1º Os serviços de registros públicos disponibilizarão serviços de recepção de títulos e de fornecimento de informações e certidões em meio eletrônico. (Incluído pela Lei n° 14.382, de 2022)</h4>
+ <h4>§ 2º Ato da Corregedoria Nacional de Justiça do Conselho Nacional de Justiça poderá estabelecer hipóteses de admissão de assinatura avançada em atos que envolvam imóveis. (Incluído pela Lei n° 14.382, de 2022)</h4>
+ <h3>Art. 39. Os atos registrais praticados a partir da vigência da Lei N° 6.015, de 31 de dezembro de 1973 , serão inseridos no sistema de registro eletrônico, no prazo de até 5 (cinco) anos a contar da publicação desta Lei. (Vide Decreto nº 8.270, de 2014)</h3>
+ <h4>Parágrafo único. Os atos praticados e os documentos arquivados anteriormente à vigência da Lei n° 6.015, de 31 de dezembro de 1973 , deverão ser inseridos no sistema eletrônico.</h4>
+ <h3>Art. 40. Serão definidos em regulamento os requisitos quanto a cópias de segurança de documentos e de livros escriturados de forma eletrônica.</h3>
+ <h3>Art. 41. A partir da implementação do sistema de registro eletrônico de que trata o art. 37, os serviços de registros públicos disponibilizarão ao Poder Judiciário e ao Poder Executivo federal, por meio eletrônico e sem ônus, o acesso às informações constantes de seus bancos de dados, conforme regulamento. (Redação dada pela Lei n° 13.097, de 2015)</h3>
+ <h4>Parágrafo único. O descumprimento do disposto no caput ensejará a aplicação das penas previstas nos incisos II a IV do caput do art. 32 da Lei N° 8.935, de 18 de novembro de 1994 . (Redação dada pela Lei n° 13.097, de 2015)</h4>
+ <h3>Art. 42. Os emolumentos devidos pelos atos de abertura de matrícula, registro de incorporação, parcelamento do solo, averbação de construção, instituição de condomínio, averbação da carta de “habite-se” e demais atos referentes à construção de empreendimentos no âmbito do PMCMV serão reduzidos em: (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - 75% (setenta e cinco por cento) para os empreendimentos do FAR e do FDS; (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - 50% (cinquenta por cento) para os atos relacionados aos demais empreendimentos do PMCMV. (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h5>III - (revogado). (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 1º A redução prevista no inciso I será também aplicada aos emolumentos devidos pelo registro da transferência de propriedade do imóvel para o FAR e o FDS. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º No ato do registro de incorporação, o interessado deve declarar que o seu empreendimento está enquadrado no PMCMV para obter a redução dos emolumentos previstos no caput . (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 3º O desenquadramento do PMCMV de uma ou mais unidades habitacionais de empreendimento que tenha obtido a redução das custas na forma do § 2º implica a complementação do pagamento dos emolumentos relativos a essas unidades. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 4º A redução prevista no inciso II do caput aplica-se às operações com recursos do FGTS firmadas a partir de 26 de agosto de 2020. (Redação dada pela Lei n° 14.620, de 2023)</h4>
+ <h3>Art. 43. Os emolumentos referentes a escritura pública, quando esta for exigida, ao registro da alienação de imóvel e de correspondentes garantias reais e aos demais atos relativos ao imóvel residencial adquirido ou financiado no âmbito do PMCMV serão reduzidos em: (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - 75% (setenta e cinco por cento) para os imóveis residenciais adquiridos do FAR e do FDS; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - 50% (cinquenta por cento) para os imóveis residenciais dos demais empreendimentos do PMCMV. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>Parágrafo único. (Revogado). (Redação dada pela Lei n° 12.424, de 2011)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - (revogado). (Redação dada pela Lei n° 12.424, de 2011)</h5>
+ <h3>Art. 43-A. (VETADO) . (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h3>Art. 43-B. A redução prevista no inciso II do caput do art. 43 aplica-se também às operações com imóveis residenciais de empreendimentos fora do PMCMV contratados com recursos do FGTS firmadas a partir de 26 de agosto de 2020. (Incluído pela Lei n° 14.620, de 2023)</h3>
+ <h3>Art. 44. Os cartórios que não cumprirem o disposto nos arts. 42 e 43 ficarão sujeitos à multa no valor de até R$ 100.000,00 (cem mil reais), bem como a outras sanções previstas na Lei N° 8.935, de 18 de novembro de 1994 .</h3>
+ <h3>Art. 44-A. Nos atos registrais relativos ao PMCMV, o prazo para qualificação do título e respectivo registro, averbação ou devolução com indicação das pendências a serem satisfeitas para sua efetivação não poderá ultrapassar a 15 (quinze) dias, contados da data em que ingressar na serventia. (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h4>§ 1º Havendo exigências de qualquer ordem, elas deverão ser formuladas de uma só vez, por escrito, articuladamente, de forma clara e objetiva, em papel timbrado do cartório, com data, identificação e assinatura do servidor responsável, para que o interessado possa satisfazê-las, ou, não se conformando, requerer a suscitação de dúvida. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º Reingressando o título dentro da vigência da prenotação, e estando em ordem, o registro ou averbação será feito no prazo de 10 (dez) dias. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 3º Em caso de inobservância do disposto neste artigo, será aplicada multa, na forma do inciso II do caput do art. 32 da Lei N° 8.935, de 18 de novembro de 1994 , com valor mínimo de 20% (vinte por cento) dos respectivos emolumentos, sem prejuízo de outras sanções cabíveis. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h3>Art. 45. Regulamento disporá sobre as condições e as etapas mínimas, bem como sobre os prazos máximos, a serem cumpridos pelos serviços de registros públicos, com vistas na efetiva implementação do sistema de registro eletrônico de que trata o art. 37.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>(Revogado pela Lei n° 13.465, de 2017)</del></p>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 72. Nas ações judiciais de cobrança ou execução de cotas de condomínio, de imposto sobre a propriedade predial e territorial urbana ou de outras obrigações vinculadas ou decorrentes da posse do imóvel urbano, nas quais o responsável pelo pagamento seja o possuidor investido nos respectivos direitos aquisitivos, assim como o usufrutuário ou outros titulares de direito real de uso, posse ou fruição, será notificado o titular do domínio pleno ou útil, inclusive o promitente vendedor ou fiduciário.</h3>
+ <h3>Art. 73. Serão assegurados no PMCMV:</h3>
+ <h5>I - condições de acessibilidade a todas as áreas públicas e de uso comum, com obrigatoriedade de construção de rampas de acesso nas calçadas e nos espaços públicos no âmbito do PMCMV; (Redação dada pela Lei n° 14.620, de 2023)</h5>
+ <h5>II – disponibilidade de unidades adaptáveis ao uso por pessoas com deficiência, com mobilidade reduzida e idosos, de acordo com a demanda;</h5>
+ <h5>III - condições de sustentabilidade das construções e dos espaços adequados e/ou destinados para animais domésticos ( pets ) em cada unidade habitacional; (Redação dada pela Lei n° 14.620, de 2023)</h5>
+ <h5>IV – uso de novas tecnologias construtivas.</h5>
+ <h5>V - condições de habitabilidade e sustentabilidade das construções. (Incluído pela Lei n° 14.620, de 2023)</h5>
+ <h4>Parágrafo único. Na ausência de legislação municipal ou estadual acerca de condições de acessibilidade que estabeleça regra específica, será assegurado que, do total de unidades habitacionais construídas no âmbito do PMCMV em cada Município, no mínimo, 3% (três por cento) sejam adaptadas ao uso por pessoas com deficiência. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h3>Art. 73-A. Excetuados os casos que envolvam recursos do FGTS, os contratos em que o beneficiário final seja mulher chefe de família, no âmbito do PMCMV ou em programas de regularização fundiária de interesse social promovidos pela União, Estados, Distrito Federal ou 	Municípios, poderão ser firmados independentemente da outorga do cônjuge, 	afastada a aplicação do disposto nos arts. 1.647 a 1.649 da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil) . (Redação dada pela Lei n° 12.693, de 2012)</h3>
+ <h4>§ 1º O contrato firmado na forma do caput será registrado no registro de imóveis competente, sem a exigência de documentos relativos a eventual cônjuge. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º Prejuízos sofridos pelo cônjuge por decorrência do previsto neste artigo serão resolvidos em perdas e danos. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h3>Art. 74. O Decreto-Lei N° 3.365, de 21 de junho de 1941 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 15. ...................................................................................................................................</h3>
+ <p>................................................................................................................................................</p>
+ <h4>§ 4º A imissão provisória na posse será registrada no registro de imóveis competente.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 32. ...............................................................................................................................</h3>
+ <h4>§ 1º As dívidas fiscais serão deduzidas dos valores depositados, quando inscritas e ajuizadas.</h4>
+ <h4>§ 2º Incluem-se na disposição prevista no § 1º as multas decorrentes de inadimplemento e de obrigações fiscais.</h4>
+ <h4>§ 3º A discussão acerca dos valores inscritos ou executados será realizada em ação própria.” (NR)</h4>
+ <h3>Art. 75. A Lei N° 4.380, de 21 de agosto de 1964 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 8º ................................................................................................................................</h3>
+ <h5>I – pelos bancos múltiplos;</h5>
+ <h5>II – pelos bancos comerciais;</h5>
+ <h5>III – pelas caixas econômicas;</h5>
+ <h5>IV – pelas sociedades de crédito imobiliário;</h5>
+ <h5>V – pelas associações de poupança e empréstimo;</h5>
+ <h5>VI – pelas companhias hipotecárias;</h5>
+ <h5>VII – pelos órgãos federais, estaduais e municipais, inclusive sociedades de economia mista em que haja participação majoritária do poder público, que operem, de acordo com o disposto nesta Lei, no financiamento de habitações e obras conexas;</h5>
+ <h5>VIII – pelas fundações, cooperativas e outras formas associativas para construção ou aquisição da casa própria sem finalidade de lucro, que se constituirão de acordo com as diretrizes desta Lei;</h5>
+ <h5>IX – pelas caixas militares;</h5>
+ <h5>X – pelas entidades abertas de previdência complementar;</h5>
+ <h5>XI – pelas companhias securitizadoras de crédito imobiliário; e</h5>
+ <h5>XII – por outras instituições que venham a ser consideradas pelo Conselho Monetário Nacional como integrantes do Sistema Financeiro da Habitação.</h5>
+ <p>...................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 15-A. É permitida a pactuação de capitalização de juros com periodicidade mensal nas operações realizadas pelas entidades integrantes do Sistema Financeiro da Habitação - SFH.</h3>
+ <h4>§ 1º No ato da contratação e sempre que solicitado pelo devedor será apresentado pelo credor, por meio de planilha de cálculo que evidencie de modo claro e preciso, e de fácil entendimento e compreensão, o seguinte conjunto de informações:</h4>
+ <h5>I – saldo devedor e prazo remanescente do contrato;</h5>
+ <h5>II – taxa de juros contratual, nominal e efetiva, nas periodicidades mensal e anual;</h5>
+ <h5>III – valores repassados pela instituição credora às seguradoras, a título de pagamento de prêmio de seguro pelo mutuário, por tipo de seguro;</h5>
+ <h5>IV – taxas, custas e demais despesas cobradas juntamente com a prestação, discriminadas uma a uma;</h5>
+ <h5>V – somatório dos valores já pagos ou repassados relativos a:</h5>
+ <h6>a) juros;</h6>
+ <h6>b) amortização;</h6>
+ <h6>c) prêmio de seguro por tipo de seguro;</h6>
+ <h6>d) taxas, custas e demais despesas, discriminando por tipo;</h6>
+ <h5>VI – valor mensal projetado das prestações ainda não pagas, pelo prazo remanescente do contrato, e o respectivo somatório, decompostos em juros e amortizações;</h5>
+ <h5>VII – valor devido em multas e demais penalidades contratuais quando houver atraso no pagamento da prestação.</h5>
+ <h4>§ 2º No cômputo dos valores de que trata o inciso VI do § 1º , a instituição credora deve desconsiderar os efeitos de eventual previsão contratual de atualização monetária do saldo devedor ou das prestações.”</h4>
+ <p>“</p>
+ <h3>Art. 15-B. Nas operações de empréstimo ou financiamento realizadas por instituições integrantes do Sistema Financeiro da Habitação que prevejam pagamentos por meio de prestações periódicas, os sistemas de amortização do saldo devedor poderão ser livremente pactuados entre as partes.</h3>
+ <h4>§ 1º O valor presente do fluxo futuro das prestações, compostas de amortização do principal e juros, geradas pelas operações de que trata o caput , deve ser calculado com a utilização da taxa de juros pactuada no contrato, não podendo resultar em valor diferente ao do empréstimo ou do financiamento concedido.</h4>
+ <h4>§ 2º No caso de empréstimos e financiamentos com previsão de atualização monetária do saldo devedor ou das prestações, para fins de apuração do valor presente de que trata o § 1º , não serão considerados os efeitos da referida atualização monetária.</h4>
+ <h4>§ 3º Nas operações de empréstimo ou financiamento de que dispõe o caput é obrigatório o oferecimento ao mutuário do Sistema de Amortização Constante - SAC e de, no mínimo, outro sistema de amortização que atenda o disposto nos §§ 1º e 2º , entre eles o Sistema de Amortização Crescente - SACRE e o Sistema Francês de Amortização (Tabela Price).”</h4>
+ <h3>Art. 76. A Lei N° 6.015, de 31 de dezembro de 1973 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 17. .................................................................................................................................</h3>
+ <h4>Parágrafo único. O acesso ou envio de informações aos registros públicos, quando forem realizados por meio da rede mundial de computadores (internet) deverão ser assinados com uso de certificado digital, que atenderá os requisitos da Infraestrutura de Chaves Públicas Brasileira - ICP.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 167. .......................................................................................................................................</h3>
+ <h5>I – .............................................................................................................................................</h5>
+ <p>.......................................................................................................................................................</p>
+ <p>41. da legitimação de posse;</p>
+ <h5>II – ........................................................................................................................................</h5>
+ <p>...............................................................................................................................................</p>
+ <p>26. do auto de demarcação urbanística.” (NR)</p>
+ <p>“</p>
+ <h3>Art. 221. ........................................................................................................................</h3>
+ <p>.............................................................................................................................................</p>
+ <h5>V – contratos ou termos administrativos, assinados com a União, Estados e Municípios no âmbito de programas de regularização fundiária, dispensado o reconhecimento de firma.” (NR)</h5>
+ <p>“</p>
+ <h3>Art. 237-A. Após o registro do parcelamento do solo ou da incorporação imobiliária, até a emissão da carta de habite-se, as averbações e registros relativos à pessoa do incorporador ou referentes a direitos reais de garantias, cessões ou demais negócios jurídicos que envolvam o empreendimento serão realizados na matrícula de origem do imóvel e em cada uma das matrículas das unidades autônomas eventualmente abertas.</h3>
+ <h4>§ 1º Para efeito de cobrança de custas e emolumentos, as averbações e os registros realizados com base no caput serão considerados como ato de registro único, não importando a quantidade de unidades autônomas envolvidas ou de atos intermediários existentes.</h4>
+ <h4>§ 2º Nos registros decorrentes de processo de parcelamento do solo ou de incorporação imobiliária, o registrador deverá observar o prazo máximo de 15 (quinze) dias para o fornecimento do número do registro ao interessado ou a indicação das pendências a serem satisfeitas para sua efetivação.”</h4>
+ <h3>Art. 77. O inciso VII do art. 20 da Lei N° 8.036, de 11 de maio de 1990 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 20. ...............................................................................................................................</h3>
+ <p>.............................................................................................................................................</p>
+ <h5>VII – pagamento total ou parcial do preço de aquisição de moradia própria, ou lote urbanizado de interesse social não construído, observadas as seguintes condições:</h5>
+ <p>.........................................................................................................................................” (NR)</p>
+ <h3>Art. 78. O inciso V do art. 4º da Lei N° 10.257, de 10 de julho de 2001 , passa a vigorar acrescido das seguintes alíneas t e u :</h3>
+ <p>“</p>
+ <h3>Art. 4º ..............................................................................................................................</h3>
+ <p>.............................................................................................................................................</p>
+ <h5>V – .................................................................................................................................</h5>
+ <p>....................................................................................................................................</p>
+ <h6>t) demarcação urbanística para fins de regularização fundiária;</h6>
+ <h6>u) legitimação de posse.</h6>
+ <p>................................................................................................................................” (NR)</p>
+ <h3>Art. 79. Os agentes financeiros do SFH somente poderão conceder financiamentos habitacionais com cobertura securitária que preveja, no mínimo, cobertura aos riscos de morte e invalidez permanente do mutuário e de danos físicos ao imóvel. (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h4>§ 1º Para o cumprimento do disposto no caput , os agentes financeiros, respeitada a livre escolha do mutuário, deverão: (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h5>I - disponibilizar, na qualidade de estipulante e beneficiário, quantidade mínima de apólices emitidas por entes seguradores diversos, que observem a exigência estabelecida no caput ; (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - aceitar apólices individuais apresentadas pelos pretendentes ao financiamento, desde que a cobertura securitária prevista observe a exigência mínima estabelecida no caput e o ente segurador cumpra as condições estabelecidas pelo Conselho Nacional de Seguros Privados - CNSP, para apólices direcionadas a operações da espécie. (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 2º Sem prejuízo da regulamentação do seguro habitacional pelo CNSP, o Conselho Monetário Nacional estabelecerá as condições necessárias à implementação do disposto no § 1º deste artigo, no que se refere às obrigações dos agentes financeiros. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 3º Nas operações em que sejam utilizados recursos advindos do Fundo de Arrendamento Residencial - FAR e do Fundo de Desenvolvimento Social - FDS, os agentes financeiros poderão dispensar a contratação de seguro de que trata o caput , nas hipóteses em que os riscos de morte e invalidez permanente do mutuário e de danos físicos ao imóvel estejam garantidos pelos respectivos fundos. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 4º Nas operações de financiamento na modalidade de aquisição de material de construção com recursos do FGTS, os agentes financeiros ficam autorizados a dispensar a contratação do seguro de danos físicos ao imóvel. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 5º Nas operações de financiamento de habitação rural, na modalidade de aquisição de material de construção, com recursos do FGTS, os agentes financeiros ficam autorizados a dispensar a contratação do seguro de morte e invalidez permanente do mutuário nos casos em que estes riscos contarem com outra garantia. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h3>Art. 79-A. Para construção, reforma ou requalificação de imóveis no âmbito do PMCMV, a Caixa Econômica Federal fica autorizada a adquirir, em nome do FAR, e pelo prazo necessário à conclusão das obras e transferência da unidade construída aos beneficiários do programa: (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h5>I - os direitos de posse em que estiver imitido qualquer ente da Federação a partir de decisão proferida em processo judicial de desapropriação em curso, conforme comprovado mediante registro no cartório de registro de imóveis competente; e (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h5>II - os direitos reais de uso de imóvel público, de que trata o art. 7º do Decreto-Lei N° 271, de 28 de fevereiro de 1967 . (Incluído pela Lei n° 12.424, de 2011)</h5>
+ <h4>§ 1º A aquisição prevista no inciso I do caput será condicionada ao compromisso do ente público de transferir o direito de propriedade do imóvel ao FAR, após o trânsito em julgado da sentença do processo judicial de desapropriação. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 2º A transferência ao beneficiário final será condicionada ao adimplemento das obrigações assumidas por ele com o FAR. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 3º A aquisição prevista no inciso II do caput somente será admitida quando o direito real de uso for concedido por prazo indeterminado. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h4>§ 4º Os contratos de aquisição de imóveis ou de direitos a eles relativos pelo FAR serão celebrados por instrumento particular com força de escritura pública e registrados no registro de imóveis competente. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h3>Art. 80. Até que a quantidade mínima a que se refere o inciso I do § 1º do art. 79 desta Lei seja regulamentada pelo Conselho Monetário Nacional, os agentes financeiros poderão oferecer apenas uma apólice ao mutuário. (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <h3>Art. 81. Ficam convalidados os atos do Conselho Monetário Nacional que relacionaram as instituições integrantes do Sistema Financeiro da Habitação.</h3>
+ <h3>Art. 81-A. Os limites de renda familiar expressos nesta Lei constituem valores máximos, admitindo-se a atualização nos termos do § 6º do art. 3º , bem como a definição, em regulamento, de subtetos de acordo com as modalidades operacionais praticadas. (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h3>Art. 82. Fica autorizado o custeio, no âmbito do PMCMV, da aquisição e instalação de equipamentos de energia solar ou que contribuam para a redução do consumo de água em moradias. (Redação dada pela Lei n° 12.424, de 2011)</h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 12.722, de 2012)</del></p>
+ <h3>Art. 82-A. Enquanto não efetivado o aporte de recursos necessários às subvenções econômicas de que tratam os incisos I e II do art. 2º e o art. 11 desta Lei, observado o disposto na lei orçamentária anual, o agente operador do FGTS, do FAR e do FDS, que tenha utilizado as disponibilidades dos referidos fundos em contratações no âmbito do PMCMV, terá direito ao ressarcimento das quantias desembolsadas, devidamente atualizadas pela taxa Selic. (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h3>Art. 82-B. O PMCMV, nos termos do art. 1º desta Lei, tem como meta promover a produção, aquisição, requalificação e reforma de dois milhões de unidades habitacionais, a partir de 1º de dezembro de 2010 até 31 de dezembro de 2014, das quais, no mínimo, 220.000 (duzentas e vinte mil) unidades serão produzidas por meio de concessão de subvenção econômica na forma do inciso I do § 1º do art. 6º -B, nas operações de que trata o inciso III do caput do art. 2º , a beneficiários finais com renda de até R$ 1.395,00 (mil, trezentos e noventa e cinco reais), respeitados os valores consignados nas respectivas leis orçamentárias anuais. (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h4>Parágrafo único. As diretrizes para a continuidade do programa poderão ser complementadas no plano nacional de habitação a ser apresentado pelo Poder Executivo federal mediante projeto de lei. (Incluído pela Lei n° 12.424, de 2011)</h4>
+ <h3>Art. 82-C. Para o exercício de 2011, a União fica autorizada a utilizar os recursos previstos nos arts. 2º , 5º , 12, 18 e 19 desta Lei. (Incluído pela Lei n° 12.424, de 2011)</h3>
+ <h3>Art. 82-D. No âmbito do PMCMV, no caso de empreendimentos construídos com recursos do FAR, poderá ser custeada a edificação de equipamentos de educação, saúde e outros complementares à habitação, inclusive em terrenos de propriedade pública, nos termos do regulamento. (Incluído pela Lei n° 12.722, de 2012)</h3>
+ <h4>§ 1º A edificação dos equipamentos de que trata o caput está condicionada à existência de compromisso prévio do Governo Estadual, Municipal ou Distrital em assumir a operação, a guarda e a manutenção do equipamento, imediatamente após a conclusão da obra, e colocá-lo em funcionamento em prazo compatível com o atendimento da demanda do empreendimento, nos termos do regulamento. (Incluído pela Lei n° 12.722, de 2012)</h4>
+ <h4>§ 2º Caso a operação não seja iniciada no prazo previsto no termo de compromisso, o ente responsável deverá ressarcir o FAR com os recursos gastos com a edificação, devidamente atualizados. (Incluído pela Lei n° 12.722, de 2012)</h4>
+ <h4>§ 3º Os equipamentos de que trata o caput serão incorporados ao patrimônio do ente público proprietário do terreno no qual foi realizada a edificação ou doados ao ente público responsável pela operação, guarda e manutenção, caso a edificação seja realizada em terreno de propriedade do FAR. (Incluído pela Lei n° 12.722, de 2012)</h4>
+ <h4>§ 4º Quando a edificação tiver que ser realizada em terreno cuja propriedade não seja do ente público responsável pela operação, guarda e manutenção dos equipamentos, o termo de compromisso deverá contar com a participação de todos os entes envolvidos como também prever a obrigação de transferência do uso ou da propriedade para o mencionado ente responsável pela operacionalização. (Incluído pela Lei n° 12.722, de 2012)</h4>
+ <h3>Art. 83. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 7 de julho de 2009; 188º da Independência e 121º da República.</p>
+ <h3>JOSÉ ALENCAR GOMES DA SILVA</h3>
+ <p>Luiz Paulo Teles Ferreira Barreto</p>
+ <p>Marcio Fortes de Almeida</p>
+ <p>Este texto não substitui o publicado no DOU de 8.7.2009</p>
+ <p>Provisória nº 459, de 2009(Regulamento) | Dispõe sobre o Programa Minha Casa, Minha Vida –</p>
+ <p>PMCMV e a regularização fundiária de assentamentos localizados em áreas urbanas;</p>
+ <p>altera o Decreto-Lei n° 3.365, de 21 de junho de 1941, as Leis nos4.380, de 21 de agosto de 1964, 6.015, de 31 de dezembro de 1973, 8.036, de 11 de maio de 1990, e 10.257, de 10 de julho de 2001, e a</p>
+ <p>Medida Provisória no2.197-43, de 24 de agosto de 2001; e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L11977compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

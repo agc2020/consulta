@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.437, DE 15 DE AGOSTO DE 2022 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2022" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.437, DE 15 DE AGOSTO DE 2022</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:10:32 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14437.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 44.169 caracteres | espelho: 44.509 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.437, 	DE 15 DE AGOSTO DE 2022 Conversão da Medida 	Provisória nº 1.109, de 2022</p>
+ <p>Autoriza o Poder Executivo federal a dispor sobre a adoção, por empregados e empregadores, de medidas trabalhistas alternativas e sobre o Programa Emergencial de Manutenção do Emprego e da Renda, para enfrentamento das consequências sociais e econômicas de estado de calamidade pública em âmbito nacional ou em âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</p>
+ <p>Faço saber que o PRESIDENTE DA REPÚBLICA adotou a Medida Provisória nº 1.109, de 2022 , 	que o Congresso Nacional aprovou, e eu, Rodrigo Pacheco, Presidente da Mesa do Congresso Nacional, para os efeitos do disposto no art. 62 da 	Constituição Federal, com a redação dada pela Emenda Constitucional nº 32, 	combinado com o art. 12 da Resolução nº 1, de 2002-CN, promulgo a seguinte 	Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei autoriza o Poder Executivo federal a dispor sobre a adoção, por empregados e empregadores, de medidas trabalhistas alternativas e sobre o 	Programa Emergencial de Manutenção do Emprego e da Renda, para enfrentamento das consequências sociais e econômicas de estado de calamidade pública em 	âmbito nacional ou em âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</h3>
+ <h4>§ 1º São objetivos desta 	Lei:</h4>
+ <h5>I - preservar o emprego e a renda;</h5>
+ <h5>II - garantir a continuidade das atividades laborais, empresariais e das organizações da sociedade civil sem fins lucrativos; e</h5>
+ <h5>III - reduzir o impacto social decorrente das consequências de estado de calamidade pública em 	âmbito nacional ou em âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</h5>
+ <h4>§ 2º As medidas previstas no caput deste artigo poderão ser adotadas exclusivamente:</h4>
+ <h5>I - para trabalhadores em grupos de risco; e</h5>
+ <h5>II - para trabalhadores de áreas específicas dos entes federativos atingidos por estado de calamidade pública.</h5>
+ <h2>CAPÍTULO II</h2>
+ <p>DAS MEDIDAS TRABALHISTAS 	ALTERNATIVAS PARA ENFRENTAMENTO DE ESTADO DE CALAMIDADE PÚBLICA</p>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 2º Poderão ser adotadas, por empregados e empregadores, para a preservação do emprego, a sustentabilidade do mercado de trabalho e o enfrentamento das consequências de estado de calamidade pública em âmbito nacional ou em 	âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal, as seguintes medidas trabalhistas alternativas:</h3>
+ <h5>I - o teletrabalho;</h5>
+ <h5>II - a antecipação de férias individuais;</h5>
+ <h5>III - a concessão de férias coletivas;</h5>
+ <h5>IV - o aproveitamento e a antecipação de feriados;</h5>
+ <h5>V - o banco de horas; e</h5>
+ <h5>VI - a suspensão da exigibilidade dos recolhimentos do Fundo de Garantia do Tempo de Serviço 	(FGTS).</h5>
+ <h4>§ 1º A adoção das medidas previstas no caput deste artigo observará o disposto em ato do Ministério do Trabalho e Previdência, que estabelecerá, 	entre outros parâmetros, o prazo em que as medidas trabalhistas alternativas poderão ser adotadas.</h4>
+ <h4>§ 2º O prazo a que se refere o § 1º deste artigo será de até 90 (noventa) dias, prorrogável enquanto durar o estado de calamidade pública em âmbito nacional ou em 	âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</h4>
+ <p>Seção II</p>
+ <p>Do Teletrabalho</p>
+ <h3>Art. 3º O empregador poderá, a seu critério, durante o prazo previsto no ato do 	Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, 	alterar o regime de trabalho presencial para teletrabalho ou trabalho remoto, além de determinar o retorno ao regime de trabalho presencial, 	independentemente da existência de acordos individuais ou coletivos, 	dispensado o registro prévio da alteração no contrato individual de trabalho.</h3>
+ <h4>§ 1º Para fins do disposto nesta Lei, considera-se teletrabalho ou trabalho remoto a definição constante do art. 75-B da Consolidação das Leis do Trabalho , aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943.</h4>
+ <h4>§ 2º A alteração de que trata o caput deste artigo será notificada ao empregado com antecedência de, no mínimo, 48 (quarenta e oito) horas, por escrito ou por meio eletrônico.</h4>
+ <h4>§ 3º As disposições relativas à responsabilidade pela aquisição, pela manutenção ou pelo fornecimento dos equipamentos tecnológicos e da infraestrutura necessária e adequada à prestação de teletrabalho ou de trabalho remoto e as disposições relativas ao reembolso de despesas efetuadas pelo empregado serão previstas em contrato escrito, firmado previamente ou no prazo de 30 (trinta) dias, 	contado da data da mudança do regime de trabalho.</h4>
+ <h4>§ 4º Na hipótese de o empregado não possuir os equipamentos tecnológicos ou a infraestrutura necessária e adequada à prestação de teletrabalho ou de trabalho remoto:</h4>
+ <h5>I - o empregador poderá 	fornecer os equipamentos em regime de comodato e custear os serviços de infraestrutura, que não caracterizarão verba de natureza salarial; ou</h5>
+ <h5>II - o período da jornada normal de trabalho será computado como tempo de trabalho à 	disposição do empregador, na impossibilidade do oferecimento do regime de comodato de que trata o inciso I deste parágrafo.</h5>
+ <h4>§ 5º O tempo de uso de equipamentos tecnológicos e de infraestrutura necessária, bem como de softwares , de ferramentas digitais ou de aplicações de internet utilizados para o teletrabalho ou o trabalho remoto, fora da jornada de trabalho normal do empregado não constitui tempo à disposição ou regime de prontidão ou de sobreaviso, exceto se houver previsão em acordo individual ou em acordo ou convenção coletiva de trabalho.</h4>
+ <h4>§ 6º Aplica-se ao teletrabalho e ao trabalho remoto de que trata este artigo o disposto no inciso III do caput do art. 62 da Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943.</h4>
+ <h3>Art. 4º Fica permitida a adoção do regime de teletrabalho ou de trabalho remoto para estagiários e aprendizes, nos termos desta Seção.</h3>
+ <h3>Art. 5º O regime de teletrabalho ou de trabalho remoto não se confunde nem se equipara à ocupação de operador de telemarketing ou de teleatendimento.</h3>
+ <p>Seção III</p>
+ <p>Da Antecipação de Férias Individuais</p>
+ <h3>Art. 6º O empregador informará ao empregado, durante o prazo previsto no ato do 	Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, sobre a antecipação de suas férias com antecedência de, no mínimo, 48 (quarenta e oito) horas, por escrito ou por meio eletrônico, com a indicação do período a ser gozado pelo empregado.</h3>
+ <h4>§ 1º As férias antecipadas nos termos do caput deste artigo:</h4>
+ <h5>I - não poderão ser gozadas em períodos inferiores a 5 (cinco) dias corridos; e</h5>
+ <h5>II - poderão ser concedidas por ato do empregador, ainda que o período aquisitivo a que se referem não tenha transcorrido.</h5>
+ <h4>§ 2º O empregado e o empregador poderão, adicionalmente, negociar a antecipação de períodos futuros de férias, por meio de acordo individual escrito.</h4>
+ <h3>Art. 7º O empregador poderá, durante o prazo previsto no ato do Ministério do 	Trabalho e Previdência de que trata o art. 2º desta Lei, suspender as férias e as licenças não remuneradas dos profissionais da área de saúde ou daqueles que desempenham funções essenciais, por meio de comunicação formal da decisão ao trabalhador por escrito ou, preferencialmente, por meio eletrônico, com antecedência de 48 (quarenta e oito) horas.</h3>
+ <h3>Art. 8º O adicional de 1/3 (um terço) relativo às férias concedidas durante o prazo previsto no ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei poderá ser pago após a sua concessão, a critério do empregador, até a data em que é devida a gratificação natalina prevista no art. 1º da Lei n° 4.749, de 12 de agosto de 1965.</h3>
+ <h3>Art. 9º A conversão de 1/3 (um terço) do período das férias em abono pecuniário dependerá da anuência do empregador, hipótese em que o pagamento poderá ser efetuado até a data de que trata o art. 8º desta Lei.</h3>
+ <h3>Art. 10. O pagamento da remuneração das férias concedidas durante o prazo previsto no ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei poderá ser efetuado até o quinto dia útil do mês subsequente ao do início do gozo das férias, hipótese em que não se aplica o disposto no art. 145 da Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943.</h3>
+ <h3>Art. 11. Na hipótese de rescisão do contrato de trabalho, os valores das férias, 	individuais ou coletivas, ainda não adimplidos serão pagos juntamente com as verbas rescisórias devidas.</h3>
+ <h4>Parágrafo único. No caso de pedido de demissão, as férias antecipadas gozadas cujo período não tenha sido adquirido serão descontadas das verbas rescisórias devidas ao empregado.</h4>
+ <p>Seção IV</p>
+ <p>Da Concessão de Férias Coletivas</p>
+ <h3>Art. 12. O empregador poderá, a seu critério, durante o prazo previsto no ato do 	Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, 	conceder férias coletivas a todos os empregados ou a setores da empresa e deverá notificar o conjunto de empregados afetados, por escrito ou por meio eletrônico, com antecedência de, no mínimo, 48 (quarenta e oito) horas, 	hipótese em que não se aplicam o limite máximo de períodos anuais e o limite mínimo de dias corridos previstos na Consolidação das Leis do Trabalho, 	aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , permitida a concessão por prazo superior a 30 (trinta) dias.</h3>
+ <h3>Art. 13. Aplica-se às férias coletivas o disposto no § 1º do art. 6º, nos arts. 	8º, 9º e 10 e no parágrafo único do art. 11 desta Lei.</h3>
+ <h3>Art. 14. Na hipótese de que trata esta Seção, ficam dispensadas a comunicação prévia ao órgão local do Ministério do Trabalho e Previdência e a comunicação aos sindicatos representativos da categoria profissional de que trata o art. 139 da Consolidação das Leis do Trabalho, aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943.</h3>
+ <p>Seção V</p>
+ <p>Do Aproveitamento e da Antecipação de Feriados</p>
+ <h3>Art. 15. Os empregadores poderão, durante o prazo previsto no ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, antecipar o gozo de feriados federais, estaduais, distritais e municipais, incluídos os religiosos, e deverão notificar, por escrito ou por meio eletrônico, o conjunto de empregados beneficiados, com antecedência de, no mínimo, 48 	(quarenta e oito) horas, com a indicação expressa dos feriados aproveitados.</h3>
+ <h4>Parágrafo único. Os feriados a que se refere o caput deste artigo poderão ser utilizados para compensação do saldo em banco de horas.</h4>
+ <p>Seção VI</p>
+ <p>Do Banco de Horas</p>
+ <h3>Art. 16. Ficam autorizadas, durante o prazo previsto no ato do Ministério do 	Trabalho e Previdência de que trata o art. 2º desta Lei, a interrupção das atividades pelo empregador e a constituição de regime especial de compensação de jornada, por meio de banco de horas, em favor do empregador ou do empregado, estabelecido por meio de acordo individual ou coletivo escrito, para a compensação no prazo de até 18 (dezoito) meses, contado da data de encerramento do período estabelecido no ato do Ministério do 	Trabalho e Previdência.</h3>
+ <h4>§ 1º A compensação de tempo para recuperação do período interrompido poderá ser feita por meio da prorrogação de jornada em até 2 (duas) horas, a qual não poderá exceder 10 	(dez) horas diárias e poderá ser realizada aos finais de semana, observado o disposto no art. 68 da Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943.</h4>
+ <h4>§ 2º A compensação do saldo de horas poderá ser determinada pelo empregador independentemente de convenção coletiva ou de acordo individual ou coletivo.</h4>
+ <h4>§ 3º As empresas que desempenham atividades essenciais poderão, durante o prazo previsto no ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, 	constituir regime especial de compensação de jornada por meio de banco de horas independentemente da interrupção de suas atividades.</h4>
+ <p>Seção VII</p>
+ <p>Da Suspensão da Exigibilidade dos Recolhimentos do Fundo de Garantia do 	Tempo de Serviço</p>
+ <h3>Art. 17. O ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei poderá suspender a exigibilidade dos recolhimentos do FGTS de até 	4 (quatro) competências, relativos aos estabelecimentos dos empregadores situados em Municípios alcançados por estado de calamidade pública reconhecido pelo Poder Executivo federal.</h3>
+ <h4>Parágrafo único. Os empregadores poderão fazer uso da prerrogativa prevista no caput deste artigo independentemente:</h4>
+ <h5>I - do número de empregados;</h5>
+ <h5>II - do regime de tributação;</h5>
+ <h5>III - da natureza jurídica;</h5>
+ <h5>IV - do ramo de atividade econômica; e</h5>
+ <h5>V - da adesão prévia.</h5>
+ <h3>Art. 18. O depósito das competências suspensas poderá ser realizado de forma parcelada, sem a incidência da atualização, da multa e dos encargos previstos no art. 22 da Lei n° 8.036, de 11 de maio de 1990.</h3>
+ <h4>§ 1º Os depósitos referentes às competências suspensas serão realizados em até 6 (seis) 	parcelas, nos prazos e nas condições estabelecidos no ato do Ministério do 	Trabalho e Previdência, na data prevista para o recolhimento mensal devido, 	conforme disposto no caput do art. 15 da Lei n° 8.036, de 11 de maio de 1990.</h4>
+ <h4>§ 2º Até que o disposto no art. 17-A da Lei n° 8.036, de 11 de maio de 1990 , seja regulamentado e produza efeitos, para usufruir da prerrogativa prevista no caput deste artigo, o empregador fica obrigado a declarar as informações na data prevista em ato do Ministério do Trabalho e Previdência, 	nos termos do inciso IV do caput do art. 32 da Lei n° 8.212, de 24 de julho de 1991 , observado que:</h4>
+ <h5>I - as informações prestadas constituirão declaração e reconhecimento dos créditos delas decorrentes, caracterizarão confissão de débito e constituirão instrumento hábil e suficiente para a cobrança do crédito de FGTS; e</h5>
+ <h5>II - os valores não declarados nos termos deste parágrafo não terão sua exigibilidade suspensa e obrigarão o pagamento integral da multa e dos encargos devidos nos termos do art. 22 da Lei n° 8.036, de 11 de maio de 1990 , sem possibilidade de realização do parcelamento de que trata o caput deste artigo.</h5>
+ <h4>§ 3º Para os depósitos de FGTS realizados nos termos do caput deste artigo, a atualização monetária e a capitalização dos juros de que trata o art. 13 da Lei n° 8.036, de 11 	de maio de 1990 , incidentes sobre os valores devidos na competência originária, correrão à conta do FGTS.</h4>
+ <h3>Art. 19. Na hipótese de rescisão do contrato de trabalho que autorize o saque do 	FGTS, a suspensão prevista no art. 17 desta Lei resolver-se-á em relação ao respectivo empregado, e ficará o empregador obrigado:</h3>
+ <h5>I - ao recolhimento dos valores de FGTS cuja exigibilidade tenha sido suspensa nos termos desta Lei, 	sem incidência da multa e dos encargos devidos na forma do art. 22 da Lei n° 8.036, de 11 de maio de 1990 , desde que seja efetuado no prazo legal; e</h5>
+ <h5>II - ao depósito dos valores previstos no art. 18 da Lei n° 8.036, de 11 de maio de 1990.</h5>
+ <h4>Parágrafo único. Na hipótese prevista no caput deste artigo, as eventuais parcelas vincendas terão a sua data de vencimento antecipada para o prazo aplicável ao recolhimento previsto no art. 18 da Lei n° 8.036, de 11 de maio de 1990.</h4>
+ <h3>Art. 20.Os valores de FGTS cuja exigibilidade tenha sido suspensa nos termos do art. 17 desta Lei, caso inadimplidos nos prazos fixados na forma desta Lei, 	estarão sujeitos à multa e aos encargos devidos nos termos do art. 22 da Lei n° 8.036, de 11 de maio de 1990 , desde a data originária de vencimento fixada no caput do art. 15 da Lei n° 8.036, de 11 de maio de 1990.</h3>
+ <h3>Art. 21. Na hipótese de suspensão da exigibilidade de que trata o art. 17 desta 	Lei, o prazo prescricional dos débitos relativos aos depósitos do FGTS 	vencidos até a data de publicação do ato do Ministério do Trabalho e 	Previdência de que trata o art. 2º desta Lei ficará suspenso por 120 (cento e vinte) dias.</h3>
+ <h3>Art. 22. O inadimplemento das parcelas previstas no § 1º do art. 18 e a não quitação do FGTS nos termos do art. 19 desta Lei ensejarão o bloqueio da emissão do certificado de regularidade do FGTS.</h3>
+ <h3>Art. 23.Na hipótese de suspensão da exigibilidade de que trata o art. 17 desta 	Lei, os prazos dos certificados de regularidade do FGTS emitidos até a data de publicação do ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei ficarão prorrogados por 90 (noventa) dias.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>DO PROGRAMA EMERGENCIAL 	DE MANUTENÇÃO DO EMPREGO E DA RENDA EM ESTADO DE CALAMIDADE PUBLICA</p>
+ <p>Seção I</p>
+ <p>Da Instituição, dos Objetivos e das Medidas do Programa Emergencial de 	Manutenção do Emprego e da Renda</p>
+ <h3>Art. 24. O Poder Executivo federal poderá instituir o Programa Emergencial de 	Manutenção do Emprego e da Renda, para o enfrentamento das consequências sociais e econômicas de estado de calamidade pública em âmbito nacional ou em âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</h3>
+ <h4>§ 1º A adoção do 	Programa Emergencial de Manutenção do Emprego e da Renda observará o disposto no regulamento, que estabelecerá a forma e o prazo durante o qual o 	Programa poderá ser adotado, observadas as disponibilidades financeiras e orçamentárias.</h4>
+ <h4>§ 2º O prazo a que se refere o § 1º deste artigo será de até 90 (noventa) dias, prorrogável enquanto durar o estado de calamidade pública em âmbito nacional ou em 	âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</h4>
+ <h3>Art. 25.São medidas do Programa Emergencial de Manutenção do Emprego e da Renda:</h3>
+ <h5>I - o pagamento do 	Benefício Emergencial de Manutenção do Emprego e da Renda (BEm);</h5>
+ <h5>II - a redução proporcional da jornada de trabalho e do salário; e</h5>
+ <h5>III - a suspensão temporária do contrato de trabalho.</h5>
+ <h4>Parágrafo único. O 	disposto no caput deste artigo não se aplica:</h4>
+ <h5>I - no âmbito da União, 	dos Estados, do Distrito Federal e dos Municípios:</h5>
+ <h6>a) aos órgãos da administração pública direta e indireta; e</h6>
+ <h6>b) às empresas públicas e às sociedades de economia mista, inclusive às suas subsidiárias; e</h6>
+ <h5>II - aos organismos internacionais.</h5>
+ <h3>Art. 26.Compete ao Ministério do Trabalho e Previdência coordenar, executar, 	monitorar e fiscalizar o Programa Emergencial de Manutenção do Emprego e da 	Renda e editar as normas complementares necessárias à sua execução.</h3>
+ <h4>Parágrafo único. O 	Ministério do Trabalho e Previdência divulgará, por meio eletrônico, 	informações detalhadas sobre os acordos firmados, com o número de empregados e empregadores beneficiados.</h4>
+ <p>Seção II</p>
+ <p>Do Benefício Emergencial de Manutenção do Emprego e da Renda</p>
+ <h3>Art. 27. O BEm será pago nas hipóteses de:</h3>
+ <h5>I - redução proporcional da jornada de trabalho e do salário; e</h5>
+ <h5>II - suspensão temporária do contrato de trabalho.</h5>
+ <h4>§ 1º O BEm será custeado com recursos da União, mediante disponibilidade orçamentária.</h4>
+ <h4>§ 2º O BEm será de prestação mensal e devido a partir da data do início da redução da jornada de trabalho e do salário ou da suspensão temporária do contrato de trabalho, 	observadas as seguintes disposições:</h4>
+ <h5>I - o empregador informará ao Ministério do Trabalho e Previdência a redução da jornada de trabalho e do salário ou a suspensão temporária do contrato de trabalho, no prazo de 10 (dez) dias, contado da data da celebração do acordo;</h5>
+ <h5>II - a primeira parcela será paga no prazo de 30 (trinta) dias, contado da data da celebração do acordo, desde que a celebração do acordo seja informada no prazo a que se refere o inciso I deste parágrafo; e</h5>
+ <h5>III - o benefício será 	pago exclusivamente enquanto durar a redução da jornada de trabalho e do salário ou a suspensão temporária do contrato de trabalho.</h5>
+ <h4>§ 3º Caso a informação de que trata o inciso I do § 2º deste artigo não seja prestada no prazo previsto no referido inciso:</h4>
+ <h5>I - o empregador ficará 	responsável pelo pagamento da remuneração no valor anterior à redução da jornada de trabalho e do salário ou à suspensão temporária do contrato de trabalho do empregado, inclusive dos respectivos encargos sociais e trabalhistas, até que a informação seja prestada;</h5>
+ <h5>II - a data de início do 	BEm será estabelecida na data em que a informação tenha sido efetivamente prestada, e o benefício será devido pelo restante do período pactuado; e</h5>
+ <h5>III - a primeira parcela, observado o disposto no inciso II deste parágrafo, será paga no prazo de 30 (trinta) dias, contado da data em que a informação tiver sido efetivamente prestada.</h5>
+ <h4>§ 4º Ato do Ministério do Trabalho e Previdência disciplinará a forma de:</h4>
+ <h5>I - transmissão das informações e das comunicações pelo empregador;</h5>
+ <h5>II - concessão e pagamento do BEm; e</h5>
+ <h5>III - interposição de recurso contra as decisões proferidas em relação ao BEm.</h5>
+ <h4>§ 5º As notificações e as comunicações referentes ao BEm poderão ser realizadas exclusivamente por meio digital, mediante a ciência do interessado, o cadastramento em sistema próprio e a utilização de certificado digital da Infraestrutura de Chaves 	Públicas Brasileira (ICP-Brasil) ou o uso de login e senha, conforme estabelecido em ato do Ministério do 	Trabalho e Previdência.</h4>
+ <h4>§ 6º O devido recebimento do BEm não impedirá a concessão nem alterará o valor do seguro-desemprego a que o empregado vier a ter direito, desde que cumpridos os requisitos previstos na Lei n° 7.998, 	de 11 de janeiro de 1990 , no momento de eventual dispensa.</h4>
+ <h4>§ 7º O BEm será 	operacionalizado e pago pelo Ministério do Trabalho e Previdência.</h4>
+ <h3>Art. 28. O valor do BEm terá como base de cálculo o valor da parcela do seguro-desemprego a que o empregado teria direito, nos termos do art. 5º da Lei n° 7.998, de 11 de janeiro de 1990 , observadas as seguintes disposições:</h3>
+ <h5>I - na hipótese de redução da jornada de trabalho e do salário, será calculado com a aplicação do percentual da redução sobre a base de cálculo; e</h5>
+ <h5>II - na hipótese de suspensão temporária do contrato de trabalho, terá valor mensal:</h5>
+ <h6>a) equivalente a 100% 	(cem por cento) do valor do seguro-desemprego a que o empregado teria direito, na hipótese prevista no caput do art. 30 desta Lei; ou</h6>
+ <h6>b) equivalente a 70% 	(setenta por cento) do valor do seguro-desemprego a que o empregado teria direito, na hipótese prevista no § 6º do art. 30 desta Lei.</h6>
+ <h4>§ 1º O BEm será pago ao empregado independentemente do:</h4>
+ <h5>I - cumprimento de qualquer período aquisitivo;</h5>
+ <h5>II - tempo de vínculo empregatício; e</h5>
+ <h5>III - número de salários recebidos.</h5>
+ <h4>§ 2º O BEm não será 	devido ao empregado que:</h4>
+ <h5>I - seja ocupante de cargo ou emprego público ou cargo em comissão de livre nomeação e exoneração, ou seja titular de mandato eletivo; ou</h5>
+ <h5>II - esteja em gozo:</h5>
+ <h6>a) de benefício de prestação continuada do Regime Geral de Previdência Social ou dos regimes próprios de previdência social, ressalvados os benefícios de pensão por morte e de auxílio-acidente;</h6>
+ <h6>b) do seguro-desemprego, 	em quaisquer de suas modalidades; ou</h6>
+ <h6>c) da bolsa de qualificação profissional de que trata o art. 2º-A da Lei n° 7.998, de 11 de janeiro de 1990.</h6>
+ <h4>§ 3º O empregado com mais de um vínculo formal de emprego poderá receber cumulativamente 1 (um) 	BEm para cada vínculo com redução proporcional da jornada de trabalho e do salário ou com suspensão temporária do contrato de trabalho.</h4>
+ <h4>§ 4º Nos casos em que o cálculo do BEm resultar em valores decimais, o valor a ser pago deverá ser arredondado para a unidade inteira imediatamente superior.</h4>
+ <h4>§ 5º O empregado com contrato de trabalho intermitente a que se refere o § 3º do art. 443 da 	Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943, não faz jus ao BEm.</h4>
+ <h4>§ 6º O BEm do aprendiz:</h4>
+ <h5>I - poderá ser acumulado com o benefício de prestação continuada de que trata o art. 20 da Lei n° 8.742, de 7 de dezembro de 1993 ; e</h5>
+ <h5>II - não será computado para fins de cálculo da renda familiar per capita para a concessão ou a manutenção do benefício de prestação continuada de que trata o art. 20 da Lei n° 8.742, de 7 de dezembro de 1993.</h5>
+ <h4>§ 7º Fica suspenso o prazo a que se refere o § 2º do art. 21-A da Lei n° 8.742, de 7 de dezembro de 1993 , durante o recebimento do BEm pelo aprendiz.</h4>
+ <p>Seção III</p>
+ <p>Da Redução Proporcional da Jornada de Trabalho e do Salário</p>
+ <h3>Art. 29. O empregador, na forma e no prazo previstos no regulamento de que trata o art. 24 desta Lei, poderá acordar a redução proporcional da jornada de trabalho e do salário de seus empregados, de forma setorial, departamental, 	parcial ou na totalidade dos postos de trabalho, observados os seguintes requisitos:</h3>
+ <h5>I - preservação do valor do salário-hora de trabalho;</h5>
+ <h5>II - pactuação, conforme o disposto nos arts. 33 e 34 desta Lei, por convenção coletiva de trabalho, 	por acordo coletivo de trabalho ou por acordo individual escrito entre empregador e empregado; e</h5>
+ <h5>III - na hipótese de pactuação por acordo individual escrito, encaminhamento da proposta de acordo ao empregado com antecedência de, no mínimo, 2 (dois) dias corridos e redução da jornada de trabalho e do salário somente nos seguintes percentuais:</h5>
+ <h6>a) 25% (vinte e cinco por cento);</h6>
+ <h6>b) 50% (cinquenta por cento); ou</h6>
+ <h6>c) 70% (setenta por cento).</h6>
+ <h4>Parágrafo único. A 	jornada de trabalho e o salário pago anteriormente serão restabelecidos no prazo de 2 (dois) dias corridos, contado da:</h4>
+ <h5>I - cessação do estado de calamidade pública;</h5>
+ <h5>II - data estabelecida como termo de encerramento do período de redução pactuado; ou</h5>
+ <h5>III - data de comunicação do empregador que informe ao empregado a sua decisão de antecipar o fim do período de redução pactuado.</h5>
+ <p>Seção IV</p>
+ <p>Da Suspensão Temporária do Contrato de Trabalho</p>
+ <h3>Art. 30. O empregador, na forma e no prazo previstos no regulamento de que trata o art. 24 desta Lei, poderá acordar a suspensão temporária do contrato de trabalho de seus empregados, de forma setorial, departamental, parcial ou na totalidade dos postos de trabalho.</h3>
+ <h4>§ 1º A suspensão temporária do contrato de trabalho será pactuada, conforme o disposto nos arts. 33 e 34 desta Lei, por convenção coletiva de trabalho, por acordo coletivo de trabalho ou por acordo individual escrito entre empregador e empregado.</h4>
+ <h4>§ 2º Na hipótese de acordo individual escrito entre empregador e empregado, a proposta deverá 	ser encaminhada ao empregado com antecedência de, no mínimo, 2 (dois) dias corridos.</h4>
+ <h4>§ 3º O empregado, 	durante o período de suspensão temporária do contrato de trabalho:</h4>
+ <h5>I - fará jus a todos os benefícios concedidos pelo empregador aos seus empregados; e</h5>
+ <h5>II - ficará autorizado a recolher para o Regime Geral de Previdência Social na qualidade de segurado facultativo.</h5>
+ <h4>§ 4º O contrato de trabalho será restabelecido no prazo de 2 (dois) dias corridos, contado da:</h4>
+ <h5>I - cessação do estado de calamidade pública;</h5>
+ <h5>II - data estabelecida como termo de encerramento do período de suspensão pactuado; ou</h5>
+ <h5>III - data de comunicação do empregador que informe ao empregado a sua decisão de antecipar o fim do período de suspensão pactuado.</h5>
+ <h4>§ 5º Se durante o período de suspensão temporária do contrato de trabalho o empregado mantiver as atividades de trabalho, ainda que parcialmente, por meio de teletrabalho, 	trabalho remoto ou trabalho a distância, ficará descaracterizada a suspensão temporária do contrato de trabalho, e o empregador estará sujeito:</h4>
+ <h5>I - ao pagamento imediato da remuneração e dos encargos sociais referentes a todo o período;</h5>
+ <h5>II - às penalidades previstas na legislação; e</h5>
+ <h5>III - às sanções previstas em convenção coletiva ou em acordo coletivo de trabalho.</h5>
+ <h4>§ 6º A empresa que tiver auferido, no ano-calendário anterior ao estado de calamidade pública de que trata o art. 1º desta Lei, receita bruta superior ao limite máximo previsto no inciso 	II do caput do art. 3º da Lei Complementar nº 123, de 14 de dezembro de 2006 , somente poderá 	suspender o contrato de trabalho de seus empregados mediante o pagamento de ajuda compensatória mensal no valor de 30% (trinta por cento) do valor do salário do empregado, durante o período de suspensão temporária do contrato de trabalho pactuado, observado o disposto neste artigo e no art. 31 desta 	Lei.</h4>
+ <p>Seção V</p>
+ <p>Das Disposições Comuns às Medidas do Programa Emergencial de Manutenção do 	Emprego e da Renda</p>
+ <h3>Art. 31. O BEm poderá ser acumulado com o pagamento, pelo empregador, de ajuda compensatória mensal, em decorrência da redução proporcional da jornada de trabalho e do salário ou da suspensão temporária do contrato de trabalho de que trata esta Lei.</h3>
+ <h4>§ 1º A ajuda compensatória mensal de que trata o caput deste artigo:</h4>
+ <h5>I - deverá ter o valor definido em negociação coletiva ou no acordo individual escrito pactuado; e</h5>
+ <h5>II - não integrará a base de cálculo do valor dos depósitos do FGTS, instituído pela Lei n° 8.036, de 11 de maio de 1990 , e de que trata a Lei 	Complementar nº 150, de 1º de junho de 2015.</h5>
+ <h4>§ 2º Na hipótese de redução proporcional da jornada de trabalho e do salário, a ajuda compensatória prevista no caput não integrará o salário devido pelo empregador e observará o disposto no § 1º deste artigo.</h4>
+ <h3>Art. 32. Fica reconhecida a garantia provisória no emprego ao empregado que receber o BEm em decorrência da redução da jornada de trabalho e do salário ou da suspensão temporária do contrato de trabalho de que trata esta Lei, 	nos seguintes termos:</h3>
+ <h5>I - durante o período acordado de redução da jornada de trabalho e do salário ou de suspensão temporária do contrato de trabalho;</h5>
+ <h5>II - após o restabelecimento da jornada de trabalho e do salário ou do encerramento da suspensão temporária do contrato de trabalho, por período equivalente ao acordado para a redução ou a suspensão; e</h5>
+ <h5>III - no caso da empregada gestante, por período equivalente ao acordado para a suspensão temporária do contrato de trabalho, contado da data do término do período da garantia estabelecida na alínea "b" do inciso II do caput do art. 10 do Ato das Disposições Constitucionais Transitórias.</h5>
+ <h4>§ 1º A dispensa sem justa causa que ocorrer durante o período de garantia provisória no emprego de que trata o caput deste artigo sujeitará o empregador ao pagamento, além das parcelas rescisórias previstas na legislação, de indenização no valor de:</h4>
+ <h5>I - 50% (cinquenta por cento) do salário a que o empregado teria direito no período de garantia provisória no emprego, na hipótese de redução da jornada de trabalho e do salário igual ou superior a 25% (vinte e cinco por cento) e inferior a 50% (cinquenta por cento);</h5>
+ <h5>II - 75% (setenta e cinco por cento) do salário a que o empregado teria direito no período de garantia provisória no emprego, na hipótese de redução da jornada de trabalho e do salário igual ou superior a 50% (cinquenta por cento) e inferior a 70% (setenta por cento); e</h5>
+ <h5>III - 100% (cem por cento) do salário a que o empregado teria direito no período de garantia provisória no emprego, nas hipóteses de redução da jornada de trabalho e do salário em percentual igual ou superior a 70% (setenta por cento) ou de suspensão temporária do contrato de trabalho.</h5>
+ <h4>§ 2º Os prazos da garantia provisória no emprego decorrente dos acordos de redução proporcional da jornada de trabalho e do salário ou de suspensão do contrato de trabalho com base em regulamento editado na forma do art. 24 desta Lei ficarão suspensos na hipótese de recebimento do benefício com fundamento em um regulamento posterior, também expedido na forma do art. 24 desta Lei, 	durante o recebimento do BEm de que trata esse regulamento posterior, e somente retomarão a sua contagem após o encerramento do período da garantia de emprego de que trata o regulamento posterior.</h4>
+ <h4>§ 3º O disposto neste artigo não se aplica às hipóteses de pedido de demissão, de extinção do contrato de trabalho por acordo nos termos do art. 484-A da 	Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943, ou de dispensa por justa causa do empregado.</h4>
+ <h3>Art. 33. As medidas de redução proporcional da jornada de trabalho e do salário ou de suspensão temporária do contrato de trabalho de que trata esta Lei poderão ser celebradas por meio de negociação coletiva, observado o disposto no § 1º deste artigo e nos arts. 29 e 30 desta Lei.</h3>
+ <h4>§ 1º A convenção coletiva ou o acordo coletivo de trabalho poderão estabelecer redução da jornada de trabalho e do salário em percentuais diversos daqueles previstos no inciso III do caput do art. 29 desta Lei.</h4>
+ <h4>§ 2º Na hipótese prevista no § 1º deste artigo, o BEm será devido nos seguintes termos:</h4>
+ <h5>I - sem percepção do benefício, para a redução da jornada de trabalho e do salário inferior a 25% 	(vinte e cinco por cento);</h5>
+ <h5>II - no valor de 25% 	(vinte e cinco por cento) sobre a base de cálculo prevista no art. 28 desta 	Lei, para a redução da jornada de trabalho e do salário igual ou superior a 	25% (vinte e cinco por cento) e inferior a 50% (cinquenta por cento);</h5>
+ <h5>III - no valor de 50% (cinquenta por cento) sobre a base de cálculo prevista no art. 28 desta Lei, para a redução da jornada de trabalho e do salário igual ou superior a 50% (cinquenta por cento) e inferior a 70% (setenta por cento); e</h5>
+ <h5>IV - no valor de 70% 	(setenta por cento) sobre a base de cálculo prevista no art. 28 desta Lei, 	para a redução da jornada de trabalho e do salário igual ou superior a 70% 	(setenta por cento).</h5>
+ <h4>§ 3º As convenções coletivas ou os acordos coletivos de trabalho celebrados anteriormente à 	publicação do regulamento de que trata o art. 24 desta Lei poderão ser renegociados para adequação de seus termos no prazo de 10 (dez) dias corridos, contado da data de publicação do regulamento.</h4>
+ <h3>Art. 34. As medidas de que trata o art. 25 desta Lei serão implementadas por meio de acordo individual escrito ou de negociação coletiva aos empregados:</h3>
+ <h5>I - com salário igual ou inferior a metade do limite máximo dos benefícios do Regime Geral de 	Previdência Social; ou</h5>
+ <h5>II - com diploma de nível superior que percebam salário mensal igual ou superior a 2 (duas) 	vezes o limite máximo dos benefícios do Regime Geral de Previdência Social.</h5>
+ <h4>§ 1º Para os empregados que não se enquadrem no disposto no caput deste artigo, as medidas de que trata o art. 25 desta 	Lei somente poderão ser estabelecidas por convenção coletiva ou por acordo coletivo de trabalho, exceto nas seguintes hipóteses, nas quais se admite a pactuação por acordo individual escrito:</h4>
+ <h5>I - redução proporcional da jornada de trabalho e do salário de 25% (vinte e cinco por cento), de que trata a alínea "a" do inciso III do caput do art. 29 desta Lei; ou</h5>
+ <h5>II - redução proporcional da jornada de trabalho e do salário ou suspensão temporária do contrato de trabalho, quando do acordo não resultar diminuição do valor total recebido mensalmente pelo empregado, incluídos o valor do BEm, a ajuda compensatória mensal e, em caso de redução da jornada de trabalho, o salário pago pelo empregador em razão das horas trabalhadas pelo empregado.</h5>
+ <h4>§ 2º Para os empregados que se encontrem em gozo do benefício de aposentadoria, a implementação das medidas de redução proporcional da jornada de trabalho e do salário ou de suspensão temporária do contrato de trabalho por acordo individual escrito somente será admitida quando, além do enquadramento em alguma das hipóteses de autorização do acordo individual de trabalho previstas no caput ou no § 1º deste artigo, houver o pagamento, pelo empregador, de ajuda compensatória mensal, observados o disposto no art. 31 desta Lei e as seguintes condições:</h4>
+ <h5>I - o valor da ajuda compensatória mensal a que se refere este parágrafo deverá ser, no mínimo, 	equivalente ao valor do BEm que o empregado receberia se não houvesse a vedação prevista na alínea "a" do inciso II do § 2º do art. 28 desta Lei; e</h5>
+ <h5>II - o valor total pago a título de ajuda compensatória mensal deverá ser, no mínimo, igual à soma do valor previsto no § 6º do art. 30 desta Lei com o valor mínimo previsto no inciso I deste parágrafo, na hipótese de empresa que se enquadre no disposto naquele dispositivo.</h5>
+ <h4>§ 3º Os atos necessários 	à pactuação dos acordos individuais escritos de que trata este artigo poderão ser realizados por meios físicos ou eletrônicos.</h4>
+ <h4>§ 4º Os acordos individuais de redução da jornada de trabalho e do salário ou de suspensão temporária do contrato de trabalho, pactuados nos termos desta Lei, deverão ser comunicados pelos empregadores ao sindicato da categoria profissional, 	no prazo de 10 (dez) dias corridos, contado da data de sua celebração.</h4>
+ <h4>§ 5º Se, após a pactuação de acordo individual na forma prevista neste artigo, houver a celebração de convenção coletiva ou de acordo coletivo de trabalho com cláusulas conflitantes com as cláusulas do acordo individual, deverão ser observadas as seguintes regras:</h4>
+ <h5>I - a aplicação das condições estabelecidas no acordo individual em relação ao período anterior ao período da negociação coletiva; e</h5>
+ <h5>II - a prevalência das condições estipuladas na negociação coletiva, naquilo em que conflitarem com as condições estabelecidas no acordo individual, a partir da data de entrada em vigor da convenção coletiva ou do acordo coletivo de trabalho.</h5>
+ <h4>§ 6º As condições do acordo individual prevalecerão sobre a negociação coletiva se forem mais favoráveis ao trabalhador.</h4>
+ <h3>Art. 35.A redução proporcional da jornada de trabalho e do salário ou a suspensão temporária do contrato de trabalho, quando adotada, deverá resguardar o exercício e o funcionamento dos serviços públicos e das atividades essenciais de que trata a Lei n° 7.783, de 28 de junho de 1989.</h3>
+ <h3>Art. 36. As irregularidades constatadas pela Auditoria-Fiscal do Trabalho do 	Ministério do Trabalho e Previdência quanto aos acordos de redução proporcional da jornada de trabalho e do salário ou de suspensão temporária do contrato de trabalho de que trata esta Lei sujeitam os infratores à multa prevista no art. 25 da Lei n° 7.998, de 11 de janeiro de 1990.</h3>
+ <h4>Parágrafo único. O 	processo de fiscalização, de notificação, de autuação e de imposição de multas decorrente das disposições desta Lei observará o disposto no Título VII da Consolidação das Leis do Trabalho, aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943, hipótese em que não se aplica o critério da dupla visita.</h4>
+ <h3>Art. 37.O disposto neste Capítulo aplica-se aos contratos de trabalho celebrados até a data de publicação do regulamento de que trata o art. 24 desta Lei.</h3>
+ <h4>Parágrafo único. O 	disposto no caput deste artigo aplica-se aos contratos de trabalho de aprendizagem e de jornada parcial.</h4>
+ <h3>Art. 38.O trabalhador que receber indevidamente parcela do BEm estará sujeito à 	compensação automática com eventuais parcelas devidas do referido benefício relativas ao mesmo acordo ou a acordos diversos ou com futuras parcelas de abono salarial de que trata a Lei n° 7.998, de 11 de janeiro de 1990 , ou de seguro-desemprego a que tiver direito, na forma prevista no art. 25-A da referida Lei , conforme estabelecido em ato do Ministério do Trabalho e Previdência, garantido ao trabalhador o direito de ciência prévia sobre a referida compensação.</h3>
+ <h3>Art. 39. O empregador e o empregado poderão, em comum acordo, optar pelo cancelamento de aviso prévio em curso.</h3>
+ <h4>Parágrafo único. Na hipótese de cancelamento do aviso prévio na forma prevista no caput deste artigo, as partes poderão adotar as medidas do 	Programa Emergencial de Manutenção do Emprego e da Renda.</h4>
+ <p>Seção VI</p>
+ <p>Da Operacionalização do Pagamento do Benefício Emergencial de Manutenção do 	Emprego e da Renda</p>
+ <h3>Art. 40. Fica dispensada a licitação para contratação da Caixa Econômica Federal e do Banco do Brasil S.A. para a operacionalização do pagamento do BEm.</h3>
+ <h3>Art. 41. O beneficiário poderá receber o BEm na instituição financeira em que possuir conta-poupança ou conta de depósito à vista, exceto conta-salário, 	desde que autorize o empregador a informar os seus dados bancários quando prestadas as informações de que trata o inciso I do § 2º do art. 27 desta 	Lei.</h3>
+ <h4>§ 1º Na hipótese de não validação ou de rejeição do crédito na conta indicada, inclusive pelas instituições financeiras destinatárias das transferências, ou na ausência da indicação de que trata o caput deste artigo, a Caixa 	Econômica Federal e o Banco do Brasil S.A. poderão utilizar outra conta-poupança de titularidade do beneficiário, identificada por meio de processo de levantamento e conferência da coincidência de dados cadastrais para o pagamento do BEm.</h4>
+ <h4>§ 2º Na hipótese de não ser localizada conta-poupança de titularidade do beneficiário na forma prevista no § 1º deste artigo, a Caixa Econômica Federal e o Banco do Brasil 	S.A. poderão realizar o pagamento do BEm por meio de conta digital, de abertura automática, em nome do beneficiário, com as seguintes características:</h4>
+ <h5>I - dispensa de apresentação de documentos pelo beneficiário;</h5>
+ <h5>II - isenção de cobrança de tarifas de manutenção;</h5>
+ <h5>III - direito a, no mínimo, 3 (três) transferências eletrônicas de valores e a 1 (um) saque ao mês, sem custos, para conta mantida em instituição autorizada a operar pelo 	Banco Central do Brasil; e</h5>
+ <h5>IV - vedação à emissão de cheque.</h5>
+ <h4>§ 3º É vedado às instituições financeiras, independentemente da modalidade de conta utilizada para pagamento do BEm, efetuar descontos, compensações ou pagamentos de débitos de qualquer natureza, mesmo a pretexto de recompor saldo negativo ou de saldar dívidas preexistentes, que impliquem a redução do valor do benefício.</h4>
+ <h4>§ 4º Os recursos relativos ao BEm creditados nos termos do § 2º deste artigo e não movimentados no prazo de 1 (um) ano, contado da data do depósito, retornarão para a União.</h4>
+ <h3>Art. 42. O Ministério do Trabalho e Previdência editará os atos complementares necessários à execução do disposto nos arts. 40 e 41 desta Lei.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 43.Durante o prazo previsto no ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, o curso ou o programa de qualificação profissional de que trata o art. 476-A da 	Consolidação das Leis do Trabalho, aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943, poderá ser oferecido pelo empregador exclusivamente na modalidade não presencial e terá duração de, no mínimo, 1 (um) mês e, no máximo, 3 (três) meses.</h3>
+ <h4>§ 1º A suspensão do contrato de trabalho para a realização do curso de qualificação de que trata o caput deste artigo poderá ser realizada por acordo individual escrito, quando houver o pagamento pelo empregador de ajuda compensatória mensal em valor equivalente à diferença entre a remuneração do empregado e a bolsa de qualificação.</h4>
+ <h4>§ 2º O pagamento da ajuda compensatória de que trata o § 1º deste artigo observará o disposto no 	§ 1º do art. 31 desta Lei.</h4>
+ <h4>§ 3º Se, após a pactuação de acordo individual na forma prevista no § 1º deste artigo, 	houver a celebração de convenção coletiva ou de acordo coletivo de trabalho com cláusulas conflitantes com as cláusulas do acordo individual, deverão ser observadas as seguintes regras:</h4>
+ <h5>I - a aplicação das condições estabelecidas no acordo individual em relação ao período anterior ao período da negociação coletiva; e</h5>
+ <h5>II - a prevalência das condições estipuladas na negociação coletiva, naquilo em que conflitarem com as condições estabelecidas no acordo individual, a partir da data de entrada em vigor da convenção coletiva ou do acordo coletivo de trabalho.</h5>
+ <h4>§ 4º As condições do acordo individual prevalecerão sobre a negociação coletiva se forem mais favoráveis ao trabalhador.</h4>
+ <h3>Art. 44. Durante o prazo previsto no regulamento de que trata o art. 2º desta 	Lei, fica permitida a utilização de meios eletrônicos para cumprimento dos requisitos formais previstos no Título VI da 	Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943, inclusive para convocação, 	deliberação, decisão, formalização e publicidade de convenção ou de acordo coletivo de trabalho.</h3>
+ <h3>Art. 45. Durante o prazo previsto no ato do Ministério do Trabalho e Previdência de que trata o art. 2º desta Lei, os prazos previstos no Título VI da 	Consolidação das Leis do Trabalho , aprovada pelo 	Decreto-Lei n° 5.452, de 1º de maio de 1943, ficam reduzidos pela metade.</h3>
+ <h3>Art. 46. O disposto nesta Lei aplica-se também:</h3>
+ <h5>I - às relações de trabalho regidas:</h5>
+ <h6>a) pela Lei n° 6.019, 	de 3 de janeiro de 1974 ; e</h6>
+ <h6>b) pela Lei n° 5.889, 	de 8 de junho de 1973 ; e</h6>
+ <h5>II - no que couber, às relações regidas pela Lei Complementar nº 150, de 1º de junho de 2015 , tais como as disposições referentes ao Programa Emergencial de Manutenção do Emprego e da 	Renda, à redução de jornada, ao banco de horas e às férias.</h5>
+ <h3>Art. 47. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Congresso Nacional, em 	15 de agosto de 2022; 201º da Independência e 134º da República.</p>
+ <h3>SENADOR RODRIGO PACHECO</h3>
+ <p>Presidente da Mesa do 	Congresso Nacional</p>
+ <p>Este texto não substitui o publicado no DOU de 	16.8.2022</p>
+ <p>Provisória nº 1.109, de 2022 | Autoriza o Poder Executivo federal a dispor sobre a adoção, por empregados e empregadores, de medidas trabalhistas alternativas e sobre o Programa Emergencial de Manutenção do Emprego e da Renda, para enfrentamento das consequências sociais e econômicas de estado de calamidade pública em âmbito nacional ou em âmbito estadual, distrital ou municipal reconhecido pelo Poder Executivo federal.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14437.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

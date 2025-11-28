@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.467, DE 16 DE NOVEMBRO DE 2022 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2022" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.467, DE 16 DE NOVEMBRO DE 2022</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 15:37:24 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14467.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 14.404 caracteres | espelho: 14.560 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.467, DE 16 DE NOVEMBRO DE 2022</p>
+ <p>Conversão da Medida 	Provisória nº 1.128, de 2022</p>
+ <p>Produção de efeitos</p>
+ <p>Dispõe sobre o tratamento tributário aplicável às perdas incorridas no recebimento de créditos decorrentes das atividades das instituições financeiras e das demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</p>
+ <p>Faço saber que o PRESIDENTE DA REPÚBLICA adotou a Medida Provisória nº 1.128, de 2022 , que o Congresso Nacional aprovou, e eu, Rodrigo Pacheco, Presidente da Mesa do Congresso Nacional, para os efeitos do disposto no art. 62 da Constituição Federal, com a redação dada pela Emenda Constitucional nº 32, 	combinado com o art. 12 da Resolução nº 1, de 2002-CN, promulgo a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre o tratamento tributário aplicável às perdas incorridas no recebimento de créditos decorrentes das atividades das instituições financeiras e das demais instituições autorizadas a funcionar pelo Banco 	Central do Brasil.</h3>
+ <h4>Parágrafo único. O disposto no caput deste artigo não se aplica às:</h4>
+ <h5>I - administradoras de consórcio; e</h5>
+ <h5>II - instituições de pagamento.</h5>
+ <h3>Art. 2º A partir de 1º de janeiro de 2025, as instituições a que se refere o art. 1º desta Lei poderão deduzir, na determinação do lucro real e da base de cálculo da Contribuição Social sobre o Lucro Líquido (CSLL), as perdas incorridas no recebimento de créditos decorrentes de atividades relativas a:</h3>
+ <h5>I - operações inadimplidas, independentemente da data da sua contratação; e</h5>
+ <h5>II - operações com pessoa jurídica em processo falimentar ou em recuperação judicial, a partir da data da decretação da falência ou da concessão da recuperação judicial.</h5>
+ <h4>§ 1º Para fins do disposto nesta Lei, considera-se inadimplida a operação com atraso superior a 90 (noventa) dias em relação ao pagamento do principal ou de encargos.</h4>
+ <h4>§ 2º O valor da perda dedutível para as operações de que trata o inciso I do caput deste artigo deverá ser apurado mensalmente, limitado ao valor total do crédito, com base nas seguintes regras:</h4>
+ <h5>I - aplicação do fator "A" sobre o valor total do crédito a partir do mês em que a operação for considerada inadimplida;</h5>
+ <h5>II - soma ao valor apurado na forma prevista no inciso I 	deste parágrafo do valor resultante da aplicação do fator "B" multiplicado pelo número de meses de atraso, contados a partir do mês em que a operação foi considerada inadimplida, sobre o valor total do crédito; e</h5>
+ <h5>III - subtração do valor apurado na forma prevista no inciso 	II deste parágrafo dos montantes já deduzidos em períodos de apuração anteriores.</h5>
+ <h4>§ 3º O valor da perda dedutível para as operações de que trata o inciso II do caput deste artigo será:</h4>
+ <h5>I - a parcela do valor do crédito que exceder o montante que o devedor tenha se comprometido a pagar no processo de recuperação judicial; ou</h5>
+ <h5>II - o valor total do crédito, na hipótese de falência.</h5>
+ <h4>§ 4º O tratamento dispensado às operações de que trata o inciso I do caput deste artigo será aplicado às perdas incorridas no recebimento dos créditos originados após a concessão da recuperação judicial e da parcela do crédito cujo compromisso de pagar não houver sido honrado pela pessoa jurídica em recuperação judicial.</h4>
+ <h4>§ 5º Para fins do disposto neste artigo, entende-se como valor total do crédito o valor do principal deduzido das amortizações e acrescido dos encargos incidentes reconhecidos contabilmente até os 90 (noventa) 	dias de inadimplemento ou até a data da decretação da falência ou da concessão da recuperação judicial do devedor.</h4>
+ <h4>§ 6º A dedução de que trata o caput somente poderá ser efetuada no período de apuração dos tributos correspondente à apuração da perda de que tratam os §§ 2º e 3º deste artigo.</h4>
+ <h3>Art. 3º Ficam estabelecidos os seguintes valores para o fator 	"A" e para o fator "B" a que se referem, respectivamente, os incisos I e 	II do § 2º do art. 2º desta Lei:</h3>
+ <h5>I - fator "A" igual a 0,055 (cinquenta e cinco milésimos) e fator "B" igual a 0,045 (quarenta e cinco milésimos) para:</h5>
+ <h6>a) créditos garantidos por alienação fiduciária de imóveis; e</h6>
+ <h6>b) créditos com garantia fidejussória da União, de governos centrais de jurisdições estrangeiras e respectivos bancos centrais ou organismos multilaterais e entidades multilaterais de desenvolvimento;</h6>
+ <h5>II - fator "A" igual a 0,30 (trinta centésimos) e fator "B" 	igual a 0,034 (trinta e quatro milésimos) para:</h5>
+ <h6>a) créditos de arrendamento mercantil, nos termos da Lei n° 6.099, 	de 12 de setembro de 1974 ;</h6>
+ <h6>b) créditos garantidos por hipoteca de primeiro grau de imóveis residenciais, por penhor de bens móveis ou imóveis ou por alienação fiduciária de bens móveis;</h6>
+ <h6>c) créditos garantidos por depósitos à vista, a prazo ou de poupança;</h6>
+ <h6>d) créditos decorrentes de ativos financeiros emitidos por ente público federal ou por instituições autorizadas a funcionar pelo Banco 	Central do Brasil;</h6>
+ <h6>e) créditos com garantia fidejussória de instituições autorizadas a funcionar pelo Banco Central do Brasil; e</h6>
+ <h6>f) créditos com cobertura de seguro de crédito emitido por entidade que não seja parte relacionada da instituição;</h6>
+ <h5>III - fator "A" igual a 0,45 (quarenta e cinco centésimos) e fator "B" igual a 0,037 (trinta e sete milésimos) para:</h5>
+ <h6>a) créditos decorrentes de operações de desconto de direitos creditórios, inclusive recebíveis comerciais adquiridos e operações formalizadas como aquisição de recebíveis comerciais de pessoa não integrante do Sistema 	Financeiro Nacional e nas quais a mesma pessoa seja devedora solidária ou subsidiária dos recebíveis;</h6>
+ <h6>b) créditos decorrentes de operações garantidas por cessão fiduciária, por caução de direitos creditórios ou por penhor de direitos creditórios; e</h6>
+ <h6>c) créditos com cobertura de seguro de crédito, garantia real ou garantia fidejussória não abrangidos pelas hipóteses previstas nos incisos I e II 	do caput deste artigo;</h6>
+ <h5>IV - fator "A" igual a 0,35 (trinta e cinco centésimos) e fator "B" igual a 0,045 (quarenta e cinco milésimos) para:</h5>
+ <h6>a) créditos para capital de giro, adiantamentos sobre contratos de câmbio, adiantamentos sobre cambiais entregues, debêntures e demais títulos emitidos por empresas privadas, sem garantias ou colaterais; e</h6>
+ <h6>b) operações de crédito rural sem garantias ou colaterais destinadas a investimentos; ou</h6>
+ <h5>V - fator "A" igual a 0,50 (cinquenta centésimos) e fator "B" 	igual a 0,034 (trinta e quatro milésimos) para:</h5>
+ <h6>a) operações de crédito pessoal, com ou sem consignação, 	crédito direto ao consumidor, crédito rural não abrangido pelas hipóteses previstas no inciso IV do caput deste artigo e crédito na modalidade rotativo sem garantias ou colaterais;</h6>
+ <h6>b) créditos sem garantias ou colaterais não abrangidos pelas hipóteses previstas no inciso IV do caput deste artigo; e</h6>
+ <h6>c) créditos decorrentes de operações mercantis e outras operações com características de concessão de crédito não abrangidos pelas hipóteses previstas nos incisos I, II, III e IV do caput deste artigo.</h6>
+ <h4>§ 1º Na hipótese de créditos cobertos por mais de uma espécie de garantia, serão aplicados os valores para os fatores "A" e "B" 	relativos à garantia que apresentar o menor valor para o fator "A", a que se refere o inciso I do 	§ 2º do art. 2º desta Lei, sem proporcionalidade.</h4>
+ <h4>§ 2º Não será admitida a dedução de perda no recebimento de créditos nas operações realizadas com:</h4>
+ <h5>I - partes relacionadas; ou</h5>
+ <h5>II - residentes ou domiciliados no exterior.</h5>
+ <h4>§ 3º Para fins do disposto nesta Lei, são consideradas partes relacionadas de uma pessoa jurídica:</h4>
+ <h5>I - os seus controladores, pessoas naturais ou jurídicas, nos termos do art. 116 da Lei n° 6.404, de 15 de dezembro de 1976 ;</h5>
+ <h5>II - os seus diretores e membros de órgãos estatutários ou contratuais;</h5>
+ <h5>III - o cônjuge, o companheiro e os parentes, consanguíneos ou afins, até o segundo grau, das pessoas naturais mencionadas nos incisos I 	e II deste parágrafo;</h5>
+ <h5>IV - as pessoas naturais com participação societária, direta ou indireta, no capital da pessoa jurídica equivalente a 15% (quinze por cento) ou mais das ações ou quotas em seu capital; e</h5>
+ <h5>V - as pessoas jurídicas:</h5>
+ <h6>a) que sejam suas controladas, nos termos do § 2º do art. 243 da Lei n° 6.404, de 15 de dezembro de 1976 ;</h6>
+ <h6>b) que sejam suas coligadas, nos termos do § 1º do art. 243 da Lei n° 6.404, de 15 de dezembro de 1976;</h6>
+ <h6>c) sobre as quais haja controle operacional efetivo ou preponderância nas deliberações, independentemente da participação societária; e</h6>
+ <h6>d) que possuam diretor ou membro de conselho de administração em comum.</h6>
+ <h3>Art. 4º Na determinação do lucro real e da base de cálculo da 	CSLL, deverá ser computado o montante dos créditos deduzidos que tenham sido recuperados, em qualquer época ou a qualquer título, inclusive nos casos de novação da dívida ou do</h3>
+ <p>arresto dos bens recebidos em garantia real.</p>
+ <h4>Parágrafo único. Os bens recebidos a título de quitação do débito serão mensurados pela pessoa jurídica credora pelo valor do crédito ou pelo valor estabelecido na decisão judicial que tenha determinado a sua incorporação ao seu patrimônio.</h4>
+ <h3>Art. 5º Na determinação do lucro real e da base de cálculo da 	CSLL, a pessoa jurídica credora deverá excluir do lucro líquido os valores dos encargos financeiros incidentes sobre os créditos de que trata o caput do art. 2º desta Lei e reconhecidos contabilmente como receitas de operações inadimplidas ou após a data da decretação da falência ou do deferimento da recuperação judicial do devedor.</h3>
+ <h4>§ 1º Na hipótese de créditos originados após o deferimento da recuperação judicial do devedor, a pessoa jurídica credora deverá excluir do lucro líquido, para a determinação do lucro real e da base de cálculo da CSLL, os valores dos encargos financeiros reconhecidos contabilmente como receitas somente após o inadimplemento do crédito.</h4>
+ <h4>§ 2º Os valores excluídos na forma prevista no caput e no § 1º deste artigo deverão ser adicionados no período de apuração em que se tornarem disponíveis para a pessoa jurídica credora para os fins legais.</h4>
+ <h4>§ 3º A partir da citação inicial para o pagamento do débito, 	a pessoa jurídica devedora deverá adicionar ao lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, os encargos incidentes sobre o débito vencido e não pago que tenham sido contabilizados como despesa ou custo incorridos a partir daquela data.</h4>
+ <h4>§ 4º Os valores adicionados a que se refere o § 3º deste artigo poderão ser excluídos do lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, no período de apuração em que ocorrer a quitação do débito por qualquer forma.</h4>
+ <h3>Art. 6º As perdas apuradas em 1º de janeiro de 2025 relativas aos créditos que se encontrarem inadimplidos em 31 de dezembro de 2024 que não tenham sido deduzidas até essa data e que não tenham sido recuperadas somente poderão ser excluídas do lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, à 	razão de 1/36 (um trinta e seis avos) para cada mês do período de apuração, a partir do mês de abril de 2025.</h3>
+ <h3>Art. 6º As perdas apuradas em 1º de janeiro de 2025 	relativas aos créditos que se encontrarem inadimplidos em 31 de dezembro de 	2024 e que não tenham sido deduzidas até essa data e que não tenham sido recuperadas somente poderão ser excluídas do lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, à razão de 1/84 (um oitenta e quatro avos) para cada mês do período de apuração, a partir do mês de janeiro de 2026. (Redação dada pela Medida Provisória nº 1.261, de 2024) encerrada</h3>
+ <h4>§ 1º As instituições a que se refere o art. 1º, caput , podem optar, até 	31 de dezembro de 2025, de forma irrevogável e irretratável, por efetuar as deduções de que trata o caput deste artigo, à razão de 1/120 (um cento e vinte avos) para cada mês do período de apuração, a partir do mês de janeiro de 2026. (Incluído pela 	Medida Provisória nº 1.261, de 2024) encerrada</h4>
+ <h4>§ 2º Fica vedado às instituições a que se refere o art. 1º, caput , 	deduzir as perdas incorridas de que trata o art. 2º relativas ao exercício de 2025 em montante superior ao lucro real do exercício, antes de computada essa dedução. (Incluído pela 	Medida Provisória nº 1.261, de 2024) encerrada</h4>
+ <h4>§ 3º As perdas não deduzidas em virtude do disposto no § 2º devem ser adicionadas aos saldos das perdas de que trata o caput e excluídas do lucro líquido à mesma razão e no mesmo prazo da dedução desse saldo, 	observada a opção a que se refere o § 1º. (Incluído pela 	Medida Provisória nº 1.261, de 2024) encerrada</h4>
+ <h3>Art. 6º As perdas apuradas em 1º de janeiro de 2025 relativas aos créditos que se encontrarem inadimplidos em 31 de dezembro de 2024 que não tenham sido deduzidas até essa data e que não tenham sido recuperadas somente poderão ser excluídas do lucro líquido, na determinação do lucro real e da base de cálculo da CSLL, à razão de 1/84 (um oitenta e quatro avos) para cada mês do período de apuração, a partir do mês de janeiro de 2026. (Redação dada pela Lei n° 15.078, de 2024)</h3>
+ <h4>§ 1º As instituições a que se refere o caput do art. 1º desta Lei poderão optar, até 31 de dezembro de 2025, de forma irrevogável e irretratável, por efetuar as deduções de que trata o caput deste artigo, à razão de 	1/120 (um cento e vinte avos) para cada mês do período de apuração, a partir do mês de janeiro de 2026. (Incluído pela Lei n° 15.078, de 2024)</h4>
+ <h4>§ 2º Fica vedado às instituições a que se refere o caput do art. 1º deduzir as perdas incorridas de que trata o art. 2º desta Lei relativas ao exercício de 2025 em montante superior ao lucro real do exercício, antes de computada essa dedução. (Incluído pela Lei n° 15.078, de 2024)</h4>
+ <h4>§ 3º As perdas não deduzidas em virtude do disposto no § 2º deverão ser adicionadas aos saldos das perdas de que trata o caput e excluídas do lucro líquido à mesma razão e no mesmo prazo da dedução desse saldo, 	observada a opção a que se refere o § 1º deste artigo. (Incluído pela Lei n° 15.078, de 2024)</h4>
+ <h3>Art. 7º O disposto nos arts. 9º , 9º-A , 10, 11 e 12 da Lei n° 9.430, de 27 de dezembro de 1996 , 	não se aplica às instituições a que se refere o caput do art. 1º desta Lei.</h3>
+ <h3>Art. 8º Esta Lei entra em vigor na data de sua publicação e produzirá efeitos a partir de 1º de janeiro de 2025.</h3>
+ <p>Congresso Nacional, em 16 de novembro de 2022; 201º da 	Independência e 134º da República.</p>
+ <p>Senador RODRIGO PACHECO</p>
+ <p>Presidente da Mesa do Congresso Nacional</p>
+ <p>Este texto não substitui o publicado no DOU de 	17.11.2022</p>
+ <p>Provisória nº 1.128, de 2022Produção de efeitos | Dispõe sobre o tratamento tributário aplicável às perdasincorridas no recebimento de créditos decorrentes dasatividades das instituições financeiras e das demaisinstituições autorizadas a funcionar pelo Banco Centraldo Brasil.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14467.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

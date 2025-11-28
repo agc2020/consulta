@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.966, DE 26 DE DEZEMBRO DE 2019 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2019" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.966, DE 26 DE DEZEMBRO DE 2019</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:38:04 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13966.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 11.190 caracteres | espelho: 11.209 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.966, DE 	26 DE DEZEMBRO DE 2019</p>
+ <p>Dispõe sobre o sistema de franquia empresarial e revoga a Lei n° 8.955, de 15 de dezembro de 1994 (Lei de Franquia).</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei disciplina o sistema de franquia empresarial, pelo qual um franqueador autoriza por meio de contrato um franqueado a usar marcas e outros objetos de propriedade intelectual, sempre associados ao direito de produção ou distribuição exclusiva ou não exclusiva de produtos ou serviços e também ao direito de uso de métodos e sistemas de implantação e administração de negócio ou sistema operacional desenvolvido ou detido pelo franqueador, mediante remuneração direta ou indireta, sem caracterizar relação de consumo ou vínculo empregatício em relação ao franqueado ou a seus empregados, ainda que durante o período de treinamento.</h3>
+ <h4>§ 1º Para os fins da autorização referida no caput , o franqueador deve ser titular ou requerente de direitos sobre as marcas e outros objetos de propriedade intelectual negociados no âmbito do contrato de franquia, ou estar expressamente autorizado pelo titular.</h4>
+ <h4>§ 2º A franquia pode ser adotada por empresa privada, empresa estatal ou entidade sem fins lucrativos, independentemente do segmento em que desenvolva as atividades.</h4>
+ <h3>Art. 2º Para a implantação da franquia, o franqueador deverá fornecer ao interessado Circular de Oferta de Franquia, escrita em língua portuguesa, de forma objetiva e acessível, contendo obrigatoriamente:</h3>
+ <h5>I - histórico resumido do negócio franqueado;</h5>
+ <h5>II - qualificação completa do franqueador e das empresas a que esteja ligado, identificando-as com os respectivos números de inscrição no Cadastro Nacional da Pessoa Jurídica 	(CNPJ);</h5>
+ <h5>III - balanços e demonstrações financeiras da empresa franqueadora, relativos aos 2 (dois) 	últimos exercícios;</h5>
+ <h5>IV - indicação das ações judiciais relativas à franquia que questionem o sistema ou que possam comprometer a operação da franquia no País, nas quais sejam parte o franqueador, as empresas controladoras, o subfranqueador e os titulares de marcas e demais direitos de propriedade intelectual;</h5>
+ <h5>V - descrição detalhada da franquia e descrição geral do negócio e das atividades que serão desempenhadas pelo franqueado;</h5>
+ <h5>VI - perfil do franqueado ideal no que se refere a experiência anterior, escolaridade e outras características que deve ter, obrigatória ou preferencialmente;</h5>
+ <h5>VII - requisitos quanto ao envolvimento direto do franqueado na operação e na administração do negócio;</h5>
+ <h5>VIII - especificações quanto ao:</h5>
+ <h6>a) total estimado do investimento inicial necessário à aquisição, à implantação e à entrada em operação da franquia;</h6>
+ <h6>b) valor da taxa inicial de filiação ou taxa de franquia;</h6>
+ <h6>c) valor estimado das instalações, dos equipamentos e do estoque inicial e suas condições de pagamento;</h6>
+ <h5>IX - informações claras quanto a taxas periódicas e outros valores a serem pagos pelo franqueado ao franqueador ou a terceiros por este indicados, detalhando as respectivas bases de cálculo e o que elas remuneram ou o fim a que se destinam, 	indicando, especificamente, o seguinte:</h5>
+ <h6>a) remuneração periódica pelo uso do sistema, da marca, de outros objetos de propriedade intelectual do franqueador ou sobre os quais este detém direitos ou, ainda, pelos serviços prestados pelo franqueador ao franqueado;</h6>
+ <h6>b) aluguel de equipamentos ou ponto comercial;</h6>
+ <h6>c) taxa de publicidade ou semelhante;</h6>
+ <h6>d) seguro mínimo;</h6>
+ <h5>X - relação completa de todos os franqueados, subfranqueados ou subfranqueadores da rede e, também, 	dos que se desligaram nos últimos 24 (vinte quatro) meses, com os respectivos nomes, endereços e telefones;</h5>
+ <h5>XI - informações relativas 	à política de atuação territorial, devendo ser especificado:</h5>
+ <h6>a) se é garantida ao franqueado a exclusividade ou a preferência sobre determinado território de atuação e, neste caso, sob que condições;</h6>
+ <h6>b) se há possibilidade de o franqueado realizar vendas ou prestar serviços fora de seu território ou realizar exportações;</h6>
+ <h6>c) se há e quais são as regras de concorrência territorial entre unidades próprias e franqueadas;</h6>
+ <h5>XII - informações claras e detalhadas quanto à obrigação do franqueado de adquirir quaisquer bens, 	serviços ou insumos necessários à implantação, operação ou administração de sua franquia apenas de fornecedores indicados e aprovados pelo franqueador, 	incluindo relação completa desses fornecedores;</h5>
+ <h5>XIII - indicação do que é 	oferecido ao franqueado pelo franqueador e em quais condições, no que se refere a:</h5>
+ <h6>a) suporte;</h6>
+ <h6>b) supervisão de rede;</h6>
+ <h6>c) serviços;</h6>
+ <h6>d) incorporação de inovações tecnológicas às franquias;</h6>
+ <h6>e) treinamento do franqueado e de seus funcionários, especificando duração, conteúdo e custos;</h6>
+ <h6>f) manuais de franquia;</h6>
+ <h6>g) auxílio na análise e na escolha do ponto onde será instalada a franquia; e</h6>
+ <h6>h) leiaute e padrões arquitetônicos das instalações do franqueado, incluindo arranjo físico de equipamentos e instrumentos, memorial descritivo, composição e croqui;</h6>
+ <h5>XIV - informações sobre a situação da marca franqueada e outros direitos de propriedade intelectual relacionados à franquia, cujo uso será autorizado em contrato pelo franqueador, incluindo a caracterização completa, com o número do registro ou do pedido protocolizado, com a classe e subclasse, nos órgãos competentes, e, no caso de cultivares, informações sobre a situação perante o Serviço Nacional de Proteção de Cultivares (SNPC);</h5>
+ <h5>XV - situação do franqueado, após a expiração do contrato de franquia, em relação a:</h5>
+ <h6>a) know-how da tecnologia de produto, de processo ou de gestão, informações confidenciais e segredos de indústria, comércio, finanças e negócios a que venha a ter acesso em função da franquia;</h6>
+ <h6>b) implantação de atividade concorrente à da franquia;</h6>
+ <h5>XVI - modelo do contrato-padrão e, se for o caso, também do pré-contrato-padrão de franquia adotado pelo franqueador, com texto completo, inclusive dos respectivos anexos, condições e prazos de validade;</h5>
+ <h5>XVII - indicação da existência ou não de regras de transferência ou sucessão e, caso positivo, 	quais são elas;</h5>
+ <h5>XVIII - indicação das situações em que são aplicadas penalidades, multas ou indenizações e dos respectivos valores, estabelecidos no contrato de franquia;</h5>
+ <h5>XIX - informações sobre a existência de cotas mínimas de compra pelo franqueado junto ao franqueador, 	ou a terceiros por este designados, e sobre a possibilidade e as condições para a recusa dos produtos ou serviços exigidos pelo franqueador;</h5>
+ <h5>XX - indicação de existência de conselho ou associação de franqueados, com as atribuições, os poderes e os mecanismos de representação perante o franqueador, e detalhamento das competências para gestão e fiscalização da aplicação dos recursos de fundos existentes;</h5>
+ <h5>XXI - indicação das regras de limitação à concorrência entre o franqueador e os franqueados, e entre os franqueados, durante a vigência do contrato de franquia, e detalhamento da abrangência territorial, do prazo de vigência da restrição e das penalidades em caso de descumprimento;</h5>
+ <h5>XXII - especificação precisa do prazo contratual e das condições de renovação, se houver;</h5>
+ <h5>XXIII - local, dia e hora para recebimento da documentação proposta, bem como para início da abertura dos envelopes, quando se tratar de órgão ou entidade pública.</h5>
+ <h4>§ 1º A Circular de Oferta de Franquia deverá ser entregue ao candidato a franqueado, no mínimo, 10 	(dez) dias antes da assinatura do contrato ou pré-contrato de franquia ou, 	ainda, do pagamento de qualquer tipo de taxa pelo franqueado ao franqueador ou a empresa ou a pessoa ligada a este, salvo no caso de licitação ou pré-qualificação promovida por órgão ou entidade pública, caso em que a 	Circular de Oferta de Franquia será divulgada logo no início do processo de seleção.</h4>
+ <h4>§ 2º Na hipótese de não cumprimento do disposto no § 1º, o franqueado poderá arguir anulabilidade ou nulidade, conforme o caso, e exigir a devolução de todas e quaisquer quantias já pagas ao franqueador, ou a terceiros por este indicados, a título de filiação ou de royalties , corrigidas monetariamente.</h4>
+ <h3>Art. 3º Nos casos em que o franqueador subloque ao franqueado o ponto comercial onde se acha instalada a franquia, qualquer uma das partes terá legitimidade para propor a renovação do contrato de locação do imóvel, vedada a exclusão de qualquer uma delas do contrato de locação e de sublocação por ocasião da sua renovação ou prorrogação, salvo nos casos de inadimplência dos respectivos contratos ou do contrato de franquia.</h3>
+ <h4>Parágrafo único. O valor do aluguel a ser pago pelo franqueado ao franqueador, nas sublocações de que trata o caput , poderá ser superior ao valor que o franqueador paga ao proprietário do imóvel na locação originária do ponto comercial, desde que:</h4>
+ <h5>I - essa possibilidade esteja expressa e clara na Circular de Oferta de Franquia e no contrato; e</h5>
+ <h5>II - o valor pago a maior ao franqueador na sublocação não implique excessiva onerosidade ao franqueado, garantida a manutenção do equilíbrio econômico-financeiro da sublocação na vigência do contrato de franquia.</h5>
+ <h3>Art. 4º Aplica-se ao franqueador que omitir informações exigidas por lei ou veicular informações falsas na Circular de Oferta de Franquia a sanção prevista no § 2º do art. 2º desta Lei, sem prejuízo das sanções penais cabíveis.</h3>
+ <h3>Art. 5º Para os fins desta Lei, as disposições referentes ao franqueador ou ao franqueado aplicam-se, no que couber, ao subfranqueador e ao subfranqueado, 	respectivamente.</h3>
+ <h3>Art. 6º 	(VETADO).</h3>
+ <h3>Art. 7º Os contratos de franquia obedecerão às seguintes condições:</h3>
+ <h5>I - os que produzirem efeitos exclusivamente no território nacional serão escritos em língua portuguesa e regidos pela legislação brasileira;</h5>
+ <h5>II - os contratos de franquia internacional serão escritos originalmente em língua portuguesa ou terão tradução certificada para a língua portuguesa custeada pelo franqueador, e os contratantes poderão optar, no contrato, pelo foro de um de seus países de domicílio.</h5>
+ <h4>§ 1º As partes poderão eleger juízo arbitral para solução de controvérsias relacionadas ao contrato de franquia.</h4>
+ <h4>§ 2º Para os fins desta 	Lei, entende-se como contrato internacional de franquia aquele que, pelos atos concernentes à sua conclusão ou execução, à situação das partes quanto a nacionalidade ou domicílio, ou à localização de seu objeto, tem liames com mais de um sistema jurídico.</h4>
+ <h4>§ 3º Caso expresso o foro de opção no contrato internacional de franquia, as partes deverão constituir e manter representante legal ou procurador devidamente qualificado e domiciliado no país do foro definido, com poderes para representá-las administrativa e judicialmente, inclusive para receber citações.</h4>
+ <h3>Art. 8º A aplicação desta Lei observará o disposto na legislação de propriedade intelectual vigente no País.</h3>
+ <h3>Art. 9º Revoga-se a Lei n° 8.955, de 15 de dezembro de 1994 (Lei de Franquia).</h3>
+ <h3>Art. 10. Esta Lei entra em vigor após decorridos 90 (noventa) dias de sua publicação oficial.</h3>
+ <p>Brasília, 26 	de dezembro de 2019; 198º da Independência e 131º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Este texto não substitui o publicado no DOU de 	27.12.2019</p>
+ <p>Dispõe sobre o sistema de franquia empresarial e revoga a Lei n° 8.955, de 15</p>
+ <p>de dezembro de 1994 (Lei de Franquia).</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13966.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.969, DE 26 DE DEZEMBRO DE 2019 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2019" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.969, DE 26 DE DEZEMBRO DE 2019</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 17:37:37 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13969.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 64.291 caracteres | espelho: 63.192 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.969, DE 	26 DE DEZEMBRO DE 2019</p>
+ <p>Produção de efeitos</p>
+ <p>Dispõe sobre a política industrial para o setor de tecnologias da informação e comunicação e para o setor de semicondutores e altera a Lei n° 11.484, de 31 de maio de 2007, a Lei n° 8.248, de 23 de outubro de 1991, a Lei n° 10.637, de 30 de dezembro de 2002, e a Lei n° 8.387, de 30 de dezembro de 1991.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre a política industrial para o setor de tecnologias da informação e comunicação e para o setor de semicondutores e altera a Lei n° 11.484, de 31 de maio de 2007 , a Lei n° 8.248, de 23 de outubro de 1991 , a Lei n° 10.637, de 30 de dezembro de 2002 , 	e a Lei n° 8.387, de 30 de dezembro de 1991 .</h3>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA POLÍTICA INDUSTRIAL 	PARA O SETOR DE TECNOLOGIAS DA INFORMAÇÃO E COMUNICAÇÃO</h3>
+ <h3>Art. 2º As pessoas jurídicas fabricantes de bens de tecnologias da informação e comunicação que investirem em atividades de pesquisa, desenvolvimento e inovação, que cumprirem o processo produtivo básico e que estiverem habilitadas nos termos da Lei n° 8.248, de 23 de outubro de 1991 , 	farão jus, até 31 de dezembro de 2029, ao crédito financeiro referido no art. 4º da referida Lei.</h3>
+ <h3>Art. 2º As pessoas jurídicas fabricantes de bens de tecnologias da informação e comunicação que invistam em atividades de pesquisa, desenvolvimento e inovação, cumpram o processo produtivo básico e estejam habilitadas nos termos da Lei n° 8.248, de 23 de outubro de 1991 , farão jus ao crédito financeiro do art. 4º da referida Lei. (Redação dada pela Lei n° 14.968, de 2024)</h3>
+ <h3>Art. 3º O crédito financeiro referido no art. 4º da Lei n° 8.248, de 23 de outubro de 1991 , 	será calculado sobre o dispêndio efetivamente aplicado pela pessoa jurídica no trimestre anterior em atividade de pesquisa, desenvolvimento e inovação, 	nos termos do art. 11 da referida Lei , 	multiplicado por:</h3>
+ <h3>Art. 3º O crédito financeiro referido no art. 4º da Lei n° 8.248, de 23 de outubro de 1991 , será calculado sobre o dispêndio efetivo aplicado pela pessoa jurídica no trimestre anterior em atividade de pesquisa, desenvolvimento e inovação, nos termos do art. 11 da referida Lei, multiplicado por: (Redação dada pela Lei n° 14.968, de 2024)</h3>
+ <h5>I - na hipótese de o estabelecimento da pessoa jurídica localizar-se na região Centro-Oeste e nas regiões de influência da Superintendência do 	Desenvolvimento da Amazônia (Sudam) e da Superintendência do Desenvolvimento do Nordeste (Sudene):</h5>
+ <p><del>a) 3,24 (três inteiros e vinte e quatro centésimos), até 31 de dezembro de 	2024, limitado a 12,97% (doze inteiros e noventa e sete centésimos por cento) da base de cálculo do valor de investimento em Pesquisa, 	Desenvolvimento e Inovação Mínimo (PD&IM) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>b) 3,07 (três inteiros e sete centésimos), de 1º de janeiro de 2025 a 31 de dezembro de 2026, limitado a 12,29% (doze inteiros e vinte e nove centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>c) 2,90 (dois inteiros e noventa centésimos), de 1º de janeiro de 2027 a 31 	de dezembro de 2029, limitado a 11,60% (onze inteiros e sessenta centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <h5>I - na hipótese de o estabelecimento da pessoa jurídica localizar-se na região Centro-Oeste e nas regiões de influência da Superintendência do Desenvolvimento da Amazônia (Sudam) e da Superintendência do Desenvolvimento do Nordeste (Sudene), 3,24 (três inteiros e vinte e quatro centésimos), limitado a 12,97% (doze inteiros e noventa e sete centésimos por cento) da base de cálculo do valor de investimento em Pesquisa, Desenvolvimento e Inovação Mínimo (PD&IM) do período de apuração; (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h6>a) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>b) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>c) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h5>II - na hipótese de o estabelecimento da pessoa jurídica localizar-se na região Centro-Oeste e nas regiões de influência da Sudam e da Sudene, para os investimentos em atividades de pesquisa, desenvolvimento e inovação decorrentes de tecnologias desenvolvidas no País:</h5>
+ <p><del>a) 3,41 (três inteiros e quarenta e um centésimos), até 31 de dezembro de 	2024, limitado a 13,65% (treze inteiros e sessenta e cinco centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>b) 3,24 (três inteiros e vinte e quatro centésimos), de 1º de janeiro de 	2025 a 31 de dezembro de 2026, limitado a 12,97% (doze inteiros e noventa e sete centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>c) 2,90 (dois inteiros e noventa centésimos), de 1º de janeiro de 2027 a 31 	de dezembro de 2029, limitado a 11,60% (onze inteiros e sessenta centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <h5>II - na hipótese de o estabelecimento da pessoa jurídica localizar-se na região Centro-Oeste e nas regiões de influência da Sudam e da Sudene, para os investimentos em atividades de pesquisa, desenvolvimento e inovação decorrentes de tecnologias desenvolvidas no País, 3,41 (três inteiros e quarenta e um centésimos), limitado a 17% (dezessete por cento) da base de cálculo do PD&IM; (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h6>a) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>b) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>c) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h5>III - na hipótese de o estabelecimento da pessoa jurídica não se localizar na região Centro-Oeste e nas regiões de influência da Sudam e da Sudene, 	para os investimentos em atividades de pesquisa, desenvolvimento e inovação decorrentes de tecnologias desenvolvidas no País:</h5>
+ <p><del>a) 3,41 (três inteiros e quarenta e um centésimos), até 31 de dezembro de 	2024, limitado a 13,65% (treze inteiros e sessenta e cinco centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>b) 3,24 (três inteiros e vinte e quatro centésimos), de 1º de janeiro de 	2025 a 31 de dezembro de 2026, limitado a 12,97% (doze inteiros e noventa e sete centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>c) 3,07 (três inteiros e sete centésimos), de 1º de janeiro de 2027 a 31 	de dezembro de 2029, limitado a 12,29% (doze inteiros e vinte e nove centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <h5>III - na hipótese de o estabelecimento da pessoa jurídica não se localizar na região Centro-Oeste e nas regiões de influência da Sudam e da Sudene, para os investimentos em atividades de pesquisa, desenvolvimento e inovação decorrentes de tecnologias desenvolvidas no País, 3,41 (três inteiros e quarenta e um centésimos), limitado a 15% (quinze por cento) da base de cálculo do PD&IM; (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h6>a) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>b) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>c) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h5>IV - nas demais hipóteses:</h5>
+ <p><del>a) 2,73 (dois inteiros e setenta e três centésimos), até 31 de dezembro de 	2024, limitado a 10,92% (dez inteiros e noventa e dois centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>b) 2,56 (dois inteiros e cinquenta e seis centésimos), de 1º de janeiro de 	2025 a 31 de dezembro de 2026, limitado a 10,24% (dez inteiros e vinte e quatro centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>c) 2,39 (dois inteiros e trinta e nove centésimos), de 1º de janeiro de 2027 	a 31 de dezembro de 2029, limitado a 9,56% (nove inteiros e cinquenta e seis centésimos por cento) (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <h5>IV - nas demais hipóteses, 2,73 (dois inteiros e setenta e três centésimos), limitado a 10,92% (dez inteiros e noventa e dois centésimos por cento) da base de cálculo do PD&IM; (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h6>a) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>b) (revogada); (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h6>c) (revogada). (Redação dada pela Lei n° 14.968, de 2024)</h6>
+ <h4>§ 1º O PD&IM estabelecido nesta Lei é aquele definido no art. 11 da Lei n° 8.248, de 23 de outubro de 1991 .</h4>
+ <h4>§ 2º As hipóteses previstas nos incisos I, II, III e IV do caput deste artigo não poderão ser utilizadas de forma cumulativa para um mesmo investimento.</h4>
+ <h4>§ 3º O valor do crédito financeiro referido no art. 4º da Lei n° 8.248, de 23 de outubro de 1991 , não poderá ser superior ao resultado da aplicação dos percentuais definidos neste artigo sobre a base de cálculo do PD&IM no referido período de apuração, nos termos desta Lei e da Lei n° 8.248, de 23 de outubro de 	1991 .</h4>
+ <h4>§ 4º Observado o disposto no art. 4º desta Lei, as pessoas jurídicas beneficiárias da política de que trata este Capítulo terão direito, 	alternativamente ao crédito financeiro gerado conforme os incisos I, II, III 	e IV do caput deste artigo, a gerar crédito financeiro com base no valor de investimento em atividades de pesquisa, desenvolvimento e inovação em tecnologias da informação e comunicação e no cumprimento do processo produtivo básico, relativos ao ano-calendário anterior, calculado na forma do Anexo a esta Lei.</h4>
+ <h4>§ 5º O valor do crédito financeiro de que trata o § 4º, para as pessoas jurídicas habilitadas localizadas nas regiões Sul e Sudeste, será calculado com os seguintes multiplicadores e não poderá ser superior aos seguintes percentuais da base de cálculo do PD&IM de que trata o art. 11 da Lei n° 8.248, de 23 de outubro de 1991 , 	no respectivo período de apuração:</h4>
+ <p><del>I - (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>II - (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>III - (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <h4>§ 5º O valor do crédito financeiro de que trata o § 4º deste artigo, para as pessoas jurídicas habilitadas localizadas nas regiões Sul e Sudeste, será calculado com multiplicador de 1,73 (um inteiro e setenta e três centésimos) e não poderá ser superior a 10,92% (dez inteiros e noventa e dois centésimos por cento) da base de cálculo do PD&IM de que trata o art. 11 da Lei n° 8.248, de 23 de outubro de 1991. (Redação dada pela Lei n° 14.968, de 2024)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h5>II - (revogado); (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h5>III - (revogado). (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h4>§ 6º O valor do crédito financeiro de que trata o § 4º , 	para as pessoas jurídicas habilitadas localizadas na região Centro-Oeste e nas regiões de influência da Sudam e da Sudene, será calculado com os seguintes multiplicadores e não poderá ser superior aos seguintes percentuais da base de cálculo do PD&IM de que trata o art. 11 da Lei n° 8.248, de 23 de outubro de 1991 , 	no respectivo período de apuração:</h4>
+ <p><del>I - (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>II - (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <p><del>III - (Revogado pela Lei n° 14.968, de 2024)</del></p>
+ <h4>§ 6º O valor do crédito financeiro de que trata o § 4º deste artigo, para as pessoas jurídicas habilitadas localizadas na região Centro-Oeste e nas regiões de influência da Sudam e da Sudene, será calculado com multiplicador de 2,41 (dois inteiros e quarenta e um centésimos) e não poderá ser superior a 12,97% (doze inteiros e noventa e sete centésimos por cento) da base de cálculo do PD&IM de que trata o art. 11 da Lei n° 8.248, de 23 de outubro de 1991 . (Redação dada pela Lei n° 14.968, de 2024)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h5>II - (revogado); (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h5>III - (revogado) . (Redação dada pela Lei n° 14.968, de 2024)</h5>
+ <h4>§ 7º O cálculo do PD&IM será feito em relação à base de cálculo do PD&IM de cada produto de que trata o art. 16-A da Lei n° 8.248, de 23 de outubro de 	1991 , para o qual for calculada ou utilizada a relação entre a pontuação atingida pela pessoa jurídica habilitada no processo produtivo básico específico e a meta de pontuação definida nesse processo (relação PA/MPD), 	sendo o valor do crédito financeiro a somatória de todos os créditos financeiros decorrentes dos valores de investimento em PD&IM, nos termos do caput deste artigo.</h4>
+ <h4>§ 8º O valor do investimento em Pesquisa, Desenvolvimento e Inovação 	Complementar (PD&IC) não se confunde com o valor do investimento em 	Pesquisa, Desenvolvimento e Inovação Adicional (PD&IA), estabelecidos nos processos produtivos básicos, sendo a base de cálculo de ambos aquela definida para o PD&IM, vedada a dupla contagem dos valores investidos.</h4>
+ <h4>§ 9º Caso o processo produtivo básico estabelecido nos termos do § 2º do art. 4º da Lei n° 8.248, de 23 de outubro de 1991, não defina metas de pontuação, a pessoa jurídica habilitada deverá dar cumprimento aos termos definidos em portaria interministerial ali referida e utilizar a relação PA/MPD 	igual a 1 (um).</h4>
+ <h4>§ 10. As empresas que optarem pela fórmula de cálculo referida no § 4º ou de que trata os §§ 5º ou 6º deste artigo deverão atingir relação PA/MPD de no mínimo 0,6 (seis décimos), e, a título de cálculo do crédito financeiro de que trata o § 4º, 	a relação PA/MPD será limitada a 1 (um).</h4>
+ <h4>§ 11. As empresas que optarem pelo crédito financeiro gerado conforme os incisos I, II, III e IV do caput deste artigo poderão contabilizar o valor de investimento em Pesquisa, Desenvolvimento e Inovação (PD&I) 	efetivamente realizado no primeiro trimestre de 2020, vedada a dupla contagem.</h4>
+ <h4>§ 12. Para a geração de crédito financeiro relativo ao ano de 2020 até o ano de 2029, será permitida, opcionalmente, às pessoas jurídicas habilitadas conforme o art. 4º desta Lei, a aplicação em PD&IC em valor excedente ao 	PD&IM, para atingimento dos percentuais máximos definidos nos §§ 5º e 6º deste artigo, quando a apuração da relação PA/MPD for inferior a 1 (um).</h4>
+ <h4>§ 12. Para a geração de crédito financeiro será permitida, opcionalmente, às pessoas jurídicas habilitadas conforme o art. 4º desta Lei, a aplicação em PD&IC em valor excedente ao PD&IM, para atingimento dos percentuais máximos definidos nos §§ 5º e 6º deste artigo, quando a apuração da relação PA/MPD for inferior a 1 (um). (Redação dada pela Lei n° 14.968, de 2024)</h4>
+ <h4>§ 13. Regulamento editado pelo Ministério da Economia e pelo Ministério da 	Ciência, Tecnologia, Inovações e Comunicações definirá os termos e as condições para geração e utilização do crédito financeiro de que trata este artigo.</h4>
+ <h4>§ 14. O crédito financeiro referido no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, poderá ser utilizado pelas pessoas jurídicas sob regime de apuração de:</h4>
+ <h5>I - lucro real;</h5>
+ <h5>II – lucro presumido, desde que apresentem escrituração contábil, nos termos da legislação comercial, não aplicado o disposto no parágrafo único do art. 45 da Lei n° 8.981 , de 20 de janeiro de 1995.</h5>
+ <h4>§ 15. Do crédito financeiro referido no art. 4º da Lei n° 8.248, de 23 de outubro de 1991:</h4>
+ <h5>I - 20% (vinte por cento) serão devolvidos a título de Contribuição Social sobre o Lucro Líquido (CSLL);</h5>
+ <h5>II - 80% (oitenta por cento) serão devolvidos a título de Imposto sobre a 	Renda das Pessoas Jurídicas (IRPJ).</h5>
+ <h4>§ 16. O valor do crédito financeiro referido no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, não será computado:</h4>
+ <h5>I - na base de cálculo da contribuição para o Programa de Integração Social e o Programa de Formação do Patrimônio do Servidor Público (PIS/Pasep) e da 	Contribuição para o Financiamento da Seguridade Social (Cofins);</h5>
+ <h5>II - para fins de apuração da CSLL e do IRPJ.</h5>
+ <h4>§ 17. Os bens de tecnologias da informação e comunicação incentivados são os referidos no art. 16-A da Lei n° 8.248, de 23 de outubro de 1991, 	produzidos de acordo com o processo produtivo básico definido em ato conjunto do Ministério da Economia e do Ministério da Ciência, Tecnologia, 	Inovações e Comunicações.</h4>
+ <h4>§ 18. (VETADO).</h4>
+ <h4>§ 19. O residual de investimento em pesquisa, desenvolvimento e inovação não utilizado, para fins de geração de crédito financeiro no período de apuração, em razão dos limites estabelecidos nos incisos I, II, III e IV do caput e nos §§ 5º, 6º e 18 deste artigo, poderá ser utilizado para cálculo de crédito financeiro nos períodos de apuração subsequentes, 	limitado seu uso para geração de crédito financeiro até 31 de julho do ano subsequente.</h4>
+ <h4>§ 20. O cálculo do crédito financeiro poderá ser realizado e ajustado em períodos cumulativos dentro do mesmo ano-base, abatendo-se eventuais créditos financeiros cujo ressarcimento ou compensação já tenham sido solicitados.</h4>
+ <h4>§ 21. O estabelecimento da pessoa jurídica beneficiária dos incentivos do 	Decreto-Lei n° 288, de 28 de fevereiro de 1967, não poderá acumular os incentivos desse Decreto-Lei com o crédito financeiro previsto na Lei n° 8.248, de 23 de outubro de 1991.</h4>
+ <h4>§ 22. No ano de 2020, a base de cálculo para os PD&Is previstos no art. 11 	da Lei n° 8.248, de 23 de outubro de 1991, para fins de geração de crédito financeiro, será contabilizada entre 1º de abril e 31 de dezembro de 2020.</h4>
+ <h3>Art. 4º O Ministério da Economia e o Ministério da 	Ciência, Tecnologia, Inovações e Comunicações regulamentarão:</h3>
+ <h5>I - a habilitação das pessoas jurídicas aos benefícios de que tratam esta 	Lei e a Lei n° 8.248, de 23 de outubro de 1991;</h5>
+ <h5>II - a obrigação de cumprimento de processo produtivo básico.</h5>
+ <h4>Parágrafo único. As pessoas jurídicas que, na data de publicação desta Lei, 	já estejam habilitadas aos benefícios de que trata a Lei n° 8.248, de 23 de outubro de 1991, permanecem habilitadas, observado o disposto no art. 10 	desta Lei.</h4>
+ <h3>Art. 5º A pessoa jurídica deverá apresentar ao 	Ministério da Ciência, Tecnologia, Inovações e Comunicações, na forma e nos prazos estabelecidos em ato do Ministério, declaração de investimentos em pesquisa, desenvolvimento e inovação que conterá, no mínimo:</h3>
+ <h5>I - a sua identificação e a habilitação referida no art. 4º desta Lei;</h5>
+ <h5>II - o valor do crédito financeiro decorrente dos benefícios referidos no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, com a respectiva memória de cálculo;</h5>
+ <h5>III - o valor do faturamento bruto da pessoa jurídica;</h5>
+ <h5>IV - o período de apuração a que o crédito financeiro e o faturamento se referem;</h5>
+ <h5>V - o dispêndio efetivamente aplicado em atividades de pesquisa, 	desenvolvimento e inovação no período de apuração.</h5>
+ <h4>§ 1º Não poderá ser realizada mais de uma declaração de investimentos em pesquisa, desenvolvimento e inovação para um mesmo período de apuração, 	salvo no caso de ajustes de períodos cumulativos, permitida a retificação nos termos do ato referido no caput deste artigo.</h4>
+ <h4>§ 2º A declaração referida no caput deste artigo somente poderá ser apresentada pela pessoa jurídica após a realização de todos os investimentos de pesquisa, desenvolvimento e inovação aplicáveis ao período de apuração.</h4>
+ <h4>§ 3º O Ministério da Ciência, Tecnologia, Inovações e Comunicações, ao analisar a declaração referida no caput deste artigo, inclusive sua eventual retificação, deverá certificar que:</h4>
+ <h5>I - a pessoa jurídica é habilitada nos termos do art. 4º desta Lei;</h5>
+ <h5>II - houve entrega do demonstrativo de cumprimento, no ano anterior à 	declaração, das obrigações estabelecidas nesta Lei;</h5>
+ <h5>III - não existem, na data de entrega da declaração, débitos de pesquisa, 	desenvolvimento e inovação definitivos e pendentes da pessoa jurídica perante o Ministério;</h5>
+ <h5>IV - os valores do crédito financeiro apresentados na declaração são compatíveis com os limites de que trata o art. 3º desta Lei e com o faturamento bruto declarado.</h5>
+ <h4>§ 4º O valor do crédito financeiro apresentado na declaração referida no caput deste artigo é de responsabilidade exclusiva da pessoa jurídica, e não cabe ao Ministério da Ciência, Tecnologia, Inovações e Comunicações atestar sua veracidade por ocasião da certificação prevista no § 3º deste artigo.</h4>
+ <h4>§ 5º Para fins da compensação prevista no inciso I do caput do art. 7º desta Lei, o Ministério da Ciência, Tecnologia, Inovações e Comunicações encaminhará a declaração apresentada pela pessoa jurídica, juntamente com a certificação de que trata o § 3º deste artigo, à Secretaria Especial da 	Receita Federal do Brasil, com cópia para a pessoa jurídica solicitante e para a Secretaria Especial de Produtividade, Emprego e Competitividade do 	Ministério da Economia.</h4>
+ <h4>§ 6º A certificação de que trata o § 3º deste artigo possibilitará a utilização, pela pessoa jurídica, do montante do crédito financeiro gerado em relação ao período a que se refere, para fins de compensação.</h4>
+ <h4>§ 7º A pessoa jurídica tem prazo de 5 (cinco) anos para usufruir da compensação prevista no inciso I do caput do art. 7º desta Lei, 	contado da data de publicação do extrato da certificação no site do 	Ministério da Ciência, Tecnologia, Inovações e Comunicações, que deverá 	ocorrer no prazo máximo de 30 (trinta) dias contado da data de envio da declaração referida no caput deste artigo, salvo os casos em que haja manifestação em contrário do Ministério, hipótese na qual o prazo de 30 	(trinta) dias ficará suspenso.</h4>
+ <h3>Art. 6º O Ministério da Ciência, Tecnologia, Inovações e 	Comunicações divulgará, de forma agregada, respeitados os sigilos fiscais, 	comerciais e industriais, ainda que indiretamente incidentes, os recursos financeiros aplicados em atividades de pesquisa, desenvolvimento e inovação pelas pessoas jurídicas beneficiárias desta Lei.</h3>
+ <h3>Art. 7º Os créditos financeiros decorrentes dos benefícios referidos no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, 	apurados nos termos desta Lei, poderão ser:</h3>
+ <h5>I - compensados com débitos próprios, vincendos ou vencidos, relativos a tributos e a contribuições administrados pela Secretaria Especial da Receita 	Federal do Brasil, nos termos desta Lei; ou</h5>
+ <h5>II - ressarcidos em espécie, nos termos e nas condições previstos em ato do 	Poder Executivo.</h5>
+ <h4>Parágrafo único. Os débitos vencidos somente poderão ser objeto de compensação se estiverem suspensos ou em cobrança no prazo de 30 (trinta) 	dias contado do término da suspensão.</h4>
+ <h3>Art. 8º A compensação declarada nos termos do inciso I 	do caput do art. 7º desta Lei extingue o crédito tributário, sob condição resolutória de sua ulterior homologação.</h3>
+ <h4>§ 1º Além das hipóteses previstas nas leis específicas de cada tributo ou contribuição, não poderão ser objeto da compensação de que trata o inciso I do caput do art. 7º desta 	Lei:</h4>
+ <h5>I - os débitos referidos no inciso II do § 3º do art. 74 da Lei n° 9.430, de 	27 de dezembro de 1996;</h5>
+ <h5>II - o débito consolidado em qualquer modalidade de parcelamento concedido pela Secretaria Especial da Receita Federal do Brasil;</h5>
+ <h5>III - o débito que já tenha sido objeto de compensação não homologada, ainda que a compensação se encontre pendente de decisão definitiva na esfera administrativa, inclusive de compensação nos termos da Lei n° 9.430, de 27 	de dezembro de 1996, e da Lei n° 8.212, de 24 de julho de 1991;</h5>
+ <h5>IV - o crédito financeiro informado em declaração de compensação cuja confirmação de liquidez e certeza esteja sob procedimento fiscal;</h5>
+ <h5>V - os valores de quotas de salário-família e de salário-maternidade;</h5>
+ <h5>VI - os débitos relativos ao recolhimento mensal por estimativa da CSLL e do 	IRPJ apurados na forma do art. 2º da Lei n° 9.430, de 27 de dezembro de 	1996;</h5>
+ <h5>VII - o crédito financeiro objeto de declaração indeferida ou anulada pelo 	Ministério da Ciência, Tecnologia, Inovações e Comunicações;</h5>
+ <h5>VIII - os créditos financeiros objeto de pedido de ressarcimento, sem que haja desistência expressa do pedido para o qual não exista decisão, e aqueles indeferidos, ainda que a decisão não seja definitiva.</h5>
+ <h4>§ 2º O prazo para homologação da compensação declarada pelo sujeito passivo será de 5 (cinco) anos, contado da data de entrega da declaração de compensação.</h4>
+ <h4>§ 3º A declaração de compensação constitui confissão de dívida e instrumento hábil e suficiente para a exigência dos débitos indevidamente compensados.</h4>
+ <h4>§ 4º Não homologada a compensação, a autoridade administrativa deverá 	cientificar o sujeito passivo e intimá-lo a efetuar o pagamento dos débitos indevidamente compensados, no prazo de 30 (trinta) dias, contado da ciência do ato que não homologou a compensação.</h4>
+ <h4>§ 5º Não efetuado o pagamento no prazo referido no § 4º deste artigo, o débito será encaminhado à Procuradoria-Geral da Fazenda Nacional para inscrição em dívida ativa da União, ressalvado o disposto no § 6º deste artigo.</h4>
+ <h4>§ 6º É facultado ao sujeito passivo, no prazo referido no § 4º deste artigo, 	apresentar manifestação de inconformidade contra a não homologação da compensação.</h4>
+ <h4>§ 7º Da decisão que julgar improcedente a manifestação de inconformidade, 	caberá recurso ao Conselho Administrativo de Recursos Fiscais (Carf).</h4>
+ <h4>§ 8º A manifestação de inconformidade e o recurso referidos nos §§ 6º e 7º deste artigo obedecerão ao rito processual do Decreto nº 70.235, de 6 de março de 1972, e enquadrar-se-ão no disposto no inciso III do caput do art. 151 da Lei n° 5.172, de 25 de outubro de 1966 (Código Tributário 	Nacional), relativamente ao débito objeto da compensação.</h4>
+ <h4>§ 9º A compensação será considerada não declarada nas seguintes hipóteses:</h4>
+ <h5>I - nas previstas no § 1º deste artigo;</h5>
+ <h5>II - em que o crédito financeiro seja:</h5>
+ <h6>a) de terceiros; ou</h6>
+ <h6>b) decorrente de decisão judicial não transitada em julgado;</h6>
+ <h5>III - em que o débito não se refira a tributos administrados pela Secretaria 	Especial da Receita Federal do Brasil.</h5>
+ <h4>§ 10. Quando a compensação for considerada não declarada, não haverá 	extinção do crédito tributário e não se aplicará o disposto no caput e nos §§ 4º, 5º, 6º, 7º e 8º deste artigo.</h4>
+ <h4>§ 11. Na hipótese de compensação não homologada ou anulada em decorrência de irregularidade constatada pelo Ministério da Ciência, Tecnologia, 	Inovações e Comunicações ou pela Secretaria Especial de Produtividade, 	Emprego e Competitividade do Ministério da Economia, não caberá discussão no 	âmbito da Secretaria Especial da Receita Federal do Brasil e do Carf.</h4>
+ <h4>§ 12. Nos termos do art. 43 da Lei n° 9.430, de 27 de dezembro de 1996, 	será aplicada multa isolada de 50% (cinquenta por cento) sobre o valor do débito objeto de declaração de compensação não homologada e de 75% (setenta e cinco por cento) sobre o valor do débito objeto de compensação não declarada.</h4>
+ <h4>§ 13. No caso de apresentação de manifestação de inconformidade contra a não homologação da compensação, ficará suspensa, de ofício, a exigibilidade da multa de que trata o § 12 deste artigo, ainda que não impugnada essa exigência, conforme o disposto no inciso III do caput do art. 151 da 	Lei n° 5.172, de 25 de outubro de 1966 (Código Tributário Nacional).</h4>
+ <h4>§ 14. Para usufruir da compensação de créditos financeiros, a pessoa jurídica deverá registrar e manter em sua contabilidade, com clareza e exatidão e segregados das demais atividades, os elementos que compõem as receitas, os custos, as despesas e os resultados do período de apuração referentes ao faturamento bruto e aos investimentos em pesquisa, 	desenvolvimento e inovação utilizados para cálculo do crédito financeiro gerado, para fornecimento aos órgãos do governo, quando solicitada.</h4>
+ <h4>§ 15. A Secretaria Especial da Receita Federal do Brasil disciplinará o disposto neste artigo, inclusive quanto à fixação de critérios de prioridade para apreciação das compensações, atendidas as hipóteses legais, e quanto à 	forma como as compensações deverão ser apresentadas.</h4>
+ <h3>Art. 9º A pessoa jurídica beneficiária desta Lei será 	punida, a qualquer tempo, com a suspensão dos benefícios, sem prejuízo da aplicação de penalidades específicas, no caso das seguintes infrações:</h3>
+ <h5>I - impropriedade quanto ao valor declarado ou descumprimento quanto à 	obrigação de efetuar investimento mínimo em pesquisa, desenvolvimento e inovação, na forma desta Lei e de regulamento;</h5>
+ <h5>II - não apresentação ou não aprovação total ou parcial dos demonstrativos de cumprimento das obrigações, dos relatórios e dos pareceres de que trata o 	§ 9º do art. 11 da Lei n° 8.248, de 23 de outubro de 1991;</h5>
+ <h5>III - irregularidade no atendimento dos requisitos e das metas assumidas em relação às etapas de manufatura definidas nos processos produtivos básicos estabelecidos pelo Ministério da Economia e pelo Ministério da Ciência, 	Tecnologia, Inovações e Comunicações, nos termos do § 2º do art. 4º da Lei n° 8.248, de 23 de outubro de 1991.</h5>
+ <h4>§ 1º No caso das infrações referidas nos incisos I, II e III do caput deste artigo, a irregularidade pelo crédito financeiro utilizado indevidamente deverá ser sanada da seguinte forma:</h4>
+ <h5>I - se tiver sido ressarcido, o crédito financeiro deverá ser pago acrescido de juros de 1% (um por cento) ao mês ou fração dele, sem prejuízo de multa no valor de 75% (setenta e cinco por cento) do crédito financeiro indevidamente ressarcido;</h5>
+ <h5>II - se tiver sido objeto de compensação, o débito tributário indevidamente compensado será pago nos termos do art. 61 da Lei n° 9.430, de 27 de dezembro de 1996, sem prejuízo das multas de que trata o § 12 do art. 8º desta Lei.</h5>
+ <h4>§ 2º A suspensão referida no caput deste artigo converter-se-á 	automaticamente em impedimento para apuração e utilização do crédito financeiro decorrente dos benefícios referidos no art. 4º da Lei n° 8.248, 	de 23 de outubro de 1991, no caso de a pessoa jurídica não sanar a infração no prazo de 90 (noventa) dias, contado da notificação de suspensão.</h4>
+ <h4>§ 3º A pessoa jurídica que der causa a 2 (duas) suspensões em prazo inferior a 2 (dois) anos será punida com o cancelamento da habilitação ao crédito financeiro decorrente dos benefícios referidos no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, e, consequentemente, com a impossibilidade de utilização desse crédito financeiro.</h4>
+ <h4>§ 4º A penalidade de impedimento para apuração e utilização do crédito financeiro decorrente dos benefícios referidos no art. 4º da Lei n° 8.248, 	de 23 de outubro de 1991, somente poderá ser revertida após 2 (dois) anos de sanada a última infração que a motivou.</h4>
+ <h4>§ 5º Após sanar as pendências que ensejaram a suspensão ou o impedimento, a pessoa jurídica deverá comunicar o saneamento ao Ministério da Economia e ao 	Ministério da Ciência, Tecnologia, Inovações e Comunicações para que possa estar apta novamente a apurar e utilizar o crédito financeiro decorrente dos benefícios referidos no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, 	observado o disposto nos §§ 2º, 3º e 4º deste artigo.</h4>
+ <h4>§ 6º O Ministério da Economia e o Ministério da Ciência, Tecnologia, 	Inovações e Comunicações regulamentarão, mediante ato conjunto, as disposições deste artigo.</h4>
+ <h3>Art. 10. O crédito financeiro decorrente dos benefícios referidos no art. 4º da Lei n° 8.248, de 23 de outubro de 1991, constitui, 	para todos os efeitos, compensação integral em substituição aos incentivos extintos pela revogação dos §§ 1º-A, 1º-D, 1º-E, 1º-F, 5º e 7º do art. 4º da referida Lei, devendo isso constar da habilitação de que tratam o caput e o parágrafo único do art. 4º desta Lei.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DAS ALTERAÇÕES À POLÍTICA 	INDUSTRIAL PARA O SETOR DE SEMICONDUTORES</h3>
+ <h3>Art. 11. A Lei n° 11.484, de 31 de maio de 2007 , 	passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 2º É beneficiária do Padis a pessoa jurídica que realize investimento em pesquisa, desenvolvimento e inovação na forma do art. 6º desta Lei e que exerça, isoladamente ou em conjunto, em relação a:</h3>
+ <h5>I - componentes ou dispositivos eletrônicos semicondutores, as atividades de:</h5>
+ <p>..........................................................................................................................</p>
+ <h6>b) difusão ou processamento físico-químico;</h6>
+ <h6>c) corte da lâmina ( wafer ), encapsulamento e teste; ou</h6>
+ <h6>d) corte do substrato, encapsulamento e teste no caso de circuitos integrados de multicomponentes (MCOs), entendidos como uma combinação de um ou mais circuitos integrados monolíticos, híbridos ou de multichips com, pelo menos, um dos seguintes componentes: sensores, atuadores, 	osciladores ou ressonadores à base de silício, ou as suas combinações, ou componentes que desempenhem as funções de artigos classificáveis nas posições 85.32, 85.33 ou 85.41 da Tabela de Incidência do Imposto sobre 	Produtos Industrializados (Tipi), ou as bobinas classificadas na posição 	85.04 dessa tabela, combinados de maneira praticamente indissociável em um corpo único como um circuito integrado, com a forma de um componente do tipo utilizado para a montagem em uma placa de circuito impresso ou em outro suporte, por ligação de pinos, terminais de ligação, bolas, lands , 	relevos ou superfícies de contato;</h6>
+ <h5>II - 	..............................................................................................................</h5>
+ <p>.........................................................................................................................</p>
+ <h6>c) montagem e testes elétricos e ópticos;</h6>
+ <h5>III - insumos e equipamentos dedicados e destinados à fabricação de componentes ou dispositivos eletrônicos semicondutores, relacionados em ato do Poder Executivo e fabricados conforme processo produtivo básico estabelecido pelo Ministério da Economia e pelo Ministério da Ciência, 	Tecnologia, Inovações e Comunicações.</h5>
+ <h4>§ 1º A pessoa jurídica poderá exercer as atividades previstas na alínea dos incisos I e II do caput deste artigo em que se enquadrar, 	isoladamente ou em conjunto, de acordo com os projetos aprovados na forma do art. 5º desta Lei.</h4>
+ <h5>I - (revogado);</h5>
+ <h5>II - (revogado).</h5>
+ <p>.........................................................................................................................</p>
+ <h4>§ 3º Para os efeitos deste artigo, a pessoa jurídica deve exercer, 	exclusivamente, as atividades de pesquisa, desenvolvimento e inovação, 	projeto, produção e prestação de serviços, ou outras atividades nas áreas de semicondutores ou mostradores de informação ( displays ).</h4>
+ <p>.................................................................................................................” 	(NR)</p>
+ <p>“</p>
+ <h3>Art. 3º 	........................................................................................................</h3>
+ <p>..........................................................................................................................</p>
+ <h4>§ 2º As disposições do caput e do § 1º deste artigo alcançam somente os bens ou insumos relacionados em ato conjunto do Ministério da Economia e do Ministério da Ciência, Tecnologia, Inovações e Comunicações.</h4>
+ <p>..................................................................................................................” 	(NR)</p>
+ <p>“</p>
+ <h3>Art. 4º 	........................................................................................................</h3>
+ <h5>I – (revogado);</h5>
+ <h5>II – (revogado);</h5>
+ <p>..........................................................................................................................</p>
+ <h4>§ 1º A redução de alíquota prevista no inciso III do caput deste artigo aplica-se também às receitas decorrentes da venda de projeto ( design ) 	quando efetuada por pessoa jurídica beneficiária do Padis.</h4>
+ <h4>§ 2º (Revogado).</h4>
+ <p>..................................................................................................................” 	(NR)</p>
+ <p>“</p>
+ <h3>Art. 4º-A Observado o disposto no art. 65 desta Lei, a pessoa jurídica beneficiária do Padis fará jus a crédito financeiro calculado sobre o dispêndio efetivamente aplicado no trimestre anterior em atividades de pesquisa, desenvolvimento e inovação de que trata o caput do art. 6º desta Lei multiplicado por 2,62 (dois inteiros e sessenta e dois centésimos).</h3>
+ <h4>§ 1º O valor do crédito financeiro de que trata o caput deste artigo não poderá ser superior ao resultado da aplicação de percentual sobre a base de cálculo do valor do investimento em Pesquisa, Desenvolvimento e Inovação 	Mínimo (PD&IM) no referido período de apuração no mercado interno da pessoa jurídica habilitada.</h4>
+ <h4>§ 2º O percentual de que trata o § 1º deste artigo será de no máximo 13,10% 	(treze inteiros e dez centésimos por cento).</h4>
+ <h4>§ 3º O residual de investimento em pesquisa, desenvolvimento e inovação não utilizado para fins de geração do crédito financeiro no período de apuração em razão do limite estabelecido no § 2º poderá ser utilizado para cálculo do crédito financeiro nos períodos de apuração subsequentes, limitado seu uso até 31 de julho do ano subsequente.</h4>
+ <h4>§ 4º O cálculo do crédito financeiro pode ser realizado e ajustado em períodos cumulativos, abatendo-se eventuais créditos financeiros cujo ressarcimento ou compensação já tenham sido solicitados.”</h4>
+ <p>“</p>
+ <h3>Art. 4º-B O crédito financeiro de que trata o art. 4º-A desta Lei poderá 	ser utilizado pelas pessoas jurídicas sob regime de apuração de:</h3>
+ <h5>I - lucro real; ou</h5>
+ <h5>II - lucro presumido, desde que apresentem escrituração contábil, nos termos da legislação comercial, não aplicado o disposto no parágrafo único do art. 45 da Lei n° 8.981, de 20 de janeiro de 1995.</h5>
+ <h4>§ 1º Do crédito financeiro de que trata o art. 4º-A desta Lei:</h4>
+ <h5>I - 20% (vinte por cento) serão devolvidos a título de Contribuição Social sobre o Lucro Líquido (CSLL); e</h5>
+ <h5>II - 80% (oitenta por cento) serão devolvidos a título de Imposto sobre a 	Renda das Pessoas Jurídicas (IRPJ).</h5>
+ <h4>§ 2º O valor do crédito financeiro de que trata o art. 4º-A desta Lei não será computado:</h4>
+ <h5>I - na base de cálculo da contribuição para o PIS/Pasep e da Cofins; e</h5>
+ <h5>II - para fins de apuração do IRPJ e da CSLL.”</h5>
+ <p>“</p>
+ <h3>Art. 4º-C O crédito financeiro de que trata o art. 4º-A desta Lei poderá ser:</h3>
+ <h5>I - compensado com débitos próprios, vincendos ou vencidos, relativos a tributos e a contribuições administrados pela Secretaria Especial da Receita 	Federal do Brasil, nos termos desta Lei; ou</h5>
+ <h5>II - ressarcido em espécie conforme regulamento a ser editado pelo Poder 	Executivo.</h5>
+ <h4>Parágrafo único. Os débitos vencidos somente poderão ser objeto de compensação se estiverem suspensos ou em cobrança no prazo de 30 (trinta) 	dias contado do término da suspensão.”</h4>
+ <p>“</p>
+ <h3>Art. 4º-D A pessoa jurídica deverá apresentar ao Ministério da Ciência, 	Tecnologia, Inovações e Comunicações, na forma e nos prazos estabelecidos em ato daquele Ministério, declaração de investimentos em pesquisa, 	desenvolvimento e inovação, que conterá, no mínimo:</h3>
+ <h5>I - a identificação da pessoa jurídica e o respectivo ato de habilitação ao programa;</h5>
+ <h5>II - o valor do crédito financeiro de que trata o art. 4º-A desta Lei, com a respectiva memória de cálculo e o dispêndio efetivamente aplicado em atividades de pesquisa, desenvolvimento e inovação;</h5>
+ <h5>III - o valor do faturamento bruto; e</h5>
+ <h5>IV - o período de apuração a que o crédito financeiro e o faturamento se referem.</h5>
+ <h4>§ 1º Não poderá ser realizada mais de uma declaração dos créditos financeiros de que trata esta Lei para um mesmo período de apuração, salvo o caso de ajuste de períodos cumulativos.</h4>
+ <h4>§ 2º A declaração de que trata o caput deste artigo somente poderá 	ser apresentada pela pessoa jurídica após a efetiva realização de todos os investimentos em pesquisa, desenvolvimento e inovação aplicáveis ao período de apuração.</h4>
+ <h4>§ 3º O sujeito passivo poderá retificar a declaração de que trata o caput deste artigo, conforme ato do Ministério da Ciência, Tecnologia, 	Inovações e Comunicações.</h4>
+ <h4>§ 4º O Ministério da Ciência, Tecnologia, Inovações e Comunicações, ao analisar a declaração de que trata o caput deste artigo, inclusive sua eventual retificação, deverá certificar que:</h4>
+ <h5>I - a pessoa jurídica é habilitada ao programa;</h5>
+ <h5>II - houve entrega do demonstrativo de cumprimento, no ano anterior à 	declaração, das obrigações estabelecidas nesta Lei;</h5>
+ <h5>III - não existem, na data de entrega da declaração, débitos de pesquisa, 	desenvolvimento e inovação definitivos e pendentes da pessoa jurídica perante esse Ministério; e</h5>
+ <h5>IV - o valor do crédito financeiro apresentado na declaração é compatível com o previsto no art. 4º-A desta Lei e com o faturamento bruto declarado.</h5>
+ <h4>§ 5º O valor do crédito financeiro apresentado na declaração de que trata o caput deste artigo é de responsabilidade exclusiva da pessoa jurídica, e não cabe ao Ministério da Ciência, Tecnologia, Inovações e 	Comunicações atestar sua veracidade por ocasião da certificação prevista no 	§ 4º deste artigo.</h4>
+ <h4>§ 6º Para fins da compensação prevista no inciso I do caput do art. 4º-C desta Lei, o Ministério da Ciência, Tecnologia, Inovações e 	Comunicações encaminhará a declaração apresentada pela pessoa jurídica, 	juntamente com a certificação de que trata o § 4º deste artigo, para a 	Secretaria Especial da Receita Federal do Brasil, com cópia para a pessoa jurídica solicitante e para a Secretaria Especial de Produtividade, Emprego e Competitividade do Ministério da Economia.</h4>
+ <h4>§ 7º A certificação emitida nos termos do § 4º deste artigo possibilitará a utilização pela pessoa jurídica do montante do crédito financeiro gerado em relação ao período a que se refira, para fins de compensação.</h4>
+ <h4>§ 8º A pessoa jurídica tem o prazo de 5 (cinco) anos para usufruir da compensação prevista no inciso I do caput do art. 4º-C deste artigo, 	contado da data da publicação do extrato da certificação no sítio eletrônico do Ministério da Ciência, Tecnologia, Inovações e Comunicações, que deverá 	ocorrer no prazo máximo de 30 (trinta) dias, contado do envio da declaração de que trata o caput deste artigo, salvo os casos em que haja manifestação em contrário do Ministério da Ciência, Tecnologia, Inovações e 	Comunicações, hipótese na qual o prazo de 30 (trinta) dias ficará suspenso.”</h4>
+ <p>“</p>
+ <h3>Art. 4º-E A compensação prevista no inciso I do caput do art. 4º-C 	desta Lei será efetuada mediante a entrega, pelo sujeito passivo, de declaração à Secretaria Especial da Receita Federal do Brasil da qual constarão informações relativas ao crédito financeiro utilizado e ao respectivo débito compensado.</h3>
+ <h4>§ 1º A compensação declarada nos termos do caput deste artigo extingue o crédito tributário, sob condição resolutória de sua ulterior homologação.</h4>
+ <h4>§ 2º Além das hipóteses previstas nas leis específicas de cada tributo ou contribuição, não poderão ser objeto de compensação nos termos desta Lei:</h4>
+ <h5>I - os débitos de que trata o inciso II do § 3º do art. 74 da Lei n° 9.430, 	de 27 de dezembro de 1996;</h5>
+ <h5>II - os débitos relativos a tributos e a contribuições administrados pela 	Secretaria Especial da Receita Federal do Brasil que já tenham sido encaminhados à Procuradoria-Geral da Fazenda Nacional para inscrição em dívida ativa da União;</h5>
+ <h5>III - o débito consolidado em qualquer modalidade de parcelamento concedido pela Secretaria Especial da Receita Federal do Brasil;</h5>
+ <h5>IV - o débito que já tenha sido objeto de compensação não homologada, ainda que a compensação se encontre pendente de decisão definitiva na esfera administrativa, inclusive de compensação efetuada nos termos da Lei n° 9.430, de 27 de dezembro de 1996, e da Lei n° 8.212, de 24 de julho de 1991;</h5>
+ <h5>V - o crédito financeiro objeto de declaração indeferida ou anulada pelo 	Ministério da Ciência, Tecnologia, Inovações e Comunicações e o crédito financeiro informado em declaração de compensação cuja confirmação de liquidez e certeza esteja sob procedimento fiscal;</h5>
+ <h5>VI - os valores de quotas de salário-família e saláriomaternidade;</h5>
+ <h5>VII - os débitos relativos ao recolhimento mensal por estimativa do IRPJ e da CSLL apurados na forma do art. 2º da Lei n° 9.430, de 27 de dezembro de 	1996; e</h5>
+ <h5>VIII - os créditos financeiros objeto de pedido de ressarcimento, sem que haja desistência expressa do pedido para o qual não exista decisão, e aqueles indeferidos, ainda que a decisão não seja definitiva.</h5>
+ <h4>§ 3º O prazo para homologação da compensação declarada pelo credor será de 	5 (cinco) anos, contado da data da entrega da declaração de compensação.</h4>
+ <h4>§ 4º A declaração de compensação do sujeito passivo constitui confissão de dívida e instrumento hábil e suficiente para a exigência dos débitos indevidamente compensados.</h4>
+ <h4>§ 5º Não homologada a compensação, a Secretaria Especial da Receita 	Federal do Brasil deverá cientificar o sujeito passivo e intimá-lo a efetuar o pagamento dos débitos indevidamente compensados, no prazo de 30 (trinta) 	dias, contado da ciência do ato que não homologou a compensação.</h4>
+ <h4>§ 6º Não efetuado o pagamento no prazo previsto no § 5º deste artigo, o débito será encaminhado à Procuradoria-Geral da Fazenda Nacional para inscrição em dívida ativa da União, ressalvado o disposto no § 7º deste artigo.</h4>
+ <h4>§ 7º É facultado ao sujeito passivo, no prazo referido no § 5º deste artigo, apresentar manifestação de inconformidade contra a não homologação da compensação.</h4>
+ <h4>§ 8º Da decisão que julgar improcedente a manifestação de inconformidade caberá recurso ao Conselho Administrativo de Recursos Fiscais (Carf).</h4>
+ <h4>§ 9º A manifestação de inconformidade e o recurso de que tratam os §§ 7º e 	8º deste artigo obedecerão ao rito processual previsto no Decreto nº 70.235, 	de 6 de março de 1972, e enquadrar-se-ão no disposto no inciso III do caput do art. 151 da Lei n° 5.172, de 25 de outubro de 1966 (Código 	Tributário Nacional), relativamente ao débito objeto da compensação.</h4>
+ <h4>§ 10. Será considerada não declarada a compensação nas hipóteses:</h4>
+ <h5>I - previstas no § 2º deste artigo;</h5>
+ <h5>II - em que o crédito financeiro seja:</h5>
+ <h6>a) de terceiros;</h6>
+ <h6>b) decorrente de decisão judicial não transitada em julgado; ou</h6>
+ <h5>III - em que o débito não se refira a tributos e a contribuições administrados pela Secretaria Especial da Receita Federal do Brasil.</h5>
+ <h4>§ 11. Quando a compensação for considerada não declarada não haverá 	extinção do crédito tributário e não se aplicará o disposto nos §§ 1º, 5º, 	6º, 7º, 8º e 9º deste artigo.</h4>
+ <h4>§ 12. Na hipótese de compensação não homologada ou anulada em decorrência de irregularidade constatada pelo Ministério da Ciência, Tecnologia, 	Inovações e Comunicações ou pela Secretaria Especial de Produtividade, 	Emprego e Competitividade do Ministério da Economia, não caberá discussão no 	âmbito da Secretaria Especial da Receita Federal do Brasil e do Carf.</h4>
+ <h4>§ 13. Nos termos do art. 43 da Lei n° 9.430, de 27 de dezembro de 1996, 	será aplicada multa isolada de 50% (cinquenta por cento) sobre o valor do débito objeto de declaração de compensação não homologada e de 75% (setenta e cinco por cento) sobre o valor do débito objeto de compensação não declarada.</h4>
+ <h4>§ 14. No caso de apresentação de manifestação de inconformidade contra a não homologação da compensação, ficará suspensa, de ofício, a exigibilidade da multa de que trata o § 13 deste artigo, ainda que não impugnada essa exigência, conforme o disposto no inciso III do caput do art. 151 da 	Lei n° 5.172, de 25 de outubro de 1966 (Código Tributário Nacional).</h4>
+ <h4>§ 15. Para usufruir da compensação de créditos financeiros, a pessoa jurídica deverá registrar e manter em sua contabilidade, com clareza e exatidão e segregados das demais atividades, os elementos que compõem as receitas, os custos, as despesas e os resultados do período de apuração referentes ao faturamento bruto e aos investimentos em pesquisa, 	desenvolvimento e inovação utilizados para cálculo do crédito financeiro gerado, para fornecimento aos órgãos do governo, quando solicitada.</h4>
+ <h4>§ 16. A Secretaria Especial da Receita Federal do Brasil disciplinará o disposto neste artigo, inclusive quanto à fixação de critérios de prioridade para apreciação das compensações, atendidas as hipóteses legais, e quanto à 	forma como as compensações deverão ser apresentadas."</h4>
+ <p>“</p>
+ <h3>Art. 4º-F Observado o disposto no art. 65 desta Lei, a pessoa jurídica que já seja beneficiária do Padis será elegível aos benefícios de que trata o art. 4º-A desta Lei, independentemente de qualquer ato administrativo específico.”</h3>
+ <p>“</p>
+ <h3>Art. 4º-G A pessoa jurídica beneficiária desta Lei será punida, a qualquer tempo, com a suspensão dos benefícios, sem prejuízo da aplicação de penalidades específicas, no caso de:</h3>
+ <h5>I – impropriedade quanto ao valor declarado ou descumprimento quanto à 	obrigação de efetuar investimento mínimo em pesquisa, desenvolvimento e inovação, na forma desta Lei e de regulamento;</h5>
+ <h5>II - irregularidade no atendimento dos requisitos e das metas assumidas em relação às etapas de manufatura definidas no processo produtivo básico previsto no inciso III do caput do art. 2º desta Lei.</h5>
+ <h4>§ 1º No caso das infrações previstas nos incisos I e II do caput deste artigo, a irregularidade pelo crédito financeiro utilizado indevidamente deverá ser sanada da seguinte forma:</h4>
+ <h5>I - se tiver sido ressarcido, o crédito financeiro deverá ser pago acrescido de juros de 1% (um por cento) ao mês ou fração dele, sem prejuízo de multa no valor de 75% (setenta e cinco por cento) do crédito financeiro indevidamente ressarcido; e</h5>
+ <h5>II - se tiver sido objeto de compensação, o débito tributário indevidamente compensado será pago nos termos do art. 61 da Lei n° 9.430, de 27 de dezembro de 1996, sem prejuízo das multas de que trata o § 13 do art. 4º-E 	desta Lei.</h5>
+ <h4>§ 2º A suspensão referida no caput deste artigo converter-se-á 	automaticamente em impedimento para apuração e utilização do crédito financeiro de que trata o art. 4º-A desta Lei, no caso de a pessoa jurídica não sanar a infração no prazo de 90 (noventa) dias, contado da notificação de suspensão.</h4>
+ <h4>§ 3º A pessoa jurídica que der causa a 2 (duas) suspensões em prazo inferior a 2 (dois) anos será punida com o cancelamento da habilitação ao crédito financeiro de que trata o art. 4º-A desta Lei e, consequentemente, 	com a impossibilidade de utilização desse crédito financeiro.</h4>
+ <h4>§ 4º A penalidade de impedimento para apuração e utilização do crédito financeiro de que trata o art. 4º-A desta Lei somente poderá ser revertida após 2 (dois) anos de sanada a última infração que a motivou.</h4>
+ <h4>§ 5º Após sanar as pendências que ensejaram a suspensão ou o impedimento, a pessoa jurídica deverá comunicar o saneamento ao Ministério da Economia e ao 	Ministério da Ciência, Tecnologia, Inovações e Comunicações para que possa estar apta novamente a apurar e utilizar o crédito financeiro de que trata o art. 4º-A desta Lei, observado o disposto nos §§ 2º, 3º e 4º deste artigo.</h4>
+ <h4>§ 6º O Ministério da Economia e o Ministério da Ciência, Tecnologia, 	Inovações e Comunicações regulamentarão, mediante ato conjunto, as disposições deste artigo.”</h4>
+ <p>“</p>
+ <h3>Art. 4º-H O crédito financeiro de que trata o art. 4º-A desta Lei constitui, para todos os efeitos, compensação integral em substituição aos incentivos extintos pela revogação dos incisos I e II do caput do art. 4º desta Lei.”</h3>
+ <p>“</p>
+ <h3>Art. 6º A pessoa jurídica beneficiária do Padis referida no caput do art. 2º desta Lei deverá investir no País, anualmente, em atividades de pesquisa, desenvolvimento e inovação, no mínimo, o valor de 5% (cinco por cento) da base de cálculo formada pelo seu faturamento bruto no mercado interno.</h3>
+ <p>..........................................................................................................................</p>
+ <h4>§ 6º Ao convênio com centros ou institutos de pesquisa ou com entidades brasileiras de ensino de que trata o § 2º deste artigo aplicase o disposto no art. 9º da Lei n° 10.973, de 2 de dezembro de 2004.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 7º A pessoa jurídica beneficiária do Padis deverá encaminhar ao 	Ministério da Ciência, Tecnologia, Inovações e Comunicações, até 31 de julho de cada ano civil:</h3>
+ <h5>I - demonstrativos de cumprimento, no ano anterior, das obrigações estabelecidas nesta Lei, mediante apresentação de relatórios descritivos das atividades de pesquisa, desenvolvimento e inovação previstas no projeto elaborado e dos resultados alcançados, bem como, quando houver, do cumprimento dos requisitos do processo produtivo básico; e</h5>
+ <h5>II - relatório consolidado e parecer conclusivo acerca dos demonstrativos referidos no inciso I do caput deste artigo, elaborados por auditoria independente credenciada na Comissão de Valores Mobiliários (CVM) e cadastrada no Ministério da Ciência, Tecnologia, Inovações e Comunicações, 	que ateste a veracidade das informações prestadas.</h5>
+ <h4>§ 1º O cadastramento das entidades responsáveis pela auditoria independente e a análise do demonstrativo do cumprimento das obrigações da pessoa jurídica beneficiária obedecerão ao regulamento do Ministério da Ciência, 	Tecnologia, Inovações e Comunicações.</h4>
+ <h4>§ 2º O relatório e o parecer previstos no inciso II do caput deste artigo poderão ser dispensados para as empresas cuja base de cálculo do PD&I 	anual, calculada conforme o caput do art. 6º desta Lei, seja inferior a R$ 10.000.000,00 (dez milhões de reais).</h4>
+ <h4>§ 3º O pagamento da auditoria a que se refere o inciso II do caput deste artigo poderá ser integralmente deduzido do complemento de 4% (quatro por cento) da base de cálculo do PD&I mencionada no caput do art. 6º, 	e, neste caso, o valor não poderá exceder 0,2% (dois décimos por cento) da base de cálculo do PD&I anual, calculada conforme o caput do art. 6º desta Lei.</h4>
+ <h4>§ 4º O relatório consolidado e o parecer conclusivo referidos no inciso II 	do caput deste artigo serão obrigatórios a partir do anocalendário de 2019.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 11-A (VETADO).”</h3>
+ <p>“</p>
+ <h3>Art. 64 . As disposições do art. 3º e dos arts. 4º-A ao 4º-H desta Lei vigorarão até 22 de janeiro de 2022.” (NR)</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS ALTERAÇÕES 	LEGISLATIVAS</h3>
+ <h3>Art. 12. A Lei n° 8.248, de 23 de outubro de 1991 , 	passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 4º As pessoas jurídicas que exerçam atividades de desenvolvimento ou produção de bens de tecnologias da informação e comunicação que investirem em atividades de pesquisa, desenvolvimento e inovação nesse setor farão jus, 	até 31 de dezembro de 2029, a crédito financeiro decorrente do dispêndio mínimo efetivamente aplicado nessas atividades.</h3>
+ <h4>§ 1º (Revogado).</h4>
+ <h4>§ 1º-A (Revogado).</h4>
+ <p>..........................................................................................................................</p>
+ <h4>§ 1º-C (Revogado).</h4>
+ <h4>§ 1º-D (Revogado).</h4>
+ <h4>§ 1º-E (Revogado).</h4>
+ <h4>§ 1º-F (Revogado).</h4>
+ <h4>§ 2º O Ministério da Economia e o Ministério da Ciência, Tecnologia, 	Inovações e Comunicações estabelecerão os processos produtivos básicos de ofício ou no prazo de 120 (cento e vinte) dias, contado da data da solicitação fundamentada da interessada.</h4>
+ <h4>§ 3º (Revogado).</h4>
+ <h4>§ 4º (Revogado).</h4>
+ <h4>§ 5º (Revogado).</h4>
+ <p>.........................................................................................................................</p>
+ <h4>§ 7º (Revogado).</h4>
+ <h4>§ 8º (Revogado).” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 11. Farão jus ao crédito financeiro de que trata o art. 4º desta Lei as pessoas jurídicas beneficiárias que investirem anualmente, no País, em atividades de pesquisa, desenvolvimento e inovação referentes ao setor de tecnologias da informação e comunicação, no mínimo 5% (cinco por cento) da base de cálculo formada pelo faturamento bruto no mercado interno, 	decorrente da comercialização de bens de tecnologias da informação e comunicação definidos no art. 16-A, e que cumprirem o processo produtivo básico.</h3>
+ <h4>§ 1º 	...........................................................................................................</h4>
+ <p>........................................................................................................................</p>
+ <h5>IV - sob a forma de aplicação em programas e projetos de interesse nacional nas áreas de tecnologias da informação e comunicação considerados prioritários pelo comitê de que trata o § 19 deste artigo, conforme regulamento a ser editado pelo Ministro de Estado da Ciência, Tecnologia, 	Inovações e Comunicações e ouvido o referido comitê, podendo essa aplicação substituir os percentuais previstos nos incisos I, II e III deste parágrafo.</h5>
+ <p>.........................................................................................................................</p>
+ <h4>§ 7º 	............................................................................................................</h4>
+ <p>........................................................................................................................</p>
+ <h5>III - em 20% (vinte por cento), de 1º de janeiro de 2004 até 31 de dezembro de 2029;</h5>
+ <p>..........................................................................................................................</p>
+ <h4>§ 9º 	.............................................................................................................</h4>
+ <h5>I – demonstrativos de cumprimento, no ano anterior, das obrigações estabelecidas nesta Lei, mediante apresentação de relatórios descritivos das atividades de pesquisa, desenvolvimento e inovação, de cumprimento dos processos produtivos básicos e dos resultados alcançados; e</h5>
+ <h5>II - relatório e parecer conclusivo acerca dos demonstrativos referidos no inciso I do caput deste parágrafo, elaborados por auditoria independente, credenciada na Comissão de Valores Mobiliários (CVM) e cadastrada no Ministério da Ciência, Tecnologia, Inovações e Comunicações, 	que ateste a veracidade das informações prestadas.</h5>
+ <p>......................................................................................................................</p>
+ <h4>§ 13 . (Revogado)</h4>
+ <p>........................................................................................................................</p>
+ <h4>§ 24. A aplicação de recursos na forma dos incisos III e IV do § 1º e III e 	IV do § 18 deste artigo, atendidos os percentuais desta Lei, e em conformidade com o regulamento a ser editado pelo Ministro de Estado da 	Ciência, Tecnologia, Inovações e Comunicações, desonera as empresas beneficiárias de sua responsabilidade quanto à efetiva utilização dos recursos nos programas e projetos de interesse nacional nas áreas de tecnologias da informação e comunicação considerados prioritários.</h4>
+ <h4>§ 25 . (Revogado).</h4>
+ <h4>§ 26 . Poderão ser enquadrados como dispêndios de pesquisa, desenvolvimento e inovação, para fins das obrigações previstas nesta Lei, os gastos realizados na aquisição, implantação, ampliação ou modernização de infraestrutura física e de laboratórios de pesquisa, desenvolvimento e inovação de ICTs, realizadas e justificadas no âmbito de projetos de pesquisa, desenvolvimento e inovação, conforme as atividades descritas no caput deste artigo, desde que esses gastos não excedam 20% (vinte por cento) do total de investimentos em ICTs.</h4>
+ <h4>§ 27 . Aos convênios com ICTs de que trata o § 1º deste artigo aplica-se o disposto no art. 9º da Lei n° 10.973, de 2 de dezembro de 2004.</h4>
+ <h4>§ 28 . Os termos e condições para a assunção das obrigações de investimento em pesquisa, desenvolvimento e inovação pela pessoa jurídica contratante serão regulamentados pelo Ministério da Ciência, Tecnologia, Inovações e 	Comunicações.</h4>
+ <h4>§ 29 . Para fins de geração do crédito financeiro previsto nesta Lei, não integra a base de cálculo dos investimentos em pesquisa, desenvolvimento e inovação o faturamento bruto realizado ao amparo:</h4>
+ <h5>I - do inciso III do § 1º do art. 29 da Lei n° 10.637 de 30 de dezembro de 	2002; e</h5>
+ <h5>II - do art. 4º do Decreto-Lei n° 288, de 28 de fevereiro de 1967.” (NR)</h5>
+ <p>“</p>
+ <h3>Art. 16-A 	...................................................................................................</h3>
+ <p>.....................................................................................................................</p>
+ <h4>§ 6º Ato do Poder Executivo federal definirá a relação dos bens de tecnologias da informação e comunicação, respeitado o disposto no caput deste artigo, com base em proposta conjunta do Ministério da Economia e do 	Ministério da Ciência, Tecnologia, Inovações e Comunicações.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 16-B (VETADO).”</h3>
+ <h3>Art. 13. O art. 29 da Lei n° 10.637, de 30 de dezembro de 2002 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 29. 	....................................................................................................</h3>
+ <h4>§ 1º 	...........................................................................................................</h4>
+ <h5>I - 	..............................................................................................................</h5>
+ <p>.......................................................................................................................</p>
+ <h6>c) (revogada);</h6>
+ <p>.......................................................................................................................</p>
+ <h5>III - estabelecimentos industriais fabricantes de bens de que trata o art. 16-A da Lei n° 8.248, de 23 de outubro de 1991, desde que façam jus ao crédito previsto no art. 4º da mesma Lei.</h5>
+ <p>...............................................................................................................” 	(NR)</p>
+ <h3>Art. 14. O art. 2º da Lei n° 8.387, de 30 de dezembro de 1991 , 	passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 2º Aos bens e serviços do setor de tecnologias da informação e comunicação industrializados na Zona Franca de Manaus serão concedidos os incentivos fiscais e financeiros previstos no art. 9º do Decreto-Lei n° 288, 	de 28 de fevereiro de 1967, atendidos os requisitos estabelecidos no § 7º do art. 7º do referido Decreto-Lei.</h3>
+ <p>.........................................................................................................................</p>
+ <h4>§ 2º (Revogado).</h4>
+ <h4>§ 2º-A Os bens de que trata o caput deste artigo são os constantes da relação prevista no § 6º do art. 16-A da Lei n° 8.248, de 23 de outubro de 1991.</h4>
+ <p>.........................................................................................................................</p>
+ <h4>§ 27 . (Revogado).</h4>
+ <h4>§ 28 . Poderão ser enquadrados como dispêndios de pesquisa, desenvolvimento e inovação, para fins das obrigações previstas nesta Lei, os gastos realizados na aquisição, implantação, ampliação ou modernização de infraestrutura física e de laboratórios de pesquisa, desenvolvimento e inovação de ICTs, realizadas e justificadas no âmbito de projetos de pesquisa, desenvolvimento e inovação, conforme as atividades descritas no caput deste artigo, desde que esses gastos não excedam 20% (vinte por cento) do total de investimentos em ICTs.</h4>
+ <h4>§ 29 . Aos convênios com ICTs de que trata o § 4º deste artigo aplica-se o disposto no art. 9º da Lei n° 10.973, de 2 de dezembro de 2004.” (NR)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 15. Revogam-se:</h3>
+ <h5>I - os §§ 1º , 1º-A , 1º-C , 1º-D , 1º-E , 1º-F , 3º , 4º , 5º , 7º e 8º do art. 4º , 	o art. 10 e os §§ 13 e 25 do art. 11 da Lei n° 8.248, de 23 de outubro de 1991 ;</h5>
+ <h5>II - os incisos I e II do § 1º do art. 2º e os incisos I e II do caput e o § 2º do art. 4º da Lei n° 11.484, de 31 de maio de 2007 ;</h5>
+ <h5>III - os §§ 2º e 27 do art. 2º da Lei n° 8.387, de 30 de dezembro de 1991 ; e</h5>
+ <h5>IV - a alínea c do inciso I do § 1º do art. 29 da Lei n° 10.637, de 	30 de dezembro de 2002 .</h5>
+ <h3>Art. 16. Esta Lei entra em vigor na data de sua publicação e produzirá efeitos a partir do primeiro dia do quarto mês subsequente à sua publicação.</h3>
+ <p>Brasília, 26 de dezembro de 2019; 198º da 	Independência e 131º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Júlio Francisco Semeghini Neto</p>
+ <p>Este texto não substitui o publicado no DOU de 	27.12.2019 - Edição extra</p>
+ <p>CÁLCULO DO VALOR DO CRÉDITO FINANCEIRO REFERIDO NO § 4º DO 	ART. 3º DESTA LEI</p>
+ <h3>VC=PD&IM*M*(PA/MPD)+PD&IM+(PD&IC/2,5)</h3>
+ <p>VC = valor do crédito financeiro;</p>
+ <p>PD&IM = valor do investimento em Pesquisa, Desenvolvimento e 	Inovação Mínimo estabelecido nos termos desta Lei;</p>
+ <p>M = multiplicador do PD&IM;</p>
+ <p>PA = pontuação atingida pela pessoa jurídica habilitada no processo produtivo básico específico;</p>
+ <p>MPD = meta de pontuação definida no processo produtivo básico específico;</p>
+ <p>PD&IC = valor do investimento em Pesquisa, Desenvolvimento e 	Inovação Complementar, aplicado pela pessoa jurídica habilitada nos termos do art. 4º desta Lei, excedente ao valor do PD&IM e utilizado, 	opcionalmente, para permitir o atingimento dos percentuais máximos definidos nos §§ 5º e 6º do art. 3º desta Lei, quando a apuração da relação PA/MPD for inferior a 1 (um).</p>
+ <p>Produção de efeitos | Dispõe sobre a política industrial para o setor de tecnologias da informação e comunicação e para o setor de semicondutores e altera a Lei n° 11.484, de 31 de maio de 2007, a Lei n° 8.248, de 23 de outubro de 1991, a Lei n° 10.637, de 30 de dezembro de</p>
+ <p>2002, e a Lei n° 8.387, de 30 de dezembro de 1991.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13969.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

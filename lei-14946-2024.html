@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.946, DE 31 DE JULHO DE 2024 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2024" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.946, DE 31 DE JULHO DE 2024</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 15:03:13 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14946.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 27.519 caracteres | espelho: 27.471 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.946, DE 31 DE JULHO DE 2024</p>
+ <p>Institui normas aplicáveis a atividades espaciais nacionais .</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o 	Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 1º Esta Lei estabelece normas aplicáveis a atividades espaciais nacionais.</h3>
+ <h3>Art. 2º Para efeitos desta Lei, considera-se:</h3>
+ <h5>I - análise de conjunção de lançamento: processo de identificação e de análise de trajetórias e de planos de voo de artefatos espaciais;</h5>
+ <h5>II - aplicação espacial: bem ou serviço que depende da capacidade operativa de artefatos espaciais;</h5>
+ <h5>III 	- artefato espacial:</h5>
+ <h6>a) 	veículo ou engenho, ou parte desses, que se destina ao acesso ao espaço exterior e à realização de operação nele ou à exploração de corpos celestes, 	de maneira que se enquadre, genericamente, como carga útil;</h6>
+ <h6>b) 	satélite, veículo espacial, veículo de exploração espacial e veículos lançadores, ou seus sistemas, subsistemas, equipamentos e componentes;</h6>
+ <h6>c) 	estação espacial orbital;</h6>
+ <h6>d) 	base de apoio para missões espaciais de maior duração ou mais distantes da superfície da Terra;</h6>
+ <h5>IV - atividade espacial dual: atividade para emprego civil e atividade de defesa;</h5>
+ <h5>V - consciência situacional espacial: habilidade de percepção das características do ambiente espacial e do que nele ocorre, com auxílio de técnicas de rastreamento de artefatos espaciais e de corpos celestes, 	monitoramento de eventos climáticos espaciais e identificação de possíveis riscos às atividades espaciais;</h5>
+ <h5>VI - corpo celeste: objeto natural originário do espaço exterior, tal como asteroide, cometa, estrela, meteoro, meteorito, planeta e satélite natural;</h5>
+ <h5>VII 	- dado espacial: dado primário que se adquire com o uso de artefato espacial e que se transmite ao solo, por qualquer meio, a partir do espaço exterior, 	bem como produto resultante do processamento de dado primário que o torne utilizável;</h5>
+ <h5>VIII 	- detrito espacial: artefato espacial, ou parte desse, que se encontra no espaço exterior sem desempenhar função útil;</h5>
+ <h5>IX - Estado de registro: Estado nacional em que é registrado determinado artefato espacial;</h5>
+ <h5>X - Estado lançador: Estado nacional que lança ou promove o lançamento ao espaço exterior de um artefato espacial ou Estado de cujo território ou instalações um artefato espacial é lançado ao espaço exterior;</h5>
+ <h5>XI - infraestrutura espacial: equipamentos de solo, recursos logísticos, 	instalações, ferramentas e sistemas computacionais e artefatos espaciais necessários para a viabilização de aplicações espaciais, para a condução das atividades espaciais do País ou para a implementação e a viabilização de todo o ciclo de vida de sistemas espaciais;</h5>
+ <h5>XII 	- recurso espacial: recurso natural proveniente de corpo celeste;</h5>
+ <h5>XIII 	- sistema espacial: combinação de elementos de infraestrutura espacial que, 	conjunta e integradamente, atende à entrega de determinada aplicação espacial;</h5>
+ <h5>XIV 	- veículo lançador: veículo que se destina a transportar uma carga útil para o espaço exterior.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DAS 	ATIVIDADES ESPACIAIS</h3>
+ <h3>Art. 3º Esta Lei aplica-se somente às seguintes atividades espaciais:</h3>
+ <h5>I - decolagem de veículos lançadores a partir do território nacional;</h5>
+ <h5>II - recondução de veículos lançadores, ou partes desses, à superfície da Terra, 	com pouso no território nacional;</h5>
+ <h5>III 	- transporte de material e de pessoal ao espaço exterior a partir do território nacional;</h5>
+ <h5>IV - desenvolvimento de artefatos espaciais no território nacional;</h5>
+ <h5>V - desenvolvimento de artefatos espaciais no exterior com participação de entidade brasileira;</h5>
+ <h5>VI - desenvolvimento de artefatos espaciais por encomenda de entidade brasileira;</h5>
+ <h5>VII 	- turismo espacial;</h5>
+ <h5>VIII 	- exploração de corpos celestes;</h5>
+ <h5>IX - exploração de recursos espaciais;</h5>
+ <h5>X - lançamento, comando, controle, reentrada e recuperação de artefatos espaciais dos quais o Brasil figure como Estado lançador;</h5>
+ <h5>XI - operação de equipamentos e de sistemas que permitam operação, transcepção de dados, monitoramento e vigilância de artefatos espaciais;</h5>
+ <h5>XII 	- realização de serviços para estender a vida útil de satélites;</h5>
+ <h5>XIII 	- remoção de detritos espaciais.</h5>
+ <h3>Art. 4º A atividade espacial, de acordo com sua natureza, classifica-se em:</h3>
+ <h5>I - atividade espacial de defesa: aquela conduzida para fins de segurança ou de defesa nacional, nos termos da Constituição Federal e da Lei Complementar nº 97, de 9 de junho de 1999 ;</h5>
+ <h5>II - atividade espacial civil: aquela que não se enquadra no conceito de atividade espacial de defesa.</h5>
+ <h4>Parágrafo único. As atividades espaciais civis que comprometam a segurança ou a defesa nacional serão acompanhadas pela autoridade espacial de defesa, 	nos termos desta Lei.</h4>
+ <h3>Art. 5º Compete à:</h3>
+ <h5>I - autoridade espacial de defesa, exercida pelo Comando da Aeronáutica, 	regulamentar e fiscalizar as atividades espaciais de defesa nacional;</h5>
+ <h5>II - autoridade espacial civil, exercida pela Agência Espacial Brasileira (AEB), 	regulamentar e fiscalizar as atividades espaciais civis realizadas no País.</h5>
+ <h4>§ 1º No caso de atividade espacial dual, as autoridades referidas nos incisos I e 	II do caput deste artigo atuarão em coordenação, cabendo decisões por consenso, na forma de regulamento.</h4>
+ <h4>§ 2º Excluem-se das competências previstas nos incisos I e II do caput deste artigo aquelas legalmente atribuídas à Agência Nacional de 	Telecomunicações (Anatel).</h4>
+ <h3>Art. 6º A recepção e a distribuição de dados espaciais sobre infraestruturas críticas e áreas sensíveis para a segurança nacional com emprego de infraestruturas espaciais no território nacional são passíveis de controle pelo Ministério da Defesa, na forma de regulamento.</h3>
+ <h3>Art. 7º A autorização para a instalação e a operação de sensores de monitoramento e de vigilância de artefatos e detritos espaciais e sua infraestrutura associada, em território nacional, dar-se-á pela autoridade espacial de defesa, ouvida a autoridade espacial civil, em proveito da consciência situacional espacial, sem prejuízo do disposto na Lei Complementar nº 97, de 	9 de junho de 1999.</h3>
+ <h4>§ 1º A autoridade espacial de defesa poderá requisitar o compartilhamento de dados relevantes, de artefatos e de detritos espaciais produzidos por essas infraestruturas, na forma de regulamento.</h4>
+ <h4>§ 2º O descarte dos dados somente poderá ocorrer mediante conhecimento da autoridade espacial de defesa, conforme regulamento próprio.</h4>
+ <h3>Art. 8º Com base nos tratados internacionais ratificados pelo País e na legislação brasileira, proteger-se-ão os processos de patenteamento de invenções e de modelos de utilidade, absorção tecnológica, transferência de tecnologias, exportação de bens sensíveis e propriedade intelectual que se vinculem às atividades espaciais.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA 	EXPLORAÇÃO DAS ATIVIDADES ESPACIAIS</h3>
+ <p>Seção I</p>
+ <p>Do Operador Espacial</p>
+ <h3>Art. 9º O operador espacial é uma entidade pública ou privada com representação jurídica no Brasil que executa atividade espacial de acordo com o disposto nesta Lei.</h3>
+ <h4>§ 1º O operador espacial privado poderá realizar atividades espaciais por meio de parceria com o setor público ou por meio de autorização, de permissão, de cessão ou de outros instrumentos congêneres previstos em Lei.</h4>
+ <h4>§ 2º Duas ou mais pessoas jurídicas poderão associar-se para a composição de um operador espacial, mediante a definição de uma pessoa jurídica líder que será responsável pelo cumprimento das obrigações legais, sem prejuízo da responsabilidade solidária das demais associadas ou consorciadas.</h4>
+ <h3>Art. 10. O operador espacial, de acordo com sua natureza, classifica-se em:</h3>
+ <h5>I - operador espacial de defesa: aquele que executa atividade espacial de defesa;</h5>
+ <h5>II - operador espacial civil: aquele que executa atividade espacial civil.</h5>
+ <p>Seção II</p>
+ <p>Da Exploração Econômica</p>
+ <h3>Art. 11. A União poderá realizar, de forma direta ou indireta, dispensada a licitação, a exploração econômica da infraestrutura espacial e das atividades espaciais, incluídos os serviços inerentes à operação e à 	utilização de sistemas espaciais.</h3>
+ <h4>§ 1º A exploração direta ocorrerá por intermédio de órgãos ou entidades da administração pública federal.</h4>
+ <h4>§ 2º A exploração indireta poderá ocorrer mediante instrumentos previstos em lei.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA 	REGULAMENTAÇÃO DAS ATIVIDADES ESPACIAIS</h3>
+ <p>Seção I</p>
+ <p>Do Licenciamento e da Autorização para Atividades 	Espaciais Civis</p>
+ <h3>Art. 12. A AEB, por meio de ato próprio, estabelecerá as normas para a execução de atividades espaciais civis no território nacional.</h3>
+ <h3>Art. 13. A AEB, observado regulamento próprio, expedirá licenças e autorizações para operadores espaciais civis.</h3>
+ <h4>§ 1º Poderão ser estabelecidos acordos e parcerias internacionais com vistas ao reconhecimento de certificações, de licenças e de autorizações que outros países emitam para empresas privadas ou públicas, contanto que esses instrumentos atendam às exigências da legislação e da regulamentação nacionais, mediante a apresentação dos documentos equivalentes, com validade no território nacional.</h4>
+ <h4>§ 2º O operador espacial civil somente poderá atuar no Brasil e executar atividades espaciais civis se possuir as devidas licenças e autorizações.</h4>
+ <h4>§ 3º A autoridade espacial de defesa será ouvida para fins de análise dos impactos da atividade espacial civil na segurança ou defesa nacional.</h4>
+ <h3>Art. 14. O Comando da Aeronáutica expedirá a autorização para voo de veículo lançador em espaço aéreo brasileiro, com vistas à execução de atividades espaciais civis no território nacional.</h3>
+ <h4>Parágrafo único. O Comando da Aeronáutica coordenará a análise de conjunção de lançamento em conjunto com a AEB para o caso de atividades espaciais civis.</h4>
+ <p>Seção II</p>
+ <p>Das Garantias para a Execução de Atividades 	Espaciais</p>
+ <h3>Art. 15. Para a obtenção de licença, nos termos desta Lei, o operador espacial civil deverá vincular garantias reais, fidejussórias e com base em apólices de seguros, em quaisquer combinações, para que, em caso de sinistro, seja garantida cobertura de danos a:</h3>
+ <h5>I - bens públicos passíveis de serem afetados, danificados ou destruídos; e</h5>
+ <h5>II - terceiros.</h5>
+ <h4>§ 1º A AEB definirá, em regulamento próprio, os patamares mínimos de valores e as condições aplicáveis às garantias e aos seguros previstos no caput deste artigo.</h4>
+ <h4>§ 2º A AEB definirá, em regulamento próprio, as atividades espaciais civis que não se submeterão às exigências previstas no caput deste artigo.</h4>
+ <h4>§ 3º O disposto no caput deste artigo não se aplica aos entes da administração pública direta, autárquica e fundacional.</h4>
+ <h4>§ 4º Em caso de sinistro a União responderá, subsidiariamente, nos termos desta 	Lei.</h4>
+ <p>Seção III</p>
+ <p>Dos Direitos e dos Deveres do Titular de Licença e de Autorização</p>
+ <h3>Art. 16. As licenças e as autorizações conferem aos seus titulares o direito de realizarem somente as atividades espaciais a elas correspondentes, nos termos desta Lei.</h3>
+ <h3>Art. 17. São deveres dos titulares de licença e de autorização:</h3>
+ <h5>I - cumprir e respeitar os princípios internacionais de utilização do espaço exterior, notadamente os tratados espaciais dos quais o Brasil é signatário;</h5>
+ <h5>II - informar os dados necessários para o registro dos artefatos espaciais que lancem ou controlem, nos termos desta Lei;</h5>
+ <h5>III 	- constituir e atualizar o seguro exigido, nos termos da lei e da regulamentação específica;</h5>
+ <h5>IV - cumprir as disposições legais e os regulamentos em vigor, bem como as condições previstas nas licenças e nas autorizações.</h5>
+ <h3>Art. 18. O operador espacial deverá notificar a autoridade espacial competente, 	no prazo de até 24 (vinte e quatro) horas, contado do seu conhecimento, 	sobre acidentes ou incidentes que tenham ocorrido em suas instalações ou no 	âmbito de sua atividade espacial.</h3>
+ <p>Seção IV</p>
+ <p>Da Supervisão das Atividades Espaciais Nacionais</p>
+ <h3>Art. 19. A supervisão das atividades espaciais compreende as ações de acompanhamento e de fiscalização que a autoridade espacial competente executará, conforme regulamento próprio.</h3>
+ <h4>Parágrafo único. A autoridade espacial competente poderá celebrar acordos com o propósito de instrumentalizar a supervisão das atividades espaciais.</h4>
+ <h3>Art. 20. No âmbito das atividades de supervisão, os operadores espaciais deverão:</h3>
+ <h5>I - garantir o livre acesso de pessoal técnico das autoridades espaciais competentes às suas instalações e dependências, bem como aos seus equipamentos, ressalvadas as condições impostas por acordos celebrados pelo 	País;</h5>
+ <h5>II - prestar as informações e o auxílio necessários ao desempenho das funções de supervisão;</h5>
+ <h5>III 	- manter disponíveis em suas instalações no território nacional, para supervisão, os documentos e os registros relacionados às suas atividades espaciais no País.</h5>
+ <h3>Art. 21. Caberá às autoridades espaciais competentes adotar medidas apropriadas para a proteção das informações obtidas em decorrência da supervisão.</h3>
+ <p>Seção V</p>
+ <p>Do Cancelamento, da Suspensão e da Alteração das 	Licenças e Autorizações</p>
+ <h3>Art. 22. Em caso de descumprimento de qualquer condição regulamentar, legal ou contratual, ou no caso de os desdobramentos das atividades espaciais comprometerem a segurança nacional ou entrarem em conflito com os compromissos internacionais assumidos pelo Brasil, a autoridade espacial competente poderá, a qualquer momento, cancelar, suspender ou alterar licença ou autorização.</h3>
+ <h4>Parágrafo único. O operador espacial permanecerá responsável pelos artefatos espaciais em operação, mesmo em caso de cancelamento ou de suspensão de sua licença ou de suas autorizações.</h4>
+ <p>Seção VI</p>
+ <p>Da Transferência a Terceiros</p>
+ <h3>Art. 23. A transferência a terceiros do controle de um artefato espacial que tenha sido escopo de licença ou de autorização, nos termos desta Lei, 	demandará novo processo de licenciamento ou de autorização em favor do novo titular.</h3>
+ <h3>Art. 24. Caberá à AEB autorizar a transferência de propriedade e de comando e controle de sistemas espaciais civis com registro no País ou pelo Brasil.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DAS 	ATIVIDADES DE APOIO</h3>
+ <p>Seção I</p>
+ <p>Do Registro Espacial Brasileiro (Resbra)</p>
+ <h3>Art. 25. A fim de cumprir as obrigações internacionais às quais o Brasil se submete referentes à formalização do Estado de registro, a AEB estabelecerá 	e coordenará o Registro Espacial Brasileiro (Resbra), como sistema de coleta, de tratamento e de armazenamento de dados e de informações sobre as atividades espaciais nacionais.</h3>
+ <h4>§ 1º Além do previsto no caput deste artigo, o Resbra poderá incluir em seus registros dados e informações sobre:</h4>
+ <h5>I - operadores espaciais civis nacionais;</h5>
+ <h5>II - atividades espaciais civis nacionais;</h5>
+ <h5>III 	- artefatos espaciais nacionais;</h5>
+ <h5>IV - licenças e autorizações relacionadas às atividades espaciais civis;</h5>
+ <h5>V - outorgas de direitos de qualquer natureza e transações delas decorrentes.</h5>
+ <h4>§ 2º O operador espacial que atuar no território nacional deverá disponibilizar ao Resbra os dados e as informações de interesse do sistema.</h4>
+ <h4>§ 3º Se houver 2 (dois) ou mais Estados lançadores em relação a um artefato espacial, será determinado por acordo entre eles o Estado de registro para esse artefato.</h4>
+ <h4>§ 4º As atividades espaciais experimentais serão objeto de registro.</h4>
+ <h4>§ 5º O Comando da Aeronáutica terá acesso aos dados constantes do Resbra.</h4>
+ <h4>§ 6º A disponibilização a terceiros de dados do Resbra dar-se-á mediante consulta ao Comando da Aeronáutica quanto às questões de segurança nacional.</h4>
+ <h4>§ 7º Ato da AEB disporá sobre o funcionamento do Resbra.</h4>
+ <h3>Art. 26. Caberá ao operador espacial promover os registros no Resbra, bem como nas organizações internacionais.</h3>
+ <p>Seção II</p>
+ <p>Da Prevenção e da Investigação de Acidentes em 	Atividades Espaciais</p>
+ <h3>Art. 27. Para os fins exclusivos de prevenção de acidentes em atividades espaciais, é instituído o Sistema de Investigação e Prevenção de Acidentes em Atividades Espaciais (Sipae).</h3>
+ <h4>Parágrafo único. Para os efeitos do caput deste artigo, considera-se sistema o conjunto de órgãos, de organizações, de entidades e de elementos relacionados entre si para a finalidade específica de prevenção de acidentes em atividades espaciais ou por interesse de coordenação e orientação técnica e normativa, sem implicar subordinação hierárquica.</h4>
+ <h3>Art. 28. Compõem o Sipae:</h3>
+ <h5>I - a AEB;</h5>
+ <h5>II - o Comando da Aeronáutica; e</h5>
+ <h5>III 	- as organizações militares e civis, públicas e privadas, que atuem em:</h5>
+ <h6>a) 	fabricação de artefatos espaciais;</h6>
+ <h6>b) 	operação de artefatos espaciais;</h6>
+ <h6>c) 	manutenção de artefatos espaciais;</h6>
+ <h6>d) 	controle do espaço aéreo; e</h6>
+ <h6>e) 	atividades de apoio da infraestrutura espacial.</h6>
+ <h3>Art. 29. O Comando da Aeronáutica, em coordenação com a AEB, definirá o funcionamento do Sipae.</h3>
+ <h3>Art. 30. A atuação do Sipae será baseada em práticas, em técnicas, em procedimentos e em métodos com o objetivo de, no contexto das atividades espaciais, identificar eventos, ações, condições ou circunstâncias que, de forma isolada ou conjunta, representem riscos à integridade de pessoas, às infraestruturas espaciais e a outros bens, unicamente em proveito da prevenção de acidentes em atividades espaciais.</h3>
+ <h3>Art. 31. Em caso de acidentes ou incidentes relacionados a atividades espaciais, 	o Sipae deverá atuar de maneira a considerar as seguintes prerrogativas:</h3>
+ <h5>I - condução das investigações pelo Comando da Aeronáutica;</h5>
+ <h5>II - atuação independente de quaisquer outras investigações sobre o mesmo evento, 	de maneira a não impedir ou substituir a atuação de demais autoridades competentes;</h5>
+ <h5>III 	- vedação à participação de pessoa que tenha atuado ou que atue, com relação a um mesmo evento, em investigações com fins distintos do Sipae;</h5>
+ <h5>IV - garantia de acesso ao artefato espacial acidentado e a seus destroços, bem como a dependências, equipamentos, documentos e quaisquer outros elementos necessários à investigação, respeitados os acordos de salvaguarda;</h5>
+ <h5>V - emissão de relatório final para formalizar seu pronunciamento sobre os fatores que possivelmente tenham contribuído para o evento, com recomendações unicamente em proveito da segurança das atividades espaciais.</h5>
+ <h3>Art. 32. Toda informação que for fornecida em proveito da atuação do Sipae deverá 	ser espontânea e baseada na garantia legal de uso exclusivo para fins de prevenção de acidentes ou incidentes relacionados a atividades espaciais.</h3>
+ <h4>Parágrafo único. O investigador do Sipae não poderá revelar suas fontes e respectivos conteúdos, salvo em proveito da atuação do sistema, e será 	aplicado o disposto no art. 207 do Decreto-Lei n° 3.689, de 3 de outubro de 	1941 (Código de Processo Penal).</h4>
+ <h3>Art. 33. As análises e as conclusões do Sipae não serão utilizadas para fins probatórios em processos judiciais e em procedimentos administrativos.</h3>
+ <p>Seção III</p>
+ <p>Da Proteção Ambiental</p>
+ <h3>Art. 34. Os órgãos federais competentes conduzirão em regime especial os licenciamentos ambientais relacionados às atividades espaciais, com base nos requisitos técnicos aplicáveis desta Lei e da legislação ambiental.</h3>
+ <h4>Parágrafo único. (VETADO).</h4>
+ <h4>Parágrafo único. Exceto os casos de parecer justificadamente em sentido contrário, o processo de licenciamento ambiental deverá ser concluído no prazo máximo de 60 (sessenta) dias, prorrogável 1 	(uma) única vez, sob pena de aprovação tácita.</h4>
+ <p>Seção IV</p>
+ <p>Da Mitigação de Detritos Espaciais</p>
+ <h3>Art. 35. A atividade espacial deverá ser planejada e realizada de forma a atenuar a geração de detritos espaciais.</h3>
+ <h4>§ 1º O operador espacial deverá planejar a atividade espacial e a mitigação de detritos espaciais de maneira a reduzir o risco de colisões em órbita.</h4>
+ <h4>§ 2º Para as atividades espaciais civis, caberá à AEB emitir regulamentos específicos que visem a mitigar a geração de detritos.</h4>
+ <h3>Art. 36. Incumbirá ao Comando da Aeronáutica, com o apoio da AEB, a coordenação dos meios para a consciência situacional espacial dos artefatos e dos detritos espaciais.</h3>
+ <h4>Parágrafo único. Ao Comando da Aeronáutica caberá:</h4>
+ <h5>I - recorrer a parcerias nacionais ou internacionais para o cumprimento do disposto no caput , quando julgar necessário;</h5>
+ <h5>II - aplicar a consciência situacional espacial, com os sistemas próprios e com os insumos que as parcerias nacionais e internacionais correlatas gerarem;</h5>
+ <h5>III 	- consolidar as informações provenientes dos diversos operadores espaciais nacionais e internacionais.</h5>
+ <p>Seção V</p>
+ <p>Do Resgate de Artefatos Espaciais</p>
+ <h3>Art. 37. A AEB coordenará, com os órgãos e as instituições competentes, as ações requeridas para a realização de resgate de artefatos e de detritos espaciais no território nacional.</h3>
+ <h4>Parágrafo único. A AEB poderá realizar os acordos e as parcerias necessários para viabilizar as ações previstas no caput deste artigo.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA 	APLICAÇÃO DOS RECURSOS OBTIDOS NA EXPLORAÇÃO DAS ATIVIDADES ESPACIAIS</h3>
+ <h3>Art. 38. Os recursos que a União obtiver a partir da exploração das atividades espaciais e da aplicação das sanções administrativas previstas nesta Lei serão destinados a investimento nas áreas de:</h3>
+ <h5>I - pesquisa, desenvolvimento e inovação no setor espacial;</h5>
+ <h5>II - manutenção da infraestrutura espacial;</h5>
+ <h5>III 	- desenvolvimento e manutenção da consciência situacional espacial;</h5>
+ <h5>IV - fomento à indústria espacial nacional;</h5>
+ <h5>V - prevenção e investigação de acidentes em atividades espaciais;</h5>
+ <h5>VI - desenvolvimento socioambiental dos territórios adjacentes àqueles nos quais são desenvolvidas atividades espaciais.</h5>
+ <h4>Parágrafo único. Ato do Poder Executivo disporá sobre os percentuais que serão aplicados a cada uma das áreas previstas no caput deste artigo.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DAS 	RESPONSABILIDADES</h3>
+ <h3>Art. 39. Em caso de sinistro, o operador espacial terá como limites de responsabilidade os valores identificados durante os processos de licenciamento e de autorização, conforme o disposto nesta Lei.</h3>
+ <h4>Parágrafo único. A União atuará subsidiariamente para complementar o valor das indenizações, de acordo com as obrigações internacionais a que o Brasil se vincula, com direito de regresso a quem deu causa ao sinistro em caso de dolo ou de culpa grave.</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DAS 	TARIFAS</h3>
+ <h3>Art. 40. Sem prejuízo do disposto nos arts. 8º , 9º , 10 e 11 da Lei n° 6.009, de 	26 de dezembro de 1973 , e dos arts. 1º e 2º da Lei n° 9.994, de 24 de julho de 2000 , a autoridade espacial competente poderá cobrar tarifas como contrapartida aos serviços decorrentes de suas obrigações no âmbito desta 	Lei, de acordo com regulamento próprio.</h3>
+ <h4>§ 1º O produto da arrecadação das tarifas referidas no caput deste artigo será destinado ao Fundo Nacional de Desenvolvimento Científico e Tecnológico 	(FNDCT) e ao Fundo Aeronáutico, para aplicação em conformidade com o disposto nesta Lei.</h4>
+ <h4>§ 2º As atividades espaciais governamentais civis ou de defesa serão isentas de tarifas.</h4>
+ <h4>§ 3º Poderá ocorrer isenção de tarifas relativas aos sistemas espaciais governamentais de outros países, mediante negociação de compensação entre o 	Brasil e o Estado estrangeiro.</h4>
+ <h4>§ 4º Caberá à autoridade espacial competente recolher as tarifas de que trata este artigo.</h4>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DAS 	PENALIDADES</h3>
+ <p>Seção I</p>
+ <p>Das Infrações e das Sanções</p>
+ <h3>Art. 41. O operador espacial incorrerá em infração passível de sanções, sem prejuízo de eventual responsabilidade civil ou criminal, ao cometer um ou mais dos seguintes atos, no âmbito nacional:</h3>
+ <h5>I - realizar atividades espaciais sem as devidas licenças ou autorizações;</h5>
+ <h5>II - continuar a atividade espacial após suspensão de licença ou de autorização, 	com exceção dos casos previstos nesta Lei;</h5>
+ <h5>III 	- continuar a atividade espacial após notificação formal da autoridade espacial competente para sua interrupção, com exceção dos casos previstos nesta Lei;</h5>
+ <h5>IV - descumprir qualquer obrigação relativa à licença ou à autorização;</h5>
+ <h5>V - deixar de informar os dados necessários ao Resbra, de acordo com o que institui esta Lei;</h5>
+ <h5>VI - deixar de manter o seguro, nos termos desta Lei;</h5>
+ <h5>VII 	- retardar ou falhar em reportar acidentes ou incidentes ou reportá-los com informação falsa ou incorreta;</h5>
+ <h5>VIII 	- deixar de cumprir determinações decorrentes da fiscalização, nos termos desta Lei;</h5>
+ <h5>IX - apresentar informações falsas ou incorretas durante os processos de licenciamento e de autorização;</h5>
+ <h5>X - apresentar informações falsas ou incorretas em processo de transferência de comando e de controle de artefato espacial.</h5>
+ <h4>§ 1º A prática das infrações previstas no caput deste artigo sujeitará o infrator às seguintes sanções:</h4>
+ <h5>I - advertência;</h5>
+ <h5>II - suspensão de licença;</h5>
+ <h5>III 	- revogação de licença;</h5>
+ <h5>IV - suspensão de autorização;</h5>
+ <h5>V - revogação de autorização;</h5>
+ <h5>VI - multa.</h5>
+ <h4>§ 2º A autoridade espacial competente definirá em ato próprio as condições para a aplicação das sanções, de acordo com as características de cada infração e as suas consequências.</h4>
+ <h3>Art. 42. Qualquer pessoa, natural ou jurídica, que constatar a ocorrência de infração deverá comunicá-la à autoridade espacial competente, para a adoção das medidas cabíveis.</h3>
+ <p>Seção II</p>
+ <p>Do Processamento das Sanções</p>
+ <h3>Art. 43. A autoridade espacial competente aplicará as sanções decorrentes das infrações conforme o disposto nesta Lei e em regulamento específico, com observância do direito ao contraditório e à ampla defesa.</h3>
+ <h4>Parágrafo único. O montante resultante de multas pecuniárias deverá ser revertido ao FNDCT e ser aplicado de acordo com as disposições desta Lei.</h4>
+ <h3>Art. 44. As controvérsias decorrentes da interpretação ou da aplicação desta Lei poderão ser submetidas à câmara de prevenção e resolução administrativa de conflitos de que trata o caput do art. 32 da Lei n° 13.140, de 26 de junho de 2015 (Lei da Mediação), conforme rito previsto em norma específica da autoridade espacial competente.</h3>
+ <h3>Art. 45. A União poderá propor ou aceitar, quando julgar conveniente, recurso às 	Regras Opcionais da Corte Permanente de Arbitragem Relativas a Atividades no 	Espaço Exterior, acordo do qual o Brasil é signatário.</h3>
+ <h2>CAPÍTULO X</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 46. No prazo de até 180 (cento e oitenta) dias, contado da data de entrada em vigor desta Lei, a AEB deverá estabelecer o Resbra, em coordenação com os 	órgãos e as entidades nacionais necessários.</h3>
+ <h3>Art. 47. No prazo de até 365 (trezentos e sessenta e cinco) dias, contado da data de entrada em vigor desta Lei, as autoridades espaciais competentes deverão atualizar o conjunto de regulamentos relativos às suas atividades espaciais.</h3>
+ <h3>Art. 48. No prazo de até 180 (cento e oitenta) dias, contado da data de entrada em vigor desta Lei, ato do Poder Executivo estabelecerá colegiado interministerial, no âmbito da Presidência da República, de caráter deliberativo, com a competência de estabelecer os parâmetros gerais relativos à formulação, ao acompanhamento e à avaliação da política espacial brasileira e de estimular cooperações internacionais estratégicas.</h3>
+ <h3>Art. 49. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 31 de julho de 2024; 203º da Independência e 136º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA 	SILVA</h3>
+ <p>Maria Osmarina Marina da Silva Vaz de Lima</p>
+ <p>Jorge Rodrigo Araújo 	Messias</p>
+ <p>Este texto não substitui o publicado no DOU de 	1º.8.2024.</p>
+ <p>*</p>
+ <h3>LEI N° 14.946, DE 31 DE JULHO DE 2024</h3>
+ <p>Institui normas aplicáveis a atividades espaciais nacionais .</p>
+ <p>O PRESIDENTE DA REPÚBLICA, Faço saber que o Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, a seguinte parte vetada da Lei N° 14.946, de 31 de julho de 	2024:</p>
+ <p>“</p>
+ <h3>Art. 34. 	........................................................................................................................</h3>
+ <h4>Parágrafo único . Exceto os casos de parecer justificadamente em sentido contrário, o processo de licenciamento ambiental deverá ser concluído no prazo máximo de 60 (sessenta) dias, prorrogável 1 	(uma) única vez, sob pena de aprovação tácita.”</h4>
+ <p>Brasília, 1º de julho de 2025; 204º da Independência e 137º da República.</p>
+ <h3>LUIZ 	INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 	2.7.2025.</p>
+ <p>Institui normas aplicáveis a atividades espaciais nacionais.</p>
+ <p>Institui normas aplicáveis a atividades espaciais nacionais.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14946.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
