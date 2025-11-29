@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 12.725, DE 16 DE OUTUBRO DE 2012 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2012" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 12.725, DE 16 DE OUTUBRO DE 2012</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 20:37:51 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/L12725.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 11.443 caracteres | espelho: 11.429 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 12.725, DE 16 DE OUTUBRO DE 2012.</p>
+ <p>Dispõe sobre o controle da fauna nas imediações de aeródromos.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei estabelece regras que visam à diminuição do risco de acidentes e incidentes aeronáuticos decorrentes da colisão de aeronaves com espécimes da fauna nas imediações de aeródromos.</h3>
+ <h3>Art. 2º Para os efeitos desta Lei, considera-se:</h3>
+ <h5>I - abate: morte de animais em qualquer fase do seu ciclo de vida, causada e controlada pelo homem;</h5>
+ <h5>II - aeródromo: toda área destinada ao pouso, à decolagem e à movimentação de aeronaves;</h5>
+ <h5>III - aeródromo militar: aquele destinado ao uso de aeronaves militares;</h5>
+ <h5>IV - aeroporto: todo aeródromo público dotado de instalações e facilidades para apoio a aeronaves e ao embarque e desembarque de pessoas e cargas;</h5>
+ <h5>V - Área de Segurança Aeroportuária - ASA: área circular do território de um ou mais municípios, definida a partir do centro geométrico da maior pista do aeródromo ou do aeródromo militar, com 20 km (vinte quilômetros) de raio, cujos uso e ocupação estão sujeitos a restrições especiais em função da natureza atrativa de fauna;</h5>
+ <h5>VI - atividade atrativa de fauna: vazadouros de resíduos sólidos e quaisquer outras atividades que sirvam de foco ou concorram para a atração relevante de fauna, no interior da ASA, comprometendo a segurança operacional da aviação;</h5>
+ <h5>VII - atividade com potencial atrativo de fauna: aterros sanitários e quaisquer outras atividades que, utilizando as devidas técnicas de operação e de manejo, não se constituam como foco atrativo de fauna no interior da ASA, nem comprometam a segurança operacional da aviação;</h5>
+ <h5>VIII - autoridade ambiental: órgão ou entidade federal, estadual ou municipal integrante do Sistema Nacional do Meio Ambiente - SISNAMA e responsável pela concessão de licenciamento ambiental;</h5>
+ <h5>IX - autoridade aeronáutica militar: o Comando da Aeronáutica - COMAER ou aquele a quem o Comando tenha delegado competência para o desempenho de suas atribuições;</h5>
+ <h5>X - autoridade de aviação civil: a Agência Nacional de Aviação Civil - ANAC;</h5>
+ <h5>XI - autoridade municipal: o órgão ou entidade competente da administração municipal ou do Distrito Federal;</h5>
+ <h5>XII - captura: ato ou efeito de deter, conter por meio mecânico ou impedir a movimentação de um animal, seguido de sua coleta ou soltura;</h5>
+ <h5>XIII - espécie-problema: espécie da fauna, nativa ou exótica, que interfira na segurança operacional da aviação;</h5>
+ <h5>XIV - espécie sinantrópica: espécie animal adaptada a viver junto ao homem, a despeito da vontade deste, e que difere dos animais domésticos criados com as finalidades de companhia, produção de alimentos ou transporte;</h5>
+ <h5>XV - manejo de fauna: aplicação de conhecimento ecológico às populações de espécies da fauna e da flora, que busca o equilíbrio entre as necessidades dessas populações e as necessidades das pessoas;</h5>
+ <h5>XVI - operador do aeródromo: órgão, entidade ou empresa responsável pela administração do aeródromo;</h5>
+ <h5>XVII - parâmetros de adequação: medidas determinadas pela autoridade competente com a finalidade de gerenciar e reduzir o risco de acidentes e incidentes aeronáuticos decorrentes da colisão de aeronaves com espécimes da fauna nos aeródromos;</h5>
+ <h5>XVIII - Plano de Manejo da Fauna em Aeródromos - PMFA: documento técnico que especifica detalhadamente as intervenções necessárias no meio ambiente, natural ou antrópico, de um aeródromo ou diretamente nas populações de espécies da fauna, nativa ou exótica, com o objetivo de reduzir o risco de colisões com aeronaves;</h5>
+ <h5>XIX - Programa Nacional de Gerenciamento do Risco da Fauna - PNGRF: documento de caráter normativo que estabelece objetivos e metas com o intuito de aprimorar a segurança operacional no País por meio do gerenciamento proativo do risco decorrente da colisão de aeronaves com espécies da fauna, nativa ou exótica;</h5>
+ <h5>XX - restrições especiais: quaisquer das seguintes limitações impostas pela autoridade competente no âmbito da aviação ao aproveitamento de imóvel, público ou privado, situado no interior da ASA:</h5>
+ <h6>a) proibição de implantação de atividade atrativa de espécimes da fauna;</h6>
+ <h6>b) cessação, imediata ou gradual, de atividade atrativa de espécimes da fauna, devendo o responsável pela atividade observar o estrito cumprimento do previsto na legislação ambiental vigente, inclusive quanto à recuperação da área degradada;</h6>
+ <h6>c) adequação das atividades com potencial de atração de espécimes da fauna aos parâmetros definidos pela autoridade competente, acompanhada ou não de sua suspensão;</h6>
+ <h6>d) implantação e operação de atividades com potencial de atração de espécimes da fauna, observados a autorização e os parâmetros de adequação, ambos definidos pela autoridade competente;</h6>
+ <h5>XXI - segurança operacional: estado em que o risco de lesões às pessoas ou de danos aos bens se reduz e se mantém em um nível aceitável, ou abaixo deste, por meio de um processo contínuo de identificação de perigos e gestão de riscos; e</h5>
+ <h5>XXII - translocação: captura de organismos vivos em uma determinada área para posterior soltura em outra área previamente determinada, conforme a distribuição geográfica da espécie.</h5>
+ <h3>Art. 3º Para o gerenciamento e a redução do risco de acidentes e incidentes aeronáuticos decorrentes da colisão de aeronaves com espécimes da fauna nos aeródromos, é estabelecida a Área de Segurança Aeroportuária - ASA, onde o aproveitamento e o uso do solo são restritos e condicionados ao cumprimento de exigências normativas específicas de segurança operacional da aviação e ambientais.</h3>
+ <h4>§ 1º O perímetro da Área de Segurança Aeroportuária - ASA do aeródromo será definido a partir do centro geométrico da maior pista do aeródromo ou do aeródromo militar e compreenderá um raio de 20 km (vinte quilômetros).</h4>
+ <h4>§ 2º O Programa Nacional de Gerenciamento do Risco da Fauna - PNGRF, desenvolvido e supervisionado pelas autoridades de aviação civil, aeronáutica militar e ambiental, abrangerá objetivos e metas comuns aos aeródromos e suas respectivas ASAs.</h4>
+ <h3>Art. 4º As restrições especiais constantes no PNGRF devem ser observadas, obrigatoriamente:</h3>
+ <h5>I - pela autoridade municipal, na ordenação e controle do uso e ocupação do solo urbano, sendo ela a responsável pela implementação e fiscalização do PNGRF;</h5>
+ <h5>II - pela autoridade ambiental, no processo de licenciamento ambiental e durante as atividades de fiscalização e controle; e</h5>
+ <h5>III - pelo operador do aeródromo, na administração do sítio aeroportuário.</h5>
+ <h4>§ 1º As propriedades rurais incorporadas à ASA também são sujeitas às restrições especiais previstas no PNGRF e à fiscalização pela autoridade municipal.</h4>
+ <h4>§ 2º Os instrumentos de planejamento municipal que disciplinam o parcelamento, o uso e a ocupação do solo observarão as disposições desta Lei e as restrições especiais previstas no PNGRF.</h4>
+ <h3>Art. 5º A administração pública federal, estadual ou municipal, o operador do aeródromo e o proprietário dos imóveis ou empreendimentos situados na ASA são obrigados a prestar as informações requisitadas pela autoridade de aviação civil ou pela autoridade aeronáutica militar.</h3>
+ <h3>Art. 6º O manejo da fauna em aeródromos e em áreas de entorno será autorizado pela autoridade ambiental mediante a aprovação do Plano de Manejo da Fauna em Aeródromos - PMFA e poderá envolver:</h3>
+ <h5>I - manejo do ambiente;</h5>
+ <h5>II - manejo de animais ou de partes destes;</h5>
+ <h5>III - transporte e destinação do material zoológico coletado;</h5>
+ <h5>IV - captura e translocação;</h5>
+ <h5>V - coleta e destruição de ovos e ninhos; e</h5>
+ <h5>VI - abate de animais.</h5>
+ <h4>§ 1º O PMFA deve avaliar as formas de controle e de redução do potencial perigo de colisões de aeronaves com espécimes da fauna, subsidiado por dados obtidos a partir de método científico e que contemplem aspectos da dinâmica populacional da(s) espécie(s)-problema.</h4>
+ <h4>§ 2º O abate de animais somente será permitido:</h4>
+ <h5>I - após comprovação de que o uso de manejo indireto e direto da(s) espécie(s)-problema ou do ambiente não tenha gerado resultados significativos na redução do perigo de colisões de aeronaves com espécimes da fauna no aeródromo;</h5>
+ <h5>II - após comprovação de que o impacto ambiental ou o custo econômico da transferência de espécies sinantrópicas ou da(s) espécie(s)-problema não ameaçada(s) de extinção não justificam a translocação.</h5>
+ <h4>§ 3º Os animais abatidos, ninhos e demais materiais zoológicos coletados poderão ser encaminhados para coleções de instituições científicas ou descartados.</h4>
+ <h4>§ 4º O descarte de material zoológico deverá ser feito por meio de enterro, deposição em aterro sanitário, incineração ou demais formas adequadas e possíveis no Município onde se localiza o aeródromo em questão.</h4>
+ <h4>§ 5º A autorização para o manejo da fauna silvestre não exime os portadores do cumprimento da Lei n° 9.605, de 12 de fevereiro de 1998.</h4>
+ <h3>Art. 7º Constitui infração ao disposto nesta Lei:</h3>
+ <h5>I - implantar ou operar atividade com potencial de atração de espécimes da fauna na ASA sem submetê-la à aprovação da autoridade municipal e da autoridade ambiental;</h5>
+ <h5>II - estimular, desenvolver ou permitir que se desenvolva atividade com potencial de atração de espécimes da fauna consideradas proibidas no interior da ASA;</h5>
+ <h5>III - desrespeitar prazo que haja sido estabelecido para a cessação de atividade com potencial de atração de espécimes da fauna;</h5>
+ <h5>IV - deixar de adequar atividade com potencial de atração de espécimes da fauna a parâmetros definidos nas restrições especiais; e</h5>
+ <h5>V - desrespeitar a determinação de suspender atividade atrativa de espécimes da fauna.</h5>
+ <h3>Art. 8º Em razão das infrações previstas no art. 7º desta Lei, são cabíveis as seguintes sanções administrativas:</h3>
+ <h5>I - notificação de advertência;</h5>
+ <h5>II - multa simples;</h5>
+ <h5>III - multa diária;</h5>
+ <h5>IV - suspensão de atividade;</h5>
+ <h5>V - interdição de área ou estabelecimento; e</h5>
+ <h5>VI - embargo de obra.</h5>
+ <h4>§ 1º As sanções administrativas serão suspensas tão logo sejam sanados os motivos que ensejaram a sua imposição.</h4>
+ <h4>§ 2º As sanções previstas nos incisos II e IV do caput deste artigo poderão ser aplicadas cumulativamente.</h4>
+ <h4>§ 3º As multas serão aplicadas de acordo com a gravidade da infração, respeitados os seguintes limites:</h4>
+ <h5>I - para multa simples, o mínimo de R$ 1.000,00 (mil reais) e o máximo de R$ 1.250.000,00 (um milhão, duzentos e cinquenta mil reais); e</h5>
+ <h5>II - para multa diária, o mínimo de R$ 250,00 (duzentos e cinquenta reais) e o máximo de R$ 12.500,00 (doze mil e quinhentos reais).</h5>
+ <h3>Art. 9º São circunstâncias que agravam as sanções previstas nesta Lei:</h3>
+ <h5>I - reincidência;</h5>
+ <h5>II - evidências de que o infrator, por incorrer em quaisquer das atitudes previstas no art. 7º desta Lei, colaborou para a ocorrência de acidente ou incidente aeronáutico resultante da colisão de aeronave com espécimes da fauna nas imediações de aeródromo.</h5>
+ <h3>Art. 10. A aplicação das sanções administrativas previstas nesta Lei é atribuição da autoridade municipal.</h3>
+ <h3>Art. 11. O montante auferido pela arrecadação de multas deverá ser empregado em atividades que concorram para a redução do risco de acidentes e incidentes aeronáuticos decorrentes da colisão de aeronaves com espécimes da fauna.</h3>
+ <h3>Art. 12. Esta Lei entra em vigor após decorridos 180 (cento e oitenta) dias de sua publicação oficial.</h3>
+ <p>Brasília, 16 de outubro de 2012; 191º da Independência e 124º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Celso Luiz Nunes Amorim</p>
+ <p>Izabella Mônica Vieira Teixeira</p>
+ <p>Wagner Bittencourt de Oliveira</p>
+ <p>Este texto não substitui o publicado no DOU de 17.10.2012</p>
+ <p>Dispõe sobre o controle da fauna nas imediações de aeródromos.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/L12725.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

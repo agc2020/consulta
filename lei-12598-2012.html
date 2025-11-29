@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 12.598, DE 21 DE MARÇO DE 2012 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2012" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 12.598, DE 21 DE MARÇO DE 2012</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 20:41:48 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/L12598.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 32.111 caracteres | espelho: 32.362 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 12.598, DE 21 DE MARÇO DE 2012. Conversão da Medida Provisória nº 544, de 2011.</p>
+ <p>Regulamento</p>
+ <p>(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</p>
+ <p>Estabelece normas especiais para as compras, as contratações e o desenvolvimento de produtos e de sistemas de defesa; dispõe sobre regras de incentivo à área estratégica de defesa; altera a Lei n° 12.249, de 11 de junho de 2010; e dá outras providências.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei estabelece normas especiais para as compras, as contratações e o desenvolvimento de produtos e de sistemas de defesa e dispõe sobre regras de incentivo à área estratégica de defesa.</h3>
+ <h4>Parágrafo único. Subordinam-se ao regime especial de compras, de contratações de produtos, de sistemas de defesa, e de desenvolvimento de produtos e de sistemas de defesa, além dos órgãos da administração direta, os fundos especiais, as autarquias, as fundações públicas, as empresas públicas e privadas, as sociedades de economia mista, os órgãos e as entidades públicas fabricantes de produtos de defesa e demais entidades controladas, direta ou indiretamente, pela União, pelos Estados, pelo Distrito Federal e pelos Municípios.</h4>
+ <h3>Art. 1º-A As Empresas 	Estratégicas de Defesa - EED são essenciais para a promoção do desenvolvimento científico e tecnológico brasileiro e fundamentais para preservação da segurança e defesa nacional contra ameaças externas. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h3>
+ <h3>Art. 1º-A. As Empresas Estratégicas de Defesa (EEDs) são essenciais para a promoção do desenvolvimento científico e tecnológico brasileiro e fundamentais para a preservação da segurança e da defesa nacional contra ameaças externas. (Incluído pela Lei n° 14.459, de 2022)</h3>
+ <h3>Art. 2º Para os efeitos desta Lei, são considerados:</h3>
+ <h5>I - Produto de Defesa - PRODE - todo bem, serviço, obra ou informação, inclusive armamentos, munições, meios de transporte e de comunicações, fardamentos e materiais de uso individual e coletivo utilizados nas atividades finalísticas de defesa, com exceção daqueles de uso administrativo;</h5>
+ <h5>II - Produto Estratégico de Defesa - PED - todo Prode que, pelo conteúdo tecnológico, pela dificuldade de obtenção ou pela imprescindibilidade, seja de interesse estratégico para a defesa nacional, tais como:</h5>
+ <h6>a) recursos bélicos navais, terrestres e aeroespaciais;</h6>
+ <h6>b) serviços técnicos especializados na área de projetos, pesquisas e desenvolvimento científico e tecnológico;</h6>
+ <h6>c) equipamentos e serviços técnicos especializados para as áreas de informação e de inteligência;</h6>
+ <h5>III - Sistema de Defesa - SD - conjunto inter-relacionado ou interativo de Prode que atenda a uma finalidade específica;</h5>
+ <h5>IV - Empresa Estratégica de Defesa - EED - toda pessoa jurídica credenciada pelo Ministério da Defesa mediante o atendimento cumulativo das seguintes condições:</h5>
+ <h6>a) ter como finalidade, em seu objeto social, a realização ou condução de atividades de pesquisa, projeto, desenvolvimento, industrialização, prestação dos serviços referidos no art. 10, produção, reparo, conservação, revisão, conversão, modernização ou manutenção de PED no País, incluídas a venda e a revenda somente quando integradas às atividades industriais supracitadas;</h6>
+ <h6>b) ter no País a sede, a sua administração e o estabelecimento industrial, equiparado a industrial ou prestador de serviço;</h6>
+ <h6>c) dispor, no País, de comprovado conhecimento científico ou tecnológico próprio ou complementado por acordos de parceria com Instituição Científica e Tecnológica para realização de atividades conjuntas de pesquisa científica e tecnológica e desenvolvimento de tecnologia, produto ou processo, relacionado à atividade desenvolvida, observado o disposto no inciso X do caput ;</h6>
+ <h6>d) assegurar, em seus atos constitutivos ou nos atos de seu controlador direto ou indireto, que o conjunto de sócios ou acionistas e grupos de sócios ou acionistas estrangeiros não possam exercer em cada assembleia geral número de votos superior a 2/3 (dois terços) do total de votos que puderem ser exercidos pelos acionistas brasileiros presentes; e</h6>
+ <h6>e) assegurar a continuidade produtiva no País;</h6>
+ <h5>V - Inova ção - introdução de novidade ou aperfeiçoamento no ambiente produtivo de Prode;</h5>
+ <h5>VI - Desenvolvimento - concepção ou projeto de novo Prode ou seu aperfeiçoamento, incluindo, quando for o caso, produção de protótipo ou lote piloto;</h5>
+ <h5>VII - Compensação - toda e qualquer prática acordada entre as partes, como condição para a compra ou contratação de bens, serviços ou tecnologia, com a intenção de gerar benefícios de natureza tecnológica, industrial ou comercial, conforme definido pelo Ministério da Defesa;</h5>
+ <h5>VIII - Acordo de Compensação - instrumento legal que formaliza o compromisso e as obrigações do fornecedor para compensar as compras ou contratações realizadas;</h5>
+ <h5>IX - Plano de Compensação - documento que regula a especificidade de cada compromisso e permite controlar o andamento de sua execução;</h5>
+ <h5>X - Instituição Científica e Tecnológica - ICT - órgão ou entidade da administração pública definida nos termos do inciso V do caput do art. 2º da Lei n° 10.973, de 2 de dezembro de 2004;</h5>
+ <h5>XI - Sócios ou Acionistas Brasileiros:</h5>
+ <h6>a) pessoas naturais brasileiras, natas ou naturalizadas, residentes no Brasil ou no exterior;</h6>
+ <h6>b) pessoas jurídicas de direito privado organizadas em conformidade com a lei brasileira que tenham no País a sede e a administração, que não tenham estrangeiros como acionista controlador nem como sociedade controladora e sejam controladas, direta ou indiretamente, por uma ou mais pessoas naturais de que trata a alínea a ; e</h6>
+ <h6>c) os fundos ou clubes de investimentos, organizados em conformidade com a lei brasileira, com sede e administração no País e cujos administradores ou condôminos, detentores da maioria de suas quotas, sejam pessoas que atendam ao disposto nas alíneas a e b ;</h6>
+ <h5>XII - Sócios ou Acionistas Estrangeiros - as pessoas, naturais ou jurídicas, os fundos ou clubes de investimento e quaisquer outras entidades não compreendidas no inciso XI do caput .</h5>
+ <h4>Parágrafo único. As EED serão submetidas à avaliação das condições previstas no inciso IV do caput na forma disciplinada pelo Ministério da Defesa.</h4>
+ <h2>CAPÍTULO I-A</h2>
+ <p>(Incluído pela 	Medida Provisória nº 1.123, de 2022)</p>
+ <h3>DO 	CREDENCIAMENTO E DO DESCREDENCIAMENTO</h3>
+ <h3>Art. 2º-A O credenciamento e o descredenciamento de pessoa jurídica como EED observarão procedimento estabelecido em ato do 	Ministro de Estado da Defesa. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h3>
+ <h4>§ 1º O 	descredenciamento se dará: (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h4>
+ <h5>I - ex officio , pelo Ministério da Defesa, garantido o direito de defesa e no interesse da defesa nacional, na hipótese do não atendimento aos requisitos previstos no inciso IV do caput do art. 2º; ou (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h5>II - a pedido da EED. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h4>§ 2º O 	descredenciamento a pedido da EED não afasta a obrigatoriedade do cumprimento das obrigações relacionadas com a continuidade produtiva no País até a conclusão dos projetos estratégicos e da entrega de todos os PRODEs e 	PEDs contratados pelas Forças Armadas ou pelo Ministério da Defesa; (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h4>
+ <h4>§ 3º O Ministro de 	Estado da Defesa poderá negar o descredenciamento imediato da EED quando houver risco para o interesse da defesa nacional. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h4>
+ <h4>§ 4º Na hipótese prevista no § 3º, a empresa poderá ser obrigada a permanecer na condição de EED por até cinco anos, a contar do pedido de descredenciamento. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h4>
+ <h4>§ 5º São nulos a alteração do ato constitutivo da pessoal jurídica, o desfazimento de bens e a redução do conhecimento científico ou tecnológico próprio ou complementado por ICT que impliquem descumprimento das condições previstas no inciso IV do caput do art. 2º antes do descredenciamento da EED 	pelo Ministro de Estado da Defesa. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h4>
+ <h3>Art. 2º-B O Ministério da Defesa comunicará ao 	Departamento Nacional de Registro Empresarial e Integração da Secretaria de 	Inovação e Micro e Pequenas Empresas da Secretaria Especial de Produtividade e Competitividade do Ministério da Economia, para informação à respectiva junta comercial e consequente anotação nos registros da empresa: (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h3>
+ <h5>I - a condição de EED; (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h5>II - a perda da condição de EED; e (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h5>III - a declaração de nulidade, por ato do Ministro de Estado da Defesa, de atos registrais da EED por violação desta Lei. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h4>Parágrafo 	único. A junta comercial: (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h4>
+ <h5>I - comunicará ao Ministério da Defesa todos os atos de alteração dos registros das EED; e (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h5>II - cancelará o registro do ato declarado nulo nos termos do disposto no inciso 	III do caput deste artigo e no § 4º do art. 2º-A. (Incluído pela 	Medida Provisória nº 1.123, de 2022)</h5>
+ <h2>CAPÍTULO I-A</h2>
+ <p>(Incluído pela Lei n° 14.459, de 2022)</p>
+ <h3>DO CREDENCIAMENTO E DO DESCREDENCIAMENTO</h3>
+ <h3>Art. 2º-A. O credenciamento e o descredenciamento de pessoa jurídica como 	EED observarão procedimento estabelecido em ato do Ministro de Estado da Defesa. (Incluído pela Lei n° 14.459, de 2022)</h3>
+ <h4>§ 1º O descredenciamento dar-se-á: (Incluído pela Lei n° 14.459, de 2022)</h4>
+ <h5>I - de ofício, pelo Ministério da Defesa, garantido o direito de defesa e no interesse da defesa nacional, na hipótese do não atendimento aos requisitos previstos no inciso IV do caput do art. 2º desta Lei; ou (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h5>II - a pedido da EED. (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h4>§ 2º O descredenciamento a pedido da EED não afasta a obrigatoriedade do cumprimento das obrigações relacionadas com a continuidade produtiva no País até a conclusão dos projetos estratégicos e da entrega de todo Prode e PED 	contratado pelas Forças Armadas ou pelo Ministério da Defesa. (Incluído pela Lei n° 14.459, de 2022)</h4>
+ <h4>§ 3º O Ministro de Estado da Defesa poderá negar o descredenciamento imediato da EED quando houver risco para o interesse da defesa nacional. (Incluído pela Lei n° 14.459, de 2022)</h4>
+ <h4>§ 4º Na hipótese prevista no § 3º deste artigo, a empresa poderá ser obrigada a permanecer na condição de EED por até 5 (cinco) anos, a contar do pedido de descredenciamento. (Incluído pela Lei n° 14.459, de 2022)</h4>
+ <h4>§ 5º São nulos a alteração do ato constitutivo da pessoa jurídica, o desfazimento de bens e a redução do conhecimento científico ou tecnológico próprio ou complementado por ICT que impliquem descumprimento das condições previstas no inciso IV do caput do art. 2º desta Lei antes do descredenciamento da EED pelo Ministro de Estado da Defesa. (Incluído pela Lei n° 14.459, de 2022)</h4>
+ <h3>Art. 2º-B. O Ministério da Defesa comunicará ao Departamento Nacional de Registro Empresarial e Integração da Secretaria de Inovação e Micro e 	Pequenas Empresas da Secretaria Especial de Produtividade e Competitividade do 	Ministério da Economia, para informação à respectiva junta comercial e consequente anotação nos registros da empresa: (Incluído pela Lei n° 14.459, de 2022)</h3>
+ <h5>I - a condição de EED; (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h5>II - a perda da condição de EED; e (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h5>III - a declaração de nulidade, por ato do Ministro de Estado da Defesa, de atos registrais da EED por violação ao disposto nesta Lei. (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h4>Parágrafo único. A junta comercial: (Incluído pela Lei n° 14.459, de 2022)</h4>
+ <h5>I - comunicará ao Ministério da Defesa todos os atos de alteração dos registros das EEDs; e (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h5>II - cancelará o registro do ato declarado nulo nos termos do inciso III do caput deste artigo e do § 4º do art. 2º-A desta Lei. (Incluído pela Lei n° 14.459, de 2022)</h5>
+ <h2>CAPÍTULO II</h2>
+ <p>DAS COMPRAS, DAS CONTRATAÇÕES E DO DESENVOLVIMENTO DE PRODUTOS E DE SISTEMAS DE DEFESA</p>
+ <h3>Art. 3º As compras e contratações de Prode ou SD, e do seu desenvolvimento, observarão o disposto nesta Lei.</h3>
+ <h4>§ 1º O poder público poderá realizar procedimento licitatório:</h4>
+ <h5>I - destinado exclusivamente à participação de EED quando envolver fornecimento ou desenvolvimento de PED;</h5>
+ <h5>II - destinado exclusivamente à compra ou à contratação de Prode ou SD produzido ou desenvolvido no País ou que utilize insumos nacionais ou com inovação desenvolvida no País, e, caso o SD envolva PED, aplica-se o disposto no inciso I deste parágrafo; e</h5>
+ <h5>III - que assegure à empresa nacional produtora de Prode ou à ICT, no percentual e nos termos fixados no edital e no contrato, a transferência do conhecimento tecnológico empregado ou a participação na cadeia produtiva.</h5>
+ <h4>§ 2º Os editais e contratos referentes a PED ou a SD conterão cláusulas relativas:</h4>
+ <h5>I - à continuidade produtiva;</h5>
+ <h5>II - à transferência de direitos de propriedade intelectual ou industrial; e</h5>
+ <h5>III - aos poderes reservados à administração pública federal para dispor sobre:</h5>
+ <h6>a) a criação ou alteração de PED que envolva ou não o País; e</h6>
+ <h6>b) a capacitação de terceiros em tecnologia para PED.</h6>
+ <h4>§ 3º Os critérios de seleção das propostas poderão abranger a avaliação das condições de financiamento oferecidas pelos licitantes.</h4>
+ <h4>§ 4º Poderá ser admitida a participação de empresas em consórcio, inclusive sob a forma de sociedade de propósito específico, desde que formalizada a sua constituição antes da celebração do contrato, observadas as seguintes normas:</h4>
+ <h5>I - quando houver fornecimento ou desenvolvimento de PED, a liderança do consórcio caberá à empresa credenciada pelo Ministério da Defesa como EED; e</h5>
+ <h5>II - se a participação do consórcio se der sob a forma de sociedade de propósito específico, a formalização de constituição deverá ocorrer antes da celebração do contrato, e seus acionistas serão as empresas consorciadas com participação idêntica à que detiverem no consórcio.</h5>
+ <h4>§ 5º O edital e o contrato poderão determinar a segregação de área reservada para pesquisa, projeto, desenvolvimento, produção ou industrialização de Prode ou SD.</h4>
+ <h4>§ 6º O edital e o contrato poderão determinar percentual mínimo de agregação de conteúdo nacional.</h4>
+ <h3>Art. 4º Os editais e contratos que envolvam importação de Prode ou SD disporão de regras definidas pelo Ministério da Defesa quanto a acordos de compensação tecnológica, industrial e comercial.</h3>
+ <h4>§ 1º Constará dos editais de que trata o caput deste artigo a exigência de apresentação de Plano de Compensação que explicite o objeto da compensação, o cronograma e o detalhamento da possível inovação.</h4>
+ <h4>§ 2º Na impossibilidade comprovada de atendimento ao disposto no caput deste artigo e caracterizada a urgência ou relevância da operação, a importação poderá ser realizada, independentemente de compensação, a critério do Ministério da Defesa.</h4>
+ <h4>§ 3º Na hipótese do § 2º , o Ministério da Defesa poderá exigir que a importação de PED seja feita com envolvimento de EED capacitada a realizar ou conduzir, em território nacional, no mínimo, uma das atividades previstas na alínea a do inciso IV do caput do art. 2º .</h4>
+ <h3>Art. 5º As contratações de Prode ou SD, e do seu desenvolvimento, poderão ser realizadas sob a forma de concessão administrativa a que se refere a Lei n° 11.079, de 30 de dezembro de 2004, observado, quando couber, o regime jurídico aplicável aos casos que possam comprometer a segurança nacional.</h3>
+ <h4>§ 1º O edital definirá, entre outros critérios, aqueles relativos ao valor estimado do contrato, ao período de prestação de serviço e ao objeto.</h4>
+ <h4>§ 2º O edital e o contrato de concessão administrativa disciplinarão a possibilidade e os requisitos para a realização de subcontratações pela concessionária.</h4>
+ <h4>§ 3º Caso as contratações previstas no caput envolvam fornecimento ou desenvolvimento de PED, mesmo que sob a responsabilidade dos concessionários, suas aquisições obedecerão aos critérios e normas definidos por esta Lei.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO INCENTIVO À ÁREA ESTRATÉGICA DE DEFESA</h3>
+ <h3>Art. 6º As EED terão acesso a regimes especiais tributários e financiamentos para programas, projetos e ações relativos, respectivamente, aos bens e serviços de defesa nacional de que trata o inciso I do caput do art. 8º e a PED, nos termos da lei.</h3>
+ <h3>Art. 7º Fica instituído o Regime Especial Tributário para a Indústria de Defesa - RETID, nos termos e condições estabelecidos neste Capítulo.</h3>
+ <h3>Art. 8º São beneficiárias do Retid:</h3>
+ <h5>I - a EED que produza ou desenvolva bens de defesa nacional definidos em ato do Poder Executivo ou preste os serviços referidos no art. 10 empregados na manutenção, conservação, modernização, reparo, revisão, conversão e industrialização dos referidos bens;</h5>
+ <h5>II - a pessoa jurídica que produza ou desenvolva partes, peças, ferramentais, componentes, equipamentos, sistemas, subsistemas, insumos e matérias-primas a serem empregados na produção ou desenvolvimento dos bens referidos no inciso I do caput ; e</h5>
+ <h5>III - a pessoa jurídica que preste os serviços referidos no art. 10 a serem empregados como insumos na produção ou desenvolvimento dos bens referidos nos incisos I e II do caput .</h5>
+ <h4>§ 1º No caso dos incisos II e III do caput , somente poderá ser habilitada ao Retid a pessoa jurídica preponderantemente fornecedora para as pessoas jurídicas referidas no inciso I do caput .</h4>
+ <h4>§ 2º Considera-se pessoa jurídica preponderantemente fornecedora, de que trata o § 1º , aquela que tenha pelo menos 70% (setenta por cento) da sua receita total de venda de bens e serviços, no ano-calendário imediatamente anterior ao da habilitação, decorrentes do somatório das vendas:</h4>
+ <h5>I - para as pessoas jurídicas referidas no inciso I do caput ;</h5>
+ <h5>II - para as pessoas jurídicas fabricantes de bens de defesa nacional definidos no ato do Poder Executivo de que trata o inciso I do caput ;</h5>
+ <h5>III - de exportação; e</h5>
+ <h5>IV - para o Ministério da Defesa e suas entidades vinculadas.</h5>
+ <h4>§ 3º Para os fins do § 2º , excluem-se do cálculo da receita o valor dos impostos e as contribuições incidentes sobre a venda.</h4>
+ <h4>§ 4º A pessoa jurídica em início de atividade ou que não se enquadre como preponderantemente fornecedora, nos termos do § 2º , poderá habilitar-se ao Retid, desde que assuma compromisso de atingir o percentual mínimo referido no § 2º até o término do ano-calendário seguinte ao da habilitação.</h4>
+ <h4>§ 5º Condiciona-se a fruição dos benefícios do Retid ao atendimento cumulativo dos seguintes requisitos pela pessoa jurídica:</h4>
+ <h5>I - credenciamento por órgão competente do Ministério da Defesa;</h5>
+ <h5>II - prévia habilitação na Secretaria da Receita Federal do Brasil; e</h5>
+ <h5>III - regularidade fiscal em relação aos impostos e contribuições administradas pela Secretaria da Receita Federal do Brasil.</h5>
+ <h4>§ 6º As pessoas jurídicas optantes pelo Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples Nacional, de que trata a Lei Complementar nº 123, de 14 de dezembro de 2006, e as pessoas jurídicas de que tratam o inciso II do caput do art. 8º da Lei n° 10.637, de 30 de dezembro de 2002 , e o inciso II do caput do art. 10 da Lei n° 10.833, de 29 de dezembro de 2003 , não podem habilitar-se ao Retid.</h4>
+ <h4>§ 7º O Poder Executivo disciplinará em regulamento o Retid.</h4>
+ <h3>Art. 9º No caso de venda no mercado interno ou de importação dos bens de que trata o art. 8º , ficam suspensos:</h3>
+ <h5>I - a exigência da Contribuição para o Programa de Integração Social e de Formação do Patrimônio do Servidor Público - PIS/Pasep e da Contribuição para o Financiamento da Seguridade Social - COFINS incidentes sobre a receita da pessoa jurídica vendedora, quando a aquisição for efetuada por pessoa jurídica beneficiária do Retid; (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>II - a exigência da Contribuição para o PIS/Pasep-Importação e da Cofins-Importação, quando a importação for efetuada por pessoa jurídica beneficiária do Retid; (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>III - o Imposto sobre Produtos Industrializados - IPI incidente na saída do estabelecimento industrial ou equiparado, quando a aquisição no mercado interno for efetuada por estabelecimento industrial de pessoa jurídica beneficiária do Retid;</h5>
+ <h5>IV - o IPI incidente na importação, quando efetuada por estabelecimento industrial de pessoa jurídica beneficiária do Retid .</h5>
+ <h4>§ 1º Deverá constar nas notas fiscais relativas:</h4>
+ <h5>I - às vendas de que trata o inciso I do caput a expressão “Venda efetuada com suspensão da exigibilidade da Contribuição para o PIS/Pasep e da Cofins”, com a especificação do dispositivo legal correspondente; e (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>II - às saídas de que trata o inciso III do caput a expressão “Saída com suspensão do IPI”, com a especificação do dispositivo legal correspondente, vedado o registro do imposto nas referidas notas.</h5>
+ <h4>§ 2º As suspensões de que trata este artigo convertem-se em alíquota 0 (zero):</h4>
+ <h5>I - após o emprego ou utilização dos bens adquiridos ou importados no âmbito do Retid, ou dos bens que resultaram de sua industrialização, na manutenção, conservação, modernização, reparo, revisão, conversão, industrialização de bens de defesa nacional definidos no ato do Poder Executivo de que trata o inciso I do caput do art. 8º , quando destinados à venda à União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo, ou os definidos em ato do Poder Executivo como de interesse estratégico para a Defesa Nacional; ou</h5>
+ <h5>II - após exportação dos bens com tributação suspensa ou dos que resultaram de sua industrialização.</h5>
+ <h4>§ 3º A pessoa jurídica que não utilizar o bem na forma prevista no § 2º , ou não tiver atendido às condições de que trata o § 4º do art. 8º ao término do ano-calendário subsequente ao da concessão da habilitação ao Retid, fica obrigada a recolher os tributos não pagos em decorrência da suspensão de que trata este artigo, acrescidos de juros e multa, de mora ou de ofício, na forma da lei, contados a partir da data da aquisição ou do registro da Declaração de Importação - DI, na condição:</h4>
+ <h5>I - de contribuinte, em relação à Contribuição para o PIS/Pasep-Importação, à Cofins-Importação, ao IPI incidente no desembaraço aduaneiro de importação ; e</h5>
+ <h5>II - de responsável, em relação à Contribuição para o PIS/Pasep, à Cofins e ao IPI.</h5>
+ <h4>§ 4º Para os efeitos deste artigo, equipara-se ao importador a pessoa jurídica adquirente de bens estrangeiros, no caso de importação realizada por sua conta e ordem por intermédio de pessoa jurídica importadora.</h4>
+ <h3>Art. 9º-A Ficam reduzidas a zero as alíquotas: (Incluído pela Medida Provisória nº 582, de 2012)</h3>
+ <h5>I - da Contribuição para o PIS/PASEP e da COFINS incidentes sobre a receita decorrente da venda dos bens referidos no inciso I do caput do art. 8º efetuada por pessoa jurídica beneficiária do RETID à União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo; e (Incluído pela Medida Provisória nº 582, de 2012)</h5>
+ <h5>II - da Contribuição para o PIS/PASEP e da COFINS incidentes sobre a receita decorrente da prestação dos serviços referidos no art. 10 por pessoa jurídica beneficiária do RETID à União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo. (Incluído pela Medida Provisória nº 582, de 2012)</h5>
+ <h3>Art. 9º-A. Ficam reduzidas a zero as alíquotas: (Incluído pela Lei n° 12.794, de 2013)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h5>I - da Contribuição para o PIS/Pasep e da Cofins incidentes sobre a receita decorrente da venda dos bens referidos no inciso I do caput do art. 8º efetuada por pessoa jurídica beneficiária do Retid à União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo; e (Incluído pela Lei n° 12.794, de 2013)</h5>
+ <h5>II - da Contribuição para o PIS/Pasep e da Cofins incidentes sobre a receita decorrente da prestação dos serviços referidos no art. 10 por pessoa jurídica beneficiária do Retid à União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo. (Incluído pela Lei n° 12.794, de 2013)</h5>
+ <h3>Art. 9º -B Ficam isentos do IPI os bens referidos no inciso I do caput do art. 8º saídos do estabelecimento industrial ou equiparado de pessoa jurídica beneficiária do RETID, quando adquiridos pela União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo. (Incluído pela Medida Provisória nº 582, de 2012)</h3>
+ <h3>Art. 9º-B. Ficam isentos do IPI os bens referidos no inciso I do caput do art. 8º saídos do estabelecimento industrial ou equiparado de pessoa jurídica beneficiária do Retid, quando adquiridos pela União, para uso privativo das Forças Armadas, exceto para uso pessoal e administrativo. (Incluído pela Lei n° 12.794, de 2013)</h3>
+ <h3>Art. 10. No caso de venda ou importação de serviços de tecnologia industrial básica, projetos, pesquisa, desenvolvimento e inovação tecnológica, assistência técnica e transferência de tecnologia, destinados a empresas beneficiárias do Retid, fica suspensa a exigência: (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h5>I - da Contribuição para o PIS/Pasep e da Cofins incidentes sobre a receita de prestação de serviços efetuada por pessoa jurídica estabelecida no País, quando prestados para pessoa jurídica beneficiária do Retid; e</h5>
+ <h5>II - da Contribuição para o PIS/Pasep-Importação e da Cofins-Importação incidentes sobre serviços, quando importados diretamente por pessoa jurídica beneficiária do Retid.</h5>
+ <h4>§ 1º As suspensões de que trata este artigo convertem-se em alíquota 0 (zero) após o emprego ou utilização dos serviços nas destinações a que se referem os incisos I a III do caput do art. 8º .</h4>
+ <h4>§ 2º A pessoa jurídica que não empregar ou utilizar os serviços na forma prevista no § 1º , ou não tiver atendido às condições de que trata o § 4º do art. 8º ao término do ano-calendário subsequente ao da concessão da habilitação ao Retid, fica obrigada a recolher os tributos não pagos em decorrência da suspensão de que trata o caput , acrescidos de juros e multa, de mora ou de ofício, na forma da lei, contados a partir da data:</h4>
+ <h5>I - do pagamento, do crédito, da entrega, do emprego ou da remessa de valores, na condição de contribuinte, em relação à Contribuição para o PIS/Pasep-Importação e para a Cofins-Importação; e</h5>
+ <h5>II - da aquisição, na condição de responsável, em relação à Contribuição para o PIS/Pasep e à Cofins.</h5>
+ <h4>§ 3º O disposto no inciso I do caput aplica-se também à hipótese da receita de aluguel de máquinas, aparelhos, instrumentos e equipamentos, quando contratados por pessoas jurídicas habilitadas ao Retid.</h4>
+ <h4>§ 4º A fruição do benefício de que trata este artigo depende da comprovação da efetiva prestação do serviço nas destinações a que se refere o art. 8º .</h4>
+ <h3>Art. 11. Os benefícios de que tratam os arts. 9º e 10 poderão ser usufruídos em até 5 (cinco) anos contados da data de publicação desta Lei, nas aquisições e importações realizadas após a habilitação das pessoas jurídicas beneficiadas pelo Retid.</h3>
+ <h3>Art. 11. Os benefícios de que tratam os arts. 9º , 9º -A, 9º -B e 10 poderão ser usufruídos em até cinco anos contados da data de publicação desta Lei, nas aquisições e importações realizadas depois da habilitação das pessoas jurídicas beneficiadas pelo RETID. (Redação dada pela Medida Provisória nº 582, de 2012)</h3>
+ <h3>Art. 11. Os benefícios de que tratam os arts. 9º , 9º-A, 9º-B e 10 poderão ser usufruídos em até 5 (cinco) anos contados da data de publicação desta Lei, nas aquisições e importações realizadas depois da habilitação das pessoas jurídicas beneficiadas pelo Retid. (Redação dada pela Lei n° 12.794, de 2013)</h3>
+ <h3>Art. 11. Os benefícios de que tratam os arts. 9º , 9º-A, 9º-B e 10 poderão ser usufruídos em até 20 (vinte) anos contados da data de publicação desta Lei, nas aquisições e importações realizadas depois da habilitação das pessoas jurídicas beneficiadas pelo Retid. (Redação dada pela Lei n° 13.043, de 2014)</h3>
+ <h3>Art. 12. As operações de exportação de Prode realizadas pelas EED poderão receber a cobertura de garantia do Seguro de Crédito à Exportação, por intermédio do Fundo de Garantia à Exportação - FGE, a que se refere a Lei n° 9.818, de 23 de agosto de 1999, compreendidas as garantias prestadas pela União em operações de seguro de crédito interno para a produção de PED.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 13. O disposto nesta Lei não exclui o controle e as restrições à importação, à exportação, à fabricação, à comercialização e à utilização de produtos controlados.</h3>
+ <h3>Art. 14. As compras e contratações a que se refere esta Lei observarão as diretrizes de política externa e os compromissos internacionais ratificados pelo Brasil na área de defesa, em especial os referentes às salvaguardas.</h3>
+ <h3>Art. 15. A Lei n° 8.666, de 21 de junho de 1993, será aplicada de forma subsidiária aos procedimentos licitatórios e aos contratos regidos por esta Lei.</h3>
+ <h3>Art. 16. O</h3>
+ <h2>CAPÍTULO V da Lei n° 12.249, de 11 de junho de 2010, passa a vigorar com as seguintes alterações: (Vigência)</h2>
+ <p>“</p>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO REGIME ESPECIAL PARA A INDÚSTRIA AEROESPACIALBRASILEIRA - RETAERO” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 29. Fica instituído o Regime Especial para a Indústria Aeroespacial Brasileira - RETAERO, nos termos desta Lei.” (NR)</h3>
+ <p>“</p>
+ <h3>Art. 30. ......................................................................</h3>
+ <h5>I - a pessoa jurídica que produza partes, peças, ferramentais, componentes, equipamentos, sistemas, subsistemas, insumos e matérias-primas, ou preste serviços referidos no art. 32, a serem empregados na manutenção, conservação, modernização, reparo, revisão, conversão e industrialização dos produtos classificados na posição 88.02 da Nomenclatura Comum do Mercosul - NCM;</h5>
+ <p>............................................................................................</p>
+ <h4>§ 2º .............................................................................</h4>
+ <p>...........................................................................................</p>
+ <h5>II - a pessoas jurídicas fabricantes de produtos classificados na posição 88.02 da NCM; e</h5>
+ <p>............................................................................................</p>
+ <h4>§ 8º Excetua-se do disposto no § 7º a receita bruta decorrente da venda, no mercado interno, dos produtos classificados na posição 88.02 da NCM, que continua sujeita a alíquotas 0 (zero) da Contribuição para o PIS/Pasep e da Cofins.</h4>
+ <p>...................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 31. ................................. ........................</h3>
+ <p>.......................................... ...............................................</p>
+ <h4>§ 2º ...............................................................................</h4>
+ <h5>I - após o emprego ou utilização dos bens adquiridos ou importados no âmbito do Retaero, ou dos bens que resultaram de sua industrialização, na manutenção, conservação, modernização, reparo, revisão, conversão e industrialização dos produtos classificados na posição 88.02 da NCM;</h5>
+ <p>...................................................................................” (NR)</p>
+ <p>“</p>
+ <h3>Art. 32. ......................................................................</h3>
+ <p>............................................................................................</p>
+ <h4>§ 3º A fruição do benefício de que trata este artigo depende da comprovação da efetiva prestação do serviço para produção, reparo e manutenção de produtos classificados na posição 88.02 da NCM.” (NR)</h4>
+ <h3>Art. 17. O Poder Executivo regulamentará o disposto nesta Lei.</h3>
+ <h3>Art. 18. Esta Lei entra em vigor:</h3>
+ <h5>I - a partir de 1º de janeiro de 2013, em relação ao art. 16;</h5>
+ <h5>II - na data de sua publicação, em relação aos demais dispositivos.</h5>
+ <p>Brasília, 21 de março de 2012; 191º da Independência e 124º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Celso Luiz Nunes Amorim</p>
+ <p>Fernando Damata Pimentel</p>
+ <p>Este texto não substitui o publicado no DOU de 22.3.2012 - Edição extra</p>
+ <p>Conversão da Medida Provisória nº 544, de 2011.</p>
+ <p>Regulamento(Vide Lei Complementar nº 214, de 2025)Produção de efeitos | Estabelece normas especiais para as compras, as contratações e o desenvolvimento de produtos e de sistemas de defesa; dispõe sobre regras de incentivo à área estratégica de defesa; altera a Lei n° 12.249, de 11 de junho de 2010; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/L12598.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

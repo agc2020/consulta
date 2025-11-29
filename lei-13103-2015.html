@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 13.103, DE 2 DE MARÇO DE 2015 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2015" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 13.103, DE 2 DE MARÇO DE 2015</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 28/11/2025 20:40:42 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2015/Lei/L13103.htm#art21" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 39.500 caracteres | espelho: 39.857 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 13.103, DE 2 DE MARÇO DE 2015.</p>
+ <p>Dispõe sobre o exercício da profissão de motorista; altera a Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943, e as Leis n º 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro, e 11.442, de 5 de janeiro de 2007 (empresas e transportadores autônomos de carga), para disciplinar a jornada de trabalho e o tempo de direção do motorista profissional; altera a Lei n° 7.408, de 25 de novembro de 1985; revoga dispositivos da Lei n° 12.619, de 30 de abril de 2012; e dá outras providências.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º É livre o exercício da profissão de motorista profissional, atendidas as condições e qualificações profissionais estabelecidas nesta Lei.</h3>
+ <h4>Parágrafo único. Integram a categoria profissional de que trata esta Lei os motoristas de veículos automotores cuja condução exija formação profissional e que exerçam a profissão nas seguintes atividades ou categorias econômicas:</h4>
+ <h5>I - de transporte rodoviário de passageiros;</h5>
+ <h5>II - de transporte rodoviário de cargas.</h5>
+ <h3>Art. 2º São direitos dos motoristas profissionais de que trata esta Lei, sem prejuízo de outros previstos em leis específicas:</h3>
+ <h5>I - ter acesso gratuito a programas de formação e aperfeiçoamento profissional, preferencialmente mediante cursos técnicos e especializados previstos no inciso IV do art. 145 da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , normatizados pelo Conselho Nacional de Trânsito - CONTRAN, em cooperação com o poder público;</h5>
+ <h5>II - contar, por intermédio do Sistema Único de Saúde - SUS, com atendimento profilático, terapêutico, reabilitador, especialmente em relação às enfermidades que mais os acometam;</h5>
+ <h5>III - receber proteção do Estado contra ações criminosas que lhes sejam dirigidas no exercício da profissão;</h5>
+ <h5>IV - contar com serviços especializados de medicina ocupacional, prestados por entes públicos ou privados à sua escolha;</h5>
+ <h5>V - se empregados:</h5>
+ <h6>a) não responder perante o empregador por prejuízo patrimonial decorrente da ação de terceiro, ressalvado o dolo ou a desídia do motorista, nesses casos mediante comprovação, no cumprimento de suas funções;</h6>
+ <h6>b) ter jornada de trabalho controlada e registrada de maneira fidedigna mediante anotação em diário de bordo, papeleta ou ficha de trabalho externo, ou sistema e meios eletrônicos instalados nos veículos, a critério do empregador; e</h6>
+ <h6>c) ter benefício de seguro de contratação obrigatória assegurado e custeado pelo empregador, destinado à cobertura de morte natural, morte por acidente, invalidez total ou parcial decorrente de acidente, traslado e auxílio para funeral referentes às suas atividades, no valor mínimo correspondente a 10 (dez) vezes o piso salarial de sua categoria ou valor superior fixado em convenção ou acordo coletivo de trabalho.</h6>
+ <h3>Art. 3º Aos motoristas profissionais dependentes de substâncias psicoativas é assegurado o pleno atendimento pelas unidades de saúde municipal, estadual e federal, no âmbito do Sistema Único de Saúde, podendo ser realizados convênios com entidades privadas para o cumprimento da obrigação.</h3>
+ <h3>Art. 4º O § 5º do art. 71 da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de lº de maio de 1943 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 71. .......................................................................</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 5º O intervalo expresso no caput poderá ser reduzido e/ou fracionado, e aquele estabelecido no § 1º poderá ser fracionado, quando compreendidos entre o término da primeira hora trabalhada e o início da última hora trabalhada, desde que previsto em convenção ou acordo coletivo de trabalho, ante a natureza do serviço e em virtude das condições especiais de trabalho a que são submetidos estritamente os motoristas, cobradores, fiscalização de campo e afins nos serviços de operação de veículos rodoviários, empregados no setor de transporte coletivo de passageiros, mantida a remuneração e concedidos intervalos para descanso menores ao final de cada viagem.” (NR)</h4>
+ <h3>Art. 5º O art. 168 da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de lº de maio de 1943 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 168 ......................................................................</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 6º Serão exigidos exames toxicológicos, previamente à admissão e por ocasião do desligamento, quando se tratar de motorista profissional, assegurados o direito à contraprova em caso de resultado positivo e a confidencialidade dos resultados dos respectivos exames.</h4>
+ <h4>§ 7º Para os fins do disposto no § 6º, será obrigatório exame toxicológico com janela de detecção mínima de 90 (noventa) dias, específico para substâncias psicoativas que causem dependência ou, comprovadamente, comprometam a capacidade de direção, podendo ser utilizado para essa finalidade o exame toxicológico previsto na Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , desde que realizado nos últimos 60 (sessenta) dias.” (NR)</h4>
+ <h3>Art. 6º A</h3>
+ <p>Seção IV-A do Capítulo I do Título III da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , passa a vigorar com as seguintes alterações:</p>
+ <p>“</p>
+ <h3>TÍTULO III</h3>
+ <p>...................................................................................................</p>
+ <h2>CAPÍTULO I</h2>
+ <p>....................................................................................................</p>
+ <p>Seção IV-A</p>
+ <p>Do Serviço do Motorista Profissional</p>
+ <p>Empregado</p>
+ <p>‘</p>
+ <h3>Art. 235-A. Os preceitos especiais desta Seção aplicam-se ao motorista profissional empregado:</h3>
+ <h5>I - de transporte rodoviário coletivo de passageiros;</h5>
+ <h5>II - de transporte rodoviário de cargas.’ (NR)</h5>
+ <p>‘</p>
+ <h3>Art. 235-B. São deveres do motorista profissional empregado:</h3>
+ <p>.............................................................................................</p>
+ <h5>III - respeitar a legislação de trânsito e, em especial, as normas relativas ao tempo de direção e de descanso controlado e registrado na forma do previsto no art. 67-E da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro ;</h5>
+ <p>.............................................................................................</p>
+ <h5>VII - submeter-se a exames toxicológicos com janela de detecção mínima de 90 (noventa) dias e a programa de controle de uso de droga e de bebida alcoólica, instituído pelo empregador, com sua ampla ciência, pelo menos uma vez a cada 2 (dois) anos e 6 (seis) meses, podendo ser utilizado para esse fim o exame obrigatório previsto na Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , desde que realizado nos últimos 60 (sessenta) dias.</h5>
+ <h4>Parágrafo único. A recusa do empregado em submeter-se ao teste ou ao programa de controle de uso de droga e de bebida alcoólica previstos no inciso VII será considerada infração disciplinar, passível de penalização nos termos da lei.’ (NR)</h4>
+ <p>‘</p>
+ <h3>Art. 235-C. A jornada diária de trabalho do motorista profissional será de 8 (oito) horas, admitindo-se a sua prorrogação por até 2 (duas) horas extraordinárias ou, mediante previsão em convenção ou acordo coletivo, por até 4 (quatro) horas extraordinárias.</h3>
+ <h4>§ 1º Será considerado como trabalho efetivo o tempo em que o motorista empregado estiver à disposição do empregador, excluídos os intervalos para refeição, repouso e descanso e o tempo de espera.</h4>
+ <h4>§ 2º Será assegurado ao motorista profissional empregado intervalo mínimo de 1 (uma) hora para refeição, podendo esse período coincidir com o tempo de parada obrigatória na condução do veículo estabelecido pela Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , exceto quando se tratar do motorista profissional enquadrado no § 5º do art. 71 desta Consolidação .</h4>
+ <h4>§ 3º Dentro do período de 24 (vinte e quatro) horas, são asseguradas 11 (onze) horas de descanso, sendo facultados o seu fracionamento e a coincidência com os períodos de parada obrigatória na condução do veículo estabelecida pela Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , garantidos o mínimo de 8 (oito) horas ininterruptas no primeiro período e o gozo do remanescente dentro das 16 (dezesseis) horas seguintes ao fim do primeiro período.</h4>
+ <h4>§ 4º Nas viagens de longa distância, assim consideradas aquelas em que o motorista profissional empregado permanece fora da base da empresa, matriz ou filial e de sua residência por mais de 24 (vinte e quatro) horas, o repouso diário pode ser feito no veículo ou em alojamento do empregador, do contratante do transporte, do embarcador ou do destinatário ou em outro local que ofereça condições adequadas.</h4>
+ <h4>§ 5º As horas consideradas extraordinárias serão pagas com o acréscimo estabelecido na Constituição Federal ou compensadas na forma do § 2º do art. 59 desta Consolidação .</h4>
+ <h4>§ 6º À hora de trabalho noturno aplica-se o disposto no art. 73 desta Consolidação .</h4>
+ <p>.............................................................................................</p>
+ <h4>§ 8º São considerados tempo de espera as horas em que o motorista profissional empregado ficar aguardando carga ou descarga do veículo nas dependências do embarcador ou do destinatário e o período gasto com a fiscalização da mercadoria transportada em barreiras fiscais ou alfandegárias, não sendo computados como jornada de trabalho e nem como horas extraordinárias.</h4>
+ <h4>§ 9º As horas relativas ao tempo de espera serão indenizadas na proporção de 30% (trinta por cento) do salário-hora normal.</h4>
+ <h4>§ 10. Em nenhuma hipótese, o tempo de espera do motorista empregado prejudicará o direito ao recebimento da remuneração correspondente ao salário-base diário.</h4>
+ <h4>§ 11. Quando a espera de que trata o § 8º for superior a 2 (duas) horas ininterruptas e for exigida a permanência do motorista empregado junto ao veículo, caso o local ofereça condições adequadas, o tempo será considerado como de repouso para os fins do intervalo de que tratam os §§ 2º e 3º, sem prejuízo do disposto no § 9º.</h4>
+ <h4>§ 12. Durante o tempo de espera, o motorista poderá realizar movimentações necessárias do veículo, as quais não serão consideradas como parte da jornada de trabalho, ficando garantido, porém, o gozo do descanso de 8 (oito) horas ininterruptas aludido no § 3º.</h4>
+ <h4>§ 13. Salvo previsão contratual, a jornada de trabalho do motorista empregado não tem horário fixo de início, de final ou de intervalos.</h4>
+ <h4>§ 14. O empregado é responsável pela guarda, preservação e exatidão das informações contidas nas anotações em diário de bordo, papeleta ou ficha de trabalho externo, ou no registrador instantâneo inalterável de velocidade e tempo, ou nos rastreadores ou sistemas e meios eletrônicos, instalados nos veículos, normatizados pelo Contran, até que o veículo seja entregue à empresa.</h4>
+ <h4>§ 15. Os dados referidos no § 14 poderão ser enviados a distância, a critério do empregador, facultando-se a anexação do documento original posteriormente.</h4>
+ <h4>§ 16. Aplicam-se as disposições deste artigo ao ajudante empregado nas operações em que acompanhe o motorista.’ (NR)</h4>
+ <p>‘</p>
+ <h3>Art. 235-D. Nas viagens de longa distância com duração superior a 7 (sete) dias, o repouso semanal será de 24 (vinte e quatro) horas por semana ou fração trabalhada, sem prejuízo do intervalo de repouso diário de 11 (onze) horas, totalizando 35 (trinta e cinco) horas, usufruído no retorno do motorista à base (matriz ou filial) ou ao seu domicílio, salvo se a empresa oferecer condições adequadas para o efetivo gozo do referido repouso.</h3>
+ <h5>I - revogado;</h5>
+ <h5>II - revogado;</h5>
+ <h5>III - revogado.</h5>
+ <h4>§ 1º É permitido o fracionamento do repouso semanal em 2 (dois) períodos, sendo um destes de, no mínimo, 30 (trinta) horas ininterruptas, a serem cumpridos na mesma semana e em continuidade a um período de repouso diário, que deverão ser usufruídos no retorno da viagem.</h4>
+ <h4>§ 2º A cumulatividade de descansos semanais em viagens de longa distância de que trata o caput fica limitada ao número de 3 (três) descansos consecutivos.</h4>
+ <h4>§ 3º O motorista empregado, em viagem de longa distância, que ficar com o veículo parado após o cumprimento da jornada normal ou das horas extraordinárias fica dispensado do serviço, exceto se for expressamente autorizada a sua permanência junto ao veículo pelo empregador, hipótese em que o tempo será considerado de espera.</h4>
+ <h4>§ 4º Não será considerado como jornada de trabalho, nem ensejará o pagamento de qualquer remuneração, o período em que o motorista empregado ou o ajudante ficarem espontaneamente no veículo usufruindo dos intervalos de repouso.</h4>
+ <h4>§ 5º Nos casos em que o empregador adotar 2 (dois) motoristas trabalhando no mesmo veículo, o tempo de repouso poderá ser feito com o veículo em movimento, assegurado o repouso mínimo de 6 (seis) horas consecutivas fora do veículo em alojamento externo ou, se na cabine leito, com o veículo estacionado, a cada 72 (setenta e duas) horas.</h4>
+ <h4>§ 6º Em situações excepcionais de inobservância justificada do limite de jornada de que trata o art. 235-C, devidamente registradas, e desde que não se comprometa a segurança rodoviária, a duração da jornada de trabalho do motorista profissional empregado poderá ser elevada pelo tempo necessário até o veículo chegar a um local seguro ou ao seu destino.</h4>
+ <h4>§ 7º Nos casos em que o motorista tenha que acompanhar o veículo transportado por qualquer meio onde ele siga embarcado e em que o veículo disponha de cabine leito ou a embarcação disponha de alojamento para gozo do intervalo de repouso diário previsto no § 3º do art. 235-C, esse tempo será considerado como tempo de descanso.</h4>
+ <h4>§ 8º Para o transporte de cargas vivas, perecíveis e especiais em longa distância ou em território estrangeiro poderão ser aplicadas regras conforme a especificidade da operação de transporte realizada, cujas condições de trabalho serão fixadas em convenção ou acordo coletivo de modo a assegurar as adequadas condições de viagem e entrega ao destino final.’ (NR)</h4>
+ <p>‘</p>
+ <h3>Art. 235-E. Para o transporte de passageiros, serão observados os seguintes dispositivos:</h3>
+ <h5>I - é facultado o fracionamento do intervalo de condução do veículo previsto na Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , em períodos de no mínimo 5 (cinco) minutos;</h5>
+ <h5>II - será assegurado ao motorista intervalo mínimo de 1 (uma) hora para refeição, podendo ser fracionado em 2 (dois) períodos e coincidir com o tempo de parada obrigatória na condução do veículo estabelecido pela Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , exceto quando se tratar do motorista profissional enquadrado no § 5º do art. 71 desta Consolidação ;</h5>
+ <h5>III - nos casos em que o empregador adotar 2 (dois) motoristas no curso da mesma viagem, o descanso poderá ser feito com o veículo em movimento, respeitando-se os horários de jornada de trabalho, assegurado, após 72 (setenta e duas) horas, o repouso em alojamento externo ou, se em poltrona correspondente ao serviço de leito, com o veículo estacionado.</h5>
+ <h4>§ 1º (Revogado).</h4>
+ <p>.............................................................................................</p>
+ <h4>§ 3º (Revogado).</h4>
+ <h4>§ 4º (Revogado).</h4>
+ <h4>§ 5º (Revogado).</h4>
+ <h4>§ 6º (Revogado).</h4>
+ <h4>§ 7º (Revogado).</h4>
+ <p>.............................................................................................</p>
+ <h4>§ 9º (Revogado).</h4>
+ <h4>§ 10. (Revogado).</h4>
+ <h4>§ 11. (Revogado).</h4>
+ <h4>§ 12. (Revogado).’ (NR)</h4>
+ <p>‘</p>
+ <h3>Art. 235-F. Convenção e acordo coletivo poderão prever jornada especial de 12 (doze) horas de trabalho por 36 (trinta e seis) horas de descanso para o trabalho do motorista profissional empregado em regime de compensação.’ (NR)</h3>
+ <p>‘</p>
+ <h3>Art. 235-G. É permitida a remuneração do motorista em função da distância percorrida, do tempo de viagem ou da natureza e quantidade de produtos transportados, inclusive mediante oferta de comissão ou qualquer outro tipo de vantagem, desde que essa remuneração ou comissionamento não comprometa a segurança da rodovia e da coletividade ou possibilite a violação das normas previstas nesta Lei.’ (NR)</h3>
+ <p>‘</p>
+ <h3>Art. 235-H. (Revogado).’ (NR)”</h3>
+ <h3>Art. 7º O</h3>
+ <h2>CAPÍTULO III-A da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , passa a vigorar com as seguintes alterações:</h2>
+ <p>“</p>
+ <h2>CAPÍTULO III-A</h2>
+ <p>.............................................................................................</p>
+ <p>‘</p>
+ <h3>Art. 67-A. O disposto neste Capítulo aplica-se aos motoristas profissionais:</h3>
+ <h5>I - de transporte rodoviário coletivo de passageiros;</h5>
+ <h5>II - de transporte rodoviário de cargas.</h5>
+ <h4>§ 1º (Revogado).</h4>
+ <h4>§ 2º (Revogado).</h4>
+ <h4>§ 3º (Revogado).</h4>
+ <h4>§ 4º (Revogado).</h4>
+ <h4>§ 5º (Revogado).</h4>
+ <h4>§ 6º (Revogado).</h4>
+ <h4>§ 7º (Revogado).</h4>
+ <p>...................................................................................’ (NR)</p>
+ <p>.............................................................................................</p>
+ <p>‘</p>
+ <h3>Art. 67-C. É vedado ao motorista profissional dirigir por mais de 5 (cinco) horas e meia ininterruptas veículos de transporte rodoviário coletivo de passageiros ou de transporte rodoviário de cargas.</h3>
+ <h4>§ 1º Serão observados 30 (trinta) minutos para descanso dentro de cada 6 (seis) horas na condução de veículo de transporte de carga, sendo facultado o seu fracionamento e o do tempo de direção desde que não ultrapassadas 5 (cinco) horas e meia contínuas no exercício da condução.</h4>
+ <h4>§ 1º -A. Serão observados 30 (trinta) minutos para descanso a cada 4 (quatro) horas na condução de veículo rodoviário de passageiros, sendo facultado o seu fracionamento e o do tempo de direção.</h4>
+ <h4>§ 2º Em situações excepcionais de inobservância justificada do tempo de direção, devidamente registradas, o tempo de direção poderá ser elevado pelo período necessário para que o condutor, o veículo e a carga cheguem a um lugar que ofereça a segurança e o atendimento demandados, desde que não haja comprometimento da segurança rodoviária.</h4>
+ <h4>§ 3º O condutor é obrigado, dentro do período de 24 (vinte e quatro) horas, a observar o mínimo de 11 (onze) horas de descanso, que podem ser fracionadas, usufruídas no veículo e coincidir com os intervalos mencionados no § 1º, observadas no primeiro período 8 (oito) horas ininterruptas de descanso.</h4>
+ <h4>§ 4º Entende-se como tempo de direção ou de condução apenas o período em que o condutor estiver efetivamente ao volante, em curso entre a origem e o destino.</h4>
+ <h4>§ 5º Entende-se como início de viagem a partida do veículo na ida ou no retorno, com ou sem carga, considerando-se como sua continuação as partidas nos dias subsequentes até o destino.</h4>
+ <h4>§ 6º O condutor somente iniciará uma viagem após o cumprimento integral do intervalo de descanso previsto no § 3º deste artigo.</h4>
+ <h4>§ 7º Nenhum transportador de cargas ou coletivo de passageiros, embarcador, consignatário de cargas, operador de terminais de carga, operador de transporte multimodal de cargas ou agente de cargas ordenará a qualquer motorista a seu serviço, ainda que subcontratado, que conduza veículo referido no caput sem a observância do disposto no § 6º .’ (NR)</h4>
+ <p>.............................................................................................</p>
+ <p>‘</p>
+ <h3>Art. 67-E. O motorista profissional é responsável por controlar e registrar o tempo de condução estipulado no art. 67-C, com vistas à sua estrita observância.</h3>
+ <h4>§ 1º A não observância dos períodos de descanso estabelecidos no art. 67-C sujeitará o motorista profissional às penalidades daí decorrentes, previstas neste Código.</h4>
+ <h4>§ 2º O tempo de direção será controlado mediante registrador instantâneo inalterável de velocidade e tempo e, ou por meio de anotação em diário de bordo, ou papeleta ou ficha de trabalho externo, ou por meios eletrônicos instalados no veículo, conforme norma do Contran.</h4>
+ <h4>§ 3º O equipamento eletrônico ou registrador deverá funcionar de forma independente de qualquer interferência do condutor, quanto aos dados registrados.</h4>
+ <h4>§ 4º A guarda, a preservação e a exatidão das informações contidas no equipamento registrador instantâneo inalterável de velocidade e de tempo são de responsabilidade do condutor.’”</h4>
+ <h3>Art. 8º A Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 132. ......................................................................</h3>
+ <h4>§ 1º ...............................................................................</h4>
+ <h4>§ 2º Antes do registro e licenciamento, o veículo de carga novo, nacional ou importado, portando a nota fiscal de compra e venda ou documento alfandegário, deverá transitar embarcado do pátio da fábrica ou do posto alfandegário ao Município de destino.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 148-A. Os condutores das categorias C, D e E deverão submeter-se a exames toxicológicos para a habilitação e renovação da Carteira Nacional de Habilitação.</h3>
+ <h4>§ 1º O exame de que trata este artigo buscará aferir o consumo de substâncias psicoativas que, comprovadamente, comprometam a capacidade de direção e deverá ter janela de detecção mínima de 90 (noventa) dias, nos termos das normas do Contran.</h4>
+ <h4>§ 2º Os condutores das categorias C, D e E com Carteira Nacional de Habilitação com validade de 5 (cinco) anos deverão fazer o exame previsto no § 1º no prazo de 2 (dois) anos e 6 (seis) meses a contar da realização do disposto no caput .</h4>
+ <h4>§ 3º Os condutores das categorias C, D e E com Carteira Nacional de Habilitação com validade de 3 (três) anos deverão fazer o exame previsto no § 1º no prazo de 1 (um) ano e 6 (seis) meses a contar da realização do disposto no caput .</h4>
+ <h4>§ 4º É garantido o direito de contraprova e de recurso administrativo no caso de resultado positivo para o exame de que trata o caput , nos termos das normas do Contran.</h4>
+ <h4>§ 5º A reprovação no exame previsto neste artigo terá como consequência a suspensão do direito de dirigir pelo período de 3 (três) meses, condicionado o levantamento da suspensão ao resultado negativo em novo exame, e vedada a aplicação de outras penalidades, ainda que acessórias.</h4>
+ <h4>§ 6º O resultado do exame somente será divulgado para o interessado e não poderá ser utilizado para fins estranhos ao disposto neste artigo ou no § 6º do art. 168 da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 .</h4>
+ <h4>§ 7º O exame será realizado, em regime de livre concorrência, pelos laboratórios credenciados pelo Departamento Nacional de Trânsito - DENATRAN, nos termos das normas do Contran, vedado aos entes públicos:</h4>
+ <h5>I - fixar preços para os exames;</h5>
+ <h5>II - limitar o número de empresas ou o número de locais em que a atividade pode ser exercida; e</h5>
+ <h5>III - estabelecer regras de exclusividade territorial.”</h5>
+ <p>“</p>
+ <h3>Art. 230. ......................................................................</h3>
+ <p>.............................................................................................</p>
+ <h5>XXIII - em desacordo com as condições estabelecidas no art. 67-C, relativamente ao tempo de permanência do condutor ao volante e aos intervalos para descanso, quando se tratar de veículo de transporte de carga ou coletivo de passageiros:</h5>
+ <p>Infração - média;</p>
+ <p>Penalidade - multa;</p>
+ <p>Medida administrativa - retenção do veículo para cumprimento do tempo de descanso aplicável.</p>
+ <p>.............................................................................................</p>
+ <h4>§ 1º Se o condutor cometeu infração igual nos últimos 12 (doze) meses, será convertida, automaticamente, a penalidade disposta no inciso XXIII em infração grave.</h4>
+ <h4>§ 2º Em se tratando de condutor estrangeiro, a liberação do veículo fica condicionada ao pagamento ou ao depósito, judicial ou administrativo, da multa.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 259. ......................................................................</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 4º Ao condutor identificado no ato da infração será atribuída pontuação pelas infrações de sua responsabilidade, nos termos previstos no § 3º do art. 257, excetuando-se aquelas praticadas por passageiros usuários do serviço de transporte rodoviário de passageiros em viagens de longa distância transitando em rodovias com a utilização de ônibus, em linhas regulares intermunicipal, interestadual, internacional e aquelas em viagem de longa distância por fretamento e turismo ou de qualquer modalidade, excetuadas as situações regulamentadas pelo Contran a teor do art. 65 da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro .” (NR)</h4>
+ <h3>Art. 9º As condições de segurança, sanitárias e de conforto nos locais de espera, de repouso e de descanso dos motoristas profissionais de transporte rodoviário de passageiros e rodoviário de cargas terão que obedecer ao disposto em normas regulamentadoras pelo ente competente. (Regulamento)</h3>
+ <h4>§ 1º É vedada a cobrança ao motorista ou ao seu empregador pelo uso ou permanência em locais de espera sob a responsabilidade de:</h4>
+ <h5>I - transportador, embarcador ou consignatário de cargas;</h5>
+ <h5>II - operador de terminais de cargas;</h5>
+ <h5>III - aduanas;</h5>
+ <h5>IV - portos marítimos, lacustres, fluviais e secos;</h5>
+ <h5>V - terminais ferroviários, hidroviários e aeroportuários.</h5>
+ <h4>§ 2º Os locais de repouso e descanso dos motoristas profissionais serão, entre outros, em:</h4>
+ <h5>I - estações rodoviárias;</h5>
+ <h5>II - pontos de parada e de apoio;</h5>
+ <h5>III - alojamentos, hotéis ou pousadas;</h5>
+ <h5>IV - refeitórios das empresas ou de terceiros;</h5>
+ <h5>V - postos de combustíveis.</h5>
+ <h4>§ 3º Será de livre iniciativa a implantação de locais de repouso e descanso de que trata este artigo.</h4>
+ <h4>§ 4º A estrita observância às Normas Regulamentadoras do Ministério do Trabalho e Emprego, no que se refere aos incisos II, III, IV e V do § 2º, será considerada apenas quando o local for de propriedade do transportador, do embarcador ou do consignatário de cargas, bem como nos casos em que esses mantiverem com os proprietários destes locais contratos que os obriguem a disponibilizar locais de espera e repouso aos motoristas profissionais.</h4>
+ <h3>Art. 10. O poder público adotará medidas, no prazo de até 5 (cinco) anos a contar da vigência desta Lei, para ampliar a disponibilidade dos espaços previstos no art. 9º, especialmente: (Regulamento)</h3>
+ <h5>I - a inclusão obrigatória de cláusulas específicas em contratos de concessão de exploração de rodovias, para concessões futuras ou renovação;</h5>
+ <h5>II - a revisão das concessões de exploração das rodovias em vigor, de modo a adequá-las à previsão de construção de pontos de parada de espera e descanso, respeitado o equilíbrio econômico-financeiro dos contratos;</h5>
+ <h5>III - a identificação e o cadastramento de pontos de paradas e locais para espera, repouso e descanso que atendam aos requisitos previstos no art. 9º desta Lei;</h5>
+ <h5>IV - a permissão do uso de bem público nas faixas de domínio das rodovias sob sua jurisdição, vinculadas à implementação de locais de espera, repouso e descanso e pontos de paradas, de trevos ou acessos a esses locais;</h5>
+ <h5>V - a criação de linha de crédito para apoio à implantação dos pontos de paradas.</h5>
+ <h4>Parágrafo único. O poder público apoiará ou incentivará, em caráter permanente, a implantação pela iniciativa privada de locais de espera, pontos de parada e de descanso.</h4>
+ <h3>Art. 11. Atos do órgão competente da União ou, conforme o caso, de autoridade do ente da federação com circunscrição sobre a via publicarão a relação de trechos das vias públicas que disponham de pontos de parada ou de locais de descanso adequados para o cumprimento desta Lei. (Regulamento)</h3>
+ <h4>§ 1º A primeira relação dos trechos das vias referidas no caput será publicada no prazo de até 180 (cento e oitenta) dias a contar da data da publicação desta Lei.</h4>
+ <h4>§ 2º As relações de trechos das vias públicas de que trata o caput deverão ser ampliadas e revisadas periodicamente.</h4>
+ <h4>§ 3º Os estabelecimentos existentes nas vias poderão requerer no órgão competente com jurisdição sobre elas o seu reconhecimento como ponto de parada e descanso.</h4>
+ <h3>Art. 12. O disposto nos §§ 2º e 3º do art. 235-C do Capítulo I do Título III da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e no caput e nos §§ 1º e 3º do art. 67-C do Capítulo III-A da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , produzirá efeitos: (Regulamento)</h3>
+ <h5>I - a partir da data da publicação dos atos de que trata o art. 11, para os trechos das vias deles constantes;</h5>
+ <h5>II - a partir da data da publicação das relações subsequentes, para as vias por elas acrescidas.</h5>
+ <h4>Parágrafo único. Durante os primeiros 180 (cento e oitenta) dias de sujeição do trecho ao disposto na Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e na Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , com as alterações constantes desta Lei, a fiscalização do seu cumprimento será meramente informativa e educativa.</h4>
+ <h3>Art. 13. O exame toxicológico com janela de detecção mínima de 90 (noventa) dias de que tratam o art. 148-A da Lei 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , os §§ 6º e 7º do art. 168 e o inciso VII do art. 235-B da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , será exigido:</h3>
+ <h5>I - em 90 (noventa) dias da publicação desta Lei, para a renovação e habilitação das categorias C, D e E;</h5>
+ <h5>II - em 1 (um) ano a partir da entrada em vigor desta Lei, para a admissão e a demissão de motorista profissional;</h5>
+ <h5>III - em 3 (três) anos e 6 (seis) meses a partir da entrada em vigor desta Lei, para o disposto no § 2º do art. 148-A da Lei n° 9.503, de 23 de setembro de 1997 ;</h5>
+ <h5>IV - em 2 (dois) anos e 6 (seis) meses a partir da entrada em vigor desta Lei, para o disposto no § 3º do art. 148-A da Lei n° 9.503, de 23 de setembro de 1997 .</h5>
+ <h4>Parágrafo único. Caberá ao Contran estabelecer adequações necessárias ao cronograma de realização dos exames.</h4>
+ <h3>Art. 14. Decorrido o prazo de 3 (três) anos a contar da publicação desta Lei, os seus efeitos dar-se-ão para todas as vias, independentemente da publicação dos atos de que trata o art. 11 ou de suas revisões.</h3>
+ <h3>Art. 15. A Lei n° 11.442, de 5 de janeiro de 2007 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 4º ..........................................................................</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 3º Sem prejuízo dos demais requisitos de controle estabelecidos em regulamento, é facultada ao TAC a cessão de seu veículo em regime de colaboração a outro profissional, assim denominado TAC - Auxiliar, não implicando tal cessão a caracterização de vínculo de emprego.</h4>
+ <h4>§ 4º O Transportador Autônomo de Cargas Auxiliar deverá contribuir para a previdência social de forma idêntica à dos Transportadores Autônomos.</h4>
+ <h4>§ 5º As relações decorrentes do contrato estabelecido entre o Transportador Autônomo de Cargas e seu Auxiliar ou entre o transportador autônomo e o embarcador não caracterizarão vínculo de emprego.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 5º -A. O pagamento do frete do transporte rodoviário de cargas ao Transportador Autônomo de Cargas - TAC deverá ser efetuado por meio de crédito em conta mantida em instituição integrante do sistema financeiro nacional, inclusive poupança, ou por outro meio de pagamento regulamentado pela Agência Nacional de Transportes Terrestres - ANTT, à critério do prestador do serviço.</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 7º As tarifas bancárias ou pelo uso de meio de pagamento eletrônico relativas ao pagamento do frete do transporte rodoviário de cargas ao Transportador Autônomo de Cargas - TAC correrão à conta do responsável pelo pagamento.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 11. ........................................................................</h3>
+ <p>.............................................................................................</p>
+ <h4>§ 5º O prazo máximo para carga e descarga do Veículo de Transporte Rodoviário de Cargas será de 5 (cinco) horas, contadas da chegada do veículo ao endereço de destino, após o qual será devido ao Transportador Autônomo de Carga - TAC ou à ETC a importância equivalente a R$ 1,38 (um real e trinta e oito centavos) por tonelada/hora ou fração.</h4>
+ <h4>§ 6º A importância de que trata o § 5º será atualizada, anualmente, de acordo com a variação do Índice Nacional de Preços ao Consumidor - INPC, calculado pela Fundação Instituto Brasileiro de Geografia e Estatística - IBGE ou, na hipótese de sua extinção, pelo índice que o suceder, definido em regulamento.</h4>
+ <h4>§ 7º Para o cálculo do valor de que trata o § 5º, será considerada a capacidade total de transporte do veículo.</h4>
+ <h4>§ 8º Incidente o pagamento relativo ao tempo de espera, este deverá ser calculado a partir da hora de chegada na procedência ou no destino.</h4>
+ <h4>§ 9º O embarcador e o destinatário da carga são obrigados a fornecer ao transportador documento hábil a comprovar o horário de chegada do caminhão nas dependências dos respectivos estabelecimentos, sob pena de serem punidos com multa a ser aplicada pela Agência Nacional de Transportes Terrestres - ANTT, que não excederá a 5% (cinco por cento) do valor da carga.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 13-A. É vedada a utilização de informações de bancos de dados de proteção ao crédito como mecanismo de vedação de contrato com o TAC e a ETC devidamente regulares para o exercício da atividade do Transporte Rodoviário de Cargas.”</h3>
+ <h3>Art. 16. O art. 1º da Lei n° 7.408, de 25 de novembro de 1985 , passa a vigorar com a seguinte redação:</h3>
+ <p>“</p>
+ <h3>Art. 1º Fica permitida, na pesagem de veículos de transporte de carga e de passageiros, a tolerância máxima de:</h3>
+ <h5>I - 5% (cinco por cento) sobre os limites de peso bruto total;</h5>
+ <h5>II - 10% (dez por cento) sobre os limites de peso bruto transmitido por eixo de veículos à superfície das vias públicas.</h5>
+ <h4>Parágrafo único. Os limites de peso bruto não se aplicam aos locais não abrangidos pelo disposto no art. 2º da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , incluindo-se as vias particulares sem acesso à circulação pública.” (NR)</h4>
+ <h3>Art. 17. Os veículos de transporte de cargas que circularem vazios não pagarão taxas de pedágio sobre os eixos que mantiverem suspensos. (Regulamento)</h3>
+ <h3>Art. 17. Em todo o território nacional, os veículos de transporte de cargas que circularem vazios ficarão isentos da cobrança de pedágio sobre os eixos que mantiverem suspensos. (Redação dada pela Medida Provisória nº 833, de 2018)</h3>
+ <h4>§ 1º O disposto no caput abrange as vias terrestres federais, estaduais, distritais e municipais, inclusive as concedidas. (Incluído pela Medida Provisória nº 833, de 2018)</h4>
+ <h4>§ 2º Os órgãos e as entidades competentes da União, dos Estados, do Distrito Federal e dos Municípios disporão sobre as medidas técnicas e operacionais para viabilizar a isenção de que trata o caput . (Incluído pela Medida Provisória nº 833, de 2018)</h4>
+ <h4>§ 3º Até a implementação das medidas a que se refere o § 2º, consideram-se vazios os veículos de transporte de carga que transpuserem as praças de pedágio com um ou mais eixos que mantiverem suspensos, assegurada a fiscalização da condição pela autoridade com circunscrição sobre a via ou pelo seu agente designado na forma prevista no § 4º do art. 280 da Lei n° 9.503, de 1997 - Código de Trânsito Brasileiro . (Incluído pela Medida Provisória nº 833, de 2018)</h4>
+ <h4>§ 4º Para as vias rodoviárias federais concedidas, poderá ser adotada a regulamentação da Agência Nacional de Transportes Terrestres - ANTT. (Incluído pela Medida Provisória nº 833, de 2018)</h4>
+ <h4>§ 5º Ficam sujeitos à penalidade prevista no art. 209 do Código de Trânsito Brasileiro os veículos de transporte de cargas que circularem com eixos indevidamente suspensos. (Incluído pela Medida Provisória nº 833, de 2018)</h4>
+ <h3>Art. 17. Em todo o território nacional, os veículos de transporte de cargas que circularem vazios ficarão isentos da cobrança de pedágio sobre os eixos que mantiverem suspensos. (Redação dada pela Lei n° 13.711, de 2018)</h3>
+ <h4>§ 1º O disposto no caput deste artigo abrange as vias terrestres federais, estaduais, distritais e municipais, inclusive as concedidas. (Incluído pela Lei n° 13.711, de 2018)</h4>
+ <h4>§ 2º Os órgãos e as entidades competentes da União, dos Estados, do Distrito Federal e dos Municípios disporão sobre as medidas técnicas e operacionais para viabilizar a isenção de que trata o caput deste artigo. (Incluído pela Lei n° 13.711, de 2018)</h4>
+ <h4>§ 3º Até a implementação das medidas a que se refere o § 2º deste artigo, considerar-se-ão vazios os veículos de transporte de carga que transpuserem as praças de pedágio com um ou mais eixos mantidos suspensos, assegurada a fiscalização dessa condição pela autoridade com circunscrição sobre a via ou pelo agente designado na forma prevista no § 4º do art. 280 da Lei n° 9.503, de 23 de setembro de 1997 (Código de Trânsito Brasileiro) . (Incluído pela Lei n° 13.711, de 2018)</h4>
+ <h4>§ 4º Para as vias rodoviárias federais concedidas ou delegadas, será adotada a regulamentação da Agência Nacional de Transportes Terrestres (ANTT). (Incluído pela Lei n° 13.711, de 2018)</h4>
+ <h4>§ 5º Ficam sujeitos à penalidade prevista no art. 209 da Lei n° 9.503, de 23 de setembro de 1997 (Código de Trânsito Brasileiro) , os veículos de transporte de cargas que circularem com eixos indevidamente suspensos. (Incluído pela Lei n° 13.711, de 2018)</h4>
+ <h4>§ 6º O aumento do valor do pedágio para os usuários da rodovia a fim de compensar a isenção de que trata o caput deste artigo somente será adotado após esgotadas as demais alternativas de reequilíbrio econômico-financeiro dos contratos. (Incluído pela Lei n° 13.711, de 2018)</h4>
+ <h3>Art. 18. O embarcador indenizará o transportador por todos os prejuízos decorrentes de infração por transporte de carga com excesso de peso em desacordo com a nota fiscal, inclusive as despesas com transbordo de carga.</h3>
+ <h3>Art. 19. Fica instituído o Programa de Apoio ao Desenvolvimento do Transporte de Cargas Nacional - PROCARGAS, cujo objetivo principal é estimular o desenvolvimento da atividade de transporte terrestre nacional de cargas.</h3>
+ <h4>Parágrafo único. O Procargas tem como finalidade o desenvolvimento de programas visando à melhoria do meio ambiente de trabalho no setor de transporte de cargas, especialmente as ações de medicina ocupacional para o trabalhador.</h4>
+ <h3>Art. 20. Fica permitida a concessão de Autorização Especial de Trânsito - AET - para composição de veículos boiadeiros articulados (Romeu e Julieta) com até 25 m de comprimento, sendo permitido a estes veículos autorização para transitar em qualquer horário do dia.</h3>
+ <h3>Art. 21. Ficam revogados os arts. 1º, 2º e 9º da Lei n° 12.619, de 30 de abril de 2012 .</h3>
+ <h3>Art. 22. Ficam convertidas em sanção de advertência: (Regulamento)</h3>
+ <h5>I - as penalidades decorrentes de infrações ao disposto na Lei n° 12.619, de 30 de abril de 2012 , que alterou a Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , e a Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , aplicadas até a data da publicação desta Lei; e (Vide Decreto nº 8.433, de 2015)</h5>
+ <h5>II - as penalidades por violação do inciso V do art. 231 da Lei n° 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro , aplicadas até 2 (dois) anos antes da entrada em vigor desta Lei. (Vide Decreto nº 8.433, de 2015)</h5>
+ <p>Brasília, 2 de março de 2015; 194º da Independência e 127º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Antônio Carlos Rodrigues</p>
+ <p>Este texto não substitui o publicado no DOU de 3.3.2015</p>
+ <p>Dispõe sobre o exercício da profissão de motorista; altera a Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943, e as Leis nº9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro, e 11.442, de 5 de janeiro de 2007 (empresas e transportadores autônomos de carga), para disciplinar a jornada de trabalho e o tempo de direção do motorista profissional; altera a Lei n° 7.408, de 25 de novembro de 1985; revoga dispositivos da Lei n° 12.619, de 30 de abril de 2012; e dáoutras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2015/Lei/L13103.htm#art21" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
