@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.610, DE 20 DE DEZEMBRO DE 2002 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2002" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.610, DE 20 DE DEZEMBRO DE 2002</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:12:14 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/2002/L10610.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 9.092 caracteres | espelho: 9.342 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.610, DE 20 DE DEZEMBRO DE 2002. Conversão da MPv nº 70, de 2002</p>
+ <p>Dispõe sobre a participação de capital estrangeiro nas empresas jornalísticas e de radiodifusão sonora e de sons e imagens, conforme o § 4º do art. 222 da Constituição, altera os arts. 38 e 64 da Lei N° 4.117, de 27 de agosto de 1962, o § 3º do art. 12 do Decreto-Lei N° 236, de 28 de fevereiro de 1967, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei disciplina a participação de capital estrangeiro nas empresas jornalísticas e de radiodifusão sonora e de sons e imagens de que trata o § 4º do art. 222 da Constituição.</h3>
+ <h3>Art. 2º A participação de estrangeiros ou de brasileiros naturalizados há menos de dez anos no capital social de empresas jornalísticas e de radiodifusão não poderá exceder a trinta por cento do capital total e do capital votante dessas empresas e somente se dará de forma indireta, por intermédio de pessoa jurídica constituída sob as leis brasileiras e que tenha sede no País.</h3>
+ <h4>§ 1º As empresas efetivamente controladas, mediante encadeamento de outras empresas ou por qualquer outro meio indireto, por estrangeiros ou por brasileiros naturalizados há menos de dez anos não poderão ter participação total superior a trinta por cento no capital social, total e votante, das empresas jornalísticas e de radiodifusão.</h4>
+ <h4>§ 2º É facultado ao órgão do Poder Executivo expressamente definido pelo Presidente da República requisitar das empresas jornalísticas e das de radiodifusão, dos órgãos de registro comercial ou de registro civil das pessoas jurídicas as informações e os documentos necessários para a verificação do cumprimento do disposto neste artigo.</h4>
+ <h3>Art. 3º As alterações de controle societário de empresas jornalísticas e de radiodifusão sonora e de sons e imagens serão comunicadas ao Congresso Nacional.</h3>
+ <h4>Parágrafo único. A comunicação ao Congresso Nacional de alteração de controle societário de empresas de radiodifusão será de responsabilidade do órgão competente do Poder Executivo e a comunicação de alterações de controle societário de empresas jornalísticas será de responsabilidade destas empresas.</h4>
+ <h3>Art. 4º As empresas jornalísticas deverão apresentar, até o último dia útil de cada ano, aos órgãos de registro comercial ou de registro civil das pessoas jurídicas, declaração com a composição de seu capital social, incluindo a nomeação dos brasileiros natos ou naturalizados há mais de dez anos titulares, direta ou indiretamente, de pelo menos setenta por cento do capital total e do capital votante.</h3>
+ <h3>Art. 5º Os órgãos de registro comercial ou de registro civil das pessoas jurídicas não procederão ao registro ou arquivamento dos atos societários de empresas jornalísticas e de radiodifusão, caso seja constatada infração dos limites percentuais de participação previstos no art. 2º , sendo nulo o ato de registro ou arquivamento baseado em declaração que omita informação ou contenha informação falsa.</h3>
+ <h3>Art. 6º Será nulo de pleno direito qualquer acordo entre sócios, acionistas ou cotistas, ou qualquer ato, contrato ou outra forma de avença que, direta ou indiretamente, confira ou objetive conferir, a estrangeiros ou a brasileiros naturalizados há menos de dez anos, participação no capital total e no capital votante de empresas jornalísticas e de radiodifusão, em percentual acima do previsto no art. 2º , ou que tenha por objeto o estabelecimento, de direito ou de fato, de igualdade ou superioridade de poderes desses sócios em relação aos sócios brasileiros natos ou naturalizados há mais de dez anos.</h3>
+ <h4>§ 1º Será também nulo qualquer acordo, ato, contrato ou outra forma de avença que, direta ou indiretamente, de direito ou de fato, confira ou objetive conferir aos sócios estrangeiros ou brasileiros naturalizados há menos de dez anos a responsabilidade editorial, a seleção e direção da programação veiculada e a gestão das atividades das empresas referidas neste artigo.</h4>
+ <h4>§ 2º Caracterizada a prática dos crimes tipificados no art. 1º da Lei N° 9.613, de 3 de março de 1998 , aplicar-se-á a sanção prevista no art. 91, inciso II, letra a , do Código Penal à participação no capital de empresas jornalísticas e de radiodifusão adquirida com os recursos de origem ilícita, sem prejuízo da nulidade de qualquer acordo, ato ou contrato ou outra forma de avença que vincule ou tenha por objeto tal participação societária.</h4>
+ <h3>Art. 7º Os arts. 38 e 64 da Lei N° 4.117, de 27 de agosto de 1962, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 38 . Nas concessões, permissões ou autorizações para explorar serviços de radiodifusão, serão observados, além de outros requisitos, os seguintes preceitos e cláusulas:</h3>
+ <h6>a) os administradores ou gerentes que detenham poder de gestão e de representação civil e judicial serão brasileiros natos ou naturalizados há mais de dez anos. Os técnicos encarregados da operação dos equipamentos transmissores serão brasileiros ou estrangeiros com residência exclusiva no País, permitida, porém, em caráter excepcional e com autorização expressa do órgão competente do Poder Executivo, a admissão de especialistas estrangeiros, mediante contrato;</h6>
+ <h6>b) as alterações contratuais ou estatutárias que não impliquem alteração dos objetivos sociais ou modificação do quadro diretivo e as cessões de cotas ou ações ou aumento de capital social que não resultem em alteração de controle societário deverão ser informadas ao órgão do Poder Executivo expressamente definido pelo Presidente da República, no prazo de sessenta dias a contar da realização do ato;</h6>
+ <h6>c) a alteração dos objetivos sociais, a modificação do quadro diretivo, a alteração do controle societário das empresas e a transferência da concessão, da permissão ou da autorização dependem, para sua validade, de prévia anuência do órgão competente do Poder Executivo;</h6>
+ <p>..................................................................................</p>
+ <h6>g) a mesma pessoa não poderá participar da administração ou da gerência de mais de uma concessionária, permissionária ou autorizada do mesmo tipo de serviço de radiodifusão, na mesma localidade</h6>
+ <p>.................................................................................</p>
+ <p>i) as concessionárias e permissionárias de serviços de radiodifusão deverão apresentar, até o último dia útil de cada ano, ao órgão do Poder Executivo expressamente definido pelo Presidente da República e aos órgãos de registro comercial ou de registro civil de pessoas jurídicas, declaração com a composição de seu capital social, incluindo a nomeação dos brasileiros natos ou naturalizados há mais de dez anos titulares, direta ou indiretamente, de pelo menos setenta por cento do capital total e do capital votante.</p>
+ <h4>Parágrafo único. Não poderá exercer a função de diretor ou gerente de concessionária, permissionária ou autorizada de serviço de radiodifusão quem esteja no gozo de imunidade parlamentar ou de foro especial." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 64 . ..................................................................................</h3>
+ <p>..................................................................................</p>
+ <h6>g) não-observância, pela concessionária ou permissionária, das disposições contidas no art. 222, caput e seus §§ 1º e 2º , da Constituição." (NR)</h6>
+ <h3>Art. 8º Na aplicação desta Lei, deverá ser obedecido o disposto no art. 12 do Decreto-Lei N° 236, de 28 de fevereiro de 1967.</h3>
+ <h3>Art. 9º Não se aplica a limitação estabelecida no caput do art. 12 do Decreto-Lei n° 236, de 28 de fevereiro de 1967, aos investimentos de carteira de ações, desde que o seu titular não indique administrador em mais de uma empresa executante de serviço de radiodifusão, ou em suas respectivas controladoras, nem detenha mais de uma participação societária que configure controle ou coligação em tais empresas.</h3>
+ <h4>§ 1º Entende-se como coligação, para fins deste artigo, a participação, direta ou indireta, em pelo menos quinze por cento do capital de uma pessoa jurídica, ou se o capital de duas pessoas jurídicas for detido, em pelo menos quinze por cento, direta ou indiretamente, pelo mesmo titular de investimento financeiro.</h4>
+ <h4>§ 2º Consideram-se investimentos de carteira de ações, para os fins do caput deste artigo, os recursos aplicados em ações de companhias abertas, por investidores individuais e institucionais, estes últimos entendidos como os investidores, com sede ou domicílio no Brasil ou no exterior, que apliquem, de forma diversificada, por força de disposição legal, regulamentar ou de seus atos constitutivos, recursos no mercado de valores mobiliários, devendo cada ação ser nominalmente identificada.</h4>
+ <h3>Art. 10. Ficam convalidados os atos praticados com base na Medida Provisória Nº 70, de 1º de outubro de 2002.</h3>
+ <h3>Art. 11. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 20 de dezembro de 2002; 181º da Independência e 114º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Juarez Quadros do Nascimento</p>
+ <p>Este texto não substitui o publicado no DOU de 23.12.2002</p>
+ <p>Conversão da MPv nº 70, de 2002 | Dispõe sobre a participação de capital estrangeiro nas empresas jornalísticas e de radiodifusão sonora e de sons e imagens, conforme o § 4odo art. 222</p>
+ <p>da Constituição, altera os arts. 38 e 64 da Lei n° 4.117, de 27 de agosto de 1962, o § 3odo art. 12 do Decreto-Lei n° 236, de 28 de fevereiro de 1967, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/2002/L10610.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

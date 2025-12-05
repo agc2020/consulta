@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 12.158, DE 28 DE DEZEMBRO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 12.158, DE 28 DE DEZEMBRO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 15:55:02 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L12158.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 6.268 caracteres | espelho: 6.268 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 12.158, DE 28 DE DEZEMBRO DE 2009. Produção de efeito</p>
+ <p>Regulamento.</p>
+ <p>Dispõe sobre o acesso às graduações superiores de militares oriundos do Quadro de Taifeiros da Aeronáutica.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Aos militares oriundos do Quadro de Taifeiros da Aeronáutica - QTA, na reserva remunerada, reformados ou no serviço ativo, cujo ingresso no referido Quadro se deu até 31 de dezembro de 1992, é assegurado, na inatividade, o acesso às graduações superiores na forma desta Lei.</h3>
+ <h4>§ 1º O acesso às graduações superiores àquela em que ocorreu ou venha a ocorrer a inatividade dar-se-á conforme os requisitos constantes desta Lei e respectivo regulamento e será sempre limitado à última graduação do QTA, a de Suboficial.</h4>
+ <h4>§ 2º O acesso às graduações superiores, nos termos desta Lei, adotará critérios tais como a data de praça do militar, a data de promoção à graduação inicial do QTA, a data de inclusão do militar no QTA, a data de ingresso na inatividade e o fato motivador do ingresso na inatividade, conforme paradigmas a serem definidos em regulamento.</h4>
+ <h3>Art. 2º A promoção às graduações superiores, limitada à graduação de Suboficial, e aos proventos correspondentes observará pelo menos um dos seguintes requisitos:</h3>
+ <h5>I - que a transferência para a reserva remunerada tenha se dado ou venha a se dar a pedido, depois de cumprido tempo mínimo de serviço determinado em legislação específica;</h5>
+ <h5>II - que a inatividade tenha sobrevindo ou venha a sobrevir pelo alcance da idade limite para a permanência no serviço ativo;</h5>
+ <h5>III - que a inatividade tenha sobrevindo ou venha a sobrevir em face de aplicação da quota compulsória; ou</h5>
+ <h5>IV - que a despeito de não cumprir o tempo mínimo de serviço determinado em legislação específica para requerer a transferência para a reserva remunerada, a inatividade tenha sobrevindo em face de incapacidade definitiva para o serviço ativo.</h5>
+ <h3>Art. 3º O direito à promoção às graduações superiores previsto nesta Lei não abrange os militares oriundos do QTA que tenham ingressado na inatividade em data anterior à publicação da Lei N° 3.953, de 2 de setembro de 1961 , ou que tiveram as pensões militares instituídas anteriormente à data de publicação daquela Lei.</h3>
+ <h3>Art. 4º Desde que atendam ao art. 1º e a um dos requisitos estabelecidos nos incisos de I a IV do art. 2º e tendo o tempo mínimo de serviço determinado em legislação específica para a transferência para a reserva remunerada, também farão jus ao acesso a graduações superiores, até a graduação de Suboficial:</h3>
+ <h5>I - os militares falecidos na inatividade, instituidores de pensão militar e oriundos do QTA; e</h5>
+ <h5>II - os militares falecidos quando em atividade, instituidores de pensão militar e oriundos do QTA.</h5>
+ <h3>Art. 5º Os militares que atendam a uma das condições estabelecidas nos incisos de I a IV do art. 2º , bem como os beneficiários de pensão militar cujos instituidores preencham as condições dispostas no art. 3º , somente farão jus ao benefício previsto nesta Lei após a assinatura de termo de acordo, que importará:</h3>
+ <h5>I - a expressa concordância do militar ou do pensionista com a forma, prazos, montantes e limites de valores definidos nesta Lei;</h5>
+ <h5>II - a desistência de processo judicial em curso, em qualquer instância, e sua consequente extinção, assim como de seus eventuais recursos;</h5>
+ <h5>III - a renúncia ao direito de pleitear, na via administrativa ou judicial, quaisquer valores ou vantagens decorrentes da mesma revisão prevista nesta Lei, salvo em caso de comprovado erro material;</h5>
+ <h5>IV - a renúncia aos honorários advocatícios e à restituição de custas.</h5>
+ <h4>§ 1º Havendo ação judicial em curso, o advogado do militar ou pensionista deverá manifestar a renúncia ao recebimento de honorários ou, alternativamente, o militar ou pensionista deverá manifestar concordância com o desconto direto nos valores de remuneração ou de proventos de eventuais quantias despendidas pela União.</h4>
+ <h4>§ 2º Compete ao interessado requerer ao juiz da causa a desistência da ação, nos termos do inciso V do art. 269 da Lei N° 5.869, de 11 de janeiro de 1973 - Código de Processo Civil, e juntar ao termo de acordo a homologação judicial da desistência.</h4>
+ <h4>§ 3º Ocorrendo pagamento concomitante ou em duplicidade de valores referentes ao acordo previsto nesta Lei, fica a União autorizada a reaver a respectiva importância administrativamente por meio de desconto direto na remuneração ou nos proventos.</h4>
+ <h4>§ 4º Na hipótese de o militar ou beneficiário de pensão ocultar a existência de ação judicial, as restituições de que tratam os §§ 1º e 3º serão realizadas acrescidas de multa de 20% (vinte por cento).</h4>
+ <h4>§ 5º A concessão do benefício previsto nesta Lei fica condicionada à aprovação da autorização específica e prévia dotação constantes do Anexo V do Projeto de Lei N° 46, de 2009, do Congresso Nacional - Proposta Orçamentária para 2010.</h4>
+ <h3>Art. 6º O acesso às graduações superiores, até a graduação de Suboficial, será efetivado, mediante requerimento administrativo do interessado, por ato da autoridade competente do Comando da Aeronáutica, após verificação do atendimento das condições exigidas.</h3>
+ <h4>§ 1º Os inativos e pensionistas abrangidos por esta Lei terão o prazo limite de 2 (dois) anos, contado da publicação do seu regulamento, para apresentação dos requerimentos administrativos referidos no caput.</h4>
+ <h4>§ 2º Os militares em atividade abrangidos por esta Lei terão o prazo limite de 90 (noventa) dias, contado da publicação do ato de desligamento de serviço ativo, para apresentação dos requerimentos administrativos referidos no caput.</h4>
+ <h3>Art. 7º O disposto nesta Lei não implica interrupção, suspensão, renúncia ou reabertura de prazo prescricional.</h3>
+ <h4>Parágrafo único. Os arts. 191 e 202 da Lei N° 10.406, de 10 de janeiro de 2002 - Código Civil, não se aplicam à matéria de que trata esta Lei.</h4>
+ <h3>Art. 8º Esta Lei entra em vigor na data de sua publicação, produzindo efeitos financeiros a partir de 1º de julho de 2010.</h3>
+ <p>Brasília, 28 de dezembro de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 29.12.2009</p>
+ <p>Produção de efeitoRegulamento. | Dispõe sobre o acesso às graduações superiores de militares oriundos do Quadro de Taifeiros da Aeronáutica.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L12158.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

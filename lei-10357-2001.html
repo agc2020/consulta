@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.357, DE 27 DE DEZEMBRO DE 2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.357, DE 27 DE DEZEMBRO DE 2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:21:33 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/L10357.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 11.970 caracteres | espelho: 12.132 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.357, DE 27 DE DEZEMBRO DE 2001.</p>
+ <p>Regulamento</p>
+ <p>Estabelece normas de controle e fiscalização sobre produtos químicos que direta ou indiretamente possam ser destinados à elaboração ilícita de substâncias entorpecentes, psicotrópicas ou que determinem dependência física ou psíquica, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Estão sujeitos a controle e fiscalização, na forma prevista nesta Lei, em sua fabricação, produção, armazenamento, transformação, embalagem, compra, venda, comercialização, aquisição, posse, doação, empréstimo, permuta, remessa, transporte, distribuição, importação, exportação, reexportação, cessão, reaproveitamento, reciclagem, transferência e utilização, todos os produtos químicos que possam ser utilizados como insumo na elaboração de substâncias entorpecentes, psicotrópicas ou que determinem dependência física ou psíquica.</h3>
+ <h4>§ 1º Aplica-se o disposto neste artigo às substâncias entorpecentes, psicotrópicas ou que determinem dependência física ou psíquica que não estejam sob controle do órgão competente do Ministério da Saúde.</h4>
+ <h4>§ 2º Para efeito de aplicação das medidas de controle e fiscalização previstas nesta Lei, considera-se produto químico as substâncias químicas e as formulações que as contenham, nas concentrações estabelecidas em portaria, em qualquer estado físico, independentemente do nome fantasia dado ao produto e do uso lícito a que se destina.</h4>
+ <h3>Art. 2º O Ministro de Estado da Justiça, de ofício ou em razão de proposta do Departamento de Polícia Federal, da Secretaria Nacional Antidrogas ou da Agência Nacional de Vigilância Sanitária, definirá, em portaria, os produtos químicos a serem controlados e, quando necessário, promoverá sua atualização, excluindo ou incluindo produtos, bem como estabelecerá os critérios e as formas de controle.</h3>
+ <h3>Art. 3º Compete ao Departamento de Polícia Federal o controle e a fiscalização dos produtos químicos a que se refere o art. 1º desta Lei e a aplicação das sanções administrativas decorrentes.</h3>
+ <h3>Art. 4º Para exercer qualquer uma das atividades sujeitas a controle e fiscalização relacionadas no art. 1º , a pessoa física ou jurídica deverá se cadastrar e requerer licença de funcionamento ao Departamento de Polícia Federal, de acordo com os critérios e as formas a serem estabelecidas na portaria a que se refere o art. 2º , independentemente das demais exigências legais e regulamentares.</h3>
+ <h4>§ 1º As pessoas jurídicas já cadastradas, que estejam exercendo atividade sujeita a controle e fiscalização, deverão providenciar seu recadastramento junto ao Departamento de Polícia Federal, na forma a ser estabelecida em regulamento.</h4>
+ <h4>§ 2º A pessoa física ou jurídica que, em caráter eventual, necessitar exercer qualquer uma das atividades sujeitas a controle e fiscalização, deverá providenciar o seu cadastro junto ao Departamento de Polícia Federal e requerer autorização especial para efetivar as suas operações.</h4>
+ <h3>Art. 5º A pessoa jurídica referida no caput do art. 4º deverá requerer, anualmente, a Renovação da Licença de Funcionamento para o prosseguimento de suas atividades.</h3>
+ <h3>Art. 6º Todas as partes envolvidas deverão possuir licença de funcionamento, exceto quando se tratar de quantidades de produtos químicos inferiores aos limites a serem estabelecidos em portaria do Ministro de Estado da Justiça.</h3>
+ <h3>Art. 7º Para importar, exportar ou reexportar os produtos químicos sujeitos a controle e fiscalização, nos termos dos arts. 1º e 2º , será necessária autorização prévia do Departamento de Polícia Federal, nos casos previstos em portaria, sem prejuízo do disposto no art. 6º e dos procedimentos adotados pelos demais órgãos competentes.</h3>
+ <h3>Art. 8º A pessoa jurídica que realizar qualquer uma das atividades a que se refere o art. 1º desta Lei é obrigada a fornecer ao Departamento de Polícia Federal, periodicamente, as informações sobre suas operações.</h3>
+ <h4>Parágrafo único. Os documentos que consubstanciam as informações a que se refere este artigo deverão ser arquivados pelo prazo de cinco anos e apresentados ao Departamento de Polícia Federal quando solicitados.</h4>
+ <h3>Art. 9º Os modelos de mapas e formulários necessários à implementação das normas a que se referem os artigos anteriores serão publicados em portaria ministerial.</h3>
+ <h3>Art. 10. A pessoa física ou jurídica que, por qualquer motivo, suspender o exercício de atividade sujeita a controle e fiscalização ou mudar de atividade controlada deverá comunicar a paralisação ou alteração ao Departamento de Polícia Federal, no prazo de trinta dias a partir da data da suspensão ou da mudança de atividade.</h3>
+ <h3>Art. 11. A pessoa física ou jurídica que exerça atividade sujeita a controle e fiscalização deverá informar ao Departamento de Polícia Federal, no prazo máximo de vinte e quatro horas, qualquer suspeita de desvio de produto químico a que se refere esta Lei.</h3>
+ <h3>Art. 12. Constitui infração administrativa:</h3>
+ <h5>I – deixar de cadastrar-se ou licenciar-se no prazo legal;</h5>
+ <h5>II – deixar de comunicar ao Departamento de Polícia Federal, no prazo de trinta dias, qualquer alteração cadastral ou estatutária a partir da data do ato aditivo, bem como a suspensão ou mudança de atividade sujeita a controle e fiscalização;</h5>
+ <h5>III – omitir as informações a que se refere o art. 8º desta Lei, ou prestá-las com dados incompletos ou inexatos;</h5>
+ <h5>IV – deixar de apresentar ao órgão fiscalizador, quando solicitado, notas fiscais, manifestos e outros documentos de controle;</h5>
+ <h5>V – exercer qualquer das atividades sujeitas a controle e fiscalização, sem a devida Licença de Funcionamento ou Autorização Especial do órgão competente;</h5>
+ <h5>VI – exercer atividade sujeita a controle e fiscalização com pessoa física ou jurídica não autorizada ou em situação irregular, nos termos desta Lei;</h5>
+ <h5>VII – deixar de informar qualquer suspeita de desvio de produto químico controlado, para fins ilícitos;</h5>
+ <h5>VIII – importar, exportar ou reexportar produto químico controlado, sem autorização prévia;</h5>
+ <h5>IX – alterar a composição de produto químico controlado, sem prévia comunicação ao órgão competente;</h5>
+ <h5>X – adulterar laudos técnicos, notas fiscais, rótulos e embalagens de produtos químicos controlados visando a burlar o controle e a fiscalização;</h5>
+ <h5>XI – deixar de informar no laudo técnico, ou nota fiscal, quando for o caso, em local visível da embalagem e do rótulo, a concentração do produto químico controlado;</h5>
+ <h5>XII – deixar de comunicar ao Departamento de Polícia Federal furto, roubo ou extravio de produto químico controlado e documento de controle, no prazo de quarenta e oito horas; e</h5>
+ <h5>XIII – dificultar, de qualquer maneira, a ação do órgão de controle e fiscalização.</h5>
+ <h3>Art. 13. Os procedimentos realizados no exercício da fiscalização deverão ser formalizados mediante a elaboração de documento próprio.</h3>
+ <h3>Art. 14. O descumprimento das normas estabelecidas nesta Lei, independentemente de responsabilidade penal, sujeitará os infratores às seguintes medidas administrativas, aplicadas cumulativa ou isoladamente:</h3>
+ <h5>I – advertência formal;</h5>
+ <h5>II – apreensão do produto químico encontrado em situação irregular;</h5>
+ <h5>III – suspensão ou cancelamento de licença de funcionamento;</h5>
+ <h5>IV – revogação da autorização especial; e</h5>
+ <h5>V – multa de R$ 2.128,20 (dois mil, cento e vinte e oito reais e vinte centavos) a R$ 1.064.100,00 (um milhão, sessenta e quatro mil e cem reais).</h5>
+ <h4>§ 1º Na dosimetria da medida administrativa, serão consideradas a situação econômica, a conduta do infrator, a reincidência, a natureza da infração, a quantidade dos produtos químicos encontrados em situação irregular e as circunstâncias em que ocorreram os fatos.</h4>
+ <h4>§ 2º A critério da autoridade competente, o recolhimento do valor total da multa arbitrada poderá ser feito em até cinco parcelas mensais e consecutivas.</h4>
+ <h4>§ 3º Das sanções aplicadas caberá recurso ao Diretor-Geral do Departamento de Polícia Federal, na forma e prazo estabelecidos em regulamento.</h4>
+ <h3>Art. 15. A pessoa física ou jurídica que cometer qualquer uma das infrações previstas nesta Lei terá prazo de trinta dias, a contar da data da fiscalização, para sanar as irregularidades verificadas, sem prejuízo da aplicação de medidas administrativas previstas no art. 14.</h3>
+ <h4>§ 1º Sanadas as irregularidades, os produtos químicos eventualmente apreendidos serão devolvidos ao seu legítimo proprietário ou representante legal.</h4>
+ <h4>§ 2º Os produtos químicos que não forem regularizados e restituídos no prazo e nas condições estabelecidas neste artigo serão destruídos, alienados ou doados pelo Departamento de Polícia Federal a instituições de ensino, pesquisa ou saúde pública, após trânsito em julgado da decisão proferida no respectivo processo administrativo.</h4>
+ <h4>§ 3º Em caso de risco iminente à saúde pública ou ao meio ambiente, o órgão fiscalizador poderá dar destinação imediata aos produtos químicos apreendidos.</h4>
+ <h3>Art. 16. Fica instituída a Taxa de Controle e Fiscalização de Produtos Químicos, cujo fato gerador é o exercício do poder de polícia conferido ao Departamento de Polícia Federal para controle e fiscalização das atividades relacionadas no art. 1º desta Lei.</h3>
+ <h3>Art. 17. São sujeitos passivos da Taxa de Controle e Fiscalização de Produtos Químicos as pessoas físicas e jurídicas que exerçam qualquer uma das atividades sujeitas a controle e fiscalização de que trata o art. 1º desta Lei.</h3>
+ <h3>Art. 18. São isentos do pagamento da Taxa de Controle e Fiscalização de Produtos Químicos, sem prejuízo das demais obrigações previstas nesta Lei:</h3>
+ <h5>I – os órgãos da Administração Pública direta federal, estadual e municipal;</h5>
+ <h5>II – as instituições públicas de ensino, pesquisa e saúde;</h5>
+ <h5>III – as entidades particulares de caráter assistencial, filantrópico e sem fins lucrativos que comprovem essa condição na forma da lei específica em vigor.</h5>
+ <h3>Art. 19. A Taxa de Controle e Fiscalização de Produtos Químicos é devida pela prática dos seguintes atos de controle e fiscalização:</h3>
+ <h5>I – no valor de R$ 500,00 (quinhentos reais) para:</h5>
+ <p>a. emissão de Certificado de Registro Cadastral;</p>
+ <p>b. emissão de segunda via de Certificado de Registro Cadastral; e</p>
+ <p>c. alteração de Registro Cadastral;</p>
+ <h5>II – no valor de R$ 1.000,00 (um mil reais) para:</h5>
+ <p>a. emissão de Certificado de Licença de Funcionamento;</p>
+ <p>b. emissão de segunda via de Certificado de Licença de Funcionamento; e</p>
+ <p>c. renovação de Licença de Funcionamento;</p>
+ <h5>III – no valor de R$ 50,00 (cinqüenta reais) para:</h5>
+ <p>a. emissão de Autorização Especial; e</p>
+ <p>b. emissão de segunda via de Autorização Especial.</p>
+ <h4>Parágrafo único. Os valores constantes dos incisos I e II deste artigo serão reduzidos de:</h4>
+ <h5>I - quarenta por cento, quando se tratar de empresa de pequeno porte;</h5>
+ <h5>II - cinqüenta por cento, quando se tratar de filial de empresa já cadastrada;</h5>
+ <h5>III - setenta por cento, quando se tratar de microempresa.</h5>
+ <h3>Art. 20. A Taxa de Controle e Fiscalização de Produtos Químicos será recolhida nos prazos e nas condições estabelecidas em ato do Departamento de Polícia Federal.</h3>
+ <h3>Art. 21. Os recursos relativos à cobrança da Taxa de Controle e Fiscalização de Produtos Químicos, à aplicação de multa e à alienação de produtos químicos previstas nesta Lei constituem receita do Fundo Nacional Antidrogas – FUNAD.</h3>
+ <h4>Parágrafo único. O Fundo Nacional Antidrogas destinará oitenta por cento dos recursos relativos à cobrança da Taxa, à aplicação de multa e à alienação de produtos químicos, referidos no caput deste artigo, ao Departamento de Polícia Federal, para o reaparelhamento e custeio das atividades de controle e fiscalização de produtos químicos e de repressão ao tráfico ilícito de drogas.</h4>
+ <h3>Art. 22. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 23. Ficam revogados os arts. 1º a 13 e 18 da Lei N° 9.017, de 30 de março de 1995.</h3>
+ <p>Brasília, 27 de dezembro de 2001; 180º da Independência e 113º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Aloysio Nunes Ferreira Filho</p>
+ <p>Este texto não substitui o publicado no D.O.U. de 28.12.2001</p>
+ <p>Regulamento | Estabelece normas de controle e fiscalização sobre produtos químicos que direta ou indiretamente possam ser destinados à elaboração ilícita de substâncias entorpecentes, psicotrópicas ou que determinem dependência física ou psíquica, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/L10357.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

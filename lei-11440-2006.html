@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.440, DE 29 DE DEZEMBRO DE 2006 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2006" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.440, DE 29 DE DEZEMBRO DE 2006</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:31:45 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/L11440.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 55.228 caracteres | espelho: 55.720 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.440, DE 29 DE DEZEMBRO DE 2006. Conversão da MPv nº 319, de 2006</p>
+ <p>Institui o Regime Jurídico dos Servidores do Serviço Exterior Brasileiro, altera a Lei n° 8.829, de 22 de dezembro de 1993, que cria, no Serviço Exterior Brasileiro, as Carreiras de Oficial de Chancelaria e de Assistente de Chancelaria, altera a Lei n° 8.829, de 22 de dezembro de 1993; revoga as Leis nºs 7.501, de 27 de junho de 1986, 9.888, de 8 de dezembro de 1999, e 10.872, de 25 de maio de 2004, e dispositivos das Leis nºs 8.028, de 12 de abril de 1990, 8.745, de 9 de dezembro de 1993, e 8.829, de 22 de dezembro de 1993; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <p>TÍTULO I</p>
+ <p>DO SERVIÇO EXTERIOR BRASILEIRO</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º O Serviço Exterior Brasileiro, essencial à execução da política exterior do Brasil, constitui-se do corpo de servidores, ocupantes de cargos de provimento efetivo, capacitados profissionalmente como agentes do Ministério das Relações Exteriores, no Brasil e no exterior, organizados em carreiras definidas e hierarquizadas.</h3>
+ <h3>Art. 1º O Serviço Exterior Brasileiro, essencial à execução da política exterior da República Federativa do Brasil, constitui-se do corpo de servidores, ocupantes de cargos de provimento efetivo, capacitados profissionalmente como agentes do Ministério das Relações Exteriores, no País e no exterior, organizados em carreiras definidas e hierarquizadas, ressalvadas as nomeações para cargos em comissão e funções de chefia, incluídas as atribuições correspondentes, nos termos do disposto em ato do Poder Executivo. (Redação dada pela Medida Provisória nº 870, de 2019)</h3>
+ <h3>Art. 1º O Serviço Exterior Brasileiro, essencial à execução da política exterior da República Federativa do Brasil, constitui-se do corpo de servidores, ocupantes de cargos de provimento efetivo, capacitados profissionalmente como agentes do Ministério das Relações Exteriores, no País e no exterior, organizados em carreiras definidas e hierarquizadas, ressalvadas as nomeações para cargos em comissão e para funções de chefia, incluídas as atribuições correspondentes, nos termos de ato do Poder Executivo. (Redação dada pela Lei n° 13.844, de 2019)</h3>
+ <h4>Parágrafo único. Aplica-se aos integrantes do Serviço Exterior Brasileiro o disposto nesta Lei, na Lei n° 8.829, de 22 de dezembro de 1993 , e na legislação relativa aos servidores públicos civis da União.</h4>
+ <h3>Art. 2º O Serviço Exterior Brasileiro é composto da Carreira de Diplomata, da Carreira de Oficial de Chancelaria e da Carreira de Assistente de Chancelaria.</h3>
+ <h3>Art. 3º Aos servidores da Carreira de Diplomata incumbem atividades de natureza diplomática e consular, em seus aspectos específicos de representação, negociação, informação e proteção de interesses brasileiros no campo internacional.</h3>
+ <h3>Art. 4º Aos servidores integrantes da Carreira de Oficial de Chancelaria, de nível superior, incumbem atividades de formulação, implementação e execução dos atos de análise técnica e gestão administrativa necessários ao desenvolvimento da política externa brasileira.</h3>
+ <h3>Art. 5º Aos servidores integrantes da Carreira de Assistente de Chancelaria, de nível médio, incumbem tarefas de apoio técnico e administrativo.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS DIREITOS E VANTAGENS</h3>
+ <h3>Art. 6º A nomeação para cargo das Carreiras do Serviço Exterior Brasileiro far-se-á em classe inicial, obedecida a ordem de classificação dos habilitados em concurso público de provas, ou de provas e títulos.</h3>
+ <h3>Art. 7º Não serão nomeados os candidatos que, embora aprovados em concurso público, venham a ser considerados, em exame de suficiência física e mental, inaptos para o exercício de cargo de Carreira do Serviço Exterior Brasileiro.</h3>
+ <h3>Art. 8º O servidor nomeado para cargo inicial das Carreiras do Serviço Exterior Brasileiro fica sujeito a estágio probatório de 3 (três) anos de efetivo exercício, com o objetivo de avaliar suas aptidões e capacidade para o exercício do cargo.</h3>
+ <h4>§ 1º A avaliação especial de desempenho para fins de aquisição da estabilidade será realizada por comissão instituída para essa finalidade.</h4>
+ <h4>§ 2º Os procedimentos de avaliação das aptidões e da capacidade para o exercício do cargo serão estabelecidos em ato do Ministro de Estado das Relações Exteriores, observada a legislação pertinente.</h4>
+ <h3>Art. 9º A promoção obedecerá aos critérios estabelecidos nesta Lei e às normas constantes de regulamento, o qual também disporá sobre a forma de avaliação de desempenho funcional e de apuração de antigüidade.</h3>
+ <h3>Art. 10. Não poderá ser promovido o servidor temporariamente afastado do exercício do cargo em razão de:</h3>
+ <h5>I - licença para o trato de interesses particulares;</h5>
+ <h5>II - licença por motivo de afastamento do cônjuge;</h5>
+ <h5>III - licença para trato de doença em pessoa da família, por prazo superior a 1 (um) ano, desde que a doença não haja sido contraída em razão do serviço do servidor;</h5>
+ <h5>IV - licença extraordinária; e</h5>
+ <h5>V - investidura em mandato eletivo, cujo exercício lhe exija o afastamento.</h5>
+ <h3>Art. 11. Os servidores do Serviço Exterior Brasileiro servirão na Secretaria de Estado e em postos no exterior.</h3>
+ <h4>Parágrafo único. Consideram-se postos no exterior as repartições do Ministério das Relações Exteriores sediadas em país estrangeiro.</h4>
+ <h3>Art. 12. Nas remoções entre a Secretaria de Estado e os postos no exterior e de um para outro posto no exterior, procurar-se-á compatibilizar a conveniência da administração com o interesse funcional do servidor do Serviço Exterior Brasileiro, observadas as disposições desta Lei e de ato regulamentar do Ministro de Estado das Relações Exteriores.</h3>
+ <h3>Art. 13. Os postos no exterior serão classificados, para fins de movimentação de pessoal, em grupos A, B, C e D, segundo o grau de representatividade da missão, as condições específicas de vida na sede e a conveniência da administração.</h3>
+ <h4>§ 1º A classificação dos postos em grupos far-se-á mediante ato do Ministro de Estado das Relações Exteriores.</h4>
+ <h4>§ 2º Para fins de contagem de tempo de posto, prevalecerá a classificação estabelecida para o posto de destino na data da publicação do ato que remover o servidor.</h4>
+ <h3>Art. 14. A lotação numérica de cada posto será fixada em ato do Ministro de Estado das Relações Exteriores.</h3>
+ <h4>Parágrafo único. O servidor do Serviço Exterior Brasileiro somente poderá ser removido para posto no qual se verifique claro de lotação em sua classe ou grupo de classes, ressalvadas as disposições dos arts. 46 e 47 desta Lei.</h4>
+ <h3>Art. 15. Ao servidor estudante, removido ex officio de posto no exterior para o Brasil, fica assegurado matrícula em estabelecimento de ensino oficial, independentemente de vaga.</h3>
+ <h4>Parágrafo único. O disposto neste artigo estende-se ao cônjuge e filhos de qualquer condição, aos enteados e aos adotivos que vivam na companhia do servidor, àqueles que, em ato regular da autoridade competente, estejam sob a sua guarda e aos que tenham sido postos sob sua tutela.</h4>
+ <h3>Art. 16. Além das garantias decorrentes do exercício de seus cargos e funções, ficam asseguradas aos servidores do Serviço Exterior Brasileiro as seguintes prerrogativas:</h3>
+ <h5>I - uso dos títulos decorrentes do exercício do cargo ou função;</h5>
+ <h5>II - concessão de passaporte diplomático ou de serviço, na forma da legislação pertinente; e</h5>
+ <h5>III - citação em processo civil ou penal, quando em serviço no exterior, por intermédio do Ministério das Relações Exteriores.</h5>
+ <h4>Parágrafo único. Estendem-se aos inativos das Carreiras do Serviço Exterior Brasileiro as prerrogativas estabelecidas nos incisos I e II do caput deste artigo.</h4>
+ <h3>Art. 17. Não poderá gozar férias o servidor removido para posto no exterior ou para a Secretaria de Estado, antes de um período mínimo de 6 (seis) meses de sua chegada ao posto ou à Secretaria de Estado, desde que sua remoção não tenha sido ex officio.</h3>
+ <h3>Art. 18. O disposto no art. 17 desta Lei não poderá acarretar a perda de férias eventualmente acumuladas.</h3>
+ <h3>Art. 19. Os Ministros de Primeira Classe e de Segunda Classe, depois de 4 (quatro) anos consecutivos de exercício no exterior, terão direito a 2 (dois) meses de férias extraordinárias, que deverão ser gozadas no Brasil.</h3>
+ <h4>Parágrafo único. A época de gozo dependerá da conveniência do serviço e de programação estabelecida pela Secretaria de Estado para o cumprimento de estágio de atualização dos Ministros de Primeira Classe e de Segunda Classe em férias extraordinárias.</h4>
+ <h3>Art. 20. Sem prejuízo da retribuição e dos demais direitos e vantagens, poderá o servidor do Serviço Exterior Brasileiro ausentar-se do posto em razão das condições peculiares de vida da sede no exterior, atendidos os prazos e requisitos estabelecidos em ato do Ministro de Estado das Relações Exteriores.</h3>
+ <h3>Art. 21. O servidor do Serviço Exterior Brasileiro casado terá direito a licença, sem remuneração ou retribuição, quando o seu cônjuge, que não ocupar cargo das Carreiras do Serviço Exterior Brasileiro, for mandado servir, ex officio, em outro ponto do território nacional ou no exterior.</h3>
+ <h3>Art. 22. O servidor do Serviço Exterior Brasileiro casado cujo cônjuge, também integrante do Serviço Exterior Brasileiro, for removido para o exterior ou nele encontrar-se em missão permanente poderá entrar em licença extraordinária, sem remuneração ou retribuição, se assim o desejar ou desde que não satisfaça os requisitos estipulados em regulamento, para ser removido para o mesmo posto de seu cônjuge ou para outro posto na mesma sede em que este se encontre.</h3>
+ <h4>Parágrafo único. Não poderá permanecer em licença extraordinária o servidor cujo cônjuge, também integrante do Serviço Exterior Brasileiro, removido do exterior, venha a apresentar-se na Secretaria de Estado.</h4>
+ <h3>Art. 23. Contar-se-á como de efetivo exercício na Carreira, ressalvado o disposto nos incisos I, II e III do caput do art. 52 desta Lei, o tempo em que o Diplomata houver permanecido como aluno no Curso de Preparação à Carreira de Diplomata.</h3>
+ <h3>Art. 24. Os proventos do servidor do Serviço Exterior Brasileiro que se aposente em serviço no exterior serão calculados com base na remuneração a que faria jus se estivesse em exercício no Brasil.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO REGIME DISCIPLINAR</h3>
+ <h3>Art. 25. Ao servidor do Serviço Exterior Brasileiro, submetido aos princípios de hierarquia e disciplina, incumbe observar o conjunto de deveres, atribuições e responsabilidades previstas nesta Lei e em disposições regulamentares, tanto no exercício de suas funções, quanto em sua conduta pessoal na vida privada.</h3>
+ <h3>Art. 26. As questões relativas à conduta dos efetivos do corpo permanente do Serviço Exterior Brasileiro - Diplomatas, Oficiais de Chancelaria, Assistentes de Chancelaria - e dos demais servidores do Quadro de Pessoal do Ministério das Relações Exteriores serão, sem prejuízo das disposições do Regime Jurídico Único dos Servidores Públicos Civis da União, tratadas pela Corregedoria do Serviço Exterior.</h3>
+ <h3>Art. 27. Além dos deveres previstos no Regime Jurídico Único dos Servidores Públicos Civis da União, constituem deveres específicos do servidor do Serviço Exterior Brasileiro:</h3>
+ <h5>I - atender pronta e solicitamente ao público em geral, em especial quando no desempenho de funções de natureza consular e de assistência a brasileiros no exterior;</h5>
+ <h5>II - respeitar as leis, os usos e os costumes dos países onde servir, observadas as práticas internacionais;</h5>
+ <h5>III - manter comportamento correto e decoroso na vida pública e privada;</h5>
+ <h5>IV - dar conhecimento à autoridade superior de qualquer fato relativo à sua vida pessoal, que possa afetar interesse de serviço ou da repartição em que estiver servindo; e</h5>
+ <h5>V - solicitar, previamente, anuência da autoridade competente, na forma regulamentar, para manifestar-se publicamente sobre matéria relacionada com a formulação e execução da política exterior do Brasil.</h5>
+ <h3>Art. 28. São deveres do servidor do Serviço Exterior Brasileiro no exercício de função de chefia, no Brasil e no exterior:</h3>
+ <h5>I - defender os interesses legítimos de seus subordinados, orientá-los no desempenho de suas tarefas, estimular-lhes espírito de iniciativa, disciplina e respeito ao patrimônio público;</h5>
+ <h5>II - exigir de seus subordinados ordem, atendimento pronto e cortês ao público em geral e exação no cumprimento de seus deveres, bem como, dentro de sua competência, responsabilizar e punir os que o mereçam, comunicando as infrações à autoridade competente; e</h5>
+ <h5>III - dar conta à autoridade competente do procedimento público dos subordinados, quando incompatível com a disciplina e a dignidade de seus cargos ou funções.</h5>
+ <h3>Art. 29. Além das proibições capituladas no Regime Jurídico Único dos Servidores Públicos Civis da União, ao servidor do Serviço Exterior Brasileiro é proibido:</h3>
+ <h5>I - divulgar, sem anuência da autoridade competente, informação relevante para a política exterior do Brasil, a que tenha tido acesso em razão de desempenho de cargo no Serviço Exterior Brasileiro;</h5>
+ <h5>II - aceitar comissão, emprego ou pensão de governo estrangeiro sem licença expressa do Presidente da República;</h5>
+ <h5>III - renunciar às imunidades de que goze em serviço no exterior sem expressa autorização da Secretaria de Estado;</h5>
+ <h5>IV - valer-se abusivamente de imunidades ou privilégios de que goze em país estrangeiro; e</h5>
+ <h5>V - utilizar, para fim ilícito, meio de comunicação de qualquer natureza do Ministério das Relações Exteriores.</h5>
+ <h3>Art. 30. A Corregedoria do Serviço Exterior, em caso de dúvida razoável quanto à veracidade ou exatidão de informação ou denúncia sobre qualquer irregularidade no âmbito do Serviço Exterior Brasileiro, determinará a realização de sindicância prévia, com o objetivo de coligir dados para eventual instauração de processo administrativo disciplinar.</h3>
+ <h3>Art. 31. O processo administrativo disciplinar será instaurado pela Corregedoria do Serviço Exterior, que designará, para realizá-lo, Comissão constituída por 3 (três) membros efetivos.</h3>
+ <h4>§ 1º A Comissão contará entre seus membros com, pelo menos, 2 (dois) servidores de classe igual ou superior à do indiciado e, sempre que possível, de maior antigüidade do que este.</h4>
+ <h4>§ 2º Ao designar a Comissão, a Corregedoria do Serviço Exterior indicará, dentre seus membros, o respectivo presidente, ao qual incumbirá a designação do secretário.</h4>
+ <h3>Art. 32. Durante o processo administrativo disciplinar, a Corregedoria do Serviço Exterior poderá determinar o afastamento do indiciado do exercício do cargo ou função, sem prejuízo de seus vencimentos e vantagens, ou a sua reassunção a qualquer tempo.</h3>
+ <h3>Art. 33. O servidor do Serviço Exterior Brasileiro deverá solicitar autorização do Ministro de Estado das Relações Exteriores para casar com pessoa de nacionalidade estrangeira.</h3>
+ <h4>§ 1º A critério do Ministro de Estado das Relações Exteriores, serão apresentados, com o pedido de autorização, quaisquer documentos julgados necessários.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se ao aluno de curso do Instituto Rio Branco.</h4>
+ <h4>§ 3º Dependerá, igualmente, de autorização do Ministro de Estado das Relações Exteriores a inscrição de candidato casado com pessoa de nacionalidade estrangeira em concurso para ingresso em Carreira do Serviço Exterior Brasileiro.</h4>
+ <h4>§ 4º A transgressão do estabelecido no caput deste artigo e em seus §§ 2º e 3º acarretará, conforme o caso:</h4>
+ <h5>I - o cancelamento da inscrição do candidato;</h5>
+ <h5>II - a denegação de matrícula em curso ministrado pelo Instituto Rio Branco;</h5>
+ <h5>III - o desligamento do aluno de curso ministrado pelo Instituto Rio Branco;</h5>
+ <h5>IV - a impossibilidade de nomeação para cargo do Serviço Exterior Brasileiro; e</h5>
+ <h5>V - a demissão do servidor, mediante processo administrativo.</h5>
+ <h3>Art. 34. O servidor do Serviço Exterior Brasileiro deverá solicitar autorização do Ministro de Estado das Relações Exteriores para casar com pessoa empregada de governo estrangeiro ou que dele receba comissão ou pensão.</h3>
+ <h4>§ 1º Poder-se-á exigir que sejam apresentados, com o pedido de autorização, quaisquer documentos julgados necessários.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se ao aluno de curso do Instituto Rio Branco e será considerado, nos termos desta Lei, como requisito prévio à nomeação.</h4>
+ <h4>§ 3º Dependerá, igualmente, de autorização do Ministro de Estado das Relações Exteriores a inscrição de candidato, casado com pessoa nas situações previstas no caput deste artigo, em concurso para ingresso em Carreira de Serviço Exterior Brasileiro.</h4>
+ <h4>§ 4º A transgressão do estabelecido no caput deste artigo e em seus §§ 2º e 3º acarretará, conforme o caso, a aplicação do disposto no § 4º do art. 33 desta Lei.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA CARREIRA DIPLOMÁTICA</h3>
+ <p>Seção I</p>
+ <p>Do Ingresso</p>
+ <h3>Art. 35. O ingresso na Carreira de Diplomata far-se-á mediante concurso público de provas ou de provas e títulos, de âmbito nacional, organizado pelo Instituto Rio Branco.</h3>
+ <h4>Parágrafo único. A aprovação no concurso habilitará o ingresso no cargo da classe inicial da Carreira de Diplomata, de acordo com a ordem de classificação obtida, bem como a matrícula no Curso de Formação do Instituto Rio Branco.</h4>
+ <h3>Art. 36. Ao concurso público de provas ou de provas e títulos para admissão na Carreira de Diplomata somente poderão concorrer brasileiros natos.</h3>
+ <h4>Parágrafo único. Para investidura no cargo de Terceiro-Secretário, deverá ser cumprido o requisito de apresentação de diploma de conclusão de curso de graduação em nível superior, devidamente registrado, emitido por instituição de ensino oficialmente reconhecida.</h4>
+ <p>Seção II</p>
+ <p>Das Classes, dos Cargos e das Funções</p>
+ <h3>Art. 37. A Carreira de Diplomata do Serviço Exterior Brasileiro, de nível superior, estruturada na forma desta Lei, é constituída pelas classes de Ministro de Primeira Classe, Ministro de Segunda Classe, Conselheiro, Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário, em ordem hierárquica funcional decrescente.</h3>
+ <h4>§ 1º O número de cargos do Quadro Ordinário da Carreira de Diplomata em cada classe é o constante do Anexo I desta Lei.</h4>
+ <h4>§ 2º O número de cargos nas classes de Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário poderá variar, desde que seu total não ultrapasse os limites fixados no Anexo I desta Lei.</h4>
+ <h4>§ 3º O número de Terceiros-Secretários promovidos a cada semestre a Segundos-Secretários e o número de Segundos-Secretários promovidos a cada semestre a Primeiros-Secretários serão estabelecidos em regulamento.</h4>
+ <h3>Art. 38. Os Servidores do Serviço Exterior Brasileiro em serviço nos postos no exterior e na Secretaria de Estado poderão ocupar cargos em comissão ou funções de chefia, assessoria e assistência correspondentes às atividades privativas de suas respectivas Carreiras, de acordo com o disposto nesta Lei e em regulamento.</h3>
+ <h3>Art. 39. Mediante aprovação prévia do Senado Federal, os Chefes de Missão Diplomática Permanente e de Missão ou Delegação Permanente junto a organismo internacional serão nomeados pelo Presidente da República com o título de Embaixador.</h3>
+ <h4>§ 1º Em Estados nos quais o Brasil não tenha representação diplomática efetiva, poderá ser cumulativamente acreditado Chefe de Missão Diplomática Permanente residente em outro Estado, mantendo-se, nessa eventualidade, a sede primitiva.</h4>
+ <h4>§ 2º Em Estados nos quais o Brasil não tenha representação diplomática residente ou cumulativa, poderá ser excepcionalmente acreditado como Chefe de Missão Diplomática Ministro de Primeira Classe ou Ministro de Segunda Classe, nos termos do art. 46 desta Lei, lotado na Secretaria de Estado.</h4>
+ <h4>§ 3º Excepcionalmente e a critério da administração, o Ministro de Primeira Classe, em exercício na Secretaria de Estado, poderá ser designado como Embaixador Extraordinário para o tratamento de assuntos relevantes para a política externa brasileira.</h4>
+ <h3>Art. 40. O Chefe de Missão Diplomática Permanente é a mais alta autoridade brasileira no país em cujo governo está acreditado.</h3>
+ <h3>Art. 41. Os Chefes de Missão Diplomática Permanente serão escolhidos dentre os Ministros de Primeira Classe ou, nos termos do art. 46 desta Lei, dentre os Ministros de Segunda Classe.</h3>
+ <h4>Parágrafo único. Excepcionalmente, poderá ser designado para exercer a função de Chefe de Missão Diplomática Permanente brasileiro nato, não pertencente aos quadros do Ministério das Relações Exteriores, maior de 35 (trinta e cinco) anos, de reconhecido mérito e com relevantes serviços prestados ao País.</h4>
+ <p>Seção III</p>
+ <p>Da Lotação e da Movimentação</p>
+ <h3>Art. 42. Os Ministros de Primeira Classe, os Ministros de Segunda Classe e os Conselheiros no exercício de chefia de posto não permanecerão por período superior a 5 (cinco) anos consecutivos em cada posto, incluindo-se nessa contagem o tempo de exercício das funções de Representante Permanente e de Representante Permanente Alterno em organismos internacionais.</h3>
+ <h4>§ 1º O período contínuo máximo para exercer o cargo de chefia de posto no exterior será definido em ato do Ministro de Estado das Relações Exteriores, respeitado o disposto no caput deste artigo.</h4>
+ <h4>§ 2º A permanência dos Ministros de Primeira Classe, dos Ministros de Segunda Classe e dos Conselheiros, no exercício do cargo de chefia de posto não será superior a 3 (três) anos em cada posto dos grupos C e D, podendo ser prorrogada por no máximo até 12 (doze) meses, atendida a conveniência da administração e mediante expressa anuência do interessado.</h4>
+ <h3>Art. 43. Ressalvadas as hipóteses do art. 42 desta Lei, a permanência no exterior de Ministros de Segunda Classe e de Conselheiros comissionados na função de Ministro-Conselheiro não será superior a 5 (cinco) anos em cada posto.</h3>
+ <h4>§ 1º O período de permanência no exterior do Ministro de Segunda Classe poderá estender-se segundo o interesse do Diplomata e atendida a conveniência da administração, desde que respeitado o disposto no caput deste artigo.</h4>
+ <h4>§ 2º O período de permanência no exterior de Diplomata da classe de Conselheiro poderá estender-se segundo o interesse do Diplomata e atendida a conveniência da administração, desde que observado o critério de rodízio entre postos dos grupos A, B, C ou D a que se referem os incisos I, II e III do caput do art. 45 desta Lei.</h4>
+ <h4>§ 2º O período de permanência no exterior de Diplomata da classe de Conselheiro poderá estender-se segundo o interesse do Diplomata e atendida a conveniência da administração, desde que observados o prazo máximo de três anos em cada posto e o critério de rodízio entre postos dos grupos A, B, C ou D a que se referem os incisos I, II e III do caput do art. 45. (Redação dada pela Medida Provisória nº 568, de 2012)</h4>
+ <h4>§ 2º O período de permanência no exterior de Diplomata da classe de Conselheiro poderá estender-se segundo o interesse do Diplomata e atendida a conveniência da administração, desde que observados o prazo máximo de 3 (três) anos em cada posto e o critério de rodízio entre postos dos grupos A, B, C ou D a que se referem os incisos I, II e III do caput do art. 45. (Redação dada pela Lei n° 12.702, de 2012)</h4>
+ <h4>§ 3º O Conselheiro que tiver sua permanência no exterior estendida nos termos do § 2º deste artigo, após servir em posto do grupo A, somente poderá ser removido novamente para posto desse mesmo grupo após servir em 2 (dois) postos do grupo C ou em 1 (um) posto do grupo D.</h4>
+ <h4>§ 4º Quando o Conselheiro servir consecutivamente em postos dos grupos A e B, somente será novamente removido para posto do grupo B após cumprir missão em um posto do grupo C.</h4>
+ <h4>§5º Nos postos C e D a permanência não será superior a dois anos, podendo ser prorrogada por prazo de até um ano, sem prejuízo dos demais prazos fixados nesta Lei, atendida a conveniência da administração e mediante expressa anuência do chefe do posto e do interessado. (Incluído pela Medida Provisória nº 568, de 2012)</h4>
+ <h4>§ 5º Nos postos C e D a permanência não será superior a 2 (dois) anos, podendo ser prorrogada por prazo de até 1 (um) ano, sem prejuízo dos demais prazos fixados nesta Lei, atendida a conveniência da administração e mediante expressa anuência do chefe do posto e do interessado. (Redação dada pela Lei n° 12.702, de 2012)</h4>
+ <h3>Art. 44. Os Primeiros-Secretários, Segundos-Secretários e Terceiros-Secretários deverão servir efetivamente durante 3 (três) anos em cada posto e 6 (seis) anos consecutivos no exterior.</h3>
+ <h4>§ 1º A permanência no exterior de Diplomata das classes de Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário poderá, no interesse do Diplomata e atendida a conveniência do serviço, estender-se a 10 (dez) anos consecutivos, desde que nesse período sirva em postos dos grupos C e D.</h4>
+ <h4>§ 2º A permanência inicial de Diplomata das classes de Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário nos postos dos grupos C e D não será superior a 2 (dois) anos, podendo ser prorrogada por prazo de até 2 (dois) anos, sem prejuízo dos demais prazos fixados nesta Lei, atendida a conveniência da administração e mediante expressa anuência do chefe do posto e do interessado.</h4>
+ <h4>§ 3º Após 3 (três) anos de lotação em posto dos grupos A ou B, o Diplomata das classes de Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário poderá permanecer no posto por mais 1 (um) ano, desde que atendida a conveniência da administração e mediante expressa anuência do chefe do posto e do interessado.</h4>
+ <h4>§ 4º Após permanência adicional de 1 (um) ano em posto do grupo A, o Diplomata somente poderá ser removido para posto dos grupos C ou D ou para a Secretaria de Estado.</h4>
+ <h4>§ 5º A primeira remoção para o exterior de Diplomata das classes de Segundo-Secretário e Terceiro-Secretário far-se-á para posto no qual estejam lotados pelo menos 2 (dois) Diplomatas de maior hierarquia funcional, excetuados os casos em que o Segundo-Secretário tenha concluído o Curso de Aperfeiçoamento de Diplomatas - CAD.</h4>
+ <h4>§ 5º A primeira remoção para o exterior de Diplomata das classes de Segundo-Secretário e Terceiro-Secretário far-se-á para posto no qual esteja lotado pelo menos um Diplomata de maior hierarquia funcional. (Redação dada pela Medida Provisória nº 568, de 2012)</h4>
+ <h4>§ 5º A primeira remoção para o exterior de Diplomata das classes de Segundo-Secretário e Terceiro-Secretário far-se-á para posto no qual esteja lotado pelo menos um Diplomata de maior hierarquia funcional. (Redação dada pela Lei n° 12.702, de 2012)</h4>
+ <h4>§ 6º Será de, no mínimo, 1 (um) ano o estágio inicial, na Secretaria de Estado, dos Diplomatas da classe de Terceiro-Secretário, contado a partir do início das atividades profissionais ao término do correspondente curso de formação.</h4>
+ <h3>Art. 45. Nas remoções entre postos no exterior de Diplomatas das classes de Conselheiro, Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário, deverão ser obedecidos os seguintes critérios, observado o disposto no art. 13 desta Lei:</h3>
+ <h5>I - os que estiverem servindo em posto do grupo A somente poderão ser removidos para posto dos grupos B, C ou D;</h5>
+ <h5>II - os que estiverem servindo em posto do grupo B somente poderão ser removidos para posto dos grupos A ou B; e</h5>
+ <h5>III - os que estiverem servindo em posto dos grupos C ou D somente poderão ser removidos para posto do grupo A.</h5>
+ <h4>§ 1º As remoções que não se ajustem aos critérios estabelecidos nos incisos II e III do caput deste artigo somente poderão ser efetivadas mediante solicitação, por escrito, do interessado, atendida a conveniência da administração e manifestada a anuência do chefe do posto ao qual é candidato.</h4>
+ <h4>§ 2º Somente em casos excepcionais, justificados pelo interesse do serviço, serão, a critério do Ministro de Estado das Relações Exteriores, efetuadas remoções para a Secretaria de Estado antes de cumpridos os prazos e condições estabelecidos nesta Lei e em regulamento.</h4>
+ <h4>§ 3º O Diplomata das classes de Conselheiro, Primeiro-Secretário, Segundo-Secretário ou Terceiro-Secretário, removido para a Secretaria de Estado poderá, na remoção seguinte, ser designado para missão permanente em posto de qualquer grupo, desde que sua estada na Secretaria de Estado tenha sido de 1 (um) ano se regressou de posto dos grupos C ou D, 2 (dois) anos se retornou de posto do grupo B e 4 (quatro) anos se proveniente de posto do grupo A.</h4>
+ <h4>§ 3º O Diplomata das classes de Conselheiro, Primeiro-Secretário, Segundo-Secretário ou Terceiro-Secretário, removido para a Secretaria de Estado poderá, na remoção seguinte, ser designado para missão permanente em posto de qualquer grupo, nas seguintes condições: (Redação dada pela Medida Provisória nº 568, de 2012)</h4>
+ <h5>I - tendo servido em dois ou mais postos, deverá cumprir estada na Secretaria de Estado de um ano em caso de remoção para posto dos grupos C ou D; dois anos em caso de remoção para posto do grupo B, e de três anos em caso de remoção para posto do grupo A; (Incluído pela Medida Provisória nº 568, de 2012)</h5>
+ <h5>II - tendo servido em apenas um posto dos grupos C ou D, deverá cumprir estada na Secretaria de Estado de um ano; (Incluído pela Medida Provisória nº 568, de 2012)</h5>
+ <h5>III - tendo servido em apenas um posto do grupo B, deverá cumprir estada na Secretaria de Estado de um ano em caso de remoção para posto dos grupos C ou D; de dois anos em caso de remoção para posto do grupo B; e de três anos em caso de remoção para posto do grupo A; e (Incluído pela Medida Provisória nº 568, de 2012)</h5>
+ <h5>IV - tendo servido em apenas um posto do grupo A, deverá cumprir estada na Secretaria de Estado de um ano em caso de remoção para posto do grupo D; dois anos em caso de remoção para posto do grupo C; três anos em caso de remoção para posto do grupo B; e de quatro anos em caso de remoção para posto do grupo A. (Incluído pela Medida Provisória nº 568, de 2012)</h5>
+ <h4>§ 3º O Diplomata das classes de Conselheiro, Primeiro-Secretário, Segundo-Secretário ou Terceiro-Secretário removido para a Secretaria de Estado poderá, na remoção seguinte, ser designado para missão permanente em posto de qualquer grupo, nas seguintes condições: (Redação dada pela Lei n° 12.702, de 2012)</h4>
+ <h5>I - tendo servido em 2 (dois) ou mais postos, deverá cumprir estada na Secretaria de Estado de 1 (um) ano, em caso de remoção para posto dos grupos C ou D, de 2 (dois) anos, em caso de remoção para posto do grupo B, e de 3 (três) anos, em caso de remoção para posto do grupo A; (Incluído pela Lei n° 12.702, de 2012)</h5>
+ <h5>II - tendo servido em apenas 1 (um) posto dos grupos C ou D, deverá cumprir estada na Secretaria de Estado de 1 (um) ano; (Incluído pela Lei n° 12.702, de 2012)</h5>
+ <h5>III - tendo servido em apenas um posto do grupo B, deverá cumprir estada na Secretaria de Estado de 1 (um) ano, em caso de remoção para posto dos grupos C ou D, de 2 (dois) anos, em caso de remoção para posto do grupo B, e de 3 (três) anos, em caso de remoção para posto do grupo A; e (Incluído pela Lei n° 12.702, de 2012)</h5>
+ <h5>IV - tendo servido em apenas um posto do grupo A, deverá cumprir estada na Secretaria de Estado de 1 (um) ano, em caso de remoção para posto do grupo D, de 2 (dois) anos, em caso de remoção para posto do grupo C, de 3 (três) anos, em caso de remoção para posto do grupo B, e de 4 (quatro) anos, em caso de remoção para posto do grupo A. (Incluído pela Lei n° 12.702, de 2012)</h5>
+ <p>Seção IV</p>
+ <p>Do Comissionamento</p>
+ <h3>Art. 46. A título excepcional, poderá ser comissionado como Chefe de Missão Diplomática Permanente Ministro de Segunda Classe.</h3>
+ <h4>§ 1º Só poderá haver comissionamento como Chefe de Missão Diplomática Permanente em postos dos grupos C e D.</h4>
+ <h4>§ 2º Em caráter excepcional, poderá ser comissionado como Chefe de Missão Diplomática Permanente, unicamente em postos do grupo D, o Conselheiro que preencha os requisitos constantes do inciso II do caput do art. 52 desta Lei.</h4>
+ <h4>§ 3º O número de Ministros de Segunda Classe e de Conselheiros comissionados nos termos deste artigo será estabelecido em ato do Ministro de Estado das Relações Exteriores.</h4>
+ <h4>§ 4º Quando se verificar claro de lotação na função de Ministro-Conselheiro em postos dos grupos C e D, poderá, de acordo com a conveniência da administração, ser comissionado, respectivamente, Conselheiro ou Primeiro-Secretário.</h4>
+ <h4>§ 4º Quando se verificar claro de lotação na função de Ministro-Conselheiro em postos dos grupos C e D, poderá, de acordo com a conveniência da administração, ser comissionado, respectivamente, Conselheiro e Primeiro-Secretário. (Redação dada pela Medida Provisória nº 568, de 2012)</h4>
+ <h4>§ 4º Quando se verificar claro de lotação na função de Ministro-Conselheiro em postos dos grupos C e D, poderão, de acordo com a conveniência da administração, ser comissionados, respectivamente, Conselheiro e Primeiro-Secretário. (Redação dada pela Lei n° 12.702, de 2012)</h4>
+ <h4>§ 5º Somente poderá ser comissionado na função de Ministro-Conselheiro o Primeiro-Secretário aprovado no Curso de Atualização em Política Externa - CAP.</h4>
+ <h4>§ 6º Em ato do Ministro de Estado das Relações Exteriores e no interesse da administração, poderá ser comissionado Conselheiro em postos do grupo B.</h4>
+ <h4>§ 7º O Diplomata perceberá a retribuição básica no exterior, acrescida de gratificação temporária, correspondente à diferença entre a retribuição básica do cargo efetivo e a do cargo no qual tiver sido comissionado, e da respectiva indenização de representação.</h4>
+ <h4>§ 8º A gratificação temporária a que alude o § 7º deste artigo somente será devida ao Diplomata durante o período em que estiver comissionado, sendo vedada a incorporação à retribuição no exterior ou à remuneração.</h4>
+ <h3>Art. 47. Quando se verificar claro de lotação na função de Conselheiro em postos dos grupos C e D, poderá, a título excepcional e de acordo com a conveniência da administração, ser comissionado, respectivamente, Diplomata das classes de Primeiro-Secretário ou Segundo-Secretário.</h3>
+ <h3>Art. 47. Quando se verificar claro de lotação na função de Conselheiro em postos dos grupos C e D, poderá, a título excepcional e de acordo com a conveniência da administração, ser comissionado, respectivamente, Diplomata das classes de Primeiro-Secretário e Segundo-Secretário. (Redação dada pela Medida Provisória nº 568, de 2012)</h3>
+ <h3>Art. 47. Quando se verificar claro de lotação na função de Conselheiro em postos dos grupos C e D, poderá, a título excepcional e de acordo com a conveniência da administração, ser comissionado, respectivamente, Diplomata das classes de Primeiro-Secretário e de Segundo-Secretário. (Redação dada pela Lei n° 12.702, de 2012)</h3>
+ <h3>Art. 48. Quando se verificar claro de lotação na função de Primeiro-Secretário em postos dos grupos C e D, poderá, a título excepcional e de acordo com a conveniência da administração, ser comissionado Diplomata das classes de Segundo-Secretário ou de Terceiro-Secretário.</h3>
+ <h3>Art. 48. Quando se verificar claro de lotação na função de Primeiro-Secretário em postos dos grupos C e D, poderá, a título excepcional e de acordo com a conveniência da administração, ser comissionado, respectivamente, Diplomata das classes de Segundo-Secretário e de Terceiro-Secretário. (Redação dada pela Medida Provisória nº 568, de 2012)</h3>
+ <h3>Art. 48. Quando se verificar claro de lotação na função de Primeiro-Secretário em postos dos grupos C e D, poderá, a título excepcional e de acordo com a conveniência da administração, ser comissionado, respectivamente, Diplomata das classes de Segundo-Secretário e de Terceiro-Secretário. (Redação dada pela Lei n° 12.702, de 2012)</h3>
+ <h3>Art. 49. Na hipótese dos arts. 47 e 48 desta Lei, o Diplomata perceberá a retribuição no exterior conforme estabelecem os §§ 7º e 8º do art. 46 desta Lei.</h3>
+ <h3>Art. 50. As condições para o comissionamento nas funções de Conselheiro e Primeiro-Secretário, vedado em postos dos grupos A e B, serão definidas em ato do Ministro de Estado das Relações Exteriores.</h3>
+ <p>Seção V</p>
+ <p>Da Promoção</p>
+ <h3>Art. 51. As promoções na Carreira de Diplomata obedecerão aos seguintes critérios:</h3>
+ <h5>I - promoção a Ministro de Primeira Classe, Ministro de Segunda Classe, Conselheiro e Primeiro-Secretário, por merecimento; e</h5>
+ <h5>II - promoção a Segundo-Secretário, obedecida a antigüidade na classe e a ordem de classificação no Concurso de Admissão à Carreira de Diplomata - CACD, cumprido o requisito previsto no art. 53 desta Lei.</h5>
+ <h3>Art. 52. Poderão ser promovidos somente os Diplomatas que satisfaçam os seguintes requisitos específicos:</h3>
+ <h5>I - no caso de promoção a Ministro de Primeira Classe, contar o Ministro de Segunda Classe, no mínimo:</h5>
+ <h6>a) 20 (vinte) anos de efetivo exercício, computados a partir da posse em cargo da classe inicial da carreira, dos quais pelo menos 10 (dez) anos de serviços prestados no exterior; e</h6>
+ <h6>b) 3 (três) anos de exercício, como titular, de funções de chefia equivalentes a nível igual ou superior a DAS-4 ou em posto no exterior, de acordo com o disposto em regulamento;</h6>
+ <h5>II - no caso de promoção a Ministro de Segunda Classe, haver o Conselheiro concluído o Curso de Altos Estudos – CAE e contar pelo menos 15 (quinze) anos de efetivo exercício, computados a partir da posse em cargo da classe inicial da carreira, dos quais um mínimo de 7 (sete) anos e 6 (seis) meses de serviços prestados no exterior;</h5>
+ <h5>III - no caso de promoção a Conselheiro, haver o Primeiro-Secretário concluído o Curso de Atualização em Política Externa - CAP e contar pelo menos 10 (dez) anos de efetivo exercício, computados a partir da posse em cargo da classe inicial da carreira, dos quais um mínimo de 5 (cinco) anos de serviços prestados no exterior; e</h5>
+ <h5>IV - no caso de promoção a Primeiro-Secretário, haver o Segundo-Secretário concluído o CAD e contar pelo menos 2 (dois) anos de serviços prestados no exterior.</h5>
+ <h4>§ 1º A conclusão do CAP, a que se refere o inciso III do caput deste artigo, se constituirá em requisito para a promoção à classe de Conselheiro, decorridos 2 (dois) anos de sua implantação pelo Instituto Rio Branco.</h4>
+ <h4>§ 2º Contam-se, para efeito de apuração de tempo de serviço prestado no exterior, os períodos que o Diplomata cumpriu em:</h4>
+ <h5>I - missões permanentes; e</h5>
+ <h5>II - missões transitórias ininterruptas de duração igual ou superior a 1 (um) ano.</h5>
+ <h4>§ 3º Será computado em dobro, somente para fins de promoção, o tempo de serviço no exterior prestado em postos do grupo C e em triplo em postos do grupo D, apurado a partir do momento em que o Diplomata completar 1 (um) ano de efetivo exercício no posto.</h4>
+ <h4>§ 4º Nas hipóteses previstas no § 2º deste artigo, será computado como tempo de efetivo exercício no posto o prazo compreendido entre a data de chegada do Diplomata ao posto e a data de partida, excluindo-se desse cômputo os períodos de afastamento relativos a: licença para trato de interesses particulares; licença por afastamento do cônjuge; licença para trato de doença em pessoa da família, por prazo superior a 60 (sessenta) dias, desde que a doença não haja sido contraída em razão de serviço do servidor; licença extraordinária; e investidura em mandato eletivo, cujo exercício lhe exija o afastamento.</h4>
+ <h3>Art. 53. Poderá ser promovido somente o Diplomata das classes de Ministro de Segunda Classe, Conselheiro, Primeiro-Secretário, Segundo-Secretário ou Terceiro-Secretário que contar pelo menos 3 (três) anos de interstício de efetivo exercício na respectiva classe.</h3>
+ <h4>§ 1º O tempo de serviço prestado em posto do grupo D será computado em triplo para fins do interstício a que se refere o caput deste artigo, a partir de 1 (um) ano de efetivo exercício no posto.</h4>
+ <h4>§ 2º O tempo de efetivo exercício no posto a que se refere o § 1º deste artigo será computado conforme o disposto no § 3º do art. 52 desta Lei.</h4>
+ <p>Seção VI</p>
+ <p>Do Quadro Especial do Serviço Exterior Brasileiro</p>
+ <h3>Art. 54. Serão transferidos para o Quadro Especial do Serviço Exterior Brasileiro, condicionado ao atendimento do disposto nos arts. 16 e 17 da Lei Complementar nº 101, de 4 de maio de 2000, e observada a existência de vaga, em ato do Presidente da República, na forma estabelecida por esta Lei:</h3>
+ <h5>I - o Ministro de Primeira Classe, o Ministro de Segunda Classe e o Conselheiro para cargo da mesma natureza, classe e denominação;</h5>
+ <h5>II - o Primeiro-Secretário para o cargo de Conselheiro; e</h5>
+ <h5>III - o Segundo-Secretário para o cargo de Primeiro-Secretário.</h5>
+ <h4>Parágrafo único. O Quadro Especial do Serviço Exterior Brasileiro é composto pelo quantitativo de cargos em cada classe, na forma do Anexo II desta Lei.</h4>
+ <h3>Art. 55. Observado o disposto no art. 54 desta Lei, serão transferidos para o Quadro Especial do Serviço Exterior Brasileiro:</h3>
+ <h5>I - o Ministro de Primeira Classe, ao completar 65 (sessenta e cinco) anos de idade ou 15 (quinze) anos de classe;</h5>
+ <h5>II - o Ministro de Segunda Classe, ao completar 60 (sessenta) anos de idade ou 15 (quinze) anos de classe;</h5>
+ <h5>III - o Conselheiro, ao completar 58 (cinqüenta e oito) anos de idade ou 15 (quinze) anos de classe;</h5>
+ <h5>IV - os Primeiros-Secretários que, em 15 de junho e em 15 de dezembro, contarem maior tempo efetivo de exercício na classe, desde que esse tempo seja igual ou superior a 12 (doze) anos; e</h5>
+ <h5>V - os Segundos-Secretários que, em 15 de junho e em 15 de dezembro, contarem maior tempo efetivo de classe, desde que esse tempo seja igual ou superior a 10 (dez) anos.</h5>
+ <h4>§ 1º A transferência para o Quadro Especial do Serviço Exterior Brasileiro ocorrerá na data em que se verificar a primeira das 2 (duas) condições previstas em cada um dos incisos I, II e III do caput deste artigo.</h4>
+ <h4>§ 2º O Ministro de Segunda Classe que tiver exercido, por no mínimo 2 (dois) anos, as funções de Chefe de Missão Diplomática Permanente terá assegurada, no Quadro Especial do Serviço Exterior Brasileiro, a remuneração correspondente ao cargo de Ministro de Primeira Classe do mesmo Quadro.</h4>
+ <h4>§ 3º Na segunda quinzena de junho e de dezembro, observada a existência de vaga, 1 (um) Ministro de Segunda Classe do Quadro Especial do Serviço Exterior Brasileiro poderá ser promovido para Ministro de Primeira Classe do mesmo Quadro, em ato do Presidente da República, desde que cumpra os requisitos do inciso I do caput do art. 52 desta Lei.</h4>
+ <h4>§ 4º Na segunda quinzena de junho e de dezembro, observada a existência de vaga, 1 (um) Conselheiro do Quadro Especial do Serviço Exterior Brasileiro poderá ser promovido para Ministro de Segunda Classe do mesmo Quadro, em ato do Presidente da República, desde que cumpra os requisitos do inciso II do caput do art. 52 desta Lei.</h4>
+ <h4>§ 5º Na segunda quinzena de junho e de dezembro, observada a existência de vaga, 2 (dois) Primeiros-Secretários do Quadro Especial do Serviço Exterior Brasileiro poderão ser promovidos para Conselheiro do mesmo Quadro, em ato do Presidente da República, desde que cumpram os requisitos do inciso III do caput do art. 52 desta Lei.</h4>
+ <h4>§ 6º O Diplomata em licença extraordinária ou em licença por investidura em mandato eletivo, cujo exercício exija o seu afastamento, será transferido para o Quadro Especial do Serviço Exterior Brasileiro, na mesma classe que ocupe, ao completar 15 (quinze) anos consecutivos de afastamento.</h4>
+ <h4>§ 7º A fim de atender ao disposto neste artigo, poderão ser transformados, sem aumento de despesa, em ato do Presidente da República, os cargos da Carreira de Diplomata do Quadro Especial.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DOS AUXILIARES LOCAIS</h3>
+ <h3>Art. 56. Auxiliar Local é o brasileiro ou o estrangeiro admitido para prestar serviços ou desempenhar atividades de apoio que exijam familiaridade com as condições de vida, os usos e os costumes do país onde esteja sediado o posto.</h3>
+ <h4>Parágrafo único. Os requisitos da admissão de Auxiliar Local serão especificados em regulamento, atendidas as seguintes exigências:</h4>
+ <h5>I - possuir escolaridade compatível com as tarefas que lhe caibam; e</h5>
+ <h5>II - ter domínio do idioma local ou estrangeiro de uso corrente no país, sendo que, no caso de admissão de Auxiliar Local estrangeiro, dar-se-á preferência a quem possuir melhores conhecimentos da língua portuguesa.</h5>
+ <h3>Art. 57. As relações trabalhistas e previdenciárias concernentes aos Auxiliares Locais serão regidas pela legislação vigente no país em que estiver sediada a repartição.</h3>
+ <h4>§ 1º Serão segurados da previdência social brasileira os Auxiliares Locais de nacionalidade brasileira que, em razão de proibição legal, não possam filiar-se ao sistema previdenciário do país de domicílio.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se aos Auxiliares civis que prestam serviços aos órgãos de representação das Forças Armadas brasileiras no exterior.</h4>
+ <h3>TÍTULO II</h3>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 58. Os atuais servidores do Plano de Classificação de Cargos – PCC de que trata a Lei n° 5.645, de 10 de dezembro de 1970, e do Plano Geral de Cargos do Poder Executivo - PGPE de que trata a Lei n° 11.357, de 19 de outubro de 2006, do Ministério das Relações Exteriores poderão, em caráter excepcional, ser designados para missões transitórias e permanentes no exterior, aplicando-se-lhes, no que couber, os dispositivos constantes dos arts. 22 e 24 da Lei n° 8.829, de 22 de dezembro de 1993 .</h3>
+ <h4>§ 1º A remoção dos servidores a que se refere o caput deste artigo obedecerá aos critérios fixados nos planos de movimentação preparados pelo órgão de pessoal do Ministério das Relações Exteriores, observada a ordem de preferência destinada aos Oficiais de Chancelaria e Assistentes de Chancelaria para o preenchimento das vagas nos postos.</h4>
+ <h4>§ 2º Poderão ser incluídos nos planos de movimentação referidos no § 1º deste artigo os servidores que, além de possuírem perfil funcional para o desempenho das atividades correntes dos postos no exterior, satisfaçam aos seguintes requisitos:</h4>
+ <h5>I - contarem pelo menos 5 (cinco) anos de efetivo exercício na Secretaria de Estado;</h5>
+ <h5>II - tiverem sido aprovados em curso de treinamento para o serviço no exterior; e</h5>
+ <h5>III - contarem pelo menos 4 (quatro) anos de efetivo exercício na Secretaria de Estado entre 2 (duas) missões permanentes no exterior.</h5>
+ <h3>Art. 59. As disposições desta Lei aplicar-se-ão, no que couber, aos servidores do Quadro Permanente do Ministério das Relações Exteriores não pertencentes às Carreiras do Serviço Exterior Brasileiro quando se encontrarem em serviço no exterior.</h3>
+ <h3>Art. 60. A contagem do tempo de efetivo exercício no posto, para fins do que dispõe o § 2º do art. 52 desta Lei, terá início na data de entrada em vigor da Medida Provisória nº 319, de 24 de agosto de 2006, quando se tratar de postos do grupo C.</h3>
+ <h3>Art. 61. O Diplomata que se encontrar, na data de publicação da Medida Provisória nº 319, de 24 de agosto de 2006, lotado em posto que venha a ser classificado como integrante do grupo D terá a contagem de tempo de efetivo exercício no posto, para fins do que dispõem o § 2º do art. 52 e o § 1º do art. 53 ambos desta Lei, iniciada na data de publicação do ato do Ministro de Estado das Relações Exteriores que estabeleça a categoria do posto.</h3>
+ <h3>Art. 62. Nos casos não contemplados nos arts. 60 e 61 desta Lei, a contagem do tempo de efetivo exercício no posto, para fins do que dispõe o § 2º do art. 52 desta Lei, terá início a partir da data de chegada do Diplomata ao posto.</h3>
+ <h3>Art. 63. Será feita aproximação para o número inteiro imediatamente superior sempre que a imposição de limite numérico por aplicação de qualquer dispositivo desta Lei produzir resultado fracionário.</h3>
+ <h3>Art. 64. Fica assegurado ao servidor do Serviço Exterior Brasileiro o direito de requerer ou representar.</h3>
+ <h3>Art. 65. Durante o período de implementação do preenchimento do Quadro Ordinário, conforme o Anexo I desta Lei, no semestre em que não se verificar a proporção de 2 (dois) concorrentes para cada vaga, os candidatos ao Quadro de Acesso e à promoção, nas classes de Conselheiro, Primeiro-Secretário, Segundo-Secretário e Terceiro-Secretário poderão, excepcionalmente, ser dispensados do cumprimento das disposições dos arts. 52 e 53 desta Lei, ressalvados, exclusivamente, os requisitos de conclusão do CAE, do CAD e, quando for o caso, do CAP, de que trata o inciso III do caput do art. 52 desta Lei.</h3>
+ <h3>Art. 66. Os arts. 21, 22 e 24 da Lei n° 8.829, de 22 de dezembro de 1993, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 21. O instituto da remoção de que trata o regime jurídico dos servidores do Serviço Exterior Brasileiro não configura direito do servidor e obedecerá aos planos de movimentação preparados pelo órgão de pessoal do Ministério das Relações Exteriores para os Oficiais de Chancelaria e Assistentes de Chancelaria." (NR)</h3>
+ <p>"</p>
+ <h3>Art. 22 . .......................................................................................................................</h3>
+ <p>.......................................................................................................................................</p>
+ <h5>IV - aprovação no Curso de Habilitação para o Serviço Exterior - CHSE para o Oficial de Chancelaria e no Curso de Treinamento para o Serviço no Exterior - CTSE para o Assistente de Chancelaria.</h5>
+ <h4>§ 1º Os requisitos para os referidos cursos serão definidos em ato do Ministro de Estado das Relações Exteriores.</h4>
+ <h4>§ 2º O prazo máximo de 10 (dez) anos consecutivos de permanência no exterior poderá estender-se, atendidos a conveniência do serviço e o interesse do servidor, desde que o período adicional seja cumprido em postos dos grupos C ou D, conforme normas a serem definidas em ato do Ministro de Estado das Relações Exteriores." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 24 . .......................................................................................................................</h3>
+ <h5>I - os que estiverem servindo em posto do grupo A somente poderão ser removidos para posto dos grupos B, C ou D;</h5>
+ <h5>II - os que estiverem servindo em posto do grupo B somente poderão ser removidos para posto dos grupos A ou B; e</h5>
+ <h5>III - os que estiverem servindo em posto dos grupos C ou D somente poderão ser removidos para posto do grupo A.</h5>
+ <h4>§ 1º As remoções que não se ajustem aos critérios estabelecidos nos incisos II e III do caput deste artigo somente poderão ser efetivadas mediante solicitação, por escrito, do interessado, atendida a conveniência da administração e manifestada a anuência do chefe do posto ao qual é candidato.</h4>
+ <h4>§ 2º O Oficial de Chancelaria e o Assistente de Chancelaria removidos para a Secretaria de Estado nas condições do § 1º deste artigo, tendo servido apenas em posto do grupo A, só poderão, na remoção seguinte, ser designados para missão permanente em posto daquele mesmo grupo, após permanência de 4 (quatro) anos na Secretaria de Estado.</h4>
+ <h4>§ 3º Somente em casos excepcionais, justificados pelo interesse do serviço, serão, a critério da administração, efetuadas remoções de Oficial de Chancelaria e de Assistente de Chancelaria para a Secretaria de Estado antes de cumpridos os prazos a que se refere o art. 22 desta Lei.</h4>
+ <h4>§ 4º Os prazos a que se referem os arts. 15 e 16 desta Lei poderão ser reduzidos de 1/3 (um terço) caso o Oficial de Chancelaria ou o Assistente de Chancelaria cumpram, na classe, missão permanente ou transitória ininterrupta de duração igual ou superior a 1 (um) ano em posto do grupo D." (NR)</h4>
+ <p><del></p>
+ <h3>Art. 67. O número de cargos da Carreira de Assistente de Chancelaria é de 1.200 (mil e duzentos), sendo 360 (trezentos e sessenta) cargos na Classe Especial, 390 (trezentos e noventa) (Revogado pela Lei n° 11.907, de 2009)</del></h3>
+ <p><del>§ 1º O Assistente de Chancelaria que na data da publicação desta Lei estiver posicionado na Classe A, padrão VII e contar com 20 (vinte) anos ou mais de efetivo exercício no Ministério das Relações Exteriores será automaticamente promovido para a Classe Especial, observado o limite de 360 (trezentos e sessenta) cargos, progredindo 1 (um) padrão para cada 2 (dois) (Revogado pela Lei n° 11.907, de 2009)</del></p>
+ <p><del>§ 2º (Revogado pela Lei n° 11.907, de 2009)</del></p>
+ <h3>Art. 68. Ficam vedadas redistribuições de servidores para o Ministério das Relações Exteriores.</h3>
+ <h3>Art. 69. Não haverá, nas unidades administrativas do Ministério das Relações Exteriores no exterior, o exercício provisório de que trata o § 2º do art. 84 da Lei n° 8.112, de 11 de dezembro de 1990.</h3>
+ <p>(Vide ADIN 5355)</p>
+ <h3>Art. 70. Fica estabelecido o prazo de 30 (trinta) dias, a partir da publicação desta Lei, para que os servidores de que trata o parágrafo único do art. 1º da Lei n° 11.357, de 19 de outubro de 2006, possam se retratar quanto à opção pelo não enquadramento no Plano Geral de Cargos do Poder Executivo – PGPE, conforme § 3º do art. 3º da mencionada Lei.</h3>
+ <h3>Art. 71. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 72. Revogam-se a Lei n° 7.501, de 27 de junho de 1986 , os arts. 40 e 41 da Lei n° 8.028, de 12 de abril de 1990 , os arts. 13 , 14 e 15 da Lei n° 8.745, de 9 de dezembro de 1993, o art. 23 da Lei n° 8.829, de 22 de dezembro de 1993 , a Lei n° 9.888, de 8 de dezembro de 1999 , e a Lei n° 10.872, de 25 de maio de 2004.</h3>
+ <p>Brasília, 29 de dezembro de 2006; 185º da Independência e 118º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Celso Luiz Nunes Amorim</p>
+ <p>Este texto não substitui o publicado no DOU de 29.12.2006 - Edição extra</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ORDINÁRIO DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>( Redação dada pela Medida Provisória nº 493, de 2010)</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ORDINÁRIO DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>(Redação dada pela Lei n° 12.337, de 2010)</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ORDINÁRIO DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>(Redação dada pela Lei n° 12.601, de 2012).</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ORDINÁRIO DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>(Redação dada pela Lei n° 15.141, de 2025)</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ORDINÁRIO DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ESPECIAL DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ESPECIAL DA CARREIRA DE DIPLOMATA</h3>
+ <p>(Redação dada pelo Decreto nº 9.343, de 2018)</p>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>(Redação dada pelo Decreto nº 10.942, de 2021)</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ESPECIAL DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>(Redação dada pela Lei n° 15.141, de 2025)</p>
+ <h3>QUANTITATIVO DE CARGOS DO QUADRO ESPECIAL DA CARREIRA DE DIPLOMATA</h3>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>(Redação dada pelo Decreto nº 12.524, de 2025)</p>
+ <h3>DENOMINAÇÃO</h3>
+ <p>Ministro de Primeira Classe</p>
+ <p>Ministro de Segunda Classe</p>
+ <p>Conversão da MPv nº 319, de 2006 | Institui o Regime Jurídico dos Servidores do Serviço Exterior Brasileiro, altera a Lei n° 8.829, de 22 de dezembro de 1993, que cria, no Serviço Exterior Brasileiro, as Carreiras de Oficial de Chancelaria e de Assistente de Chancelaria, altera a Lei n° 8.829, de 22 de dezembro de 1993; revoga as Leis nºs 7.501, de 27 de junho de 1986, 9.888, de 8 de dezembro de 1999, e 10.872, de 25 de maio de 2004, e dispositivos das Leis nºs 8.028, de 12 de abril de 1990, 8.745, de 9 de dezembro de 1993, e 8.829, de 22 de dezembro de 1993; e dá outras providências.</p>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 122</p>
+ <p>Ministro de Segunda Classe | 169</p>
+ <p>Primeiro-Secretário |</p>
+ <p>Segundo-Secretário | 880</p>
+ <p>Terceiro-Secretário |</p>
+ <h3>TOTAL | 1.397</h3>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 130</p>
+ <p>Ministro de Segunda Classe | 169</p>
+ <p>Terceiro-Secretário | 880</p>
+ <h3>TOTAL | 1.405</h3>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 130</p>
+ <p>Ministro de Segunda Classe | 169</p>
+ <p>Terceiro-Secretário | 880</p>
+ <h3>TOTAL | 1.405</h3>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 157</p>
+ <p>Ministro de Segunda Classe | 217</p>
+ <p>Primeiro-Secretário |</p>
+ <p>Segundo-Secretário | 1.140</p>
+ <p>Terceiro-Secretário |</p>
+ <h3>TOTAL | 1.805</h3>
+ <p>Ministro de Primeira Classe | 157</p>
+ <p>Ministro de Segunda Classe | 250</p>
+ <p>Primeiro-Secretário | 1.140</p>
+ <p>Terceiro-Secretário |</p>
+ <h3>TOTAL | 1.911</h3>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 75</p>
+ <p>Ministro de Segunda Classe | 85</p>
+ <p>Primeiro-Secretário | 40</p>
+ <h3>TOTAL | 300</h3>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 90</p>
+ <p>Ministro de Segunda Classe | 90</p>
+ <p>Primeiro-Secretário | 16</p>
+ <h3>TOTAL | 296</h3>
+ <p>DENOMINAÇÃO | Nº DE CARGOS</p>
+ <p>Ministro de Primeira Classe | 98</p>
+ <p>Ministro de Segunda Classe | 90</p>
+ <p>Primeiro-Secretário | 4</p>
+ <h3>TOTAL | 294</h3>
+ <p>Ministro de Primeira Classe | 98</p>
+ <p>Ministro de Segunda Classe | 107</p>
+ <p>Primeiro-Secretário | 4</p>
+ <h3>TOTAL | 343</h3>
+ <p>DENOMINAÇÃO | Nº DECARGOS</p>
+ <p>de Primeira Classe | 104</p>
+ <p>Primeiro-Secretário | 4</p>
+ <h3>TOTAL | 342</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/L11440.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

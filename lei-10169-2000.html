@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.169, DE 29 DE DEZEMBRO DE 2000 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2000" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.169, DE 29 DE DEZEMBRO DE 2000</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:32:43 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L10169.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 7.789 caracteres | espelho: 7.884 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.169, DE 29 DE DEZEMBRO DE 2000. Mensagem de Veto nº 2.113</p>
+ <p>Regula o § 2º do art. 236 da Constituição Federal , mediante o estabelecimento de normas gerais para a fixação de emolumentos relativos aos atos praticados pelos serviços notariais e de registro.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Os Estados e o Distrito Federal fixarão o valor dos emolumentos relativos aos atos praticados pelos respectivos serviços notariais e de registro, observadas as normas desta Lei.</h3>
+ <h4>Parágrafo único. O valor fixado para os emolumentos deverá corresponder ao efetivo custo e à adequada e suficiente remuneração dos serviços prestados.</h4>
+ <h3>Art. 2º Para a fixação do valor dos emolumentos, a Lei dos Estados e do Distrito Federal levará em conta a natureza pública e o caráter social dos serviços notariais e de registro, atendidas ainda as seguintes regras:</h3>
+ <h5>I – os valores dos emolumentos constarão de tabelas e serão expressos em moeda corrente do País;</h5>
+ <h5>II – os atos comuns aos vários tipos de serviços notariais e de registro serão remunerados por emolumentos específicos, fixados para cada espécie de ato;</h5>
+ <h5>III – os atos específicos de cada serviço serão classificados em:</h5>
+ <h6>a) atos relativos a situações jurídicas, sem conteúdo financeiro, cujos emolumentos atenderão às peculiaridades socioeconômicas de cada região;</h6>
+ <h6>b) atos relativos a situações jurídicas, com conteúdo financeiro, cujos emolumentos serão fixados mediante a observância de faixas que estabeleçam valores mínimos e máximos, nas quais enquadrar-se-á o valor constante do documento apresentado aos serviços notariais e de registro.</h6>
+ <h4>Parágrafo único. Nos casos em que, por força de lei, devam ser utilizados valores decorrentes de avaliação judicial ou fiscal, estes serão os valores considerados para os fins do disposto na alínea b do inciso III deste artigo.</h4>
+ <h4>§ 1º Nos casos em que, por força de lei, devam ser utilizados valores decorrentes de avaliação judicial ou fiscal, esses serão os valores considerados para os fins do disposto na alínea “b” do inciso III do caput deste artigo. (Incluído pela Lei n° 13.986, de 2020)</h4>
+ <h4>§ 2º Os emolumentos devidos pela constituição de direitos reais de garantia mobiliária ou imobiliária destinados ao crédito rural não poderão exceder o menor dos seguintes valores: (Incluído pela Lei n° 13.986, de 2020)</h4>
+ <h5>I - 0,3% (zero vírgula três por cento) do valor do crédito concedido, incluída a taxa de fiscalização judicial, limitada a 5% (cinco por cento) do valor pago pelo usuário, vedados quaisquer outros acréscimos a título de taxas, custas e contribuições para o Estado ou Distrito Federal, carteira de previdência ou para associação de classe, criados ou que venham a ser criados sob qualquer título ou denominação; e (Incluído pela Lei n° 13.986, de 2020)</h5>
+ <h5>II - o valor respectivo previsto na tabela estadual definida em lei, observado que: (Incluído pela Lei n° 13.986, de 2020)</h5>
+ <h6>a) nos registros, quando 2 (dois) ou mais imóveis forem dados em garantia, situados ou não na mesma circunscrição imobiliária, tenham ou não igual valor, a base de cálculo dos atos será o resultado da divisão do valor do mútuo pelo número de imóveis, limitada ao potencial econômico de cada bem; (Incluído pela Lei n° 13.986, de 2020)</h6>
+ <h6>b) a averbação de aditivo de garantia real com liberação de crédito suplementar será cobrada conforme o disposto neste artigo e terá como base de cálculo o valor do referido crédito; (Incluído pela Lei n° 13.986, de 2020)</h6>
+ <h6>c) a averbação de aditivo que contenha outras alterações que não importem mudança no valor do crédito concedido é considerada ato sem conteúdo econômico; (Incluído pela Lei n° 13.986, de 2020)</h6>
+ <h6>d) os valores de cancelamento dos atos de que trata o caput deste parágrafo obedecerão ao previsto nas tabelas estaduais, até o limite máximo de 0,1% (zero vírgula um por cento) do valor do crédito concedido; (Incluído pela Lei n° 13.986, de 2020)</h6>
+ <h6>e) a prenotação, as indicações e os arquivamentos estão incluídos nos emolumentos devidos pelos registros de garantias reais previstas nesta Lei; (Incluído pela Lei n° 13.986, de 2020)</h6>
+ <h6>f) os emolumentos devidos pelo registro auxiliar de cédula ou nota de crédito e de produto rural, não garantida por hipoteca ou alienação fiduciária de bens imóveis, obedecerão ao previsto nas tabelas estaduais e não poderão exceder 0,3% (zero vírgula três por cento) do valor do crédito concedido, incluída a taxa de fiscalização judicial, limitada a 5% (cinco por cento) do valor pago pelo usuário, observadas as vedações estipuladas no inciso I deste parágrafo. (Incluído pela Lei n° 13.986, de 2020)</h6>
+ <h3>Art. 3º É vedado:</h3>
+ <h5>I – ( VETADO )</h5>
+ <h5>II – fixar emolumentos em percentual incidente sobre o valor do negócio jurídico objeto dos serviços notariais e de registro;</h5>
+ <h5>III – cobrar das partes interessadas quaisquer outras quantias não expressamente previstas nas tabelas de emolumentos;</h5>
+ <h5>IV – cobrar emolumentos em decorrência da prática de ato de retificação ou que teve de ser refeito ou renovado em razão de erro imputável aos respectivos serviços notariais e de registro;</h5>
+ <h5>V – ( VETADO )</h5>
+ <h5>VI - impor ao registro e averbação de situações jurídicas em que haja a interveniência de produtor rural quaisquer acréscimos a título de taxas, custas e contribuições para o Estado ou Distrito Federal, carteira de previdência, fundo de custeio de atos gratuitos e fundos especiais do Tribunal de Justiça, bem como de associação de classe, ou outros que venham a ser criados. (Incluído pela Lei n° 13.986, de 2020)</h5>
+ <h3>Art. 4º As tabelas de emolumentos serão publicadas nos órgãos oficiais das respectivas unidades da Federação, cabendo às autoridades competentes determinar a fiscalização do seu cumprimento e sua afixação obrigatória em local visível em cada serviço notarial e de registro.</h3>
+ <h3>Art. 5º Quando for o caso, o valor dos emolumentos poderá sofrer reajuste, publicando-se as respectivas tabelas, até o último dia do ano, observado o princípio da anterioridade.</h3>
+ <h3>Art. 6º Os notários e os registradores darão recibo dos emolumentos percebidos, sem prejuízo da indicação definitiva e obrigatória dos respectivos valores à margem do documento entregue ao interessado, em conformidade com a tabela vigente ao tempo da prática do ato.</h3>
+ <h3>Art. 7º O descumprimento, pelos notários e registradores, do disposto nesta Lei sujeitá-los-á às penalidades previstas na Lei N° 8.935, de 18 de novembro de 1994 , sem prejuízo da aplicação de outras sanções legais.</h3>
+ <h3>Art. 8º Os Estados e o Distrito Federal, no âmbito de sua competência, respeitado o prazo estabelecido no art. 9º desta Lei, estabelecerão forma de compensação aos registradores civis das pessoas naturais pelos atos gratuitos, por eles praticados, conforme estabelecido em lei federal.</h3>
+ <h4>Parágrafo único. O disposto no caput não poderá gerar ônus para o Poder Público.</h4>
+ <h3>Art. 9º Os Estados e o Distrito Federal deverão proceder à revisão das tabelas de emolumentos atualmente em vigor, a fim de adaptá-las ao disposto nesta Lei, no prazo de noventa dias contado da data de sua vigência.</h3>
+ <h4>Parágrafo único. Até a publicação das novas tabelas de emolumentos, revistas e adaptadas conforme estabelece este artigo, os atos praticados pelos serviços notariais e de registro continuarão a ser remunerados na forma da legislação em vigor nos Estados e no Distrito Federal, observadas, desde logo, as vedações estabelecidas no art. 3º desta Lei.</h4>
+ <h3>Art. 10. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 29 de dezembro de 2000; 179º da Independência e 112º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Amaury Guilherme Bier</p>
+ <p>Banjamin Benzaquen Sicsú</p>
+ <p>Este texto não substitui o publicado no DOU de 30.12.2000 (Edição Extra)</p>
+ <p>Mensagem de Veto nº 2.113 | Regula o</p>
+ <p>Constituição Federal, mediante o estabelecimento de normas gerais para a fixação de emolumentos relativos aos atos praticados pelos serviços notariais e de registro.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L10169.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

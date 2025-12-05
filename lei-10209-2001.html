@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.209, DE 23 DE MARÇO DE 2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.209, DE 23 DE MARÇO DE 2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:26:28 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/L10209.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 10.793 caracteres | espelho: 10.628 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.209, DE 23 DE MARÇO DE 2001 Conversão da MPv nº 2.107-12, de 2001</p>
+ <p>Institui o Vale-Pedágio obrigatório sobre o transporte rodoviário de carga e dá outras providências.</p>
+ <p>Faço saber que o PRESIDENTE DA REPÚBLICA adotou a Medida Provisória nº 2.107-12, de 2001, que o Congresso Nacional aprovou, e eu, Jader Barbalho, Presidente, para os efeitos do disposto no parágrafo único do art. 62 da Constituição Federal, promulgo a seguinte Lei:</p>
+ <h3>Art. 1º Fica instituído o Vale-Pedágio obrigatório, para utilização efetiva em despesas de deslocamento de carga por meio de transporte rodoviário, nas rodovias brasileiras.</h3>
+ <h4>§ 1º O pagamento de pedágio, por veículos de carga, passa a ser de responsabilidade do embarcador.</h4>
+ <h4>§ 2º Para efeito do disposto no § 1º , considera-se embarcador o proprietário originário da carga, contratante do serviço de transporte rodoviário de carga.</h4>
+ <h4>§ 3º Equipara-se, ainda, ao embarcador:</h4>
+ <h5>I - o contratante do serviço de transporte rodoviário de carga que não seja o proprietário originário da carga;</h5>
+ <h5>II - a empresa transportadora que subcontratar serviço de transporte de carga prestado por transportador autônomo.</h5>
+ <h3>Art. 2º O valor do Vale-Pedágio não integra o valor do frete, não será considerado receita operacional ou rendimento tributável, nem constituirá base de incidência de contribuições sociais ou previdenciárias.</h3>
+ <h4>Parágrafo único. O valor do Vale-Pedágio obrigatório deverá ser destacado em campo específico no documento comprobatório do transporte.</h4>
+ <h4>Parágrafo único. O valor do Vale-Pedágio obrigatório e os dados do modelo próprio, necessários à sua identificação, deverão ser destacados em campo específico no documento comprobatório de embarque. (Redação dada pela Lei n° 10.561, de 13.11.2002)</h4>
+ <h4>Parágrafo único. O valor do Vale-Pedágio obrigatório e os dados do modelo próprio, necessários à sua identificação, deverão ser destacados em campo específico no Documento Eletrônico de Transporte - DT-e. (Redação dada pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>Parágrafo único. O valor do Vale-Pedágio obrigatório e os dados do modelo próprio, necessários à sua identificação, deverão ser destacados em campo específico no Documento Eletrônico de Transporte (DT-e). (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h3>Art. 3º A partir de 12 de maio de 2000, o embarcador passará a antecipar o Vale-Pedágio obrigatório ao transportador, em modelo próprio ou em espécie, independentemente do valor do frete, ressalvado o disposto no § 5º deste artigo.</h3>
+ <h3>Art. 3º A partir de 25 de outubro de 2002, o embarcador passará a antecipar o Vale-Pedágio obrigatório ao transportador, em modelo próprio, independentemente do valor do frete, ressalvado o disposto no § 5º deste artigo. (Redação dada pela Lei n° 10.561, de 13.11.2002)</h3>
+ <h4>§ 1º Quando o Vale-Pedágio obrigatório for expedido em modelo próprio, a aquisição, pelo embarcador, para fins de repasse ao transportador de carga, dar-se-á junto às concessionárias das rodovias, podendo a comercialização ser delegada a centrais de vendas ou a outras instituições, a critério da concessionária.</h4>
+ <h4>§ 2º O Vale-Pedágio obrigatório deverá ser entregue ao transportador rodoviário autônomo no ato do embarque decorrente da contratação do serviço de transporte no valor necessário à livre circulação entre a sua origem e o destino.</h4>
+ <h4>§ 2º O Vale-Pedágio obrigatório deverá ser disponibilizado ao transportador autônomo de cargas contratado para o serviço de transporte, no valor necessário à livre circulação entre a sua origem e o destino, e a comprovação da antecipação prevista no caput deverá ser consignada no Documento Eletrônico de Transporte - DT-e. (Redação dada pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 2º O Vale-Pedágio obrigatório deverá ser disponibilizado ao transportador contratado para o serviço de transporte pelo embarcador ou equiparado, no valor necessário à livre circulação entre a sua origem e o destino, e a comprovação da antecipação a que se refere o caput deste artigo deverá ser consignada no DT-e. (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 3º Sendo o transporte efetuado por empresa comercial para um só embarcador, aplica-se o disposto no parágrafo anterior.</h4>
+ <h4>§ 4º O rateio do valor do Vale-Pedágio obrigatório, no caso do transporte fracionado, será definido em regulamento.</h4>
+ <h4>§ 5º No caso de transporte fracionado, efetuado por empresa comercial de transporte rodoviário, o rateio do Vale-Pedágio obrigatório será feito por despacho, destacando-se seu valor no conhecimento para quitação, pelo embarcador, juntamente com o valor do frete a ser faturado.</h4>
+ <h4>§ 6º Até o dia 20 de julho de 2000, as concessionárias de rodovias que pratiquem a cobrança de pedágio informarão à Secretaria de Transportes Terrestres do Ministério dos Transportes o modelo próprio de Vale-Pedágio obrigatório que estejam disponibilizando aos interessados e os locais em que poderão ser adquiridos.</h4>
+ <h4>§ 6º Até o dia 15 de outubro de 2002, as concessionárias de rodovias que pratiquem a cobrança de pedágio informarão à Agência Nacional de Transportes Terrestres - ANTT o modelo próprio de Vale-Pedágio obrigatório, utilizável em todas as rodovias nacionais, que estejam disponibilizando aos interessados e os locais em que poderão ser adquiridos. (Redação dada pela Lei n° 10.561, de 13.11.2002)</h4>
+ <h4>§ 7º O descumprimento do que estabelece o parágrafo anterior implicará a aplicação de multa diária de R$ 550,00 (quinhentos e cinqüenta reais).</h4>
+ <h4>§ 8º O não cumprimento do disposto no caput deste artigo será considerado infração, devendo-se aplicar ao infrator o disposto no art. 8º desta Lei. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <p><del></p>
+ <h3>Art. 4º (Revogado pela Lei n° 10.561, de 13.11.2002)</del></h3>
+ <h4>Parágrafo único. A dedução de que trata o caput deste artigo fica limitada ao valor do Vale-Pedágio obrigatório.</h4>
+ <h3>Art. 5º O descumprimento do disposto nesta Lei sujeitará o infrator à aplicação de multa administrativa de R$ 550,00 (quinhentos e cinqüenta reais) a R$ 10.500,00 (dez mil e quinhentos reais), a ser aplicada pelo órgão competente, na forma do regulamento.</h3>
+ <h4>§ 1º No âmbito do processo administrativo sancionador, as notificações de autuação poderão ser encaminhadas por meio eletrônico para endereço eletrônico cadastrado formalmente para esse fim, de forma a assegurar a ciência da imposição da penalidade, nos termos do regulamento. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º A notificação de autuação será expedida no prazo máximo de 30 (trinta) dias, contado da data do cometimento da infração, sob pena de o auto de infração ser arquivado e seu registro julgado insubsistente. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 3º Da autuação e da aplicação de sanção caberá a apresentação, respectivamente, de defesa e de recurso pelo autuado, no prazo estabelecido em norma do órgão fiscalizador competente. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 4º Prescreve em 12 (doze) meses o prazo para cobrança da pena de multa a que se refere o caput deste artigo, a contar da notificação de autuação. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h3>Art. 6º Compete ao Ministério dos Transportes a adoção das medidas indispensáveis à implantação do Vale-Pedágio obrigatório, a regulamentação, a coordenação, a delegação e a fiscalização, o processamento e a aplicação das penalidades por infrações a esta Lei.</h3>
+ <h3>Art. 6º Compete à ANTT a adoção das medidas indispensáveis à implantação do Vale-Pedágio obrigatório, a regulamentação, a coordenação, a delegação e a fiscalização, o processamento e a aplicação das penalidades por infrações a esta Lei. (Redação dada pela Lei n° 10.561, de 13.11.2002)</h3>
+ <h4>§ 1º A fiscalização, o processamento e a aplicação das penalidades previstas neste artigo poderão ser descentralizados mediante convênio a ser celebrado com o Ministério do Trabalho e Emprego e com outros órgãos ou entidades da Administração Pública Federal, dos Estados, do Distrito Federal ou dos Municípios.</h4>
+ <h4>§ 2º O Ministério dos Transportes obriga-se a subsidiar os órgãos ou as entidades de que trata o parágrafo anterior, fornecendo-lhes elementos necessários e atualizados.</h4>
+ <h4>§ 2º A ANTT obriga-se a prover os órgãos ou as entidades de que trata o § 1º , fornecendo-lhes elementos necessários e atualizados. (Redação dada pela Lei n° 10.561, de 13.11.2002)</h4>
+ <h3>Art. 7º Caso o Ministério do Trabalho e Emprego venha a exerçer, por delegação e descentralização, as atividades inerentes ao Ministério dos Transportes, os valores arrecadados, decorrentes das multas por ele aplicadas, constituirão receita adicional do Fundo de Amparo ao Trabalhador - FAT, de que trata a Lei n° 7.998, de 11 de janeiro de 1990. (Redação dada pela Lei n° 10.561, de 13.11.2002)</h3>
+ <h3>Art. 7º Caso o Ministério do Trabalho e Emprego venha a exercer, por delegação e descentralização, as atividades inerentes à ANTT, os valores arrecadados, decorrentes das multas por ele aplicadas, constituirão receita adicional do Fundo de Amparo ao Trabalhador - FAT, de que trata a Lei n° 7.998, de 11 de janeiro de 1990 . (Redação dada pela Lei n° 10.561, de 13.11.2002)</h3>
+ <h3>Art. 8º Sem prejuízo do que estabelece o art. 5º , nas hipóteses de infração ao disposto nesta Lei, o embarcador será obrigado a indenizar o transportador em quantia equivalente a duas vezes o valor do frete. (Vide ADIN 6031)</h3>
+ <h4>Parágrafo único. Prescreve em 12 (doze) meses o prazo para cobrança das penas de multa ou da indenização a que se refere o caput deste artigo, contado da data da realização do transporte. (Incluído pela Lei n° 14.229, de 2021)</h4>
+ <h3>Art. 9º Os órgãos competentes do Poder Executivo, no âmbito de suas atribuições, tomarão as providências necessárias, em trinta dias, para o cumprimento do disposto nesta Lei.</h3>
+ <h4>Parágrafo único. A partir das nove horas do dia 4 até às vinte e quatro horas do dia 11 de maio de 2000, os veículos de transporte rodoviário de carga terão livre circulação, sem pagamento da tarifa de pedágio, nas rodovias sob concessão federal.</h4>
+ <h3>Art. 9º -A. A ANTT articular-se-á com os Estados e Municípios que operem diretamente rodovias com pedágio, ou por meio de concessões, com vistas à implementação das disposições desta Lei nas suas esferas de atuação. (Incluído pela Lei n° 10.561, de 13.11.2002)</h3>
+ <h3>Art. 10. Ficam convalidados os atos praticados com base na Medida Provisória Nº 2.107-11, de 26 de janeiro de 2001.</h3>
+ <h3>Art. 11. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Congresso Nacional, em 23 de março de 2001; 180º da Independência e 113º da República.</p>
+ <p>Senador JADER BARBALHO</p>
+ <p>Presidente do Congresso Nacional</p>
+ <p>Este texto não substitui o publicado no DOU de 24.3.2001 (edição extra)</p>
+ <p>Conversão da MPv nº 2.107-12, de 2001 | Institui o Vale-Pedágio obrigatório sobre o transporte rodoviário de carga e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/L10209.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

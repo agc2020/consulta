@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.771, DE 17 DE SETEMBRO DE 2008 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2008" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.771, DE 17 DE SETEMBRO DE 2008</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:15:24 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/L11771.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 85.816 caracteres | espelho: 83.192 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.771, DE 17 DE SETEMBRO DE 2008.</p>
+ <p>R egulamento</p>
+ <p>Dispõe sobre a Política Nacional de Turismo, define as atribuições do Governo Federal no planejamento, desenvolvimento e estímulo ao setor turístico; revoga a Lei N° 6.505, de 13 de dezembro de 1977, o Decreto-Lei N° 2.294, de 21 de novembro de 1986, e dispositivos da Lei N° 8.181, de 28 de março de 1991; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei estabelece normas sobre a Política Nacional de Turismo, define as atribuições do Governo Federal no planejamento, desenvolvimento e estímulo ao setor turístico e disciplina a prestação de serviços turísticos, o cadastro, a classificação e a fiscalização dos prestadores de serviços turísticos.</h3>
+ <h3>Art. 1º Esta Lei estabelece normas sobre a Política Nacional de Turismo, define as atribuições do Governo Federal quanto ao planejamento, ao desenvolvimento e ao estímulo ao setor turístico e disciplina a prestação de serviços turísticos e o cadastro, a qualificação e a fiscalização dos prestadores de serviços turísticos. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h3>Art. 2º Para os fins desta Lei, considera-se turismo as atividades realizadas por pessoas físicas durante viagens e estadas em lugares diferentes do seu entorno habitual, por um período inferior a 1 (um) ano, com finalidade de lazer, negócios ou outras.</h3>
+ <h3>Art. 2º Para os fins desta Lei, considera-se turismo o fenômeno social, cultural e econômico que envolve as atividades realizadas por pessoas físicas durante viagens e estadas em lugares diferentes do seu entorno habitual, por um período inferior a 1 (um) ano, com finalidade de lazer, negócios, comparecimento a eventos, entre outros. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h4>Parágrafo único. As viagens e estadas de que trata o caput deste artigo devem gerar movimentação econômica, trabalho, emprego, renda e receitas públicas, constituindo-se instrumento de desenvolvimento econômico e social, promoção e diversidade cultural e preservação da biodiversidade.</h4>
+ <h3>Art. 3º Caberá ao Ministério do Turismo estabelecer a Política Nacional de Turismo, planejar, fomentar, regulamentar, coordenar e fiscalizar a atividade turística, bem como promover e divulgar institucionalmente o turismo em âmbito nacional e internacional.</h3>
+ <h4>Parágrafo único. O poder público atuará, mediante apoio técnico, logístico e financeiro, na consolidação do turismo como importante fator de desenvolvimento sustentável, de distribuição de renda, de geração de emprego e da conservação do patrimônio natural, cultural e turístico brasileiro.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA POLÍTICA, DO PLANO E DO SISTEMA NACIONAL DE TURISMO</h3>
+ <p>Seção I</p>
+ <p>Da Política Nacional de Turismo</p>
+ <p>Subseção I</p>
+ <p>Dos Princípios</p>
+ <h3>Art. 4º A Política Nacional de Turismo é regida por um conjunto de leis e normas, voltadas ao planejamento e ordenamento do setor, e por diretrizes, metas e programas definidos no Plano Nacional do Turismo - PNT estabelecido pelo Governo Federal.</h3>
+ <h4>Parágrafo único. A Política Nacional de Turismo obedecerá aos princípios constitucionais da livre iniciativa, da descentralização, da regionalização e do desenvolvimento econômico-social justo e sustentável.</h4>
+ <p>Subseção II</p>
+ <p>Dos Objetivos</p>
+ <h3>Art. 5º A Política Nacional de Turismo tem por objetivos:</h3>
+ <h5>I - democratizar e propiciar o acesso ao turismo no País a todos os segmentos populacionais, contribuindo para a elevação do bem-estar geral;</h5>
+ <h5>II - reduzir as disparidades sociais e econômicas de ordem regional, promovendo a inclusão social pelo crescimento da oferta de trabalho e melhor distribuição de renda;</h5>
+ <h5>II - contribuir para a redução das disparidades sociais e econômicas de ordem regional e promover a inclusão social por meio do crescimento da oferta de trabalho e da melhor distribuição de renda; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - ampliar os fluxos turísticos, a permanência e o gasto médio dos turistas nacionais e estrangeiros no País, mediante a promoção e o apoio ao desenvolvimento do produto turístico brasileiro;</h5>
+ <h5>IV - estimular a criação, a consolidação e a difusão dos produtos e destinos turísticos brasileiros, com vistas em atrair turistas nacionais e estrangeiros, diversificando os fluxos entre as unidades da Federação e buscando beneficiar, especialmente, as regiões de menor nível de desenvolvimento econômico e social;</h5>
+ <h5>V - propiciar o suporte a programas estratégicos de captação e apoio à realização de feiras e exposições de negócios, viagens de incentivo, congressos e eventos nacionais e internacionais;</h5>
+ <h5>VI - promover, descentralizar e regionalizar o turismo, estimulando Estados, Distrito Federal e Municípios a planejar, em seus territórios, as atividades turísticas de forma sustentável e segura, inclusive entre si, com o envolvimento e a efetiva participação das comunidades receptoras nos benefícios advindos da atividade econômica;</h5>
+ <h5>VI - promover, descentralizar e regionalizar o turismo, para estimular os Estados, o Distrito Federal e os Municípios a planejar, ordenar e monitorar, em seus territórios, as atividades turísticas, de forma sustentável e segura, inclusive entre si, com o envolvimento e a participação das comunidades beneficiadas pela atividade econômica; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VII - criar e implantar empreendimentos destinados às atividades de expressão cultural, de animação turística, entretenimento e lazer e de outros atrativos com capacidade de retenção e prolongamento do tempo de permanência dos turistas nas localidades;</h5>
+ <h5>VII - estimular a implantação de empreendimentos destinados às atividades de expressão cultural, de animação turística, de entretenimento e de lazer e a implantação de outros atrativos com capacidade de retenção e prolongamento do tempo de permanência dos turistas nessas localidades; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VIII - propiciar a prática de turismo sustentável nas áreas naturais, promovendo a atividade como veículo de educação e interpretação ambiental e incentivando a adoção de condutas e práticas de mínimo impacto compatíveis com a conservação do meio ambiente natural;</h5>
+ <h5>IX - preservar a identidade cultural das comunidades e populações tradicionais eventualmente afetadas pela atividade turística;</h5>
+ <h5>IX - estimular a participação e o envolvimento das comunidades e populações tradicionais no desenvolvimento sustentável da atividade turística, para promover a melhoria de sua qualidade de vida e a preservação de sua identidade cultural; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>X - prevenir e combater as atividades turísticas relacionadas aos abusos de natureza sexual e outras que afetem a dignidade humana, respeitadas as competências dos diversos órgãos governamentais envolvidos;</h5>
+ <h5>X - apoiar a prevenção e o enfrentamento da exploração sexual de crianças e adolescentes e de outros abusos que afetem a dignidade humana no turismo brasileiro, respeitadas as competências dos diversos órgãos governamentais envolvidos; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XI - desenvolver, ordenar e promover os diversos segmentos turísticos; (Regulamento)</h5>
+ <p><del>XII - (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h5>XII - (revogado); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XIII - propiciar os recursos necessários para investimentos e aproveitamento do espaço turístico nacional de forma a permitir a ampliação, a diversificação, a modernização e a segurança dos equipamentos e serviços turísticos, adequando-os às preferências da demanda, e, também, às características ambientais e socioeconômicas regionais existentes;</h5>
+ <h5>XIV - aumentar e diversificar linhas de financiamentos para empreendimentos turísticos e para o desenvolvimento das pequenas e microempresas do setor pelos bancos e agências de desenvolvimento oficiais;</h5>
+ <h5>XV - contribuir para o alcance de política tributária justa e equânime, nas esferas federal, estadual, distrital e municipal, para as diversas entidades componentes da cadeia produtiva do turismo;</h5>
+ <h5>XVI - promover a integração do setor privado como agente complementar de financiamento em infra-estrutura e serviços públicos necessários ao desenvolvimento turístico;</h5>
+ <h5>XVI - estimular a integração do setor privado como agente complementar de financiamento em infraestrutura e na promoção, qualificação e prestação de serviços públicos necessários ao desenvolvimento do turismo; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XVII - propiciar a competitividade do setor por meio da melhoria da qualidade, eficiência e segurança na prestação dos serviços, da busca da originalidade e do aumento da produtividade dos agentes públicos e empreendedores turísticos privados;</h5>
+ <h5>XVII - propiciar a competitividade, a melhoria do ambiente de negócios, a inovação, a desburocratização, a qualidade, a eficiência e a segurança na prestação dos serviços, bem como incentivar a originalidade e o aumento da produtividade dos agentes públicos e dos empreendedores turísticos privados; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XVIII - estabelecer padrões e normas de qualidade, eficiência e segurança na prestação de serviços por parte dos operadores, empreendimentos e equipamentos turísticos;</h5>
+ <h5>XVIII - estabelecer padrões e normas de qualidade, de eficiência e de segurança na prestação de serviços turísticos; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XIX - promover a formação, o aperfeiçoamento, a qualificação e a capacitação de recursos humanos para a área do turismo, bem como a implementação de políticas que viabilizem a colocação profissional no mercado de trabalho; e</h5>
+ <h5>XIX - promover a formação, o aperfeiçoamento, a qualificação e a capacitação de recursos humanos para o setor do turismo e a implementação de políticas que viabilizem a colocação profissional no mercado de trabalho; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XX - implementar a produção, a sistematização e o intercâmbio de dados estatísticos e informações relativas às atividades e aos empreendimentos turísticos instalados no País, integrando as universidades e os institutos de pesquisa públicos e privados na análise desses dados, na busca da melhoria da qualidade e credibilidade dos relatórios estatísticos sobre o setor turístico brasileiro.</h5>
+ <h5>XX - implementar a produção, a sistematização, a padronização e o intercâmbio de dados estatísticos e de informações relativas às atividades e aos empreendimentos turísticos instalados no País, a serem utilizados em análises feitas por universidades e institutos de pesquisa públicos e privados, com vistas à melhoria da qualidade e da credibilidade dos relatórios estatísticos sobre o setor turístico brasileiro; e (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XXI - incentivar a pesquisa e a produção científica relacionadas ao turismo. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>Parágrafo único. Quando se tratar de unidades de conservação, o turismo será desenvolvido em consonância com seus objetivos de criação e com o disposto no plano de manejo da unidade.</h4>
+ <p>Seção II</p>
+ <p>Do Plano Nacional de Turismo - PNT</p>
+ <h3>Art. 6º O Plano Nacional de Turismo - PNT será elaborado pelo Ministério do Turismo, ouvidos os segmentos públicos e privados interessados, inclusive o Conselho Nacional de Turismo, e aprovado pelo Presidente da República, com o intuito de promover:</h3>
+ <h5>I - a política de crédito para o setor, nela incluídos agentes financeiros, linhas de financiamento e custo financeiro;</h5>
+ <h5>II - a boa imagem do produto turístico brasileiro no mercado nacional e internacional;</h5>
+ <h5>III - a vinda de turistas estrangeiros e a movimentação de turistas no mercado interno;</h5>
+ <h5>IV - maior aporte de divisas ao balanço de pagamentos;</h5>
+ <h5>V - a incorporação de segmentos especiais de demanda ao mercado interno, em especial os idosos, os jovens e as pessoas portadoras de deficiência ou com mobilidade reduzida, pelo incentivo a programas de descontos e facilitação de deslocamentos, hospedagem e fruição dos produtos turísticos em geral e campanhas institucionais de promoção;</h5>
+ <h5>V - a incorporação de segmentos especiais de demanda nacional e internacional, notadamente os de pessoas idosas, de jovens e de pessoas com deficiência ou mobilidade reduzida, por meio de iniciativas destinadas ao incremento e à diversificação da demanda turística; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - a proteção do meio ambiente, da biodiversidade e do patrimônio cultural de interesse turístico;</h5>
+ <h5>VII - a atenuação de passivos socioambientais eventualmente provocados pela atividade turística;</h5>
+ <h5>VIII - o estímulo ao turismo responsável praticado em áreas naturais protegidas ou não;</h5>
+ <h5>VIII - o estímulo ao turismo responsável, como forma de orientar a atuação do setor turístico, com base nos princípios de sustentabilidade ambiental, sociocultural, econômica e político-institucional; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IX - a orientação às ações do setor privado, fornecendo aos agentes econômicos subsídios para planejar e executar suas atividades; e</h5>
+ <h5>X - a informação da sociedade e do cidadão sobre a importância econômica e social do turismo.</h5>
+ <h5>X - a divulgação de informações à sociedade e ao cidadão sobre a importância econômica e social do turismo; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>XI - a elaboração de estudos e pesquisas que auxiliem gestores dos setores público e privado do turismo; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XII - a coleta e a disponibilização ao turista e aos prestadores de serviços turísticos de informações sistematizadas sobre os produtos e destinos turísticos do País; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XIII - o turismo social, como forma de conduzir e praticar a atividade turística com vistas a promover a igualdade de oportunidades, de forma não discriminatória, acessível a todos e solidária, em condições de respeito e sob os princípios da sustentabilidade e da ética; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XIV - o fortalecimento do modelo de gestão descentralizada e da regionalização do turismo; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XV - a produção associada ao turismo e ao turismo de base local, como estratégia de diversificação da oferta turística, com vistas à inclusão social e à geração de trabalho e renda; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XVI - as ações relacionadas ao enfrentamento do abuso e da exploração sexual de crianças e adolescentes na atividade turística; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XVII - a segmentação do turismo, como forma de organizar a atividade para fins de planejamento, gestão e mercado, considerados os segmentos turísticos com base nos elementos de identidade da oferta e nas características da demanda; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XVIII - a elaboração e a implementação de estratégias para definição de mercados para o posicionamento dos produtos e dos destinos turísticos brasileiros; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XIX - o apoio à identificação e à criação de produtos turísticos competitivos nas regiões turísticas brasileiras; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XX - o apoio a parcerias público-privadas para o desenvolvimento da atividade turística e a realização dessas parcerias; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XXI - a melhoria do ambiente de negócios para facilitar e impulsionar a atração de investimentos, a geração de emprego e a melhor distribuição de renda nas regiões turísticas do País; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XXII - a formulação de diretrizes e de estratégias para estimular a atração de investimentos privados internos e externos para as regiões turísticas; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XXIII - a inovação e a competitividade de produtos turísticos brasileiros; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>XXIV - a qualificação de profissionais e de prestadores de serviços turísticos. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>Parágrafo único. O PNT terá suas metas e programas revistos a cada 4 (quatro) anos, em consonância com o plano plurianual, ou quando necessário, observado o interesse público, tendo por objetivo ordenar as ações do setor público, orientando o esforço do Estado e a utilização dos recursos públicos para o desenvolvimento do turismo.</h4>
+ <h3>Art. 7º O Ministério do Turismo, em parceria com outros órgãos e entidades integrantes da administração pública, publicará, anualmente, relatórios, estatísticas e balanços, consolidando e divulgando dados e informações sobre:</h3>
+ <h3>Art. 7º O Ministério do Turismo, em parceria com outros órgãos e entidades integrantes da administração pública, publicará, anualmente, relatórios, estatísticas e balanços consolidados sobre: (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h5>I - movimento turístico receptivo e emissivo;</h5>
+ <h5>I - caracterização e dimensionamento do turismo receptivo e emissivo, internacional e doméstico; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - atividades turísticas e seus efeitos sobre o balanço de pagamentos; e</h5>
+ <h5>III - efeitos econômicos e sociais advindos da atividade turística.</h5>
+ <p>Seção III</p>
+ <p>Do Sistema Nacional de Turismo</p>
+ <p>Subseção I</p>
+ <p>Da Organização e Composição</p>
+ <h3>Art. 8º Fica instituído o Sistema Nacional de Turismo, composto pelos seguintes órgãos e entidades:</h3>
+ <h5>I - Ministério do Turismo;</h5>
+ <h5>II - EMBRATUR - Instituto Brasileiro de Turismo;</h5>
+ <h5>II - Agência Brasileira de 	Promoção Internacional do Turismo - Embratur; (Redação dada pela Medida Provisória nº 1.207, de 2024)</h5>
+ <h5>II - Agência Brasileira de Promoção Internacional do Turismo (Embratur); (Redação dada pela Lei n° 14.901, de 2024)</h5>
+ <h5>III - Conselho Nacional de Turismo; e</h5>
+ <h5>III - Conselho Nacional de Turismo; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - Fórum Nacional de Secretários e Dirigentes Estaduais de Turismo.</h5>
+ <h5>IV - Fórum Nacional dos Secretários e Dirigentes Estaduais de Turismo (Fornatur); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>V - Associação Nacional dos Secretários e Dirigentes Municipais de Turismo (Anseditur); (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - os órgãos da administração pública estaduais, distritais e municipais que atuem no desenvolvimento do turismo; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VII - os fóruns e os conselhos estaduais, distritais e municipais de turismo; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VIII - as instâncias de governança macrorregionais e regionais de turismo; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>IX - as entidades de representação nacional dos Municípios relacionadas com o turismo. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <p><del>§ 1º (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h5>I - os fóruns e conselhos estaduais de turismo;</h5>
+ <h5>II - os órgãos estaduais de turismo; e</h5>
+ <h5>III - as instâncias de governança macrorregionais, regionais e municipais.</h5>
+ <h4>§ 1º (Revogado). (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º O Ministério do Turismo, Órgão Central do Sistema Nacional de Turismo, no âmbito de sua atuação, coordenará os programas de desenvolvimento do turismo, em interação com os demais integrantes.</h4>
+ <p>Subseção II</p>
+ <p>Dos Objetivos</p>
+ <h3>Art. 9º O Sistema Nacional de Turismo tem por objetivo promover o desenvolvimento das atividades turísticas, de forma sustentável, pela coordenação e integração das iniciativas oficiais com as do setor produtivo, de modo a:</h3>
+ <h5>I - atingir as metas do PNT;</h5>
+ <h5>II - estimular a integração dos diversos segmentos do setor, atuando em regime de cooperação com os órgãos públicos, entidades de classe e associações representativas voltadas à atividade turística;</h5>
+ <h5>III - promover a regionalização do turismo, mediante o incentivo à criação de organismos autônomos e de leis facilitadoras do desenvolvimento do setor, descentralizando a sua gestão; e</h5>
+ <h5>IV - promover a melhoria da qualidade dos serviços turísticos prestados no País.</h5>
+ <h5>IV - promover a melhoria contínua da qualidade dos serviços turísticos prestados no País. (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h4>Parágrafo único. Os órgãos e entidades que compõem o Sistema Nacional de Turismo, observadas as respectivas áreas de competência, deverão orientar-se, ainda, no sentido de:</h4>
+ <h5>I - definir os critérios que permitam caracterizar as atividades turísticas e dar homogeneidade à terminologia específica do setor;</h5>
+ <h5>II - promover os levantamentos necessários ao inventário da oferta turística nacional e ao estudo de demanda turística, nacional e internacional, com vistas em estabelecer parâmetros que orientem a elaboração e execução do PNT;</h5>
+ <h5>II - promover, orientar e estimular a realização de levantamentos necessários ao diagnóstico da oferta turística nacional, ao estudo de demanda turística e ao marketing turístico, nacional e internacional, com o objetivo de estabelecer parâmetros que orientem a elaboração e a execução do PNT; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - proceder a estudos e diligências voltados à quantificação, caracterização e regulamentação das ocupações e atividades, no âmbito gerencial e operacional, do setor turístico e à demanda e oferta de pessoal qualificado para o turismo;</h5>
+ <h5>IV - articular, perante os órgãos competentes, a promoção, o planejamento e a execução de obras de infra-estrutura, tendo em vista o seu aproveitamento para finalidades turísticas;</h5>
+ <h5>V - promover o intercâmbio com entidades nacionais e internacionais vinculadas direta ou indiretamente ao turismo;</h5>
+ <h5>V - promover e apoiar o intercâmbio com entidades nacionais e internacionais relacionadas direta ou indiretamente ao turismo; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - propor o tombamento e a desapropriação por interesse social de bens móveis e imóveis, monumentos naturais, sítios ou paisagens cuja conservação seja de interesse público, dado seu valor cultural e de potencial turístico;</h5>
+ <h5>VII - propor aos órgãos ambientais competentes a criação de unidades de conservação, considerando áreas de grande beleza cênica e interesse turístico; e</h5>
+ <h5>VIII - implantar sinalização turística de caráter informativo, educativo e, quando necessário, restritivo, utilizando linguagem visual padronizada nacionalmente, observados os indicadores de sinalização turística utilizados pela Organização Mundial de Turismo.</h5>
+ <h5>VIII - implantar sinalização turística informativa, educativa, interativa, acessível a pessoas com deficiência e, quando necessário, restritiva, com tradução em língua estrangeira e com comunicação visual padronizada nacionalmente, observados os indicadores utilizados pela Organização Mundial do Turismo (OMT) e o regulamento. (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA COORDENAÇÃO E INTEGRAÇÃO DE DECISÕES E AÇÕES NO PLANO FEDERAL</h3>
+ <p>Seção Única</p>
+ <p>Das Ações, Planos e Programas</p>
+ <h3>Art. 10. O poder público federal promoverá a racionalização e o desenvolvimento uniforme e orgânico da atividade turística, tanto na esfera pública como privada, mediante programas e projetos consoantes com a Política Nacional de Turismo e demais políticas públicas pertinentes, mantendo a devida conformidade com as metas fixadas no PNT.</h3>
+ <h3>Art. 11. Fica criado o Comitê Interministerial de Facilitação Turística, com a finalidade de compatibilizar a execução da Política Nacional de Turismo e a consecução das metas do PNT com as demais políticas públicas, de forma que os planos, programas e projetos das diversas áreas do Governo Federal venham a incentivar:</h3>
+ <h5>I - a política de crédito e financiamento ao setor;</h5>
+ <h5>II - a adoção de instrumentos tributários de fomento à atividade turística mercantil, tanto no consumo como na produção;</h5>
+ <h5>III - o incremento ao turismo pela promoção adequada de tarifas aeroportuárias, em especial a tarifa de embarque, preços de passagens, tarifas diferenciadas ou estimuladoras relativas ao transporte turístico;</h5>
+ <h5>III - o incremento ao turismo pela promoção e pelo desenvolvimento do transporte aéreo doméstico e internacional, pela implantação de infraestrutura aeroportuária adequada às regiões turísticas e pela aplicação de tarifas aeroportuárias diferenciadas ou estimuladoras, em especial a tarifa de embarque e preços de passagens, que estimulem o desenvolvimento do turismo; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - as condições para afretamento relativas ao transporte turístico;</h5>
+ <h5>V - a facilitação de exigências, condições e formalidades, estabelecidas para o ingresso, saída e permanência de turistas no País, e as respectivas medidas de controle adotadas nos portos, aeroportos e postos de fronteira, respeitadas as competências dos diversos órgãos governamentais envolvidos;</h5>
+ <h5>VI - o levantamento de informações quanto à procedência e nacionalidade dos turistas estrangeiros, faixa etária, motivo da viagem e permanência estimada no País;</h5>
+ <h5>VI - o levantamento de informações quanto à procedência, à nacionalidade, à faixa etária, ao motivo da viagem e à permanência estimada no País dos turistas estrangeiros, entre outras; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VII - a metodologia e o cálculo da receita turística contabilizada no balanço de pagamentos das contas nacionais;</h5>
+ <h5>VIII - a formação, a capacitação profissional, a qualificação, o treinamento e a reciclagem de mão-de-obra para o setor turístico e sua colocação no mercado de trabalho;</h5>
+ <h5>VIII - a formação, a capacitação profissional, a qualificação, o treinamento e o aperfeiçoamento de mão de obra para o setor turístico e a sua colocação no mercado de trabalho; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IX - o aproveitamento turístico de feiras, exposições de negócios, congressos e simpósios internacionais, apoiados logística, técnica ou financeiramente por órgãos governamentais, realizados em mercados potencialmente emissores de turistas para a divulgação do Brasil como destino turístico;</h5>
+ <h5>IX - o aproveitamento turístico de feiras, exposições de negócios, congressos, simpósios e eventos culturais apoiados por órgãos governamentais e realizados para a divulgação do País como destino turístico; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>X - o fomento e a viabilização da promoção do turismo, visando à captação de turistas estrangeiros, solicitando inclusive o apoio da rede diplomática e consular do Brasil no exterior;</h5>
+ <h5>XI - o tratamento diferenciado, simplificado e favorecido às microempresas e empresas de pequeno porte de turismo;</h5>
+ <h5>XII - a geração de empregos;</h5>
+ <h5>XIII - o estabelecimento de critérios de segurança na utilização de serviços e equipamentos turísticos; e</h5>
+ <h5>XIV - a formação de parcerias interdisciplinares com as entidades da administração pública federal, visando ao aproveitamento e ordenamento do patrimônio natural e cultural para fins turísticos.</h5>
+ <h4>Parágrafo único. O Comitê Interministerial de Facilitação Turística, cuja composição, forma de atuação e atribuições serão definidas pelo Poder Executivo, será presidido pelo Ministro de Estado do Turismo.</h4>
+ <h3>Art. 12. O Ministério do Turismo poderá buscar, no Ministério do Desenvolvimento, Indústria e Comércio Exterior, apoio técnico e financeiro para as iniciativas, planos e projetos que visem ao fomento das empresas que exerçam atividade econômica relacionada à cadeia produtiva do turismo, com ênfase nas microempresas e empresas de pequeno porte.</h3>
+ <h3>Art. 12. O Ministério do Turismo poderá dirigir-se a outros órgãos da administração pública federal, com vistas a obter apoio técnico e financeiro para as iniciativas, os planos e os projetos que visem ao fomento das empresas que exerçam atividade econômica relacionada à cadeia produtiva do turismo, com ênfase nas microempresas e nas empresas de pequeno porte. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h3>Art. 13. O Ministério do Turismo poderá buscar, no Ministério da Educação e no Ministério do Trabalho e Emprego, no âmbito de suas respectivas competências, apoio para estimular as unidades da Federação emissoras de turistas à implantação de férias escolares diferenciadas, buscando minorar os efeitos da sazonalidade turística, caracterizada pelas alta e baixa temporadas.</h3>
+ <h4>Parágrafo único. O Governo Federal, por intermédio do Ministério do Turismo, poderá oferecer estímulos e vantagens especiais às unidades da Federação emissoras de turistas em função do disposto neste artigo.</h4>
+ <h3>Art. 13-A. É instituído o Mapa do Turismo Brasileiro como instrumento para facilitar o alcance dos objetivos da Política e do Sistema Nacional de Turismo. (Incluído pela Lei n° 14.978, de 2024)</h3>
+ <h4>§ 1º O Mapa do Turismo Brasileiro é a base territorial para o desenvolvimento das políticas públicas setoriais e locais de turismo, com foco na gestão, na estruturação, na qualificação, na promoção e no apoio à comercialização do turismo brasileiro, de forma regionalizada e descentralizada. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º O Mapa do Turismo Brasileiro será organizado por regiões turísticas, compostas de Municípios que devem possuir características similares ou complementares, tais como identidade histórica, cultural, econômica ou geográfica. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 3º Os Municípios de uma região turística são aqueles que dispõem de atrativos turísticos e que recebem fluxos de turistas em seus territórios ou aqueles fornecedores de mão de obra, serviços, equipamentos e produtos associados ao turismo e poderão ser categorizados pelo Ministério do Turismo como: (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - Município turístico: aquele que dá identidade à região, concentra o maior fluxo de turistas e detém os principais atrativos e serviços turísticos em relação aos Municípios circunvizinhos; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - Município com oferta turística complementar: aquele que possui atrativos e serviços turísticos que complementam a oferta e o fluxo de turistas dos Municípios turísticos da região; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - Município de apoio ao turismo: aquele em que não há fluxo de turistas ou que possui fluxo de turistas pouco expressivo, mas que se beneficia da atividade turística, fornecendo mão de obra, serviços e produtos associados ao turismo aos Municípios turísticos e/ou aos Municípios com oferta turística complementar. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>§ 4º Uma região turística pode contemplar 1 (um) ou mais Municípios da mesma categoria. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 5º Os Municípios de uma região turística devem ser limítrofes ou próximos uns aos outros, com interligações modais fluidas. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 6º Uma região turística poderá ser composta de apenas 1 (um) Município, desde que seja capital de Estado ou área metropolitana oficializada por legislação local. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 7º O Distrito Federal poderá ser compreendido como uma única região turística ou poderá compor regiões turísticas que agrupam uma ou mais Regiões Administrativas (RAs). (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 8º O Ministério do Turismo definirá os critérios a serem utilizados na identificação das regiões turísticas e a metodologia de categorização dos Municípios que comporão as regiões e o Mapa do Turismo Brasileiro, com o apoio dos órgãos oficiais de turismo dos Estados e do Distrito Federal. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 9º Os Municípios e as regiões turísticas que fazem parte do Mapa do Turismo Brasileiro deverão ser, preferencialmente, os beneficiários dos recursos públicos federais para o desenvolvimento do turismo. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 10. O Poder Executivo estadual ou distrital, nos limites de seu território e no âmbito do Mapa do Turismo Brasileiro, promoverá a criação, por meio de regulamento próprio, de Áreas Especiais de Interesse Turístico (AEITs), que são territórios que serão considerados prioritários para a facilitação da atração de investimentos e a realização de parcerias com o setor privado. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 11. Regulamento federal disporá sobre a delimitação e outros requisitos necessários à criação das AEITs em âmbito federal, nos territórios de domínio ou competência da União. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 14. O Ministério do Turismo, diretamente ou por intermédio do Instituto Brasileiro de Turismo - EMBRATUR, poderá utilizar, mediante delegação ou convênio, os serviços das representações diplomáticas, econômicas e culturais do Brasil no exterior para a execução de suas tarefas de captação de turistas, eventos e investidores internacionais para o País e de apoio à promoção e à divulgação de informações turísticas nacionais, com vistas na formação de uma rede de promoção internacional do produto turístico brasileiro, intercâmbio tecnológico com instituições estrangeiras e à prestação de assistência turística aos que dela necessitarem.</h3>
+ <h3>Art. 14. O Ministério do Turismo, diretamente ou por intermédio da Embratur, poderá utilizar, mediante delegação ou convênio, os serviços das representações diplomáticas, econômicas e culturais do Brasil no exterior para a execução de suas tarefas de captação de turistas, eventos e investidores internacionais para o País e de apoio à promoção e à divulgação de informações turísticas nacionais, com vistas à formação de uma rede de promoção internacional do produto turístico brasileiro, ao intercâmbio tecnológico com instituições estrangeiras e à prestação de assistência turística aos que dela necessitarem. (Redação dada pela Medida Provisória nº 1.207, de 2024)</h3>
+ <h3>Art. 14. O Ministério do Turismo, diretamente ou por intermédio da Embratur, poderá utilizar, mediante delegação ou convênio, os serviços das representações diplomáticas, econômicas e culturais do Brasil no exterior para a execução de suas tarefas de captação de turistas, de eventos e de investidores internacionais para o País e de apoio à promoção e à divulgação de informações turísticas nacionais, com vistas à formação de uma rede de promoção internacional do produto turístico brasileiro, ao intercâmbio tecnológico com instituições estrangeiras e à prestação de assistência turística aos que dela necessitarem. (Redação dada pela Lei n° 14.901, de 2024)</h3>
+ <h3>Art. 14-A. O Ministério do Turismo e a Embratur poderão realizar, observadas as respectivas competências, em parceria com instituições privadas, nacionais ou internacionais, ações de marketing destinadas à promoção do País como destino turístico, com compartilhamento dos custos. (Incluído pela Lei n° 14.978, de 2024)</h3>
+ <h3>Art. 14-B. O Ministério do Turismo, no âmbito das ações de qualificação para o setor de turismo, buscará, em conjunto com as instituições públicas e privadas: (Incluído pela Lei n° 14.978, de 2024)</h3>
+ <h5>I - promover ações de formação, qualificação e aperfeiçoamento profissional; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - associar a integração das ações de qualificação profissional com a educação básica de jovens e adultos; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - articular a inserção do tema turismo na educação básica; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - identificar e propor a revisão de ocupações do setor de turismo; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>V - incentivar a inserção e a progressão profissional dos qualificados no mercado de trabalho; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - incentivar e difundir o turismo cívico, como experiência complementar ao ensino de sala de aula. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>Parágrafo único. Os espaços e órgãos públicos tidos como atrativos turísticos culturais e naturais brasileiros, sobretudo aqueles que possuem acervos culturais, artísticos, paisagísticos, arqueológicos, paleontológicos, ecológicos e científicos, devem garantir a visitação pública, principalmente de estudantes, para fins de realização de turismo cívico, conforme regulamento a ser editado pelo Ministério do Turismo. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO FOMENTO À ATIVIDADE TURÍSTICA</h3>
+ <p>Seção I</p>
+ <p>Da Habilitação a Linhas de Crédito Oficiais e ao Fundo Geral de Turismo - FUNGETUR</p>
+ <p>Da Habilitação a Linhas de Crédito Oficiais e ao Fundo Geral de Turismo 	(Novo Fungetur)</p>
+ <p>(Redação dada pela Lei n° 14.476, de 2022)</p>
+ <h3>Art. 15. As pessoas físicas ou jurídicas, de direito público ou privado, com ou sem fins lucrativos, que desenvolverem programas e projetos turísticos poderão receber apoio financeiro do poder público, mediante:</h3>
+ <h5>I - cadastro efetuado no Ministério do Turismo, no caso de pessoas de direito privado; e</h5>
+ <h5>II - participação no Sistema Nacional de Turismo, no caso de pessoas de direito público.</h5>
+ <p>Seção II</p>
+ <p>Do Suporte Financeiro às Atividades Turísticas</p>
+ <h3>Art. 16. O suporte financeiro ao setor turístico será viabilizado por meio dos seguintes mecanismos operacionais de canalização de recursos:</h3>
+ <h5>I - da lei orçamentária anual, alocado ao Ministério do Turismo e à Embratur;</h5>
+ <h5>I - da lei orçamentária anual, 	alocado ao Ministério do Turismo; (Redação dada pela Medida Provisória nº 1.207, de 2024)</h5>
+ <h5>I - da lei orçamentária anual, alocados ao Ministério do Turismo; (Redação dada pela Lei n° 14.901, de 2024)</h5>
+ <h5>II - do Fundo Geral de Turismo - FUNGETUR;</h5>
+ <h5>II - do Fundo Geral de Turismo (Novo Fungetur); (Redação dada pela Lei n° 14.476, de 2022)</h5>
+ <h5>III - de linhas de crédito de bancos e instituições federais;</h5>
+ <h5>IV - de agências de fomento ao desenvolvimento regional;</h5>
+ <h5>V - alocados pelos Estados, Distrito Federal e Municípios;</h5>
+ <h5>VI - de organismos e entidades nacionais e internacionais; e</h5>
+ <h5>VII - da securitização de recebíveis originários de operações de prestação de serviços turísticos, por intermédio da utilização de Fundos de Investimento em Direitos Creditórios - FIDC e de Fundos de Investimento em Cotas de Fundos de Investimento em Direitos Creditórios - FICFIDC, observadas as normas do Conselho Monetário Nacional - CMN e da Comissão de Valores Mobiliários - CVM .</h5>
+ <h5>VII - da securitização de recebíveis originários de operações de prestação de serviços turísticos, por intermédio da utilização de Fundos de Investimento em Direitos Creditórios (FIDC), de Fundos de Investimento em Cotas de Fundos de Investimento em Direitos Creditórios (FICFIDC), de Fundos de Investimento em Participações (FIP), de Fundos de Investimento Imobiliário (FII), de Fundos de Investimento em Cotas de Fundos de Investimento Imobiliário (FICFII), de Certificados de Recebíveis Imobiliários (CRI), de Cédulas de Crédito Imobiliário (CCI), de operações de desconto de recebíveis de arranjo de pagamento, da oferta pública de distribuição de valores mobiliários de emissão de sociedades empresárias de pequeno porte realizada com dispensa de registro por meio de plataforma eletrônica de investimento participativo ( crowdfunding ) e de outros instrumentos que sejam disponibilizados no mercado de capitais, observadas as normas pertinentes do Conselho Monetário Nacional (CMN) e da Comissão de Valores Mobiliários (CVM). (Redação dada pela Lei n° 14.476, de 2022)</h5>
+ <h4>Parágrafo único. O poder público federal poderá viabilizar, ainda, a criação de mecanismos de investimentos privados no setor turístico.</h4>
+ <h3>Art. 17. (VETADO)</h3>
+ <h3>Art. 17-A. O Fungetur, criado pelo Decreto-Lei n° 1.191, de 27 de outubro de 1971 , alterado pelo Decreto-Lei n° 1.439, de 30 de dezembro de 1975 , e ratificado pela Lei n° 8.181, de 28 de março de 1991 , passa a ser denominado Fundo Geral de Turismo (Novo Fungetur). (Incluído pela Lei n° 14.476, de 2022)</h3>
+ <p>Seção III</p>
+ <p>Do Fundo Geral de Turismo - FUNGETUR</p>
+ <p>Do Fundo Geral de Turismo (Novo Fungetur)</p>
+ <p>(Redação dada pela Lei n° 14.476, de 2022)</p>
+ <h3>Art. 18. O Fundo Geral de Turismo - FUNGETUR, criado pelo Decreto-Lei N° 1.191, de 27 de outubro de 1971 , alterado pelo Decreto-Lei N° 1.439, de 30 de dezembro de 1975 , ratificado pela Lei N° 8.181, de 28 de março de 1991 , terá seu funcionamento e condições operacionais regulados em ato do Ministro de Estado do Turismo.</h3>
+ <h3>Art. 18. O Novo Fungetur terá seu funcionamento e condições operacionais regulados em ato do Ministro de Estado do Turismo. (Redação dada pela Lei n° 14.476, de 2022)</h3>
+ <h3>Art. 19. O Fungetur tem por objeto o financiamento, o apoio ou a participação financeira em planos, projetos, ações e empreendimentos reconhecidos pelo Ministério do Turismo como de interesse turístico, os quais deverão estar abrangidos nos objetivos da Política Nacional de Turismo, bem como consoantes com as metas traçadas no PNT, explicitados nesta Lei.</h3>
+ <h4>Parágrafo único. As aplicações dos recursos do Fungetur, para fins do disposto neste artigo, serão objeto de normas, definições e condições a serem fixadas pelo Ministério do Turismo, em observância à legislação em vigor.</h4>
+ <h3>Art. 20. Constituem recursos do Fungetur:</h3>
+ <h3>Art. 20. Constituem recursos do Novo Fungetur: (Redação dada pela Lei n° 14.476, de 2022)</h3>
+ <h5>I - recursos do orçamento geral da União;</h5>
+ <h5>II - contribuições, doações, subvenções e auxílios de entidades de qualquer natureza, inclusive de organismos internacionais;</h5>
+ <h5>III – (VETADO);</h5>
+ <h5>IV - devolução de recursos de projetos não iniciados ou interrompidos, com ou sem justa causa;</h5>
+ <h5>V - reembolso das operações de crédito realizadas a título de financiamento reembolsável;</h5>
+ <h5>VI - recebimento de dividendos ou da alienação das participações acionárias do próprio Fundo e da Embratur em empreendimentos turísticos;</h5>
+ <h5>VI - recebimento de dividendos ou da alienação das participações acionárias do próprio Fundo em empreendimentos turísticos; (Redação dada pela Medida Provisória nº 1.207, de 2024)</h5>
+ <h5>VI - recebimento de dividendos ou da alienação das participações acionárias do próprio fundo em empreendimentos turísticos; (Redação dada pela Lei n° 14.901, de 2024)</h5>
+ <h5>VII - resultado das aplicações em títulos públicos federais;</h5>
+ <h5>VII - resultado das aplicações em títulos públicos federais, cotas de fundos de investimento de renda fixa e fundos de investimento preconizados no inciso VII do caput do art. 16 desta Lei, buscando a manutenção de sua rentabilidade, segurança e liquidez; (Redação dada pela Lei n° 14.476, de 2022)</h5>
+ <h5>VIII - quaisquer outros depósitos de pessoas físicas ou jurídicas realizados a seu crédito;</h5>
+ <h5>IX - receitas eventuais e recursos de outras fontes que vierem a ser definidas; e</h5>
+ <h5>X - superávit financeiro de cada exercício.</h5>
+ <h5>XI - recuperação de crédito de operações honradas garantidas indiretamente mediante cotas de fundo garantidor adquiridas pelo Novo Fungetur, participação em sociedades de garantia de crédito ou em FIDC preconizados no inciso VII do art. 16 desta Lei; (Incluído pela Lei n° 14.476, de 2022)</h5>
+ <h5>XII - taxa de administração e de comissão de concessão de garantia; (Incluído pela Lei n° 14.476, de 2022)</h5>
+ <h5>XIII - contratação de empréstimos internacionais; e (Incluído pela Lei n° 14.476, de 2022)</h5>
+ <h5>XIV - recursos de emendas parlamentares. (Incluído pela Lei n° 14.476, de 2022)</h5>
+ <h4>Parágrafo único. A operacionalização do Fungetur poderá ser feita por intermédio de agentes financeiros.</h4>
+ <h4>§ 1º A operacionalização do Novo Fungetur deverá ser feita por intermédio de agentes financeiros credenciados. (Incluído pela Lei n° 14.476, de 2022)</h4>
+ <h4>§ 1º A operacionalização do Novo Fungetur poderá ser realizada por meio de: (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - agentes financeiros credenciados; e (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - descentralizações não-reembolsáveis para Municípios, Estados e Distrito Federal, inclusive para fundos desses entes, nos casos de recursos oriundos de emendas parlamentares, com vistas à execução de ações relacionadas a planos, projetos e ações para o desenvolvimento do turismo aprovados pelo Ministério do Turismo, na forma estabelecida em regulamento. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>§ 2º É vedada a participação societária do Fungetur, mediante subscrição de ações ou quotas, em qualquer empresa da cadeia produtiva do turismo, excetuada a aquisição de cotas dos fundos de investimento referidos no inciso VII do caput do art. 16 desta Lei, observadas as normas pertinentes do Conselho Monetário Nacional e da Comissão de Valores Mobiliários. (Incluído pela Lei n° 14.476, de 2022)</h4>
+ <h4>§ 3º (VETADO). (Incluído pela Lei n° 14.476, de 2022)</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DOS PRESTADORES DE SERVIÇOS TURÍSTICOS</h3>
+ <p>Seção I</p>
+ <p>Da Prestação de Serviços Turísticos</p>
+ <p>Subseção I</p>
+ <p>Do Funcionamento e das Atividades</p>
+ <h3>Art. 21. Consideram-se prestadores de serviços turísticos, para os fins desta Lei, as sociedades empresárias, sociedades simples, os empresários individuais e os serviços sociais autônomos que prestem serviços turísticos remunerados e que exerçam as seguintes atividades econômicas relacionadas à cadeia produtiva do turismo:</h3>
+ <h3>Art. 21. Consideram-se prestadores de serviços turísticos, para os fins desta Lei, as sociedades empresárias, as sociedades simples, os empresários individuais, os microempreendedores individuais, as sociedades limitadas unipessoais, os serviços sociais autônomos e as associações privadas de turismo que prestem serviços turísticos remunerados e que exerçam as seguintes atividades econômicas relacionadas à cadeia produtiva do turismo: (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h5>I - meios de hospedagem;</h5>
+ <h5>II - agências de turismo;</h5>
+ <h5>III - transportadoras turísticas;</h5>
+ <h5>IV - organizadoras de eventos;</h5>
+ <h5>V - parques temáticos; e</h5>
+ <h5>V - parques temáticos, parques aquáticos, parques de diversões, atrações e empreendimentos turísticos dotados de equipamentos de entretenimento e lazer; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - acampamentos turísticos.</h5>
+ <h4>Parágrafo único. Poderão ser cadastradas no Ministério do Turismo, atendidas as condições próprias, as sociedades empresárias que prestem os seguintes serviços:</h4>
+ <h4>§ 1º Poderão ser cadastrados no Ministério do Turismo, atendidas as condições próprias, os seguintes prestadores de serviços turísticos: (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - restaurantes, cafeterias, bares e similares;</h5>
+ <h5>II - centros ou locais destinados a convenções e/ou a feiras e a exposições e similares;</h5>
+ <h5>III - parques temáticos aquáticos e empreendimentos dotados de equipamentos de entretenimento e lazer;</h5>
+ <h5>III - parques naturais, parques urbanos e espaços destinados ao bem-estar animal que tenham visitação pública; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - marinas e empreendimentos de apoio ao turismo náutico ou à pesca desportiva;</h5>
+ <h5>V - casas de espetáculos e equipamentos de animação turística;</h5>
+ <h5>VI - organizadores, promotores e prestadores de serviços de infra-estrutura, locação de equipamentos e montadoras de feiras de negócios, exposições e eventos ;</h5>
+ <h5>VI - organizadores, promotores e prestadores de serviços de infraestrutura e de locação de equipamentos, fornecedores de produtos e serviços relacionados com o turismo e montadoras de feiras de negócios, exposições e eventos; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VII - locadoras de veículos para turistas; e</h5>
+ <h5>VIII - prestadores de serviços especializados na realização e promoção das diversas modalidades dos segmentos turísticos, inclusive atrações turísticas e empresas de planejamento, bem como a prática de suas atividades.</h5>
+ <h5>IX – taxistas regularmente inscritos nos Municípios; (Incluído pela Lei n° 15.271)</h5>
+ <h5>X – cooperativas de táxis. (Incluído pela Lei n° 15.271)</h5>
+ <h4>§ 2º Para efeitos do caput e do § 1º deste artigo, a relação de atividades poderá ser ampliada, prevendo novas hipóteses de cadastramento, desde que seja de interesse turístico e estabelecidas por meio de regulamento editado pelo Ministro de Estado do Turismo. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 3º Será permitida a inclusão, no cadastro do Ministério do Turismo para prestação de serviços turísticos, dos serviços sociais autônomos que prestem serviços turísticos, tais como de hospedagem, locação de veículos e agenciamento turístico. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 4º Os produtores rurais ou agricultores familiares, desde que prestem serviços turísticos, nos termos do caput ou do § 1º deste artigo, poderão cadastrar-se no Ministério do Turismo, mesmo que o façam na condição de pessoa física. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 5º Os produtores rurais ou agricultores familiares que prestem serviços turísticos e que estejam cadastrados no Cadastur são autorizados à manufatura e à comercialização de sua produção, e essa comercialização é considerada atividade rural. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 21-A. São considerados profissionais de turismo aqueles ligados à cadeia produtiva do turismo, conforme legislação específica. (Incluído pela Lei n° 14.978, de 2024)</h3>
+ <h3>Art. 22. Os prestadores de serviços turísticos estão obrigados ao cadastro no Ministério do Turismo, na forma e nas condições fixadas nesta Lei e na sua regulamentação.</h3>
+ <h4>§ 1º As filiais são igualmente sujeitas ao cadastro no Ministério do Turismo, exceto no caso de estande de serviço de agências de turismo instalado em local destinado a abrigar evento de caráter temporário e cujo funcionamento se restrinja ao período de sua realização.</h4>
+ <h4>§ 2º O Ministério do Turismo expedirá certificado para cada cadastro deferido, inclusive de filiais, correspondente ao objeto das atividades turísticas a serem exercidas.</h4>
+ <h4>§ 3º Somente poderão prestar serviços de turismo a terceiros, ou intermediá-los, os prestadores de serviços turísticos referidos neste artigo quando devidamente cadastrados no Ministério do Turismo.</h4>
+ <h4>§ 4º O cadastro terá validade de 2 (dois) anos, contados da data de emissão do certificado.</h4>
+ <h4>§ 5º O disposto neste artigo não se aplica aos serviços de transporte aéreo.</h4>
+ <h4>§ 5º O disposto neste artigo não se aplica aos serviços de transporte aéreo e de transporte individual remunerado de passageiros. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 6º Os prestadores de serviços turísticos listados no art. 21 desta Lei, quando divulgados por meio de agenciamento turístico prestado por meio da internet ou de plataformas digitais, deverão estar cadastrados no Ministério do Turismo, sob pena de responsabilização própria e dos referidos canais de divulgação, nos termos da legislação vigente. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <p>Subseção II</p>
+ <p>Dos Meios de Hospedagem</p>
+ <h3>Art. 23. Consideram-se meios de hospedagem os empreendimentos ou estabelecimentos, independentemente de sua forma de constituição, destinados a prestar serviços de alojamento temporário, ofertados em unidades de freqüência individual e de uso exclusivo do hóspede, bem como outros serviços necessários aos usuários, denominados de serviços de hospedagem, mediante adoção de instrumento contratual, tácito ou expresso, e cobrança de diária.</h3>
+ <h3>Art. 23. Consideram-se meios de hospedagem os empreendimentos ou estabelecimentos destinados a prestar serviços de alojamento temporário, ofertados em unidades de frequência individual ou coletiva de uso exclusivo de hóspede, bem como outros serviços necessários aos usuários, denominados serviços de hospedagem, mediante instrumento contratual, tácito ou expresso, e cobrança de diária. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h4>§ 1º Os empreendimentos ou estabelecimentos de hospedagem que explorem ou administrem, em condomínios residenciais, a prestação de serviços de hospedagem em unidades mobiliadas e equipadas, bem como outros serviços oferecidos a hóspedes, estão sujeitos ao cadastro de que trata esta Lei e ao seu regulamento.</h4>
+ <h4>§ 2º Considera-se prestação de serviços de hospedagem em tempo compartilhado a administração de intercâmbio, entendida como organização e permuta de períodos de ocupação entre cessionários de unidades habitacionais de distintos meios de hospedagem.</h4>
+ <h4>§ 3º Não descaracteriza a prestação de serviços de hospedagem a divisão do empreendimento em unidades hoteleiras, assim entendida a atribuição de natureza jurídica autônoma às unidades habitacionais que o compõem, sob titularidade de diversas pessoas, desde que sua destinação funcional seja apenas e exclusivamente a de meio de hospedagem.</h4>
+ <h4>§ 4º Entende-se por diária o preço de hospedagem correspondente à utilização da unidade habitacional e dos serviços incluídos, no período de 24 (vinte e quatro) horas, compreendido nos horários fixados para entrada e saída de hóspedes.</h4>
+ <h4>§ 5º (VETADO). (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 6º O disposto no § 4º do caput deste artigo será regulamentado pelo Ministério do Turismo, para dispor sobre os procedimentos operacionais mínimos, relacionados à entrada e à saída do hóspede, considerando o tempo necessário para arrumação e higienização do ambiente da unidade habitacional. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 7º Os meios de hospedagem respondem objetiva e solidariamente pelos danos causados pelos serviços que prestarem. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 8º (VETADO). (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 23-A. (VETADO). (Incluído pela Lei n° 14.978, de 2024)</h3>
+ <h3>Art. 24. Os meios de hospedagem, para obter o cadastramento, devem preencher pelo menos um dos seguintes requisitos:</h3>
+ <h5>I - possuir licença de funcionamento, expedida pela autoridade competente, para prestar serviços de hospedagem, podendo tal licença objetivar somente partes da edificação; e</h5>
+ <h5>II - no caso dos empreendimentos ou estabelecimentos conhecidos como condomínio hoteleiro, flat, flat-hotel, hotel-residence, loft, apart-hotel, apart-service condominial , condohotel e similares, possuir licença edilícia de construção ou certificado de conclusão de construção, expedidos pela autoridade competente, acompanhados dos seguintes documentos:</h5>
+ <p><del>a) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h6>b) documento ou contrato de formalização de constituição do pool de locação, como sociedade em conta de participação, ou outra forma legal de constituição, com a adesão dos proprietários de pelo menos 60% (sessenta por cento) das unidades habitacionais à exploração hoteleira do empreendimento;</h6>
+ <p><del>c (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h6>d) certidão de cumprimento às regras de segurança contra riscos aplicáveis aos estabelecimentos comerciais; e</h6>
+ <p><del>e) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h4>§ 1º Para a obtenção do cadastro no Ministério do Turismo, os empreendimentos de que trata o inciso II do caput deste artigo, caso a licença edilícia de construção tenha sido emitida após a vigência desta Lei, deverão apresentar, necessariamente, a licença de funcionamento.</h4>
+ <p><del>§ 2º O disposto nesta Lei não se aplica aos empreendimentos imobiliários, organizados sob forma de condomínio, que contem com instalações e serviços de hotelaria à disposição dos moradores, cujos proprietários disponibilizem suas unidades exclusivamente para uso residencial ou para serem utilizadas por terceiros, com esta finalidade, por períodos superiores a 90 (noventa) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h3>Art. 25. O Poder Executivo estabelecerá em regulamento:</h3>
+ <h5>I - as definições dos tipos e categorias de classificação e qualificação de empreendimentos e estabelecimentos de hospedagem, que poderão ser revistos a qualquer tempo;</h5>
+ <h5>II - os padrões, critérios de qualidade, segurança, conforto e serviços previstos para cada tipo de categoria definido; e</h5>
+ <h5>III - os requisitos mínimos relativos a serviços, aspectos construtivos, equipamentos e instalações indispensáveis ao deferimento do cadastro dos meios de hospedagem.</h5>
+ <p><del>Parágrafo único (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h3>Art. 26. Os meios de hospedagem deverão fornecer ao Ministério do Turismo, em periodicidade por ele determinada, as seguintes informações:</h3>
+ <h5>I - perfil dos hóspedes recebidos, distinguindo-os por nacionalidade; e</h5>
+ <h5>I - o perfil dos hóspedes recebidos; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - registro quantitativo de hóspedes, taxas de ocupação, permanência média e número de hóspedes por unidade habitacional.</h5>
+ <h5>II - o registro quantitativo de hóspedes, inclusive as taxas de ocupação e de permanência, e o número médio de hóspedes por unidade habitacional. (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h4>Parágrafo único. Para os fins deste artigo, os meios de hospedagem utilizarão as informações previstas nos impressos Ficha Nacional de Registro de Hóspedes - FNRH e Boletim de Ocupação Hoteleira - BOH, na forma em que dispuser o regulamento.</h4>
+ <h4>§ 1º Para os fins deste artigo, os meios de hospedagem fornecerão os dados determinados em regulamento, observadas as normas que protegem os direitos à privacidade e à intimidade do hóspede. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º Para os fins deste artigo, compete ao Ministério do Turismo estabelecer a periodicidade e os dados de interesse público que os meios de hospedagens fornecerão. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 3º Havendo a intermediação dos serviços de hospedagem, o intermediário fica sujeito a fornecer os mesmos dados requeridos dos meios de hospedagem, nos termos de regulamento. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <p>Subseção III</p>
+ <p>Das Agências de Turismo</p>
+ <h3>Art. 27. Compreende-se por agência de turismo a pessoa jurídica que exerce a atividade econômica de intermediação remunerada entre fornecedores e consumidores de serviços turísticos ou os fornece diretamente.</h3>
+ <h3>Art. 27. Considera-se agência de turismo a pessoa jurídica que exerce a atividade econômica de intermediação remunerada entre prestadores, consumidores e usuários de serviços turísticos ou que fornece diretamente esses serviços. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h4>§ 1º São considerados serviços de operação de viagens, excursões e passeios turísticos, a organização, contratação e execução de programas, roteiros, itinerários, bem como recepção, transferência e a assistência ao turista.</h4>
+ <h4>§ 1º A intermediação a que se refere este artigo abrange o agenciamento, o assessoramento, o planejamento, a organização, a promoção, a contratação e a operação dos serviços intermediados, isolados ou conjugados, individuais ou coletivos, inclusive os fretamentos e os bloqueios, totais ou parciais, de meios de transporte, de hospedagem, de cruzeiros aquaviários e afins. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º O preço do serviço de intermediação é a comissão recebida dos fornecedores ou o valor que agregar ao preço de custo desses fornecedores, facultando-se à agência de turismo cobrar taxa de serviço do consumidor pelos serviços prestados.</h4>
+ <h4>§ 2º O preço dos serviços das agências de turismo é a soma do valor bruto das comissões recebidas dos prestadores dos serviços turísticos ou dos consumidores e contratantes dos serviços intermediados, acrescido de valor agregado ao preço de custo desses serviços, se houver sido facultada à agência de turismo a cobrança de taxa de serviço do consumidor pelos serviços prestados. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 3º As atividades de intermediação de agências de turismo compreendem a oferta, a reserva e a venda a consumidores de um ou mais dos seguintes serviços turísticos fornecidos por terceiros:</h4>
+ <h5>I - passagens;</h5>
+ <h5>II - acomodações e outros serviços em meios de hospedagem; e</h5>
+ <h5>II - acomodações e outros serviços em meios de hospedagem; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - programas educacionais e de aprimoramento profissional.</h5>
+ <h5>III - programas educacionais e de aprimoramento profissional; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - locação de veículos; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>V - obtenção ou venda de ingressos para espetáculos públicos, artísticos, esportivos, culturais e outras manifestações públicas; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - cruzeiros aquaviários. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>§ 4º As atividades complementares das agências de turismo compreendem a intermediação ou execução dos seguintes serviços:</h4>
+ <h5>I - obtenção de passaportes, vistos ou qualquer outro documento necessário à realização de viagens;</h5>
+ <h5>II - transporte turístico;</h5>
+ <h5>II - transporte turístico de superfície; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - desembaraço de bagagens em viagens e excursões;</h5>
+ <p><del>IV - (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h5>IV - (revogado); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <p><del>V - (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h5>V - (revogado); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - representação de empresas transportadoras, de meios de hospedagem e de outras fornecedoras de serviços turísticos;</h5>
+ <h5>VII - apoio a feiras, exposições de negócios, congressos, convenções e congêneres;</h5>
+ <h5>VIII - venda ou intermediação remunerada de seguros vinculados a viagens, passeios e excursões e de cartões de assistência ao viajante;</h5>
+ <h5>IX - venda de livros, revistas e outros artigos destinados a viajantes; e</h5>
+ <h5>X - acolhimento turístico, consistente na organização de visitas a museus, monumentos históricos e outros locais de interesse turístico.</h5>
+ <h4>§ 5º A intermediação prevista no § 2º deste artigo não impede a oferta, reserva e venda direta ao público pelos fornecedores dos serviços nele elencados.</h4>
+ <h4>§ 6º (VETADO)</h4>
+ <h4>§ 7º As agências de turismo que operam diretamente com frota própria deverão atender aos requisitos específicos exigidos para o transporte de superfície.</h4>
+ <h4>§ 7º As agências de turismo que operam diretamente com frota própria e empresas de transporte turístico de superfície deverão atender aos requisitos específicos exigidos exclusivamente pela legislação federal para o transporte de superfície turístico, cujos termos prevalecerão sobre quaisquer regras estaduais, municipais e distrital sobre o mesmo tema. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 8º Os valores das multas, das penalidades ou de outras taxas cobradas pelas agências de turismo a título de cláusula penal, no caso de pedidos de alteração ou de cancelamento dos serviços por elas reservados e confirmados, não poderão exceder o valor total desses serviços. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 9º (VETADO). (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 10. (VETADO). (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 11. Nas hipóteses previstas nos incisos I e II do § 10 deste artigo, cabe à agência de turismo assistir o consumidor na interlocução com fornecedores de serviços por ela intermediados. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 12. Para os efeitos legais e regulamentares, os cruzeiros aquaviários são classificados nas seguintes categorias: (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - cruzeiro de cabotagem: realizado inteiramente em águas jurisdicionais brasileiras; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - cruzeiro internacional: realizado em águas jurisdicionais brasileiras e estrangeiras. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>§ 13. Para os efeitos legais, quanto aos cruzeiros aquaviários, considera-se: (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - embarque: o início da viagem de passageiros; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - escala: as paradas programadas para visitas locais; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - trânsito: a saída e a entrada de passageiros durante escalas; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - desembarque: o término da viagem de passageiros. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <p>Subseção IV</p>
+ <p>Das Transportadoras Turísticas</p>
+ <h3>Art. 28. Consideram-se transportadoras turísticas as empresas que tenham por objeto social a prestação de serviços de transporte turístico de superfície, caracterizado pelo deslocamento de pessoas em veículos e embarcações por vias terrestres e aquáticas, compreendendo as seguintes modalidades:</h3>
+ <h3>Art. 28. Consideram-se transportadoras turísticas as pessoas jurídicas que exercem atividade econômica de prestação de serviços de transporte turístico de superfície, caracterizado pelo deslocamento de pessoas em veículos e embarcações por vias terrestres e aquáticas, compreendidas as seguintes modalidades: (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h5>I - pacote de viagem: itinerário realizado em âmbito municipal, intermunicipal, interestadual ou internacional que incluam, além do transporte, outros serviços turísticos como hospedagem, visita a locais turísticos, alimentação e outros;</h5>
+ <h5>II - passeio local: itinerário realizado para visitação a locais de interesse turístico do município ou vizinhança, sem incluir pernoite;</h5>
+ <h5>III - traslado: percurso realizado entre as estações terminais de embarque e desembarque de passageiros, meios de hospedagem e locais onde se realizem congressos, convenções, feiras, exposições de negócios e respectivas programações sociais; e</h5>
+ <h5>IV - especial: ajustado diretamente por entidades civis associativas, sindicais, de classe, desportivas, educacionais, culturais, religiosas, recreativas e grupo de pessoas físicas e de pessoas jurídicas, sem objetivo de lucro, com transportadoras turísticas, em âmbito municipal, intermunicipal, interestadual e internacional.</h5>
+ <h4>Parágrafo único. É facultado aos guias de turismo utilizar e conduzir veículos próprios na exploração da atividade de que trata este artigo, na condição de pessoa física enquadrada como empresário individual ou profissional liberal ou na condição de titular de sociedade limitada individual. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 29. O Ministério do Turismo, ouvidos os demais órgãos competentes sobre a matéria, fixará:</h3>
+ <p><del>I - (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <p><del>II - os padrões para a identificação oficial a ser usada na parte externa dos veículos terrestres e embarcações referidas no inciso I (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h3>Art. 29. O Ministério do Turismo, ouvidos os demais órgãos competentes sobre a matéria, fixará os padrões para a identificação oficial a ser usada na parte externa dos veículos terrestres e das embarcações. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h5>I - (revogado); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - (revogado). (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <p>Subseção V</p>
+ <p>Das Organizadoras de Eventos</p>
+ <h3>Art. 30. Compreendem-se por organizadoras de eventos as empresas que têm por objeto social a prestação de serviços de gestão, planejamento, organização, promoção, coordenação, operacionalização, produção e assessoria de eventos.</h3>
+ <h4>§ 1º As empresas organizadoras de eventos distinguem-se em 2 (duas) categorias: as organizadoras de congressos, convenções e congêneres de caráter comercial, técnico-científico, esportivo, cultural, promocional e social, de interesse profissional, associativo e institucional, e as organizadoras de feiras de negócios, exposições e congêneres.</h4>
+ <h4>§ 2º O preço do serviço das empresas organizadoras de eventos é o valor cobrado pelos serviços de organização, a comissão recebida pela intermediação na captação de recursos financeiros para a realização do evento e a taxa de administração referente à contratação de serviços de terceiros.</h4>
+ <h3>Art. 30. Consideram-se organizadoras de eventos as pessoas jurídicas que exercem atividade econômica de prestação de serviços de gestão, planejamento, organização, promoção, coordenação, operacionalização, produção e assessoria de eventos. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h4>§ 1º As organizadoras de eventos poderão prestar serviços nas categorias de organização de feiras, exposições, congressos, convenções e congêneres de caráter comercial, técnico-científico, esportivo, cultural, promocional e social e de interesse profissional, associativo e institucional, incluídos shows , festas, festivais, espetáculos em geral e simpósios. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º O preço do serviço das organizadoras de evento é a taxa de intermediação remunerada entre clientes e prestadores de infraestrutura de apoio a eventos. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <p>Subseção VI</p>
+ <p>Dos Parques Temáticos</p>
+ <h3>Art. 31. Consideram-se parques temáticos os empreendimentos ou estabelecimentos que tenham por objeto social a prestação de serviços e atividades, implantados em local fixo e de forma permanente, ambientados tematicamente, considerados de interesse turístico pelo Ministério do Turismo.</h3>
+ <h3>Art. 31. Consideram-se parques temáticos, parques aquáticos e parques de diversões, atrações e empreendimentos turísticos dotados de equipamentos de entretenimento e lazer, os estabelecimentos considerados de interesse turístico e capazes de induzir fluxo turístico, que exercem a prestação de serviços e atividades de entretenimento, lazer, diversão, apoio, suporte ao turista e alimentação, mediante cobrança de ingresso e venda de produtos e serviços aos turistas, implantados em um único espaço. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h4>§ 1º Os empreendimentos de que trata o caput deste artigo deverão estar implantados em local fixo e de forma permanente. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º Parques naturais, parques urbanos e espaços destinados ao bem-estar animal que tenham visitação pública deverão possuir as características definidas no caput deste artigo para serem considerados prestadores de serviços turísticos. (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <p>Subseção VII</p>
+ <p>Dos Acampamentos Turísticos</p>
+ <h3>Art. 32. Consideram-se acampamentos turísticos as áreas especialmente preparadas para a montagem de barracas e o estacionamento de reboques habitáveis, ou equipamento similar, dispondo, ainda, de instalações, equipamentos e serviços específicos para facilitar a permanência dos usuários ao ar livre.</h3>
+ <h4>Parágrafo único. O Poder Executivo discriminará, mediante regulamentação, os equipamentos mínimos necessários para o enquadramento do prestador de serviço na atividade de que trata o caput deste artigo.</h4>
+ <p>Subseção VIII</p>
+ <p>Dos Direitos</p>
+ <h3>Art. 33. São direitos dos prestadores de serviços turísticos cadastrados no Ministério do Turismo, resguardadas as diretrizes da Política Nacional de Turismo, na forma desta Lei:</h3>
+ <h5>I - o acesso a programas de apoio, financiamentos ou outros benefícios constantes da legislação de fomento ao turismo;</h5>
+ <h5>II - a menção de seus empreendimentos ou estabelecimentos empresariais, bem como dos serviços que exploram ou administram, em campanhas promocionais do Ministério do Turismo e da Embratur, para as quais contribuam financeiramente; e</h5>
+ <h5>III - a utilização de siglas, palavras, marcas, logomarcas, número de cadastro e selos de qualidade, quando for o caso, em promoção ou divulgação oficial para as quais o Ministério do Turismo e a Embratur contribuam técnica ou financeiramente.</h5>
+ <p>Subseção IX</p>
+ <p>Dos Deveres</p>
+ <h3>Art. 34. São deveres dos prestadores de serviços turísticos:</h3>
+ <h5>I - mencionar e utilizar, em qualquer forma de divulgação e promoção, o número de cadastro, os símbolos, expressões e demais formas de identificação determinadas pelo Ministério do Turismo;</h5>
+ <p><del>II - (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h5>II - (revogado); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>III - manter, em suas instalações, livro de reclamações e, em local visível, cópia do certificado de cadastro; e</h5>
+ <h5>III - manter em suas instalações, de forma visível, mecanismos que possibilitem a apresentação de denúncias, sugestões ou reclamações e cópia do certificado de cadastro no Ministério do Turismo; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - manter, no exercício de suas atividades, estrita obediência aos direitos do consumidor e à legislação ambiental.</h5>
+ <h5>IV - manter, no exercício de suas atividades, estrita obediência aos direitos do consumidor e à legislação ambiental; (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>V - manter, em local visível, mensagem referente à vedação da exploração sexual e do tráfico de crianças e adolescentes, conforme o disposto na Lei n° 11.577, de 22 de novembro de 200 7; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VI - viabilizar a ação fiscalizadora das autoridades competentes no exercício de suas funções. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>VII - inibir, no exercício de suas atividades, práticas que favoreçam o turismo sexual, entendido como a exploração sexual associada, diretamente ou não, à prestação de serviços turísticos. (Incluído pela Lei n° 15.073, de 2024)</h5>
+ <p>Seção II</p>
+ <p>Da Fiscalização</p>
+ <h3>Art. 35. O Ministério do Turismo, no âmbito de sua competência, fiscalizará o cumprimento desta Lei por toda e qualquer pessoa, física ou jurídica, que exerça a atividade de prestação de serviços turísticos, cadastrada ou não, inclusive as que adotem, por extenso ou de forma abreviada, expressões ou termos que possam induzir em erro quanto ao real objeto de suas atividades.</h3>
+ <h3>Art. 35. O Ministério do Turismo, no âmbito de sua competência, fiscalizará o cumprimento do disposto nesta Lei. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <p>Seção III</p>
+ <p>Das Infrações e das Penalidades</p>
+ <p>Subseção I</p>
+ <p>Das Penalidades</p>
+ <h3>Art. 36. A não-observância do disposto nesta Lei sujeitará os prestadores de serviços turísticos, observado o contraditório e a ampla defesa, às seguintes penalidades:</h3>
+ <h5>I - advertência por escrito;</h5>
+ <h5>II - multa;</h5>
+ <p><del>III - (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h5>III - (revogado); (Redação dada pela Lei n° 14.978, de 2024)</h5>
+ <h5>IV - interdição de local, atividade, instalação, estabelecimento empresarial, empreendimento ou equipamento; e</h5>
+ <h5>V - cancelamento do cadastro.</h5>
+ <h4>§ 1º As penalidades previstas nos incisos II a V do caput deste artigo poderão ser aplicadas isolada ou cumulativamente.</h4>
+ <h4>§ 2º A aplicação da penalidade de advertência não dispensa o infrator da obrigação de fazer ou deixar de fazer, interromper, cessar, reparar ou sustar de imediato o ato ou a omissão caracterizada como infração, sob pena de incidência de multa ou aplicação de penalidade mais grave.</h4>
+ <h4>§ 3º A penalidade de multa será em montante não inferior a R$ 350,00 (trezentos e cinqüenta reais) e não superior a R$ 1.000.000,00 (um milhão de reais).</h4>
+ <h4>§ 4º Regulamento disporá sobre critérios para gradação dos valores das multas.</h4>
+ <h4>§ 5º A penalidade de interdição será mantida até a completa regularização da situação, ensejando a reincidência de tal ocorrência aplicação de penalidade mais grave.</h4>
+ <p><del>§ 6º A penalidade de cancelamento da classificação ensejará a retirada do nome do prestador de serviços turísticos da página eletrônica do Ministério do Turismo, na qual consta o rol daqueles que foram contemplados com a chancela oficial de que trata o parágrafo único do art. 25 (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h4>§ 6º (Revogado) . (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 7º A penalidade de cancelamento de cadastro implicará a paralisação dos serviços e a apreensão do certificado de cadastro, sendo deferido prazo de até 30 (trinta) dias, contados da ciência do infrator, para regularização de compromissos assumidos com os usuários, não podendo, no período, assumir novas obrigações.</h4>
+ <h4>§ 7º A penalidade de cancelamento de cadastro: (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - implicará a apreensão do certificado de cadastro, concedido prazo de até 30 (trinta) dias, contado da ciência do infrator, para regularização de compromissos assumidos com os usuários, não podendo, no período, assumir novas obrigações; (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - ocorrerá somente por ordem judicial ou, quando os serviços prestados forem estranhos à atividade turística, por decisão administrativa. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h4>§ 8º As penalidades referidas nos incisos III a V do caput deste artigo acarretarão a perda, no todo, ou em parte, dos benefícios, recursos ou incentivos que estejam sendo concedidos ao prestador de serviços turísticos.</h4>
+ <h4>§ 8º As penalidades referidas nos incisos IV e V do caput deste artigo acarretarão a perda, no todo ou em parte, dos benefícios, dos recursos ou dos incentivos que estejam sendo concedidos ao prestador de serviços turísticos. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 37. Serão observados os seguintes fatores na aplicação de penalidades:</h3>
+ <h5>I - natureza das infrações;</h5>
+ <h5>II - menor ou maior gravidade da infração, considerados os prejuízos dela decorrentes para os usuários e para o turismo nacional; e</h5>
+ <h5>III - circunstâncias atenuantes ou agravantes, inclusive os antecedentes do infrator.</h5>
+ <h4>§ 1º Constituirão circunstâncias atenuantes a colaboração com a fiscalização e a presteza no ressarcimento dos prejuízos ou reparação dos erros.</h4>
+ <h4>§ 2º Constituirão circunstâncias agravantes a reiterada prática de infrações, a sonegação de informações e documentos e os obstáculos impostos à fiscalização.</h4>
+ <h4>§ 3º O Ministério do Turismo manterá sistema cadastral de informações no qual serão registradas as infrações e as respectivas penalidades aplicadas.</h4>
+ <h3>Art. 38. A multa a ser cominada será graduada de acordo com a gravidade da infração, a vantagem auferida, a condição econômica do fornecedor, bem como com a imagem do turismo nacional, devendo sua aplicação ser precedida do devido procedimento administrativo, e ser levados em conta os seguintes fatores:</h3>
+ <h5>I - maior ou menor gravidade da infração; e</h5>
+ <h5>II - circunstâncias atenuantes ou agravantes.</h5>
+ <h4>§ 1º As multas a que se refere esta Lei, devidamente atualizadas na data de seu efetivo pagamento, serão recolhidas à conta única do Tesouro Nacional.</h4>
+ <h4>§ 1º A receita arrecadada com a cobrança das multas a que se refere esta Lei será recolhida em favor do ente que as aplicar, inclusive quando o fizer por delegação de competência da União. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h4>§ 2º Os débitos decorrentes do não-pagamento, no prazo de 30 (trinta) dias, de multas aplicadas pelo Ministério do Turismo serão, após apuradas sua liquidez e certeza, inscritos na Dívida Ativa da União.</h4>
+ <p><del></p>
+ <h3>Art. 39. Caberá pedido de reconsideração, no prazo de 10 (dez) dias, contados a partir da efetiva ciência pelo interessado, à autoridade que houver proferido a decisão de aplicar a penalidade, a qual decidirá no prazo de 5 (cinco) (Revogado pela Lei n° 14.978, de 2024)</del></h3>
+ <p><del>§ 1º No caso de indeferimento, o interessado poderá, no prazo de 10 (dez) dias, contados da ciência da decisão, apresentar recurso hierárquico, com efeito suspensivo, para uma junta de recursos, com composição tripartite formada por 1 (um) representante dos empregadores, 1 (um) representante dos empregados, ambos escolhidos entre as associações de classe componentes do Conselho Nacional de Turismo, e 1 (um) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <p><del>§ 2º Os critérios para composição e a forma de atuação da junta de recursos, de que trata o § 1º (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h3>Art. 39-A. O interessado poderá, no prazo de 10 (dez) dias, contado da data da efetiva ciência da decisão que aplicar a penalidade, apresentar recurso hierárquico com efeito suspensivo perante a junta de recursos. (Incluído pela Lei n° 14.978, de 2024)</h3>
+ <h4>Parágrafo único. A junta de recursos a que se refere o caput deste artigo terá composição tripartite e será constituída por: (Incluído pela Lei n° 14.978, de 2024)</h4>
+ <h5>I - 1 (um) representante dos empregadores e 1 (um) representante dos empregados, escolhidos entre os associados das associações de classe componentes do Conselho Nacional de Turismo; e (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <h5>II - 1 (um) representante do Ministério do Turismo. (Incluído pela Lei n° 14.978, de 2024)</h5>
+ <p><del></p>
+ <h3>Art. 40 (Revogado pela Lei n° 14.978, de 2024)</del></h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <p><del>I - decorridos 180 (cento e oitenta) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <p><del>II - decorridos 2 (dois) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <p><del>III - decorridos 5 (cinco) (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <p>Subseção II</p>
+ <p>Das Infrações</p>
+ <h3>Art. 41. Prestar serviços de turismo sem o devido cadastro no Ministério do Turismo ou não atualizar cadastro com prazo de validade vencido:</h3>
+ <p>Pena - multa e interdição do local e atividade, instalação, estabelecimento empresarial, empreendimento ou equipamento.</p>
+ <p>Pena - advertência por escrito e multa. (Redação dada pela Lei n° 14.978, de 2024)</p>
+ <p><del>Parágrafo único (Revogado pela Lei n° 14.978, de 2024)</del></p>
+ <h4>Parágrafo único. (Revogado). (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 42. Não fornecer os dados e informações previstos no art. 26 desta Lei:</h3>
+ <p>Pena - advertência por escrito.</p>
+ <p>Pena - advertência por escrito e multa. (Redação dada pela Lei n° 14.978, de 2024)</p>
+ <h3>Art. 43. Não cumprir com os deveres insertos no art. 34 desta Lei:</h3>
+ <h3>Art. 43. Não cumprir com os deveres insertos no art. 34, observado o disposto nos arts. 43-A a 43-D desta Lei: (Redação dada pela Lei n° 15.073, de 2024)</h3>
+ <p>Pena - advertência por escrito.</p>
+ <p>Pena - advertência por escrito e multa. (Redação dada pela Lei n° 14.978, de 2024)</p>
+ <h4>Parágrafo único. No caso de não-observância dos deveres insertos no inciso IV do caput do art. 34 desta Lei, caberá aplicação de multa, conforme dispuser Regulamento.</h4>
+ <h4>Parágrafo único. No caso de inobservância dos deveres previstos no inciso IV do caput do art. 34 desta Lei, o termo de fiscalização será lavrado e encaminhado ao respectivo órgão competente. (Redação dada pela Lei n° 14.978, de 2024)</h4>
+ <h3>Art. 43-A. (VETADO). (Incluído pela Lei n° 15.073, de 2024)</h3>
+ <h3>Art. 43-B. Submeter criança ou adolescente à prostituição ou à exploração sexual, no âmbito da prestação de serviços turísticos: (Incluído pela Lei n° 15.073, de 2024)</h3>
+ <p>Pena - multa, cancelamento da classificação, interdição de local, de atividade, de instalação, de estabelecimento empresarial, de empreendimento ou de equipamento e cancelamento do cadastro. (Incluído pela Lei n° 15.073, de 2024)</p>
+ <h3>Art. 43-C. Deixar de colaborar com as iniciativas governamentais de combate ao turismo sexual no âmbito da prestação de serviços turísticos: (Incluído pela Lei n° 15.073, de 2024)</h3>
+ <p>Pena - multa, cancelamento da classificação, interdição de local, de atividade, de instalação, de estabelecimento empresarial, de empreendimento ou de equipamento e cancelamento do cadastro. (Incluído pela Lei n° 15.073, de 2024)</p>
+ <h3>Art. 43-D. Promover, de forma direta ou oblíqua, empreendimento, atividade ou local no território nacional como destino de turismo sexual: (Incluído pela Lei n° 15.073, de 2024)</h3>
+ <p>Pena - multa, cancelamento da classificação, interdição de local, de atividade, de instalação, de estabelecimento empresarial, de empreendimento ou de equipamento e cancelamento do cadastro. (Incluído pela Lei n° 15.073, de 2024)</p>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 44. O Ministério do Turismo poderá delegar competência para o exercício de atividades e atribuições específicas estabelecidas nesta Lei a órgãos e entidades da administração pública, inclusive de demais esferas federativas, em especial das funções relativas ao cadastramento, classificação e fiscalização dos prestadores de serviços turísticos, assim como a aplicação de penalidades e arrecadação de receitas.</h3>
+ <h3>Art. 44. O Ministério do Turismo poderá delegar competência para o exercício de atividades e atribuições específicas estabelecidas nesta Lei a órgãos e entidades da administração pública, inclusive das demais esferas federativas, em especial das funções relativas ao cadastramento e à fiscalização dos prestadores de serviços turísticos, à aplicação de penalidades e à arrecadação e ao recolhimento de receitas. (Redação dada pela Lei n° 14.978, de 2024)</h3>
+ <h3>Art. 45. Os prestadores de serviços turísticos cadastrados na data da publicação desta Lei deverão adaptar-se ao disposto nesta Lei quando expirado o prazo de validade do certificado de cadastro.</h3>
+ <h3>Art. 45-A. As ações de promoção turística serão consideradas prioritárias para o fortalecimento e a expansão do turismo, devendo ser assim contempladas no planejamento e no ordenamento do setor pela Política Nacional de Turismo e nas diretrizes, nas metas e nos programas definidos no PNT. (Incluído pela Lei n° 14.476, de 2022)</h3>
+ <h3>Art. 46. (VETADO)</h3>
+ <h3>Art. 47. (VETADO)</h3>
+ <h3>Art. 48. Esta Lei entra em vigor na data de sua publicação, observado, quanto ao seu art. 46, o disposto no inciso I do caput do art. 106 da Lei N° 5.172, de 25 de outubro de 1966 - Código Tributário Nacional.</h3>
+ <h3>Art. 49. Ficam revogados:</h3>
+ <h5>I - a Lei N° 6.505, de 13 de dezembro de 1977 ;</h5>
+ <h5>II - o Decreto-Lei N° 2.294, de 21 de novembro de 1986 ; e</h5>
+ <h5>III - os incisos VIII e X do caput e os §§ 2º e 3º do art. 3º , o inciso VIII do caput do art. 6º e o art. 8º da Lei N° 8.181, de 28 de março de 1991.</h5>
+ <p>Brasília, 17 de setembro de 2008; 187º da Independência e 120º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Celso Luiz Nunes Amorim</p>
+ <p>Luiz Eduardo Pereira Barreto Filho</p>
+ <p>Este texto não substitui o publicado no DOU de 18.9.2008</p>
+ <p>Regulamento | Dispõe sobre a Política Nacional de Turismo, define as atribuições do Governo Federal no planejamento, desenvolvimento e estímulo ao setor turístico; revoga a Lei n° 6.505, de 13 de dezembro de</p>
+ <p>1977, o Decreto-Lei n° 2.294, de 21 de novembro de 1986, e dispositivos da Lei n° 8.181, de 28 de março de 1991; e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/L11771.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

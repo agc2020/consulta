@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.898, DE 8 DE JANEIRO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.898, DE 8 DE JANEIRO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:07:57 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L11898.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 16.114 caracteres | espelho: 16.197 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.898, DE 8 DE JANEIRO DE 2009.</p>
+ <p>(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</p>
+ <p>Institui o Regime de Tributação Unificada - RTU na importação, por via terrestre, de mercadorias procedentes do Paraguai; e altera as Leis n os 10.637, de 30 de dezembro de 2002, e 10.833, de 29 de dezembro de 2003.</p>
+ <p>PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DO REGIME DE TRIBUTAÇÃO UNIFICADA</h3>
+ <h3>Art. 1º Fica instituído o Regime de Tributação Unificada - RTU na importação de mercadorias procedentes da República do Paraguai, nos termos desta Lei.</h3>
+ <h3>Art. 2º O Regime de que trata o art. 1º desta Lei permite a importação, por via terrestre, de mercadorias procedentes do Paraguai, mediante o pagamento unificado de impostos e contribuições federais incidentes na importação, observado o limite máximo de valor das mercadorias importadas por habilitado, por ano-calendário, fixado pelo Poder Executivo, bem como o disposto no art. 7º desta Lei.</h3>
+ <h4>Parágrafo único. A adesão ao Regime é opcional e será efetuada na forma estabelecida pelo Poder Executivo.</h4>
+ <h3>Art. 3º Somente poderão ser importadas ao amparo do Regime de que trata o art. 1º desta Lei as mercadorias relacionadas pelo Poder Executivo.</h3>
+ <h4>Parágrafo único. É vedada a inclusão no Regime de quaisquer mercadorias que não sejam destinadas ao consumidor final, bem como de armas e munições, fogos de artifícios, explosivos, bebidas, inclusive alcoólicas, cigarros, veículos automotores em geral e embarcações de todo tipo, inclusive suas partes e peças, medicamentos, pneus, bens usados e bens com importação suspensa ou proibida no Brasil.</h4>
+ <h3>Art. 4º O Poder Executivo poderá:</h3>
+ <h5>I - alterar o limite máximo de valor referido no caput do art. 2º desta Lei, para vigorar no ano-calendário seguinte ao da alteração;</h5>
+ <h5>II - estabelecer limites máximos trimestrais ou semestrais para a utilização do montante fixado para o respectivo ano-calendário; e</h5>
+ <h5>III - fixar limites quantitativos, por tipo de mercadoria, para as importações.</h5>
+ <h3>Art. 5º Os efeitos decorrentes dos atos do Poder Executivo previstos nos arts. 3º e 4º desta Lei serão monitorados por Comissão de Monitoramento do RTU - CMRTU, a quem compete:</h3>
+ <h5>I - acompanhar a evolução do fluxo de comércio entre o Brasil e o Paraguai;</h5>
+ <h5>II - monitorar e acompanhar eventuais impactos das importações realizadas sob o RTU no que tange à observância da legislação brasileira aplicável aos bens importados.</h5>
+ <h4>§ 1º A Secretaria da Receita Federal do Brasil - SRFB tornará públicos, mensalmente, os dados estatísticos sobre o fluxo de comércio, quantidades e valores, dentro do Regime.</h4>
+ <h4>§ 2º Em decorrência das informações coletadas e das análises realizadas, a Comissão poderá recomendar modificações na relação de que trata o art. 3º desta Lei e a revisão dos limites previstos no art. 4º desta Lei.</h4>
+ <h3>Art. 6º A Comissão de que trata o art. 5º desta Lei será composta por representantes do Ministério da Fazenda, do Ministério do Desenvolvimento, Indústria e Comércio Exterior, do Ministério da Ciência e Tecnologia, do Ministério das Relações Exteriores, de entidades representativas do setor industrial, incluindo uma do Pólo Industrial de Manaus, de comércio e de serviços, e das 2 (duas) Casas do Congresso Nacional, conforme dispuser o Regulamento.</h3>
+ <h4>§ 1º A Comissão será coordenada de acordo com o Regulamento.</h4>
+ <h4>§ 2º A Comissão reunir-se-á ordinariamente a cada 3 (três) meses e extraordinariamente por determinação do seu Coordenador.</h4>
+ <h4>§ 3º O Coordenador poderá convidar para participar das reuniões outras partes interessadas nos temas a serem examinados pela Comissão, bem como entidades representativas de segmentos da economia nacional afetados direta ou indiretamente pelos efeitos desta Lei.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>DA OPÇÃO PELO Regime de Tributação Unificada - RTU</p>
+ <h3>Art. 7º Somente poderá optar pelo Regime de que trata o art. 1º desta Lei a microempresa optante pelo Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - SIMPLES NACIONAL, de que trata a Lei Complementar Nº 123, de 14 de dezembro de 2006.</h3>
+ <h4>§ 1º Ao optante pelo Regime não se aplica o disposto no art. 56 da Lei Complementar nº 123, de 14 de dezembro de 2006.</h4>
+ <h4>§ 2º A operação de importação e o despacho aduaneiro poderão ser realizados pelo empresário ou pelo sócio da sociedade empresária, por pessoa física nomeada pelo optante pelo Regime ou por despachante aduaneiro.</h4>
+ <h4>§ 3º A Secretaria da Receita Federal do Brasil disciplinará os termos e condições de credenciamento das pessoas de que trata o § 2º deste artigo.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO CONTROLE ADUANEIRO DAS MERCADORIAS</h3>
+ <h3>Art. 8º A entrada das mercadorias referidas no caput do art. 3º desta Lei no território aduaneiro somente poderá ocorrer em ponto de fronteira alfandegado especificamente habilitado.</h3>
+ <h4>§ 1º A habilitação a que se refere o caput deste artigo fica condicionada à adoção de mecanismos adequados de controle e facilitação do comércio desde a aquisição das mercadorias até o seu desembaraço e posterior comercialização, a serem ajustados pelos órgãos de controle aduaneiro do Brasil e do Paraguai.</h4>
+ <h4>§ 2º A habilitação de que trata o caput deste artigo será outorgada pela Secretaria da Receita Federal do Brasil quando implementados os mecanismos de controle de que trata o § 1º deste artigo.</h4>
+ <h4>§ 3º Decorrido o prazo de 30 (trinta) dias da entrada no recinto alfandegado onde será realizado o despacho aduaneiro de importação ao amparo do Regime, sem que tenha sido iniciado ou retomado o respectivo despacho aduaneiro, por ação ou por omissão do optante pelo Regime, a mercadoria será declarada abandonada pela autoridade aduaneira e destinada na forma da legislação específica.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO PAGAMENTO E DA ALÍQUOTA</h3>
+ <h3>Art. 9º O Regime de que trata o art. 1º desta Lei implica o pagamento dos seguintes impostos e contribuições federais incidentes na importação:</h3>
+ <h5>I - Imposto de Importação;</h5>
+ <h5>II - Imposto sobre Produtos Industrializados;</h5>
+ <h5>III - Contribuição Social para o Financiamento da Seguridade Social devida pelo Importador de Bens Estrangeiros ou Serviços do Exterior - COFINS-Importação; e (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>IV - Contribuição para o PIS/Pasep-Importação. (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h4>§ 1º Os impostos e contribuições de que trata o caput deste artigo serão pagos na data do registro da Declaração de Importação.</h4>
+ <h4>§ 2º O optante pelo Regime não fará jus a qualquer benefício fiscal de isenção ou de redução dos impostos e contribuições referidos no caput deste artigo, bem como de redução de suas alíquotas ou bases de cálculo.</h4>
+ <h4>§ 3º O Regime poderá incluir o Imposto sobre Operações Relativas à Circulação de Mercadorias e sobre Prestações de Serviços de Transporte Interestadual e Intermunicipal e de Comunicação - ICMS devido pelo optante, desde que o Estado ou o Distrito Federal venha a aderir ao Regime mediante convênio.</h4>
+ <h3>Art. 10. Os impostos e contribuições federais devidos pelo optante pelo Regime de que trata o art. 1º desta Lei serão calculados pela aplicação da alíquota única de 42,25% (quarenta e dois inteiros e vinte e cinco centésimos por cento) sobre o preço de aquisição das mercadorias importadas, à vista da fatura comercial ou documento de efeito equivalente, observados os valores de referência mínimos estabelecidos pela Secretaria da Receita Federal do Brasil, sem prejuízo do disposto no § 3º do art. 9º desta Lei.</h3>
+ <h4>§ 1º A alíquota de que trata o caput deste artigo, relativamente a cada imposto ou contribuição federal, corresponde a:</h4>
+ <h5>I - 18% (dezoito por cento), a título de Imposto de Importação;</h5>
+ <h5>II - 15% (quinze por cento), a título de Imposto sobre Produtos Industrializados;</h5>
+ <h5>III - 7,60% (sete inteiros e sessenta centésimos por cento), a título de COFINS-Importação; e (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>IV - 1,65% (um inteiro e sessenta e cinco centésimos por cento), a título de Contribuição para o PIS-Pasep-Importação. (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h4>§ 2º O Poder Executivo poderá reduzir ou restabelecer a alíquota de que trata o caput deste artigo, mediante alteração dos percentuais de que tratam os incisos I e II do § 1º deste artigo.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DAS OBRIGAÇÕES ACESSÓRIAS</h3>
+ <h3>Art. 11. O documento fiscal de venda emitido pelo optante pelo Regime de que trata o art. 1º desta Lei, de conformidade com a legislação específica, deverá conter a expressão “Regime de Tributação Unificada na Importação” e a indicação do dispositivo legal correspondente.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DAS INFRAÇÕES E PENALIDADES</h3>
+ <h3>Art. 12. O optante pelo Regime de que trata o art. 1º desta Lei será:</h3>
+ <h5>I - suspenso pelo prazo de 3 (três) meses:</h5>
+ <h6>a) na hipótese de inobservância, por 2 (duas) vezes em um período de 2 (dois) anos, dos limites de valor ou de quantidade estabelecidos para as importações;</h6>
+ <h6>b) quando vender mercadoria sem emissão do documento fiscal de venda; ou</h6>
+ <h6>c) na hipótese em que tiver contra si ou contra o seu representante decisão administrativa aplicando a pena de perdimento da mercadoria;</h6>
+ <h5>II - excluído do Regime:</h5>
+ <h6>a) quando for excluído do Simples Nacional;</h6>
+ <h6>b) na hipótese de acúmulo, em período de 3 (três) anos, de suspensão cujo prazo total supere 6 (seis) meses;</h6>
+ <h6>c) na hipótese de atuação em nome de microempresa excluída do Regime ou no interesse desta; ou</h6>
+ <h6>d) na hipótese de importação de mercadoria que não conste da lista positiva.</h6>
+ <h4>§ 1º Aplica-se, no que couber, o disposto no art. 76 da Lei N° 10.833, de 29 de dezembro de 2003, para efeitos de aplicação e julgamento das sanções administrativas estabelecidas neste artigo.</h4>
+ <h4>§ 2º Nas hipóteses de que trata o inciso II do caput deste artigo, a microempresa somente poderá requerer nova adesão após o decurso do prazo de 3 (três) anos, contados da data da exclusão do Regime.</h4>
+ <h4>§ 3º As sanções previstas neste artigo não prejudicam a aplicação de outras penalidades cabíveis e das sanções previstas no art. 76 da Lei n° 10.833, de 29 de dezembro de 2003 , quando for o caso.</h4>
+ <h3>Art. 13. Aplica-se, relativamente às mercadorias submetidas a despacho ou desembaraçadas ao amparo do Regime de que trata o art. 1º desta Lei, a multa de:</h3>
+ <h5>I - 50% (cinqüenta por cento), na hipótese de o excesso, em valor ou em quantidade, ser igual ou inferior a 20% (vinte por cento) do limite máximo, em valor ou em quantidade, permitido;</h5>
+ <h5>II - 75% (setenta e cinco por cento), na hipótese de o excesso, em valor ou em quantidade, ser superior a 20% (vinte por cento) e igual ou inferior a 50% (cinqüenta por cento) do limite máximo, em valor ou em quantidade, permitido; e</h5>
+ <h5>III - 100% (cem por cento), na hipótese de o excesso, em valor ou em quantidade, ser superior a 50% (cinqüenta por cento) do limite máximo, em valor ou em quantidade, permitido.</h5>
+ <h4>§ 1º As multas de que trata o caput deste artigo aplicam-se por inobservância do limite de valor ou de quantidade no trimestre-calendário, no semestre-calendário ou no ano-calendário correspondente.</h4>
+ <h4>§ 2º As multas de que trata o caput deste artigo incidem sobre:</h4>
+ <h5>I - a diferença entre o preço total das mercadorias importadas e o limite máximo de valor fixado; ou</h5>
+ <h5>II - o preço das mercadorias importadas que excederem o limite de quantidade fixado.</h5>
+ <h3>Art. 14. Aplica-se a multa de 100% (cem por cento) sobre a diferença de preço das mercadorias submetidas a despacho ou desembaraçadas ao amparo do Regime de que trata o art. 1º desta Lei quando:</h3>
+ <h5>I - a mercadoria declarada não for idêntica à mercadoria efetivamente importada; ou</h5>
+ <h5>II - a quantidade de mercadorias efetivamente importadas for maior que a quantidade declarada.</h5>
+ <h4>Parágrafo único. A multa prevista no inciso I do caput deste artigo não se aplica quando a mercadoria estiver sujeita à pena de perdimento prevista no inciso XII do caput do art. 105 do Decreto-Lei N° 37, de 18 de novembro de 1966.</h4>
+ <h3>Art. 15. Na ocorrência de mais de uma das condutas infracionais passíveis de enquadramento no mesmo inciso ou em diferentes incisos dos arts. 13 e 14 desta Lei, aplica-se a multa de maior valor.</h3>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 16. A redução da multa de lançamento de ofício prevista no art. 6º da Lei N° 8.218, de 29 de agosto de 1991 , e o disposto nos arts. 18 e 19 da Lei n° 9.779, de 19 de janeiro de 1999 , não se aplicam às penalidades previstas nesta Lei.</h3>
+ <h3>Art. 17. A aplicação das penalidades previstas nesta Lei não elide a exigência dos impostos e contribuições incidentes, a aplicação de outras penalidades cabíveis e a representação fiscal para fins penais, quando for o caso.</h3>
+ <h3>Art. 18. A exclusão da microempresa do Regime poderá ser efetuada a pedido, não se aplicando o disposto no § 2º do art. 12 desta Lei.</h3>
+ <h3>Art. 19. O Poder Executivo regulamentará as disposições contidas nesta Lei e disporá sobre os mecanismos e formas de monitoramento do impacto do Regime na economia brasileira.</h3>
+ <h3>Art. 20. (VETADO)</h3>
+ <h3>Art. 21. (VETADO)</h3>
+ <h3>Art. 22. (VETADO)</h3>
+ <h3>Art. 23. (VETADO)</h3>
+ <h3>Art. 24. O caput do art. 3º da Lei n° 10.637, de 30 de dezembro de 2002 , passa a vigorar acrescido do seguinte inciso X:</h3>
+ <p>“</p>
+ <h3>Art. 3º ........................................................................</h3>
+ <p>.............................................................................................</p>
+ <h5>X - vale-transporte, vale-refeição ou vale-alimentação, fardamento ou uniforme fornecidos aos empregados por pessoa jurídica que explore as atividades de prestação de serviços de limpeza, conservação e manutenção.</h5>
+ <p>..................................................................................” (NR)</p>
+ <h3>Art. 25. O caput do art. 3º da Lei n° 10.833, de 29 de dezembro de 2003 , passa a vigorar acrescido do seguinte inciso X:</h3>
+ <p>“</p>
+ <h3>Art. 3º .....................................................................</h3>
+ <p>.............................................................................................</p>
+ <h5>X - vale-transporte, vale-refeição ou vale-alimentação, fardamento ou uniforme fornecidos aos empregados por pessoa jurídica que explore as atividades de prestação de serviços de limpeza, conservação e manutenção.</h5>
+ <p>.................................................................................” (NR)</p>
+ <h3>Art. 26. Os produtos industrializados na área de livre comércio de importação e exportação de que tratam as Leis Nº 7.965, de 22 de dezembro de 1989, Nº 8.210, de 19 de julho de 1991 , Nº 8.387, de 30 de dezembro de 1991 , e Nº 8.857, de 8 de março de 1994 , ficam isentos do Imposto sobre Produtos Industrializados, quer se destinem ao seu consumo interno, quer à comercialização em qualquer outro ponto do território nacional.</h3>
+ <h4>§ 1º A isenção prevista no caput deste artigo somente se aplica a produtos em cuja composição final haja preponderância de matérias-primas de origem regional, provenientes dos segmentos animal, vegetal, mineral, exceto os minérios do Capítulo 26 da Nomenclatura Comum do Mercosul - NCM, ou agrossilvopastoril, observada a legislação ambiental pertinente e conforme definido em regulamento.</h4>
+ <h4>§ 2º Excetuam-se da isenção prevista no caput deste artigo as armas e munições, o fumo, as bebidas alcoólicas, os automóveis de passageiros e os produtos de perfumaria ou de toucador, preparados e preparações cosméticas, salvos os classificados nas posições 3303 a 3307 da NCM, se destinados, exclusivamente, a consumo interno nas áreas de livre comércio referidas no caput deste artigo ou quando produzidos com utilização de matérias-primas da fauna e da flora regionais, em conformidade com processo produtivo básico e observada a preponderância de que trata o § 1º deste artigo.</h4>
+ <h3>Art. 27. A isenção prevista no art. 26 desta Lei aplica-se exclusivamente aos produtos elaborados por estabelecimentos industriais cujos projetos tenham sido aprovados pela Superintendência da Zona Franca de Manaus.</h3>
+ <h3>Art. 28. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 8 de janeiro de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 9.1.2009</p>
+ <p>Lei Complementar nº 214, de 2025)Produção de efeitos | Institui o Regime de Tributação</p>
+ <p>Unificada - RTU na importação, por via terrestre, de mercadorias procedentes do</p>
+ <p>Paraguai; e altera as Leis nos10.637, de 30 de dezembro de</p>
+ <p>2002, e 10.833, de 29 de dezembro de 2003.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L11898.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

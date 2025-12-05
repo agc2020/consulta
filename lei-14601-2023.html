@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 14.601, DE 19 DE JUNHO DE 2023 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2023" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 14.601, DE 19 DE JUNHO DE 2023</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:57:24 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14601.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 37.954 caracteres | espelho: 38.314 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 14.601, DE 19 DE JUNHO DE 2023</p>
+ <p>Conversão da Medida 	Provisória nº 1.164, de 2023</p>
+ <p>Regulamento</p>
+ <p>Institui o Programa Bolsa Família; altera a Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), a Lei n° 10.820, de 17 de dezembro de 2003, que dispõe sobre a autorização para desconto em folha de pagamento, e a Lei n° 10.779, de 25 de novembro de 2003; e revoga dispositivos das Leis nºs 14.284, de 29 de dezembro de 2021, e 14.342, de 18 de maio de 2022, e a Medida Provisória nº 1.155, de 1º de janeiro de 2023.</p>
+ <p>O PRESIDENTE 	DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Fica instituído o Programa Bolsa Família, 	no âmbito do Ministério do Desenvolvimento e Assistência Social, Família e 	Combate à Fome, em substituição ao Programa Auxílio Brasil, instituído pela Lei n° 14.284, de 29 de dezembro de 2021 .</h3>
+ <h4>§ 1º O Programa Bolsa Família constitui etapa do processo gradual e progressivo de implementação da universalização da renda básica de cidadania, na forma estabelecida no parágrafo único do art. 6º da Constituição Federa l e no caput e no § 1º do art. 1º da Lei n° 10.835, de 8 de janeiro de 2004 .</h4>
+ <h4>§ 2º Os critérios, os parâmetros, os mecanismos e os procedimentos para adequação dos benefícios do Programa Auxílio Brasil ao Programa Bolsa Família serão estabelecidos nesta Lei e em seus regulamentos.</h4>
+ <h4>§ 3º Ato do Poder Executivo federal regulamentará o disposto nesta Lei.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO PROGRAMA BOLSA FAMÍLIA</h3>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 2º O Programa Bolsa Família, destinado à 	transferência direta e condicionada de renda, será implementado na forma estabelecida nesta Lei e em seus regulamentos.</h3>
+ <h3>Art. 3º São objetivos do Programa Bolsa Família:</h3>
+ <h5>I - combater a fome, por meio da transferência direta de renda às famílias beneficiárias;</h5>
+ <h5>II - contribuir para a interrupção do ciclo de reprodução da pobreza entre as gerações; e</h5>
+ <h5>III 	- promover o desenvolvimento e a proteção social das famílias, especialmente das crianças, dos adolescentes e dos jovens em situação de pobreza.</h5>
+ <h4>Parágrafo único. Os objetivos do Programa Bolsa Família serão obtidos por meio de:</h4>
+ <h5>I - articulação entre o Programa e as ações de saúde, de educação, de assistência social e de outras áreas que atendam o público beneficiário, 	executadas pelos governos federal, estaduais, municipais e distrital;</h5>
+ <h5>II - vinculação ao Sistema Único de Assistência Social (Suas), de que trata a Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), permitida a utilização de sua rede de serviços socioassistenciais;</h5>
+ <h5>III 	- coordenação e compartilhamento da gestão e da execução com os entes federativos que venham a aderir ao Programa, na forma estabelecida nesta Lei e em seus regulamentos;</h5>
+ <h5>IV - participação social, por meio dos procedimentos estabelecidos nesta Lei e em seus regulamentos;</h5>
+ <h5>V - utilização do Cadastro Único para Programas Sociais do Governo Federal (CadÚnico), 	instituído pelo art. 6º-F da Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), e sua promoção como plataforma de integração do 	Programa a ações executadas pelos governos federal, estaduais, municipais e distrital; e</h5>
+ <h5>VI - respeito à privacidade das famílias beneficiárias, na forma estabelecida nas Leis nºs 12.527, de 18 	de novembro de 2011 , e 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados 	Pessoais).</h5>
+ <h3>Art. 4º Para fins do disposto nesta Lei, 	considera-se:</h3>
+ <h5>I - família: núcleo composto de uma ou mais pessoas que formem um grupo doméstico, com residência no mesmo domicílio, e que contribuam para o rendimento ou que dele dependam para atendimento de suas despesas;</h5>
+ <h5>II - renda familiar mensal: soma dos rendimentos auferidos por todos os integrantes da família, excluídos aqueles rendimentos indicados no § 1º deste artigo e em regulamento;</h5>
+ <h5>III 	- renda familiar per capita mensal: razão entre a renda familiar mensal e o total de integrantes da família; e</h5>
+ <h5>IV - domicílio: local que serve de moradia à família.</h5>
+ <h4>§ 1º Para fins do disposto no inciso II do caput deste artigo, não serão computados na renda familiar mensal, sem prejuízo de outros rendimentos indicados em regulamento:</h4>
+ <h5>I - benefícios financeiros de caráter eventual, temporário ou sazonal instituídos pelo poder público federal, estadual, municipal e distrital;</h5>
+ <h5>II - recursos financeiros de natureza indenizatória, recebidos de entes públicos ou privados, para recomposição de danos materiais ou morais; e</h5>
+ <h5>III 	- recursos financeiros recebidos de ações de transferência de renda de natureza assistencial instituídas pelo poder público federal, estadual, 	municipal e distrital.</h5>
+ <h4>§ 2º O benefício de prestação continuada, de que trata o art. 20 da Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), recebido por quaisquer dos integrantes da família, compõe o cálculo da renda familiar per capita mensal.</h4>
+ <h4>§ 3º O Poder Executivo poderá autorizar o desconto de faixas percentuais do valor do benefício de prestação continuada recebido por pessoa com deficiência no cálculo da renda familiar per capita mensal de que trata o inciso II 	do caput deste artigo, observado, no que couber, o critério de que trata o inciso I do caput do art. 20-B da 	Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da 	Assistência Social), na forma do regulamento.</h4>
+ <p>Seção II</p>
+ <p>Da Elegibilidade</p>
+ <h3>Art. 5º São elegíveis ao Programa Bolsa Família as famílias:</h3>
+ <h5>I - inscritas no CadÚnico; e</h5>
+ <h5>II - cuja renda familiar per capita mensal seja igual ou inferior a R$ 	218,00 (duzentos e dezoito reais).</h5>
+ <h3>Art. 6º As famílias beneficiárias do Programa Bolsa 	Família cuja renda per capita mensal seja superior ao valor estabelecido no inciso II do caput do art. 5º desta Lei serão mantidas no Programa pelo período de até 24 (vinte e quatro) meses, 	observados os parâmetros estabelecidos neste artigo e em regulamento.</h3>
+ <h4>§ 1º Na hipótese de a renda familiar per capita mensal superar o valor de meio salário mínimo, excluído de seu cálculo o valor dos benefícios financeiros do Programa Bolsa Família e observado o disposto nos §§ 1º e 2º do art. 4º desta Lei, a família será desligada do Programa.</h4>
+ <h4>§ 2º Durante o período de 24 (vinte e quatro) meses a que se refere o caput deste artigo, a família beneficiária receberá 50% (cinquenta por cento) do valor dos benefícios financeiros a que for elegível, nos termos do art. 7º desta Lei.</h4>
+ <h4>§ 3º Terão prioridade para reingressar no Programa Bolsa Família:</h4>
+ <h5>I - as famílias que voluntariamente se desligarem do Programa; e</h5>
+ <h5>II - as famílias que forem desligadas do Programa em decorrência do término do período de 24 (vinte e quatro) meses previsto no caput deste artigo.</h5>
+ <h4>§ 4º Na hipótese prevista no § 3º deste artigo, a família deverá cumprir os requisitos para ingresso no Programa Bolsa Família estabelecidos nesta Lei e em regulamento.</h4>
+ <h4>§ 5º Ato do Poder Executivo federal poderá alterar: (Incluído pela Lei n° 15.077, de 2024)</h4>
+ <h5>I - o valor-limite de desligamento do Programa, observado o valor constante do 	§ 1º deste artigo como máximo; (Incluído pela Lei n° 15.077, de 2024)</h5>
+ <h5>II - o prazo a que se refere o § 2º deste artigo, não podendo ser superior ao prazo previsto no referido parágrafo. (Incluído pela Lei n° 15.077, de 2024)</h5>
+ <p>Seção III</p>
+ <p>Dos Benefícios Financeiros</p>
+ <h3>Art. 7º A transferência de renda do Programa Bolsa 	Família é composta de benefícios financeiros disponibilizados às famílias e calculados na forma estabelecida neste artigo e em regulamento.</h3>
+ <h4>§ 1º Constituem benefícios financeiros do Programa Bolsa Família:</h4>
+ <h5>I - Benefício de Renda de Cidadania, no valor de R$ 142,00 (cento e quarenta e dois reais) por integrante, destinado a todas as famílias beneficiárias do 	Programa Bolsa Família;</h5>
+ <h5>II - Benefício Complementar, destinado às famílias beneficiárias do Programa 	Bolsa Família cuja soma dos valores relativos aos benefícios financeiros de que trata o inciso I deste parágrafo seja inferior a R$ 600,00 (seiscentos reais), calculado pela diferença entre este valor e a referida soma;</h5>
+ <h5>III 	- Benefício Primeira Infância, no valor de R$ 150,00 (cento e cinquenta reais) por criança, destinado às famílias beneficiárias que possuírem, em sua composição, crianças com idade entre 0 (zero) e 7 (sete) anos incompletos;</h5>
+ <h5>IV - Benefício Variável Familiar, no valor de R$ 50,00 (cinquenta reais), 	destinado às famílias beneficiárias que possuírem, em sua composição:</h5>
+ <h6>a) 	gestantes;</h6>
+ <h6>b) 	nutrizes;</h6>
+ <h6>c) 	crianças com idade entre 7 (sete) anos e 12 (doze) anos incompletos; ou</h6>
+ <h6>d) 	adolescentes, com idade entre 12 (doze) anos e 18 (dezoito) anos incompletos;</h6>
+ <h5>V - Benefício Extraordinário de Transição, destinado exclusivamente às famílias que constarem como beneficiárias do Programa Auxílio Brasil na data de entrada em vigor deste inciso, que será calculado pela diferença entre o valor recebido pela família em maio de 2023 e o que vier a receber em junho de 2023.</h5>
+ <h4>§ 2º Os benefícios financeiros de que trata o § 1º deste artigo:</h4>
+ <h5>I - serão calculados na ordem estabelecida no § 1º deste artigo, observada a elegibilidade da família a cada um deles, na forma estabelecida em regulamento; e</h5>
+ <h5>II - poderão ser pagos cumulativamente às famílias beneficiárias, na forma estabelecida em regulamento.</h5>
+ <h4>§ 3º Ato do Poder Executivo federal poderá alterar:</h4>
+ <h5>I - os valores dos benefícios financeiros de que tratam os incisos I, III e IV 	do § 1º deste artigo;</h5>
+ <h5>II - o valor de referência de R$ 600,00 (seiscentos reais) de que trata o inciso 	II do § 1º deste artigo; e</h5>
+ <h5>III 	- o valor de referência para caracterização da situação de pobreza de que trata o inciso II do caput do art. 5º desta Lei.</h5>
+ <h4>§ 4º Os valores de que trata o § 3º deste artigo poderão ser corrigidos a cada intervalo de, no máximo, 24 (vinte e quatro) meses, na forma estabelecida em regulamento, vedada sua redução.</h4>
+ <h4>§ 5º O Benefício Variável Familiar será calculado por integrante familiar que se enquadrar nas hipóteses previstas no inciso IV do § 1º deste artigo.</h4>
+ <h4>§ 6º Os benefícios financeiros de que tratam os incisos I, II, III e IV do § 1º deste artigo serão pagos enquanto as famílias beneficiárias estiverem enquadradas nos critérios de elegibilidade ao Programa Bolsa Família e de manutenção dos benefícios, sem prejuízo do disposto no art. 6º desta Lei, na forma estabelecida em regulamento.</h4>
+ <h4>§ 7º O Benefício Extraordinário de Transição:</h4>
+ <h5>I - terá duração limitada, na forma estabelecida em regulamento; e</h5>
+ <h5>II - terá o seu pagamento encerrado, sem prejuízo do disposto no art. 6º desta 	Lei, quando:</h5>
+ <h6>a) a redução no valor do benefício transferido à família decorrer de alteração da estrutura familiar ou da renda familiar per capita mensal, na forma estabelecida em regulamento; ou</h6>
+ <h6>b) a soma dos benefícios financeiros de que tratam os incisos I, II, III e IV do 	§ 1º deste artigo devidos à família beneficiária for igual ou superior ao valor que a família recebia como beneficiária do Programa Auxílio Brasil.</h6>
+ <h4>§ 8º Os benefícios financeiros de que trata o § 1º deste artigo constituem direito das famílias elegíveis ao Programa Bolsa Família, na forma estabelecida nesta Lei e em regulamento, observado o disposto no § 1º do art. 11 desta Lei.</h4>
+ <h3>Art. 8º Os benefícios financeiros de que trata o § 1º do art. 7º desta Lei serão pagos mensalmente pelo agente pagador do Programa 	Bolsa Família, na forma estabelecida em regulamento.</h3>
+ <h4>§ 1º O pagamento dos benefícios financeiros de que trata o caput deste artigo será feito:</h4>
+ <h5>I - ao responsável familiar, de acordo com os dados constantes da inscrição da família no CadÚnico; e</h5>
+ <h5>II - preferencialmente, à mulher.</h5>
+ <h4>§ 2º Os benefícios financeiros de que trata o caput deste artigo poderão ser pagos por meio das seguintes modalidades de contas, na forma estabelecida em resoluções do Banco Central do Brasil:</h4>
+ <h5>I - conta do tipo poupança social digital, de que trata a Lei n° 14.075, de 22 de outubro de 2020 ;</h5>
+ <h5>II - conta poupança digital;</h5>
+ <h5>III 	- conta contábil;</h5>
+ <h5>IV - conta de depósitos; ou</h5>
+ <h5>V - outras espécies de contas que venham a ser criadas, desde que autorizadas por ato do Ministro de Estado do Desenvolvimento e Assistência Social, 	Família e Combate à Fome.</h5>
+ <h4>§ 3º Reverterão à Conta Única do Tesouro Nacional os créditos:</h4>
+ <h5>I - de benefícios disponibilizados indevidamente;</h5>
+ <h5>II - das contas a que se referem os incisos I, II, IV e V do § 2º deste artigo não movimentadas, na forma estabelecida em regulamento; e</h5>
+ <h5>III 	- de recursos não sacados da conta a que se refere o inciso III do § 2º deste artigo, na forma estabelecida em regulamento.</h5>
+ <h4>§ 4º A abertura da conta do tipo poupança social digital para os pagamentos dos benefícios financeiros do Programa Bolsa Família:</h4>
+ <h5>I - poderá ocorrer de forma automática, em nome do responsável familiar inscrito no CadÚnico; e</h5>
+ <h5>II - ocorrerá na forma estabelecida em contrato firmado entre a União e o agente pagador do Programa Bolsa Família.</h5>
+ <p>Seção IV</p>
+ <p>Da Identificação dos Integrantes das Famílias</p>
+ <h3>Art. 9º A identificação dos integrantes das famílias que se inscreverem no CadÚnico será realizada, preferencialmente, por meio do número de inscrição no Cadastro de Pessoas Físicas (CPF) da Secretaria 	Especial da Receita Federal do Brasil do Ministério da Fazenda.</h3>
+ <h4>Parágrafo único. Ato do Poder Executivo federal disporá sobre a utilização de documentos alternativos ao CPF, como o Número de Identificação Social (NIS) 	e o Registro Administrativo de Nascimento do Indígena (Rani), para fins de identificação dos integrantes das famílias registradas no CadÚnico.</h4>
+ <p>Seção V</p>
+ <p>Das Condicionalidades</p>
+ <h3>Art. 10. A manutenção da família como beneficiária no 	Programa Bolsa Família dependerá, sem prejuízo dos requisitos estabelecidos nesta Lei e em regulamento, do cumprimento, pelos integrantes das famílias, 	de condicionalidades relativas:</h3>
+ <h5>I - 	à realização de pré-natal;</h5>
+ <h5>II - ao cumprimento do calendário nacional de vacinação;</h5>
+ <h5>III 	- ao acompanhamento do estado nutricional, para os beneficiários que tenham até 7 (sete) anos de idade incompletos; e</h5>
+ <h5>IV - 	à frequência escolar mínima de:</h5>
+ <h6>a) 	60% (sessenta por cento), para os beneficiários de 4 (quatro) anos a 6 	(seis) anos de idade incompletos; e</h6>
+ <h6>b) 	75% (setenta e cinco por cento), para os beneficiários de 6 (seis) anos a 18 	(dezoito) anos de idade incompletos que não tenham concluído a educação básica.</h6>
+ <h4>§ 1º Ato do Poder Executivo federal disporá sobre:</h4>
+ <h5>I - os critérios para o cumprimento das condicionalidades;</h5>
+ <h5>II - as informações a serem coletadas e disponibilizadas;</h5>
+ <h5>III 	- as atribuições dos órgãos responsáveis pela gestão e pela execução das políticas destinadas à provisão dos serviços relacionados com as condicionalidades;</h5>
+ <h5>IV - os efeitos do descumprimento das condicionalidades pelas famílias, vedada a adoção de procedimentos de caráter punitivo e de exposição vexatória;</h5>
+ <h5>V - as alterações nos percentuais de frequência escolar estabelecidos no inciso 	IV do caput deste artigo; e</h5>
+ <h5>VI - os procedimentos e os mecanismos para a verificação da situação da família e o seu atendimento, com estabelecimento de prazo razoável para que possa cumprir as exigências antes de ser desligada do Programa Bolsa Família.</h5>
+ <h4>§ 2º A rede de serviços do Suas poderá atender ou acompanhar as famílias beneficiárias em situação de descumprimento das condicionalidades do 	Programa Bolsa Família, com vistas à superação gradativa de suas vulnerabilidades, na forma estabelecida em regulamento.</h4>
+ <p>Seção VI</p>
+ <p>Da Operacionalização e da Gestão</p>
+ <h3>Art. 11. As despesas do Programa Bolsa Família serão custeadas pelos seguintes recursos, a serem aplicados na forma prevista na legislação específica e em conformidade com as dotações e as disponibilidades orçamentárias e financeiras:</h3>
+ <h5>I - dotações orçamentárias da União alocadas ao Programa Auxílio Brasil;</h5>
+ <h5>II - dotações orçamentárias da União alocadas ao Programa Bolsa Família; e</h5>
+ <h5>III 	- outros recursos financeiros de fontes nacionais e internacionais destinados à implementação do Programa Bolsa Família.</h5>
+ <h4>§ 1º O Poder Executivo federal compatibilizará a quantidade de beneficiários e de benefícios financeiros de que trata o § 1º do art. 7º desta Lei com as dotações orçamentárias disponíveis.</h4>
+ <h4>§ 2º Enquanto não houver a transposição dos saldos orçamentários entre o Programa 	Auxílio Brasil e o Programa Bolsa Família, fica autorizada a utilização das dotações disponíveis no Programa Auxílio Brasil para custear o Programa 	Bolsa Família.</h4>
+ <h3>Art. 12. A execução e a gestão do Programa Bolsa Família são públicas e governamentais e ocorrerão de forma descentralizada, por meio da conjugação de esforços entre os entes federativos, observados a intersetorialidade, a participação comunitária e o controle social.</h3>
+ <h4>§ 1º A execução e a gestão descentralizadas a que se refere o caput deste artigo serão implementadas por meio de adesão voluntária dos Estados, do 	Distrito Federal e dos Municípios ao Programa Bolsa Família, realizada na forma estabelecida em regulamento.</h4>
+ <h4>§ 2º Até que as adesões de que trata o § 1º deste artigo sejam formalizadas, 	ficam convalidados os termos de adesão ao Programa Auxílio Brasil firmados pelos Estados, pelo Distrito Federal e pelos Municípios.</h4>
+ <h3>Art. 12-A. Os Municípios e o Distrito Federal, na atuação descentralizada da execução e da gestão do Programa Bolsa Família, 	deverão observar índice máximo de famílias compostas de 1 (uma) só pessoa inscritas no Programa, nos termos de ato do Poder Executivo federal. (Incluído pela Lei n° 15.077, de 2024)</h3>
+ <h3>Art. 13. Fica criada a Rede Federal de Fiscalização do 	Programa Bolsa Família e do CadÚnico, sob a coordenação do Ministério do 	Desenvolvimento e Assistência Social, Família e Combate à Fome, na forma estabelecida em regulamento.</h3>
+ <h3>Art. 14. Fica instituído o Índice de Gestão 	Descentralizada do Programa Bolsa Família e do CadÚnico (IGD), a ser utilizado em âmbito estadual, distrital e municipal, cujos parâmetros serão regulamentados em ato do Poder Executivo federal.</h3>
+ <h4>§ 1º O índice de que trata o caput deste artigo destina-se a:</h4>
+ <h5>I - aferir os resultados da gestão descentralizada, com base na atuação da gestão estadual, distrital ou municipal, na execução dos procedimentos de:</h5>
+ <h6>a) 	cadastramento e atualização cadastral;</h6>
+ <h6>b) 	aprimoramento da qualidade cadastral;</h6>
+ <h6>c) 	gestão do Programa Bolsa Família;</h6>
+ <h6>d) 	acompanhamento de condicionalidades;</h6>
+ <h6>e) 	articulação intersetorial; e</h6>
+ <h6>f) 	implementação das ações de desenvolvimento das famílias beneficiárias;</h6>
+ <h5>II - incentivar a obtenção de resultados qualitativos na gestão estadual, 	distrital e municipal do Programa Bolsa Família e do CadÚnico; e</h5>
+ <h5>III 	- calcular o montante de recursos a ser transferido aos entes federativos a título de apoio financeiro.</h5>
+ <h4>§ 2º A União transferirá, obrigatoriamente, aos entes federativos que aderirem ao 	Programa Bolsa Família, recursos para apoio financeiro às ações de execução e de gestão descentralizadas do Programa e do CadÚnico, desde que obtenham 	índices mínimos no IGD, na forma estabelecida em regulamento.</h4>
+ <h4>§ 3º Para a execução do disposto neste artigo, ato do Poder Executivo federal disporá sobre:</h4>
+ <h5>I - os procedimentos e as condições necessários à adesão ao Programa Bolsa 	Família e ao CadÚnico, incluídas as obrigações dos entes federativos;</h5>
+ <h5>II - os instrumentos, os parâmetros e os procedimentos de avaliação de resultados e da qualidade de gestão em âmbito estadual, distrital e municipal; e</h5>
+ <h5>III 	- os procedimentos e os instrumentos de controle e acompanhamento da execução do Programa Bolsa Família e de utilização do CadÚnico pelos entes federativos.</h5>
+ <h4>§ 4º Os resultados obtidos pelo ente federativo na gestão do Programa Bolsa 	Família e do CadÚnico, aferidos na forma prevista no inciso I do § 1º deste artigo, serão considerados como prestação de contas dos recursos transferidos.</h4>
+ <h4>§ 5º Os Estados, o Distrito Federal e os Municípios submeterão suas prestações de contas aos respectivos conselhos de assistência social e, na hipótese de não aprovação, os recursos transferidos na forma prevista no § 2º deste artigo serão restituídos pelo ente federativo ao respectivo fundo de assistência social, na forma estabelecida em regulamento.</h4>
+ <h4>§ 6º O montante dos recursos de que trata o § 2º deste artigo não excederá a 1% 	(um por cento) da previsão orçamentária total relativa ao pagamento de benefícios do Programa Bolsa Família.</h4>
+ <h4>§ 7º Na hipótese prevista no § 6º deste artigo, ato do Poder Executivo federal estabelecerá os limites e os parâmetros mínimos para a transferência de recursos para cada ente federativo.</h4>
+ <p>Seção VII</p>
+ <p>Do Agente Operador e Pagador</p>
+ <h3>Art. 15. Fica atribuída à Caixa Econômica Federal a função de agente operador e pagador do Programa Bolsa Família, dispensada a licitação para sua contratação, mediante condições a serem pactuadas com o governo federal, na forma estabelecida em regulamento.</h3>
+ <h4>§ 1º 	É vedado ao agente operador e pagador efetuar descontos ou compensações que impliquem a redução do valor dos benefícios financeiros do Programa Bolsa 	Família ou de qualquer programa de transferência condicionada de renda, a pretexto de recompor saldos negativos ou de saldar dívidas preexistentes do beneficiário.</h4>
+ <h4>§ 2º A Caixa Econômica Federal, com a anuência do Ministério do Desenvolvimento e 	Assistência Social, Família e Combate à Fome, poderá subcontratar instituição financeira, para efetuar o pagamento dos benefícios financeiros do Programa Bolsa Família.</h4>
+ <h4>§ 3º Poderão ser contratadas instituições públicas e privadas para apoiar a operacionalização e o pagamento dos benefícios do Programa Bolsa Família.</h4>
+ <h4>§ 4º Na hipótese prevista no § 3º deste artigo, fica dispensada a licitação, caso se trate de instituição pública que tenha, entre suas competências, as atividades contratadas para a operacionalização do Programa Bolsa Família.</h4>
+ <h4>§ 5º O governo federal poderá firmar apenas um instrumento contratual com a Caixa 	Econômica Federal para a execução das atividades de:</h4>
+ <h5>I - agente operador e pagador do Programa Bolsa Família;</h5>
+ <h5>II - fornecimento da infraestrutura necessária à organização e à manutenção do 	CadÚnico; e</h5>
+ <h5>III 	- desenvolvimento dos sistemas de processamento de dados.</h5>
+ <h4>§ 6º O disposto no § 1º deste artigo:</h4>
+ <h5>I - aplica-se às instituições subcontratadas pela Caixa Econômica Federal, na forma do § 2º deste artigo; e</h5>
+ <h5>II - não se aplica ao pagamento, pelos beneficiários, dos empréstimos pessoais já 	contratados com base no art. 6º-B da Lei n° 10.820, 	de 17 de dezembro de 2003 .</h5>
+ <h4>§ 7º A autorização prevista no § 2º deste artigo alcança as instituições de que trata o art. 6º da 	Lei n° 12.865, de 9 de outubro de 2013 .</h4>
+ <p>Seção VIII</p>
+ <p>Do Controle e da Participação Social</p>
+ <h3>Art. 16. O controle e a participação social no 	Programa Bolsa Família serão realizados, em âmbito local, pelo conselho de assistência social.</h3>
+ <h3>Art. 17. Será de acesso público a relação dos beneficiários e dos benefícios do Programa Bolsa Família, na forma estabelecida em regulamento.</h3>
+ <h4>§ 1º As informações a que se refere o caput deste artigo serão divulgadas em meio eletrônico de acesso público e em outros meios.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se às informações relativas aos benefícios financeiros do Programa Auxílio Brasil e do Programa Alimenta Brasil, 	instituídos pela Lei n° 14.284, de 29 de dezembro de 2021.</h4>
+ <h4>§ 3º Poderão ser adotadas ações que ampliem o diálogo da gestão do Programa Bolsa 	Família com as famílias beneficiárias e com a rede que lhes presta atendimento, facilitando o acesso a informações, orientações e normas aplicáveis, na forma do regulamento.</h4>
+ <h4>§ 4º Serão disponibilizados sistemas de informação on-line , canais nas redes sociais, páginas governamentais na internet, entre outros meios, sobre as ações de gestão do Programa Bolsa Família, incluídas as informações de que trata o § 3º deste artigo.</h4>
+ <p>Seção IX</p>
+ <p>Do Ressarcimento de Recursos Financeiros</p>
+ <h3>Art. 18. Sem prejuízo das sanções penais e cíveis cabíveis, e observados os princípios do contraditório e da ampla defesa, o responsável familiar que dolosamente prestar informação falsa no CadÚnico, 	ao registrar seus dados ou os dos integrantes de sua família, que resulte no ingresso ou na permanência como beneficiário do Programa Bolsa Família, 	deverá ressarcir ao erário os valores recebidos a título de benefícios financeiros do Programa.</h3>
+ <h4>§ 1º A notificação para o ressarcimento de que trata o caput deste artigo poderá ser realizada pelos seguintes meios, sem prejuízo de outros que possam ser estabelecidos em regulamento:</h4>
+ <h5>I - meio eletrônico;</h5>
+ <h5>II - serviço de mensagens curtas ( short message service - SMS);</h5>
+ <h5>III 	- rede bancária;</h5>
+ <h5>IV - via postal, considerado o endereço do beneficiário constante do CadÚnico, 	hipótese em que o aviso de recebimento será considerado prova suficiente de notificação;</h5>
+ <h5>V - pessoalmente, quando entregue ao beneficiário em mão, desde que haja registro da notificação; ou</h5>
+ <h5>VI - edital, quando o beneficiário não for localizado, após a notificação realizada pelos meios previstos nos incisos I, II, III, IV e V do caput deste parágrafo.</h5>
+ <h4>§ 2º Ato do Poder Executivo federal disporá sobre:</h4>
+ <h5>I - as condições e os valores mínimos para a cobrança de ressarcimento a que se refere o caput deste artigo;</h5>
+ <h5>II - as formas de notificação previstas nos incisos I, II e III do § 1º deste artigo; e</h5>
+ <h5>III 	- os prazos, as etapas e os procedimentos necessários ao processo de ressarcimento.</h5>
+ <h4>§ 3º Para fins de ressarcimento, será considerado o valor original do débito atualizado pelo Índice Nacional de Preços ao Consumidor Amplo (IPCA).</h4>
+ <h4>§ 4º Nas hipóteses de denúncia ou de constatação de indício de fraude cometida por agente público durante a inscrição da família no CadÚnico, as informações serão enviadas para apuração da autoridade policial competente.</h4>
+ <h3>Art. 19. Os valores não restituídos, na forma e nos prazos estabelecidos em regulamento, serão inscritos em dívida ativa da 	União, na forma prevista na legislação aplicável.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO ADICIONAL COMPLEMENTAR PARA O 	PROGRAMA AUXÍLIO GÁS DOS BRASILEIROS</h3>
+ <h3>Art. 20. Fica instituído o Adicional Complementar para Famílias Beneficiárias do Programa Auxílio Gás dos Brasileiros.</h3>
+ <h4>§ 1º O adicional complementar consiste no pagamento bimestral do valor monetário correspondente a um adicional de 50% (cinquenta por cento) da média do preço nacional de referência do botijão de 13 kg (treze quilogramas) de gás liquefeito de petróleo, estabelecido pelo Sistema de Levantamento de Preços 	(SLP) da Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP), 	nos 6 (seis) meses anteriores, às famílias beneficiárias do Programa Auxílio 	Gás dos Brasileiros, instituído pela Lei n° 14.237, de 19 de novembro de 2021 .</h4>
+ <h4>§ 2º Terão direito ao adicional complementar as famílias beneficiárias cujo benefício esteja liberado ou temporariamente bloqueado na data da geração da folha de pagamentos da competência do benefício.</h4>
+ <h4>§ 3º O adicional complementar será limitado a um benefício por família.</h4>
+ <h4>§ 4º O adicional complementar terá caráter temporário e será pago até que novo programa venha a substituir o Programa Auxílio Gás dos Brasileiros.</h4>
+ <h4>§ 5º As despesas para o pagamento e a operacionalização do adicional complementar destinado às famílias beneficiárias do Programa Auxílio Gás dos Brasileiros correrão à conta das dotações orçamentárias consignadas ao referido 	Programa.</h4>
+ <h3>Art. 21. Compete ao Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome a implementação do adicional complementar de que trata o art. 20 desta Lei.</h3>
+ <h4>§ 1º Para o pagamento do adicional complementar será utilizada a estrutura de gestão e operação de benefícios e de pagamentos do Programa Auxílio Gás dos 	Brasileiros.</h4>
+ <h4>§ 2º O pagamento do adicional complementar será feito na data prevista no calendário de pagamentos do Programa Auxílio Gás dos Brasileiros, pelos mesmos meios de pagamento.</h4>
+ <h3>Art. 22. Aplica-se, no que couber, o disposto na Lei n° 14.237, de 19 de novembro de 2021 , e nos seus regulamentos ao adicional complementar de que trata o art. 20 desta Lei.</h3>
+ <h4>Parágrafo único. Ato do Ministro de Estado do Desenvolvimento e Assistência 	Social, Família e Combate à Fome poderá definir procedimentos para a gestão e a operacionalização do adicional complementar de que trata o art. 20 desta 	Lei.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 23. Os atos normativos infralegais que dispõem sobre o Programa Auxílio Brasil, no que forem compatíveis com o disposto nesta Lei, permanecem em vigor até que sejam reeditados.</h3>
+ <h3>Art. 24. As famílias beneficiárias do Programa 	Auxílio Brasil deixarão de receber os benefícios financeiros do referido 	Programa quando passarem a receber os benefícios do Programa Bolsa Família, 	sem prejuízo das regras de elegibilidade e de manutenção de benefícios do 	Programa Bolsa Família.</h3>
+ <h3>Art. 25. Com a finalidade de garantir a continuidade do atendimento às famílias beneficiárias do Programa Auxílio 	Brasil, os contratos vigentes para a sua operacionalização poderão ser aditados no âmbito do Programa Bolsa Família.</h3>
+ <h3>Art. 26. Ficam extintos os benefícios instituídos pelo art. 5º da Lei n° 14.284, de 29 de dezembro de 2021 .</h3>
+ <h4>§ 1º Serão realizados os pagamentos mensais, relativos aos benefícios concedidos em dezembro de 2022, até que se complete o total das 12 (doze) parcelas mensais previstas, dos seguintes benefícios instituídos pelo art. 5º da Lei n° 14.284, de 29 de dezembro de 2021 :</h4>
+ <h5>I - Auxílio Esporte Escolar;</h5>
+ <h5>II - Bolsa de Iniciação Científica Júnior; e</h5>
+ <h5>III 	- Auxílio Inclusão Produtiva Rural.</h5>
+ <h4>§ 2º Ato do Poder Executivo federal estabelecerá os critérios e os procedimentos para a execução dos benefícios de que trata o § 1º deste artigo durante o ano de 2023.</h4>
+ <h3>Art. 27. O disposto nos arts. 18 e 19 desta Lei aplica-se aos benefícios instituídos no âmbito:</h3>
+ <h5>I - do Programa Auxílio Brasil, incluídos os processos não concluídos na data de publicação desta Lei; e</h5>
+ <h5>II - do Programa Bolsa Família, instituído pela Lei n° 10.836, de 9 de janeiro de 2004 , incluídos os processos não concluídos na data de publicação desta Lei.</h5>
+ <h4>§ 1º As cobranças de ressarcimentos relativas à vigência da Lei n° 10.836, de 9 de janeiro de 2004 , nos termos do inciso II 	do caput deste artigo, ficam condicionadas à possibilidade de obtenção do histórico de movimentação cadastral da família beneficiária na base de dados do CadÚnico.</h4>
+ <h4>§ 2º Ato do Poder Executivo federal regulamentará os procedimentos aplicáveis às hipóteses previstas no caput do art. 28 da Lei n° 14.284, de 29 de dezembro de 2021 .</h4>
+ <h3>Art. 28. A Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da 	Assistência Social), passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 6º-F Fica instituído o Cadastro Único para Programas Sociais do Governo Federal (CadÚnico), registro público eletrônico com a finalidade de coletar, processar, sistematizar e disseminar informações para a identificação e a caracterização socioeconômica das famílias de baixa renda, nos termos do regulamento.</h3>
+ <p>.................................................................................................................................................</p>
+ <h4>§ 2º A inscrição no CadÚnico poderá ser obrigatória para acesso a programas sociais do governo federal, na forma estabelecida em regulamento.</h4>
+ <h4>§ 3º Para fins de cumprimento do disposto no art. 12 da Emenda Constitucional nº 103, de 12 de novembro de 2019 , e de ampliação da fidedignidade das informações cadastrais, será garantida a interoperabilidade de dados do CadÚnico com os dados constantes do Cadastro Nacional de Informações Sociais (CNIS), de que trata a Lei n° 8.213, de 24 de julho de 1991 .</h4>
+ <h4>§ 4º Os dados do CNIS incluídos no CadÚnico poderão ser acessados pelos órgãos gestores do CadÚnico, nas 3 (três) esferas da Federação, conforme termo de adesão do ente federativo ao CadÚnico, do qual constará cláusula de compromisso com o sigilo de dados.</h4>
+ <h4>§ 5º A sociedade civil poderá cooperar com a identificação de pessoas que precisem ser inscritas no CadÚnico, nos termos do regulamento.</h4>
+ <h4>§ 6º O CadÚnico coletará informações que caracterizem a condição socioeconômica e territorial das famílias, de forma a reduzir sua invisibilidade social e com vistas a identificar suas demandas por políticas públicas, na forma do regulamento.” (NR)</h4>
+ <p>“</p>
+ <h3>Art. 20. .......................................................................................................................</h3>
+ <p>.................................................................................................................................................</p>
+ <h4>§ 4º O benefício de que trata este artigo não pode ser acumulado pelo beneficiário com qualquer outro no âmbito da seguridade social ou de outro regime, salvo os da assistência médica e da pensão especial de natureza indenizatória, bem como as transferências de renda de que tratam o parágrafo único do art. 6º e o inciso VI do caput do art. 203 da Constituição Federal e o caput e o § 1º do art. 1º da Lei n° 10.835, de 8 de janeiro de 2004 .</h4>
+ <p>........................................................................................................................................” (NR)</p>
+ <h3>Art. 29. O art. 6º da Lei n° 10.820, de 17 de dezembro de 2003 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 6º ..............................................................................................................................</h3>
+ <p>.................................................................................................................................................</p>
+ <h4>§ 5º Para os titulares de benefícios de aposentadoria e pensão do Regime Geral de Previdência Social, os descontos e as retenções referidos no caput deste artigo não poderão ultrapassar o limite de 45% (quarenta e cinco por cento) do valor dos benefícios, dos quais 35% (trinta e cinco por cento) destinados exclusivamente a empréstimos, a financiamentos e a arrendamentos mercantis, 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão de crédito consignado ou à utilização com a finalidade de saque por meio de cartão de crédito consignado e 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão consignado de benefício ou à utilização com a finalidade de saque por meio de cartão consignado de benefício.</h4>
+ <h4>§ 5º-A Para os titulares do benefício de prestação continuada de que trata o art. 20 da Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), os descontos e as retenções referidos no caput deste artigo não poderão ultrapassar o limite de 35% (trinta e cinco por cento) do valor dos benefícios, dos quais 30% (trinta por cento) destinados exclusivamente a empréstimos, a financiamentos e a arrendamentos mercantis e 5% (cinco por cento) destinados exclusivamente à amortização de despesas contraídas por meio de cartão de crédito consignado ou cartão consignado de benefício ou à utilização com a finalidade de saque por meio de cartão de crédito consignado ou cartão consignado de benefício.</h4>
+ <h4>§ 6º A instituição financeira que proceder à retenção de valor superior ao limite estabelecido nos §§ 5º e 5º-A deste artigo perderá todas as garantias que lhe são conferidas nesta Lei.</h4>
+ <h4>§ 7º Aplica-se o previsto no caput e no § 5º deste artigo aos titulares da renda mensal vitalícia prevista na Lei n° 6.179, de 11 de dezembro de 1974 .</h4>
+ <h4>§ 8º Para os benefícios que tenham como requisito para sua concessão a preexistência do benefício de prestação continuada de que trata o art. 20 da Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), aplica-se o previsto no caput e no § 5º-A deste artigo.</h4>
+ <h4>§ 9º As operações de empréstimos, de financiamentos e de arrendamentos mercantis de que trata o § 5º-A deste artigo deverão ser realizadas em 2 (dois) momentos, separados entre si pelo intervalo mínimo de 5 (cinco) dias úteis entre a proposta da instituição financeira e a celebração do contrato.” (NR)</h4>
+ <h3>Art. 30. O art. 2º da Lei n° 10.779, de 25 de novembro de 	2003 , passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 2º ..............................................................................................................................</h3>
+ <h4>§ 1º Para fazer jus ao benefício, o pescador não poderá estar em gozo de nenhum benefício decorrente de benefício previdenciário ou assistencial de natureza continuada, exceto pensão por morte, auxílio-acidente e transferências de renda de que tratam o parágrafo único do art. 6º e o inciso VI do caput do art. 203 da Constituição Federal e o caput e o § 1º do art. 1º da Lei n° 10.835, de 8 de janeiro de 2004.</h4>
+ <p>........................................................................................................................................” (NR)</p>
+ <h3>Art. 31. As suspensões das parcelas dos Programas 	Auxílio Brasil e Bolsa Família que, na forma do § 9º do art. 2º da Lei n° 10.779, de 25 de novembro de 2003 , não tenham sido aplicadas até o momento da publicação desta Lei não serão tratadas como dívidas da família beneficiária nem imputadas ao Programa Bolsa Família.</h3>
+ <h3>Art. 32. As agências financeiras oficiais de fomento desenvolverão, de forma integrada e articulada, instrumentos de crédito específicos para a inclusão produtiva das famílias beneficiárias do 	Programa Bolsa Família.</h3>
+ <h3>Art. 33. Ficam revogados:</h3>
+ <h5>I - os §§ 8º, 9º e 10 do art. 2º da Lei n° 10.779, de 25 de novembro de 2003 ;</h5>
+ <h5>II - o art. 6º-B da Lei n° 10.820, 	de 17 de dezembro de 2003 ;</h5>
+ <h5>III 	- os seguintes dispositivos da Lei n° 14.284, de 29 de dezembro de 2021 :</h5>
+ <h6>a) arts. 1º a 20 ;</h6>
+ <h6>b) §§ 1º e 2º do art. 21 ;</h6>
+ <h6>c) arts. 22 a 27 ; 	e</h6>
+ <h6>d) §§ 1º a 6º do art. 28 ;</h6>
+ <h5>IV - os arts. 1º a 5º da 	Lei n° 14.342, de 18 de maio de 2022 ; e</h5>
+ <h5>V - a Medida Provisória nº 1.155, de 1º de janeiro de 2023 .</h5>
+ <h3>Art. 34. Esta Lei entra em vigor:</h3>
+ <h5>I - em 1º de janeiro de 2024, quanto:</h5>
+ <h6>a) 	aos arts. 30 e 31 e ao inciso I do caput do art. 33;</h6>
+ <h6>b) 	ao § 3º do art. 4º ; e</h6>
+ <h5>II - na data de sua publicação, quanto aos demais dispositivos.</h5>
+ <p>Brasília, 19 de junho de 2023; 202º da Independência e 135º da 	República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>José Wellington Barroso de Araujo Dias</p>
+ <p>Este texto não substitui o publicado no DOU de 20.6.2023</p>
+ <p>Provisória nº 1.164, de 2023</p>
+ <p>Regulamento | Institui o Programa Bolsa Família; altera a Lei n° 8.742, de 7 de dezembro de 1993 (Lei Orgânica da Assistência Social), a Lei n° 10.820,</p>
+ <p>de 17 de dezembro de 2003, que dispõe sobre a autorização para desconto em folha de pagamento, e a Lei n° 10.779, de 25 de novembro de 2003; e revoga dispositivos das Leis nºs 14.284, de 29 de dezembro de 2021, e</p>
+ <p>14.342, de 18 de maio de 2022, e a Medida Provisória nº 1.155, de 1º de janeiro de 2023.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14601.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.051, DE 29 DE DEZEMBRO DE 2004 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2004" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.051, DE 29 DE DEZEMBRO DE 2004</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:53:44 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L11051compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 40.776 caracteres | espelho: 40.945 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.051, DE 29 DE DEZEMBRO DE 2004.</p>
+ <p>(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</p>
+ <p>Dispõe sobre o desconto de crédito na apuração da Contribuição Social sobre o Lucro Líquido - CSLL e da Contribuição para o PIS/Pasep e Cofins não cumulativas e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º As pessoas jurídicas tributadas com base no lucro real poderão utilizar crédito relativo à Contribuição Social sobre o Lucro Líquido - CSLL, à razão de 25% (vinte e cinco por cento) sobre a depreciação contábil de máquinas, aparelhos, instrumentos e equipamentos, novos, relacionados em regulamento, adquiridos entre 1º de outubro de 2004 e 31 de dezembro de 2010, destinados ao ativo imobilizado e empregados em processo industrial do adquirente. (Redação dada pela Lei n° 11.774, de 2008)</h3>
+ <h4>§ 1º O crédito de que trata o caput deste artigo será deduzido do valor da CSLL apurada, no regime trimestral ou anual.</h4>
+ <h4>§ 2º A utilização do crédito está limitada ao saldo da CSLL a pagar, observado o disposto no § 1º deste artigo, não gerando a parcela excedente, em qualquer hipótese, direito à restituição, compensação, ressarcimento ou aproveitamento em períodos de apuração posteriores.</h4>
+ <h4>§ 3º Será admitida a utilização do crédito no pagamento mensal por estimativa.</h4>
+ <h4>§ 4º Na hipótese do § 3º deste artigo, o crédito a ser efetivamente utilizado está limitado à CSLL apurada no encerramento do período de apuração.</h4>
+ <h4>§ 5º É vedada a utilização do crédito referido nos §§ 1º e 3º deste artigo, na hipótese de a pessoa jurídica não compensar base de cálculo negativa de períodos anteriores existente ou o fizer em valor inferior ao admitido na legislação.</h4>
+ <h4>§ 6º As pessoas jurídicas poderão se beneficiar do crédito a partir do mês em que o bem entrar em operação até o final do 4º (quarto) ano-calendário subseqüente àquele a que se referir o mencionado mês.</h4>
+ <h4>§ 7º A partir do ano-calendário subseqüente ao término do período de gozo do benefício a que se refere o § 6º deste artigo, deverá ser adicionado à CSLL devida o valor utilizado a título de crédito em função dos anos-calendário de gozo do benefício e do regime de apuração da CSLL.</h4>
+ <h4>§ 8º A parcela a ser adicionada nos termos do § 7º deste artigo será devida pelo seu valor integral, ainda que a pessoa jurídica apure, no período, base de cálculo negativa da CSLL.</h4>
+ <h4>§ 9º A pessoa jurídica que deixar de ser tributada com base no lucro real deverá adicionar os créditos a que se refere o caput deste artigo, aproveitados anteriormente, à CSLL devida relativa ao 1º (primeiro) período de apuração do novo regime de tributação adotado.</h4>
+ <h4>§ 10. Na hipótese de a pessoa jurídica vir a optar pelo Sistema Integrado de Pagamento de Impostos e Contribuições das Microempresas e Empresas de Pequeno Porte - SIMPLES, o crédito a que se refere o caput deste artigo, aproveitado anteriormente, deverá ser recolhido em separado, em quota única, até o último dia útil de janeiro do ano-calendário a que corresponderem os efeitos dessa opção.</h4>
+ <h4>§ 11. Na hipótese de extinção, a pessoa jurídica deverá recolher, em quota única, os créditos aproveitados anteriormente até o último dia útil do mês subseqüente ao evento.</h4>
+ <h4>§ 12. Na hipótese de alienação dos bens de que trata o caput deste artigo, o valor total dos créditos aproveitados anteriormente deverá ser recolhido, em quota única, até o último dia útil do mês subseqüente ao da alienação ou ser adicionado ao valor da CSLL devida no período de apuração em que ocorrer a alienação.</h4>
+ <h3>Art. 2º As pessoas jurídicas poderão optar pelo desconto, no prazo de 2 (dois) anos, dos créditos da Contribuição para o PIS/Pasep e da Cofins de que tratam o inciso III do § 1º do art. 3º das Leis nºs 10.637, de 30 de dezembro de 2002, e 10.833, de 29 de dezembro de 2003, e o § 4º do art. 15 da Lei n° 10.865, de 30 de abril de 2004, na hipótese de aquisição dos bens de que trata o art. 1º desta Lei. (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h4>§ 1º Os créditos de que trata este artigo serão apurados mediante a aplicação, a cada mês, das alíquotas referidas no caput do art. 2º das Leis nºs 10.637, de 30 de dezembro de 2002, e 10.833, de 29 de dezembro de 2003, sobre o valor correspondente a 1/24 (um vinte e quatro avos) do custo de aquisição do bem.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se às aquisições efetuadas após 1º de outubro de 2004. (Redação dada pela Lei n° 11.196, de 2006)</h4>
+ <h3>Art. 3º Os arts. 14 e 18 da Lei n° 10.522, de 19 de julho de 2002, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 14. ............................................................................</h3>
+ <h5>I - tributos ou contribuições retidos na fonte ou descontados de terceiros e não recolhidos ao Tesouro Nacional;</h5>
+ <p>............................................................................" (NR)</p>
+ <p>"</p>
+ <h3>Art. 18. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h5>X – à Cota de Contribuição revigorada pelo art. 2º do Decreto-Lei n° 2.295, de 21 de novembro de 1986.</h5>
+ <p>............................................................................" (NR)</p>
+ <h3>Art. 4º O art. 74 da Lei n° 9.430, de 27 de dezembro de 1996, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 74. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 3º ............................................................................</h4>
+ <p>............................................................................</p>
+ <h5>IV - o débito consolidado em qualquer modalidade de parcelamento concedido pela Secretaria da Receita Federal - SRF;</h5>
+ <h5>V - o débito que já tenha sido objeto de compensação não homologada, ainda que a compensação se encontre pendente de decisão definitiva na esfera administrativa; e</h5>
+ <h5>VI - o valor objeto de pedido de restituição ou de ressarcimento já indeferido pela autoridade competente da Secretaria da Receita Federal - SRF, ainda que o pedido se encontre pendente de decisão definitiva na esfera administrativa.</h5>
+ <p>............................................................................</p>
+ <h4>§ 12. Será considerada não declarada a compensação nas hipóteses:</h4>
+ <h5>I - previstas no § 3º deste artigo;</h5>
+ <h5>II - em que o crédito:</h5>
+ <h6>a) seja de terceiros;</h6>
+ <h6>b) refira-se a "crédito-prêmio" instituído pelo art. 1º do Decreto-Lei n° 491, de 5 de março de 1969;</h6>
+ <h6>c) refira-se a título público;</h6>
+ <h6>d) seja decorrente de decisão judicial não transitada em julgado; ou</h6>
+ <h6>e) não se refira a tributos e contribuições administrados pela Secretaria da Receita Federal - SRF.</h6>
+ <h4>§ 13. O disposto nos §§ 2º e 5º a 11 deste artigo não se aplica às hipóteses previstas no § 12 deste artigo.</h4>
+ <h4>§ 14. A Secretaria da Receita Federal - SRF disciplinará o disposto neste artigo, inclusive quanto à fixação de critérios de prioridade para apreciação de processos de restituição, de ressarcimento e de compensação." (NR)</h4>
+ <h3>Art. 5º O disposto nos arts. 36, 37 e 38 da Medida Provisória nº 2.158-35, de 24 de agosto de 2001, aplica-se aos estabelecimentos envasadores ou industriais fabricantes dos produtos classificados na posição 2201 da Tabela de Incidência do Imposto sobre Produtos Industrializados - TIPI, aprovada pelo Decreto nº 4.542, de 26 de dezembro de 2002.</h3>
+ <h3>Art. 6º O art. 40 da Lei n° 6.830, de 22 de setembro de 1980, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 40. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 4º Se da decisão que ordenar o arquivamento tiver decorrido o prazo prescricional, o juiz, depois de ouvida a Fazenda Pública, poderá, de ofício, reconhecer a prescrição intercorrente e decretá-la de imediato." (NR)</h4>
+ <h3>Art. 7º Na determinação das bases de cálculo da Contribuição para o PIS/Pasep e da Cofins, devidas pelas pessoas jurídicas, inclusive as equiparadas, relativamente às atividades de que trata o art. 4º da Lei n° 10.833, de 29 de dezembro de 2003, deverá ser adotado o regime de reconhecimento de receitas previsto na legislação do imposto de renda. (Vigência) (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h3>Art. 8º A suspensão da exigibilidade da Contribuição para o PIS/Pasep e da Cofins incidentes sobre a importação de bens, na forma dos arts. 14 e 14-A da Lei n° 10.865, de 30 de abril de 2004, será convertida em alíquota zero quando esses bens forem utilizados: (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h5>I - na elaboração de matérias-primas, produtos intermediários e materiais de embalagem destinados a emprego em processo de industrialização por estabelecimentos industriais instalados na Zona Franca de Manaus e consoante projetos aprovados pelo Conselho de Administração da Superintendência da Zona Franca de Manaus – Suframa;</h5>
+ <h5>II – como matérias-primas, produtos intermediários e materiais de embalagem em processo de industrialização por estabelecimentos industriais instalados na Zona Franca de Manaus e consoante projetos aprovados pelo Conselho de Administração da Superintendência da Zona Franca de Manaus – Suframa.</h5>
+ <h3>Art. 9º O direito ao crédito presumido de que trata o art. 8º da Lei n° 10.925, de 23 de julho de 2004, calculado sobre o valor dos bens referidos no inciso II do caput do art. 3º das Leis nºs 10.637, de 30 de dezembro de 2002, e 10.833, de 29 de dezembro de 2003, recebidos de cooperado, fica limitado para as operações de mercado interno, em cada período de apuração, ao valor da Contribuição para o PIS/Pasep e da Cofins devidas em relação à receita bruta decorrente da venda de bens e de produtos deles derivados, após efetuadas as exclusões previstas no art. 15 da Medida Provisória nº 2.158-35, de 24 de agosto de 2001. (Vigência) (Vide Lei n° 13.137, de 2015) (Vigência) (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h4>§ 1º . O disposto neste artigo aplica-se também ao crédito presumido de que trata o art. 15 da Lei n° 10.925, de 23 de julho de 2004. (Redação dada pela Lei n° 13.137, de 2015) (Vigência)</h4>
+ <h4>§ 2º O disposto neste artigo não se aplica no caso de recebimento, por cooperativa, de leite in natura de cooperado. (Incluído pela Lei n° 13.137, de 2015) (Vigência)</h4>
+ <h3>Art. 10. Na determinação do valor da Contribuição para o PIS/Pasep e da Cofins incidentes sobre a receita bruta auferida pela pessoa jurídica encomendante, no caso de industrialização por encomenda, aplicam-se, conforme o caso, as alíquotas previstas: (Vigência) (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h5>I - nos incisos I a III do art. 4º da Lei n° 9.718, de 27 de novembro de 1998, e alterações posteriores, no caso de venda de gasolinas, exceto gasolina de aviação, óleo diesel e gás liquefeito de petróleo - GLP derivado de petróleo e de gás natural;</h5>
+ <h5>II - no art. 1º da Lei n° 10.485, de 3 de julho de 2002, e alterações posteriores, no caso de venda de máquinas e veículos classificados nos códigos 84.29, 8432.40.00, 84.32.80.00, 8433.20, 8433.30.00, 8433.40.00, 8433.5, 87.01, 87.02, 87.03, 87.04, 87.05 e 87.06, da TIPI;</h5>
+ <h5>III - para autopeças relacionadas nos Anexos I e II da Lei n° 10.485, de 3 de julho de 2002 : (Redação dada pela Lei n° 11.196, de 2005)</h5>
+ <h6>a) no inciso I do art. 3º da Lei n° 10.485, de 3 julho de 2002, no caso de venda para as pessoas jurídicas nele relacionadas; ou (Incluída pela Lei n° 11.196, de 2005)</h6>
+ <h6>b) no inciso II do art. 3º da Lei n° 10.485, de 3 julho de 2002, no caso de venda para as pessoas jurídicas nele relacionadas; (Incluída pela Lei n° 11.196, de 2005)</h6>
+ <h5>IV - no caput do art. 5º da Lei n° 10.485, de 3 de julho de 2002, e alterações posteriores, no caso de venda dos produtos classificados nas posições 40.11 (pneus novos de borracha) e 40.13 (câmaras-de-ar de borracha), da TIPI;</h5>
+ <h5>V - no art. 2º da Lei n° 10.560, de 13 de novembro de 2002, e alterações posteriores, no caso de venda de querosene de aviação; e</h5>
+ <p><del>VI (Revogado pela Lei n° 13.097, de 2015) (Vigência)</del></p>
+ <h4>§ 1º Na hipótese dos produtos de que tratam os incisos I e V do caput, aplica-se à pessoa jurídica encomendante o direito à opção pelo regime especial de que trata o art. 23 da Lei n° 10.865, de 30 de abril de 2004. (Redação dada pela Lei n° 13.097, de 2015) (Vigência)</h4>
+ <h4>§ 2º A Contribuição para o PIS/Pasep e a Cofins incidirão sobre a receita bruta auferida pela pessoa jurídica executora da encomenda às alíquotas de 1,65% (um inteiro e sessenta e cinco centésimos por cento) e de 7,6% (sete inteiros e seis décimos por cento), respectivamente. (Redação dada pela Lei n° 11.196, de 2005)</h4>
+ <h4>§ 3º Para os efeitos deste artigo, aplicam-se os conceitos de industrialização por encomenda do Imposto sobre Produtos Industrializados - IPI. (Incluído pela Lei n° 11.196, de 2005)</h4>
+ <h3>Art. 11. (VETADO) (Vigência)</h3>
+ <h3>Art. 12. Não se considera industrialização a operação de que resultem os produtos relacionados na subposição 2401.20 da TIPI, quando exercida por produtor rural pessoa física. (Redação dada pela Lei n° 11.452, de 2007)</h3>
+ <h3>Art. 13. Fica a administração fazendária federal, durante o prazo de 1 (um) ano, contado da publicação desta Lei, autorizada a atribuir os mesmos efeitos previstos no art. 205 da Lei n° 5.172, de 25 de outubro de 1966 – Código Tributário Nacional, à certidão quanto a tributos e contribuições administrados pela Secretaria da Receita Federal – SRF e à dívida ativa da União de que conste a existência de débitos em relação aos quais o interessado tenha apresentado, ao órgão competente, pedido de revisão fundado em alegação de pagamento integral anterior à inscrição pendente da apreciação há mais de 30 (trinta) dias.</h3>
+ <h4>§ 1º Para fins de obtenção da certidão a que se refere o caput deste artigo, o requerimento deverá ser instruído com:</h4>
+ <h5>I - cópia do pedido de revisão de débitos inscritos em dívida ativa da União instruído com os documentos de arrecadação da Receita Federal – DARF que comprovem o pagamento alegado;</h5>
+ <h5>II - declaração firmada pelo devedor de que o pedido de revisão e os documentos relativos aos pagamentos referem-se aos créditos de que tratará a certidão.</h5>
+ <h4>§ 2º A concessão da certidão a que se refere o caput deste artigo não implica o deferimento do pedido de revisão formulado.</h4>
+ <h4>§ 3º Será suspenso, até o pronunciamento formal do órgão competente, o registro no Cadastro Informativo de Créditos Não-Quitados do Setor Público Federal - Cadin, de que trata a Lei n° 10.522, de 19 de julho de 2002, quando o devedor comprovar, nos termos do § 1º deste artigo, a situação descrita no caput deste artigo.</h4>
+ <h4>§ 4º A certidão fornecida nos termos do caput deste artigo perderá sua validade com a publicação, no Diário Oficial da União, do respectivo cancelamento.</h4>
+ <h4>§ 5º (VETADO)</h4>
+ <h4>§ 6º A falsidade na declaração de que trata o inciso II do § 1º deste artigo implicará multa correspondente a 50% (cinqüenta por cento) do pagamento alegado, não passível de redução, sem prejuízo de outras penalidades administrativas ou criminais.</h4>
+ <h4>§ 7º A Procuradoria-Geral da Fazenda Nacional - PGFN e a Secretaria da Receita Federal - SRF expedirão os atos necessários ao fiel cumprimento das disposições deste artigo.</h4>
+ <h3>Art. 14. Para os fins do disposto no § 4º do art. 1º da Lei n° 10.684, de 30 de maio de 2003, o enquadramento das pessoas jurídicas observará exclusivamente os limites de receita bruta expressos no art. 2º da Lei n° 9.841, de 5 de outubro de 1999.</h3>
+ <h3>Art. 15. O art. 4º da Lei n° 10.964, de 28 de outubro de 2004, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 4º Ficam excetuadas da restrição de que trata o inciso XIII do art. 9º da Lei n° 9.317, de 5 de dezembro de 1996, as pessoas jurídicas que se dediquem às seguintes atividades:</h3>
+ <h5>I – serviços de manutenção e reparação de automóveis, caminhões, ônibus e outros veículos pesados;</h5>
+ <h5>II – serviços de instalação, manutenção e reparação de acessórios para veículos automotores;</h5>
+ <h5>III – serviços de manutenção e reparação de motocicletas, motonetas e bicicletas;</h5>
+ <h5>IV – serviços de instalação, manutenção e reparação de máquinas de escritório e de informática;</h5>
+ <h5>V – serviços de manutenção e reparação de aparelhos eletrodomésticos.</h5>
+ <h4>§ 1º Fica assegurada a permanência no Sistema Integrado de Pagamento de Impostos e Contribuições das Microempresas e das Empresas de Pequeno Porte – SIMPLES, com efeitos retroativos à data de opção da empresa, das pessoas jurídicas de que trata o caput deste artigo que tenham feito a opção pelo sistema em data anterior à publicação desta Lei, desde que não se enquadrem nas demais hipóteses de vedação previstas na legislação.</h4>
+ <h4>§ 2º As pessoas jurídicas de que trata o caput deste artigo que tenham sido excluídas do SIMPLES exclusivamente em decorrência do disposto no inciso XIII do art. 9º da Lei n° 9.317, de 5 de dezembro de 1996, poderão solicitar o retorno ao sistema, com efeitos retroativos à data de opção desta, nos termos, prazos e condições estabelecidos pela Secretaria da Receita Federal – SRF, desde que não se enquadrem nas demais hipóteses de vedação previstas na legislação.</h4>
+ <h4>§ 3º Na hipótese de a exclusão de que trata o § 2º deste artigo ter ocorrido durante o ano-calendário de 2004 e antes da publicação desta Lei, a Secretaria da Receita Federal – SRF promoverá a reinclusão de ofício dessas pessoas jurídicas retroativamente à data de opção da empresa.</h4>
+ <h4>§ 4º Aplica-se o disposto no art. 2º da Lei n° 10.034, de 24 de outubro de 2000, a partir de 1º de janeiro de 2004." (NR)</h4>
+ <h3>Art. 16. O crédito apurado no âmbito do Parcelamento Especial - Paes de que trata o art. 1º da Lei n° 10.684, de 30 de maio de 2003, decorrente de pagamento indevido, bem como de pagamento a maior, no caso de liquidação deste parcelamento, será restituído a pedido do sujeito passivo.</h3>
+ <h4>§ 1º Na hipótese de existência de débitos do sujeito passivo relativos a tributos e contribuições perante a Secretaria da Receita Federal - SRF ou a Procuradoria-Geral da Fazenda Nacional – PGFN, o valor da restituição, após o prévio reconhecimento do direito creditório a pedido do sujeito passivo, deverá ser utilizado para quitá-los, mediante compensação em procedimento de ofício.</h4>
+ <h4>§ 2º À compensação com os créditos a que se refere o caput deste artigo não se aplicam as disposições sobre a declaração de compensação de que trata o art. 74 da Lei n° 9.430, de 27 de dezembro de 1996, cujo procedimento somente será realizado na forma do § 1º deste artigo.</h4>
+ <h4>§ 3º A restituição e a compensação de que trata este artigo serão efetuadas pela Secretaria da Receita Federal - SRF, aplicando-se o disposto no art. 39 da Lei n° 9.250, de 26 de dezembro de 1995, alterado pelo art. 73 da Lei n° 9.532, de 10 de dezembro de 1997.</h4>
+ <h3>Art. 17. O art. 32 da Lei n° 4.357, de 16 de julho de 1964, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 32. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 1º A inobservância do disposto neste artigo importa em multa que será imposta:</h4>
+ <h5>I - às pessoas jurídicas que distribuírem ou pagarem bonificações ou remunerações, em montante igual a 50% (cinqüenta por cento) das quantias distribuídas ou pagas indevidamente; e</h5>
+ <h5>II - aos diretores e demais membros da administração superior que receberem as importâncias indevidas, em montante igual a 50% (cinqüenta por cento) dessas importâncias.</h5>
+ <h4>§ 2º A multa referida nos incisos I e II do § 1º deste artigo fica limitada, respectivamente, a 50% (cinqüenta por cento) do valor total do débito não garantido da pessoa jurídica." (NR)</h4>
+ <h3>Art. 18. O art. 4º da Lei n° 9.718, de 27 de novembro de 1998, com a redação dada pela Lei n° 10.865, de 30 de abril de 2004, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 4º ............................................................................</h3>
+ <p>............................................................................</p>
+ <h5>III - 10,2% (dez inteiros e dois décimos por cento) e 47,4% (quarenta e sete inteiros e quatro décimos por cento) incidentes sobre a receita bruta decorrente da venda de gás liquefeito de petróleo - GLP derivado de petróleo e de gás natural;</h5>
+ <p>............................................................................" (NR)</p>
+ <h3>Art. 19. O art. 7º da Lei n° 10.426, de 24 de abril de 2002, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 7º O sujeito passivo que deixar de apresentar Declaração de Informações Econômico-Fiscais da Pessoa Jurídica - DIPJ, Declaração de Débitos e Créditos Tributários Federais - DCTF, Declaração Simplificada da Pessoa Jurídica, Declaração de Imposto de Renda Retido na Fonte - DIRF e Demonstrativo de Apuração de Contribuições Sociais - Dacon, nos prazos fixados, ou que as apresentar com incorreções ou omissões, será intimado a apresentar declaração original, no caso de não-apresentação, ou a prestar esclarecimentos, nos demais casos, no prazo estipulado pela Secretaria da Receita Federal - SRF, e sujeitar-se-á às seguintes multas:</h3>
+ <p>............................................................................</p>
+ <h5>III - de 2% (dois por cento) ao mês-calendário ou fração, incidente sobre o montante da Cofins, ou, na sua falta, da contribuição para o PIS/Pasep, informado no Dacon, ainda que integralmente pago, no caso de falta de entrega desta Declaração ou entrega após o prazo, limitada a 20% (vinte por cento), observado o disposto no § 3º deste artigo; e</h5>
+ <h5>IV - de R$ 20,00 (vinte reais) para cada grupo de 10 (dez) informações incorretas ou omitidas.</h5>
+ <h4>§ 1º Para efeito de aplicação das multas previstas nos incisos I, II e III do caput deste artigo, será considerado como termo inicial o dia seguinte ao término do prazo originalmente fixado para a entrega da declaração e como termo final a data da efetiva entrega ou, no caso de não-apresentação, da lavratura do auto de infração.</h4>
+ <p>............................................................................" (NR)</p>
+ <h3>Art. 20. O art. 4º da Lei n° 10.560, de 13 de novembro de 2002, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 4º ................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 3º Para os efeitos desta Lei, considera-se acordo qualquer forma de ajuste entre os países interessados, observadas as prescrições do § 1º deste artigo.</h4>
+ <h4>§ 4º Havendo questionamento judicial sobre os débitos referidos no caput e no § 1º deste artigo, a remissão fica condicionada à renúncia, por parte do contribuinte, do direito em que se funda a respectiva ação e, pelo advogado e pela parte, dos ônus de sucumbência." (NR)</h4>
+ <h3>Art. 21. O art. 3º da Lei n° 10.833, de 29 de dezembro de 2003, passa a vigorar acrescido do seguinte § 18:</h3>
+ <p>"</p>
+ <h3>Art. 3º ................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 18. O crédito, na hipótese de devolução dos produtos de que tratam os §§ 1º e 2º do art. 2º desta Lei, será determinado mediante a aplicação das alíquotas incidentes na venda sobre o valor ou unidade de medida, conforme o caso, dos produtos recebidos em devolução no mês." (NR)</h4>
+ <h3>Art. 22. O disposto no art. 21 desta Lei produz efeitos a partir de 1º de agosto de 2004.</h3>
+ <h4>Parágrafo único. Para as pessoas jurídicas que apuram o imposto de renda com base no lucro real que, por opção, adotaram antecipadamente o regime de incidência não-cumulativa da Contribuição para o PIS/Pasep e da Cofins, nos termos do art. 42 da Lei n° 10.865, de 30 de abril de 2004, o disposto no art. 21 desta Lei produz efeitos em relação aos fatos geradores ocorridos a partir de 1º de maio de 2004.</h4>
+ <h3>Art. 23. O art. 3º da Lei n° 10.833, de 29 de dezembro de 2003, passa a vigorar acrescido dos seguintes §§ 19 e 20:</h3>
+ <p>"</p>
+ <h3>Art. 3º ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 19. A empresa de serviço de transporte rodoviário de carga que subcontratar serviço de transporte de carga prestado por:</h4>
+ <h5>I – pessoa física, transportador autônomo, poderá descontar, da Cofins devida em cada período de apuração, crédito presumido calculado sobre o valor dos pagamentos efetuados por esses serviços;</h5>
+ <h5>II - pessoa jurídica transportadora, optante pelo SIMPLES, poderá descontar, da Cofins devida em cada período de apuração, crédito calculado sobre o valor dos pagamentos efetuados por esses serviços.</h5>
+ <h4>§ 20. Relativamente aos créditos referidos no § 19 deste artigo, seu montante será determinado mediante aplicação, sobre o valor dos mencionados pagamentos, de alíquota correspondente a 75% (setenta e cinco por cento) daquela constante do art. 2º desta Lei." (NR)</h4>
+ <h3>Art. 24. O disposto no art. 23 desta Lei aplica-se a partir da data da publicação desta Lei, produzindo efeitos, em relação ao § 20, no que se refere ao inciso II do § 19, ambos do art. 3º da Lei n° 10.833, de 29 de dezembro de 2003, a partir do 1º (primeiro) dia do 4º (quarto) mês subseqüente ao de sua publicação.</h3>
+ <h3>Art. 25. Os arts. 10, 18, 51 e 58 da Lei n° 10.833, de 29 de dezembro de 2003, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 10. ............................................................................</h3>
+ <p>.........................................................................................</p>
+ <h5>XXV - as receitas auferidas por empresas de serviços de informática, decorrentes das atividades de desenvolvimento de software e o seu licenciamento ou cessão de direito de uso, bem como de análise, programação, instalação, configuração, assessoria, consultoria, suporte técnico e manutenção ou atualização de software, compreendidas ainda como softwares as páginas eletrônicas.</h5>
+ <h4>§ 1º (antigo parágrafo único)..............................................</h4>
+ <h4>§ 2º O disposto no inciso XXV do caput deste artigo não alcança a comercialização, licenciamento ou cessão de direito de uso de software importado." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 18. O lançamento de ofício de que trata o art. 90 da Medida Provisória nº 2.158-35, de 24 de agosto de 2001, limitar-se-á à imposição de multa isolada em razão da não-homologação de compensação declarada pelo sujeito passivo nas hipóteses em que ficar caracterizada a prática das infrações previstas nos arts. 71 a 73 da Lei n° 4.502, de 30 de novembro de 1964.</h3>
+ <p>...................................................................</p>
+ <h4>§ 2º A multa isolada a que se refere o caput deste artigo será aplicada no percentual previsto no inciso II do caput ou no § 2º do art. 44 da Lei n° 9.430, de 27 de dezembro de 1996, conforme o caso, e terá como base de cálculo o valor total do débito indevidamente compensado.</h4>
+ <p>............................................................................</p>
+ <h4>§ 4º A multa prevista no caput deste artigo também será aplicada quando a compensação for considerada não declarada nas hipóteses do inciso II do § 12 do art. 74 da Lei n° 9.430, de 27 de dezembro de 1996." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 51.. ...........................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 2º As receitas decorrentes da venda a pessoas jurídicas comerciais das embalagens referidas neste artigo ficam sujeitas ao recolhimento da Contribuição para o PIS/Pasep e da Cofins na forma aqui disciplinada, independentemente da destinação das embalagens.</h4>
+ <h4>§ 3º A pessoa jurídica comercial que adquirir para revenda as embalagens referidas no § 2º deste artigo poderá se creditar dos valores das contribuições estabelecidas neste artigo referentes às embalagens que adquirir, no período de apuração em que registrar o respectivo documento fiscal de aquisição.</h4>
+ <h4>§ 4º Na hipótese de a pessoa jurídica comercial não conseguir utilizar o crédito referido no § 3º deste artigo até o final de cada trimestre do ano civil, poderá compensá-lo com débitos próprios, vencidos ou vincendos, relativos a tributos e contribuições administrados pela Secretaria da Receita Federal - SRF, observada a legislação específica aplicável à matéria." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 58. ............................................................................</h3>
+ <h4>§ 1º As pessoas jurídicas referidas no art. 51 desta Lei poderão, a partir da data em que submetidas às normas de apuração ali referidas, creditar-se, em relação à:</h4>
+ <h5>I - Contribuição para o PIS/Pasep, do saldo dos créditos apurados de conformidade com a Lei n° 10.637, de 30 de dezembro de 2002, não aproveitados pela modalidade de tributação não cumulativa; e</h5>
+ <h5>II - Cofins, do saldo dos créditos apurados de conformidade com esta Lei, não aproveitados pela modalidade de tributação não cumulativa.</h5>
+ <p>............................................................................" (NR)</p>
+ <h3>Art. 26. O art. 15 da Lei n° 10.833, de 29 de dezembro de 2003, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 15. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h5>II - nos incisos VI, VII e IX do caput e nos §§ 1º e 10 a 20 do art. 3º desta Lei;</h5>
+ <p>............................................................................</p>
+ <h5>V - nos incisos VI, IX a XXV do caput e no § 2º do art. 10 desta Lei;</h5>
+ <p>............................................................................" (NR)</p>
+ <h3>Art. 27. O art. 26 desta Lei entra em vigor na data de sua publicação, observados, com relação às alterações produzidas por esta Lei, os mesmos prazos de produção de efeitos determinados para a Cofins.</h3>
+ <h3>Art. 28. Os arts. 8º , 17, 23 e 40 da Lei n° 10.865, de 30 de abril de 2004, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 8º ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 6º-A A importação das embalagens referidas no art. 51 da Lei n° 10.833, de 29 de dezembro de 2003, fica sujeita à incidência da Contribuição para o PIS/Pasep – Importação e da Cofins – Importação nos termos do § 6º deste artigo, quando realizada por pessoa jurídica comercial, independentemente da destinação das embalagens.</h4>
+ <p>............................................................................" (NR)</p>
+ <p>"</p>
+ <h3>Art. 17. ............................................................................</h3>
+ <h5>I - dos §§ 1º a 3º , 5º a 7º e 10 do art. 8º desta Lei, quando destinados à revenda;</h5>
+ <p>............................................................................</p>
+ <h4>§ 7º O disposto no inciso III deste artigo não se aplica no caso de importação efetuada por montadora de máquinas ou veículos relacionados no art. 1º da Lei n° 10.485, de 3 de julho de 2002.</h4>
+ <h4>§ 8º O disposto neste artigo alcança somente as pessoas jurídicas de que trata o art. 15 desta Lei." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 23. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h5>III - R$ 119,40 (cento e dezenove reais e quarenta centavos) e R$ 551,40 (quinhentos e cinqüenta e um reais e quarenta centavos), por tonelada de gás liquefeito de petróleo - GLP, derivado de petróleo e de gás natural;</h5>
+ <p>............................................................................" (NR)</p>
+ <p>"</p>
+ <h3>Art. 40. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 5º A pessoa jurídica que, após adquirir matérias-primas, produtos intermediários e materiais de embalagem com o benefício da suspensão de que trata este artigo, der-lhes destinação diversa de exportação, fica obrigada a recolher as contribuições não pagas pelo fornecedor, acrescidas de juros e multa de mora, ou de ofício, conforme o caso, contados a partir da data da aquisição." (NR)</h4>
+ <h3>Art. 29. Os arts. 1º , 8º , 9º e 15 da Lei n° 10.925, de 23 de julho de 2004, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 1º ............................................................................</h3>
+ <p>............................................................................</p>
+ <h5>IX - farinha, grumos e sêmolas, grãos esmagados ou em flocos, de milho, classificados, respectivamente, nos códigos 1102.20, 1103.13 e 1104.19, todos da TIPI ;</h5>
+ <h5>X - pintos de 1 (um) dia classificados no código 0105.11 da TIPI ;</h5>
+ <h5>XI – leite fluido pasteurizado ou industrializado, na forma ultrapasteurizado, destinado ao consumo humano.</h5>
+ <p>............................................................................" (NR)</p>
+ <p>"</p>
+ <h3>Art. 8º As pessoas jurídicas, inclusive cooperativas, que produzam mercadorias de origem animal ou vegetal, classificadas nos capítulos 2, 3, exceto os produtos vivos desse capítulo, e 4, 8 a 12, 15, 16 e 23, e nos códigos 03.02, 03.03, 03.04, 03.05, 0504.00, 0701.90.00, 0702.00.00, 0706.10.00, 07.08, 0709.90, 07.10, 07.12 a 07.14, exceto os códigos 0713.33.19, 0713.33.29 e 0713.33.99, 1701.11.00, 1701.99.00, 1702.90.00, 18.01, 18.03, 1804.00.00, 1805.00.00, 20.09, 2101.11.10 e 2209.00.00, todos da NCM, destinadas à alimentação humana ou animal, poderão deduzir da Contribuição para o PIS/Pasep e da Cofins, devidas em cada período de apuração, crédito presumido, calculado sobre o valor dos bens referidos no inciso II do caput do art. 3º das Leis nºs 10.637, de 30 de dezembro de 2002, e 10.833, de 29 de dezembro de 2003, adquiridos de pessoa física ou recebidos de cooperado pessoa física.</h3>
+ <h4>§ 1º ............................................................................</h4>
+ <p>............................................................................</p>
+ <h5>III - pessoa jurídica que exerça atividade agropecuária e cooperativa de produção agropecuária.</h5>
+ <p>............................................................................</p>
+ <h4>§ 6º Para os efeitos do caput deste artigo, considera-se produção, em relação aos produtos classificados no código 09.01 da NCM, o exercício cumulativo das atividades de padronizar, beneficiar, preparar e misturar tipos de café para definição de aroma e sabor (blend) ou separar por densidade dos grãos, com redução dos tipos determinados pela classificação oficial.</h4>
+ <h4>§ 7º O disposto no § 6º deste artigo aplica-se também às cooperativas que exerçam as atividades nele previstas." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 9º A incidência da Contribuição para o PIS/Pasep e da Cofins fica suspensa no caso de venda:</h3>
+ <h5>I - de produtos de que trata o inciso I do § 1º do art. 8º desta Lei, quando efetuada por pessoas jurídicas referidas no mencionado inciso;</h5>
+ <h5>II - de leite in natura, quando efetuada por pessoa jurídica mencionada no inciso II do § 1º do art. 8º desta Lei; e</h5>
+ <h5>III - de insumos destinados à produção das mercadorias referidas no caput do art. 8º desta Lei, quando efetuada por pessoa jurídica ou cooperativa referidas no inciso III do § 1º do mencionado artigo.</h5>
+ <h4>§ 1º O disposto neste artigo:</h4>
+ <h5>I - aplica-se somente na hipótese de vendas efetuadas à pessoa jurídica tributada com base no lucro real; e</h5>
+ <h5>II - não se aplica nas vendas efetuadas pelas pessoas jurídicas de que tratam os §§ 6º e 7º do art. 8º desta Lei.</h5>
+ <h4>§ 2º A suspensão de que trata este artigo aplicar-se-á nos termos e condições estabelecidos pela Secretaria da Receita Federal - SRF." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 15. ............................................................................</h3>
+ <p>............................................................................</p>
+ <h4>§ 3º A incidência da Contribuição para o PIS/Pasep e da Cofins fica suspensa na hipótese de venda de produtos in natura de origem vegetal, efetuada por pessoa jurídica que exerça atividade rural e cooperativa de produção agropecuária, para pessoa jurídica tributada com base no lucro real, nos termos e condições estabelecidos pela Secretaria da Receita Federal - SRF.</h4>
+ <h4>§ 4º É vedado o aproveitamento de crédito pela pessoa jurídica que exerça atividade rural e pela cooperativa de produção agropecuária, em relação às receitas de vendas efetuadas com suspensão às pessoas jurídicas de que trata o caput deste artigo.</h4>
+ <p>............................................................................" (NR)</p>
+ <h3>Art. 30. As sociedades cooperativas de crédito e de transporte rodoviário de cargas, na apuração dos valores devidos a título de Cofins e PIS-faturamento, poderão excluir da base de cálculo os ingressos decorrentes do ato cooperativo, aplicando-se, no que couber, o disposto no art. 15 da Medida Provisória nº 2.158-35, de 24 de agosto de 2001, e demais normas relativas às cooperativas de produção agropecuária e de infra-estrutura. (Redação dada pela Lei n° 11.196, de 2005)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h3>Art. 30-A. As cooperativas de radiotáxi, bem como aquelas cujos cooperados se dediquem a serviços relacionados a atividades culturais, de música, de cinema, de letras, de artes cênicas (teatro, dança, circo) e de artes plásticas, poderão excluir da base de cálculo da contribuição para PIS/Pasep e Cofins: (Redação dada pela lei n° 12.973, de 2014)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h5>I - os valores repassados aos associados pessoas físicas decorrentes de serviços por eles prestados em nome da cooperativa; (Incluído pela Lei n° 12.649, de 2012)</h5>
+ <h5>II - as receitas de vendas de bens, mercadorias e serviços a associados, quando adquiridos de pessoas físicas não associadas; e (Incluído pela Lei n° 12.649, de 2012)</h5>
+ <h5>III - as receitas financeiras decorrentes de repasses de empréstimos a associados, contraídos de instituições financeiras, até o limite dos encargos a estas devidos. (Incluído pela Lei n° 12.649, de 2012)</h5>
+ <h4>Parágrafo único. Na hipótese de utilização de uma ou mais das exclusões referidas no caput, a cooperativa ficará também sujeita à incidência da contribuição para o PIS/Pasep, determinada em conformidade com o disposto no art. 13 da Medida Provisória nº 2.158-35, de 24 de agosto de 2001 . (Incluído pela Lei n° 12.649, de 2012)</h4>
+ <h3>Art. 30-B. São remidos os créditos tributários, constituídos ou não, inscritos ou não em dívida ativa, bem como anistiados os respectivos encargos legais, multas e juros de mora quando relacionados à falta de pagamento da Cofins e da contribuição para o PIS/Pasep sobre os valores passíveis de exclusão das suas bases de cálculo nos termos do art. 30-A desta Lei das associações civis e das sociedades cooperativas referidas no art. 30-A desta Lei. (Redação dada pela lei n° 12.973, de 2014)</h3>
+ <h3>Art. 31. Fica a União autorizada, a exclusivo critério do Ministro de Estado da Fazenda, a assumir, mediante novação contratual, obrigações de responsabilidade de autarquias federais, desde que registradas pelo Banco Central do Brasil na Dívida Líquida do Setor Público na data da publicação desta Lei.</h3>
+ <h3>Art. 32. Para efeito de determinação da base de cálculo do imposto de renda das pessoas jurídicas e da contribuição social sobre o lucro líquido, da Contribuição para o Financiamento da Seguridade Social - Cofins e da Contribuição para o PIS/Pasep, os resultados positivos ou negativos incorridos nas operações realizadas em mercados de liquidação futura, inclusive os sujeitos a ajustes de posições, serão reconhecidos por ocasião da liquidação do contrato, cessão ou encerramento da posição.</h3>
+ <h4>§ 1º O resultado positivo ou negativo de que trata este artigo será constituído pela soma algébrica dos ajustes, no caso das operações a futuro sujeitas a essa especificação, e pelo rendimento, ganho ou perda, apurado na operação, nos demais casos.</h4>
+ <h4>§ 2º O disposto neste artigo aplica-se:</h4>
+ <h5>I – no caso de operações realizadas no mercado de balcão, somente àquelas registradas nos termos da legislação vigente;</h5>
+ <h5>II – em relação à pessoa física, aos ganhos líquidos auferidos em mercados de liquidação futura sujeitos a ajustes de posições, ficando mantidas para os demais mercados as regras previstas na legislação vigente.</h5>
+ <h3>Art. 33. A Secretaria da Receita Federal - SRF expedirá, no âmbito da sua competência, as normas necessárias ao cumprimento do disposto nesta Lei.</h3>
+ <h3>Art. 34. Esta Lei entra em vigor na data da sua publicação, produzindo efeitos, em relação:</h3>
+ <h5>I – ao art. 7º , a partir de 1º de novembro de 2004;</h5>
+ <h5>II – aos arts. 9º , 10 e 11, a partir do 1º (primeiro) dia do 4º (quarto) mês subseqüente ao de sua publicação;</h5>
+ <h5>III – aos demais artigos, a partir da data da sua publicação.</h5>
+ <h3>Art. 35. Ficam revogados:</h3>
+ <h5>I - o § 3º do art. 3º da Lei n° 9.718, de 27 de novembro de 1998 ;</h5>
+ <h5>II - o inciso IV do caput do art. 17 da Lei n° 10.865, de 30 de abril de 2004;</h5>
+ <h5>III - o art. 90 da Lei n° 10.833, de 29 de dezembro de 2003 ;</h5>
+ <h5>IV – o art. 84 da Lei n° 10.833, de 29 de dezembro de 2003, a partir do 1º (primeiro) dia do 4º (quarto) mês subseqüente ao de sua publicação.</h5>
+ <p>Brasília, 29 de dezembro de 2004; 183º da Independência e 116º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Antonio Palocci Filho</p>
+ <p>Este texto não substitui o publicado no DOU de 30.12.2004, retificado em 4.1.2005, em 11.1.2005 e em 16.2.2005.</p>
+ <p>(Vide Lei Complementar nº 214, de 2025)Produção de efeitos | Dispõe sobre o desconto de crédito na apuração da Contribuição Social sobre o Lucro Líquido - CSLL e da Contribuição para o PIS/Pasep e Cofins não cumulativas e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L11051compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

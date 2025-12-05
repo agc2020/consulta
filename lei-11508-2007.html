@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.508, DE 20 DE JULHO DE 2007 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2007" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.508, DE 20 DE JULHO DE 2007</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:24:27 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/L11508compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 37.040 caracteres | espelho: 37.033 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.508, DE 20 DE JULHO DE 2007</p>
+ <p>Regulamento</p>
+ <p>(Vide Lei n° 14.184, de 	2021)</p>
+ <p>(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</p>
+ <p>Dispõe sobre o regime tributário, cambial e administrativo das Zonas de Processamento de Exportação, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica o Poder Executivo autorizado a criar, nas regiões menos desenvolvidas, Zonas de Processamento de Exportação (ZPE), sujeitas ao regime jurídico instituído por esta Lei, com a finalidade de desenvolver a cultura exportadora, de fortalecer o balanço de pagamentos e de promover a difusão tecnológica, a redução de desequilíbrios regionais e o desenvolvimento econômico e social do País. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h4>Parágrafo único. As ZPE caracterizam-se como áreas de livre comércio com o exterior, destinadas à instalação de empresas direcionadas para a produção de bens a serem comercializados no exterior, a prestação de serviços vinculados à industrialização das mercadorias a serem exportadas ou a prestação de serviços a serem comercializados ou destinados exclusivamente para o exterior, consideradas zonas primárias para efeito de controle aduaneiro. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h3>Art. 2º A criação de ZPE far-se-á por decreto, que delimitará sua 	área, a qual poderá ser descontínua observado o disposto no § 6º deste artigo, à vista de proposta dos Estados ou dos Municípios, em conjunto ou isoladamente, ou de ente privado. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h4>§ 1º A proposta a que se refere este artigo deverá satisfazer os seguintes requisitos:</h4>
+ <h5>I - indicação de localização adequada no que diz respeito a acesso a portos e aeroportos internacionais;</h5>
+ <h5>II - comprovação da disponibilidade da área destinada a sediar a ZPE;</h5>
+ <h5>III - comprovação de disponibilidade financeira, considerando inclusive a possibilidade de aportes de recursos da iniciativa privada;</h5>
+ <h5>IV - comprovação de disponibilidade mínima de infra-estrutura e de serviços capazes de absorver os efeitos de sua implantação;</h5>
+ <h5>V - indicação da forma de administração da ZPE; e</h5>
+ <h5>VI - atendimento de outras condições que forem estabelecidas em regulamento.</h5>
+ <h4>§ 1º-A O Poder Executivo regulamentará o processo seletivo de caráter público por meio do qual os entes privados poderão apresentar propostas para a criação de ZPE. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 2º (Revogado) . (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 3º (Revogado) . (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 4º (Revogado) . (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei n° 14.184, de 	2021)</h5>
+ <h4>§ 4º-A O ato de criação de ZPE será: (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - cancelado, a partir de manifestação formal do proponente pela desistência voluntária do processo de implantação da respectiva ZPE; (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - cassado, nas seguintes hipóteses: (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h6>a) se, no prazo de 24 (vinte e quatro) meses, contado da publicação do ato de criação, a administradora da ZPE não tiver iniciado as obras de implantação, sem motivo justificado, de acordo com o cronograma previamente apresentado ao Conselho Nacional das Zonas de Processamento de Exportacão 	(CZPE) para fins de planejamento das obras de infraestrutura da ZPE; e (Incluído pela Lei n° 14.184, de 	2021)</h6>
+ <h6>b) se as obras de implantação não forem concluídas, sem motivo justificado, no prazo de 12 (doze) meses, contado da data prevista para sua conclusão, constante do cronograma previamente apresentado ao CZPE para fins de planejamento das obras de infraestrutura da ZPE. (Incluído pela Lei n° 14.184, de 	2021)</h6>
+ <h4>§ 4º-B A administradora da ZPE poderá pleitear ao CZPE a prorrogação dos prazos para comprovação do início e da conclusão das obras da ZPE até o 	último dia dos prazos estabelecidos nas alíneas a e b do inciso II do § 4º-A deste artigo, desde que devidamente justificado. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 4º-C Na hipótese de aprovação do pleito de prorrogação de prazo de que trata o § 4º-B deste artigo, o CZPE estabelecerá novo prazo para a comprovação do início ou da conclusão de obras da ZPE. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 4º-D O novo prazo de que trata o § 4º-C deste artigo não poderá ser, 	conforme o caso, superior aos constantes do inciso II do § 4º-A deste artigo. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 4º-E Na hipótese de indeferimento, pelo CZPE, do pedido de prorrogação de prazo de que trata o § 4º-B deste artigo, fica cassado o ato que autorizou a criação de ZPE, ressalvado o direito ao recurso administrativo com efeito devolutivo. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 5º A solicitação de instalação de empresa em ZPE será feita mediante apresentação de projeto, na forma estabelecida em regulamento. (Incluído pela Lei n° 11.732, de 2008)</h4>
+ <h4>§ 6º A necessidade de área descontínua para instalação de ZPE deve ser devidamente justificada no projeto apresentado na forma do § 5º deste artigo e limitada à distância de 30 km (trinta quilômetros) do conjunto das áreas segregadas destinadas à movimentação, à armazenagem e à submissão a despacho aduaneiro de mercadorias procedentes do exterior ou a ele destinadas. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h3>Art. 2º-A A empresa administradora da ZPE será constituída como pessoa jurídica de direito privado. (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h4>§ 1º Na hipótese de a ZPE ser administrada por empresa sob controle de capital privado, o proponente deverá promover o devido processo seletivo de caráter público. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 2º Compete à administradora da ZPE implantar e administrar a ZPE e, 	nessa condição: (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h5>I - prover as instalações e os equipamentos necessários ao controle, à 	vigilância e à administração aduaneira local atendendo aos requisitos de que trata o § 1º do art. 4º desta Lei; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - disponibilizar lotes para as empresas autorizadas a instalar-se em 	ZPE; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - prestar serviços às empresas instaladas em ZPE; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>IV - prestar apoio à autoridade aduaneira; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>V - atender a outras condições que forem estabelecidas em regulamento. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h3>Art. 3º Fica mantido o Conselho Nacional das Zonas de Processamento de Exportação - CZPE, criado pelo art. 3º do Decreto-Lei N° 2.452, de 29 de julho de 1988, com competência para: (Redação dada pela Lei n° 11.732, de 2008) (Vide)</h3>
+ <h5>I - analisar as propostas de criação de ZPE; (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>II - aprovar os projetos de empresas interessadas em se instalar nas ZPE, observado o disposto no § 5º do art. 2º desta Lei; (Redação dada pela Lei n° 14.184, de 	2021)</h5>
+ <h5>III - traçar a orientação superior da política das ZPE. (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>IV - (revogado). (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>V - decidir sobre os pedidos de prorrogação dos prazos previstos no inciso II do § 4º-A do art. 2º e no caput do art. 25 desta Lei; (Redação dada pela Lei n° 14.184, de 2021)</h5>
+ <h5>VI - (revogado); (Redação dada pela Lei n° 14.184, de 2021)</h5>
+ <h5>VII - publicar o ato de cancelamento e declarar a cassação nas hipóteses referidas nos §§ 4º-A e 4º-E do art. 2º e no caput do art. 25 desta Lei. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 1º Para fins de análise das propostas e aprovação dos projetos, o CZPE levará em consideração, entre outras que poderão ser fixadas em regulamento, as seguintes diretrizes: (Redação dada pela Lei n° 11.732, de 2008)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>II - (revogado); (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>III - atendimento às prioridades governamentais para os diversos setores da indústria nacional e da política econômica global, especialmente para as políticas industrial, tecnológica e de comércio exterior; (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>IV - prioridade para as propostas de criação de ZPE localizada em área geográfica privilegiada para a exportação; e (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>V - valor mínimo em investimentos totais na ZPE por empresa autorizada a operar no regime de que trata esta Lei, quando assim for fixado em regulamento. (Incluído pela Lei n° 11.732, de 2008)</h5>
+ <h5>VI - (Incluído pela Medida Provisória nº 1.307, de 2025) encerrada</h5>
+ <h4>§ 2º (VETADO)</h4>
+ <h4>§ 3º O CZPE estabelecerá mecanismos e formas de monitoramento do impacto da aplicação do regime de que trata esta Lei nas empresas nacionais não instaladas em ZPE. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 4º Na hipótese de constatação de impacto negativo em empresas nacionais não instaladas em ZPE, provocado por empresa em ZPE, o CZPE 	poderá, enquanto persistir esse impacto, propor a vedação ou a limitação da destinação para o mercado interno de produtos industrializados em ZPE. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - (revogado); (Redação dada pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 5º O Poder Executivo, ouvido o CZPE, poderá adotar as medidas de que trata o § 4º deste artigo. (Incluído pela Lei n° 11.732, de 2008)</h4>
+ <h4>§ 6º A apreciação dos projetos de instalação de empresas em ZPE será realizada de acordo com a ordem de protocolo no CZPE. (Incluído pela Lei n° 11.732, de 2008)</h4>
+ <h4>§ 7º Para efeito de cumprimento do disposto no § 3º deste artigo, as empresas autorizadas a operar em ZPE deverão fornecer ao CZPE as informações definidas em regulamento. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 8º (Incluído pela Medida Provisória nº 1.307, de 2025) encerrada</h4>
+ <h3>Art. 4º O início do funcionamento de ZPE dependerá do prévio alfandegamento do conjunto das áreas segregadas na ZPE e destinadas à movimentação, à armazenagem e à submissão a despacho aduaneiro de mercadorias procedentes do exterior ou a ele destinadas. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h4>§ 1º Para cumprimento do disposto no caput deste artigo devem ser observados os requisitos técnicos e operacionais estabelecidos pela Secretaria Especial da Receita 	Federal do Brasil. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 2º Na hipótese de desalfandegamento do recinto de que trata o caput deste artigo, a partir da data de publicação do ato que formalizar o desalfandegamento: (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - as empresas autorizadas a operar naquela ZPE ficarão impedidas de realizar novas aquisições de máquinas, de aparelhos, de instrumentos ou de equipamentos com o tratamento estabelecido no art. 6º-A desta Lei; e (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - as mercadorias que se encontrem armazenadas no recinto submetido ao desalfandegamento ficarão sob a custódia da respectiva empresa administradora da ZPE, na condição de fiel depositária. (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h4>§ 3º As mercadorias referidas no inciso II do § 2º deste artigo, no prazo de 30 (trinta) dias, contado da data da publicação do ato que formalizar o desalfandegamento, deverão, conforme o caso, ser submetidas: (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - a despacho aduaneiro de importação para consumo ou de trânsito aduaneiro para outro local ou recinto alfandegado; (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - a despacho aduaneiro para extinção do regime especial aplicado em 	áreas especiais ou de trânsito aduaneiro destinado a outro local que opere o regime a que estejam submetidas; (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>III - aos procedimentos de devolução para o exterior, nas hipóteses previstas na legislação; ou (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>IV - aos procedimentos de embarque para o exterior ou ao regime de trânsito aduaneiro para outro local ou recinto alfandegado, no caso de mercadoria desembaraçada para exportação. (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h4>§ 4º Na hipótese de transferência para outro recinto alfandegado, serão mantidas as condições da concessão do regime aduaneiro especial ou aplicado em áreas especiais até a constituição de nova administradora, no prazo fixado pelo Poder Executivo. (Incluído pela Lei n° 14.184, de 	2021)</h4>
+ <h3>Art. 5º É vedada a instalação em ZPE de empresas cujos projetos evidenciem a simples transferência de plantas industriais já instaladas no País.</h3>
+ <h4>Parágrafo único. Não serão autorizadas, em ZPE, a produção, a importação ou exportação de:</h4>
+ <h5>I - armas ou explosivos de qualquer natureza, salvo com prévia autorização do Comando do Exército;</h5>
+ <h5>II - material radioativo, salvo com prévia autorização da Comissão Nacional de Energia Nuclear - CNEN; e</h5>
+ <h5>III - outros indicados em regulamento, produzindo efeitos a partir da data de sua publicação. (Redação dada pela Lei n° 14.184, de 	2021)</h5>
+ <p><del></p>
+ <h3>Art. 6º (Revogado pela Lei n° 11.732, de 2008)</del></h3>
+ <h3>Art. 6º-A As importações ou as aquisições no mercado interno de máquinas, de aparelhos, de instrumentos e de equipamentos por empresa autorizada a operar em ZPE terão suspensão da exigência dos seguintes impostos e contribuições: (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h5>I - Imposto de Importação; (Incluído pela Lei n° 11.732, de 2008)</h5>
+ <h5>II - Imposto sobre Produtos Industrializados - IPI; (Incluído pela Lei n° 11.732, de 2008)</h5>
+ <h5>III - Contribuição para o Financiamento da Seguridade Social - Cofins; (Incluído pela Lei n° 11.732, de 2008)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>IV - Contribuição Social para o Financiamento da Seguridade Social devida pelo Importador de Bens Estrangeiros ou Serviços do Exterior - Cofins-Importação; (Incluído pela Lei n° 11.732, de 2008)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>V - Contribuição para os Programas de Integração Social e de Formação do 	Patrimônio do Servidor Público - Contribuição para o PIS/Pasep; (Redação dada pela Lei n° 14.184, de 	2021) (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>VI - Contribuição para os Programas de Integração Social e de Formação do Patrimônio do Servidor Público incidente na Importação de Produtos 	Estrangeiros ou Serviços - Contribuição para o PIS/Pasep-Importação; e (Redação dada pela Lei n° 14.184, de 	2021) (Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>VII - Adicional de Frete para Renovação da Marinha Mercante - AFRMM. (Incluído pela Lei n° 11.732, de 2008)</h5>
+ <p><del>§ 1º (Revogado pela Lei n° 14.184, de 2021)</del></p>
+ <h4>§ 2º A suspensão de que trata o caput deste artigo aplica-se apenas às máquinas, aos aparelhos, aos instrumentos e aos equipamentos, novos ou usados, necessários às atividades da empresa, para incorporação ao ativo imobilizado da empresa autorizada a operar em ZPE. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 3º Na hipótese de importação de bens usados, a suspensão de que trata o caput deste artigo será aplicada quando se tratar de conjunto industrial e que seja elemento constitutivo da integralização do capital social da empresa. (Incluído pela Lei n° 11.732, de 2008)</h4>
+ <h4>§ 4º A pessoa jurídica que utilizar as máquinas, os aparelhos, os instrumentos e os equipamentos em desacordo com os §§ 2º e 3º deste artigo ou revendê-los antes da conversão em alíquota 0 (zero) ou em isenção, na forma do § 7º deste artigo, fica obrigada a recolher os impostos e as contribuições com a exigibilidade suspensa acrescidos de juros e multa de mora, na forma da lei, contados a partir da data da ocorrência dos fatos geradores dos tributos suspensos, na condição de: (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - contribuinte, nas operações de importação, em relação à Contribuição para o PIS/Pasep-Importação, à Cofins-Importação, ao IPI e ao Imposto de 	Importação; (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - responsável, nas aquisições no mercado interno, em relação à 	Contribuição para o PIS/Pasep, à Cofins e ao IPI. (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <p><del>§ 5º (Revogado pela Lei n° 14.184, de 2021)</del></p>
+ <p><del>§ 6º (Revogado pela Lei n° 14.184, de 2021)</del></p>
+ <h4>§ 7º Se não ocorrer as hipóteses previstas no § 4º deste artigo, a suspensão de que trata este artigo converter-se-á em: (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - alíquota 0% (zero por cento), decorrido o prazo de 2 (dois) anos, 	contado da data de ocorrência do fato gerador, na hipótese da Contribuição para o PIS/Pasep, da Cofins, da Contribuição para o PIS/Pasep-Importação, da 	Cofins-Importação, do IPI; e (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - isenção, decorrido o prazo de 5 (cinco) anos, contado da data de ocorrência do fato gerador, na hipótese do Imposto de Importação e do AFRMM. (Incluído pela Lei n° 14.184, de 	2021)</h5>
+ <p><del>§ 8º (Revogado pela Lei n° 14.184, de 2021)</del></p>
+ <h4>§ 9º Se não for efetuado o recolhimento dos impostos e das contribuições na forma do § 4º deste artigo, caberá lançamento de ofício, 	com aplicação de juros e da multa a contar do fato gerador, nos termos do art. 44 da Lei n° 9.430, de 27 de dezembro de 1996 . (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h3>Art. 6º-B As matérias-primas, os produtos intermediários e os materiais de embalagem serão importados ou adquiridos no mercado interno por empresa autorizada a operar em ZPE, com a suspensão da exigência dos seguintes impostos e contribuições: (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - Imposto de Importação; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - IPI; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - Cofins; (Incluído pela Lei n° 14.184, de 2021)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>IV - Cofins-Importação; (Incluído pela Lei n° 14.184, de 2021)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>V - Contribuição para o PIS/Pasep; (Incluído pela Lei n° 14.184, de 2021)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>VI - Contribuição para o PIS/Pasep-Importação; e (Incluído pela Lei n° 14.184, de 2021)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h5>VII - AFRMM. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 1º As matérias-primas, os produtos intermediários e os materiais de embalagem de que trata o caput deste artigo deverão ser utilizados integralmente no processo produtivo do produto final a ser exportado, sem prejuízo do disposto no art. 6º-C 	desta Lei. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 2º Com a exportação do produto final, a suspensão de que trata o caput deste artigo converter-se-á em: (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h5>I - alíquota 0% (zero por cento), na hipótese da Contribuição para o 	PIS/Pasep, da Cofins, da Contribuição para o PIS/Pasep-Importação, da 	Cofins-Importação e do IPI; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - isenção, na hipótese do Imposto de Importação e do AFRMM. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 3º As matérias-primas, os produtos intermediários e os materiais de embalagem que, no todo ou em parte, deixarem de ser empregados no processo produtivo de bens ficam sujeitos aos seguintes procedimentos: (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h5>I - exportação ou reexportação; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - manutenção em depósito; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - destruição, sob controle aduaneiro, a expensas do interessado; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>IV - destinação para o mercado interno, com o pagamento dos tributos suspensos e dos acréscimos legais devidos, contados desde a data da ocorrência do fato gerador, na forma do art. 6º-C desta Lei, desde que previamente autorizado pelo CZPE; ou (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>V - entrega à Fazenda Nacional, livres de quaisquer despesas e ônus, 	desde que a autoridade aduaneira concorde em recebê-los. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h3>Art. 6º-C Os produtos industrializados por empresa beneficiária do regime jurídico instituído por esta Lei poderão ser vendidos para o mercado interno, desde que a pessoa jurídica efetue o pagamento: (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - na condição de contribuinte dos impostos e das contribuições suspensos de que tratam os incisos I, II, IV, VI e VII do caput do art. 6º-B desta Lei, relativos às matérias-primas, aos produtos intermediários e aos materiais de embalagem de procedência estrangeira neles empregados, com acréscimo de juros e multa de mora, na forma da lei, 	contados a partir da data da ocorrência dos fatos geradores dos tributos suspensos; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - na condição de responsável dos impostos e das contribuições suspensos de que tratam os incisos II, III, V e VII do caput do art. 6º-B desta Lei, relativos às matérias-primas, aos produtos intermediários e aos materiais de embalagem adquiridos no mercado interno e neles empregados, com acréscimo de juros e multa de mora, na forma da lei, 	contados a partir da data da ocorrência dos fatos geradores dos tributos suspensos; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - de todos os impostos e contribuições normalmente incidentes na operação de venda. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 1º Na hipótese de não ser efetuado o recolhimento dos impostos e das contribuições na forma dos incisos I, II e III do caput deste artigo, caberá lançamento de ofício, com aplicação de juros e da multa de que trata o art. 44 da Lei n° 9.430, de 27 	de dezembro de 1996 . (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 2º O beneficiário do regime poderá optar pelo pagamento dos tributos incidentes nas operações de importação ou de aquisição no mercado interno de matérias-primas, de produtos intermediários e de materiais de embalagem, o que não implicará renúncia ao regime. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h3>Art. 6º-D Ficam reduzidas a 0 (zero) as alíquotas da Contribuição para o PIS/Pasep e da Cofins incidentes na importação ou na aquisição no mercado interno de serviços por empresa autorizada a operar em ZPE. (Incluído pela Lei n° 14.184, de 2021)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h3>
+ <h3>Art. 6º-E A exportação de produto fabricado em ZPE poderá ser realizada com a intermediação de empresa comercial exportadora de que trata o Decreto-Lei n° 1.248, de 29 de novembro de 1972 . (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h3>Art. 6º-F Aplica-se o tratamento estabelecido nos arts. 6º-A e 6º-B 	desta Lei às aquisições de máquinas, de aparelhos, de instrumentos, de equipamentos, de matérias-primas, de produtos intermediários e de materiais de embalagem realizadas entre empresas autorizadas a operar em ZPE. (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h3>Art. 6º-G Aplicam-se as reduções do art. 6º-D às aquisições de serviços vinculados à industrialização de que trata o art. 21-A desta Lei por empresas autorizadas a operar em ZPE. (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h3>Art. 6º-H Das notas fiscais relativas à venda de máquinas, de aparelhos, de instrumentos, de equipamentos, de matérias-primas, de produtos intermediários e de materiais de embalagem e à prestação de serviços para empresa autorizada a operar em ZPE, deverá constar, respectivamente: (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - a expressão ‘Venda efetuada com regime de suspensão’, com a especificação do dispositivo legal correspondente; ou (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - a expressão ‘Prestação de serviço efetuada com alíquota zero da 	Contribuição para o PIS/Pasep e da Cofins’, com a especificação do dispositivo legal correspondente. (Incluído pela Lei n° 14.184, de 2021)
+(Vide Lei Complementar nº 214, de 2025) Produção de efeitos</h5>
+ <h3>Art. 7º (VETADO)</h3>
+ <h3>Art. 8º O ato que autorizar a instalação de empresa em ZPE relacionará 	os produtos a serem fabricados, com a sua classificação na Nomenclatura 	Comum do Mercosul (NCM), e os serviços vinculados à industrialização a serem prestados, com a sua classificação na Nomenclatura Brasileira de Serviços, 	Intangíveis e outras Operações que Produzam Variações no Patrimônio (NBS), e assegurará o tratamento instituído por esta Lei pelo prazo de 20 (vinte) 	anos. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h4>§ 1º A empresa poderá solicitar alteração dos produtos a serem fabricados e dos serviços a serem prestados, na forma estabelecida pelo 	Poder Executivo. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 2º O CZPE poderá prorrogar o prazo de que trata o caput deste artigo por períodos adicionais de até 20 	(vinte) anos. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 3º Esgotado o prazo para a utilização do regime, a empresa poderá 	optar por permanecer dentro da área da ZPE mesmo se não for mais beneficiária do regime jurídico de que trata esta Lei. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h3>Art. 9º A empresa instalada em ZPE somente poderá constituir estabelecimento filial localizado fora da ZPE quando se tratar de unidade auxiliar dedicada a funções gerenciais ou de apoio administrativo ou técnico, vedadas as unidades do tipo operacional que desenvolvam atividade de produção ou de venda de mercadorias ou de serviços. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h3>Art. 10. (VETADO)</h3>
+ <h3>Art. 11. (VETADO)</h3>
+ <h3>Art. 12. As importações e as exportações de empresa autorizada a operar em ZPE ficam dispensadas de licença ou de autorização de órgãos federais, com exceção dos controles de ordem sanitária, de interesse da segurança nacional e de proteção do meio ambiente. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <h5>I - (revogado); (Redação dada pela Lei n° 14.184, de 	2021)</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei n° 14.184, de 	2021)</h5>
+ <h4>§ 1º A dispensa de licenças ou de autorizações a que se refere o caput deste artigo não se aplicará à exportação de produtos: (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h5>I - destinados a países com os quais o Brasil mantenha convênios de pagamento, as quais se submeterão às disposições e controles estabelecidos na forma da legislação em vigor;</h5>
+ <h5>II - sujeitos a regime de cotas aplicáveis às exportações do País, vigentes na data de aprovação do projeto, ou que venha a ser instituído posteriormente; e</h5>
+ <h5>III - sujeitos ao Imposto de Exportação.</h5>
+ <h4>§ 2º (Revogado) . (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 3º O disposto no art. 17 do Decreto-Lei n° 37, de 18 de novembro de 	1966 , bem como o disposto no art. 2º do Decreto-Lei n° 666, de 2 de julho de 	1969 , não se aplicam aos produtos importados nos termos dos arts. 6º-A e 	6º-B desta Lei, os quais, se usados, ficam dispensados das normas administrativas aplicáveis aos bens usados em geral. (Redação dada pela Lei n° 14.184, de 	2021)</h4>
+ <h4>§ 4º Não se aplica o disposto no § 3º deste artigo aos bens usados importados fora das condições estabelecidas no § 3º do art. 6º -A desta Lei. (Incluído pela Lei n° 11.732, de 2008)</h4>
+ <p><del></p>
+ <h3>Art. 13 (Revogado pela Lei n° 14.184, de 2021)</del></h3>
+ <h3>Art. 14. (VETADO)</h3>
+ <h3>Art. 15. Aplicam-se às empresas autorizadas a operar em ZPE as mesmas disposições legais e regulamentares relativas a câmbio e capitais internacionais aplicáveis às demais empresas nacionais. (Redação dada pela Lei n° 11.732, de 2008)</h3>
+ <h4>Parágrafo único. Os limites de que trata o caput do art. 1º da Lei N° 11.371, de 28 de novembro de 2006, não se aplicam às empresas que operarem em ZPE. (Incluído pela Lei n° 11.732, de 2008)</h4>
+ <h3>Art. 16. (VETADO)</h3>
+ <h3>Art. 17. A empresa instalada em ZPE não poderá usufruir de quaisquer incentivos ou benefícios não expressamente previstos nesta Lei.</h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 11.732, de 2008)</del></p>
+ <p><del></p>
+ <h3>Art. 18 (Revogado pela Lei n° 14.184, de 2021)</del></h3>
+ <h3>Art. 18-A. (VETADO) (Incluído pela Lei n° 11.732, de 2008)</h3>
+ <h3>Art. 18-B. Será permitida, sob as condições previstas na legislação específica, a aplicação dos seguintes incentivos ou benefícios fiscais: (Redação dada pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - regimes aduaneiros suspensivos previstos em regulamento; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - previstos para as áreas da Sudam, instituída pela Lei Complementar nº 124, de 3 de janeiro de 2007 , da Sudene, instituída pela Lei Complementar nº 125, de 3 de janeiro de 2007 e da Superintendência do Desenvolvimento do 	Centro-Oeste (Sudeco), instituída pela Lei Complementar nº 129, de 8 de janeiro de 2009 ; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - previstos no art. 9º da Medida Provisória nº 2.159-70, de 24 de agosto de 2001 ; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>IV - previstos na Lei n° 8.248, de 23 de outubro de 1991 ; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>V - previstos nos arts. 17 a 26 da Lei n° 11.196, de 21 de novembro de 	2005 . (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h3>Art. 18-C. A receita auferida por empresa autorizada a operar em ZPE 	decorrente da comercialização de oxigênio medicinal, classificado sob o código 2804.40.00 da NCM, não será considerada no cálculo do percentual da receita bruta decorrente de exportação de que trata o caput do art. 18 desta Lei, no ano-calendário de 	2021. (Redação dada pela Lei n° 14.184, de 2021)</h3>
+ <h3>Art. 19. (VETADO)</h3>
+ <h3>Art. 20. O Poder Executivo estabelecerá em regulamento as normas para a fiscalização das operações da empresa prestadora de serviços vinculados à 	industrialização beneficiária do regime jurídico instituído por esta Lei e para a fiscalização, o despacho e o controle aduaneiro de mercadorias em ZPE 	e a forma como a autoridade aduaneira exercerá o controle e a verificação do embarque e, quando for o caso, da destinação de mercadoria exportada por empresa instalada em ZPE. (Redação dada pela Lei n° 14.184, de 	2021)</h3>
+ <p><del></p>
+ <h3>Art. 21 (Revogado pela Lei n° 14.184, de 2021)</del></h3>
+ <h3>Art. 21-A. A empresa prestadora de serviços vinculados à industrialização das mercadorias a serem exportadas poderá ser beneficiária do regime instituído por esta Lei, desde que possua: (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - vínculo contratual com empresa industrial autorizada a operar em ZPE; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - projeto aprovado pelo CZPE. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 1º Desfeito o vínculo contratual de que trata o inciso I do caput deste artigo, fica extinta a condição de beneficiária do regime para a empresa prestadora de serviços e fica a empresa industrial contratante obrigada a comunicar ao CZPE a extinção do referido contrato no prazo de até 30 (trinta) dias, contado da data da extinção. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 2º Os serviços beneficiados pelo disposto neste artigo são os seguintes: (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h5>I - serviços de Pesquisa e Desenvolvimento (P&D); (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - serviços de engenharia e arquitetura; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - serviços científicos e outros serviços técnicos; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>IV - serviços de branding e marketing; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>V - serviços especializados de projetos (design); (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>VI - serviços de Tecnologia da Informação (TI); (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>VII - serviços de manutenção, reparação e instalação; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>VIII - serviços de coleta e tratamento de água e efluentes, e ambientais; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>IX - serviços de transporte de carga e de apoio ao transporte; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>X - outros serviços fixados pelo CZPE. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 3º Os serviços enumerados no § 2º deste artigo serão fixados pelo CZPE de acordo com a NBS. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 4º O Poder Executivo disporá sobre as hipóteses de controle informatizado das operações da empresa de serviços de que trata o caput deste artigo.</h4>
+ <h4>§ 5º O ato que aprovar projeto de empresa prestadora de serviços identificará o estabelecimento beneficiado, relacionará os serviços a serem prestados, de acordo com a sua classificação na NBS, e assegurará o tratamento instituído por esta Lei pelo prazo de vigência do contrato de que trata o inciso I do caput deste artigo ou pelo prazo restante concedido para a empresa industrial operar em ZPE, o que for menor. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 6º A empresa prestadora de serviços de que trata o caput deste artigo não poderá prestar serviços para empresas nacionais sediadas fora da ZPE. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 7º (Incluído pela Medida Provisória nº 1.307, de 2025) encerrada</h4>
+ <h3>Art. 21-B. A 	administradora da ZPE poderá autorizar a instalação em ZPE de estabelecimento de empresa prestadora de serviços não enquadrados nas hipóteses estabelecidas no art. 21-A desta Lei cuja presença contribua para: (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - otimizar a operação das pessoas jurídicas instaladas na ZPE; ou (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - proporcionar comodidade às pessoas físicas que circulam pela área da ZPE. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>Parágrafo único. As empresas a que se refere o caput deste artigo: (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h5>I - não farão jus aos benefícios do regime tributário, cambial e administrativo estabelecido nesta Lei; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - não poderão movimentar ou armazenar mercadoria adquirida ou importada ao amparo do regime. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h3>Art. 21-C. Poderá ser beneficiária do regime instituído por esta Lei a pessoa jurídica exclusivamente prestadora de serviços, sem prejuízo dos serviços relacionados nos arts. 21-A e 21-B desta Lei, desde que: (Incluído pela Lei n° 14.184, de 2021)</h3>
+ <h5>I - possua projeto aprovado pelo CZPE, para prestação de serviços exclusivamente ao mercado externo; (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>II - não evidencie a instalação em ZPE a simples transferência de pessoa jurídica já instalada fora da ZPE; e (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h5>III - não aufira receita referente à prestação de serviços no mercado interno. (Incluído pela Lei n° 14.184, de 2021)</h5>
+ <h4>§ 1º A pessoa jurídica beneficiária do regime terá a habilitação cancelada na hipótese de não observância do disposto no inciso III do caput deste artigo ou das demais condições e requisitos previstos nesta Lei. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 2º Na hipótese de cancelamento de que trata o § 1º deste artigo, a empresa excluída do regime somente poderá efetuar nova habilitação após o decurso do prazo de 2 (dois) anos, contado da data do cancelamento. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 3º Para cumprimento do disposto neste artigo, devem ser observados as condições necessárias para fruição do benefício fiscal e os requisitos técnicos e operacionais estabelecidos pela Secretaria Especial da Receita Federal do Brasil. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 4º No caso de descumprimento dos requisitos e das condições para fruição dos benefícios de que trata este artigo, o beneficiário ficará sujeito ao pagamento dos tributos que deixarem de ser recolhidos, com os acréscimos legais e penalidades cabíveis, conforme o caso, calculados da data do fato gerador. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 5º Nas hipóteses de que trata o § 1º deste artigo, a pessoa jurídica adquirente será responsável solidária com a pessoa jurídica de que trata o caput deste artigo. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h4>§ 6º Os serviços de que trata este artigo serão fixados pelo CZPE de acordo com a NBS. (Incluído pela Lei n° 14.184, de 2021)</h4>
+ <h3>Art. 22. As sanções previstas nesta Lei não prejudicam a aplicação de outras penalidades, inclusive do disposto no art. 76 da Lei N° 10.833, de 29 de dezembro de 2003. (Redação dada pela Lei n° 11.732, de 2008)</h3>
+ <h3>Art. 23. Considera-se dano ao erário, para efeito de aplicação da pena de perdimento, na forma da legislação específica, a introdução: (Redação dada pela Lei n° 11.732, de 2008)</h3>
+ <h5>I - no mercado interno, de mercadoria procedente de ZPE que tenha sido importada, adquirida no mercado interno ou produzida em ZPE fora dos casos autorizados nesta Lei; e (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <h5>II - em ZPE, de mercadoria estrangeira não permitida; (Redação dada pela Lei n° 11.732, de 2008)</h5>
+ <p><del>III (Revogado pela Lei n° 11.732, de 2008)</del></p>
+ <h4>Parágrafo único. Aplica-se o disposto no Decreto-Lei N° 1.455, de 7 de abril de 1976, para efeitos de aplicação e julgamento da pena de perdimento estabelecida neste artigo. (Redação dada pela Lei n° 11.732, de 2008)</h4>
+ <p><del></p>
+ <h3>Art. 24 (Revogado pela Lei n° 11.732, de 2008)</del></h3>
+ <h3>Art. 25. O ato de criação de ZPE já autorizada até 13 de outubro de 1994 caducará se até 31 de dezembro de 2015 a administradora da ZPE não tiver iniciado, sem motivo justificado, as obras de implantação. (Redação dada pela Lei n° 12.767, de 2012)</h3>
+ <h3>Art. 26. (VETADO)</h3>
+ <h3>Art. 27. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 28. Revogam-se o Decreto-Lei N° 2.452, de 29 de julho de 1988 , as Leis n os 8.396, de 2 de janeiro de 1992 , e 8.924, de 29 de julho de 1994 , o inciso II do § 2º do art. 14 da Medida Provisória Nº 2.158-35, de 24 de agosto de 2001 , e o inciso XVI do caput do art. 88 da Lei N° 9.430, de 27 de dezembro de 1996.</h3>
+ <p>Brasília, 20 de julho de 2007; 186º da Independência e 119º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Celso Luiz Nunes Amorim</p>
+ <p>José Antonio Dias Toffoli</p>
+ <p>Este texto não substitui o publicado no DOU de 23.7.2007</p>
+ <p>Regulamento(Vide Lei n° 14.184, de</p>
+ <p>Lei Complementar nº 214, de 2025)Produção de efeitos | Dispõe sobre o regime tributário, cambial e administrativo das Zonas de Processamento de Exportação, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/L11508compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

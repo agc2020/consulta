@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.534, DE 25 DE OUTUBRO DE 2007 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2007" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.534, DE 25 DE OUTUBRO DE 2007</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:23:49 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/L11534.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 6.227 caracteres | espelho: 8.438 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.534, DE 25 DE OUTUBRO DE 2007.</p>
+ <p>Dispõe sobre a criação de Escolas Técnicas e Agrotécnicas Federais e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Ficam criadas, como entidades de natureza autárquica, vinculadas ao Ministério da Educação, nos termos da Lei N° 3.552, de 16 de fevereiro de 1959 , as Escolas Técnicas Federais:</h3>
+ <h5>I – do Acre, com sede na cidade de Rio Branco;</h5>
+ <h5>II – do Amapá, com sede na cidade de Macapá;</h5>
+ <h5>III – de Mato Grosso do Sul, com sede na cidade de Campo Grande;</h5>
+ <h5>IV – de Brasília, no Distrito Federal; e</h5>
+ <h5>V – de Canoas, no Rio Grande do Sul.</h5>
+ <h3>Art. 2º Ficam criadas, como entidades de natureza autárquica, vinculadas ao Ministério da Educação, nos termos da Lei N° 8.731, de 16 de novembro de 1993 , as Escolas Agrotécnicas Federais:</h3>
+ <h5>I – de Marabá – PA;</h5>
+ <h5>II – de Nova Andradina – MS; e</h5>
+ <h5>III – de São Raimundo das Mangabeiras – MA.</h5>
+ <h3>Art. 3º A Escola Técnica Federal de Porto Velho - RO, criada nos termos do art. 3º da Lei N° 8.670, de 30 de junho de 1993 , passa a denominar-se Escola Técnica Federal de Rondônia, com sede no Município de Porto Velho, constituindo-se em entidade de natureza autárquica vinculada ao Ministério da Educação, em conformidade com a Lei N° 3.552, de 16 de fevereiro de 1959.</h3>
+ <h3>Art. 4º Ficam criados, na forma dos Anexos I, II, III e IV desta Lei, 450 (quatrocentos e cinqüenta) cargos de professor de 1º e 2º graus; 360 (trezentos e sessenta) cargos de técnico-administrativo em educação de nível intermediário (níveis C e D); 225 (duzentos e vinte e cinco) cargos de técnico-administrativo em educação de nível superior (nível E), bem como 09 (nove) cargos de direção - código CD-2; 27 (vinte e sete) cargos de direção - código CD-3; 54 (cinqüenta e quatro) cargos de direção - código CD-4; 45 (quarenta e cinco) funções gratificadas - código FG-1 e 90 (noventa) funções gratificadas - código FG-2.</h3>
+ <h4>Parágrafo único. O provimento dos Cargos em Comissão e das Funções de Confiança de que trata o caput deste artigo fica condicionado à prévia verificação e declaração do ordenador de despesa quanto à existência de disponibilidade orçamentária e ao cumprimento do disposto no § 1º do art. 169 da Constituição Federal.</h4>
+ <h3>Art. 5º As instituições de educação profissional e tecnológica de que trata esta Lei serão implantadas gradativamente, bem como os seus respectivos cargos e funções de confiança, dependendo da existência de instalações adequadas e de recursos financeiros necessários ao respectivo funcionamento.</h3>
+ <h3>Art. 6º As despesas decorrentes da aplicação desta Lei correrão por conta dos recursos orçamentários destinados ao Ministério da Educação.</h3>
+ <h3>Art. 7º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 25 de outubro de 2007; 186º da Independência e 119º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 26.10.2007</p>
+ <h3>QUADRO DE PESSOAL EFETIVO PARA AS NOVAS ESCOLAS TÉCNICAS FEDERAIS E</h3>
+ <h3>ESCOLAS AGROTÉCNICAS FEDERAIS</h3>
+ <h3>INSTITUIÇÃO</h3>
+ <h3>TÉCNICOS-ADMINISTRATIVOS</h3>
+ <h3>NÍVEL MÉDIO</h3>
+ <h3>NÍVEL SUPERIOR</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DO ACRE</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DO AMAPÁ</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE MATO GROSSO DO SUL</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE RONDÔNIA</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE BRASÍLIA – DF</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE</h3>
+ <h3>CANOAS – RS</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL DE MARABÁ – PA</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL DE NOVA ANDRADINA – MS</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL DE SÃO RAIMUNDO DAS MANGABEIRAS – MA</h3>
+ <h3>QUADRO DE CARGOS DE DIREÇÃO E FUNÇÕES GRATIFICADAS PARA AS NOVAS</h3>
+ <h3>ESCOLAS TÉCNICAS FEDERAIS E ESCOLAS AGROTÉCNICAS FEDERAIS</h3>
+ <h3>INSTITUIÇÃO</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DO ACRE</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DO AMAPÁ</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE MATO GROSSO DO SUL</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE RONDÔNIA</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE BRASÍLIA – DF</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE CANOAS – RS</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL DE MARABÁ – PA</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL DE NOVA ANDRADINA – MS</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL DE SÃO RAIMUNDO DAS MANGABEIRAS – MA</h3>
+ <h3>DETALHAMENTO DO QUADRO DE PESSOAL TÉCNICO-ADMINISTRATIVO</h3>
+ <h3>PARA AS NOVAS ESCOLAS TÉCNICAS FEDERAIS</h3>
+ <h3>CARGOS DE NÍVEL SUPERIOR</h3>
+ <h3>QUANTITATIVO POR UNIDADE</h3>
+ <h3>QUANTITATIVO PARA O GRUPO</h3>
+ <h3>ADMINISTRADOR</h3>
+ <h3>ANALISTA DE TECNOLOGIA DA INFORMAÇÃO</h3>
+ <h3>ASSISTENTE SOCIAL</h3>
+ <h3>BIBLIOTECÁRIO–DOCUMENTALISTA</h3>
+ <h3>ENGENHEIRO/ÁREA</h3>
+ <h3>MÉDICO/ÁREA</h3>
+ <h3>PEDAGOGO/ÁREA</h3>
+ <h3>PROGRAMADOR VISUAL</h3>
+ <h3>PSICÓLOGO/ÁREA</h3>
+ <h3>TÉCNICO EM ASSUNTOS EDUCACIONAIS</h3>
+ <h3>CARGOS DE NÍVEL INTERMEDIÁRIO</h3>
+ <h3>QUANTITATIVO POR UNIDADE</h3>
+ <h3>QUANTITATIVO PARA O GRUPO</h3>
+ <h3>ASSISTENTE EM ADMINISTRAÇÃO</h3>
+ <h3>TÉCNICO EM ENFERMAGEM</h3>
+ <h3>TÉCNICO DE LABORATÓRIO/ÁREA</h3>
+ <h3>TÉCNICO DE TECNOLOGIA DA INFORMAÇÃO</h3>
+ <h3>DETALHAMENTO DO QUADRO DE PESSOAL TÉCNICO-ADMINISTRATIVO</h3>
+ <h3>PARA AS NOVAS ESCOLAS AGROTÉCNICAS FEDERAIS</h3>
+ <h3>CARGOS DE NÍVEL SUPERIOR</h3>
+ <h3>QUANTITATIVO POR UNIDADE</h3>
+ <h3>QUANTITATIVO PARA O GRUPO</h3>
+ <h3>ADMINISTRADOR</h3>
+ <h3>ANALISTA DE TECNOLOGIA DA INFORMAÇÃO</h3>
+ <h3>ASSISTENTE SOCIAL</h3>
+ <h3>BIBLIOTECÁRIO–DOCUMENTALISTA</h3>
+ <h3>ENGENHEIRO/ÁREA</h3>
+ <h3>MÉDICO/ÁREA</h3>
+ <h3>MÉDICO-VETERINÁRIO</h3>
+ <h3>NUTRICIONISTA/HABILITAÇÃO</h3>
+ <h3>PEDAGOGO/ÁREA</h3>
+ <h3>PSICÓLOGO/ÁREA</h3>
+ <h3>TÉCNICO EM ASSUNTOS EDUCACIONAIS</h3>
+ <h3>ZOOTECNISTA</h3>
+ <h3>CARGOS DE NÍVEL INTERMEDIÁRIO</h3>
+ <h3>QUANTITATIVO POR UNIDADE</h3>
+ <h3>QUANTITATIVO PARA O GRUPO</h3>
+ <h3>ASSISTENTE EM ADMINISTRAÇÃO</h3>
+ <h3>ASSISTENTE DE ALUNOS</h3>
+ <h3>TÉCNICO EM AGROPECUÁRIA</h3>
+ <h3>TÉCNICO EM ALIMENTOS E LATICÍNIOS</h3>
+ <h3>TÉCNICO EM CONTABILIDADE</h3>
+ <h3>TÉCNICO EM ECONOMIA DOMÉSTICA</h3>
+ <h3>TÉCNICO EM ENFERMAGEM</h3>
+ <h3>TÉCNICO DE LABORATÓRIO/ÁREA</h3>
+ <h3>TÉCNICO DE TECNOLOGIA DA INFORMAÇÃO</h3>
+ <p>Dispõe sobre a criação de</p>
+ <p>Escolas Técnicas e Agrotécnicas Federais e dá outras providências.</p>
+ <h3>INSTITUIÇÃO | DOCENTES | TÉCNICOS-ADMINISTRATIVOS</h3>
+ <h3>NÍVEL MÉDIO | NÍVEL SUPERIOR |</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL</h3>
+ <h3>DO ACRE | 50 | 40</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL</h3>
+ <h3>DO AMAPÁ | 50 | 40</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL</h3>
+ <h3>DE MATO GROSSO DO SUL | 50 | 40</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL</h3>
+ <h3>DE RONDÔNIA | 50 | 40</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL</h3>
+ <h3>DE BRASÍLIA – DF | 50 | 40</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL</h3>
+ <h3>CANOAS – RS | 50 | 40</h3>
+ <h3>ESCOLA AGROTÉCNICA</h3>
+ <h3>FEDERAL DE MARABÁ – PA | 50 | 40</h3>
+ <h3>ESCOLA AGROTÉCNICA</h3>
+ <h3>FEDERAL DE NOVA ANDRADINA – MS | 50 | 40</h3>
+ <h3>ESCOLA AGROTÉCNICA</h3>
+ <h3>FEDERAL DE SÃO RAIMUNDO DAS MANGABEIRAS – MA | 50 | 40</h3>
+ <h3>TOTAIS | 450 | 360</h3>
+ <p>INSTITUIÇÃO | CD - 2 | CD - 3 | CD - 4 | FG - 1 | FG - 2 | Total</p>
+ <p>--- | --- | --- | --- | --- | --- | ---</p>
+ <h3>ESCOLA TÉCNICA FEDERAL DO</h3>
+ <h3>ACRE | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DO</h3>
+ <h3>AMAPÁ | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE</h3>
+ <h3>MATO GROSSO DO SUL | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE</h3>
+ <h3>RONDÔNIA | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE</h3>
+ <h3>BRASÍLIA – DF | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA TÉCNICA FEDERAL DE</h3>
+ <h3>CANOAS – RS | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL</h3>
+ <h3>DE MARABÁ – PA | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL</h3>
+ <h3>DE NOVA ANDRADINA – MS | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>ESCOLA AGROTÉCNICA FEDERAL</h3>
+ <h3>DE SÃO RAIMUNDO DAS MANGABEIRAS – MA | 01 | 03 | 06 | 05 | 10 | 25</h3>
+ <h3>TOTAIS | 09 | 27 | 54 | 45 | 90 | 225</h3>
+ <p>CARGOS DE NÍVEL SUPERIOR(NÍVEL E) | QUANTITATIVO POR UNIDADE | QUANTITATIVO PARA O GRUPO</p>
+ <h3>ADMINISTRADOR | 03 | 18</h3>
+ <h3>ANALISTA DE TECNOLOGIA</h3>
+ <h3>DA INFORMAÇÃO | 03 | 18</h3>
+ <h3>ASSISTENTE SOCIAL | 01 | 06</h3>
+ <h3>BIBLIOTECÁRIO–DOCUMENTALISTA | 03 | 18</h3>
+ <h3>CONTADOR | 01 | 06</h3>
+ <h3>ENGENHEIRO/ÁREA | 02 | 12</h3>
+ <h3>JORNALISTA | 01 | 06</h3>
+ <h3>MÉDICO/ÁREA | 02 | 12</h3>
+ <h3>PEDAGOGO/ÁREA | 03 | 18</h3>
+ <h3>PROGRAMADOR VISUAL | 01 | 06</h3>
+ <h3>PSICÓLOGO/ÁREA | 01 | 06</h3>
+ <h3>TÉCNICO EM ASSUNTOS</h3>
+ <h3>EDUCACIONAIS | 04 | 24</h3>
+ <h3>TOTAL | 25 | 150</h3>
+ <p>CARGOS DE NÍVEL INTERMEDIÁRIO(NÍVEIS C e D) | QUANTITATIVO POR UNIDADE | QUANTITATIVO PARA O GRUPO</p>
+ <h3>ASSISTENTE EM ADMINISTRAÇÃO | 28 | 168</h3>
+ <h3>TÉCNICO EM ENFERMAGEM | 02 | 12</h3>
+ <h3>TÉCNICO DE LABORATÓRIO/ÁREA | 07 | 42</h3>
+ <h3>TÉCNICO DE TECNOLOGIA DA INFORMAÇÃO | 03 | 18</h3>
+ <h3>TOTAL | 40 | 240</h3>
+ <p>CARGOS DE NÍVEL SUPERIOR(NÍVEL E) | QUANTITATIVO POR UNIDADE | QUANTITATIVO PARA O GRUPO</p>
+ <h3>ADMINISTRADOR | 02 | 06</h3>
+ <h3>ANALISTA DE TECNOLOGIA DA INFORMAÇÃO | 02 | 06</h3>
+ <h3>ASSISTENTE SOCIAL | 01 | 03</h3>
+ <h3>BIBLIOTECÁRIO–DOCUMENTALISTA | 03 | 09</h3>
+ <h3>CONTADOR | 01 | 03</h3>
+ <h3>ENGENHEIRO/ÁREA | 02 | 06</h3>
+ <h3>JORNALISTA | 01 | 03</h3>
+ <h3>MÉDICO/ÁREA | 02 | 06</h3>
+ <h3>MÉDICO-VETERINÁRIO | 01 | 03</h3>
+ <h3>NUTRICIONISTA/HABILITAÇÃO | 01 | 03</h3>
+ <h3>ODONTÓLOGO | 01 | 03</h3>
+ <h3>PEDAGOGO/ÁREA | 03 | 09</h3>
+ <h3>PSICÓLOGO/ÁREA | 01 | 03</h3>
+ <h3>TÉCNICO EM ASSUNTOS EDUCACIONAIS | 03 | 09</h3>
+ <h3>ZOOTECNISTA | 01 | 03</h3>
+ <h3>TOTAL | 25 | 75</h3>
+ <p>CARGOS DE NÍVEL INTERMEDIÁRIO(NÍVEIS C e D) | QUANTITATIVO POR UNIDADE | QUANTITATIVO PARA O GRUPO</p>
+ <h3>ASSISTENTE EM ADMINISTRAÇÃO | 22 | 66</h3>
+ <h3>ASSISTENTE DE ALUNOS | 03 | 09</h3>
+ <h3>TÉCNICO EM AGROPECUÁRIA | 06 | 18</h3>
+ <h3>TÉCNICO EM ALIMENTOS E LATICÍNIOS | 02 | 06</h3>
+ <h3>TÉCNICO EM CONTABILIDADE | 01 | 03</h3>
+ <h3>TÉCNICO EM ECONOMIA DOMÉSTICA | 01 | 03</h3>
+ <h3>TÉCNICO EM ENFERMAGEM | 01 | 03</h3>
+ <h3>TÉCNICO DE LABORATÓRIO/ÁREA | 02 | 06</h3>
+ <h3>TÉCNICO DE TECNOLOGIA DA INFORMAÇÃO | 02 | 06</h3>
+ <h3>TOTAL | 40 | 120</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/L11534.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

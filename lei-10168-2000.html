@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.168, DE 29 DE DEZEMBRO DE 2000 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2000" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.168, DE 29 DE DEZEMBRO DE 2000</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:33:07 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L10168.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 8.499 caracteres | espelho: 8.553 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.168, DE 29 DE DEZEMBRO DE 2000. Produção de efeito</p>
+ <p>Mensagem de Veto nº 2.112</p>
+ <p>Institui contribuição de intervenção de domínio econômico destinada a financiar o Programa de Estímulo à Interação Universidade-Empresa para o Apoio à Inovação e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica instituído o Programa de Estímulo à Interação Universidade-Empresa para o Apoio à Inovação, cujo objetivo principal é estimular o desenvolvimento tecnológico brasileiro, mediante programas de pesquisa científica e tecnológica cooperativa entre universidades, centros de pesquisa e o setor produtivo.</h3>
+ <h3>Art. 2º Para fins de atendimento ao Programa de que trata o artigo anterior, fica instituída contribuição de intervenção no domínio econômico, devida pela pessoa jurídica detentora de licença de uso ou adquirente de conhecimentos tecnológicos, bem como aquela signatária de contratos que impliquem transferência de tecnologia, firmados com residentes ou domiciliados no exterior. (Vide Decreto nº 6.233, de 2007) (Vide Medida Provisória nº 510, de 2010)</h3>
+ <h4>§ 1º Consideram-se, para fins desta Lei, contratos de transferência de tecnologia os relativos à exploração de patentes ou de uso de marcas e os de fornecimento de tecnologia e prestação de assistência técnica.</h4>
+ <h4>§ 1º -A. A contribuição de que trata este artigo não incide sobre a remuneração pela licença de uso ou de direitos de comercialização ou distribuição de programa de computador, salvo quando envolverem a transferência da correspondente tecnologia. (Incluído pela Lei n° 11.452, de 2007)</h4>
+ <h4>§ 2º A contribuição incidirá sobre os valores pagos, creditados, entregues, empregados ou remetidos, a cada mês, a residentes ou domiciliados no exterior, a título de remuneração decorrente das obrigações indicadas no caput deste artigo.</h4>
+ <h4>§ 2º A partir de 1º de janeiro de 2002, a contribuição de que trata o caput deste artigo passa a ser devida também pelas pessoas jurídicas signatárias de contratos que tenham por objeto serviços técnicos e de assistência administrativa e semelhantes a serem prestados por residentes ou domiciliados no exterior, bem assim pelas pessoas jurídicas que pagarem, creditarem, entregarem, empregarem ou remeterem royalties , a qualquer título, a beneficiários residentes ou domiciliados no exterior. (Redação da pela Lei n° 10.332, de 2001)</h4>
+ <h4>§ 3º A alíquota da contribuição será de dez por cento.</h4>
+ <h4>§ 3º A contribuição incidirá sobre os valores pagos, creditados, entregues, empregados ou remetidos, a cada mês, a residentes ou domiciliados no exterior, a título de remuneração decorrente das obrigações indicadas no caput e no § 2º deste artigo. (Redação da pela Lei n° 10.332, de 2001)</h4>
+ <h4>§ 4º O pagamento da contribuição será efetuado até o último dia útil da quinzena subseqüente ao mês de ocorrência do fato gerador.</h4>
+ <h4>§ 4º A alíquota da contribuição será de 10% (dez por cento). (Redação da pela Lei n° 10.332, de 2001)</h4>
+ <h4>§ 5º O pagamento da contribuição será efetuado até o último dia útil da quinzena subseqüente ao mês de ocorrência do fato gerador. (Incluído pela Lei n° 10.332, de 2001)</h4>
+ <h4>§ 6º Não se aplica a Contribuição de que trata o caput quando o contratante for órgão ou entidade da administração direta, autárquica e fundacional da União, dos Estados, do Distrito Federal e dos Municípios, e o contratado for instituição de ensino ou pesquisa situada no exterior, para o oferecimento de curso ou atividade de treinamento ou qualificação profissional a servidores civis ou militares do respectivo ente estatal, órgão ou entidade. (Incluído pela Medida Provisória nº 510, de 2010) (Produção de efeito)</h4>
+ <h4>§ 6º Não se aplica a Contribuição de que trata o caput quando o contratante for órgão ou entidade da administração direta, autárquica e fundacional da União, dos Estados, do Distrito Federal e dos Municípios, e o contratado for instituição de ensino ou pesquisa situada no exterior, para o oferecimento de curso ou atividade de treinamento ou qualificação profissional a servidores civis ou militares do respectivo ente estatal, órgão ou entidade. (Incluído pela Lei n° 12.402, de 2011) (Produção de efeito)</h4>
+ <h3>Art. 2º -A. Fica reduzida para 15% (quinze por cento), a partir de 1º de janeiro de 2002, a alíquota do imposto de renda na fonte incidente sobre as importâncias pagas, creditadas, entregues, empregadas ou remetidas ao exterior a título de remuneração de serviços de assistência administrativa e semelhantes. (Incluído pela Lei n° 10.332, de 2001)</h3>
+ <h3>Art. 2º -B. O imposto sobre a renda na fonte não incidirá sobre as importâncias pagas, creditadas, entregues, empregadas ou remetidas ao exterior por órgãos ou entidades da administração direta, autárquica e fundacional da União, dos Estados, do Distrito Federal e dos Municípios, em razão de despesas contratuais com instituições de ensino e pesquisa relacionados a participação em cursos ou atividades de treinamento ou qualificação profissional de servidores civis ou militares do respectivo ente estatal, órgão ou entidade. (Incluído pela Medida Provisória nº 510, de 2010) (Produção de efeito)</h3>
+ <h3>Art. 2º -B. O imposto sobre a renda na fonte não incidirá sobre as importâncias pagas, creditadas, entregues, empregadas ou remetidas ao exterior por órgãos ou entidades da administração direta, autárquica e fundacional da União, dos Estados, do Distrito Federal e dos Municípios, em razão de despesas contratuais com instituições de ensino e pesquisa relacionadas à participação em cursos ou atividades de treinamento ou qualificação profissional de servidores civis ou militares do respectivo ente estatal, órgão ou entidade. (Incluído pela Lei n° 12.402, de 2011) (Produção de efeito)</h3>
+ <h3>Art. 3º Compete à Secretaria da Receita Federal a administração e a fiscalização da contribuição de que trata esta Lei.</h3>
+ <h4>Parágrafo único. A contribuição de que trata esta Lei sujeita-se às normas relativas ao processo administrativo fiscal de determinação e exigência de créditos tributários federais, previstas no Decreto Nº 70.235, de 6 de março de 1972 , e alterações posteriores, bem como, subsidiariamente e no que couber, às disposições da legislação do imposto de renda, especialmente quanto a penalidades e demais acréscimos aplicáveis.</h4>
+ <h3>Art. 4º A contribuição de que trata o art. 2º será recolhida ao Tesouro Nacional e destinada ao Fundo Nacional de Desenvolvimento Científico e Tecnológico – FNDCT, criado pelo Decreto-Lei N° 719, de 31 de julho de 1969 , e restabelecido pela Lei N° 8.172, de 18 de janeiro de 1991 .</h3>
+ <h4>§ 1º Os recursos destinados ao FNDCT serão alocados em categoria de programação específica e administrados conforme o disposto no regulamento.</h4>
+ <h4>§ 2º Para fins do disposto no § 5º do art. 165 da Constituição Federa l, o Poder Executivo incluirá na proposta de lei orçamentária anual os recursos de que trata o caput deste artigo.</h4>
+ <h3>Art. 5º Será constituído, no âmbito do Ministério da Ciência e Tecnologia, um Comitê Gestor com a finalidade de coordenar as atividades do Programa de Estímulo à Interação Universidade-Empresa para o Apoio à Inovação, cabendo-lhe definir as diretrizes gerais e o plano anual de investimentos, acompanhar a implementação das ações e avaliar anualmente os resultados alcançados. (Vide Medida Provisória nº 2.062-63 de 	2001) (Vide Medida Provisória nº 2.159-70 de 	2001)</h3>
+ <h4>§ 1º ( VETADO )</h4>
+ <h4>§ 2º A participação no Comitê Gestor não será remunerada.</h4>
+ <h4>§ 3º O Ministério da Ciência e Tecnologia prestará ao Comitê Gestor apoio técnico, administrativo e financeiro necessários ao seu funcionamento.</h4>
+ <h3>Art. 6º Do total dos recursos a que se refere o art. 2º , trinta por cento, no mínimo, serão aplicados em programas de fomento à capacitação tecnológica e ao amparo à pesquisa científica e ao desenvolvimento tecnológico nas regiões Norte, Nordeste e Centro-Oeste.</h3>
+ <h3>Art. 7º Não se aplica a este Fundo o disposto na Lei N° 9.530, de 10 de dezembro de 1997 .</h3>
+ <h3>Art. 8º Esta Lei entra em vigor na data de sua publicação, aplicando-se aos fatos geradores ocorridos a partir de 1º de janeiro de 2001.</h3>
+ <p>Brasília, 29 de dezembro de 2000; 179º da Independência e 112º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Amaury Guilherme Bier</p>
+ <p>Luciano Oliva Patrício</p>
+ <p>Banjamin Benzaquen Sicsú</p>
+ <p>Ronaldo Mota Sardenberg</p>
+ <p>Este texto não substitui o publicado no DOU de 30.12.2000 (Edição Extra)</p>
+ <p>Produção de efeitoMensagem de Veto nº 2.112 | Institui contribuição de intervenção de domínio econômico destinada a financiar o Programa de</p>
+ <p>Estímulo à Interação Universidade-Empresa para o Apoio à Inovação e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L10168.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

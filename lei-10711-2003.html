@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.711, DE 5 DE AGOSTO DE 2003 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2003" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.711, DE 5 DE AGOSTO DE 2003</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:49:58 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.711.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 27.811 caracteres | espelho: 27.445 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.711, DE 5 DE AGOSTO DE 2003.</p>
+ <p>(Vigência) Dispõe sobre o Sistema Nacional de Sementes e Mudas e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º O Sistema Nacional de Sementes e Mudas, instituído nos termos desta Lei e de seu regulamento, objetiva garantir a identidade e a qualidade do material de multiplicação e de reprodução vegetal produzido, comercializado e utilizado em todo o território nacional.</h3>
+ <h3>Art. 2º Para os efeitos desta Lei, entende-se por:</h3>
+ <h5>I – amostra: porção representativa de um lote de sementes ou de mudas, suficientemente homogênea e corretamente identificada, obtida por método indicado pelo Ministério da Agricultura, Pecuária e Abastecimento - Mapa;</h5>
+ <h5>II – amostra oficial: amostra retirada por fiscal, para fins de análise de fiscalização;</h5>
+ <h5>III - amostragem: ato ou processo de obtenção de porção de sementes ou de mudas, definido no regulamento desta Lei, para constituir amostra representativa de campo ou de lote definido;</h5>
+ <h5>IV - amostrador: pessoa física credenciada pelo Mapa para execução de amostragem;</h5>
+ <h5>V - armazenador: pessoa física ou jurídica que armazena sementes para si ou para terceiros;</h5>
+ <h5>VI - beneficiamento: operação efetuada mediante meios físicos, químicos ou mecânicos, com o objetivo de se aprimorar a qualidade de um lote de sementes;</h5>
+ <h5>VII - beneficiador: pessoa física ou jurídica que presta serviços de beneficiamento de sementes ou mudas para terceiros, assistida por responsável técnico;</h5>
+ <h5>VIII - categoria: unidade de classificação, dentro de uma classe de semente, que considera a origem genética, a qualidade e o número de gerações, quando for o caso;</h5>
+ <h5>IX - certificação de sementes ou mudas: processo de produção de sementes ou mudas, executado mediante controle de qualidade em todas as etapas do seu ciclo, incluindo o conhecimento da origem genética e o controle de gerações;</h5>
+ <h5>X - certificado de sementes ou mudas: documento emitido pelo certificador, comprovante de que o lote de sementes ou de mudas foi produzido de acordo com as normas e padrões de certificação estabelecidos;</h5>
+ <h5>XI - certificador: o Mapa ou pessoa jurídica por este credenciada para executar a certificação de sementes e mudas;</h5>
+ <h5>XII - classe: grupo de identificação da semente de acordo com o processo de produção;</h5>
+ <h5>XIII - comerciante: pessoa física ou jurídica que exerce o comércio de sementes ou mudas;</h5>
+ <h5>XIV - comércio: o ato de anunciar, expor à venda, ofertar, vender, consignar, reembalar, importar ou exportar sementes ou mudas;</h5>
+ <h5>XV - cultivar: a variedade de qualquer gênero ou espécie vegetal superior que seja claramente distinguível de outras cultivares conhecidas, por margem mínima de descritores, por sua denominação própria, que seja homogênea e estável quanto aos descritores através de gerações sucessivas e seja de espécie passível de uso pelo complexo agroflorestal, descrita em publicação especializada disponível e acessível ao público, bem como a linhagem componente de híbridos;</h5>
+ <h5>XVI - cultivar local, tradicional ou crioula: variedade desenvolvida, adaptada ou produzida por agricultores familiares, assentados da reforma agrária ou indígenas, com características fenotípicas bem determinadas e reconhecidas pelas respectivas comunidades e que, a critério do Mapa, considerados também os descritores socioculturais e ambientais, não se caracterizem como substancialmente semelhantes às cultivares comerciais;</h5>
+ <h5>XVII - detentor de semente: a pessoa física ou jurídica que estiver na posse da semente;</h5>
+ <h5>XVIII - fiscalização: exercício do poder de polícia, visando coibir atos em desacordo com os dispositivos desta Lei e de sua regulamentação, realizado por Fiscal Federal Agropecuário do Mapa ou por funcionário da administração estadual, municipal ou do Distrito Federal, capacitados para o exercício da fiscalização e habilitados pelos respectivos conselhos de fiscalização do exercício profissional;</h5>
+ <h5>XIX - híbrido: o resultado de um ou mais cruzamentos, sob condições controladas, entre progenitores de constituição genética distinta, estável e de pureza varietal definida;</h5>
+ <h5>XX - identidade: conjunto de informações necessárias à identificação de sementes ou mudas, incluindo a identidade genética;</h5>
+ <h5>XXI - identidade genética: conjunto de caracteres genotípicos e fenotípicos da cultivar que a diferencia de outras;</h5>
+ <h5>XXII - introdutor: pessoa física ou jurídica que introduz pela primeira vez, no País, uma cultivar desenvolvida em outro país;</h5>
+ <h5>XXIII - jardim clonal: conjunto de plantas, matrizes ou básicas, destinado a fornecer material de multiplicação de determinada cultivar;</h5>
+ <h5>XXIV - laboratório de análise de sementes e mudas: unidade constituída e credenciada especificamente para proceder a análise de sementes e expedir o respectivo boletim ou certificado de análise, assistida por responsável técnico;</h5>
+ <h5>XXV - mantenedor: pessoa física ou jurídica que se responsabiliza por tornar disponível um estoque mínimo de material de propagação de uma cultivar inscrita no Registro Nacional de Cultivares - RNC, conservando suas características de identidade genética e pureza varietal;</h5>
+ <h5>XXVI - muda: material de propagação vegetal de qualquer gênero, espécie ou cultivar, proveniente de reprodução sexuada ou assexuada, que tenha finalidade específica de plantio;</h5>
+ <h5>XXVII - muda certificada: muda que tenha sido submetida ao processo de certificação, proveniente de planta básica ou de planta matriz;</h5>
+ <h5>XXVIII - obtentor: pessoa física ou jurídica que obtiver cultivar, nova cultivar ou cultivar essencialmente derivada;</h5>
+ <h5>XXIX - planta básica: planta obtida a partir de processo de melhoramento, sob a responsabilidade e controle direto de seu obtentor ou introdutor, mantidas as suas características de identidade e pureza genéticas;</h5>
+ <h5>XXX - planta matriz: planta fornecedora de material de propagação que mantém as características da Planta Básica da qual seja proveniente;</h5>
+ <h5>XXXI - produção: o processo de propagação de sementes ou mudas;</h5>
+ <h5>XXXII - produtor de muda: pessoa física ou jurídica que, assistida por responsável técnico, produz muda destinada à comercialização;</h5>
+ <h5>XXXIII - produtor de semente: pessoa física ou jurídica que, assistida por responsável técnico, produz semente destinada à comercialização;</h5>
+ <h5>XXXIV - propagação: a reprodução, por sementes propriamente ditas, ou a multiplicação, por mudas e demais estruturas vegetais, ou a concomitância dessas ações;</h5>
+ <h5>XXXV - qualidade: conjunto de atributos inerentes a sementes ou a mudas, que permite comprovar a origem genética e o estado físico, fisiológico e fitossanitário delas;</h5>
+ <h5>XXXVI - reembalador: pessoa física ou jurídica que, assistida por responsável técnico, reembala sementes;</h5>
+ <h5>XXXVII - responsável técnico: engenheiro agrônomo ou engenheiro florestal, registrado no respectivo Conselho Regional de Engenharia, Arquitetura e Agronomia - Crea, a quem compete a responsabilidade técnica pela produção, beneficiamento, reembalagem ou análise de sementes em todas as suas fases, na sua respectiva área de habilitação profissional;</h5>
+ <h5>XXXVIII - semente: material de reprodução vegetal de qualquer gênero, espécie ou cultivar, proveniente de reprodução sexuada ou assexuada, que tenha finalidade específica de semeadura;</h5>
+ <h5>XXXIX - semente genética: material de reprodução obtido a partir de processo de melhoramento de plantas, sob a responsabilidade e controle direto do seu obtentor ou introdutor, mantidas as suas características de identidade e pureza genéticas;</h5>
+ <h5>XL - semente básica: material obtido da reprodução de semente genética, realizada de forma a garantir sua identidade genética e sua pureza varietal;</h5>
+ <h5>XLI - semente certificada de primeira geração: material de reprodução vegetal resultante da reprodução de semente básica ou de semente genética;</h5>
+ <h5>XLII - semente certificada de segunda geração: material de reprodução vegetal resultante da reprodução de semente genética, de semente básica ou de semente certificada de primeira geração;</h5>
+ <h5>XLIII - semente para uso próprio: quantidade de material de reprodução vegetal guardada pelo agricultor, a cada safra, para semeadura ou plantio exclusivamente na safra seguinte e em sua propriedade ou outra cuja posse detenha, observados, para cálculo da quantidade, os parâmetros registrados para a cultivar no Registro Nacional de Cultivares - RNC; (Vide Medida provisória nº 223, de 2004)</h5>
+ <h5>XLIV - termo de conformidade: documento emitido pelo responsável técnico, com o objetivo de atestar que a semente ou a muda foi produzida de acordo com as normas e padrões estabelecidos pelo Mapa;</h5>
+ <h5>XLV - utilização de sementes ou mudas: uso de vegetais ou de suas partes com o objetivo de semeadura ou plantio;</h5>
+ <h5>XLVI - usuário de sementes ou mudas: aquele que utiliza sementes ou mudas com objetivo de semeadura ou plantio;</h5>
+ <h5>XLVII - valor de cultivo e uso - VCU: valor intrínseco de combinação das características agronômicas da cultivar com as suas propriedades de uso em atividades agrícolas, industriais, comerciais ou consumo in natura .</h5>
+ <h4>Parágrafo único. Aplicam-se, também, no que couber e no que não dispuser em contrário esta Lei, os conceitos constantes da Lei N° 9.456, de 25 de abril de 1997 .</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO SISTEMA NACIONAL DE SEMENTES E MUDAS</h3>
+ <h3>Art. 3º O Sistema Nacional de Sementes e Mudas - SNSM compreende as seguintes atividades:</h3>
+ <h5>I - registro nacional de sementes e mudas - Renasem;</h5>
+ <h5>II - registro nacional de cultivares - RNC;</h5>
+ <h5>III - produção de sementes e mudas;</h5>
+ <h5>IV - certificação de sementes e mudas;</h5>
+ <h5>V - análise de sementes e mudas;</h5>
+ <h5>VI - comercialização de sementes e mudas;</h5>
+ <h5>VII - fiscalização da produção, do beneficiamento, da amostragem, da análise, certificação, do armazenamento, do transporte e da comercialização de sementes e mudas;</h5>
+ <h5>VIII - utilização de sementes e mudas.</h5>
+ <h3>Art. 4º Compete ao Mapa promover, coordenar, normatizar, supervisionar, auditar e fiscalizar as ações decorrentes desta Lei e de seu regulamento.</h3>
+ <h3>Art. 5º Compete aos Estados e ao Distrito Federal elaborar normas e procedimentos complementares relativos à produção de sementes e mudas, bem como exercer a fiscalização do comércio estadual.</h3>
+ <h4>Parágrafo único. A fiscalização do comércio estadual de sementes e mudas poderá ser exercida pelo Mapa, quando solicitado pela unidade da Federação.</h4>
+ <h3>Art. 6º Compete privativamente ao Mapa a fiscalização do comércio interestadual e internacional de sementes e mudas.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO REGISTRO NACIONAL DE SEMENTES E MUDAS</h3>
+ <h3>Art. 7º Fica instituído, no Mapa, o Registro Nacional de Sementes e Mudas - Renasem.</h3>
+ <h3>Art. 8º As pessoas físicas e jurídicas que exerçam as atividades de produção, beneficiamento, embalagem, armazenamento, análise, comércio, importação e exportação de sementes e mudas ficam obrigadas à inscrição no Renasem.</h3>
+ <h4>§ 1º O Mapa credenciará, junto ao Renasem, pessoas físicas e jurídicas que atendam aos requisitos exigidos no regulamento desta Lei, para exercer as atividades de:</h4>
+ <h5>I - responsável técnico;</h5>
+ <h5>II - entidade de certificação de sementes e mudas;</h5>
+ <h5>III - certificador de sementes ou mudas de produção própria;</h5>
+ <h5>IV - laboratório de análise de sementes e de mudas;</h5>
+ <h5>V - amostrador de sementes e mudas.</h5>
+ <h4>§ 2º As pessoas físicas ou jurídicas que importem sementes ou mudas para uso próprio em sua propriedade, ou em propriedades de terceiros cuja posse detenham, ficam dispensadas da inscrição no Renasem, obedecidas as condições estabelecidas no regulamento desta Lei.</h4>
+ <h4>§ 3º Ficam isentos da inscrição no Renasem os agricultores familiares, os assentados da reforma agrária e os indígenas que multipliquem sementes ou mudas para distribuição, troca ou comercialização entre si.</h4>
+ <h3>Art. 9º Os serviços públicos decorrentes da inscrição ou do credenciamento no Renasem serão remunerados pelo regime de preços de serviços públicos específicos, cabendo ao Mapa fixar valores e formas de arrecadação para as atividades de:</h3>
+ <h5>I - produtor de sementes;</h5>
+ <h5>II - produtor de mudas;</h5>
+ <h5>III - beneficiador de sementes;</h5>
+ <h5>IV - reembalador de sementes;</h5>
+ <h5>V - armazenador de sementes;</h5>
+ <h5>VI - comerciante de sementes;</h5>
+ <h5>VII - comerciante de mudas;</h5>
+ <h5>VIII - certificador de sementes ou de mudas;</h5>
+ <h5>IX - laboratório de análise de sementes ou de mudas;</h5>
+ <h5>X - amostrador;</h5>
+ <h5>XI - responsável técnico.</h5>
+ <h4>Parágrafo único. A pessoa física ou jurídica que exercer mais de uma atividade pagará somente o valor referente à maior anuidade e à maior taxa de inscrição ou de credenciamento nas atividades que desenvolve.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO REGISTRO NACIONAL DE CULTIVARES</h3>
+ <h3>Art. 10. Fica instituído, no Mapa, o Registro Nacional de Cultivares - RNC e o Cadastro Nacional de Cultivares Registradas - CNCR.</h3>
+ <h4>Parágrafo único. O CNCR é o cadastro das cultivares registradas no RNC e de seus mantenedores.</h4>
+ <h3>Art. 11. A produção, o beneficiamento e a comercialização de sementes e de mudas ficam condicionados à prévia inscrição da respectiva cultivar no RNC.</h3>
+ <h4>§ 1º A inscrição da cultivar deverá ser única.</h4>
+ <h4>§ 2º A permanência da inscrição de uma cultivar, no RNC, fica condicionada à existência de pelo menos um mantenedor, excetuadas as cultivares cujo material de propagação dependa exclusivamente de importação.</h4>
+ <h4>§ 3º O Mapa poderá aceitar mais de um mantenedor da mesma cultivar inscrita no RNC, desde que comprove possuir condições técnicas para garantir a manutenção da cultivar.</h4>
+ <h4>§ 4º O mantenedor que, por qualquer motivo, deixar de fornecer material básico ou de assegurar as características da cultivar declaradas na ocasião de sua inscrição no RNC terá seu nome excluído do registro da cultivar no CNCR.</h4>
+ <h4>§ 5º Na hipótese de cultivar protegida, nos termos da Lei N° 9.456, de 25 de abril de 1997 , a inscrição deverá ser feita pelo obtentor ou por procurador legalmente autorizado.</h4>
+ <h4>§ 6º Não é obrigatória a inscrição no RNC de cultivar local, tradicional ou crioula, utilizada por agricultores familiares, assentados da reforma agrária ou indígenas.</h4>
+ <h4>§ 7º O regulamento desta Lei estabelecerá os critérios de permanência ou exclusão de inscrição no RNC, das cultivares de domínio público.</h4>
+ <h3>Art. 12. A denominação da cultivar será obrigatória para sua identificação e destinar-se-á a ser sua denominação genérica, devendo, para fins de registro, obedecer aos seguintes critérios:</h3>
+ <h5>I - ser única, não podendo ser expressa apenas na forma numérica;</h5>
+ <h5>II - ser diferente de denominação de cultivar preexistente;</h5>
+ <h5>III - não induzir a erro quanto às características intrínsecas ou quanto à procedência da cultivar.</h5>
+ <h3>Art. 13. O Mapa editará publicação especializada para divulgação do Cadastro Nacional de Cultivares Registradas.</h3>
+ <h3>Art. 14. Ficam convalidadas as inscrições de cultivares já existentes no RNC, na data de publicação desta Lei, desde que, no prazo de 180 (cento e oitenta) dias, os interessados atendam ao disposto no art. 11.</h3>
+ <h3>Art. 15. O Mapa estabelecerá normas para determinação de valor de cultivo e de uso - VCU pertinentes a cada espécie vegetal, para a inscrição das respectivas cultivares no RNC.</h3>
+ <h3>Art. 16. A inscrição de cultivar no RNC poderá ser cancelada ou suspensa, na forma que estabelecer o regulamento desta Lei.</h3>
+ <h3>Art. 17. Os serviços públicos decorrentes da inscrição no RNC serão remunerados pelo regime de preços de serviços públicos específicos, cabendo ao Mapa fixar valores e formas de arrecadação.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA PRODUÇÃO E DA CERTIFICAÇÃO</h3>
+ <h3>Art. 18. O Mapa promoverá a organização do sistema de produção de sementes e mudas em todo o território nacional, incluindo o processo de certificação, na forma que dispuser o regulamento desta Lei.</h3>
+ <h3>Art. 19. A produção de sementes e mudas será de responsabilidade do produtor de sementes e mudas inscrito no Renasem, competindo-lhe zelar pelo controle de identidade e qualidade.</h3>
+ <h4>Parágrafo único. A garantia do padrão mínimo de germinação será assegurada pelo detentor da semente, seja produtor, comerciante ou usuário, na forma que dispuser o regulamento desta Lei.</h4>
+ <h3>Art. 20. Os padrões de identidade e qualidade das sementes e mudas, estabelecidos pelo Mapa e publicados no Diário Oficial da União, serão válidos em todo o território nacional.</h3>
+ <h3>Art. 21. O produtor de sementes e de mudas fica obrigado a identificá-las, devendo fazer constar da respectiva embalagem, carimbo, rótulo ou etiqueta de identificação, as especificações estabelecidas no regulamento desta Lei.</h3>
+ <h3>Art. 22. As sementes e mudas deverão ser identificadas com a denominação "Semente de" ou "Muda de" acrescida do nome comum da espécie.</h3>
+ <h4>Parágrafo único. As sementes e mudas produzidas sob o processo de certificação serão identificadas de acordo com a denominação das categorias estabelecidas no art. 23, acrescida do nome comum da espécie.</h4>
+ <h3>Art. 23. No processo de certificação, as sementes e as mudas poderão ser produzidas segundo as seguintes categorias:</h3>
+ <h5>I - semente genética;</h5>
+ <h5>II - semente básica;</h5>
+ <h5>III - semente certificada de primeira geração - C1;</h5>
+ <h5>IV - semente certificada de segunda geração - C2;</h5>
+ <h5>V - planta básica;</h5>
+ <h5>VI - planta matriz;</h5>
+ <h5>VII - muda certificada.</h5>
+ <h4>§ 1º A obtenção de semente certificada de segunda geração - C2, de semente certificada de primeira geração - C1 e de semente básica se dará, respectivamente, pela reprodução de, no máximo, uma geração da categoria imediatamente anterior, na escala de categorias constante do caput .</h4>
+ <h4>§ 2º O Mapa poderá autorizar mais de uma geração para a multiplicação da categoria de semente básica, considerando as peculiaridades de cada espécie vegetal.</h4>
+ <h4>§ 3º A produção de semente básica, semente certificada de primeira geração - C1 e semente certificada de segunda geração - C2, fica condicionada à prévia inscrição dos campos de produção no Mapa, observados as normas e os padrões pertinentes a cada espécie.</h4>
+ <h4>§ 4º A produção de muda certificada fica condicionada à prévia inscrição do jardim clonal de planta matriz e de planta básica, assim como do respectivo viveiro de produção, no Mapa, observados as normas e os padrões pertinentes.</h4>
+ <h3>Art. 24. A produção de sementes da classe não-certificada com origem genética comprovada poderá ser feita por, no máximo, duas gerações a partir de sementes certificadas, básicas ou genéticas, condicionada à prévia inscrição dos campos de produção no Mapa e ao atendimento às normas e padrões estabelecidos no regulamento desta Lei.</h3>
+ <h4>Parágrafo único. A critério do Mapa, a produção de sementes prevista neste artigo poderá ser feita sem a comprovação da origem genética, quando ainda não houver tecnologia disponível para a produção de semente genética da respectiva espécie.</h4>
+ <h3>Art. 25. A inscrição de campo de produção de sementes e mudas de cultivar protegida nos termos da Lei N° 9.456, de 1997, somente poderá ser feita mediante autorização expressa do detentor do direito de propriedade da cultivar.</h3>
+ <h3>Art. 26. A produção de muda não-certificada deverá obedecer ao disposto no regulamento desta Lei.</h3>
+ <h3>Art. 27. A certificação de sementes e mudas deverá ser efetuada pelo Mapa ou por pessoa jurídica credenciada, na forma do regulamento desta Lei.</h3>
+ <h4>Parágrafo único. Será facultado ao produtor de sementes ou de mudas certificar a sua própria produção, desde que credenciado pelo Mapa, na forma do § 1º do art. 8º desta Lei.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA ANÁLISE DE SEMENTES E DE MUDAS</h3>
+ <h3>Art. 28. A análise de amostras de sementes e de mudas deverá ser executada de acordo com metodologias oficializadas pelo Mapa.</h3>
+ <h3>Art. 29. As análises de amostras de sementes e de mudas somente serão válidas, para os fins previstos nesta Lei, quando realizadas diretamente pelo Mapa ou por laboratório por ele credenciado ou reconhecido.</h3>
+ <h4>Parágrafo único. Os resultados das análises somente terão valor, para fins de fiscalização, quando obtidos de amostras oficiais e analisadas diretamente pelo Mapa ou por laboratório oficial por ele credenciado.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DO COMÉRCIO INTERNO</h3>
+ <h3>Art. 30. O comércio e o transporte de sementes e de mudas ficam condicionados ao atendimento dos padrões de identidade e de qualidade estabelecidos pelo Mapa.</h3>
+ <h4>Parágrafo único. Em situações emergenciais e por prazo determinado, o Mapa poderá autorizar a comercialização de material de propagação com padrões de identidade e qualidade abaixo dos mínimos estabelecidos.</h4>
+ <h3>Art. 31. As sementes e mudas deverão ser identificadas, constando sua categoria, na forma estabelecida no art. 23 e deverão, ao ser transportadas, comercializadas ou estocadas, estar acompanhadas de nota fiscal ou nota fiscal do produtor e do certificado de semente ou do termo de conformidade, conforme definido no regulamento desta Lei.</h3>
+ <h3>Art. 32. A comercialização e o transporte de sementes tratadas com produtos químicos ou agrotóxicos deverão obedecer ao disposto no regulamento desta Lei.</h3>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DO COMÉRCIO INTERNACIONAL</h3>
+ <h3>Art. 33. A produção de sementes e mudas destinadas ao comércio internacional deverá obedecer às normas específicas estabelecidas pelo Mapa, atendidas as exigências de acordos e tratados que regem o comércio internacional ou aquelas estabelecidas com o país importador, conforme o caso.</h3>
+ <h3>Art. 34. Somente poderão ser importadas sementes ou mudas de cultivares inscritas no Registro Nacional de Cultivares.</h3>
+ <h4>Parágrafo único. Ficam isentas de inscrição no RNC as cultivares importadas para fins de pesquisa, de ensaios de valor de cultivo e uso, ou de reexportação.</h4>
+ <h3>Art. 35. A semente ou muda importada deve estar acompanhada da documentação prevista no regulamento desta Lei.</h3>
+ <h4>§ 1º A semente ou muda importada não poderá, sem prévia autorização do Mapa, ser usada, ainda que parcialmente, para fins diversos daqueles que motivaram sua importação.</h4>
+ <h4>§ 2º As sementes ou mudas importadas, quando condenadas, devem, a critério do Mapa, ser devolvidas, reexportadas, destruídas ou utilizadas para outro fim.</h4>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DA UTILIZAÇÃO</h3>
+ <h3>Art. 36. Compete ao Mapa orientar a utilização de sementes e mudas no País, com o objetivo de evitar seu uso indevido e prejuízos à agricultura nacional, conforme estabelecido no regulamento desta Lei.</h3>
+ <h2>CAPÍTULO X</h2>
+ <h3>DA FISCALIZAÇÃO</h3>
+ <h3>Art. 37. Estão sujeitas à fiscalização, pelo Mapa, as pessoas físicas e jurídicas que produzam, beneficiem, analisem, embalem, reembalem, amostrem, certifiquem, armazenem, transportem, importem, exportem, utilizem ou comercializem sementes ou mudas.</h3>
+ <h4>§ 1º A fiscalização de que trata este artigo é de competência do Mapa e será exercida por fiscal por ele capacitado, sem prejuízo do disposto no art. 5º .</h4>
+ <h4>§ 2º Compete ao fiscal exercer a fiscalização da produção, do beneficiamento, do comércio e da utilização de sementes e mudas, sendo-lhe assegurado, no exercício de suas funções, livre acesso a quaisquer estabelecimentos, documentos ou pessoas referidas no caput .</h4>
+ <h3>Art. 38. O Mapa poderá descentralizar, por convênio ou acordo com entes públicos, a execução do serviço de fiscalização de que trata esta Lei, na forma de seu regulamento.</h3>
+ <h4>Parágrafo único. A delegação de competência prevista no caput fica sujeita a auditorias regulares, executadas pelo Mapa conforme estabelecido no regulamento desta Lei.</h4>
+ <h3>Art. 39. Toda semente ou muda, embalada ou a granel, armazenada ou em trânsito, identificada ou não, está sujeita à fiscalização, na forma que dispuser o regulamento.</h3>
+ <h2>CAPÍTULO XI</h2>
+ <h3>DAS COMISSÕES DE SEMENTES E MUDAS</h3>
+ <h3>Art. 40. Ficam criadas as Comissões de Sementes e Mudas, órgãos colegiados, de caráter consultivo e de assessoramento ao Mapa, às quais compete propor normas e procedimentos complementares, relativos à produção, comércio e utilização de sementes e mudas.</h3>
+ <h4>§ 1º As Comissões de Sementes e Mudas, a serem instaladas nas unidades da Federação, serão compostas por representantes de entidades federais, estaduais e municipais e da iniciativa privada, vinculadas à fiscalização, à pesquisa, ao ensino, à assistência técnica e extensão rural, à produção, ao comércio e ao uso de sementes e mudas.</h4>
+ <h4>§ 2º A composição, a estrutura, as atribuições e as responsabilidades das Comissões de Sementes e Mudas serão estabelecidas no regulamento desta Lei.</h4>
+ <h4>§ 3º Cabe ao Mapa a coordenação, em âmbito nacional, das Comissões de Sementes e Mudas.</h4>
+ <h2>CAPÍTULO XII</h2>
+ <h3>DAS PROIBIÇÕES</h3>
+ <h3>Art. 41. Ficam proibidos a produção, o beneficiamento, o armazenamento, a análise, o comércio, o transporte e a utilização de sementes e mudas em desacordo com o estabelecido nesta Lei e em sua regulamentação.</h3>
+ <h4>Parágrafo único. A classificação das infrações desta Lei e as respectivas penalidades serão disciplinadas no regulamento.</h4>
+ <h2>CAPÍTULO XIII</h2>
+ <h3>DAS MEDIDAS CAUTELARES E DAS PENALIDADES</h3>
+ <p><del></p>
+ <h3>Art. 42 (Revogado pela Lei n° 14.515, de 2022)</del></h3>
+ <h5>I - suspensão da comercialização; ou</h5>
+ <h5>II - interdição de estabelecimento.</h5>
+ <h3>Art. 43. Sem prejuízo da responsabilidade penal e civil cabível, a inobservância das disposições desta Lei sujeita as pessoas físicas e jurídicas, referidas no art. 8º , às seguintes penalidades, isolada ou cumulativamente, conforme dispuser o regulamento desta Lei:</h3>
+ <p><del>I - (Revogado pela Lei n° 14.515, de 2022)</del></p>
+ <p><del>II - (Revogado pela Lei n° 14.515, de 2022)</del></p>
+ <p><del>III - (Revogado pela Lei n° 14.515, de 2022)</del></p>
+ <p><del>IV - (Revogado pela Lei n° 14.515, de 2022)</del></p>
+ <p><del>V - (Revogado pela Lei n° 14.515, de 2022)</del></p>
+ <p><del>VI - (Revogado pela Lei n° 14.515, de 2022)</del></p>
+ <h4>Parágrafo único. A multa pecuniária será de valor equivalente a até 250% (duzentos e cinqüenta por cento) do valor comercial do produto fiscalizado, quando incidir sobre a produção, beneficiamento ou comercialização.</h4>
+ <h3>Art. 44. O responsável técnico, o amostrador ou o certificador que descumprir os dispositivos desta Lei, estará sujeito às seguintes penalidades, isolada ou cumulativamente, conforme dispuser a regulamentação desta Lei:</h3>
+ <h5>I - advertência;</h5>
+ <h5>II - multa pecuniária;</h5>
+ <h5>III - suspensão do credenciamento;</h5>
+ <h5>IV - cassação do credenciamento.</h5>
+ <h4>Parágrafo único . Sem prejuízo do disposto no caput deste artigo, fica o órgão fiscalizador obrigado a comunicar as eventuais ocorrências, imediatamente, ao respectivo Conselho Regional de Engenharia, Arquitetura e Agronomia - Crea.</h4>
+ <h2>CAPÍTULO XIV</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 45. As sementes produzidas de conformidade com o estabelecido no caput do art. 24 e denominadas na forma do caput do art. 22 poderão ser comercializadas com a designação de "sementes fiscalizadas", por um prazo máximo de 2 (dois) anos, contado a partir da data de publicação desta Lei.</h3>
+ <h3>Art. 46. O produto da arrecadação a que se referem os arts. 9º e 17 será recolhido ao Fundo Federal Agropecuário, de conformidade com a legislação vigente, e aplicado na execução dos serviços de que trata esta Lei, conforme regulamentação.</h3>
+ <h3>Art. 47. Fica o Mapa autorizado a estabelecer mecanismos específicos e, no que couber, exceções ao disposto nesta Lei, para regulamentação da produção e do comércio de sementes de espécies florestais, nativas ou exóticas, ou de interesse medicinal ou ambiental, bem como para as demais espécies referidas no parágrafo único do art. 24.</h3>
+ <h3>Art. 48. Observadas as demais exigências desta Lei, é vedado o estabelecimento de restrições à inclusão de sementes e mudas de cultivar local, tradicional ou crioula em programas de financiamento ou em programas públicos de distribuição ou troca de sementes, desenvolvidos junto a agricultores familiares.</h3>
+ <h3>Art. 49. O Mapa estabelecerá os mecanismos de coordenação e execução das atividades previstas nesta Lei.</h3>
+ <h3>Art. 50. O Poder Executivo regulamentará esta Lei no prazo de 90 (noventa) dias, a contar da data de sua publicação.</h3>
+ <h3>Art. 51. Esta Lei entra em vigor 90 (noventa) dias após a data de sua publicação.</h3>
+ <h3>Art. 52. Fica revogada a Lei N° 6.507, de 19 de dezembro de 1977 .</h3>
+ <p>Brasília, 5 de agosto de 2003; 182º da Independência e 115º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 6.8.2003</p>
+ <p>(Vigência) | Dispõe sobre o Sistema Nacional de Sementes e Mudas e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.711.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

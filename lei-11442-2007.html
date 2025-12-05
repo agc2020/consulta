@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.442, DE 5 DE JANEIRO DE 2007 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2007" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.442, DE 5 DE JANEIRO DE 2007</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:41:19 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/L11442.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 37.855 caracteres | espelho: 37.889 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.442, DE 5 DE JANEIRO DE 2007</p>
+ <p>(Vide Lei n° 13.103. de 2015)</p>
+ <p>(Vide ADC nº 48)</p>
+ <p>Dispõe sobre o transporte rodoviário de cargas por conta de terceiros e mediante remuneração e revoga a Lei N° 6.813, de 10 de julho de 1980.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei dispõe sobre o Transporte Rodoviário de Cargas - TRC realizado em vias públicas, no território nacional, por conta de terceiros e mediante remuneração, os mecanismos de sua operação e a responsabilidade do transportador.</h3>
+ <h4>§ 1º No caso de transporte de produtos perigosos, será observado exclusivamente o disposto em lei federal, considerando-se as competências estabelecidas nos arts. 22 e 24 da Lei N° 10.233, de 5 de junho de 2001 . (Incluído pela Lei n° 12.667, de 2012)</h4>
+ <h4>§ 2º ( VETADO ). (Incluído pela Lei n° 12.667, de 2012)</h4>
+ <h3>Art. 2º A atividade econômica de que trata o art. 1º desta Lei é de natureza comercial, exercida por pessoa física ou jurídica em regime de livre concorrência, e depende de prévia inscrição do interessado em sua exploração no Registro Nacional de Transportadores Rodoviários de Cargas - RNTR-C da Agência Nacional de Transportes Terrestres - ANTT, nas seguintes categorias:</h3>
+ <h5>I - Transportador Autônomo de Cargas - TAC, pessoa física que tenha no transporte rodoviário de cargas a sua atividade profissional;</h5>
+ <h5>II - Empresa de Transporte Rodoviário de Cargas - ETC, pessoa jurídica constituída por qualquer forma prevista em lei que tenha no transporte rodoviário de cargas a sua atividade principal.</h5>
+ <h5>III - Cooperativa de Transporte Rodoviário de Cargas (CTC), sociedade cooperativa na forma da lei, constituída por pessoas físicas e/ou jurídicas, que exerce atividade de transporte rodoviário de cargas; (Incluído pela Lei n° 14.206, de 2021)</h5>
+ <h4>§ 1º O TAC deverá:</h4>
+ <h5>I - comprovar ser proprietário, co-proprietário ou arrendatário de, pelo menos, 1 (um) veículo automotor de carga, registrado em seu nome no órgão de trânsito, como veículo de aluguel;</h5>
+ <h5>II - comprovar ter experiência de, pelo menos, 3 (três) anos na atividade, ou ter sido aprovado em curso específico.</h5>
+ <h4>§ 2º A ETC deverá:</h4>
+ <h5>I - ter sede no Brasil;</h5>
+ <h5>II - comprovar ser proprietária ou arrendatária de, pelo menos, 1 (um) veículo automotor de carga, registrado no País;</h5>
+ <h5>III - indicar e promover a substituição do Responsável Técnico, que deverá ter, pelo menos, 3 (três) anos de atividade ou ter sido aprovado em curso específico;</h5>
+ <h5>IV - demonstrar capacidade financeira para o exercício da atividade e idoneidade de seus sócios e de seu responsável técnico.</h5>
+ <h4>§ 3º Para efeito de cumprimento das exigências contidas no inciso II do § 2º deste artigo, as Cooperativas de Transporte de Cargas deverão comprovar a propriedade ou o arrendamento dos veículos automotores de cargas de seus associados.</h4>
+ <h4>§ 4º Deverá constar no veículo automotor de carga, na forma a ser regulamentada pela ANTT, o número de registro no RNTR-C de seu proprietário ou arrendatário.</h4>
+ <h4>§ 5º A ANTT disporá sobre as exigências curriculares e a comprovação dos cursos previstos no inciso II do § 1º e no inciso III do § 2º , ambos deste artigo.</h4>
+ <h3>Art. 3º O processo de inscrição e cassação do registro bem como a documentação exigida para o RNTR-C serão regulamentados pela ANTT.</h3>
+ <h3>Art. 4º O contrato a ser celebrado entre a ETC e o TAC ou entre o dono ou embarcador da carga e o TAC definirá a forma de prestação de serviço desse último, como agregado ou independente.</h3>
+ <h4>§ 1º Denomina-se TAC-agregado aquele que coloca veículo de sua propriedade ou de sua posse, a ser dirigido por ele próprio ou por preposto seu, a serviço do contratante, com exclusividade, mediante remuneração certa.</h4>
+ <h4>§ 2º Denomina-se TAC-independente aquele que presta os serviços de transporte de carga de que trata esta Lei em caráter eventual e sem exclusividade, mediante frete ajustado a cada viagem.</h4>
+ <h4>§ 3º Sem prejuízo dos demais requisitos de controle estabelecidos em regulamento, é facultada ao TAC a cessão de seu veículo em regime de colaboração a outro profissional, assim denominado TAC - Auxiliar, não implicando tal cessão a caracterização de vínculo de emprego. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 4º O Transportador Autônomo de Cargas Auxiliar deverá contribuir para a previdência social de forma idêntica à dos Transportadores Autônomos. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 5º As relações decorrentes do contrato estabelecido entre o Transportador 	Autônomo de Cargas e seu Auxiliar ou entre o transportador autônomo e o embarcador não caracterizarão vínculo de emprego. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h3>Art. 5º As relações decorrentes do contrato de transporte de cargas de que trata o art. 4º desta Lei são sempre de natureza comercial, não ensejando, em nenhuma hipótese, a caracterização de vínculo de emprego.</h3>
+ <h4>Parágrafo único. Compete à Justiça Comum o julgamento de ações oriundas dos contratos de transporte de cargas.</h4>
+ <h4>§1º Compete à Justiça Comum o julgamento de ações oriundas dos contratos de transporte de cargas. (Renumerado do parágrafo único pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 1º (Revogado). (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º No caso de contratação direta do TAC pelo proprietário da mercadoria, a relação dar-se-á nos termos desta Lei e será considerada de natureza comercial, conforme o caput deste artigo. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 3º Compete à justiça comum o julgamento de ações oriundas dos contratos de transportes de cargas. (Incluído pela Lei n° 14.440, de 2022)</h4>
+ <h3>Art. 5º -A. O pagamento do frete do transporte rodoviário de cargas ao Transportador Autônomo de Cargas - TAC deverá ser efetuado por meio de crédito em conta de depósitos mantida em instituição bancária ou por outro meio de pagamento regulamentado pela Agência Nacional de Transportes Terrestres - ANTT. (Incluído pelo Lei n° 12.249, de 2010)</h3>
+ <h3>Art. 5º -A. O pagamento do frete do transporte rodoviário de cargas ao Transportador 	Autônomo de Cargas - TAC deverá ser efetuado por meio de crédito em conta mantida em instituição integrante do sistema financeiro nacional, inclusive poupança, ou por outro meio de pagamento regulamentado pela Agência Nacional de Transportes Terrestres - ANTT, à critério do prestador do serviço. (Redação dada pela Lei n° 13.103, de 2015)</h3>
+ <h3>Art. 5º-A O pagamento do frete do transporte rodoviário de cargas ao Transportador Autônomo de Cargas - TAC será efetuado em conta de depósitos ou em conta de pagamento pré-paga, mantida em instituição autorizada a funcionar pelo Banco Central do Brasil, de livre escolha do TAC prestador do serviço, e informado no Documento Eletrônico de Transporte - DT-e. (Redação dada pela Medida Provisória nº 1.051, de 2021)</h3>
+ <h3>Art. 5º-A. O pagamento do frete do transporte rodoviário de cargas ao TAC será efetuado em conta de depósito ou em conta de pagamento pré-paga mantida em instituição autorizada a funcionar pelo Banco Central do Brasil, de livre escolha do TAC prestador do serviço, e informado no Documento Eletrônico de Transporte (DT-e). (Redação dada pela Lei n° 14.206, de 2021)</h3>
+ <h4>§ 1º A conta de depósitos ou o outro meio de pagamento deverá ser de titularidade do TAC e identificado no conhecimento de transporte. (Incluído pelo Lei n° 12.249, de 2010)</h4>
+ <h4>§ 1º A conta de depósitos ou conta de pagamento pré-paga de que trata o caput deverá ser indicada pelo TAC e identificada no DT-e. (Redação dada pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 1º A conta de depósito à vista, de poupança ou pré-paga deverá ser de titularidade do TAC, cônjuge, companheira ou parente em linha reta ou colateral até o segundo grau, indicada expressamente pelo TAC, vedada a imposição por parte do contratante, e identificada no DT-e. (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º O contratante e o subcontratante dos serviços de transporte rodoviário de cargas, assim como o cossignatário e o proprietário da carga, são solidariamente responsáveis pela obrigação prevista no caput deste artigo, resguardado o direito de regresso destes contra os primeiros. (Incluído pelo Lei n° 12.249, de 2010)</h4>
+ <h4>§ 3º Para os fins deste artigo, equiparam-se ao TAC a Empresa de Transporte Rodoviário de Cargas - ETC que possuir, em sua frota, até 3 (três) veículos registrados no Registro Nacional de Transportadores Rodoviários de Cargas - RNTRC e as Cooperativas de Transporte de Cargas. (Incluído pelo Lei n° 12.249, de 2010)</h4>
+ <h4>§ 4º As Cooperativas de Transporte de Cargas deverão efetuar o pagamento aos seus cooperados na forma do caput deste artigo. (Incluído pelo Lei n° 12.249, de 2010)</h4>
+ <h4>§ 5º O registro das movimentações da conta de depósitos ou do meio de pagamento de que trata o caput deste artigo servirá como comprovante de rendimento do TAC. (Incluído pelo Lei n° 12.249, de 2010)</h4>
+ <h4>§ 5º O extrato da conta de depósitos ou conta de pagamento pré-paga de que trata o caput , com as movimentações relacionadas aos pagamentos das obrigações estabelecidas em DT-e, servirá como forma de comprovação de rendimentos do TAC. (Redação dada pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 5º O extrato da conta de depósito ou da conta de pagamento pré-paga de que trata o caput deste artigo, com as movimentações relacionadas aos pagamentos das obrigações estabelecidas em DT-e, servirá como forma de comprovação de rendimentos do TAC. (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 6º É vedado o pagamento do frete por qualquer outro meio ou forma diverso do previsto no caput deste artigo ou em seu regulamento. (Incluído pelo Lei n° 12.249, de 2010)</h4>
+ <h4>§ 7º As tarifas bancárias ou pelo uso de meio de pagamento eletrônico relativas ao pagamento do frete do transporte rodoviário de cargas ao Transportador 	Autônomo de Cargas - TAC correrão à conta do responsável pelo pagamento. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 7º As custas com a geração e a emissão de DT-e, as tarifas bancárias ou as demais custas decorrentes da operação de pagamento do frete contratado correrão à conta do responsável pelo pagamento, sem ônus ao TAC. (Redação dada pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 7º As custas com a geração e a emissão de DT-e, as tarifas bancárias e as demais custas decorrentes da operação de pagamento do frete contratado correrão à conta do responsável pelo pagamento, sem ônus ao TAC. (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 8º As informações para o pagamento a que se refere o caput e o valor da transação deverão ser identificados no DT-e emitido. (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 8º As informações para o pagamento a que se refere o caput deste artigo e o valor da transação deverão ser identificados no DT-e emitido. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 9º Constituirá prova de pagamento total ou parcial do serviço identificado no DT-e o extrato do pagamento pela instituição pagadora em favor do legítimo credor na forma prevista no caput . (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 9º Constituirá prova de pagamento total ou parcial do serviço identificado no DT-e o extrato do pagamento pela instituição pagadora em favor do legítimo credor na forma prevista no caput deste artigo. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 10. O TAC poderá ceder, inclusive fiduciariamente, endossar ou empenhar títulos ou instrumentos representativos dos direitos creditórios, constituídos ou a constituir, referentes ao pagamento do frete do transporte rodoviário de cargas, nas hipóteses em que: (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h5>I - o pagamento do frete será feito em favor do cessionário, do endossatário ou do credor pignoratício, desde que o devedor seja devidamente notificado da cessão do crédito, vedado o pagamento diretamente ao TAC; e (Incluído pela Medida Provisória nº 1.051, de 2021)</h5>
+ <h5>II - o disposto nos § 1º, § 4º, § 6º e § 7º do caput não será aplicado. (Incluído pela Medida Provisória nº 1.051, de 2021)</h5>
+ <h4>§ 10. O TAC poderá ceder, inclusive fiduciariamente, endossar ou empenhar títulos ou instrumentos representativos dos direitos creditórios constituídos ou a constituir referentes ao pagamento do frete do transporte rodoviário de cargas, observado que: (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h5>I - o pagamento do frete será feito em favor do cessionário, do endossatário ou do credor pignoratício, desde que o devedor seja devidamente notificado da cessão do crédito, vedado o pagamento diretamente ao TAC; e (Incluído pela Lei n° 14.206, de 2021)</h5>
+ <h5>II - o disposto nos §§ 1º, 4º, 6º e 7º do caput deste artigo não será aplicado. (Incluído pela Lei n° 14.206, de 2021)</h5>
+ <h3>Art. 5º-B. É facultado ao TAC contratar pessoa jurídica para administrar seus direitos relativos à prestação de serviços de transporte. (Incluído pela Lei n° 14.206, de 2021)</h3>
+ <h4>§ 1º A pessoa jurídica de que trata o caput deste artigo é responsável pela adequação dos documentos legais do TAC que a contratou, bem como pelas obrigações fiscais inerentes à geração, à emissão e ao recolhimento de tributos de qualquer espécie ou natureza, aplicado o disposto no inciso III do caput do art. 134 da Lei Complementar nº 5.172, de 25 de outubro de 1966. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º As entidades representativas dos TACs são autorizadas a atuar como administradora nos termos deste artigo. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 3º Recebido o valor do frete pelo TAC conforme disposto no art. 5º-A desta Lei, competirá à administradora de que trata o caput deste artigo: (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h5>I - controlar, emitir e gerir os documentos, inclusive fiscais, inerentes à operação de transporte; (Incluído pela Lei n° 14.206, de 2021)</h5>
+ <h5>II - reter e recolher os tributos incidentes, bem como encaminhar ao TAC os comprovantes de pagamento. (Incluído pela Lei n° 14.206, de 2021)</h5>
+ <h4>§ 4º A pessoa jurídica de que trata o caput deste artigo não poderá ser ou estar vinculada como administradora ou sócia, direta ou indireta, de empresa distribuidora de combustíveis, de rede de revendedores ou de revendedor varejista de combustíveis. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 5º Fica vedado ao contratante ou subcontratante dos serviços de transporte de cargas atuar, na mesma operação, como administrador dos serviços de transporte de que trata o caput , de forma direta ou indireta, inclusive por meio de empresa à qual esteja vinculado como administrador ou sócio ou que integre o mesmo grupo econômico. (Redação dada pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h3>Art. 6º O transporte rodoviário de cargas será efetuado sob contrato ou conhecimento de transporte, que deverá conter informações para a completa identificação das partes e dos serviços e de natureza fiscal.</h3>
+ <h3>Art. 6º-A. As informações relativas à comprovação dos pagamentos efetuados no âmbito de contrato celebrado entre embarcador, proprietário da carga, consignatário ou contratante dos serviços de transporte rodoviário de cargas e o transportador ou seu subcontratado deverão ser consignadas pelo pagador em campos próprios do respectivo DT-e. (Incluído pela Lei n° 14.206, de 2021)</h3>
+ <h4>§ 1º O disposto no caput deste artigo aplica-se às informações relativas à importância decorrente do tempo adicional sobre o prazo máximo para carga e descarga do veículo de transporte rodoviário de cargas, nos termos do § 5º do art. 11 desta Lei e, se aplicável, aos pagamentos antecipados do Vale-Pedágio obrigatório instituído pela Lei n° 10.209, de 23 de março de 2001. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º Para fins de cumprimento do previsto no caput deste artigo, o Banco Central do Brasil, as instituições financeiras públicas e privadas de que trata a Lei n° 4.595, de 31 de dezembro de 1964 , e as instituições de pagamento de que trata o art. 6º da Lei n° 12.865, de 9 de outubro de 2013 , realizarão troca de informações com a entidade emissora de DT-e a que se refere o art. 11 desta Lei, assegurado o sigilo bancário. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h3>Art. 7º Com a emissão do contrato ou conhecimento de transporte, a ETC e o TAC assumem perante o contratante a responsabilidade:</h3>
+ <h5>I - pela execução dos serviços de transporte de cargas, por conta própria ou de terceiros, do local em que as receber até a sua entrega no destino;</h5>
+ <h5>II - pelos prejuízos resultantes de perda, danos ou avarias às cargas sob sua custódia, assim como pelos decorrentes de atraso em sua entrega, quando houver prazo pactuado.</h5>
+ <h4>Parágrafo único. No caso de dano ou avaria, será assegurado às partes interessadas o direito de vistoria, de acordo com a legislação aplicável, sem prejuízo da observância das cláusulas do contrato de seguro, quando houver.</h4>
+ <h3>Art. 8º O transportador é responsável pelas ações ou omissões de seus empregados, agentes, prepostos ou terceiros contratados ou subcontratados para a execução dos serviços de transporte, como se essas ações ou omissões fossem próprias.</h3>
+ <h4>Parágrafo único. O transportador tem direito a ação regressiva contra os terceiros contratados ou subcontratados, para se ressarcir do valor da indenização que houver pago.</h4>
+ <h3>Art. 9º A responsabilidade do transportador cobre o período compreendido entre o momento do recebimento da carga e o de sua entrega ao destinatário.</h3>
+ <h4>Parágrafo único. A responsabilidade do transportador cessa quando do recebimento da carga pelo destinatário, sem protestos ou ressalvas.</h4>
+ <h3>Art. 10. O atraso ocorre quando as mercadorias não forem entregues dentro dos prazos constantes do contrato ou do conhecimento de transporte.</h3>
+ <h4>Parágrafo único. Se as mercadorias não forem entregues dentro de 30 (trinta) dias corridos após a data estipulada, de conformidade com o disposto no caput deste artigo, o consignatário ou qualquer outra pessoa com direito de reclamar as mercadorias poderá considerá-las perdidas.</h4>
+ <h3>Art. 11. O transportador informará ao expedidor ou ao destinatário, quando não pactuado no contrato ou conhecimento de transporte, o prazo previsto para a entrega da mercadoria.</h3>
+ <h4>§ 1º O transportador obriga-se a comunicar ao expedidor ou ao destinatário, em tempo hábil, a chegada da carga ao destino.</h4>
+ <h4>§ 2º A carga ficará à disposição do interessado, após a comunicação de que trata o § 1º deste artigo, pelo prazo de 30 (trinta) dias, se outra condição não for pactuada.</h4>
+ <h4>§ 3º Findo o prazo previsto no § 2º deste artigo, não sendo retirada, a carga será considerada abandonada.</h4>
+ <h4>§ 4º No caso de bem perecível ou produto perigoso, o prazo de que trata o § 2º deste artigo poderá ser reduzido, conforme a natureza da mercadoria, devendo o transportador informar o fato ao expedidor e ao destinatário.</h4>
+ <h4>§ 5º Atendidas as exigências deste artigo, o prazo máximo para carga e descarga do veículo de Transporte Rodoviário de Cargas será de 5 (cinco) horas, contadas da chegada do veículo ao endereço de destino; após este período será devido ao TAC ou à ETC o valor de R$ 1,00 (um real) por tonelada/hora ou fração.</h4>
+ <h4>§ 6º O disposto no § 5º deste artigo não se aplica aos contratos ou conhecimentos de transporte em que houver cláusula ou ajuste dispondo sobre o tempo de carga ou descarga. (Incluído pela Lei n° 11.524, de 2007)</h4>
+ <h4>§ 5º O prazo máximo para carga e descarga do Veículo de Transporte Rodoviário de 	Cargas será de 5 (cinco) horas, contadas da chegada do veículo ao endereço de destino, após o qual será devido ao Transportador Autônomo de Carga - TAC 	ou à ETC a importância equivalente a R$ 1,38 (um real e trinta e oito centavos) por tonelada/hora ou fração. (Redação dada pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 6º A importância de que trata o § 5º será atualizada, 	anualmente, de acordo com a variação do Índice Nacional de Preços ao 	Consumidor - INPC, calculado pela Fundação Instituto Brasileiro de Geografia e Estatística - IBGE ou, na hipótese de sua extinção, pelo índice que o suceder, definido em regulamento. (Redação dada pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 7º Para o cálculo do valor de que trata o § 5º , será 	considerada a capacidade total de transporte do veículo. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 8º Incidente o pagamento relativo ao tempo de espera, este deverá ser calculado a partir da hora de chegada na procedência ou no destino. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 9º O embarcador e o destinatário da carga são obrigados a fornecer ao transportador documento hábil a comprovar o horário de chegada do caminhão nas dependências dos respectivos estabelecimentos, sob pena de serem punidos com multa a ser aplicada pela Agência Nacional de Transportes Terrestres - 	ANTT, que não excederá a 5% (cinco por cento) do valor da carga. (Incluído pela Lei n° 13.103, de 2015)</h4>
+ <h4>§ 9º O embarcador e o destinatário da carga são obrigados a informar ao transportador em campo específico do DT-e o horário de chegada do caminhão nas dependências dos respectivos estabelecimentos, sob pena de serem punidos com multa a ser aplicada pela ANTT, que não excederá a 5% (cinco por cento) do valor da carga. (Redação dada pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 10. No âmbito do processo administrativo sancionador, as notificações de autuação poderão ser encaminhadas por meio eletrônico para endereço eletrônico cadastrado formalmente para esse fim, de forma a assegurar a ciência da imposição da penalidade, nos termos de regulamento. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 11. A notificação de autuação será expedida no prazo máximo de 30 (trinta) dias, contado da data do cometimento da infração, sob pena de o auto de infração ser arquivado e seu registro julgado insubsistente. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 12. Da autuação e da aplicação de sanção caberá a apresentação, respectivamente, de defesa e de recurso pelo autuado, no prazo estabelecido em norma do órgão fiscalizador competente. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 13. Prescreve em 12 (doze) meses o prazo para cobrança da pena de multa a que se refere o § 9º deste artigo, a contar da notificação de autuação. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h3>Art. 12. Os transportadores e seus subcontratados somente serão liberados de sua responsabilidade em razão de:</h3>
+ <h5>I - ato ou fato imputável ao expedidor ou ao destinatário da carga;</h5>
+ <h5>II - inadequação da embalagem, quando imputável ao expedidor da carga;</h5>
+ <h5>III - vício próprio ou oculto da carga;</h5>
+ <h5>IV - manuseio, embarque, estiva ou descarga executados diretamente pelo expedidor, destinatário ou consignatário da carga ou, ainda, pelos seus agentes ou prepostos;</h5>
+ <h5>V - força maior ou caso fortuito;</h5>
+ <h5>VI - contratação de seguro pelo contratante do serviço de transporte, na forma do inciso I do art. 13 desta Lei.</h5>
+ <h4>Parágrafo único. Não obstante as excludentes de responsabilidades previstas neste artigo, o transportador e seus subcontratados serão responsáveis pela agravação das perdas ou danos a que derem causa.</h4>
+ <h3>Art. 13. Sem prejuízo do seguro de responsabilidade civil contra danos a terceiros previsto em lei, toda operação de transporte contará com o seguro contra perdas ou danos causados à carga, de acordo com o que seja estabelecido no contrato ou conhecimento de transporte, podendo o seguro ser contratado:</h3>
+ <h5>I - pelo contratante dos serviços, eximindo o transportador da responsabilidade de fazê-lo;</h5>
+ <h5>II - pelo transportador, quando não for firmado pelo contratante.</h5>
+ <h4>Parágrafo único. As condições do seguro de transporte rodoviário de cargas obedecerão à legislação em vigor. (Revogado pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h4>Parágrafo único. (Revogado). (Redação dada pela Lei n° 14.599, de 2023)</h4>
+ <h3>Art. 13. São de contratação exclusiva dos transportadores, pessoas físicas ou jurídicas, prestadores do serviço de transporte rodoviário de cargas: (Redação dada pela Medida Provisória nº 1.153, de 2022)</h3>
+ <h5>I - seguro obrigatório de responsabilidade civil do transportador rodoviário de cargas, para cobertura de perdas ou danos causados à carga transportada em decorrência de acidentes rodoviários; (Redação dada pela Medida Provisória nº 1.153, de 2022)</h5>
+ <h5>II - seguro facultativo de responsabilidade civil do transportador rodoviário de cargas, para cobertura de roubo da carga, quando estabelecido no contrato ou conhecimento de transporte; e (Redação dada pela Medida Provisória nº 1.153, de 2022)</h5>
+ <h5>III - seguro facultativo de responsabilidade civil por veículos e danos materiais e danos corporais, para cobertura de danos causados a terceiros pelo veículo automotor utilizado no transporte rodoviário de cargas. (Incluído pela Medida Provisória nº 1.153, de 2022)</h5>
+ <h4>§ 1º Cabe exclusivamente ao transportador a escolha da seguradora, vedada a estipulação das condições e características da apólice por parte do contratante do serviço de transporte. (Incluído pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h4>§ 2º O seguro de que trata o inciso I do caput poderá ser contratado pelo contratante do serviço quando for realizada a contratação direta do TAC, hipótese em que o contratante do serviço ficará responsável por eventuais perdas, sem qualquer ônus ao transportador autônomo. (Incluído pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h4>§ 3º Ao adquirir coberturas de seguro adicionais contra riscos já cobertos pelas apólices do transportador, o contratante do serviço de transporte não poderá vincular o transportador ao cumprimento de obrigações operacionais associadas à prestação de serviços de transporte, inclusive as previstas nos Planos de Gerenciamento de Riscos - PGR. (Incluído pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h4>§ 4º O seguro de que trata o inciso II do caput não exclui e nem impossibilita a contratação de outros seguros facultativos para cobertura de furto simples e qualificado, apropriação indébita, estelionato, extorsão simples ou mediante sequestro, ou quaisquer outros sinistros, perdas ou danos causados à carga transportada. (Incluído pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h4>§ 5º O seguro de que trata o inciso III do caput poderá ser feito em apólice globalizada, que envolva toda a frota, sem a necessidade de listagem individual dos veículos. (Incluído pela Medida Provisória nº 1.153, de 2022)</h4>
+ <h3>Art. 13. São de contratação obrigatória dos transportadores, prestadores do serviço de transporte rodoviário de cargas, os seguros de: (Redação dada pela Lei n° 14.599, de 2023)</h3>
+ <h5>I - Responsabilidade Civil do Transportador Rodoviário de Carga (RCTR-C), para cobertura de perdas ou danos causados à carga transportada em consequência de acidentes com o veículo transportador, decorrentes de colisão, de abalroamento, de tombamento, de capotamento, de incêndio ou de explosão; (Redação dada pela Lei n° 14.599, de 2023)</h5>
+ <h5>II - Responsabilidade Civil do Transportador Rodoviário por Desaparecimento de Carga (RC-DC), para cobertura de roubo, de furto simples ou qualificado, de apropriação indébita, de estelionato e de extorsão simples ou mediante sequestro sobrevindos à carga durante o transporte; e (Redação dada pela Lei n° 14.599, de 2023)</h5>
+ <h5>III - Responsabilidade Civil de Veículo (RC-V), para cobertura de danos corporais e materiais causados a terceiros pelo veículo automotor utilizado no transporte rodoviário de cargas. (Redação dada pela Lei n° 14.599, de 2023)</h5>
+ <h4>§ 1º Os seguros previstos nos incisos I e II do caput deste artigo deverão estar vinculados a Plano de Gerenciamento de Riscos (PGR), estabelecido de comum acordo entre o transportador e sua seguradora, observado que o contratante do serviço de transporte poderá exigir obrigações ou medidas adicionais, relacionadas a operação e/ou a gerenciamento, arcando este com todos os custos e despesas inerentes a elas. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 2º Os seguros previstos nos incisos I, II e III do caput deste artigo não excluem nem impossibilitam a contratação facultativa pelo transportador de outras coberturas para quaisquer perdas ou danos causados à carga transportada não contempladas nos referidos seguros. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 3º O seguro de que trata o inciso III do caput deste artigo poderá ser feito em apólice globalizada que envolva toda a frota do segurado, com cobertura mínima de 35.000 DES (trinta e cinco mil direitos especiais de saque) para danos corporais e de 20.000 DES (vinte mil direitos especiais de saque) para danos materiais. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 4º No caso de subcontratação do TAC: (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h5>I - os seguros previstos nos incisos I e II do caput deste artigo deverão ser firmados pelo contratante do serviço emissor do conhecimento de transporte e do manifesto de transporte, sendo o TAC considerado preposto do tomador de serviços, não cabendo sub-rogação por parte da seguradora contra este; (Incluído pela Lei n° 14.599, de 2023)</h5>
+ <h5>II - o seguro previsto no inciso III do caput deste artigo deverá ser firmado pelo contratante do serviço, por viagem, em nome do TAC subcontratado. (Incluído pela Lei n° 14.599, de 2023)</h5>
+ <h4>§ 5º Os seguros previstos nos incisos I e II do caput deste artigo serão contratados mediante apólice única para cada ramo de seguro, por segurado, vinculados ao respectivo RNTR-C. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 6º Para fixação dos prejuízos advindos à carga transportada, deverá ser realizada a vistoria conjunta, pelo contratante do frete e pelo transportador, bem como pelas respectivas seguradoras, quando couber, consoante o disposto no parágrafo único do art. 7º desta Lei. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 7º Todos os embarques realizados por transportadores, pessoas físicas ou jurídicas, devem possuir as devidas coberturas securitárias nos termos e condições deste artigo. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 8º O proprietário da mercadoria, contratante do frete, independentemente da contratação pelo transportador dos seguros que cobrem suas responsabilidades previstos nos incisos I e II do caput deste artigo, poderá, a seu critério, contratar o seguro facultativo de transporte nacional para cobertura das perdas e danos dos bens e mercadorias de sua propriedade. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h4>§ 9º O proprietário da mercadoria poderá, na contratação do frete, exigir do transportador a cópia da apólice de seguro com as condições, o prêmio e o gerenciamento de risco contratados. (Incluído pela Lei n° 14.599, de 2023)</h4>
+ <h3>Art. 13-A. É 	vedada a utilização de informações de bancos de dados de proteção ao crédito como mecanismo de vedação de contrato com o TAC e a ETC devidamente regulares para o exercício da atividade do Transporte Rodoviário de Cargas. (Incluído pela Lei n° 13.103, de 2015)</h3>
+ <h3>Art. 13-B. Ficam os embarcadores, as empresas de transporte e as cooperativas de transporte, sob qualquer pretexto, forma ou modalidade, impedidos de descontar do valor do frete do TAC, ou de seu equiparado, valores referentes a taxa administrativa e seguros de qualquer natureza, sob pena de terem que indenizar ao TAC o valor referente a 2 (duas) vezes o valor do frete contratado. (Incluído pela Lei n° 14.599, de 2023)</h3>
+ <h3>Art. 14. A responsabilidade do transportador por prejuízos resultantes de perdas ou danos causados às mercadorias é limitada ao valor declarado pelo expedidor e consignado no contrato ou conhecimento de transporte, acrescido dos valores do frete e do seguro correspondentes.</h3>
+ <h4>Parágrafo único. Na hipótese de o expedidor não declarar o valor das mercadorias, a responsabilidade do transportador será limitada ao valor de 2 (dois) Direitos Especiais de Saque - DES por quilograma de peso bruto transportado.</h4>
+ <h3>Art. 15. Quando não definida no contrato ou conhecimento de transporte, a responsabilidade por prejuízos resultantes de atraso na entrega é limitada ao valor do frete.</h3>
+ <h3>Art. 16. Os operadores de terminais, armazéns e quaisquer outros que realizem operações de transbordo são responsáveis, perante o transportador que emitiu o conhecimento de transporte, pelas perdas e danos causados às mercadorias no momento da realização das referidas operações, inclusive de depósito.</h3>
+ <h3>Art. 17. O expedidor, sem prejuízo de outras sanções previstas em lei, indenizará o transportador pelas perdas, danos ou avarias:</h3>
+ <h5>I - resultantes de inveracidade na declaração de carga ou de inadequação dos elementos que lhe compete fornecer para a emissão do conhecimento de transporte, sem que tal dever de indenizar exima ou atenue a responsabilidade do transportador, nos termos previstos nesta Lei; e</h5>
+ <h5>II - quando configurado o disposto nos incisos I, II e IV do caput do art. 12 desta Lei.</h5>
+ <h3>Art. 18. Prescreve em 1 (um) ano a pretensão à reparação pelos danos relativos aos contratos de transporte, iniciando-se a contagem do prazo a partir do conhecimento do dano pela parte interessada .</h3>
+ <h3>Art. 19. É facultado aos contratantes dirimir seus conflitos recorrendo à arbitragem.</h3>
+ <h3>Art. 20. (VETADO)</h3>
+ <h3>Art. 21. As infrações do disposto nesta Lei serão punidas com multas administrativas de R$ 550,00 (quinhentos e cinqüenta reais) a R$ 10.500,00 (dez mil e quinhentos reais), a serem aplicadas pela ANTT, sem prejuízo do cancelamento da inscrição no RNTR-C, quando for o caso.</h3>
+ <h3>Art. 22. Na aplicação do disposto nesta Lei, ficam ressalvadas as disposições previstas em acordos ou convênios internacionais firmados pela República Federativa do Brasil.</h3>
+ <h3>Art. 22-A. As instituições de pagamento que realizam pagamentos eletrônicos de frete, que estejam em funcionamento na data de publicação da Medida Provisória nº 1.050, de 18 de maio de 2021 , e que não se enquadrem nos critérios previstos na regulamentação para serem autorizadas a funcionar pelo Banco Central do Brasil poderão continuar a ofertar pagamentos eletrônicos de frete. (Incluído pela Medida Provisória nº 1.051, de 2021)</h3>
+ <h3>Art. 22-A. As instituições de pagamento que realizam pagamentos eletrônicos de frete, que estejam em funcionamento na data de publicação desta Lei e que não se enquadrem nos critérios previstos na regulamentação para serem autorizadas a funcionar pelo Banco Central do Brasil poderão continuar a ofertar pagamentos eletrônicos de frete. (Incluído pela Lei n° 14.206, de 2021)</h3>
+ <h4>§ 1º Ao se enquadrar nos critérios a que se refere o caput , a instituição de pagamento deverá solicitar ao Banco Central do Brasil autorização para o seu funcionamento. (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 1º Ao se enquadrar nos critérios a que se refere o caput deste artigo, a instituição de pagamento deverá solicitar ao Banco Central do Brasil autorização para o seu funcionamento. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º Na hipótese de a solicitação de que trata o § 1º ser indeferida, a instituição de pagamento deverá cessar as suas atividades, nos termos do disposto na regulamentação do Banco Central do Brasil. (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 2º Na hipótese de a solicitação de que trata o § 1º deste artigo ser indeferida, a instituição de pagamento deverá cessar as suas atividades, nos termos da regulamentação do Banco Central do Brasil. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h3>Art. 22-B. As instituições de pagamento que realizam pagamentos eletrônicos de frete deverão, para além dos serviços oferecidos no âmbito do próprio arranjo de pagamento, participar obrigatoriamente do arranjo de pagamentos instantâneos instituído pelo Banco Central do Brasil, na forma e nos termos da regulamentação própria. (Incluído pela Medida Provisória nº 1.051, de 2021)</h3>
+ <h3>Art. 22-B. As instituições de pagamento que realizam pagamentos eletrônicos de frete deverão, além dos serviços oferecidos no âmbito do próprio arranjo de pagamento, participar obrigatoriamente do arranjo de pagamentos instantâneos instituído pelo Banco Central do Brasil, na forma e nos termos da regulamentação própria. (Incluído pela Lei n° 14.206, de 2021)</h3>
+ <h3>Art. 22-B. As instituições de pagamento que realizam pagamentos eletrônicos de frete deverão, além dos serviços oferecidos no âmbito do próprio arranjo de pagamento, disponibilizar obrigatoriamente o arranjo de pagamentos instantâneos instituído pelo Banco Central do Brasil, na forma e nos termos da regulamentação própria. (Redação dada pela Lei n° 14.599, de 2023)</h3>
+ <h4>§ 1º As instituições de pagamento que, a critério do Banco Central do Brasil, não cumprirem os requisitos de participação estabelecidos no regulamento do arranjo de pagamentos instantâneos de que trata o caput e que, por essa razão, não puderem ofertar o meio de pagamentos correspondente ao TAC ou equiparado deverão encerrar a prestação de serviços de pagamentos eletrônicos de frete. (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 1º As instituições de pagamento que, a critério do Banco Central do Brasil, não cumprirem os requisitos de participação estabelecidos no regulamento do arranjo de pagamentos instantâneos referido no caput deste artigo e que, por essa razão, não puderem ofertar o meio de pagamento correspondente ao TAC ou equiparado deverão encerrar a prestação de serviços de pagamentos eletrônicos de frete. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h4>§ 2º Na hipótese prevista no § 1º, o Banco Central do Brasil deverá dispor sobre a forma e o prazo de remessa dos recursos pelo prestador de serviços de pagamentos eletrônicos de frete para a conta de depósitos ou conta de pagamento indicada pelo TAC ou equiparado. (Incluído pela Medida Provisória nº 1.051, de 2021)</h4>
+ <h4>§ 2º Na hipótese prevista no § 1º deste artigo, o Banco Central do Brasil deverá dispor sobre a forma e o prazo de remessa dos recursos pelo prestador de serviços de pagamentos eletrônicos de frete para a conta de depósitos ou para a conta de pagamento indicada pelo TAC ou equiparado. (Incluído pela Lei n° 14.206, de 2021)</h4>
+ <h3>Art. 23. Esta Lei entra em vigor na data de sua publicação, assegurando-se aos que já exercem a atividade de transporte rodoviário de cargas inscrição no RNTR-C e a continuação de suas atividades, observadas as disposições desta Lei.</h3>
+ <h3>Art. 24. Revoga-se a Lei N° 6.813, de 10 de julho de 1980.</h3>
+ <p>Brasília, 5 de janeiro de 2007; 186º da Independência e 119º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Paulo Sérgio Oliveira Passos</p>
+ <p>Este texto não substitui o publicado no D.O.U. de 8.1.2007.</p>
+ <p>(Vide Lei n° 13.103. de 2015)(Vide ADC nº 48) | Dispõe sobre o transporte rodoviário de cargas por conta de terceiros e mediante remuneração e revoga a Lei n° 6.813, de 10 de julho de 1980.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/L11442.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.891, DE 9 DE JULHO DE 2004 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2004" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.891, DE 9 DE JULHO DE 2004</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:55:03 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.891compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 13.654 caracteres | espelho: 16.357 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.891, DE 9 DE JULHO DE 2004.</p>
+ <p>Regulamento</p>
+ <p>Institui a Bolsa-Atleta.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica instituída a Bolsa-Atleta, destinada prioritariamente aos atletas praticantes do esporte de alto rendimento em modalidades olímpicas e paraolímpicas, sem prejuízo da análise e deliberação acerca das demais modalidades, a serem feitas de acordo com o art. 5º desta Lei. (Redação dada pela Lei n° 12.395, de 2011).</h3>
+ <h4>§ 1º A Bolsa-Atleta garantirá aos atletas benefício financeiro conforme os valores fixados no Anexo desta Lei, que serão revistos em ato do Poder Executivo, com base em estudos técnicos sobre o tema, observado o limite definido na lei orçamentária anual. (Redação dada pela Lei n° 12.395, de 2011).</h4>
+ <h4>§ 2º Para efeito do disposto no § 1o, ficam criadas as seguintes categorias de Bolsa-Atleta: (Redação dada pela Lei n° 12.395, de 2011).</h4>
+ <h5>I - Categoria Atleta de Base, destinada aos atletas que participem com destaque das categorias iniciantes, a serem determinadas pela respectiva entidade nacional de administração do desporto, em conjunto com o Ministério do Esporte; (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h5>II - Categoria Estudantil, destinada aos atletas que tenham participado de eventos nacionais estudantis, reconhecidos pelo Ministério do Esporte; (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h5>III - Categoria Atleta Nacional, destinada aos atletas que tenham participado de competição esportiva em âmbito nacional, indicada pela respectiva entidade nacional de administração do desporto e que atenda aos critérios fixados pelo Ministério do Esporte; (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h5>IV - Categoria Atleta Internacional, destinada aos atletas que tenham participado de competição esportiva de âmbito internacional integrando seleção brasileira ou representando o Brasil em sua modalidade, reconhecida pela respectiva entidade internacional e indicada pela entidade nacional de administração da modalidade; (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h5>V - Categoria Atleta Olímpico ou Paraolímpico, destinada aos atletas que tenham participado de Jogos Olímpicos ou Paraolímpicos e cumpram os critérios fixados pelo Ministério do Esporte em regulamento; (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h5>VI - Categoria Atleta Pódio, destinada aos atletas de modalidades individuais olímpicas e paraolímpicas, de acordo com os critérios a serem definidos pelas respectivas entidades nacionais de administração do desporto em conjunto com o Comitê Olímpico Brasileiro - COB ou Comitê Paraolímpico Brasileiro - CPB e o Ministério do Esporte, obrigatoriamente vinculados ao Programa Atleta Pódio. (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h4>§ 3º A Bolsa-Atleta será concedida prioritariamente aos atletas de alto rendimento das modalidades olímpicas e paraolímpicas filiadas, respectivamente, ao Comitê Olímpico Brasileiro - COB ou ao Comitê Paraolímpico Brasileiro - CPB e, subsidiariamente, aos atletas das modalidades que não fazem parte do programa olímpico ou paraolímpico. (Incluído pela Lei n° 12.395, de 2011).</h4>
+ <h4>§ 4º A concessão do benefício para os atletas participantes de modalidades individuais e coletivas que não fizerem parte do programa olímpico ou paraolímpico fica limitada a 15% (quinze por cento) dos recursos orçamentários disponíveis para a Bolsa-Atleta. (Incluído pela Lei n° 12.395, de 2011).</h4>
+ <h4>§ 5º Não serão beneficiados com a Bolsa-Atleta os atletas pertencentes à categoria máster ou similar. (Incluído pela Lei n° 12.395, de 2011).</h4>
+ <h4>§ 6º O beneficiário do Bolsa-Atleta com idade igual ou superior a 16 (dezesseis) anos que não seja filiado a regime próprio de previdência social ou que não esteja enquadrado em uma das hipóteses do art. 11 da Lei n° 8.213, de 24 de julho de 1991, poderá filiar-se ao Regime Geral de Previdência Social como segurado facultativo. (Redação dada pela Lei n° 13.756, de 2018)</h4>
+ <h4>§ 7º (Revogado). (Redação dada pela Lei n° 13.756, de 2018)</h4>
+ <h3>Art. 2º A concessão da Bolsa-Atleta não gera qualquer vínculo entre os atletas beneficiados e a administração pública federal.</h3>
+ <h3>Art. 3º Para pleitear a concessão da Bolsa-Atleta, o atleta deverá preencher, cumulativamente, os seguintes requisitos:</h3>
+ <h5>I - possuir idade mínima de 14 (quatorze) anos para a obtenção das Bolsas-Atleta de Base, Nacional, Internacional, Olímpico ou Paraolímpico, Pódio, e possuir idade mínima de 14 (quatorze) anos e máxima de 20 (vinte) anos para a obtenção da Bolsa-Atleta Estudantil, até o término das inscrições; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>II - estar vinculado a alguma entidade de prática desportiva; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>III - estar em plena atividade esportiva; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>IV - apresentar declaração sobre valores recebidos a título de patrocínio de pessoas jurídicas públicas ou privadas, incluindo-se todo e qualquer montante percebido eventual ou regularmente, diverso do salário, assim como qualquer tipo de apoio em troca de vinculação de marca; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>V - ter participado de competição esportiva em âmbito nacional ou internacional no ano imediatamente anterior em que tiver sido pleiteada a concessão da Bolsa-Atleta, com exceção da Categoria Atleta Pódio; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>VI - estar regularmente matriculado em instituição de ensino pública ou privada, exclusivamente para os atletas que pleitearem a Bolsa-Atleta Estudantil; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>VII - encaminhar, para aprovação, plano esportivo anual, contendo plano de treinamento, objetivos e metas esportivas para o ano de recebimento do benefício, conforme critérios e modelos a serem estabelecidos pelo Ministério do Esporte; (Redação dada pela Lei n° 12.395, de 2011).</h5>
+ <h5>VIII - estar ranqueado na sua respectiva entidade internacional entre os 20 (vinte) primeiros colocados do mundo em sua modalidade ou prova específica, exclusivamente para atletas da Categoria Atleta Pódio. (Incluído pela Lei n° 12.395, de 2011).</h5>
+ <h4>§ 1º Não poderá candidatar-se à Bolsa-Atleta o atleta que: (Incluído pela Lei n° 13.051, de 2014)</h4>
+ <h5>I - estiver cumprindo suspensão imposta por Tribunal de Justiça Desportiva, em sentença transitada em julgado, por resultado adverso em exame oficial de antidoping ou violação das regras antidoping contidas na Convenção Internacional contra o Doping nos Esportes, ratificada pelo Decreto Legislativo nº 306, de 26 de outubro de 2007; (Incluído pela Lei n° 13.051, de 2014)</h5>
+ <h5>II - tiver sido condenado, com trânsito em julgado, mais de 1 (uma) vez, por Tribunal de Justiça Desportiva, por violação das regras antidoping contidas na Convenção Internacional contra o Doping nos Esportes, ratificada pelo Decreto Legislativo nº 306, de 26 de outubro de 2007. (Incluído pela Lei n° 13.051, de 2014)</h5>
+ <h4>§ 2º Aos atletas beneficiados pela Bolsa-Atleta que forem enquadrados nas situações descritas no § 1º serão imputadas as seguintes penalidades: (Incluído pela Lei n° 13.051, de 2014)</h4>
+ <h5>I - quando for configurada a situação prevista no inciso I do § 1º , suspensão do pagamento da bolsa por período igual ao da suspensão determinada pela Justiça Desportiva; (Incluído pela Lei n° 13.051, de 2014)</h5>
+ <h5>II - quando for configurada a situação prevista no inciso II do § 1º , vedação de concorrência à nova Bolsa-Atleta nos 2 (dois) primeiros exercícios subsequentes ao da última condenação. (Incluído pela Lei n° 13.051, de 2014)</h5>
+ <h3>Art. 4º ( VETADO )</h3>
+ <h3>Art. 4º-A. A Bolsa-Atleta será concedida pelo prazo de 1 (um) ano, a ser paga em até 12 (doze) parcelas mensais. (Redação dada pela Lei n° 13.756, de 2018)</h3>
+ <h4>§ 1º Os atletas que já recebem o benefício e que conquistarem medalhas nos jogos olímpicos e paraolímpicos bem como os atletas da Categoria Atleta Pódio terão prioridade para renovação das suas respectivas bolsas. (Incluído pela Lei n° 12.395, de 2011).</h4>
+ <h4>§ 2º A prioridade para renovação da Bolsa-Atleta não desobriga o atleta ou seu representante ou procurador legal de obedecer a todos os procedimentos, inclusive de inscrição, e prazos estabelecidos pelo Ministério do Esporte, bem como de apresentação da respectiva prestação de contas. (Incluído pela Lei n° 12.395, de 2011).</h4>
+ <h3>Art. 5º O Ministro de Estado do Esporte submeterá ao Conselho Nacional do Esporte - CNE a análise e deliberação acerca de pleito de concessão de bolsas para atletas de modalidades não olímpicas e não paraolímpicas, e respectivas categorias, que serão atendidas no exercício subsequente pela Bolsa-Atleta, observando-se o Plano Nacional do Desporto e as disponibilidades financeiras. (Redação dada pela Lei n° 12.395, de 2011).</h3>
+ <h3>Art. 6º As indicações referentes às modalidades previstas no art. 5º desta Lei serão submetidas ao Conselho Nacional do Esporte – CNE, para que sejam observadas as prioridades de atendimento à Política Nacional de Esporte e as disponibilidades financeiras.</h3>
+ <h3>Art. 7º ( VETADO )</h3>
+ <h3>Art. 7º-A. Os critérios para reconhecimento de competições válidas para a concessão do benefício serão estabelecidos pelo Ministro de Estado do Esporte. (Incluído pela Lei n° 12.395, de 2011).</h3>
+ <h3>Art. 8º ( VETADO )</h3>
+ <h3>Art. 8º-A. As formas e os prazos para a inscrição dos interessados na obtenção do benefício, bem como para a prestação de contas dos recursos financeiros recebidos e dos resultados esportivos propostos e alcançados pelos atletas beneficiados, serão fixados em regulamento. (Incluído pela Lei n° 12.395, de 2011).</h3>
+ <h3>Art. 9º ( VETADO )</h3>
+ <h3>Art. 10. ( VETADO )</h3>
+ <p><del></p>
+ <h3>Art. 11 (Revogado pela Lei n° 13.051, de 2014)</del></h3>
+ <h3>Art. 12. As despesas decorrentes da concessão da Bolsa-Atleta correrão à conta dos recursos orçamentários do Ministério do Esporte.</h3>
+ <h3>Art. 13. Os atletas beneficiados prestarão contas dos recursos financeiros recebidos na forma e nos prazos fixados em regulamento.</h3>
+ <h3>Art. 14. ( VETADO )</h3>
+ <h3>Art. 15. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 9 de julho de 2004; 183º da Independência e 116º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Agnelo Santos Queiroz Filho</p>
+ <p>Este texto não substitui o publicado no DOU de 12.7.2004</p>
+ <p>Bolsa-Atleta - Categoria Atleta de Base (Incluído pela Lei n° 12.395, de 2011).</p>
+ <p>Atletas Eventualmente Beneficiados</p>
+ <p>Atletas de quatorze e dezenove anos de idade, com destaque nas categorias de base do esporte de alto rendimento, tendo obtido até a terceira colocação nas modalidades individuais de categorias e eventos previamente indicados pela respectiva entidade nacional de administração do desporto ou que tenham sido eleitos entre os dez melhores atletas do ano anterior em cada modalidade coletiva, na categoria indicada pela respectiva entidade e que continuem treinando e participando de competições nacionais.</p>
+ <p>(trezentos e setenta reais)</p>
+ <p>Bolsa-Atleta - Categoria Estudantil (Redação dada pela Lei n° 12.395, de 2011).</p>
+ <p>Atletas Eventualmente Beneficiados</p>
+ <p>Atletas de quatorze a vinte anos de idade, que tenham participado de eventos nacionais estudantis reconhecidos pelo Ministério do Esporte, tendo obtido até a terceira colocação nas modalidades individuais ou que tenham sido eleitos entre os seis melhores atletas em cada modalidade coletiva do referido evento e que continuem treinando e participando de competições nacionais.</p>
+ <p>(trezentos e setenta reais)</p>
+ <p>Bolsa-Atleta - Categoria Atleta Nacional (Redação dada pela Lei n° 12.395, de 2011).</p>
+ <p>Atletas Eventualmente Beneficiados</p>
+ <p>Atletas que tenham participado do evento máximo da temporada nacional ou que integrem o ranking nacional da modalidade divulgado oficialmente pela respectiva entidade nacional da administração da modalidade, em ambas as situações, tendo obtido até a terceira colocação, e que continuem treinando e participando de competições nacionais.</p>
+ <p>Os eventos máximos serão indicados pelas respectivas confederações ou associações nacionais da modalidade.</p>
+ <p>(novecentos e vinte e cinco reais)</p>
+ <p>Bolsa-Atleta - Categoria Atleta Internacional (Redação dada pela Lei n° 12.395, de 2011).</p>
+ <p>Atletas Eventualmente Beneficiados</p>
+ <p>Atletas que tenham integrado a seleção brasileira de sua modalidade esportiva, representando o Brasil em campeonatos sul-americanos, pan-americanos ou mundiais, reconhecidos pelo Comitê Olímpico Brasileiro - COB ou Comitê Paraolímpico Brasileiro - CPB ou entidade internacional de administração da modalidade, obtendo até a terceira colocação, e que continuem treinando e participando de competições internacionais.</p>
+ <h3>R$ 1.850,00</h3>
+ <p>(mil, oitocentos e cinquenta reais)</p>
+ <p>Bolsa-Atleta - Categoria Atleta Olímpico ou Paraolímpico (Redação dada pela Lei n° 12.395, de 2011).</p>
+ <p>Atletas Eventualmente Beneficiados</p>
+ <p>Atletas que tenham integrado as delegações olímpica ou paraolímpica brasileiras de sua modalidade esportiva, que continuem treinando e participando de competições internacionais e cumpram critérios definidos pelo Ministério do Esporte.</p>
+ <h3>R$ 3.100,00</h3>
+ <p>(três mil e cem reais)</p>
+ <p>Bolsa-Atleta: Categoria Atleta Pódio (Incluído pela Lei n° 12.395, de 2011).</p>
+ <p>Atletas Eventualmente Beneficiados</p>
+ <p>Atletas de modalidades olímpicas e paraolímpicas individuais que estejam entre os vinte melhores do mundo em sua prova, segundo ranqueamento oficial da entidade internacional de administração da modalidade e que sejam indicados pelas respectivas entidades nacionais de administração do desporto em conjunto com o respectivo Comitê Olímpico Brasileiro - COB ou Comitê Paraolímpico Brasileiro - CPB e com o Ministério do Esporte.</p>
+ <p>Regulamento | Institui a Bolsa-Atleta.</p>
+ <p>Atletas Eventualmente Beneficiados | Valor Base Mensal</p>
+ <p>Atletas de quatorze e dezenove anos de idade, com destaque nas categorias de base do esporte de alto rendimento, tendo obtido até a terceira colocação nas modalidades individuais de categorias e eventos previamente indicados pela respectiva entidade nacional de administração do desporto ou que tenham sido eleitos entre os dez melhores atletas do ano anterior em cada modalidade coletiva, na categoria indicada pela respectiva entidade e que continuem treinando e participando de competições nacionais. | R$ 370,00</p>
+ <p>(trezentos e setenta reais)</p>
+ <p>Atletas Eventualmente Beneficiados | Valor Base Mensal</p>
+ <p>Atletas de quatorze a vinte anos de idade, que tenham participado de eventos nacionais estudantis reconhecidos pelo Ministério do Esporte, tendo obtido até a terceira colocação nas modalidades individuais ou que tenham sido eleitos entre os seis melhores atletas em cada modalidade coletiva do referido evento e que continuem treinando e participando de competições nacionais. | R$ 370,00</p>
+ <p>(trezentos e setenta reais)</p>
+ <p>Atletas Eventualmente Beneficiados | Valor Base Mensal</p>
+ <p>Atletas que tenham participado do evento máximo da temporada nacional ou que integrem o</p>
+ <p>nacional da modalidade divulgado oficialmente pela respectiva entidade nacional da administração da modalidade, em ambas as situações, tendo obtido até a terceira colocação, e que continuem treinando e participando de competições nacionais.</p>
+ <p>Os eventos máximos serão indicados pelas respectivas confederações ou associações nacionais da modalidade. | R$ 925,00</p>
+ <p>(novecentos e vinte e cinco reais)</p>
+ <p>Atletas Eventualmente Beneficiados | Valor Base Mensal</p>
+ <p>Atletas que tenham integrado a seleção brasileira de sua modalidade esportiva, representando o Brasil em campeonatos sul-americanos, pan-americanos ou mundiais, reconhecidos pelo Comitê Olímpico Brasileiro - COB ou Comitê Paraolímpico Brasileiro - CPB ou entidade internacional de administração da modalidade, obtendo até a terceira colocação, e que continuem treinando e participando de competições internacionais. | R$ 1.850,00</p>
+ <p>(mil, oitocentos e cinquenta reais)</p>
+ <p>Atletas Eventualmente Beneficiados | Valor Base Mensal</p>
+ <p>Atletas que tenham integrado as delegações olímpica ou paraolímpica brasileiras de sua modalidade esportiva, que continuem treinando e participando de competições internacionais e cumpram critérios definidos pelo Ministério do Esporte. | R$ 3.100,00</p>
+ <p>(três mil e cem reais)</p>
+ <p>Atletas Eventualmente Beneficiados | Valor Base Mensal</p>
+ <p>Atletas de modalidades olímpicas e paraolímpicas individuais que estejam entre os vinte melhores do mundo em sua prova, segundo ranqueamento oficial da entidade internacional de administração da modalidade e que sejam indicados pelas respectivas entidades nacionais de administração do desporto em conjunto com o respectivo Comitê Olímpico Brasileiro - COB ou Comitê Paraolímpico Brasileiro - CPB e com o Ministério do Esporte. | Até R$ 15.000,00</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.891compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

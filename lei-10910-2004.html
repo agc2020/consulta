@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.910, DE 15 DE JULHO DE 2004 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2004" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.910, DE 15 DE JULHO DE 2004</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:13:24 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.910compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.895 caracteres | espelho: 13.800 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.910, DE 15 DE JULHO DE 2004.</p>
+ <p>Reestrutura a remuneração dos cargos das carreiras de Auditoria da Receita Federal, Auditoria-Fiscal da Previdência Social, Auditoria-Fiscal do Trabalho, altera o pró-labore, devido aos ocupantes dos cargos efetivos da carreira de Procurador da Fazenda Nacional, e a Gratificação de Desempenho de Atividade Jurídica – GDAJ, devida aos ocupantes dos cargos efetivos das carreiras de Advogados da União, de Procuradores Federais, de Procuradores do Banco Central do Brasil, de Defensores Públicos da União e aos integrantes dos quadros suplementares de que trata o art. 46 da Medida Provisória nº 2.229-43, de 6 de setembro de 2001, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º As Carreiras de Auditoria da Receita Federal do Brasil e Auditoria-Fiscal do Trabalho compõem-se de cargos efetivos agrupados nas classes A, B e Especial, compreendendo a 1ª (primeira) 5 (cinco) padrões, e as 2 (duas) últimas, 4 (quatro) padrões, na forma do Anexo I desta Lei. (Redação dada pela Lei n° 11.457, de 2007) (Vigência)</h3>
+ <h4>Parágrafo único. Os titulares de cargos de provimento efetivo das Carreiras de que trata o caput deste artigo serão reenquadrados, a contar de 1º de julho de 2009, conforme disposto no Anexo III desta Lei. (Incluído pela Lei n° 11.890, de 2008).</h4>
+ <p><del></p>
+ <h3>Art. 2º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <h3>Art. 2º-A. A partir de 1º de julho de 2008, os titulares dos cargos de provimento efetivo integrantes das Carreiras a que se refere o art. 1º desta Lei passam a ser remunerados, exclusivamente, por subsídio, fixado em parcela única, vedado o acréscimo de qualquer gratificação, adicional, abono, prêmio, verba de representação ou outra espécie remuneratória. (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <h4>Parágrafo único. Os valores do subsídio dos titulares dos cargos a que se refere o caput deste artigo são os fixados no Anexo IV desta Lei, com efeitos financeiros a partir das datas nele especificadas. (Incluído pela Lei n° 11.890, de 2008).</h4>
+ <h3>Art. 2º-B. Estão compreendidas no subsídio e não são mais devidas aos titulares dos cargos a que se refere o art. 1º desta Lei, a partir de 1º de julho de 2008, as seguintes espécies remuneratórias: (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <h5>I - Vencimento Básico; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>II - Gratificação de Atividade Tributária - GAT, de que trata o art. 3º desta Lei; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>III - Gratificação de Incremento da Fiscalização e da Arrecadação - GIFA, de que trata o art. 4º desta Lei; e (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>IV - Vantagem Pecuniária Individual - VPI, de que trata a Lei n° 10.698, de 2 de julho de 2003. (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h4>Parágrafo único. Considerando o disposto no art. 2º-A desta Lei, os titulares dos cargos nele referidos não fazem jus à percepção das seguintes vantagens remuneratórias: (Incluído pela Lei n° 11.890, de 2008).</h4>
+ <h5>I - Gratificação de Desempenho de Atividade Tributária - GDAT, de que trata o art. 15 da Lei n° 10.593, de 6 de dezembro de 2002; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>II - retribuição adicional variável, de que trata o art. 5º da Lei n° 7.711, de 22 de dezembro de 1988; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>III - Gratificação de Estímulo à Fiscalização e Arrecadação - GEFA, criada pelo Decreto-Lei n° 2.371, de 18 de novembro de 1987; e (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>IV - Gratificação de Atividade - GAE, de que trata a Lei Delegada nº 13, de 27 de agosto de 1992. (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h3>Art. 2º-C. Além das parcelas e vantagens de que trata o art. 2º-B desta Lei, não são devidas aos titulares dos cargos a que se refere o art. 1º desta Lei, a partir de 1º de julho de 2008, as seguintes espécies remuneratórias: (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <h5>I - vantagens pessoais e Vantagens Pessoais Nominalmente Identificadas - VPNI, de qualquer origem e natureza; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>II - diferenças individuais e resíduos, de qualquer origem e natureza; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>III - valores incorporados à remuneração decorrentes do exercício de função de direção, chefia ou assessoramento ou de cargo de provimento em comissão; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>IV - valores incorporados à remuneração referentes a quintos ou décimos; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>V - valores incorporados à remuneração a título de adicional por tempo de serviço; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>VI - vantagens incorporadas aos proventos ou pensões por força dos arts. 180 e 184 da Lei n° 1.711, de 28 de outubro de 1952, e dos arts. 192 e 193 da Lei n° 8.112, de 11 de dezembro de 1990; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>VII - abonos; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>VIII - valores pagos a título de representação; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>IX - adicional pelo exercício de atividades insalubres, perigosas ou penosas; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>X - adicional noturno; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>XI - adicional pela prestação de serviço extraordinário; e (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>XII - outras gratificações e adicionais, de qualquer origem e natureza, que não estejam explicitamente mencionados no art. 2º-E. (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h3>Art. 2º-D. Os servidores integrantes das Carreiras de que trata o art. 1º desta Lei não poderão perceber cumulativamente com o subsídio quaisquer valores ou vantagens incorporadas à remuneração por decisão administrativa, judicial ou extensão administrativa de decisão judicial, de natureza geral ou individual, ainda que decorrentes de sentença judicial transitada em julgado. (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <h3>Art. 2º-E. O subsídio dos integrantes das Carreiras de que trata o art. 1º desta Lei não exclui o direito à percepção, nos termos da legislação e regulamentação específica, de: (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <h5>I - gratificação natalina; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>II - adicional de férias; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>III - abono de permanência de que tratam o § 19 do art. 40 da Constituição Federal, o § 5º do art. 2º e o § 1º do art. 3º da Emenda Constitucional nº 41, de 19 de dezembro de 2003; (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>IV - retribuição pelo exercício de função de direção, chefia e assessoramento; e (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h5>V - parcelas indenizatórias previstas em lei. (Incluído pela Lei n° 11.890, de 2008).</h5>
+ <h3>Art. 2º-F. A aplicação das disposições desta Lei aos servidores ativos, aos inativos e aos pensionistas não poderá implicar redução de remuneração, de proventos e de pensões. (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <h4>§ 1º Na hipótese de redução de remuneração, de provento ou de pensão, em decorrência da aplicação do disposto nesta Lei, eventual diferença será paga a título de parcela complementar de subsídio, de natureza provisória, que será gradativamente absorvida por ocasião do desenvolvimento no cargo ou na Carreira por progressão ou promoção ordinária ou extraordinária, da reorganização ou da reestruturação dos cargos e das Carreiras ou das remunerações previstas nesta Lei, da concessão de reajuste ou vantagem de qualquer natureza, bem como da implantação dos valores constantes do Anexo IV desta Lei. (Incluído pela Lei n° 11.890, de 2008).</h4>
+ <h4>§ 2º A parcela complementar de subsídio referida no § 1º deste artigo estará sujeita exclusivamente à atualização decorrente de revisão geral da remuneração dos servidores públicos federais. (Incluído pela Lei n° 11.890, de 2008).</h4>
+ <h3>Art. 2º-G. Aplica-se às aposentadorias concedidas aos servidores integrantes das Carreiras de Auditoria da Receita Federal do Brasil e de Auditoria-Fiscal do Trabalho de que trata o art. 1º desta Lei e às pensões, ressalvadas as aposentadorias e pensões reguladas pelos arts. 1º e 2º da Lei n° 10.887, de 18 de junho de 2004, no que couber, o disposto nesta Lei em relação aos servidores que se encontram em atividade. (Incluído pela Lei n° 11.890, de 2008).</h3>
+ <p><del></p>
+ <h3>Art. 3º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 4º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 5º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 6º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 7º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 8º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 9º (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 10 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 11 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 12 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 13 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 14 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 15 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <p><del></p>
+ <h3>Art. 16 (Revogado pela Lei n° 11.890, de 2008)</del></h3>
+ <h3>Art. 17. Nos processos em que atuem em razão das atribuições de seus cargos, os ocupantes dos cargos das carreiras de Procurador Federal e de Procurador do Banco Central do Brasil serão intimados e notificados pessoalmente.</h3>
+ <h3>Art. 18. Ficam transformados, no Poder Executivo Federal, sem aumento de despesa, 2 (dois) cargos com comissão do Grupo Direção e Assessoramento Superiores – DAS, nível DAS-5, em 9 (nove) cargos, nível DAS-2, e 4 (quatro) cargos, nível DAS-4, em 12 (doze) cargos, nível DAS-3.</h3>
+ <h3>Art. 19. O art. 3º da Lei n° 4.348, de 26 de junho de 1964, passa a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 3º Os representantes judiciais da União, dos Estados, do Distrito Federal, dos Municípios ou de suas respectivas autarquias e fundações serão intimados pessoalmente pelo juiz, no prazo de 48 (quarenta e oito) horas, das decisões judiciais em que suas autoridades administrativas figurem como coatoras, com a entrega de cópias dos documentos nelas mencionados, para eventual suspensão da decisão e defesa do ato apontado como ilegal ou abusivo de poder." (NR)</h3>
+ <h3>Art. 20. Esta Lei entra em vigor na data de sua publicação, respeitado o disposto no art. 2º desta Lei.</h3>
+ <h3>Art. 21. Ficam revogados o art. 2º , os §§ 1º , 2º , 3º , 4º e 6º do art. 15, os arts. 16 e 22 e os Anexos I, II, III e IV da Lei n° 10.593, de 2002.</h3>
+ <p>Brasília, 15 de julho de 2004; 183º da Independência e 116º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Antonio Palocci Filho</p>
+ <p>Álvaro Augusto Ribeiro Costa</p>
+ <p>Este texto não substitui o publicado no DOU de 16.7.2004 - Edição Extra</p>
+ <p>(Redação dada pela lei n° 13.464, de 2017)</p>
+ <h3>ESTRUTURA DE CLASSES E PADRÕES DOS CARGOS</h3>
+ <h6>a) Carreira Tributária e Aduaneira da Receita Federal do Brasil:</h6>
+ <p>Cargo de Auditor-Fiscal da Receita Federal do Brasil e de Analista Tributário da Receita Federal do Brasil</p>
+ <h6>b) Carreira de Auditoria-Fiscal do Trabalho:</h6>
+ <p>Cargo de Auditor-Fiscal do Trabalho</p>
+ <p>(Revogado pela Lei n° 11.890, de 2008)</del></p>
+ <p>(Redação dada pela lei n° 13.464, de 2017)</p>
+ <h3>TABELA DE CORRELAÇÃO DE CARGOS</h3>
+ <h6>a) Carreira Tributária e Aduaneira da Receita Federal do Brasil:</h6>
+ <h3>SITUAÇÃO ATUAL</h3>
+ <h3>SITUAÇÃO NOVA</h3>
+ <p>Cargo de Auditor-Fiscal da Receita Federal do Brasil e de Analista Tributário da Receita Federal do Brasil</p>
+ <p>Cargo de Auditor-Fiscal da Receita Federal do Brasil e de Analista Tributário da Receita Federal do Brasil</p>
+ <h6>b) Carreira de Auditoria-Fiscal do Trabalho:</h6>
+ <h3>SITUAÇÃO ATUAL</h3>
+ <h3>SITUAÇÃO NOVA</h3>
+ <p>Cargo de Auditor-Fiscal do Trabalho</p>
+ <p>(Redação dada pela Lei n° 14.673, de 2023) Produção de efeitos</p>
+ <p>CARREIRAS TRIBUTÁRIA E ADUANEIRA DA RECEITA FEDERAL DO BRASIL E DE 	AUDITORIA-FISCAL DO TRABALHO</p>
+ <h6>a) 	Vencimento básico para os cargos de Auditor-Fiscal da Receita Federal do 	Brasil:</h6>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <p>EFEITOS FINANCEIROS A PARTIR DE 1º DE MAIO DE 2023</p>
+ <h6>b) 	Vencimento básico para os cargos de Analista Tributário da Receita Federal do Brasil:</h6>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <p>EFEITOS FINANCEIROS A PARTIR DE 1º DE MAIO DE 2023</p>
+ <h6>c) 	Vencimento básico para os cargos de Auditor-Fiscal do Trabalho:</h6>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <p>EFEITOS FINANCEIROS A PARTIR DE 1º DE MAIO DE 2023</p>
+ <p>Reestrutura a remuneração dos cargos das carreiras de Auditoria da Receita Federal, Auditoria-Fiscal da Previdência Social, Auditoria-Fiscal do Trabalho, altera o pró-labore, devido aos ocupantes dos cargos efetivos da carreira de Procurador da Fazenda Nacional, e a Gratificação de Desempenho de Atividade Jurídica – GDAJ, devida aos ocupantes dos cargos efetivos das carreiras de Advogados da União, de Procuradores Federais, de Procuradores do Banco Central do Brasil, de Defensores Públicos da União e aos integrantes dos quadros suplementares de que trata o art. 46 da Medida Provisória nº 2.229-43, de 6 de setembro de 2001, e dá outras providências.</p>
+ <p>Cargo de Auditor-Fiscal da Receita Federal do Brasil e de Analista Tributário da Receita Federal do Brasil | CLASSE | PADRÃO</p>
+ <h3>ESPECIAL | III |</h3>
+ <h3>PRIMEIRA | III |</h3>
+ <h3>SEGUNDA | III |</h3>
+ <p>Cargo de Auditor-Fiscal do Trabalho | CLASSE | PADRÃO</p>
+ <h3>ESPECIAL | III |</h3>
+ <h3>PRIMEIRA | III |</h3>
+ <h3>SEGUNDA | III |</h3>
+ <h3>SITUAÇÃO ATUAL | SITUAÇÃO NOVA</h3>
+ <p>Cargo de Auditor-Fiscal da Receita Federal do Brasil e de Analista Tributário da Receita Federal do Brasil | CLASSE</p>
+ <h3>SITUAÇÃO ATUAL | SITUAÇÃO NOVA</h3>
+ <p>Cargo de Auditor-Fiscal do Trabalho | CLASSE</p>
+ <p>CLASSE | PADRÃO | VENCIMENTO BÁSICOEFEITOS FINANCEIROS A PARTIR DE 1º DE MAIO DE 2023</p>
+ <h3>ESPECIAL | III | 29.760,95</h3>
+ <h3>II | 28.934,13 |</h3>
+ <h3>I | 28.422,52 |</h3>
+ <h3>PRIMEIRA | III | 26.846,11</h3>
+ <h3>II | 26.319,73 |</h3>
+ <h3>I | 25.297,70 |</h3>
+ <h3>SEGUNDA | III | 24.324,71</h3>
+ <h3>II | 23.847,76 |</h3>
+ <h3>I | 22.921,71 |</h3>
+ <p>CLASSE | PADRÃO | VENCIMENTO BÁSICOEFEITOS FINANCEIROS A PARTIR DE 1º DE MAIO DE 2023</p>
+ <h3>ESPECIAL | III | 17.740,89</h3>
+ <h3>II | 17.108,03 |</h3>
+ <h3>I | 16.772,58 |</h3>
+ <h3>PRIMEIRA | III | 15.811,26</h3>
+ <h3>II | 15.203,13 |</h3>
+ <h3>I | 14.056,15 |</h3>
+ <h3>SEGUNDA | III | 13.515,52</h3>
+ <h3>II | 13.250,52 |</h3>
+ <h3>I | 12.735,99 |</h3>
+ <p>CLASSE | PADRÃO | VENCIMENTO BÁSICOEFEITOS FINANCEIROS A PARTIR DE 1º DE MAIO DE 2023</p>
+ <h3>ESPECIAL | III | 29.760,95</h3>
+ <h3>II | 28.934,13 |</h3>
+ <h3>I | 28.422,52 |</h3>
+ <h3>PRIMEIRA | III | 26.846,11</h3>
+ <h3>II | 26.319,73 |</h3>
+ <h3>I | 25.297,70 |</h3>
+ <h3>SEGUNDA | III | 24.324,71</h3>
+ <h3>II | 23.847,76 |</h3>
+ <h3>I | 22.921,71 |</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.910compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

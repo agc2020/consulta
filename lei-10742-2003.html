@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.742, DE 6 DE OUTUBRO DE 2003 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2003" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.742, DE 6 DE OUTUBRO DE 2003</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:04:54 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/2003/L10.742.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 13.270 caracteres | espelho: 13.389 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.742, DE 6 DE OUTUBRO DE 2003. Conversão da MPv nº 123, de 2003</p>
+ <p>Vide Medida Provisória nº 933, de 2020</p>
+ <p>Define normas de regulação para o setor farmacêutico, cria a Câmara de Regulação do Mercado de Medicamentos - CMED e altera a Lei N° 6.360, de 23 de setembro de 1976, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei estabelece normas de regulação do setor farmacêutico, com a finalidade de promover a assistência farmacêutica à população, por meio de mecanismos que estimulem a oferta de medicamentos e a competitividade do setor.</h3>
+ <h3>Art. 2º Aplica-se o disposto nesta Lei às empresas produtoras de medicamentos, às farmácias e drogarias, aos representantes, às distribuidoras de medicamentos, e, de igual modo, a quaisquer pessoas jurídicas de direito público ou privado, inclusive associações de entidades ou pessoas, constituídas de fato ou de direito, ainda que temporariamente, com ou sem personalidade jurídica, que, de alguma maneira, atuem no setor farmacêutico.</h3>
+ <h3>Art. 3º Para efeitos desta Lei, são adotadas as seguintes definições:</h3>
+ <h5>I - farmácia - estabelecimento de manipulação de drogas magistrais e oficinais, de comércio de drogas, medicamentos, insumos farmacêuticos e correlatos, compreendendo o de dispensação e o de atendimento privativo de unidade hospitalar ou de qualquer outra equivalente de assistência médica, nos termos do inciso X do art. 4º da Lei N° 5.991, de 17 de dezembro de 1973;</h5>
+ <h5>II - drogaria - estabelecimento destinado à dispensação e comércio de drogas, medicamentos, insumos farmacêuticos e correlatos em suas embalagens originais, nos termos do inciso XI do art. 4º da Lei N° 5.991, de 1973 ;</h5>
+ <h5>III - representante e distribuidor - empresa que exerça direta ou indiretamente o comércio atacadista de drogas, medicamentos em suas embalagens originais, insumos farmacêuticos e de correlatos, nos termos do inciso XVI do art. 4º da Lei N° 5.991, de 1973;</h5>
+ <h5>IV - medicamento - todo produto farmacêutico, tecnicamente obtido ou elaborado, com finalidade profilática, curativa, paliativa ou para fins de diagnóstico, nos termos do inciso II do art. 4º da Lei N° 5.991, de 1973 ; e</h5>
+ <h5>V - empresas produtoras de medicamentos - estabelecimentos industriais que, operando sobre matéria-prima ou produto intermediário, modificam-lhes a natureza, o acabamento, a apresentação ou a finalidade do produto, gerando, por meio desse processo, medicamentos.</h5>
+ <h4>Parágrafo único. Equiparam-se às empresas produtoras de medicamentos os estabelecimentos importadores de medicamentos de procedência estrangeira que têm registros dos respectivos produtos importados junto à Agência Nacional de Vigilância Sanitária - Anvisa.</h4>
+ <h3>Art. 4º As empresas produtoras de medicamentos deverão observar, para o ajuste e determinação de seus preços, as regras definidas nesta Lei, a partir de sua publicação, ficando vedado qualquer ajuste em desacordo com esta Lei. (Regulamento)</h3>
+ <h4>§ 1º O ajuste de preços de medicamentos será baseado em modelo de teto de preços calculado com base em um índice, em um fator de produtividade e em um fator de ajuste de preços relativos intra-setor e entre setores.</h4>
+ <h4>§ 2º O índice utilizado, para fins do ajuste previsto no § 1º , é o Índice Nacional de Preços ao Consumidor Amplo - IPCA, calculado pelo Instituto Brasileiro de Geografia e Estatística - IBGE.</h4>
+ <h4>§ 3º O fator de produtividade, expresso em percentual, é o mecanismo que permite repassar aos consumidores, por meio dos preços dos medicamentos, projeções de ganhos de produtividade das empresas produtoras de medicamentos.</h4>
+ <h4>§ 4º O fator de ajuste de preços relativos, expresso em percentual, é composto de duas parcelas:</h4>
+ <h5>I - a parcela do fator de ajuste de preços relativos intra-setor, que será calculada com base no poder de mercado, que é determinado, entre outros, pelo poder de monopólio ou oligopólio, na assimetria de informação e nas barreiras à entrada; e</h5>
+ <h5>II - a parcela do fator de ajuste de preços relativos entre setores, que será calculada com base na variação dos custos dos insumos, desde que tais custos não sejam recuperados pelo cômputo do índice previsto no § 2º deste artigo.</h5>
+ <h4>§ 5º Compete à Câmara de Regulação do Mercado de Medicamentos - CMED, criada pelo art. 5º desta Lei, propor critérios de composição dos fatores a que se refere o § 1º , bem como o grau de desagregação de tais fatores, seja por produto, por mercado relevante ou por grupos de mercados relevantes, a serem reguladas até 31 de dezembro de 2003, na forma do art. 84 da Constituição Federal.</h4>
+ <h4>§ 6º A CMED dará transparência e publicidade aos critérios a que se referem os §§ 1º e 2º deste artigo.</h4>
+ <h4>§ 7º Os ajustes de preços ocorrerão anualmente.</h4>
+ <h4>§ 8º O primeiro ajuste, com base nos critérios estabelecidos nesta Lei, ocorrerá em março de 2004, considerando-se, para efeito desse ajuste:</h4>
+ <h5>I - o preço fabricante do medicamento em 31 de agosto de 2003; e</h5>
+ <h5>II - o IPCA acumulado a partir de setembro de 2003, inclusive.</h5>
+ <h4>§ 9º Excepcionalmente, o Conselho de Ministros da CMED poderá autorizar um ajuste positivo de preços ou determinar um ajuste negativo em 31 de agosto de 2003, tendo como referência o preço fabricante em 31 de março de 2003.</h4>
+ <h4>§ 9º Excepcionalmente, o Conselho de Ministros da CMED poderá autorizar ajuste positivo ou negativo de preços. (Redação dada pela Medida Provisória nº 754, de 2016 ( Vigência encerrada ))</h4>
+ <h4>§ 9º Excepcionalmente, o Conselho de Ministros da CMED poderá autorizar um ajuste positivo de preços ou determinar um ajuste negativo em 31 de agosto de 2003, tendo como referência o preço fabricante em 31 de março de 2003.</h4>
+ <h3>Art. 5º Fica criada a Câmara de Regulação do Mercado de Medicamentos - CMED, do Conselho de Governo, que tem por objetivos a adoção, implementação e coordenação de atividades relativas à regulação econômica do mercado de medicamentos, voltados a promover a assistência farmacêutica à população, por meio de mecanismos que estimulem a oferta de medicamentos e a competitividade do setor.</h3>
+ <h4>Parágrafo único. A composição da CMED será definida em ato do Poder Executivo.</h4>
+ <h3>Art. 6º Compete à CMED, dentre outros atos necessários à consecução dos objetivos a que se destina esta Lei:</h3>
+ <h5>I - definir diretrizes e procedimentos relativos à regulação econômica do mercado de medicamentos;</h5>
+ <h5>II - estabelecer critérios para fixação e ajuste de preços de medicamentos;</h5>
+ <h5>III - definir, com clareza, os critérios para a fixação dos preços dos produtos novos e novas apresentações de medicamentos, nos termos do art. 7º ;</h5>
+ <h5>IV - decidir pela exclusão de grupos, classes, subclasses de medicamentos e produtos farmacêuticos da incidência de critérios de estabelecimento ou ajuste de preços, bem como decidir pela eventual reinclusão de grupos, classes, subclasses de medicamentos e produtos farmacêuticos à incidência de critérios de determinação ou ajuste de preços, nos termos desta Lei;</h5>
+ <h5>V - estabelecer critérios para fixação de margens de comercialização de medicamentos a serem observados pelos representantes, distribuidores, farmácias e drogarias, inclusive das margens de farmácias voltadas especificamente ao atendimento privativo de unidade hospitalar ou de qualquer outra equivalente de assistência médica;</h5>
+ <h5>VI - coordenar ações dos órgãos componentes da CMED voltadas à implementação dos objetivos previstos no art. 5º ;</h5>
+ <h5>VII - sugerir a adoção, pelos órgãos competentes, de diretrizes e procedimentos voltados à implementação da política de acesso a medicamentos;</h5>
+ <h5>VIII - propor a adoção de legislações e regulamentações referentes à regulação econômica do mercado de medicamentos;</h5>
+ <h5>IX - opinar sobre regulamentações que envolvam tributação de medicamentos;</h5>
+ <h5>X - assegurar o efetivo repasse aos preços dos medicamentos de qualquer alteração da carga tributária;</h5>
+ <h5>XI - sugerir a celebração de acordos e convênios internacionais relativos ao setor de medicamentos;</h5>
+ <h5>XII - monitorar, para os fins desta Lei, o mercado de medicamentos, podendo, para tanto, requisitar informações sobre produção, insumos, matérias-primas, vendas e quaisquer outros dados que julgar necessários ao exercício desta competência, em poder de pessoas de direito público ou privado;</h5>
+ <h5>XIII - zelar pela proteção dos interesses do consumidor de medicamentos;</h5>
+ <h5>XIV - decidir sobre a aplicação de penalidades previstas nesta Lei e, relativamente ao mercado de medicamentos, aquelas previstas na Lei N° 8.078, de 11 de setembro de 1990 , sem prejuízo das competências dos demais órgãos do Sistema Nacional de Defesa do Consumidor;</h5>
+ <h5>XV - elaborar seu regimento interno.</h5>
+ <h3>Art. 7º A partir da publicação desta Lei, os produtos novos e as novas apresentações de medicamentos que venham a ser incluídos na lista de produtos comercializados pela empresa produtora deverão observar, para fins da definição de preços iniciais, os critérios estabelecidos pela CMED.</h3>
+ <h4>§ 1º Para fins do cálculo do preço referido no caput deste artigo, a CMED utilizará as informações fornecidas à Anvisa por ocasião do pedido de registro ou de sua renovação, sem prejuízo de outras que venham a ser por ela solicitadas.</h4>
+ <h4>§ 2º A CMED regulamentará prazos para análises de preços de produtos novos e novas apresentações.</h4>
+ <h3>Art. 8º O descumprimento de atos emanados pela CMED, no exercício de suas competências de regulação e monitoramento do mercado de medicamentos, bem como o descumprimento de norma prevista nesta Lei, sujeitam-se às sanções administrativas previstas no art. 56 da Lei N° 8.078, de 1990.</h3>
+ <h4>Parágrafo único. A recusa, omissão, falsidade ou retardamento injustificado de informações ou documentos requeridos nos termos desta Lei ou por ato da CMED, sujeitam-se à multa diária de R$ 10.000,00 (dez mil reais), podendo ser aumentada em até 20 (vinte) vezes, se necessário, para garantir eficácia.</h4>
+ <h3>Art. 9º Fica extinta a Câmara de Medicamentos, criada pela Lei N° 10.213, de 27 de março de 2001 , cujas competências e atribuições são absorvidas pela CMED.</h3>
+ <h4>Parágrafo único. Os processos, documentos e demais expedientes relativos às competências e atribuições absorvidas pela CMED terão sua tramitação por ela disciplinada.</h4>
+ <h3>Art. 10. A Lei N° 6.360, de 23 de setembro de 1976, passa a vigorar com as seguintes alterações:</h3>
+ <p>"</p>
+ <h3>Art. 16. O registro de drogas, medicamentos, insumos farmacêuticos e correlatos, dadas as suas características sanitárias, medicamentosas ou profiláticas, curativas, paliativas, ou mesmo para fins de diagnóstico, fica sujeito, além do atendimento das exigências próprias, aos seguintes requisitos específicos:</h3>
+ <p>..................................................</p>
+ <h5>VII - a apresentação das seguintes informações econômicas:</h5>
+ <h6>a) o preço do produto praticado pela empresa em outros países;</h6>
+ <h6>b) o valor de aquisição da substância ativa do produto;</h6>
+ <h6>c) o custo do tratamento por paciente com o uso do produto;</h6>
+ <h6>d) o número potencial de pacientes a ser tratado;</h6>
+ <h6>e) a lista de preço que pretende praticar no mercado interno, com a discriminação de sua carga tributária;</h6>
+ <h6>f) a discriminação da proposta de comercialização do produto, incluindo os gastos previstos com o esforço de venda e com publicidade e propaganda;</h6>
+ <h6>g) o preço do produto que sofreu modificação, quando se tratar de mudança de fórmula ou de forma; e</h6>
+ <h6>h) a relação de todos os produtos substitutos existentes no mercado, acompanhada de seus respectivos preços.</h6>
+ <h4>§ 1º (Revogado como parágrafo único pela Lei N° 6.480, de 1º de dezembro de 1977).</h4>
+ <h4>§ 2º A apresentação das informações constantes do inciso VII poderá ser dispensada, em parte ou no todo, em conformidade com regulamentação específica." (NR)</h4>
+ <p>"</p>
+ <h3>Art. 22. As drogas, os medicamentos e insumos farmacêuticos que contenham substâncias entorpecentes ou determinem dependência física ou psíquica, estando sujeitos ao controle especial previsto no Decreto-Lei n° 753, de 11 de agosto de 1969, bem como em outros diplomas legais, regulamentos e demais normas pertinentes, e os medicamentos em geral, só serão registrados ou terão seus registros renovados, se, além do atendimento das condições, das exigências e do procedimento estabelecidos nesta Lei e seu regulamento, suas embalagens e sua rotulagem se enquadrarem nos padrões aprovados pelo Ministério da Saúde." (NR)</h3>
+ <p>"</p>
+ <h3>Art. 23. (Revogado)."</h3>
+ <p>"</p>
+ <h3>Art. 24. Estão isentos de registro os medicamentos novos, destinados exclusivamente a uso experimental, sob controle médico, podendo, inclusive, ser importados mediante expressa autorização do Ministério da Saúde.</h3>
+ <h3>.................................................." (NR)</h3>
+ <h3>Art. 11. A realização do encontro de contas entre a União e a Petróleo Brasileiro S.A. - Petrobrás, previsto no art. 74 da Lei N° 9.478, de 6 de agosto de 1997 , deverá ocorrer até 30 de junho de 2004.</h3>
+ <h3>Art. 12. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 13. Ficam revogados o art. 23 da Lei N° 6.360, de 23 de setembro de 1976 , a Lei N° 10.213, de 27 de março de 2001 , e a Medida Provisória Nº 2.230, de 6 de setembro de 2001.</h3>
+ <p>Brasília, 6 de outubro de 2003; 182º da Independência e 115º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Antonio Palocci Filho</p>
+ <p>Humberto Sérgio Costa Lima</p>
+ <p>José Dirceu de Oliveira e Silva</p>
+ <p>Este texto não substitui o publicado no D.O.U. de 7.10.2003</p>
+ <p>Conversão da MPv nº 123, de 2003</p>
+ <p>Vide Medida Provisória nº 933, de 2020 | Define normas de regulação para o setor farmacêutico, cria a Câmara de</p>
+ <p>Regulação do Mercado de Medicamentos - CMED e altera a Lei n° 6.360,</p>
+ <p>de 23 de setembro de 1976, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/2003/L10.742.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

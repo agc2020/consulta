@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Lei Complementar Nº 187/2021 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei Complementar" />
+ <meta data-pagefind-filter="ano[content]" content="2021" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Lei Complementar Nº 187/2021</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 15:59:20 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/LCP/Lcp187.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 64.726 caracteres | espelho: 65.610 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI COMPLEMENTAR Nº 187, DE 16 DE DEZEMBRO DE 2021</p>
+ <p>Vide Lei n° 14.332, de 2022</p>
+ <p>Vide Lei n° 14.334, de 2022</p>
+ <p>Regulamento</p>
+ <p>Dispõe sobre a certificação das entidades beneficentes e regula os procedimentos referentes à imunidade de contribuições à seguridade social de que trata o § 7º do art. 195 da Constituição Federal; altera as Leis n os 5.172, de 25 de outubro de 1966 (Código Tributário Nacional), e 9.532, de 10 de dezembro de 1997; revoga a Lei n° 12.101, de 27 de novembro de 2009, e dispositivos das Leis n os 11.096, de 13 de janeiro de 2005, e 12.249, de 11 de junho de 2010; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei Complementar:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei Complementar regula, com fundamento no inciso II do caput do art. 146 e no § 7º do art. 195 da Constituição Federa l, as condições para limitação ao poder de tributar da União em relação às entidades beneficentes, no tocante às contribuições para a seguridade social.</h3>
+ <h3>Art. 2º Entidade beneficente, para os fins de cumprimento desta Lei Complementar, é a pessoa jurídica de direito privado, sem fins lucrativos, que presta serviço nas áreas de assistência social, de saúde e de educação, assim certificada na forma desta Lei Complementar.</h3>
+ <h3>Art. 3º Farão jus à imunidade de que trata o § 7º do art. 195 da Constituição Federal as entidades beneficentes que atuem nas áreas da saúde, da educação e da assistência social, certificadas nos termos desta Lei Complementar, e que atendam, cumulativamente, aos seguintes requisitos:</h3>
+ <h5>I - não percebam seus dirigentes estatutários, conselheiros, associados, instituidores ou benfeitores remuneração, vantagens ou benefícios, direta ou indiretamente, por qualquer forma ou título, em razão das competências, das funções ou das atividades que lhes sejam atribuídas pelos respectivos atos constitutivos;</h5>
+ <h5>II - apliquem suas rendas, seus recursos e eventual superávit integralmente no território nacional, na manutenção e no desenvolvimento de seus objetivos institucionais;</h5>
+ <h5>III - apresentem certidão negativa ou certidão positiva com efeito de negativa de débitos relativos aos tributos administrados pela Secretaria Especial da Receita Federal do Brasil e pela Procuradoria-Geral da Fazenda Nacional, bem como comprovação de regularidade do Fundo de Garantia do Tempo de Serviço (FGTS);</h5>
+ <h5>IV - mantenham escrituração contábil regular que registre as receitas e as despesas, bem como o registro em gratuidade, de forma segregada, em consonância com as normas do Conselho Federal de Contabilidade e com a legislação fiscal em vigor;</h5>
+ <h5>V - não distribuam a seus conselheiros, associados, instituidores ou benfeitores seus resultados, dividendos, bonificações, participações ou parcelas do seu patrimônio, sob qualquer forma ou pretexto, e, na hipótese de prestação de serviços a terceiros, públicos ou privados, com ou sem cessão de mão de obra, não transfiram a esses terceiros os benefícios relativos à imunidade prevista no § 7º do art. 195 da Constituição Federal;</h5>
+ <h5>VI - conservem, pelo prazo de 10 (dez) anos, contado da data de emissão, os documentos que comprovem a origem e o registro de seus recursos e os relativos a atos ou a operações realizadas que impliquem modificação da situação patrimonial;</h5>
+ <h5>VII - apresentem as demonstrações contábeis e financeiras devidamente auditadas por auditor independente legalmente habilitado nos Conselhos Regionais de Contabilidade, quando a receita bruta anual auferida for superior ao limite fixado pelo inciso II do caput do art. 3º da Lei Complementar nº 123, de 14 de dezembro de 2006 ; e</h5>
+ <h5>VIII - pre vej am, em se us atos co n st it ut i vos, em c aso de d isso luç ão ou e xt inç ão, a d e st in ação do e ve ntu al p atr imô n io r ema nesc e nte a e nt id ad es b en e f ice n t es cer t i f ica das ou a e nt id ad es p úb licas.</h5>
+ <h4>§ 1º A exigência a que se refere o inciso I do caput deste artigo não impede:</h4>
+ <h5>I - a remuneração aos dirigentes não estatutários; e</h5>
+ <h5>II - a remuneração aos dirigentes estatutários, desde que recebam remuneração inferior, em seu valor bruto, a 70% (setenta por cento) do limite estabelecido para a remuneração de servidores do Poder Executivo federal, obedecidas as seguintes condições:</h5>
+ <h6>a) nenhum dirigente remunerado poderá ser cônjuge ou parente até o terceiro grau, inclusive afim, de instituidores, de associados, de dirigentes, de conselheiros, de benfeitores ou equivalentes da entidade de que trata o caput deste artigo; e</h6>
+ <h6>b) o total pago a título de remuneração para dirigentes pelo exercício das atribuições estatutárias deverá ser inferior a 5 (cinco) vezes o valor correspondente ao limite individual estabelecido para a remuneração dos servidores do Poder Executivo federal.</h6>
+ <h4>§ 2º O va lor d as r emu ne raç ões de que tr ata o § 1º d este art i go d e verá res pe itar c omo lim ite má x imo os va lores p ratic ad os p e lo mercado na r e g i ão cor res po nd e nte à sua área de atu açã o e deverá ser f i xa do pe lo ór gão de d e lib eraç ão su peri or da e nt id ad e, r e g is tra do em ata, c om c omu n icaç ão ao M in istério Pú b lico, no caso d as fu nd açõ es.</h4>
+ <h4>§ 3º Os dirigentes, estatutários ou não, não respondem, direta ou subsidiariamente, pelas obrigações fiscais da entidade, sa l vo se compro va da a oc orrê nc ia de d o lo, fra u de ou s imu laç ã o.</h4>
+ <h3>Art. 4º A imunidade de que trata esta Lei Complementar abrange as co ntr ib u içõ es s oc ia is previstas nos incisos I, III e IV do caput do art. 195 e no art. 239 da Constituição Federal, re lati vas a e nt id ade b en e f ice nt e, a to das as su as ati v id ad es e aos empregados e demais segurados da previdência social, mas não se estende a outra pessoa jurídica, ainda que constituída e mantida pela entidade à qual a certificação foi concedida.</h3>
+ <h3>Art. 5º As entidades beneficentes deverão obedecer ao princípio da universalidade do atendimento, vedado dirigir suas atividades exclusivamente a seus associados ou categoria profissional.</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS REQUISITOS PARA A CERTIFICAÇÃO DA ENTIDADE BENEFICENTE</h3>
+ <p>Seção I</p>
+ <p>Disposições Preliminares</p>
+ <h3>Art. 6º A certificação será concedida à entidade beneficente que demonstre, no exercício fiscal anterior ao do requerimento a que se refere o art. 34 desta Lei Complementar, observado o período mínimo de 12 (doze) meses de constituição da entidade, o cumprimento do disposto nas Seções II, III e IV deste Capítulo, de acordo com as respectivas áreas de atuação, sem prejuízo do disposto no art. 3º desta Lei.</h3>
+ <h4>§ 1º A entidade que atue em mais de uma das áreas a que se refere o art. 2º desta Lei Complementar deverá manter escrituração contábil segregada por área, de modo a evidenciar as receitas, os custos e as despesas de cada atividade desempenhada.</h4>
+ <h4>§ 2º Nos processos de certificação, o período mínimo de cumprimento dos requisitos de que trata este artigo poderá ser reduzido se a entidade for prestadora de serviços por meio de contrato, de convênio ou de instrumento congênere com o Sistema Único de Saúde (SUS), com o Sistema Único de Assistência Social (Suas) ou com o Sistema Nacional de Políticas Públicas sobre Drogas (Sisnad), em caso de necessidade local atestada pelo gestor do respectivo sistema.</h4>
+ <p>Seção II</p>
+ <p>Da Saúde</p>
+ <p>Subseção I</p>
+ <p>Dos Requisitos Relativos às Entidades de Saúde</p>
+ <h3>Art. 7º Para fazer jus à certificação, a entidade de saúde deverá, alternativamente:</h3>
+ <h5>I - prestar serviços ao SUS;</h5>
+ <h5>II - prestar serviços gratuitos;</h5>
+ <h5>III - atuar na promoção à saúde;</h5>
+ <h5>IV - ser de reconhecida excelência e realizar projetos de apoio ao desenvolvimento institucional do SUS; ou</h5>
+ <h5>V - (VETADO).</h5>
+ <h4>§ 1º A entidade de saúde também deverá manter o Cadastro Nacional de Estabelecimentos de Saúde (CNES) atualizado, informando as alterações referentes aos seus registros, na forma e no prazo determinados em regulamento.</h4>
+ <h4>§ 2º As entidades poderão desenvolver atividades que gerem recursos, inclusive por meio de suas filiais, com ou sem cessão de mão de obra, independentemente do quantitativo de profissionais e dos recursos auferidos, de modo a contribuir com a realização das atividades previstas no art. 2º desta Lei Complementar, registradas segregadamente em sua contabilidade e destacadas em suas Notas Explicativas.</h4>
+ <h3>Art. 8º P ara f ins do d isp osto n esta Seç ão, s erá co ns id era da inst rume nto co n gê n ere a d ec laração do ge stor lo cal do S U S que ate ste a e x istê nc ia de re laç ão de pre staç ão de ser viços de sa úd e, nos t ermos de regulamento.</h3>
+ <p>Subseção II</p>
+ <p>Da Prestação de Serviços ao Sistema Único de Saúde (SUS)</p>
+ <h3>Art. 9º Para ser certificada pela prestação de serviços ao SUS, a entidade de saúde deverá, nos termos de regulamento:</h3>
+ <h5>I - celebrar contrato, convênio ou instrumento congênere com o gestor do SUS; e</h5>
+ <h5>II - comprovar, anualmente, a prestação de seus serviços ao SUS no percentual mínimo de 60% (sessenta por cento), com base nas internações e nos atendimentos ambulatoriais realizados.</h5>
+ <h4>§ 1º A prestação de serviços ao SUS de que trata o inciso II do caput deste artigo será apurada por cálculo percentual simples, com base no total de internações hospitalares, medidas por paciente por dia, incluídos usuários do SUS e não usuários do SUS, e no total de atendimentos ambulatoriais, medidos por número de atendimentos e procedimentos, de usuários do SUS e de não usuários do SUS, com a possibilidade da incorporação do componente ambulatorial do SUS, nos termos de regulamento.</h4>
+ <h4>§ 2º O atendimento do percentual mínimo de que trata o inciso II do caput deste artigo poderá ser individualizado por estabelecimento ou pelo conjunto de estabelecimentos de saúde da pessoa jurídica, desde que não abranja outra entidade com personalidade jurídica própria que seja por ela mantida.</h4>
+ <h4>§ 3º Para fins do disposto no § 2º deste artigo, no conjunto de estabelecimentos de saúde da pessoa jurídica, poderá ser incorporado estabelecimento vinculado em decorrência de contrato de gestão, no limite de 10% (dez por cento) dos seus serviços.</h4>
+ <h4>§ 4º Para fins do disposto no inciso II do caput deste artigo, a entidade de saúde que aderir a programas e a estratégias prioritárias definidas pela autoridade executiva federal competente fará jus a índice percentual que será adicionado ao total de prestação de seus serviços ofertados ao SUS, observado o limite máximo de 10% (dez por cento).</h4>
+ <h4>§ 5º A entidade de saúde que presta serviços exclusivamente na área ambulatorial deverá observar o disposto nos incisos I e II do caput deste artigo e comprovar, anualmente, a prestação dos serviços ao SUS no percentual mínimo de 60% (sessenta por cento).</h4>
+ <h3>Art. 10. A entidade de saúde deverá informar obrigatoriamente, na forma estabelecida em regulamento:</h3>
+ <h5>I - a totalidade das internações e dos atendimentos ambulatoriais realizados para os pacientes não usuários do SUS; e</h5>
+ <h5>II - a totalidade das internações e dos atendimentos ambulatoriais realizados para os pacientes usuários do SUS.</h5>
+ <h3>Art. 11. Para os requerimentos de renovação da certificação, caso a entidade de saúde não cumpra o disposto no inciso II do caput do art. 9º desta Lei Complementar, no exercício fiscal anterior ao exercício do requerimento, será avaliado o cumprimento do requisito com base na média da prestação de serviços ao SUS de que trata o referido dispositivo, atendido pela entidade, durante todo o período de certificação em curso, que deverá ser de, no mínimo, 60% (sessenta por cento).</h3>
+ <h4>Parágrafo único. Para fins do disposto no caput deste artigo, apenas será admitida a avaliação caso a entidade tenha cumprido, no mínimo, 50% (cinquenta por cento) da prestação de serviços ao SUS de que trata o inciso II do caput do art. 9º desta Lei Complementar em cada um dos anos do período de certificação.</h4>
+ <p>Subseção III</p>
+ <p>Da Prestação de Serviços Gratuitos na Área da Saúde</p>
+ <h3>Art. 12. Para ser certificada pela aplicação de percentual de sua receita em gratuidade na área da saúde, a entidade deverá comprovar essa aplicação da seguinte forma:</h3>
+ <h5>I - 20% (vinte por cento), quando não houver interesse de contratação pelo gestor local do SUS ou se o percentual de prestação de serviços ao SUS for inferior a 30% (trinta por cento);</h5>
+ <h5>II - 10% (dez por cento), se o percentual de prestação de serviços ao SUS for igual ou superior a 30% (trinta por cento) e inferior a 50% (cinquenta por cento); ou</h5>
+ <h5>III - 5% (cinco por cento), se o percentual de prestação de serviços ao SUS for igual ou superior a 50% (cinquenta por cento).</h5>
+ <h4>§ 1º A receita prevista no caput deste artigo será a efetivamente recebida pela prestação de serviços de saúde.</h4>
+ <h4>§ 2º Para as entidades que não possuam receita de prestação de serviços de saúde, a receita prevista no caput deste artigo será a proveniente de qualquer fonte cujo montante do dispêndio com gratuidade não seja inferior à imunidade de contribuições sociais usufruída.</h4>
+ <h4>§ 3º A prestação de serviços prevista no caput deste artigo será pactuada com o gestor local do SUS por meio de contrato, de convênio ou de instrumento congênere.</h4>
+ <p>Subseção IV</p>
+ <p>Das Ações e dos Serviços de Promoção de Saúde</p>
+ <h3>Art. 13. Será admitida a certificação de entidades que atuem exclusivamente na promoção da saúde sem exigência de contraprestação do usuário pelas ações e pelos serviços de saúde realizados e pactuados com o gestor do SUS, na forma prevista em regulamento.</h3>
+ <h4>§ 1º A execução de ações e de serviços de promoção da saúde será previamente pactuada por meio de contrato, de convênio ou de instrumento congênere com o gestor local do SUS.</h4>
+ <h4>§ 2º Para efeito do disposto no caput deste artigo, são consideradas ações e serviços de promoção da saúde as atividades direcionadas para a redução de risco à saúde, desenvolvidas em áreas como:</h4>
+ <h5>I - nutrição e alimentação saudável;</h5>
+ <h5>II - prática corporal ou atividade física;</h5>
+ <h5>III - prevenção e controle do tabagismo;</h5>
+ <h5>IV - prevenção ao câncer;</h5>
+ <h5>V - prevenção ao vírus da imunodeficiência humana (HIV) e às hepatites virais;</h5>
+ <h5>VI - prevenção e controle da dengue;</h5>
+ <h5>VII - prevenção à malária;</h5>
+ <h5>VIII - ações de promoção à saúde relacionadas à tuberculose e à hanseníase;</h5>
+ <h5>IX - redução da morbimortalidade em decorrência do uso abusivo de álcool e de outras drogas;</h5>
+ <h5>X - redução da morbimortalidade por acidentes de trânsito;</h5>
+ <h5>XI - redução da morbimortalidade nos diversos ciclos de vida;</h5>
+ <h5>XII - prevenção da violência;</h5>
+ <h5>XIII – (VETADO).</h5>
+ <p>Subseção V</p>
+ <p>Do Desenvolvimento de Projetos no Âmbito do Programa de Apoio ao Desenvolvimento Institucional do Sistema Único de Saúde (Proadi-SUS)</p>
+ <h3>Art. 14. A entidade de saúde com reconhecida excelência poderá ser certificada como entidade beneficente pelo desenvolvimento de projetos no âmbito do Programa de Apoio ao Desenvolvimento Institucional do Sistema Único de Saúde (Proadi-SUS), nas seguintes áreas de atuação:</h3>
+ <h5>I - estudos de avaliação e incorporação de tecnologias;</h5>
+ <h5>II - capacitação de recursos humanos;</h5>
+ <h5>III - pesquisas de interesse público em saúde; ou</h5>
+ <h5>IV - desenvolvimento de técnicas e operação de gestão em serviços de saúde.</h5>
+ <h4>§ 1º O recurso despendido pela entidade de saúde com projeto de apoio e desenvolvimento institucional do SUS não poderá ser inferior ao valor da imunidade das contribuições sociais usufruída.</h4>
+ <h4>§ 2º Regulamento definirá os requisitos técnicos para reconhecimento de excelência das entidades de saúde.</h4>
+ <h4>§ 3º A participação das entidades de saúde ou de educação em projetos de apoio previstos neste artigo não poderá ocorrer em prejuízo das atividades beneficentes prestadas ao SUS.</h4>
+ <h3>Art. 15. As entidades de saúde de reconhecida excelência que desenvolvam projetos no âmbito do Proadi-SUS poderão, após autorização da autoridade executiva federal competente, firmar pacto com o gestor local do SUS para a prestação de serviços ambulatoriais e hospitalares ao SUS não remunerados, observadas as seguintes condições:</h3>
+ <h5>I - o gasto com a prestação de serviços ambulatoriais e hospitalares ao SUS não remunerados não poderá ultrapassar 30% (trinta por cento) do valor usufruído com imunidade das contribuições sociais;</h5>
+ <h5>II - a entidade de saúde deverá apresentar a relação de serviços ambulatoriais e hospitalares a serem ofertados, com o respectivo demonstrativo da projeção das despesas e do referencial utilizado, os quais não poderão exceder o valor por ela efetivamente despendido;</h5>
+ <h5>III - a comprovação dos custos a que se refere o inciso II deste caput poderá ser exigida a qualquer tempo, mediante apresentação dos documentos necessários;</h5>
+ <h5>IV - a entidade de saúde deverá informar a produção na forma estabelecida em regulamento, com observação de não geração de créditos.</h5>
+ <h3>Art. 16. O valor dos recursos despendidos e o conteúdo das atividades desenvolvidas no âmbito dos projetos de apoio ao desenvolvimento institucional do SUS ou da prestação de serviços previstos no art. 15 desta Lei Complementar deverão ser objeto de relatórios anuais encaminhados à autoridade executiva federal competente para acompanhamento e fiscalização, sem prejuízo das atribuições dos órgãos de fiscalização tributária.</h3>
+ <h4>§ 1º Os relatórios previstos no caput deste artigo deverão ser acompanhados de demonstrações contábeis e financeiras submetidas a parecer conclusivo de auditoria independente, realizada por instituição credenciada perante o Conselho Regional de Contabilidade.</h4>
+ <h4>§ 2º O cálculo do valor da imunidade prevista no § 1º do art. 14 desta Lei Complementar será realizado anualmente com base no exercício fiscal anterior.</h4>
+ <h4>§ 3º Em caso de requerimento de concessão da certificação, o recurso despendido pela entidade de saúde no projeto de apoio não poderá ser inferior ao valor das contribuições para a seguridade social referente ao exercício fiscal anterior ao do requerimento.</h4>
+ <h4>§ 4º Caso os recursos despendidos nos projetos de apoio institucional não alcancem o valor da imunidade usufruída, na forma do § 2º deste artigo, a entidade deverá complementar a diferença até o término do prazo de validade de sua certificação.</h4>
+ <h4>§ 5º O disposto no § 4º deste artigo alcança somente as entidades que tenham aplicado, no mínimo, 70% (setenta por cento) do valor usufruído anualmente com a imunidade nos projetos de apoio ao desenvolvimento institucional do SUS.</h4>
+ <p>Subseção VI</p>
+ <p>Da Prestação de Serviços de Saúde não Remunerados pelo SUS a Trabalhadores</p>
+ <h3>Art. 17. As e nt id ad es da área de sa úde cer t i f ica das até o d ia ime d iatame nte a nteri or ao da p ub licaç ão da L ei nº 1 2.1 0 1, de 27 de n o vembro de 2 0 09 , que prest em s er v iços ass iste nc ia is de sa úde n ão remun era dos p e lo S US a tr ab a lh ad ores ati vos e in at i vos e aos res pecti vos d ep en de nt es ec on ôm ic os, d ecor re ntes do esta be lec ido em lei ou N orma Co leti va de Trab a lh o, e d esde q ue, s imu lta ne ame nte, d e st in em no m ín imo 2 0% ( v inte p or ce nto) do va lor total d as imu n id ad es de su as co ntr ib u içõ es soc ia is em ser viç os, c om u n iversa l id ade de atend ime nt o, a b en e f ic iá rios do S U S, me d ia nte p acto do ge stor do loc a l, t e rão co nce d ida ou re no va da a ce rt i f ica çã o, na f orma de r e gu la me nto.</h3>
+ <p>Seção III</p>
+ <p>Da Educação</p>
+ <h3>Art. 18. Para fazer jus à imunidade, a entidade com atuação na área da educação cujas atividades sejam de oferta de educação básica, de educação superior ou de ambas, deve atender ao disposto nesta Seção e na legislação aplicável.</h3>
+ <h4>§ 1º As instituições de ensino deverão:</h4>
+ <h5>I - obter autorização de funcionamento expedida pela autoridade executiva competente;</h5>
+ <h5>II - informar anualmente os dados referentes à instituição ao Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep); e</h5>
+ <h5>III - atender a padrões mínimos de qualidade aferidos pelos processos de avaliação conduzidos pela autoridade executiva federal competente.</h5>
+ <h4>§ 2º Para os fins desta Lei Complementar, o atendimento ao princípio da universalidade na área da educação pressupõe a seleção de bolsistas segundo o perfil socioeconômico, sem qualquer forma de discriminação, segregação ou diferenciação, vedada a utilização de critérios étnicos, religiosos, corporativos, políticos ou quaisquer outros que afrontem esse perfil, ressalvados os estabelecidos na legislação vigente, em especial na Lei n° 12.711, de 29 de agosto de 2012.</h4>
+ <h4>§ 3º As instituições que prestam serviços totalmente gratuitos e as que prestam serviços mediante convênio com órgãos ou entidades dos poderes públicos devem assegurar que os alunos a serem contabilizados no atendimento da proporcionalidade de bolsas sejam selecionados segundo o perfil socioeconômico definido nesta Lei Complementar.</h4>
+ <h4>§ 4º (VETADO).</h4>
+ <h4>§ 4º O certificado será expedido em favor da entidade mantenedora das instituições de ensino.</h4>
+ <h4>§ 5º A cada 2 (dois) anos, será publicado levantamento dos resultados apresentados pelas instituições de ensino que oferecem educação básica certificadas na forma desta Lei Complementar, quanto às condições de oferta e de desempenho dos estudantes, com base no Censo Escolar da Educação Básica e no Sistema de Avaliação da Educação Básica (Saeb).</h4>
+ <h4>§ 6º A cada 3 (três) anos, será publicado levantamento dos resultados apresentados pelas instituições de ensino superior certificadas na forma desta Lei Complementar, em termos de avaliação das instituições, dos cursos e do desempenho dos estudantes da educação superior, a partir dos dados do Sistema Nacional de Avaliação da Educação Superior (Sinaes).</h4>
+ <h3>Art. 19. As entidades que atuam na área da educação devem comprovar a oferta de gratuidade na forma de bolsas de estudo e de benefícios.</h3>
+ <h4>§ 1º As entidades devem conceder bolsas de estudo nos seguintes termos:</h4>
+ <h5>I - bolsa de estudo integral a aluno cuja renda familiar bruta mensal per capita não exceda o valor de 1,5 (um inteiro e cinco décimos) salário mínimo;</h5>
+ <h5>II - bolsa de estudo parcial com 50% (cinquenta por cento) de gratuidade a aluno cuja renda familiar bruta mensal per capita não exceda o valor de 3 (três) salários mínimos.</h5>
+ <h4>§ 2º Para fins de concessão da bolsa de estudo integral, admite-se a majoração em até 20% (vinte por cento) do teto estabelecido, ao se considerar aspectos de natureza social do beneficiário, de sua família ou de ambos, quando consubstanciados em relatório comprobatório devidamente assinado por assistente social com registro no respectivo órgão de classe.</h4>
+ <h4>§ 3º Para os fins desta Lei Complementar, consideram-se benefícios aqueles providos pela entidade a beneficiários cuja renda familiar bruta mensal per capita esteja enquadrada nos limites dos incisos I e II do § 1º deste artigo, que tenham por objetivo promover ao estudante o acesso, a permanência, a aprendizagem e a conclusão do curso na instituição de ensino e estejam explicitamente orientados para o alcance das metas e estratégias do Plano Nacional de Educação (PNE).</h4>
+ <h4>§ 4º Os benefícios de que trata o § 3º deste artigo são tipificados em:</h4>
+ <h5>I - tipo 1: benefícios destinados exclusivamente ao aluno bolsista, tais como transporte escolar, uniforme, material didático, moradia e alimentação;</h5>
+ <h5>II - tipo 2: ações e serviços destinados a alunos e a seu grupo familiar, com vistas a favorecer ao estudante o acesso, a permanência, a aprendizagem e a conclusão do curso na instituição de ensino; e</h5>
+ <h5>III - tipo 3: projetos e atividades de educação em tempo integral destinados à ampliação da jornada escolar dos alunos da educação básica matriculados em escolas públicas que apresentem índice de nível socioeconômico baixo estabelecido nos termos da legislação.</h5>
+ <h4>§ 5º As entidades que optarem pela substituição de bolsas de estudo por benefícios de tipos 1 e 2, no limite de até 25% (vinte e cinco por cento) das bolsas de estudo, deverão firmar Termo de Concessão de Benefícios Complementares com cada um dos beneficiários.</h4>
+ <h4>§ 6º As entidades que optarem pela substituição de bolsas de estudo por projetos e atividades de educação em tempo integral destinados à ampliação da jornada escolar dos alunos da educação básica matriculados em escolas públicas deverão firmar termo de parceria ou instrumento congênere com instituições públicas de ensino.</h4>
+ <h4>§ 7º Os projetos e atividades de educação em tempo integral deverão:</h4>
+ <h5>I - estar integrados ao projeto pedagógico da escola pública parceira;</h5>
+ <h5>II - assegurar a complementação da carga horária da escola pública parceira em, no mínimo, 10 (dez) horas semanais; e</h5>
+ <h5>III - estar relacionados aos componentes da grade curricular da escola pública parceira.</h5>
+ <h4>§ 8º Considera-se educação básica em tempo integral a jornada escolar com duração igual ou superior a 7 (sete) horas diárias, durante todo o período letivo, que compreende o tempo em que o aluno permanece na escola e aquele em que exerce, nos termos de regulamento, atividades escolares em outros espaços educacionais.</h4>
+ <h4>§ 9º As regras de conversão dos valores de benefícios em bolsas de estudo serão definidas conforme o valor médio do encargo educacional mensal ao longo do período letivo, a ser estabelecido com base em planilha que deverá ser enviada, anualmente, por cada instituição de ensino à autoridade executiva federal competente.</h4>
+ <h4>§ 10. O encargo educacional de que trata o § 9º deste artigo considerará todos os descontos aplicados pela instituição, regulares ou temporários, de caráter coletivo ou decorrentes de convênios com instituições públicas ou privadas, incluídos os descontos concedidos devido ao seu pagamento pontual, respeitada a proporcionalidade da carga horária.</h4>
+ <h3>Art. 20. A entidade que atua na educação básica deverá conceder, anualmente, bolsas de estudo na proporção de 1 (uma) bolsa de estudo integral para cada 5 (cinco) alunos pagantes.</h3>
+ <h4>§ 1º Para o cumprimento da proporção estabelecida no caput deste artigo, a entidade poderá oferecer, em substituição, bolsas de estudo parciais, observadas as seguintes condições:</h4>
+ <h5>I - no mínimo, 1 (uma) bolsa de estudo integral para cada 9 (nove) alunos pagantes; e</h5>
+ <h5>II - bolsas de estudo parciais com 50% (cinquenta por cento) de gratuidade, para o alcance do número mínimo exigido, mantida a equivalência de 2 (duas) bolsas de estudo parciais para cada 1 (uma) bolsa de estudo integral.</h5>
+ <h4>§ 2º Será facultado à entidade substituir até 25% (vinte e cinco por cento) da quantidade das bolsas de estudo definidas no caput e no § 1º deste artigo por benefícios concedidos nos termos do art. 19 desta Lei Complementar.</h4>
+ <h4>§ 3º Para fins de cumprimento das proporções de que tratam o caput e o § 1º deste artigo:</h4>
+ <h5>I - cada bolsa de estudo integral concedida a aluno com deficiência, assim declarado ao Censo Escolar da Educação Básica, equivalerá a 1,2 (um inteiro e dois décimos) do valor da bolsa de estudo integral;</h5>
+ <h5>II - cada bolsa de estudo integral concedida a aluno matriculado na educação básica em tempo integral equivalerá a 1,4 (um inteiro e quatro décimos) do valor da bolsa de estudo integral.</h5>
+ <h4>§ 4º As equivalências previstas nos incisos I e II do § 3º deste artigo não poderão ser cumulativas.</h4>
+ <h4>§ 5º A entidade de educação que presta serviços integralmente gratuitos deverá garantir a proporção de, no mínimo, 1 (um) aluno cuja renda familiar bruta mensal per capita não exceda o valor de 1,5 (um inteiro e cinco décimos) salário mínimo para cada 5 (cinco) alunos matriculados.</h4>
+ <h4>§ 6º Atendidas as condições socioeconômicas referidas nos incisos I e II do § 1º do art. 19 desta Lei Complementar, as instituições poderão considerar como bolsistas os trabalhadores da própria instituição e os dependentes destes em decorrência de convenção coletiva ou de acordo coletivo de trabalho, até o limite de 20% (vinte por cento) da proporção definida no caput e nos incisos I e II do § 1º deste artigo.</h4>
+ <h4>§ 7º Os e ntes fe der at i vos q ue ma nte nh am va gas p úb licas p ara a e duc ação b á s ica p or me io de e nt id ade c om a tu ação na área da e du caç ão d e ver ão res pe ita r, p ara as va gas o fe rta das p or me io de co n vê n ios ou co n gê n er es com ess as e nt id ad es, o d isp o sto n este art i go.</h4>
+ <h4>§ 8º Em caso de d escu mprimento p e los e ntes fe derat i vos da o br i gaç ão de que tr ata o § 7º deste artigo, n ão po derão ser p en a li za das as e nt id ad es co n ve n ia das com atu aç ão na área da e duc açã o.</h4>
+ <h3>Art. 21. As entidades que atuam na educação superior e que aderiram ao Programa Universidade para Todos (Prouni), na forma do caput do art. 11 da Lei n° 11.096, de 13 de janeiro de 2005 , deverão atender às condições previstas no caput e nos §§ 1º, 2º e 5º do art. 20 desta Lei Complementar.</h3>
+ <h3>Art. 21. As entidades que atuam na educação superior e que aderiram ao Programa Universidade para Todos (Prouni), na forma do caput do art. 11-A da Lei n° 11.096, de 13 de janeiro de 2005 , deverão atender às condições previstas no caput e nos §§ 1º, 2º e 5º do art. 20 desta Lei Complementar. (Redação dada pela Lei n° 14.350, de 2022)</h3>
+ <h4>§ 1º As entidades que atuam concomitantemente na educação básica e na educação superior com adesão ao Prouni deverão cumprir os requisitos exigidos para cada nível de educação, inclusive quanto à complementação eventual da gratuidade por meio da concessão de bolsas de estudo parciais de 50% (cinquenta por cento) e de benefícios.</h4>
+ <h4>§ 2º Somente serão aceitas no âmbito da educação superior bolsas de estudo vinculadas ao Prouni, salvo as bolsas integrais ou parciais de 50% (cinquenta por cento) para pós-graduação stricto sensu e as estabelecidas nos termos do § 6º do art. 20 desta Lei Complementar.</h4>
+ <h4>§ 3º Excepcionalmente, serão aceitas como gratuidade, no âmbito da educação superior, as bolsas de estudo integrais ou parciais de 50% (cinquenta por cento) oferecidas sem vínculo com o Prouni aos alunos enquadrados nos limites de renda familiar bruta mensal per capita de que tratam os incisos I e II do § 1º do art. 19 desta Lei Complementar, desde que a entidade tenha cumprido a proporção de 1 (uma) bolsa de estudo integral para cada 9 (nove) alunos pagantes no Prouni e tenha ofertado bolsas no âmbito do Prouni que não tenham sido preenchidas.</h4>
+ <h3>Art. 22. As entidades que atuam na educação superior e que não tenham aderido ao Prouni na forma do art. 10 da Lei n° 11.096, de 13 de janeiro de 200 5, deverão conceder anualmente bolsas de estudo na proporção de 1 (uma) bolsa de estudo integral para cada 4 (quatro) alunos pagantes.</h3>
+ <h3>Art. 22. As entidades que atuam na educação superior e que não tenham aderido ao Prouni na forma do art. 10-A da Lei n° 11.096, de 13 de janeiro de 2005 , deverão conceder anualmente bolsas de estudo na proporção de 1 (uma) bolsa de estudo integral para cada 4 (quatro) alunos pagantes. (Redação dada pela Lei n° 14.350, de 2022)</h3>
+ <h4>§ 1º Para o cumprimento da proporção descrita no caput deste artigo, a entidade poderá oferecer bolsas de estudo parciais, desde que conceda:</h4>
+ <h5>I - no mínimo, 1 (uma) bolsa de estudo integral para cada 9 (nove) alunos pagantes; e</h5>
+ <h5>II - bolsas de estudo parciais de 50% (cinquenta por cento), quando necessário para o alcance do número mínimo exigido, mantida a equivalência de 2 (duas) bolsas de estudo parciais para cada 1 (uma) bolsa de estudo integral.</h5>
+ <h4>§ 2º Será facultado à entidade substituir até 25% (vinte e cinco por cento) da quantidade das bolsas de estudo definida no caput e no § 1º deste artigo por benefícios concedidos nos termos do art. 19 desta Lei Complementar.</h4>
+ <h4>§ 3º Sem prejuízo do cumprimento das proporções estabelecidas no inciso II do § 1º deste artigo, a entidade de educação deverá ofertar, em cada uma de suas instituições de ensino superior, no mínimo, 1 (uma) bolsa integral para cada 25 (vinte e cinco) alunos pagantes.</h4>
+ <h4>§ 4º A entidade deverá ofertar bolsa integral em todos os cursos de todas as instituições de ensino superior por ela mantidos e poderá, nos termos do § 6º do art. 20 desta Lei Complementar, considerar como bolsistas os trabalhadores da própria instituição e os dependentes destes em decorrência de convenção coletiva ou de acordo coletivo de trabalho, até o limite de 20% (vinte por cento) da proporção definida no caput e nos incisos I e II do § 1º deste artigo.</h4>
+ <h4>§ 5º As entidades que atuam concomitantemente na educação básica e na educação superior sem ter aderido ao Prouni deverão cumprir os requisitos exigidos de maneira segregada, por nível de educação, inclusive quanto à eventual complementação da gratuidade por meio da concessão de bolsas de estudo parciais de 50% (cinquenta por cento) e de benefícios.</h4>
+ <h4>§ 6º Para os fins do disposto neste artigo, somente serão computadas as bolsas de estudo concedidas em cursos regulares de graduação ou sequenciais de formação específica.</h4>
+ <h3>Art. 23. A entidade que atua na oferta da educação profissional em consonância com as Leis nºs 9.394, de 20 de dezembro de 1996 , e 12.513, de 26 de outubro de 2011 , deverá atender às proporções previstas no caput e nos §§ 1º, 2º e 5º do art. 20 desta Lei Complementar na educação profissional.</h3>
+ <h4>Parágrafo único. É permitido ao estudante acumular bolsas de estudo na educação profissional técnica de nível médio e ser contabilizado em ambas para fins de apuração das proporções exigidas nesta Seção.</h4>
+ <h3>Art. 24. Considera-se alunos pagantes, para fins de aplicação das proporções previstas nos arts. 20, 21, 22 e 23 desta Lei Complementar, o total de alunos matriculados, excluídos os beneficiados com bolsas de estudo integrais nos termos do inciso I do § 1º do art. 20 e com outras bolsas integrais concedidas pela entidade.</h3>
+ <h4>§ 1º Na aplicação das proporções previstas nos arts. 21 e 22 desta Lei Complementar, serão considerados os alunos pagantes, incluídos os beneficiários de bolsas de estudo de que trata esta Lei Complementar, matriculados em cursos regulares de graduação ou sequenciais de formação específica.</h4>
+ <h4>§ 2º Não se consideram alunos pagantes os inadimplentes por período superior a 90 (noventa) dias cujas matrículas tenham sido recusadas no período letivo imediatamente subsequente ao inadimplemento.</h4>
+ <h3>Art. 25. Para os efeitos desta Lei Complementar, a bolsa de estudo refere-se às semestralidades ou às anuidades escolares fixadas na forma da lei, considerados todos os descontos aplicados pela instituição, regulares ou temporários, de caráter coletivo ou decorrentes de convênios com instituições públicas ou privadas, incluídos os descontos concedidos devido ao seu pagamento pontual, respeitada a proporcionalidade da carga horária, vedados a cobrança de taxas de qualquer natureza e o cômputo de custeio de material didático eventualmente oferecido em caráter gratuito ao aluno beneficiado exclusivamente com bolsa de estudo integral.</h3>
+ <h4>§ 1º As entidades que atuam na área de educação devem registrar e divulgar em sua contabilidade, atendidas as normas brasileiras de contabilidade, de modo segregado, as bolsas de estudo e os benefícios concedidos, bem como evidenciar em suas Notas Explicativas o atendimento às proporções referidas nesta Seção.</h4>
+ <h4>§ 2º Para fins de aferição dos requisitos desta Seção, será considerado o número total de alunos matriculados no último mês de cada período letivo.</h4>
+ <h4>§ 3º (VETADO).</h4>
+ <h3>Art. 26. Os alunos beneficiários das bolsas de estudo de que trata esta Lei Complementar, ou seus pais ou responsáveis, quando for o caso, respondem legalmente pela veracidade e pela autenticidade das informações por eles prestadas, e as informações prestadas pelas instituições de ensino superior (IES) acerca dos beneficiários em qualquer âmbito devem respeitar os limites estabelecidos pela Lei n° 13.709, de 14 de agosto de 2018 .</h3>
+ <h4>§ 1º Compete à entidade que atua na área de educação confirmar o atendimento, pelo candidato, do perfil socioeconômico de que trata esta Lei Complementar.</h4>
+ <h4>§ 2º As bolsas de estudo poderão ser canceladas a qualquer tempo em caso de constatação de falsidade da informação prestada pelo bolsista ou por seus pais ou seu responsável, ou de inidoneidade de documento apresentado, sem prejuízo das demais sanções cíveis e penais cabíveis, sem que o ato do cancelamento resulte em prejuízo à entidade beneficente concedente, inclusive na apuração das proporções exigidas nesta Seção, salvo se comprovada negligência ou má-fé da entidade beneficente.</h4>
+ <h4>§ 3º Os estudantes a serem beneficiados pelas bolsas de estudo para os cursos superiores poderão ser pré-selecionados pelos resultados do Exame Nacional do Ensino Médio (Enem).</h4>
+ <h4>§ 4º É vedado ao estudante acumular bolsas de estudo concedidas por entidades em gozo da imunidade na forma desta Lei Complementar, salvo no que se refere ao disposto no parágrafo único do art. 23 desta Lei Complementar.</h4>
+ <h4>§ 5º As bolsas de estudo integrais e parciais com 50% (cinquenta por cento) de gratuidade concedidas pelas entidades antes da vigência desta Lei Complementar, nos casos em que a renda familiar bruta mensal per capita do bolsista não exceda os parâmetros de que trata o § 1º do art. 19 desta Lei Complementar, poderão ser mantidas e consideradas até a conclusão do ensino médio, para a educação básica, e até a conclusão do curso superior, para a educação superior.</h4>
+ <h3>Art. 27. É vedada qualquer discriminação ou diferença de tratamento entre alunos bolsistas e pagantes.</h3>
+ <h3>Art. 28. (VETADO).</h3>
+ <h3>Art. 28. No ato de aferição periódica do cumprimento dos requisitos desta Seção, as entidades de educação que não tenham concedido o número mínimo de bolsas previsto nos arts. 20, 21, 22 e 23 desta Lei Complementar poderão compensar o número de bolsas devido no exercício subsequente, mediante a assinatura de Termo de Ajuste de Gratuidade ou de instrumento congênere, nas condições estabelecidas em regulamento.</h3>
+ <h4>§ 1º Após a publicação da decisão relativa à aferição do cumprimento dos requisitos desta Seção, as entidades que atuam na área da educação a que se refere o caput deste artigo terão prazo de 30 (trinta) dias para requerer a assinatura do Termo de Ajuste de Gratuidade.</h4>
+ <h4>§ 2º Na hipótese de descumprimento do Termo de Ajuste de Gratuidade ou congênere, a certificação da entidade será cancelada.</h4>
+ <h4>§ 3º O Termo de Ajuste de Gratuidade poderá ser celebrado somente uma vez com a mesma entidade a cada período de aferição, estabelecido nos termos de regulamento.</h4>
+ <h4>§ 4º As bolsas de pós-graduação stricto sensu poderão integrar a compensação, desde que se refiram a áreas de formação definidas em regulamento.</h4>
+ <p>Seção IV</p>
+ <p>Da Assistência Social</p>
+ <p>Subseção I</p>
+ <p>Das Entidades de Assistência Social em Geral</p>
+ <h3>Art. 29. A certificação ou sua renovação será concedida às entidades beneficentes com atuação na área de assistência social abrangidas pela Lei n° 8.742, de 7 de dezembro de 1993 , que executem:</h3>
+ <h5>I - serviços, programas ou projetos socioassistenciais de atendimento ou de assessoramento ou que atuem na defesa e na garantia dos direitos dos beneficiários da Lei n° 8.742, de 7 de dezembro de 1993;</h5>
+ <h5>II - serviços, programas ou projetos socioassistenciais com o objetivo de habilitação e de reabilitação da pessoa com deficiência e de promoção da sua inclusão à vida comunitária, no enfrentamento dos limites existentes para as pessoas com deficiência, de forma articulada ou não com ações educacionais ou de saúde;</h5>
+ <h5>III - programas de aprendizagem de adolescentes, de jovens ou de pessoas com deficiência, prestados com a finalidade de promover a sua integração ao mundo do trabalho nos termos da Lei n° 8.742, de 7 de dezembro de 1993 , e do inciso II do caput do art. 430 da Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 , ou da legislação que lhe for superveniente, observadas as ações protetivas previstas na Lei n° 8.069, de 13 de julho de 1990 (Estatuto da Criança e do Adolescente);</h5>
+ <h5>IV - serviço de acolhimento institucional provisório de pessoas e de seus acompanhantes que estejam em trânsito e sem condições de autossustento durante o tratamento de doenças graves fora da localidade de residência.</h5>
+ <h4>Parágrafo único. Desde que observado o disposto no caput deste artigo e no art. 35 da Lei n° 10.741, de 1º de outubro de 2003 (Estatuto do Idoso), as entidades beneficentes poderão ser certificadas, com a condição de que eventual cobrança de participação do idoso no custeio da entidade ocorra nos termos e nos limites do § 2º do art. 35 da referida Lei.</h4>
+ <h3>Art. 30. As entidades beneficentes de assistência social poderão desenvolver atividades que gerem recursos, inclusive por meio de filiais, com ou sem cessão de mão de obra, de modo a contribuir com as finalidades previstas no art. 2º desta Lei Complementar, registradas segregadamente em sua contabilidade e destacadas em suas Notas Explicativas.</h3>
+ <h3>Art. 31. Constituem requisitos para a certificação de entidade de assistência social:</h3>
+ <h5>I - ser constituída como pessoa jurídica de natureza privada e ter objetivos e públicos-alvo compatíveis com a Lei n° 8.742, de 7 de dezembro de 1993;</h5>
+ <h5>II - comprovar inscrição no conselho municipal ou distrital de assistência social, nos termos do art. 9º da Lei n° 8.742, de 7 de dezembro de 1993;</h5>
+ <h5>III - prestar e manter atualizado o cadastro de entidades e organizações de assistência social de que trata o inciso XI do caput do art. 19 da Lei n° 8.742, de 7 de dezembro de 1993;</h5>
+ <h5>IV - manter escrituração contábil regular que registre os custos e as despesas em atendimento às Normas Brasileiras de Contabilidade;</h5>
+ <h5>V - comprovar, cumulativamente, que, no ano anterior ao requerimento:</h5>
+ <h6>a) destinou a maior parte de seus custos e despesas a serviços, a programas ou a projetos no âmbito da assistência social e a atividades certificáveis nas áreas de educação, de saúde ou em ambas, caso a entidade também atue nessas áreas;</h6>
+ <h6>b) remunerou seus dirigentes de modo compatível com o seu resultado financeiro do exercício, na forma a ser definida em regulamento, observados os limites referidos nos §§ 1º e 2º do art. 3º desta Lei Complementar.</h6>
+ <h4>§ 1º Para fins de certificação, a entidade de assistência social de atendimento que atuar em mais de um Município ou Estado, inclusive o Distrito Federal, deverá apresentar o comprovante de inscrição, ou de solicitação desta, de suas atividades nos conselhos de assistência social de, no mínimo, 90% (noventa por cento) dos Municípios de atuação, com comprovação de que a preponderância dos custos e das despesas esteja nesses Municípios, conforme definido em regulamento.</h4>
+ <h4>§ 2º Para fins de certificação, a entidade de assistência social de assessoramento ou defesa e garantia de direitos que atuar em mais de um Município ou Estado, inclusive o Distrito Federal, deverá apresentar o comprovante de inscrição da entidade, ou de solicitação desta, no conselho municipal de assistência social de sua sede, ou do Distrito Federal, caso nele situada a sua sede, nos termos do art. 9º da Lei n° 8.742, de 7 de dezembro de 1993.</h4>
+ <h4>§ 3º Os requisitos constantes dos incisos II e III do caput deste artigo deverão ser cumpridos:</h4>
+ <h5>I - no ano do protocolo ou no anterior, quando se tratar de concessão da certificação; ou</h5>
+ <h5>II - no ano anterior ao do protocolo, quando se tratar de renovação.</h5>
+ <h4>§ 4º As entidades que atuem exclusivamente na área certificável de assistência social, ainda que desempenhem eventual atividade de que trata o art. 30 desta Lei Complementar, caso obtenham faturamento anual que ultrapasse o valor fixado em regulamento, deverão apresentar as demonstrações contábeis auditadas, nos termos definidos em regulamento.</h4>
+ <h4>§ 5º As entidades de atendimento ao idoso de longa permanência, ou casas-lares, poderão gozar da imunidade de que trata esta Lei Complementar, desde que seja firmado contrato de prestação de serviços com a pessoa idosa abrigada e de que eventual cobrança de participação do idoso no custeio da entidade seja realizada no limite de 70% (setenta por cento) de qualquer benefício previdenciário ou de assistência social percebido pelo idoso.</h4>
+ <h4>§ 6º (VETADO).</h4>
+ <h4>§ 6º O limite estabelecido no § 5º deste artigo poderá ser excedido, desde que observados os seguintes termos:</h4>
+ <h5>I - tenham termo de curatela do idoso;</h5>
+ <h5>II - o usuário seja encaminhado pelo Poder Judiciário, pelo Ministério Público ou pelo gestor local do Suas; e</h5>
+ <h5>III - a pessoa idosa ou seu responsável efetue a doação, de forma livre e voluntária.</h5>
+ <h4>§ 7º Não se equiparam a entidades de atendimento ao idoso de longa permanência, ou casas-lares, aquelas unidades destinadas somente à hospedagem de idoso e remuneradas com fins de geração de recursos para as finalidades beneficentes de mantenedora, conforme o art. 30 desta Lei Complementar.</h4>
+ <p>Subseção II</p>
+ <p>Das Entidades Atuantes na Redução de Demandas de Drogas</p>
+ <h3>Art. 32. A certificação de entidade beneficente será concedida ou renovada às instituições que atuem na redução da demanda de drogas, nos termos desta Subseção.</h3>
+ <h4>§ 1º Consideram-se entidades que atuam na redução da demanda de drogas:</h4>
+ <h5>I – as comunidades terapêuticas;</h5>
+ <h5>II – as entidades de cuidado, de prevenção, de apoio, de mútua ajuda, de atendimento psicossocial e de ressocialização de dependentes do álcool e de outras drogas e seus familiares.</h5>
+ <h4>§ 2º Considera-se comunidade terapêutica o modelo terapêutico de atenção em regime residencial e transitório, mediante adesão e permanência voluntárias, a pessoas com problemas associados ao uso, ao abuso ou à dependência do álcool e de outras drogas acolhidas em ambiente protegido e técnica e eticamente orientado, que tem como objetivo promover o desenvolvimento pessoal e social, por meio da promoção da abstinência, bem como a reinserção social, buscando a melhora geral na qualidade de vida do indivíduo.</h4>
+ <h4>§ 3º Considera-se entidade de cuidado, de prevenção, de apoio, de mútua ajuda, de atendimento psicossocial e de ressocialização de dependentes do álcool e de outras drogas e seus familiares a entidade que presta serviços intersetoriais, interdisciplinares, transversais e complementares da área do uso e da dependência do álcool e de outras drogas.</h4>
+ <h4>§ 4º As entidades referidas nos §§ 2º e 3º deste artigo, constituídas como pessoas jurídicas sem fins lucrativos, na forma dos incisos I , III ou IV do caput do art. 44 da Lei n° 10.406, de 10 de janeiro de 2002 (Código Civil), deverão ser cadastradas pela autoridade executiva federal competente e atender ao disposto na alínea a do inciso I do caput do art. 2º da Lei n° 13.019, de 31 de julho de 2014.</h4>
+ <h4>§ 5º A certificação das entidades de que trata o caput deste artigo será realizada pela unidade responsável pela política sobre drogas da autoridade executiva federal responsável pela área da assistência social.</h4>
+ <h4>§ 6º As entidades beneficentes de assistência social poderão desenvolver atividades que gerem recursos, inclusive por meio de filiais, com ou sem cessão de mão de obra, de modo a contribuir com as finalidades previstas no art. 2º desta Lei Complementar, registradas segregadamente em sua contabilidade e destacadas em suas Notas Explicativas.</h4>
+ <h3>Art. 33. Para serem consideradas beneficentes e fazerem jus à certificação, as entidades a que se refere o art. 32 desta Lei Complementar deverão:</h3>
+ <h5>I – apresentar declaração emitida por autoridade federal, estadual, distrital ou municipal competente que ateste atuação na área de controle do uso de drogas ou atividade similar;</h5>
+ <h5>II – manter cadastro atualizado na unidade a que se refere o § 5º do art. 32 desta Lei Complementar;</h5>
+ <h5>III – comprovar, anualmente, nos termos do regulamento, a prestação dos serviços referidos no art. 32 desta Lei Complementar;</h5>
+ <h5>IV – cadastrar todos os acolhidos em sistema de informação específico desenvolvido, nos termos do regulamento, no caso das comunidades terapêuticas;</h5>
+ <h5>V – comprovar o registro de, no mínimo, 20% (vinte por cento) de sua capacidade em atendimentos gratuitos.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO PROCESSO DE CERTIFICAÇÃO</h3>
+ <h3>Art. 34. A ent i d a de i nt e r ess a da na c o nc es s ão ou na r e n o v aç ão da c e rt i f ic a ç ão de v e rá ap r e s e nt ar r e q u e rim en to c om os d o c u m e nt os ne c es s á ri os à c o m p r o v aç ão dos r e q u is it os de q ue t r a ta esta Lei C o m p l e m e n t a r, na f o rma est a be l ec i da em r e g u l a m en t o.</h3>
+ <h4>§ 1º A tr am itaç ão e a a p rec iaç ão do r e qu er ime nto de que trata o caput deste artigo d e verão o be dec er à ordem cro no l ó g ica de sua a pres e ntaç ão, sa l vo em c aso de d ili gê n c ia p en de nt e, d e v id ame nte ju st i f ica da.</h4>
+ <h4>§ 2º Po d erão s er so li c ita dos esc larec ime ntos e i n fo rmaç ões a os ó r gã os p úb licos e à e nt id ade inter essa da, s em pre ju í zo da re a li zaç ão de d ili gê nc ia s, d esde que re le va ntes p ara a t oma da de d ec isão so bre o r e qu er ime nto de que trata o caput deste artigo.</h4>
+ <h4>§ 3º Na h ip ótese de que tr ata o § 2º deste artigo, su p era do o pra zo de 30 (tr inta) d i as da so lic itaç ão, pro rr o gá vel p or i gu al p er ío do, a a ná li se do r e qu er ime nto de que trata o caput deste artigo p ross e gu irá, n os te rmos do § 1º deste artigo.</h4>
+ <h3>Art. 35. Os requerimentos de certificação serão apreciados:</h3>
+ <h5>I – pela autoridade executiva federal responsável pela área da saúde, para as entidades atuantes na área da saúde;</h5>
+ <h5>II – pela autoridade executiva federal responsável pela área da educação, para as entidades atuantes na área da educação;</h5>
+ <h5>III – pela autoridade executiva federal responsável pela área da assistência social, para:</h5>
+ <h6>a) as entidades atuantes na área da assistência social;</h6>
+ <h6>b) as comunidades terapêuticas e entidades de prevenção, de apoio, de mútua ajuda, de atendimento psicossocial e de ressocialização de dependentes do álcool e de outras drogas e seus familiares.</h6>
+ <h4>§ 1º Consideram-se áreas de atuação preponderantes aquelas em que a entidade registre a maior parte de seus custos e despesas nas ações previstas em seus objetivos institucionais, conforme as normas brasileiras de contabilidade.</h4>
+ <h4>§ 2º A certificação dependerá da manifestação de todas as autoridades competentes, em suas respectivas áreas de atuação.</h4>
+ <h4>§ 3º No caso em que a entidade atue em mais de uma das áreas a que se refere o art. 2º desta Lei Complementar, será dispensada a comprovação dos requisitos específicos exigidos para cada área não preponderante, desde que o valor total dos custos e das despesas nas áreas não preponderantes, cumulativamente:</h4>
+ <h5>I – não supere 30% (trinta por cento) dos custos e das despesas totais da entidade;</h5>
+ <h5>II – não ultrapasse o valor anual fixado, nos termos do regulamento, para as áreas não preponderantes.</h5>
+ <h4>§ 4º As entidades de que trata o inciso II do caput do art. 29 desta Lei Complementar serão certificadas exclusivamente pela autoridade executiva federal responsável pela área da assistência social, ainda que exerçam suas atividades em articulação com ações educacionais ou de saúde, dispensadas as manifestações das autoridades executivas responsáveis pelas áreas da educação e da saúde, cabendo àquela verificar, além dos requisitos constantes do art. 31 desta Lei Complementar, o atendimento ao disposto:</h4>
+ <h5>I – no § 1º do art. 7º desta Lei Complementar, pelas entidades que exerçam suas atividades em articulação com ações de saúde;</h5>
+ <h5>II – no § 1º do art. 18 desta Lei Complementar, pelas entidades que exerçam suas atividades em articulação com ações educacionais.</h5>
+ <h3>Art. 36. O prazo de validade da concessão da certificação será de 3 (três) anos, contado da data da publicação da decisão de deferimento no Diário Oficial da União, e seus efeitos retroagirão à data de protocolo do requerimento para fins tributários.</h3>
+ <h3>Art. 37. Na hipótese de renovação de certificação, o efeito da decisão de deferimento será contado do término da validade da certificação anterior, com validade de 3 (três) ou 5 (cinco) anos, na forma de regulamento.</h3>
+ <h4>§ 1º Será considerado tempestivo o requerimento de renovação da certificação protocolado no decorrer dos 360 (trezentos e sessenta) dias que antecedem a data final de validade da certificação.</h4>
+ <h4>§ 2º A certificação da entidade permanece válida até a data da decisão administrativa definitiva sobre o requerimento de renovação tempestivamente apresentado.</h4>
+ <h4>§ 3º Os requerimentos de renovação protocolados antes de 360 (trezentos e sessenta) dias da data final de validade da certificação não serão conhecidos.</h4>
+ <h4>§ 4º Os requerimentos de renovação protocolados após o prazo da data final de validade da certificação serão considerados como requerimentos para concessão da certificação.</h4>
+ <h3>Art. 38. A va lid ade da ce rt i f icaç ão como enti da de b en e f ice n te co nd ic io na-se à ma nute nção do cumprimento das condições que a ensejaram, inclusive as previstas no art. 3º desta Lei Complementar, cabendo às autoridades executivas certificadoras supervisionar esse atendimento, as quais poderão, a qualquer tempo, determinar a apresentação de documentos, a realização de auditorias ou o cumprimento de diligências.</h3>
+ <h4>§ 1º Verificada a prática de irregularidade pela entidade em gozo da imunidade, são competentes para representar, motivadamente, sem prejuízo das atribuições do Ministério Público:</h4>
+ <h5>I - o gestor municipal ou estadual do SUS, do Suas e do Sisnad, de acordo com sua condição de gestão, bem como o gestor federal, estadual, distrital ou municipal da educação;</h5>
+ <h5>II - a Secretaria Especial da Receita Federal do Brasil;</h5>
+ <h5>III - os conselhos de acompanhamento e controle social previstos na Lei n° 14.113, de 25 de dezembro de 2020 , e os Conselhos de Assistência Social e de Saúde;</h5>
+ <h5>IV - o Tribunal de Contas da União;</h5>
+ <h5>V - o Ministério Público.</h5>
+ <h4>§ 2º Ver i f ica do pe la Secret ar ia Especial da Rec e ita Fe deral do Bras il o d escumpr ime nto de qu a l qu er d os r e qu is it os pr ev istos n esta L ei Co mp l eme nt ar, se rá la vra do o res pe ct i vo a u to de i nfraç ã o, o qual s erá e ncami nh ado à a ut or id ade e xec ut i va cer t i f ica d ora e ser virá de re pr ese ntaç ão n os te rmos do inc iso II do § 1º d este a rt ig o, e ficarão suspensos a e x i g ib ilid ade do cré d ito tr ib ut ár io e o tr âm ite do res pe c ti vo processo a dm in istr at i vo f iscal até a d ec isão d e f in it i va no p roc esso a dm in is trati vo a que se r efere o § 4º deste artigo, d e ve ndo o l anç ame nto ser ca nce la do de o f íc io caso a ce rt i f icaç ão seja ma nt id a.</h4>
+ <h4>§ 3º A representação será dirigida à autoridade executiva federal responsável pela área de atuação da entidade e deverá conter a qualificação do representante, a descrição dos fatos a serem apurados, a documentação pertinente e as demais informações relevantes para o esclarecimento do seu objeto.</h4>
+ <h4>§ 4º Rec eb ida re pres entação m ot i va da que in d i que a pr át ica de irr e gu lari da de p e la e nt id ade em go zo da im un id ad e, ou co n statada de o f íc io p e la admi n istraç ã o pública, será in ic ia do proce sso a dm in istr at i vo, o bser va do o d isp osto em r e gu lament o.</h4>
+ <h4>§ 5º A ce rt i f icaç ão da e nt id ade p e rma nece vá lida até a d ata da d ec isão a dm in istr at i va d e f in it i va sobre o ca nce lame nto da ce rt i f icaç ão da e nt id ade b en e f ice n te.</h4>
+ <h4>§ 6º F i n a liz a do o p r o c esso a d mi n ist r at i vo de q ue t r a ta o § 4º deste artigo e c an c e l a da a c e rt i f ic a ç ã o, a S ec r e t a ria Especial da R ec e i ta F e de r al do B r as il s e rá c o m un i c a da pa ra q ue l av re o r es p ect ivo a u to de i n f r a ç ão ou dê c ont i nu i d a de ao p r oc es so ad mi n ist r at ivo f isc al a q ue se r ef e re o § 2º deste artigo, e os e f e i t os do c a nc e l a m e nto da im un i d a de t ri bu t á ria retroagirão à d a ta em q ue h ou v er s i do p r at ic a da a irr e g u l a r i d a de p e la ent i d a de.</h4>
+ <h3>Art. 39. O prazo para as manifestações da entidade nos processos administrativos relativos a esta Lei Complementar será de 30 (trinta) dias, inclusive para a interposição de recursos.</h3>
+ <h4>§ 1º O recurso interposto contra a decisão que indeferir a concessão ou a renovação da certificação, ou cancelá-la, será dirigido à autoridade julgadora que, se não reconsiderar a decisão, fará seu encaminhamento ao Ministro de Estado da área responsável.</h4>
+ <h4>§ 2º A p ós o r ec e b im e nto do r ec u rso p e lo M i n ist ro de Es t a d o, a b ri r-s e -á p r azo de 30 (t ri nta) d i as p a ra q ue a e nt i d a de i nt e r ess a da p ossa ap r es e n t ar n ov as c ons i de r a ç õ es e f a z er j u nt a da de d oc u m en t os c om v ist as a s a n ar im p r o p ri e d a d es i de nt i f ic a das p e la au t o ri d a de j u l ga do ra n as r a z ões do i n def e rim en to do r e q ue r i m e nt o.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DISPOSIÇÕES GERAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 40. A p lic a -se o d is posto nes ta Lei Co mp le m en tar aos req ue rimen tos de c onces são ou de r en ova ção de ce rt i f ica ção ap re sen ta dos a pa rt ir da da ta de sua pub li caç ão.</h3>
+ <h4>§ 1º A va li da de dos ce rt i f i ca dos v ig e n tes cu jo r eq ue rimen to de reno vaç ão n ão t enha s ido ap re s ent ado a té a data de pub lic aç ão des ta Lei Co mp le m en tar f i ca p ro rro ga da a té 31 de de ze m b ro do a no sub se qu en te ao do f im de seu p ra zo de va li da de.</h4>
+ <h4>§ 2º (VETADO).</h4>
+ <h4>§ 2º Aos requerimentos de concessão ou de renovação de certificação pendentes de decisão na data de publicação desta Lei Complementar aplicam-se as regras e as condições vigentes à época de seu protocolo.</h4>
+ <h4>§ 3º A e nt i da de que ap re se ntar r eq ue rimen to de r eno vaç ão de ce rt i f ica ção com ba se nos r equ is i tos de q ue t r ata o C ap ítu lo II desta Lei Complementar, e des de q ue te nha us u f ru ído de fo rma in in te rru pta da i mun i dade de q ue t r ata o § 7º do a rt. 1 95 da Const i tu iç ão F ede ra l, por fo rça do d i spo sto no § 2º do a r t. 24 da Lei n° 12 .1 01, de 27 de no ve mb ro de 20 09 , po de rá so lic itar s ua a ná lise p rio rit á ria em re l aç ão a s eus out ros req ue rimen tos de re nov aç ão p en de ntes na da ta de p ub licaç ão des ta Lei Co mp le m en ta r.</h4>
+ <h4>§ 4º (VETADO).</h4>
+ <h3>Art. 41. A p a rt ir da e nt r ada em v i g or de sta Lei C o m p l e m e n t a r, ficam ext i n t os os c r é d i t os de c o rr e nt es de c o nt ri b u iç õ es soc i a is l a nç a dos c ont ra i nst i t u iç õ es s em f i ns l uc r at i v os q ue a t uam n as á r e as de s a ú d e, de e d u c aç ão ou de ass i st ê nc ia s oc i a l, ex p r e ss a m e n te m ot iv a dos p or d ec i s ões de riv ad as de p r oc es s os a d mi n ist r at i v os ou j ud ic i a is c om b ase em d i s pos it i v os da l e g is l a ç ão o r d i ná ria dec l a r a d os i nc o nst i t uc i o na is, em razão d os ef e i t os da i nc o nst i t uc i o na li d a de dec l a r a da p e lo S u p r e mo T ri b u nal F e d e r al no j u l ga m en to d as Aç õ es Dir e t as de I nc o nst it uc i o n a li d a de nºs 2 0 2 8 e 4 4 80 e c o rr e l a t as.</h3>
+ <p>Pa r á g r a fo ún i c o. (VETADO).</p>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 42. (VETADO).</h3>
+ <h3>Art. 43. As ent i da des be ne f i cen tes e em gozo da i mun i da de na fo rma des ta Lei Co mp le m entar deve r ão man te r, em l o cal v is ível ao p úb lico, p laca i nd icat i va com i nfo rma ções s ob re a sua c ond i ção de be ne f ic en te e s ob re s ua á rea ou á re as de a tua ção.</h3>
+ <h3>Art. 44. Será m ant i da nos s ít ios e let rôn i cos o f i c ia is lista a tua liz ada com os d ados re lat iv os às ent id ades b en ef ic ente s, as ce rt i f ica ç ões e mit i das e os respe ct ivos p ra zos de va li da de.</h3>
+ <h3>Art. 45. O art. 198 da Lei n° 5 .1 72, de 25 de o ut ub ro de 1966 (Código Tributário Nacional), pa ssa a v i go rar com as s egu i ntes alterações:</h3>
+ <p>“ A r t. 1 9 8. .......................................................................................</p>
+ <p>......................................................................................................</p>
+ <h4>§ 3º ...............................................................................................</h4>
+ <p>......................................................................................................</p>
+ <h5>III - pa r c e l a m e nto ou m o r at ó ri a; e</h5>
+ <h5>IV - incentivo, renúncia, benefício ou imunidade de natureza tributária cujo beneficiário seja pessoa jurídica.” (NR)</h5>
+ <h3>Art. 46. O art. 64 da Lei n° 9. 5 32, de 10 de d ez e m b ro de 19 97 , p assa a v i g o r ar acrescido do s e gu i nte § 13:</h3>
+ <p>“ A r t. 6 4. .........................................................................................</p>
+ <p>......................................................................................................</p>
+ <h4>§ 1 3. No c aso de f u n da ç ões q ue p r e v e j am em s eu es t a t uto s oc i al q ue a a li e na ç ão de im ó v e is d e p e n de de a u t o riz aç ão do M i n ist é rio Púb li c o, s e r ão c o nt a b iliz a d os no limite de q ue trata o caput deste artigo apenas os créditos tributários inscritos em dívida ativa.” (NR)</h4>
+ <h3>Art. 47. Ficam revogados:</h3>
+ <h5>I - o a rt. 11 da L ei nº 11 . 0 9 6, de 13 de j a n e iro de 2 0 0 5 ;</h5>
+ <p>I I - a Lei n° 1 2 . 1 0 1, de 27 de no v e m b ro de 2 0 0 9 ; e</p>
+ <p>I II - o a rt. 1 10 da Lei n° 12 . 2 49, de 11 de j u n ho de 2 0 10.</p>
+ <h3>Art. 48. Esta Lei Complementar entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 16 de dezembro de 2021; 200º da Independência e 133º da República.</p>
+ <h3>JAIR MESSIAS BOLSONARO</h3>
+ <p>Paulo Guedes</p>
+ <p>Milton Ribeiro</p>
+ <p>Marcelo Antônio Cartaxo Queiroga Lopes</p>
+ <p>João Inácio Ribeiro Roma Neto</p>
+ <p>Damares Regina Alves</p>
+ <p>Bruno Bianco Leal</p>
+ <p>Este texto não substitui o publicado no DOU de 17.12.2021 e retificado em 17.12.2021 - Edição extra</p>
+ <p>LEI COMPLEMENTAR Nº 187, DE 16 DE DEZEMBRO DE 2021</p>
+ <p>Dispõe sobre a certificação das entidades beneficentes e regula os procedimentos referentes à imunidade de contribuições à seguridade social de que trata o § 7º do art. 195 da Constituição Federal; altera as Leis n os 5.172, de 25 de outubro de 1966 (Código Tributário Nacional), e 9.532, de 10 de dezembro de 1997; revoga a Lei n° 12.101, de 27 de novembro de 2009, e dispositivos das Leis n os 11.096, de 13 de janeiro de 2005, e 12.249, de 11 de junho de 2010; e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, as seguintes partes vetadas da Lei Complementar Nº 187, de 16 	de dezembro de 2021:</p>
+ <p>“</p>
+ <h3>Art. 18. 	..........................................................................................................</h3>
+ <p>.........................................................................................................................</p>
+ <h4>§ 4º O 	certificado será expedido em favor da entidade mantenedora das instituições de ensino.</h4>
+ <p>.......................................................................................................................”</p>
+ <p>“</p>
+ <h3>Art. 28. No ato de aferição periódica do cumprimento dos requisitos desta Seção, as entidades de educação que não tenham concedido o número mínimo de bolsas previsto nos arts. 20, 21, 22 e 23 desta Lei Complementar poderão compensar o número de bolsas devido no exercício subsequente, mediante a assinatura de 	Termo de Ajuste de Gratuidade ou de instrumento congênere, nas condições estabelecidas em regulamento.</h3>
+ <h4>§ 1º Após a publicação da decisão relativa à aferição do cumprimento dos requisitos desta Seção, as entidades que atuam na área da educação a que se refere o caput deste artigo terão prazo de 30 (trinta) dias para requerer a assinatura do Termo de Ajuste de Gratuidade.</h4>
+ <h4>§ 2º Na hipótese de descumprimento do Termo de Ajuste de Gratuidade ou congênere, a certificação da entidade será cancelada.</h4>
+ <h4>§ 3º O Termo de 	Ajuste de Gratuidade poderá ser celebrado somente uma vez com a mesma entidade a cada período de aferição, estabelecido nos termos de regulamento.</h4>
+ <h4>§ 4º As bolsas de pós-graduação stricto sensu poderão integrar a compensação, desde que se refiram a áreas de formação definidas em regulamento.</h4>
+ <p>........................................................................................................................”</p>
+ <p>“</p>
+ <h3>Art. 31. 	...........................................................................................................</h3>
+ <p>..........................................................................................................................</p>
+ <h4>§ 6º O limite estabelecido no § 5º deste artigo poderá ser excedido, desde que observados os seguintes termos:</h4>
+ <h5>I - tenham termo de curatela do idoso;</h5>
+ <h5>II - o usuário seja encaminhado pelo Poder Judiciário, pelo Ministério Público ou pelo gestor local do Suas; e</h5>
+ <h5>III - a pessoa idosa ou seu responsável efetue a doação, de forma livre e voluntária.</h5>
+ <p>.........................................................................................................................”</p>
+ <p>“</p>
+ <h3>Art. 40. 	............................................................................................................</h3>
+ <p>...........................................................................................................................</p>
+ <h4>§ 2º Aos requerimentos de concessão ou de renovação de certificação pendentes de decisão na data de publicação desta Lei Complementar aplicam-se as regras e as condições vigentes à época de seu protocolo.</h4>
+ <p>.........................................................................................................................”</p>
+ <p>Brasília, 8 de julho de 2022; 201º da Independência e 134º da República.</p>
+ <h3>JAIR 	MESSIAS BOLSONARO</h3>
+ <p>Este texto não substitui o publicado no DOU de 8.7.2022 - Edição extra</p>
+ <p>Vide Lei n° 14.332, de 2022</p>
+ <p>Vide Lei n° 14.334, de 2022</p>
+ <p>Regulamento | Dispõe sobre a certificação das entidades beneficentes e regula os procedimentos referentes à imunidade de contribuições à</p>
+ <p>seguridade social de que trata o § 7º do art. 195 da Constituição Federal;</p>
+ <p>altera as Leis nos5.172, de 25 de outubro de 1966 (Código</p>
+ <p>Tributário Nacional), e 9.532, de 10 de dezembro de 1997; revoga a Lei n° 12.101, de 27 de novembro de 2009, e dispositivos das Leis nos11.096, de 13 de janeiro de 2005, e 12.249, de 11 de junho de 2010; e dá outras providências.</p>
+ <p>Dispõe sobre a certificação das entidades beneficentes e regula os procedimentos referentes à imunidade de contribuições à</p>
+ <p>seguridade social de que trata o § 7º do art. 195 da Constituição Federal;</p>
+ <p>altera as Leis nos5.172, de 25 de outubro de 1966 (Código</p>
+ <p>Tributário Nacional), e 9.532, de 10 de dezembro de 1997; revoga a Lei n° 12.101, de 27 de novembro de 2009, e dispositivos das Leis nos11.096, de 13 de janeiro de 2005, e 12.249, de 11 de junho de 2010; e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/LCP/Lcp187.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.973, DE 2 DE DEZEMBRO DE 2004 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2004" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.973, DE 2 DE DEZEMBRO DE 2004</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:54:03 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.973compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 52.233 caracteres | espelho: 52.237 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.973, DE 	2 DE DEZEMBRO DE 2004</p>
+ <p>Regulamento</p>
+ <p>Dispõe sobre incentivos à inovação e à pesquisa científica e tecnológica no ambiente produtivo e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Esta Lei estabelece medidas de incentivo à inovação e à pesquisa científica e tecnológica no ambiente produtivo, com vistas à capacitação tecnológica, ao alcance da autonomia tecnológica e ao desenvolvimento do sistema produtivo nacional e regional do País, nos termos dos arts. 23, 24, 167, 200, 213, 218, 219 e 219-A da Constituição Federal. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>Parágrafo único. As medidas às quais se refere o caput deverão observar os seguintes princípios: (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - promoção das atividades científicas e tecnológicas como estratégicas para o desenvolvimento econômico e social; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - promoção e continuidade dos processos de desenvolvimento científico, tecnológico e de inovação, assegurados os recursos humanos, econômicos e financeiros para tal finalidade; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - redução das desigualdades regionais; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - descentralização das atividades de ciência, tecnologia e inovação em cada esfera de governo, com desconcentração em cada ente federado; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>V - promoção da cooperação e interação entre os entes públicos, entre os setores público e privado e entre empresas; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VI - estímulo à atividade de inovação nas Instituições Científica, Tecnológica e de Inovação (ICTs) e nas empresas, inclusive para a atração, a constituição e a instalação de centros de pesquisa, desenvolvimento e inovação e de parques e polos tecnológicos no País; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VII - promoção da competitividade empresarial nos mercados nacional e internacional; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VIII - incentivo à constituição de ambientes favoráveis à inovação e às atividades de transferência de tecnologia; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IX - promoção e continuidade dos processos de formação e capacitação científica e tecnológica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>X - fortalecimento das capacidades operacional, científica, tecnológica e administrativa das ICTs; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XI - atratividade dos instrumentos de fomento e de crédito, bem como sua permanente atualização e aperfeiçoamento; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XII - simplificação de procedimentos para gestão de projetos de ciência, tecnologia e inovação e adoção de controle por resultados em sua avaliação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XIII - utilização do poder de compra do Estado para fomento à inovação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XIV - apoio, incentivo e integração dos inventores independentes às atividades das ICTs e ao sistema produtivo. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h3>Art. 2º Para os efeitos desta Lei, considera-se:</h3>
+ <h5>I - agência de fomento: órgão ou instituição de natureza pública ou privada que tenha entre os seus objetivos o financiamento de ações que visem a estimular e promover o desenvolvimento da ciência, da tecnologia e da inovação;</h5>
+ <h5>II - criação: invenção, modelo de utilidade, desenho industrial, programa de computador, topografia de circuito integrado, nova cultivar ou cultivar essencialmente derivada e qualquer outro desenvolvimento tecnológico que acarrete ou possa acarretar o surgimento de novo produto, processo ou aperfeiçoamento incremental, obtida por um ou mais criadores;</h5>
+ <h5>III - criador: pessoa física que seja inventora, obtentora ou autora de criação; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>III-A - incubadora de empresas: organização ou estrutura que objetiva estimular ou prestar apoio logístico, gerencial e tecnológico ao empreendedorismo inovador e intensivo em conhecimento, com o objetivo de facilitar a criação e o desenvolvimento de empresas que tenham como diferencial a realização de atividades voltadas à inovação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - inovação: introdução de novidade ou aperfeiçoamento no ambiente produtivo e social que resulte em novos produtos, serviços ou processos ou que compreenda a agregação de novas funcionalidades ou características a produto, serviço ou processo já existente que possa resultar em melhorias e em efetivo ganho de qualidade ou desempenho; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>V - Instituição Científica, Tecnológica e de Inovação (ICT): órgão ou entidade da administração pública direta ou indireta ou pessoa jurídica de direito privado sem fins lucrativos legalmente constituída sob as leis brasileiras, com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada de caráter científico ou tecnológico ou o desenvolvimento de novos produtos, serviços ou processos; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <p>(Vide Decreto nº 9.841, de 2019)</p>
+ <h5>VI - Núcleo de Inovação Tecnológica (NIT): estrutura instituída por uma ou mais ICTs, com ou sem personalidade jurídica própria, que tenha por finalidade a gestão de política institucional de inovação e por competências mínimas as atribuições previstas nesta Lei; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>VII - fundação de apoio: fundação criada com a finalidade de dar apoio a projetos de pesquisa, ensino e extensão, projetos de desenvolvimento institucional, científico, tecnológico e projetos de estímulo à inovação de interesse das ICTs, registrada e credenciada no Ministério da Educação e no Ministério da Ciência, Tecnologia e Inovação, nos termos da Lei n° 8.958, de 20 de dezembro de 1994, e das demais legislações pertinentes nas esferas estadual, distrital e municipal; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <p>(Vide Decreto nº 9.841, de 2019)</p>
+ <h5>VIII - pesquisador público: ocupante de cargo público efetivo, civil ou militar, ou detentor de função ou emprego público que realize, como atribuição funcional, atividade de pesquisa, desenvolvimento e inovação; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>IX - inventor independente: pessoa física, não ocupante de cargo efetivo, cargo militar ou emprego público, que seja inventor, obtentor ou autor de criação.</h5>
+ <h5>X - parque tecnológico: complexo planejado de desenvolvimento empresarial e tecnológico, promotor da cultura de inovação, da competitividade industrial, da capacitação empresarial e da promoção de sinergias em atividades de pesquisa científica, de desenvolvimento tecnológico e de inovação, entre empresas e uma ou mais ICTs, com ou sem vínculo entre si; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XI - polo tecnológico: ambiente industrial e tecnológico caracterizado pela presença dominante de micro, pequenas e médias empresas com áreas correlatas de atuação em determinado espaço geográfico, com vínculos operacionais com ICT, recursos humanos, laboratórios e equipamentos organizados e com predisposição ao intercâmbio entre os entes envolvidos para consolidação, marketing e comercialização de novas tecnologias; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XII - extensão tecnológica: atividade que auxilia no desenvolvimento, no aperfeiçoamento e na difusão de soluções tecnológicas e na sua disponibilização à sociedade e ao mercado; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XIII - bônus tecnológico: subvenção a microempresas e a empresas de pequeno e médio porte, com base em dotações orçamentárias de órgãos e entidades da administração pública, destinada ao pagamento de compartilhamento e uso de infraestrutura de pesquisa e desenvolvimento tecnológicos, de contratação de serviços tecnológicos especializados, ou transferência de tecnologia, quando esta for meramente complementar àqueles serviços, nos termos de regulamento; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XIV - capital intelectual: conhecimento acumulado pelo pessoal da organização, passível de aplicação em projetos de pesquisa, desenvolvimento e inovação. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO ESTÍMULO À CONSTRUÇÃO DE AMBIENTES ESPECIALIZADOS E COOPERATIVOS DE INOVAÇÃO</h3>
+ <h3>Art. 3º A União, os Estados, o Distrito Federal, os Municípios e as respectivas agências de fomento poderão estimular e apoiar a constituição de alianças estratégicas e o desenvolvimento de projetos de cooperação envolvendo empresas, ICTs e entidades privadas sem fins lucrativos voltados para atividades de pesquisa e desenvolvimento, que objetivem a geração de produtos, processos e serviços inovadores e a transferência e a difusão de tecnologia. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>Parágrafo único. O apoio previsto no caput poderá contemplar as redes e os projetos internacionais de pesquisa tecnológica, as ações de empreendedorismo tecnológico e de criação de ambientes de inovação, inclusive incubadoras e parques tecnológicos, e a formação e a capacitação de recursos humanos qualificados. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 3º-A. A Financiadora de Estudos e Projetos - FINEP, como secretaria executiva do Fundo Nacional de Desenvolvimento Científico e Tecnológico - FNDCT, o Conselho Nacional de Desenvolvimento Científico e Tecnológico - CNPq e as Agências Financeiras Oficiais de Fomento poderão celebrar convênios e contratos, nos termos do inciso XIII do art. 24 da Lei n° 8.666, de 21 de junho de 1993, por prazo determinado, com as fundações de apoio, com a finalidade de dar apoio às IFES e demais ICTs, inclusive na gestão administrativa e financeira dos projetos mencionados no caput do art. 1º da Lei n° 8.958, de 20 de dezembro de 1994, com a anuência expressa das instituições apoiadas. (Incluído pela Lei n° 12.349, de 2010)</h3>
+ <h3>Art. 3º-B. A União, os Estados, o Distrito Federal, os Municípios, as respectivas agências de fomento e as ICTs poderão apoiar a criação, a implantação e a consolidação de ambientes promotores da inovação, incluídos parques e polos tecnológicos e incubadoras de empresas, como forma de incentivar o desenvolvimento tecnológico, o aumento da competitividade e a interação entre as empresas e as ICTs. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º As incubadoras de empresas, os parques e polos tecnológicos e os demais ambientes promotores da inovação estabelecerão suas regras para fomento, concepção e desenvolvimento de projetos em parceria e para seleção de empresas para ingresso nesses ambientes. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º Para os fins previstos no caput, a União, os Estados, o Distrito Federal, os Municípios, as respectivas agências de fomento e as ICTs públicas poderão: (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - ceder o uso de imóveis para a instalação e a consolidação de ambientes promotores da inovação, diretamente às empresas e às ICTs interessadas ou por meio de entidade com ou sem fins lucrativos que tenha por missão institucional a gestão de parques e polos tecnológicos e de incubadora de empresas, mediante contrapartida obrigatória, financeira ou não financeira, na forma de regulamento; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - participar da criação e da governança das entidades gestoras de parques tecnológicos ou de incubadoras de empresas, desde que adotem mecanismos que assegurem a segregação das funções de financiamento e de execução. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h3>Art. 3º-C. A União, os Estados, o Distrito Federal e os Municípios estimularão a atração de centros de pesquisa e desenvolvimento de empresas estrangeiras, promovendo sua interação com ICTs e empresas brasileiras e oferecendo-lhes o acesso aos instrumentos de fomento, visando ao adensamento do processo de inovação no País. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h3>Art. 3º-D. A União, os Estados, o Distrito Federal, os Municípios e as respectivas agências de fomento manterão programas específicos para as microempresas e para as empresas de pequeno porte, observando-se o disposto na Lei Complementar nº 123, de 14 de dezembro de 2006. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h3>Art. 4º A ICT pública poderá, mediante contrapartida financeira ou não financeira e por prazo determinado, nos termos de contrato ou convênio: (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h5>I - compartilhar seus laboratórios, equipamentos, instrumentos, materiais e demais instalações com ICT ou empresas em ações voltadas à inovação tecnológica para consecução das atividades de incubação, sem prejuízo de sua atividade finalística; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - permitir a utilização de seus laboratórios, equipamentos, instrumentos, materiais e demais instalações existentes em suas próprias dependências por ICT, empresas ou pessoas físicas voltadas a atividades de pesquisa, desenvolvimento e inovação, desde que tal permissão não interfira diretamente em sua atividade-fim nem com ela conflite; (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - permitir o uso de seu capital intelectual em projetos de pesquisa, desenvolvimento e inovação. (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h4>Parágrafo único. O compartilhamento e a permissão de que tratam os incisos I e II do caput obedecerão às prioridades, aos critérios e aos requisitos aprovados e divulgados pela ICT pública, observadas as respectivas disponibilidades e assegurada a igualdade de oportunidades a empresas e demais organizações interessadas. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 5º São a União e os demais entes federativos e suas entidades autorizados, nos termos de regulamento, a participar minoritariamente do capital social de empresas, com o propósito de desenvolver produtos ou processos inovadores que estejam de acordo com as diretrizes e prioridades definidas nas políticas de ciência, tecnologia, inovação e de desenvolvimento industrial de cada esfera de governo. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º A propriedade intelectual sobre os resultados obtidos pertencerá à empresa, na forma da legislação vigente e de seus atos constitutivos. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º O poder público poderá condicionar a participação societária via aporte de capital à previsão de licenciamento da propriedade intelectual para atender ao interesse público. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 3º A alienação dos ativos da participação societária referida no caput dispensa realização de licitação, conforme legislação vigente. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º Os recursos recebidos em decorrência da alienação da participação societária referida no caput deverão ser aplicados em pesquisa e desenvolvimento ou em novas participações societárias. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 5º Nas empresas a que se refere o caput, o estatuto ou contrato social poderá conferir às ações ou quotas detidas pela União ou por suas entidades poderes especiais, inclusive de veto às deliberações dos demais sócios nas matérias que especificar. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 6º A participação minoritária de que trata o caput dar-se-á por meio de contribuição financeira ou não financeira, desde que economicamente mensurável, e poderá ser aceita como forma de remuneração pela transferência de tecnologia e pelo licenciamento para outorga de direito de uso ou de exploração de criação de titularidade da União e de suas entidades. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DO ESTÍMULO À PARTICIPAÇÃO DAS ICT NO PROCESSO DE INOVAÇÃO</h3>
+ <h3>Art. 6º É facultado à ICT pública celebrar contrato de transferência de tecnologia e de licenciamento para outorga de direito de uso ou de exploração de criação por ela desenvolvida isoladamente ou por meio de parceria. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º A contratação com cláusula de exclusividade, para os fins de que trata o caput, deve ser precedida da publicação de extrato da oferta tecnológica em sítio eletrônico oficial da ICT, na forma estabelecida em sua política de inovação. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 1º-A. Nos casos de desenvolvimento conjunto com empresa, essa poderá ser contratada com cláusula de exclusividade, dispensada a oferta pública, devendo ser estabelecida em convênio ou contrato a forma de remuneração. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º Quando não for concedida exclusividade ao receptor de tecnologia ou ao licenciado, os contratos previstos no caput deste artigo poderão ser firmados diretamente, para fins de exploração de criação que deles seja objeto, na forma do regulamento. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 3º A empresa detentora do direito exclusivo de exploração de criação protegida perderá automaticamente esse direito caso não comercialize a criação dentro do prazo e condições definidos no contrato, podendo a ICT proceder a novo licenciamento. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º O licenciamento para exploração de criação cujo objeto interesse à defesa nacional deve observar o disposto no § 3º do art. 75 da Lei n° 9.279, de 14 de maio de 1996. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 5º A transferência de tecnologia e o licenciamento para exploração de criação reconhecida, em ato do Poder Executivo, como de relevante interesse público, somente poderão ser efetuados a título não exclusivo. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 6º Celebrado o contrato de que trata o caput, dirigentes, criadores ou quaisquer outros servidores, empregados ou prestadores de serviços são obrigados a repassar os conhecimentos e informações necessários à sua efetivação, sob pena de responsabilização administrativa, civil e penal, respeitado o disposto no art. 12. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 7º A remuneração de ICT privada pela transferência de tecnologia e pelo licenciamento para uso ou exploração de criação de que trata o § 6º do art. 5º , bem como a oriunda de pesquisa, desenvolvimento e inovação, não representa impeditivo para sua classificação como entidade sem fins lucrativos. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 7º A ICT poderá obter o direito de uso ou de exploração de criação protegida.</h3>
+ <h3>Art. 8º É facultado à ICT prestar a instituições públicas ou privadas serviços técnicos especializados compatíveis com os objetivos desta Lei, nas atividades voltadas à inovação e à pesquisa científica e tecnológica no ambiente produtivo, visando, entre outros objetivos, à maior competitividade das empresas. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º A prestação de serviços prevista no caput dependerá de aprovação pelo representante legal máximo da instituição, facultada a delegação a mais de uma autoridade, e vedada a subdelegação. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º O servidor, o militar ou o empregado público envolvido na prestação de serviço prevista no caput deste artigo poderá receber retribuição pecuniária, diretamente da ICT ou de instituição de apoio com que esta tenha firmado acordo, sempre sob a forma de adicional variável e desde que custeado exclusivamente com recursos arrecadados no âmbito da atividade contratada.</h4>
+ <h4>§ 3º O valor do adicional variável de que trata o § 2º deste artigo fica sujeito à incidência dos tributos e contribuições aplicáveis à espécie, vedada a incorporação aos vencimentos, à remuneração ou aos proventos, bem como a referência como base de cálculo para qualquer benefício, adicional ou vantagem coletiva ou pessoal.</h4>
+ <h4>§ 4º O adicional variável de que trata este artigo configura-se, para os fins do art. 28 da Lei n° 8.212, de 24 de julho de 1991, ganho eventual.</h4>
+ <h3>Art. 9º É facultado à ICT celebrar acordos de parceria com instituições públicas e privadas para realização de atividades conjuntas de pesquisa científica e tecnológica e de desenvolvimento de tecnologia, produto, serviço ou processo. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º O servidor, o militar, o empregado da ICT pública e o aluno de curso técnico, de graduação ou de pós-graduação envolvidos na execução das atividades previstas no caput poderão receber bolsa de estímulo à inovação diretamente da ICT a que estejam vinculados, de fundação de apoio ou de agência de fomento. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º As partes deverão prever, em instrumento jurídico específico, a titularidade da propriedade intelectual e a participação nos resultados da exploração das criações resultantes da parceria, assegurando aos signatários o direito à exploração, ao licenciamento e à transferência de tecnologia, observado o disposto nos §§ 4º a 7º do art. 6º . (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 3º A propriedade intelectual e a participação nos resultados referidas no § 2º serão asseguradas às partes contratantes, nos termos do contrato, podendo a ICT ceder ao parceiro privado a totalidade dos direitos de propriedade intelectual mediante compensação financeira ou não financeira, desde que economicamente mensurável. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º A bolsa concedida nos termos deste artigo caracteriza-se como doação, não configura vínculo empregatício, não caracteriza contraprestação de serviços nem vantagem para o doador, para efeitos do disposto no art. 26 da Lei n° 9.250, de 26 de dezembro de 1995, e não integra a base de cálculo da contribuição previdenciária, aplicando-se o disposto neste parágrafo a fato pretérito, como previsto no inciso I do art. 106 da Lei n° 5.172, de 25 de outubro de 1966. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 9º-A. Os órgãos e entidades da União, dos Estados, do Distrito Federal e dos Municípios são autorizados a conceder recursos para a execução de projetos de pesquisa, desenvolvimento e inovação às ICTs ou diretamente aos pesquisadores a elas vinculados, por termo de outorga, convênio, contrato ou instrumento jurídico assemelhado. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º A concessão de apoio financeiro depende de aprovação de plano de trabalho. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º A celebração e a prestação de contas dos instrumentos aos quais se refere o caput serão feitas de forma simplificada e compatível com as características das atividades de ciência, tecnologia e inovação, nos termos de regulamento. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 3º A vigência dos instrumentos jurídicos aos quais se refere o caput deverá ser suficiente à plena realização do objeto, admitida a prorrogação, desde que justificada tecnicamente e refletida em ajuste do plano de trabalho. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º Do valor total aprovado e liberado para os projetos referidos no caput, poderá ocorrer transposição, remanejamento ou transferência de recursos de categoria de programação para outra, de acordo com regulamento. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 5º A transferência de recursos da União para ICT estadual, distrital ou municipal em projetos de ciência, tecnologia e inovação não poderá sofrer restrições por conta de inadimplência de quaisquer outros órgãos ou instâncias que não a própria ICT. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 10. Os acordos e contratos firmados entre as ICT, as instituições de apoio, agências de fomento e as entidades nacionais de direito privado sem fins lucrativos voltadas para atividades de pesquisa, cujo objeto seja compatível com a finalidade desta Lei, poderão prever recursos para cobertura de despesas operacionais e administrativas incorridas na execução destes acordos e contratos, observados os critérios do regulamento.</h3>
+ <h3>Art. 11. Nos casos e condições definidos em normas da ICT e nos termos da legislação pertinente, a ICT poderá ceder seus direitos sobre a criação, mediante manifestação expressa e motivada e a título não oneroso, ao criador, para que os exerça em seu próprio nome e sob sua inteira responsabilidade, ou a terceiro, mediante remuneração. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>Parágrafo único. A manifestação prevista no caput deste artigo deverá ser proferida pelo órgão ou autoridade máxima da instituição, ouvido o núcleo de inovação tecnológica, no prazo fixado em regulamento.</h4>
+ <h3>Art. 12. É vedado a dirigente, ao criador ou a qualquer servidor, militar, empregado ou prestador de serviços de ICT divulgar, noticiar ou publicar qualquer aspecto de criações de cujo desenvolvimento tenha participado diretamente ou tomado conhecimento por força de suas atividades, sem antes obter expressa autorização da ICT.</h3>
+ <h3>Art. 13. É assegurada ao criador participação mínima de 5% (cinco por cento) e máxima de 1/3 (um terço) nos ganhos econômicos, auferidos pela ICT, resultantes de contratos de transferência de tecnologia e de licenciamento para outorga de direito de uso ou de exploração de criação protegida da qual tenha sido o inventor, obtentor ou autor, aplicando-se, no que couber, o disposto no parágrafo único do art. 93 da Lei n° 9.279, de 1996.</h3>
+ <h4>§ 1º A participação de que trata o caput deste artigo poderá ser partilhada pela ICT entre os membros da equipe de pesquisa e desenvolvimento tecnológico que tenham contribuído para a criação.</h4>
+ <h4>§ 2º Entende-se por ganho econômico toda forma de royalty ou de remuneração ou quaisquer benefícios financeiros resultantes da exploração direta ou por terceiros da criação protegida, devendo ser deduzidos: (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - na exploração direta e por terceiros, as despesas, os encargos e as obrigações legais decorrentes da proteção da propriedade intelectual; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - na exploração direta, os custos de produção da ICT. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h4>§ 3º A participação prevista no caput deste artigo obedecerá ao disposto nos §§ 3º e 4º do art. 8º .</h4>
+ <h4>§ 4º A participação referida no caput deste artigo deverá ocorrer em prazo não superior a 1 (um) ano após a realização da receita que lhe servir de base, contado a partir da regulamentação pela autoridade interna competente. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 14. Para a execução do disposto nesta Lei, ao pesquisador público é facultado o afastamento para prestar colaboração a outra ICT, nos termos do inciso II do art. 93 da Lei n° 8.112, de 11 de dezembro de 1990, observada a conveniência da ICT de origem.</h3>
+ <h4>§ 1º As atividades desenvolvidas pelo pesquisador público, na instituição de destino, devem ser compatíveis com a natureza do cargo efetivo, cargo militar ou emprego público por ele exercido na instituição de origem, na forma do regulamento.</h4>
+ <h4>§ 2º Durante o período de afastamento de que trata o caput deste artigo, são assegurados ao pesquisador público o vencimento do cargo efetivo, o soldo do cargo militar ou o salário do emprego público da instituição de origem, acrescido das vantagens pecuniárias permanentes estabelecidas em lei, bem como progressão funcional e os benefícios do plano de seguridade social ao qual estiver vinculado.</h4>
+ <h4>§ 3º As gratificações específicas do pesquisador público em regime de dedicação exclusiva, inclusive aquele enquadrado em plano de carreiras e cargos de magistério, serão garantidas, na forma do § 2º deste artigo, quando houver o completo afastamento de ICT pública para outra ICT, desde que seja de conveniência da ICT de origem. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º No caso de pesquisador público em instituição militar, seu afastamento estará condicionado à autorização do Comandante da Força à qual se subordine a instituição militar a que estiver vinculado.</h4>
+ <h3>Art. 14-A. O pesquisador público em regime de dedicação exclusiva, inclusive aquele enquadrado em plano de carreiras e cargos de magistério, poderá exercer atividade remunerada de pesquisa, desenvolvimento e inovação em ICT ou em empresa e participar da execução de projeto aprovado ou custeado com recursos previstos nesta Lei, desde que observada a conveniência do órgão de origem e assegurada a continuidade de suas atividades de ensino ou pesquisa nesse órgão, a depender de sua respectiva natureza. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h3>Art. 15. A critério da administração pública, na forma do regulamento, poderá ser concedida ao pesquisador público, desde que não esteja em estágio probatório, licença sem remuneração para constituir empresa com a finalidade de desenvolver atividade empresarial relativa à inovação.</h3>
+ <h4>§ 1º A licença a que se refere o caput deste artigo dar-se-á pelo prazo de até 3 (três) anos consecutivos, renovável por igual período.</h4>
+ <h4>§ 2º Não se aplica ao pesquisador público que tenha constituído empresa na forma deste artigo, durante o período de vigência da licença, o disposto no inciso X do art. 117 da Lei n° 8.112, de 1990.</h4>
+ <h4>§ 3º Caso a ausência do servidor licenciado acarrete prejuízo às atividades da ICT integrante da administração direta ou constituída na forma de autarquia ou fundação, poderá ser efetuada contratação temporária nos termos da Lei n° 8.745, de 9 de dezembro de 1993, independentemente de autorização específica.</h4>
+ <h3>Art. 15-A. A ICT de direito público deverá instituir sua política de inovação, dispondo sobre a organização e a gestão dos processos que orientam a transferência de tecnologia e a geração de inovação no ambiente produtivo, em consonância com as prioridades da política nacional de ciência, tecnologia e inovação e com a política industrial e tecnológica nacional. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h4>Parágrafo único. A política a que se refere o caput deverá estabelecer diretrizes e objetivos: (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - estratégicos de atuação institucional no ambiente produtivo local, regional ou nacional; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - de empreendedorismo, de gestão de incubadoras e de participação no capital social de empresas; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - para extensão tecnológica e prestação de serviços técnicos; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - para compartilhamento e permissão de uso por terceiros de seus laboratórios, equipamentos, recursos humanos e capital intelectual; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>V - de gestão da propriedade intelectual e de transferência de tecnologia; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VI - para institucionalização e gestão do Núcleo de Inovação Tecnológica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VII - para orientação das ações institucionais de capacitação de recursos humanos em empreendedorismo, gestão da inovação, transferência de tecnologia e propriedade intelectual; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VIII - para estabelecimento de parcerias para desenvolvimento de tecnologias com inventores independentes, empresas e outras entidades. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h3>Art. 16. Para apoiar a gestão de sua política de inovação, a ICT pública deverá dispor de Núcleo de Inovação Tecnológica, próprio ou em associação com outras ICTs. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º São competências do Núcleo de Inovação Tecnológica a que se refere o caput, entre outras: (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - zelar pela manutenção da política institucional de estímulo à proteção das criações, licenciamento, inovação e outras formas de transferência de tecnologia;</h5>
+ <h5>II - avaliar e classificar os resultados decorrentes de atividades e projetos de pesquisa para o atendimento das disposições desta Lei;</h5>
+ <h5>III - avaliar solicitação de inventor independente para adoção de invenção na forma do art. 22;</h5>
+ <h5>IV - opinar pela conveniência e promover a proteção das criações desenvolvidas na instituição;</h5>
+ <h5>V - opinar quanto à conveniência de divulgação das criações desenvolvidas na instituição, passíveis de proteção intelectual;</h5>
+ <h5>VI - acompanhar o processamento dos pedidos e a manutenção dos títulos de propriedade intelectual da instituição.</h5>
+ <h5>VII - desenvolver estudos de prospecção tecnológica e de inteligência competitiva no campo da propriedade intelectual, de forma a orientar as ações de inovação da ICT; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VIII - desenvolver estudos e estratégias para a transferência de inovação gerada pela ICT; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IX - promover e acompanhar o relacionamento da ICT com empresas, em especial para as atividades previstas nos arts. 6º a 9º ; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>X - negociar e gerir os acordos de transferência de tecnologia oriunda da ICT. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h4>§ 2º A representação da ICT pública, no âmbito de sua política de inovação, poderá ser delegada ao gestor do Núcleo de Inovação Tecnológica. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 3º O Núcleo de Inovação Tecnológica poderá ser constituído com personalidade jurídica própria, como entidade privada sem fins lucrativos. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º Caso o Núcleo de Inovação Tecnológica seja constituído com personalidade jurídica própria, a ICT deverá estabelecer as diretrizes de gestão e as formas de repasse de recursos. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 5º Na hipótese do § 3º , a ICT pública é autorizada a estabelecer parceria com entidades privadas sem fins lucrativos já existentes, para a finalidade prevista no caput. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 17. A ICT pública deverá, na forma de regulamento, prestar informações ao Ministério da Ciência, Tecnologia e Inovação. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h5>I - ( Revogado ); (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - ( Revogado ); (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - ( Revogado ); (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - ( Revogado ). (Redação pela Lei n° 13.243, de 2016)</h5>
+ <h4>Parágrafo único. Aplica-se o disposto no caput à ICT privada beneficiada pelo poder público, na forma desta Lei. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 18. A ICT pública, na elaboração e na execução de seu orçamento, adotará as medidas cabíveis para a administração e a gestão de sua política de inovação para permitir o recebimento de receitas e o pagamento de despesas decorrentes da aplicação do disposto nos arts. 4º a 9º , 11 e 13, o pagamento das despesas para a proteção da propriedade intelectual e o pagamento devido aos criadores e aos eventuais colaboradores. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>Parágrafo único. A captação, a gestão e a aplicação das receitas próprias da ICT pública, de que tratam os arts. 4º a 8º , 11 e 13, poderão ser delegadas a fundação de apoio, quando previsto em contrato ou convênio, devendo ser aplicadas exclusivamente em objetivos institucionais de pesquisa, desenvolvimento e inovação, incluindo a carteira de projetos institucionais e a gestão da política de inovação. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO ESTÍMULO À INOVAÇÃO NAS EMPRESAS</h3>
+ <h3>Art. 19. A União, os Estados, o Distrito Federal, os Municípios, as ICTs e suas agências de fomento promoverão e incentivarão a pesquisa e o desenvolvimento de produtos, serviços e processos inovadores em empresas brasileiras e em entidades brasileiras de direito privado sem fins lucrativos, mediante a concessão de recursos financeiros, humanos, materiais ou de infraestrutura a serem ajustados em instrumentos específicos e destinados a apoiar atividades de pesquisa, desenvolvimento e inovação, para atender às prioridades das políticas industrial e tecnológica nacional. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º As prioridades da política industrial e tecnológica nacional de que trata o caput deste artigo serão estabelecidas em regulamento.</h4>
+ <h4>§ 2º A concessão de recursos financeiros, sob a forma de subvenção econômica, financiamento ou participação societária, visando ao desenvolvimento de produtos ou processos inovadores, será precedida de aprovação de projeto pelo órgão ou entidade concedente.</h4>
+ <h4>§ 2º-A. São instrumentos de estímulo à inovação nas empresas, quando aplicáveis, entre outros: (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - subvenção econômica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - financiamento; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - participação societária; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - bônus tecnológico; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>V - encomenda tecnológica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VI - incentivos fiscais; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VII - concessão de bolsas; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VIII - uso do poder de compra do Estado; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IX - fundos de investimentos; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>X - fundos de participação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XI - títulos financeiros, incentivados ou não; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XII - previsão de investimento em pesquisa e desenvolvimento em contratos de concessão de serviços públicos ou em regulações setoriais. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h4>§ 3º A concessão da subvenção econômica prevista no § 1º deste artigo implica, obrigatoriamente, a assunção de contrapartida pela empresa beneficiária, na forma estabelecida nos instrumentos de ajuste específicos.</h4>
+ <h4>§ 4º O Poder Executivo regulamentará a subvenção econômica de que trata este artigo, assegurada a destinação de percentual mínimo dos recursos do Fundo Nacional de Desenvolvimento Científico e Tecnológico - FNDCT.</h4>
+ <h4>§ 5º Os recursos de que trata o § 4º deste artigo serão objeto de programação orçamentária em categoria específica do FNDCT, não sendo obrigatória sua aplicação na destinação setorial originária, sem prejuízo da alocação de outros recursos do FNDCT destinados à subvenção econômica.</h4>
+ <h4>§ 6º As iniciativas de que trata este artigo poderão ser estendidas a ações visando a: (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - apoio financeiro, econômico e fiscal direto a empresas para as atividades de pesquisa, desenvolvimento e inovação tecnológica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - constituição de parcerias estratégicas e desenvolvimento de projetos de cooperação entre ICT e empresas e entre empresas, em atividades de pesquisa e desenvolvimento, que tenham por objetivo a geração de produtos, serviços e processos inovadores; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - criação, implantação e consolidação de incubadoras de empresas, de parques e polos tecnológicos e de demais ambientes promotores da inovação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - implantação de redes cooperativas para inovação tecnológica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>V - adoção de mecanismos para atração, criação e consolidação de centros de pesquisa e desenvolvimento de empresas brasileiras e estrangeiras; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VI - utilização do mercado de capitais e de crédito em ações de inovação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VII - cooperação internacional para inovação e para transferência de tecnologia; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VIII - internacionalização de empresas brasileiras por meio de inovação tecnológica; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IX - indução de inovação por meio de compras públicas; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>X - utilização de compensação comercial, industrial e tecnológica em contratações públicas; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XI - previsão de cláusulas de investimento em pesquisa e desenvolvimento em concessões públicas e em regimes especiais de incentivos econômicos; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>XII - implantação de solução de inovação para apoio e incentivo a atividades tecnológicas ou de inovação em microempresas e em empresas de pequeno porte. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h4>§ 7º A União, os Estados, o Distrito Federal e os Municípios poderão utilizar mais de um instrumento de estímulo à inovação a fim de conferir efetividade aos programas de inovação em empresas. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 8º Os recursos destinados à subvenção econômica serão aplicados no financiamento de atividades de pesquisa, desenvolvimento tecnológico e inovação em empresas, admitida sua destinação para despesas de capital e correntes, desde que voltadas preponderantemente à atividade financiada. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 20. Os órgãos e entidades da administração pública, em matéria de interesse público, poderão contratar diretamente ICT, entidades de direito privado sem fins lucrativos ou empresas, isoladamente ou em consórcios, voltadas para atividades de pesquisa e de reconhecida capacitação tecnológica no setor, visando à realização de atividades de pesquisa, desenvolvimento e inovação que envolvam risco tecnológico, para solução de problema técnico específico ou obtenção de produto, serviço ou processo inovador. (Redação pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º Considerar-se-á desenvolvida na vigência do contrato a que se refere o caput deste artigo a criação intelectual pertinente ao seu objeto cuja proteção seja requerida pela empresa contratada até 2 (dois) anos após o seu término.</h4>
+ <h4>§ 2º Findo o contrato sem alcance integral ou com alcance parcial do resultado almejado, o órgão ou entidade contratante, a seu exclusivo critério, poderá, mediante auditoria técnica e financeira, prorrogar seu prazo de duração ou elaborar relatório final dando-o por encerrado.</h4>
+ <h4>§ 3º O pagamento decorrente da contratação prevista no caput será efetuado proporcionalmente aos trabalhos executados no projeto, consoante o cronograma físico-financeiro aprovado, com a possibilidade de adoção de remunerações adicionais associadas ao alcance de metas de desempenho no projeto. (Redação pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º O fornecimento, em escala ou não, do produto ou processo inovador resultante das atividades de pesquisa, desenvolvimento e inovação encomendadas na forma do caput poderá ser contratado mediante dispensa de licitação, inclusive com o próprio desenvolvedor da encomenda, observado o disposto em regulamento específico. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 5º Para os fins do caput e do § 4º , a administração pública poderá, mediante justificativa expressa, contratar concomitantemente mais de uma ICT, entidade de direito privado sem fins lucrativos ou empresa com o objetivo de: (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h5>I - desenvolver alternativas para solução de problema técnico específico ou obtenção de produto ou processo inovador; ou (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - executar partes de um mesmo objeto. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h4>§ 6º Observadas as diretrizes previstas em regulamento específico, os órgãos e as entidades da administração pública federal competentes para regulação, revisão, aprovação, autorização ou licenciamento atribuído ao poder público, inclusive para fins de vigilância sanitária, preservação ambiental, importação de bens e segurança, estabelecerão normas e procedimentos especiais, simplificados e prioritários que facilitem: (Incluído pela Lei n° 13.322, de 2016)</h4>
+ <h5>I - a realização das atividades de pesquisa, desenvolvimento ou inovação encomendadas na forma do caput ; (Incluído pela Lei n° 13.322, de 2016)</h5>
+ <h5>II - a obtenção dos produtos para pesquisa e desenvolvimento necessários à realização das atividades descritas no inciso I deste parágrafo; e (Incluído pela Lei n° 13.322, de 2016)</h5>
+ <h5>III - a fabricação, a produção e a contratação de produto, serviço ou processo inovador resultante das atividades descritas no inciso I deste parágrafo. (Incluído pela Lei n° 13.322, de 2016)</h5>
+ <h3>Art. 20-A. (VETADO): (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h5>I - (VETADO); (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - (VETADO). (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h4>§ 1º (VETADO). (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 2º Aplicam-se ao procedimento de contratação as regras próprias do ente ou entidade da administração pública contratante. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 3º Outras hipóteses de contratação de prestação de serviços ou fornecimento de bens elaborados com aplicação sistemática de conhecimentos científicos e tecnológicos poderão ser previstas em regulamento. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h4>§ 4º Nas contratações de que trata este artigo, deverá ser observado o disposto no inciso IV do art. 27. (Incluído pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 21. As agências de fomento deverão promover, por meio de programas específicos, ações de estímulo à inovação nas micro e pequenas empresas, inclusive mediante extensão tecnológica realizada pelas ICT.</h3>
+ <h3>Art. 21-A. A União, os Estados, o Distrito Federal, os Municípios, os órgãos e as agências de fomento, as ICTs públicas e as fundações de apoio concederão bolsas de estímulo à inovação no ambiente produtivo, destinadas à formação e à capacitação de recursos humanos e à agregação de especialistas, em ICTs e em empresas, que contribuam para a execução de projetos de pesquisa, desenvolvimento tecnológico e inovação e para as atividades de extensão tecnológica, de proteção da propriedade intelectual e de transferência de tecnologia. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DO ESTÍMULO AO INVENTOR INDEPENDENTE</h3>
+ <h3>Art. 22. Ao inventor independente que comprove depósito de pedido de patente é facultado solicitar a adoção de sua criação por ICT pública, que decidirá quanto à conveniência e à oportunidade da solicitação e à elaboração de projeto voltado à avaliação da criação para futuro desenvolvimento, incubação, utilização, industrialização e inserção no mercado. (Redação dada pela Lei n° 13.243, de 2016)</h3>
+ <h4>§ 1º O núcleo de inovação tecnológica da ICT avaliará a invenção, a sua afinidade com a respectiva área de atuação e o interesse no seu desenvolvimento.</h4>
+ <h4>§ 2º O núcleo informará ao inventor independente, no prazo máximo de 6 (seis) meses, a decisão quanto à adoção a que se refere o caput deste artigo.</h4>
+ <h4>§ 3º Adotada a invenção por uma ICT, o inventor independente comprometer-se-á, mediante contrato, a compartilhar os ganhos econômicos auferidos com a exploração industrial da invenção protegida.</h4>
+ <h4>§ 3º O inventor independente, mediante instrumento jurídico específico, deverá comprometer-se a compartilhar os eventuais ganhos econômicos auferidos com a exploração da invenção protegida adotada por ICT pública. (Redação dada pela Lei n° 13.243, de 2016)</h4>
+ <h3>Art. 22-A. A União, os Estados, o Distrito Federal, os Municípios, as agências de fomento e as ICTs públicas poderão apoiar o inventor independente que comprovar o depósito de patente de sua criação, entre outras formas, por meio de: (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h5>I - análise da viabilidade técnica e econômica do objeto de sua invenção; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>II - assistência para transformação da invenção em produto ou processo com os mecanismos financeiros e creditícios dispostos na legislação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>III - assistência para constituição de empresa que produza o bem objeto da invenção; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - orientação para transferência de tecnologia para empresas já constituídas. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DOS FUNDOS DE INVESTIMENTO</h3>
+ <h3>Art. 23. Fica autorizada a instituição de fundos mútuos de investimento em empresas cuja atividade principal seja a inovação, caracterizados pela comunhão de recursos captados por meio do sistema de distribuição de valores mobiliários, na forma da Lei n° 6.385, de 7 de dezembro de 1976, destinados à aplicação em carteira diversificada de valores mobiliários de emissão dessas empresas.</h3>
+ <h4>Parágrafo único. A Comissão de Valores Mobiliários editará normas complementares sobre a constituição, o funcionamento e a administração dos fundos, no prazo de 90 (noventa) dias da data de publicação desta Lei.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 24. A Lei n° 8.745, de 9 de dezembro de 1993, passa a vigorar com as seguintes alterações:</h3>
+ <p>"</p>
+ <h3>Art. 2º . . .................................................................</h3>
+ <p>...................................................................</p>
+ <h5>VII - admissão de professor, pesquisador e tecnólogo substitutos para suprir a falta de professor, pesquisador ou tecnólogo ocupante de cargo efetivo, decorrente de licença para exercer atividade empresarial relativa à inovação.</h5>
+ <h3>................................................................... " (NR)</h3>
+ <p>"</p>
+ <h3>Art. 4º . . .................................................................</h3>
+ <p>...................................................................</p>
+ <h5>IV - 3 (três) anos, nos casos dos incisos VI, alínea 'h', e VII do art. 2º ;</h5>
+ <p>...................................................................</p>
+ <h4>Parágrafo único.. ..................................................................</h4>
+ <p>...................................................................</p>
+ <h5>V - no caso do inciso VII do art. 2º , desde que o prazo total não exceda 6 (seis) anos." (NR)</h5>
+ <h3>Art. 25. O art. 24 da Lei n° 8.666, de 21 de junho de 1993, passa a vigorar acrescido do seguinte inciso:</h3>
+ <p>"</p>
+ <h3>Art. 24. ...................................................................</h3>
+ <p>...................................................................</p>
+ <h5>XXV - na contratação realizada por Instituição Científica e Tecnológica - ICT ou por agência de fomento para a transferência de tecnologia e para o licenciamento de direito de uso ou de exploração de criação protegida.</h5>
+ <h3>..................................................................." (NR)</h3>
+ <h3>Art. 26. As ICT que contemplem o ensino entre suas atividades principais deverão associar, obrigatoriamente, a aplicação do disposto nesta Lei a ações de formação de recursos humanos sob sua responsabilidade.</h3>
+ <h3>Art. 26-A. As medidas de incentivo previstas nesta Lei, no que for cabível, aplicam-se às ICTs públicas que também exerçam atividades de produção e oferta de bens e serviços. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h3>Art. 27. Na aplicação do disposto nesta Lei, serão observadas as seguintes diretrizes:</h3>
+ <h5>I - priorizar, nas regiões menos desenvolvidas do País e na Amazônia, ações que visem a dotar a pesquisa e o sistema produtivo regional de maiores recursos humanos e capacitação tecnológica;</h5>
+ <h5>II - atender a programas e projetos de estímulo à inovação na indústria de defesa nacional e que ampliem a exploração e o desenvolvimento da Zona Econômica Exclusiva (ZEE) e da Plataforma Continental;</h5>
+ <h5>III - assegurar tratamento diferenciado, favorecido e simplificado às microempresas e às empresas de pequeno porte; (Redação dada pela Lei n° 13.243, de 2016)</h5>
+ <h5>IV - dar tratamento preferencial, diferenciado e favorecido, na aquisição de bens e serviços pelo poder público e pelas fundações de apoio para a execução de projetos de desenvolvimento institucional da instituição apoiada, nos termos da Lei n° 8.958, de 20 de dezembro de 1994, às empresas que invistam em pesquisa e no desenvolvimento de tecnologia no País e às microempresas e empresas de pequeno porte de base tecnológica, criadas no ambiente das atividades de pesquisa das ICTs. (Redação dada pela Lei n° 12.349, de 2010)</h5>
+ <h5>V - promover a simplificação dos procedimentos para gestão dos projetos de ciência, tecnologia e inovação e do controle por resultados em sua avaliação; (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h5>VI - promover o desenvolvimento e a difusão de tecnologias sociais e o fortalecimento da extensão tecnológica para a inclusão produtiva e social. (Incluído pela Lei n° 13.243, de 2016)</h5>
+ <h3>Art. 27-A. Os procedimentos de prestação de contas dos recursos repassados com base nesta Lei deverão seguir formas simplificadas e uniformizadas e, de forma a garantir a governança e a transparência das informações, ser realizados anualmente, preferencialmente, mediante envio eletrônico de informações, nos termos de regulamento. (Incluído pela Lei n° 13.243, de 2016)</h3>
+ <h4>Parágrafo único. As informações sobre prestação de contas de recursos repassados com base nesta Lei serão acessíveis ao público, conforme o disposto na Lei n° 12.527, de 18 de novembro de 	2011 (Lei de Acesso à Informação). (Incluído pela Lei n° 15.001, de 2024)</h4>
+ <h3>Art. 28. A União fomentará a inovação na empresa mediante a concessão de incentivos fiscais com vistas na consecução dos objetivos estabelecidos nesta Lei.</h3>
+ <h4>Parágrafo único. O Poder Executivo encaminhará ao Congresso Nacional, em até 120 (cento e vinte) dias, contados da publicação desta Lei, projeto de lei para atender o previsto no caput deste artigo.</h4>
+ <h3>Art. 29. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 2 de dezembro de 2004; 183º da Independência e 116º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Antonio Palocci Filho</p>
+ <p>José Dirceu de Oliveira e Silva</p>
+ <p>Este texto não substitui o publicado no DOU de 3.12.2004 e retificado em 16.5.2005</p>
+ <p>Regulamento | Dispõe sobre incentivos à inovação e à pesquisa científica e tecnológica no ambiente produtivo e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.973compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

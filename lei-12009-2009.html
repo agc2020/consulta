@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 12.009, DE 29 DE JULHO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 12.009, DE 29 DE JULHO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:01:49 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L12009.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 6.167 caracteres | espelho: 6.500 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 12.009, DE 29 DE JULHO DE 2009.</p>
+ <p>Regulamenta o exercício das atividades dos profissionais em transporte de passageiros, “mototaxista”, em entrega de mercadorias e em serviço comunitário de rua, e “motoboy”, com o uso de motocicleta, altera a Lei N° 9.503, de 23 de setembro de 1997, para dispor sobre regras de segurança dos serviços de transporte remunerado de mercadorias em motocicletas e motonetas – moto-frete –, estabelece regras gerais para a regulação deste serviço e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei regulamenta o exercício das atividades dos profissionais em transportes de passageiros, “mototaxista”, em entrega de mercadorias e em serviço comunitário de rua, e “motoboy”, com o uso de motocicleta, dispõe sobre regras de segurança dos serviços de transporte remunerado de mercadorias em motocicletas e motonetas – moto-frete –, estabelece regras gerais para a regulação deste serviço e dá outras providências. (Vide ADIN 4530)</h3>
+ <h3>Art. 2º Para o exercício das atividades previstas no art. 1º , é necessário:</h3>
+ <h5>I – ter completado 21 (vinte e um) anos;</h5>
+ <h5>II – possuir habilitação, por pelo menos 2 (dois) anos, na categoria;</h5>
+ <h5>III – ser aprovado em curso especializado, nos termos da regulamentação do Contran;</h5>
+ <h5>IV – estar vestido com colete de segurança dotado de dispositivos retrorrefletivos, nos termos da regulamentação do Contran.</h5>
+ <h4>Parágrafo único. Do profissional de serviço comunitário de rua serão exigidos ainda os seguintes documentos:</h4>
+ <h5>I – carteira de identidade;</h5>
+ <h5>II – título de eleitor;</h5>
+ <h5>III – cédula de identificação do contribuinte – CIC;</h5>
+ <h5>IV – atestado de residência;</h5>
+ <h5>V – certidões negativas das varas criminais;</h5>
+ <h5>VI – identificação da motocicleta utilizada em serviço.</h5>
+ <h3>Art. 3º São atividades específicas dos profissionais de que trata o art. 1º :</h3>
+ <h5>I – transporte de mercadorias de volume compatível com a capacidade do veículo;</h5>
+ <h5>II – transporte de passageiros. (Vide ADIN 4530)</h5>
+ <h4>Parágrafo único. (VETADO)</h4>
+ <h3>Art. 4º A Lei N° 9.503, de 23 de setembro de 1997 , passa a vigorar acrescida do seguinte</h3>
+ <h2>CAPÍTULO XIII-A:</h2>
+ <p>“</p>
+ <h2>CAPÍTULO XIII-A</h2>
+ <h3>DA CONDUÇÃO DE MOTO-FRETE</h3>
+ <h3>Art. 139-A. As motocicletas e motonetas destinadas ao transporte remunerado de mercadorias – moto-frete – somente poderão circular nas vias com autorização emitida pelo órgão ou entidade executivo de trânsito dos Estados e do Distrito Federal, exigindo-se, para tanto:</h3>
+ <h5>I – registro como veículo da categoria de aluguel;</h5>
+ <h5>II – instalação de protetor de motor mata-cachorro, fixado no chassi do veículo, destinado a proteger o motor e a perna do condutor em caso de tombamento, nos termos de regulamentação do Conselho Nacional de Trânsito – Contran;</h5>
+ <h5>III – instalação de aparador de linha antena corta-pipas, nos termos de regulamentação do Contran;</h5>
+ <h5>IV – inspeção semestral para verificação dos equipamentos obrigatórios e de segurança.</h5>
+ <h4>§ 1º A instalação ou incorporação de dispositivos para transporte de cargas deve estar de acordo com a regulamentação do Contran.</h4>
+ <h4>§ 2º É proibido o transporte de combustíveis, produtos inflamáveis ou tóxicos e de galões nos veículos de que trata este artigo, com exceção do gás de cozinha e de galões contendo água mineral, desde que com o auxílio de side-car , nos termos de regulamentação do Contran.</h4>
+ <h3>Art. 139-B. O disposto neste Capítulo não exclui a competência municipal ou estadual de aplicar as exigências previstas em seus regulamentos para as atividades de moto-frete no âmbito de suas circunscrições.”</h3>
+ <h3>Art. 5º O art. 244 da Lei N° 9.503, de 23 de setembro de 1997 , passa a vigorar com a seguinte redação: (Vide ADIN 4530)</h3>
+ <p>“</p>
+ <h3>Art. 244. .................................................................................</h3>
+ <p>................................................................................................</p>
+ <h5>VIII – transportando carga incompatível com suas especificações ou em desacordo com o previsto no § 2º do art. 139-A desta Lei;</h5>
+ <h5>IX – efetuando transporte remunerado de mercadorias em desacordo com o previsto no art. 139-A desta Lei ou com as normas que regem a atividade profissional dos mototaxistas:</h5>
+ <p>Infração – grave;</p>
+ <p>Penalidade – multa;</p>
+ <p>Medida administrativa – apreensão do veículo para regularização.</p>
+ <h4>§ 1º ................................................................................</h4>
+ <p>....................................................................................” (NR)</p>
+ <h3>Art. 6º A pessoa natural ou jurídica que empregar ou firmar contrato de prestação continuada de serviço com condutor de moto-frete é responsável solidária por danos cíveis advindos do descumprimento das normas relativas ao exercício da atividade, previstas no art. 139-A da Lei N° 9.503, de 23 de setembro de 1997 , e ao exercício da profissão, previstas no art. 2º desta Lei.</h3>
+ <h3>Art. 7º Constitui infração a esta Lei:</h3>
+ <h5>I – empregar ou manter contrato de prestação continuada de serviço com condutor de moto-frete inabilitado legalmente;</h5>
+ <h5>II – fornecer ou admitir o uso de motocicleta ou motoneta para o transporte remunerado de mercadorias, que esteja em desconformidade com as exigências legais.</h5>
+ <h4>Parágrafo único. Responde pelas infrações previstas neste artigo o empregador ou aquele que contrata serviço continuado de moto-frete, sujeitando-se à sanção relativa à segurança do trabalho prevista no art. 201 da Consolidação das Leis do Trabalho – CLT , aprovada pelo Decreto-Lei N° 5.452, de 1º de maio de 1943 .</h4>
+ <h3>Art. 8º Os condutores que atuam na prestação do serviço de moto-frete, assim como os veículos empregados nessa atividade, deverão estar adequados às exigências previstas nesta Lei no prazo de até 365 (trezentos e sessenta e cinco) dias, contado da regulamentação pelo Contran dos dispositivos previstos no art. 139-A da Lei n° 9.503, de 23 de setembro de 1997 , e no art. 2º desta Lei.</h3>
+ <h3>Art. 9º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Brasília, 29 de julho de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Marcio Fortes de Almeida</p>
+ <p>Este texto não substitui o publicado no DOU de 30.7.2009</p>
+ <p>Regulamenta o exercício das atividades dos profissionais em transporte de passageiros, “mototaxista”, em entrega de mercadorias e em serviço comunitário de rua, e “motoboy”, com o uso de motocicleta, altera a Lei n° 9.503, de 23 de setembro de 1997, para dispor sobre regras de segurança dos serviços de transporte remunerado de mercadorias em motocicletas e motonetas –</p>
+ <p>moto-frete –, estabelece regras gerais para a regulação deste serviço e dá</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L12009.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

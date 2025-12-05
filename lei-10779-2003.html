@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.779, DE 25 DE NOVEMBRO DE 2003 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2003" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.779, DE 25 DE NOVEMBRO DE 2003</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:04:26 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/2003/L10.779compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 11.084 caracteres | espelho: 11.125 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.779, DE 25 DE NOVEMBRO DE 2003.</p>
+ <p>Regulamento</p>
+ <p>(Vide Lei n° 14.601, 	de 2023)</p>
+ <p>Dispõe sobre a concessão do benefício de seguro desemprego, durante o período de defeso, ao pescador profissional que exerce a atividade pesqueira de forma artesanal.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º O pescador artesanal de que tratam a alínea “b” do inciso VII do art. 12 da Lei N° 8.212, de 24 de julho de 1991 , e a alínea “b” do inciso VII do art. 11 da Lei N° 8.213, de 24 de julho de 1991 , desde que exerça sua atividade profissional ininterruptamente, de forma artesanal e individualmente ou em regime de economia familiar, fará jus ao benefício do seguro-desemprego, no valor de 1 (um) salário-mínimo mensal, durante o período de defeso de atividade pesqueira para a preservação da espécie. (Redação dada pela Lei n° 13.134, de 2015)</h3>
+ <h4>§ 1º Considera-se profissão habitual ou principal meio de vida a atividade exercida durante o período compreendido entre o defeso anterior e o em curso, ou nos 12 (doze) meses imediatamente anteriores ao do defeso em curso, o que for menor. (Redação dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 2º O período de defeso de atividade pesqueira é o fixado pelo Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis - IBAMA, em relação à espécie marinha, fluvial ou lacustre a cuja captura o pescador se dedique.</h4>
+ <h4>§ 3º Considera-se ininterrupta a atividade exercida durante o período compreendido entre o defeso anterior e o em curso, ou nos 12 (doze) meses imediatamente anteriores ao do defeso em curso, o que for menor. (Incluído dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 4º Somente terá direito ao seguro-desemprego o segurado especial pescador artesanal que não disponha de outra fonte de renda diversa da decorrente da atividade pesqueira. (Incluído dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 5º O pescador profissional artesanal não fará jus, no mesmo ano, a mais de um benefício de seguro-desemprego decorrente de defesos relativos a espécies distintas. (Incluído dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 6º A concessão do benefício não será extensível às atividades de apoio à pesca nem aos familiares do pescador profissional que não satisfaçam os requisitos e as condições estabelecidos nesta Lei. (Incluído dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 7º O benefício do seguro-desemprego é pessoal e intransferível. (Incluído dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 8º O período de recebimento do benefício não poderá exceder o limite máximo variável de que trata o caput do art. 4º da Lei N° 7.998, de 11 de janeiro de 1990 , ressalvado o disposto nos §§ 4º e 5º do referido artigo. (Incluído dada pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 9º Os órgãos federais disponibilizarão as informações constantes das bases de dados, de que sejam detentores, necessárias à verificação dos requisitos para concessão e manutenção do benefício, os quais serão objeto de cruzamento com informações das bases de dados cadastrais oficiais, nos termos de ato do Poder Executivo federal. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h4>§ 10. Ao requerente do benefício de que trata o caput será solicitado registro biométrico nos termos do art. 1º da Lei n° 15.077, de 27 de dezembro de 2024 , e inscrição no CadÚnico. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h4>§ 11. Somente fará jus ao benefício de que trata este artigo o pescador profissional que comprovar domicílio em Município abrangido ou limítrofe à área definida no ato que instituiu o período de defeso, conforme procedimentos e critérios estabelecidos em resolução do Conselho Deliberativo do Fundo de Amparo ao Trabalhador (Codefat). (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h3>Art. 2º Compete ao Ministério do Trabalho e Emprego (MTE) receber e processar os requerimentos e habilitar os beneficiários do seguro-desemprego do pescador artesanal, conforme procedimentos, critérios e validações estabelecidos em resolução do Codefat. (Redação dada pela Lei n° 15.265, de 2025)</h3>
+ <h5>I - (Revogado); (Redação dada pela Lei n° 13.134, de 2015)</h5>
+ <h5>II - (Revogado); (Redação dada pela Lei n° 13.134, de 2015)</h5>
+ <h5>III - (Revogado); (Redação dada pela Lei n° 13.134, de 2015)</h5>
+ <h5>IV - (Revogado): (Redação dada pela Lei n° 13.134, de 2015)</h5>
+ <h6>a) (Revogada); (Redação dada pela Lei n° 13.134, de 2015)</h6>
+ <h6>b) (Revogada); (Redação dada pela Lei n° 13.134, de 2015)</h6>
+ <h6>c) (Revogada). (Redação dada pela Lei n° 13.134, de 2015)</h6>
+ <h4>§ 1º Para fazer jus ao benefício, o pescador não poderá estar em gozo de benefício previdenciário ou assistencial de natureza continuada, exceto pensão por morte, auxílio-acidente e transferências de renda de que tratam o parágrafo único do art. 6º e o inciso VI do caput do art. 203 da Constituição Federal e o caput e o § 1º do art. 1º da Lei n° 10.835, de 8 de janeiro de 2004. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h4>§ 2º Para se habilitar ao benefício, o pescador deverá apresentar ao Ministério do Trabalho e Emprego os seguintes documentos: (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h5>I - registro como pescador profissional, categoria artesanal, devidamente atualizado no Registro Geral da Atividade Pesqueira (RGP), emitido pelo Ministério da Pesca e Aquicultura com antecedência mínima de 1 (um) ano, contado da data de requerimento do benefício; (Incluído pela Lei n° 13.134, de 2015)</h5>
+ <h5>II – cópia dos documentos fiscais de venda do pescado a empresa adquirente, consumidora ou consignatária da produção, em que conste, além do registro da operação realizada, o valor da respectiva contribuição previdenciária de que trata o § 7º do art. 30 da Lei n° 8.212, de 24 de julho de 1991 , referentes a pelo menos 6 (seis) dos 12 (doze) meses anteriores ao início do período de defeso ou comprovantes de contribuição previdenciária mensal referentes aos meses de exercício da pesca, caso tenha comercializado sua produção a pessoa física; e (Redação dada pela Lei n° 15.265, de 2025)</h5>
+ <h5>III – outros estabelecidos em ato do Codefat que comprovem: (Redação dada pela Lei n° 15.265, de 2025)</h5>
+ <h6>a) o exercício da profissão, na forma do art. 1º desta Lei; (Incluído pela Lei n° 13.134, de 2015)</h6>
+ <h6>b) que se dedicou à pesca durante o período definido no § 3º do art. 1º desta Lei; (Incluído pela Lei n° 13.134, de 2015)</h6>
+ <h6>c) que não dispõe de outra fonte de renda diversa da decorrente da atividade pesqueira. (Incluído pela Lei n° 13.134, de 2015)</h6>
+ <h4>§ 3º O Ministério do Trabalho e Emprego, no ato de habilitação ao benefício, deverá verificar a condição de segurado pescador artesanal e o pagamento mensal da contribuição previdenciária, nos últimos 12 (doze) meses imediatamente anteriores ao requerimento do benefício ou no período entre defesos, o que for menor. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h4>§ 4º O Ministério da Pesca e Aquicultura desenvolverá atividades que garantam ao Ministério do Trabalho e Emprego acesso às informações cadastrais disponíveis no RGP, de que trata o art. 24 da Lei n° 11.959, de 29 de junho de 2009 , necessárias para a concessão do seguro-desemprego. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h4>§ 5º Da aplicação do disposto no § 4º deste artigo não poderá resultar nenhum ônus para os segurados. (Incluído pela Lei n° 13.134, de 2015)</h4>
+ <h4>§ 6º O Ministério do Trabalho e Emprego poderá, quando julgar necessário, exigir outros documentos ou validações para a habilitação do benefício. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h4>§ 7º O Ministério do Trabalho e Emprego deverá divulgar mensalmente lista com todos os beneficiários que estão em gozo do seguro-desemprego no período de defeso, detalhados por localidade, nome, endereço e número e data de inscrição no RGP. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <p><del>§ 8º (Revogado pela Lei n° 14.601, de 2023)</del></p>
+ <p><del>§ 9º (Revogado pela Lei n° 14.601, de 2023)</del></p>
+ <p><del>§ 10 (Revogado pela Lei n° 14.601, de 2023)</del></p>
+ <h4>§ 11. (Incluído Medida 	Provisória nº 1.303, de 2025) encerrada</h4>
+ <h4>§ 12. A concessão e a manutenção do seguro-desemprego de que trata esta Lei ficam condicionadas à comprovação do exercício da atividade pesqueira, no período entre defesos, por meio de relatório periódico, que deverá conter informações sobre a venda do pescado, a ser submetido ao Ministério do Trabalho e Emprego, na forma, nos prazos e de acordo com os critérios estabelecidos em resolução do Codefat. (Redação dada pela Lei n° 15.265, de 2025)</h4>
+ <h3>Art. 3º Sem prejuízo das sanções civis e penais cabíveis, os responsáveis pelo uso de meios fraudulentos na habilitação ou na percepção do seguro-desemprego estarão sujeitos: (Redação dada pela Lei n° 15.265, de 2025)</h3>
+ <h5>I - a demissão do cargo que ocupa, se servidor público;</h5>
+ <h5>II – à suspensão de sua atividade, com cancelamento do seu registro, por 3 (três) anos, se pescador profissional; (Redação dada pela Lei n° 15.265, de 2025)</h5>
+ <h5>III – ao impedimento de requerer o benefício pelo prazo de 3 (três) anos. (Redação dada pela Lei n° 15.265, de 2025)</h5>
+ <h3>Art. 4º O benefício de que trata esta Lei será cancelado nas seguintes hipóteses:</h3>
+ <h5>I - início de atividade remunerada;</h5>
+ <h5>II - início de percepção de outra renda;</h5>
+ <h5>III - morte do beneficiário;</h5>
+ <h5>IV - desrespeito ao período de defeso; ou</h5>
+ <h5>V - comprovação de falsidade nas informações prestadas para a obtenção do benefício.</h5>
+ <h3>Art. 4º-A. O pescador profissional artesanal que houver percebido indevidamente parcela do seguro-desemprego de que trata esta Lei sujeitar-se-á à compensação automática do valor percebido indevidamente com o novo benefício a que fizer jus, na forma e de acordo com os critérios definidos em resolução do Codefat. (Redação dada pela Lei n° 15.265, de 2025)</h3>
+ <h3>Art. 5º O benefício do seguro-desemprego a que se refere esta Lei será pago à conta do Fundo de Amparo ao Trabalhador - FAT, instituído pela Lei N° 7.998, de 11 de janeiro de 1990 .</h3>
+ <h4>§ 1º (Incluído Medida 	Provisória nº 1.303, de 2025) encerrada</h4>
+ <h4>§ 2º (Incluído Medida 	Provisória nº 1.303, de 2025) encerrada</h4>
+ <h4>§ 3º (Incluído Medida 	Provisória nº 1.303, de 2025) encerrada</h4>
+ <h4>§ 4º A despesa resultante da concessão do benefício de que trata esta Lei fica limitada, a cada exercício, à dotação orçamentária para essa despesa referente ao exercício anterior, corrigida pelo índice calculado nos termos do disposto nos art. 4º e art. 5º da Lei Complementar nº 200, de 30 	de agosto de 2023 , aplicável ao exercício a que se refere a despesa. (Incluído pela 	Medida Provisória nº 1.323, de 2025)</h4>
+ <h4>§ 5º A concessão do benefício de que trata esta Lei observará o disposto no § 4º. (Incluído pela Medida Provisória nº 1.323, de 2025)</h4>
+ <h4>§ 6º No exercício de 2025, a despesa de que trata o § 4º não excederá a R$ 7.325.000.000,00 (sete bilhões trezentos e vinte e cinco milhões de reais). (Incluído pela Medida Provisória nº 1.323, de 2025)</h4>
+ <h3>Art. 6º Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 7º Fica revogada a Lei n° 8.287, de 20 de dezembro de 1991 .</h3>
+ <p>Brasília, 25 de novembro de 2003; 182º da Independência e 115º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no D.O.U. de 26.11.2003</p>
+ <p>Regulamento(Vide Lei n° 14.601,</p>
+ <p>de 2023) | Dispõe sobre a concessão do benefício de seguro desemprego,</p>
+ <p>durante o período de defeso, ao pescador profissional que exerce a atividade pesqueira de forma artesanal.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/2003/L10.779compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

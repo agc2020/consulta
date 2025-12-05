@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.904, DE 14 DE JANEIRO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.904, DE 14 DE JANEIRO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:07:28 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L11904.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 27.388 caracteres | espelho: 27.325 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.904, DE 14 DE JANEIRO DE 2009.</p>
+ <p>Regulamento Institui o Estatuto de Museus e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Disposições Gerais</p>
+ <h3>Art. 1º Consideram-se museus, para os efeitos desta Lei, as instituições sem fins lucrativos que conservam, investigam, comunicam, interpretam e expõem, para fins de preservação, estudo, pesquisa, educação, contemplação e turismo, conjuntos e coleções de valor histórico, artístico, científico, técnico ou de qualquer outra natureza cultural, abertas ao público, a serviço da sociedade e de seu desenvolvimento.</h3>
+ <h4>Parágrafo único. Enquadrar-se-ão nesta Lei as instituições e os processos museológicos voltados para o trabalho com o patrimônio cultural e o território visando ao desenvolvimento cultural e socioeconômico e à participação das comunidades.</h4>
+ <h3>Art. 2º São princípios fundamentais dos museus:</h3>
+ <h5>I – a valorização da dignidade humana;</h5>
+ <h5>II – a promoção da cidadania;</h5>
+ <h5>III – o cumprimento da função social;</h5>
+ <h5>IV – a valorização e preservação do patrimônio cultural e ambiental;</h5>
+ <h5>V – a universalidade do acesso, o respeito e a valorização à diversidade cultural;</h5>
+ <h5>VI – o intercâmbio institucional.</h5>
+ <h4>Parágrafo único. A aplicação deste artigo está vinculada aos princípios basilares do Plano Nacional de Cultura e do regime de proteção e valorização do patrimônio cultural.</h4>
+ <h3>Art. 3º Conforme as características e o desenvolvimento de cada museu, poderão existir filiais, seccionais e núcleos ou anexos das instituições.</h3>
+ <h4>Parágrafo único. Para fins de aplicação desta Lei, são definidos:</h4>
+ <h5>I – como filial os museus dependentes de outros quanto à sua direção e gestão, inclusive financeira, mas que possuem plano museológico autônomo;</h5>
+ <h5>II – como seccional a parte diferenciada de um museu que, com a finalidade de executar seu plano museológico, ocupa um imóvel independente da sede principal;</h5>
+ <h5>III – como núcleo ou anexo os espaços móveis ou imóveis que, por orientações museológicas específicas, fazem parte de um projeto de museu.</h5>
+ <h3>Art. 4º O poder público estabelecerá mecanismos de fomento e incentivo visando à sustentabilidade dos museus brasileiros.</h3>
+ <h3>Art. 5º Os bens culturais dos museus, em suas diversas manifestações, podem ser declarados como de interesse público, no todo ou em parte.</h3>
+ <h4>§ 1º Consideram-se bens culturais passíveis de musealização os bens móveis e imóveis de interesse público, de natureza material ou imaterial, tomados individualmente ou em conjunto, portadores de referência ao ambiente natural, à identidade, à cultura e à memória dos diferentes grupos formadores da sociedade brasileira.</h4>
+ <h4>§ 2º Será declarado como de interesse público o acervo dos museus cuja proteção e valorização, pesquisa e acesso à sociedade representar um valor cultural de destacada importância para a Nação, respeitada a diversidade cultural, regional, étnica e lingüística do País.</h4>
+ <h4>§ 3º (VETADO)</h4>
+ <h3>Art. 6º Esta Lei não se aplica às bibliotecas, aos arquivos, aos centros de documentação e às coleções visitáveis.</h3>
+ <h4>Parágrafo único. São consideradas coleções visitáveis os conjuntos de bens culturais conservados por uma pessoa física ou jurídica, que não apresentem as características previstas no art. 1º desta Lei, e que sejam abertos à visitação, ainda que esporadicamente.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>Do Regime Aplicável aos Museus</p>
+ <h3>Art. 7º A criação de museus por qualquer entidade é livre, independentemente do regime jurídico, nos termos estabelecidos nesta Lei.</h3>
+ <h3>Art. 8º A criação, a fusão e a extinção de museus serão efetivadas por meio de documento público.</h3>
+ <h4>§ 1º A elaboração de planos, programas e projetos museológicos, visando à criação, à fusão ou à manutenção dos museus, deve estar em consonância com a Lei N° 7.287, de 18 de dezembro de 1984 .</h4>
+ <h4>§ 2º A criação, a fusão ou a extinção de museus deverá ser registrada no órgão competente do poder público.</h4>
+ <h3>Art. 9º Os museus poderão estimular a constituição de associações de amigos dos museus, grupos de interesse especializado, voluntariado ou outras formas de colaboração e participação sistemática da comunidade e do público.</h3>
+ <h4>§ 1º Os museus, à medida das suas possibilidades, facultarão espaços para a instalação de estruturas associativas ou de voluntariado que tenham por fim a contribuição para o desempenho das funções e finalidades dos museus.</h4>
+ <h4>§ 2º Os museus poderão criar um serviço de acolhimento, formação e gestão de voluntariado, dotando-se de um regulamento específico, assegurando e estabelecendo o benefício mútuo da instituição e dos voluntários.</h4>
+ <h3>Art. 10. (VETADO)</h3>
+ <h3>Art. 11. A denominação de museu estadual, regional ou distrital só pode ser utilizada por museu vinculado a Unidade da Federação ou por museus a quem o Estado autorize a utilização desta denominação.</h3>
+ <h3>Art. 12. A denominação de museu municipal só pode ser utilizada por museu vinculado a Município ou por museus a quem o Município autorize a utilização desta denominação.</h3>
+ <p>Seção I</p>
+ <p>Dos Museus Públicos</p>
+ <h3>Art. 13. São considerados museus públicos as instituições museológicas vinculadas ao poder público, situadas no território nacional.</h3>
+ <h3>Art. 14. O poder público firmará um plano anual prévio, de modo a garantir o funcionamento dos museus públicos e permitir o cumprimento de suas finalidades.</h3>
+ <h3>Art. 15. Os museus públicos serão regidos por ato normativo específico.</h3>
+ <h4>Parágrafo único. Sem prejuízo do disposto neste artigo, o museu público poderá estabelecer convênios para a sua gestão.</h4>
+ <h3>Art. 16. É vedada a participação direta ou indireta de pessoal técnico dos museus públicos em atividades ligadas à comercialização de bens culturais.</h3>
+ <h4>Parágrafo único. Atividades de avaliação para fins comerciais serão permitidas aos funcionários em serviço nos museus, nos casos de uso interno, de interesse científico, ou a pedido de órgão do Poder Público, mediante procedimento administrativo cabível.</h4>
+ <h3>Art. 17. Os museus manterão funcionários devidamente qualificados, observada a legislação vigente.</h3>
+ <h4>Parágrafo único. A entidade gestora do museu público garantirá a disponibilidade de funcionários qualificados e em número suficiente para o cumprimento de suas finalidades.</h4>
+ <p>Seção II</p>
+ <p>Do Regimento e das Áreas Básicas dos Museus</p>
+ <h3>Art. 18. As entidades públicas e privadas de que dependam os museus deverão definir claramente seu enquadramento orgânico e aprovar o respectivo regimento.</h3>
+ <h3>Art. 19. Todo museu deverá dispor de instalações adequadas ao cumprimento das funções necessárias, bem como ao bem-estar dos usuários e funcionários.</h3>
+ <h3>Art. 20. Compete à direção dos museus assegurar o seu bom funcionamento, o cumprimento do plano museológico por meio de funções especializadas, bem como planejar e coordenar a execução do plano anual de atividades.</h3>
+ <p>Subseção I</p>
+ <p>Da Preservação, da Conservação, da Restauração e da Segurança</p>
+ <h3>Art. 21. Os museus garantirão a conservação e a segurança de seus acervos.</h3>
+ <h4>Parágrafo único. Os programas, as normas e os procedimentos de preservação, conservação e restauração serão elaborados por cada museu em conformidade com a legislação vigente.</h4>
+ <h3>Art. 22. Aplicar-se-á o regime de responsabilidade solidária às ações de preservação, conservação ou restauração que impliquem dano irreparável ou destruição de bens culturais dos museus, sendo punível a negligência.</h3>
+ <h3>Art. 23. Os museus devem dispor das condições de segurança indispensáveis para garantir a proteção e a integridade dos bens culturais sob sua guarda, bem como dos usuários, dos respectivos funcionários e das instalações.</h3>
+ <h4>Parágrafo único. Cada museu deve dispor de um Programa de Segurança periodicamente testado para prevenir e neutralizar perigos.</h4>
+ <h3>Art. 24. É facultado aos museus estabelecer restrições à entrada de objetos e, excepcionalmente, pessoas, desde que devidamente justificadas.</h3>
+ <h3>Art. 25. As entidades de segurança pública poderão cooperar com os museus, por meio da definição conjunta do Programa de Segurança e da aprovação dos equipamentos de prevenção e neutralização de perigos.</h3>
+ <h3>Art. 26. Os museus colaborarão com as entidades de segurança pública no combate aos crimes contra a propriedade e tráfico de bens culturais.</h3>
+ <h3>Art. 27. O Programa e as regras de segurança de cada museu têm natureza confidencial.</h3>
+ <h4>Parágrafo único. (VETADO)</h4>
+ <p>Subseção II</p>
+ <p>Do Estudo, da Pesquisa e da Ação Educativa</p>
+ <h3>Art. 28. O estudo e a pesquisa fundamentam as ações desenvolvidas em todas as áreas dos museus, no cumprimento das suas múltiplas competências.</h3>
+ <h4>§ 1º O estudo e a pesquisa nortearão a política de aquisições e descartes, a identificação e caracterização dos bens culturais incorporados ou incorporáveis e as atividades com fins de documentação, de conservação, de interpretação e exposição e de educação.</h4>
+ <h4>§ 2º Os museus deverão promover estudos de público, diagnóstico de participação e avaliações periódicas objetivando a progressiva melhoria da qualidade de seu funcionamento e o atendimento às necessidades dos visitantes.</h4>
+ <h3>Art. 29. Os museus deverão promover ações educativas, fundamentadas no respeito à diversidade cultural e na participação comunitária, contribuindo para ampliar o acesso da sociedade às manifestações culturais e ao patrimônio material e imaterial da Nação.</h3>
+ <h3>Art. 30. Os museus deverão disponibilizar oportunidades de prática profissional aos estabelecimentos de ensino que ministrem cursos de museologia e afins, nos campos disciplinares relacionados às funções museológicas e à sua vocação.</h3>
+ <p>Subseção III</p>
+ <p>Da Difusão Cultural e Do Acesso aos Museus</p>
+ <h3>Art. 31. As ações de comunicação constituem formas de se fazer conhecer os bens culturais incorporados ou depositados no museu, de forma a propiciar o acesso público.</h3>
+ <h4>Parágrafo único. O museu regulamentará o acesso público aos bens culturais, levando em consideração as condições de conservação e segurança.</h4>
+ <h3>Art. 32. Os museus deverão elaborar e implementar programas de exposições adequados à sua vocação e tipologia, com a finalidade de promover acesso aos bens culturais e estimular a reflexão e o reconhecimento do seu valor simbólico.</h3>
+ <h3>Art. 33. Os museus poderão autorizar ou produzir publicações sobre temas vinculados a seus bens culturais e peças publicitárias sobre seu acervo e suas atividades.</h3>
+ <h4>§ 1º Serão garantidos a qualidade, a fidelidade e os propósitos científicos e educativos do material produzido, sem prejuízo dos direitos de autor e conexos.</h4>
+ <h4>§ 2º Todas as réplicas e demais cópias serão assinaladas como tais, de modo a evitar que sejam confundidas com os objetos ou espécimes originais.</h4>
+ <h3>Art. 34. A política de gratuidade ou onerosidade do ingresso ao museu será estabelecida por ele ou pela entidade de que dependa, para diferentes públicos, conforme dispositivos abrigados pelo sistema legislativo nacional.</h3>
+ <h3>Art. 35. Os museus caracterizar-se-ão pela acessibilidade universal dos diferentes públicos, na forma da legislação vigente.</h3>
+ <h3>Art. 36. As estatísticas de visitantes dos museus serão enviadas ao órgão ou entidade competente do poder público, na forma fixada pela respectiva entidade, quando solicitadas.</h3>
+ <h3>Art. 37. Os museus deverão disponibilizar um livro de sugestões e reclamações disposto de forma visível na área de acolhimento dos visitantes.</h3>
+ <p>Subseção IV</p>
+ <p>Dos Acervos dos Museus</p>
+ <h3>Art. 38. Os museus deverão formular, aprovar ou, quando cabível, propor, para aprovação da entidade de que dependa, uma política de aquisições e descartes de bens culturais, atualizada periodicamente.</h3>
+ <h4>Parágrafo único. Os museus vinculados ao poder público darão publicidade aos termos de descartes a serem efetuados pela instituição, por meio de publicação no respectivo Diário Oficial.</h4>
+ <h3>Art. 39. É obrigação dos museus manter documentação sistematicamente atualizada sobre os bens culturais que integram seus acervos, na forma de registros e inventários.</h3>
+ <h4>§ 1º O registro e o inventário dos bens culturais dos museus devem estruturar-se de forma a assegurar a compatibilização com o inventário nacional dos bens culturais.</h4>
+ <h4>§ 2º Os bens inventariados ou registrados gozam de proteção com vistas em evitar o seu perecimento ou degradação, a promover sua preservação e segurança e a divulgar a respectiva existência.</h4>
+ <h3>Art. 40. Os inventários museológicos e outros registros que identifiquem bens culturais, elaborados por museus públicos e privados, são considerados patrimônio arquivístico de interesse nacional e devem ser conservados nas respectivas instalações dos museus, de modo a evitar destruição, perda ou deterioração.</h3>
+ <h4>Parágrafo único. No caso de extinção dos museus, os seus inventários e registros serão conservados pelo órgão ou entidade sucessora.</h4>
+ <h3>Art. 41. A proteção dos bens culturais dos museus se completa pelo inventário nacional, sem prejuízo de outras formas de proteção concorrentes.</h3>
+ <h4>§ 1º Entende-se por inventário nacional a inserção de dados sistematizada e atualizada periodicamente sobre os bens culturais existentes em cada museu, objetivando a sua identificação e proteção.</h4>
+ <h4>§ 2º O inventário nacional dos bens dos museus não terá implicações na propriedade, posse ou outro direito real.</h4>
+ <h4>§ 3º O inventário nacional dos bens culturais dos museus será coordenado pela União.</h4>
+ <h4>§ 4º Para efeito da integridade do inventário nacional, os museus responsabilizar-se-ão pela inserção dos dados sobre seus bens culturais.</h4>
+ <p>Subseção V</p>
+ <p>Do Uso das Imagens e Reproduções dos Bens Culturais dos Museus</p>
+ <h3>Art. 42. Os museus facilitarão o acesso à imagem e à reprodução de seus bens culturais e documentos conforme os procedimentos estabelecidos na legislação vigente e nos regimentos internos de cada museu.</h3>
+ <h4>Parágrafo único. A disponibilização de que trata este artigo será fundamentada nos princípios da conservação dos bens culturais, do interesse público, da não interferência na atividade dos museus e da garantia dos direitos de propriedade intelectual, inclusive imagem, na forma da legislação vigente.</h4>
+ <h3>Art. 43. Os museus garantirão a proteção dos bens culturais que constituem seus acervos, tanto em relação à qualidade das imagens e reproduções quanto à fidelidade aos sentidos educacional e de divulgação que lhes são próprios, na forma da legislação vigente.</h3>
+ <p>Seção III</p>
+ <p>Do Plano Museológico</p>
+ <h3>Art. 44. É dever dos museus elaborar e implementar o Plano Museológico.</h3>
+ <h3>Art. 45. O Plano Museológico é compreendido como ferramenta básica de planejamento estratégico, de sentido global e integrador, indispensável para a identificação da vocação da instituição museológica para a definição, o ordenamento e a priorização dos objetivos e das ações de cada uma de suas áreas de funcionamento, bem como fundamenta a criação ou a fusão de museus, constituindo instrumento fundamental para a sistematização do trabalho interno e para a atuação dos museus na sociedade.</h3>
+ <h3>Art. 46. O Plano Museológico do museu definirá sua missão básica e sua função específica na sociedade e poderá contemplar os seguintes itens, dentre outros:</h3>
+ <h5>I – o diagnóstico participativo da instituição, podendo ser realizado com o concurso de colaboradores externos;</h5>
+ <h5>II – a identificação dos espaços, bem como dos conjuntos patrimoniais sob a guarda dos museus;</h5>
+ <h5>III – a identificação dos públicos a quem se destina o trabalho dos museus;</h5>
+ <h5>IV – detalhamento dos Programas:</h5>
+ <h6>a) Institucional;</h6>
+ <h6>b) de Gestão de Pessoas;</h6>
+ <h6>c) de Acervos;</h6>
+ <h6>d) de Exposições;</h6>
+ <h6>e) Educativo e Cultural;</h6>
+ <h6>f) de Pesquisa;</h6>
+ <h6>g) Arquitetônico-urbanístico;</h6>
+ <h6>h) de Segurança;</h6>
+ <p>i) de Financiamento e Fomento;</p>
+ <h6>j) de Comunicação.</h6>
+ <h6>k) de acessibilidade a todas as pessoas. (Incluído pela Lei n° 13.146, de 2015) (Vigência)</h6>
+ <h4>§ 1º Na consolidação do Plano Museológico, deve-se levar em conta o caráter interdisciplinar dos Programas.</h4>
+ <h4>§ 2º O Plano Museológico será elaborado, preferencialmente, de forma participativa, envolvendo o conjunto dos funcionários dos museus, além de especialistas, parceiros sociais, usuários e consultores externos, levadas em conta suas especificidades.</h4>
+ <h4>§ 3º O Plano Museológico deverá ser avaliado permanentemente e revisado pela instituição com periodicidade definida em seu regimento.</h4>
+ <h3>Art. 47. Os projetos componentes dos Programas do Plano Museológico caracterizar-se-ão pela exeqüibilidade, adequação às especificações dos distintos Programas, apresentação de cronograma de execução, a explicitação da metodologia adotada, a descrição das ações planejadas e a implantação de um sistema de avaliação permanente.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>A Sociedade e os Museus</p>
+ <p>Seção I</p>
+ <p>Disposições Gerais</p>
+ <h3>Art. 48. Em consonância com o propósito de serviço à sociedade estabelecido nesta Lei, poderão ser promovidos mecanismos de colaboração com outras entidades.</h3>
+ <h3>Art. 49. As atividades decorrentes dos mecanismos previstos no art. 48 desta Lei serão autorizadas e supervisionadas pela direção do museu, que poderá suspendê-las caso seu desenvolvimento entre em conflito com o funcionamento normal do museu.</h3>
+ <h3>Art. 50. Serão entendidas como associações de amigos de museus as sociedades civis, sem fins lucrativos, constituídas na forma da lei civil, que preencham, ao menos, os seguintes requisitos:</h3>
+ <h5>I – constar em seu instrumento criador, como finalidade exclusiva, o apoio, a manutenção e o incentivo às atividades dos museus a que se refiram, especialmente aquelas destinadas ao público em geral;</h5>
+ <h5>II – não restringir a adesão de novos membros, sejam pessoas físicas ou jurídicas;</h5>
+ <h5>III – ser vedada a remuneração da diretoria.</h5>
+ <h4>Parágrafo único. O reconhecimento da associação de amigos dos museus será realizado em ficha cadastral elaborada pelo órgão mantenedor ou entidade competente.</h4>
+ <h3>Art. 51. (VETADO)</h3>
+ <h3>Art. 52. As associações de amigos deverão tornar públicos seus balanços periodicamente.</h3>
+ <h4>Parágrafo único. As associações de amigos de museus deverão permitir quaisquer verificações determinadas pelos órgãos de controle competentes, prestando os esclarecimentos que lhes forem solicitados, além de serem obrigadas a remeter-lhes anualmente cópias de balanços e dos relatórios do exercício social.</h4>
+ <h3>Art. 53. As associações de amigos, no exercício de suas funções, submeter-se-ão à aprovação prévia e expressa da instituição a que se vinculem, dos planos, dos projetos e das ações.</h3>
+ <h3>Art. 54. As associações poderão reservar até dez por cento da totalidade dos recursos por elas recebidos e gerados para a sua própria administração e manutenção, sendo o restante revertido para a instituição museológica.</h3>
+ <p>Seção II</p>
+ <p>Dos Sistemas de Museus</p>
+ <h3>Art. 55. O Sistema de Museus é uma rede organizada de instituições museológicas, baseado na adesão voluntária, configurado de forma progressiva e que visa à coordenação, articulação, à mediação, à qualificação e à cooperação entre os museus.</h3>
+ <h3>Art. 56. Os entes federados estabelecerão em lei, denominada Estatuto Estadual, Regional, Municipal ou Distrital dos Museus, normas específicas de organização, articulação e atribuições das instituições museológicas em sistemas de museus, de acordo com os princípios dispostos neste Estatuto.</h3>
+ <h4>§ 1º A instalação dos sistemas estaduais ou regionais, distritais e municipais de museus será feita de forma gradativa, sempre visando à qualificação dos respectivos museus.</h4>
+ <h4>§ 2º Os sistemas de museus têm por finalidade:</h4>
+ <h5>I – apoiar tecnicamente os museus da área disciplinar e temática ou geográfica com eles relacionada;</h5>
+ <h5>II – promover a cooperação e a articulação entre os museus da área disciplinar e temática ou geográfica com eles relacionada, em especial com os museus municipais;</h5>
+ <h5>III – contribuir para a vitalidade e o dinamismo cultural dos locais de instalação dos museus;</h5>
+ <h5>IV – elaborar pareceres e relatórios sobre questões relativas à museologia no contexto de atuação a eles adstrito;</h5>
+ <h5>V – colaborar com o órgão ou entidade do poder público competente no tocante à apreciação das candidaturas ao Sistema Brasileiro de Museus, na promoção de programas e de atividade e no acompanhamento da respectiva execução.</h5>
+ <h3>Art. 57. O Sistema Brasileiro de Museus disporá de um Comitê Gestor, com a finalidade de propor diretrizes e ações, bem como apoiar e acompanhar o desenvolvimento do setor museológico brasileiro.</h3>
+ <h4>Parágrafo único. O Comitê Gestor do Sistema Brasileiro de Museus será composto por representantes de órgãos e entidades com representatividade na área da museologia nacional.</h4>
+ <h3>Art. 58. O Sistema Brasileiro de Museus tem a finalidade de promover:</h3>
+ <h5>I – a interação entre os museus, instituições afins e profissionais ligados ao setor, visando ao constante aperfeiçoamento da utilização de recursos materiais e culturais;</h5>
+ <h5>II – a valorização, registro e disseminação de conhecimentos específicos no campo museológico;</h5>
+ <h5>III – a gestão integrada e o desenvolvimento das instituições, acervos e processos museológicos;</h5>
+ <h5>IV – o desenvolvimento das ações voltadas para as áreas de aquisição de bens, capacitação de recursos humanos, documentação, pesquisa, conservação, restauração, comunicação e difusão entre os órgãos e entidades públicas, entidades privadas e unidades museológicas que integrem o Sistema;</h5>
+ <h5>V – a promoção da qualidade do desempenho dos museus por meio da implementação de procedimentos de avaliação.</h5>
+ <h3>Art. 59. Constituem objetivos específicos do Sistema Brasileiro de Museus:</h3>
+ <h5>I – promover a articulação entre as instituições museológicas, respeitando sua autonomia jurídico-administrativa, cultural e técnico-científica;</h5>
+ <h5>II – estimular o desenvolvimento de programas, projetos e atividades museológicas que respeitem e valorizem o patrimônio cultural de comunidades populares e tradicionais, de acordo com as suas especificidades;</h5>
+ <h5>III – divulgar padrões e procedimentos técnico-científicos que orientem as atividades desenvolvidas nas instituições museológicas;</h5>
+ <h5>IV – estimular e apoiar os programas e projetos de incremento e qualificação profissional de equipes que atuem em instituições museológicas;</h5>
+ <h5>V – estimular a participação e o interesse dos diversos segmentos da sociedade no setor museológico;</h5>
+ <h5>VI – estimular o desenvolvimento de programas, projetos e atividades educativas e culturais nas instituições museológicas;</h5>
+ <h5>VII – incentivar e promover a criação e a articulação de redes e sistemas estaduais, municipais e internacionais de museus, bem como seu intercâmbio e integração ao Sistema Brasileiro de Museus;</h5>
+ <h5>VIII – contribuir para a implementação, manutenção e atualização de um Cadastro Nacional de Museus;</h5>
+ <h5>IX – propor a criação e aperfeiçoamento de instrumentos legais para o melhor desempenho e desenvolvimento das instituições museológicas no País;</h5>
+ <h5>X – propor medidas para a política de segurança e proteção de acervos, instalações e edificações;</h5>
+ <h5>XI – incentivar a formação, a atualização e a valorização dos profissionais de instituições museológicas; e</h5>
+ <h5>XII – estimular práticas voltadas para permuta, aquisição, documentação, investigação, preservação, conservação, restauração e difusão de acervos museológicos.</h5>
+ <h3>Art. 60. Poderão fazer parte do Sistema Brasileiro de Museus, mediante a formalização de instrumento hábil a ser firmado com o órgão competente, os museus públicos e privados, instituições educacionais relacionadas à área da museologia e as entidades afins, na forma da legislação específica.</h3>
+ <h3>Art. 61. Terão prioridade, quanto ao beneficiamento por políticas especificamente desenvolvidas, os museus integrantes do Sistema Brasileiro de Museus.</h3>
+ <h4>Parágrafo único. Os museus em processo de adesão podem ser beneficiados por políticas de qualificação específicas.</h4>
+ <h3>Art. 62. Os museus integrantes do Sistema Brasileiro de Museus colaboram entre si e articulam os respectivos recursos com vistas em melhorar e potencializar a prestação de serviços ao público.</h3>
+ <h4>Parágrafo único. A colaboração supracitada traduz-se no estabelecimento de contratos, acordos, convênios e protocolos de cooperação entre museus ou com entidades públicas ou privadas.</h4>
+ <h3>Art. 63. Os museus integrados ao Sistema Brasileiro de Museus gozam do direito de preferência em caso de venda judicial ou leilão de bens culturais, respeitada a legislação em vigor.</h3>
+ <h4>§ 1º O prazo para o exercício do direito de preferência é de quinze dias, e, em caso de concorrência entre os museus do Sistema, cabe ao Comitê Gestor determinar qual o museu a que se dará primazia.</h4>
+ <h4>§ 2º A preferência só poderá ser exercida se o bem cultural objeto da preferência se integrar na política de aquisições dos museus, sob pena de nulidade do ato.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Penalidades</p>
+ <h3>Art. 64. (VETADO)</h3>
+ <h3>Art. 65. (VETADO)</h3>
+ <h3>Art. 66. Sem prejuízo das penalidades definidas pela legislação federal, estadual e municipal, em especial os arts. 62 , 63 e 64 da Lei N° 9.605, de 12 de fevereiro de 1998 , o não cumprimento das medidas necessárias à preservação ou correção dos inconvenientes e danos causados pela degradação, inutilização e destruição de bens dos museus sujeitará os transgressores:</h3>
+ <h5>I – à multa simples ou diária, nos valores correspondentes, no mínimo, a dez e, no máximo, a mil dias-multa, agravada em casos de reincidência, conforme regulamentação específica, vedada a sua cobrança pela União se já tiver sido aplicada pelo Estado, pelo Distrito Federal, pelos Territórios ou pelos Municípios;</h5>
+ <h5>II – à perda ou restrição de incentivos e benefícios fiscais concedidos pelo poder público, pelo prazo de cinco anos;</h5>
+ <h5>III – à perda ou suspensão de participação em linhas de financiamento em estabelecimentos oficiais de crédito, pelo prazo de cinco anos;</h5>
+ <h5>IV – ao impedimento de contratar com o poder público, pelo prazo de cinco anos;</h5>
+ <h5>V – à suspensão parcial de sua atividade.</h5>
+ <h4>§ 1º Sem obstar a aplicação das penalidades previstas neste artigo, é o transgressor obrigado a indenizar ou reparar os danos causados aos bens musealizados e a terceiros prejudicados.</h4>
+ <h4>§ 2º No caso de omissão da autoridade, caberá à entidade competente, em âmbito federal, a aplicação das penalidades pecuniárias previstas neste artigo.</h4>
+ <h4>§ 3º Nos casos previstos nos incisos II e III do caput deste artigo, o ato declaratório da perda, restrição ou suspensão será atribuição da autoridade administrativa ou financeira que concedeu os benefícios, incentivos ou financiamento.</h4>
+ <h4>§ 4º Verificada a reincidência, a pena de multa será agravada.</h4>
+ <h2>CAPÍTULO V</h2>
+ <p>Disposições Finais e Transitórias</p>
+ <h3>Art. 67. Os museus adequarão suas estruturas, recursos e ordenamentos ao disposto nesta Lei no prazo de cinco anos, contados da sua publicação.</h3>
+ <h4>Parágrafo único. Os museus federais já em funcionamento deverão proceder à adaptação de suas atividades aos preceitos desta Lei no prazo de dois anos.</h4>
+ <h3>Art. 68. Resguardados a soberania nacional, a ordem pública e os bons costumes, o governo brasileiro prestará, no que concerne ao combate do tráfico de bens culturais dos museus, a necessária cooperação a outro país, sem qualquer ônus, quando solicitado para:</h3>
+ <h5>I – produção de prova;</h5>
+ <h5>II – exame de objetos e lugares;</h5>
+ <h5>III – informações sobre pessoas e coisas;</h5>
+ <h5>IV – presença temporária de pessoa presa, cujas declarações tenham relevância para a decisão de uma causa;</h5>
+ <h5>V – outras formas de assistência permitidas pela legislação em vigor pelos tratados de que o Brasil seja parte.</h5>
+ <h3>Art. 69. Para a consecução dos fins visados nesta Lei e especialmente para a reciprocidade da cooperação internacional, deverá ser mantido sistema de comunicações apto a facilitar o intercâmbio internacional, rápido e seguro, de informações sobre bens culturais dos museus.</h3>
+ <h3>Art. 70. Esta Lei entra em vigor cento e vinte dias após a data de sua publicação.</h3>
+ <p>Brasília, 14 de janeiro de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Roberto Gomes do Nascimento</p>
+ <p>Este texto não substitui o publicado no DOU de 15.1.2009</p>
+ <p>Regulamento | Institui o Estatuto de Museus e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/L11904.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

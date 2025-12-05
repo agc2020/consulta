@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.214, DE 27 DE MARÇO DE 2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.214, DE 27 DE MARÇO DE 2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 17:25:36 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/L10214.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 10.656 caracteres | espelho: 10.741 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.214, DE 27 DE MARÇO DE 2001. Conversão da MPv nº 2.115-16, de 2001</p>
+ <p>Dispõe sobre a atuação das câmaras e dos prestadores de serviços de compensação e de liquidação, no âmbito do sistema de pagamentos brasileiro, e dá outras providências.</p>
+ <p>Faço saber que o PRESIDENTE DA REPÚBLICA adotou a Medida Provisória nº 2.115-16, de 2001, que o Congresso Nacional aprovou, e eu Jader Barbalho, Presidente do Senado Federal, para os efeitos do disposto no parágrafo único do art. 62 da Constituição Federal, promulgo a seguinte Lei:</p>
+ <h3>Art. 1º Esta Lei regula a atuação das câmaras e dos prestadores de serviços de compensação e de liquidação, no âmbito do sistema de pagamentos brasileiro.</h3>
+ <h3>Art. 2º O sistema de pagamentos brasileiro de que trata esta Lei compreende as entidades, os sistemas e os procedimentos relacionados com a transferência de fundos e de outros ativos financeiros, ou com o processamento, a compensação e a liquidação de pagamentos em qualquer de suas formas.</h3>
+ <h4>Parágrafo único. Integram o sistema de pagamentos brasileiro, além do serviço de compensação de cheques e outros papéis, os seguintes sistemas, na forma de autorização concedida às respectivas câmaras ou prestadores de serviços de compensação e de liquidação, pelo Banco Central do Brasil ou pela Comissão de Valores Mobiliários, em suas áreas de competência:</h4>
+ <h5>I - de compensação e liquidação de ordens eletrônicas de débito e de crédito;</h5>
+ <h5>II - de transferência de fundos e de outros ativos financeiros;</h5>
+ <h5>III - de compensação e de liquidação de operações com títulos e valores mobiliários;</h5>
+ <h5>IV - de compensação e de liquidação de operações realizadas em bolsas de mercadorias e de futuros; e</h5>
+ <h5>V - outros, inclusive envolvendo operações com derivativos financeiros, cujas câmaras ou prestadores de serviços tenham sido autorizados na forma deste artigo.</h5>
+ <h3>Art. 3º É admitida a compensação multilateral de obrigações no âmbito de uma mesma câmara ou prestador de serviços de compensação e de liquidação.</h3>
+ <h4>Parágrafo único. Para os efeitos desta Lei, define-se compensação multilateral de obrigações o procedimento destinado à apuração da soma dos resultados bilaterais devedores e credores de cada participante em relação aos demais.</h4>
+ <h3>Art. 4º Nos sistemas em que o volume e a natureza dos negócios, a critério do Banco Central do Brasil, forem capazes de oferecer risco à solidez e ao normal funcionamento do sistema financeiro, as câmaras e os prestadores de serviços de compensação e de liquidação assumirão, sem prejuízo de obrigações decorrentes de lei, regulamento ou contrato, em relação a cada participante, a posição de parte contratante, para fins de liquidação das obrigações, realizada por intermédio da câmara ou prestador de serviços.</h3>
+ <h4>§ 1º As câmaras e os prestadores de serviços de compensação e de liquidação não respondem pelo adimplemento das obrigações originárias do emissor, de resgatar o principal e os acessórios de seus títulos e valores mobiliários objeto de compensação e de liquidação.</h4>
+ <h4>§ 2º Os sistemas de que trata o caput deverão contar com mecanismos e salvaguardas que permitam às câmaras e aos prestadores de serviços de compensação e de liquidação assegurar a certeza da liquidação das operações neles compensadas e liquidadas.</h4>
+ <h4>§ 3º Os mecanismos e as salvaguardas de que trata o parágrafo anterior compreendem, dentre outros, dispositivos de segurança adequados e regras de controle de riscos , de contingências, de compartilhamento de perdas entre os participantes e de execução direta de posições em custódia, de contratos e de garantias aportadas pelos participantes.</h4>
+ <h3>Art. 5º Sem prejuízo do disposto no § 3º do artigo anterior, as câmaras e os prestadores de serviços de compensação e de liquidação responsáveis por um ou mais ambientes sistemicamente importantes deverão, obedecida a regulamentação baixada pelo Banco Central do Brasil, separar patrimônio especial, formado por bens e direitos necessários a garantir exclusivamente o cumprimento das obrigações existentes em cada um dos sistemas que estiverem operando</h3>
+ <h4>§ 1º Os bens e direitos integrantes do patrimônio especial de que trata o caput , bem como seus frutos e rendimentos, não se comunicarão com o patrimônio geral ou outros patrimônios especiais da mesma câmara ou prestador de serviços de compensação e de liquidação, e não poderão ser utilizados para realizar ou garantir o cumprimento de qualquer obrigação assumida pela câmara ou prestador de serviços de compensação e de liquidação em sistema estranho àquele ao qual se vinculam.</h4>
+ <h4>§ 2º Os atos de constituição do patrimônio separado, com a respectiva destinação, serão objeto de averbação ou registro, na forma da lei ou do regulamento.</h4>
+ <h3>Art. 6º Os bens e direitos integrantes do patrimônio especial, bem como aqueles oferecidos em garantia pelos participantes, são impenhoráveis, e não poderão ser objeto de arresto, seqüestro, busca e apreensão ou qualquer outro ato de constrição judicial, exceto para o cumprimento das obrigações assumidas pela própria câmara ou prestador de serviços de compensação e de liquidação na qualidade de parte contratante, nos termos do disposto no caput do art. 4º desta Lei.</h3>
+ <h3>Art. 7º Os regimes de insolvência civil, concordata, intervenção, falência ou liquidação extrajudicial, a que seja submetido qualquer participante, não afetarão o adimplemento de suas obrigações, assumidas no âmbito das câmaras ou prestadores de serviços de compensação e de liquidação, que serão ultimadas e liquidadas pela câmara ou prestador de serviços, na forma de seus regulamentos.</h3>
+ <h4>Parágrafo único. O produto da realização das garantias prestadas pelo participante submetido aos regimes de que trata o caput , assim como os títulos, valores mobiliários e quaisquer outros seus ativos, objeto de compensação ou liquidação, serão destinados à liquidação das obrigações assumidas no âmbito das câmaras ou prestadores de serviços.</h4>
+ <h3>Art. 8º Nas hipóteses de que trata o artigo anterior, ou quando verificada a inadimplência de qualquer participante de um sistema, a liquidação das obrigações, observado o disposto nos regulamentos e procedimentos das câmaras ou prestadores de serviços de compensação e de liquidação, dar-se-á:</h3>
+ <h5>I - com a tradição dos ativos negociados ou a transferência dos recursos, no caso de movimentação financeira; e</h5>
+ <h5>II - com a entrega do produto da realização das garantias e com a utilização dos mecanismos e salvaguardas de que tratam os §§ 2º e 3º do art. 4º , quando inexistentes ou insuficientes os ativos negociados ou os recursos a transferir.</h5>
+ <h4>Parágrafo único. Se, após adotadas as providências de que tratam os incisos I e II, houver saldo positivo, será ele transferido ao participante, integrando a respectiva massa, se for o caso, e se houver saldo negativo, constituirá ele crédito da câmara ou do prestador de serviços de compensação e de liquidação contra o participante.</h4>
+ <h3>Art. 9º A infração às normas legais e regulamentares que regem o sistema de pagamentos sujeita as câmaras e os prestadores de serviços de compensação e de liquidação, seus administradores e membros de conselhos fiscais, consultivos e assemelhados às penalidades previstas:</h3>
+ <h5>I - no art. 44 da Lei N° 4.595, de 31 de dezembro de 1964, aplicáveis pelo Banco Central do Brasil;</h5>
+ <h5>II - no art. 11 da Lei N° 6.385, de 7 de dezembro de 1976, aplicáveis pela Comissão de Valores Mobiliários.</h5>
+ <h4>Parágrafo único. Das decisões proferidas pelo Banco Central do Brasil e pela Comissão de Valores Mobiliários, com fundamento neste artigo, caberá recurso, sem efeito suspensivo, para o Conselho de Recursos do Sistema Financeiro Nacional, no prazo de quinze dias.</h4>
+ <h3>Art. 9º A infração às normas legais e regulamentares que regem o sistema de pagamentos sujeita as câmaras e os prestadores de serviços de compensação e de liquidação, seus administradores e membros de conselhos fiscais, consultivos e assemelhados ao disposto na Medida Provisória nº 784, de 7 de junho de 2017 , e na Lei n° 6.385, de 7 de dezembro de 1976 . (Redação dada pela Medida provisória nº 784, de 2017) encerrada</h3>
+ <h4>Parágrafo único. Caberá recurso, no prazo de trinta dias, sem efeito suspensivo, das decisões proferidas pelo Banco Central do Brasil ou pela Comissão de Valores Mobiliários, com fundamento neste artigo, para o Conselho de Recursos do Sistema Financeiro Nacional. (Redação dada pela Medida provisória nº 784, de 2017) encerrada</h4>
+ <h3>Art. 9º A infração às normas legais e regulamentares que regem o sistema de pagamentos sujeita as câmaras e os prestadores de serviços de compensação e de liquidação, seus administradores e membros de conselhos fiscais, consultivos e assemelhados às penalidades previstas:</h3>
+ <h5>I - no art. 44 da Lei N° 4.595, de 31 de dezembro de 1964, aplicáveis pelo Banco Central do Brasil;</h5>
+ <h5>II - no art. 11 da Lei N° 6.385, de 7 de dezembro de 1976, aplicáveis pela Comissão de Valores Mobiliários.</h5>
+ <h4>Parágrafo único. Das decisões proferidas pelo Banco Central do Brasil e pela Comissão de Valores Mobiliários, com fundamento neste artigo, caberá recurso, sem efeito suspensivo, para o Conselho de Recursos do Sistema Financeiro Nacional, no prazo de quinze dias.</h4>
+ <h3>Art. 9º A infração às normas legais e regulamentares que regem o sistema de pagamentos sujeita as câmaras e os prestadores de serviços de compensação e de liquidação, seus administradores e membros de conselhos fiscais, consultivos e assemelhados ao disposto na Lei n° 6.385, de 7 de dezembro de 1976 , e nas demais disposições legais. (Redação dada pela Lei n° 13.506, de 2017)</h3>
+ <h5>I - (revogado); (Redação dada pela Lei n° 13.506, de 2017)</h5>
+ <h5>II - (revogado) . (Redação dada pela Lei n° 13.506, de 2017)</h5>
+ <h4>Parágrafo único. Caberá recurso, no prazo de 30 (trinta) dias, sem efeito suspensivo, das decisões proferidas pelo Banco Central do Brasil ou pela Comissão de Valores Mobiliários, com fundamento neste artigo, para o Conselho de Recursos do Sistema Financeiro Nacional. (Redação dada pela Lei n° 13.506, de 2017)</h4>
+ <p>(Vide Decreto nº 9.889, de 2019)</p>
+ <h3>Art. 10. O Conselho Monetário Nacional, o Banco Central do Brasil e a Comissão de Valores Mobiliários, nas suas respectivas esferas de competência, baixarão as normas e instruções necessárias ao cumprimento desta Lei.</h3>
+ <h3>Art. 11. Ficam convalidados os atos praticados com base na Medida Provisória Nº 2.115-15, de 26 de janeiro de 2001 .</h3>
+ <h3>Art. 12. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <p>Congresso Nacional, em 27 de março de 2001; 180º da Independência e 113º da República.</p>
+ <p>Senador JADER BARBALHO</p>
+ <p>Presidente do Congresso Nacional</p>
+ <p>Este texto não substitui o publicado no DOU de 28.3.2001 (edição extra)</p>
+ <p>Conversão da MPv nº 2.115-16, de 2001 | Dispõe sobre a atuação das câmaras e dos prestadores de serviços de compensação e de liquidação, no âmbito do sistema de pagamentos brasileiro, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/L10214.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 10.876, DE 2 DE JUNHO DE 2004 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2004" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 10.876, DE 2 DE JUNHO DE 2004</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 05/12/2025 16:55:46 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.876compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 29.349 caracteres | espelho: 29.918 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 10.876, DE 2 DE JUNHO DE 2004.</p>
+ <p>Regulamento</p>
+ <p>Conversão da MPv nº 166, de 2004</p>
+ <p>Cria a Carreira de Perícia Médica da Previdência Social, dispõe sobre a remuneração da Carreira de Supervisor Médico-Pericial do Quadro de Pessoal do Instituto Nacional do Seguro Social - INSS e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Fica criada, nos termos desta Lei, a Carreira de Perícia Médica da Previdência Social, constituída pelos cargos efetivos de Perito Médico da Previdência Social.</h3>
+ <p><del></p>
+ <h3>Art. 2º (Revogado pela Lei n° 13.846, de 2019)</del></h3>
+ <h3>Art. 3º São transformados em cargos de Perito Médico da Previdência Social da Carreira de Perícia Médica da Previdência Social os atuais cargos efetivos de Médico do Plano de Classificação de Cargos – PCC, de que trata a Lei n° 5.645, de 10 de dezembro de 1970, ou de planos de cargos correlatos do Quadro de Pessoal do INSS, de Médico da Carreira Previdenciária, de que trata a Lei n° 10.355, de 26 de dezembro de 2001, e de Médico da Carreira do Seguro Social, de que trata a Lei n° 10.855, de 1º de abril de 2004, cujos ocupantes estejam em efetivo exercício das atividades de perícia médica nas unidades do Instituto Nacional do Seguro Social e no Ministério da Previdência Social.</h3>
+ <h4>Parágrafo único. Serão enquadrados na Carreira de Perícia Médica da Previdência Social, mediante opção, os atuais ocupantes dos cargos mencionados no caput deste artigo, desde que sua investidura haja observado as pertinentes normas constitucionais e ordinárias anteriores a 5 de outubro de 1988 e, se posterior a esta data, tenha decorrido de aprovação em concurso público específico para os cargos referidos no caput deste artigo .</h4>
+ <h3>Art. 4º Os cargos efetivos de Perito Médico da Previdência Social da Carreira de Perícia Médica da Previdência Social e os cargos de Supervisor Médico-Pericial da Carreira de Supervisor Médico-Pericial, de que trata a Lei n° 9.620, de 2 de abril de 1998, observarão a estrutura de classes e padrões de vencimentos estabelecida no Anexo I desta Lei.</h3>
+ <h3>Art. 5º Os servidores ocupantes dos cargos efetivos de que trata o art. 4º desta Lei perceberão os valores da Tabela de Vencimento Básico de que trata o Anexo II desta Lei, observada a respectiva jornada de trabalho originária de 20 (vinte) ou 40 (quarenta) horas semanais. (Redação dada pela Lei n° 11.302 de 2006)</h3>
+ <h4>Parágrafo único. (VETADO)</h4>
+ <h3>Art. 6º O posicionamento nas respectivas tabelas de vencimentos dos atuais ocupantes dos cargos de que trata o art. 4º desta Lei será efetuado observando-se a correlação estabelecida no Anexo III desta Lei.</h3>
+ <h4>Parágrafo único. O posicionamento dos aposentados e pensionistas na tabela remuneratória será referenciado à situação em que o servidor se encontrava na data da aposentadoria ou em que se originou a pensão, com vigência a partir da data de publicação da Medida Provisória nº 166, de 18 de fevereiro de 2004.</h4>
+ <h3>Art. 7º O enquadramento de que trata o parágrafo único do art. 3º desta Lei dar-se-á mediante opção irretratável do servidor ativo, do aposentado ou dos respectivos pensionistas, a ser formalizada no prazo de 90 (noventa) dias, a contar da vigência da Medida Provisória nº 166, de 18 de fevereiro de 2004, na forma do termo de opção, constante do Anexo IV desta Lei, cujos efeitos financeiros vigorarão a partir da data da vigência daquela Medida Provisória.</h3>
+ <h4>§ 1º A opção referida no caput deste artigo implica renúncia às parcelas de valores incorporados à remuneração por decisão administrativa ou judicial, relativas a recomposição de vencimentos, atribuindo-se precedência ao adiantamento pecuniário de que trata a Lei n° 7.686, de 2 de dezembro de 1988, que vencerem após o início dos efeitos financeiros referidos no caput deste artigo. (Redação dada pela Lei n° 10.997, de 2004)</h4>
+ <h4>§ 2º A renúncia de que trata o § 1º deste artigo fica limitada ao percentual resultante da variação entre o vencimento básico vigente no mês de janeiro de 2004 e o vencimento básico fixado no Anexo II desta Lei para dezembro de 2006.</h4>
+ <h4>§ 3º Os ocupantes dos cargos referidos no art. 3º desta Lei que não formalizarem a opção referida no caput deste artigo permanecerão na situação em que se encontravam na data da entrada em vigor da Medida Provisória nº 166, de 18 de fevereiro de 2004, não fazendo jus aos vencimentos e vantagens por ela estabelecidos.</h4>
+ <h4>§ 4º Os valores incorporados à remuneração, objeto da renúncia a que se referem os §§ 1º e 2º deste artigo, que forem pagos aos servidores ativos, aos aposentados e aos pensionistas, por decisão administrativa ou judicial, no mês de janeiro de 2004, sofrerão redução proporcional à implantação das Tabelas de Vencimento Básico, de que trata o art. 5º desta Lei, e os valores excedentes serão convertidos em diferença pessoal nominalmente identificada, de natureza provisória, redutível na mesma proporção acima referida, sujeita apenas ao índice de reajuste aplicável às tabelas de vencimentos dos servidores públicos federais, a título de revisão geral das remunerações e subsídios.</h4>
+ <h4>§ 5º Concluída a implantação das tabelas em dezembro de 2006, respeitado o que dispõem os §§ 3º e 4º deste artigo, o valor eventualmente excedente continuará a ser pago como vantagem pessoal nominalmente identificada, sujeita apenas ao índice de reajuste aplicável às tabelas de vencimentos dos servidores públicos federais, a título de revisão geral das remunerações e subsídios.</h4>
+ <h4>§ 6º A opção pela Carreira de Perícia Médica da Previdência Social não poderá ensejar redução da remuneração percebida pelo servidor.</h4>
+ <h4>§ 7º Para fins de apuração do valor excedente referido nos §§ 4º e 5º deste artigo, a parcela que vinha sendo paga em cada período de implantação das Tabelas constantes do Anexo II desta Lei, sujeita à redução proporcional, não será considerada no demonstrativo da remuneração recebida no mês anterior ao da aplicação.</h4>
+ <h4>§ 8º A opção de que trata o § 1º deste artigo sujeita as ações judiciais em curso, relativas ao adiantamento pecuniário, cujas decisões sejam prolatadas após o início da implantação das Tabelas de que trata o Anexo II desta Lei, aos critérios estabelecidos nesta Lei, por ocasião da execução, observado o disposto no § 5º deste artigo quanto ao pagamento de vantagem pessoal nominalmente identificada.</h4>
+ <h4>§ 9º O prazo para exercer a opção referida no caput deste artigo, nos casos de servidores afastados nos termos dos arts. 81 e 102 da Lei n° 8.112, de 11 de dezembro de 1990, será contado a partir do término do afastamento.</h4>
+ <h3>Art. 8º O ingresso nos cargos da Carreira de Perito Médico da Previdência Social é condicionado ao cumprimento obrigatório da jornada de trabalho estabelecida no art. 19 da Lei n° 8.112, de 11 de dezembro de 1990.</h3>
+ <h4>Parágrafo único. Ficam mantidos para os ocupantes dos cargos de que trata o parágrafo único do art. 3º desta Lei as atribuições, os requisitos de formação profissional e a jornada semanal de trabalho dos cargos originários, conforme estabelecido na legislação vigente na data de publicação da Medida Provisória nº 166, de 18 de fevereiro de 2004, sendo assegurado o regime de 40 (quarenta) horas para aqueles que se encontravam no exercício de jornada de 40 (quarenta) horas, com base nos §§ 1º e 2º do art. 1º da Lei n° 9.436, de 5 de fevereiro de 1997, na data de publicação da Medida Provisória nº 166, de 18 de fevereiro de 2004.</h4>
+ <h3>Art. 9º O ingresso nos cargos de que trata esta Lei dar-se-á sempre no primeiro padrão da classe inicial, mediante habilitação em concurso público, de provas ou de provas e títulos, conforme dispuser o regulamento, exigindo-se como pré-requisito a habilitação em medicina.</h3>
+ <h4>§ 1º O concurso referido no caput deste artigo poderá ser realizado em uma ou mais fases, incluindo curso de formação quando julgado pertinente, conforme dispuser o edital de abertura do certame e observada a legislação pertinente.</h4>
+ <h4>§ 2º O regulamento a que se refere o caput deste artigo poderá dispor sobre outros requisitos para ingresso, além do curso superior em medicina concluído.</h4>
+ <h3>Art. 10. O desenvolvimento dos servidores de que trata esta Lei ocorrerá mediante progressão funcional e promoção.</h3>
+ <h4>§ 1º Para os efeitos desta Lei, progressão funcional é a passagem do servidor para o padrão de vencimento imediatamente superior dentro de uma mesma classe, e promoção, a passagem do servidor do último padrão de uma classe para o primeiro da classe imediatamente superior.</h4>
+ <h4>§ 2º A progressão funcional e a promoção observarão os requisitos e as condições a serem fixados em regulamento, devendo levar em consideração os resultados da avaliação de desempenho do servidor.</h4>
+ <h3>Art. 11. Fica instituída a Gratificação de Desempenho de Atividade Médico-Pericial - GDAMP, devida aos ocupantes dos cargos a que se refere o art. 4º desta Lei. (Regulamento)</h3>
+ <h3>Art. 12. A GDAMP será paga observado o limite máximo de 100 (cem) pontos e mínimo de 10 (dez) pontos por servidor, correspondendo cada ponto ao valor estabelecido no Anexo V desta Lei. (Redação dada pela Lei n° 11.302 de 2006)</h3>
+ <h4>§ 1º A pontuação referente à GDAMP será assim distribuída: (Redação dada pela Lei n° 11.302 de 2006)</h4>
+ <h5>I - até 60 (sessenta) pontos serão atribuídos em função dos resultados obtidos na avaliação de desempenho institucional; e (Incluído pela Lei n° 11.302 de 2006)</h5>
+ <h5>II - até 40 (quarenta) pontos serão atribuídos em função dos resultados obtidos na avaliação de desempenho individual. (Incluído pela Lei n° 11.302 de 2006)</h5>
+ <h4>§ 2º A avaliação de desempenho individual visa a aferir o desempenho do servidor no exercício das atribuições do cargo ou função, com foco na contribuição individual para o alcance dos objetivos organizacionais. (Redação dada pela Lei n° 11.302 de 2006)</h4>
+ <h4>§ 3º A parcela referente à avaliação de desempenho institucional será: (Incluído pela Lei n° 11.302 de 2006)</h4>
+ <h5>I - paga integralmente, quando o tempo médio apurado entre a marcação e a realização da perícia inicial no âmbito da Gerência Executiva de lotação do servidor for igual ou inferior a 5 (cinco) dias; (Incluído pela Lei n° 11.302 de 2006)</h5>
+ <h5>II - paga conforme percentual definido em ato do Ministro de Estado da Previdência Social, quando o tempo médio apurado entre a marcação e a realização da perícia inicial no âmbito da Gerência Executiva de lotação do servidor for inferior a 40 (quarenta) e superior a 5 (cinco) dias; e (Incluído pela Lei n° 11.302 de 2006)</h5>
+ <h5>III - igual a 0 (zero), quando o tempo médio apurado entre a marcação e a realização da perícia inicial no âmbito da Gerência Executiva de lotação do servidor for igual ou superior a 40 (quarenta) dias. (Incluído pela Lei n° 11.302 de 2006)</h5>
+ <h4>§ 4º Os critérios de avaliação de desempenho individual e o percentual a que se refere o inciso II do § 3º deste artigo poderão variar segundo as condições específicas de cada Gerência Executiva. (Incluído pela Lei n° 11.302 de 2006)</h4>
+ <h3>Art. 12-A O ocupante de cargo efetivo de Perito Médico da Previdência Social da carreira de Perícia Médica da Previdência Social em exercício no órgão de lotação ou no INSS perceberá a parcela da GDAMP referente à avaliação de desempenho institucional no valor correspondente ao atribuído ao órgão ou à entidade em que o servidor estiver em efetivo exercício somada à parcela da GDAMP referente à avaliação de desempenho individual conforme os critérios de avaliação estabelecidos em regulamento. (Redação dada pela Lei n° 13.846, de 2019)</h3>
+ <h3>Art. 13. Para fins de incorporação da GDAMP aos proventos de aposentadoria, serão adotados os seguintes critérios: (Redação dada pela Lei n° 15.141, de 2025)</h3>
+ <h5>I - quando o benefício de aposentadoria tiver como critérios a integralidade e a paridade de que tratam a Emenda Constitucional nº 41, de 19 de dezembro de 2003 , e a Emenda Constitucional nº 47, de 5 de julho de 2005 , a gratificação corresponderá: (Redação dada pela Lei n° 15.141, de 2025)</h5>
+ <h6>a) a trinta pontos, considerados o nível, a classe e o padrão do servidor, para aqueles que perceberam a gratificação por período inferior a sessenta meses; ou (Incluída pela Lei n° 15.141, de 2025)</h6>
+ <h6>b) à média dos pontos da gratificação de desempenho recebidos nos últimos sessenta meses de atividade, para aqueles que perceberam a gratificação por período igual ou superior a sessenta meses; ou (Incluída pela Lei n° 15.141, de 2025)</h6>
+ <h5>II - quando o benefício de aposentadoria tiver como critérios a integralidade e a paridade de que trata a Emenda Constitucional nº 103, de 12 de novembro de 2019 , deverá ser observado o disposto no art. 4º, § 8º, inciso II, da referida Emenda Constitucional. (Redação dada pela Lei n° 15.141, de 2025)</h5>
+ <h4>§ 1º Para os benefícios de aposentadoria e de pensão instituídos até 19 de fevereiro de 2004, ou até a vigência da Medida Provisória nº 166, de 18 de fevereiro de 2004 , a GDAMP corresponderá a trinta pontos, considerados o nível, a classe e o padrão do servidor. (Incluído pela Lei n° 15.141, de 2025)</h4>
+ <h4>§ 2º Aos benefícios não alcançados pelos incisos I e II do caput e pelo § 1º, será aplicado o disposto na Lei n° 10.887, de 18 de junho de 2004, ou no art. 26 da Emenda Constitucional nº 103, de 12 de novembro de 2019, conforme a data de cumprimento dos respectivos requisitos, observado o disposto na Lei n° 12.618, de 30 de abril de 2012 . (Incluído pela Lei n° 15.141, de 2025)</h4>
+ <h3>Art. 14. Os ocupantes de cargos efetivos referidos no art. 4º desta Lei que se encontrarem na condição de dirigentes máximos de Gerência-Regional, de Gerência-Executiva, de Agência da Previdência Social e de Chefia de Gerenciamento de Benefícios por Incapacidade perceberão a GDAMP conforme estabelecido no art. 12-A desta Lei. (Redação dada pela Lei n° 11.302 de 2006)</h3>
+ <h3>Art. 15. O ocupante de cargo efetivo de Perito Médico da Previdência Social da carreira de Perícia Médica da Previdência Social que não se encontrar em exercício no órgão de lotação ou no INSS perceberá integralmente a parcela da GDAMP referente à avaliação de desempenho institucional no período somada à parcela da GDAMP referente à avaliação de desempenho individual, quando requisitado pela Presidência da República ou pela Vice-Presidência da República. (Redação dada pela Lei n° 13.846, de 2019)</h3>
+ <h5>I - (Revogado); (Redação dada pela Lei n° 11.302 de 2006)</h5>
+ <h5>II - (Revogado); (Redação dada pela Lei n° 11.302 de 2006)</h5>
+ <h5>III - (Revogado). (Redação dada pela Lei n° 11.302 de 2006)</h5>
+ <h4>Parágrafo único. A parcela referente à avaliação de desempenho institucional considerada para o servidor alcançado pelo caput será: (Incluído pela Lei n° 13.328, de 2016)</h4>
+ <h5>I - a do órgão ou entidade onde o servidor permaneceu em exercício por mais tempo; (Incluído pela Lei n° 13.328, de 2016)</h5>
+ <h5>II - a do órgão ou entidade onde o servidor se encontrar em exercício ao término do ciclo, caso ele tenha permanecido o mesmo número de dias em diferentes órgãos ou entidades; ou (Incluído pela Lei n° 13.328, de 2016)</h5>
+ <h5>III - a do órgão de origem, quando requisitado ou cedido para órgão diverso da administração pública federal direta, autárquica ou fundacional. (Incluído pela Lei n° 13.328, de 2016)</h5>
+ <h3>Art. 16. Os critérios e procedimentos da avaliação de desempenho institucional e individual e de atribuição da GDAMP serão estabelecidos em regulamento.</h3>
+ <h4>§ 1º Enquanto não for regulamentada e até que sejam processados os resultados da avaliação de desempenho, a GDAMP corresponderá a 25% (vinte e cinco por cento) incidentes sobre o vencimento básico de cada servidor.</h4>
+ <h4>§ 2º O resultado da primeira avaliação gera efeitos financeiros a partir do início do período de avaliação, devendo ser compensadas eventuais diferenças pagas a maior ou a menor.</h4>
+ <h4>§ 3º O disposto neste artigo aplica-se aos ocupantes de cargos ou funções comissionadas que fazem jus à GDAMP.</h4>
+ <h3>Art. 17. Ao servidor ativo beneficiário da GDAMP que obtiver pontuação inferior a 30% (trinta por cento) do limite máximo de pontos destinado à avaliação individual em duas avaliações individuais consecutivas será assegurado processo de capacitação, de responsabilidade do INSS, devendo ser novamente avaliado, no prazo de 6 (seis) meses, contado da avaliação anterior.</h3>
+ <h3>Art. 18. A GDAMP não será devida àqueles que não se encontram no desempenho de atribuições decorrentes da condição de servidor público.</h3>
+ <h3>Art. 18-A. Fica instituída a Gratificação Específica de Perícia Médica - GEPM, devida aos servidores a que se refere o art. 4º desta Lei, a partir de 1º de janeiro de 2006, nos valores constantes do Anexo VI desta Lei. (Incluído pela Lei n° 11.302 de 2006)</h3>
+ <h4>§ 1º A GEPM integrará os proventos da aposentadoria e as pensões. (Incluído pela Lei n° 11.302 de 2006)</h4>
+ <h4>§ 2º A GEPM não servirá de base de cálculo para quaisquer outros benefícios, parcelas remuneratórias ou vantagens devidas aos servidores que a ela fazem jus. (Incluído pela Lei n° 11.302 de 2006)</h4>
+ <h3>Art. 19. Na hipótese de redução de remuneração dos ocupantes dos cargos de que trata o art. 4º desta Lei decorrente da aplicação desta Lei, a diferença será paga a título de vantagem pessoal nominalmente identificada, a ser absorvida por ocasião da reorganização ou reestruturação da carreira ou tabela remuneratória, da concessão de reajustes, adicionais, gratificações ou vantagem de caráter geral instituídos por lei, excluídos os reajustes decorrentes da revisão geral das remunerações e subsídios dos servidores públicos federais.</h3>
+ <h3>Art. 20. A aplicação do disposto nesta Lei a aposentados e pensionistas não poderá implicar redução de proventos e pensões.</h3>
+ <h4>Parágrafo único. Constatada a redução de proventos ou pensão decorrente da aplicação do disposto nesta Lei, a diferença será paga a título de vantagem pessoal nominalmente identificada, sujeita exclusivamente à atualização decorrente de revisão geral da remuneração dos servidores públicos federais.</h4>
+ <h3>Art. 21. Em decorrência do disposto nos arts. 4º e 11 desta Lei, os servidores abrangidos pelo disposto no art. 4º desta Lei deixam de fazer jus, respectivamente, à Gratificação de Atividade, de que trata a Lei Delegada nº 13, de 27 de agosto de 1992; à Gratificação de Desempenho de Atividade Técnico-Administrativa - GDATA, instituída por intermédio da Lei n° 10.404, de 9 de janeiro de 2002 ; à Gratificação de Desempenho de Atividade Previdenciária -GDAP, instituída por intermédio da Lei n° 10.355, de 26 de dezembro de 2001 ; à Gratificação de Desempenho de Atividade do Seguro Social - GDASS, instituída por intermédio da Lei n° 10.855, de 1º de abril de 2004; e à Gratificação de Desempenho e Eficiência - GDE, instituída por intermédio da Lei n° 9.620, de 2 de abril de 1998.</h3>
+ <h3>Art. 22. Até que seja regulamentado o art. 10 desta Lei, as progressões funcionais e promoções serão concedidas observando-se, no que couber, as normas aplicáveis aos servidores do Plano de Classificação de Cargos da Lei n° 5.645, de 10 de dezembro de 1970.</h3>
+ <h3>Art. 23. Ficam criados, para exercício exclusivo no Quadro de Pessoal do INSS, 3.000 (três mil) cargos de Perito Médico da Previdência Social.</h3>
+ <h3>Art. 24. Fica o INSS autorizado, em caráter emergencial, a promover, por prazo máximo de 24 (vinte e quatro) meses a contar da vigência da Medida Provisória nº 166, de 18 de fevereiro de 2004, o credenciamento de profissionais médicos para prestarem serviços de perícia médica para fins de concessão e manutenção de benefícios previdenciários.</h3>
+ <h4>§ 1º Para os efeitos do disposto no caput deste artigo, no edital, deverão ser consideradas, dentre os critérios para o credenciamento, a experiência profissional na atividade médico-pericial, a residência na localidade em que a atividade será exercida e a qualificação técnica dos participantes do processo licitatório de contratação dos serviços de perícia médica.</h4>
+ <h4>§ 2º A retribuição dos profissionais médicos credenciados na forma do caput deste artigo será estabelecida em ato do presidente do INSS, que deverá fixar os valores a serem pagos por perícia realizada, o número máximo mensal permitido de perícias por profissional credenciado no âmbito de cada Gerência-Executiva do INSS, as condições para a realização das perícias médicas e os instrumentos de controle e aferição da regularidade do exercício das atividades.</h4>
+ <h4>§ 3º O presidente do INSS fará publicar no Diário Oficial da União e em sítio na rede mundial de computadores internet, mensalmente, a relação mensal nominal de médicos peritos credenciados, dela constando o endereço e o registro profissional, o número de perícias médicas realizadas no mês anterior e o número total de perícias médicas realizadas no ano em curso por profissional médico credenciado até o mês anterior, bem como o montante total, realizado no mês anterior e acumulado no ano em curso, do total de perícias realizadas por profissionais credenciados e da despesa realizada com a respectiva retribuição, no âmbito de cada Gerência-Executiva.</h4>
+ <h3>Art. 25. Fica vedada a redistribuição de cargos de médico dos quadros de pessoal de quaisquer órgãos e entidades da administração pública federal direta, autárquica e fundacional para o INSS.</h3>
+ <h4>Parágrafo único. (VETADO)</h4>
+ <h3>Art. 26. As despesas decorrentes do disposto nesta Lei correrão à conta das dotações consignadas nos orçamentos da União.</h3>
+ <h3>Art. 27. Esta Lei entra em vigor na data da sua publicação.</h3>
+ <p>Brasília, 2 de junho de 2004; 183º da Independência e 116º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Este texto não substitui o publicado no DOU de 3. 6 .2004</p>
+ <h3>ESTRUTURA DE CALSSES E PADRÕES</h3>
+ <p>Perito Médico da Previdência Social, da Carreira</p>
+ <p>de Perícia Médica da Previdência Social</p>
+ <p>Supervisor Médico-Pericial, da Carreira de</p>
+ <p>Supervisor Médico-Pericial, de que trata a Lei</p>
+ <p>nº 9.620, de 2 de abril de 1998</p>
+ <p>(Redação dada pela Lei n° 15.141, de 2025)</p>
+ <h3>TABELA DE VENCIMENTO BÁSICO</h3>
+ <h6>a) Vencimento Básico - jornada de 40 horas semanais:</h6>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE JANEIRO DE 2025</p>
+ <h6>b) Vencimento Básico - jornada de 20 horas semanais:</h6>
+ <h3>VENCIMENTO BÁSICO</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE JANEIRO DE 2025</p>
+ <h3>TABELAS DE CORRELAÇÃO</h3>
+ <h6>A) PERITO MÉDICO DA PREVIDÊNCIA SOCIAL</h6>
+ <p>Previdenciária, de que</p>
+ <p>trata a Lei n° 10.355, de</p>
+ <p>Médico, da Carreira do</p>
+ <p>Seguro Social, de que</p>
+ <p>trata a Lei n° 10.855, de</p>
+ <p>Classificação de Cargos</p>
+ <p>– PCC, de que trata a</p>
+ <p>Previdência Social, da</p>
+ <p>Lei n° 5.645, de 10 de</p>
+ <p>correlatos, do Quadro de</p>
+ <h6>B) SUPERVISOR MÉDICO-PERICIAL</h6>
+ <p>Pericial, da Carreira de</p>
+ <p>Pericial, de que trata a Lei</p>
+ <p>nº 9.620, de 2 de abril de</p>
+ <p>Pericial, de que trata a</p>
+ <p>Lei n° 9.620, de 2 de</p>
+ <h3>TERMO DE OPÇÃO</h3>
+ <p>Servidor Ativo ( ) Aposentado ( )</p>
+ <p>Venho, nos Termos da Medida Provisória nº 166, de 18 de fevereiro de 2004, e observando o disposto nos §§ 1º e 2º do art. 7º , optar pelo enquadramento no cargo de Perito Médico da Previdência Social, na Carreira de Perícia Médica da Previdência Social, e recebimento dos vencimentos e vantagens fixados pela mesma Medida Provisória, renunciando às parcelas de valores incorporados à remuneração por decisão administrativa ou judicial, dando precedência ao aditamento pecuniário previsto na Lei n° 7.686, de 2 de dezembro de 1988, que vencerem após o início da vigência dos efeitos financeiros deste Termo de Opção, conforme o caput do art. 7º e o art. 5º da mesma Medida Provisória.</p>
+ <p>Autorizo o Instituto Nacional de Seguro Social – INSS a levar a presente renúncia ao Poder Judiciário, concordando com os efeitos dela decorrentes.</p>
+ <p>___________________________________, ________/________/____________</p>
+ <p>___________________________________________________</p>
+ <p>Recebido em: ________/_______/_________</p>
+ <p>Assinatura/Matrícula ou Carimbo do Servidor do Órgão do Sistema de Pessoal Civil da Administração Federal – SIPEC</p>
+ <p>(Redação dada pela Lei n° 15.141, de 2025)</p>
+ <p>TABELA DE VALOR DO PONTO DA GRATIFICAÇÃO DE DESEMPENHO DE ATIVIDADE MÉDICO-PERICIAL – GDAMP</p>
+ <h6>a) Valor do ponto da Gratificação de Desempenho de Atividade Médico-Pericial – GDAMP - jornada de 40 horas semanais:</h6>
+ <h3>VALOR DO PONTO DA GDAMP</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE JANEIRO DE 2025</p>
+ <h6>b) Valor do ponto da Gratificação de Desempenho de Atividade Médico-Pericial – GDAMP - jornada de 20 horas semanais:</h6>
+ <h3>VALOR DO PONTO DA GDAMP</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE JANEIRO DE 2025</p>
+ <p>(Redação dada pela Lei n° 15.141, de 2025)</p>
+ <h3>VALORES DA GRATIFICAÇÃO ESPECÍFICA DE PERÍCIA MÉDICA – GEPM</h3>
+ <h6>a) Valores da Gratificação Específica de Perícia Médica – GEPM, jornada de 40 horas semanais:</h6>
+ <h3>VALOR DA GEPM</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE JANEIRO DE 2025</p>
+ <h6>b) Valores da Gratificação Específica de Perícia Médica – GEPM, jornada de 20 horas semanais:</h6>
+ <h3>VALOR DA GEPM</h3>
+ <h3>EFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE JANEIRO DE 2025</p>
+ <p>RegulamentoConversão da MPv nº 166, de 2004 | Cria a Carreira de Perícia Médica da Previdência Social, dispõe sobre a remuneração da Carreira de Supervisor Médico-Pericial do Quadro de Pessoal do Instituto Nacional do Seguro Social - INSS e dá outras providências.</p>
+ <p>Cargos | Classe | Padrão</p>
+ <h3>| ESPECIAL | III</h3>
+ <p>Perito Médico da Previdência Social, da Carreira | C | III</p>
+ <p>de Perícia Médica da Previdência Social | | II</p>
+ <p>Supervisor Médico-Pericial, da Carreira de | | I</p>
+ <p>Supervisor Médico-Pericial, de que trata a Lei | | V</p>
+ <p>nº 9.620, de 2 de abril de 1998 | | IV</p>
+ <h3>CLASSE | PADRÃO | VENCIMENTO BÁSICOEFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE MAIO DE 2023 | 1º DE JANEIRO DE 2025 | 1º DE ABRIL DE 2026</p>
+ <h3>ESPECIAL | V | 4.066,04</h3>
+ <h3>IV | 3.978,66 | 4.441,38</h3>
+ <h3>III | 3.891,29 | 4.343,85</h3>
+ <h3>II | 3.803,91 | 4.246,30</h3>
+ <h3>I | 3.716,54 | 4.148,77</h3>
+ <h3>C | V | 3.629,17</h3>
+ <h3>IV | 3.541,79 | 3.953,70</h3>
+ <h3>III | 3.454,42 | 3.856,17</h3>
+ <h3>II | 3.367,04 | 3.758,63</h3>
+ <h3>I | 3.279,68 | 3.661,11</h3>
+ <h3>B | V | 3.192,30</h3>
+ <h3>IV | 3.104,93 | 3.466,03</h3>
+ <h3>III | 3.017,56 | 3.368,50</h3>
+ <h3>II | 2.930,18 | 3.270,96</h3>
+ <h3>I | 2.842,81 | 3.173,43</h3>
+ <h3>A | V | 2.755,43</h3>
+ <h3>IV | 2.668,06 | 2.978,36</h3>
+ <h3>III | 2.580,68 | 2.880,81</h3>
+ <h3>II | 2.493,31 | 2.783,28</h3>
+ <h3>I | 2.405,94 | 2.685,75</h3>
+ <h3>CLASSE | PADRÃO | VENCIMENTO BÁSICOEFEITOS FINANCEIROS A PARTIR DE</h3>
+ <p>1º DE MAIO DE 2023 | 1º DE JANEIRO DE 2025 | 1º DE ABRIL DE 2026</p>
+ <h3>ESPECIAL | V | 2.033,01</h3>
+ <h3>IV | 1.989,33 | 2.220,69</h3>
+ <h3>III | 1.945,65 | 2.171,93</h3>
+ <h3>II | 1.901,96 | 2.123,16</h3>
+ <h3>I | 1.858,28 | 2.074,40</h3>
+ <h3>C | V | 1.814,59</h3>
+ <h3>IV | 1.770,90 | 1.976,86</h3>
+ <h3>III | 1.727,21 | 1.928,08</h3>
+ <h3>II | 1.683,53 | 1.879,32</h3>
+ <h3>I | 1.639,84 | 1.830,55</h3>
+ <h3>B | V | 1.596,15</h3>
+ <h3>IV | 1.552,47 | 1.733,02</h3>
+ <h3>III | 1.508,78 | 1.684,25</h3>
+ <h3>II | 1.465,09 | 1.635,48</h3>
+ <h3>I | 1.421,40 | 1.586,71</h3>
+ <h3>A | V | 1.377,72</h3>
+ <h3>IV | 1.334,03 | 1.489,18</h3>
+ <h3>III | 1.290,34 | 1.440,41</h3>
+ <h3>II | 1.246,65 | 1.391,64</h3>
+ <h3>I | 1.202,97 | 1.342,88</h3>
+ <p>Situação Atual | Situação Proposta</p>
+ <p>Médico, da Carreira | C</p>
+ <p>Previdenciária, de que |</p>
+ <p>trata a Lei n° 10.355, de |</p>
+ <p>Médico, da Carreira do | B</p>
+ <p>Seguro Social, de que |</p>
+ <p>trata a Lei n° 10.855, de |</p>
+ <p>1º de abril de 2004 |</p>
+ <p>Situação Atual | Situação Proposta</p>
+ <p>Médico, do Plano de | B</p>
+ <p>Classificação de Cargos |</p>
+ <p>– PCC, de que trata a |</p>
+ <p>Lei n° 5.645, de 10 de |</p>
+ <p>dezembro de 1970, ou |</p>
+ <p>de planos de cargos |</p>
+ <p>correlatos, do Quadro de | C</p>
+ <p>Situação Atual | Situação Proposta</p>
+ <p>Pericial, da Carreira de | B</p>
+ <p>Pericial, de que trata a Lei |</p>
+ <p>nº 9.620, de 2 de abril de |</p>
+ <p>SIAPE: | Unidade de Lotação:</p>
+ <p>Servidor Ativo ( ) Aposentado ( )</p>
+ <p>Venho, nos Termos da Medida Provisória nº 166, de 18 de fevereiro de 2004, e observando o disposto nos §§ 1º e 2º do art. 7º , optar pelo enquadramento no cargo de Perito Médico da Previdência Social, na Carreira de Perícia Médica da Previdência Social, e recebimento dos vencimentos e vantagens fixados pela mesma Medida Provisória, renunciando às parcelas de valores incorporados à remuneração por decisão administrativa ou judicial, dando precedência ao aditamento pecuniário previsto na Lei n° 7.686, de 2 de dezembro de 1988, que vencerem após o início da vigência dos efeitos financeiros deste Termo de Opção, conforme o caput</p>
+ <p>do art. 7º e o art. 5º da mesma Medida Provisória.</p>
+ <p>Autorizo o Instituto Nacional de Seguro Social – INSS a levar a presente renúncia ao Poder Judiciário, concordando com os efeitos dela decorrentes.</p>
+ <p>___________________________________, ________/________/____________</p>
+ <p>___________________________________________________</p>
+ <p>Recebido em: ________/_______/_________ |</p>
+ <p>Assinatura/Matrícula ou Carimbo do Servidor do Órgão do Sistema de Pessoal Civil da Administração Federal – SIPEC |</p>
+ <h3>CLASSE | PADRÃO | VALOR DO</h3>
+ <h3>PONTO DA GDAMPEFEITOS</h3>
+ <h3>FINANCEIROS A PARTIR DE</h3>
+ <p>JANEIRO DE 2025 | 1º DE</p>
+ <h3>ABRIL DE 2026</h3>
+ <h3>ESPECIAL | V | 49,97</h3>
+ <h3>IV | 49,54 | 55,30</h3>
+ <h3>III | 49,10 | 54,81</h3>
+ <h3>II | 48,68 | 54,34</h3>
+ <h3>I | 48,24 | 53,85</h3>
+ <h3>C | V | 47,37</h3>
+ <h3>IV | 47,37 | 52,88</h3>
+ <h3>III | 46,95 | 52,41</h3>
+ <h3>II | 46,52 | 51,93</h3>
+ <h3>I | 46,09 | 51,45</h3>
+ <h3>B | V | 45,66</h3>
+ <h3>IV | 45,22 | 50,48</h3>
+ <h3>III | 44,80 | 50,01</h3>
+ <h3>II | 44,38 | 49,54</h3>
+ <h3>I | 43,95 | 49,06</h3>
+ <h3>A | V | 43,52</h3>
+ <h3>IV | 43,10 | 48,11</h3>
+ <h3>III | 42,66 | 47,62</h3>
+ <h3>II | 42,24 | 47,15</h3>
+ <h3>I | 41,80 | 46,66</h3>
+ <h3>CLASSE | PADRÃO | VALOR DO</h3>
+ <h3>PONTO DA GDAMPEFEITOS</h3>
+ <h3>FINANCEIROS A PARTIR DE</h3>
+ <p>JANEIRO DE 2025 | 1º DE</p>
+ <h3>ABRIL DE 2026</h3>
+ <h3>ESPECIAL | V | 24,99</h3>
+ <h3>IV | 24,78 | 27,66</h3>
+ <h3>III | 24,56 | 27,42</h3>
+ <h3>II | 24,34 | 27,17</h3>
+ <h3>I | 24,13 | 26,94</h3>
+ <h3>C | V | 23,90</h3>
+ <h3>IV | 23,69 | 26,45</h3>
+ <h3>III | 23,47 | 26,20</h3>
+ <h3>II | 23,26 | 25,97</h3>
+ <h3>I | 23,04 | 25,72</h3>
+ <h3>B | V | 22,82</h3>
+ <h3>IV | 22,62 | 25,25</h3>
+ <h3>III | 22,40 | 25,01</h3>
+ <h3>II | 22,18 | 24,76</h3>
+ <h3>I | 21,97 | 24,53</h3>
+ <h3>A | V | 21,76</h3>
+ <h3>IV | 21,54 | 24,05</h3>
+ <h3>III | 21,33 | 23,81</h3>
+ <h3>II | 21,11 | 23,57</h3>
+ <h3>I | 20,90 | 23,33</h3>
+ <h3>CLASSE | PADRÃO | VALOR DA</h3>
+ <h3>GEPMEFEITOS</h3>
+ <h3>FINANCEIROS A PARTIR DE</h3>
+ <p>JANEIRO DE 2025 | 1º DE</p>
+ <h3>ABRIL DE 2026</h3>
+ <h3>ESPECIAL | V | 1.210,35</h3>
+ <h3>IV | 1.199,99 | 1.339,55</h3>
+ <h3>III | 1.189,64 | 1.328,00</h3>
+ <h3>II | 1.179,28 | 1.316,43</h3>
+ <h3>I | 1.168,93 | 1.304,88</h3>
+ <h3>C | V | 1.158,58</h3>
+ <h3>IV | 1.148,23 | 1.281,77</h3>
+ <h3>III | 1.137,87 | 1.270,20</h3>
+ <h3>II | 1.127,52 | 1.258,65</h3>
+ <h3>I | 1.117,16 | 1.247,09</h3>
+ <h3>B | V | 1.106,81</h3>
+ <h3>IV | 1.096,45 | 1.223,97</h3>
+ <h3>III | 1.086,10 | 1.212,41</h3>
+ <h3>II | 1.075,74 | 1.200,85</h3>
+ <h3>I | 1.065,40 | 1.189,31</h3>
+ <h3>A | V | 1.055,04</h3>
+ <h3>IV | 1.044,69 | 1.166,19</h3>
+ <h3>III | 1.034,33 | 1.154,62</h3>
+ <h3>II | 1.023,98 | 1.143,07</h3>
+ <h3>I | 1.013,62 | 1.131,50</h3>
+ <h3>CLASSE | PADRÃO | VALOR DA</h3>
+ <h3>GEPMEFEITOS</h3>
+ <h3>FINANCEIROS A PARTIR DE</h3>
+ <p>JANEIRO DE 2025 | 1º DE</p>
+ <h3>ABRIL DE 2026</h3>
+ <h3>ESPECIAL | V | 805,94</h3>
+ <h3>IV | 800,76 | 893,89</h3>
+ <h3>III | 795,58 | 888,11</h3>
+ <h3>II | 790,40 | 882,32</h3>
+ <h3>I | 785,23 | 876,55</h3>
+ <h3>C | V | 780,05</h3>
+ <h3>IV | 774,87 | 864,99</h3>
+ <h3>III | 769,69 | 859,20</h3>
+ <h3>II | 764,52 | 853,43</h3>
+ <h3>I | 759,34 | 847,65</h3>
+ <h3>B | V | 754,16</h3>
+ <h3>IV | 748,99 | 836,10</h3>
+ <h3>III | 743,82 | 830,33</h3>
+ <h3>II | 738,64 | 824,54</h3>
+ <h3>I | 733,46 | 818,76</h3>
+ <h3>A | V | 728,28</h3>
+ <h3>IV | 723,11 | 807,21</h3>
+ <h3>III | 717,93 | 801,43</h3>
+ <h3>II | 712,75 | 795,64</h3>
+ <h3>I | 707,57 | 789,86</h3>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Lei/L10.876compilado.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
