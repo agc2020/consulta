@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 7.886, DE 20 DE NOVEMBRO DE 1989 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1989" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 7.886, DE 20 DE NOVEMBRO DE 1989</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 22:46:19 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/L7886.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 9.671 caracteres | espelho: 9.741 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 7.886, DE 20 DE NOVEMBRO DE 1989. Conversão da Medida Provisória nº 92, 	de 1989</p>
+ <p>Regulamenta o art. 43 do Ato das Disposições Constitucionais Transitórias e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º Tornar-se-ão sem efeito, no dia 5 de outubro de 1989, e, sem exceção, na forma do art. 43 do Ato das Disposições Constitucionais Transitórias , as autorizações de pesquisa, as concessões de lavra, os manifestos de minas, as licenças e demais títulos atributivos de direitos minerários, caso os respectivos trabalhos de pesquisa ou de lavra não hajam sido comprovadamente iniciados nos prazos legais ou estejam inativos.</h3>
+ <h3>Art. 2º Os titulares de direitos minerários deverão comprovar, até 30 de novembro de 1989, junto ao Departamento Nacional da Produção Mineral - DNPM, que os trabalhos de pesquisa ou de lavra, de que trata o artigo anterior, foram iniciados nos prazos legais e não se encontravam inativos na data referida no art. 1º.</h3>
+ <h3>Art. 3º Consideram-se inativos, para os fins desta Lei, os trabalhos de pesquisa ou lavra:</h3>
+ <h6>a) que tenham sido interrompidos, suspensos ou abandonados em desacordo com os prazos e preceitos legais;</h6>
+ <h6>b) que configurem lavra simbólica.</h6>
+ <h4>Parágrafo único. Entende-se por lavra simbólica a lavra realizada em flagrante desacordo com o plano de aproveitamento econômico previamente aprovado e de forma incompatível com as finalidades e condições da respectiva concessão, cuja prática possa impedir ou restringir, de alguma forma, o aproveitamento da jazida, segundo o seu efetivo potencial econômico.</h4>
+ <h3>Art. 4º A comprovação de que trata o art. 2º desta Lei deverá ser efetuada, mediante protocolização junto ao DNPM, dos seguintes elementos, conforme o caso:</h3>
+ <h6>a) relatório dos trabalhos de pesquisa realizados até 5 de outubro de 1989, acompanhado do programa e do cronograma físico-financeiro dos trabalhos a realizar e de documentos idôneos demonstrativos das ocorrências;</h6>
+ <h6>b) relatório dos trabalhos de lavra realizados até 5 de outubro de 1989, acompanhado do programa e cronograma físico-financeiro dos trabalhos a realizar, bem como dos três últimos relatórios anuais de lavra, a que se refere o artigo 57, do Decreto-Lei n° 227, de 28 de fevereiro de 1967 , com cópia dos documentos demonstrativos.</h6>
+ <h3>Art. 5º O DNPM cancelará, ex officio, os atos vigentes na data da publicação desta Lei, que autorizem o adiantamento ou a suspensão dos trabalhos de pesquisa ou lavra, se constatar a inexistência de condições ou circunstâncias que justifiquem a manutenção de tais autorizações, assegurada defesa ao interessado.</h3>
+ <h3>Art. 6º O DNPM fará publicar, no Diário Oficial da União, até 120 (cento e vinte) dias após a data da publicação desta Lei, relação completa dos títulos minerários tornados sem efeito com base nesta Lei, declarando a libertação ou a disponibilidade das respectivas áreas e assegurando defesa aos interessados, nos termos da legislação minerária pertinente.</h3>
+ <h4>Parágrafo único. No prazo de até 2 (dois) anos, o DNPM, mediante edital publicado no Diário Oficial da União, colocará em disponibilidade para pesquisa ou lavra as áreas cujos títulos foram tornados sem efeito, por força desta Lei, fixando prazo compatível para recebimento de propostas dos interessados.</h4>
+ <h3>Art. 7° O DNPM levará em conta, para os efeitos do artigo, a eventual existência da garimpagem, respeitando, na outorga de novos títulos minerários, a prioridade das cooperativas de garimpeiros para pesquisar e lavrar jazidas de minerais garimpáveis nas áreas onde estejam atuando e o estabelecimento de área para o exercício da atividade de garimpagem.</h3>
+ <h4>Parágrafo único. Em áreas ocupadas por garimpeiro que, por ignorância ou falta de recursos, não manifestou ao DNPM o exercício de atividades, comprovada a circunstância pelo interessado, fica aberta, por 90 (noventa) dias da data da publicação desta Lei, a permissão para regularizar a exploração existente.</h4>
+ <h3>Art. 8° Os arts. 20 e 26, do Decreto-Lei n° 227, de 28 de fevereiro de 1967, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 20. A outorga da autorização de pesquisa importa nos seguintes pagamentos, em quantias fixadas relativamente ao maior valor de referência (MVR) estabelecido de acordo com o disposto no art. 2°, parágrafo único, da Lei n° 6205, de 29 de abril de 1975:</h3>
+ <h5>I - pelo interessado, quando do requerimento da autorização de pesquisa, de emolumentos no valor de 10 (dez) MVR;</h5>
+ <h5>II - pelo titular da autorização de pesquisa, quando o somatório de áreas por ele detidas ultrapassar 1000 (um mil) hectares e até a entrega do correspondente relatório de pesquisa ao DNPM, de taxa anual para a área excedente, fixada por hectare, no valor máximo de 10% (dez por cento) do MVR, cujos critérios, valores específicos e condições de pagamento serão estabelecidos em portaria do Ministro das Minas e Energia.</h5>
+ <h4>§ 1° O requerente terá direito à restituição da importância relativa aos emolumentos do inciso I, se o pedido foi indeferido com fundamento no § 1° do art. 18 deste Código, ou por falta de assentimento de entidade ou órgão público, exigível para a outorga da autorização.</h4>
+ <h4>§ 2° Encontrando-se livre a área objetivada, e satisfeitas as exigências deste Código, o DNPM expedirá ofício ao requerente, convidando-o a efetuar, no prazo de trinta dias, contados de sua publicação no Diário Oficial da União, o pagamento das despesas inerentes à publicação do alvará de pesquisa, devendo apresentar ao mencionado órgão, no mesmo prazo, o respectivo comprovante.</h4>
+ <h4>§ 3° Se o requerente deixar de atender, no prazo próprio, ao disposto no parágrafo anterior, o pedido será indeferido e o processo arquivado, por despacho do Diretor-Geral do DNPM.</h4>
+ <h4>§ 4° O não pagamento, no prazo determinado em lei, da taxa referida no inciso II, bem como da taxa adicional prevista no art. 26, § 6°, inciso III, deste Código, ensejará a nulidade ex officio do respectivo alvará pelo Diretor-Geral do DNPM.</h4>
+ <h4>§ 5° Os emolumentos e taxas referidos nos incisos I e II do caput deste artigo, na alínea b, inciso II do art. 22 e no inciso III, do § 6°, do art. 26, serão recolhidos ao Banco do Brasil S.A., à conta do Fundo Nacional de Mineração - Parte Disponível, instituído pela Lei n° 4425, de 8 de outubro de 1964."</h4>
+ <p>"</p>
+ <h3>Art. 26. Fica estabelecido que o DNPM deverá manter atualizado em seus registros o somatório da extensão das áreas objeto de requerimentos de pesquisa, formulados por uma mesma pessoa física ou jurídica.</h3>
+ <h4>§ 1° Em se tratando de pessoas físicas, considerar-se-ão formulados por uma mesma pessoa os requerimentos protocolizados em nome do cônjuge casado em regime de comunhão de bens.</h4>
+ <h4>§ 2° As restrições do parágrafo anterior se aplicam ao titular da firma individual.</h4>
+ <h4>§ 3° Tratando-se de pessoa jurídica, considerar-se-ão formulados por uma mesma pessoa os requerimentos protocolizados em nome dos sócios controladores da empresa ou de sociedades coligadas, subsidiárias, controladoras ou controladas, na forma da Lei n° 6404, de 16 de dezembro de 1976.</h4>
+ <h4>§ 4° Para efeito do somatório de que trata o caput deste artigo, será incluída a extensão das áreas objeto de autorização de pesquisa em vigor, outorgadas ao requerente, pessoa física ou jurídica, observado o disposto nos §§ 1°, 2° e 3°.</h4>
+ <h4>§ 5° Serão juridicamente nulos os direitos outorgados com inobservância do disposto no caput e nos §§ 1° a 4° deste artigo.</h4>
+ <h4>§ 6° Ao fim de 18 (dezoito) meses de validade do alvará de autorização de pesquisa, o seu titular, quando detiver um somatório de áreas objeto de autorização de pesquisa superior a 50.000 (cinqüenta mil) hectares, deverá, sob pena de declaração de caducidade, na forma do disposto no art. 68:</h4>
+ <h5>I - comunicar ao DNPM a desistência de pelo menos 50% (cinqüenta por cento) do total originalmente titulado, da área em causa, para o terceiro ano da vigência do alvará;</h5>
+ <h5>II - se for o caso, pleitear ao DNPM, através de justificativa técnica, a manutenção para o terceiro ano de vigência do alvará, da totalidade ou fração superior a 50% (cinqüenta por cento), da área originalmente titulada, a qual só será concedida após vistoria no local, se caracterizados trabalhos efetivamente realizados dentro do cronograma de pesquisa, indícios de mineralizações ou anomalias geoquímicas ou geofísicas de relevante significação que justifique a permanência da área adicional pleiteada.</h5>
+ <h5>III - pagar taxa anual adicional àquela prevista no inciso II do art. 20, fixada por hectare, no valor de 50% (cinqüenta por cento) da taxa original, no terceiro ano de vigência do alvará de autorização de pesquisa, caso o DNPM decida pela manutenção total ou parcial da área titulada.</h5>
+ <h4>§ 7° Quando a área se tornar livre por publicação no Diário Oficial da União, o efeito liberativo para aplicação do regime de prioridade dar-se-á no 30° dia após a referida publicação.</h4>
+ <h4>§ 8° As despesas pertinentes às vistorias de campo realizadas pelo DNPM no exercício da fiscalização que lhe incumbe no termos deste Código, serão reembolsadas pelos respectivos titulares, pessoas físicas ou jurídicas, na conformidade do que dispuser portaria do Diretor-Geral do referido Órgão."</h4>
+ <h3>Art. 9° A aplicação do disposto nesta Lei não gera direito a indenização contra a União, a qualquer título ou fundamento.</h3>
+ <h3>Art. 10. Esta Lei entra em vigor na data de sua publicação, devendo o Poder Executivo regulamentá-la no prazo de 60 (sessenta) dias.</h3>
+ <h3>Art. 11. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 20 de novembro de 1989; 168° da Independência e 101° da República.</p>
+ <h3>JOSÉ SARNEY</h3>
+ <p>Vicente Cavalcante Fialho</p>
+ <p>Este texto não substitui o publicado no D.O.U. de 21.11.1989.</p>
+ <p>Conversão da Medida Provisória nº 92,</p>
+ <p>de 1989 | Regulamenta o art. 43 do Ato das Disposições Constitucionais Transitórias e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/L7886.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

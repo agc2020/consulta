@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 8.088, DE 31 DE OUTUBRO DE 1990 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1990" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 8.088, DE 31 DE OUTUBRO DE 1990</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 22:23:52 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8088compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 15.746 caracteres | espelho: 16.103 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 8.088, DE 31 DE OUTUBRO DE 1990. Conversão da Medida Provisória nº 237, de 1990</p>
+ <p>Partes mantidas pelo Congresso Nacional</p>
+ <p>Dispõe sobre a atualização do Bônus do Tesouro Nacional e dos depósitos de poupança e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o Congresso Nacional decreta e eu sanciono a seguinte lei:</p>
+ <h3>Art. 1º O valor nominal das Obrigações do Tesouro Nacional (OTN), emitidas anteriormente a 15 de janeiro de 1989 (art. 6º do Decreto-Lei n° 2.284, de 10 de março de 1986) e do Bônus do Tesouro Nacional (BTN) será atualizado, no primeiro dia de cada mês, pelo Índice de Reajuste de Valores Fiscais (IRVF), divulgado pela Fundação Instituto Brasileiro de Geografia e Estatística (IBGE), de acordo com metodologia estabelecida em Portaria do Ministro da Economia, Fazenda e Planejamento.</h3>
+ <h4>Parágrafo único. O valor do BTN Fiscal do primeiro dia útil de cada mês corresponderá ao valor do BTN fixado para o mesmo mês.</h4>
+ <h3>Art. 2º Os depósitos de poupança, em cada período de rendimento, serão atualizados monetariamente pela variação do valor nominal do BTN e renderão juros de cinco décimos por cento ao mês.</h3>
+ <h4>§ 1º A atualização monetária e os juros serão calculados sobre o menor saldo diário apresentado em cada período de rendimento.</h4>
+ <h4>§ 2º Para os efeitos do disposto neste artigo, considera-se período mínimo de rendimento:</h4>
+ <h6>a) para os depósitos de pessoas físicas e entidades sem fins lucrativos, o mês corrido a partir da data de aniversário da conta de depósito de poupança; e</h6>
+ <h6>b) para os demais depósitos, o trimestre corrido a partir da data de aniversário da conta de depósito de poupança.</h6>
+ <h4>§ 3º A data de aniversário da conta de depósito de poupança será o dia do mês de sua abertura, considerando-se a data de aniversário das contas abertas nos dias 29, 30 e 31 como o dia 1º do mês seguinte.</h4>
+ <h4>§ 4º A atualização monetária de que trata este artigo será computada mediante a aplicação da variação do valor nominal do BTN verificada:</h4>
+ <h6>a) para os depósitos de pessoas físicas e entidades sem fins lucrativos, no mês imediatamente anterior ao do crédito de rendimentos; e</h6>
+ <h6>b) para do demais depósitos, no trimestre encerrado no mês imediatamente anterior ao do crédito de rendimentos.</h6>
+ <h4>§ 5º O crédito da atualização monetária e dos juros será efetuado:</h4>
+ <h6>a) mensalmente, na data de aniversário da conta, para os depósitos de pessoas físicas e entidades sem fins lucrativos; e</h6>
+ <h6>b) trimestralmente, na data de aniversário no última mês do trimestre, para os demais depósitos.</h6>
+ <h4>§ 6º A taxa de juros fixadas no caput deste artigo aplica-se aos depósitos de poupança livre e rural, devendo, para as demais modalidades, prevalecer aquela estabelecida na legislação e atos normativos específicos.</h4>
+ <h3>Art. 3º O disposto no artigo anterior aplica-se ao crédito de rendimento realizado a partir do mês de junho de 1990, inclusive.</h3>
+ <h3>Art. 4º (Vetado) .</h3>
+ <h3>Art. 5° Nas operações de crédito rural, lastreadas em recursos não oriundos de depósitos de caderneta de poupança rural, poderá o mutuário optar pela atualização monetária do saldo devedor e respectivas prestações, nos meses de abril e maio de 1990, com base na variação, em relação ao mês anterior, do valor nominal do Bônus do Tesouro Nacional (BTN). (Vide ato de promulgação das partes vetadas)</h3>
+ <h3>Art. 6° Nas operações de crédito rural, lastreadas em recursos oriundos de depósitos de caderneta de poupança rural, poderá o mutuário optar pela atualização monetária do saldo devedor e respectivas prestações, no mês de abril de 1990, pelo acréscimo de setenta e quatro vírgula seis por cento, e no mês de maio de 1990, pela variação do valor nominal do BTN de maio de 1990, em relação ao seu valor em abril de 1990.</h3>
+ <p>(Vide ato de promulgação das partes vetadas)</p>
+ <h3>Art. 7º (Vetado) .</h3>
+ <h3>Art. 8º É autorizado o pagamento, em cruzados novos, do valor de aquisição de bens imóveis de propriedade da União e de suas autarquias.</h3>
+ <h4>§ 1º O produto da alienação dos bens de que trata este artigo será obrigatoriamente utilizado no resgate de títulos da dívida pública federal, preferencialmente junto ao Banco Central do Brasil.</h4>
+ <h4>§ 2º O disposto no parágrafo anterior não se aplica ao produto da venda dos bens imóveis previstos nas Leis nºs 8.011, de 4 de abril de 1990 , e 8.025, de 12 de abril de 1990.</h4>
+ <h4>§ 3º O Ministério da Economia, Fazenda e Planejamento regulamentará o disposto neste artigo, podendo autorizar a transferência de titularidade de cruzados novos para aquisição dos bens a que se refere o caput deste artigo.</h4>
+ <h3>Art. 9º Dê-se ao art. 18 da Lei n° 8.024, de 12 de abril de 1990, a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 18. O Ministro da Economia, Fazenda e Planejamento poderá:</h3>
+ <h5>I - reduzir cada um dos prazos e elevar cada um dos limites estabelecidos nos arts. 5º, 6º e 7º, desta lei;</h5>
+ <h5>II - autorizar leilões de conversão antecipada em cruzeiros de direitos expressos em cruzados novos, em função de objetivos da política monetária e conveniência em ser ampliada a liquidez da economia."</h5>
+ <h3>Art. 10. As conversões a que ser referem o § 1º do art. 5º , § 1º do art. 6º , § 1º do art. 7º e art. 10 da Lei n° 8.024, de 12 de abril de 1990 , far-se-ão, em qualquer hipótese, na moeda que tiver curso forçado e poder liberatório pleno à época de sua vigência, sendo vedada a restituição compulsória em títulos da dívida pública ou em qualquer outro título financeiro.</h3>
+ <h3>Art. 11. É o Banco Central do Brasil autorizado a instituir uma modalidade de caderneta de poupança vinculada, nas seguintes condições:</h3>
+ <h5>I - para cada valor em cruzeiros depositado durante o prazo mínimo de dez meses, será assegurada, ao término desse prazo, a conversão de idêntico valor de cruzados novos, daqueles recolhidos ao Banco Central, na forma do art. 9º da Lei n° 8.024, de 12 de abril de 1990 , em nome do titular da conta;</h5>
+ <h5>II - aplicar-se-ão à caderneta de poupança de que trata este artigo todas as demais condições de remuneração e prazo válidas para os depósitos de poupança livre.</h5>
+ <h4>Parágrafo único. O Banco Central do Brasil estabelecerá as demais condições relativas às cadernetas de poupança referidas no caput deste artigo, bem como disciplinará o direcionamento dos recursos captados, os quais deverão ser preferencialmente utilizados para cobertura dos saldos devedores das instituições financeiras junto ao Banco Central do Brasil.</h4>
+ <h3>Art. 12. (Vetado) .</h3>
+ <h3>Art. 13. É autorizado, a partir de 13 de setembro de 1990, o pagamento integral em cruzados novos, de saldo devedor, inclusive de parcelas atrasadas, de mutuários junto ao Sistema Financeiro da Habitação (SFH), desde que seja efetuado em parcela única e o contrato esteja enquadrado nas condições da Lei n° 8.004, de 14 de março de 1990.</h3>
+ <h4>§ 1º Nos casos em que a propriedade do imóvel habitacional financiado por instituição integrante do SFH sejam comum a mais de uma pessoa, admitir-se-á a utilização de saldos em cruzados novos de titularidade dos co-proprietários, para a finalidade indicada neste artigo.</h4>
+ <h4>§ 2º Poderão ser utilizados para a finalidade e nas condições previstas neste artigo, observada a legislação pertinente, os saldos das contas vinculadas do Fundo de Garantia de Tempo de Serviço (FGTS) do proprietário ou co-proprietários do imóvel.</h4>
+ <h4>§ 3º Os recursos em cruzados novos recebidos pelas instituições financeiras na quitação das dívidas de que trata este artigo:</h4>
+ <h5>I - ficarão depositados em nome da instituição financeira, no Banco Central do Brasil, e convertidos em cruzeiros, a partir de 16 de setembro de 1991, em doze parcelas mensais, iguais e sucessivas;</h5>
+ <h5>II - serão atualizados monetariamente pela variação da BTN Fiscal, a partir da data de quitação da dívida junto ao agente financeiro, acrescidos de juros equivalentes a seis por cento ao ano ou fração pro rata ;</h5>
+ <h5>III - não poderão ser utilizados no recolhimento de cruzados novos ao Banco Central do Brasil, para os fins previstos no art. 9º da Lei n° 8.024, de 12 de abril de 1990 ; e</h5>
+ <h5>IV - terão a titularidade transferida à Caixa Econômica Federal, até o limite recebido dos mutuários, no caso de quitação de contratos celebrados com recursos de repasse ou refinanciamentos do extinto Banco Nacional da Habitação, observado o disposto nas alíneas anteriores.</h5>
+ <h3>Art. 14. O Ministro da Economia, Fazenda e Planejamento, poderá autorizar, para quaisquer contratos de financiamento habitacional, a utilização de cruzados novos na quitação de saldo devedor de mutuários junto ao Sistema Financeiro da Habitação (SFH).</h3>
+ <h4>§ 1º (Vetado) .</h4>
+ <h4>§ 2º Os recursos em cruzados novos recebidos pelas instituições financeiras na quitação das dívidas de que trata este artigo:</h4>
+ <h5>I - ficarão depositados em nome da instituição financeira, na Banco Central do Brasil, e convertidos em cruzeiros, a partir de 16 de setembro de 1991, em doze parcelas mensais, iguais e sucessivas;</h5>
+ <h5>II - serão atualização monetariamente pela variação do BTN Fiscal, a partir da data de quitação da dívida junto ao agente financeiro, acrescidos de juros equivalentes a seis por cento ao ano ou fração pro rata ;</h5>
+ <h5>III - não poderão ser utilizados no recolhimento de cruzados novos ao Banco Central do Brasil, para os fins previstos no art. 9º da Lei n° 8.024, de 12 de abril de 1990.</h5>
+ <h3>Art. 15. Os §§ 1º e 2º do art. 5º, os §§ 1º e 2º do art. 6º e os §§ 1º e 2º do art. 7º da Lei n° 8.024, de 1990, passam a vigorar com a seguinte redação:</h3>
+ <p>"Art 5º ..................................................... ...........................................</p>
+ <p>.................................................... .......................................................</p>
+ <h4>§ 1º As quantias que excederem o limite fixado no caput deste artigo serão convertidas, a partir de 16 de setembro de 1991, em doze parcelas mensais iguais e sucessivas, segundo a paridade estabelecida no § 2º do art. 1º desta lei.</h4>
+ <h4>§ 2º As quantias mencionadas no parágrafo anterior serão atualizadas monetariamente pela variação do BTN Fiscal, verificada entre o dia 19 de março de 1990 e a data do efetivo pagamento das parcelas referidas no dito parágrafo, acrescidas de juros equivalentes a seis por cento ao ano ou fração pro rata.</h4>
+ <h3>Art 6º ................................................................................ ............................................</h3>
+ <p>................................................................................ .......................................................</p>
+ <h4>§ 1º As quantias que excederem o limite fixado no caput deste artigo serão convertidas, a partir de 16 de setembro de 1991, em doze parcelas mensais iguais e sucessivas, segundo a paridade estabelecida no § 2º do art. 1º desta lei.</h4>
+ <h4>§ 2º As quantias mencionadas no parágrafo anterior serão atualizadas pela variação do BTN Fiscal, verificada entre a data do próximo crédito de rendimento e a data do efetivo pagamento das parcelas referidas no dito parágrafo, acrescidas de juros equivalentes a seis por cento ao ano ou fração pro rata .</h4>
+ <h3>Art 7º ................................................................................ ...........................................</h3>
+ <p>................................................................................ .......................................................</p>
+ <h4>§ 1º As quantias que excederem o limite fixado no caput deste artigo serão convertidas, a partir de 16 de setembro de 1991, em doze parcelas mensais iguais e sucessivas, segundo a paridade estabelecida no § 2º do art. 1º desta lei.</h4>
+ <h4>§ 2º As quantias mencionadas no parágrafo anterior serão atualizadas monetariamente pela variação do BTN Fiscal, verificada entre a data de vencimento do prazo original do título e a data do efetivo pagamento das parcelas referidas no dito parágrafo, acrescidas de juros de seis por cento ao ano ou fração pro rata ."</h4>
+ <h3>Art. 16. O Ministério da Economia, Fazenda e Planejamento fornecerá, trimestralmente, às Comissões de Assuntos Econômicos do Senado Federal e de Economia, Indústria e Comércio e de Finanças e Tributação da Câmara dos Deputadas, todas as informações necessárias ao acompanhamento e avaliação do plano de estabilização definido pela Lei n° 8.024, de 1990 , entre as quais a programação monetária, prevista e realizada, sua compatibilização com a política econômica e, mais especificamente, com a política fiscal, e relatórios sobre a liquidez, normas, instruções e liberações de depósitos em cruzados novos e sua conversão.</h3>
+ <h3>Art. 17. São isentos do imposto de renda os rendimentos cujos beneficiários sejam pessoas físicas, entidades sem fins lucrativos e pessoas jurídicas não tributadas com base no lucro real:</h3>
+ <h5>I - creditados, a partir de 1º de junho de 1990, em contas de depósitos de poupança; e</h5>
+ <h5>II - produzidos, a partir de 19 de março de 1990, pelos cruzados novos não convertidos em cruzeiros, nos termos dos arts. 5º , 6º e 7º da Lei n° 8.024, de 1990.</h5>
+ <h4>Parágrafo único. No caso de pessoas jurídicas tributadas com base no lucro real, os rendimentos referidos neste artigo continuarão integrando a base de cálculo do imposto, no encerramento do período-base de apuração.</h4>
+ <p><del></p>
+ <h3>Art. 18 (Revogado pela Lei n° 8.894, de 1994)</del></h3>
+ <h3>Art. 19. Todos os títulos, valores mobiliários e cambiais serão emitidos sempre sob a forma nominativa, sendo transmissíveis somente por endosso em preto.</h3>
+ <h4>§ 1° Revestir-se-ão de forma nominativa os títulos, valores mobiliários e cambiais em circulação antes da vigência desta lei, quando, por qualquer motivo, reemitidos, repactuados, desdobrados ou agrupados.</h4>
+ <h4>§ 2° A emissão em desobediência à forma nominativa prevista neste artigo torna inexigível qualquer débito representado pelo título, valor mobiliário ou cambial irregular.</h4>
+ <h4>§ 3° A Comissão de Valores Mobiliários regulamentará o disposto neste artigo em relação aos valores mobiliários.</h4>
+ <h3>Art. 20. O Banco Central do Brasil fica autorizado a baixar normas complementares aos dispositivos desta lei.</h3>
+ <h3>Art. 21. São convalidados os atos praticados com base nas Medidas Provisórias n°s 189, de 30 de maio de 1990, 195, de 30 de junho de 1990 , 200, de 27 de julho de 1990 e 212, de 29 de agosto de 1990.</h3>
+ <h3>Art. 22. Esta lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 23. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 31 de outubro de 1990; 169° da Independência e 102° da República.</p>
+ <h3>FERNANDO COLLOR</h3>
+ <p>João da Silva Maia</p>
+ <p>Este texto não substitui o publicado no D.O.U. de 31.11.1990 e retificado no DOU de 5.11.1990</p>
+ <h3>LEI N° 8.088, DE 31 DE OUTUBRO DE 1990.</h3>
+ <p>Partes vetadas pelo Presidente da República e mantidas pelo Congresso Nacional, do Projeto que se transformou na Lei n° 8.088, de 31 de outubro de 1990, que "dispõe sobre a atualização do Bônus do Tesouro Nacional e dos depósitos de poupança e dá outras providências.</p>
+ <p>O PRESIDENTE DO SENADO FEDERAL: Faço saber que o CONGRESSO NACIONAL manteve, e eu, MAURO BENEVIDES, Presidente do Senado Federal, nos termos do § 7° do art. 66 da Constituição, promulgo as seguintes partes da Lei n° 8.088, de 31 de outubro de 1990:</p>
+ <p>"</p>
+ <h3>Art. 5° Nas operações de crédito rural, lastreadas em recursos não oriundos de depósitos de caderneta de poupança rural, poderá o mutuário optar pela atualização monetária do saldo devedor e respectivas prestações, nos meses de abril e maio de 1990, com base na variação, em relação ao mês anterior, do valor nominal do Bônus do Tesouro Nacional (BTN).</h3>
+ <h3>Art. 6° Nas operações de crédito rural, lastreadas em recursos oriundos de depósitos de caderneta de poupança rural, poderá o mutuário optar pela atualização monetária do saldo devedor e respectivas prestações, no mês de abril de 1990, pelo acréscimo de setenta e quatro vírgula seis por cento, e no mês de maio de 1990, pela variação do valor nominal do BTN de maio de 1990, em relação ao seu valor em abril de 1990."</h3>
+ <p>Senado Federal, 14 de junho de 1991.</p>
+ <h3>MAURO BENEVIDES</h3>
+ <p>Este texto não substitui o publicado no DOU de 17.6.1991</p>
+ <p>Conversão da Medida Provisória nº 237, de 1990Partes mantidas pelo Congresso Nacional | Dispõe sobre a atualização do Bônus do Tesouro Nacional e dos depósitos de poupança e dá</p>
+ <p>Partes vetadas pelo Presidente da República e mantidas pelo Congresso Nacional, do Projeto que se transformou na Lei n° 8.088, de 31 de outubro de 1990, que "dispõe sobre a atualização do Bônus do Tesouro Nacional e dos depósitos de poupança e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8088compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

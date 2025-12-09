@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 8.171, DE 17 DE JANEIRO DE 1991 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1991" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 8.171, DE 17 DE JANEIRO DE 1991</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 22:13:18 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8171.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 56.930 caracteres | espelho: 56.737 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 8.171, DE 17 DE JANEIRO DE 1991.</p>
+ <p>(Vide Decreto nº 175, de 1991)</p>
+ <p>Dispõe sobre a política agrícola.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Dos Princípios Fundamentais</p>
+ <h3>Art. 1° Esta lei fixa os fundamentos, define os objetivos e as competências institucionais, prevê os recursos e estabelece as ações e instrumentos da política agrícola, relativamente às atividades agropecuárias, agroindustriais e de planejamento das atividades pesqueira e florestal.</h3>
+ <h4>Parágrafo único. Para os efeitos desta lei, entende-se por atividade agrícola a produção, o processamento e a comercialização dos produtos, subprodutos e derivados, serviços e insumos agrícolas, pecuários, pesqueiros e florestais.</h4>
+ <h3>Art. 2° A política fundamenta-se nos seguintes pressupostos:</h3>
+ <h5>I - a atividade agrícola compreende processos físicos, químicos e biológicos, onde os recursos naturais envolvidos devem ser utilizados e gerenciados, subordinando-se às normas e princípios de interesse público, de forma que seja cumprida a função social e econômica da propriedade;</h5>
+ <h5>II - o setor agrícola é constituído por segmentos como: produção, insumos, agroindústria, comércio, abastecimento e afins, os quais respondem diferenciadamente às políticas públicas e às forças de mercado;</h5>
+ <h5>III - como atividade econômica, a agricultura deve proporcionar, aos que a ela se dediquem, rentabilidade compatível com a de outros setores da economia;</h5>
+ <h5>IV - o adequado abastecimento alimentar é condição básica para garantir a tranqüilidade social, a ordem pública e o processo de desenvolvimento econômico-social;</h5>
+ <h5>V - a produção agrícola ocorre em estabelecimentos rurais heterogêneos quanto à estrutura fundiária, condições edafoclimáticas, disponibilidade de infra-estrutura, capacidade empresarial, níveis tecnológicos e condições sociais, econômicas e culturais;</h5>
+ <h5>VI - o processo de desenvolvimento agrícola deve proporcionar ao homem do campo o acesso aos serviços essenciais: saúde, educação, segurança pública, transporte, eletrificação, comunicação, habitação, saneamento, lazer e outros benefícios sociais.</h5>
+ <h3>Art. 3° São objetivos da política agrícola:</h3>
+ <h5>I - na forma como dispõe o art. 174 da Constituição , o Estado exercerá função de planejamento, que será determinante para o setor público e indicativo para o setor privado, destinado a promover, regular, fiscalizar, controlar, avaliar atividade e suprir necessidades, visando assegurar o incremento da produção e da produtividade agrícolas, a regularidade do abastecimento interno, especialmente alimentar, e a redução das disparidades regionais;</h5>
+ <h5>II - sistematizar a atuação do Estado para que os diversos segmentos intervenientes da agricultura possam planejar suas ações e investimentos numa perspectiva de médio e longo prazos, reduzindo as incertezas do setor;</h5>
+ <h5>III - eliminar as distorções que afetam o desempenho das funções econômica e social da agricultura;</h5>
+ <h5>IV - proteger o meio ambiente, garantir o seu uso racional e estimular a recuperação dos recursos naturais;</h5>
+ <h5>V - (Vetado );</h5>
+ <h5>VI - promover a descentralização da execução dos serviços públicos de apoio ao setor rural, visando a complementariedade de ações com Estados, Distrito Federal, Territórios e Municípios, cabendo a estes assumir suas responsabilidades na execução da política agrícola, adequando os diversos instrumentos às suas necessidades e realidades;</h5>
+ <h5>VII - compatibilizar as ações da política agrícola com as de reforma agrária, assegurando aos beneficiários o apoio à sua integração ao sistema produtivo;</h5>
+ <h5>VIII - promover e estimular o desenvolvimento da ciência e da tecnologia agrícola pública e privada, em especial aquelas voltadas para a utilização dos fatores de produção internos;</h5>
+ <h5>IX - possibilitar a participação efetiva de todos os segmentos atuantes no setor rural, na definição dos rumos da agricultura brasileira;</h5>
+ <h5>X - prestar apoio institucional ao produtor rural, com prioridade de atendimento ao pequeno produtor e sua família;</h5>
+ <h5>XI - estimular o processo de agroindustrialização junto às respectivas áreas de produção;</h5>
+ <h5>XII - (Vetado);</h5>
+ <h5>XIII – promover a saúde animal e a sanidade vegetal ; (Inciso incluído pela Lei n° 10.298, de 30.10.2001)</h5>
+ <h5>XIV – promover a idoneidade dos insumos e serviços empregados na agricultura; (Inciso incluído pela Lei n° 10.298, de 30.10.2001)</h5>
+ <h5>XV – assegurar a qualidade dos produtos de origem agropecuária, seus derivados e resíduos de valor econômico; (Inciso incluído pela Lei n° 10.298, de 30.10.2001)</h5>
+ <h5>XVI – promover a concorrência leal entre os agentes que atuam nos setores e a proteção destes em relação a práticas desleais e a riscos de doenças e pragas exóticas no País; (Inciso incluído pela Lei n° 10.298, de 30.10.2001)</h5>
+ <h5>XVII – melhorar a renda e a qualidade de vida no meio rural. (Inciso incluído pela Lei n° 10.298, de 30.10.2001)</h5>
+ <h3>Art. 4° As ações e instrumentos de política agrícola referem-se a:</h3>
+ <h5>I - planejamento agrícola;</h5>
+ <h5>II - pesquisa agrícola tecnológica;</h5>
+ <h5>III - assistência técnica e extensão rural;</h5>
+ <h5>IV - proteção do meio ambiente, conservação e recuperação dos recursos naturais;</h5>
+ <h5>V - defesa da agropecuária;</h5>
+ <h5>VI - informação agrícola;</h5>
+ <h5>VII - produção, comercialização, abastecimento e armazenagem;</h5>
+ <h5>VIII - associativismo e cooperativismo;</h5>
+ <h5>IX - formação profissional e educação rural;</h5>
+ <h5>X - investimentos públicos e privados;</h5>
+ <h5>XI - crédito rural;</h5>
+ <h5>XII - garantia da atividade agropecuária;</h5>
+ <h5>XIII - seguro agrícola;</h5>
+ <h5>XIV - tributação e incentivos fiscais;</h5>
+ <h5>XV - irrigação e drenagem;</h5>
+ <h5>XVI - habitação rural;</h5>
+ <h5>XVII - eletrificação rural;</h5>
+ <h5>XVIII - mecanização agrícola;</h5>
+ <h5>XIX - crédito fundiário.</h5>
+ <h4>Parágrafo único. Os instrumentos de política agrícola deverão orientar-se pelos planos plurianuais. (Incluído pela Lei n° 10.246, de 2 de julho de 2001)</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>Da Organização Institucional</p>
+ <h3>Art. 5° É instituído o Conselho Nacional de Política Agrícola (CNPA), vinculado ao Ministério da Agricultura e Reforma Agrária (Mara), com as seguintes atribuições:</h3>
+ <h3>Art. 5º É instituído o Conselho Nacional de Política Agrícola, vinculado ao Ministério da Agricultura, Pecuária e Abastecimento, com as seguintes atribuições: (Redação dada pela Medida Provisória nº 886, de 2019)</h3>
+ <h3>Art. 5º Fica instituído o Conselho Nacional de Política Agrícola (CNPA), vinculado ao Ministério da Agricultura, Pecuária e Abastecimento, com as seguintes atribuições: (Redação dada pela Lei n° 13.901, de 2019)</h3>
+ <h5>I - (Vetado);</h5>
+ <h5>II - (Vetado);</h5>
+ <h5>III - orientar a elaboração do Plano de Safra;</h5>
+ <h5>IV - propor ajustamentos ou alterações na política agrícola;</h5>
+ <h5>V - (Vetado);</h5>
+ <h5>VI - manter sistema de análise e informação sobre a conjuntura econômica e social da atividade agrícola.</h5>
+ <h4>§ 1° O Conselho Nacional da Política Agrícola (CNPA) será constituído pelos seguintes membros: (Vide Decreto nº 4.623, de 2003).</h4>
+ <h5>I - um do Ministério da Economia, Fazenda e Planejamento;</h5>
+ <h5>II - um do Banco do Brasil S.A.;</h5>
+ <h5>III - dois da Confederação Nacional da Agricultura;</h5>
+ <h5>IV - dois representantes da Confederação Nacional dos Trabalhadores na Agricultura (Contag);</h5>
+ <h5>V - dois da Organização das Cooperativas Brasileiras, ligados ao setor agropecuário;</h5>
+ <h5>VI - um do Departamento Nacional da Defesa do Consumidor;</h5>
+ <h5>VII - um da Secretaria do Meio Ambiente;</h5>
+ <h5>VIII - um da Secretaria do Desenvolvimento Regional;</h5>
+ <h5>IX - três do Ministério da Agricultura e Reforma Agrária (Mara);</h5>
+ <h5>X - um do Ministério da Infra-Estrutura;</h5>
+ <h5>XI - dois representantes de setores econômicos privados abrangidos pela Lei Agrícola, de livre nomeação do Ministério da Agricultura e Reforma Agrária (Mara);</h5>
+ <h5>XII - (Vetado);</h5>
+ <h4>§ 2° (Vetado) .</h4>
+ <h4>§ 3° O Conselho Nacional da Política Agrícola (CNPA) contará com uma Secretaria Executiva e sua estrutura funcional será integrada por Câmaras Setoriais, especializadas em produtos, insumos, comercialização, armazenamento, transporte, crédito, seguro e demais componentes da atividade rural.</h4>
+ <h4>§ 4° As Câmaras Setoriais serão instaladas por ato e a critério do Ministro da Agricultura e Reforma Agrária, devendo o regimento interno do Conselho Nacional de Política Agrícola (CNPA) fixar o número de seus membros e respectivas atribuições .</h4>
+ <h4>§ 5° O regimento interno do Conselho Nacional de Política Agrícola (CNPA) será elaborado pelo Ministro da Agricultura e Reforma Agrária e submetido a aprovação do seu plenário.</h4>
+ <h4>§ 4º As Câmaras Setoriais serão instaladas por ato e a critério do Ministro de Estado da Agricultura, Pecuária e Abastecimento. (Redação dada pela Medida Provisória nº 886, de 2019)</h4>
+ <h4>§ 5º O regimento interno do Conselho Nacional de Política Agrícola será elaborado pelo Ministério da Agricultura, Pecuária e Abastecimento e submetido à aprovação do plenário do Conselho. (Redação dada pela Medida Provisória nº 886, de 2019)</h4>
+ <h4>§ 4º As Câmaras Setoriais serão instaladas por ato e a critério do Ministro de Estado da Agricultura, Pecuária e Abastecimento. (Redação dada pela Lei n° 13.901, de 2019)</h4>
+ <h4>§ 5º O regimento interno do CNPA será elaborado pelo Ministério da Agricultura, Pecuária e Abastecimento e submetido à aprovação do plenário do Conselho. (Redação dada pela Lei n° 13.901, de 2019)</h4>
+ <h4>§ 6° O Conselho Nacional de Política Agrícola (CNPA) coordenará a organização de Conselhos Estaduais e Municipais de Política Agrícola, com as mesmas finalidades, no âmbito de suas competências.</h4>
+ <h4>§ 7° (Vetado) .</h4>
+ <h4>§ 8° (Vetado).</h4>
+ <h4>§ 9º Os atos de instalação das Câmaras Setoriais do Conselho Nacional de Política Agrícola a que se refere o § 4º estabelecerão o número de seus membros e suas atribuições. (Incluído pela Medida Provisória nº 886, de 2019)</h4>
+ <h4>§ 9º Os atos de instalação das Câmaras Setoriais do CNPA a que se refere o § 4º deste artigo estabelecerão o número de seus membros e suas atribuições. (Incluído pela Lei n° 13.901, de 2019)</h4>
+ <h3>Art. 6° A ação governamental para o setor agrícola é organizada pela União, Estados, Distrito Federal, Territórios e Municípios, cabendo:</h3>
+ <h5>I - (Vetado);</h5>
+ <h5>II – ao Governo Federal a orientação normativa, as diretrizes nacionais e a execução das atividades estabelecidas em lei. (Inciso incluído pela Lei n° 10.327, de 12.12.2001)</h5>
+ <h5>III - às entidades de administração direta e indireta dos Estados, do Distrito Federal e dos Territórios o planejamento, a execução, o acompanhamento, o controle e a avaliação de atividades específicas. (Inciso renumerado de II para III, pela Lei n° 10.327, de 12.12.2001)</h5>
+ <h3>Art. 7° A ação governamental para o setor agrícola desenvolvida pela União, pelos Estados, Distrito Federal, Territórios e Municípios, respeitada a autonomia constitucional, é exercida em sintonia, evitando-se superposições e paralelismos, conforme dispuser lei complementar prevista no parágrafo único do a rt. 23 da Constituição .</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Do Planejamento Agrícola</p>
+ <h3>Art. 8° O planejamento agrícola será feito em consonância com o que dispõe o art. 174 da Constituição , de forma democrática e participativa, através de planos nacionais de desenvolvimento agrícola plurianuais, planos de safras e planos operativos anuais, observadas as definições constantes desta lei.</h3>
+ <h4>§ 1° (Vetado).</h4>
+ <h4>§ 2° (Vetado).</h4>
+ <h4>§ 3° Os planos de safra e planos plurianuais considerarão as especificidades regionais e estaduais, de acordo com a vocação agrícola e as necessidades diferenciadas de abastecimento, formação de estoque e exportação.</h4>
+ <h4>§ 3º Os planos de safra e os planos plurianuais, elaborados de acordo com os instrumentos gerais de planejamento, considerarão o tipo de produto, fatores e ecossistemas homogêneos, o planejamento das ações dos órgãos e entidades da administração federal direta e indireta, as especificidades regionais e estaduais, de acordo com a vocação agrícola e as necessidades diferenciadas de abastecimento, formação de estoque e exportação. (Redação dada pela Lei n° 10.246, de 2 de julho de 2001)</h4>
+ <h4>§ 4° Os planos deverão prever a integração das atividades de produção e de transformação do setor agrícola, e deste com os demais setores da economia.</h4>
+ <h4>§ 5º A agricultura familiar contará com Plano Safra específico que orientará e definirá, para cada ano agrícola: (Incluído pela Lei n° 15.223, de 2025)</h4>
+ <h5>I – os valores programados para o crédito e as suas prioridades, nessas incluídas a produção dos alimentos nucleares da dieta básica da população brasileira; (Incluído pela Lei n° 15.223, de 2025)</h5>
+ <h5>II – os estímulos diferenciados para a agricultura orgânica e agroecológica e para os alimentos fundamentais da dieta básica com riscos de oferta; (Incluído pela Lei n° 15.223, de 2025)</h5>
+ <h5>III – os mecanismos de distribuição do crédito entre as diferentes regiões do País, visando reduzir as disparidades regionais, segundo parâmetros definidos em regulamento; (Incluído pela Lei n° 15.223, de 2025)</h5>
+ <h5>IV – demais instrumentos de política agrícola aplicáveis a esse segmento social. (Incluído pela Lei n° 15.223, de 2025)</h5>
+ <h3>Art. 9° O Ministério da Agricultura e Reforma Agrária (Mara) coordenará, a nível nacional, as atividades de planejamento agrícola, em articulação com os Estados, o Distrito Federal, os Territórios e os Municípios.</h3>
+ <h3>Art. 10. O Poder Público deverá:</h3>
+ <h5>I - proporcionar a integração dos instrumentos de planejamento agrícola com os demais setores da economia;</h5>
+ <h5>II - desenvolver e manter atualizada uma base de indicadores sobre o desempenho do setor agrícola, a eficácia da ação governamental e os efeitos e impactos dos programas dos planos plurianuais.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <p>Da Pesquisa Agrícola</p>
+ <h3>Art. 11. (Vetado).</h3>
+ <h4>Parágrafo único. É o Ministério da Agricultura e Reforma Agrária (Mara) autorizado a instituir o Sistema Nacional de Pesquisa Agropecuária (SNPA), sob a coordenação da Empresa Brasileira de Pesquisa Agropecuária (Embrapa) e em convênio com os Estados, o Distrito Federal, os Territórios, os Municípios, entidades públicas e privadas, universidades, cooperativas, sindicatos, fundações e associações.</h4>
+ <h3>Art. 12. A pesquisa agrícola deverá:</h3>
+ <h5>I - estar integrada à assistência técnica e extensão rural, aos produtores, comunidades e agroindústrias, devendo ser gerada ou adaptada a partir do conhecimento biológico da integração dos diversos ecossistemas, observando as condições econômicas e culturais dos segmentos sociais do setor produtivo;</h5>
+ <h5>II - dar prioridade ao melhoramento dos materiais genéticos produzidos pelo ambiente natural dos ecossistemas, objetivando o aumento de sua produtividade, preservando ao máximo a heterogeneidade genética;</h5>
+ <h5>III - dar prioridade à geração e à adaptação de tecnologias agrícolas destinadas ao desenvolvimento dos pequenos agricultores, enfatizando os alimentos básicos, equipamentos e implementos agrícolas voltados para esse público;</h5>
+ <h5>IV - observar as características regionais e gerar tecnologias voltadas para a sanidade animal e vegetal, respeitando a preservação da saúde e do meio ambiente.</h5>
+ <h3>Art. 13. É autorizada a importação de material genético para a agricultura desde que não haja proibição legal.</h3>
+ <h3>Art. 14. Os programas de desenvolvimento científico e tecnológico, tendo em vista a geração de tecnologia de ponta, merecerão nível de prioridade que garanta a independência e os parâmetros de competitividade internacional à agricultura brasileira.</h3>
+ <h2>CAPÍTULO V</h2>
+ <p>Da Assistência Técnica e Extensão Rural</p>
+ <h3>Art. 15. (Vetado).</h3>
+ <h3>Art. 16. A assistência técnica e extensão rural buscarão viabilizar, com o produtor rural, proprietário ou não, suas famílias e organizações, soluções adequadas a seus problemas de produção, gerência, beneficiamento, armazenamento, comercialização, industrialização, eletrificação, consumo, bem-estar e preservação do meio ambiente.</h3>
+ <h3>Art. 17. O Poder Público manterá serviço oficial de assistência técnica e extensão rural, sem paralelismo na área governamental ou privada, de caráter educativo, garantindo atendimento gratuito aos pequenos produtores e suas formas associativas, visando:</h3>
+ <h5>I - difundir tecnologias necessárias ao aprimoramento da economia agrícola, à conservação dos recursos naturais e à melhoria das condições de vida do meio rural;</h5>
+ <h5>II - estimular e apoiar a participação e a organização da população rural, respeitando a organização da unidade familiar bem como as entidades de representação dos produtores rurais;</h5>
+ <h5>III - identificar tecnologias alternativas juntamente com instituições de pesquisa e produtores rurais;</h5>
+ <h5>IV - disseminar informações conjunturais nas áreas de produção agrícola, comercialização, abastecimento e agroindústria.</h5>
+ <h3>Art. 18. A ação de assistência técnica e extensão rural deverá estar integrada à pesquisa agrícola, aos produtores rurais e suas entidades representativas e às comunidades rurais.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <p>Da Proteção ao Meio Ambiente e da Conservação dos Recursos Naturais</p>
+ <h3>Art. 19. O Poder Público deverá:</h3>
+ <h5>I - integrar, a nível de Governo Federal, os Estados, o Distrito Federal, os Territórios, os Municípios e as comunidades na preservação do meio ambiente e conservação dos recursos naturais;</h5>
+ <h5>II - disciplinar e fiscalizar o uso racional do solo, da água, da fauna e da flora;</h5>
+ <h5>III - realizar zoneamentos agroecológicos que permitam estabelecer critérios para o disciplinamento e o ordenamento da ocupação espacial pelas diversas atividades produtivas, bem como para a instalação de novas hidrelétricas;</h5>
+ <h5>IV - promover e/ou estimular a recuperação das áreas em processo de desertificação;</h5>
+ <h5>V - desenvolver programas de educação ambiental, a nível formal e informal, dirigidos à população;</h5>
+ <h5>VI - fomentar a produção de sementes e mudas de essências nativas;</h5>
+ <h5>VII - coordenar programas de estímulo e incentivo à preservação das nascentes dos cursos d'água e do meio ambiente, bem como o aproveitamento de dejetos animais para conversão em fertilizantes.</h5>
+ <h4>Parágrafo único. A fiscalização e o uso racional dos recursos naturais do meio ambiente é também de responsabilidade dos proprietários de direito, dos beneficiários da reforma agrária e dos ocupantes temporários dos imóveis rurais.</h4>
+ <h3>Art. 20. As bacias hidrográficas constituem-se em unidades básicas de planejamento do uso, da conservação e da recuperação dos recursos naturais.</h3>
+ <h3>Art. 21. (Vetado).</h3>
+ <h3>Art. 21-A. O Poder Público procederá à identificação, em todo o território nacional, das áreas desertificadas, as quais somente poderão ser exploradas mediante a adoção de adequado plano de manejo, com o emprego de tecnologias capazes de interromper o processo de desertificação e de promover a recuperação dessas áreas. (Incluído pela Lei n° 10.228, de 29.5.2001)</h3>
+ <h4>§ 1º O Poder Público estabelecerá cadastros das áreas sujeitas a processos de desertificação, em âmbito estadual ou municipal. ( (Incluído pela Lei n° 10.228, de 29.5.2001) )</h4>
+ <h4>§ 2º O Poder Público, por intermédio dos órgãos competentes, promoverá a pesquisa, a geração e a difusão de tecnologias capazes de suprir as condições expressas neste artigo. (Incluído pela Lei n° 10.228, de 29.5.2001)</h4>
+ <h3>Art. 22. A prestação de serviços e aplicações de recursos pelo Poder Público em atividades agrícolas devem ter por premissa básica o uso tecnicamente indicado, o manejo racional dos recursos naturais e a preservação do meio ambiente.</h3>
+ <h3>Art. 23. As empresas que exploram economicamente águas represadas e as concessionárias de energia elétrica serão responsáveis pelas alterações ambientais por elas provocadas e obrigadas a recuperação do meio ambiente, na área de abrangência de suas respectivas bacias hidrográficas.</h3>
+ <h3>Art. 24. (Vetado).</h3>
+ <h3>Art. 25. O Poder Público implementará programas de estímulo às atividades criatórias de peixes e outros produtos de vida fluvial, lacustre e marinha de interesse econômico, visando ao incremento da oferta de alimentos e a preservação das espécies.</h3>
+ <h3>Art. 25. O Poder Público implementará programas de estímulo às atividades de interesse econômico apícolas e criatórias de peixes e outros produtos de vida fluvial, lacustre e marinha, visando ao incremento da oferta de alimentos e à preservação das espécies animais e vegetais. (Redação dada pela Lei n° 10.990, de 2004)</h3>
+ <h3>Art. 26. A proteção do meio ambiente e dos recursos naturais terá programas plurianuais e planos operativos anuais elaborados pelos órgãos competentes, mantidos ou não pelo Poder Público, sob a coordenação da União e das Unidades da Federação.</h3>
+ <h2>CAPÍTULO VII</h2>
+ <p>Da Defesa Agropecuária</p>
+ <h3>Art. 27. (Vetado).</h3>
+ <h3>Art. 27-A. São objetivos da defesa agropecuária assegurar: (Incluído pela Lei n° 9.712, de 20.11.1998) (Regulamento) (Regulamento)</h3>
+ <h5>I – a sanidade das populações vegetais;</h5>
+ <h5>II – a saúde dos rebanhos animais;</h5>
+ <h5>III – a idoneidade dos insumos e dos serviços utilizados na agropecuária;</h5>
+ <h5>IV – a identidade e a segurança higiênico-sanitária e tecnológica dos produtos agropecuários finais destinados aos consumidores. (Regulamento)</h5>
+ <h4>§ 1º Na busca do atingimento dos objetivos referidos no caput , o Poder Público desenvolverá, permanentemente, as seguintes atividades:</h4>
+ <h5>I – vigilância e defesa sanitária vegetal;</h5>
+ <h5>II – vigilância e defesa sanitária animal;</h5>
+ <h5>III – inspeção e classificação de produtos de origem vegetal, seus derivados, subprodutos e resíduos de valor econômico; (Regulamento)</h5>
+ <h5>IV – inspeção e classificação de produtos de origem animal, seus derivados, subprodutos e resíduos de valor econômico;</h5>
+ <h5>V – fiscalização dos insumos e dos serviços usados nas atividades agropecuárias.</h5>
+ <h4>§ 2º As atividades constantes do parágrafo anterior serão organizadas de forma a garantir o cumprimento das legislações vigentes que tratem da defesa agropecuária e dos compromissos internacionais firmados pela União.</h4>
+ <h3>Art. 28. (Vetado).</h3>
+ <h3>Art. 28-A. Visando à promoção da saúde, as ações de vigilância e defesa sanitária dos animais e dos vegetais serão organizadas, sob a coordenação do Poder Público nas várias instâncias federativas e no âmbito de sua competência, em um Sistema Unificado de Atenção à Sanidade Agropecuária, articulado, no que for atinente à saúde pública, com o Sistema Único de Saúde de que trata a Lei N° 8.080, de 19 de setembro de 1990 , do qual participarão: (Incluído pela Lei n° 9.712, de 20.11.1998) (Regulamento) (Regulamento)</h3>
+ <h5>I – serviços e instituições oficiais;</h5>
+ <h5>II – produtores e trabalhadores rurais, suas associações e técnicos que lhes prestam assistência;</h5>
+ <h5>III – órgãos de fiscalização das categorias profissionais diretamente vinculadas à sanidade agropecuária;</h5>
+ <h5>IV – entidades gestoras de fundos organizados pelo setor privado para complementar as ações públicas no campo da defesa agropecuária.</h5>
+ <h4>§ 1º A área municipal será considerada unidade geográfica básica para a organização e o funcionamento dos serviços oficiais de sanidade agropecuária.</h4>
+ <h4>§ 2º A instância local do sistema unificado de atenção à sanidade agropecuária dará, na sua jurisdição, plena atenção à sanidade, com a participação da comunidade organizada, tratando especialmente das seguintes atividades:</h4>
+ <h5>I – cadastro das propriedades;</h5>
+ <h5>II – inventário das populações animais e vegetais;</h5>
+ <h5>III – controle de trânsito de animais e plantas;</h5>
+ <h5>IV – cadastro dos profissionais de sanidade atuantes;</h5>
+ <h5>V – cadastro das casas de comércio de produtos de uso agronômico e veterinário;</h5>
+ <h5>VI – cadastro dos laboratórios de diagnósticos de doenças;</h5>
+ <h5>VII – inventário das doenças diagnosticadas;</h5>
+ <h5>VIII – execução de campanhas de controle de doenças;</h5>
+ <h5>IX – educação e vigilância sanitária;</h5>
+ <h5>X – participação em projetos de erradicação de doenças e pragas.</h5>
+ <h4>§ 3º Às instâncias intermediárias do Sistema Unificado de Atenção à Sanidade Agropecuária competem as seguintes atividades:</h4>
+ <h5>I – vigilância do trânsito interestadual de plantas e animais;</h5>
+ <h5>II – coordenação das campanhas de controle e erradicação de pragas e doenças;</h5>
+ <h5>III – manutenção dos informes nosográficos;</h5>
+ <h5>IV – coordenação das ações de epidemiologia;</h5>
+ <h5>V – coordenação das ações de educação sanitária;</h5>
+ <h5>VI – controle de rede de diagnóstico e dos profissionais de sanidade credenciados.</h5>
+ <h4>§ 4º À instância central e superior do Sistema Unificado de Atenção à Sanidade Agropecuária compete:</h4>
+ <h5>I – a vigilância de portos, aeroportos e postos de fronteira internacionais;</h5>
+ <h5>II – a fixação de normas referentes a campanhas de controle e erradicação de pragas e doenças;</h5>
+ <h5>III – a aprovação dos métodos de diagnóstico e dos produtos de uso veterinário e agronômico;</h5>
+ <h5>IV – a manutenção do sistema de informações epidemiológicas;</h5>
+ <h5>V – a avaliação das ações desenvolvidas nas instâncias locais e intermediárias do sistema unificado de atenção à sanidade agropecuária;</h5>
+ <h5>VI – a representação do País nos fóruns internacionais que tratam da defesa agropecuária;</h5>
+ <h5>VII – a realização de estudos de epidemiologia e de apoio ao desenvolvimento do Sistema Unificado de Atenção à Sanidade Agropecuária;</h5>
+ <h5>VIII – a cooperação técnica às outras instâncias do Sistema Unificado;</h5>
+ <h5>IX – o aprimoramento do Sistema Unificado;</h5>
+ <h5>X – a coordenação do Sistema Unificado;</h5>
+ <h5>XI – a manutenção do Código de Defesa Agropecuária.</h5>
+ <h4>§ 5º Integrarão o Sistema Unificado de Atenção à Sanidade Agropecuária instituições gestoras de fundos organizados por entidades privadas para complementar as ações públicas no campo da defesa agropecuária.</h4>
+ <h4>§ 6º As estratégias e políticas de promoção à sanidade e de vigilância serão ecossistêmicas e descentralizadas, por tipo de problema sanitário, visando ao alcance de áreas livres de pragas e doenças, conforme previsto em acordos e tratados internacionais subscritos pelo País.</h4>
+ <h4>§ 7º Sempre que recomendado epidemiologicamente é prioritária a erradicação das doenças e pragas, na estratégia de áreas livres.</h4>
+ <h3>Art. 29. (Vetado).</h3>
+ <h3>Art. 29-A. A inspeção industrial e sanitária de produtos de origem vegetal e animal, bem como a dos insumos agropecuários, será gerida de maneira que os procedimentos e a organização da inspeção se faça por métodos universalizados e aplicados eqüitativamente em todos os estabelecimentos inspecionados. (Incluído pela Lei n° 9.712, de 20.11.1998) (Regulamento) (Regulamento)</h3>
+ <h4>§ 1º Na inspeção poderá ser adotado o método de análise de riscos e pontos críticos de controle.</h4>
+ <h4>§ 2º Como parte do Sistema Unificado de Atenção à Sanidade Agropecuária, serão constituídos um sistema brasileiro de inspeção de produtos de origem vegetal e um sistema brasileiro de inspeção de produtos de origem animal, bem como sistemas específicos de inspeção para insumos usados na agropecuária.</h4>
+ <h4>§ 3º É instituído o Sistema de Gestão de Serviços de Inspeção (e-Sisbi) no âmbito do Ministério da Agricultura, Pecuária e Abastecimento, para cadastro dos serviços oficiais de inspeção e fiscalização dos Estados, do Distrito Federal, dos Municípios e dos consórcios municipais, bem como dos estabelecimentos e dos produtos de origem animal. (Incluído pela Lei n° 14.515, de 2022)</h4>
+ <h4>§ 4º Os serviços oficiais de inspeção dos Estados, do Distrito Federal, dos Municípios e dos consórcios municipais, devidamente cadastrados no e-Sisbi, integram o Sistema Brasileiro de Inspeção de Produtos de Origem Animal (Sisbi-Poa) previsto no § 2º deste artigo. (Incluído pela Lei n° 14.515, de 2022)</h4>
+ <h4>§ 5º O Ministério da Agricultura, Pecuária e Abastecimento editará norma para definir os objetivos e as metas nacionais de inocuidade e de conformidade dos produtos de origem animal, que deverá ser observada pelos serviços de inspeção dos Estados, do Distrito Federal, dos Municípios e dos consórcios municipais integrantes do Sisbi-Poa. (Incluído pela Lei n° 14.515, de 2022)</h4>
+ <h4>§ 6º O Ministério da Agricultura, Pecuária e Abastecimento auditará os serviços de inspeção dos Estados, do Distrito Federal, dos Municípios e dos consórcios municipais integrantes do Sisbi-Poa, com o objetivo de verificar a equivalência com o Serviço de Inspeção Federal. (Incluído pela Lei n° 14.515, de 2022)</h4>
+ <h4>§ 7º Fica autorizado o comércio interestadual dos produtos sob inspeção dos serviços integrantes do Sisbi-Poa, mediante prévio cadastro dos estabelecimentos e dos produtos no e-Sisbi, realizado pelos respectivos serviços de inspeção. (Incluído pela Lei n° 14.515, de 2022)</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <p>Da Informação Agrícola</p>
+ <h3>Art. 30. O Ministério da Agricultura e Reforma Agrária (Mara), integrado com os Estados, o Distrito Federal, os Territórios e os Municípios, manterá um sistema de informação agrícola ampla para divulgação de:</h3>
+ <h5>I - previsão de safras por Estado, Distrito Federal e Território, incluindo estimativas de área cultivada ou colhida, produção e produtividade;</h5>
+ <h5>II - preços recebidos e pagos pelo produtor, com a composição dos primeiros até os mercados atacadistas e varejistas, por Estado, Distrito Federal e Território;</h5>
+ <h5>III - valores e preços de exportação FOB, com a decomposição dos preços até o interior, a nível de produtor, destacando as taxas e impostos cobrados;</h5>
+ <h5>IV - valores e preços de importação CIF, com a decomposição dos preços dos mercados internacionais até a colocação do produto em portos brasileiros, destacando, taxas e impostos cobrados;</h5>
+ <h5>V - (Vetado);</h5>
+ <h5>V - cadastro, cartografia e solo das propriedades rurais: (Redação dada pela Lei n° 9.272, de 03/05/96)</h5>
+ <h5>VI - custos de produção agrícola;</h5>
+ <h5>VI - volume dos estoques públicos e privados, reguladores e estratégicos, discriminados por produtos, tipos e localização; (Redação dada pela Lei n° 9.272, de 03/05/96)</h5>
+ <h5>VII - (Vetado);</h5>
+ <h5>VIII - (Vetado);</h5>
+ <h5>IX - dados de meteorologia e climatologia agrícolas;</h5>
+ <h5>X - (Vetado);</h5>
+ <h5>XI - (Vetado);</h5>
+ <h5>XII - (Vetado);</h5>
+ <h5>XIII - pesquisas em andamento e os resultados daquelas já concluídas.</h5>
+ <h5>XIV - informações sobre doenças e pragas; (Incluído pela Lei n° 9.272, de 03/05/96)</h5>
+ <h5>XV - indústria de produtos de origem vegetal e aninal e de insumos; (Incluído pela Lei n° 9.272, de 03/05/96)</h5>
+ <h5>XVI - classificação de produtos agropecuários; (Incluído pela Lei n° 9.272, de 03/05/96)</h5>
+ <h5>XVII - inspeção de produtos e insumos; (Incluído pela Lei n° 9.272, de 03/05/96)</h5>
+ <h5>XVIII - infratores das várias legislações relativas à agropecuária. (Incluído pela Lei n° 9.272, de 03/05/96)</h5>
+ <h4>Parágrafo único. O Ministério da Agricultura e Reforma Agrária (Mara) coordenará a realização de estudos e análises detalhadas do comportamento dos mercados interno e externo dos produtos agrícolas e agroindustriais, informando sua apropriação e divulgação para o pleno e imediato conhecimento dos produtores rurais e demais agentes do mercado.</h4>
+ <h2>CAPÍTULO IX</h2>
+ <p>Da Produção, da Comercialização, do Abastecimento e da Armazenagem</p>
+ <h3>Art. 31. O Poder Público formará, localizará adequadamente e manterá estoques reguladores e estratégicos, visando garantir a compra do produtor, na forma da lei, assegurar o abastecimento e regular o preço do mercado interno.</h3>
+ <h4>§ 1° Os estoques reguladores devem contemplar, prioritariamente, os produtos básicos.</h4>
+ <h4>§ 2° (Vetado).</h4>
+ <h4>§ 3° Os estoques reguladores devem ser adquiridos preferencialmente de organizações associativas de pequenos e médios produtores.</h4>
+ <h4>§ 4° (Vetado).</h4>
+ <h4>§ 5° A formação e a liberação destes estoques obedecerão regras pautadas no princípio da menor interferência na livre comercialização privada, observando-se prazos e procedimentos pré-estabelecidos e de amplo conhecimento público, sem ferir a margem mínima do ganho real do produtor rural, assentada em custos de produção atualizados e produtividades médias históricas.</h4>
+ <h3>Art. 32. (Vetado).</h3>
+ <h3>Art. 33. (Vetado).</h3>
+ <h4>§ 1° (Vetado).</h4>
+ <h4>§ 2° A garantia de preços mínimos far-se-á através de financiamento da comercialização e da aquisição dos produtos agrícolas amparados.</h4>
+ <h4>§ 3° Os alimentos considerados básicos terão tratamento privilegiado para efeito de preço mínimo.</h4>
+ <h3>Art. 34. (Vetado).</h3>
+ <h3>Art. 35. As vendas dos estoques públicos serão realizadas através de leilões em bolsas de mercadorias, ou diretamente, mediante licitação pública.</h3>
+ <h3>Art. 36. O Poder Público criará estímulos para a melhoria das condições de armazenagem, processamento, embalagem e redução de perdas em nível de estabelecimento rural, inclusive comunitário.</h3>
+ <h3>Art. 37. É mantida, no território nacional, a exigência de padronização, fiscalização e classificação de produtos vegetais e animais, subprodutos e derivados e seus resíduos de valores econômico, bem como dos produtos agrícolas destinados ao consumo e à industrialização para o mercado interno e externo.</h3>
+ <h3>Art. 37. É mantida, no território nacional, a exigência de padronização, fiscalização e classificação de produtos animais, subprodutos e derivados e seus resíduos de valor econômico, bem como dos produtos de origem animal destinados ao consumo e à industrialização para o mercado interno e externo. (Redação dada pela Lei n° 9.972, de 25.5.2000)</h3>
+ <h4>Parágrafo único. (Vetado).</h4>
+ <h3>Art. 38. (Vetado).</h3>
+ <h3>Art. 39. (Vetado).</h3>
+ <h3>Art. 40. (Vetado).</h3>
+ <h3>Art. 41. (Vetado).</h3>
+ <h3>Art. 42. É estabelecido, em caráter obrigatório, o cadastro nacional de unidades armazenadoras de produtos agrícolas.</h3>
+ <h2>CAPÍTULO X</h2>
+ <p>Do Produtor Rural, da Propriedade Rural e sua Função Social</p>
+ <h3>Art. 43. (Vetado).</h3>
+ <h3>Art. 44. (Vetado).</h3>
+ <h2>CAPÍTULO XI</h2>
+ <p>Do Associativismo e do Cooperativismo</p>
+ <h3>Art. 45. O Poder Público apoiará e estimulará os produtores rurais a se organizarem nas suas diferentes formas de associações, cooperativas, sindicatos, condomínios e outras, através de:</h3>
+ <h5>I - inclusão, nos currículos de 1° e 2° graus, de matérias voltadas para o associativismo e cooperativismo;</h5>
+ <h5>II - promoção de atividades relativas à motivação, organização, legislação e educação associativista e cooperativista para o público do meio rural;</h5>
+ <h5>III - promoção das diversas formas de associativismo como alternativa e opção para ampliar a oferta de emprego e de integração do trabalhador rural com o trabalhador urbano;</h5>
+ <h5>IV - integração entre os segmentos cooperativistas de produção, consumo, comercialização, crédito e de trabalho;</h5>
+ <h5>V - a implantação de agroindústrias.</h5>
+ <h4>Parágrafo único. O apoio do Poder Público será extensivo aos grupos indígenas, pescadores artesanais e àqueles que se dedicam às atividades de extrativismo vegetal não predatório.</h4>
+ <h3>Art. 46. (Vetado).</h3>
+ <h2>CAPÍTULO XII</h2>
+ <p>Dos Investimentos Públicos</p>
+ <h3>Art. 47. O Poder Público deverá implantar obras que tenham como objetivo o bem-estar social de comunidades rurais, compreendendo, entre outras:</h3>
+ <h6>a) barragens, açudes, perfuração de poços, diques e comportas para projetos de irrigação, retificação de cursos de água e drenagens de áreas alagadiças;</h6>
+ <h6>b) armazéns comunitários;</h6>
+ <h6>c) mercados de produtor;</h6>
+ <h6>d) estradas;</h6>
+ <h6>e) escolas e postos de saúde rurais;</h6>
+ <h6>f) energia;</h6>
+ <h6>g) comunicação;</h6>
+ <h6>h) saneamento básico;</h6>
+ <p>i) lazer.</p>
+ <h2>CAPÍTULO XIII</h2>
+ <p>Do Crédito Rural</p>
+ <h3>Art. 48. O crédito rural, instrumento de financiamento da atividade rural, será suprido por todos os agentes financeiros sem discriminação entre eles, mediante aplicação compulsória, recursos próprios livres, dotações das operações oficiais de crédito, fundos e quaisquer outros recursos, com os seguintes objetivos: (Vide Medida Provisória nº 372, de 2007)</h3>
+ <h5>I - estimular os investimentos rurais para produção, extrativismo não predatório, armazenamento, beneficiamento e instalação de agroindústria, sendo esta quando realizada por produtor rural ou suas formas associativas;</h5>
+ <h5>II - favorecer o custeio oportuno e adequado da produção, do extrativismo não predatório e da comercialização de produtos agropecuários;</h5>
+ <h5>III - incentivar a introdução de métodos racionais no sistema de produção, visando ao aumento da produtividade, à melhoria do padrão de vida das populações rurais e à adequada conservação do solo e preservação do meio ambiente;</h5>
+ <h5>IV - (Vetado).</h5>
+ <h5>V - propiciar, através de modalidade de crédito fundiário, a aquisição e regularização de terras pelos pequenos produtores, posseiros e arrendatários e trabalhadores rurais;</h5>
+ <h5>VI - desenvolver atividades florestais e pesqueiras.</h5>
+ <h5>VII – apoiar a substituição do sistema de pecuária extensivo pelo sistema de pecuária intensivo; (Incluído pela Lei n° 13.158, de 2015)</h5>
+ <h5>VIII – estimular o desenvolvimento do sistema orgânico de produção agropecuária. (Incluído pela Lei n° 13.158, de 2015)</h5>
+ <h4>Parágrafo único. Quando destinado a agricultor familiar ou empreendedor familiar rural, nos termos do art. 3º da Lei N° 11.326, de 24 de julho de 2006 , o crédito rural terá por objetivo estimular a geração de renda e o melhor uso da mão-de-obra familiar, por meio do financiamento de atividades e serviços rurais, agropecuários e não agropecuários, desde que desenvolvidos em estabelecimento rural ou áreas comunitárias próximas, inclusive o turismo rural, a produção de artesanato e assemelhados. (Incluído pela Medida Provisória nº 432, de 2008)</h4>
+ <h4>§ 1º Quando destinado a agricultor familiar ou empreendedor familiar rural, nos termos do art. 3º da Lei N° 11.326, de 24 de julho de 2006 , o crédito rural terá por objetivo estimular a geração de renda e o melhor uso da mão-de-obra familiar, por meio do financiamento de atividades e serviços rurais agropecuários e não agropecuários, desde que desenvolvidos em estabelecimento rural ou áreas comunitárias próximas, inclusive o turismo rural, a produção de artesanato e assemelhados. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h4>§ 2º Quando destinado a agricultor familiar ou empreendedor familiar rural, nos termos do art. 3º da Lei N° 11.326, de 24 de julho de 2006 , o crédito rural poderá ser destinado à construção ou reforma de moradias no imóvel rural e em pequenas comunidades rurais. (Incluído pela Lei n° 11.718, de 2008)</h4>
+ <h3>Art. 49. O crédito rural terá como beneficiários produtores rurais extrativistas não predatórios e indígenas, assistidos por instituições competentes, pessoas físicas ou jurídicas que, embora não conceituadas como produtores rurais, se dediquem às seguintes atividades vinculadas ao setor:</h3>
+ <h5>I - produção de mudas ou sementes básicas, fiscalizadas ou certificadas;</h5>
+ <h5>II - produção de sêmen para inseminação artificial e embriões;</h5>
+ <h5>III - atividades de pesca artesanal e aqüicultura para fins comerciais;</h5>
+ <h5>IV - atividades florestais e pesqueiras.</h5>
+ <h4>§ 1º Podem ser beneficiários do crédito rural, quando necessário ao escoamento da produção agropecuária, beneficiadores e agroindústrias que beneficiem ou industrializem o produto, desde que comprovada a aquisição da matéria-prima diretamente de produtores ou suas cooperativas, por preço não inferior ao mínimo fixado ou ao adotado como base de cálculo do financiamento, e mediante deliberação e disciplinamento do Conselho Monetário Nacional. (Incluído pela Medida Provisória nº 432, de 2008)</h4>
+ <h4>§ 1º Podem ser beneficiários do crédito rural de comercialização, quando necessário ao escoamento da produção agropecuária, beneficiadores e agroindústrias que beneficiem ou industrializem o produto, desde que comprovada a aquisição da matéria-prima diretamente de produtores ou suas cooperativas, por preço não inferior ao mínimo fixado ou ao adotado como base de cálculo do financiamento, e mediante deliberação e disciplinamento do Conselho Monetário Nacional. (Redação dada pela Lei n° 11.775, de 2008)</h4>
+ <h4>§ 2º Para efeito do § 1º , enquadram-se como beneficiadores os cerealistas que exerçam, cumulativamente, as atividades de limpeza, padronização, armazenamento e comercialização de produtos agrícolas. (Incluído pela Medida Provisória nº 432, de 2008)</h4>
+ <h4>§ 2º Para efeito do disposto no § 1º deste artigo, enquadram-se como beneficiadores os cerealistas que exerçam, cumulativamente, as atividades de limpeza, padronização, armazenamento e comercialização de produtos agrícolas. (Redação dada pela Lei n° 11.775, de 2008)</h4>
+ <h3>Art. 50. A concessão de crédito rural observará os seguintes preceitos básicos:</h3>
+ <h5>I - idoneidade do tomador;</h5>
+ <h5>II - fiscalização pelo financiador;</h5>
+ <h5>III - liberação do crédito diretamente aos agricultores ou por intermédio de suas associações formais ou informais, ou organizações cooperativas;</h5>
+ <h5>IV - liberação do crédito em função do ciclo da produção e da capacidade de ampliação do financiamento;</h5>
+ <h5>V - prazos e épocas de reembolso ajustados à natureza e especificidade das operações rurais, bem como à capacidade de pagamento e às épocas normais de comercialização dos bens produzidos pelas atividades financeiras.</h5>
+ <h4>§ 1° (Vetado).</h4>
+ <h4>§ 2° Poderá exigir-se dos demais produtores rurais contrapartida de recursos próprios, em percentuais diferenciados, tendo em conta a natureza e o interesse da exploração agrícola.</h4>
+ <h4>§ 3° A aprovação do crédito rural levará sempre em conta o zoneamento agroecológico.</h4>
+ <h3>Art. 51. (Vetado).</h3>
+ <h3>Art. 52. O Poder Público assegurará crédito rural especial e diferenciado aos produtores rurais assentados em áreas de reforma agrária.</h3>
+ <h3>Art. 53. (Vetado).</h3>
+ <h3>Art. 54. (Vetado).</h3>
+ <h2>CAPÍTULO XIV</h2>
+ <p>Do Crédito Fundiário</p>
+ <h3>Art. 55. (Vetado).</h3>
+ <h2>CAPÍTULO XV</h2>
+ <p>Do Seguro Agrícola</p>
+ <h3>Art. 56. É instituído o seguro agrícola destinado a:</h3>
+ <h5>I - cobrir prejuízos decorrentes de sinistros que atinjam bens fixos e semifixos ou semoventes;</h5>
+ <h5>II - cobrir prejuízos decorrentes de fenômenos naturais, pragas, doenças e outros que atinjam plantações.</h5>
+ <h4>Parágrafo único. As atividades florestais e pesqueiras serão amparadas pelo seguro agrícola previsto nesta lei.</h4>
+ <h3>Art. 57. (Vetado).</h3>
+ <h3>Art. 58. A apólice de seguro agrícola poderá constituir garantia nas operações de crédito rural.</h3>
+ <h2>CAPÍTULO XVI</h2>
+ <p>(Vide Decreto nº 175, de 1991)</p>
+ <p>Da Garantia da Atividade Agropecuária</p>
+ <h2>CAPÍTULO XVI</h2>
+ <p>Da Garantia da Atividade Agropecuária</p>
+ <p>(Redação dada pela Lei n° 12.058, de 2009)</p>
+ <h3>Art. 59. O Programa de Garantia da Atividade Agropecuária (Proagro), instrumento de política agrícola instituído pela Lei n° 5.969, de 11 de dezembro de 1973, será regido pelas disposições desta lei e assegurará ao produtor rural:</h3>
+ <h3>Art. 59. O Programa de Garantia da Atividade Agropecuária - PROAGRO será regido pelas disposições desta Lei e assegurará ao produtor rural, na forma estabelecida pelo Conselho Monetário Nacional: (Redação dada pela Lei n° 12.058, de 2009)</h3>
+ <h5>I - a exoneração de obrigações financeiras relativas a operação de crédito rural de custeio, cuja liquidação seja dificultada pela ocorrência de fenômenos naturais, pragas e doenças que atinjam bens, rebanhos e plantações;</h5>
+ <h5>I - a exoneração de obrigações financeiras relativas a operação de crédito rural de custeio cuja liquidação seja dificultada pela ocorrência de fenômenos naturais, pragas e doenças que atinjam rebanhos e plantações; (Redação dada pela Lei n° 12.058, de 2009)</h5>
+ <h5>II - a indenização de recursos próprios utilizados pelo produtor em custeio rural, quando ocorrer perdas em virtude dos eventos citados no inciso anterior.</h5>
+ <h3>Art. 60. O Programa de Garantia da Atividade Agropecuária (Proagro) será custeado:</h3>
+ <h5>I - por recursos provenientes da participação dos produtores rurais;</h5>
+ <h5>II - por outros recursos que vierem a ser alocados ao programa;</h5>
+ <h5>II - por recursos do Orçamento da União e outros recursos que vierem a ser alocados ao programa; (Redação dada pela Lei n° 12.058, de 2009)</h5>
+ <h5>III - pelas receitas auferidas da aplicação dos recursos dos incisos anteriores.</h5>
+ <h3>Art. 61. (Vetado).</h3>
+ <h3>Art. 62. (Vetado).</h3>
+ <h3>Art. 63. (Vetado).</h3>
+ <h3>Art. 64. (Vetado).</h3>
+ <h3>Art. 65. O Programa de Garantia da Atividade Agropecuária (Proagro) cobrirá integral ou parcialmente:</h3>
+ <h5>I - os financiamentos de custeio rural;</h5>
+ <h5>II - os recursos próprios aplicados pelo produtor em custeio rural, vinculados ou não a financiamentos rurais.</h5>
+ <h4>Parágrafo único. Não serão cobertos os prejuízos relativos a exploração rural conduzida sem a observância da legislação e normas do Programa de Garantia da Atividade Agropecuária (Proagro).</h4>
+ <h4>Parágrafo único. Não serão cobertas as perdas relativas à exploração rural conduzida sem a observância da legislação e das normas do Proagro. (Redação dada pela Lei n° 12.058, de 2009)</h4>
+ <h3>Art. 65-A. Será operado, no âmbito do Proagro, o Programa de Garantia da Atividade Agropecuária da Agricultura Familiar - PROAGRO Mais, que assegurará ao agricultor familiar, na forma estabelecida pelo Conselho Monetário Nacional: (Incluído pela Lei n° 12.058, de 2009)</h3>
+ <h5>I - a exoneração de obrigações financeiras relativas a operação de crédito rural de custeio ou de parcelas de investimento, cuja liquidação seja dificultada pela ocorrência de fenômenos naturais, pragas e doenças que atinjam rebanhos e plantações; (Incluído pela Lei n° 12.058, de 2009)</h5>
+ <h5>II - a indenização de recursos próprios utilizados pelo produtor em custeio ou em investimento rural, quando ocorrerem perdas em virtude dos eventos citados no inciso I; (Incluído pela Lei n° 12.058, de 2009)</h5>
+ <h5>III - a garantia de renda mínima da produção agropecuária vinculada ao custeio rural. (Incluído pela Lei n° 12.058, de 2009)</h5>
+ <h3>Art. 65-B. A comprovação das perdas será efetuada pela instituição financeira, mediante laudo de avaliação expedido por profissional habilitado. (Incluído pela Lei n° 12.058, de 2009)</h3>
+ <h3>Art. 65-C. Os Ministérios da Agricultura, Pecuária e Abastecimento - MAPA e do Desenvolvimento Agrário - MDA, em articulação com o Banco Central do Brasil, deverão estabelecer conjuntamente as diretrizes para o credenciamento e para a supervisão dos encarregados dos serviços de comprovação de perdas imputáveis ao Proagro. (Incluído pela Lei n° 12.058, de 2009)</h3>
+ <h4>Parágrafo único. O MDA credenciará e supervisionará os encarregados da comprovação de perdas imputáveis ao Proagro, devendo definir e divulgar instrumentos operacionais e a normatização técnica para o disposto neste artigo, observadas as diretrizes definidas na forma do caput . (Incluído pela Lei n° 12.058, de 2009)</h4>
+ <h3>Art. 66. Competirá à Comissão Especial de Recursos (CER) decidir, em única instância administrativa, sobre recursos relativos à apuração de prejuízos e respectivas indenizações no âmbito do Programa de Garantia da Atividade Agropecuária (Proagro) .</h3>
+ <h3>Art. 66-A. O Proagro será administrado pelo Banco Central do Brasil, conforme normas, critérios e condições definidas pelo Conselho Monetário Nacional. (Incluído pela Lei n° 12.058, de 2009)</h3>
+ <h3>Art. 66-B. O planejamento anual das contratações do Programa ficará sujeito à disponibilidade orçamentária para o custeio de que trata o art. 60 desta Lei. (Incluído pela Lei n° 15.077, de 2024)</h3>
+ <h2>CAPÍTULO XVII</h2>
+ <p>Da Tributação e dos Incentivos Fiscais</p>
+ <h3>Art. 67. (Vetado).</h3>
+ <h3>Art. 68. (Vetado).</h3>
+ <h3>Art. 69. (Vetado).</h3>
+ <h3>Art. 70. (Vetado).</h3>
+ <h3>Art. 71. (Vetado).</h3>
+ <h3>Art. 72. (Vetado).</h3>
+ <h3>Art. 73. (Vetado).</h3>
+ <h3>Art. 74. (Vetado).</h3>
+ <h3>Art. 75. (Vetado).</h3>
+ <h3>Art. 76. (Vetado).</h3>
+ <h2>CAPÍTULO XVIII</h2>
+ <p>Do Fundo Nacional de Desenvolvimento Rural</p>
+ <h3>Art. 77. (Vetado).</h3>
+ <h3>Art. 78. (Vetado).</h3>
+ <h3>Art. 79. (Vetado).</h3>
+ <h3>Art. 80. (Vetado).</h3>
+ <h3>Art. 81. São fontes de recursos financeiros para o crédito rural:</h3>
+ <h5>I - (Vetado).</h5>
+ <h5>II - programas oficiais de fomento;</h5>
+ <h5>III - caderneta de poupança rural operadas por instituições públicas e privadas;</h5>
+ <h5>IV - recursos financeiros de origem externa, decorrentes de empréstimos, acordos ou convênios, especialmente reservados para aplicações em crédito rural;</h5>
+ <h5>V - recursos captados pelas cooperativas de crédito rural;</h5>
+ <h5>VI - multas aplicadas a instituições do sistema financeiro pelo descumprimento de leis e normas de crédito rural;</h5>
+ <h5>VII - (Vetado).</h5>
+ <h5>VIII - recursos orçamentários da União;</h5>
+ <h5>IX - (Vetado).</h5>
+ <h5>X - outros recursos que venham a ser alocados pelo Poder Público.</h5>
+ <h3>Art. 82. São fontes de recursos financeiros para o seguro agrícola:</h3>
+ <h5>I - os recursos provenientes da participação dos produtores rurais, pessoa física e jurídica, de suas cooperativas e associações;</h5>
+ <h5>II - (Vetado).</h5>
+ <h5>III - (Vetado).</h5>
+ <p><del>IV - (Revogado pela Lei complementar nº 137, de 2010)</del></p>
+ <p><del>V - os recursos previstos no art. 17 (Revogado pela Lei complementar nº 137, de 2010)</del></p>
+ <h5>VI - dotações orçamentárias e outros recursos alocados pela União; e</h5>
+ <h5>VII - (Vetado).</h5>
+ <h3>Art. 83. (Vetado).</h3>
+ <h4>§ 1° (Vetado).</h4>
+ <h4>§ 2° (Vetado).</h4>
+ <h2>CAPÍTULO XIX</h2>
+ <p>Da Irrigação e Drenagem</p>
+ <h3>Art. 84. A política de irrigação e drenagem será executada em todo o território nacional, de acordo com a Constituição e com prioridade para áreas de comprovada aptidão para irrigação, áreas de reforma agrária ou de colonização e projetos públicos de irrigação.</h3>
+ <h3>Art. 85. Compete ao Poder Público:</h3>
+ <h5>I - estabelecer as diretrizes da política nacional de irrigação e drenagem, ouvido o Conselho Nacional de Política Agrícola (CNPA);</h5>
+ <h5>II - coordenar e executar o programa nacional de irrigação;</h5>
+ <h5>III - baixar normas objetivando o aproveitamento racional dos recursos hídricos destinados à irrigação, promovendo a integração das ações dos órgãos federais, estaduais, municipais e entidades públicas, ouvido o Conselho Nacional de PolíticaAgrícola (CNPA);</h5>
+ <h5>IV - apoiar estudos para a execução de obras de infra-estrutura e outras referentes ao aproveitamento das bacias hidrográficas, áreas de rios perenizados ou vales irrigáveis, com vistas a melhor e mais racional utilização das águas para irrigação;</h5>
+ <h5>V - instituir linhas de financiamento ou incentivos, prevendo encargos e prazos, bem como modalidades de garantia compatíveis com as características da agricultura irrigada, ouvido o Conselho Nacional de Política Agrícola (CNPA).</h5>
+ <h3>Art. 86. (Vetado).</h3>
+ <h2>CAPÍTULO XX</h2>
+ <p>Da Habitação Rural</p>
+ <h3>Art. 87. É criada a política de habitação rural, cabendo à União destinar recursos financeiros para a construção e/ou recuperação da habitação rural.</h3>
+ <h4>§ 1° Parcela dos depósitos da Caderneta de Poupança Rural será destinada ao financiamento da habitação rural.</h4>
+ <h4>§ 2° (Vetado).</h4>
+ <h3>Art. 88. (Vetado).</h3>
+ <h3>Art. 89. O Poder Público estabelecerá incentivos fiscais para a empresa rural ou para o produtor rural, nos casos em que sejam aplicados recursos próprios na habitação para o produtor rural.</h3>
+ <h3>Art. 90. (Vetado).</h3>
+ <h3>Art. 91. (Vetado).</h3>
+ <h3>Art. 92. (Vetado).</h3>
+ <h2>CAPÍTULO XXI</h2>
+ <p>Da Eletrificação Rural</p>
+ <h3>Art. 93. Compete ao Poder Público implementar a política de eletrificação rural, com a participação dos produtores rurais, cooperativas e outras entidades associativas.</h3>
+ <h4>§ 1° A política de energização rural e agroenergia engloba a eletrificação rural, qualquer que seja sua fonte de geração, o reflorestamento energético e a produção de combustíveis, a partir de culturas, da biomassa e dos resíduos agrícolas.</h4>
+ <h4>§ 2° Entende-se por energização rural e agroenergia a produção e utilização de insumos energéticos relevantes à produção e produtividade agrícola e ao bem-estar social dos agricultores e trabalhadores rurais.</h4>
+ <h3>Art. 94. O Poder Público incentivará prioritariamente:</h3>
+ <h5>I - atividades de eletrificação rural e cooperativas rurais, através de financiamentos das instituições de crédito oficiais, assistência técnica na implantação de projetos e tarifas de compra e venda de energia elétrica, compatíveis com os custos de prestação de serviços;</h5>
+ <h5>II - a construção de pequenas centrais hidrelétricas e termoelétricas de aproveitamento de resíduos agrícolas, que objetivem a eletrificação rural por cooperativas rurais e outras formas associativas;</h5>
+ <h5>III - os programas de florestamento energético e manejo florestal, em conformidade com a legislação ambiental, nas propriedades rurais;</h5>
+ <h5>IV - o estabelecimento de tarifas diferenciadas horozonais.</h5>
+ <h3>Art. 95. As empresas concessionárias de energia elétrica deverão promover a capacitação de mão-de-obra a ser empregada nas pequenas centrais referidas no inciso II do artigo anterior.</h3>
+ <h2>CAPÍTULO XXII</h2>
+ <p>Da Mecanização Agrícola</p>
+ <h3>Art. 96. Compete ao Poder Público implementar um conjunto de ações no âmbito da mecanização agrícola, para que, com recursos humanos, materiais e financeiros, alcance:</h3>
+ <h5>I - preservar e incrementar o parque nacional de máquinas agrícolas, evitando-se o sucateamento e obsolescência, proporcionando sua evolução tecnológica;</h5>
+ <h5>II - incentivar a formação de empresas públicas ou privadas com o objetivo de prestação de serviços mecanizados à agricultura, diretamente aos produtores e através de associações ou cooperativas;</h5>
+ <h5>III - fortalecer a pesquisa nas universidades e institutos de pesquisa e desenvolvimento na área de máquinas agrícolas assim como os serviços de extensão rural e treinamento em mecanização;</h5>
+ <h5>IV - aprimorar os centros de ensaios e testes para o desenvolvimento de máquinas agrícolas;</h5>
+ <h5>V - (Vetado).</h5>
+ <h5>VI - divulgar e estimular as práticas de mecanização que promovam a conservação do solo e do meio ambiente.</h5>
+ <h2>CAPÍTULO XXIII</h2>
+ <p>Das Disposições Finais</p>
+ <h3>Art. 97. No prazo de noventa dias da promulgação desta lei, o Poder Executivo encaminhará ao Congresso Nacional projeto de lei dispondo sobre: produção, comercialização e uso de produtos biológicos de uso em imunologia e de uso veterinário, corretivos, fertilizantes e inoculantes, sementes e mudas, alimentos de origem animal e vegetal, código e uso de solo e da água, e reformulando a legislação que regula as atividades dos armazéns gerais.</h3>
+ <h3>Art. 98. É o Poder Executivo autorizado a outorgar concessões remuneradas de uso pelo prazo máximo de até vinte e cinco anos, sobre as faixas de domínio das rodovias federais, para fins exclusivos de implantação de reflorestamentos.</h3>
+ <h4>Parágrafo único. As concessões de que trata este artigo deverão obedecer às normas específicas sobre a utilização de bens públicos e móveis, constantes da legislação pertinente.</h4>
+ <h3>Art. 99. A partir do ano seguinte ao de promulgação desta lei, obriga-se o proprietário rural, quando for o caso, a recompor em sua propriedade a Reserva Florestal Legal, prevista na Lei n° 4.771, de 1965 , com a nova redação dada pela Lei n° 7.803, de 1989 , mediante o plantio, em cada ano, de pelo menos um trinta avos da área total para complementar a referida Reserva Florestal Legal (RFL) . (Revogado pela Medida Provisória nº 1.956, de 200)</h3>
+ <h4>§ 1° (Vetado). (Revogado pela Medida Provisória nº 1.956-49, de 2000)</h4>
+ <h4>§ 2° O reflorestamento de que trata o caput deste artigo será efetuado mediante normas que serão aprovadas pelo órgão gestor da matéria. (Revogado pela Medida Provisória nº 1.956-49, de 2000)</h4>
+ <h3>Art. 99. A partir do ano seguinte ao de promulgação desta lei, obriga-se o proprietário rural, quando for o caso, a recompor em sua propriedade a Reserva Florestal Legal, prevista na Lei n° 4.771, de 1965 , com a nova redação dada pela Lei n° 7.803, de 1989 , mediante o plantio, em cada ano, de pelo menos um trinta avos da área total para complementar a referida Reserva Florestal Legal (RFL).</h3>
+ <h4>§ 1° (Vetado).</h4>
+ <h4>§ 2° O reflorestamento de que trata o caput deste artigo será efetuado mediante normas que serão aprovadas pelo órgão gestor da matéria.</h4>
+ <h3>Art. 100. (Vetado).</h3>
+ <h3>Art. 101. (Vetado).</h3>
+ <h3>Art. 102. O solo deve ser respeitado como patrimônio natural do País.</h3>
+ <h4>Parágrafo único. A erosão dos solos deve ser combatida pelo Poder Público e pelos proprietários rurais.</h4>
+ <h3>Art. 103. O Poder Público, através dos órgãos competentes, concederá incentivos especiais ao proprietário rural que:</h3>
+ <h5>I - preservar e conservar a cobertura florestal nativa existente na propriedade;</h5>
+ <h5>II - recuperar com espécies nativas ou ecologicamente adaptadas as áreas já devastadas de sua propriedade;</h5>
+ <h5>III - sofrer limitação ou restrição no uso de recursos naturais existentes na sua propriedade, para fins de proteção dos ecossistemas, mediante ato do órgão competente, federal ou estadual.</h5>
+ <h5>IV - adotar, em sua propriedade, sistemas integrados agroflorestais, agropastoris ou agrossilvopastoris voltados para a recuperação de áreas degradas ou em fase de degradação. (Incluído pela Lei n° 12.805, de 2013)</h5>
+ <h5>IV – promover a substituição do sistema de pecuária extensivo pelo sistema de pecuária intensivo; (Redação dada pela Lei n° 13.158, de 2015)</h5>
+ <h5>V – adotar o sistema orgânico de produção agropecuária, nos termos da Lei n° 10.831, de 23 de dezembro de 2003 . (Incluído pela Lei n° 13.158, de 2015)</h5>
+ <h4>Parágrafo único. Para os efeitos desta lei, consideram-se incentivos:</h4>
+ <h5>I - a prioridade na obtenção de apoio financeiro oficial, através da concessão de crédito rural e outros tipos de</h5>
+ <p>financiamentos, bem como a cobertura do seguro agrícola concedidos pelo Poder Público.</p>
+ <h5>II - a prioridade na concessão de benefícios associados a programas de infra-estrutura rural, notadamente de energização, irrigação, armazenagem, telefonia e habitação;</h5>
+ <h5>III - a preferência na prestação de serviços oficiais de assistência técnica e de fomento, através dos órgãos competentes;</h5>
+ <h5>IV - o fornecimento de mudas de espécies nativas e/ou ecologicamente adaptadas produzidas com a finalidade de recompor a cobertura florestal; e</h5>
+ <h5>V - o apoio técnico-educativo no desenvolvimento de projetos de preservação, conservação e recuperação ambiental.</h5>
+ <h3>Art. 104. São isentas de tributação e do pagamento do Imposto Territorial Rural as áreas dos imóveis rurais consideradas de preservação permanente e de reserva legal, previstas na Lei n° 4.771, de 1965 , com a nova redação dada pela Lei n° 7.803, de 1989 .</h3>
+ <h4>Parágrafo único. A isenção do Imposto Territorial Rural (ITR) estende-se às áreas da propriedade rural de interesse ecológico para a proteção dos ecossistemas, assim declarados por ato do órgão competente federal ou estadual e que ampliam as restrições de uso previstas no caput deste artigo.</h4>
+ <h3>Art. 105. (Vetado).</h3>
+ <h3>Art. 106. É o Ministério da Agricultura e Reforma Agrária (Mara) autorizado a firmar convênios ou ajustes com os Estados, o Distrito Federal, os Territórios, os Municípios, entidades e órgãos públicos e privados, cooperativas, sindicatos, universidades, fundações e associações, visando ao desenvolvimento das atividades agropecuárias, agroindustriais, pesqueiras e florestais, dentro de todas as ações, instrumentos, objetivos e atividades previstas nesta lei.</h3>
+ <h3>Art. 107. Esta lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 108. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 17 de janeiro de 1991; 170° da Independência e 103° da República.</p>
+ <h3>FERNANDO COLLOR</h3>
+ <p>Antonio Cabrera Mano Filho</p>
+ <p>Este texto não substitui o publicado no DOU de 18.1.1991 e retificado em 12.3.1991</p>
+ <p>(Vide Decreto nº 175, de 1991) | Dispõe sobre a política agrícola.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8171.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

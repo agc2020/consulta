@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.996, DE 7 DE JUNHO DE 1982 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1982" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.996, DE 7 DE JUNHO DE 1982</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 23:41:49 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/1980-1988/L6996.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 10.828 caracteres | espelho: 20.239 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.996, DE 7 DE JUNHO DE 1982.</p>
+ <p>Dispõe sobre a utilização de processamento eletrônico de dados nos serviços eleitorais e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º - Os Tribunais Regionais Eleitorais, nos Estados em que for autorizado pelo Tribunal Superior Eleitoral, poderão utilizar processamento eletrônico de dados nos serviços eleitorais, na forma prevista nesta Lei.</h3>
+ <h4>§ 1º - A autorização do Tribunal Superior Eleitoral será solicitada pelo Tribunal Regional Eleitoral interessado, que, previamente, ouvirá os Partidos Políticos.</h4>
+ <h4>§ 2º - O pedido de autorização poderá referir-se ao alistamento eleitoral, à votação e à apuração, ou a apenas uma dessas fases, em todo o Estado, em determinadas Zonas Eleitorais ou em parte destas.</h4>
+ <h3>Art. 2º - Concedida a autorização, o Tribunal Regional Eleitoral, em conformidade com as condições e peculiaridades locais, executará os serviços de processamento eletrônico de dados diretamente ou mediante convênio ou contrato.</h3>
+ <h4>§ 1º - Os serviços de que trata este artigo deverão ser executados de acordo com definições e especificações fixadas pelo Tribunal Superior Eleitoral.</h4>
+ <p><del>§ 2º (Revogado pela Lei n° 7.444, de 1985)</del></p>
+ <h3>Art. 3º - Ao setor da Secretaria do Tribunal Regional Eleitoral responsável pelos serviços de processamento eletrônico de dados compete:</h3>
+ <h5>I - preencher as fórmulas dos títulos e documentos eleitorais;</h5>
+ <h5>II - confeccionar relações de eleitores destinadas aos Cartórios Eleitorais e aos Partidos Políticos;</h5>
+ <h5>III - manter atualizado o cadastro geral de eleitores do Estado;</h5>
+ <h5>IV - manter atualizado o cadastro de filiação partidária, expedindo relações destinadas aos Partidos Políticos e à Justiça Eleitoral;</h5>
+ <h5>V - expedir comunicações padronizadas e previamente programadas nos processos de alistamento, transferência ou cancelamento de inscrições;</h5>
+ <h5>VI - contar votos, ou totalizar resultados já apurados, expedindo relações ou boletins destinados à Justiça Eleitoral e aos Partidos Políticos;</h5>
+ <h5>VII - calcular quociente eleitoral, quociente partidário e distribuição de sobras, indicando os eleitos;</h5>
+ <h5>VIII - preencher diplomas e expedir relações com os resultados finais de cada pleito, destinados à justiça Eleitoral e aos Partidos Políticos;</h5>
+ <h5>IX - executar outras tarefas que lhe forem atribuídas por instruções do Tribunal Superior Eleitoral.</h5>
+ <h3>Art. 4º - O alistamento se faz mediante a inscrição do eleitor.</h3>
+ <h4>Parágrafo único - Para efeito de inscrição, domicílio eleitoral é o lugar de residência ou moradia do requerente, e, verificado ter o alistando mais de uma, considerar-se-á domicílio qualquer delas.</h4>
+ <h3>Art. 5º - O alistando apresentará em cartório, ou em local previamente designado, requerimento em formulário que obedecerá a modelo aprovado pelo Tribunal Superior Eleitoral.</h3>
+ <h4>Parágrafo único - O escrivão, o funcionário ou o preparador, recebendo o formulário e documentos, determinará que o alistando date e assine o requerimento, e, ato contínuo, atestará terem sido a data e a assinatura lançadas na sua presença.</h4>
+ <h3>Art. 6º - O pedido de inscrição do eleitor será instruído com um dos seguintes documentos:</h3>
+ <h5>I - carteira de identidade;</h5>
+ <h5>II - certificado de quitação de serviço militar;</h5>
+ <h5>III - carteira emitida pelos órgãos criados por lei federal, controladores do exercício profissional;</h5>
+ <h5>IV - certidão de idade extraída do Registro Civil;</h5>
+ <h5>V - instrumento público do qual se infira, por direito, ter o requerente idade superior a 18 (dezoito) anos e do qual conste, também, os demais elementos necessários à sua qualificação;</h5>
+ <h5>VI - documento do qual se infira a nacionalidade brasileira, originária ou adquirida, do requerente.</h5>
+ <h4>§ 1º - A restituição de qualquer documento não poderá ser feita antes de despachado o requerimento pelo Juiz Eleitoral.</h4>
+ <h4>§ 2º - Sempre que, com o documento, for apresentada cópia, o original será devolvido no ato, feita a autenticação pelo próprio funcionário do Cartório Eleitoral, mediante aposição de sua assinatura no verso da cópia.</h4>
+ <h4>§ 3º - O documento poderá ser apresentado em cópia autenticada por tabelião, dispensando-se, nessa hipótese, nova conferência com o documento original.</h4>
+ <h3>Art. 7º - Despachado o requerimento de inscrição pelo Juiz Eleitoral, o setor da Secretaria do Tribunal Regional Eleitoral responsável pelos serviços de processamento eletrônico de dados enviará ao Cartório Eleitoral, que as fornecerá aos Partidos Políticos, relações dos eleitores inscritos originariamente ou por transferência, com os respectivos endereços, assim como dos pedidos indeferidos ou convertidos em diligência.</h3>
+ <h4>§ 1º - Do despacho que indeferir o requerimento de inscrição, caberá recurso interposto pelo alistando no prazo de 5 (cinco) dias e, do que o deferir, poderá recorrer qualquer delegado de Partido Político no prazo de 10 (dez) dias.</h4>
+ <h4>§ 2º - As relações a que se refere o "caput" deste artigo serão fornecidas aos Partidos Políticos nos dias 1º (primeiro) e 15 (quinze) de cada mês, ou no 1º (primeiro) dia útil seguinte, datas em que começarão a correr os prazos mencionados no parágrafo anterior, ainda que tenham sido exibidas ao alistando antes dessas datas e mesmo que os Partidos não as retirem.</h4>
+ <h3>Art. 8º - A transferência do eleitor só será admitida se satisfeitas as seguintes exigências:</h3>
+ <h5>I - entrada do requerimento no Cartório Eleitoral do novo domicílio até 100 (cem) dias antes da data da eleição;</h5>
+ <h5>II - transcurso de, pelo menos, 1 (um) ano da inscrição anterior;</h5>
+ <h5>III - residência mínima de 3 (três) meses no novo domicílio, declarada, sob as penas da lei, pelo próprio eleitor.</h5>
+ <h4>Parágrafo único - O disposto nos incisos II e III deste artigo não se aplica à transferência de título eleitoral de servidor público civil, militar, autárquico, ou de membro de sua família, por motivo de remoção ou transferência.</h4>
+ <p><del></p>
+ <h3>Art. 9º - Nas Zonas Eleitorais em que o alistamento se fizer pelo processamento eletrônico de dados, será cancelada a inscrição do eleitor que não votar e não pagar a multa ou se justificar no prazo de 6 (seis) (Revogado pela Lei n° 7.663, de 1988)</del></h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 7.663, de 1988)</del></p>
+ <p><del>I - (Revogado pela Lei n° 7.663, de 1988)</del></p>
+ <p><del>II - receber vencimentos, remuneração, salário ou proventos de função ou emprego público, autárquico, paraestatal, bem como em empresas públicas ou fundações mantidas ou instituídas pelo Poder Público, correspondentes ao 2º (segundo) (Revogado pela Lei n° 7.663, de 1988)</del></p>
+ <p><del>III - (Revogado pela Lei n° 7.663, de 1988)</del></p>
+ <p><del>IV - (Revogado pela Lei n° 7.663, de 1988)</del></p>
+ <h3>Art. 10 - Na votação poderá ser utilizada cédula de acordo com modelo aprovado pelo Tribunal Superior Eleitoral.</h3>
+ <h3>Art. 11 - O Tribunal Superior Eleitoral estabelecerá o número de eleitores das seções eleitorais em função do número de cabinas nelas existentes.</h3>
+ <h4>Parágrafo único - Cada seção eleitoral terá, no mínimo, duas cabinas.</h4>
+ <h3>Art. 12 - Nas seções das Zonas Eleitorais em que o alistamento se fizer pelo processamento eletrônico de dados, as folhas individuais de votação serão substituídas por listas de eleitores, emitidas por computador, das quais constarão, além do nome do eleitor, os dados de qualificação indicados pelo Tribunal Superior Eleitoral.</h3>
+ <h4>§ 1º - Somente poderão votar fora da respectiva seção os mesários, os candidatos e os fiscais ou delegados de Partidos Políticos, desde que eleitores do Município e de posse do título eleitoral.</h4>
+ <h4>§ 2º - Ainda que não esteja de posse do seu título, o eleitor será admitido a votar desde que seja inscrito na seção, conste da lista dos eleitores e exiba documento que comprove sua identidade.</h4>
+ <h4>§ 3º - Os votos dos eleitores mencionados nos parágrafos anteriores não serão tomados em separado.</h4>
+ <h4>§ 4º - O voto em separado será recolhido em invólucro especial e somente será admitido quando houver dúvida quanto à identidade ou inscrição do eleitor, ou quando da lista não constar nome de eleitor que apresentar título correspondente à seção.</h4>
+ <h4>§ 5º - A validade dos votos tomados em separado, das seções de um mesmo Município, será examinada em conjunto pela Junta Apuradora, independentemente da apuração dos votos contidos nas urnas.</h4>
+ <h3>Art. 13 - O Tribunal Superior Eleitoral poderá autorizar a criação de Juntas Apuradoras Regionais, nos termos das instruções que baixar.</h3>
+ <h3>Art. 14 - A apuração poderá ser iniciada a partir do recebimento da primeira urna, prolongando-se pelo tempo necessário, observado o prazo máximo de 10 (dez) dias.</h3>
+ <h4>Parágrafo único - Ultrapassada a fase de abertura da urna, as cédulas programadas para a apuração através da computação serão eletronicamente processadas, caso em que os Partidos poderão manter fiscais nos locais destinados a esse fim.</h4>
+ <h3>Art. 15 - Incorrerá nas penas do art. 315 do Código Eleitoral quem, no processamento eletrônico das cédulas, alterar resultados, qualquer que seja o método utilizado.</h3>
+ <p><del></p>
+ <h3>Art. 16 - Nos Estados em que for utilizado processamento eletrônico de dados no alistamento, a filiação partidária far-se-á em formulário próprio, que substituirá as fichas. Revogado pela Lei n° 9.096, de 1995</del></h3>
+ <h4>§ 1º - Deferida a filiação, a Comissão Executiva, no prazo de 3 (três) dias, enviará o formulário à Justiça Eleitoral.</h4>
+ <h4>§ 2º - Estando em vigor a inscrição eleitoral, será emitido, por processo eletrônico, cartão de filiado para o eleitor, e incluído o seu nome nas relações destinadas ao Partido Político e ao Cartório Eleitoral.</h4>
+ <h3>Art. 17 - Os arts. 6º e 8º e o parágrafo único do art. 9º desta Lei também serão aplicados nas Zonas Eleitorais em que o alistamento continuar a ser efetuado na forma prevista no Código Eleitoral.</h3>
+ <h3>Art. 18 - O Tribunal Superior Eleitoral expedirá as instruções que se fizerem necessárias para o cumprimento desta Lei, inclusive divulgando entre os Partidos Políticos, os Juízes e os Cartórios Eleitorais manuais de procedimentos detalhando a nova sistemática.</h3>
+ <h3>Art. 19 - Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 20 - Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, em 07 de junho de 1982; 161º da Independência e 94º da República.</p>
+ <h3>JOÃO FIGUEIREDO</h3>
+ <p>Ibrahim Abi-Ackel</p>
+ <p>Este texto não substitui o publicado no DOU de 8.6.1982</p>
+ <p>*</p>
+ <p>--- Tabela 1 ---</p>
+ <p>---</p>
+ <p>--- Tabela 2 ---</p>
+ <p>Dispõe sobre a utilização de processamento eletrônico de dados nos serviços eleitorais e dá outras providências.</p>
+ <p>---</p>
+ <p>=== ANEXO - Tabela 3 ===</p>
+ <h3>O PRESIDENTE DA</h3>
+ <p>REPÚBLICA, faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º - Os Tribunais Regionais Eleitorais, nos Estados em que for autorizado pelo Tribunal Superior Eleitoral, poderão utilizar processamento eletrônico de dados nos serviços eleitorais, na forma prevista nesta Lei.§</h3>
+ <p>1º - A autorização do Tribunal Superior Eleitoral será solicitada pelo</p>
+ <p>Tribunal Regional Eleitoral interessado, que, previamente, ouvirá os</p>
+ <p>Partidos Políticos.§</p>
+ <p>2º - O pedido de autorização poderá referir-se ao alistamento eleitoral,</p>
+ <p>à votação e à apuração, ou a apenas uma dessas fases, em todo o Estado,</p>
+ <p>em determinadas Zonas Eleitorais ou em parte destas.</p>
+ <h3>Art. 2º - Concedida a autorização, o Tribunal Regional Eleitoral, em conformidade com as condições e peculiaridades locais, executará os serviços de processamento eletrônico de dados diretamente ou mediante convênio ou contrato.§</h3>
+ <p>1º - Os serviços de que trata este artigo deverão ser executados de acordo com definições e especificações fixadas pelo Tribunal Superior</p>
+ <p>Eleitoral.§</p>
+ <p>(Revogado pela Lei n° 7.444, de 1985)Art.</del></p>
+ <p>3º - Ao setor da Secretaria do Tribunal Regional Eleitoral responsável pelos serviços de processamento eletrônico de dados compete:I</p>
+ <p>- preencher as fórmulas dos títulos e documentos eleitorais;II</p>
+ <p>- confeccionar relações de eleitores destinadas aos Cartórios Eleitorais e aos Partidos Políticos;III</p>
+ <p>- manter atualizado o cadastro geral de eleitores do Estado;IV</p>
+ <p>- manter atualizado o cadastro de filiação partidária, expedindo relações destinadas aos Partidos Políticos e à Justiça Eleitoral;V</p>
+ <p>- expedir comunicações padronizadas e previamente programadas nos processos de alistamento, transferência ou cancelamento de inscrições;VI</p>
+ <p>- contar votos, ou totalizar resultados já apurados, expedindo relações ou boletins destinados à Justiça Eleitoral e aos Partidos Políticos;VII</p>
+ <p>- calcular quociente eleitoral, quociente partidário e distribuição de sobras, indicando os eleitos;VIII</p>
+ <p>- preencher diplomas e expedir relações com os resultados finais de cada pleito, destinados à justiça Eleitoral e aos Partidos Políticos;IX</p>
+ <p>- executar outras tarefas que lhe forem atribuídas por instruções do</p>
+ <p>Tribunal Superior Eleitoral.</p>
+ <h3>Art. 4º - O alistamento se faz mediante a inscrição do eleitor.Parágrafo</h3>
+ <p>único - Para efeito de inscrição, domicílio eleitoral é o lugar de residência ou moradia do requerente, e, verificado ter o alistando mais de uma, considerar-se-á domicílio qualquer delas.</p>
+ <h3>Art. 5º - O alistando apresentará em cartório, ou em local previamente designado, requerimento em formulário que obedecerá a modelo aprovado pelo Tribunal Superior Eleitoral.Parágrafo</h3>
+ <p>único - O escrivão, o funcionário ou o preparador, recebendo o formulário e documentos, determinará que o alistando date e assine o requerimento, e, ato contínuo, atestará terem sido a data e a assinatura lançadas na sua presença.</p>
+ <h3>Art. 6º - O pedido de inscrição do eleitor será instruído com um dos seguintes documentos:I</h3>
+ <p>- carteira de identidade;II</p>
+ <p>- certificado de quitação de serviço militar;III</p>
+ <p>- carteira emitida pelos órgãos criados por lei federal, controladores do exercício profissional;IV</p>
+ <p>- certidão de idade extraída do Registro Civil;V</p>
+ <p>- instrumento público do qual se infira, por direito, ter o requerente idade superior a 18 (dezoito) anos e do qual conste, também, os demais elementos necessários à sua qualificação;VI</p>
+ <p>- documento do qual se infira a nacionalidade brasileira, originária ou adquirida, do requerente.§</p>
+ <p>1º - A restituição de qualquer documento não poderá ser feita antes de despachado o requerimento pelo Juiz Eleitoral.§</p>
+ <p>2º - Sempre que, com o documento, for apresentada cópia, o original será</p>
+ <p>devolvido no ato, feita a autenticação pelo próprio funcionário do</p>
+ <p>Cartório Eleitoral, mediante aposição de sua assinatura no verso da cópia.§</p>
+ <p>3º - O documento poderá ser apresentado em cópia autenticada por tabelião, dispensando-se, nessa hipótese, nova conferência com o documento original.</p>
+ <h3>Art. 7º - Despachado o requerimento de inscrição pelo Juiz Eleitoral, o setor da Secretaria do Tribunal Regional Eleitoral responsável pelos serviços de processamento eletrônico de dados enviará ao Cartório Eleitoral, que as fornecerá aos Partidos Políticos, relações dos eleitores inscritos originariamente ou por transferência, com os respectivos endereços,</h3>
+ <p>assim como dos pedidos indeferidos ou convertidos em diligência.§</p>
+ <p>1º - Do despacho que indeferir o requerimento de inscrição, caberá</p>
+ <p>recurso interposto pelo alistando no prazo de 5 (cinco) dias e, do que o deferir, poderá recorrer qualquer delegado de Partido Político no prazo de 10 (dez) dias.§</p>
+ <p>2º - As relações a que se refere o "caput" deste artigo serão fornecidas aos Partidos Políticos nos dias 1º (primeiro) e 15 (quinze) de cada mês,</p>
+ <p>ou no 1º (primeiro) dia útil seguinte, datas em que começarão a correr os prazos mencionados no parágrafo anterior, ainda que tenham sido exibidas ao alistando antes dessas datas e mesmo que os Partidos não as retirem.</p>
+ <h3>Art. 8º - A transferência do eleitor só será admitida se satisfeitas as seguintes exigências:I</h3>
+ <p>- entrada do requerimento no Cartório Eleitoral do novo domicílio até</p>
+ <p>100 (cem) dias antes da data da eleição;II</p>
+ <p>- transcurso de, pelo menos, 1 (um) ano da inscrição anterior;III</p>
+ <p>- residência mínima de 3 (três) meses no novo domicílio, declarada, sob as penas da lei, pelo próprio eleitor.Parágrafo</p>
+ <p>único - O disposto nos incisos II e III deste artigo não se aplica à</p>
+ <p>transferência de título eleitoral de servidor público civil, militar,</p>
+ <p>autárquico, ou de membro de sua família, por motivo de remoção ou transferência.</p>
+ <h3>Art. 9º - Nas Zonas Eleitorais em que o alistamento se fizer pelo processamento eletrônico de dados, será cancelada a inscrição do eleitor que não votar e não pagar a multa ou se justificar no prazo de 6 (seis)</h3>
+ <p>(Revogado pela Lei n° 7.663, de 1988)Parágrafo</del></p>
+ <p>(Revogado pela Lei n° 7.663, de 1988)I</del></p>
+ <p>(Revogado pela Lei n° 7.663, de 1988)II</del></p>
+ <p><del>- receber vencimentos, remuneração, salário ou proventos de função ou emprego público, autárquico, paraestatal, bem como em empresas públicas ou fundações mantidas ou instituídas pelo Poder Público, correspondentes ao 2º (segundo) (Revogado pela Lei n° 7.663, de 1988)III</del></p>
+ <p>- firmar, como pessoa física, quaisquer contratos de prestação de serviços perante Órgãos ou entidades da União, dos Estados, dos</p>
+ <p>(Revogado pela Lei n° 7.663, de 1988)IV</del></p>
+ <p>(Revogado pela Lei n° 7.663, de 1988)Art.</del></p>
+ <p>10 - Na votação poderá ser utilizada cédula de acordo com modelo aprovado pelo Tribunal Superior Eleitoral.</p>
+ <h3>Art. 11 - O Tribunal Superior Eleitoral estabelecerá o número de eleitores das seções eleitorais em função do número de cabinas nelas existentes.Parágrafo</h3>
+ <p>único - Cada seção eleitoral terá, no mínimo, duas cabinas.</p>
+ <h3>Art. 12 - Nas seções das Zonas Eleitorais em que o alistamento se fizer pelo processamento eletrônico de dados, as folhas individuais de votação serão substituídas por listas de eleitores, emitidas por computador, das quais constarão, além do nome do eleitor, os dados de qualificação indicados pelo Tribunal Superior Eleitoral.§</h3>
+ <p>1º - Somente poderão votar fora da respectiva seção os mesários, os candidatos e os fiscais ou delegados de Partidos Políticos, desde que eleitores do Município e de posse do título eleitoral.§</p>
+ <p>2º - Ainda que não esteja de posse do seu título, o eleitor será</p>
+ <p>admitido a votar desde que seja inscrito na seção, conste da lista dos eleitores e exiba documento que comprove sua identidade.§</p>
+ <p>3º - Os votos dos eleitores mencionados nos parágrafos anteriores não serão tomados em separado.§</p>
+ <p>4º - O voto em separado será recolhido em invólucro especial e somente será admitido quando houver dúvida quanto à identidade ou inscrição do eleitor, ou quando da lista não constar nome de eleitor que apresentar título correspondente à seção.§</p>
+ <p>5º - A validade dos votos tomados em separado, das seções de um mesmo</p>
+ <p>Município, será examinada em conjunto pela Junta Apuradora,</p>
+ <p>independentemente da apuração dos votos contidos nas urnas.</p>
+ <h3>Art. 13 - O Tribunal Superior Eleitoral poderá autorizar a criação de Juntas</h3>
+ <p>Apuradoras Regionais, nos termos das instruções que baixar.</p>
+ <h3>Art. 14 - A apuração poderá ser iniciada a partir do recebimento da primeira urna, prolongando-se pelo tempo necessário, observado o prazo máximo de</h3>
+ <p>10 (dez) dias.Parágrafo</p>
+ <p>único - Ultrapassada a fase de abertura da urna, as cédulas programadas para a apuração através da computação serão eletronicamente processadas,</p>
+ <p>caso em que os Partidos poderão manter fiscais nos locais destinados a esse fim.</p>
+ <h3>Art. 15 - Incorrerá nas penas doart. 315 do Código Eleitoralquem, no processamento eletrônico das cédulas, alterar resultados, qualquer que seja o método utilizado.</h3>
+ <h3>Art. 16 - Nos Estados em que for utilizado processamento eletrônico de dados no alistamento, a filiação partidária far-se-á em formulário próprio,</h3>
+ <p><del>que substituirá as fichas.Revogado pela Lei nº</del></p>
+ <p>9.096, de 1995</p>
+ <h4>§ 1º - Deferida a filiação, a Comissão Executiva, no prazo de 3 (três)</h4>
+ <p>dias, enviará o formulário à Justiça Eleitoral.§</p>
+ <p>2º - Estando em vigor a inscrição eleitoral, será emitido, por processo eletrônico, cartão de filiado para o eleitor, e incluído o seu nome nas relações destinadas ao Partido Político e ao Cartório Eleitoral.</p>
+ <h3>Art. 17 - Os arts. 6º e 8º e o parágrafo único do art. 9º desta Lei também serão aplicados nas Zonas Eleitorais em que o alistamento continuar a ser efetuado na forma prevista no Código Eleitoral.</h3>
+ <h3>Art. 18 - O Tribunal Superior Eleitoral expedirá as instruções que se fizerem necessárias para o cumprimento desta Lei, inclusive divulgando entre os</h3>
+ <p>Partidos Políticos, os Juízes e os Cartórios Eleitorais manuais de procedimentos detalhando a nova sistemática.</p>
+ <h3>Art. 19 - Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 20 - Revogam-se as disposições em contrário.Brasília,</h3>
+ <p>em 07 de junho de 1982; 161º da Independência e 94º da República.JOÃO FIGUEIREDOIbrahim Abi-Ackel</p>
+ <p>==================================================</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/1980-1988/L6996.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.959, DE 29 DE JUNHO DE 2009 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2009" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.959, DE 29 DE JUNHO DE 2009</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 22:55:24 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L11959.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 26.660 caracteres | espelho: 26.724 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.959, DE 29 DE JUNHO DE 2009.</p>
+ <p>Dispõe sobre a Política Nacional de Desenvolvimento Sustentável da Aquicultura e da Pesca, regula as atividades pesqueiras, revoga a Lei N° 7.679, de 23 de novembro de 1988, e dispositivos do Decreto-Lei N° 221, de 28 de fevereiro de 1967, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>NORMAS GERAIS DA POLÍTICA NACIONAL DE</h3>
+ <h3>DESENVOLVIMENTO SUSTENTÁVEL DA AQUICULTURA E</h3>
+ <h3>DA PESCA</h3>
+ <h3>Art. 1º Esta Lei dispõe sobre a Política Nacional de Desenvolvimento Sustentável da Aquicultura e da Pesca, formulada, coordenada e executada com o objetivo de promover:</h3>
+ <h5>I – o desenvolvimento sustentável da pesca e da aquicultura como fonte de alimentação, emprego, renda e lazer, garantindo-se o uso sustentável dos recursos pesqueiros, bem como a otimização dos benefícios econômicos decorrentes, em harmonia com a preservação e a conservação do meio ambiente e da biodiversidade;</h5>
+ <h5>II – o ordenamento, o fomento e a fiscalização da atividade pesqueira;</h5>
+ <h5>III – a preservação, a conservação e a recuperação dos recursos pesqueiros e dos ecossistemas aquáticos;</h5>
+ <h5>IV – o desenvolvimento socioeconômico, cultural e profissional dos que exercem a atividade pesqueira, bem como de suas comunidades.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DEFINIÇÕES</h3>
+ <h3>Art. 2º Para os efeitos desta Lei, consideram-se:</h3>
+ <h5>I – recursos pesqueiros: os animais e os vegetais hidróbios passíveis de exploração, estudo ou pesquisa pela pesca amadora, de subsistência, científica, comercial e pela aquicultura;</h5>
+ <h5>II – aquicultura: a atividade de cultivo de organismos cujo ciclo de vida em condições naturais se dá total ou parcialmente em meio aquático, implicando a propriedade do estoque sob cultivo, equiparada à atividade agropecuária e classificada nos termos do art. 20 desta Lei;</h5>
+ <h5>III – pesca: toda operação, ação ou ato tendente a extrair, colher, apanhar, apreender ou capturar recursos pesqueiros;</h5>
+ <h5>IV – aquicultor: a pessoa física ou jurídica que, registrada e licenciada pelas autoridades competentes, exerce a aquicultura com fins comerciais;</h5>
+ <h5>V – armador de pesca: a pessoa física ou jurídica que, registrada e licenciada pelas autoridades competentes, apresta, em seu nome ou sob sua responsabilidade, embarcação para ser utilizada na atividade pesqueira pondo-a ou não a operar por sua conta;</h5>
+ <h5>VI – empresa pesqueira: a pessoa jurídica que, constituída de acordo com a legislação e devidamente registrada e licenciada pelas autoridades competentes, dedica-se, com fins comerciais, ao exercício da atividade pesqueira prevista nesta Lei;</h5>
+ <h5>VII – embarcação brasileira de pesca: a pertencente a pessoa natural residente e domiciliada no Brasil ou a pessoa jurídica constituída segundo as leis brasileiras, com sede e administração no País, bem como aquela sob contrato de arrendamento por empresa pesqueira brasileira;</h5>
+ <h5>VIII – embarcação estrangeira de pesca: a pertencente a pessoa natural residente e domiciliada no exterior ou a pessoa jurídica constituída segundo as leis de outro país, em que tenha sede e administração, ou, ainda, as embarcações brasileiras arrendadas a pessoa física ou jurídica estrangeira;</h5>
+ <h5>IX – transbordo do produto da pesca: fase da atividade pesqueira destinada à transferência do pescado e dos seus derivados de embarcação de pesca para outra embarcação;</h5>
+ <h5>X – áreas de exercício da atividade pesqueira: as águas continentais, interiores, o mar territorial, a plataforma continental, a zona econômica exclusiva brasileira, o alto-mar e outras áreas de pesca, conforme acordos e tratados internacionais firmados pelo Brasil, excetuando-se as áreas demarcadas como unidades de conservação da natureza de proteção integral ou como patrimônio histórico e aquelas definidas como áreas de exclusão para a segurança nacional e para o tráfego aquaviário;</h5>
+ <h5>XI – processamento: fase da atividade pesqueira destinada ao aproveitamento do pescado e de seus derivados, provenientes da pesca e da aquicultura;</h5>
+ <h5>XII – ordenamento pesqueiro: o conjunto de normas e ações que permitem administrar a atividade pesqueira, com base no conhecimento atualizado dos seus componentes biológico-pesqueiros, ecossistêmico, econômicos e sociais;</h5>
+ <h5>XIII – águas interiores: as baías, lagunas, braços de mar, canais, estuários, portos, angras, enseadas, ecossistemas de manguezais, ainda que a comunicação com o mar seja sazonal, e as águas compreendidas entre a costa e a linha de base reta, ressalvado o disposto em acordos e tratados de que o Brasil seja parte;</h5>
+ <h5>XIV – águas continentais: os rios, bacias, ribeirões, lagos, lagoas, açudes ou quaisquer depósitos de água não marinha, naturais ou artificiais, e os canais que não tenham ligação com o mar;</h5>
+ <h5>XV – alto-mar: a porção de água do mar não incluída na zona econômica exclusiva, no mar territorial ou nas águas interiores e continentais de outro Estado, nem nas águas arquipelágicas de Estado arquipélago;</h5>
+ <h5>XVI – mar territorial: faixa de 12 (doze) milhas marítimas de largura, medida a partir da linha de baixa-mar do litoral continental e insular brasileiro, tal como indicada nas cartas náuticas de grande escala, reconhecidas oficialmente pelo Brasil;</h5>
+ <h5>XVII – zona econômica exclusiva: faixa que se estende das 12 (doze) às 200 (duzentas) milhas marítimas, contadas a partir das linhas de base que servem para medir a largura do mar territorial;</h5>
+ <h5>XVIII – plataforma continental: o leito e o subsolo das áreas submarinas que se estendem além do mar territorial, em toda a extensão do prolongamento natural do território terrestre, até o bordo exterior da margem continental, ou até uma distância de 200 (duzentas) milhas marítimas das linhas de base, a partir das quais se mede a largura do mar territorial, nos casos em que o bordo exterior da margem continental não atinja essa distância;</h5>
+ <h5>XIX – defeso: a paralisação temporária da pesca para a preservação da espécie, tendo como motivação a reprodução e/ou recrutamento, bem como paralisações causadas por fenômenos naturais ou acidentes;</h5>
+ <h5>XX – (VETADO);</h5>
+ <h5>XXI – pescador amador: a pessoa física, brasileira ou estrangeira, que, licenciada pela autoridade competente, pratica a pesca sem fins econômicos;</h5>
+ <h5>XXII – pescador profissional: a pessoa física, brasileira ou estrangeira residente no País que, licenciada pelo órgão público competente, exerce a pesca com fins comerciais, atendidos os critérios estabelecidos em legislação específica.</h5>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA SUSTENTABILIDADE DO USO DOS RECURSOS</h3>
+ <h3>PESQUEIROS E DA ATIVIDADE DE PESCA</h3>
+ <p>Seção I</p>
+ <p>Da Sustentabilidade do Uso dos Recursos Pesqueiros</p>
+ <h3>Art. 3º Compete ao poder público a regulamentação da Política Nacional de Desenvolvimento Sustentável da Atividade Pesqueira, conciliando o equilíbrio entre o princípio da sustentabilidade dos recursos pesqueiros e a obtenção de melhores resultados econômicos e sociais, calculando, autorizando ou estabelecendo, em cada caso:</h3>
+ <h5>I – os regimes de acesso;</h5>
+ <h5>II – a captura total permissível;</h5>
+ <h5>III – o esforço de pesca sustentável;</h5>
+ <h5>IV – os períodos de defeso;</h5>
+ <h5>V – as temporadas de pesca;</h5>
+ <h5>VI – os tamanhos de captura;</h5>
+ <h5>VII – as áreas interditadas ou de reservas;</h5>
+ <h5>VIII – as artes, os aparelhos, os métodos e os sistemas de pesca e cultivo;</h5>
+ <h5>IX – a capacidade de suporte dos ambientes;</h5>
+ <h5>X – as necessárias ações de monitoramento, controle e fiscalização da atividade;</h5>
+ <h5>XI – a proteção de indivíduos em processo de reprodução ou recomposição de estoques.</h5>
+ <h4>§ 1º O ordenamento pesqueiro deve considerar as peculiaridades e as necessidades dos pescadores artesanais, de subsistência e da aquicultura familiar, visando a garantir sua permanência e sua continuidade.</h4>
+ <h4>§ 2º Compete aos Estados e ao Distrito Federal o ordenamento da pesca nas águas continentais de suas respectivas jurisdições, observada a legislação aplicável, podendo o exercício da atividade ser restrita a uma determinada bacia hidrográfica.</h4>
+ <p>Seção II</p>
+ <p>Da Atividade Pesqueira</p>
+ <h3>Art. 4º A atividade pesqueira compreende todos os processos de pesca, explotação e exploração, cultivo, conservação, processamento, transporte, comercialização e pesquisa dos recursos pesqueiros.</h3>
+ <h4>Parágrafo único. Consideram-se atividade pesqueira artesanal, para os efeitos desta Lei, os trabalhos de confecção e de reparos de artes e petrechos de pesca, os reparos realizados em embarcações de pequeno porte e o processamento do produto da pesca artesanal.</h4>
+ <h3>Art. 5º O exercício da atividade pesqueira somente poderá ser realizado mediante prévio ato autorizativo emitido pela autoridade competente, asseguradas:</h3>
+ <h5>I – a proteção dos ecossistemas e a manutenção do equilíbrio ecológico, observados os princípios de preservação da biodiversidade e o uso sustentável dos recursos naturais;</h5>
+ <h5>II – a busca de mecanismos para a garantia da proteção e da seguridade do trabalhador e das populações com saberes tradicionais;</h5>
+ <h5>III – a busca da segurança alimentar e a sanidade dos alimentos produzidos.</h5>
+ <h3>Art. 6º O exercício da atividade pesqueira poderá ser proibido transitória, periódica ou permanentemente, nos termos das normas específicas, para proteção:</h3>
+ <h5>I – de espécies, áreas ou ecossistemas ameaçados;</h5>
+ <h5>II – do processo reprodutivo das espécies e de outros processos vitais para a manutenção e a recuperação dos estoques pesqueiros;</h5>
+ <h5>III – da saúde pública;</h5>
+ <h5>IV – do trabalhador.</h5>
+ <h4>§ 1º Sem prejuízo do disposto no caput deste artigo, o exercício da atividade pesqueira é proibido:</h4>
+ <h5>I – em épocas e nos locais definidos pelo órgão competente;</h5>
+ <h5>II – em relação às espécies que devam ser preservadas ou espécimes com tamanhos não permitidos pelo órgão competente;</h5>
+ <h5>III – sem licença, permissão, concessão, autorização ou registro expedido pelo órgão competente;</h5>
+ <h5>IV – em quantidade superior à permitida pelo órgão competente;</h5>
+ <h5>V – em locais próximos às áreas de lançamento de esgoto nas águas, com distância estabelecida em norma específica;</h5>
+ <h5>VI – em locais que causem embaraço à navegação;</h5>
+ <h5>VII – mediante a utilização de:</h5>
+ <h6>a) explosivos;</h6>
+ <h6>b) processos, técnicas ou substâncias que, em contato com a água, produzam efeito semelhante ao de explosivos;</h6>
+ <h6>c) substâncias tóxicas ou químicas que alterem as condições naturais da água;</h6>
+ <h6>d) petrechos, técnicas e métodos não permitidos ou predatórios.</h6>
+ <h4>§ 2º São vedados o transporte, a comercialização, o processamento e a industrialização de espécimes provenientes da atividade pesqueira proibida.</h4>
+ <h3>Art. 7º O desenvolvimento sustentável da atividade pesqueira dar-se-á mediante:</h3>
+ <h5>I – a gestão do acesso e uso dos recursos pesqueiros;</h5>
+ <h5>II – a determinação de áreas especialmente protegidas;</h5>
+ <h5>III – a participação social;</h5>
+ <h5>IV – a capacitação da mão de obra do setor pesqueiro;</h5>
+ <h5>V – a educação ambiental;</h5>
+ <h5>VI – a construção e a modernização da infraestrutura portuária de terminais portuários, bem como a melhoria dos serviços portuários;</h5>
+ <h5>VII – a pesquisa dos recursos, técnicas e métodos pertinentes à atividade pesqueira;</h5>
+ <h5>VIII – o sistema de informações sobre a atividade pesqueira;</h5>
+ <h5>IX – o controle e a fiscalização da atividade pesqueira;</h5>
+ <h5>X – o crédito para fomento ao setor pesqueiro.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA PESCA</h3>
+ <p>Seção I</p>
+ <p>Da Natureza da Pesca</p>
+ <h3>Art. 8º Pesca, para os efeitos desta Lei, classifica-se como:</h3>
+ <h5>I – comercial:</h5>
+ <h6>a) artesanal: quando praticada diretamente por pescador profissional, de forma autônoma ou em regime de economia familiar, com meios de produção próprios ou mediante contrato de parceria, desembarcado, podendo utilizar embarcações de pequeno porte;</h6>
+ <h6>b) industrial: quando praticada por pessoa física ou jurídica e envolver pescadores profissionais, empregados ou em regime de parceria por cotas-partes, utilizando embarcações de pequeno, médio ou grande porte, com finalidade comercial;</h6>
+ <h5>II – não comercial:</h5>
+ <h6>a) científica: quando praticada por pessoa física ou jurídica, com a finalidade de pesquisa científica;</h6>
+ <h6>b) amadora: quando praticada por brasileiro ou estrangeiro, com equipamentos ou petrechos previstos em legislação específica, tendo por finalidade o lazer ou o desporto;</h6>
+ <h6>c) de subsistência: quando praticada com fins de consumo doméstico ou escambo sem fins de lucro e utilizando petrechos previstos em legislação específica.</h6>
+ <p>Seção II</p>
+ <p>Das Embarcações de Pesca</p>
+ <h3>Art. 9º Podem exercer a atividade pesqueira em áreas sob jurisdição brasileira:</h3>
+ <h5>I – as embarcações brasileiras de pesca;</h5>
+ <h5>II – as embarcações estrangeiras de pesca cobertas por acordos ou tratados internacionais firmados pelo Brasil, nas condições neles estabelecidas e na legislação específica;</h5>
+ <h5>III – as embarcações estrangeiras de pesca arrendadas por empresas, armadores e cooperativas brasileiras de produção de pesca, nos termos e condições estabelecidos em legislação específica.</h5>
+ <h4>§ 1º Para os efeitos desta Lei, consideram-se equiparadas às embarcações brasileiras de pesca as embarcações estrangeiras de pesca arrendadas por pessoa física ou jurídica brasileira.</h4>
+ <h4>§ 2º A pesca amadora ou esportiva somente poderá utilizar embarcações classificadas pela autoridade marítima na categoria de esporte e recreio.</h4>
+ <h3>Art. 10. Embarcação de pesca, para os fins desta Lei, é aquela que, permissionada e registrada perante as autoridades competentes, na forma da legislação específica, opera, com exclusividade, em uma ou mais das seguintes atividades:</h3>
+ <h5>I – na pesca;</h5>
+ <h5>II – na aquicultura;</h5>
+ <h5>III – na conservação do pescado;</h5>
+ <h5>IV – no processamento do pescado;</h5>
+ <h5>V – no transporte do pescado;</h5>
+ <h5>VI – na pesquisa de recursos pesqueiros.</h5>
+ <h4>§ 1º As embarcações que operam na pesca comercial se classificam em:</h4>
+ <h5>I – de pequeno porte: quando possui arqueação bruta - AB igual ou menor que 20 (vinte);</h5>
+ <h5>II – de médio porte: quando possui arqueação bruta - AB maior que 20 (vinte) e menor que 100 (cem);</h5>
+ <h5>III – de grande porte: quando possui arqueação bruta - AB igual ou maior que 100 (cem).</h5>
+ <h4>§ 2º Para fins creditícios, são considerados bens de produção as embarcações, as redes e os demais petrechos utilizados na pesca ou na aquicultura comercial.</h4>
+ <h4>§ 3º Para fins creditícios, são considerados instrumentos de trabalho as embarcações, as redes e os demais petrechos e equipamentos utilizados na pesca artesanal.</h4>
+ <h4>§ 4º A embarcação utilizada na pesca artesanal, quando não estiver envolvida na atividade pesqueira, poderá transportar as famílias dos pescadores, os produtos da pequena lavoura e da indústria doméstica, observadas as normas da autoridade marítima aplicáveis ao tipo de embarcação.</h4>
+ <h4>§ 5º É permitida a admissão, em embarcações pesqueiras, de menores a partir de 14 (catorze) anos de idade, na condição de aprendizes de pesca, observadas as legislações trabalhista, previdenciária e de proteção à criança e ao adolescente, bem como as normas da autoridade marítima.</h4>
+ <h3>Art. 11. As embarcações brasileiras de pesca terão, no curso normal de suas atividades, prioridades no acesso aos portos e aos terminais pesqueiros nacionais, sem prejuízo da exigência de prévia autorização, podendo a descarga de pescado ser feita pela tripulação da embarcação de pesca.</h3>
+ <h4>Parágrafo único. Não se aplicam à embarcação brasileira de pesca ou estrangeira de pesca arrendada por empresa brasileira as normas reguladoras do tráfego de cabotagem e as referentes à praticagem.</h4>
+ <h3>Art. 12. O transbordo do produto da pesca, desde que previamente autorizado, poderá ser feito nos termos da regulamentação específica.</h3>
+ <h4>§ 1º O transbordo será permitido, independentemente de autorização, em caso de acidente ou defeito mecânico que implique o risco de perda do produto da pesca ou seu derivado.</h4>
+ <h4>§ 2º O transbordo de pescado em área portuária, para embarcação de transporte, poderá ser realizado mediante autorização da autoridade competente, nas condições nela estabelecidas.</h4>
+ <h4>§ 3º As embarcações pesqueiras brasileiras poderão desembarcar o produto da pesca em portos de países que mantenham acordo com o Brasil e que permitam tais operações na forma do regulamento desta Lei.</h4>
+ <h4>§ 4º O produto pesqueiro ou seu derivado oriundo de embarcação brasileira ou de embarcação estrangeira de pesca arrendada à pessoa jurídica brasileira é considerado produto brasileiro.</h4>
+ <h3>Art. 13. A construção e a transformação de embarcação brasileira de pesca, assim como a importação ou arrendamento de embarcação estrangeira de pesca, dependem de autorização prévia das autoridades competentes, observados os critérios definidos na regulamentação pertinente.</h3>
+ <h4>§ 1º A autoridade competente poderá dispensar, nos termos da legislação específica, a exigência de que trata o caput deste artigo para a construção e transformação de embarcação utilizada nas pescas artesanal e de subsistência, atendidas as diretrizes relativas à gestão dos recursos pesqueiros.</h4>
+ <h4>§ 2º A licença de construção, de alteração ou de reclassificação da embarcação de pesca expedida pela autoridade marítima está condicionada à apresentação da Permissão Prévia de Pesca expedida pelo órgão federal competente, conforme parâmetros mínimos definidos em regulamento conjunto desses órgãos.</h4>
+ <p>Seção III</p>
+ <p>Dos Pescadores</p>
+ <h3>Art. 14. (VETADO)</h3>
+ <h3>Art. 15. (VETADO)</h3>
+ <h3>Art. 16. (VETADO)</h3>
+ <h3>Art. 17. (VETADO)</h3>
+ <h2>CAPÍTULO V</h2>
+ <p>Da Aquicultura</p>
+ <h3>Art. 18. O aquicultor poderá coletar, capturar e transportar organismos aquáticos silvestres, com finalidade técnico-científica ou comercial, desde que previamente autorizado pelo órgão competente, nos seguintes casos:</h3>
+ <h5>I – reposição de plantel de reprodutores;</h5>
+ <h5>II – cultivo de moluscos aquáticos e de macroalgas disciplinado em legislação específica.</h5>
+ <h3>Art. 19. A aquicultura é classificada como:</h3>
+ <h5>I – comercial: quando praticada com finalidade econômica, por pessoa física ou jurídica;</h5>
+ <h5>II – científica ou demonstrativa: quando praticada unicamente com fins de pesquisa, estudos ou demonstração por pessoa jurídica legalmente habilitada para essas finalidades;</h5>
+ <h5>III – recomposição ambiental: quando praticada sem finalidade econômica, com o objetivo de repovoamento, por pessoa física ou jurídica legalmente habilitada;</h5>
+ <h5>IV – familiar: quando praticada por unidade unifamiliar, nos termos da Lei N° 11.326, de 24 de julho de 2006;</h5>
+ <h5>V – ornamental: quando praticada para fins de aquariofilia ou de exposição pública, com fins comerciais ou não.</h5>
+ <h3>Art. 20. O regulamento desta Lei disporá sobre a classificação das modalidades de aquicultura a que se refere o art. 19, consideradas:</h3>
+ <h5>I – a forma do cultivo;</h5>
+ <h5>II – a dimensão da área explorada;</h5>
+ <h5>III – a prática de manejo;</h5>
+ <h5>IV – a finalidade do empreendimento.</h5>
+ <h4>Parágrafo único. As empresas de aquicultura são consideradas empresas pesqueiras.</h4>
+ <h3>Art. 21. O Estado concederá o direito de uso de águas e terrenos públicos para o exercício da aquicultura.</h3>
+ <h3>Art. 22. Na criação de espécies exóticas, é responsabilidade do aquicultor assegurar a contenção dos espécimes no âmbito do cativeiro, impedindo seu acesso às águas de drenagem de bacia hidrográfica brasileira.</h3>
+ <h4>Parágrafo único. Fica proibida a soltura, no ambiente natural, de organismos geneticamente modificados, cuja caracterização esteja em conformidade com os termos da legislação específica.</h4>
+ <h3>Art. 23. São instrumentos de ordenamento da aquicultura os planos de desenvolvimento da aquicultura, os parques e áreas aquícolas e o Sistema Nacional de Autorização de Uso de Águas da União para fins de aquicultura, conforme definidos em regulamentação específica.</h3>
+ <h4>Parágrafo único. A implantação de empreendimentos aquícolas em áreas de salinas, salgados, apicuns, restingas, bem como em todas e quaisquer áreas adjacentes a rios, lagoas, lagos, açudes, deverá observar o contido na Lei N° 4.771, de 15 de setembro de 1965 – Código Florestal, na Medida Provisória Nº 2.166-67, de 24 de agosto de 2001 , e nas demais legislações pertinentes que dispõem sobre as Áreas de Preservação Permanente – APP.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DO ACESSO AOS RECURSOS PESQUEIROS</h3>
+ <h3>Art. 24. Toda pessoa, física ou jurídica, que exerça atividade pesqueira bem como a embarcação de pesca devem ser previamente inscritas no Registro Geral da Atividade Pesqueira - RGP, bem como no Cadastro Técnico Federal - CTF na forma da legislação específica.</h3>
+ <h4>Parágrafo único. Os critérios para a efetivação do Registro Geral da Atividade Pesqueira serão estabelecidos no regulamento desta Lei. Regulamento</h4>
+ <h3>Art. 25. A autoridade competente adotará, para o exercício da atividade pesqueira, os seguintes atos administrativos: Regulamento</h3>
+ <h5>I – concessão: para exploração por particular de infraestrutura e de terrenos públicos destinados à exploração de recursos pesqueiros;</h5>
+ <h5>II – permissão: para transferência de permissão; para importação de espécies aquáticas para fins ornamentais e de aquicultura, em qualquer fase do ciclo vital; para construção, transformação e importação de embarcações de pesca; para arrendamento de embarcação estrangeira de pesca; para pesquisa; para o exercício de aquicultura em águas públicas; para instalação de armadilhas fixas em águas de domínio da União;</h5>
+ <h5>III – autorização: para operação de embarcação de pesca e para operação de embarcação de esporte e recreio, quando utilizada na pesca esportiva; e para a realização de torneios ou gincanas de pesca amadora;</h5>
+ <h5>IV – licença: para o pescador profissional e amador ou esportivo; para o aquicultor; para o armador de pesca; para a instalação e operação de empresa pesqueira;</h5>
+ <h5>V – cessão: para uso de espaços físicos em corpos d’água sob jurisdição da União, dos Estados e do Distrito Federal, para fins de aquicultura.</h5>
+ <h4>§ 1º Os critérios para a efetivação do Registro Geral da Atividade Pesqueira serão estabelecidos no regulamento desta Lei.</h4>
+ <h4>§ 2º A inscrição no RGP é condição prévia para a obtenção de concessão, permissão, autorização e licença em matéria relacionada ao exercício da atividade pesqueira.</h4>
+ <h3>Art. 26. Toda embarcação nacional ou estrangeira que se dedique à pesca comercial, além do cumprimento das exigências da autoridade marítima, deverá estar inscrita e autorizada pelo órgão público federal competente.</h3>
+ <h4>Parágrafo único. A inobservância do disposto no caput deste artigo implicará a interdição do barco até a satisfação das exigências impostas pelas autoridades competentes.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DO ESTÍMULO À ATIVIDADE PESQUEIRA</h3>
+ <h3>Art. 27. São considerados produtores rurais e beneficiários da política agrícola de que trata o art. 187 da Constituição Federal as pessoas físicas e jurídicas que desenvolvam atividade pesqueira de captura e criação de pescado nos termos desta Lei.</h3>
+ <h4>§ 1º Podem ser beneficiários do crédito rural de comercialização os agentes que desenvolvem atividades de transformação, processamento e industrialização de pescado, desde que atendido o disposto no § 1º do art. 49 da Lei N° 8.171, de 17 de janeiro de 1991.</h4>
+ <h4>§ 2º Fica o Poder Executivo autorizado a criar sistema nacional de informações sobre a pesca e a aquicultura, com o objetivo de coletar, agregar, intercambiar e disseminar informações sobre o setor pesqueiro e aquícola nacional.</h4>
+ <h3>Art. 28. As colônias de pescadores poderão organizar a comercialização dos produtos pesqueiros de seus associados, diretamente ou por intermédio de cooperativas ou outras entidades constituídas especificamente para esse fim.</h3>
+ <h3>Art. 29. A capacitação da mão de obra será orientada para o desenvolvimento sustentável da atividade pesqueira.</h3>
+ <h4>Parágrafo único. Cabe ao poder público e à iniciativa privada a promoção e o incentivo da pesquisa e capacitação da mão de obra pesqueira.</h4>
+ <h3>Art. 30. A pesquisa pesqueira será destinada a obter e proporcionar, de forma permanente, informações e bases científicas que permitam o desenvolvimento sustentável da atividade pesqueira.</h3>
+ <h4>§ 1º Não se aplicam à pesquisa científica as proibições estabelecidas para a atividade pesqueira comercial.</h4>
+ <h4>§ 2º A coleta e o cultivo de recursos pesqueiros com finalidade científica deverão ser autorizados pelo órgão ambiental competente.</h4>
+ <h4>§ 3º O resultado das pesquisas deve ser difundido para todo o setor pesqueiro.</h4>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DA FISCALIZAÇÃO E DAS SANÇÕES</h3>
+ <h3>Art. 31. A fiscalização da atividade pesqueira abrangerá as fases de pesca, cultivo, desembarque, conservação, transporte, processamento, armazenamento e comercialização dos recursos pesqueiros, bem como o monitoramento ambiental dos ecossistemas aquáticos.</h3>
+ <h4>Parágrafo único. A fiscalização prevista no caput deste artigo é de competência do poder público federal, observadas as competências estadual, distrital e municipal pertinentes.</h4>
+ <h3>Art. 32. A autoridade competente poderá determinar a utilização de mapa de bordo e dispositivo de rastreamento por satélite, bem como de qualquer outro dispositivo ou procedimento que possibilite o monitoramento a distância e permita o acompanhamento, de forma automática e em tempo real, da posição geográfica e da profundidade do local de pesca da embarcação, nos termos de regulamento específico.</h3>
+ <h3>Art. 33. As condutas e atividades lesivas aos recursos pesqueiros e ao meio ambiente serão punidas na forma da Lei N° 9.605, de 12 de fevereiro de 1998 , e de seu regulamento.</h3>
+ <h2>CAPÍTULO IX</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 34. O órgão responsável pela gestão do uso dos recursos pesqueiros poderá solicitar amostra de material biológico oriundo da atividade pesqueira, sem ônus para o solicitante, com a finalidade de geração de dados e informações científicas, podendo ceder o material a instituições de pesquisa.</h3>
+ <h3>Art. 35. A autoridade competente, nos termos da legislação específica e sem comprometer os aspectos relacionados à segurança da navegação, à salvaguarda da vida humana e às condições de habitabilidade da embarcação, poderá determinar que os proprietários, armadores ou arrendatários das embarcações pesqueiras mantenham a bordo da embarcação, sem ônus para a referida autoridade, acomodações e alimentação para servir a:</h3>
+ <h5>I – observador de bordo, que procederá à coleta de dados, material para pesquisa e informações de interesse do setor pesqueiro, assim como ao monitoramento ambiental;</h5>
+ <h5>II – cientista brasileiro que esteja realizando pesquisa de interesse do Sistema Nacional de Informações da Pesca e Aquicultura.</h5>
+ <h3>Art. 36. A atividade de processamento do produto resultante da pesca e da aquicultura será exercida de acordo com as normas de sanidade, higiene e segurança, qualidade e preservação do meio ambiente e estará sujeita à observância da legislação específica e à fiscalização dos órgãos competentes.</h3>
+ <h4>Parágrafo único. (VETADO)</h4>
+ <h3>Art. 37. Esta Lei entra em vigor após decorridos 60 (sessenta) dias de sua publicação oficial.</h3>
+ <h3>Art. 38. Ficam revogados a Lei N° 7.679, de 23 de novembro de 1988 , e os arts. 1º a 5º , 7º a 18 , 20 a 28 , 30 a 50 , 53 a 92 e 94 a 99 do Decreto-Lei N° 221, de 28 de fevereiro de 1967.</h3>
+ <p>Brasília, 29 de junho de 2009; 188º da Independência e 121º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Izabela Mônica Vieira Teixeira</p>
+ <p>Este texto não substitui o publicado no DOU de 30.6.2009 e retificado em 9.7.2009</p>
+ <p>Dispõe sobre a Política Nacional de Desenvolvimento Sustentável da Aquicultura e da Pesca, regula as atividades pesqueiras, revoga a Lei n° 7.679, de 23 de novembro de 1988, e dispositivos do Decreto-Lei n° 221, de 28 de fevereiro de 1967, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L11959.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

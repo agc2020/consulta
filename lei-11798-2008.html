@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 11.798, DE 29 DE OUTUBRO DE 2008 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2008" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 11.798, DE 29 DE OUTUBRO DE 2008</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 21:55:37 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2008/Lei/L11798.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.188 caracteres | espelho: 12.213 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 11.798, DE 29 DE OUTUBRO DE 2008.</p>
+ <p>Dispõe sobre a composição e a competência do Conselho da Justiça Federal, revoga a Lei N° 8.472, de 14 de outubro de 1992, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Disposições Preliminares</p>
+ <h3>Art. 1º Esta Lei dispõe sobre o Conselho da Justiça Federal, que funcionará no Superior Tribunal de Justiça, com atuação em todo o território nacional, a quem cabe a supervisão orçamentária e administrativa da Justiça Federal de primeiro e segundo graus, como órgão central do sistema, conforme estabelecido no inciso II do parágrafo único do art. 105 da Constituição Federal.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Da Composição e do Funcionamento</p>
+ <h3>Art. 2º O Conselho da Justiça Federal será integrado:</h3>
+ <h5>I – pelo Presidente e pelo Vice-Presidente do Superior Tribunal de Justiça;</h5>
+ <h5>II – por 3 (três) Ministros, eleitos entre os integrantes do Superior Tribunal de Justiça, juntamente com seus suplentes;</h5>
+ <h5>II - por 4 (quatro) Ministros, eleitos entre os integrantes do Superior Tribunal de Justiça, juntamente com seus suplentes; (Redação dada pela Lei n° 14.226, de 2021)</h5>
+ <h5>III – pelos Presidentes dos Tribunais Regionais Federais, que serão substituídos em suas faltas ou impedimentos pelos respectivos Vice-Presidentes.</h5>
+ <h4>§ 1º Terão direito a assento no Conselho da Justiça Federal, sem direito a voto, os Presidentes do Conselho Federal da Ordem dos Advogados do Brasil e da Associação dos Juízes Federais do Brasil – AJUFE, que indicarão os seus suplentes.</h4>
+ <h4>§ 2º A Presidência do Conselho da Justiça Federal será exercida pelo Presidente do Superior Tribunal de Justiça, que será substituído, em suas faltas ou impedimentos, pelo Vice-Presidente do Superior Tribunal de Justiça.</h4>
+ <h4>§ 3º Os Conselheiros terão mandato de 2 (dois) anos, vedada a investidura daqueles que, por mandamento constitucional, legal ou regimental, permanecerão por menos de 6 (seis) meses na função.</h4>
+ <h4>§ 4º Não se aplica a regra do § 3º deste artigo aos Presidentes do Superior Tribunal de Justiça e dos Tribunais Regionais Federais.</h4>
+ <h4>§ 5º É vedada a recondução de Conselheiros.</h4>
+ <h4>§ 6º A Corregedoria-Geral da Justiça Federal será dirigida pelo mais antigo dos Ministros do Superior Tribunal de Justiça que integrar o Conselho da Justiça Federal, à exceção do Presidente e do Vice-Presidente.</h4>
+ <h4>§ 6º A 	Corregedoria-Geral da Justiça Federal será dirigida pelo Ministro do 	Superior Tribunal de Justiça eleito Corregedor-Geral conforme o Regimento 	Interno do Superior Tribunal de Justiça. (Redação dada pela Lei n° 13.788, de 2018)</h4>
+ <h4>§ 7º O Corregedor-Geral será substituído, em suas faltas ou impedimentos, pelos demais Conselheiros Ministros do Superior Tribunal de Justiça, respeitada a ordem de antigüidade.</h4>
+ <h4>§ 7º O 	Corregedor-Geral será substituído pelo Ministro do Superior Tribunal de 	Justiça eleito Vice-Corregedor-Geral nas faltas e impedimentos daquele, ou, 	ainda, por delegação, conforme o Regimento Interno do Superior Tribunal de 	Justiça. (Redação dada pela Lei n° 13.788, de 2018)</h4>
+ <h4>§ 8º O Conselho da Justiça Federal reunir-se-á ordinariamente 1 (uma) vez por mês, durante o ano judiciário, e, extraordinariamente, sempre que for necessário, por convocação de seu Presidente, exigida, em ambos os casos, a presença mínima de 7 (sete) Conselheiros.</h4>
+ <h4>§ 9º As decisões do Conselho da Justiça Federal serão tomadas pelo voto da maioria entre os presentes, prevalecendo, em caso de empate, o voto proferido pelo Presidente.</h4>
+ <h3>Art. 3º As atividades de administração judiciária, relativas a recursos humanos, gestão documental e de informação, administração orçamentária e financeira, controle interno e informática, além de outras que necessitem coordenação central e padronização, no âmbito da Justiça Federal de primeiro e segundo graus, serão organizadas em forma de sistema, cujo órgão central será o Conselho da Justiça Federal.</h3>
+ <h4>Parágrafo único. Considerar-se-ão integrados ao sistema de que trata o caput deste artigo os serviços atualmente responsáveis pelas atividades ali descritas, pelo que se sujeitarão à orientação normativa, à supervisão técnica e à fiscalização específica do órgão central do sistema.</h4>
+ <h3>Art. 4º Integrarão a estrutura institucional do Conselho da Justiça Federal a Corregedoria-Geral da Justiça Federal, o Centro de Estudos Judiciários e a Turma Nacional de Uniformização dos Juizados Especiais Federais.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Das Competências</p>
+ <h3>Art. 5º Ao Conselho da Justiça Federal compete:</h3>
+ <h5>I – examinar e encaminhar ao Superior Tribunal de Justiça:</h5>
+ <h6>a) proposta de criação ou extinção de cargos e fixação de vencimentos e vantagens dos juízes e servidores da Justiça Federal de primeiro e segundo graus;</h6>
+ <h6>b) proposta de criação ou extinção de Tribunais Regionais Federais e de alteração do número de seus membros;</h6>
+ <h5>II – aprovar sugestões de alteração da legislação relativa às matérias de competência da Justiça Federal;</h5>
+ <h5>III – expedir normas relacionadas ao sistema de administração judiciária da Justiça Federal de primeiro e segundo graus, constante do art. 3º desta Lei;</h5>
+ <h5>IV – apreciar, de ofício, ou a requerimento de magistrado federal, as decisões administrativas dos Tribunais Regionais Federais que contrariarem a legislação vigente e as normas editadas com base no inciso II do caput deste artigo;</h5>
+ <h5>V – homologar, na forma regimental, como condição de eficácia, as decisões dos Tribunais Regionais Federais que implicarem aumento de despesas;</h5>
+ <h5>VI – aprovar as propostas orçamentárias e os pedidos de créditos adicionais do Conselho da Justiça Federal, dos Tribunais Regionais Federais e da Justiça Federal de primeiro grau;</h5>
+ <h5>VII – prover, por concurso público, os cargos necessários à sua administração, ressalvados os cargos em comissão, declarados em lei de livre nomeação e exoneração;</h5>
+ <h5>VIII – avocar processos administrativos em curso;</h5>
+ <h5>IX – julgar processos administrativos disciplinares relativos a membros dos Tribunais Regionais Federais, imputando, quando for o caso, as penalidades cabíveis, assegurados a ampla defesa e o contraditório;</h5>
+ <h5>X – representar ao Ministério Público para a promoção das ações judiciais cabíveis contra magistrados, inclusive com vistas na propositura de ação civil para a decretação de perda de cargo ou de cassação de aposentadoria;</h5>
+ <h5>XI – decidir, em grau de recurso, as matérias relacionadas aos direitos e deveres dos servidores de sua Secretaria e dos juízes, quando a esses for aplicada sanção em processo disciplinar decidido pelo Tribunal Regional Federal;</h5>
+ <h5>XII – zelar pelo cumprimento das decisões do Conselho Nacional de Justiça, no âmbito da Justiça Federal.</h5>
+ <h4>Parágrafo único. O Conselho da Justiça Federal possui poder correicional e as suas decisões terão caráter vinculante, no âmbito da Justiça Federal de primeiro e segundo graus.</h4>
+ <h3>Art. 6º À Corregedoria-Geral da Justiça Federal, órgão de fiscalização, controle e orientação normativa da Justiça Federal de primeiro e segundo graus, compete:</h3>
+ <h5>I – exercer a supervisão técnica e o controle da execução das deliberações do Conselho da Justiça Federal;</h5>
+ <h5>II – encaminhar ao conhecimento dos Presidentes dos Tribunais Regionais Federais propostas de ações relativas aos sistemas que integram a Justiça Federal e submetê-las à aprovação do Conselho da Justiça Federal;</h5>
+ <h5>III – realizar inspeção e correição permanentes ou periódicas, ordinárias ou extraordinárias, gerais ou parciais, sobre os Tribunais Regionais Federais, conforme o Regimento Interno do Conselho da Justiça Federal;</h5>
+ <h5>IV – promover sindicâncias, inspeções e correições para apurar reclamações, representações e denúncias fundamentadas de qualquer interessado, relativas aos magistrados de segundo grau, submetendo ao Plenário para deliberação;</h5>
+ <h5>V – submeter ao Conselho da Justiça Federal provimentos destinados a disciplinar condutas a serem adotadas pelos órgãos judiciários da Justiça Federal de primeiro e segundo graus.</h5>
+ <h4>Parágrafo único. A Corregedoria-Geral da Justiça Federal deverá valer-se do apoio das unidades administrativas do Conselho da Justiça Federal.</h4>
+ <h3>Art. 7º Ao Corregedor-Geral da Justiça Federal compete:</h3>
+ <h5>I – apresentar ao Conselho da Justiça Federal relatório circunstanciado das atividades da Corregedoria-Geral durante o ano judiciário;</h5>
+ <h5>II – presidir o Fórum Permanente de Corregedores da Justiça Federal;</h5>
+ <h5>III – presidir a Turma Nacional de Uniformização dos Juizados Especiais Federais;</h5>
+ <h5>IV – coordenar a Comissão Permanente dos Coordenadores dos Juizados Especiais Federais;</h5>
+ <h5>V – dirigir o Centro de Estudos Judiciários;</h5>
+ <h5>VI – expedir instruções e outros atos normativos para o funcionamento dos serviços da Corregedoria-Geral da Justiça Federal;</h5>
+ <h5>VII – indicar ao Presidente do Conselho da Justiça Federal, para fins de designação, nomeação ou exoneração, os ocupantes de função comissionada ou cargo em comissão, no âmbito da Corregedoria-Geral da Justiça Federal;</h5>
+ <h5>VIII – relativamente às matérias de sua competência:</h5>
+ <h6>a) executar e fazer executar as deliberações do Conselho da Justiça Federal;</h6>
+ <h6>b) dirigir-se às autoridades judiciárias e administrativas, assinando as respectivas correspondências.</h6>
+ <h4>§ 1º As sindicâncias, inspeções e correições serão realizadas sem prejuízo da atuação disciplinar e correicional do Conselho Nacional da Justiça.</h4>
+ <h4>§ 2º O Corregedor-Geral da Justiça Federal poderá requisitar até 2 (dois) magistrados, observada a quinta parte mais antiga, bem como servidores, para atuarem em auxílio de sua atividade pelo período máximo de 2 (dois) anos, prorrogável uma única vez pelo mesmo período, sem prejuízo de direitos e vantagens inerentes ao exercício de seus cargos e empregos de origem.</h4>
+ <h3>Art. 8º Ao Centro de Estudos Judiciários compete:</h3>
+ <h5>I – realizar e fomentar estudos, pesquisas, serviços editoriais e de informação, com vistas na modernização da Justiça Federal;</h5>
+ <h5>II – planejar, coordenar e executar atividades de formação e aperfeiçoamento de magistrados e servidores, em articulação com as escolas de magistratura dos Tribunais Regionais Federais, segundo normas a serem editadas pela Escola Nacional de Formação e Aperfeiçoamento de Magistrados;</h5>
+ <h5>III – elaborar e encaminhar à Escola Nacional de Formação e Aperfeiçoamento de Magistrados o Plano Nacional de Aperfeiçoamento e Pesquisa para os Juízes Federais.</h5>
+ <h4>§ 1º É vedada a realização de qualquer atividade pelo Centro de Estudos Judiciários relativa a tema estranho à competência da Justiça Federal, conforme o art. 109 da Constituição Federal.</h4>
+ <h4>§ 2º É obrigatória a realização de pelo menos uma atividade anual do Centro de Estudos Judiciários nas sedes dos Tribunais Regionais Federais.</h4>
+ <h4>§ 3º Os gastos anuais com as atividades-fim do Centro de Estudos Judiciários serão vinculados à área de pesquisa em, no mínimo, 40% (quarenta por cento), conforme prioridades constantes de Plano Plurianual a ser aprovado pelo Conselho da Justiça Federal.</h4>
+ <h4>§ 4º Integrará a estrutura administrativa do Centro de Estudos Judiciários o Conselho das Escolas da Magistratura Federal, presidido pelo ministro diretor do Centro e composto pelos diretores das Escolas da Magistratura dos Tribunais Regionais Federais e pelo Presidente da Associação dos Juízes Federais do Brasil.</h4>
+ <h3>Art. 9º À Turma Nacional de Uniformização dos Juizados Especiais Federais compete apreciar os incidentes de uniformização de interpretação de lei federal, previstos na Lei N° 10.259, de 12 de julho de 2001.</h3>
+ <h4>§ 1º Compõem a Turma Nacional de Uniformização:</h4>
+ <h5>I – o Corregedor-Geral da Justiça Federal;</h5>
+ <h5>II – 2 (dois) juízes federais por região, escolhidos pelo respectivo Tribunal Regional Federal dentre os titulares em exercício em Juizados Especiais Federais.</h5>
+ <h4>§ 2º O funcionamento da Turma Nacional de Uniformização dos Juizados Especiais Federais será disciplinado por regimento próprio, aprovado pelo Conselho da Justiça Federal.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Disposições Finais</p>
+ <h3>Art. 10. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 11. É revogada a Lei N° 8.472, de 14 de outubro de 1992.</h3>
+ <p>Brasília, 29 de outubro de 2008; 187º da Independência e 120º da República.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>José Antonio Dias Toffoli</p>
+ <p>Este texto não substitui o publicado no DOU de 30.10.2008</p>
+ <p>Dispõe sobre a composição e a competência do Conselho da Justiça Federal, revoga a Lei n° 8.472, de 14 de outubro de 1992, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2008/Lei/L11798.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

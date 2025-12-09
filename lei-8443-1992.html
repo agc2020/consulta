@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 8.443, DE 16 DE JULHO DE 1992 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1992" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 8.443, DE 16 DE JULHO DE 1992</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 21:56:16 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8443.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 63.553 caracteres | espelho: 63.513 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>Lei N° 8.443, DE 16 DE JULHO DE 1992.</p>
+ <p>Dispõe sobre a 	Lei Orgânica do Tribunal de Contas da União e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <p>TÍTULO I</p>
+ <p>Natureza, Competência e Jurisdição</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Natureza e Competência</p>
+ <h3>Art. 1° Ao Tribunal de Contas da União, órgão de controle externo, compete, nos termos da Constituição Federal e na forma estabelecida nesta Lei:</h3>
+ <h5>I - julgar as contas dos administradores e demais responsáveis por dinheiros, bens e valores públicos das unidades dos poderes da União e das entidades da administração indireta, incluídas as fundações e sociedades instituídas e mantidas pelo poder público federal, e as contas daqueles que derem causa a perda, extravio ou outra irregularidade de que resulte dano ao Erário;</h5>
+ <h5>II - proceder, por iniciativa própria ou por solicitação do Congresso Nacional, de suas Casas ou das respectivas Comissões, à fiscalização contábil, financeira, orçamentária, operacional e patrimonial das unidades dos poderes da União e das demais entidades referidas no inciso anterior;</h5>
+ <h5>III - apreciar as contas prestadas anualmente pelo Presidente da República, nos termos do art. 36 desta Lei;</h5>
+ <h5>IV - acompanhar a arrecadação da receita a cargo da União e das entidades referidas no inciso I deste artigo, mediante inspeções e auditorias, ou por meio de demonstrativos próprios, na forma estabelecida no Regimento Interno;</h5>
+ <h5>V - apreciar, para fins de registro, na forma estabelecida no Regimento Interno, a legalidade dos atos de admissão de pessoal, a qualquer título, na administração direta e indireta, incluídas as fundações instituídas e mantidas pelo poder público federal, excetuadas as nomeações para cargo de provimento em comissão, bem como a das concessões de aposentadorias, reformas e pensões, ressalvadas as melhorias posteriores que não alterem o fundamento legal do ato concessório;</h5>
+ <h5>VI - efetuar, observada a legislação pertinente, o cálculo das quotas referentes aos fundos de participação a que alude o parágrafo único do art. 161 da Constituição Federal, fiscalizando a entrega dos respectivos recursos;</h5>
+ <h5>VII - emitir, nos termos do § 2º do art. 33 da Constituição Federal , parecer prévio sobre as contas do Governo de Território Federal, no prazo de sessenta dias, a contar de seu recebimento, na forma estabelecida no Regimento Interno;</h5>
+ <h5>VIII - representar ao poder competente sobre irregularidades ou abusos apurados, indicando o ato inquinado e definindo responsabilidades, inclusive as de Ministro de Estado ou autoridade de nível hierárquico equivalente;</h5>
+ <h5>IX - aplicar aos responsáveis as sanções previstas nos arts. 57 a 61 desta Lei;</h5>
+ <h5>X - elaborar e alterar seu Regimento Interno;</h5>
+ <h5>XI - eleger seu Presidente e seu Vice-Presidente, e dar-lhes posse;</h5>
+ <h5>XII - conceder licença, férias e outros afastamentos aos ministros, auditores e membros do Ministério Público junto ao Tribunal, dependendo de inspeção por junta médica a licença para tratamento de saúde por prazo superior a seis meses;</h5>
+ <h5>XIII - propor ao Congresso Nacional a fixação de vencimentos dos ministros, auditores e membros do Ministério Público junto ao Tribunal;</h5>
+ <h5>XIV - organizar sua Secretaria, na forma estabelecida no Regimento Interno, e prover-lhe os cargos e empregos, observada a legislação pertinente;</h5>
+ <h5>XV - propor ao Congresso Nacional a criação, transformação e extinção de cargos, empregos e funções do Quadro de Pessoal de sua Secretaria, bem como a fixação da respectiva remuneração;</h5>
+ <h5>XVI - decidir sobre denúncia que lhe seja encaminhada por qualquer cidadão, partido político, associação ou sindicato, na forma prevista nos arts. 53 a 55 desta Lei;</h5>
+ <h5>XVII - decidir sobre consulta que lhe seja formulada por autoridade competente, a respeito de dúvida suscitada na aplicação de dispositivos legais e regulamentares concernentes a matéria de sua competência, na forma estabelecida no Regimento Interno.</h5>
+ <h4>§ 1° No julgamento de contas e na fiscalização que lhe compete, o Tribunal decidirá sobre a legalidade, a legitimidade e a economicidade dos atos de gestão e das despesas deles decorrentes, bem como sobre a aplicação de subvenções e a renúncia de receitas.</h4>
+ <h4>§ 2° A resposta à consulta a que se refere o inciso XVII deste artigo tem caráter normativo e constitui prejulgamento da tese, mas não do fato ou caso concreto.</h4>
+ <h4>§ 3° Será parte essencial das decisões do Tribunal ou de suas Câmaras:</h4>
+ <h5>I - o relatório do Ministro-Relator, de que constarão as conclusões da instrução (do Relatório da equipe de auditoria ou do técnico responsável pela análise do processo, bem como do parecer das chefias imediatas, da Unidade Técnica), e do Ministério Público junto ao Tribunal;</h5>
+ <h5>II - fundamentação com que o Ministro-Relator analisará as questões de fato e de direito;</h5>
+ <h5>III - dispositivo com que o Ministro-Relator decidirá sobre o mérito do processo.</h5>
+ <h3>Art. 2° Para o desempenho de sua competência o Tribunal receberá, em cada exercício, o rol de responsáveis e suas alterações, e outros documentos ou informações que considerar necessários, na forma estabelecida no Regimento Interno.</h3>
+ <h4>Parágrafo único. O Tribunal poderá solicitar ao Ministro de Estado supervisor da área, ou à autoridade de nível hierárquico equivalente outros elementos indispensáveis ao exercício de sua competência.</h4>
+ <h3>Art. 3° Ao Tribunal de Contas da União, no âmbito de sua competência e jurisdição, assiste o poder regulamentar, podendo, em conseqüência, expedir atos e instruções normativas sobre matéria de suas atribuições e sobre a organização dos processos que lhe devam ser submetidos, obrigando ao seu cumprimento, sob pena de responsabilidade.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Jurisdição</p>
+ <h3>Art. 4° O Tribunal de Contas da União tem jurisdição própria e privativa, em todo o território nacional, sobre as pessoas e matérias sujeitas à sua competência.</h3>
+ <h3>Art. 5° A jurisdição do Tribunal abrange:</h3>
+ <h5>I - qualquer pessoa física, órgão ou entidade a que se refere o inciso I do art. 1° desta Lei, que utilize, arrecade, guarde, gerencie ou administre dinheiros, bens e valores públicos ou pelos quais a União responda, ou que, em nome desta, assuma obrigações de natureza pecuniária;</h5>
+ <h5>II - aqueles que derem causa a perda, extravio ou outra irregularidade de que resulte dano ao Erário;</h5>
+ <h5>III - os dirigentes ou liquidantes das empresas encampadas ou sob intervenção ou que de qualquer modo venham a integrar, provisória ou permanentemente, o patrimônio da União ou de outra entidade pública federal;</h5>
+ <h5>IV - os responsáveis pelas contas nacionais das empresas supranacionais de cujo capital social a União participe, de forma direta ou indireta, nos termos do tratado constitutivo.</h5>
+ <h5>V - os responsáveis por entidades dotadas de personalidade jurídica de direito privado que recebam contribuições parafiscais e prestem serviço de interesse público ou social;</h5>
+ <h5>VI - todos aqueles que lhe devam prestar contas ou cujos atos estejam sujeitos à sua fiscalização por expressa disposição de Lei;</h5>
+ <h5>VII - os responsáveis pela aplicação de quaisquer recursos repassados pela União, mediante convênio, acordo, ajuste ou outros instrumentos congêneres, a Estado, ao Distrito Federal ou a Município;</h5>
+ <h5>VIII - os sucessores dos administradores e responsáveis a que se refere este artigo, até o limite do valor do patrimônio transferido, nos termos do inciso XLV do art. 5° da Constituição Federal;</h5>
+ <h5>IX - os representantes da União ou do Poder Público na Assembléia Geral das empresas estatais e sociedades anônimas de cujo capital a União ou o Poder Público participem, solidariamente, com os membros dos Conselhos Fiscal e de Administração, pela prática de atos de gestão ruinosa ou liberalidade à custa das respectivas sociedades.</h5>
+ <h3>TÍTULO II</h3>
+ <p>Julgamento e Fiscalização</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Julgamento de Contas</p>
+ <p>Seção I</p>
+ <p>Tomada e Prestação de Contas</p>
+ <h3>Art. 6° Estão sujeitas à tomada de contas e, ressalvado o disposto no inciso XXXV do art. 5° da Constituição Federal, só por decisão do Tribunal de Contas da União podem ser liberadas dessa responsabilidade as pessoas indicadas nos incisos I a VI do art. 5° desta Lei.</h3>
+ <h3>Art. 7° As contas dos administradores e responsáveis a que se refere o artigo anterior serão anualmente submetidas a julgamento do Tribunal, sob forma de tomada ou prestação de contas, organizadas de acordo com normas estabelecidas em instrução normativa.</h3>
+ <h4>Parágrafo único. Nas tomadas ou prestações de contas a que alude este artigo devem ser incluídos todos os recursos, orçamentários e extra-orçamentários, geridos ou não pela unidade ou entidade.</h4>
+ <h3>Art. 8° Diante da omissão no dever de prestar contas, da não comprovação da aplicação dos recursos repassados pela União, na forma prevista no inciso VII do art. 5° desta Lei, da ocorrência de desfalque ou desvio de dinheiros, bens ou valores públicos, ou, ainda, da prática de qualquer ato ilegal, ilegítimo ou antieconômico de que resulte dano ao Erário, a autoridade administrativa competente, sob pena de responsabilidade solidária, deverá imediatamente adotar providências com vistas à instauração da tomada de contas especial para apuração dos fatos, identificação dos responsáveis e quantificação do dano.</h3>
+ <h4>§ 1° Não atendido o disposto no caput deste artigo, o Tribunal determinará a instauração da tomada de contas especial, fixando prazo para cumprimento dessa decisão.</h4>
+ <h4>§ 2° A tomada de contas especial prevista no caput deste artigo e em seu § 1° será, desde logo, encaminhada ao Tribunal de Contas da União para julgamento, se o dano causado ao Erário for de valor igual ou superior à quantia para esse efeito fixada pelo Tribunal em cada ano civil, na forma estabelecida no seu Regimento Interno.</h4>
+ <h4>§ 3° Se o dano for de valor inferior à quantia referida no parágrafo anterior, a tomada de contas especial será anexada ao processo da respectiva tomada ou prestação de contas anual do administrador ou ordenador de despesa, para julgamento em conjunto.</h4>
+ <h3>Art. 9° Integrarão a tomada ou prestação de contas, inclusive a tomada de contas especial, dentre outros elementos estabelecidos no Regimento Interno, os seguintes:</h3>
+ <h5>I - relatório de gestão;</h5>
+ <h5>II - relatório do tomador de contas, quando couber;</h5>
+ <h5>III - relatório e certificado de auditoria, com o parecer do dirigente do órgão de controle interno, que consignará qualquer irregularidade ou ilegalidade constatada, indicando as medidas adotadas para corrigir as faltas encontradas;</h5>
+ <h5>IV - pronunciamento do Ministro de Estado supervisor da área ou da autoridade de nível hierárquico equivalente, na forma do art. 52 desta Lei.</h5>
+ <p>Seção II</p>
+ <p>Decisões em Processo de Tomada ou Prestação de Contas</p>
+ <h3>Art. 10. A decisão em processo de tomada ou prestação de contas pode ser preliminar, definitiva ou terminativa.</h3>
+ <h4>§ 1° Preliminar é a decisão pela qual o Relator ou o Tribunal, antes de pronunciar-se quanto ao mérito das contas,</h4>
+ <h2>RESOLVE sobrestar o julgamento, ordenar a citação ou a audiência dos responsáveis ou, ainda, determinar outras diligências necessárias ao saneamento do processo.</h2>
+ <h4>§ 2° Definitiva é a decisão pela qual o Tribunal julga as contas regulares, regulares com ressalva, ou irregulares.</h4>
+ <h4>§ 3° Terminativa é a decisão pela qual o Tribunal ordena o trancamento das contas que forem consideradas iliquidáveis, nos termos dos arts. 20 e 21 desta Lei.</h4>
+ <h3>Art. 11. O Relator presidirá a instrução do processo, determinando, mediante despacho singular, de ofício ou por provocação do órgão de instrução ou do Ministério Público junto ao Tribunal, o sobrestamento do julgamento, a citação ou a audiência dos responsáveis, ou outras providências consideradas necessárias ao saneamento dos autos, fixando prazo, na forma estabelecida no Regimento Interno, para o atendimento das diligências, após o que submeterá o feito ao Plenário ou à Câmara respectiva para decisão de mérito.</h3>
+ <h3>Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal:</h3>
+ <h5>I - definirá a responsabilidade individual ou solidária pelo ato de gestão inquinado;</h5>
+ <h5>II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida;</h5>
+ <h5>III - se não houver débito, determinará a audiência do responsável para, no prazo estabelecido no Regimento Interno, apresentar razões de justificativa;</h5>
+ <h5>IV - adotará outras medidas cabíveis.</h5>
+ <h4>§ 1° O responsável cuja defesa for rejeitada pelo Tribunal será cientificado para, em novo e improrrogável prazo estabelecido no Regimento Interno, recolher a importância devida.</h4>
+ <h4>§ 2° Reconhecida pelo Tribunal a boa-fé, a liquidação tempestiva do débito atualizado monetariamente sanará o processo, se não houver sido observada outra irregularidade nas contas.</h4>
+ <h4>§ 3° O responsável que não atender à citação ou à audiência será considerado revel pelo Tribunal, para todos os efeitos, dando-se prosseguimento ao processo.</h4>
+ <h3>Art. 13. A decisão preliminar a que se refere ao art. 11 desta Lei poderá, a critério do Relator, ser publicada no Diário Oficial da União.</h3>
+ <h3>Art. 14. O Tribunal julgará as tomadas ou prestações de contas até o término do exercício seguinte àquele em que estas lhes tiverem sido apresentadas.</h3>
+ <h3>Art. 15. Ao julgar as contas, o Tribunal decidirá se estas são regulares, regulares com ressalva, ou irregulares.</h3>
+ <h3>Art. 16. As contas serão julgadas:</h3>
+ <h5>I - regulares, quando expressarem, de forma clara e objetiva, a exatidão dos demonstrativos contábeis, a legalidade, a legitimidade e a economicidade dos atos de gestão do responsável;</h5>
+ <h5>II - regulares com ressalva, quando evidenciarem impropriedade ou qualquer outra falta de natureza formal de que não resulte dano ao Erário;</h5>
+ <h5>III - irregulares, quando comprovada qualquer das seguintes ocorrências:</h5>
+ <h6>a) omissão no dever de prestar contas;</h6>
+ <h6>b) prática de ato de gestão ilegal, ilegítimo, antieconômico, ou infração à norma legal ou regulamentar de natureza contábil, financeira, orçamentária, operacional ou patrimonial;</h6>
+ <h6>c) dano ao Erário decorrente de ato de gestão ilegítimo ao antieconômico;</h6>
+ <h6>d) desfalque ou desvio de dinheiros, bens ou valores públicos.</h6>
+ <h4>§ 1° O Tribunal poderá julgar irregulares as contas no caso de reincidência no descumprimento de determinação de que o responsável tenha tido ciência, feita em processo de tomada ou prestarão de contas.</h4>
+ <h4>§ 2° Nas hipóteses do inciso III, alíneas c e d deste artigo, o Tribunal, ao julgar irregulares as contas, fixará a responsabilidade solidária:</h4>
+ <h6>a) do agente público que praticou o ato irregular, e</h6>
+ <h6>b) do terceiro que, como contratante ou parte interessada na prática do mesmo ato, de qualquer modo haja concorrido para o cometimento do dano apurado.</h6>
+ <h4>§ 3° Verificada a ocorrência prevista no parágrafo anterior deste artigo, o Tribunal providenciará a imediata remessa de cópia da documentação pertinente ao Ministério Público da União, para ajuizamento das ações civis e penais cabíveis.</h4>
+ <p>Subseção I</p>
+ <p>Contas Regulares</p>
+ <h3>Art. 17. Quando julgar as contas regulares, o Tribunal dará quitação plena ao responsável.</h3>
+ <p>Subseção II</p>
+ <p>Contas Regulares com Ressalva</p>
+ <h3>Art. 18. Quando julgar as contas regulares com ressalva, o Tribunal dará quitação ao responsável e lhe determinará, ou a quem lhe haja sucedido, a adoção de medidas necessárias à correção das impropriedades ou faltas identificadas, de modo a prevenir a ocorrência de outras semelhantes.</h3>
+ <p>Subseção III</p>
+ <p>Contas Irregulares</p>
+ <h3>Art. 19. Quando julgar as contas irregulares, havendo débito, o Tribunal condenará o responsável ao pagamento da dívida atualizada monetariamente, acrescida dos juros de mora devidos, podendo, ainda, aplicar-lhe a multa prevista no art. 57 desta Lei, sendo o instrumento da decisão considerado título executivo para fundamentar a respectiva ação de execução.</h3>
+ <h4>Parágrafo único. Não havendo débito, mas comprovada qualquer das ocorrências previstas nas alíneas a, b e c do inciso III, do art. 16, o Tribunal aplicará ao responsável a multa prevista no inciso I do art. 58, desta Lei.</h4>
+ <p>Subseção IV</p>
+ <p>Contas Iliquidáveis</p>
+ <h3>Art. 20. As contas serão consideradas iliquidáveis quando caso fortuito ou de força maior, comprovadamente alheio à vontade do responsável, tornar materialmente impossível o julgamento de mérito a que se refere o art. 16 desta Lei.</h3>
+ <h3>Art. 21. O Tribunal ordenará o trancamento das contas que forem consideradas iliquidáveis e o conseqüente arquivamento do processo.</h3>
+ <h4>§ 1° Dentro do prazo de cinco anos contados da publicação da decisão terminativa no Diário Oficial da União, o Tribunal poderá, à vista de novos elementos que considere suficientes, autorizar o desarquivamento do processo e determinar que se ultime a respectiva tomada ou prestação de contas.</h4>
+ <h4>§ 2º Transcorrido o prazo referido no parágrafo anterior sem que tenha havido nova decisão, as contas serão consideradas encerradas, com baixa na responsabilidade do administrador.</h4>
+ <p>Seção III</p>
+ <p>Execução das Decisões</p>
+ <h3>Art. 22. A citação, a audiência, a comunicação de diligência ou a notificação far-se-á:</h3>
+ <h5>I - mediante ciência do responsável ou do interessado, na forma estabelecida no Regimento Interno;</h5>
+ <h5>II - pelo correio, mediante carta registrada, com aviso de recebimento;</h5>
+ <h5>III - por edital publicado no Diário Oficial da União quando o seu destinatário não for localizado.</h5>
+ <h4>Parágrafo único. A comunicação de rejeição dos fundamentos da defesa ou das razões de justificativa será transmitida ao responsável ou interessado, na forma prevista neste artigo.</h4>
+ <h3>Art. 23. A decisão definitiva será formalizada nos termos estabelecidos no Regimento Interno, por acórdão, cuja publicação no Diário Oficial da União constituirá:</h3>
+ <h5>I - no caso de contas regulares, certificado de quitação plena do responsável para com o Erário;</h5>
+ <h5>II - no caso de contas regulares com ressalva, certificado de quitação com determinação, nos termos do art. 18 desta Lei;</h5>
+ <h5>III - no caso de contas irregulares:</h5>
+ <h6>a) obrigação de o responsável, no prazo estabelecido no Regimento Interno, comprovar perante o Tribunal que recolheu aos cofres públicos a quantia correspondente ao débito que lhe tiver sido imputado ou da multa cominada, na forma prevista nos arts. 19 e 57 desta Lei;</h6>
+ <h6>b) título executivo bastante para cobrança judicial da dívida decorrente do débito ou da multa, se não recolhida no prazo pelo responsável;</h6>
+ <h6>c) fundamento para que a autoridade competente proceda à efetivação das sanções previstas nos arts. 60 e 61 desta Lei.</h6>
+ <h3>Art. 24. A decisão do Tribunal, de que resulte imputação de débito ou cominação de multa, torna a dívida líquida e certa e tem eficácia de título executivo, nos termos da alínea b do inciso III do art. 23 desta Lei.</h3>
+ <h3>Art. 25. O responsável será notificado para, no prazo estabelecido no Regimento Interno, efetuar e comprovar o recolhimento da dívida a que se refere o art. 19 e seu parágrafo único desta Lei.</h3>
+ <h4>Parágrafo único. A notificação será feita na forma prevista no art. 22 desta Lei.</h4>
+ <h3>Art. 26. Em qualquer fase do processo, o Tribunal poderá autorizar o recolhimento parcelado da importância devida, na forma estabelecida no Regimento Interno, incidindo sobre cada parcela os correspondentes acréscimos legais.</h3>
+ <h4>Parágrafo único. A falta de recolhimento de qualquer parcela importará no vencimento antecipado do saldo devedor.</h4>
+ <h3>Art. 27. Comprovado o recolhimento integral, o Tribunal expedirá quitação do débito ou da multa.</h3>
+ <h3>Art. 28. Expirado o prazo a que se refere o caput do art. 25 desta Lei, sem manifestação do responsável, o Tribunal poderá:</h3>
+ <h5>I - determinar o desconto integral ou parcelado da dívida nos vencimentos, salários ou proventos do responsável, observados os limites previstos na legislação pertinente; ou</h5>
+ <h5>II - autorizar a cobrança judicial da dívida por intermédio do Ministério Público junto ao Tribunal, na forma prevista no inciso III do art. 81 desta Lei.</h5>
+ <h3>Art. 29. A decisão terminativa, acompanhada de seus fundamentos, será publicada no Diário Oficial da União.</h3>
+ <h3>Art. 30. Os prazos referidos nesta Lei contam-se da data:</h3>
+ <h5>I - do recebimento pelo responsável ou interessado:</h5>
+ <h6>a) da citação ou da comunicação de audiência;</h6>
+ <h6>b) da comunicação de rejeição dos fundamentos da defesa ou das razões de justificativa;</h6>
+ <h6>c) da comunicação de diligência;</h6>
+ <h6>d) da notificação;</h6>
+ <h5>II - da publicação de edital no Diário Oficial da União, quando, nos casos indicados no inciso anterior, o responsável ou interessado não for localizado;</h5>
+ <h5>III - nos demais casos, salvo disposição legal expressa em contrário, da publicação da decisão ou do acórdão no Diário Oficial da União.</h5>
+ <p>Seção IV</p>
+ <p>Recursos</p>
+ <h3>Art. 31. Em todas as etapas do processo de julgamento de contas será assegurado ao responsável ou interessado ampla defesa.</h3>
+ <h3>Art. 32. De decisão proferida em processo de tomada ou prestação de contas cabem recursos de:</h3>
+ <h5>I - reconsideração;</h5>
+ <h5>II - embargos de declaração;</h5>
+ <h5>III - revisão.</h5>
+ <h4>Parágrafo único. Não se conhecerá de recurso interposto fora do prazo, salvo em razão da superveniência de fatos novos na forma prevista no Regimento Interno.</h4>
+ <h3>Art. 33. O recurso de reconsideração, que terá efeito suspensivo, será apreciado por quem houver proferido a decisão recorrida, na forma estabelecida no Regimento Interno, e poderá ser formulado por escrito uma só vez, pelo responsável ou interessado, ou pelo Ministério Público junto ao Tribunal, dentro do prazo de quinze dias, contados na forma prevista no art. 30 desta Lei.</h3>
+ <h3>Art. 34. Cabem embargos de declaração para corrigir obscuridade, omissão ou contradição da decisão recorrida.</h3>
+ <h4>§ 1° Os embargos de declaração podem ser opostos por escrito pelo responsável ou interessado, ou pelo Ministério Público junto ao Tribunal, dentro do prazo de dez dias, contados na forma prevista no art. 30 desta Lei.</h4>
+ <h4>§ 2° Os embargos de declaração suspendem os prazos para cumprimento da decisão embargada e para interposição dos recursos previstos nos incisos I e III do art. 32 desta Lei.</h4>
+ <h3>Art. 35. De decisão definitiva caberá recurso de revisão ao Plenário, sem efeito suspensivo, interposto por escrito, uma só vez, pelo responsável, seus sucessores, ou pelo Ministério Público junto ao Tribunal, dentro do prazo de cinco anos, contados na forma prevista no inciso III do art. 30 desta Lei, e fundar-se-á:</h3>
+ <h5>I - em erro de cálculo nas contas;</h5>
+ <h5>II - em falsidade ou insuficiência de documentos em que se tenha fundamentado a decisão recorrida;</h5>
+ <h5>III - na superveniência de documentos novos com eficácia sobre a prova produzida.</h5>
+ <h4>Parágrafo único. A decisão que der provimento a recurso de revisão ensejará a correção de todo e qualquer erro ou engano apurado.</h4>
+ <h2>CAPÍTULO II</h2>
+ <p>Fiscalização a Cargo do Tribunal</p>
+ <p>Seção I</p>
+ <p>Contas do Presidente da República</p>
+ <h3>Art. 36. Ao Tribunal de Contas da União compete, na forma estabelecida no Regimento Interno, apreciar as contas prestadas anualmente pelo Presidente da República, mediante parecer prévio a ser elaborado em sessenta dias a contar de seu recebimento.</h3>
+ <h4>Parágrafo único. As contas consistirão nos balanços gerais da União e no relatório do órgão central do sistema de controle interno do Poder Executivo sobre a execução dos orçamentos de que trata o § 5° do art. 165 da Constituição Federal.</h4>
+ <p>Seção II</p>
+ <p>Fiscalização exercida por iniciativa do Congresso Nacional</p>
+ <h3>Art. 37. (Vetado)</h3>
+ <h4>Parágrafo único. (Vetado)</h4>
+ <h3>Art. 38. Compete, ainda, ao Tribunal:</h3>
+ <h5>I - realizar por iniciativa da Câmara dos Deputados, do Senado Federal, de comissão técnica ou de inquérito, inspeções e auditorias de natureza contábil, financeira, orçamentária, operacional e patrimonial nas unidades administrativas dos Poderes Legislativo, Executivo e Judiciário e nas entidades da administração indireta, incluídas as fundações e sociedades instituídas e mantidas pelo poder público federal;</h5>
+ <h5>II - prestar as informações solicitadas pelo Congresso Nacional, por qualquer de suas Casas, ou por suas comissões, sobre a fiscalização contábil, financeira, orçamentária, operacional e patrimonial e sobre resultados de inspeções e auditorias realizadas;</h5>
+ <h5>III - emitir, no prazo de trinta dias contados do recebimento da solicitação, pronunciamento conclusivo sobre matéria que seja submetida a sua apreciação pela comissão mista permanente de Senadores e Deputados, nos termos dos §§ 1° e 2° do art. 72 da Constituição Federal.</h5>
+ <h5>IV - auditar, por solicitação da comissão a que se refere o art. 166, § 1°, da Constituição Federal , ou comissão técnica de qualquer das Casas do Congresso Nacional, projetos e programas autorizados na Lei orçamentária anual, avaliando os seus resultados quanto à eficácia, eficiência e economicidade.</h5>
+ <p>Seção III</p>
+ <p>Atos Sujeitos a Registro</p>
+ <h3>Art. 39. De conformidade com o preceituado nos arts. 5°, inciso XXIV , 71, incisos II e III , 73 in fine, 74, § 2° , 96, inciso I, alínea a , 97 , 39, §§ 1° e 2° e 40, § 4°, da Constituição Federal , o Tribunal apreciará, para fins de registro ou reexame, os atos de:</h3>
+ <h5>I - admissão de pessoal, a qualquer título, na administração direta e indireta, incluídas as fundações instituídas e mantidas pelo poder público, executadas as nomeações para cargo de provimento em comissão;</h5>
+ <h5>II - concessão inicial de aposentadoria, reformas e pensões, bem como de melhorias posteriores que tenham alterado o fundamento legal do respectivo concessório inicial.</h5>
+ <h4>Parágrafo único. Os atos a que se refere este artigo serão apreciados pelo Tribunal na forma estabelecida no Regimento Interno.</h4>
+ <h3>Art. 40. O Relator presidirá a instrução do processo, determinando, mediante despacho singular, por sua ação própria e direta, ou por provocação do órgão de instrução ou do Ministério Público junto ao Tribunal, a adoção das providências consideradas necessárias ao saneamento dos autos, fixando prazo, na forma estabelecida no Regimento Interno, para o atendimento das diligências, após o que submeterá o feito ao Plenário ou à Câmara respectiva para decisão de mérito.</h3>
+ <p>Seção IV</p>
+ <p>Fiscalização de Atos e Contratos</p>
+ <h3>Art. 41. Para assegurar a eficácia do controle e para instruir o julgamento das contas, o Tribunal efetuará a fiscalização dos atos de que resulte receita ou despesa, praticados pelos responsáveis sujeitos à sua jurisdição, competindo-lhe, para tanto, em especial:</h3>
+ <h5>I - acompanhar, pela publicação no Diário Oficial da União, ou por outro meio estabelecido no Regimento Interno:</h5>
+ <h6>a) a lei relativa ao plano plurianual, a lei de diretrizes orçamentárias, a lei orçamentária anual e a abertura de créditos adicionais;</h6>
+ <h6>b) os editais de licitação, os contratos, inclusive administrativos, e os convênios, acordos, ajustes ou outros instrumentos congêneres, bem como os atos referidos no art. 38 desta Lei;</h6>
+ <h5>II - realizar, por iniciativa própria, na forma estabelecida no Regimento Interno, inspeções e auditorias de mesma natureza que as previstas no inciso I do art. 38 desta Lei;</h5>
+ <h5>III - fiscalizar, na forma estabelecida no Regimento Interno, as contas nacionais das empresas supranacionais de cujo capital social a União participe, de forma direta ou indireta, nos termos do tratado constitutivo;</h5>
+ <h5>IV - fiscalizar, na forma estabelecida no Regimento Interno, a aplicação de quaisquer recursos repassados pela União mediante convênio, acordo, ajuste ou outros instrumentos congêneres, a Estado, ao Distrito Federal ou a Município.</h5>
+ <h4>§ 1° As inspeções e auditorias de que trata esta seção serão regulamentadas no Regimento Interno e realizadas por servidores da Secretaria do Tribunal.</h4>
+ <h4>§ 2° O Tribunal comunicará às autoridades competentes dos poderes da União o resultado das inspeções e auditorias que realizar, para as medidas saneadoras das impropriedades e faltas identificadas.</h4>
+ <h3>Art. 42. Nenhum processo, documento ou informação poderá ser sonegado ao Tribunal em suas inspeções ou auditorias, sob qualquer pretexto.</h3>
+ <h4>§ 1° No caso de sonegação, o Tribunal assinará prazo para apresentação dos documentos, informações e esclarecimentos julgados necessários, comunicando o fato ao Ministro de Estado supervisor da área ou à autoridade de nível hierárquico equivalente, para as medidas cabíveis.</h4>
+ <h4>§ 2° Vencido o prazo e não cumprida a exigência, o Tribunal aplicará as sanções previstas no inciso IV do art. 58 desta Lei.</h4>
+ <h3>Art. 43. Ao proceder à fiscalização de que trata este capítulo, o Relator ou o Tribunal:</h3>
+ <h5>I - determinará as providências estabelecidas no Regimento Interno, quando não apurada transgressão a norma legal ou regulamentar de natureza contábil, financeira, orçamentária, operacional e patrimonial, ou for constatada, tão-somente, falta ou impropriedade de caráter formal;</h5>
+ <h5>II - se verificar a ocorrência de irregularidade quanto à legitimidade ou economicidade, determinará a audiência do responsável para, no prazo estabelecido no Regimento Interno, apresentar razões de justificativa.</h5>
+ <h4>Parágrafo único. Não elidido o fundamento da impugnação, o Tribunal aplicará ao responsável a multa prevista no inciso III do art. 58 desta Lei.</h4>
+ <h3>Art. 44. No início ou no curso de qualquer apuração, o Tribunal, de ofício ou a requerimento do Ministério Público, determinará, cautelarmente, o afastamento temporário do responsável, se existirem indícios suficientes de que, prosseguindo no exercício de suas funções, possa retardar ou dificultar a realização de auditoria ou inspeção, causar novos danos ao Erário ou inviabilizar o seu ressarcimento.</h3>
+ <h4>§ 1° Estará solidariamente responsável a autoridade superior competente que, no prazo determinado pelo Tribunal, deixar de atender à determinação prevista no caput deste artigo.</h4>
+ <h4>§ 2° Nas mesmas circunstâncias do caput deste artigo e do parágrafo anterior, poderá o Tribunal, sem prejuízo das medidas previstas nos arts. 60 e 61 desta Lei, decretar, por prazo não superior a um ano, a indisponibilidade de bens do responsável, tantos quantos considerados bastantes para garantir o ressarcimento dos danos em apuração.</h4>
+ <h3>Art. 45. Verificada a ilegalidade de ato ou contrato, o Tribunal, na forma estabelecida no Regimento Interno, assinará prazo para que o responsável adote as providências necessárias ao exato cumprimento da lei, fazendo indicação expressa dos dispositivos a serem observados.</h3>
+ <h4>§ 1° No caso de ato administrativo, o Tribunal, se não atendido:</h4>
+ <h5>I - sustará a execução do ato impugnado;</h5>
+ <h5>II - comunicará a decisão à Câmara dos Deputados e ao Senado Federal;</h5>
+ <h5>III - aplicará ao responsável a multa prevista no inciso II do art. 58 desta Lei.</h5>
+ <h4>§ 2° No caso de contrato, o Tribunal, se não atendido, comunicará o fato ao Congresso Nacional, a quem compete adotar o ato de sustação e solicitar, de imediato, ao Poder Executivo, as medidas cabíveis.</h4>
+ <h4>§ 3° Se o Congresso Nacional ou o Poder Executivo, no prazo de noventa dias, não efetivar as medidas previstas no parágrafo anterior, o Tribunal decidirá a respeito da sustação do contrato.</h4>
+ <h3>Art. 46. Verificada a ocorrência de fraude comprovada à licitação, o Tribunal declarará a inidoneidade do licitante fraudador para participar, por até cinco anos, de licitação na Administração Pública Federal.</h3>
+ <h3>Art. 47. Ao exercer a fiscalização, se configurada a ocorrência de desfalque, desvio de bens ou outra irregularidade de que resulte dano ao Erário, o Tribunal ordenará, desde logo, a conversão do processo em tomada de contas especial, salvo a hipótese prevista no art. 93 desta Lei.</h3>
+ <h4>Parágrafo único. O processo de tomada de contas especial a que se refere este artigo tramitará em separado das respectivas contas anuais.</h4>
+ <p>Seção V</p>
+ <p>Pedido de Reexame</p>
+ <h3>Art. 48. De decisão proferida em processos concernentes às matérias de que tratam as Seções III e IV deste capítulo caberá pedido de reexame, que terá efeito suspensivo.</h3>
+ <h4>Parágrafo único. O pedido de reexame reger-se-á pelo disposto no parágrafo único do art. 32 e no art. 33 desta Lei.</h4>
+ <h2>CAPÍTULO III</h2>
+ <p>Controle Interno</p>
+ <h3>Art. 49. Os Poderes Legislativo, Executivo e Judiciário manterão, de forma integrada, sistema de controle interno, com a finalidade de:</h3>
+ <h5>I - avaliar o cumprimento das metas previstas no plano plurianual, a execução dos programas de governo e dos orçamentos da União;</h5>
+ <h5>II - comprovar a legalidade e avaliar os resultados quanto à eficácia e à eficiência da gestão orçamentária, financeira e patrimonial nos órgãos e entidades da administração federal, bem como da aplicação de recursos públicos por entidades de direito privado;</h5>
+ <h5>III - exercer o controle das operações de crédito, avais e garantias, bem como dos direitos e haveres da União;</h5>
+ <h5>IV - apoiar o controle externo no exercício de sua missão institucional .</h5>
+ <h3>Art. 50. No apoio ao controle externo, os órgãos integrantes do sistema de controle interno deverão exercer, dentre outras, as seguintes atividades:</h3>
+ <h5>I - (Vetado)</h5>
+ <h5>II - realizar auditorias nas contas dos responsáveis sob seu controle, emitindo relatório, certificado de auditoria e parecer;</h5>
+ <h5>III - alertar formalmente a autoridade administrativa competente para que instaure tomada de contas especial, sempre que tiver conhecimento de qualquer das ocorrências referidas no caput do art. 8° desta Lei.</h5>
+ <h3>Art. 51. Os responsáveis pelo controle interno, ao tomarem conhecimento de qualquer irregularidade ou ilegalidade, dela darão ciência de imediato ao Tribunal de Contas da União, sob pena de responsabilidade solidária.</h3>
+ <h4>§ 1° Na comunicação ao Tribunal, o dirigente do órgão competente indicará as providências adotadas para evitar ocorrências semelhantes.</h4>
+ <h4>§ 2º Verificada em inspeção ou auditoria, ou no julgamento de contas, irregularidade ou ilegalidade que não tenha sido comunicada tempestivamente ao Tribunal, e provada a omissão, o dirigente do órgão de controle interno, na qualidade de responsável solidário, ficará sujeito às sanções previstas para a espécie nesta Lei.</h4>
+ <h3>Art. 52. O Ministro de Estado supervisor da área ou a autoridade de nível hierárquico equivalente emitirá, sobre as contas e o parecer do controle interno, expresso e indelegável pronunciamento, no qual atestará haver tomado conhecimento das conclusões nele contidas.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <p>Denúncia</p>
+ <h3>Art. 53. Qualquer cidadão, partido político, associação ou sindicato é parte legítima para denunciar irregularidades ou ilegalidades perante o Tribunal de Contas da União.</h3>
+ <h4>§ 1° (Vetado)</h4>
+ <h4>§ 2° (Vetado)</h4>
+ <h4>§ 3º A denúncia será apurada em caráter sigiloso, até que se comprove a sua procedência, e somente poderá ser arquivada após efetuadas as diligências pertinentes, mediante despacho fundamentado do responsável.</h4>
+ <h4>§ 4º Reunidas as provas que indiquem a existência de irregularidade ou ilegalidade, serão públicos os demais atos do processo, assegurando-se aos acusados a oportunidade de ampla defesa.</h4>
+ <h3>Art. 54. O denunciante poderá requerer ao Tribunal de Contas da União certidão dos despachos e dos fatos apurados, a qual deverá ser fornecida no prazo máximo de quinze dias, a contar do recebimento do pedido, desde que o respectivo processo de apuração tenha sido concluído ou arquivado.</h3>
+ <h4>Parágrafo único. Decorrido o prazo de noventa dias, a contar do recebimento da denúncia, será obrigatoriamente fornecida a certidão de que trata este artigo, ainda que não estejam concluídas as investigações.</h4>
+ <h3>Art. 55. No resguardo dos direitos e garantias individuais, o Tribunal dará tratamento sigiloso às denúncias formuladas, até decisão definitiva sobre a matéria.</h3>
+ <h4>§ 1° Ao decidir, caberá ao Tribunal manter ou não o sigilo quanto ao objeto e à autoria da denúncia . (Expressão suspensa pela Resolução SF nº 16, de 2006)</h4>
+ <h4>§ 2° O denunciante não se sujeitará a qualquer sanção administrativa, cível ou penal, em decorrência da denúncia, salvo em caso de comprovada má-fé.</h4>
+ <h4>§ 3º Ao decidir, caberá ao Tribunal manter o sigilo do objeto e da autoria da denúncia quando imprescindível à segurança da sociedade e do Estado. (Incluído pela Lei n° 13.866, de 2019)</h4>
+ <h2>CAPÍTULO V</h2>
+ <p>Sanções</p>
+ <p>Seção I</p>
+ <p>Disposição Geral</p>
+ <h3>Art. 56. O Tribunal de Contas da União poderá aplicar aos administradores ou responsáveis, na forma prevista nesta Lei e no seu Regimento Interno, as sanções previstas neste capítulo.</h3>
+ <p>Seção II</p>
+ <p>Multas</p>
+ <h3>Art. 57. Quando o responsável for julgado em débito, poderá ainda o Tribunal aplicar-lhe multa de até cem por cento do valor atualizado do dano causado ao Erário.</h3>
+ <h3>Art. 58. O Tribunal poderá aplicar multa de Cr$ 42.000.000,00 (quarenta e dois milhões de cruzeiros), ou valor equivalente em outra moeda que venha a ser adotada como moeda nacional, aos responsáveis por:</h3>
+ <h5>I - contas julgadas irregulares de que não resulte débito, nos termos do parágrafo único do art. 19 desta Lei;</h5>
+ <h5>II - ato praticado com grave infração à norma legal ou regulamentar de natureza contábil, financeira, orçamentária, operacional e patrimonial;</h5>
+ <h5>III - ato de gestão ilegítimo ou antieconômico de que resulte injustificado dano ao Erário;</h5>
+ <h5>IV - não atendimento, no prazo fixado, sem causa justificada, a diligência do Relator ou a decisão do Tribunal;</h5>
+ <h5>V - obstrução ao livre exercício das inspeções e auditorias determinadas;</h5>
+ <h5>VI - sonegação de processo, documento ou informação, em inspeções ou auditorias realizadas pelo Tribunal;</h5>
+ <h5>VII - reincidência no descumprimento de determinação do Tribunal.</h5>
+ <h4>§ 1° Ficará sujeito à multa prevista no caput deste artigo aquele que deixar de dar cumprimento à decisão do Tribunal, salvo motivo justificado.</h4>
+ <h4>§ 2° O valor estabelecido no caput deste artigo será atualizado, periodicamente, por portaria da Presidência do Tribunal, com base na variação acumulada, no período, pelo índice utilizado para atualização dos créditos tributários da União.</h4>
+ <h4>§ 3° O Regimento Interno disporá sobre a gradação da multa prevista no caput deste artigo, em função da gravidade da infração.</h4>
+ <h3>Art. 59. O débito decorrente de multa aplicada pelo Tribunal de Contas da União nos do art. 57 desta Lei, quando pago após o seu vencimento, será atualizado monetariamente na data do efetivo pagamento.</h3>
+ <h3>Art. 60. Sem prejuízo das sanções previstas na seção anterior e das penalidades administrativas, aplicáveis pelas autoridades competentes, por irregularidades constatadas pelo Tribunal de Contas da União, sempre que este, por maioria absoluta de seus membros, considerar grave a infração cometida, o responsável ficará inabilitado, por um período que variará de cinco a oito anos, para o exercício de cargo em comissão ou função de confiança no âmbito da Administração Pública.</h3>
+ <h3>Art. 61. O Tribunal poderá, por intermédio do Ministério Público, solicitar à Advocacia-Geral da União ou, conforme o caso, aos dirigentes das entidades que lhe sejam jurisdicionadas, as medidas necessárias ao arresto dos bens dos responsáveis julgados em débito, devendo ser ouvido quanto à liberação dos bens arrestados e sua restituição.</h3>
+ <h3>TÍTULO III</h3>
+ <p>Organização do Tribunal</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Sede e Composição</p>
+ <h3>Art. 62. O Tribunal de Contas da União tem sede no Distrito Federal e compõe-se de nove ministros.</h3>
+ <h3>Art. 63. Os ministros, em suas ausências e impedimentos por motivo de licença, férias ou outro afastamento legal, serão substituídos, mediante convocação do Presidente do Tribunal, pelos auditores, observada a ordem de antigüidade no cargo, ou a maior idade, no caso de idêntica antigüidade.</h3>
+ <h4>§ 1° Os auditores serão também convocados para substituir ministros, para efeito de quorum, sempre que os titulares comunicarem, ao Presidente do Tribunal ou da Câmara respectiva, a impossibilidade de comparecimento à sessão.</h4>
+ <h4>§ 2° Em caso de vacância de cargo de ministro, o Presidente do Tribunal convocará auditor para exercer as funções inerentes ao cargo vago, até novo provimento, observado o critério estabelecido no caput deste artigo.</h4>
+ <h3>Art. 64. Funciona junto ao Tribunal de Contas da União o Ministério Público, na forma estabelecida nos arts. 80 a 84 desta Lei.</h3>
+ <h3>Art. 65. O Tribunal de Contas da União disporá de secretaria para atender às atividades de apoio técnico e administrativo necessárias ao exercício de sua competência.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Plenário e Câmaras</p>
+ <h3>Art. 66. O Plenário do Tribunal de Contas da União, dirigido por seu Presidente, terá a competência e o funcionamento regulados nesta Lei e no seu Regimento Interno.</h3>
+ <h3>Art. 67. O Tribunal de Contas da União poderá dividir-se em Câmaras, mediante deliberação da maioria absoluta de seus ministros titulares.</h3>
+ <h4>§ 1° Não será objeto de deliberação das Câmaras matéria da competência privativa do Plenário, a ser definida no Regimento Interno.</h4>
+ <h4>§ 2° A competência, o número, a composição, a presidência e o funcionamento das Câmaras serão regulados no Regimento Interno.</h4>
+ <h3>Art. 68. O Tribunal fixará, no Regimento Interno, os períodos de funcionamento das sessões do Plenário e das Câmaras e o recesso que entender conveniente, sem ocasionar a interrupção de seus trabalhos.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Presidente e Vice-Presidente</p>
+ <h3>Art. 69. Os ministros elegerão o Presidente e o Vice-Presidente do Tribunal para mandato correspondente a um ano civil, permitida a reeleição apenas por um período de igual duração.</h3>
+ <h4>§ 1° A eleição realizar-se-á em escrutínio secreto, na última sessão ordinária do mês de dezembro, ou, em caso de vaga eventual, na primeira sessão ordinária após sua ocorrência, exigida a presença de, pelo menos, cinco ministros titulares, inclusive o que presidir o ato.</h4>
+ <h4>§ 2° O Vice-Presidente substituirá o Presidente em suas ausências ou impedimentos e exercerá as funções de corregedor, cujas atribuições serão as estabelecidas no Regimento Interno.</h4>
+ <h4>§ 3° Na ausência ou impedimento do Vice-Presidente, o Presidente será substituído pelo ministro mais antigo em exercício no cargo.</h4>
+ <h4>§ 4° O eleito para a vaga que ocorrer antes do término do mandato exercerá o cargo no período restante.</h4>
+ <h4>§ 5° Não se procederá a nova eleição se a vaga ocorrer dentro dos sessenta dias anteriores ao término do mandato.</h4>
+ <h4>§ 6° A eleição do Presidente precederá à do Vice-Presidente .</h4>
+ <h4>§ 7° Considerar-se-á eleito o ministro que obtiver a maioria dos votos. Não alcançada esta, proceder-se-á a novo escrutínio entre os dois mais votados, decidindo-se afinal, entre esses, pela antigüidade no cargo de ministro do Tribunal, caso nenhum consiga a maioria dos votos.</h4>
+ <h4>§ 8° Somente os ministros titulares, ainda que em gozo de licença, férias, ou ausentes com causa justificada, poderão tomar parte nas eleições, na forma estabelecida no Regimento Interno.</h4>
+ <h3>Art. 70. Compete ao Presidente, dentre outras atribuições estabelecidas no Regimento Interno:</h3>
+ <h5>I - dirigir o Tribunal;</h5>
+ <h5>II - dar posse aos ministros, auditores, membros do Ministério Público junto ao Tribunal e dirigentes das unidades da secretaria, na forma estabelecida no Regimento Interno;</h5>
+ <h5>III - expedir atos de nomeação, admissão, exoneração, remoção, dispensa, aposentadoria e outros atos relativos aos servidores do quadro de pessoal da secretaria, os quais serão publicados no Diário Oficial da União e no Boletim do Tribunal;</h5>
+ <h5>IV - diretamente ou por delegação, movimentar as dotações e os créditos orçamentários próprios e praticar os atos de administração financeira, orçamentária e patrimonial necessários ao funcionamento do Tribunal.</h5>
+ <h2>CAPÍTULO IV</h2>
+ <p>Ministros</p>
+ <h3>Art. 71. Os ministros do Tribunal de Contas da União serão nomeados dentre brasileiros que satisfaçam os seguintes requisitos:</h3>
+ <h5>I - ter mais de trinta e cinco e menos de sessenta e cinco anos de idade;</h5>
+ <h5>II - idoneidade moral e reputação ilibada;</h5>
+ <h5>III - notórios conhecimentos jurídicos, contábeis, econômicos e financeiros ou de administração pública;</h5>
+ <h5>IV - contar mais de dez anos de exercício de função ou de efetiva atividade profissional que exija os conhecimentos mencionados no inciso anterior.</h5>
+ <h3>Art. 72. Os ministros do Tribunal de Contas da União serão escolhidos:</h3>
+ <h5>I - um terço pelo Presidente da República, com aprovação do Senado Federal, sendo dois alternadamente dentre auditores e membros do Ministério Público junto ao Tribunal, indicados em lista tríplice pelo Plenário, segundo os critérios de antigüidade e merecimento;</h5>
+ <h5>II - dois terços pelo Congresso Nacional.</h5>
+ <h3>Art. 73. Os ministros do Tribunal de Contas da União terão as mesmas garantias, prerrogativas, impedimentos, vencimentos e vantagens dos ministros do Superior Tribunal de Justiça e somente poderão aposentar-se com as vantagens do cargo quando o tiverem exercido efetivamente por mais de cinco anos.</h3>
+ <h4>Parágrafo único. Os ministros do Tribunal gozarão das seguintes garantias e prerrogativas:</h4>
+ <h5>I - vitaliciedade, não podendo perder o cargo senão por sentença judicial transitada em julgado;</h5>
+ <h5>II - inamovibilidade;</h5>
+ <h5>III - irredutibilidade de vencimentos, observado, quanto à remuneração, o disposto nos arts. 37, XI , 150, II, 153, III e 153, § 2°, I, da Constituição Federal;</h5>
+ <h5>IV - aposentadoria, com proventos integrais, compulsoriamente aos setenta anos de idade ou por invalidez comprovada, e facultativa após trinta anos de serviço, contados na forma da lei, observada a ressalva prevista no caput, in fine, deste artigo.</h5>
+ <h3>Art. 74. É vedado ao ministro do Tribunal de Contas da União:</h3>
+ <h5>I - exercer, ainda que em disponibilidade, outro cargo ou função, salvo uma de magistério;</h5>
+ <h5>II - exercer cargo técnico ou de direção de sociedade civil, associação ou fundação, de qualquer natureza ou finalidade, salvo de associação de classe, sem remuneração;</h5>
+ <h5>III - exercer comissão remunerada ou não, inclusive em órgãos de controle da administração direta ou indireta, ou em concessionárias de serviço público;</h5>
+ <h5>IV - exercer profissão liberal, emprego particular, comércio, ou participar de sociedade comercial, exceto como acionista ou cotista sem ingerência;</h5>
+ <h5>V - celebrar contrato com pessoa jurídica de direito público, empresa pública, sociedade de economia mista, fundação, sociedade instituída e mantida pelo poder público ou empresa concessionária de serviço público, salvo quando o contrato obedecer a normas uniformes para todo e qualquer contratante;</h5>
+ <h5>VI - dedicar-se à atividade político-partidária.</h5>
+ <h3>Art. 75. (Vetado)</h3>
+ <h4>Parágrafo único. (Vetado)</h4>
+ <h3>Art. 76. Não podem ocupar, simultaneamente, cargos de ministro parentes consangüíneos ou afins, na linha reta ou na colateral, até o segundo grau.</h3>
+ <h4>Parágrafo único. A incompatibilidade decorrente da restrição imposta no caput deste artigo</h4>
+ <h2>RESOLVE-se:</h2>
+ <h5>I - antes da posse, contra o último nomeado ou contra o mais moço, se nomeados na mesma data;</h5>
+ <h5>II - depois da posse, contra o que lhe deu causa;</h5>
+ <h5>III - se a ambos imputável, contra o que tiver menos tempo de exercício no Tribunal.</h5>
+ <h2>CAPÍTULO V</h2>
+ <p>Auditores</p>
+ <h3>Art. 77. Os auditores, em número de três, serão nomeados pelo Presidente da República, dentre os cidadãos que satisfaçam os requisitos exigidos para o cargo de ministro do Tribunal de Contas da União, mediante concurso público de provas e títulos, observada a ordem de classificação.</h3>
+ <h4>Parágrafo único. A comprovação do efetivo exercício por mais de dez anos de cargo da carreira de controle externo do quadro de pessoal da secretaria do Tribunal constitui título computável para efeito do concurso a que se refere o caput deste artigo .</h4>
+ <h3>Art. 78. (Vetado)</h3>
+ <h4>Parágrafo único. O auditor, quando não convocado para substituir ministro, presidirá à instrução dos processos que lhe forem distribuídos, relatando-os com proposta de decisão a ser votada pelos integrantes do Plenário ou da Câmara para a qual estiver designado.</h4>
+ <h3>Art. 79. O auditor, depois de empossado, só perderá o cargo por sentença judicial transitada em julgado.</h3>
+ <h4>Parágrafo único. Aplicam-se ao auditor as vedações e restrições previstas nos arts. 74 e 76 desta Lei.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <p>Ministério Público Junto ao Tribunal</p>
+ <h3>Art. 80. O Ministério Público junto ao Tribunal de Contas da União, ao qual se aplicam os princípios institucionais da unidade, da indivisibilidade e da independência funcional, compõe-se de um procurador-geral, três subprocuradores-gerais e quatro procuradores, nomeados pelo Presidente da República, dentre brasileiros, bacharéis em direito.</h3>
+ <h4>§ 1° (Vetado)</h4>
+ <h4>§ 2° A carreira do Ministério Público junto ao Tribunal de Contas da União é constituída pelos cargos de subprocurador-geral e procurador, este inicial e aquele representando o último nível da carreira, não excedendo a dez por cento a diferença de vencimentos de uma classe para outra, respeitada igual diferença entre os cargos de subprocurador-geral e procurador-geral.</h4>
+ <h4>§ 3° O ingresso na carreira far-se-á no cargo de procurador, mediante concurso público de provas e títulos, assegurada a participação da Ordem dos Advogados do Brasil em sua realização e observada, nas nomeações, a ordem de classificação, enquanto a promoção ao cargo de subprocurador-geral far-se-á, alternadamente, por antigüidade e merecimento.</h4>
+ <h3>Art. 81. Competem ao procurador-geral junto ao Tribunal de Contas da União, em sua missão de guarda da lei e fiscal de sua execução, além de outras estabelecidas no Regimento Interno, as seguintes atribuições:</h3>
+ <h5>I - promover a defesa da ordem jurídica, requerendo, perante o Tribunal de Contas da União as medidas de interesse da justiça, da administração e do Erário;</h5>
+ <h5>II - comparecer às sessões do Tribunal e dizer de direito, verbalmente ou por escrito, em todos os assuntos sujeitos à decisão do Tribunal, sendo obrigatória sua audiência nos processos de tomada ou prestação de contas e nos concernentes aos atos de admissão de pessoal e de concessão de aposentadorias, reformas e pensões;</h5>
+ <h5>III - promover junto à Advocacia-Geral da União ou, conforme o caso, perante os dirigentes das entidades jurisdicionadas do Tribunal de Contas da União, as medidas previstas no inciso II do art. 28 e no art. 61 desta Lei, remetendo-lhes a documentação e instruções necessárias;</h5>
+ <h5>IV - interpor os recursos permitidos em lei.</h5>
+ <h3>Art. 82. Aos subprocuradores-gerais e procuradores compete, por delegação do procurador-geral, exercer as funções previstas no artigo anterior.</h3>
+ <h4>Parágrafo único. Em caso de vacância e em suas ausências e impedimentos por motivo de licença, férias ou outro afastamento legal, o procurador-geral será substituído pelos subprocuradores-gerais e, na ausência destes, pelos procuradores, observada, em ambos os casos, a ordem de antigüidade no cargo, ou a maior idade, no caso de idêntica antigüidade, fazendo jus, nessas substituições, aos vencimentos do cargo exercido.</h4>
+ <h3>Art. 83. O Ministério Público contará com o apoio administrativo e de pessoal da secretaria do Tribunal, conforme organização estabelecida no Regimento Interno.</h3>
+ <h3>Art. 84. Aos membros do Ministério Público junto ao Tribunal de Contas da União aplicam-se, subsidiariamente, no que couber, as disposições da Lei orgânica do Ministério Público da União, pertinentes a direitos, garantias, prerrogativas, vedações, regime disciplinar e forma de investidura no cargo inicial da carreira.</h3>
+ <h2>CAPÍTULO VII</h2>
+ <p>Secretaria do Tribunal</p>
+ <p>Seção I</p>
+ <p>Objetivo e Estrutura</p>
+ <h3>Art. 85. A secretaria incumbe a prestação de apoio técnico e a execução dos serviços administrativos do Tribunal de Contas da União.</h3>
+ <h4>§ 1° A organização, atribuições e normas de funcionamento da secretaria são as estabelecidas no Regimento Interno.</h4>
+ <h4>§ 2º O Tribunal poderá manter unidades integrantes de sua secretaria nos estados federados.</h4>
+ <h3>Art. 86. São obrigações do servidor que exerce funções específicas de controle externo no Tribunal de Contas da União:</h3>
+ <h5>I - manter, no desempenho de suas tarefas, atitude de independência, serenidade e imparcialidade;</h5>
+ <h5>II - representar à chefia imediata contra os responsáveis pelos órgãos e entidades sob sua fiscalização, em casos de falhas e/ou irregularidades;</h5>
+ <h5>III - propor a aplicação de multas, nos casos previstos no Regimento Interno;</h5>
+ <h5>IV - guardar sigilo sobre dados e informações obtidos em decorrência do exercício de suas funções e pertinentes aos assuntos sob sua fiscalização, utilizando-os, exclusivamente, para a elaboração de pareceres e relatórios destinados à chefia imediata.</h5>
+ <h3>Art. 87. Ao servidor a que se refere o artigo anterior, quando credenciado pelo Presidente do Tribunal ou, por delegação deste, pelos dirigentes das unidades técnicas da secretaria do Tribunal, para desempenhar funções de auditoria, de inspeções e diligências expressamente determinadas pelo Tribunal ou por sua Presidência, são asseguradas as seguintes prerrogativas:</h3>
+ <h5>I - livre ingresso em órgãos e entidades sujeitos à jurisdição do Tribunal de Contas da União;</h5>
+ <h5>II - acesso a todos os documentos e informações necessários à realização de seu trabalho;</h5>
+ <h5>III - competência para requerer, nos termos do Regimento Interno, aos responsáveis pelos órgãos e entidades objeto de inspeções, auditorias e diligências, as informações e documentos necessários para instrução de processos e relatórios de cujo exame esteja expressamente encarregado por sua chefia imediata.</h5>
+ <h3>Art. 88. Fica criado, na secretaria, diretamente subordinado à Presidência, um instituto que terá a seu cargo:</h3>
+ <h5>I - a realização periódica de concursos públicos de provas ou de provas e títulos, para seleção dos candidatos a matrícula nos cursos de formação requeridos para ingresso nas carreiras do quadro de pessoal do Tribunal;</h5>
+ <h5>II - a organização e a administração de cursos de níveis superior e médio, para formação e aprovação final dos candidatos selecionados nos concursos referidos no inciso anterior;</h5>
+ <h5>III - a organização e a administração de cursos de treinamento e de aperfeiçoamento para os servidores do quadro de pessoal;</h5>
+ <h5>IV - a promoção e a organização de simpósios, seminários, trabalhos e pesquisas sobre questões relacionadas com as técnicas de controle da administração pública;</h5>
+ <h5>V - a organização e administração de biblioteca e de centro de documentação, nacional e internacional, sobre doutrina, técnicas e legislação pertinentes ao controle e questões correlatas.</h5>
+ <h4>Parágrafo único. O Tribunal regulamentará em resolução a organização, as atribuições e as normas de funcionamento do instituto referido neste artigo.</h4>
+ <p>Seção II</p>
+ <p>Orçamentos</p>
+ <h3>Art. 89. (Vetado)</h3>
+ <h4>§ 1° (Vetado)</h4>
+ <h4>§ 2º (Vetado)</h4>
+ <h4>§ 3° (Vetado)</h4>
+ <h3>TÍTULO IV</h3>
+ <p>Disposições Gerais e Transitórias</p>
+ <h3>Art. 90. A fiscalização contábil, financeira, orçamentária, operacional e patrimonial do Tribunal de Contas da União será exercida pelo Congresso Nacional, na forma definida no seu regimento comum.</h3>
+ <h4>§ 1° O Tribunal encaminhará ao Congresso Nacional, trimestral e anualmente, relatório de suas atividades.</h4>
+ <h4>§ 2° No relatório anual, o Tribunal apresentará análise da evolução dos custos de controle e de sua eficiência, eficácia e economicidade.</h4>
+ <h3>Art. 91 . Para a finalidade prevista no art. 1°, inciso I, alínea g e no art. 3°, ambos da Lei Complementar n° 64, de 18 de maio de 1990 , o Tribunal enviará ao Ministério Público Eleitoral, em tempo hábil, o nome dos responsáveis cujas contas houverem sido julgadas irregulares nos cinco anos imediatamente anteriores à realização de cada eleição.</h3>
+ <h3>Art. 92. Os atos relativos a despesa de natureza reservada serão, com esse caráter, examinados pelo Tribunal, que poderá, à vista das demonstrações recebidas, ordenar a verificação in loco dos correspondentes comprobatórios, na forma estabelecida no Regimento Interno.</h3>
+ <h3>Art. 93. A título de racionalização administrativa e economia processual, e com o objetivo de evitar que o custo da cobrança seja superior ao valor do ressarcimento, o Tribunal poderá determinar, desde logo, o arquivamento do processo, sem cancelamento do débito, a cujo pagamento continuará obrigado o devedor, para que lhe possa ser dada quitação.</h3>
+ <h3>Art. 94. É vedado a ministro, auditor e membro do Ministério Público junto ao Tribunal intervir em processo de interesse próprio, de cônjuge ou de parente consangüíneo ou afim, na linha reta ou na colateral, até o segundo grau.</h3>
+ <h3>Art. 95. Os ministros, auditores e membros do Ministério Público junto ao Tribunal têm prazo de trinta dias, a partir da publicação do ato de nomeação no Diário Oficial da União, prorrogável por mais sessenta dias, no máximo, mediante solicitação escrita, para posse e exercício no cargo.</h3>
+ <h3>Art. 96. As atas das sessões do Tribunal serão publicadas, na íntegra, sem ônus, no Diário Oficial da União.</h3>
+ <h3>Art. 97. As publicações editadas pelo Tribunal são as definidas no Regimento Interno.</h3>
+ <h3>Art. 98. O Boletim do Tribunal de Contas da União é considerado órgão oficial.</h3>
+ <h3>Art. 99. O Regimento Interno do Tribunal somente poderá ser aprovado e alterado pela maioria absoluta de seus ministros titulares.</h3>
+ <h3>Art. 100. O Tribunal de Contas da União poderá firmar acordo de cooperação com os Tribunais de Contas dos Estados, do Distrito Federal, dos Municípios, ou dos Conselhos ou Tribunais de Contas dos Municípios, na forma estabelecida pelo Regimento Interno.</h3>
+ <h3>Art. 101. O Tribunal de Contas da União, para o exercício de sua competência institucional, poderá requisitar aos órgãos e entidades federais, sem quaisquer ônus, a prestação de serviços técnicos especializados, a serem executados em prazo previamente estabelecido, sob pena de aplicação da sanção prevista no art. 58 desta Lei.</h3>
+ <h3>Art. 102. A Fundação Instituto Brasileiro de Geografia e Estatística (IBGE) ou entidade congênere fará publicar no Diário Oficial da União, até o dia 31 de agosto de cada ano, e para os fins previstos no inciso VI do art. 1° desta Lei, a relação das populações por Estados e Municípios.</h3>
+ <h4>§ 1° Os interessados, dentro do prazo de vinte dias da publicação, poderão apresentar reclamações fundamentadas à Fundação IBGE, que decidirá conclusivamente.</h4>
+ <h4>§ 2° Até o dia 31 de outubro de cada ano, a Fundação IBGE encaminhará ao Tribunal de Contas da União a relação referida neste artigo.</h4>
+ <h3>Art. 102. Entidade competente do Poder Executivo federal fará publicar no Diário Oficial da União, para os fins previstos no inciso VI do art. 1º desta Lei, a relação das populações: (Redação dada pela Lei Complementar nº 143, de 2013) (Produção de efeito)</h3>
+ <h5>I - até 31 de dezembro de cada ano, no caso dos Estados e do Distrito Federal; (Incluído pela Lei Complementar nº 143, de 2013) (Produção de efeito)</h5>
+ <h5>II - até 31 de agosto de cada ano, no caso dos Municípios. (Incluído pela Lei Complementar nº 143, de 2013) (Produção de efeito)</h5>
+ <h4>§ 1º (Revogado) (Redação dada pela Lei Complementar nº 143, de 2013) (Produção de efeito)</h4>
+ <h4>§ 2º (Revogado) (Redação dada pela Lei Complementar nº 143, de 2013) (Produção de efeito)</h4>
+ <h4>§ 3º Far-se-á nova comunicação sempre que houver, transcorrido o prazo fixado nos incisos I e II do caput , a criação de novo Estado ou Município a ser implantado no exercício subsequente. (Incluído pela Lei Complementar nº 143, de 2013) (Produção de efeito)</h4>
+ <h3>Art. 103. O Tribunal de Contas da União prestará auxílio à comissão mista do Congresso Nacional incumbida do exame do endividamento externo brasileiro, nos termos do art. 26 do Ato das Disposições Constitucionais Transitórias.</h3>
+ <h3>Art. 104. Os ordenadores de despesas dos órgãos da administração direta, bem assim os dirigentes das entidades da administração indireta e fundações e quaisquer servidores responsáveis por atos de que resulte despesa pública, remeterão ao Tribunal de Contas da União por solicitação do Plenário ou de suas Câmaras, cópia das suas declarações de rendimentos e de bens.</h3>
+ <h4>§ 1° O descumprimento da obrigação estabelecida neste artigo ensejará a aplicação da multa estabelecida no art. 58 desta Lei, pelo Tribunal, que manterá em sigilo o conteúdo das declarações apresentadas e poderá solicitar os esclarecimentos que entender convenientes sobre a variação patrimonial dos declarantes.</h4>
+ <h4>§ 2° O sigilo assegurado no parágrafo anterior poderá ser quebrado por decisão do Plenário, em processo no qual fique comprovado enriquecimento ilícito por exercício irregular da função pública.</h4>
+ <h4>§ 3° A quebra de sigilo sem autorização do Plenário constitui infração funcional punível na forma do art. 132, inciso IX da Lei n° 8.112, de 11 de dezembro de 1990.</h4>
+ <h4>§ 4° O disposto neste artigo aplica-se à autoridade a que se refere o art. 52 desta Lei.</h4>
+ <h3>Art. 105. O processo de escolha de ministro do Tribunal de Contas da União, em caso de vaga ocorrida ou que venha a ocorrer após a promulgação da Constituição de 1988, obedecerá ao seguinte critério:</h3>
+ <h5>I - na primeira, quarta e sétima vagas, a escolha caberá ao Presidente da República, devendo recair as duas últimas, respectivamente, em auditor e membro do Ministério Público junto ao Tribunal.</h5>
+ <h5>II - na segunda, terceira, quinta, sexta, oitava e nona vagas, a escolha será da competência do Congresso Nacional;</h5>
+ <h5>III - a partir da décima vaga, reinicia-se o processo previsto nos incisos anteriores, observada a alternância quanto à escolha de auditor e membro do Ministério Público junto ao Tribunal, nos termos do inciso I do § 2° do art. 73 da Constituição Federal.</h5>
+ <h3>Art. 106. Aos ministros do Tribunal de Contas da União que, na data da promulgação da Constituição Federal de 1988, preenchiam os requisitos necessários à aposentadoria com as vantagens do cargo, não se aplica a ressalva prevista no art. 73, caput, in fine, desta Lei.</h3>
+ <h3>Art. 107. - A distribuição dos processos observará os princípios da publicidade, da alternatividade e do sorteio.</h3>
+ <h3>Art. 108. Serão públicas as sessões ordinárias do Tribunal de Contas da União .</h3>
+ <h4>§ 1° O Tribunal poderá realizar sessões extraordinárias de caráter reservado, para tratar de assuntos de natureza administrativa interna ou quando a preservação de direitos individuais e o interesse público o exigirem.</h4>
+ <h4>§ 2° Na hipótese do parágrafo anterior, os atos processuais terão o concurso das partes envolvidas, se assim desejarem seus advogados, podendo consultar os autos e pedir cópia de peças e certidões dos mesmos.</h4>
+ <h4>§ 3° Nenhuma sessão extraordinária de caráter reservado poderá ser realizada sem a presença obrigatória de representante do Ministério Público.</h4>
+ <h3>Art. 109. O Tribunal de Contas da União ajustará o exame dos processos em curso às disposições desta Lei.</h3>
+ <h3>Art. 110. No prazo de noventa dias a contar da entrada em vigor desta Lei, o Tribunal encaminhará ao Congresso Nacional projeto de lei dispondo sobre o quadro próprio de pessoal de sua secretaria, com observância dos princípios constitucionais pertinentes e, especialmente, das seguintes diretrizes:</h3>
+ <h5>I - regime jurídico único;</h5>
+ <h5>II - previsão das respectivas estrutura orgânica e atribuições;</h5>
+ <h5>III - condicionamento, como indispensável a investidura em cargo ou emprego, à prévia aprovação em concurso público de provas ou de provas e títulos, bem como em cursos organizados na forma preconizada no inciso II do art. 88 desta Lei;</h5>
+ <h5>IV - provimento dos cargos em comissão e funções de confiança por servidores do quadro próprio de pessoal;</h5>
+ <h5>IV - provimento dos cargos em comissão e funções de confiança por servidores do quadro de pessoal, exceto quanto aos Gabinetes de Ministro, do Procurador-Geral e de Auditor em relação a um Oficial de Gabinete e a um Assistente, que serão de livre escolha da autoridade, obedecidos os requisitos legais e regimentais; (Redação dada pela Lei n° 9.165, de 1995)</h5>
+ <h5>V - competência do Tribunal, para em relação aos cargos em comissão e funções de confiança:</h5>
+ <p>a ) estabelecer-lhes o escalonamento, segundo a legislação pertinente;</p>
+ <h6>b) transformá-los e reclassificá-los em consonância com os parâmetros previstos na Lei de Diretrizes Orçamentárias;</h6>
+ <h5>VI - fixação da respectiva remuneração, observados os limites orçamentários, fixados, os níveis de remuneração adotados para os servidores do Poder Legislativo e, no que couber, os princípios reguladores do sistema de pessoal da União.</h5>
+ <h4>Parágrafo único. É vedada a nomeação, para cargos em comissão, e a designação, para funções de confiança, de cônjuge, companheiro ou parentes, consangüíneos ou afins, em linha reta ou colateral, até o terceiro grau, de ministro, auditor ou membro do Ministério Público junto ao Tribunal, em atividade ou aposentados há menos de cinco anos, exceto se admitidos no quadro próprio de pessoal mediante concurso público. (Incluído pela Lei n° 9.165, de 1995)</h4>
+ <h3>Art. 111. Os atuais cargos de subprocurador-geral junto ao Tribunal de Contas da União integrarão quadro em extinção, assegurados os direitos e observadas as vedações aplicáveis a seus titulares.</h3>
+ <h3>Art. 112. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 113. Revogam-se as disposições em contrário, em especial o Decreto-Lei n° 199, de 25 de fevereiro de 1967.</h3>
+ <p>Brasília, 16 de julho de 1992; 171° da Independência e 104° da República.</p>
+ <h3>FERNANDO COLLOR</h3>
+ <p>Este texto não substitui o publicado no DOU de 17.7.1992 e retificado em 22.4.1993</p>
+ <p>Tribunal de Contas da União e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8443.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

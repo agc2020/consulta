@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 12.464, DE 4 DE AGOSTO DE 2011 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="2011" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 12.464, DE 4 DE AGOSTO DE 2011</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 23:33:28 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2011/Lei/L12464.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 19.395 caracteres | espelho: 19.475 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 12.464, DE 4 DE AGOSTO DE 2011.</p>
+ <p>Dispõe sobre o ensino na Aeronáutica; e revoga o Decreto-Lei n° 8.437, de 24 de dezembro de 1945, e as Leis nºs 1.601, de 12 de maio de 1952, e 7.549, de 11 de dezembro de 1986.</p>
+ <p>A PRESIDENTA DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º O ensino na Aeronáutica tem como finalidade proporcionar ao seu pessoal militar, da ativa e da reserva, e a civis, na paz e na guerra, a necessária qualificação para o exercício dos cargos e para o desempenho das funções previstas na estrutura organizacional do Comando da Aeronáutica, para o cumprimento de sua destinação constitucional.</h3>
+ <h4>Parágrafo único. Atendidos os aspectos que lhe são peculiares, o ensino na Aeronáutica observará as diretrizes e bases da educação nacional, estabelecidas em legislação federal específica.</h4>
+ <h3>Art. 2º O ensino na Aeronáutica obedecerá a processo contínuo e progressivo de educação integral, constantemente atualizado e aprimorado, executado de forma sistêmica, que se desenvolve mediante fases de qualificação profissional, com exigências sempre crescentes, desde os fundamentos até os padrões mais apurados de cultura geral e profissional.</h3>
+ <h3>Art. 3º O ensino na Aeronáutica será ministrado com base nos seguintes princípios:</h3>
+ <h5>I - observância dos valores, virtudes e deveres militares;</h5>
+ <h5>II - profissionalização continuada e progressiva;</h5>
+ <h5>III - aperfeiçoamento constante dos padrões éticos, morais, culturais e de eficiência;</h5>
+ <h5>IV - preservação das tradições nacionais e militares;</h5>
+ <h5>V - permanente atualização doutrinária, científica e tecnológica;</h5>
+ <h5>VI - pluralismo pedagógico;</h5>
+ <h5>VII - permanente aperfeiçoamento do processo ensino-aprendizagem;</h5>
+ <h5>VIII - valorização do instrutor e do profissional de ensino;</h5>
+ <h5>IX - integração aos sistemas de ensino da educação nacional; e</h5>
+ <h5>X - titulações e graus técnicos ou universitários próprios ou equivalentes aos de outros sistemas de ensino.</h5>
+ <h2>CAPÍTULO II</h2>
+ <h3>DO SISTEMA DE ENSINO DA AERONÁUTICA</h3>
+ <h3>Art. 4º A Aeronáutica manterá o seu Sistema de Ensino - SISTENS, destinado a qualificar o pessoal militar e civil para o desempenho dos cargos e exercício das funções previstas em sua organização, nos termos desta Lei.</h3>
+ <h3>Art. 5º Para cumprimento da destinação constitucional da Aeronáutica, o SISTENS terá sua competência balizada pelos conceitos de preparo e emprego estabelecidos em legislação específica.</h3>
+ <h4>§ 1º O preparo define as atividades de instrução voltadas para a eficiência operacional e diferentes modalidades de emprego, como fundamentais para a área de competência legal do órgão ou entidade.</h4>
+ <h4>§ 2º As demais atividades serão complementares àquelas destinadas ao emprego operacional.</h4>
+ <h3>Art. 6º Integram o SISTENS:</h3>
+ <h5>I - o Órgão Central do Sistema;</h5>
+ <h5>II - as organizações de ensino; e</h5>
+ <h5>III - outras organizações da Aeronáutica que também desenvolvam atividades de ensino, de pesquisa, de extensão ou de apoio ao ensino.</h5>
+ <h4>§ 1º O Departamento de Ensino da Aeronáutica é o Órgão Central do Sistema responsável pela orientação normativa, pela coordenação, pelo controle, pela supervisão, pela elaboração do orçamento e pelo apoio técnico às atividades do SISTENS.</h4>
+ <h4>§ 2º Serão consideradas atividades do SISTENS:</h4>
+ <h5>I - as pertinentes ao conjunto integrado do ensino, da pesquisa e da extensão; e</h5>
+ <h5>II - as de caráter assistencial e supletivo.</h5>
+ <h3>Art. 7º O ensino na Aeronáutica compreenderá os seguintes níveis e modalidades:</h3>
+ <h5>I - educação básica:</h5>
+ <h6>a) educação infantil;</h6>
+ <h6>b) ensino fundamental; e</h6>
+ <h6>c) ensino médio;</h6>
+ <h5>II - educação superior:</h5>
+ <h6>a) graduação;</h6>
+ <h6>b) pós-graduação; e</h6>
+ <h6>c) extensão;</h6>
+ <h5>III - educação profissional:</h5>
+ <h6>a) formação inicial e continuada ou qualificação profissional;</h6>
+ <h6>b) educação profissional técnica de nível médio; e</h6>
+ <h6>c) educação profissional tecnológica de graduação e pós-graduação.</h6>
+ <h4>§ 1º A Aeronáutica proporcionará a educação básica em caráter assistencial e supletivo, a qual pode ser ministrada com a colaboração de outras instituições federais, estaduais e municipais, na forma do art. 8º da Lei n° 9.394, de 20 de dezembro de 1996.</h4>
+ <h4>§ 2º A Aeronáutica proporcionará a educação profissional ao seu pessoal militar e civil, de forma a integrá-lo às diferentes formas de educação, ao trabalho, à ciência e à tecnologia e a propiciar o permanente desenvolvimento de aptidões para o exercício de atividades peculiares à vida militar.</h4>
+ <h3>Art. 8º Na Aeronáutica, o ensino será desenvolvido por meio das seguintes fases:</h3>
+ <h5>I - preparação, com a finalidade de propiciar, ampliar, sedimentar e nivelar conhecimentos, bem como qualificar militares para o ingresso em determinados cursos de formação e pós-formação;</h5>
+ <h5>II - formação, com a finalidade de qualificar, dentro de cada nível educacional, militares e civis da Aeronáutica para o desempenho dos cargos e exercício das funções inerentes aos postos, graduações e classes iniciais dos diversos quadros, especialidades e categorias funcionais de pessoal; e</h5>
+ <h5>III - pós-formação, com a finalidade de qualificar, dentro de cada nível educacional, militares e civis da Aeronáutica para o desempenho dos cargos e exercício das funções que requeiram habilidades e conhecimentos específicos, diferenciados ou aprofundados em relação àqueles ministrados na fase de formação.</h5>
+ <h3>Art. 9º A fase de preparação será desenvolvida por meio de cursos de preparação e de admissão.</h3>
+ <h3>Art. 10. A fase de formação será desenvolvida por meio de cursos de formação, de graduação e de estágios de adaptação.</h3>
+ <h3>Art. 11. A fase de pós-formação será desenvolvida por meio de cursos de especialização, de aperfeiçoamento, de altos estudos militares e de programas de pós-graduação.</h3>
+ <h3>Art. 12. O Poder Executivo regulamentará a criação e as atividades de cursos, estágios e programas do SISTENS.</h3>
+ <h3>Art. 13. Os cursos de preparação e de admissão qualificarão e integrarão o processo seletivo para o ingresso em determinados cursos de formação e pós-formação.</h3>
+ <h3>Art. 14. Os cursos de formação e de graduação e os estágios de adaptação qualificarão para o desempenho dos cargos e exercício das funções inerentes aos postos, graduações e classes iniciais dos diversos quadros, especialidades e categorias funcionais de pessoal.</h3>
+ <h3>Art. 15. Os cursos de especialização qualificarão para o exercício de cargos e funções que requererem capacitação e habilitação específicas.</h3>
+ <h3>Art. 16. Os cursos de aperfeiçoamento qualificarão para o exercício dos cargos de comando, de chefia, de direção e de secretário e das funções de assessoramento que requererem capacitação e habilitação específicas.</h3>
+ <h3>Art. 17. Os cursos de altos estudos militares qualificarão para o exercício das funções de Estado-Maior, para os cargos de comando, chefia, direção e secretário e para as funções de assessoramento da alta administração da Aeronáutica.</h3>
+ <h3>Art. 18. O Poder Executivo regulamentará os cursos de nível superior e os programas de pós-graduação no âmbito do SISTENS.</h3>
+ <h3>Art. 19. A Academia da Força Aérea - AFA, o Instituto Tecnológico de Aeronáutica - ITA e o Centro de Instrução e Adaptação da Aeronáutica - CIAAR ministrarão cursos de nível superior, em áreas de interesse da Aeronáutica.</h3>
+ <h4>Parágrafo único. As demais organizações de ensino da Aeronáutica poderão ministrar, sempre que necessário, cursos de nível superior.</h4>
+ <h3>Art. 20. Para o ingresso na Aeronáutica e habilitação à matrícula em um dos cursos ou estágios da Aeronáutica destinados à formação ou adaptação de oficiais e de praças, da ativa e da reserva, o candidato deverá atender aos seguintes requisitos:</h3>
+ <h5>I - ser aprovado em processo seletivo, que pode ser composto por exame de provas ou provas e títulos, prova prático-oral, prova prática, inspeção de saúde, teste de avaliação do condicionamento físico, exame de aptidão psicológica e teste de aptidão motora;</h5>
+ <h5>II - estar classificado dentro do número de vagas oferecidas;</h5>
+ <h5>III - possuir a formação ou habilitação necessária ao preenchimento do cargo;</h5>
+ <h5>IV - (VETADO);</h5>
+ <h5>V - atender aos requisitos de limites de idade decorrentes do estabelecido no inciso X do § 3º do art. 142 da Constituição Federal, no que concerne ao tempo de serviço e às idades-limite de permanência no serviço ativo para os diversos corpos e quadros, devendo estar dentro dos seguintes limites etários, até 31 de dezembro do ano da matrícula, para ingresso no:</h5>
+ <h6>a) Curso Preparatório de Cadetes do Ar - não ter menos de 14 (quatorze) anos nem completar 19 (dezenove) anos de idade;</h6>
+ <h6>b) Curso de Formação de Oficiais Aviadores, Intendentes e de Infantaria da Aeronáutica - não ter menos de 17 (dezessete) anos nem completar 23 (vinte e três) anos de idade;</h6>
+ <h6>c) Curso de Graduação em Engenharia do Instituto Tecnológico de Aeronáutica - não completar 25 (vinte e cinco) anos de idade;</h6>
+ <h6>d) Curso de Adaptação de Oficiais Médicos, Dentistas e Farmacêuticos da Aeronáutica - não completar 36 (trinta e seis) anos de idade;</h6>
+ <h6>e) Estágio de Adaptação de Oficiais Engenheiros da Aeronáutica - não completar 36 (trinta e seis) anos de idade;</h6>
+ <h6>f) Estágio de Instrução e Adaptação para Capelães da Aeronáutica - não ter menos de 30 (trinta) anos nem completar 41 (quarenta e um) anos de idade;</h6>
+ <h6>g) Estágio de Adaptação de Oficiais Temporários da Aeronáutica - não completar 44 (quarenta e quatro) anos de idade;</h6>
+ <h6>h) Curso de Formação de Sargentos - não ter menos de 17 (dezessete) anos nem completar 25 (vinte e cinco) anos de idade;</h6>
+ <p>i) Estágio de Adaptação à Graduação de Sargentos - não ter menos de 17 (dezessete) anos nem completar 25 (vinte e cinco) anos de idade;</p>
+ <h6>j) Curso de Formação de Taifeiros - não ter menos de 17 (dezessete) anos nem completar 25 (vinte e cinco) anos de idade; e</h6>
+ <h6>k) cursos ou estágios destinados aos militares da ativa na Aeronáutica para progressão na Carreira - os limites de idade serão definidos em instrução da Aeronáutica e previstos nos editais dos processos seletivos, em função do tempo de permanência no serviço ativo determinado no Estatuto dos Militares;</h6>
+ <h5>VI - estar em dia com as obrigações eleitorais e militares;</h5>
+ <h5>VII - não estar respondendo a processo criminal na Justiça Militar ou Comum;</h5>
+ <h5>VIII - não ter sido o oficial excluído do serviço ativo por indignidade ou incompatibilidade, e a praça excluída ou licenciada a bem da disciplina, se militar da reserva não remunerada das Forças Armadas e Auxiliares, salvo em caso de reabilitação, na forma da legislação vigente;</h5>
+ <h5>IX - não ter sido desincorporado, expulso ou julgado desertor, nos termos da legislação que regula o serviço militar;</h5>
+ <h5>X - não ter sido, nos últimos 5 (cinco) anos, salvo em caso de reabilitação, na forma da legislação vigente, punido por ato lesivo ao patrimônio público de qualquer esfera de governo em processo disciplinar administrativo, do qual não caiba mais recurso;</h5>
+ <h5>XI - não ter sido, nos últimos 5 (cinco) anos, salvo em caso de reabilitação, na forma da legislação vigente, condenado em processo criminal com sentença transitada em julgado;</h5>
+ <h5>XII – (VETADO);</h5>
+ <h5>XIII - estar classificado no mínimo no comportamento “Bom”, se militar da ativa de Força Armada ou Auxiliar;</h5>
+ <h5>XIV - não estar cumprindo pena por crime comum, militar ou eleitoral, nem estar submetido à medida de segurança;</h5>
+ <h5>XV - cumprir os requisitos antropométricos definidos em instrução do Comando da Aeronáutica, na forma expressa no edital do processo seletivo;</h5>
+ <h5>XVI - (VETADO);</h5>
+ <h5>XVII - não apresentar tatuagem no corpo com símbolo ou inscrição que afete a honra pessoal, o pundonor militar ou o decoro exigido aos integrantes das Forças Armadas que faça alusão a:</h5>
+ <h6>a) ideologia terrorista ou extremista contrária às instituições democráticas ou que pregue a violência ou a criminalidade;</h6>
+ <h6>b) discriminação ou preconceito de raça, credo, sexo ou origem;</h6>
+ <h6>c) ideia ou ato libidinoso; e</h6>
+ <h6>d) ideia ou ato ofensivo às Forças Armadas ou à sociedade; e</h6>
+ <h5>XVIII - atender ainda aos demais requisitos definidos na legislação e regulamentação vigentes e nas instruções do Comando da Aeronáutica, desde que previstos nos editais dos processos seletivos e que não contrariem o disposto nesta Lei.</h5>
+ <h4>§ 1º Os requisitos estabelecidos devem atender às peculiaridades da formação militar, tal como a dedicação integral às atividades de treinamento e de serviço, bem como estar em consonância com a higidez física, com a ergonomia e a estabilidade emocional do militar-aluno para o emprego de armamentos e a operação de equipamentos de uso militar, com o desempenho padronizado para deslocamentos armados ou equipados, com as necessidades de logística da Força, com o alcance dos padrões exigidos durante os períodos de instruções e de treinamentos e com as necessidades de pessoal da Aeronáutica.</h4>
+ <h4>§ 2º Ato do Poder Executivo, do Comandante da Aeronáutica ou instrumento normativo da Aeronáutica ou de seleção pública disporão, para habilitação à matrícula em cada curso ou estágio, sobre os parâmetros dos requisitos citados e as especificidades relativas a cada quadro da Aeronáutica, de acordo com a legislação vigente.</h4>
+ <h4>§ 3º As matrículas dispostas no caput são acessíveis, respeitado o previsto no art. 12 da Constituição Federal, aos brasileiros que preencham os requisitos estabelecidos nesta Lei, após serem aprovados em processo seletivo.</h4>
+ <h4>§ 4º Quando a inspeção de saúde estiver prevista no processo seletivo, a habilitação à matrícula estará condicionada ao candidato ter sido considerado apto sem restrições por junta de saúde da Aeronáutica, segundo critérios definidos em instruções da Aeronáutica e constantes no edital do exame de admissão.</h4>
+ <h4>§ 5º A inspeção de saúde do processo seletivo avaliará as condições de saúde dos candidatos, por meio de exames clínicos, de imagem e laboratoriais, inclusive toxicológicos, definidos em instruções da Aeronáutica, de modo a comprovar não existir patologia ou característica incapacitante para o serviço militar nem para as atividades previstas.</h4>
+ <h4>§ 6º Quando o teste de avaliação do condicionamento físico estiver previsto no processo seletivo, a habilitação à matrícula estará condicionada ao candidato ter sido considerado aprovado sem restrições por comissão de avaliação da Aeronáutica, segundo critérios definidos em instruções da Aeronáutica e constantes no edital do exame de admissão.</h4>
+ <h4>§ 7º O teste de avaliação do condicionamento físico do processo seletivo avaliará a higidez e o vigor, por meio de exercícios e índices mínimos a serem alcançados, fixados por sexo e definidos em instruções da Aeronáutica, de modo a comprovar não existir incapacitação para o serviço militar nem para as atividades previstas.</h4>
+ <h4>§ 8º Quando o exame de aptidão psicológica ou o teste de aptidão motora estiver previsto no processo seletivo, a habilitação à matrícula estará condicionada ao candidato ter sido considerado indicado sem restrições, por avaliação especializada da Aeronáutica, segundo critérios definidos em instruções da Aeronáutica e constantes no edital do exame de admissão.</h4>
+ <h4>§ 9º O exame de aptidão psicológica do processo seletivo ou o teste de aptidão motora avaliará as condições comportamentais, características de interesse e de desempenho psicomotor, por meio de testes, entrevistas e simuladores, homologados e definidos em instruções da Aeronáutica, de modo a comprovar não existir contraindicação para o serviço militar nem para as atividades previstas.</h4>
+ <h3>Art. 21. A Aeronáutica poderá firmar contratos e convênios com instituições de ensino, públicas ou privadas, militares ou civis, nacionais ou estrangeiras, para a realização de cursos, programas de pesquisa, ciclos de conferências, seminários e outras atividades correlatas, em complemento às atividades de ensino do SISTENS, conforme a legislação federal vigente.</h3>
+ <h3>Art. 22. Os cursos, estágios e programas do SISTENS poderão ser ministrados a distância.</h3>
+ <h3>Art. 23. Poderão ser admitidos nos cursos, estágios e programas do SISTENS, a critério do Órgão Central, civis, militares das demais Forças Armadas, das Forças Auxiliares ou de nações amigas.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA DIPLOMAÇÃO E CERTIFICAÇÃO</h3>
+ <h3>Art. 24. A qualificação no SISTENS será obtida por meio de capacitação e habilitação e pela consequente diplomação e certificação.</h3>
+ <h3>Art. 25. O Curso de Formação de Oficiais Aviadores, da Aeronáutica, ministrado pela AFA, conferirá a seus concluintes a graduação de bacharel em ciências aeronáuticas, com habilitação em aviação militar, e a graduação de bacharel em administração, com ênfase em administração pública.</h3>
+ <h3>Art. 26. O Curso de Formação de Oficiais Intendentes, da Aeronáutica, ministrado pela AFA, conferirá a seus concluintes a graduação de bacharel em ciências da logística, com habilitação em intendência da Aeronáutica, e a graduação de bacharel em administração, com ênfase em administração pública.</h3>
+ <h3>Art. 27. O Curso de Formação de Oficiais de Infantaria, da Aeronáutica, ministrado pela AFA, conferirá a seus concluintes a graduação de bacharel em ciências militares, com habilitação em infantaria da Aeronáutica, e a graduação de bacharel em administração, com ênfase em administração pública.</h3>
+ <h3>Art. 28. Os concluintes de cursos ou estágios de formação e de adaptação de oficiais, bem como de cursos de graduação, farão jus à diplomação e à certificação correspondentes.</h3>
+ <h3>Art. 29. Os concluintes de cursos ou estágios de formação e de adaptação de praças farão jus à diplomação e à certificação correspondentes.</h3>
+ <h3>Art. 30. Os cursos de pós-formação, realizados no âmbito do SISTENS por militares e civis detentores de graduação de nível superior, conferirão a seus concluintes a diplomação e a certificação correspondentes e constituirão a base para a obtenção das titulações de pós-graduação, nos termos do regulamento desta Lei.</h3>
+ <h3>Art. 31. Os diplomas e certificados expedidos pelas organizações de ensino integrantes do SISTENS, registrados no Órgão Central do SISTENS, serão reconhecidos como oficialmente válidos para todos os efeitos legais.</h3>
+ <h3>Art. 32. A Aeronáutica, visando a atender às suas necessidades, reserva-se o direito de analisar a aceitabilidade dos diplomas e certificados conferidos pelos cursos realizados fora do seu âmbito.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO CORPO DOCENTE E DO PESSOAL DO ENSINO</h3>
+ <h3>Art. 33. O corpo docente das organizações de ensino do SISTENS será composto por professores integrantes da carreira de magistério superior e da carreira de magistério do ensino básico, técnico e tecnológico e por militares qualificados e designados para o desempenho das atividades de ensino, denominados instrutores.</h3>
+ <h4>§ 1º O corpo docente das organizações de ensino do SISTENS poderá ser complementado por professores visitantes, conferencistas ou militares convidados, ou profissionais com reconhecida competência.</h4>
+ <h4>§ 2º Poderão também ser contratados, de acordo com lei específica, serviços educacionais para as atividades complementares de ensino.</h4>
+ <h3>Art. 34. O SISTENS promoverá a valorização do pessoal ligado às atividades de ensino, assegurando o aperfeiçoamento profissional continuado, bem como períodos reservados a estudos, pesquisa, planejamento e avaliação, incluídos na carga de trabalho.</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DISPOSIÇÕES FINAIS</h3>
+ <h3>Art. 35. O Poder Executivo regulamentará esta Lei.</h3>
+ <h3>Art. 36. Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 37. Revogam-se o Decreto-Lei n° 8.437, de 24 de dezembro de 1945, a Lei n° 1.601, de 12 de maio de 1952, e a Lei n° 7.549, de 11 de dezembro de 1986.</h3>
+ <p>Brasília, 4 de agosto de 2011; 190º da Independência e 123º da República.</p>
+ <h3>DILMA ROUSSEFF</h3>
+ <p>Luís Inácio Lucena Adams</p>
+ <p>Este texto não substitui o publicado no DOU de 5.8.2011 - Edição extra</p>
+ <p>Dispõe sobre o ensino na Aeronáutica; e revoga o Decreto-Lei n° 8.437, de 24 de dezembro de 1945, e as Leis nºs 1.601, de 12 de maio de 1952, e 7.549, de 11 de dezembro de 1986.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2011/Lei/L12464.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

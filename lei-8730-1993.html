@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 8.730, DE 10 DE NOVEMBRO DE 1993 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1993" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 8.730, DE 10 DE NOVEMBRO DE 1993</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 21:40:50 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8730.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 7.578 caracteres | espelho: 7.665 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 8.730, DE 10 DE NOVEMBRO DE 1993.</p>
+ <p>Estabelece a obrigatoriedade da declaração de bens e rendas para o exercício de cargos, empregos e funções nos Poderes Executivo, Legislativo e Judiciário, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte lei:</p>
+ <h3>Art. 1º É obrigatória a apresentação de declaração de bens, com indicação das fontes de renda, no momento da posse ou, inexistindo esta, na entrada em exercício de cargo, emprego ou função, bem como no final de cada exercício financeiro, no término da gestão ou mandato e nas hipóteses de exoneração, renúncia ou afastamento definitivo, por parte das autoridades e servidores públicos adiante indicados:</h3>
+ <h5>I - Presidente da República;</h5>
+ <h5>II - Vice-Presidente da República;</h5>
+ <h5>III - Ministros de Estado;</h5>
+ <h5>IV - membros do Congresso Nacional;</h5>
+ <h5>V - membros da Magistratura Federal;</h5>
+ <h5>VI - membros do Ministério Público da União;</h5>
+ <h5>VII - todos quantos exerçam cargos eletivos e cargos, empregos ou funções de confiança, na administração direta, indireta e fundacional, de qualquer dos Poderes da União.</h5>
+ <h4>§ 1º A declaração de bens e rendas será transcrita em livro próprio de cada órgão e assinada pelo declarante:</h4>
+ <h4>§ 2º O declarante remeterá, incontinenti, uma cópia da declaração ao Tribunal de Contas da União, para o fim de este:</h4>
+ <h5>I - manter registro próprio dos bens e rendas do patrimônio privado de autoridades públicas;</h5>
+ <h5>II - exercer o controle da legalidade e legitimidade desses bens e rendas, com apoio nos sistemas de controle interno de cada Poder;</h5>
+ <h5>III - adotar as providências inerentes às suas atribuições e, se for o caso, representar ao Poder competente sobre irregularidades ou abusos apurados;</h5>
+ <h5>IV - publicar, periodicamente, no Diário Oficial da União, por extrato, dados e elementos constantes da declaração;</h5>
+ <h5>V - prestar a qualquer das Câmaras do Congresso Nacional ou às respectivas Comissões, informações solicitadas por escrito;</h5>
+ <h5>VI - fornecer certidões e informações requeridas por qualquer cidadão, para propor ação popular que vise a anular ato lesivo ao patrimônio público ou à moralidade administrativa, na forma da lei.</h5>
+ <h3>Art. 2º A declaração a que se refere o artigo anterior, excluídos os objetos e utensílios de uso doméstico de módico valor, constará de relação pormenorizada dos bens imóveis, móveis, semoventes, títulos ou valores mobiliários, direitos sobre veículos automóveis, embarcações ou aeronaves e dinheiros ou aplicações financeiras que, no País ou no exterior, constituam, separadamente, o patrimônio do declarante e de seus dependentes, na data respectiva.</h3>
+ <h4>§ 1º Os bens serão declarados, discriminadamente, pelos valores de aquisição constantes dos respectivos instrumentos de transferência de propriedade, com indicação concomitante de seus valores venais.</h4>
+ <h4>§ 2º No caso de inexistência do instrumento de transferência de propriedade, será dispensada a indicação do valor de aquisição do bem, facultada a indicação de seu valor venal à época do ato translativo, ao lado do valor venal atualizado.</h4>
+ <h4>§ 3º O valor de aquisição dos bens existentes no exterior será mencionado na declaração e expresso na moeda do país em que estiverem localizados.</h4>
+ <h4>§ 4º Na declaração de bens e rendas também serão consignados os ônus reais e obrigações do declarante, inclusive de seus dependentes, dedutíveis na apuração do patrimônio líquido, em cada período, discriminando-se entre os credores, se for o caso, a Fazenda Pública, as instituições oficiais de crédito e quaisquer entidades, públicas ou privadas, no País e no exterior.</h4>
+ <h4>§ 5º Relacionados os bens, direitos e obrigações, o declarante apurará a variação patrimonial ocorrida no período, indicando a origem dos recursos que hajam propiciado o eventual acréscimo.</h4>
+ <h4>§ 6º Na declaração constará, ainda, menção a cargos de direção e de órgãos colegiados que o declarante exerça ou haja exercido nos últimos dois anos, em empresas privadas ou de setor público e outras instituições, no País e no exterior.</h4>
+ <h4>§ 7º O Tribunal de Contas da União poderá:</h4>
+ <h6>a) expedir instruções sobre formulários da declaração e prazos máximos de remessa de sua cópia;</h6>
+ <h6>b) exigir, a qualquer tempo, a comprovação da legitimidade da procedência dos bens e rendas acrescidos ao patrimônio no período relativo à declaração.</h6>
+ <h3>Art. 3º A não apresentação da declaração a que se refere o art. 1º, por ocasião da posse, implicará a não realização daquele ato, ou sua nulidade, se celebrado sem esse requisito essencial.</h3>
+ <h4>Parágrafo único. Nas demais hipóteses, a não apresentação da declaração, a falta e atraso de remessa de sua cópia ao Tribunal de Contas da União ou a declaração dolosamente inexata implicarão, conforme o caso:</h4>
+ <h6>a) crime de responsabilidade, para o Presidente e o Vice-Presidente da República, os Ministros de Estado e demais autoridades previstas em lei especial, observadas suas disposições; ou</h6>
+ <h6>b) infração político-administrativa, crime funcional ou falta grave disciplinar, passível de perda do mandato, demissão do cargo, exoneração do emprego ou destituição da função, além da inabilitação, até cinco anos, para o exercício de novo mandato e de qualquer cargo, emprego ou função pública, observada a legislação específica.</h6>
+ <h3>Art. 4º Os administradores ou responsáveis por bens e valores públicos da administração direta, indireta e fundacional de qualquer dos Poderes da União, assim como toda a pessoa que por força da lei, estiver sujeita à prestação de contas do Tribunal de Contas da União, são obrigados a juntar, à documentação correspondente, cópia da declaração de rendimentos e de bens, relativa ao período-base da gestão, entregue à repartição competente, de conformidade com a legislação do Imposto sobre a Renda.</h3>
+ <h4>§ 1º O Tribunal de Contas da União considerará como não recebida a documentação que lhe for entregue em desacordo com o previsto neste artigo.</h4>
+ <h4>§ 2º Será lícito ao Tribunal de Contas da União utilizar as declarações de rendimentos e de bens, recebidas nos termos deste artigo, para proceder ao levantamento da evolução patrimonial do seu titular e ao exame de sua compatibilização com os recursos e as disponibilidades declarados.</h4>
+ <h3>Art. 5º A Fazenda Pública Federal e o Tribunal de Contas da União poderão realizar, em relação às declarações de que trata esta lei, troca de dados e informações que lhes possam favorecer o desempenho das respectivas atribuições legais.</h3>
+ <h4>Parágrafo único. O dever do sigilo sobre informações de natureza fiscal e de riqueza de terceiros, imposto aos funcionários da Fazenda Pública, que cheguem ao seu conhecimento em razão do ofício, estende-se aos funcionários do Tribunal de Contas da União que, em cumprimento das disposições desta lei, encontrem-se em idêntica situação.</h4>
+ <h3>Art. 6º Os atuais ocupantes de cargos, empregos ou funções mencionados no art. 1º, e obedecido o disposto no art. 2º, prestarão a respectiva declaração de bens e rendas, bem como remeterão cópia ao Tribunal de Contas da União, no prazo e condições por este fixados.</h3>
+ <h3>Art. 7º As disposições constantes desta lei serão adotadas pelos Estados, pelo Distrito Federal e pelos Municípios, no que couber, como normas gerais de direito financeiro, velando pela sua observância os órgãos a que se refere o art. 75 da Constituição Federal.</h3>
+ <h3>Art. 8º Esta lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 9º Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 10 de novembro de 1993; 172º da Independência e 105º da República.</p>
+ <h3>ITAMAR FRANCO</h3>
+ <p>Este texto não substitui o publicado no D.O.U. de 11.11.1993</p>
+ <p>Estabelece a obrigatoriedade da declaração de bens e rendas para o exercício de cargos, empregos e funções nos</p>
+ <p>Poderes Executivo, Legislativo e Judiciário, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/L8730.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

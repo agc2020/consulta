@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 8.042, DE 13 DE JUNHO DE 1990 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1990" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 8.042, DE 13 DE JUNHO DE 1990</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 07/12/2025 22:27:33 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Leis/1989_1994/L8042.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 20.820 caracteres | espelho: 20.842 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 8.042, DE 13 DE JUNHO DE 1990.</p>
+ <p>Cria os Conselhos Federal e Regionais de Economistas Domésticos, regula seu funcionamento, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o Congresso Nacional decreta e eu sanciono a seguinte lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Dos Conselhos Federal e Regionais</p>
+ <p>de Economia Domésticos</p>
+ <h3>Art. 1° Ficam criados o Conselho Federal e os Conselhos Regionais de Economistas Domésticos com a finalidade de orientar, disciplinar e fiscalizar o exercício da profissão de Economista Doméstico, definida na Lei n° 7.387, de 21 de outubro de 1985.</h3>
+ <h3>Art. 2° Aplicam-se, no que couber, as disposições da Lei n° 7.387, de 21 de outubro de 1985 , com as modificações introduzidas por esta lei, aos técnicos de 2° grau da área de Economia Doméstica, portadores de diploma, título ou certificado expedidos por estabelecimentos de ensino de 2° grau, oficiais ou reconhecidos, e devidamente registrados no órgão competente.</h3>
+ <h3>Art. 3° As atribuições dos técnicos de 2° grau da área de Economia Doméstica serão disciplinadas em resolução do Conselho Federal tendo em vista seus currículos.</h3>
+ <h3>Art. 4° O Conselho Federal, assim como os Conselhos Regionais de Economistas Domésticos servirão de órgão de consulta dos governos da União, dos Estados, dos Municípios e dos Territórios, em todos os assuntos relativos ao exercício profissional da Economia Doméstica.</h3>
+ <h3>Art. 5° O Conselho Federal e os Conselhos Regionais de Economistas Domésticos constituem, no seu conjunto, uma autarquia federal, com personalidade jurídica de direito público e autonomia administrativa e financeira.</h3>
+ <h3>Art. 6° O Conselho Federal de Economistas Domésticos terá sede e foro no Distrito Federal e jurisdição em todo o País, a ele subordinando-se os Conselhos Regionais com sede no Distrito Federal e nas capitais dos Estados.</h3>
+ <h3>Art. 7° O exercício do mandato de 3 (três) anos de membro do Conselho Federal e dos Conselhos Regionais de Economistas Domésticos, assim como a respectiva eleição, mesmo na condição de suplente, ficarão subordinados às exigências constantes do art. 530 da Consolidação das Leis do Trabalho e legislação complementar, e ainda, ao preenchimento dos seguintes requisitos e condições:</h3>
+ <h5>I - cidadania brasileira;</h5>
+ <h5>II - habilitação profissional na forma da legislação em vigor;</h5>
+ <h5>III - pleno gozo dos direitos profissionais, civis e políticos.</h5>
+ <h4>Parágrafo único. Será permitida uma reeleição para os membros dos Conselhos Federal e Regionais de Economistas Domésticos.</h4>
+ <h3>Art. 8° O Conselho Federal de Economistas Domésticos compor-se-á de Presidente, Vice-Presidente, Secretário, Tesoureiro e um mínimo de 6 (seis) Conselheiros, eleitos em escrutínio secreto, por maioria absoluta das delegações formadas por, no mínimo, 1 (um) representante de cada Conselho Regional, realizando-se tantos escrutínios quantos necessários para obtenção desse quorum.</h3>
+ <h4>§ 1° Na mesma eleição deverão ser eleitos os suplentes dos Conselheiros, que serão convocados na ordem de votação.</h4>
+ <h4>§ 2° O Colégio Eleitoral convocado para a eleição do Conselho Federal reunir-se-á, preliminarmente, para exame, discussão, aprovação e registro das chapas concorrentes, realizando-se a eleição 24 (vinte e quatro) horas após a sessão preliminar.</h4>
+ <h4>§ 3° Os membros dos Conselhos Regionais de Economistas Domésticos e respectivos suplentes serão eleitos pelo sistema de eleição direta, por meio de voto pessoal, secreto e obrigatório dos profissionais registrados no respectivo Conselho.</h4>
+ <h4>§ 4° Os profissionais que se encontrarem fora da sede do Órgão Regional, por ocasião de eleição, poderão colocar seu voto em envelope fechado, remetendo-o por carta ao Presidente do Conselho Regional respectivo.</h4>
+ <h4>§ 5° Os votos por correspondência só serão computados se entregues ao Conselho Regional até o momento da abertura dos trabalhos da eleição a que se destinam.</h4>
+ <h4>§ 6° Aplicar-se-á pena de multa em importância não excedente ao valor da anuidade ao profissional que deixar de votar sem causa justificada.</h4>
+ <h4>§ 7° São dispensados das obrigações de votar os profissionais remidos e os que estiverem no exterior.</h4>
+ <h3>Art. 9º O regulamento disporá sobre as eleições dos Conselhos Federais e Regionais de Economistas Domésticos.</h3>
+ <h3>Art. 10. A extinção ou perda de mandato de membros do Conselho ou dos Conselhos Regionais ocorrerá:</h3>
+ <h5>I - por renúncia;</h5>
+ <h5>II - por superveniência de causa de que resulte a inabilidade para o exercício da profissão;</h5>
+ <h5>III - por condenação a pena superior a 2 (dois) anos, em virtude de sentença transitada em julgado;</h5>
+ <h5>IV - por destituição de cargo, função ou emprego, decorrente da prática de ato de improbidade na administração pública ou privada, em virtude de sentença transitada em julgado;</h5>
+ <h5>V - por ausência, sem motivo justificado, a 3 (três) sessões consecutivas ou 6 (seis) intercaladas, durante o ano.</h5>
+ <h3>Art. 11. Compete ao Conselho Federal:</h3>
+ <h5>I - eleger, dentre os seus membros, o seu presidente, o vice-presidente, o secretário e o tesoureiro;</h5>
+ <h5>II - exercer função normativa, baixar atos necessários à interpretação e execução do disposto nesta lei e à fiscalização do exercício profissional, adotando providências indispensáveis à realização dos objetivos institucionais;</h5>
+ <h5>III - orientar, supervisionar e disciplinar o exercício da profissão de Economista Doméstico em todo o Território Nacional, bem como o dos técnicos de 2° grau dessa área;</h5>
+ <h5>IV - supervisionar a fiscalização do exercício profissional em todo o território nacional;</h5>
+ <h5>V - organizar, instalar, orientar e inspecionar os Conselhos Regionais e examinar suas prestações de contas, nelas intervindo desde que indispensável ao restabelecimento de normalidade administrativa ou financeira ou à garantia de efetividade do princípio de hierarquia institucional;</h5>
+ <h5>VI - elaborar seu regimento;</h5>
+ <h5>VII - aprovar os Regimentos Internos dos Conselhos Regionais;</h5>
+ <h5>VIII - conhecer e dirimir dúvidas suscitadas pelos Conselhos Regionais e prestar-lhes assistência técnica permanente;</h5>
+ <h5>IX - (vetado)</h5>
+ <h5>X - fixar valores das anuidades, taxas, emolumentos e multas devidas pelos profissionais e empresas aos Conselhos Regionais a que estejam jurisdicionados, nos termos da Lei n° 6.994, de 26 de maio de 1982;</h5>
+ <h5>XI - aprovar sua proposta orçamentária e autorizar a abertura de créditos adicionais, bem como operações referentes a mutações patrimoniais;</h5>
+ <h5>XII - criar e dispor sobre o Código de Ética Profissional, funcionando como Tribunal de Ética Profissional;</h5>
+ <h5>XIII - estimular a exação no exercício da profissão, zelando pelo prestígio e bom nome dos que a exercem;</h5>
+ <h5>XIV - instituir o modelo da Carteira de Identidade Profissional e do Cartão de Identificação;</h5>
+ <h5>XV - autorizar o Presidente a adquirir, onerar ou alienar bens imóveis;</h5>
+ <h5>XVI - emitir parecer conclusivo sobre prestação de contas a que esteja obrigado;</h5>
+ <h5>XVII - publicar, anualmente, seu orçamento e respectivos créditos adicionais ou balanços, a execução orçamentária, o relatório de suas atividades e, periodicamente, até o prazo de 5 (cinco) anos no máximo, a relação de todos os profissionais inscritos;</h5>
+ <h5>XVIII - propor ao Governo Federal as alterações desta lei, bem como de seus instrumentos executórios, sobretudo quanto à fiscalização do exercício profissional;</h5>
+ <h5>XIX - (vetado)</h5>
+ <h5>XX - julgar, em última instância, os recursos das deliberações dos Conselhos Regionais de Economistas Domésticos;</h5>
+ <h5>XXI - deliberar sobre instituições de prêmios, reconhecimentos, títulos e anúncio de especialidade dos profissionais inscritos nos Conselhos Regionais;</h5>
+ <h5>XXII - contratar e demitir o pessoal administrativo necessário ao bom funcionamento do Conselho Federal;</h5>
+ <h5>XXIII - realizar periodicamente reuniões de Conselhos Federal e Regionais para fixar diretrizes sobre assunto da profissão;</h5>
+ <h4>Parágrafo único. As questões referentes às atividades-afins com outras profissões serão resolvidas por meio de entendimentos com as entidades reguladoras dessas profissões.</h4>
+ <h3>Art. 12. Compete aos Conselhos Regionais:</h3>
+ <h5>I - eleger, dentre os seus membros, o seu presidente, o vice-presidente, o secretário e o tesoureiro;</h5>
+ <h5>II - expedir Carteira de Identidade Profissional e Cartão de Identificação aos profissionais residentes em sua jurisdição;</h5>
+ <h5>III - fiscalizar o exercício profissional na área de sua jurisdição, representando às autoridades competentes sobre os fatos que apurar e cuja solução ou repressão não seja de sua alçada;</h5>
+ <h5>IV - cumprir e fazer cumprir as disposições desta lei, do regulamento, do regimento, das resoluções e das demais normas baixadas pelo Conselho Federal;</h5>
+ <h5>V - funcionar como Tribunal Regional de Ética, conhecendo, processando e decidindo os casos que lhes forem submetidos;</h5>
+ <h5>VI - elaborar a proposta de seu regimento, bem como as alterações ao mesmo, submetendo-as ao Conselho Federal;</h5>
+ <h5>VII - propor ao Conselho Federal as medidas necessárias ao aprimoramento dos serviços e do sistema de fiscalização do exercício profissional e sugerir-lhe que proponha à autoridade competente as alterações desta lei que julgar conveniente, principalmente as que visem melhorar a regulamentação do exercício da profissão de Economista Doméstico;</h5>
+ <h5>VIII - aprovar a proposta orçamentária e autorizar a abertura de créditos adicionais e as operações referentes a mutações patrimoniais;</h5>
+ <h5>IX - autorizar o Presidente a adquirir, onerar ou alienar bens imóveis;</h5>
+ <h5>X - arrecadar anuidades, multas, taxas e emolumentos e adotar todas as medidas destinadas à efetivação de sua receita, destacando e entregando ao Conselho Federal as importâncias correspondentes à sua participação legal;</h5>
+ <h5>XI - promover, perante o juízo competente, a cobrança das importâncias correspondentes a anuidades, taxas, emolumentos e multas, esgotados os meios de cobrança amigável;</h5>
+ <h5>XII - estimular a exação no exercício da profissão, zelando pelo prestígio e bom conceito dos que a exercem;</h5>
+ <h5>XIII - julgar as infrações e aplicar as penalidades previstas nesta lei em normas complementares do Conselho Federal;</h5>
+ <h5>XIV - emitir parecer conclusivo sobre prestação de contas a que esteja obrigado;</h5>
+ <h5>XV - publicar, anualmente, seu orçamento e respectivos créditos adicionais, os balanços, a execução orçamentária, o relatório de suas atividades e a relação de profissionais registrados;</h5>
+ <h5>XVI - contratar e demitir o pessoal administrativo necessário ao funcionamento do respectivo Conselho Regional;</h5>
+ <h5>XVII - eleger delegado-eleitor para a reunião a que se refere o art. 8° desta lei.</h5>
+ <h3>Art. 13. O exercício do cargo de membro do Conselho Regional é incompatível com o de membro do Conselho Federal.</h3>
+ <h3>Art. 14. O Economista Doméstico que, inscrito no Conselho Regional de um Estado, passar a exercer atividades em outro Estado, em caráter permanente, assim entendido o exercício da profissão por mais de 365 (trezentos e sessenta e cinco) dias, ficará obrigado a requerer inscrição secundária no quadro respectivo ou para ele transferir-se.</h3>
+ <h3>Art. 15. O Conselho Federal e os Conselhos Regionais de Economistas Domésticos não poderão deliberar senão com a maioria absoluta de seus membros.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Das Anuidades e Taxas</p>
+ <h3>Art. 16. O Economista Doméstico, para o exercício de sua profissão, é obrigado a se inscrever no Conselho de Economistas Domésticos a cuja jurisdição estiver sujeito e pagará uma anuidade ao respectivo Conselho, até o dia 31 de março de cada ano, acrescida de 20% (vinte por cento) quando fora deste prazo.</h3>
+ <h4>Parágrafo único. O Economista Doméstico ausente do País não fica isento do pagamento da anuidade, que poderá ser paga, no seu regresso, sem acréscimo dos 20% (vinte por cento) referidos neste artigo.</h4>
+ <h3>Art. 17. O Conselho Federal ou Conselhos Regionais de Economistas Domésticos cobrarão taxa pela expedição ou substituição de carteira profissional, pela certidão referente à anotação de função técnica ou registro da empresa.</h3>
+ <h3>Art. 18. A carteira profissional contará com uma folha onde será feito registro do pagamento das anuidades por um período mínimo de 10 (dez) anos.</h3>
+ <h4>Parágrafo único. A carteira a que se refere o caput deste artigo será expedida pelo Conselho Federal de Economistas Domésticos - CFED ou Conselhos Regionais de Economistas Domésticos - CRED servindo como documento de identificação e terá fé pública.</h4>
+ <h3>Art. 19. Constituem renda do Conselho Federal:</h3>
+ <h5>I - 20% (vinte por cento) do produto de arrecadação de anuidades, taxas de expedição de carteira profissional, emolumentos e multas de cada Conselho Regional;</h5>
+ <h5>II - legados, doações e subvenções;</h5>
+ <h5>III - rendas patrimoniais;</h5>
+ <h5>IV - 20% (vinte por cento) do valor das certidões solicitadas por profissionais ou empresas.</h5>
+ <h3>Art. 20. Constitui renda dos Conselhos Regionais:</h3>
+ <h5>I - 80% (oitenta por cento) do produto de arrecadação de anuidades, taxas de expedição de carteira profissional, emolumentos e multas;</h5>
+ <h5>II - legados, doações e subvenções;</h5>
+ <h5>III - rendas patrimoniais;</h5>
+ <h5>IV - 80% (oitenta por cento) do valor das certidões solicitadas por profissionais ou empresas.</h5>
+ <h3>Art. 21. As taxas, anuidades ou quaisquer emolumentos, cuja cobrança esta lei autoriza, serão fixadas pelo Conselho Federal de Economistas Domésticos - CFED.</h3>
+ <h3>Art. 22. A renda dos Conselhos Federal e Regionais só poderá ser aplicada na organização e funcionamento de serviços úteis à fiscalização do exercício profissional, em serviço de caráter assistencial, quando solicitado por entidades sindicais, bem como no aprimoramento profissional previsto no art. 32 desta lei.</h3>
+ <h3>Art. 23. As firmas de profissionais de Economia Doméstica, as associações, empresas ou quaisquer estabelecimentos cuja atividade seja passível de ação de Economistas Domésticos, deverão, sempre que se tornar necessário, fazer prova de que para este efeito têm, a seu serviço, profissional habilitado na forma desta lei.</h3>
+ <h4>Parágrafo único. Aos infratores das normas contidas neste artigo será aplicada, pelo Conselho Regional de Economistas Domésticos a que estiverem subordinados, multa que variará de 20% (vinte por cento) a 100% (cem por cento) do valor da anuidade, independentemente de outras sanções legais.</h4>
+ <h3>Art. 24. É obrigatório o registro nos Conselhos Regionais das empresas que desenvolvem programas de atendimento às necessidades básicas da família e outros grupos, bem como programas de orientação ao consumidor previsto no art. 2° da Lei n° 7.387, de 21 de outubro de 1985 , na forma estabelecida em regulamento.</h3>
+ <h3>Art. 25. As entidades estatais, paraestatais, autárquicas e de economia mista que tenham atividades de Economia Doméstica, ou se utilizam de trabalhos de profissionais dessa categoria, são obrigados, sempre que solicitados, a fazer prova de que têm, a seu serviço, profissional habilitado na forma desta lei.</h3>
+ <h3>Art. 26. Para o exercício da profissão na Administração Pública ou exercício de cargo, função ou emprego em empresas públicas ou privadas, de assessoramento, chefia ou direção, será exigida, como condição essencial, a apresentação de Carteira de Identidade Profissional de Economista Doméstico.</h3>
+ <h4>Parágrafo único. A inscrição em concurso público dependerá da prévia apresentação de Carteira de Identidade Profissional ou Certidão de Conselho Regional de que o profissional está no exercício de seus direitos.</h4>
+ <h3>Art. 27. O Poder de disciplinar e aplicar penalidades compete, exclusivamente, ao Conselho Regional em que estejam inscritos os profissionais e as pessoas jurídicas ao tempo do fato punível.</h3>
+ <h4>Parágrafo único. Sem prejuízo das penas disciplinares aludidas no art. 30 desta Lei, o exercício ilegal da profissão será punido na forma prevista no art. 282 do Código Penal , aprovado pelo Decreto-Lei n° 2.848, de 7 de dezembro de 1940.</h4>
+ <h3>Art. 28. O exercício simultâneo, temporário ou definitivo, da profissão, em área de jurisdição de dois ou mais Conselhos Regionais, submeterá o profissional de que trata esta Lei às exigências e formalidades estabelecidas pelo Conselho Federal.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Das Infrações e Penalidades</p>
+ <h3>Art. 29. Constitui infração disciplinar:</h3>
+ <h5>I - transgredir preceito ou Código de Ética Profissional;</h5>
+ <h5>II - exercer a profissão, quando impedido de fazê-lo, ou facilitar, por qualquer meio, o seu exercício aos não inscritos ou aos leigos;</h5>
+ <h5>III - (VETADO)</h5>
+ <h5>IV - praticar, no exercício da atividade profissional, ato definido como crime ou contravenção;</h5>
+ <h5>V - revelar segredo que, em razão da profissão, lhe seja confiado;</h5>
+ <h5>VI - não cumprir, no prazo assinalado, determinações emanadas de órgão ou autoridade do Conselho Regional, em matéria de competência deste, após regularmente notificado;</h5>
+ <h5>VII - deixar de pagar, pontualmente, ao Conselho Regional as contribuições a que está obrigado;</h5>
+ <h5>VIII - faltar a qualquer dever profissional estabelecido em lei;</h5>
+ <h5>IX - manter conduta incompatível com o exercício da profissão.</h5>
+ <h4>Parágrafo único. As faltas serão apuradas, levando-se em conta a natureza do ato e as circunstâncias de cada caso.</h4>
+ <h3>Art. 30. As penas disciplinares aplicáveis pelos Conselhos Regionais são as seguintes:</h3>
+ <h5>I - advertência;</h5>
+ <h5>II - repreensão;</h5>
+ <h5>III - multa equivalente a até 10 (dez) vezes o valor da anuidade;</h5>
+ <h5>IV - suspensão do exercício profissional pelo prazo de até 3 (três) anos;</h5>
+ <h5>V - cancelamento da inscrição e proibição do exercício profissional.</h5>
+ <h4>§ 1° Salvo os casos de gravidade manifesta ou reincidência, a imposição das penalidades obedecerá à graduação deste artigo, observadas as normas estabelecidas pelo Conselho Federal para disciplina do processo de julgamento das infrações.</h4>
+ <h4>§ 2° Na fixação da pena serão considerados os antecedentes profissionais do infrator, o seu grau de culpa, as circunstâncias de cada caso.</h4>
+ <h4>§ 3° As penas de advertência, repreensão e multa serão comunicadas ao infrator pelo Conselho Regional, em ofício reservado, não se fazendo constar dos assentamentos do profissional punido, senão em caso reincidência.</h4>
+ <h4>§ 4° Da imposição de qualquer penalidade caberá recurso, com efeito suspensivo, ao Conselho Federal:</h4>
+ <h5>I - voluntário, no prazo de 30 (trinta) dias a contar da ciência de decisões;</h5>
+ <h5>II - ex officio, nas hipóteses dos incisos IV e V do caput deste artigo, no prazo de 30 (trinta) dias a contar da decisão.</h5>
+ <h4>§ 5° As denúncias somente serão recebidas quando assinadas, declinada a qualificação do denunciante, e acompanhadas da indicação dos elementos comprobatórios do alegado.</h4>
+ <h4>§ 6° A suspensão por falta de pagamento de anuidades, taxas ou multas só cessará com a satisfação da dívida, podendo ser cancelada a inscrição profissional após decorridos 3 (três) anos.</h4>
+ <h4>§ 7° É lícito ao profissional punido requerer, à instância superior, revisão do processo, no prazo de 30 (trinta) dias contados da ciência.</h4>
+ <h4>§ 8° Das decisões do Conselho Regional ou de seu Presidente, por força de competência privativa, caberá recursos, em 30 (trinta) dias, contados da ciência, para o Conselho Federal.</h4>
+ <h4>§ 9° Além do recurso previsto no parágrafo anterior, não caberá qualquer outro de natureza administrativa, assegurada aos interessados a via judicial.</h4>
+ <h4>§ 10. As instâncias recorridas poderão reconsiderar suas próprias decisões.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Disposições Gerais</p>
+ <h3>Art. 31. Aos servidores dos Conselhos Federal e Regionais de Economistas Domésticos aplica-se o regime jurídico da Consolidação das Leis do Trabalho.</h3>
+ <h3>Art. 32. Os Conselhos Regionais de Economistas Domésticos estimularão, por todos os meios, inclusive mediante concessão de auxílio, segundo normas aprovadas pelo Conselho Federal, as realizações de natureza cultural e técnico-científica, visando ao aprimoramento profissional e à classe.</h3>
+ <h3>Art. 33. Os casos omissos verificados na execução desta lei serão resolvidos pelo Conselho Federal de Economistas Domésticos (CFED).</h3>
+ <h3>Art. 34. Nenhum órgão ou estabelecimento público, autárquico, paraestatal, de economia mista ou particular poderá ter a denominação de economia doméstica se, na execução de seu trabalho, não observar os princípios da economia doméstica e não empregar economistas domésticos.</h3>
+ <h2>CAPÍTULO V</h2>
+ <p>Disposições Transitórias</p>
+ <h3>Art. 35. A escolha dos primeiros membros efetivos do Conselho Federal de Economistas Domésticos e seus suplentes será feita pela Assembléia Geral Representativa convocada pela Associação Brasileira de Economistas Domésticos - ABED.</h3>
+ <h4>Parágrafo único. A Assembléia de que trata este artigo será realizada dentro de 90 (noventa) dias contados da data de publicação desta lei.</h4>
+ <h3>Art. 36. Os primeiros Conselhos Regionais de Economistas Domésticos, após criados pelo Conselho Federal, serão constituídos pelos sócios da Assembléia Brasileira de Economistas Domésticos - ABED, na forma que dispuser o regulamento desta lei.</h3>
+ <h3>Art. 37. A carteira de identidade profissional de que trata o</h3>
+ <h2>CAPÍTULO II somente será exigível a partir de 180 (cento e oitenta) dias contados da instalação do respectivo Conselho Regional.</h2>
+ <h3>Art. 38. (VETADO)</h3>
+ <h3>Art. 39. Esta lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 40. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 13 de junho de 1990; 169° da Independência e 102° da República.</p>
+ <h3>FERNANDO COLLOR</h3>
+ <p>Este texto não substitui o publicado no D.O.U de 15.6.1990</p>
+ <p>Cria os Conselhos Federal e Regionais de Economistas Domésticos, regula seu funcionamento, e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Leis/1989_1994/L8042.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
