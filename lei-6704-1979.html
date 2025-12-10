@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.704, DE 26 DE OUTUBRO DE 1979 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1979" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.704, DE 26 DE OUTUBRO DE 1979</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:02:20 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/l6704compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 9.278 caracteres | espelho: 9.172 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.704, DE 26 DE OUTUBRO DE 1979 . Dispõe sobre o seguro de crédito à exportação e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA, Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º O Seguro de Crédito à Exportação tem a finalidade de garantir as operações de crédito à exportação contra os riscos comerciais, políticos e extraordinários que possam afetar: (Redação dada pela Lei n° 11.786, de 2008)</h3>
+ <h5>I - a produção de bens e a prestação de serviços destinados à exportação brasileira; (Incluído pela Lei n° 11.786, de 2008)</h5>
+ <h5>II - as exportações brasileiras de bens e serviços. (Incluído pela Lei n° 11.786, de 2008)</h5>
+ <h5>III - as exportações estrangeiras de bens e serviços, desde que estejam associadas a exportações brasileiras de bens e serviços ou contenham componentes produzidos ou serviços prestados por empresas brasileiras, com o correspondente compartilhamento de risco com agências de crédito à exportação estrangeiras, seguradoras, resseguradoras, instituições financeiras e organismos internacionais, observado o disposto no art. 4º . (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h4>§ 1º O Seguro de Crédito à Exportação poderá ser utilizado por exportadores e por instituições financeiras, agências de crédito à exportação, seguradoras, resseguradoras, fundos de investimento e organismos internacionais que financiarem, refinanciarem ou garantirem a produção de bens e a prestação de serviços destinados à exportação brasileira e as exportações brasileiras de bens e serviços, assegurado tratamento diferenciado, simplificado e favorecido para as micro e pequenas empresas nos termos do regulamento. (Redação dada pela Lei n° 13.292, de 2016)</h4>
+ <h4>§ 2º Nas operações destinadas ao setor aeronáutico em que a análise do risco recair sobre pessoa jurídica diversa do devedor da operação de crédito à exportação, o Seguro de Crédito à Exportação poderá garantir os riscos comerciais, políticos e extraordinários a ela relacionados, conforme dispuser o regulamento desta Lei. (Incluído pela Lei n° 12.837 de 2013)</h4>
+ <h4>§ 3º Aplica-se subsidiariamente ao Seguro de Crédito à Exportação o disposto na Lei N° 10.406, de 10 de janeiro de 2002 (Código Civil) , em especial o art. 206. (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h4>§ 4º Enquadram-se no disposto no § 1º as exportações brasileiras de bens e serviços previstas no art. 6º , inciso I, da Lei N° 9.826, de 23 de agosto de 1999 . (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <p><del></p>
+ <h3>Art. 2º (Revogado pela Lei n° 12.249, de 2010)</del></h3>
+ <p><del></p>
+ <h3>Art. 3º (Revogado pela Lei n° 11.281, de 2006)</del></h3>
+ <h3>Art. 4º A União poderá: (Redação dada pela Lei n° 11.281, de 2006)</h3>
+ <h5>I - conceder garantia da cobertura dos riscos comerciais e dos riscos políticos e extraordinários assumidos em virtude do Seguro de Crédito à Exportação - SCE, conforme dispuser o Regulamento desta Lei; e (Incluído pela Lei n° 11.281, de 2006)</h5>
+ <h5>II - contratar instituição habilitada a operar o SCE para a execução de todos os serviços a ele relacionados, inclusive análise, acompanhamento, gestão das operações de prestação de garantia e de recuperação de créditos sinistrados. (Incluído pela Lei n° 11.281, de 2006)</h5>
+ <h5>III - contratar a Agência Brasileira Gestora de Fundos Garantidores e Garantias S.A. - ABGF para a execução de todos os serviços relacionados ao seguro de crédito à exportação, inclusive análise, acompanhamento, gestão das operações de prestação de garantia e de recuperação de créditos sinistrados. (Incluído pela Lei n° 12.712, de 2012)</h5>
+ <p><del>§ 1º (Revogado pela Lei n° 11.281, de 2006)</del></p>
+ <h4>§ 2º Nas hipóteses de contratação a que se referem os incisos II e III do caput , a justificativa do preço na remuneração da contratada terá como base padrões internacionais, podendo incluir parcela variável atrelada: (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h5>I - a percentual sobre o preço de cobertura das operações, a ser definido pelo Ministério da Fazenda; (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>II - à performance alcançada pelo Seguro de Crédito à Exportação, inclusive no segmento de seguro para micro, pequenas e médias empresas; (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>III - à sustentabilidade atuarial do Fundo de Garantia à Exportação (FGE), previsto na Lei n° 9.818, de 23 de agosto de 1999 ; ou (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>IV - ao preço praticado por congêneres privadas. (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h4>§ 3º A União, com recursos do Fundo de Garantia à Exportação (FGE), poderá assumir despesas, em âmbito judicial ou extrajudicial, com o intuito de evitar ou limitar eventuais indenizações no âmbito do Seguro de Crédito à Exportação. (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h4>§ 4º O prêmio do Seguro de Crédito à Exportação poderá ser pago: (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h5>I - no momento da concessão do Seguro de Crédito à Exportação; (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>II - por ocasião de cada embarque de bens ou exportação de serviços; (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>III - a cada desembolso de recursos no âmbito de contrato de financiamento à exportação; ou (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>IV - de forma parcelada. (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h4>§ 5º A indenização do Seguro de Crédito à Exportação poderá ser paga de acordo com o cronograma de pagamentos da operação de crédito à exportação ou em parcela única, a critério da União. (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h4>§ 6º Nas situações previstas no inciso III do caput e no § 1º , ambos do art. 1º , poderá haver compartilhamento de risco entre a União e agências de crédito à exportação estrangeiras, seguradoras, resseguradoras, instituições financeiras e organismos internacionais, com o objetivo de fornecer cobertura contra os riscos comerciais, políticos e extraordinários no âmbito de uma mesma operação de crédito à exportação, independentemente do país de origem das exportações de bens e serviços, observado o seguinte: (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h5>I - a União poderá conceder garantia de cobertura de riscos às exportações brasileiras de bens e serviços que componham operações de crédito a exportações garantidas pelas instituições listadas neste parágrafo, permitida a adesão às condições de cobertura ou de garantia praticadas por essas instituições, de acordo com a legislação local, observados as regras e os princípios da Constituição Federal; (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h5>II - a União poderá conceder garantia de cobertura de riscos às operações de crédito à exportação compostas por exportações nacionais e estrangeiras de bens e serviços, desde que seja beneficiária de cobertura equivalente, emitida pelas instituições listadas neste parágrafo, na proporção das exportações estrangeiras de bens e serviços que tenham sido objeto da garantia de cobertura da União. (Incluído pela Lei n° 13.292, de 2016)</h5>
+ <h4>§ 7º Eventuais litígios entre a União e as instituições listadas no § 6º , no âmbito do compartilhamento de riscos, serão resolvidos perante o foro brasileiro ou submetidos a arbitragem. (Incluído pela Lei n° 13.292, de 2016)</h4>
+ <h4>§ 8º O sistema oficial de garantias à exportação poderá considerar, na metodologia de precificação dos prêmios de seguro, aspectos relacionados à competitividade da produção nacional nos mercados internacionais, conforme diretrizes estabelecidas pela Câmara de Comércio Exterior – CAMEX. (Incluído pela Medida Provisória nº 1.309, de 2025)</h4>
+ <h3>Art. 5º Para atender à responsabilidade assumida pelo Ministério da Fazenda, na forma do art. 4º desta Lei, o Orçamento Geral da União consignará, anualmente, dotação específica àquele Ministério. (Redação dada pela Lei n° 11.281, de 2006)</h3>
+ <h3>Art. 6º - Às operações de Seguro de Crédito à Exportação, bem como à empresa especializada nesse ramo, não se aplicam as limitações contidas no Art. 9º da Lei n° 5.627, de 1º de dezembro de 1970 , nem as disposições do Decreto-Lei n° 73, de 21 de novembro de 1966, exceto quanto à competência do Conselho Nacional de Seguros Privados - CNSP, da Superintendência de Seguros Privados - SUSEP e do Instituto de Resseguros do Brasil - IRB.</h3>
+ <h3>Art. 7º Nas operações do Seguro de Crédito à Exportação, garantidas pela União, não serão devidas comissões de corretagem. (Redação dada pela Lei n° 9.818, de 1999)</h3>
+ <h3>Art. 8º - O Presidente da República poderá autorizar a subscrição de ações, por entidades da Administração Indireta da União, no capital de empresa que se constituir para os fins previstos no Art. 2º desta Lei, não podendo essa participação acionária, no seu conjunto, ultrapassar de 49% (quarenta e nove por cento) do respectivo capital social.</h3>
+ <h3>Art. 9º - O Poder Executivo baixará o regulamento desta Lei, o qual poderá definir as condições de obrigatoriedade do Seguro de Crédito à Exportação.</h3>
+ <h3>Art. 10 - A presente Lei entrará em vigor na data de sua publicação, revogada, a partir da expedição do seu regulamento, a Lei n° 4.678, de 16 de junho de 1965 , bem assim quaisquer outros preceitos relativos ao Seguro de Crédito à Exportação, e demais disposições em contrário.</h3>
+ <p>Brasília, 26 de outubro de 1979; 158º da Independência e 91º da República.</p>
+ <h3>JOÃO FIGUEIREDO</h3>
+ <p>Este texto não substitui o publicado no DOU 29.10.1979</p>
+ <p>| Dispõe sobre o seguro de crédito à exportação e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/l6704compilada.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

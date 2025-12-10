@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.567, DE 24 DE SETEMBRO DE 1978 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1978" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.567, DE 24 DE SETEMBRO DE 1978</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:15:08 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L6567.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 15.330 caracteres | espelho: 15.128 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.567, DE 24 DE SETEMBRO DE 1978.</p>
+ <p>(Regulamento)</p>
+ <p>Dispõe sobre regime especial para exploração e o aproveitamento das substâncias minerais que especifica e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º - O aproveitamento das substâncias minerais enquadradas na Classe II, a que se refere o art. 5º do Decreto-lei n° 227, de 28 de fevereiro de 1967 (Código de Mineração) , de argilas empregadas no fabrico de cerâmica vermelha e de calcário dolomítico empregado como corretivo de solos na agricultura far-se-á, exclusivamente, por licenciamento, na forma das disposições desta Lei, ressalvada a hipótese prevista no art. 12.</h3>
+ <h4>Parágrafo único - As substâncias minerais referidas neste artigo, quando ocorrentes em área vinculada a concessão de lavra ou manifesto de mina, poderão ser aproveitadas mediante aditamento aos respectivos títulos, na forma prevista no art. 47, parágrafo único, do Código de Mineração.</h4>
+ <h3>Art. 1º O aproveitamento das substâncias minerais enquadradas na Classe II a que se refere o art. 5º do Decreto-lei n° 227, de 28 de fevereiro de 1967 - Código de Mineração , de argilas empregadas no fabrico de cerâmica vermelha, de calcário dolomítico empregado como corretivo de solos na agricultura e de basalto a ser empregado como pedra de revestimento ou ornamental na construção civil far-se-á, exclusivamente, por licenciamento, na forma das disposições desta Lei, ressalvada a hipótese prevista no art. 12. (Redação dada pela Lei n° 7.312. de 1985)</h3>
+ <h3>Art. 1º Poderão ser aproveitados pelo regime de licenciamento, ou de autorização e concessão, na forma da lei: (Redação dada pela Lei n° 8.982, de 1995)</h3>
+ <h5>I - areias, cascalhos e saibros para utilização imediata na construção civil, no preparo de agregados e argamassas, desde que não sejam submetidos a processo industrial de beneficiamento, nem se destinem como matéria-prima à indústria de transformação; (Incluído pela Lei n° 8.982, de 1995)</h5>
+ <h5>II - rochas e outras substâncias minerais, quando aparelhadas para paralelepípedos, guias, sarjetas, moirões e afins; (Incluído pela Lei n° 8.982, de 1995)</h5>
+ <h5>III - argilas usadas no fabrico de cerâmica vermelha; (Incluído pela Lei n° 8.982, de 1995)</h5>
+ <h5>III - argilas para indústrias diversas; (Redação dada pela Lei n° 13.975, de 2020)</h5>
+ <h5>IV - rochas, quando britadas para uso imediato na construção civil e os calcários empregados como corretivo de solo na agricultura. (Incluído pela Lei n° 8.982, de 1995)</h5>
+ <h5>V - rochas ornamentais e de revestimento; (Incluído pela Lei n° 13.975, de 2020)</h5>
+ <h5>VI - carbonatos de cálcio e de magnésio empregados em indústrias diversas. (Incluído pela Lei n° 13.975, de 2020)</h5>
+ <h4>Parágrafo único. O aproveitamento das substâncias minerais referidas neste artigo fica adstrito à área máxima de cinqüenta hectares. (Incluído pela Lei n° 8.982, de 1995)</h4>
+ <h3>Art. 2º - O aproveitamento mineral por licenciamento é facultado exclusivamente ao proprietário do solo ou a quem dele tiver expressa autorização, salvo se a jazida situar-se em imóveis pertencentes a pessoa jurídica de direito público, bem como na hipótese prevista no § 1º do art. 10. (Revogado pela Medida provisória nº 790, de 2017) encerrada</h3>
+ <h3>Art. 2º - O aproveitamento mineral por licenciamento é facultado exclusivamente ao proprietário do solo ou a quem dele tiver expressa autorização, salvo se a jazida situar-se em imóveis pertencentes a pessoa jurídica de direito público, bem como na hipótese prevista no § 1º do art. 10.</h3>
+ <h3>Art. 3º - O licenciamento depende da obtenção, pelo interessado, de licença específica, expedida pela autoridade administrativa local, no município de situação da jazida, e da efetivação do competente registro no Departamento Nacional da Produção Mineral (D.N.P.M.), do Ministério das Minas e Energia, mediante requerimento cujo processamento será disciplinado em portaria do Diretor-Geral desse órgão, a ser expedida no prazo de 60 (sessenta) dias da publicação desta Lei.</h3>
+ <p>A rt. 3º O licenciamento, cujo prazo máximo não poderá ser superior a vinte anos, prorrogável sucessivamente, será pleiteado por meio de requerimento cuja instrução e cujo processamento serão disciplinados conforme estabelecido em ato do DNPM. (Redação dada pela Medida Provisória nº 790, de 2017) encerrada</p>
+ <h4>Parágrafo único - Tratando-se de aproveitamento de jazida situada em imóvel pertencente a pessoa jurídica de direito público, o licenciamento ficará sujeito ao prévio assentimento desta e, se for o caso, à audiência da autoridade federal sob cuja jurisdição se achar o imóvel, na forma da legislação específica.</h4>
+ <h3>Art. 3º - O licenciamento depende da obtenção, pelo interessado, de licença específica, expedida pela autoridade administrativa local, no município de situação da jazida, e da efetivação do competente registro no Departamento Nacional da Produção Mineral (D.N.P.M.), do Ministério das Minas e Energia, mediante requerimento cujo processamento será disciplinado em portaria do Diretor-Geral desse órgão, a ser expedida no prazo de 60 (sessenta) dias da publicação desta Lei.</h3>
+ <h4>Parágrafo único - Tratando-se de aproveitamento de jazida situada em imóvel pertencente a pessoa jurídica de direito público, o licenciamento ficará sujeito ao prévio assentimento desta e, se for o caso, à audiência da autoridade federal sob cuja jurisdição se achar o imóvel, na forma da legislação específica.</h4>
+ <h3>Art. 4º - O requerimento de registro de licença sujeita o interessado ao pagamento de emolumentos em quantia correspondente a 12 (doze) vezes o valor atualizado da Obrigação Reajustável do Tesouro Nacional (ORTN), a qual deverá ser antecipadamente recolhida ao Banco do Brasil S.A., à conta do Fundo Nacional de Mineração-Parte Disponível, Instituído pela Lei n° 4.425, de 08 de outubro de 1964.</h3>
+ <h3>Art. 4º O requerimento de registro de licença sujeitará o interessado ao pagamento de emolumentos em quantia estabelecida em ato do DNPM. (Redação dada pela Medida Provisória nº 790, de 2017) encerrada</h3>
+ <h3>Art. 4º - O requerimento de registro de licença sujeita o interessado ao pagamento de emolumentos em quantia correspondente a 12 (doze) vezes o valor atualizado da Obrigação Reajustável do Tesouro Nacional (ORTN), a qual deverá ser antecipadamente recolhida ao Banco do Brasil S.A., à conta do Fundo Nacional de Mineração-Parte Disponível, Instituído pela Lei n° 4.425, de 08 de outubro de 1964.</h3>
+ <h3>Art. 5º - Da instrução do requerimento de registro da licença deverá constar, dentre outros elementos, a comprovação da nacionalidade brasileira do interessado, pessoa natural, ou registro da sociedade no órgão de registro de comércio de sua sede, se se tratar de pessoa jurídica, bem assim da inscrição do requerente no órgão próprio do Ministério da Fazenda, como contribuinte do imposto único sobre minerais, e memorial descritivo da área objetivada na licença.</h3>
+ <h4>Parágrafo único - O licenciamento fica adstrito à área máxima de 50 (cinqüenta) hectares.</h4>
+ <h3>Art. 6º - Será autorizado pelo Diretor-Geral do D.N.P.M. e efetuado em livro próprio o registro da licença, do qual se formalizará extrato a ser publicado no Diário Oficial da União, valendo como título do licenciamento.</h3>
+ <h4>Parágrafo único - Incumbe à autoridade municipal exercer vigilância para assegurar que o aproveitamento da substância mineral só se efetive depois de apresentado ao órgão local competente o título de licenciamento de que trata este artigo. (Revogado pela Medida provisória nº 790, de 2017) encerrada</h4>
+ <h4>Parágrafo único - Incumbe à autoridade municipal exercer vigilância para assegurar que o aproveitamento da substância mineral só se efetive depois de apresentado ao órgão local competente o título de licenciamento de que trata este artigo.</h4>
+ <h3>Art. 7 - O licenciado é obrigado a comunicar, imediatamente, ao D.N.P.M. a ocorrência de qualquer substância mineral útil não compreendida no licenciamento.</h3>
+ <h4>§ 1º - Se julgada necessária a realização de trabalhos de pesquisa, em razão das novas substâncias ocorrentes na área, o D.N.P.M. expedirá ofício ao titular, concedendo-lhe o prazo de 60 (sessenta) dias, contado da publicação da respectiva intimação no Diário Oficial da União, para requerer a competente autorização, na forma do art. 16 do Código de Mineração.</h4>
+ <h4>§ 2º - O plano de pesquisa pertinente deverá abranger as novas substâncias minerais ocorrentes, bem como as constantes do título de licenciamento, com a finalidade de determinar-se o potencial econômico da área.</h4>
+ <h4>§ 3º - Decorrido o prazo fixado no § 1º, sem que haja o licenciado formulado requerimento de autorização de pesquisa, será determinado a cancelamento do registro da licença, por ato do Diretor-Geral do D.N.P.M., publicado no Diário Oficial da União.</h4>
+ <h4>§ 4º - O aproveitamento de substância mineral, de que trata o art. 1º, não constante do título de licenciamento, dependerá da obtenção, pelo interessado, de nova licença e da efetivação de sua averbação à margem do competente registro no D.N.P.M.</h4>
+ <h4>§ 4º O aproveitamento de substância mineral de que trata o art. 1º não constante do título de licenciamento dependerá da obtenção, pelo interessado, de aditamento do seu título de licenciamento. (Redação dada pela Medida Provisória nº 790, de 2017) encerrada</h4>
+ <h4>§ 4º - O aproveitamento de substância mineral, de que trata o art. 1º, não constante do título de licenciamento, dependerá da obtenção, pelo interessado, de nova licença e da efetivação de sua averbação à margem do competente registro no D.N.P.M.</h4>
+ <h3>Art. 7º -A. Sem prejuízo do cumprimento dos deveres estabelecidos nesta Lei, aplica-se ao titular de licenciamento o disposto no art. 47 do Decreto-Lei n° 227, de 1967 . (Incluído pela Medida Provisória nº 790, de 2017) encerrada</h3>
+ <h3>Art. 8º - A critério do D.N.P.M., poderá ser exigida a apresentação de plano de aproveitamento econômico da jazida, observado o disposto no art. 39 do Código de Mineração .</h3>
+ <h4>Parágrafo único - Na hipótese prevista neste artigo, aplicar-se-á ao titular do licenciamento o disposto no art. 47 do Código de Mineração. Revogado pela Medida provisória nº 790, de 2017) encerrada</h4>
+ <h4>Parágrafo único - Na hipótese prevista neste artigo, aplicar-se-á ao titular do licenciamento o disposto no art. 47 do Código de Mineração.</h4>
+ <h3>Art. 9º - O titular do licenciamento é obrigado a apresentar ao D.N.P.M., até 31 de março de cada ano, relatório simplificado das atividades desenvolvidas no ano anterior, consoante for estabelecido em portaria do Diretor-Geral desse órgão.</h3>
+ <h3>Art. 10 - Será ainda determinado o cancelamento do registro de licença, por ato do Diretor-Geral do D.N.P.M., publicado no Diário Oficial da União, nos casos de:</h3>
+ <h5>I - insuficiente produção da jazida, considerada em relação às necessidades do mercado consumidor;</h5>
+ <h5>II - suspensão, sem motivo justificado, dos trabalhos de extração, por prazo superior a 6 (seis) meses;</h5>
+ <h5>III - aproveitamento de substâncias minerais não abrangidas pelo licenciamento, após advertência.</h5>
+ <h4>§ 1º - Publicado o ato determinativo do cancelamento do registro de licença, a habilitação ao aproveitamento da jazida, sob o regime de licenciamento, estará facultada a qualquer interessado, independentemente de autorização do proprietário do solo, observados os demais requisitos previstos nesta Lei.</h4>
+ <h4>§ 2º É vedado ao proprietário do solo, titular do licenciamento cujo registro haja sido cancelado, habilitar-se ao aproveitamento da jazida na forma do parágrafo anterior. (Revogado pela Medida provisória nº 790, de 2017) encerrada</h4>
+ <h4>Parágrafo único. Após a publicação do ato do cancelamento do registro de licença, a área será declarada disponível, nos termos do art. 26 do Decreto-Lei n° 227, de 1967 . (Incluído pela Medida Provisória nº 790, de 2017)</h4>
+ <h4>§ 1º - Publicado o ato determinativo do cancelamento do registro de licença, a habilitação ao aproveitamento da jazida, sob o regime de licenciamento, estará facultada a qualquer interessado, independentemente de autorização do proprietário do solo, observados os demais requisitos previstos nesta Lei.</h4>
+ <h4>§ 2º É vedado ao proprietário do solo, titular do licenciamento cujo registro haja sido cancelado, habilitar-se ao aproveitamento da jazida na forma do parágrafo anterior</h4>
+ <h3>Art. 11 - O titular do licenciamento obtido nas circunstâncias de que trata o § 1º do artigo anterior é obrigado a pagar ao proprietário do solo renda pela ocupação do terreno e indenização pelos danos ocasionados ao imóvel, em decorrência do aproveitamento da jazida, observado, no que couber, o disposto no art. 27 do Código de Mineração.</h3>
+ <p><del>Art. 12 - Por motivo de interesse do fomento da produção mineral do País, mediante proposta fundamentada do Ministro das Minas e Energia, o Presidente da República poderá estabelecer, por decreto, a aplicação, para as substâncias minerais de que trata o art. 1º (Revogado pela Lei n° 8.982, de 1995)</del></p>
+ <p><del>Parágrafo único Na hipótese de que trata este artigo, a área será declarada em disponibilidade para pesquisa, por edital do Diretor-Geral do D.N.P.M., procedendo-se na conformidade do disposto nos §§ 2º e 3º do art. 65 (Revogado pela Lei n° 8.982, de 1995)</del></p>
+ <h3>Art. 13 - Os requerimentos de autorização de pesquisa de substâncias minerais integrantes da Classe II e de argilas empregadas no fabrico de cerâmica vermelha, pendentes de decisão, serão arquivados por despacho do Diretor-Geral do D.N.P.M., assegurada aos respectivos interessados a restituição dos emolumentos que hajam sido pagos.</h3>
+ <h3>Art. 14 - Nos processos referentes a requerimentos de registro de licença, pendentes de decisão, os interessados deverão recolher, no prazo de 60 (sessenta) dias a partir da entrada em vigor desta Lei, os emolumentos pertinentes, nos termos do art. 4º, e apresentar ao D.N.P.M., dentro do mesmo prazo, o respectivo comprovante, sob pena do indeferimento do pedido.</h3>
+ <h3>Art. 15 - O item II do art. 22 (VETADO) do Decreto-lei n° 227, de 28 de fevereiro de 1967 , alterado pelo Decreto-lei n° 318, de 14 de março de 1967 e pela lei n° 6.403, de 15 de dezembro de 1976, passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 22 - ..........................................................</h3>
+ <p>Item II - A autorização valerá por 3 (três) anos podendo ser renovada por mais tempo, a critério do D.N.P.M. e considerando a região da pesquisa e tipo do minério pesquisado, mediante requerimento do interessado, protocolizado até 60 (sessenta) dias antes de expirar-se o prazo de autorização, observadas as seguintes condições:</p>
+ <h6>a) do requerimento de renovação deverá constar relatório dos trabalhos realizados, com os resultados obtidos, assim como, justificativa do prosseguimento da pesquisa;</h6>
+ <h6>b) o titular pagará emolumentos de outorga do novo alvará.</h6>
+ <h3>Art. 26 - (VETADO) ."</h3>
+ <h3>Art. 16 - Esta Lei entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 17 - Revogam-se as disposições em contrário, especialmente o art. 8º do Decreto-lei n° 227, de 28 de fevereiro de 1967 , alterado pela Lei n° 6.403, de 15 de dezembro de 1976.</h3>
+ <p>Brasília, em 24 de setembro de 1978; 157º da Independência e 90º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Este texto não substitui o publicado no DOU de 26.9.1978.</p>
+ <p>(Regulamento) | Dispõe sobre regime especial para exploração e o aproveitamento das substâncias minerais que especifica e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L6567.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

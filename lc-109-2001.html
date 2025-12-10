@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Lei Complementar Nº 109/2001 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei Complementar" />
+ <meta data-pagefind-filter="ano[content]" content="2001" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Lei Complementar Nº 109/2001</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:45:29 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp109.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 53.252 caracteres | espelho: 53.162 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI COMPLEMENTAR Nº 109, DE 29 DE MAIO DE 2001 Mensagem de veto nº 494</p>
+ <p>Vide Decreto nº 7.123, de 2010 Dispõe sobre o Regime de Previdência Complementar e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei Complementar:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>INTRODUÇÃO</h3>
+ <h3>Art. 1º O regime de previdência privada, de caráter complementar e organizado de forma autônoma em relação ao regime geral de previdência social, é facultativo, baseado na constituição de reservas que garantam o benefício, nos termos do caput do art. 202 da Constituição Federal , observado o disposto nesta Lei Complementar.</h3>
+ <h3>Art. 2º O regime de previdência complementar é operado por entidades de previdência complementar que têm por objetivo principal instituir e executar planos de benefícios de caráter previdenciário, na forma desta Lei Complementar.</h3>
+ <h3>Art. 3º A ação do Estado será exercida com o objetivo de:</h3>
+ <h5>I - formular a política de previdência complementar;</h5>
+ <h5>II - disciplinar, coordenar e supervisionar as atividades reguladas por esta Lei Complementar, compatibilizando-as com as políticas previdenciária e de desenvolvimento social e econômico-financeiro;</h5>
+ <h5>III - determinar padrões mínimos de segurança econômico-financeira e atuarial, com fins específicos de preservar a liquidez, a solvência e o equilíbrio dos planos de benefícios, isoladamente, e de cada entidade de previdência complementar, no conjunto de suas atividades;</h5>
+ <h5>IV - assegurar aos participantes e assistidos o pleno acesso às informações relativas à gestão de seus respectivos planos de benefícios;</h5>
+ <h5>V - fiscalizar as entidades de previdência complementar, suas operações e aplicar penalidades; e</h5>
+ <h5>VI - proteger os interesses dos participantes e assistidos dos planos de benefícios.</h5>
+ <h3>Art. 4º As entidades de previdência complementar são classificadas em fechadas e abertas, conforme definido nesta Lei Complementar.</h3>
+ <h3>Art. 5º A normatização, coordenação, supervisão, fiscalização e controle das atividades das entidades de previdência complementar serão realizados por órgão ou órgãos regulador e fiscalizador, conforme disposto em lei, observado o disposto no inciso VI do art. 84 da Constituição Federal .</h3>
+ <h2>CAPÍTULO II</h2>
+ <h3>DOS PLANOS DE BENEFÍCIOS</h3>
+ <p>Seção I</p>
+ <p>Disposições Comuns</p>
+ <h3>Art. 6º As entidades de previdência complementar somente poderão instituir e operar planos de benefícios para os quais tenham autorização específica, segundo as normas aprovadas pelo órgão regulador e fiscalizador, conforme disposto nesta Lei Complementar.</h3>
+ <h3>Art. 7º Os planos de benefícios atenderão a padrões mínimos fixados pelo órgão regulador e fiscalizador, com o objetivo de assegurar transparência, solvência, liquidez e equilíbrio econômico-financeiro e atuarial.</h3>
+ <h4>Parágrafo único. O órgão regulador e fiscalizador normatizará planos de benefícios nas modalidades de benefício definido, contribuição definida e contribuição variável, bem como outras formas de planos de benefícios que reflitam a evolução técnica e possibilitem flexibilidade ao regime de previdência complementar.</h4>
+ <h3>Art. 8º Para efeito desta Lei Complementar, considera-se:</h3>
+ <h5>I - participante, a pessoa física que aderir aos planos de benefícios; e</h5>
+ <h5>II - assistido, o participante ou seu beneficiário em gozo de benefício de prestação continuada.</h5>
+ <h3>Art. 9º As entidades de previdência complementar constituirão reservas técnicas, provisões e fundos, de conformidade com os critérios e normas fixados pelo órgão regulador e fiscalizador.</h3>
+ <h4>§ 1º A aplicação dos recursos correspondentes às reservas, às provisões e aos fundos de que trata o caput será feita conforme diretrizes estabelecidas pelo Conselho Monetário Nacional.</h4>
+ <h4>§ 2º É vedado o estabelecimento de aplicações compulsórias ou limites mínimos de aplicação.</h4>
+ <h3>Art. 10. Deverão constar dos regulamentos dos planos de benefícios, das propostas de inscrição e dos certificados de participantes condições mínimas a serem fixadas pelo órgão regulador e fiscalizador.</h3>
+ <h4>§ 1º A todo pretendente será disponibilizado e a todo participante entregue, quando de sua inscrição no plano de benefícios:</h4>
+ <h5>I - certificado onde estarão indicados os requisitos que regulam a admissão e a manutenção da qualidade de participante, bem como os requisitos de elegibilidade e forma de cálculo dos benefícios;</h5>
+ <h5>II - cópia do regulamento atualizado do plano de benefícios e material explicativo que descreva, em linguagem simples e precisa, as características do plano;</h5>
+ <h5>III - cópia do contrato, no caso de plano coletivo de que trata o inciso II do art. 26 desta Lei Complementar; e</h5>
+ <h5>IV - outros documentos que vierem a ser especificados pelo órgão regulador e fiscalizador.</h5>
+ <h4>§ 2º Na divulgação dos planos de benefícios, não poderão ser incluídas informações diferentes das que figurem nos documentos referidos neste artigo.</h4>
+ <h3>Art. 11. Para assegurar compromissos assumidos junto aos participantes e assistidos de planos de benefícios, as entidades de previdência complementar poderão contratar operações de resseguro, por iniciativa própria ou por determinação do órgão regulador e fiscalizador, observados o regulamento do respectivo plano e demais disposições legais e regulamentares.</h3>
+ <h4>Parágrafo único. Fica facultada às entidades fechadas a garantia referida no caput por meio de fundo de solvência, a ser instituído na forma da lei.</h4>
+ <p>Seção II</p>
+ <p>Dos Planos de Benefícios de Entidades Fechadas</p>
+ <h3>Art. 12. Os planos de benefícios de entidades fechadas poderão ser instituídos por patrocinadores e instituidores, observado o disposto no art. 31 desta Lei Complementar.</h3>
+ <h3>Art. 13. A formalização da condição de patrocinador ou instituidor de um plano de benefício dar-se-á mediante convênio de adesão a ser celebrado entre o patrocinador ou instituidor e a entidade fechada, em relação a cada plano de benefícios por esta administrado e executado, mediante prévia autorização do órgão regulador e fiscalizador, conforme regulamentação do Poder Executivo.</h3>
+ <h4>§ 1º Admitir-se-á solidariedade entre patrocinadores ou entre instituidores, com relação aos respectivos planos, desde que expressamente prevista no convênio de adesão.</h4>
+ <h4>§ 2º O órgão regulador e fiscalizador, dentre outros requisitos, estabelecerá o número mínimo de participantes admitido para cada modalidade de plano de benefício.</h4>
+ <h3>Art. 14. Os planos de benefícios deverão prever os seguintes institutos, observadas as normas estabelecidas pelo órgão regulador e fiscalizador:</h3>
+ <h5>I - benefício proporcional diferido, em razão da cessação do vínculo empregatício com o patrocinador ou associativo com o instituidor antes da aquisição do direito ao benefício pleno, a ser concedido quando cumpridos os requisitos de elegibilidade;</h5>
+ <h5>II - portabilidade do direito acumulado pelo participante para outro plano;</h5>
+ <h5>III - resgate da totalidade das contribuições vertidas ao plano pelo participante, descontadas as parcelas do custeio administrativo, na forma regulamentada; e</h5>
+ <h5>IV - faculdade de o participante manter o valor de sua contribuição e a do patrocinador, no caso de perda parcial ou total da remuneração recebida, para assegurar a percepção dos benefícios nos níveis correspondentes àquela remuneração ou em outros definidos em normas regulamentares.</h5>
+ <h4>§ 1º Não será admitida a portabilidade na inexistência de cessação do vínculo empregatício do participante com o patrocinador.</h4>
+ <h4>§ 2º O órgão regulador e fiscalizador estabelecerá período de carência para o instituto de que trata o inciso II deste artigo.</h4>
+ <h4>§ 3º Na regulamentação do instituto previsto no inciso II do caput deste artigo, o órgão regulador e fiscalizador observará, entre outros requisitos específicos, os seguintes:</h4>
+ <h5>I - se o plano de benefícios foi instituído antes ou depois da publicação desta Lei Complementar;</h5>
+ <h5>II - a modalidade do plano de benefícios.</h5>
+ <h4>§ 4º O instituto de que trata o inciso II deste artigo, quando efetuado para entidade aberta, somente será admitido quando a integralidade dos recursos financeiros correspondentes ao direito acumulado do participante for utilizada para a contratação de renda mensal vitalícia ou por prazo determinado, cujo prazo mínimo não poderá ser inferior ao período em que a respectiva reserva foi constituída, limitado ao mínimo de quinze anos, observadas as normas estabelecidas pelo órgão regulador e fiscalizador.</h4>
+ <h3>Art. 15. Para efeito do disposto no inciso II do caput do artigo anterior, fica estabelecido que:</h3>
+ <h5>I - a portabilidade não caracteriza resgate; e</h5>
+ <h5>II - é vedado que os recursos financeiros correspondentes transitem pelos participantes dos planos de benefícios, sob qualquer forma.</h5>
+ <h4>Parágrafo único. O direito acumulado corresponde às reservas constituídas pelo participante ou à reserva matemática, o que lhe for mais favorável.</h4>
+ <h3>Art. 16. Os planos de benefícios devem ser, obrigatoriamente, oferecidos a todos os empregados dos patrocinadores ou associados dos instituidores.</h3>
+ <h4>§ 1º Para os efeitos desta Lei Complementar, são equiparáveis aos empregados e associados a que se refere o caput os gerentes, diretores, conselheiros ocupantes de cargo eletivo e outros dirigentes de patrocinadores e instituidores.</h4>
+ <h4>§ 2º É facultativa a adesão aos planos a que se refere o caput deste artigo.</h4>
+ <h4>§ 3º O disposto no caput deste artigo não se aplica aos planos em extinção, assim considerados aqueles aos quais o acesso de novos participantes esteja vedado.</h4>
+ <h3>Art. 17. As alterações processadas nos regulamentos dos planos aplicam-se a todos os participantes das entidades fechadas, a partir de sua aprovação pelo órgão regulador e fiscalizador, observado o direito acumulado de cada participante.</h3>
+ <h4>Parágrafo único. Ao participante que tenha cumprido os requisitos para obtenção dos benefícios previstos no plano é assegurada a aplicação das disposições regulamentares vigentes na data em que se tornou elegível a um benefício de aposentadoria.</h4>
+ <h3>Art. 18. O plano de custeio, com periodicidade mínima anual, estabelecerá o nível de contribuição necessário à constituição das reservas garantidoras de benefícios, fundos, provisões e à cobertura das demais despesas, em conformidade com os critérios fixados pelo órgão regulador e fiscalizador.</h3>
+ <h4>§ 1º O regime financeiro de capitalização é obrigatório para os benefícios de pagamento em prestações que sejam programadas e continuadas.</h4>
+ <h4>§ 2º Observados critérios que preservem o equilíbrio financeiro e atuarial, o cálculo das reservas técnicas atenderá às peculiaridades de cada plano de benefícios e deverá estar expresso em nota técnica atuarial, de apresentação obrigatória, incluindo as hipóteses utilizadas, que deverão guardar relação com as características da massa e da atividade desenvolvida pelo patrocinador ou instituidor.</h4>
+ <h4>§ 3º As reservas técnicas, provisões e fundos de cada plano de benefícios e os exigíveis a qualquer título deverão atender permanentemente à cobertura integral dos compromissos assumidos pelo plano de benefícios, ressalvadas excepcionalidades definidas pelo órgão regulador e fiscalizador.</h4>
+ <h3>Art. 19. As contribuições destinadas à constituição de reservas terão como finalidade prover o pagamento de benefícios de caráter previdenciário, observadas as especificidades previstas nesta Lei Complementar.</h3>
+ <h4>Parágrafo único. As contribuições referidas no caput classificam-se em:</h4>
+ <h5>I - normais, aquelas destinadas ao custeio dos benefícios previstos no respectivo plano; e</h5>
+ <h5>II - extraordinárias, aquelas destinadas ao custeio de déficits, serviço passado e outras finalidades não incluídas na contribuição normal.</h5>
+ <h3>Art. 20. O resultado superavitário dos planos de benefícios das entidades fechadas, ao final do exercício, satisfeitas as exigências regulamentares relativas aos mencionados planos, será destinado à constituição de reserva de contingência, para garantia de benefícios, até o limite de vinte e cinco por cento do valor das reservas matemáticas.</h3>
+ <h4>§ 1º Constituída a reserva de contingência, com os valores excedentes será constituída reserva especial para revisão do plano de benefícios.</h4>
+ <h4>§ 2º A não utilização da reserva especial por três exercícios consecutivos determinará a revisão obrigatória do plano de benefícios da entidade.</h4>
+ <h4>§ 3º Se a revisão do plano de benefícios implicar redução de contribuições, deverá ser levada em consideração a proporção existente entre as contribuições dos patrocinadores e dos participantes, inclusive dos assistidos.</h4>
+ <h3>Art. 21. O resultado deficitário nos planos ou nas entidades fechadas será equacionado por patrocinadores, participantes e assistidos, na proporção existente entre as suas contribuições, sem prejuízo de ação regressiva contra dirigentes ou terceiros que deram causa a dano ou prejuízo à entidade de previdência complementar.</h3>
+ <h4>§ 1º O equacionamento referido no caput poderá ser feito, dentre outras formas, por meio do aumento do valor das contribuições, instituição de contribuição adicional ou redução do valor dos benefícios a conceder, observadas as normas estabelecidas pelo órgão regulador e fiscalizador.</h4>
+ <h4>§ 2º A redução dos valores dos benefícios não se aplica aos assistidos, sendo cabível, nesse caso, a instituição de contribuição adicional para cobertura do acréscimo ocorrido em razão da revisão do plano.</h4>
+ <h4>§ 3º Na hipótese de retorno à entidade dos recursos equivalentes ao déficit previsto no caput deste artigo, em conseqüência de apuração de responsabilidade mediante ação judicial ou administrativa, os respectivos valores deverão ser aplicados necessariamente na redução proporcional das contribuições devidas ao plano ou em melhoria dos benefícios.</h4>
+ <h3>Art. 22. Ao final de cada exercício, coincidente com o ano civil, as entidades fechadas deverão levantar as demonstrações contábeis e as avaliações atuariais de cada plano de benefícios, por pessoa jurídica ou profissional legalmente habilitado, devendo os resultados ser encaminhados ao órgão regulador e fiscalizador e divulgados aos participantes e aos assistidos.</h3>
+ <h3>Art. 23. As entidades fechadas deverão manter atualizada sua contabilidade, de acordo com as instruções do órgão regulador e fiscalizador, consolidando a posição dos planos de benefícios que administram e executam, bem como submetendo suas contas a auditores independentes.</h3>
+ <h4>Parágrafo único. Ao final de cada exercício serão elaboradas as demonstrações contábeis e atuariais consolidadas, sem prejuízo dos controles por plano de benefícios.</h4>
+ <h3>Art. 24. A divulgação aos participantes, inclusive aos assistidos, das informações pertinentes aos planos de benefícios dar-se-á ao menos uma vez ao ano, na forma, nos prazos e pelos meios estabelecidos pelo órgão regulador e fiscalizador.</h3>
+ <h4>Parágrafo único. As informações requeridas formalmente pelo participante ou assistido, para defesa de direitos e esclarecimento de situações de interesse pessoal específico deverão ser atendidas pela entidade no prazo estabelecido pelo órgão regulador e fiscalizador.</h4>
+ <h3>Art. 25. O órgão regulador e fiscalizador poderá autorizar a extinção de plano de benefícios ou a retirada de patrocínio, ficando os patrocinadores e instituidores obrigados ao cumprimento da totalidade dos compromissos assumidos com a entidade relativamente aos direitos dos participantes, assistidos e obrigações legais, até a data da retirada ou extinção do plano.</h3>
+ <h4>Parágrafo único. Para atendimento do disposto no caput deste artigo, a situação de solvência econômico-financeira e atuarial da entidade deverá ser atestada por profissional devidamente habilitado, cujos relatórios serão encaminhados ao órgão regulador e fiscalizador.</h4>
+ <p>Seção III</p>
+ <p>Dos Planos de Benefícios de Entidades Abertas</p>
+ <h3>Art. 26. Os planos de benefícios instituídos por entidades abertas poderão ser:</h3>
+ <h5>I - individuais, quando acessíveis a quaisquer pessoas físicas; ou</h5>
+ <h5>II - coletivos, quando tenham por objetivo garantir benefícios previdenciários a pessoas físicas vinculadas, direta ou indiretamente, a uma pessoa jurídica contratante.</h5>
+ <h4>§ 1º O plano coletivo poderá ser contratado por uma ou várias pessoas jurídicas.</h4>
+ <h4>§ 2º O vínculo indireto de que trata o inciso II deste artigo refere-se aos casos em que uma entidade representativa de pessoas jurídicas contrate plano previdenciário coletivo para grupos de pessoas físicas vinculadas a suas filiadas.</h4>
+ <h4>§ 3º Os grupos de pessoas de que trata o parágrafo anterior poderão ser constituídos por uma ou mais categorias específicas de empregados de um mesmo empregador, podendo abranger empresas coligadas, controladas ou subsidiárias, e por membros de associações legalmente constituídas, de caráter profissional ou classista, e seus cônjuges ou companheiros e dependentes econômicos.</h4>
+ <h4>§ 4º Para efeito do disposto no parágrafo anterior, são equiparáveis aos empregados e associados os diretores, conselheiros ocupantes de cargos eletivos e outros dirigentes ou gerentes da pessoa jurídica contratante.</h4>
+ <h4>§ 5º A implantação de um plano coletivo será celebrada mediante contrato, na forma, nos critérios, nas condições e nos requisitos mínimos a serem estabelecidos pelo órgão regulador.</h4>
+ <h4>§ 6º É vedada à entidade aberta a contratação de plano coletivo com pessoa jurídica cujo objetivo principal seja estipular, em nome de terceiros, planos de benefícios coletivos.</h4>
+ <h3>Art. 27. Observados os conceitos, a forma, as condições e os critérios fixados pelo órgão regulador, é assegurado aos participantes o direito à portabilidade, inclusive para plano de benefício de entidade fechada, e ao resgate de recursos das reservas técnicas, provisões e fundos, total ou parcialmente.</h3>
+ <h4>§ 1º A portabilidade não caracteriza resgate.</h4>
+ <h4>§ 2º É vedado, no caso de portabilidade:</h4>
+ <h5>I - que os recursos financeiros transitem pelos participantes, sob qualquer forma; e</h5>
+ <h5>II - a transferência de recursos entre participantes.</h5>
+ <h3>Art. 28. Os ativos garantidores das reservas técnicas, das provisões e dos fundos serão vinculados à ordem do órgão fiscalizador, na forma a ser regulamentada, e poderão ter sua livre movimentação suspensa pelo referido órgão, a partir da qual não poderão ser alienados ou prometidos alienar sem sua prévia e expressa autorização, sendo nulas, de pleno direito, quaisquer operações realizadas com violação daquela suspensão.</h3>
+ <h4>§ 1º Sendo imóvel, o vínculo será averbado à margem do respectivo registro no Cartório de Registro Geral de Imóveis competente, mediante comunicação do órgão fiscalizador.</h4>
+ <h4>§ 2º Os ativos garantidores a que se refere o caput, bem como os direitos deles decorrentes, não poderão ser gravados, sob qualquer forma, sem prévia e expressa autorização do órgão fiscalizador, sendo nulos os gravames constituídos com infringência do disposto neste parágrafo.</h4>
+ <h3>Art. 29. Compete ao órgão regulador, entre outras atribuições que lhe forem conferidas por lei:</h3>
+ <h5>I - fixar padrões adequados de segurança atuarial e econômico-financeira, para preservação da liquidez e solvência dos planos de benefícios, isoladamente, e de cada entidade aberta, no conjunto de suas atividades;</h5>
+ <h5>II - estabelecer as condições em que o órgão fiscalizador pode determinar a suspensão da comercialização ou a transferência, entre entidades abertas, de planos de benefícios; e</h5>
+ <h5>III - fixar condições que assegurem transparência, acesso a informações e fornecimento de dados relativos aos planos de benefícios, inclusive quanto à gestão dos respectivos recursos.</h5>
+ <h3>Art. 30. É facultativa a utilização de corretores na venda dos planos de benefícios das entidades abertas.</h3>
+ <h4>Parágrafo único. Aos corretores de planos de benefícios aplicam-se a legislação e a regulamentação da profissão de corretor de seguros.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS ENTIDADES FECHADAS DE PREVIDÊNCIA COMPLEMENTAR</h3>
+ <h3>Art. 31. As entidades fechadas são aquelas acessíveis, na forma regulamentada pelo órgão regulador e fiscalizador, exclusivamente:</h3>
+ <h5>I - aos empregados de uma empresa ou grupo de empresas e aos servidores da União, dos Estados, do Distrito Federal e dos Municípios, entes denominados patrocinadores; e</h5>
+ <h5>II - aos associados ou membros de pessoas jurídicas de caráter profissional, classista ou setorial, denominadas instituidores.</h5>
+ <h4>§ 1º As entidades fechadas organizar-se-ão sob a forma de fundação ou sociedade civil, sem fins lucrativos.</h4>
+ <h4>§ 2º As entidades fechadas constituídas por instituidores referidos no inciso II do caput deste artigo deverão, cumulativamente:</h4>
+ <h5>I - terceirizar a gestão dos recursos garantidores das reservas técnicas e provisões mediante a contratação de instituição especializada autorizada a funcionar pelo Banco Central do Brasil ou outro órgão competente;</h5>
+ <h5>II - ofertar exclusivamente planos de benefícios na modalidade contribuição definida, na forma do parágrafo único do art. 7º desta Lei Complementar.</h5>
+ <h4>§ 3º Os responsáveis pela gestão dos recursos de que trata o inciso I do parágrafo anterior deverão manter segregados e totalmente isolados o seu patrimônio dos patrimônios do instituidor e da entidade fechada.</h4>
+ <h4>§ 4º Na regulamentação de que trata o caput, o órgão regulador e fiscalizador estabelecerá o tempo mínimo de existência do instituidor e o seu número mínimo de associados.</h4>
+ <h3>Art. 32. As entidades fechadas têm como objeto a administração e execução de planos de benefícios de natureza previdenciária.</h3>
+ <h4>Parágrafo único. É vedada às entidades fechadas a prestação de quaisquer serviços que não estejam no âmbito de seu objeto, observado o disposto no art. 76.</h4>
+ <h3>Art. 33. Dependerão de prévia e expressa autorização do órgão regulador e fiscalizador:</h3>
+ <h5>I - a constituição e o funcionamento da entidade fechada, bem como a aplicação dos respectivos estatutos, dos regulamentos dos planos de benefícios e suas alterações;</h5>
+ <h5>II - as operações de fusão, cisão, incorporação ou qualquer outra forma de reorganização societária, relativas às entidades fechadas;</h5>
+ <h5>III - as retiradas de patrocinadores; e</h5>
+ <h5>IV - as transferências de patrocínio, de grupo de participantes, de planos e de reservas entre entidades fechadas.</h5>
+ <h4>§ 1º Excetuado o disposto no inciso III deste artigo, é vedada a transferência para terceiros de participantes, de assistidos e de reservas constituídas para garantia de benefícios de risco atuarial programado, de acordo com normas estabelecidas pelo órgão regulador e fiscalizador.</h4>
+ <h4>§ 2º Para os assistidos de planos de benefícios na modalidade contribuição definida que mantiveram esta característica durante a fase de percepção de renda programada, o órgão regulador e fiscalizador poderá, em caráter excepcional, autorizar a transferência dos recursos garantidores dos benefícios para entidade de previdência complementar ou companhia seguradora autorizada a operar planos de previdência complementar, com o objetivo específico de contratar plano de renda vitalícia, observadas as normas aplicáveis.</h4>
+ <h3>Art. 34. As entidades fechadas podem ser qualificadas da seguinte forma, além de outras que possam ser definidas pelo órgão regulador e fiscalizador:</h3>
+ <h5>I - de acordo com os planos que administram:</h5>
+ <h6>a) de plano comum, quando administram plano ou conjunto de planos acessíveis ao universo de participantes; e</h6>
+ <h6>b) com multiplano, quando administram plano ou conjunto de planos de benefícios para diversos grupos de participantes, com independência patrimonial;</h6>
+ <h5>II - de acordo com seus patrocinadores ou instituidores:</h5>
+ <h6>a) singulares, quando estiverem vinculadas a apenas um patrocinador ou instituidor; e</h6>
+ <h6>b) multipatrocinadas, quando congregarem mais de um patrocinador ou instituidor.</h6>
+ <h3>Art. 35. As entidades fechadas deverão manter estrutura mínima composta por conselho deliberativo, conselho fiscal e diretoria-executiva. (Regulamento)</h3>
+ <h4>§ 1º O estatuto deverá prever representação dos participantes e assistidos nos conselhos deliberativo e fiscal, assegurado a eles no mínimo um terço das vagas.</h4>
+ <h4>§ 2º Na composição dos conselhos deliberativo e fiscal das entidades qualificadas como multipatrocinadas, deverá ser considerado o número de participantes vinculados a cada patrocinador ou instituidor, bem como o montante dos respectivos patrimônios.</h4>
+ <h4>§ 3º Os membros do conselho deliberativo ou do conselho fiscal deverão atender aos seguintes requisitos mínimos:</h4>
+ <h5>I - comprovada experiência no exercício de atividades nas áreas financeira, administrativa, contábil, jurídica, de fiscalização ou de auditoria;</h5>
+ <h5>II - não ter sofrido condenação criminal transitada em julgado; e</h5>
+ <h5>III - não ter sofrido penalidade administrativa por infração da legislação da seguridade social ou como servidor público.</h5>
+ <h4>§ 4º Os membros da diretoria-executiva deverão ter formação de nível superior e atender aos requisitos do parágrafo anterior.</h4>
+ <h4>§ 5º Será informado ao órgão regulador e fiscalizador o responsável pelas aplicações dos recursos da entidade, escolhido entre os membros da diretoria-executiva.</h4>
+ <h4>§ 6º Os demais membros da diretoria-executiva responderão solidariamente com o dirigente indicado na forma do parágrafo anterior pelos danos e prejuízos causados à entidade para os quais tenham concorrido.</h4>
+ <h4>§ 7º Sem prejuízo do disposto no § 1º do art. 31 desta Lei Complementar, os membros da diretoria-executiva e dos conselhos deliberativo e fiscal poderão ser remunerados pelas entidades fechadas, de acordo com a legislação aplicável.</h4>
+ <h4>§ 8º Em caráter excepcional, poderão ser ocupados até trinta por cento dos cargos da diretoria-executiva por membros sem formação de nível superior, sendo assegurada a possibilidade de participação neste órgão de pelo menos um membro, quando da aplicação do referido percentual resultar número inferior à unidade.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DAS ENTIDADES ABERTAS DE PREVIDÊNCIA COMPLEMENTAR</h3>
+ <h3>Art. 36. As entidades abertas são constituídas unicamente sob a forma de sociedades anônimas e têm por objetivo instituir e operar planos de benefícios de caráter previdenciário concedidos em forma de renda continuada ou pagamento único, acessíveis a quaisquer pessoas físicas.</h3>
+ <h4>Parágrafo único. As sociedades seguradoras autorizadas a operar exclusivamente no ramo vida poderão ser autorizadas a operar os planos de benefícios a que se refere o caput, a elas se aplicando as disposições desta Lei Complementar.</h4>
+ <h3>Art. 37. Compete ao órgão regulador, entre outras atribuições que lhe forem conferidas por lei, estabelecer:</h3>
+ <h5>I - os critérios para a investidura e posse em cargos e funções de órgãos estatutários de entidades abertas, observado que o pretendente não poderá ter sofrido condenação criminal transitada em julgado, penalidade administrativa por infração da legislação da seguridade social ou como servidor público;</h5>
+ <h5>II - as normas gerais de contabilidade, auditoria, atuária e estatística a serem observadas pelas entidades abertas, inclusive quanto à padronização dos planos de contas, balanços gerais, balancetes e outras demonstrações financeiras, critérios sobre sua periodicidade, sobre a publicação desses documentos e sua remessa ao órgão fiscalizador;</h5>
+ <h5>III - os índices de solvência e liquidez, bem como as relações patrimoniais a serem atendidas pelas entidades abertas, observado que seu patrimônio líquido não poderá ser inferior ao respectivo passivo não operacional; e</h5>
+ <h5>IV - as condições que assegurem acesso a informações e fornecimento de dados relativos a quaisquer aspectos das atividades das entidades abertas.</h5>
+ <h3>Art. 38. Dependerão de prévia e expressa aprovação do órgão fiscalizador:</h3>
+ <h5>I - a constituição e o funcionamento das entidades abertas, bem como as disposições de seus estatutos e as respectivas alterações;</h5>
+ <h5>II - a comercialização dos planos de benefícios;</h5>
+ <h5>III - os atos relativos à eleição e conseqüente posse de administradores e membros de conselhos estatutários; e</h5>
+ <h5>III – os atos relativos à eleição e posse de administradores e membros de conselhos estatutários, podendo o Conselho Nacional de Seguros Privados (CNSP) dispor sobre hipóteses em que essa aprovação será dispensável; (Redação dada pela Lei Complementar nº 213, de 2025)</h5>
+ <h5>IV - as operações relativas à transferência do controle acionário, fusão, cisão, incorporação ou qualquer outra forma de reorganização societária.</h5>
+ <h4>Parágrafo único. O órgão regulador disciplinará o tratamento administrativo a ser emprestado ao exame dos assuntos constantes deste artigo.</h4>
+ <h3>Art. 39. As entidades abertas deverão comunicar ao órgão fiscalizador, no prazo e na forma estabelecidos:</h3>
+ <h5>I - os atos relativos às alterações estatutárias e à eleição de administradores e membros de conselhos estatutários; e</h5>
+ <h5>II - o responsável pela aplicação dos recursos das reservas técnicas, provisões e fundos, escolhido dentre os membros da diretoria-executiva.</h5>
+ <h4>Parágrafo único. Os demais membros da diretoria-executiva responderão solidariamente com o dirigente indicado na forma do inciso II deste artigo pelos danos e prejuízos causados à entidade para os quais tenham concorrido.</h4>
+ <h3>Art. 40. As entidades abertas deverão levantar no último dia útil de cada mês e semestre, respectivamente, balancetes mensais e balanços gerais, com observância das regras e dos critérios estabelecidos pelo órgão regulador.</h3>
+ <h4>Parágrafo único. As sociedades seguradoras autorizadas a operar planos de benefícios deverão apresentar nas demonstrações financeiras, de forma discriminada, as atividades previdenciárias e as de seguros, de acordo com critérios fixados pelo órgão regulador.</h4>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA FISCALIZAÇÃO</h3>
+ <h3>Art. 41. No desempenho das atividades de fiscalização das entidades de previdência complementar, os servidores do órgão regulador e fiscalizador terão livre acesso às respectivas entidades, delas podendo requisitar e apreender livros, notas técnicas e quaisquer documentos, caracterizando-se embaraço à fiscalização, sujeito às penalidades previstas em lei, qualquer dificuldade oposta à consecução desse objetivo.</h3>
+ <h4>§ 1º O órgão regulador e fiscalizador das entidades fechadas poderá solicitar dos patrocinadores e instituidores informações relativas aos aspectos específicos que digam respeito aos compromissos assumidos frente aos respectivos planos de benefícios.</h4>
+ <h4>§ 2º A fiscalização a cargo do Estado não exime os patrocinadores e os instituidores da responsabilidade pela supervisão sistemática das atividades das suas respectivas entidades fechadas.</h4>
+ <h4>§ 3º As pessoas físicas ou jurídicas submetidas ao regime desta Lei Complementar ficam obrigadas a prestar quaisquer informações ou esclarecimentos solicitados pelo órgão regulador e fiscalizador.</h4>
+ <h4>§ 4º O disposto neste artigo aplica-se, sem prejuízo da competência das autoridades fiscais, relativamente ao pleno exercício das atividades de fiscalização tributária.</h4>
+ <h3>Art. 42. O órgão regulador e fiscalizador poderá, em relação às entidades fechadas, nomear administrador especial, a expensas da entidade, com poderes próprios de intervenção e de liquidação extrajudicial, com o objetivo de sanear plano de benefícios específico, caso seja constatada na sua administração e execução alguma das hipóteses previstas nos arts. 44 e 48 desta Lei Complementar.</h3>
+ <h4>Parágrafo único. O ato de nomeação de que trata o caput estabelecerá as condições, os limites e as atribuições do administrador especial.</h4>
+ <h3>Art. 43. O órgão fiscalizador poderá, em relação às entidades abertas, desde que se verifique uma das condições previstas no art. 44 desta Lei Complementar, nomear, por prazo determinado, prorrogável a seu critério, e a expensas da respectiva entidade, um diretor-fiscal.</h3>
+ <h4>§ 1º O diretor-fiscal, sem poderes de gestão, terá suas atribuições estabelecidas pelo órgão regulador, cabendo ao órgão fiscalizador fixar sua remuneração.</h4>
+ <h4>§ 2º Se reconhecer a inviabilidade de recuperação da entidade aberta ou a ausência de qualquer condição para o seu funcionamento, o diretor-fiscal proporá ao órgão fiscalizador a decretação da intervenção ou da liquidação extrajudicial.</h4>
+ <h4>§ 3º O diretor-fiscal não está sujeito à indisponibilidade de bens, nem aos demais efeitos decorrentes da decretação da intervenção ou da liquidação extrajudicial da entidade aberta.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DA INTERVENÇÃO E DA LIQUIDAÇÃO EXTRAJUDICIAL</h3>
+ <p>Seção I</p>
+ <p>Da Intervenção</p>
+ <h3>Art. 44. Para resguardar os direitos dos participantes e assistidos poderá ser decretada a intervenção na entidade de previdência complementar, desde que se verifique, isolada ou cumulativamente:</h3>
+ <h5>I - irregularidade ou insuficiência na constituição das reservas técnicas, provisões e fundos, ou na sua cobertura por ativos garantidores;</h5>
+ <h5>II - aplicação dos recursos das reservas técnicas, provisões e fundos de forma inadequada ou em desacordo com as normas expedidas pelos órgãos competentes;</h5>
+ <h5>III - descumprimento de disposições estatutárias ou de obrigações previstas nos regulamentos dos planos de benefícios, convênios de adesão ou contratos dos planos coletivos de que trata o inciso II do art. 26 desta Lei Complementar;</h5>
+ <h5>IV - situação econômico-financeira insuficiente à preservação da liquidez e solvência de cada um dos planos de benefícios e da entidade no conjunto de suas atividades;</h5>
+ <h5>V - situação atuarial desequilibrada;</h5>
+ <h5>VI - outras anormalidades definidas em regulamento.</h5>
+ <h3>Art. 45. A intervenção será decretada pelo prazo necessário ao exame da situação da entidade e encaminhamento de plano destinado à sua recuperação.</h3>
+ <h4>Parágrafo único. Dependerão de prévia e expressa autorização do órgão competente os atos do interventor que impliquem oneração ou disposição do patrimônio.</h4>
+ <h3>Art. 46. A intervenção cessará quando aprovado o plano de recuperação da entidade pelo órgão competente ou se decretada a sua liquidação extrajudicial.</h3>
+ <p>Seção II</p>
+ <p>Da Liquidação Extrajudicial</p>
+ <h3>Art. 47. As entidades fechadas não poderão solicitar concordata e não estão sujeitas a falência, mas somente a liquidação extrajudicial.</h3>
+ <h3>Art. 48. A liquidação extrajudicial será decretada quando reconhecida a inviabilidade de recuperação da entidade de previdência complementar ou pela ausência de condição para seu funcionamento.</h3>
+ <h4>Parágrafo único. Para os efeitos desta Lei Complementar, entende-se por ausência de condição para funcionamento de entidade de previdência complementar:</h4>
+ <h5>I - (VETADO)</h5>
+ <h5>II - (VETADO)</h5>
+ <h5>III - o não atendimento às condições mínimas estabelecidas pelo órgão regulador e fiscalizador.</h5>
+ <h3>Art. 49. A decretação da liquidação extrajudicial produzirá, de imediato, os seguintes efeitos:</h3>
+ <h5>I - suspensão das ações e execuções iniciadas sobre direitos e interesses relativos ao acervo da entidade liquidanda;</h5>
+ <h5>II - vencimento antecipado das obrigações da liquidanda;</h5>
+ <h5>III - não incidência de penalidades contratuais contra a entidade por obrigações vencidas em decorrência da decretação da liquidação extrajudicial;</h5>
+ <h5>IV - não fluência de juros contra a liquidanda enquanto não integralmente pago o passivo;</h5>
+ <h5>V - interrupção da prescrição em relação às obrigações da entidade em liquidação;</h5>
+ <h5>VI - suspensão de multa e juros em relação às dívidas da entidade;</h5>
+ <h5>VII - inexigibilidade de penas pecuniárias por infrações de natureza administrativa;</h5>
+ <h5>VIII - interrupção do pagamento à liquidanda das contribuições dos participantes e dos patrocinadores, relativas aos planos de benefícios.</h5>
+ <h4>§ 1º As faculdades previstas nos incisos deste artigo aplicam-se, no caso das entidades abertas de previdência complementar, exclusivamente, em relação às suas atividades de natureza previdenciária.</h4>
+ <h4>§ 2º O disposto neste artigo não se aplica às ações e aos débitos de natureza tributária.</h4>
+ <h3>Art. 50. O liquidante organizará o quadro geral de credores, realizará o ativo e liquidará o passivo.</h3>
+ <h4>§ 1º Os participantes, inclusive os assistidos, dos planos de benefícios ficam dispensados de se habilitarem a seus respectivos créditos, estejam estes sendo recebidos ou não.</h4>
+ <h4>§ 2º Os participantes, inclusive os assistidos, dos planos de benefícios terão privilégio especial sobre os ativos garantidores das reservas técnicas e, caso estes não sejam suficientes para a cobertura dos direitos respectivos, privilégio geral sobre as demais partes não vinculadas ao ativo.</h4>
+ <h4>§ 3º Os participantes que já estiverem recebendo benefícios, ou que já tiverem adquirido este direito antes de decretada a liquidação extrajudicial, terão preferência sobre os demais participantes.</h4>
+ <h4>§ 4º Os créditos referidos nos parágrafos anteriores deste artigo não têm preferência sobre os créditos de natureza trabalhista ou tributária.</h4>
+ <h3>Art. 51. Serão obrigatoriamente levantados, na data da decretação da liquidação extrajudicial de entidade de previdência complementar, o balanço geral de liquidação e as demonstrações contábeis e atuariais necessárias à determinação do valor das reservas individuais.</h3>
+ <h3>Art. 52. A liquidação extrajudicial poderá, a qualquer tempo, ser levantada, desde que constatados fatos supervenientes que viabilizem a recuperação da entidade de previdência complementar.</h3>
+ <h3>Art. 53. A liquidação extrajudicial das entidades fechadas encerrar-se-á com a aprovação, pelo órgão regulador e fiscalizador, das contas finais do liquidante e com a baixa nos devidos registros.</h3>
+ <h4>Parágrafo único. Comprovada pelo liquidante a inexistência de ativos para satisfazer a possíveis créditos reclamados contra a entidade, deverá tal situação ser comunicada ao juízo competente e efetivados os devidos registros, para o encerramento do processo de liquidação.</h4>
+ <p>Seção III</p>
+ <p>Disposições Especiais</p>
+ <h3>Art. 54. O interventor terá amplos poderes de administração e representação e o liquidante plenos poderes de administração, representação e liquidação.</h3>
+ <h3>Art. 55. Compete ao órgão fiscalizador decretar, aprovar e rever os atos de que tratam os arts. 45, 46 e 48 desta Lei Complementar, bem como nomear, por intermédio do seu dirigente máximo, o interventor ou o liquidante.</h3>
+ <h3>Art. 56. A intervenção e a liquidação extrajudicial determinam a perda do mandato dos administradores e membros dos conselhos estatutários das entidades, sejam titulares ou suplentes.</h3>
+ <h3>Art. 57. Os créditos das entidades de previdência complementar, em caso de liquidação ou falência de patrocinadores, terão privilégio especial sobre a massa, respeitado o privilégio dos créditos trabalhistas e tributários.</h3>
+ <h4>Parágrafo único. Os administradores dos respectivos patrocinadores serão responsabilizados pelos danos ou prejuízos causados às entidades de previdência complementar, especialmente pela falta de aporte das contribuições a que estavam obrigados, observado o disposto no parágrafo único do art. 63 desta Lei Complementar.</h4>
+ <h3>Art. 58. No caso de liquidação extrajudicial de entidade fechada motivada pela falta de aporte de contribuições de patrocinadores ou pelo não recolhimento de contribuições de participantes, os administradores daqueles também serão responsabilizados pelos danos ou prejuízos causados.</h3>
+ <h3>Art. 59. Os administradores, controladores e membros de conselhos estatutários das entidades de previdência complementar sob intervenção ou em liquidação extrajudicial ficarão com todos os seus bens indisponíveis, não podendo, por qualquer forma, direta ou indireta, aliená-los ou onerá-los, até a apuração e liquidação final de suas responsabilidades.</h3>
+ <h4>§ 1º A indisponibilidade prevista neste artigo decorre do ato que decretar a intervenção ou liquidação extrajudicial e atinge todos aqueles que tenham estado no exercício das funções nos doze meses anteriores.</h4>
+ <h4>§ 2º A indisponibilidade poderá ser estendida aos bens de pessoas que, nos últimos doze meses, os tenham adquirido, a qualquer título, das pessoas referidas no caput e no parágrafo anterior, desde que haja seguros elementos de convicção de que se trata de simulada transferência com o fim de evitar os efeitos desta Lei Complementar.</h4>
+ <h4>§ 3º Não se incluem nas disposições deste artigo os bens considerados inalienáveis ou impenhoráveis pela legislação em vigor.</h4>
+ <h4>§ 4º Não são também atingidos pela indisponibilidade os bens objeto de contrato de alienação, de promessas de compra e venda e de cessão de direitos, desde que os respectivos instrumentos tenham sido levados ao competente registro público até doze meses antes da data de decretação da intervenção ou liquidação extrajudicial.</h4>
+ <h4>§ 5º Não se aplica a indisponibilidade de bens das pessoas referidas no caput deste artigo no caso de liquidação extrajudicial de entidades fechadas que deixarem de ter condições para funcionar por motivos totalmente desvinculados do exercício das suas atribuições, situação esta que poderá ser revista a qualquer momento, pelo órgão regulador e fiscalizador, desde que constatada a existência de irregularidades ou indícios de crimes por elas praticados.</h4>
+ <h3>Art. 60. O interventor ou o liquidante comunicará a indisponibilidade de bens aos órgãos competentes para os devidos registros e publicará edital para conhecimento de terceiros.</h3>
+ <h4>Parágrafo único. A autoridade que receber a comunicação ficará, relativamente a esses bens, impedida de:</h4>
+ <h5>I - fazer transcrições, inscrições ou averbações de documentos públicos ou particulares;</h5>
+ <h5>II - arquivar atos ou contratos que importem em transferência de cotas sociais, ações ou partes beneficiárias;</h5>
+ <h5>III - realizar ou registrar operações e títulos de qualquer natureza; e</h5>
+ <h5>IV - processar a transferência de propriedade de veículos automotores, aeronaves e embarcações.</h5>
+ <h3>Art. 61. A apuração de responsabilidades específicas referida no caput do art. 59 desta Lei Complementar será feita mediante inquérito a ser instaurado pelo órgão regulador e fiscalizador, sem prejuízo do disposto nos arts. 63 a 65 desta Lei Complementar.</h3>
+ <h4>§ 1º Se o inquérito concluir pela inexistência de prejuízo, será arquivado no órgão fiscalizador.</h4>
+ <h4>§ 2º Concluindo o inquérito pela existência de prejuízo, será ele, com o respectivo relatório, remetido pelo órgão regulador e fiscalizador ao Ministério Público, observados os seguintes procedimentos:</h4>
+ <h5>I - o interventor ou o liquidante, de ofício ou a requerimento de qualquer interessado que não tenha sido indiciado no inquérito, após aprovação do respectivo relatório pelo órgão fiscalizador, determinará o levantamento da indisponibilidade de que trata o art. 59 desta Lei Complementar;</h5>
+ <h5>II - será mantida a indisponibilidade com relação às pessoas indiciadas no inquérito, após aprovação do respectivo relatório pelo órgão fiscalizador.</h5>
+ <h3>Art. 62. Aplicam-se à intervenção e à liquidação das entidades de previdência complementar, no que couber, os dispositivos da legislação sobre a intervenção e liquidação extrajudicial das instituições financeiras, cabendo ao órgão regulador e fiscalizador as funções atribuídas ao Banco Central do Brasil.</h3>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DO REGIME DISCIPLINAR</h3>
+ <h3>Art. 63. Os administradores de entidade, os procuradores com poderes de gestão, os membros de conselhos estatutários, o interventor e o liquidante responderão civilmente pelos danos ou prejuízos que causarem, por ação ou omissão, às entidades de previdência complementar.</h3>
+ <h4>Parágrafo único. São também responsáveis, na forma do caput, os administradores dos patrocinadores ou instituidores, os atuários, os auditores independentes, os avaliadores de gestão e outros profissionais que prestem serviços técnicos à entidade, diretamente ou por intermédio de pessoa jurídica contratada.</h4>
+ <h3>Art. 64. O órgão fiscalizador competente, o Banco Central do Brasil, a Comissão de Valores Mobiliários ou a Secretaria da Receita Federal, constatando a existência de práticas irregulares ou indícios de crimes em entidades de previdência complementar, noticiará ao Ministério Público, enviando-lhe os documentos comprobatórios.</h3>
+ <h4>Parágrafo único. O sigilo de operações não poderá ser invocado como óbice à troca de informações entre os órgãos mencionados no caput, nem ao fornecimento de informações requisitadas pelo Ministério Público.</h4>
+ <h3>Art. 65. A infração de qualquer disposição desta Lei Complementar ou de seu regulamento, para a qual não haja penalidade expressamente cominada, sujeita a pessoa física ou jurídica responsável, conforme o caso e a gravidade da infração, às seguintes penalidades administrativas, observado o disposto em regulamento:</h3>
+ <h5>I - advertência;</h5>
+ <h5>II - suspensão do exercício de atividades em entidades de previdência complementar pelo prazo de até cento e oitenta dias;</h5>
+ <h5>III - inabilitação, pelo prazo de dois a dez anos, para o exercício de cargo ou função em entidades de previdência complementar, sociedades seguradoras, instituições financeiras e no serviço público; e</h5>
+ <h5>IV - multa de dois mil reais a um milhão de reais, devendo esses valores, a partir da publicação desta Lei Complementar, ser reajustados de forma a preservar, em caráter permanente, seus valores reais.</h5>
+ <h4>§ 1º A penalidade prevista no inciso IV será imputada ao agente responsável, respondendo solidariamente a entidade de previdência complementar, assegurado o direito de regresso, e poderá ser aplicada cumulativamente com as constantes dos incisos I, II ou III deste artigo.</h4>
+ <h4>§ 2º Das decisões do órgão fiscalizador caberá recurso, no prazo de quinze dias, com efeito suspensivo, ao órgão competente.</h4>
+ <h4>§ 3º O recurso a que se refere o parágrafo anterior, na hipótese do inciso IV deste artigo, somente será conhecido se for comprovado pelo requerente o pagamento antecipado, em favor do órgão fiscalizador, de trinta por cento do valor da multa aplicada. (Vide Súmula Vinculante nº 21)</h4>
+ <h4>§ 4º Em caso de reincidência, a multa será aplicada em dobro.</h4>
+ <h3>Art. 66. As infrações serão apuradas mediante processo administrativo, na forma do regulamento, aplicando-se, no que couber, o disposto na Lei N° 9.784, de 29 de janeiro de 1999 . (Regulamento)</h3>
+ <h3>Art. 67. O exercício de atividade de previdência complementar por qualquer pessoa, física ou jurídica, sem a autorização devida do órgão competente, inclusive a comercialização de planos de benefícios, bem como a captação ou a administração de recursos de terceiros com o objetivo de, direta ou indiretamente, adquirir ou conceder benefícios previdenciários sob qualquer forma, submete o responsável à penalidade de inabilitação pelo prazo de dois a dez anos para o exercício de cargo ou função em entidade de previdência complementar, sociedades seguradoras, instituições financeiras e no serviço público, além de multa aplicável de acordo com o disposto no inciso IV do art. 65 desta Lei Complementar, bem como noticiar ao Ministério Público.</h3>
+ <h2>CAPÍTULO VIII</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 68. As contribuições do empregador, os benefícios e as condições contratuais previstos nos estatutos, regulamentos e planos de benefícios das entidades de previdência complementar não integram o contrato de trabalho dos participantes, assim como, à exceção dos benefícios concedidos, não integram a remuneração dos participantes.</h3>
+ <h4>§ 1º Os benefícios serão considerados direito adquirido do participante quando implementadas todas as condições estabelecidas para elegibilidade consignadas no regulamento do respectivo plano.</h4>
+ <h4>§ 2º A concessão de benefício pela previdência complementar não depende da concessão de benefício pelo regime geral de previdência social.</h4>
+ <h3>Art. 69. As contribuições vertidas para as entidades de previdência complementar, destinadas ao custeio dos planos de benefícios de natureza previdenciária, são dedutíveis para fins de incidência de imposto sobre a renda, nos limites e nas condições fixadas em lei.</h3>
+ <h4>§ 1º Sobre as contribuições de que trata o caput não incidem tributação e contribuições de qualquer natureza.</h4>
+ <h4>§ 2º Sobre a portabilidade de recursos de reservas técnicas, fundos e provisões entre planos de benefícios de entidades de previdência complementar, titulados pelo mesmo participante, não incidem tributação e contribuições de qualquer natureza.</h4>
+ <h3>Art. 70. (VETADO)</h3>
+ <h3>Art. 71. É vedado às entidades de previdência complementar realizar quaisquer operações comerciais e financeiras:</h3>
+ <h5>I - com seus administradores, membros dos conselhos estatutários e respectivos cônjuges ou companheiros, e com seus parentes até o segundo grau;</h5>
+ <h5>II - com empresa de que participem as pessoas a que se refere o inciso anterior, exceto no caso de participação de até cinco por cento como acionista de empresa de capital aberto; e</h5>
+ <h5>III - tendo como contraparte, mesmo que indiretamente, pessoas físicas e jurídicas a elas ligadas, na forma definida pelo órgão regulador.</h5>
+ <h4>Parágrafo único. A vedação deste artigo não se aplica ao patrocinador, aos participantes e aos assistidos, que, nessa condição, realizarem operações com a entidade de previdência complementar.</h4>
+ <h3>Art. 72. Compete privativamente ao órgão regulador e fiscalizador das entidades fechadas zelar pelas sociedades civis e fundações, como definido no art. 31 desta Lei Complementar, não se aplicando a estas o disposto nos arts. 26 e 30 do Código Civil e 1.200 a 1.204 do Código de Processo Civil e demais disposições em contrário.</h3>
+ <h3>Art. 73. As entidades abertas serão reguladas também, no que couber, pela legislação aplicável às sociedades seguradoras.</h3>
+ <h3>Art. 74. Até que seja publicada a lei de que trata o art. 5º desta Lei Complementar, as funções do órgão regulador e do órgão fiscalizador serão exercidas pelo Ministério da Previdência e Assistência Social, por intermédio, respectivamente, do Conselho de Gestão da Previdência Complementar (CGPC) e da Secretaria de Previdência Complementar (SPC), relativamente às entidades fechadas, e pelo Ministério da Fazenda, por intermédio do Conselho Nacional de Seguros Privados (CNSP) e da Superintendência de Seguros Privados (SUSEP), em relação, respectivamente, à regulação e fiscalização das entidades abertas.</h3>
+ <h3>Art. 75. Sem prejuízo do benefício, prescreve em cinco anos o direito às prestações não pagas nem reclamadas na época própria, resguardados os direitos dos menores dependentes, dos incapazes ou dos ausentes, na forma do Código Civil.</h3>
+ <h3>Art. 76. As entidades fechadas que, na data da publicação desta Lei Complementar, prestarem a seus participantes e assistidos serviços assistenciais à saúde poderão continuar a fazê-lo, desde que seja estabelecido um custeio específico para os planos assistenciais e que a sua contabilização e o seu patrimônio sejam mantidos em separado em relação ao plano previdenciário.</h3>
+ <h4>§ 1º Os programas assistenciais de natureza financeira deverão ser extintos a partir da data de publicação desta Lei Complementar, permanecendo em vigência, até o seu termo, apenas os compromissos já firmados.</h4>
+ <h4>§ 2º Consideram-se programas assistenciais de natureza financeira, para os efeitos desta Lei Complementar, aqueles em que o rendimento situa-se abaixo da taxa mínima atuarial do respectivo plano de benefícios.</h4>
+ <h3>Art. 77. As entidades abertas sem fins lucrativos e as sociedades seguradoras autorizadas a funcionar em conformidade com a Lei N° 6.435, de 15 de julho de 1977 , terão o prazo de dois anos para se adaptar ao disposto nesta Lei Complementar.</h3>
+ <h4>§ 1º No caso das entidades abertas sem fins lucrativos já autorizadas a funcionar, é permitida a manutenção de sua organização jurídica como sociedade civil, sendo-lhes vedado participar, direta ou indiretamente, de pessoas jurídicas, exceto quando tiverem participação acionária:</h4>
+ <h5>I - minoritária, em sociedades anônimas de capital aberto, na forma regulamentada pelo Conselho Monetário Nacional, para aplicação de recursos de reservas técnicas, fundos e provisões;</h5>
+ <h5>II - em sociedade seguradora e/ou de capitalização.</h5>
+ <h4>§ 2º É vedado à sociedade seguradora e/ou de capitalização referida no inciso II do parágrafo anterior participar majoritariamente de pessoas jurídicas, ressalvadas as empresas de suporte ao seu funcionamento e as sociedades anônimas de capital aberto, nas condições previstas no inciso I do parágrafo anterior.</h4>
+ <h4>§ 3º A entidade aberta sem fins lucrativos e a sociedade seguradora e/ou de capitalização por ela controlada devem adaptar-se às condições estabelecidas nos §§ 1º e 2º , no mesmo prazo previsto no caput deste artigo.</h4>
+ <h4>§ 4º As reservas técnicas de planos já operados por entidades abertas de previdência privada sem fins lucrativos, anteriormente à data de publicação da Lei n° 6.435, de 15 de julho de 1977 , poderão permanecer garantidas por ativos de propriedade da entidade, existentes à época, dentro de programa gradual de ajuste às normas estabelecidas pelo órgão regulador sobre a matéria, a ser submetido pela entidade ao órgão fiscalizador no prazo máximo de doze meses a contar da data de publicação desta Lei Complementar.</h4>
+ <h4>§ 5º O prazo máximo para o término para o programa gradual de ajuste a que se refere o parágrafo anterior não poderá superar cento e vinte meses, contados da data de aprovação do respectivo programa pelo órgão fiscalizador.</h4>
+ <h4>§ 6º As entidades abertas sem fins lucrativos que, na data de publicação desta Lei Complementar, já vinham mantendo programas de assistência filantrópica, prévia e expressamente autorizados, poderão, para efeito de cobrança, adicionar às contribuições de seus planos de benefícios valor destinado àqueles programas, observadas as normas estabelecidas pelo órgão regulador.</h4>
+ <h4>§ 7º A aplicabilidade do disposto no parágrafo anterior fica sujeita, sob pena de cancelamento da autorização previamente concedida, à prestação anual de contas dos programas filantrópicos e à aprovação pelo órgão competente.</h4>
+ <h4>§ 8º O descumprimento de qualquer das obrigações contidas neste artigo sujeita os administradores das entidades abertas sem fins lucrativos e das sociedades seguradora e/ou de capitalização por elas controladas ao Regime Disciplinar previsto nesta Lei Complementar, sem prejuízo da responsabilidade civil por danos ou prejuízos causados, por ação ou omissão, à entidade.</h4>
+ <h3>Art. 78. Esta Lei Complementar entra em vigor na data de sua publicação.</h3>
+ <h3>Art. 79. Revogam-se as Leis Nº 6.435, de 15 de julho de 1977 , e Nº 6.462, de 9 de novembro de 1977 .</h3>
+ <p>Brasília, 29 de maio de 2001; 180º da Independência e 113º da República.</p>
+ <h3>FERNANDO HENRIQUE CARDOSO</h3>
+ <p>Este texto não substitui o publicado no DOU de 30.5.2001</p>
+ <p>Mensagem de veto nº 494Vide</p>
+ <p>Decreto nº 7.123, de 2010 | Dispõe sobre o Regime de</p>
+ <p>Previdência Complementar e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp109.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

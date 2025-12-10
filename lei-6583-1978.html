@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.583, DE 20 DE OUTUBRO DE 1978 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1978" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.583, DE 20 DE OUTUBRO DE 1978</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:13:45 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/1970-1979/L6583.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 19.059 caracteres | espelho: 19.058 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.583, DE 20 DE OUTUBRO DE 1978</p>
+ <p>(Vide Decreto nº 84.444, de 1980)</p>
+ <p>Cria os Conselhos Federal e Regionais de Nutricionistas, 	regula o seu funcionamento, e dá outras providências.</p>
+ <p>Cria os Conselhos Federal e Regionais de Nutrição e regula o seu funcionamento; e dá outras providências. (Redação dada pela Lei n° 14.924, de 2024)</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Dos Conselhos Federal e Regionais de Nutricionistas</p>
+ <h2>CAPÍTULO I</h2>
+ <p>(Redação dada pela Lei n° 14.924, de 2024)</p>
+ <h3>DOS CONSELHOS FEDERAL E REGIONAIS DE NUTRIÇÃO</h3>
+ <h3>Art. 1º - Ficam criados o Conselho Federal e os Conselhos Regionais de Nutricionistas com a finalidade de orientar, disciplinar e fiscalizar o exercício da profissão de nutricionista, definida na Lei n° 5.276, de 24 de abril de 1967.</h3>
+ <h3>Art. 1º São criados o Conselho Federal e os Conselhos Regionais de Nutrição com a finalidade de orientar, disciplinar e fiscalizar o exercício da profissão de nutricionista, definida na Lei n° 8.234, de 17 de setembro de 1991. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h3>Art. 2º - O Conselho Federal e os Conselhos Regionais de Nutricionistas constituem, no seu conjunto, uma autarquia federal, com personalidade jurídica de direito público e autonomia administrativa e financeira, vinculada ao Ministério do Trabalho.</h3>
+ <h3>Art. 2º O Conselho Federal e os Conselhos Regionais de Nutrição constituem, no seu conjunto, uma autarquia federal, com personalidade jurídica de direito público e autonomia administrativa e financeira, vinculada ao Ministério do Trabalho e Emprego. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h3>Art. 3º - O Conselho Federal de Nutricionistas terá sede e foro no Distrito Federal e jurisdição em todo o País e os Conselhos Regionais terão sede na Capital do Estado ou de um dos Estados ou Territórios da jurisdição, a critério do Conselho Federal.</h3>
+ <h3>Art. 3º O Conselho Federal de Nutrição terá sede e foro no Distrito Federal e jurisdição em todo o País, e os Conselhos Regionais terão sede na capital do Estado ou de um dos Estados ou Territórios da jurisdição, a critério do Conselho Federal. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h3>Art. 4º - O Conselho Federal e os Conselhos Regionais de Nutricionistas serão constituídos de 9 (nove) membros efetivos, com igual número de suplentes eleitos.</h3>
+ <h3>Art. 4º O Conselho Federal de Nutrição será constituído de tantos membros efetivos quanto seja o número de Conselhos Regionais existentes e igual número de suplentes. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h4>§ 1º - Os membros do Conselho Federal e respectivos suplentes, com mandato de 3 (três) anos, serão eleitos por um Colégio Eleitoral integrado por um representante de cada Conselho Regional, por este eleito em reunião especialmente convocada.</h4>
+ <h4>§ 2º - O Colégio Eleitoral convocado para a eleição do Conselho Federal reunir-se-á, preliminarmente, para exame, discussão, aprovação e registro das chapas concorrentes, realizando-se a eleição 24 (vinte e quatro) horas após a sessão preliminar.</h4>
+ <h4>§ 3º É assegurada a participação de 1 (um) representante dos técnicos em nutrição e dietética efetivo e do respectivo suplente na composição dos Conselhos Regionais, de forma não cumulativa, quando o número de técnicos em nutrição e dietética inscritos e ativos for maior que 10% (dez por cento) do total de nutricionistas e técnicos em nutrição e dietética inscritos e ativos naquela jurisdição. (Incluído pela Lei n° 14.924, de 2024)</h4>
+ <h3>Art. 5º Os membros dos Conselhos Regionais de Nutricionistas e respectivos suplentes, com mandato de 3 (três) anos, serão eleitos pelo sistema de eleição direta, através de voto pessoal, secreto e obrigatório dos profissionais registrados.</h3>
+ <h3>Art. 5º Os membros dos Conselhos Regionais de Nutrição e respectivos suplentes, com mandato de 3 (três) anos, serão eleitos pelo sistema de eleição direta, por meio de voto pessoal, secreto e obrigatório dos profissionais registrados. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h3>Art. 6º - O exercício do mandato de membro do Conselho Federal e dos Conselhos Regionais de Nutricionistas, assim como a respectiva eleição, mesmo na condição de suplente, ficará subordinado, além das exigências constantes do art. 530 da Consolidação das Leis do Trabalho e legislação complementar, ao preenchimento dos seguintes requisitos e condições:</h3>
+ <h3>Art. 6º O exercício do mandato de membro do Conselho Federal e dos Conselhos Regionais de Nutrição, assim como a respectiva eleição, mesmo na condição de suplente, é condicionado ao cumprimento das exigências constantes do art. 530 da Consolidação das Leis do Trabalho , aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943, e de legislação complementar, bem como ao preenchimento dos seguintes requisitos e condições: (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h5>I - cidadania brasileira;</h5>
+ <h5>II - habilitação profissional na forma da legislação em vigor;</h5>
+ <h5>III - pleno gozo dos direitos profissionais, civis e políticos.</h5>
+ <h4>Parágrafo único - Será permitida uma reeleição para os membros dos Conselhos Federal e Regionais de Nutricionistas.</h4>
+ <h4>Parágrafo único. É permitida 1 (uma) reeleição para os membros dos Conselhos Federal e Regionais de Nutrição. (Redação dada pela Lei n° 14.924, de 2024)</h4>
+ <h3>Art. 7º - O regulamento disporá sobre as eleições dos Conselhos Federal e Regionais de Nutricionistas.</h3>
+ <h3>Art. 7º O regulamento disporá sobre as eleições dos Conselhos Federal e Regionais de Nutrição. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h3>Art. 8º - A extinção ou perda de mandato de membro do Conselho Federal ou dos Conselhos Regionais ocorrerá:</h3>
+ <h5>I - por renúncia;</h5>
+ <h5>II - por superveniência de causa de que resulte a inabilitação para o exercício da profissão;</h5>
+ <h5>III - por condenação a pena superior a 2 (dois) anos, em virtude de sentença transitada em julgado;</h5>
+ <h5>IV - por destituição de cargo, função ou emprego, relacionada à prática de ato de improbidade na administração pública ou privada, em virtude de sentença transitada em julgado;</h5>
+ <h5>V - por falta de decoro ou condulta incompatível com a dignidade do órgão;</h5>
+ <h5>VI - por ausência, sem motivo justificado, a 3 (três) sessões consecutivas ou 6 (seis) intercaladas, durante o ano.</h5>
+ <h3>Art. 9º - Compete ao Conselho Federal:</h3>
+ <h5>I - eleger, dentre os seus membros, o seu Presidente, o Vice-Presidente, o Secretário e o Tesoureiro;</h5>
+ <h5>II - exercer função normativa, baixar atos necessários à interpretação e execução do disposto nesta Lei e à fiscalização do exercício profissional, adotando providências indispensáveis à realização dos objetivos institucionais;</h5>
+ <h5>III - supervisionar a fiscalização do exercício profissional em todo o território nacional;</h5>
+ <h5>IV - organizar, instalar, orientar e inspecionar os Conselhos Regionais e examinar suas prestações de contas, neles intervindo desde que indispensável ao restabelecimento da normalidade administrativa ou financeira ou à garantia da efetividade do princípio da hierarquia institucional;</h5>
+ <h5>V - elaborar seu regimento e submetê-lo à aprovação do Ministério do Trabalho;</h5>
+ <h5>VI - examinar os regimentos dos Conselhos Regionais, modificando o que se fizer necessário para assegurar unidade de orientação e uniformidade de ação, submetendo-os à aprovação do Ministro do Trabalho;</h5>
+ <h5>VII - conhecer e dirimir dúvidas suscitadas pelos Conselhos Regionais e prestar-lhes assistência técnica permanente;</h5>
+ <h5>VIII - apreciar e julgar os recursos de penalidades impostas pelos Conselhos Regionais;</h5>
+ <h5>IX - fixar valores das anuidades, taxas, emolumentos e multas devidas pelos profissionais e empresas aos Conselhos Regionais a que estejam jurisdicionados, nos termos em que dispuser o regulamento desta Lei;</h5>
+ <h5>X - aprovar sua proposta orçamentária e autorizar a abertura de créditos adicionais, bem como operações referentes a mutações patrimoniais;</h5>
+ <h5>XI - dispor sobre o Código de Ética Profissional, funcionando como o Tribunal de Ética Profissional;</h5>
+ <h5>XII - estimular a exação no exercício da profissão, zelando pelo prestígio e bom nome dos que a exercem;</h5>
+ <h5>XIII - instituir o modelo da Carteira de Identidade Profissional e do Cartão de Identificação;</h5>
+ <h5>XIV - autorizar o Presidente a adquirir, onerar ou alienar bens imóveis;</h5>
+ <h5>XV - emitir parecer conclusivo sobre prestação de contas a que esteja obrigado;</h5>
+ <h5>XVI - publicar, anualmente, seu orçamento e respectivos créditos adicionais ou balanços, a execução orçamentária e o relatório de suas atividades.</h5>
+ <h3>Art. 10 - Compete aos Conselhos Regionais:</h3>
+ <h5>I - eleger, dentre os seus membros, o seu Presidente, o Vice-Presidente, o Secretário e o Tesoureiro;</h5>
+ <h5>II - expedir Carteira de Identidade Profissional e Cartão de Identificação aos profissionais registrados;</h5>
+ <h5>III - fiscalizar o exercício profissional na área de sua jurisdição, representando às autoridade competentes sobre os fatos que apurar e cuja solução ou repressão não seja de sua alçada;</h5>
+ <h5>IV - cumprir e fazer cumprir as disposições desta Lei, do regulamento, do regimento, das resoluções e demais normas baixadas pelo Conselho Federal;</h5>
+ <h5>V - funcionar como Tribunal Regional de Ética, conhecendo, processando e decidindo os casos que lhe forem submetidos;</h5>
+ <h5>VI - elaborar a proposta de seu regimento, bem como as alterações, submetendo-as ao Conselho Federal, para aprovação pelo Ministro do Trabalho;</h5>
+ <h5>VII - propor ao Conselho Federal as medidas necessárias ao aprimoramento dos serviços e do sistema de fiscalização do exercício profissional;</h5>
+ <h5>VIII - aprovar a proposta orçamentária e autorizar a abertura de créditos adicionais e as operações referentes a mutações patrimoniais;</h5>
+ <h5>IX - autorizar o Presidente a adquirir, onerar ou alienar bens imóveis;</h5>
+ <h5>X - arrecadar anuidades, multas, taxas e emolumentos e adotar todas as medidas destinadas à efetivação de sua receita, destacando e entregando ao Conselho Federal as importâncias correspondentes a sua participação legal;</h5>
+ <h5>XI - promover, perante o juízo competente, a cobrança das importâncias correspondentes a anuidades, taxas, emolumentos e multas, esgotados os meios de cobrança amigável;</h5>
+ <h5>XII - estimular a exação no exercício da profissão, zelando pelo prestígio e bom conceito dos que exercem;</h5>
+ <h5>XIII - julgar as infrações e aplicar as penalidades previstas nesta Lei e em normas complementares do Conselho Federal;</h5>
+ <h5>XIV - emitir parecer conclusivo sobre prestação de contas a que esteja obrigado;</h5>
+ <h5>XV - publicar, anualmente, seu orçamento e respectivos créditos adicionais, os balanços, a execução orçamentária, o relatório de suas atividades e a relação dos profissionais registrados.</h5>
+ <h3>Art. 11 - Aos Presidentes dos Conselhos Federal e Regionais incumbe a administração e a representação legal dos mesmos, facultando-se-lhes suspender o cumprimento de qualquer deliberação de seu Plenário, que lhes pareça inconveniente ou contrária aos interesses da instituição, submetendo essa decisão à autoridade competente do Ministério do Trabalho ou ao Conselho Federal.</h3>
+ <h3>Art. 12 - Constitui renda do Conselho Federal:</h3>
+ <h5>I - 20% (vinte por cento) do produto da arrecadação de anuidades, taxas, emolumentos e multas de cada Conselho Regional;</h5>
+ <h5>II - legados, doações e subvenções;</h5>
+ <h5>III - rendas patrimoniais.</h5>
+ <h3>Art. 13 - Constitui renda dos Conselhos Regionais:</h3>
+ <h5>I - 80% (oitenta por cento) do produto da arrecadação de anuidades, taxas, emolumentos e multas;</h5>
+ <h5>II - legados, doações e subvenções;</h5>
+ <h5>III - rendas patrimoniais.</h5>
+ <h3>Art. 14 - A renda dos Conselhos Federal e Regionais só poderá ser aplicada na organização e funcionamento de serviços úteis à fiscalização do exercício profissional, bem como em serviços de caráter assistencial, quando solicitados por entidades sindicais.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Do Exercício Profissional</p>
+ <h3>Art. 15 - O livre exercício da profissão de nutricionista, em todo o território nacional, somente é permitido ao portador de Carteira de Identidade Profissional expedida pelo Conselho Regional competente.</h3>
+ <h4>Parágrafo único - É obrigatório o registro nos Conselhos Regionais das empresas cujas finalidades estejam ligadas à nutrição, na forma estabelecida em regulamento.</h4>
+ <h3>Art. 16 - Para o exercício da profissão na administração pública ou exercício de cargo, função ou emprego em empresas públicas e privadas, de assessoramento, chefia ou direção, será exigida, como condição essencial, a apresentação da Carteira de Identidade Profissional de Nutricionistas.</h3>
+ <h4>Parágrafo único - A inscrição em concurso público dependerá de prévia apresentação da Carteira de Identidade Profissional ou certidão do Conselho Regional de que o profissional está no exercício de seus direitos.</h4>
+ <h3>Art. 17 - O exercício simultâneo, temporário ou definitivo, da profissão em área de jurisdição de dois ou mais Conselhos Regionais, submeterá o profissional de que trata esta Lei às exigências e formalidades estabelecidas pelo Conselho Federal.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Das Anuidades</p>
+ <h3>Art. 18 - O pagamento da anuidade ao Conselho Regional da respectiva jurisdição constitui condição de legitimidade para o exercício da profissão ou para o funcionamento da em presa.</h3>
+ <h4>Parágrafo único. A anuidade do técnico em nutrição e dietética corresponderá a, no máximo, 50% (cinquenta por cento) do valor estipulado para o nutricionista. (Incluído pela Lei n° 14.924, de 2024)</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Infrações e Penalidades</p>
+ <h3>Art. 19 - Constitui infração disciplinar:</h3>
+ <h5>I - transgredir preceito ou Código de Ética Profissional;</h5>
+ <h5>II - exercer a profissão, quando impedido de fazê-lo, ou facilitar, por qualquer meio, o seu exercício aos não inscritos ou aos leigos;</h5>
+ <h5>III - violar sigilo profissional;</h5>
+ <h5>IV - praticar, no exercício da atividade profissional, ato que a lei defina como crime ou contravenção;</h5>
+ <h5>V - revelar segredo que, em razão da profissão, lhe seja confiado;</h5>
+ <h5>VI - não cumprir, no prazo assinalado, determinação emanada de órgão ou autoridade do Conselho Regional, em matéria de competência deste, após regularmente notificado;</h5>
+ <h5>VII - deixar de pagar, pontualmente, ao Conselho Regional as contribuições a que está obrigado;</h5>
+ <h5>VIII - faltar a qualquer dever profissional prescrito nesta Lei;</h5>
+ <h5>IX - manter conduta incompatível com o exercício da profissão.</h5>
+ <h4>Parágrafo único - As faltas serão apuradas, levando-se em conta a natureza do ato e as circunstâncias de cada caso.</h4>
+ <h3>Art. 20 - As penas disciplinares consistem em:</h3>
+ <h5>I - advertência;</h5>
+ <h5>II - repreensão;</h5>
+ <h5>III - multa equivalente a até 10 (dez) vezes o valor da anuidade;</h5>
+ <h5>IV - suspensão no exercício profissional pelo prazo de até 3 (três) anos;</h5>
+ <h5>V - cancelamento da inscrição e proibição do exercício profissional.</h5>
+ <h4>§ 1º - Salvo os casos de gravidade manifesta ou reincidência, a imposição das penalidades obedecerá à gradação deste artigo, observadas as normas estabelecidas pelo Conselho Federal para disciplina do processo de julgamento das infrações.</h4>
+ <h4>§ 2º - Na fixação da pena serão considerados os antecedentes profissionais do infrator, o seu grau de culpa, as circunstâncias atenuantes e agravantes e as conseqüências da infração.</h4>
+ <h4>§ 3º - As penas de advertência, repreensão e multa serão comunicadas pelo Conselho Regional, em ofício reservado, não se fazendo constar dos assentamentos do profissional punido, senão em caso de reincidência.</h4>
+ <h4>§ 4º - Da imposição de qualquer penalidade caberá recurso, com efeito suspensivo, ao Conselho Federal:</h4>
+ <h5>I - voluntário, no prazo de 30 (trinta) dias a contar da ciência da decisão;</h5>
+ <h5>II - ex-officio, nas hipóteses dos incisos IV e V deste artigo, no prazo de 30 (trinta) dias a contar da decisão.</h5>
+ <h4>§ 5º - As denúncias somente serão recebidas quando assinadas, declinada a qualificação do denunciante e acompanhada da indicação dos elementos comprobatórios do alegado.</h4>
+ <h4>§ 6º - A suspensão por falta de pagamento de anuidades, taxas ou multas só cessará com a satisfação da dívida, podendo ser cancelada a inscrição profissional, após decorridos 3 (três) anos.</h4>
+ <h4>§ 7º - É lícito ao profissional punido requerer, à instância superior, revisão do processo, no prazo de 30 (trinta) dias contados da ciência.</h4>
+ <p><del>§ 8º - Das decisões do Conselho Federal ou de seu Presidente, por força de competência privativa, caberá recurso, em 30 (trinta) (Revogado pela Lei n° 9.098, de 1995)</del></p>
+ <h4>§ 9º - As instâncias recorridas poderão reconsiderar suas próprias decisões.</h4>
+ <p><del>§ 10 (Revogado pela Lei n° 9.098, de 1995)</del></p>
+ <h3>Art. 21- O pagamento da anuidade fora do prazo sujeitará o devedor à multa prevista no regulamento.</h3>
+ <h2>CAPÍTULO V</h2>
+ <p>Disposições Gerais</p>
+ <h3>Art. 22 - Aos servidores dos Conselhos Federal e Regionais de Nutricionistas aplica-se o regime jurídico da Consolidação das Leis do Trabalho.</h3>
+ <h3>Art. 22. Aos servidores dos Conselhos Federal e Regionais de Nutrição aplica-se o regime jurídico da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h3>Art. 23 - Os Conselhos Regionais de Nutricionistas estimularão, por todos os meios, inclusive mediante concessão de auxílio, segundo normas aprovadas pelo Conselho Federal, as realizações de natureza cultural visando ao profissional e à classe.</h3>
+ <h3>Art. 23. Os Conselhos Regionais de Nutrição estimularão, por todos os meios, inclusive mediante concessão de auxílio, segundo normas aprovadas pelo Conselho Federal, as realizações de natureza cultural visando ao profissional e à classe. (Redação dada pela Lei n° 14.924, de 2024)</h3>
+ <h2>CAPÍTULO VI</h2>
+ <p>Disposições Transitórias</p>
+ <h3>Art. 24 - Às pessoas físicas e jurídicas, que agirem em desacordo com o disposto nesta Lei, aplicar-se-á a pena de multa, que variará de 1 (uma) a 10 (dez) vezes o valor de referência previsto no art. 2º, parágrafo único, da Lei n° 6.205, de 29 de abril de 1975.</h3>
+ <h4>Parágrafo único - Qualquer interessado poderá promover, perante os Conselhos Regionais de Nutricionistas, a responsabilidade do faltoso, sendo a este facultada ampla defesa.</h4>
+ <h4>Parágrafo único. Qualquer interessado poderá promover, perante os Conselhos Regionais de Nutrição, a responsabilidade do faltoso, sendo a esse facultada ampla defesa. (Redação dada pela Lei n° 14.924, de 2024)</h4>
+ <h3>Art. 25 - A Carteira de Identidade Profissional de que trata o</h3>
+ <h2>CAPÍTULO II somente será exigível a partir de 180 (cento e oitenta) dias contados da instalação do respectivo Conselho Regional.</h2>
+ <h3>Art. 26 - O primeiro Conselho Federal de Nutricionistas será constituído pelo Ministro do Trabalho.</h3>
+ <h4>Parágrafo único - Os primeiros Conselhos Regionais de Nutricionistas, após criados pelo Conselho Federal, serão constituídos pelo Ministro do Trabalho, na forma em que dispuser o regulamento desta Lei.</h4>
+ <h3>Art. 27 - O Poder Executivo providenciará a expedição do regulamento desta Lei no prazo de 120 (cento e vinte) dias.</h3>
+ <h3>Art. 28 - Esta Lei entrará em vigor na data de sua publicação.</h3>
+ <h3>Art. 29 - Revogam-se as disposições em contrário, especialmente os arts. 7º e 10 da Lei n° 5.276, de 24 de abril de 1967.</h3>
+ <p>Brasília, em 20 de outubro de 1978; 157º da Independência e 90º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Este texto não substitui o publicado no DOU de 24.10.1978 e retificado no DOU em 31.10.1978</p>
+ <p>(Vide Decreto nº 84.444, de 1980) | Cria os Conselhos Federal e Regionais de Nutricionistas,</p>
+ <p>regula o seu funcionamento, e dá outras providências.Cria os Conselhos Federal e Regionais de Nutrição e regula o seu funcionamento; e dá outras providências.(Redação dada pela Lei n° 14.924, de 2024)</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/1970-1979/L6583.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

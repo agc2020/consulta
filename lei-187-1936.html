@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 187, DE 15 DE JANEIRO DE 1936 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1936" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 187, DE 15 DE JANEIRO DE 1936</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 21:52:02 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/1930-1949/L187.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 24.395 caracteres | espelho: 24.407 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 187, DE 15 DE JANEIRO DE 1936.</p>
+ <p>(Vide 	Decreto-lei n° 2.383, de 1940)</p>
+ <p>(Vide Lei n° 5.474, de 1968)</p>
+ <p>Dispõe sobre as duplicatas e contas assignadas</p>
+ <p>O Presidente da Republica dos Estados Unidos do Brasil: Faço saber que o Poder Legislativo decreta e eu sancciona a seguinte lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA FACTURA OU CONTA DE VENDA E DA DUPLICATA</h3>
+ <h3>Art. 1º Nas vendas mercantis a prazo entre vendedor e comprador domiciliados no territorio brasileiro, aquelle é obrigado a emittir e entregar ou remetter a este a factura ou conta de venda e respectiva duplicata, que este lhe devolverá, depois de assignal-a, ficando com aquella.</h3>
+ <h4>§ 1º Se o comprador não souber ou não puder ler, nem escrever, a duplicata será, assignada a rogo, com duas testemunhas, ou por procurador com poderas especiaes.</h4>
+ <h4>§ 2º A factura discriminará as mercadorias vendidas e a duplicata indicará a importancia da factura, que lhe deu origem, devendo ter ambas a mesma data.</h4>
+ <p>Uma só duplicata não póde corresponder a varias facturas.</p>
+ <h4>§ 3º Quando convier ao vendedor, a factura poderá indicar sómente os numeros e valores das notas parciaes expedidas por occasião das vendas ou entregas das mercadorias, desde que essas notas sejam destacadas de livro-talão com as folhas numeradas seguidamente, duplicadas a carbono e as cópias archivadas e conservadas em bôa guarda emquanto não se prescrever a acção pertinente á duplicata.</h4>
+ <h4>§ 4º Não se póde extrahir duplicata que não corresponda a uma venda effectiva de mercadorias entregues, real ou symbolicamente, e acompanhadas da respeetiva factura.</h4>
+ <h3>Art. 2º A perda ou extravio da duplicata obriga o vendedor a extrahir triplicata, que terá os mesmos effeitos e os mesmos requisitos daquella.</h3>
+ <h3>Art. 3º A duplicata conterá:</h3>
+ <h6>a) a denominação “duplicata”, data e numero de ordem;</h6>
+ <h6>b) o numero da factura, do seu copiador e respectiva folha;</h6>
+ <h6>c) a importancia da factura a que corresponde, por algarismos e por extenso;</h6>
+ <h6>d) o nome e domicilio do vendedor;</h6>
+ <h6>e) o nome e domicilio do comprador;</h6>
+ <h6>f) a data do vencimento, com a determinação de dia certo ou com a declaração de dar-se a tantos dias da data da apresentação da duplicata ou de ser á, vista;</h6>
+ <h6>g) o reconhecimento de sua exactidão e a obrigação de pagal-a, para ser firmada do proprio punho, do comprador, salva a hypothese do art. 1º, § 1º;</h6>
+ <h6>h) a clausula á- ordem;</h6>
+ <p>i) o logar onde deve ser paga, entendendo-se, na ausencia desta declaração, que o pagamento será effectuado no domicilio do vendedor.</p>
+ <h4>§ 1º A duplicata póde ser manuscripta, dactylographada ou impressa, tendo, nestes casos, os claros para serem preenchidos a mão, a machina ou a carbono no acto da expedição, desde que contenha todos os requisitos acima exigidos, sendo permittido conter outros dizeres ou esclarecimentos, uma vez que lhe não alterem a feição caracteristica de expressão de contracto de compra e venda e de promessa de pagamento do preço.</h4>
+ <h4>§ 2º A duplicata será assignada no acto da emissão, de proprio punho, pelo vendedor, ou seu procurador, com poderes especiaes.</h4>
+ <h4>§ 3º E’ permittida a alteração da praça de pagamento da duplicata, desde que o vendedor e comprador nisso concordem, e nella expressamente o declarem.</h4>
+ <h3>Art. 4º A duplicata indicará sempre o valor total da factura, ainda que o comprador tenha qualquer importancia a credito com o vendedor, mencionando este, quando autoriizado, o credito e o liquido, que o comprador deverá reconhecer.</h3>
+ <h4>§ 1º Se o comprador tiver com o vendedor credito igual ou superior á importancia da compra e autorizar a deducção, dispensar-se-á a duplicata por tratar-se, então, de venda á vista.</h4>
+ <h4>§ 2º Não se comprehenderão no valor total da factura os abatimentos de preços das mercadorias feitos pelo vendedor no acto da emissão da factura original, desde que constem della.</h4>
+ <h4>§ 3º As vendas mercantis para pagamento contra a entrega da mercadoria ou do conhecimento do transporte, sejam ou não da mesma praça vendedor e comprador ou para pagamento á, vista ou a prazo menor de trinta (30) dias poderá representar-se tambem por duplicatas, em que se declara que o pagamento será feito nessas condições.</h4>
+ <h3>Art. 5º Nas vendas a prestações, poderá o vendedor emittir, em vez de uma só, da importancia global do preço, tantas em quantas fôr elle dividido, tomando estas duplicatas o mesmo numero de ordem, addicionado de um algarismo romano, em ordem crescente, ou letra do alphabet designativo de cada prestação.</h3>
+ <h3>Art. 6º As vendas parcelladas, feitas ao mesmo conprador, dentro do mez, serão acompanhadas de notas, ficando o vendedor obrigado a emittir, de conformidade com o art. 1º e seus paragraphos e art. 2º, a factura e a duplicata, caso pagamento não haja sido effectuado de accôrdo com o estabelecido no art. 25, nº 1.</h3>
+ <p>Paragrapho unico. As vendas parcelladas, effectuada por estabelecimentos atacadistas, a partir do dia 22 de cada mez, poderão ser acompanhadas de notas, extrahidas segundo prescreve o art. 1º § 3º, contendo a declaração – valor par o dia 1 do mez de... – passando a fazer parte das venda deste ultimo mez.</p>
+ <h3>Art. 7º Nas vendas feitas directamente a consumidores dentro do mez do calendario, entre o mesmo vendedor comprador, dispensa-se a emissão de facturas e duplicatas</h3>
+ <h4>§ 1º Se, porém, a venda exceder de 300$000 cada mez a seu pagamento demorar além de trinta dias, contados da ultimo dia do mez da compra, é obrigatoria a emissão da factura e duplicata, nos termos do art. 2º.</h4>
+ <h4>§ 2º Se a compra fôr inferior a 300$000 e o vendedor emittir a duplicata, o comprador é obrigado a assignal-a devolvel-a, mas não lhe poderá ser marcado prazo para. pagamento menor de trinta dias, contados na fórma do § 1º.</h4>
+ <h3>Art. 8º Nas vendas feitas por consignatarios ou commissarios e facturadas em nome e por conta do consignada ou committente, cumprirão aquelles os dispositivos desta lei</h3>
+ <h3>Art. 9º Nas consignações feitas por commerciantes, se as mercadorias forern vendidas por conta do consignatario este é obrigado, na occasião de expedir a factura e duplicata ao comprador, a communicar a venda ao consignador, par que, por sua vez, expeça factura e duplicata correspondente á mesma venda, afim de ser assignada por elle consignatario mencionando-se o prazo estipulado para a liquidação do saldo da conta.</h3>
+ <h4>§ 1º Se o consignatario declarar, na communicação feita que o producto liquido apurado está á disposição do consignador, é facultado a este registrar a venda como se fosse á vista, dispensado, então, de emittir duplicata.</h4>
+ <h4>§ 2º Sempre que se tratar de vendas parcelladas, de conta propria, effectuadas pelo consignatario, de mercadoria consignadas em varias partidas, a communicação ao consignador, para os effeitos deste artigo, poderá ser mensal, e qualquer data do mez, correspondendo a todas as vendas feita nesse periodo.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA REMESSA E DA DEVOLUÇÃO DE DUPLICATA</h3>
+ <h3>Art. 10. A remessa da duplicata poderá ser feita directamente pelo vendedor ou por seus representantes, por intermedio de bancos, procuradores .ou correspondentes, que se incumbam de apresental-a ao comprador, na praça ou lugar de seu estabelecimento, podendo os intermediarios devolvel-a depois de assignada, ou conserval-a em seu poder até o momento do resgate, seguindo as instrucções de quem lhes commetteu o encargo.</h3>
+ <h3>Art. 11, A duplicata. quando não fôr á vista, deverá ser devolvida pelo comprador, devidamente assignada, de modo a estar em poder do vendedor ou portador dentro do prazo do respectivo vencimento, não podendo a devolução, entretanto, exceder aos seguintes prazos:</h3>
+ <h6>a) de 30 dias, quando o comprador fôr estabelecido na mesma praça do vendedor, ou em praça diversa, desde que a mala postal chegue ao logar de domicilio do destinatario dentro em quarenta e oito horas de sua expedição;</h6>
+ <h6>b) de 60 dias, nos casos não incluidos na letra anterior;</h6>
+ <h6>c) de 120 dias, excepcionalmente, quando o comprador fôr estabelecido no Territorio do Acre, e no interior dos Estados do Amazonas, Pará, Matto Grosso, Goyaz e localidades de outros Estados, onde ae difficuldades de communicação e transporte exigirem, para a devolução, prazo superior a sessenta dias;</h6>
+ <h6>d) o portador da duplicata então é obrigado a fazer ao vendedor, até o primeiro dia util após a expiração dos prazos previstos neste artigo, as communicações relativas ao acceite do titulo para os fins dos registros de que trata o art. 24, § 1º.</h6>
+ <h4>§ 1º Estes prazos contar-se-ão da data da duplicata, a qual deverá ser remettida pelo vendedor ao comprador dentro de dez dias da sua emissão.</h4>
+ <h4>§ 2º Quando a duplicata fôr confiada a banco, casa commercial ou representante do vendedor, estabelecido na mesma praça do comprador, contar-se-á o prazo da letra a da data da entrega da duplicata ao comprador.</h4>
+ <h3>Art. 12. Dentro dos trinta dias consecutivos á terminação dos prazos de que trata o artigo precedente, e não havendo a prorogação facultada pelo art. 13, paragrapho unico, o vendedor fornecerá á repartição arrecadadora do seu domicilio, para a competente acção fiscal, o nome e o domicilio dos compradores que o hajam transgredido, com indicação do numero, da data e do valor de cada titulo não devolvido ou não acceito.</h3>
+ <p>Paragrapho unico. Quando, porém, a duplicata não tiver sido remettida ao comprador directamente pelo vendedor, o prazo de 30 dias só começará a correr do em que houver recebido do portador o aviso da falta de acceite ou de devolução.</p>
+ <h3>Art. 13. O comprador só poderá deixar de assignar a duplicata, por motivo :</h3>
+ <h6>a) de avaria, de extravio ou de não recebimento das mercadorias, quando não viajarem por sua conta e risco;</h6>
+ <h6>b) de vicios, defeitos è differenças na qualidade ou na quantidade das mercadorias;</h6>
+ <h6>c) de divergencia nos prazos ou preços ajustados.</h6>
+ <p>Paragrapho unico. Occorrendo qualquer dessas hypotheses, considerar-se-ão prorogados os prazos do art. 11, pelo tempo indispensavel para resolver-se a divergencia, comtanto que o novo prazo não exceda ao originario.</p>
+ <h3>Art. 14. Terminada a dilação do paragrapho unico anterior, e não chegando os interessados a accôrdo, será o titulo, obrigatoriamente, devolvido, acompanhado de carta em que o comprador declare os fundamentos da recusa de sua assignatura, ficando a seu cargo a prova habil da entrega do titulo e da carta ao vendedor ou portador. Concomitantemente, fará a devolução das mercadorias ou a sua consignação no juizo competente.</h3>
+ <h3>Art. 15. A duplicata emittida e não assignada em virtude da annullação da venda mercantil que a motivou, póde ser acceita por quem adquirir as mesmas mercadorias, desde que o faça dentro dos prazos do art. 11 e fiquem as causas do cancollamento da venda plenamente. justificadas na correspondencia commercial dos interessados, constante dos copiadores respectivos, regulamente escripturados.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DA LIQUIDAÇÃO E PAGAMENTO DA DUPLICATA</h3>
+ <h3>Art. 16. Ao comprador é licito resgatar a duplicata antes de assignal-a, nos prazos aqui estabelecidos, devolvendo-a, acompanhada da respectiva importancia, ao vendedor ou ao portador, que nella passará o recibo competente.</h3>
+ <p>Paragrapho unico. Se o dinheiro fôr enviado sem a duplicata, o vendedor ou o portador passará recibo em separado, com referencia expressa á mesma duplicata, para todos os effeitos legaes.</p>
+ <h3>Art. 17. Na liquidação ou pagamento da duplicata, quando o portador fôr o vendedor, poderão ser deduzidos quaesquer creditos a favor do devedor, resultantes de devolução de mercadorias, differanças de preços, enganos verificados, pagamentos por conta e outros motivos semelhantes.</h3>
+ <h3>Art. 18. O vendedor, ou o portador autorizado por aquelle, ou o endossatario, poderá conceder reforma ou prorogação do prazo de vencimento da duplicata, mediante declaração nesta escripta e assignada de proprio punho.</h3>
+ <p>Paragrapho unico. A prorogação poderá dar-se tambem pela extracção de nova duplicata, com os mesmos requisitos e com o mesmo numero, indicativo da reforma e substituição, que se mencionará na columna das observações do Registro de Duplicatas.</p>
+ <h3>Art. 19. O pagamento da duplicata póde ser assegurado por aval, sendo o avalista, equiparado áquelle cujo nome indicar: na falta de indicação, áquelle abaixo de cuja firma lançar a sua; fóra desses casos, ao comprador.</h3>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DO PROTESTO</h3>
+ <h3>Art. 20. A. duplicata. é protestavel:</h3>
+ <h6>a) por falta de assignatura ou de devolução;</h6>
+ <h6>b) por falta de pagamento.</h6>
+ <p>Paragrapho unico. Nos casos da letra e, o protesto será tirado no domicilio do comprador ou do vencedor, como a este fôr mais conveniente, dentro do prazo de trinta dias subsequentes aos marcados nos arts. 11 e 13, paragrapho unico</p>
+ <p>O protesto, neste caso, será tirado á vista da duplicata quando devolvida e apresentada em cartorio com o certificado postal ou qualquer outro documento comprobatorio da sua entrega ao comprador ou da sua devolução; e, em falta desta pelas indicações do protestante ou á vista da triplicata, extrahida pelo vendedor, por elle datada e assignada, entregue em cartorio com a prova da entrega ou da remessa da duplicata, indicando seu numero de ordem e acompanhada da cópia da factura.</p>
+ <h3>Art. 21. Si a demora na devolução da duplicata se verificar por ser o comprador domiciliado em praça ou localidade longinqua, onde seja deficiente o serviço postal, o que se provará mediante o certificado.do registro do Correio, os prazos para o protesto considerar-se-ão prorogados de accôrda com o paragrapho unico do art. 13.</h3>
+ <h3>Art. 22. O protesto por falta de pagamento será tirado em face da duplicação no logar em que ella deva ser paga, em qualquer tempo, depois de vencida e emquanto não prescripta a acção compotente, que é a executiva.</h3>
+ <h4>§ 1º O portador qne não tirar, em tempo util e fórma regular, o protesto da duplicata, perderá o direito de regresso contra os endossadores e avalistas.</h4>
+ <h4>§ 2º A acção executiva para a cobrança da duplicata ou da triplicata contra o comprador e respectivos avalistas, prescreve em cinco annos, a contar da data do vencimento; e a contra os endossadores e respectivos avalistas em doze mezes, contados da data do protesto necessario.</h4>
+ <h4>§ 3º A acção poderá ser proposta contra algum ou todos os coobrigados, sem obsorvancia da ordem dos endosaos; os signatarios da duplicata ou da triplicata obrigam-se solidariamente pelo acceite, e pelo pagamento.</h4>
+ <h3>Art. 23. O instrumento do protesto conterá os requisitos do art. 29 do decreto n. 2.044, de 31 de dezembro de de cujos demais dispositivos se applicarão á duplicata e triplicata, no que fôr possivel</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DA ESCRIPTA ESPECIAL</h3>
+ <h3>Art. 24. Todo commerciante, pessoa natural ou juridica é obrigado a ter e escripturar, além dos livros indicados no art. 11 e com as formalidades dos arts, 13 a 18 do codigo commercial :</h3>
+ <h6>a) o Registro de Duplicatas;</h6>
+ <h6>b) o Registro das Vendas a Vista.</h6>
+ <h4>§ 1º No Registro de Duplicatas serão escripturadas, chronologicamente, todas as duplicatas e triplicatas emittidas, com o numero de ordem, data e valor das facturas originarias e data de sua expedição; nome e residencia do comprador; datas de acceite da duplicata e do protesto por falta de assignata ou de devolução, annotando-se as prorogações e outras circumstancias necessarias.</h4>
+ <h4>§ 2º No Registro de Vendas á Vista serão lançadas pelo total todas as vendas desta natureza, tenha ou não sido emittida factura ou nota de venda, de conformidade com os outros livros obrigatorios.</h4>
+ <h4>§ 3º Estes livros, que não poderão conter emendas, borrões ou raspaduras, deverão ser conservados nos proprios estabelecimento afim de serem exhibidos aos agentes fiscaes, federaes ou estaduaes, sempre que exigidos, não podendo ser retirados dos mesmos estabelecimentos, sob qualquer pretexto.</h4>
+ <h4>§ 4º Quando o commerciante mantiver secções ou postos de venda de mercadorias em differentes locaes e os seus encarregados lhe prestarem contas diariamente, poderá centralizar no escriptorio do estabelecimento a escripta daquellas; postos ou agencias, tendo, porém, bem discriminado o movimento de cada um.</h4>
+ <h3>Art. 25. Consideram-se vendas á vista:</h3>
+ <p>I, as effectuadas mediante pagamento em dinheiro de contado e as realizadas, pagas e escripturadas dentro de trinta’ dias, contados da data da operação;</p>
+ <p>II, as entre comprador e vendedor domiciliados na mesmà praga e para pagamento contra a entrega de conta, do conhecimento de transporte, do recibo de deposito, do warrant e respectivo conhecimento de deposito quando ainda não separados, ou, finalmente, contra a entrega da propria mercadoria:</p>
+ <p>III, as de café, productos da lavoura, pecuaria e industrias derivadas, facturadas até o maximo de trinta dias, com obrigação de pagamento á vista, no acto da retirada ou entrega da mercadoria;</p>
+ <p>IV, as feitas directarnente a consumidores dentro do, mez, entre o mesmo vendedor e o mesmo comprador, quando’ não excedentes de trezentos mil réis (300$000) cada mez o pagamento não demorar mais de trinta dias contados do ultimo dia do mez da compra;</p>
+ <p>V, as de fundos ds commercio, ou do estabelecimento, mediante balanço, para transferencia deste, desde que o preço seja pago dentro em quarenta dias, caso em que serão lançadas no livro competente, no ultimo dia da transacção, encerrando-o;</p>
+ <p>VI, as de mercadorias, effectuadas a bordo dos navios nacionaes.</p>
+ <p>Paragrapho unico. Para escripturação das vendas de mercadorias a bordo dos navios nacionaes, haverá um livro especial, nos termos do modelo, já em uso, authenticado pela repartição fiscal federal da séde do registro maritimo do navio.</p>
+ <h3>Art. 26. Os commerciantes, estabelecidos nas praças de pará e do Amazonas nas transacções que fizerem para o interior dos mesmos Estados, poderão usar talões de notas de venda.</h3>
+ <h4>§ 1º Os talões terão numero de ordem e serão constituidos de folhas fixas e folhas destacaveis, aquellas para as primeiras vias e estas para as segundas, tiradas a carbono, de sorte que, effectuada a venda em viagem, o commerciante ou seu preposto entregue ao comprador a segunda via da nota, conservando a primeira.</h4>
+ <h4>§ 2º As duplicatas, oriundas de taes vendas, conservarão os requisitos do art. 3º, substituidas, nos respectivos modelos, as palavras – constante de nossa factura n..... desta data – pelas seguintes – conforme nota de venda desta data, n....., extrahida do talão authenticado n.........</h4>
+ <h3>Art. 27. Os livros referidos no art. 24 pagarão o imposto do sello federal a que estão sujeitos os livros indicados art. 11 do Codigo Commercial e serão rubricados como elles, sem prejuizo de qualquer outra disposição de lei estadual neste sentido.</h3>
+ <h3>Art. 28. As duplicatas e triplicatas não estão sujeitas a imposto federal de qualquer especie.</h3>
+ <p>Paragrapho unico. Não estão tambem sujeitos ao imposto de sello federal os endossos lançados nas duplicatas ou tryplicatas, antes do seu vencimento.</p>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DAS MULTAS E DAS PENAS</h3>
+ <h3>Art. 29. Aos contraventores das disposições desta lei applicar-se-ão as seguintes multas :</h3>
+ <h4>§ 1º De 100$000 a 200$000:</h4>
+ <h6>a) aos que, dentro de uma quinzena, deixarem de escripturar o movimento de vendas á vista de oito ou mais dias;</h6>
+ <h6>b) nos que deixarem em atrazo, por mais de quinze dias, o livro de Registro de Duplicatas;</h6>
+ <h6>c) aos que infringirem o disposto nos §§ 2º e 3º do artigo 1º e § 1º do art. 11 e art. 12.</h6>
+ <h4>§ 2º De 300$000 a 500$000:</h4>
+ <h6>a) aos que emittirem duplicatas ou triplicatas sem as formalidades desta lei ;</h6>
+ <h6>b) aos que depois de intimados, se recusarem a exhibir aos representantes do fisco os livros de que trata esta lei.</h6>
+ <h4>§ 3º De 500$000 a 1:000$000:</h4>
+ <h6>a) aos que deixarem de devolver as duplicatas e triplicatas, na forma e nos prazos legaes;</h6>
+ <h6>b) aos que falsificarem ou aduÌterarem a escripturação dos livros exigidos por esta lei.</h6>
+ <h4>§ 4º Para a fiscalização do cumprimento desta lei e para a applicação das multas, seu processo e recurso, applicar-se-ão, no que fôr possivel, as disposições dos decretos fede raes ns. 22.061 , 24.763 e 24.036 , sem prejuizo de qualquer outra disposição de lei estadual nesse sentido.</h4>
+ <h4>§ 5º As multas estabelecidas devem ser impostas em gráos minimos, médio ou maximo, attendendo á natureza da contravenção, se dolosa ou culposa, e á importaueia do negocio do contraventor ou da duplicata sobre que versar.</h4>
+ <h3>Art. 30. Ao comprador que deixar de devolver a duplicata devidamente acceita, nos casos de que trata esta lei, ou que a devolver sem acceite, salvo o disposto nos arts. 12 paragrapho unico, e 14, será imposta a multa de 10 % do valor, da mesma duplicata, não podendo essa multa ser inferior a, 100$000, nem superior a 1:000$000.</h3>
+ <h3>Art. 31. A. falta dos livros exigidos pelo art. 24, do pagamento do sello devido e a inobservancia, quanto a elles, dos dispositivos da lei deste, ficarão por ella disciplinados na sua fiscalização, na imposição das multas, no respectivo processo e nos recursos.</h3>
+ <h3>Art. 32. Incorrerá na pena de prisão cellular por um a quatro annos, além da multa de 10 % sobre o respectivo montante, o que expedir duplicata que não corresponda a uma,venda effectiva de mercadorias entregues real ou symbolicamente e acompanhadas da respectiva factura.</h3>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DAS DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 33. Os livros de que trata esta lei obedecerão aos modelos annexos ao decreto nº 22.061, de 9 de novembro de 1932, podendo os Estados adoptal-os para a arrecadação e fiscalização do imposto a que se refere o art. 8º, I, letra e da Constituição.</h3>
+ <h3>Art. 34. A opção, facultada pelo art. 57, § 2º, do decreto nº 5.138, de 5 de janeiro de 1927 , fica extensiva aos productores em geral, cabendo, porém, em todos os casos, sómente quando se faça sob fiscalização de funccionarios federaes a arrecadação do imposto estadual sobre as vendas e consignações realizadas pelos contribuintes.</h3>
+ <h3>Art. 35. Fica o Governo Federal autorizado a celebrar accordos com os dos Estados, afim de que funccionarios federaes effectuern, ou auxiliem, a arrecadação, ou a fiscalização dos impostos estaduaes sobre vendas e consignacões, e afim de assegurar a cobrança desse mesmo imposto nas vendas feitas ao Governo Federal, ou a repartições ou serviços que delle dependam .</h3>
+ <h3>Art. 36 As vendas de commerciantes e productores, inclusive imdustriaes, e as consignações, somente no Territorio ( ILEGÍVEL) e a bordo dos navios nacionaes, desde que não se ( ILEGÍVEL) de navegação fluvial em dominio territorial dos Estados ( ILEGÍVEL) (art. 20, alinea II, e art. 21, alinea II, da Constituição Federal), continuarão sujeitas ao imposto federal de vendas mercantis, na forma do regulamento approvado pelo decreto ( ILEGÍVEL) 22.061, de 9 de novembro de 1932. O Governo regulamentará a isenção do pequeno productor.</h3>
+ <h3>Art. 37. As vendas e consignações por commerciantes ( ILEGÍVEL) productores inclusive industriaes, consideram-se effectuadas localidade em que tenha séde o estabelecimento do vendedor ou consignante; e, quando o vendedor, ou consignante tenha mais de um estabelecimento, consideram-se realizadas onde se ache situado o de que de fez originariamente expedição da mercadoria, ou em que o producto vendido consignado, foi obtido, ou preparado, inicial ou definitivamente.</h3>
+ <h3>Art. 38. O funccionario federal, que verificar infracção desta lei, ou falta de pagamento de imposto estadual, remettera cópia do auto, que lavrar, á repartição estadual competente</h3>
+ <h3>Art. 39. Os Estados que tornarem effectiva a cobrança do imposto a elles attribuido pelo art. 8º – I – e da Consituição Federal , poderão arrecadal-o em sello adherido ás duplicatas e triplicatas ou aos livros referidos no art. 24.</h3>
+ <h3>Art. 39. O impôsto de vendas mercantís devido aos Estados poderá ser arrecadado em sêlo aderido as duplicatas e triplicatas, ou aos livros referidos no art. 24. As repartições arrecadadoras, quando a cobrança se fizer por verba rubricarão os títulos mercantís de que se ocupa êste diploma legal. (Redação dada pela Lei n° 2.448, de 1955)</h3>
+ <h3>Art. 40. Os livros de escripturação dos estabelecimentos commerciaes ou industriaes devem ser apresentados aos agentes do fisco federal ou estadual, na parte referente aos actos sobre os quaes haja fundadas suspeitas de infracção da presente lei.</h3>
+ <h3>Art. 41. As multas apontadas no art. 29, bem como as impostas pela falta dos livros de que trata esta lei, não prejudicam as que, por essas infracções, venham a ser estabelecidas em leis estaduaes.</h3>
+ <h3>Art. 42. Esta lei entrará em vigor, em todo o territorio nacional, no dia 1º de janeiro de 1936, e será communicada por telegramma aos Governadores, revogadas as disposições em contrario.</h3>
+ <p>Rio de Janeiro, 15 de Janeiro de 1936, 115º da Independencia e 48º da Republica.</p>
+ <p>Arthur de Souza Costa</p>
+ <p>Este texto não substitui o publicado no DOU de 20.1.1936e republicada em 4.2.1936</p>
+ <p>Decreto-lei n° 2.383, de 1940)
+(Vide Lei n° 5.474, de 1968) | Dispõe sobre as duplicatas e contas assignadas</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/1930-1949/L187.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

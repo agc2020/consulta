@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.708, DE 30 DE OUTUBRO DE 1979 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1979" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.708, DE 30 DE OUTUBRO DE 1979</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 21:00:12 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/1970-1979/L6708.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 14.017 caracteres | espelho: 14.098 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.708, DE 30 DE OUTUBRO DE 1979.</p>
+ <p>(Vide Decreto nº 84.560, de 1980)</p>
+ <p>(Vide Decreto nº 88.705, de 1983)</p>
+ <p>Dispõe sobre a correção automática dos salários, modifica a política salarial e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º O valor monetário dos salários será corrigido, semestralmente, de acordo com o índice de Preços ao Consumidor, variando o fator de aplicação na forma desta Lei.</h3>
+ <h3>Art. 2º A correção efetuar-se-á segundo a diversidade das faixas salariais e comulativamente, observados os seguintes critérios:</h3>
+ <h5>I - até três vezes o valor do maior salário mínimo, multiplicando-se o salário ajustado por um fator correspondente a 1.1 da variação semestral do índice Nacional de Preços ao Consumidor;</h5>
+ <h5>II - de três salários mínimos aplicar-se-á, até o limite do inciso anterior, a regra nele contida e, no que exceder, o fator 1.00;</h5>
+ <h5>III - acima de dez salários mínimos aplicar-se-ão, as regras dos incisos anteriores até os respectivos limites e, no que exceder, o fator 0.8.</h5>
+ <h5>III - de dez a quinze salários mínimos aplicar-se-ão, até os limites dos incisos anteriores, as regras neles contidas e, no que exceder, o fator 0.8; (Redação dada pela Lei n° 6.886, de 1980)</h5>
+ <h5>IV - de quinze a vinte salários mínimos aplicar-se-ão, até os limites dos incisos anteriores, as regras neles contidas e, no que exceder, o fator 0.5; (Incluído pela Lei n° 6.886, de 1980)</h5>
+ <h5>V - acima de vinte salários mínimos aplicar-se-ão as regras dos incisos anteriores até os respectivos limites e, no que exceder, o fator 0 (zero). (Incluído pela Lei n° 6.886, de 1980)</h5>
+ <h3>Art. 2º A correção efetuar-se-á segundo a diversidade das faixas salariais e cumulativamente, observados os seguintes critérios: (Redação dada pelo Decreto-Lei n° 2.012, de 1983)</h3>
+ <h5>I - até três vezes o valor do maior salário mínimo, multiplicando-se o salário ajustado por um fator correspondentes a 1,0 da variação semestral do Índice Nacional de Preços ao Consumidor; (Redação dada pelo Decreto-Lei n° 2.012, de 1983)</h5>
+ <h5>II - de três a sete salários mínimos aplicar-se-á, até o limite do inciso anterior, a regra nele contida e, no que exceder, o fator 0,95; (Redação dada pelo Decreto-Lei n° 2.012, de 1983)</h5>
+ <h5>III - de sete a quinze salários mínimos aplicar-se-ão, até os limites dos incisos anteriores, as regras neles contidas e, no que exceder, o fator 0,8; (Redação dada pelo Decreto-Lei n° 2.012, de 1983)</h5>
+ <h5>IV - de quinze salários mínimos aplicar-se-ão, até os limites dos incisos anteriores, as regras neles contidas e, no que exceder, o fator 0,5; (Redação dada pelo Decreto-Lei n° 2.012, de 1983)</h5>
+ <h5>V - acima de vinte salários mínimos aplicar-se-ão as regras dos incisos anteriores até os respectivos limites e, no que exceder, o fator 0 (zero). (Redação dada pelo Decreto-Lei n° 2.012, de 1983)</h5>
+ <h3>Art. 2º - A correção efetuar-se-á segundo a diversidade das faixas salariais e cumulativamente, observados os seguintes critérios: (Redação dada pelo Decreto-Lei n° 2.024, de 1983)</h3>
+ <h5>I - até 7 (sete) vezes o valor do maior salário-mínimo, multiplicando-se o salário ajustado por um fator correspondente a 1,0 da variação semestral do Índice Nacional de Preços ao Consumidor (INPC); (Redação dada pelo Decreto-Lei n° 2.024, de 1983)</h5>
+ <p>Il - de 7 (sete) a 15 (quinze) salários-mínimos aplicar-se-á, até o limite do inciso anterior, a regra nele contida e, no que exceder, o fator 0,8; (Redação dada pelo Decreto-Lei n° 2.024, de 1983)</p>
+ <h5>III - de 15 (quinze) a 20 (vinte) salários-mínimos aplicar-se-ão, até os limites dos incisos anteriores, as regras neles contidas e, no que exceder, o fator 0,5; (Redação dada pelo Decreto-Lei n° 2.024, de 1983)</h5>
+ <h5>IV - acima de 20 (vinte) salários-mínimos aplicar-se-ão as regras dos incisos anteriores até os respectivos limites e, no que exceder, o fator 0 (zero). (Redação dada pelo Decreto-Lei n° 2.024, de 1983)</h5>
+ <h3>Art. 2º A correção efetuar-se-á multiplicando-se o montante do salário ajustado por um fator correspondente a 0,8 da variação semestral do Índice Nacional de Preços ao Consumidor (INPC). (Redação dada pelo Decreto-Lei n° 2.045, de 1983) (Vide Resolução/CN nº 1, de 1983)</h3>
+ <h4>§ 1º Para os fins deste artigo, o Poder Executivo publicará, mensalmente, a variação do Índice Nacional de Preços ao Consumidor, ocorrida nos seis meses anteriores.</h4>
+ <h4>§ 2º O Poder Executivo colocará à disposição da Justiça do Trabalho e das Entidades Sindicais os elementos básicos utilizados para a fixação do Índice Nacional de Preços ao Consumidor;</h4>
+ <h4>§ 3º Em caso de força maior, ou de prejuízos comprovados, que acarretem crítica situação econômica e financeira à empresa, será lícita a negociação da correção, mediante acordo coletivo, na forma prevista no Título VI da Consolidação das Leis do Trabalho, ou, na hipótese de dissídio, poderá a correção ser estabelecida por sentença normativa, que concilie os interesses em confronto. (Incluído pelo Decreto-Lei n° 2.045, de 1983) (Vide Resolução/CN nº 1, de 1983)</h4>
+ <h3>Art. 3º A correção dos valores monetários dos salários, na forma do artigo anterior, independerá de negociação coletiva e poderá ser reclamada, individualmente, pelos empregados.</h3>
+ <h4>§ 1º Para a correção a ser feita no mês, será utilizada a variação a que se refere o § 1º do artigo 2º, publicada no mês anterior.</h4>
+ <h4>§ 2º Será facultado aos Sindicatos, independente da outorga de poderes dos integrantes da respectiva categoria profissional, apresentar reclamação na qualidade de substituto processual de seus associados, com o objetivo de assegurar a percepção dos valores salariais corrigidos na forma do artigo anterior.</h4>
+ <h3>Art. 4º A contagem de tempo para fins de correção salarial será feita a partir da data-base da categoria profissional.</h3>
+ <h4>§ 1º Entende-se data-base, para fins desta Lei, a data de início de vigência de acordo ou convenção coletiva, ou sentença normativa.</h4>
+ <h4>§ 2º Os empregados que não estejam incluídos numa das hipóteses do parágrafo anterior terão como data-base a data de seu último aumento ou reajustamento de salário, ou na falta desta, a data de início de vigência de seu contrato de trabalho.</h4>
+ <h3>Art. 5º O salário do empregado admitido após a correção salarial da categoria será atualizado na subseqüente revisão proporcionalmente ao número de meses a partir da admissão.</h3>
+ <h4>Parágrafo único. A regra do artigo não se aplica às empresas que adotem quadro de pessoal organizado em carreira e em que a correção incida sobre os respectivos níveis ou classes de salários.</h4>
+ <h3>Art. 6º A correção do valor monetário dos salários dos empregados, que trabalham em regime de horário parcial, será calculada proporcionalmente à correção de seu salário por hora de trabalho.</h3>
+ <h4>Parágrafo único. Para o cálculo da correção do salário por hora de trabalho, aplicar-se-á o disposto no artigo 2º desta Lei, substituindo-se o salário do trabalhador pelo seu salário por hora de trabalho e o salário mínimo pelo salário mínimo hora.</h4>
+ <h3>Art. 7º A correção monetária a que se referem os artigos 1º e 2º desta Lei não se estende às remunerações variáveis, percebidas com base em comissões percentuais preajustadas, aplicando-se, porém, à parte fixa do salário misto percebido pelo empregado assim remunerado.</h3>
+ <h3>Art. 8º A correção dos valores monetários dos salários de trabalhadores avulsos, negociados para grupos de trabalhadores, diretamente, pelas suas Entidades Sindicais, será procedida de acordo com o disposto no artigo 2º desta Lei.</h3>
+ <h4>Parágrafo único. No caso de trabalhadores avulsos, cuja remuneração seja disciplinada pelo conselho Nacional de Política Salarial, a data-base será a de sua última revisão salarial.</h4>
+ <h3>Art. 9º O empregado dispensado, sem justa causa, no período de 30 (trinta) dias que antecede a data de sua correção salarial, terá direito à indenização adicional equivalente a um salário mensal, seja ele, ou não, optante pelo Fundo de Garantia do Tempo de Serviço.</h3>
+ <h3>Art. 10. Ficam mantidas as datas-base das categorias profissionais para efeito de negociações coletivas com finalidade de obtenção de aumentos de salários e do estabelecimento de cláusulas que regulem condições especiais de trabalho.</h3>
+ <h4>Parágrafo único. Os aumentos coletivos de salários serão ajustados por um ano, não podendo ocorrer revisão, a esse título, antes de vencido aquele prazo.</h4>
+ <h3>Art. 11. O aumento dos salários poderá ser estipulado por convenção, acordo coletivo ou sentença normativa, com fundamento no acréscimo verificado na produtividade da categoria profissional.</h3>
+ <h3>Art. 11 Além da correção prevista no artigo 2º, poderá ser estipulado por convenção, acordo coletivo ou sentença normativa, um acréscimo com fundamento no aumento da produtividade da categoria, tendo por limite a variação do produto real per capita, ocorrido no ano anterior e fixado por ato do Poder Executivo. (Redação dada pelo Decreto-Lei n° 2.045, de 1983) (Vide Resolução/CN nº 1, de 1983)</h3>
+ <h4>§ 1º Poderão ser estabelecidos percentuais diferentes para os empregados, segundo os níveis de remuneração.</h4>
+ <h4>§ 2º A convenção coletiva poderá fixar níveis diversos para o aumento dos salários, em empresas de diferentes portos, sempre que razões de caráter econômico justifiquem essa diversificação, ou excluir as empresas que comprovarem sua incapacidade econômica para suportar esse aumento.</h4>
+ <h4>§ 3º Será facultado à empresa não excluída do campo de incidência do aumento determinado na forma deste artigo comprovar, na ação de cumprimento, sua incapacidade econômica, para efeito de sua exclusão ou colocação em nível compatível com suas possibilidades.</h4>
+ <h4>§ 4º As empresas empregadoras não poderão repassar, para os preços dos produtos ou serviços, o aumento de custo decorrente do aumento de salários a que se refere o caput desse artigo, salvo por resolução do Conselho Interministerial de Preços (CIP).</h4>
+ <h3>Art. 12. As empresas públicas, as sociedades de economia mista de que a União Federal ou qualquer de suas autarquias detenha a maioria do capital social, as empresas privadas, subvencionadas pela União ou concessionários de Serviço Público Federal, e ainda, as entidades governamentais cujo regime de remuneração de pessoal não obedeça integralmente ao disposto na Lei n° 5.645, de 10 de dezembro de 1970 , somente poderão celebrar acordos coletivos de trabalho, de natureza econômica ou conceder aumento coletivo de salários, nos termos das resoluções do Conselho Nacional de Polícia Salarial.</h3>
+ <h4>§ 1º As disposições deste artigo aplicam-se aos trabalhadores avulsos, cuja remuneração seja disciplinada pelo Conselho Nacional de Política Salarial.</h4>
+ <h4>§ 2º Quando se tratar de trabalhadores avulsos da orla marítima subordinados à Superintendência Nacional da Marinha Mercante (SUNAMAM), compete a esta rever os salários, inclusive taxas de produção.</h4>
+ <h4>§ 2º Quando se tratar de trabalhadores avulsos da orla marítima subordinados à Superintendência Nacional da Marinha Mercante (SUNAMAM), compete a esta rever os salários, inclusive taxas de produção, previamente ouvido o Conselho Nacional de Política Salarial. (Redação dada pela Lei n° 6.886, de 1980)</h4>
+ <h3>Art. 13. Os adiantamentos ou abonos concedidos pelo empregador, antes ou após a vigência desta Lei, serão deduzidos da correção salarial.</h3>
+ <h3>Art. 14. O § 3º do artigo 1º da Lei n° 6.205, de 29 de abril de 1975 , passa a vigorar com a seguinte redação:</h3>
+ <p>“§ 3º Para os efeitos do disposto no artigo 5º da Lei n° 5.890, de 1973, os montantes atualmente correspondentes a 10 e 20 	vezes o maior salário mínimo vigente serão corrigidos de acordo com o Índice 	Nacional de Preços ao Consumidor.”</p>
+ <h3>Art. 15. Os empregados que integram categorias profissionais cujas datas-base estejam compreendidas nos meses de novembro de 1978 a abril de 1979 terão seus salários corrigidos na data de início de vigência desta Lei, no percentual de 22% (vinte e dois porcento) sobre o salário vigente na data-base, compensados os aumentos concedidos na forma do artigo 13 desta Lei.</h3>
+ <h4>§ 1º Os salários resultantes da correção a que se refere o caput deste artigo servirão como base para a nova correção a ser procedida na data-base.</h4>
+ <h4>§ 2º Os empregados cuja data-base ocorreu no último mês de maio anterior a esta Lei terão seus salários corrigidos no mês de novembro de 1979, por percentual equivalente à variação do Índice Nacional de Preços ao Consumidor, relativo ao semestre anterior ao mês de outubro.</h4>
+ <h4>§ 3º A correção inicial dos salários dos empregados a que se refere o § 2º do artigo 4º desta Lei não poderá incidir sobre período superior a 6 (seis) meses, ainda que sua data-base ocorra antes de maio de 1979.</h4>
+ <h3>Art. 16. Os empregados integrados em categorias profissionais cuja data-base ocorra no mês de novembro terão após corrigidos na forma do artigo anterior, os salários novamente corrigidos, no percentual equivalente ao da variação do índice relativo ao semestre anterior ao mês de outubro de 1979, e que será publicado até o final do mês de novembro do mesmo ano.</h3>
+ <h3>Art. 17. O Poder Executivo poderá estabelecer, a partir de 1º de janeiro de 1981, periodicidade diversa da prevista no artigo 1º desta Lei.</h3>
+ <h3>Art. 18. O Poder Executivo, observada a legislação pertinente, ajustará a política do salário mínimo aos objetivos desta Lei.</h3>
+ <h3>Art. 19. A partir de 1º de maio de 1980, dar-se-á gradativa redução das regiões em que que se subdivide o território nacional, a fim de que seja alcançada (VETADO) a unificação do salário mínimo no País.</h3>
+ <h3>Art. 20. As disposições da presente Lei não se aplicam aos servidores da União, dos Territórios, dos Estados e dos Municípios o de suas autarquias submetidas ao regime da Consolidação das Leis do Trabalho.</h3>
+ <h3>Art. 21. Fica revogada a Lei n° 6.147, de 29 de novembro de 1974 , e demais disposições em contrário.</h3>
+ <h3>Art. 22. Esta lei entrará em vigor no dia 1º de novembro de 1979, independentemente de sua regulamentação pelo Poder Executivo, no prazo de 90 (noventa) dias, a contar de sua publicação.</h3>
+ <p>Brasília, em 30 de outubro de 1979; 158º da Independência e 91º da República.</p>
+ <h3>JOÃO FIGUEIREDO</h3>
+ <p>Este texto não substitui o publicado no DOU de 30.10.1979</p>
+ <p>(Vide Decreto nº 84.560, de 1980)</p>
+ <p>(Vide Decreto nº 88.705, de 1983) | Dispõe sobre a correção automática dos salários, modifica a política salarial e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/1970-1979/L6708.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

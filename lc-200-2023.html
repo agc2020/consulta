@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Lei Complementar Nº 200/2023 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei Complementar" />
+ <meta data-pagefind-filter="ano[content]" content="2023" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Lei Complementar Nº 200/2023</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:56:38 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp200.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 31.778 caracteres | espelho: 32.426 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI COMPLEMENTAR Nº 200, DE 30 DE AGOSTO DE 2023</p>
+ <p>Institui regime fiscal sustentável para garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico, com fundamento no art. 6º da Emenda Constitucional nº 126, de 21 de dezembro de 2022, e no inciso VIII do caput e no parágrafo único do art. 163 da Constituição Federal; e altera a Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei 	Complementar:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DISPOSIÇÕES PRELIMINARES</h3>
+ <h3>Art. 1º Fica instituído regime fiscal sustentável para garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico, com fundamento no art. 6º da Emenda Constitucional nº 126, de 21 de dezembro de 2022 , e no inciso VIII 	do caput e no parágrafo único do art. 163 da Constituição Federal.</h3>
+ <h4>§ 1º O disposto nesta Lei Complementar:</h4>
+ <h5>I - aplica-se às receitas primárias e às despesas primárias dos orçamentos fiscal e da seguridade social da União;</h5>
+ <h5>II - não afasta as limitações e as condicionantes para geração de despesa e de renúncia de receita estabelecidas na Lei 	Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal), 	observadas as disposições da lei de diretrizes orçamentárias, inclusive em relação aos efeitos das renúncias de receita sobre a sustentabilidade do regime fiscal instituído nesta Lei Complementar.</h5>
+ <h4>§ 2º A política fiscal da União deve ser conduzida de modo a manter a dívida pública em níveis sustentáveis, prevenindo riscos e promovendo medidas de ajuste fiscal em caso de desvios, garantindo a solvência e a sustentabilidade intertemporal das contas públicas.</h4>
+ <h4>§ 3º Integram o conjunto de medidas de ajuste fiscal a obtenção de resultados fiscais compatíveis com a sustentabilidade da dívida, 	a adoção de limites ao crescimento da despesa, a aplicação das vedações previstas nos incisos I a X do caput do art. 167-A da Constituição Federal , bem como a recuperação e a gestão de receitas públicas.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DAS METAS 	FISCAIS COMPATÍVEIS COM A SUSTENTABILIDADE DA DÍVIDA</h3>
+ <h3>Art. 2º A lei de diretrizes orçamentárias, nos termos do § 2º do art. 165 da Constituição Federal e do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de 	Responsabilidade Fiscal), estabelecerá as diretrizes de política fiscal e as respectivas metas anuais de resultado primário do Governo Central, para o exercício a que se referir e para os 3 (três) seguintes, compatíveis com a trajetória sustentável da dívida pública.</h3>
+ <h4>§ 1º Considera-se compatível com a sustentabilidade da dívida pública o estabelecimento de metas de resultados primários, nos termos das leis de diretrizes orçamentárias, até a estabilização da relação entre a Dívida Bruta do Governo Geral (DBGG) e o Produto Interno Bruto 	(PIB), conforme o Anexo de Metas Fiscais de que trata o § 5º do art. 4º da 	Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade 	Fiscal).</h4>
+ <h4>§ 2º A trajetória de convergência do montante da dívida, os indicadores de sua apuração e os níveis de compatibilidade dos resultados fiscais com a sustentabilidade da dívida constarão do Anexo de Metas Fiscais da lei de diretrizes orçamentárias.</h4>
+ <h4>§ 3º A elaboração e a aprovação do projeto de lei orçamentária anual, bem como a execução da respectiva lei, deverão ser compatíveis com a obtenção da meta de resultado primário estabelecida na lei de diretrizes orçamentárias, observados, na execução, os intervalos de tolerância de que trata o inciso IV do § 5º do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).</h4>
+ <h4>§ 4º A apuração do resultado primário e da relação entre a 	DBGG e o PIB será realizada pelo Banco Central do Brasil.</h4>
+ <h2>CAPÍTULO III</h2>
+ <h3>DAS 	DESPESAS SUJEITAS A LIMITES POR PODER E ÓRGÃO</h3>
+ <h3>Art. 3º Com fundamento no inciso VIII do caput do art. 163 , no art. 164-A e nos §§ 2º e 12 do art. 165 da 	Constituição Federal , ficam estabelecidos, para cada exercício a partir de 2024, 	observado o disposto nos arts. 4º, 5º e 9º desta Lei Complementar, limites individualizados para o montante global das dotações orçamentárias relativas a despesas primárias: (Vide ADI 7641)</h3>
+ <h5>I - do Poder Executivo federal;</h5>
+ <h5>II - do Supremo Tribunal Federal, do Superior Tribunal de 	Justiça, do Conselho Nacional de Justiça, da Justiça do Trabalho, da Justiça 	Federal, da Justiça Militar da União, da Justiça Eleitoral e da Justiça do 	Distrito Federal e dos Territórios, no âmbito do Poder Judiciário;</h5>
+ <h5>III - do Senado Federal, da Câmara dos Deputados e do 	Tribunal de Contas da União, no âmbito do Poder Legislativo;</h5>
+ <h5>IV - do Ministério Público da União e do Conselho Nacional do Ministério Público; e</h5>
+ <h5>V - da Defensoria Pública da União.</h5>
+ <h4>§ 1º Cada um dos limites a que se refere o caput deste artigo equivalerá: (Vide ADI 7064)</h4>
+ <h5>I - para o exercício de 2024, às dotações orçamentárias primárias constantes da Lei n° 14.535, de 17 de janeiro de 2023 , 	considerados os créditos suplementares e especiais vigentes na data de promulgação desta Lei Complementar, relativas ao respectivo Poder ou órgão referido no caput deste artigo, corrigidas nos termos do art. 4º e pelo crescimento real da despesa primária calculado nos termos do art. 5º desta 	Lei Complementar, excluídas as dotações correspondentes às despesas de que trata o § 2º deste artigo; e</h5>
+ <h5>II - para os exercícios posteriores a 2024, ao valor do limite referente ao exercício imediatamente anterior, corrigido nos termos dos arts. 4º e 5º desta Lei Complementar, observado que as alterações nas dotações orçamentárias realizadas para atender à situação prevista no caput do art. 9º desta Lei Complementar não deverão ser incluídas para a definição do limite do exercício subsequente.</h5>
+ <h4>§ 2º Não se incluem na base de cálculo e nos limites estabelecidos neste artigo: (Vide ADI 7641)</h4>
+ <h5>I – as transferências estabelecidas no § 1º do art. 20 , no inciso III do parágrafo único do art. 146 , no § 5º do art. 153 , no art. 157 , nos incisos I e II do caput do art. 158 , no art. 159 e no § 6º do art. 212 , as despesas referentes ao inciso XIV do caput do art. 21 e as complementações de que tratam os incisos IV e V do caput do art. 212-A , todos da 	Constituição Federal;</h5>
+ <h5>II - os créditos extraordinários a que se refere o § 3º do art. 167 da 	Constituição Federal ;</h5>
+ <h5>III - as despesas nos valores custeados com recursos de doações ou com recursos decorrentes de acordos judiciais ou extrajudiciais firmados para reparação de danos em decorrência de desastre;</h5>
+ <h5>IV - as despesas das universidades públicas federais, das empresas públicas da União prestadoras de serviços para hospitais universitários federais, das instituições federais de educação, ciência e tecnologia vinculadas ao Ministério da Educação, dos estabelecimentos de ensino militares federais e das demais instituições científicas, 	tecnológicas e de inovação, nos valores custeados com receitas próprias, ou de convênios, contratos ou instrumentos congêneres, celebrados com os demais entes federativos ou entidades privadas;</h5>
+ <h5>V - as despesas nos valores custeados com recursos oriundos de transferências dos demais entes federativos para a União destinados à 	execução direta de obras e serviços de engenharia;</h5>
+ <h5>VI - as despesas para cumprimento do disposto no § 20 do art. 100 da 	Constituição Federal e no § 3º do art. 107-A 	do Ato das Disposições Constitucionais Transitórias;</h5>
+ <h5>VII - as despesas para cumprimento do disposto nos §§ 11 e 21 do art. 100 da 	Constituição Federal ;</h5>
+ <h5>VIII - as despesas não recorrentes da Justiça Eleitoral com a realização de eleições;</h5>
+ <h5>IX - as transferências legais estabelecidas nas alíneas a e b do inciso II do caput do art. 39 da Lei n° 11.284, de 2 de março de 2006 , e no art. 17 da Lei n° 13.240, de 30 de dezembro de 2015 .</h5>
+ <h4>§ 3º Os limites estabelecidos no inciso IV do caput do art. 51 , no inciso XIII do caput do art. 52 , no § 1º do art. 99 , no § 3º do art. 127 e no § 3º do art. 134 da 	Constituição Federal não poderão ser superiores aos estabelecidos neste artigo.</h4>
+ <h4>§ 4º A mensagem que encaminhar o projeto de lei orçamentária anual demonstrará os valores máximos de programação compatíveis com os limites individualizados calculados na forma prevista no § 1º deste artigo.</h4>
+ <h4>§ 5º As despesas primárias autorizadas na lei orçamentária anual e os respectivos créditos suplementares e especiais, inclusive reabertos, sujeitos aos limites de que trata este artigo não poderão exceder aos valores máximos demonstrados nos termos do § 4º deste artigo.</h4>
+ <h4>§ 6º O cálculo do limite do Poder Executivo federal de que trata o inciso I do § 1º deste artigo deverá considerar a despesa anualizada das transferências aos fundos de saúde dos Estados, do Distrito Federal e dos Municípios, na forma de assistência financeira complementar para cumprimento dos pisos nacionais salariais para o enfermeiro, o técnico de enfermagem, o auxiliar de enfermagem e a parteira, de acordo com o disposto nos §§ 12 , 13 , 14 e 15 do art. 198 da 	Constituição Federal , vedada a dupla contabilização dos mesmos valores.</h4>
+ <h4>§ 7º Os limites de pagamento e de movimentação financeira não poderão ultrapassar os limites orçamentários de que trata o caput deste artigo, exceto quando as estimativas de receitas e despesas durante o exercício indicarem que não haverá comprometimento na obtenção da meta de resultado primário da União, observados os intervalos de tolerância de que trata o inciso IV do § 5º do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).</h4>
+ <h4>§ 8º Respeitado o somatório em cada um dos incisos de II a 	IV do caput deste artigo, a lei de diretrizes orçamentárias poderá dispor sobre a compensação entre os limites individualizados dos órgãos referidos em cada inciso.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <h3>DA 	CORREÇÃO DO LIMITE DE CRESCIMENTO DA DESPESA</h3>
+ <h3>Art. 4º Os limites individualizados a que se refere o art. 3º desta Lei Complementar serão corrigidos a cada exercício pela variação acumulada do Índice Nacional de Preços ao Consumidor Amplo 	(IPCA), publicado pela Fundação Instituto Brasileiro de Geografia e 	Estatística (IBGE), ou de outro índice que vier a substituí-lo, considerados os valores apurados no período de 12 (doze) meses encerrado em junho do exercício anterior ao que se refere a lei orçamentária anual, acrescidos da variação real da despesa, calculada nos termos do art. 5º desta Lei 	Complementar.</h3>
+ <h4>§ 1º O resultado da diferença entre a correção calculada com base na variação acumulada do IPCA, ou do índice que vier a substituí-lo, 	nos termos do caput deste artigo, e o valor apurado em 12 (doze) meses ao final do exercício poderá 	ser utilizado para ampliar o limite autorizado para o Poder Executivo na lei orçamentária anual, por meio de crédito, quando necessário à suplementação de despesas, nos termos da lei de diretrizes orçamentárias e das leis orçamentárias anuais, observado que a ampliação não se incorporará à base de cálculo dos exercícios seguintes.</h4>
+ <h4>§ 2º A proibição de se incorporar a ampliação à base de cálculo de que trata o § 1º deste artigo não se aplica aos créditos abertos em 2024.</h4>
+ <h3>Art. 5º A variação real dos limites de despesa primária de que trata o art. 3º desta Lei Complementar será 	cumulativa e ficará limitada, em relação à variação real da receita primária, apurada na forma do § 2º deste artigo, às seguintes proporções:</h3>
+ <h5>I - 70% (setenta por cento), caso a meta de resultado primário apurada no exercício anterior ao da elaboração da lei orçamentária anual tenha sido cumprida, observados os intervalos de tolerância de que trata o inciso IV do § 5º do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal); ou</h5>
+ <h5>II - 50% (cinquenta por cento), caso a meta de resultado primário apurada no exercício anterior ao da elaboração da lei orçamentária anual não tenha sido cumprida, observados os intervalos de tolerância de que trata o inciso IV do § 5º do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).</h5>
+ <h4>§ 1º O crescimento real dos limites da despesa primária, nos casos previstos nos incisos I e II do caput deste artigo, não será inferior a 0,6% a.a. (seis décimos por cento ao ano) nem superior a 2,5% a.a. (dois inteiros e cinco décimos por cento ao ano).</h4>
+ <h4>§ 2º Para os fins do disposto neste artigo, será considerada a receita, na forma a ser regulamentada em ato do Ministro de Estado da 	Fazenda, resultante da receita primária total do Governo Central, deduzidos os seguintes itens:</h4>
+ <h5>I - receitas primárias de concessões e permissões;</h5>
+ <h5>II - receitas primárias de dividendos e participações;</h5>
+ <h5>III - receitas primárias de exploração de recursos naturais;</h5>
+ <h5>IV - receitas primárias de que trata o parágrafo único do art. 121 do Ato das 	Disposições Constitucionais Transitórias ;</h5>
+ <h5>V - receitas de programas especiais de recuperação fiscal, 	destinados a promover a regularização de créditos perante a União, criados a partir da publicação desta Lei Complementar; e</h5>
+ <h5>VI - transferências legais e constitucionais por repartição de receitas primárias, descontadas as decorrentes das receitas de que tratam os incisos I a V deste parágrafo.</h5>
+ <h4>§ 3º Será considerada cumprida a meta se o resultado primário do Governo Central apurado pelo Banco Central do Brasil for superior ao limite inferior do intervalo de tolerância de que trata o inciso 	IV do § 5º do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal), da meta estabelecida para o respectivo exercício, em valores nominais.</h4>
+ <h4>§ 4º A variação real da receita a que se refere o § 2º deste artigo considerará os valores acumulados no período de 12 (doze) meses encerrado em junho do exercício anterior ao que se refere a lei orçamentária anual, descontados da variação acumulada do IPCA, publicado pelo IBGE, ou de outro índice que vier a substituí-lo, apurada no mesmo período.</h4>
+ <h3>Art. 5º-A. O crescimento anual de despesa anualizada sujeita ao limite de que trata o inciso I do caput do art. 3º, 	decorrente de criação ou prorrogação de benefícios da seguridade social pela 	União, fica limitado pelas regras de correção do limite de crescimento da despesa previstas nos arts. 4º e 5º desta Lei Complementar. (Incluído pela Lei Complementar nº 211, de 2024)</h3>
+ <h2>CAPÍTULO V</h2>
+ <h3>DAS 	MEDIDAS DE AJUSTE FISCAL</h3>
+ <h3>Art. 6º Caso o resultado primário do 	Governo Central apurado, relativo ao exercício anterior, seja menor que o limite inferior do intervalo de tolerância da meta, de que trata o inciso IV 	do § 5º do art. 4º da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de 	Responsabilidade Fiscal), sem prejuízo da aplicação da redução do limite nos termos do inciso II do caput do art. 5º desta Lei Complementar e de outras medidas, 	aplicam-se imediatamente, até a próxima apuração anual, com fundamento no parágrafo único do art. 163 da Constituição Federal , as vedações previstas nos incisos II , III e VI a X do art. 167-A 	da Constituição Federal.</h3>
+ <h4>§ 1º Caso o resultado de que trata o caput deste artigo seja, pelo segundo ano consecutivo, menor que o limite inferior do intervalo de tolerância da meta, aplicam-se, 	imediatamente, enquanto perdurar o descumprimento, as vedações previstas nos incisos I a X do art. 167-A da Constituição Federal .</h4>
+ <h4>§ 2º Nas hipóteses deste artigo, o Presidente da República poderá enviar mensagem ao Congresso Nacional acompanhada de projeto de lei complementar que proponha a suspensão parcial ou a gradação das vedações previstas neste artigo, demonstrando que o impacto e a duração das medidas adotadas serão suficientes para compensar a diferença havida entre o resultado primário apurado de que trata o caput deste artigo e o limite inferior do intervalo de tolerância.</h4>
+ <h4>§ 3º Na aplicação das medidas de ajuste fiscal de que trata este artigo, a vedação prevista no inciso VIII do caput do art. 167-A da Constituição Federal não se aplica aos reajustes do salário mínimo decorrentes das diretrizes instituídas em lei de valorização do salário mínimo.</h4>
+ <h3>Art. 6º-A. Em caso de apuração de déficit primário do 	Governo Central, nos termos do § 4º do art. 2º desta Lei Complementar, a partir do exercício de 2025, ficam vedadas, no exercício subsequente ao da apuração, e até a constatação de superávit primário anual: (Incluído pela Lei Complementar nº 211, de 2024)</h3>
+ <h5>I - a promulgação de lei que conceda, amplie ou prorrogue incentivo ou benefício de natureza tributária; e (Incluído pela Lei Complementar nº 211, de 2024)</h5>
+ <h5>II - até 2030, no projeto de lei orçamentária anual e na lei orçamentária anual, 	a programação de crescimento anual real do montante da despesa de pessoal e de encargos com pessoal de cada um dos Poderes ou órgãos autônomos acima do 	índice inferior de que trata o § 1º do art. 5º desta Lei Complementar, 	excluídos os montantes concedidos por força de sentença judicial. (Incluído pela Lei Complementar nº 211, de 2024)</h5>
+ <h4>Parágrafo único. Fica autorizado o Poder Executivo federal a não aplicar as vedações de que trata o caput deste artigo na hipótese de ocorrência de calamidade pública reconhecida pelo Congresso Nacional, nos termos do art. 65 da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de 	Responsabilidade Fiscal). (Incluído pela Lei Complementar nº 211, de 2024)</h4>
+ <h3>Art. 6º-B. A partir do projeto de lei orçamentária de 	2027, se verificado que as despesas discricionárias totais tenham redução nominal, na comparação do realizado no exercício anterior com o imediatamente antecedente, ficam vedadas, no exercício de vigência da respectiva lei orçamentária, e até que as despesas discricionárias totais voltem a ter crescimento nominal: (Incluído pela Lei Complementar nº 211, de 2024)</h3>
+ <h5>I - a promulgação de lei que conceda, amplie ou prorrogue incentivo ou benefício de natureza tributária; e (Incluído pela Lei Complementar nº 211, de 2024)</h5>
+ <h5>II - até 2030, no projeto de lei orçamentária anual e na lei orçamentária anual, 	a programação de crescimento anual real do montante da despesa de pessoal e de encargos com pessoal de cada um dos Poderes ou órgãos autônomos acima do 	índice inferior de que trata o § 1º do art. 5º desta Lei Complementar, 	excluídos os montantes concedidos por força de sentença judicial. (Incluído pela Lei Complementar nº 211, de 2024)</h5>
+ <h3>Art. 7º Não configura infração à Lei 	Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal), 	o descumprimento do limite inferior da meta de resultado primário, 	relativamente ao agente responsável, desde que:</h3>
+ <h5>I - tenha adotado, no âmbito de sua competência, as medidas de limitação de empenho e pagamento, preservado o nível mínimo de despesas discricionárias necessárias ao funcionamento regular da administração pública; e</h5>
+ <h5>II – não tenha ordenado ou autorizado medida em desacordo com as vedações previstas nos arts. 6º e 8º desta Lei Complementar.</h5>
+ <h4>§ 1º Na hipótese de estado de calamidade pública de âmbito nacional, aplica-se o disposto no art. 167-B da Constituição Federal e no art. 65 da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de 	Responsabilidade Fiscal).</h4>
+ <h4>§ 2º O nível mínimo de despesas discricionárias necessárias ao funcionamento regular da administração pública é de 75% (setenta e cinco por cento) do valor autorizado na respectiva lei orçamentária anual.</h4>
+ <h4>§ 3º (VETADO).</h4>
+ <h3>Art. 8º Quando verificado, relativamente ao exercício financeiro anterior, que, no âmbito das despesas sujeitas aos limites de que trata o art. 3º desta Lei Complementar, a proporção da despesa primária obrigatória em relação à despesa primária total foi superior a 95% (noventa e cinco por cento), aplicar-se-ão imediatamente as vedações previstas nos incisos I a IX do caput do art. 167-A da Constituição Federal.</h3>
+ <h4>§ 1º O Presidente da República poderá enviar mensagem ao 	Congresso Nacional acompanhada de projeto de lei complementar que proponha a suspensão parcial ou a gradação das vedações previstas neste artigo, 	demonstrando que o impacto e a duração das medidas adotadas serão suficientes para a correção do desvio apurado.</h4>
+ <h4>§ 2º Na aplicação das medidas de ajuste de que trata este artigo, a vedação prevista no inciso 	VIII do caput do art. 167-A da Constituição Federal não se aplica aos reajustes do salário mínimo decorrentes das diretrizes instituídas em lei de valorização do salário mínimo.</h4>
+ <h2>CAPÍTULO VI</h2>
+ <h3>DO 	EXCEDENTE DE RESULTADO PRIMÁRIO E DOS INVESTIMENTOS</h3>
+ <h3>Art. 9º Caso o resultado primário do 	Governo Central apurado exceda ao limite superior do intervalo de tolerância de que trata o inciso IV do § 5º do art. 4º da Lei Complementar nº 101, de 4 	de maio de 2000 (Lei de Responsabilidade Fiscal), o Poder Executivo federal poderá ampliar as dotações orçamentárias, em valor equivalente a até 70% 	(setenta por cento) do montante excedente, por meio de crédito adicional:</h3>
+ <h5>I - para investimentos, prioritariamente para obras inacabadas ou em andamento, nos termos do § 12 do art. 165 da Constituição 	Federal e do art. 45 da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal);</h5>
+ <h5>II - para inversões financeiras previstas no inciso II do § 	1º do art. 10 desta Lei Complementar.</h5>
+ <h4>§ 1º O disposto no caput deste artigo não se aplica quando for apurado déficit no resultado primário.</h4>
+ <h4>§ 2º A ampliação das dotações orçamentárias de que trata o caput deste artigo não será contabilizada no valor mínimo de que trata o art. 10 desta Lei Complementar.</h4>
+ <h4>§ 3º A ampliação das dotações orçamentárias de que trata o caput deste artigo não poderá ultrapassar, em qualquer hipótese, 	o montante de até 0,25 p.p. (vinte e cinco centésimos ponto percentual) do 	PIB do exercício anterior.</h4>
+ <h3>Art. 10. A programação destinada a investimentos constante do projeto e da lei orçamentária anual não será 	inferior ao montante equivalente a 0,6% (seis décimos por cento) do PIB 	estimado no respectivo projeto.</h3>
+ <h4>§ 1º Os investimentos a que se refere o caput deste artigo correspondem àqueles classificados no Grupo de 	Natureza de Despesa (GND):</h4>
+ <h5>I - nº 4 – investimentos, ou a classificação que vier a substituí-lo; ou</h5>
+ <h5>II - nº 5 – inversões financeiras, ou a classificação que vier a substituí-lo, quando a despesa se destinar a programas habitacionais que incluam em seus objetivos a provisão subsidiada ou financiada de unidades habitacionais novas ou usadas em áreas urbanas ou rurais.</h5>
+ <h4>§ 2º Nos exercícios subsequentes, para a apuração do montante estabelecido no caput serão utilizadas as mesmas classificações indicadas no § 1º deste artigo ou outras que venham a substituí-las.</h4>
+ <h2>CAPÍTULO VII</h2>
+ <h3>DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h3>
+ <h3>Art. 11. A Lei Complementar nº 101, de 4 	de maio de 2000 (Lei de Responsabilidade Fiscal), passa a vigorar com as seguintes alterações:</h3>
+ <p>“</p>
+ <h3>Art. 4º ...........................................................................................................................</h3>
+ <p>...................................................................................................................................................</p>
+ <h4>§ 2º ................................................................................................................................</h4>
+ <p>...................................................................................................................................................</p>
+ <h5>VI – quadro demonstrativo do cálculo da meta do resultado primário de que trata o § 1º deste artigo, que evidencie os principais agregados de receitas e despesas, os resultados, comparando-os com os valores programados para o exercício em curso e os realizados nos 2 (dois) exercícios anteriores, e as estimativas para o exercício a que se refere a lei de diretrizes orçamentárias e para os subsequentes.</h5>
+ <p>...................................................................................................................................................</p>
+ <h4>§ 5º No caso da União, o Anexo de Metas Fiscais do projeto de lei de diretrizes orçamentárias conterá também:</h4>
+ <h5>I - as metas anuais para o exercício a que se referir e para os 3 (três) seguintes, com o objetivo de garantir sustentabilidade à trajetória da dívida pública;</h5>
+ <h5>II – o marco fiscal de médio prazo, com projeções para os principais agregados fiscais que compõem os cenários de referência, distinguindo-se as despesas primárias das financeiras e as obrigatórias daquelas discricionárias;</h5>
+ <h5>III - o efeito esperado e a compatibilidade, no período de 10 (dez) anos, do cumprimento das metas de resultado primário sobre a trajetória de convergência da dívida pública, evidenciando o nível de resultados fiscais consistentes com a estabilização da Dívida Bruta do Governo Geral (DBGG) em relação ao Produto Interno Bruto (PIB);</h5>
+ <h5>IV - os intervalos de tolerância para verificação do cumprimento das metas anuais de resultado primário, convertido em valores correntes, de menos 0,25 p.p. (vinte e cinco centésimos ponto percentual) e de mais 0,25 p.p. (vinte e cinco centésimos ponto percentual) do PIB previsto no respectivo projeto de lei de diretrizes orçamentárias;</h5>
+ <h5>V - os limites e os parâmetros orçamentários dos Poderes e órgãos autônomos compatíveis com as disposições estabelecidas na lei complementar prevista no inciso VIII do caput do art. 163 da Constituição Federal e no art. 6º da Emenda Constitucional nº 126, de 21 de dezembro de 2022 ;</h5>
+ <h5>VI – a estimativa do impacto fiscal, quando couber, das recomendações resultantes da avaliação das políticas públicas previstas no § 16 do art. 37 da Constituição Federal .</h5>
+ <h4>§ 6º Os Estados, o Distrito Federal e os Municípios poderão adotar, total ou parcialmente, no que couber, o disposto no § 5º deste artigo.</h4>
+ <h4>§ 7º (VETADO).” (NR)</h4>
+ <h4>§ 7º A lei de diretrizes orçamentárias não poderá dispor sobre a exclusão de quaisquer despesas primárias da apuração da meta de resultado primário dos orçamentos fiscal e da seguridade social.” (NR)”</h4>
+ <p>“</p>
+ <h3>Art. 9º ...........................................................................................................................</h3>
+ <p>..........................................................................................................</p>
+ <h4>§ 4º Até o final dos meses de maio, setembro e fevereiro, o Ministro ou Secretário de Estado da Fazenda demonstrará e avaliará o cumprimento das metas fiscais de cada quadrimestre e a trajetória da dívida, em audiência pública na comissão referida no § 1º do art. 166 da Constituição Federal ou conjunta com as comissões temáticas do Congresso Nacional ou equivalente nas Casas Legislativas estaduais e municipais.</h4>
+ <p>................................................................................................. ” (NR)</p>
+ <h3>Art. 12. Para o exercício financeiro de 	2023, os limites individualizados para as despesas primárias e demais operações que afetam o resultado primário, bem como suas respectivas exceções, corresponderão àqueles vigentes no momento da publicação da Lei n° 14.535, de 17 de janeiro de 2023 , relativas ao respectivo Poder ou órgão.</h3>
+ <h4>§ 1º É vedada a abertura de crédito suplementar ou especial que exceda ao limite total autorizado de despesa primária sujeita aos limites de que trata este artigo.</h4>
+ <h4>§ 2º Para fins de verificação do cumprimento dos limites de que trata este artigo, serão consideradas as despesas primárias pagas, 	incluídos os restos a pagar pagos e as demais operações que afetem o resultado primário no exercício.</h4>
+ <h3>Art. 13. Os precatórios decorrentes de demandas relativas à complementação da União aos Estados e aos Municípios por conta do Fundo de Manutenção e Desenvolvimento do Ensino Fundamental e de Valorização do Magistério (Fundef), nos termos do art. 4º da Emenda 	Constitucional nº 114, de 16 de dezembro de 2021 , não serão incluídos na base de cálculo e no limite do Poder Executivo federal estabelecido no art. 3º desta Lei Complementar.</h3>
+ <h3>Art. 14. No exercício financeiro de 	2024, o limite do Poder Executivo poderá ser ampliado por crédito suplementar, após a segunda avaliação bimestral de receitas e despesas primárias, em montante decorrente da aplicação de índice equivalente à 	diferença entre 70% (setenta por cento) do crescimento real da receita para 	2024 estimado nessa avaliação em comparação com a receita arrecadada em 2023 	e o índice calculado para fins do crescimento real do limite da despesa primária do Poder Executivo estabelecido na lei orçamentária anual para 	2024, calculados nos termos do inciso I do § 1º do art. 3º, respeitado o limite superior de que trata o § 1º do art. 5º desta Lei Complementar, 	observado que, ao final do exercício financeiro de 2024, se o montante ampliado da despesa primária for superior ao calculado com base em 70% 	(setenta por cento) do crescimento real de receita primária efetivamente realizada, a diferença será reduzida da base de cálculo e subtraída do limite do exercício financeiro de 2025.</h3>
+ <h3>Art. 14. No exercício financeiro de 2024, fica autorizada a abertura de crédito suplementar por ato do Poder Executivo para ampliar o limite de que trata o inciso I do caput e o inciso II do § 1º do art. 3º, após a primeira avaliação bimestral de receitas e despesas primárias, no montante decorrente da aplicação de índice equivalente à diferença entre 70% (setenta por cento) do crescimento real da receita para 2024 estimado nessa avaliação em comparação com a receita arrecadada em 2023 e o índice calculado para fins do crescimento real do limite da despesa primária do Poder Executivo estabelecido na lei orçamentária anual para 2024, calculados nos termos do inciso I do § 1º do art. 3º, respeitado o limite superior de que trata o § 1º do art. 5º desta Lei Complementar, observado que, ao final do exercício financeiro de 2024, se o montante ampliado da despesa primária for superior ao calculado com base em 70% (setenta por cento) do crescimento real de receita primária efetivamente realizada, a diferença será reduzida da base de cálculo e subtraída do limite do exercício financeiro de 2025. (Redação dada pela Lei 	Complementar nº 207, de 2024)</h3>
+ <h3>Art. 15. Esta Lei Complementar entra em vigor:</h3>
+ <h5>I - em 1º de janeiro de 2024, quanto ao art. 11; e</h5>
+ <h5>II - na data de sua publicação, quanto aos demais dispositivos.</h5>
+ <p>Brasília, 30 de agosto de 2023; 202o da Independência e 	135o da Repúblic a.</p>
+ <h3>LUIZ INÁCIO LULA DA SILVA</h3>
+ <p>Fernando Haddad</p>
+ <p>Simone Nassar Tebet</p>
+ <p>Este texto não substitui o publicado no DOU de 31.8.2023.</p>
+ <p>*</p>
+ <p>LEI COMPLEMENTAR Nº 200, DE 30 DE AGOSTO DE 2023</p>
+ <p>Institui regime fiscal sustentável para garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico, com fundamento no art. 6º da Emenda Constitucional nº 126, de 21 de dezembro de 2022, e no inciso VIII do caput e no parágrafo único do art. 163 da Constituição Federal; e altera a Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).</p>
+ <p>O PRESIDENTE DA REPÚBLICA, Faço saber que o Congresso Nacional decreta e eu promulgo, nos termos do parágrafo 5º do art. 66 da Constituição Federal, as seguintes partes vetadas da Lei Complementar Nº 200, de 30 	de agosto de 2023:</p>
+ <p>“</p>
+ <h3>Art. 11 A Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade 	Fiscal), passa a vigorar com as seguintes alterações:</h3>
+ <p>‘</p>
+ <h3>Art. 4º 	..........................................................................................................................</h3>
+ <p>.............................................................................................................................................</p>
+ <h4>§ 7º A 	lei de diretrizes orçamentárias não poderá dispor sobre a exclusão de quaisquer despesas primárias da apuração da meta de resultado primário dos orçamentos fiscal e da seguridade social.” (NR)”</h4>
+ <p>Brasília, 22 de dezembro de 2023; 202º da Independência e 	135º da República.</p>
+ <p>Este texto não substitui o publicado no DOU de 22.12.2023 - Edição extra.</p>
+ <p>Institui regime fiscal sustentável para garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico, com fundamento no art. 6º da Emenda Constitucional nº 126, de 21 de dezembro de</p>
+ <p>2022, e no inciso VIII docapute no parágrafo único do art. 163 da</p>
+ <p>Constituição Federal; e altera a Lei Complementar nº 101, de 4 de maio de 2000</p>
+ <p>(Lei de Responsabilidade Fiscal).</p>
+ <p>Institui regime fiscal sustentável para garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico, com fundamento no art. 6º da Emenda Constitucional nº 126, de 21 de dezembro de</p>
+ <p>2022, e no inciso VIII docapute no parágrafo único do art. 163 da</p>
+ <p>Constituição Federal; e altera a Lei Complementar nº 101, de 4 de maio de 2000</p>
+ <p>(Lei de Responsabilidade Fiscal).</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/LCP/Lcp200.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

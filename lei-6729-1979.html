@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.729, DE 28 DE NOVEMBRO DE 1979 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1979" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.729, DE 28 DE NOVEMBRO DE 1979</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 19:59:18 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L6729.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 30.428 caracteres | espelho: 30.110 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.729, DE 28 DE NOVEMBRO DE 1979.</p>
+ <p>Dispõe sobre a concessão comercial entre produtores e distribuidores de veículos automotores de via terrestre.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º A distribuição de veículos automotores, de via terrestre, efetivar-se-á através de concessão comercial entre produtores e distribuidores disciplinada por esta Lei e, no que não a contrariem, pelas convenções nela previstas e disposições contratuais.</h3>
+ <h3>Art. 2º Considera-se:</h3>
+ <h5>I - Produtor, a empresa industrial que realiza a fabricação ou montagem de veículos automotores;</h5>
+ <p>Il - distribuidor, a empresa comercial pertencente à respectiva categoria econômica, que realiza a comercialização de veículos automotores, implementos e componentes novos, presta assistência técnica a esses produtos e exerce outras funções pertinentes à atividade;</p>
+ <h5>III - veículo automotor, de via terrestre, o automóvel, caminhão, ônibus, trator, motocicleta e similares;</h5>
+ <h5>IV - implemento, a máquina ou petrecho que se acopla a veículo automotor, na interação de suas finalidades;</h5>
+ <h5>V - componente, a peça ou conjunto integrante de veículo automotor ou implemento de série;</h5>
+ <h5>VI - máquina agrícola, a coineitadeira, a debulhadora, a trilhadeira e demais aparelhos similares destinados à agricultura, automotrizes ou acionados por trator ou outra fonte externa;</h5>
+ <h5>VII - implemento agrícola, o arado, a grade, a roçadeira e demais petrechos destinados à agricultura.</h5>
+ <h4>§ 1º Para os fins desta Lei:</h4>
+ <h6>a) intitula-se também o produtor de concedente e o distribuidor de concessionário;</h6>
+ <h6>b) entende-se por trator aquele destinado a uso agrícola, capaz também de servir a outros fins, excluídos os tratores de esteira, as motoniveladoras e as máquinas rodoviárias para outras destinações;</h6>
+ <h6>c) caracterizar-se-ão as diversas classes de veículos automotores pelas categorias econômicas de produtores e distribuidores, e os produtos, diferenciados em cada marca, pelo produtor e sua rede de distribuição, em conjunto.</h6>
+ <h4>§ 2º Excetuam-se da presente Lei os implementos e máquinas agrícolas caracterizados neste artigo, incisos VI e VII, que não sejam fabricados ou fornecidos por produtor definido no inciso I.</h4>
+ <h3>Art. 2° Consideram-se: (Redação dada pela Lei n° 8.132, de 1990)</h3>
+ <h5>I - produtor, a empresa industrial que realiza a fabricação ou montagem de veículos automotores; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>II - distribuidor, a empresa comercial pertencente à respectiva categoria econômica, que realiza a comercialização de veículos automotores, implementos e componentes novos, presta assistência técnica a esses produtos e exerce outras funções pertinentes à atividade; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>III - veículo automotor, de via terrestre, o automóvel, caminhão, ônibus, trator, motocicleta e similares; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>IV - implemento, a máquina ou petrecho que se acopla o veículo automotor, na interação de suas finalidades; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>V - componente, a peça ou conjunto integrante do veículo automotor ou implemento de série; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>VI - máquina agrícola, a colheitadeira, a debulhadora, a trilhadeira e demais aparelhos similares destinados à agricultura, automotrizes ou acionados por trator ou outra fonte externa; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>VII - implemento agrícola, o arado, a grade, a roçadeira e demais petrechos destinados à agricultura; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>VIII - serviço autorizado, a empresa comercial que presta serviços de assistência a proprietários de veículos automotores, assim como a empresa que comercializa peças e componentes. (Incluído pela Lei n° 8.132, de 1990)</h5>
+ <h4>§ 1° Para os fins desta lei: (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h6>a) intitula-se também o produtor de concedente e o distribuidor de concessionário; (Redação dada pela Lei n° 8.132, de 1990)</h6>
+ <h6>b) entende-se por trator aquele destinado a uso agrícola, capaz também de servir a outros fins, excluídos os tratores de esteira, as motoniveladoras e as máquinas rodoviárias para outras destinações; (Redação dada pela Lei n° 8.132, de 1990)</h6>
+ <h6>c) caracterizar-se-ão as diversas classes de veículos automotores pelas categorias econômicas de produtores e distribuidores, e os produtos, diferenciados em cada marca, pelo produtor e sua rede de distribuição, em conjunto. (Redação dada pela Lei n° 8.132, de 	1990)</h6>
+ <h4>§ 2° Excetuam-se da presente lei os implementos e máquinas agrícolas caracterizados neste artigo, incisos VI e VII, que não sejam fabricados por produtor definido no inciso I. (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h3>Art. 3º Constitui objeto de concessão:</h3>
+ <h5>I - a comercialização de veículos automotores, implementos e componentes fabricados ou fornecidos pelo produtor;</h5>
+ <p>Il - a prestação de assistência técnica a esses produtos, inclusive quanto ao seu atendimento ou revisão;</p>
+ <h5>III - o uso gratuito de marca do concedente, como identificação.</h5>
+ <h4>§ 1º A concessão poderá, em cada caso:</h4>
+ <h6>a) ser estabelecida para uma ou mais classes de veículos automotores;</h6>
+ <h6>b) vedar a comercialização de veículos automotores novos fabricados ou fornecidos por outro produtor.</h6>
+ <h4>§ 2º Quanto aos produtos lançados pelo concedente:</h4>
+ <h6>a) se forem da mesma classe daqueles compreendidos na concessão, ficarão nesta incluídos automaticamente;</h6>
+ <h6>b) se forem de classe diversa, o concessionário terá preferência em comercializá-los, se atender às condições prescritas pelo concedente para esse fim.</h6>
+ <h4>§ 3º É facultado ao concessionário participar das modalidades auxiliares de venda que o concedente promover ou adotar, tais como consórcios, sorteios, arrendamentos mercantis e planos de financiamento.</h4>
+ <h3>Art. 4º Constitui direito do concessionário também a comercialização de:</h3>
+ <h5>I - implementos e componentes novos produzidos ou fornecidos por terceiros, respeitada, quanto aos componentes, a disposição do art. 8º;</h5>
+ <h5>II - mercadorias de qualquer natureza que se destinem a veículo automotor, implemento ou à atividade da concessão;</h5>
+ <h5>III - veículos automotores e implementos usados de qualquer marca.</h5>
+ <h4>Parágrafo único. Poderá o concessionário ainda comercializar outros bens e prestar outros serviços, compatíveis com a concessão.</h4>
+ <h3>Art. 5º São inerentes à concessão:</h3>
+ <h5>I - área demarcada para o exercício das atividades do concessionário, que não poderá operar além dos seus limites;</h5>
+ <h5>II - distâncias mínimas entre estabelecimentos de concessionários da mesma rede, fixadas segundo critérios de potencial de mercado.</h5>
+ <h4>§ 1º A área demarcada poderá conter mais de um concessionário da mesma rede.</h4>
+ <h4>§ 2º Na eventualidade de venda de veículo automotor ou implementos novos a comprador domiciliado em outra área demarcada, o concessionário que a tiver efetuado destinará parte da margem de comercialização aos concessionários da área do domicílio do adquirente.</h4>
+ <h4>§ 3º Por deliberação do concedente e sua rede de distribuição, o concessionário poderá efetuar a venda de componentes novos fora de sua área demarcada.</h4>
+ <h4>§ 4º Poderá o concessionário abrir filiais, agências ou dependências secundárias, circunscritas às distâncias mínimas entre o estabelecimento de concessionários e atendidas as condições objeto de ajuste entre o produtor e sua rede de distribuição.</h4>
+ <h3>Art. 5° São inerentes à concessão: (Redação dada pela Lei n° 8.132, de 1990)</h3>
+ <h5>I - área operacional de responsabilidade do concessionário para o exercício de suas atividades; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>II - distâncias mínimas entre estabelecimentos de concessionários da mesma rede, fixadas segundo critérios de potencial de mercado. (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h4>§ 1° A área poderá conter mais de um concessionário da mesma rede. (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h4>§ 2° O concessionário obriga-se à comercialização de veículos automotores, implementos, componentes e máquinas agrícolas, de via terrestre, e à prestação de serviços inerentes aos mesmos, nas condições estabelecidas no contrato de concessão comercial, sendo-lhe defesa a prática dessas atividades, diretamente ou por intermédio de prepostos, fora de sua área demarcada. (Redação dada pela Lei n° 8.132, de 	1990)</h4>
+ <h4>§ 3° O consumidor, à sua livre escolha, poderá proceder à aquisição dos bens e serviços a que se refere esta lei em qualquer concessionário.</h4>
+ <h4>§ 4° Em convenção de marca serão fixados os critérios e as condições para ressarcimento da concessionária ou serviço autorizado que prestar os serviços de manutenção obrigatórios pela garantia do fabricante, vedada qualquer disposição de limite à faculdade prevista no parágrafo anterior. (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h3>Art. 6º É assegurada ao concedente a contratação de nova concessão:</h3>
+ <h5>I - se o mercado de veículos automotores novos da marca, na área demarcada, apresentar as condições justificativas da contratação que tenham sido ajustadas entre o produtor e sua rede de distribuição;</h5>
+ <h5>II - pela necessidade de prover vaga de concessão extinta.</h5>
+ <h4>§ 1º Na hipótese de inciso I deste artigo, o concedente dará aos respectivos concessionários da área demarcada direito de preferência quanto à nova concessão, o qual caducará pelo seu não exercício no prazo de cento e oitenta dias, contado da notificação para esse fim.</h4>
+ <h4>§ 2º A nova contratação não se poderá estabelecer em condições que de algum modo prejudiquem os concessionários da marca.</h4>
+ <h3>Art. 6° É assegurada ao concedente a contratação de nova concessão: (Redação dada pela Lei n° 8.132, de 1990)</h3>
+ <h5>I - se o mercado de veículos automotores novos da marca, na área delimitada, apresentar as condições justificadoras da contratação que tenham sido ajustadas entre o produtor e sua rede de distribuição; (Redação dada pela Lei n° 8.132, de 1990)</h5>
+ <h5>II - pela necessidade de prover vaga de concessão extinta. (Redação dada pela Lei n° 8.132, 	de 1990)</h5>
+ <h4>§ 1° Na hipótese do inciso I deste artigo, o concessionário instalado na área concorrerá com os demais interessados, em igualdade de condições. (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h4>§ 2° A nova contratação não se poderá estabelecer em condições que de algum modo prejudiquem os concessionários da marca. (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h3>Art. 7º Compreende-se na concessão a quota de veículos automotores assim estabelecida:</h3>
+ <h5>I - o concedente estimará sua produção destinada ao mercado interno para o período anual subseqüente, por produto diferenciado e consoante a expectativa de mercado da marca;</h5>
+ <h5>II - a quota corresponderá a uma parte da produção estimada, compondo-se de produtos diferenciados, e independentes entre si, inclusive quanto às respectivas quantidades;</h5>
+ <p>Ill - o concedente e o concessionário ajustarão a quota que a este caberá, consoante a respectiva capacidade empresarial e desempenho de comercialização e conforme a capacidade do mercado de sua área demarcada.</p>
+ <h4>§ 1º O ajuste da quota independe dos estoques mantidos pelo concessionário, nos termos da presente Lei.</h4>
+ <h4>§ 2º A quota será revista anualmente, podendo reajustar-se conforme os elementos constantes dos incisos deste artigo e a rotatividade dos estoques do concessionário.</h4>
+ <h4>§ 3º Em seu atendimento, a quota de veículos automotores comportará ajustamentos decorrentes de eventual diferença entre a produção efetiva e a produção estimada.</h4>
+ <h4>§ 4º É facultado incluir na quota os veículos automotores comercializados através das modalidades auxiliares de venda a que se refere o art. 3º, § 3º.</h4>
+ <h3>Art. 8º Integra a concessão o índice de fidelidade de compra de componentes dos veículos automotores pelo objeto, facultado ao concessionário haver de outros fornecedores até um quarto do valor dos componentes que adquirir em cada ano.</h3>
+ <h4>Parágrafo único. Não estão sujeitas ao índice de fidelidade de compra ao concedente as aquisições que o concessionário fizer:</h4>
+ <h6>a) de acessórios para veículos automotores;</h6>
+ <h6>b) de implementos de qualquer natureza e máquinas agrícolas.</h6>
+ <h3>Art. 8° Integra a concessão o índice de fidelidade de compra de componentes dos veículos automotores que dela faz parte, podendo a convenção de marca estabelecer percentuais de aquisição obrigatória pelos concessionários. (Redação dada pela Lei n° 8.132, 	de 1990)</h3>
+ <h4>Parágrafo único. Não estão sujeitas ao índice de fidelidade de compra ao concedente as aquisições que o concessionário fizer: (Redação dada pela Lei n° 8.132, de 1990)</h4>
+ <h6>a) de acessórios para veículos automotores (Redação dada pela Lei n° 8.132, de 	1990)</h6>
+ <h6>b) de implementos de qualquer natureza e máquinas agrícolas. (Redação dada pela Lei n° 8.132, de 1990)</h6>
+ <h3>Art 9º Os pedidos do concessionário e os fornecimentos do concedente deverão corresponder à quota de veículos automotores e enquadrar-se no índice de fidelidade de componentes.</h3>
+ <h4>§ 1º Os fornecimentos do concedente se circunscreverão a pedidos formulados por escrito e respeitarão os limites mencionados no art. 10, §§ 1º e 2º.</h4>
+ <h4>§ 2º O concedente deverá atender ao pedido no prazo fixado e, se não o fizer, poderá o concessionário cancelá-lo.</h4>
+ <h4>§ 3º Se o concedente não atender os pedidos de componentes, o concessionário ficará desobrigado do índice de fidelidade a que se refere o art. 8º, na proporção do desatendimento verificado.</h4>
+ <h3>Art. 10. O concedente poderá exigir do concessionário a manutenção de estoque proporcional à rotatividade dos produtos novos, objeto da concessão, e adequado à natureza dos clientes do estabelecimento, respeitados os limites prescritos nos §§ 1º e 2º seguintes.</h3>
+ <h4>§ 1º É facultado ao concessionário limitar seu estoque:</h4>
+ <h6>a) de veículos automotores em geral a sessenta e cinco por cento e de caminhões em particular a trinta por cento da atribuição mensal das respectivas quotas anuais por produto diferenciado, ressalvado o disposto na alínea b seguinte;</h6>
+ <h6>b) de tratores, a quatro por cento da quota anual de cada produto diferenciado;</h6>
+ <h6>c) de implementos, a cinco por cento do valor das respectivas vendas que houver efetuado nos últimos doze meses;</h6>
+ <h6>d) de componentes, o valor que não ultrapasse o preço pelo qual adquiriu aqueles que vendeu a varejo nos últimos três meses.</h6>
+ <h4>§ 2º Para efeito dos limites previstos no parágrafo anterior, em suas alíneas a e b , a cada seis meses será comparada a quota com a realidade do mercado do concessionário, segundo a comercialização por este efetuada, reduzindo-se os referidos limites na proporção de eventual diferença a menor das vendas em relação às atribuições mensais, consoante os critérios estipulados entre produtor e sua rede de distribuição.</h4>
+ <h4>§ 3º O concedente reparará o concessionário do valor do estoque de componentes que alterar ou deixar de fornecer, mediante sua recompra por preço atualizado à rede de distribuição ou substituição pelo sucedâneo ou por outros indicados pelo concessionário, devendo a reparação dar-se em um ano da ocorrência do fato.</h4>
+ <h3>Art. 11. O pagamento do preço das mercadorias fornecidas pelo concedente não poderá ser exigido, no todo ou em parte, antes do faturamento, salvo ajuste diverso entre o concedente e sua rede de distribuição.</h3>
+ <h4>Parágrafo único. Se o pagamento da mercadoria preceder a sua saída, esta se dará até o sexto dia subseqüente àquele ato.</h4>
+ <h3>Art. 12. O concessionário só poderá realizar a venda de veículos automotores novos diretamente a consumidor, vedada a comercialização para fins de revenda.</h3>
+ <h4>Parágrafo único. Ficam excluídas da disposição deste artigo:</h4>
+ <h6>a) operações entre concessionários da mesma rede de distribuição que, em relação à respectiva quota, não ultrapassem quinze por cento quanto a caminhões e dez por cento quanto aos demais veículos automotores;</h6>
+ <h6>b) vendas que o concessionário destinar ao mercado externo.</h6>
+ <h3>Art. 13. As mercadorias objeto da concessão deverão ser vendidas pelo concessionário ao preço fixado pelo concedente.</h3>
+ <h4>Parágrafo único. A esses preços poderá ser acrescido o valor do frete, seguro e outros encargos variáveis de remessa da mercadoria ao concessionário e deste para o respectivo adquirente.</h4>
+ <h3>Art. 13. É livre o preço de venda do concessionário ao consumidor, relativamente aos bens e serviços objeto da concessão dela decorrentes. (Redação dada pela Lei n° 8.132, 	de 1990)</h3>
+ <p>1° Os valores do frete, seguro e outros encargos variáveis de remessa da mercadoria ao concessionário e deste ao respectivo adquirente deverão ser discriminados, individualmente, nos documentos fiscais pertinentes. (Incluído pela Lei n° 8.132, de 1990)</p>
+ <p>2º Cabe ao concedente fixar o preço de venda aos concessionários, preservando sua uniformidade e condições de pagamento para toda a rede de distribuição. (Incluído pela Lei n° 8.132, de 1990)</p>
+ <p><del>Art. 14 (Revogado pela Lei n° 8.132, de 1990)</del></p>
+ <p><del>Parágrafo único (Revogado pela Lei n° 8.132, de 1990)</del></p>
+ <h3>Art. 15. O concedente poderá efetuar vendas diretas de veículos automotores.</h3>
+ <h5>I - independentemente da atuação ou pedido de concessionário:</h5>
+ <h6>a) à Administração Pública, direta ou indireta, ou ao Corpo Diplomático;</h6>
+ <h6>b) a outros compradores especiais, nos limites que forem previamente ajustados com sua rede de distribuição;</h6>
+ <p>lI - através da rede de distribuição:</p>
+ <h6>a) às pessoas indicadas no inciso I, alínea a , incumbindo o encaminhamento do pedido a concessionário que tenha esta atribuição;</h6>
+ <h6>b) a frotistas de veículos automotores, expressamente caracterizados, cabendo unicamente aos concessionários objetivar vendas desta natureza;</h6>
+ <h6>c) a outros compradores especiais, facultada a qualquer concessionário a apresentação do pedido.</h6>
+ <h4>§ 1º Nas vendas diretas, o concessionário fará jus ao valor da contraprestação relativa aos serviços de revisão que prestar, na hipótese do inciso I, ou ao valor da margem de comercialização correspondente à mercadoria vendida, na hipótese do inciso Il deste artigo.</h4>
+ <h4>§ 2º A incidência das vendas diretas através de concessionário, sobre a respectiva quota de veículos automotores, será estipulada entre o concedente e sua rede de distribuição.</h4>
+ <h3>Art. 16. A concessão compreende ainda o resguardo de integridade da marca e dos interesses coletivos do concedente e da rede de distribuição, ficando vedadas:</h3>
+ <h5>I - prática de atos pelos quais o concedente vincule o concessionário a condições de subordinação econômica, jurídica ou administrativa ou estabeleça interferência na gestão de seus negócios;</h5>
+ <h5>II - exigência entre concedente e concessionário de obrigação que não tenha sido constituída por escrito ou de garantias acima do valor e duração das obrigações contraídas;</h5>
+ <h5>III - diferenciação de tratamento entre concedente e concessionário quanto a encargos financeiros e quanto a prazo de obrigações que se possam equiparar.</h5>
+ <h3>Art. 17. As relações objeto desta Lei serão também reguladas por convenção que, mediante solicitação do produtor ou de qualquer uma das entidades adiante indicadas, deverão ser celebradas com força de lei, entre:</h3>
+ <h5>I - as categorias econômicas de produtores e distribuidores de veículos automotores, cada uma representada pela respectiva entidade civil ou, na falta desta, por outra entidade competente, qualquer delas sempre de âmbito nacional, designadas convenções das categorias econômicas;</h5>
+ <h5>II - cada produtor e a respectiva rede de distribuição, esta através da entidade civil de âmbito nacional que a represente, designadas convenções da marca.</h5>
+ <h4>§ 1º Qualquer dos signatários dos atos referidos neste artigo poderá proceder ao seu registro no Cartório competente do Distrito Federal e à sua publicação no Diário Oficial da União, a fim de valerem contra terceiros em todo território nacional.</h4>
+ <h4>§ 2º Independentemente de convenções, a entidade representativa da categoria econômica ou da rede de distribuição da respectiva marca poderá diligenciar a solução de dúvidas e controvérsias, no que tange às relações entre concedente e concessionário.</h4>
+ <h3>Art. 18. Celebrar-se-ão convenções das categorias econômicas para:</h3>
+ <h5>I - explicitar princípios e normas de interesse dos produtores e distribuidores de veículos automotores;</h5>
+ <p>Il - declarar a entidade civil representativa de rede de distribuição;</p>
+ <h5>III - resolver, por decisão arbitral, as questões que lhe forem submetidas pelo produtor e a entidade representativa da respectiva rede de distribuição;</h5>
+ <h5>IV - disciplinar, por juízo declaratório, assuntos pertinentes às convenções da marca, por solicitação de produtor ou entidade representativa da respectiva rede de distribuição.</h5>
+ <h3>Art. 19. Celebrar-se-ão convenções da marca para estabelecer normas e procedimentos relativos a:</h3>
+ <h5>I - atendimento de veículos automotores em garantia ou revisão (art. 3º, inciso II);</h5>
+ <h5>II - uso gratuito da marca do concedente (art. 3º, inciso IlI);</h5>
+ <h5>III - inclusão na concessão de produtos lançados na sua vigência e modalidades auxiliares de venda (art. 3º § 2º, alínea a ; § 3º);</h5>
+ <h5>IV - Comercialização de outros bens e prestação de outros serviços (art. 4º, parágrafo único);</h5>
+ <h5>V - fixação de área demarcada e distâncias mínimas, abertura de filiais e outros estabelecimentos (art. 5º, incisos I e II; § 4º);</h5>
+ <h5>VI - venda de componentes em área demarcada diversa (art. 5º, § 3º);</h5>
+ <h5>VII - novas concessões e condições de mercado para sua contratação ou extinção de concessão existente (art. 6º, incisos I e II);</h5>
+ <h5>VIII - quota de veículos automotores, reajustes anuais, ajustamentos cabíveis, abrangência quanto a modalidades auxiliares de venda (art. 7º, §§ 1º, 2º, 3º e 4º) e incidência de vendas diretas (art. 15, § 2º);</h5>
+ <h5>IX - pedidos e fornecimentos de mercadoria (art. 9º);</h5>
+ <h5>X - estoques do concessionário (art. 10 e §§ 1º e 2º);</h5>
+ <h5>XI - alteração de época de pagamento (art. 11);</h5>
+ <h5>XII - cobrança de encargos sobre o preço da mercadoria (art. 13, parágrafo único);</h5>
+ <h5>XIII - margem de comercialização, inclusive quanto a sua alteração em casos excepecionais (art. 14 e parágrafo único), seu percentual atribuído a concessionário de domicílio do comprador (art. 5º § 2º);</h5>
+ <h5>XIV - vendas diretas, com especificação de compradores especiais, limites das vendas pelo concedente sem mediação de concessionário, atribuição de faculdade a concessionários para venda à Administração Pública e ao Corpo Diplomático, caracterização de frotistas de veículos automotores, valor de margem de comercialização e de contraprestação de revisões, demais regras de procedimento (art. 15, § 1º);</h5>
+ <h5>XV - regime de penalidades gradativas (art. 22, § 1º);</h5>
+ <h5>XVI - especificação de outras reparações (art. 24, inciso IV);</h5>
+ <h5>XVII - contratações para prestação de assistência técnica e comercialização de componentes (art. 28);</h5>
+ <h5>XVIII - outras matérias previstas nesta Lei e as que as partes julgarem de interesse comum.</h5>
+ <h3>Art. 20. A concessão comercial entre produtores e distribuidores de veículos automotores será ajustada em contrato que obedecerá forma escrita padronizada para cada marca e especificará produtos, área demarcada, distância mínima e quota de veículos automotores, bem como as condições relativas a requisitos financeiros, organização administrativa e contábil, capacidade técnica, instalações, equipamentos e mão-de-obra especializada do concessionário.</h3>
+ <h3>Art. 21. A concessão comercial entre produtor e distribuidor de veículos automotores será de prazo indeterminando e somente cessará nos termos desta Lei.</h3>
+ <h4>Parágrafo único. O contrato poderá ser inicialmente ajustado por prazo determinado, não inferior a cinco anos, e se tornará automaticamente de prazo indeterminado se nenhuma das partes manifestar à outra a intenção de não prorrogá-lo, antes de cento e oitenta dias do seu termo final e mediante notificação por escrito devidamente comprovada.</h4>
+ <h3>Art. 22. Dar-se-á a resolução do contrato:</h3>
+ <h5>I - por acordo das partes ou força maior;</h5>
+ <p>Il - pela expiração do prazo determinado, estabelecido no início da concesseão, salvo se prorrogado nos termos do artigo 21, parágrafo único;</p>
+ <h5>III - por iniciativa da parte inocente, em virtude de infração a dispositivo desta Lei, das convenções ou do próprio contrato, considerada infração também a cessação das atividades do contraente.</h5>
+ <h4>§ 1º A resolução prevista neste artigo, inciso III, deverá ser precedida da aplicação de penalidades gradativas.</h4>
+ <h4>§ 2º Em qualquer caso de resolução contratual, as partes disporão do prazo necessário à extinção das suas relações e das operações do concessionário, nunca inferior a cento e vinte dias, contados da data da resolução.</h4>
+ <h3>Art. 23. O concedente que não prorrogar o contrato ajustado nos termos do art. 21, parágrafo único, ficará obrigado perante o concessionário a:</h3>
+ <h5>I - readquirir-lhe o estoque de veículos automotores e componentes novos, estes em sua embalagem original, pelo preço de venda à rede de distribuição, vigente na data de reaquisição:</h5>
+ <h5>II - comprar-lhe os equipamentos, máquinas, ferramental e instalações à concessão, pelo preço de mercado correspondente ao estado em que se encontrarem e cuja aquisição o concedente determinara ou dela tivera ciência por escrito sem lhe fazer oposição imediata e documentada, excluídos desta obrigação os imóveis do concessionário.</h5>
+ <h4>Parágrafo único. Cabendo ao concessionário a iniciativa de não prorrogar o contrato, ficará desobrigado de qualquer indenização ao concedente.</h4>
+ <h3>Art. 24. Se o concedente der causa à rescisão do contrato de prazo indeterminado, deverá reparar o concessionário:</h3>
+ <h5>I - readquirindo-lhe o estoque de veículos automotores, implementos e componentes novos, pelo preço de venda ao consumidor, vigente na data da rescisão contratual;</h5>
+ <h5>II - efetuando-lhe a compra prevista no art. 23, inciso II;</h5>
+ <h5>III - pagando-lhe perdas e danos, à razão de quatro por cento do faturamento projetado para um período correspondente à soma de uma parte fixa de dezoito meses e uma variável de três meses por quinqüênio de vigência da concessão, devendo a projeção tomar por base o valor corrigido monetariamente do faturamento de bens e serviços concernentes a concessão, que o concessionário tiver realizado nos dois anos anteriores à rescisão;</h5>
+ <h5>IV - satisfazendo-lhe outras reparações que forem eventualmente ajustadas entre o produtor e sua rede de distribuição.</h5>
+ <h3>Art. 25. Se a infração do concedente motivar a rescisão do contrato de prazo determinado, previsto no art. 21, parágrafo único, o concessionário fará jus às mesmas reparações estabelecidas no artigo anterior, sendo que:</h3>
+ <h5>I - quanto ao inciso III, será a indenização calculada sobre o faturamento projetado até o término do contrato e, se a concessão não tiver alcançado dois anos de vigência, a projeção tomará por base o faturamento até então realizado;</h5>
+ <p>Il - quanto ao inciso IV, serão satisfeitas as obrigações vicendas até o termo final do contrato rescindido.</p>
+ <h3>Art. 26. Se o concessionário der causa à rescisão do contrato, pagará ao concedente a indenização correspondente a cinco por cento do valor total das mercadorias que dele tiver adquirido nos últimos quatro meses de contrato.</h3>
+ <h3>Art. 27. Os valores devidos nas hipóteses dos artigos 23, 24, 25 e 26 deverão ser pagos dentro de sessenta dias da data da extinção da concessão e, no caso de mora, ficarão sujeitos a correção monetária e juros legais, a partir do vencimento do débito.</h3>
+ <h3>Art. 28. As contratações do concedente que tenham por objeto exclusivamente a prestação de assistência técnica ou a comercialização de componentes dependerão de ajuste com a rede de distribuição de veículos automotores e deverão, em qualquer caso, respeitar os direitos e interesses desta.</h3>
+ <h4>Parágrafo único. As contratações a que se refere este artigo serão aplicados, no que couber, os dispositivos desta Lei.</h4>
+ <h3>Art. 28. O concedente poderá contratar, com empresa reparadora de veículos ou vendedora de componentes, a prestação de serviços de assistência ou a comercialização daqueles, exceto a distribuição de veículos novos, dando-lhe a denominação de serviço autorizado. (Redação dada pela Lei n° 8.132, 	de 1990)</h3>
+ <h4>Parágrafo único. Às contratações a que se refere este artigo serão aplicados, no que couber, os dispositivos desta lei. (Redação dada pela Lei n° 8.132, 	de 1990)</h4>
+ <h3>Art. 29. As disposições do art. 66 da Lei n° 4.728, de 14 de julho de 1965 , com a redação dada pelo Decreto Lei n° 911, de 1º de outubro de 1969, não se aplicam às operações de compra de mercadorias pelo concessionário, para fins de comercialização.</h3>
+ <h3>Art. 30. A presente Lei aplica-se às situações existentes entre concedentes e concessionários, sendo consideradas nulas as cláusulas dos contratos em vigor que a contrariem.</h3>
+ <h4>§ 1º As redes de distribuição e os concessionários individualmente continuarão a manter os direitos e garantias que lhes estejam assegurados perante os respectivos produtores por ajustes de qualquer natureza, especialmente no que se refere a áreas demarcadas e quotas de veículos automotores, ressalvada a competência da convenção da marca para modificação de tais ajustes.</h4>
+ <h4>§ 2º As entidades civis a que se refere o art. 17, inciso II, existentes à data em que esta Lei entrar em vigor, representarão a respectiva rede de distribuição.</h4>
+ <h3>Art. 31. Tornar-se-ão de prazo indeterminado, nos termos do art. 21, as relações contratuais entre produtores e distribuidores de veículos automotores que já tiverem somado três anos de vigência à data em que a presente Lei entrar em vigor.</h3>
+ <h3>Art. 32. Se não estiver completo o lapso de três anos a que se refere o artigo anterior, o distribuidor poderá optar:</h3>
+ <h5>I - pela prorrogação do prazo do contrato vigente por mais cinco anos, contados na data em que esta Lei entrar em vigor;</h5>
+ <h5>II - pela conservação do prazo contratual vigente.</h5>
+ <h4>§ 1º A opção a que se refere este artigo deverá ser feita em noventa dias, contados da data em que esta Lei entrar em vigor, ou até o término do contrato, se menor prazo lhe restar.</h4>
+ <h4>§ 2º Se a opção não se realizar, prevalecerá o prazo contratual vigente.</h4>
+ <h4>§ 3º Tornar-se-á de prazo indeterminado, nos termos do art. 21, o contrato que for prorrogado até cento e oitenta dias antes do vencimento dos cinco anos, na hipótese do inciso I, ou até a data do seu vencimento, na hipótese do inciso II ou do § 2º, deste artigo.</h4>
+ <h4>§ 4º Aplicar-se-á o disposto no art. 23, se o contrato não for prorrogado nos prazos mencionados no parágrafo anterior.</h4>
+ <h3>Art. 33. Esta Lei entrará em vigor na data de sua publicação, revogadas as disposições em contrário.</h3>
+ <p>Brasília, em 28 de novembro de 1979; 158º da Independência e 91º da República.</p>
+ <h3>JOÃO FIGUEIREDO</h3>
+ <p>Este texto não substitui o publicado no DOU de 29.11.1990</p>
+ <p>Dispõe sobre a concessão comercial entre produtores e distribuidores de veículos automotores de via terrestre.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L6729.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

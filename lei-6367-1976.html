@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.367, DE 19 DE OUTUBRO DE 1976 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1976" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.367, DE 19 DE OUTUBRO DE 1976</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:05:41 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L6367.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 15.516 caracteres | espelho: 15.407 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.367, DE 19 DE OUTUBRO DE 1976.</p>
+ <p>(Vide decreto nº 79.037, de 1976)</p>
+ <p>(V ide decreto nº 3.048, de 1999)</p>
+ <p><del>Revogada pela Lei n° 15.257, de 2025</del></p>
+ <p>Texto para impressão Dispõe sobre o seguro de acidentes do trabalho a cargo do INPS e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º O seguro obrigatório contra acidentes do trabalho dos empregados segurados do regime de previdência social da Lei número 3.807, de 26 de agosto de 1960 (Lei Orgânica da Previdência Social) , e legislação posterior, é realizado pelo Instituto Nacional de Previdência Social (INPS).</h3>
+ <h4>§ 1º Consideram-se também empregados, para os fins desta lei, o trabalhador temporário, o trabalhador avulso, assim entendido o que presta serviços a diversas empresas, pertencendo ou não a sindicato, inclusive o estivador, o conferente e assemelhados, bem como o presidiário que exerce trabalho remunerado.</h4>
+ <h4>§ 2º Esta lei não se aplica ao titular de firma individual, ao diretor, sócio gerente, sócio solidário, sócio cotista e sócio de indústria de qualquer empresa, que não tenha a condição de empregado, nem ao trabalhador autônomo e ao empregado doméstico.</h4>
+ <h3>Art. 2º Acidente do trabalho é aquele que ocorrer pelo exercício do trabalho a serviço da empresa, provocando lesão corporal ou perturbação funcional que cause a morte, ou perda, ou redução, permanente ou temporária, da capacidade para o trabalho.</h3>
+ <h4>§ 1º Equiparam-se ao acidente do trabalho, para os fins desta lei:</h4>
+ <h5>I - a doença profissional ou do trabalho, assim entendida a inerente ou peculiar a determinado ramo de atividade e constante de relação organizada pelo Ministério da Previdência e Assistência Social (MPAS);</h5>
+ <h5>II - o acidente que, ligado ao trabalho, embora não tenha sido a causa única, haja contribuído diretamente para a morte, ou a perda, ou redução da capacidade para o trabalho;</h5>
+ <h5>III - o acidente sofrido pelo empregado no local e no horário do trabalho, em conseqüência de:</h5>
+ <h6>a) ato de sabotagem ou de terrorismo praticado por terceiros, inclusive companheiro de trabalho;</h6>
+ <h6>b) ofensa física intencional, inclusive de terceiro, por motivo de disputa relacionada com o trabalho;</h6>
+ <h6>c) ato de imprudência, de negligência ou de imperícia de terceiro inclusive companheiro de trabalho;</h6>
+ <h6>d) ato de pessoa privada do uso da razão;</h6>
+ <h6>e) desabamento, inundação ou incêndio;</h6>
+ <h6>f) outros casos fortuitos ou decorrentes de força maior.</h6>
+ <h5>IV - a doença proveniente de contaminação acidental de pessoal de área médica, no exercício de sua atividade;</h5>
+ <h5>V - o acidente sofrido pelo empregado ainda que fora do local e horário de trabalho:</h5>
+ <h6>a) na execução de ordem ou na realização de serviço sob a autoridade da empresa;</h6>
+ <h6>b) na prestação espontânea de qualquer serviço à empresa para lhe evitar prejuízo ou proporcionar proveito;</h6>
+ <h6>c) em viagem a serviço da empresa, seja qual for o meio de locomoção utilizado, inclusive veículo de propriedade do empregado;</h6>
+ <h6>d) no percurso da residência para o trabalho ou deste para aquela.</h6>
+ <h4>§ 2º Nos períodos destinados a refeição ou descanso, ou por ocasião da satisfação de outras necessidades fisiológicas, no local do trabalho ou durante este, o empregado será considerado a serviço da empresa.</h4>
+ <h4>§ 3º Em casos excepcionais, constatando que doença não incluída na relação prevista no item I do § 1º resultou de condições especiais em que o trabalho é executado e com ele se relaciona diretamente, o Ministério da Previdência e Assistência Social deverá considerá-la como acidente do trabalho.</h4>
+ <h4>§ 4º Não poderão ser consideradas, para os fins do disposto no § 3º, a doença degenerativa, a inerente a grupo etário e a que não acarreta incapacidade para o trabalho.</h4>
+ <h4>§ 5º Considera-se como dia do acidente, no caso de doença profissional ou do trabalho, a data da comunicação desta à empresa ou, na sua falta, a da entrada do pedido de benefício do INPS, a partir de quando serão devidas as prestações cabíveis.</h4>
+ <h3>Art. 3º Não será considerada agravação ou complicação de acidente do trabalho lesão que, resultante de outro acidente, se associe ou se superponha às conseqüências do anterior.</h3>
+ <h3>Art. 4º Em caso de acidente do trabalho, os segurados de que trata o</h3>
+ <h3>Art. 1º e seus dependentes terão direito, independentemente de período de carência, às prestações previdenciárias cabíveis, observado o disposto nesta lei.</h3>
+ <h3>Art. 5º Os benefícios por acidente do trabalho serão calculados, concedidos, mantidos e reajustados na forma do regime de previdência social do INPS, salvo no tocante aos valores dos benefícios de que trata este artigo, que serão os seguintes:</h3>
+ <h5>I - auxílio-doença - valor mensal igual a 92% (noventa e dois por cento) do salário-de-contribuição do empregado, vigente no dia do acidente, não podendo ser inferior a 92% (noventa e dois por cento) de seu salário-de-benefício;</h5>
+ <h5>II - aposentadoria por invalidez - valor mensal igual ao do salário-de-contribuição vigente no dia do acidente, não podendo ser inferior ao de seu salário-de-benefício;</h5>
+ <h5>III - pensão - valor mensal igual ao estabelecido no item II, qualquer que seja o número inicial de dependentes.</h5>
+ <h4>§ 1º Não serão considerados para a fixação do salário-de-contribuição de que trata este artigo os aumentos que excedam os limites legais, inclusive os voluntariamente concedidos nos 12 (doze) meses imediatamente anteriores ao início do benefício salvo se resultantes de promoções reguladas por normas gerais da empresa admitidas pela legislação do trabalho, de sentenças normativas ou de reajustamentos salariais obtidos pela categoria respectiva.</h4>
+ <h4>§ 2º A pensão será devida a contar da data do óbito, e o benefício por incapacidade a contar do 16º (décimo sexto) dia do afastamento do trabalho, cabendo à empresa pagar a remuneração integral do dia do acidente e dos 15 (quinze) dias seguintes.</h4>
+ <h4>§ 3º O valor da aposentadoria por invalidez do segurado que em conseqüência do acidente do trabalho necessitar da assistência permanente de outra pessoa, segundo critérios previamente estabelecidos pelo Ministério da Previdência e Assistência Social, será majorado em 25% (vinte e cinco por cento).</h4>
+ <h4>§ 4º No caso de empregado de remuneração variável e de trabalhador avulso, o valor dos benefícios de que trata este artigo, respeitado o percentual previsto no seu item I, será calculado com base na média aritmética:</h4>
+ <h5>I - dos 12 (doze) maiores salários-de-contribuição apurados em período não superior a 18 (dezoito) meses imediatamente anteriores ao acidente, se o segurado contar, nele, mais de 12 (doze) contribuições;</h5>
+ <h5>II - dos salários-de-contribuição compreendidos nos 12 (doze) meses imediatamente anteriores ao do acidente ou no período de que trata o item I, conforme for mais vantajoso, se o segurado contar 12 (doze) ou menos contribuições nesse período.</h5>
+ <h4>§ 5º O direito ao auxílio-doença, à aposentadoria por invalidez ou a pensão, nos termos deste artigo, exclui o direito aos mesmos benefícios nas condições do regime de previdência social do INPS, sem prejuízo porém dos demais benefícios por este assegurados.</h4>
+ <h4>§ 6º Quando se tratar do trabalhador avulso referido no § 1º do Art. 1º desta lei, o benefício por incapacidade ficará a cargo do Instituto Nacional de Previdência Social (INPS), a partir do dia seguinte ao acidente.</h4>
+ <h4>§ 7º Nenhum dos benefícios por acidente do trabalho de que trata este artigo poderá ser inferior ao salário mínimo do local de trabalho do acidentado, ressalvado o disposto no inciso I deste artigo.</h4>
+ <h3>Art. 6º O acidentado do trabalho que, após a consolidação das lesões resultantes do acidente, permanecer incapacitado para o exercício de atividade que exercia habitualmente, na época do acidente, mas não para o exercício de outra, fará jus, a partir da cessação do auxílio-doença, a auxílio-acidente.</h3>
+ <h4>§ 1º O auxílio-acidente, mensal, vitalício e independente de qualquer remuneração ou outro benefício não relacionado ao mesmo acidente, será concedido, mantido e reajustado na forma do regime de previdência social do INPS e corresponderá a 40% (quarenta por cento) do valor de que trata o inciso II do Art. 5º desta lei, observado o disposto no § 4º do mesmo artigo.</h4>
+ <h4>§ 2º A metade do valor do auxílio-acidente será incorporada ao valor da pensão quando a morte do seu titular não resultar de acidente do trabalho.</h4>
+ <h4>§ 3º O titular do auxílio-acidente terá direito ao abono anual.</h4>
+ <h3>Art. 7º Em caso de morte decorrente de acidente do trabalho, será também devido aos dependentes do acidentado um pecúlio no valor de 30 (trinta) vezes o valor de referência, fixado nos termos da Lei número 6.205, de 29 de abril de 1975 , vigente na localidade de trabalho do acidentado.</h3>
+ <h3>Art. 8º Em caso de aposentadoria por invalidez, decorrente de acidente de trabalho, será devido, também, ao acidentado, um pecúlio de 15 (quinze) vezes o valor de referência, fixado nos termos da Lei número 6.205, de 29 de abril de 1975 , vigente na localidade de trabalho do acidentado.</h3>
+ <h3>Art. 9º O acidentado do trabalho que, após a consolidação das lesões resultantes do acidente, apresentar, como seqüelas definitivas, perdas anatômicas ou redução da capacidade funcional, constantes de relação previamente elaborada pelo Ministério da Previdência e Assistência Social (MPAS), as quais, embora não impedindo o desempenho da mesma atividade, demandem, permanentemente, maior esforço na realização do trabalho, fará jus, a partir da cessação do auxílio-doença, a um auxílio mensal que corresponderá a 20% (vinte por cento) do valor de que trata o inciso II do Artigo 5º desta lei, observando o disposto no § 4º do mesmo artigo.</h3>
+ <h4>Parágrafo único. Esse benefício cessará com a aposentadoria do acidentado e seu valor não será incluído no cálculo de pensão.</h4>
+ <h3>Art. 10. A assistência médica, aí incluídas a cirúrgica, a hospitalar, farmacêutica e a odontológica, bem como o transporte do acidentado e a reabilitação profissional, quando indicada, serão devidos em caráter obrigatório.</h3>
+ <h3>Art. 11. Quando a perda ou redução da capacidade funcional puder ser atenuada pelo uso de aparelhos de prótese ou órtese, estes serão fornecidos pelo INPS, independentemente das prestações cabíveis.</h3>
+ <h3>Art. 12. Nas localidades onde o INPS não dispuser de recursos próprios ou contratados, a empresa prestará ao acidentado a assistência médica de emergência e, quando indispensável a critério do médico, providenciará sua remoção.</h3>
+ <h4>§ 1º Entende-se como assistência médica de emergência a necessária ao atendimento do acidentado até que o INPS assuma a responsabilidade por ele.</h4>
+ <h4>§ 2º O INPS reembolsará a empresa das despesas com a assistência de que trata este artigo até limites compatíveis com os padrões do local de atendimento.</h4>
+ <h3>Art. 13. Para pleitear direitos decorrentes desta lei, não é obrigatória a constituição de advogado.</h3>
+ <h3>Art. 14. A empresa deverá, salvo em caso de impossibilidade absoluta, comunicar o acidente do trabalho ao INPS dentro de 24 (vinte quatro) horas, e à autoridade policial competente no caso de morte, sob pena de multa de 1 (um) a 10 (dez) vezes o maior valor de referência fixado nos termos da Lei n° 6.205, de 29 de abril de 1975 .</h3>
+ <h4>Parágrafo único. Compete ao INPS aplicar e cobrar a multa de que trata este artigo.</h4>
+ <h3>Art. 15. O custeio dos encargos decorrentes desta lei será atendido pelas atuais contribuições previdenciárias a cargo da União, da empresa e do segurado, com um acréscimo, a cargo exclusivo da empresa, das seguintes percentagens do valor da folha de salário de contribuição dos segurados de que trata o</h3>
+ <h3>Art. 1º:</h3>
+ <h5>I - 0,4% (quatro décimos por cento) para a empresa em cuja atividade o risco de acidente do trabalho seja considerado leve;</h5>
+ <h5>II - 1,2% (um e dois décimos por cento) para a empresa em cuja atividade esse risco seja considerado médio;</h5>
+ <h5>III - 2,5% (dois e meio por cento) para a empresa em cuja atividade esse risco seja considerado grave.</h5>
+ <h4>§ 1º O acréscimo de que trata este artigo será recolhido juntamente com as demais contribuições arrecadadas pelo INPS.</h4>
+ <h4>§ 2º O Ministério da Previdência e Assistência Social (MPAS) classificará os três graus de risco em tabela própria organizada de acordo com a atual experiência de risco, na qual as empresas serão automaticamente enquadradas, segundo a natureza da respectiva atividade.</h4>
+ <h4>§ 3º A tabela será revista trienalmente pelo Ministério da Previdência e Assistência Social, de acordo com a experiência de risco verificada no período.</h4>
+ <h4>§ 4º O enquadramento individual na tabela, de iniciativa da empresa, poderá ser revisto pelo INPS, a qualquer tempo.</h4>
+ <h3>Art. 16. A contribuição estabelecida no Art. 5º da Lei n° 5.161, de 21 de outubro de 1966 , que criou a Fundação Centro Nacional de Segurança, Higiene e Medicina do Trabalho (FUNDACENTRO), será de 0,5% (meio por cento) da receita adicional estabelecida no Art. 15 desta Lei.</h3>
+ <h3>Art. 16 - A contribuição anual da previdência social para a Fundação Centro Nacional de Segurança, Higiene e Medicina do Trabalho - FUNDACENTRO, instituída pela Lei n° 5.161, de 21 de outubro de 1966 , será de um por cento da receita adicional prevista no art. 15 desta Lei. ( Redação dada pela Lei n° 6.617, de 1978)</h3>
+ <p><del></p>
+ <h3>Art. 17. O INPS recolherá 1,25% (um e vinte e cinco centésimos por cento) da receita adicional estabelecida no Art. 15 (Revogado pela Lei n° 6.617, de 1978)</del></h3>
+ <h4>Parágrafo único. A aplicação prevista neste artigo será feita sob a forma de empréstimo sem juros, sujeito apenas à correção monetária, segundo o valor nominal reajustado das Obrigações Reajustáveis do Tesouro Nacional (ORTN).</h4>
+ <h3>Art. 18. As ações referentes a prestações por acidente do trabalho prescreverão em (cinco) anos contados da data:</h3>
+ <h5>I - do acidente, quando dele resultar a morte ou a incapacidade temporária verificada esta em perícia médica a cargo do INPS;</h5>
+ <h5>II - da entrada do pedido de benefício no Instituto Nacional de Previdência Social (INPS), ou do afastamento do trabalho, quando este for posterior àquela, no caso de doença profissional, e da ciência, dada pelo Instituto acima mencionado ao paciente, de reconhecimento de causalidade entre o trabalho e a doença, nos demais casos de doenças do trabalho. Não sendo reconhecida pelo Instituto essa relação, o prazo prescricional aqui previsto se iniciará a partir do exame pericial que comprovar, em juízo, a enfermidade e aquela relação;</h5>
+ <h5>III - em que for reconhecida pelo INPS a incapacidade permanente ou sua agravação.</h5>
+ <h3>Art. 19. Os litígios relativos a acidentes do trabalho serão apreciados:</h3>
+ <h5>I - na esfera administrativa, pelos órgãos da previdência social, segundo as regras e prazos aplicáveis às demais prestações previdenciárias mas com prioridade absoluta para conclusão;</h5>
+ <h5>II - na via judicial, pela justiça comum dos Estados, do Distrito Federal e dos Territórios, segundo o procedimento sumaríssimo.</h5>
+ <h3>Art. 20. A legislação do regime de Previdência Social do INPS aplica-se subsidiariamente à matéria de que trata a lei.</h3>
+ <h3>Art. 21. Esta lei entrará em vigor no primeiro dia do terceiro mês seguinte ao de sua publicação.</h3>
+ <h3>Art. 22. Revogam-se as disposições em contrário, especialmente o Decreto-lei n° 7.036, de 10 novembro de 1944 , e a Lei n° 5.316, de 14 de setembro de 1967.</h3>
+ <p>Brasília, 19 de outubro de 1976; 155º da Independência e 88º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <h5>L. G. do Nascimento e Silva</h5>
+ <p>Este texto não substitui o publicado no DOU de 21.10.1976</p>
+ <p><del>(Vide decreto nº 79.037, de 1976)</p>
+ <p>(Vide decreto nº 3.048, de 1999)Revogada pela Lei nº</del></p>
+ <p>15.257, de 2025Texto para impressão | Dispõe sobre o seguro de acidentes do trabalho a cargo do INPS e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/LEIS/L6367.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

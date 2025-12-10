@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.453, DE 17 DE OUTUBRO DE 1977 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1977" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.453, DE 17 DE OUTUBRO DE 1977</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:20:28 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L6453.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 12.102 caracteres | espelho: 12.127 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.453, DE 17 DE OUTUBRO DE 1977</p>
+ <p>Dispõe sobre a responsabilidade civil por danos nucleares e a responsabilidade criminal por atos relacionados com atividades nucleares e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Das Definições</p>
+ <h3>Art. 1º - Para os efeitos desta Lei considera-se:</h3>
+ <h5>I - "operador", a pessoa jurídica devidamente autorizada para operar instalação nuclear;</h5>
+ <h5>II - "combustível nuclear", o material capaz de produzir energia, mediante processo auto-sustentado de fissão nuclear;</h5>
+ <h5>III - "produtos ou rejeitos radioativos", os materiais radioativos obtidos durante o processo de produção ou de utilização de combustíveis nucleares, ou cuja radioatividade se tenha originado da exposição às irradiações inerentes a tal processo, salvo os radioisótopos que tenham alcançado o estágio final de elaboração e já se possam utilizar para fins científicos, médicos, agrícolas, comerciais ou industriais;</h5>
+ <h5>IV - "material nuclear", o combustível nuclear e os produtos ou rejeitos radioativos;</h5>
+ <h5>V - "reator nuclear", qualquer estrutura que contenha combustível nuclear, disposto de tal maneira que, dentro dela, possa ocorrer processo auto-sustentado de fissão nuclear, sem necessidade de fonte adicional de neutrons;</h5>
+ <h5>VI - "instalação nuclear":</h5>
+ <h6>a) o reator nuclear, salvo o utilizado como fonte de energia em meio de transporte, tanto para sua propulsão como para outros fins;</h6>
+ <h6>b) a fábrica que utilize combustível nuclear para a produção de materiais nucleares ou na qual se proceda a tratamento de materiais nucleares, incluídas as instalações de reprocessamento de combustível nuclear irradiado;</h6>
+ <h6>c) o local de armazenamento de materiais nucleares, exceto aquele ocasionalmente usado durante seu transporte;</h6>
+ <h5>VII - "dano nuclear", o dano pessoal ou material produzido como resultado direto ou indireto das propriedades radioativas, da sua combinação com as propriedades tóxicas ou com outras características dos materiais nucleares, que se encontrem em instalação nuclear, ou dela procedentes ou a ela enviados;</h5>
+ <h5>VIII - "acidente nuclear", o fato ou sucessão de fatos da mesma origem, que cause dano nuclear;</h5>
+ <h5>IX - "radiação ionizante", a emissão de partículas alfa, beta, neutrons, ions acelerados ou raios X ou gama, capazes de provocar a formação de ions no tecido humano.</h5>
+ <h3>Art. 2º - Várias instalações nucleares situadas no mesmo local e que tenham um único operador poderão ser consideradas, pela Comissão Nacional de Energia Nuclear, como uma só instalação nuclear.</h3>
+ <h3>Art. 2º Várias instalações nucleares situadas no mesmo local e que tenham um único operador poderão ser consideradas, pela Autoridade Nacional de Segurança Nuclear - ANSN, como uma só instalação nuclear. (Redação dada pela Medida Provisória nº 1.049, de 2021) ( Produção de efeitos)</h3>
+ <h3>Art. 2º Várias instalações nucleares situadas no mesmo local e que tenham um único operador poderão ser consideradas, pela Autoridade Nacional de Segurança Nuclear (ANSN), como uma só instalação nuclear. (Redação dada pela Lei n° 14.118, de 2021) Produção de efeitos</h3>
+ <h3>Art. 3º - Será também considerado dano nuclear o resultante de acidente nuclear combinado com outras causas, quando não se puderem distinguir os danos não nucleares.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Da Responsabilidade Civil por Danos Nucleares</p>
+ <h3>Art. 4º - Será exclusiva do operador da instalação nuclear, nos termos desta Lei, independentemente da existência de culpa, a responsabilidade civil pela reparação de dano nuclear causado por acidente nuclear:</h3>
+ <h5>I - ocorrido na instalação nuclear;</h5>
+ <p>Il - provocado por material nuclear procedente de instalação nuclear, quando o acidente ocorrer:</p>
+ <h6>a) antes que o operador da instalação nuclear a que se destina tenha assumido, por contrato escrito, a responsabilidade por acidentes nucleares causados pelo material;</h6>
+ <h6>b) na falta de contrato, antes que o operador da outra instalação nuclear haja assumido efetivamente o encargo do material;</h6>
+ <h5>III - provocado por material nuclear enviado à instalação nuclear, quando o acidente ocorrer:</h5>
+ <h6>a) depois que a responsabilidade por acidente provocado pelo material lhe houver sido transferida, por contrato escrito, pelo operador da outra instalação nuclear;</h6>
+ <h6>b) na falta de contrato, depois que o operador da instalação nuclear houver assumido efetivamente o encargo do material a ele enviado.</h6>
+ <h3>Art. 5º - Quando responsáveis mais de um operador, respondem eles solidariamente, se impossível apurar-se a parte dos danos atribuível a cada um, observado o disposto nos artigos 9º a 13.</h3>
+ <h3>Art. 6º - Uma vez provado haver o dano resultado exclusivamente de culpa da vítima, o operador será exonerado, apenas em relação a ela, da obrigação de indenizar.</h3>
+ <h3>Art. 7º - O operador somente tem direito de regresso contra quem admitiu, por contrato escrito, o exercício desse direito, ou contra a pessoa física que, dolosamente, deu causa ao acidente.</h3>
+ <h3>Art. 8º - O operador não responde pela reparação do dano resultante de acidente nuclear causado diretamente por conflito armado, hostilidades, guerra civil, insurreição ou excepcional fato da natureza.</h3>
+ <h3>Art. 9º - A responsabilidade do operador pela reparação do dano nuclear é limitada, em cada acidente, ao valor correspondente a um milhão e quinhentas mil Obrigações Reajustáveis do Tesouro Nacional.</h3>
+ <h4>Parágrafo único - O limite fixado neste artigo não compreende os juros de mora, os honorários de advogado e as custas judiciais.</h4>
+ <h3>Art. 10 - Se a indenização relativa a danos causados por determinado acidente nuclear exceder ao limite fixado no artigo anterior, proceder-se-á ao rateio entre os credores, na proporção de seus direitos.</h3>
+ <h4>§ 1º - No rateio, os débitos referentes a danos pessoais serão executados separada e preferentemente aos relativos a danos materiais. Após seu pagamento, ratear-se-á o saldo existente entre os credores por danos materiais.</h4>
+ <h4>§ 2º - Aplica-se o disposto neste artigo quando a União, organização internacional ou qualquer entidade fornecer recursos financeiros para ajudar a reparação dos danos nucleares e a soma desses recursos com a importância fixada no artigo anterior for insuficiente ao pagamento total da indenização devida.</h4>
+ <h3>Art. 11 - As ações em que se pleiteiem indenizações por danos causados por determinado acidente nuclear deverão ser processadas e julgadas pelo mesmo Juízo Federal, fixando-se a prevenção jurisdicional segundo as disposições do Código de Processo Civil. Também competirá ao Juízo prevento a instauração, ex-officio , do procedimento do rateio previsto no artigo anterior.</h3>
+ <h3>Art. 12 - O direito de pleitear indenização com o fundamento nesta Lei prescreve em 10 (dez) anos, contados da data do acidente nuclear.</h3>
+ <h4>Parágrafo único - Se o acidente for causado por material subtraído, perdido ou abandonado, o prazo prescricional contar-se-á do acidente, mas não excederá a 20 (vinte) anos contados da data da subtração, perda ou abandono.</h4>
+ <h3>Art. 13 - O operador da instalação nuclear é obrigado a manter seguro ou outra garantia financeira que cubra a sua responsabilidade pelas indenizações por danos nucleares.</h3>
+ <h4>§ 1º - A natureza da garantia e a fixação de seu valor serão determinadas, em cada caso, pela Comissão Nacional de Energia Nuclear, no ato da licença de construção ou da autorização para a operação.</h4>
+ <h4>§ 1º A natureza da garantia e a fixação de seu valor serão determinadas, em cada caso, pela ANSN, no ato da licença de construção ou da autorização para a operação. (Redação dada pela Medida Provisória nº 1.049, de 2021) ( Produção de efeitos)</h4>
+ <h4>§ 1º A natureza da garantia e a fixação de seu valor serão determinadas, em cada caso, pela ANSN, no ato da licença de construção ou da autorização para a operação. (Redação dada pela Lei n° 14.118, de 2021) Produção de efeitos</h4>
+ <h4>§ 2º - Ocorrendo alteração na instalação, poderão ser modificados a natureza e o valor da garantia.</h4>
+ <h4>§ 3º - Para a determinação da natureza e do valor da garantia, levar-se-ão em conta o tipo, a capacidade, a finalidade, a localização de cada instalação, bem como os demais fatores previsíveis.</h4>
+ <h4>§ 4º - O não cumprimento, por parte do operador, da obrigação prevista neste artigo acarretará a cassação da autorização.</h4>
+ <h4>§ 5º - A Comissão Nacional de Energia Nuclear poderá dispensar o operador, da obrigação a que se refere o caput deste artigo, em razão dos reduzidos riscos decorrentes de determinados materiais ou instalações nucleares.</h4>
+ <h4>§ 5º A ANSN poderá dispensar o operador da obrigação a que se refere o caput , em razão dos reduzidos riscos decorrentes de determinados materiais ou instalações nucleares. (Redação dada pela Medida Provisória nº 1.049, de 2021) ( Produção de efeitos)</h4>
+ <h4>§ 5º A ANSN poderá dispensar o operador da obrigação a que se refere o caput deste artigo, em razão dos reduzidos riscos decorrentes de determinados materiais ou instalações nucleares. (Redação dada pela Lei n° 14.118, de 2021) Produção de efeitos</h4>
+ <h3>Art. 14 - A União garantira, até o limite fixado no artigo 9º, o pagamento das indenizações por danos nucleares de responsabilidade do operador, fornecendo os recursos complementares necessários, quando insuficientes os provenientes do seguro ou de outra garantia.</h3>
+ <h3>Art. 15 - No caso de acidente provocado por material nuclear ilicitamente possuído ou utilizado e não relacionado a qualquer operador, os danos serão suportados pela União, até o limite fixado no artigo 9º, ressalvado o direito de regresso contra a pessoa que lhes deu causa.</h3>
+ <h3>Art. 16 - Não se aplica a presente Lei às hipóteses de dano causado por emissão de radiação ionizante quando o fato não constituir acidente nuclear.</h3>
+ <h3>Art. 17 - As indenizações pelos danos causados aos que trabalham com material nuclear ou em instalação nuclear serão reguladas pela legislação especial sobre acidentes do trabalho.</h3>
+ <h3>Art. 18 - O disposto nesta Lei não se aplica às indenizações relativas a danos nucleares sofridos:</h3>
+ <h5>I - pela própria instalação nuclear;</h5>
+ <h5>II - pelos bens que se encontrem na área da instalação, destinados ao seu uso;</h5>
+ <h5>III - pelo meio de transporte no qual, ao produzir-se o acidente nuclear, estava o material que o ocasionou.</h5>
+ <h2>CAPÍTULO III</h2>
+ <p>Da Responsabilidade Criminal</p>
+ <h3>Art. 19 - Constituem crimes na exploração e utilização de energia nuclear os descritos neste Capítulo, além dos tipificados na legislação sobre segurança nacional e nas demais leis.</h3>
+ <h3>Art. 20 - Produzir, processar, fornecer ou usar material nuclear sem a necessária autorização ou para fim diverso do permitido em lei.</h3>
+ <p>Pena: reclusão, de quatro a dez anos.</p>
+ <h3>Art. 21 - Permitir o responsável pela instalação nuclear sua operação sem a necessária autorização.</h3>
+ <p>Pena: reclusão, de dois a seis anos.</p>
+ <h3>Art. 22 - Possuir, adquirir, transferir, transportar, guardar ou trazer consigo material nuclear, sem a necessária autorização.</h3>
+ <p>Pena: reclusão, de dois a seis anos.</p>
+ <h3>Art. 23 - Transmitir ilicitamente informações sigilosas, concernentes à energia nuclear.</h3>
+ <p>Pena: reclusão, de quatro a oito anos.</p>
+ <h3>Art. 24 - Extrair, beneficiar ou comerciar ilegalmente minério nuclear.</h3>
+ <p>Pena: reclusão, de dois a seis anos.</p>
+ <h3>Art. 25 - Exportar ou importar, sem a necessária licença, material nuclear, minérios nucleares e seus concentrados, minérios de interesse para a energia nuclear e minérios e concentrados que contenham elementos nucleares.</h3>
+ <p>Pena: reclusão, de dois a oito anos.</p>
+ <h3>Art. 26 - Deixar de observar as normas de segurança ou de proteção relativas à instalação nuclear ou ao uso, transporte, posse e guarda de material nuclear, expondo a perigo a vida, a integridade física ou o patrimônio de outrem.</h3>
+ <p>Pena: reclusão, de dois a oito anos.</p>
+ <h3>Art. 27 - Impedir ou dificultar o funcionamento de instalação nuclear ou o transporte de material nuclear.</h3>
+ <p>Pena: reclusão, de quatro a dez anos.</p>
+ <h3>Art. 28 - Esta Lei entrará em vigor na data de sua publicação.</h3>
+ <h3>Art. 29 - Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, em 17 de outubro de 1977; 156º da Independência e 89º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Hugo de Andrade Abreu</p>
+ <p>Este texto não substitui o publicado no DOU de 18.10.1977</p>
+ <p>Dispõe sobre a responsabilidade civil por danos nucleares e a responsabilidade criminal por atos relacionados com atividades nucleares e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L6453.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

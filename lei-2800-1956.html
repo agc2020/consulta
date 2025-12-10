@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 2.800, DE 18 DE JUNHO DE 1956 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1956" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 2.800, DE 18 DE JUNHO DE 1956</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 21:41:30 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L2800.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 18.019 caracteres | espelho: 18.246 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 2.800, DE 18 DE JUNHO DE 1956.</p>
+ <p>(Vide Decreto nº 42.247, de 1957)</p>
+ <p>(Vide Decreto nº 79.137, de 1977)</p>
+ <p>(Vide Decreto nº 83.033, de 1979)</p>
+ <p>(Vide Decreto nº 85.877, de 1981) Cria os Conselhos Federal e Regionais de Química, dispõe sôbre o exercício da profissão de químico, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I DOS CONSELHOS DE QUÍMICA</h2>
+ <h3>Art 1º A fiscalização do exercício da profissão de químico, regulada no decreto-lei n° 5.452, de 1 de maio de 1943 - Consolidação das Leis do Trabalho,</h3>
+ <p>TÍTULO III, Capítulo I, Seção XIII - será exercida pelo Conselho Federal de Química e pelos Conselhos Regionais de Química, criados por esta lei.</p>
+ <h3>Art 2º O Conselho Federal de Química e os Conselhos Regionais de Química são dotados de personalidade jurídica de direito público, autonomia administrativa e patrimonial.</h3>
+ <h3>Art 3º A sede do Conselho Federal de Química será no Distrito Federal.</h3>
+ <h3>Art 4º O Conselho Federal de Química será constituído de brasileiros natos ou naturalizados, registrados de acôrdo com o art. 25 desta lei e obedecerá à seguinte composição:</h3>
+ <h6>a) um presidente, nomeado pelo Presidente da República e escolhido dentre os nomes constantes da lista tríplice organizada pelos membros do Conselho; (Vide Decreto nº 86.593, de 1981)</h6>
+ <h6>b) nove conselheiros federais efetivos e três suplentes, escolhidos em assembléia constituída por delegado-eleitor de cada Conselho Regional de Química;</h6>
+ <h6>c) três conselheiros federais efetivos escolhidos pelas congregações das escolas padrões, sendo um engenheiro químico pela Escola Politécnica de São Paulo, um químico industrial pela Escola Nacional de Química e um bacharel em química pela Faculdade Nacional de Filosofia.</h6>
+ <h4>Parágrafo único. O número de conselheiros federais poderá ser ampliado de mais três, mediante resolução do Conselho Federal de Química, conforme necessidades futuras.</h4>
+ <h3>Art 5º Dentre os nove conselheiros federais efetivos de que trata a letra b do art. 4º da presente lei, três devem representar as categorias das escolas-padrões mencionadas na letra c , do mesmo artigo.</h3>
+ <h4>§ 1º Haverá entre os nove conselheiros, no mínimo, 1/3 de engenheiros químicos e 1/3 de químicos industriais ou químicos industriais agrícolas ou químicos.</h4>
+ <h4>§ 2º Haverá, também, entre os nove conselheiros, um técnico químico.</h4>
+ <h3>Art 6º Os três suplentes indicados na letra b do art. 4º desta lei deverão ser profissionais correspondentes às três categorias de escolas-padrões.</h3>
+ <h3>Art 7º O mandato do presidente e dos conselheiros federais efetivos e dos suplentes será honorífico e durará três anos.</h3>
+ <h4>Parágrafo único. O número de conselheiros será renovado anualmente pelo terço.</h4>
+ <h3>Art 8º São atribuições do Conselho Federal de Química:</h3>
+ <h6>a) organizar o seu regimento interno;</h6>
+ <h6>b) aprovar os regimentos internos organizados pelos Conselhos Regionais, modificando o que se tornar necessário, a fim de manter a unidade de ação;</h6>
+ <h6>c) tomar conhecimento de quaisquer dúvidas suscitadas pelos Conselhos Regionais de Química e dirimi-las;</h6>
+ <h6>d) julgar em última instância os recursos das deliberações dos Conselhos Regionais de Química;</h6>
+ <h6>e) publicar o relatório anual dos seus trabalhos e, periòdicamente, a relação de todos os profissionais registrados;</h6>
+ <h6>f) expedir as resoluções que se tornem necessárias para a fiel interpretação e execução da presente lei;</h6>
+ <h6>g) propor ao Govêrno Federal as modificações que se tornarem convenientes para melhorar a regulamentação do exercício da profissão de químico;</h6>
+ <h6>h) deliberar sôbre questões oriundas de exercício de atividades afins às do químico;</h6>
+ <p>i) deliberar sôbre as questões do exercício, por profissionais liberais, de atividades correlacionadas com a química, que, à data desta lei, vinham exercendo;</p>
+ <h6>j) deliberar sôbre as questões oriundas do exercício das atividades de técnico de laboratório;</h6>
+ <p>l) convocar e realizar, periòdicamente, congressos de conselheiros federais e regionais para estudar, debater e orientar assuntos referentes à profissão.</p>
+ <h4>Parágrafo único. As questões referentes às atividades afins com outras profissões serão resolvidas através de entendimento com as entidades reguladoras dessas profissões.</h4>
+ <h3>Art 9º O Conselho Federal de Química só deliberará com a presença mínima da metade mais um de seus membros.</h3>
+ <h4>Parágrafo único. As resoluções a que se refere a alínea f do art. 3º só serão válidas quando aprovadas pela maioria dos membros do Conselho Federal de Química.</h4>
+ <h3>Art 10. Ao presidente do Conselho Federal de Química compete, além da direção do Conselho, a suspensão de decisão que o mesmo tome e lhe pareça inconveniente.</h3>
+ <h4>Parágrafo único. O ato da suspensão vigorará até novo julgamento do caso, para o qual o presidente convocará segunda reunião, no prazo de 30 dias, contados do seu ato; se, no segundo julgamento, o Conselho mantiver, por dois terços de seus membros, a decisão suspensa, esta entrará em vigor imediatamente.</h4>
+ <h3>Art 11. O presidente do Conselho Federal de Química é o responsável administrativo pelo Conselho Federal de Química, inclusive pela prestação de contas perante o órgão federal competente.</h3>
+ <h3>Art 12. O Conselho Federal de Química fixará a composição dos Conselhos Regionais de Química, procurando organizá-los à sua semelhança, e promoverá a instalação de tantos órgãos quantos forem julgados necessários, fixando as suas sedes e zonas de jurisdição.</h3>
+ <h3>Art 13. As atribuições dos Conselhos Regionais de Química são as seguintes:</h3>
+ <h6>a) registrar os profissionais de acôrdo com a presente lei e expedir a carteira profissional;</h6>
+ <h6>b) examinar reclamações e representações escritas acêrca dos serviços de registro e das infrações desta lei e decidir, com recurso, para o Conselho Federal de Química;</h6>
+ <h6>c) fiscalizar o exercício da profissão, impedindo e punindo as infrações à lei, bem como enviando às autoridades competentes relatórios documentados sôbre fatos que apuraram e cuja solução não seja de sua alçada;</h6>
+ <h6>d) publicar relatórios anuais dos seus trabalhos, e, periòdicamente, a relação dos profissionais registrados;</h6>
+ <h6>e) organizar o seu regimento interno, submetendo-o à aprovação do Conselho Federal de Química;</h6>
+ <h6>f) sugerir ao Conselho Federal de Química as medidas necessárias à regularidade dos serviços e à fiscalização do exercício profissional;</h6>
+ <h6>g) admitir a colaboração dos sindicatos e associações profissionais nos casos das matérias das letras anteriores;</h6>
+ <h6>h) eleger um delegado-eleitor para a assembléia referida na letra b do art. 4º.</h6>
+ <h3>Art 14. A escolha dos conselheiros regionais efetuar-se-á em assembléias realizadas nos conselhos regionais, separadamente por delegados das escolas competentes e por delegados-eleitores dos sindicatos e associações de profissionais registrados no Conselho Regional respectivo.</h3>
+ <h3>Art 15. Tôdas as atribuições estabelecidas no decreto-lei n° 5.452, de 1 de maio de 1943 - Consolidação das Leis do Trabalho - referentes ao registro, à fiscalização e à imposição de penalidades, quanto ao exercício da profissão de químico, passam a ser de competência dos Conselhos Regionais de Química.</h3>
+ <h3>Art 16. Os Conselhos Regionais de Química poderão, por procuradores seus, promover, perante o Juízo da Fazenda Pública e mediante o processo de executivo fiscal, a cobrança das penalidades ou anuidades previstas para a execução da presente lei.</h3>
+ <h3>Art 17. A responsabilidade administrativa de cada Conselho Regional cabe ao respectivo presidente, inclusive a prestação de contas perante o órgão federal competente.</h3>
+ <h3>Art 18. O exercício da função de conselheiro federal ou regional de química, por espaço de tempo não inferior a dois terços do respectivo mandato, será considerado serviço relevante.</h3>
+ <h4>Parágrafo único. O Conselho Federal de Química concederá, aos que se acharem nas condições dêste artigo, o certificado de serviço relevante prestado à Nação, independente de requerimento do interessado, até sessenta (60) dias após a conclusão do mandato.</h4>
+ <h3>Art 19. O conselheiro federal ou Regional que, durante um ano, faltar, sem licença prévia do respectivo Conselho, a seis (6) sessões consecutivas ou não, embora com justificação, perderá automàticamente o mandato, que passará a ser exercido, em caráter efetivo, pelo respectivo suplente.</h3>
+ <h2>CAPÍTULO II DOS PROFISSIONAIS E DAS ESPECIALIZAÇÕES DA QUÍMICA</h2>
+ <h3>Art 20. Além dos profissionais relacionados no decreto-lei n° 5.452, de 1 de maio de 1943 - Consolidação das Leis do Trabalho - são também profissionais da química os bacharéis em química e os técnicos químicos.</h3>
+ <h4>§ 1º Aos bacharéis em química, após diplomados pelas Faculdades de Filosofia, oficiais ou oficializadas após registro de seus diplomas nos Conselhos Regionais de Química, para que possam gozar dos direitos decorrentes do decreto-lei n° 1.190, de 4 de abril de 1939 , fica assegurada a competência para realizar análises e pesquisas químicas em geral.</h4>
+ <h4>§ 2º Aos técnicos químicos, diplomados pelos Cursos Técnicos de Química Industrial, oficiais ou oficializados, após registro de seus diplomas nos Conselhos Regionais de Química, fica assegurada a competência para:</h4>
+ <h6>a) análises químicas aplicadas à indústria;</h6>
+ <h6>b) aplicação de processos de tecnologia química na fabricação de produtos, subprodutos e derivados, observada a especialização do respectivo diploma;</h6>
+ <h6>c) responsabilidade técnica, em virtude de necessidades locais e a critérios do Conselho Regional de Química da jurisdição, de fábrica de pequena capacidade que se enquadre dentro da respectiva competência e especialização.</h6>
+ <h4>§ 3º O Conselho Federal de Química poderá ampliar o limite de competência conferida nos parágrafos precedentes, conforme o currículo escolar ou mediante prova de conhecimento complementar de tecnologia ou especialização, prestado em escola oficial.</h4>
+ <h3>Art 21. Para registro e expedição de carteiras profissionais de bacharéis em química e técnicos químicos, serão adotadas normas equivalentes às exigidas no decreto-lei n° 5.452, de 1 de maio de 1943 - Consolidação das Leis do Trabalho - para os mais profissionais da química.</h3>
+ <h3>Art 22. Os engenheiros químicos registrados no Conselho Regional de Engenharia e Arquitetura, nos têrmos do decreto-lei n° 8.620, de 10 de janeiro de 1946 , deverão ser registrados no Conselho Regional de Química, quando suas funções, como químico, assim o exigirem.</h3>
+ <h3>Art 23. Independente de seu registro no Conselho Regional de Engenharia e Arquitetura, os engenheiros industriais, modalidade química, deverão registrar-se no Conselho Regional de Química, para o exercício de suas atividades como químico.</h3>
+ <h3>Art 24. O Conselho Federal de Química, em resoluções definirá ou modificará as atribuições ou competência dos profissionais da química, conforme as necessidades futuras.</h3>
+ <h4>Parágrafo único. Fica o Conselho Federal de Química, quando se tornar conveniente, autorizado a proceder à revisão de suas resoluções, de maneira a que constituam um corpo de doutrina, sob a forma de Consolidação.</h4>
+ <h2>CAPÍTULO III DAS ANUIDADES E TAXAS</h2>
+ <h3>Art 25. O profissional da química, para o exercício de sua profissão, é obrigado ao registro no Conselho Regional de Química a cuja jurisdição estiver sujeito, ficando obrigado ao pagamento de uma anuidade ao respectivo Conselho Regional de Química, até o dia 31 de março de cada ano, acrescida de 20% (vinte por cento) de mora, quando fora dêste prazo.</h3>
+ <h3>Art 26. Os Conselhos Regionais de Química cobrarão taxas pela expedição ou substituição de carteira profissional e pela certidão referente à anotação de função técnica ou de registro de firma.</h3>
+ <h3>Art 27. As turmas individuais de profissionais e as mais firmas, coletivas ou não, sociedades, associações, companhias e emprêsas em geral, e suas filiais, que explorem serviços para os quais são necessárias atividades de químico, especificadas no decreto-lei n° 5.452, de 1 de maio de 1943 - Consolidação das Leis do Trabalho - ou nesta lei, deverão provar perante os Conselhos Regionais de Química que essas atividades são exercidas por profissional habilitado e registrado.</h3>
+ <h4>Parágrafo único. Aos infratores, dêste artigo será aplicada pelo respectivo Conselho Regional de Química a multa de Cr$ 500,00 (quinhentos cruzeiros) a Cr$ 5.000,00 (cinco mil cruzeiros).</h4>
+ <h4>Parágrafo único. Os infratores dêste artigo incorrerão em multa de 1 (um) a 10 (dez) salários-mínimos regionais, que será aplicada em dôbro, pelo Conselho Regional de Química competente, em caso de reincidência. (Redação dada pela Lei n° 5.735, de 1971)</h4>
+ <h3>Art 28. As firmas ou entidades a que se refere o artigo anterior são obrigadas ao pagamento de anuidades ao Conselho Regional de Química em cuja jurisdição se situam, até o dia 31 de março de cada ano, ou com mora de 20% (vinte por cento) quando fora dêste prazo.</h3>
+ <h3>Art 29. O Poder Executivo proverá, em decreto, à fixação das anuidades e taxas a que se referem os artigos 25, 26 e 28, e sua alteração só poderá ter lugar com intervalos não inferiores a três anos, mediante proposta do Conselho Federal de Química.</h3>
+ <h3>Art 30. Constitui renda do Conselho Federal de Química, o seguinte:</h3>
+ <h6>a) 1/4 da taxa de expedição da carteira profissional;</h6>
+ <h6>b) 1/4 da anuidade de renovação de registro;</h6>
+ <h6>c) 1/4 das multas aplicadas de acôrdo com a presente lei;</h6>
+ <h6>d) doações;</h6>
+ <h6>e) subvenções dos Govêrnos;</h6>
+ <h6>f) 1/4 da renda de certidões.</h6>
+ <h3>Art 31. A renda de cada Conselho Regional de Química será constituída do seguinte:</h3>
+ <h6>a) três quartos (3/4) da renda proveniente da expedição de carteiras profissionais;</h6>
+ <h6>b) três quartos (3/4) da anuidade de renovação de registro;</h6>
+ <h6>c) três quartos (3/4) das multas aplicadas de acôrdo com a presente lei;</h6>
+ <h6>d) doações;</h6>
+ <h6>e) subvenções dos Governos;</h6>
+ <h6>f) três quartos (3/4) da renda de certidões.</h6>
+ <h2>CAPÍTULO IV DISPOSIÇÕES GERAIS</h2>
+ <h3>Art 32. Os processos de registro de licenciamento, que se encontrarem ainda sem despacho, no Ministério do Trabalho, Indústria e Comércio, deverão ser renovados pelos interessados perante o Conselho Federal de Química, dentro em cento e oitenta (180) dias a contar da data de constituição dêsse Conselho, ao qual caberá decidir a respeito.</h3>
+ <h3>Art 33. Aos químicos licenciados, que se registraram em conseqüência do decreto n° 24.693, de 12 de julho de 1934 , ficam asseguradas as vantagens que lhe foram conferidas por aquêle decreto.</h3>
+ <h3>Art 34. Os presidentes dos Conselhos Federal e Regionais de Química prestarão anualmente suas contas perante o Tribunal de Contas da União.</h3>
+ <h4>§ 1º A prestação de contas do presidente do Conselho Federal de Química será feita diretamente ao referido Tribunal, após aprovação do Conselho.</h4>
+ <h4>§ 2º A prestação de contas dos presidentes dos Conselhos Regionais de Química será feita ao referido Tribunal por intermédio do Conselho Federal de Química.</h4>
+ <h4>§ 3º Cabe aos presidentes de cada Conselho a responsabilidade pela prestação de contas.</h4>
+ <h3>Art 35. Os casos omissos verificados nesta lei serão resolvidos pelo Conselho Federal de Química.</h3>
+ <h2>CAPÍTULO V DISPOSIÇÕES TRANSITÓRIAS</h2>
+ <h3>Art 36. A assembléia que se realizar para a escolha dos nove primeiros conselheiros efetivos e dos três primeiros conselheiros suplentes do Conselho Federal de Química, previstos na conformidade da letra b do art. 4º desta lei, será presidida pelo consultor técnico do Ministério do Trabalho, Indústria e Comércio e se constituirá dos delegados-eleitores dos sindicatos e associações de profissionais de química, com mais de um ano de existência legal no país, eleitos em assembléias das respectivas instituições, por voto secreto e segundo as formalidades estabelecidas para a escolha de suas diretorias ou órgãos dirigentes.</h3>
+ <h4>§ 1º Cada sindicato ou associação indicará um único delegado-eleitor que deverá ser, obrigatòriamente, seu sócio efetivo e no pleno gôzo de seus direitos sociais, e profissional da química, possuidor de registro como químico diplomado ou possuidor de diploma de bacharel em química ou técnico químico.</h4>
+ <h4>§ 2º Só poderá ser eleito, na assembléia a que se refere êste artigo, para exercer o mandato de conselheiro federal de química, o profissional de química que preencha as condições estabelecidas no art. 4º desta lei.</h4>
+ <h4>§ 3º Os sindicatos ou associações de profissionais de química, para obterem seus direitos de representação na assembléia a que se refere êste artigo, deverão proceder dentro do prazo de noventa (90) dias, a partir da data desta lei, ao seu registro prévio perante o consultor técnico do Ministério do Trabalho, Indústria e Comércio, mediante a apresentação de seus estatutos e mais documentos julgados necessários.</h4>
+ <h4>§ 4º Os três conselheiros referidos na letra c do art. 4º da presente lei serão credenciados pelas respectivas escolas junto ao consultor técnico do Ministério do Trabalho, Indústria e Comércio.</h4>
+ <h3>Art 37. O Conselho Federal de Química procederá, em sua primeira sessão, ao sorteio dos conselheiros federais de que tratam as letras b e c do art. 4º desta lei que deverão exercer o mandato por um, por dois ou por três anos.</h3>
+ <h3>Art 38. Em assembléia dos conselheiros federais efetivos, eleitos na forma do art. 4º presidida pelo consultor Técnico do Ministério do Trabalho, Indústria e Comércio, serão votados os três (3) nomes de profissionais da química que deverão figurar na lista tríplice a que se refere a letra a do art. 4º da presente lei, para escolha, pelo Presidente da República, do primeiro presidente do Conselho Federal de Química.</h3>
+ <h3>Art 39. O Ministério do Trabalho, Indústria e Comércio, pelo órgão competente, fornecerá cópias dos processos existentes naquele Ministério, relativos ao registro de químico, quando requisitados pelo Conselho Federal de Química.</h3>
+ <h3>Art 40. Durante o período de organização do Conselho Federal de Química, o Ministério do Trabalho, Indústria e Comércio designará um local para sua sede, e, à requisição do presidente dêste instituto, fornecerá o material e pessoal necessários ao serviço.</h3>
+ <h3>Art 41. Esta lei entrará em vigor na data de sua publicação, revogadas as disposições em contrário.</h3>
+ <p>Rio de Janeiro, em 18 de junho de 1956; 135º da Independência e 68º da República.</p>
+ <h3>JUSCELINO KUBITSCHEK</h3>
+ <p>Parsifal Barroso Clovis Salgado</p>
+ <p>Este texto não substitui o publicado no DOU de 19.6.1956</p>
+ <p>*</p>
+ <p>--- Tabela 1 ---</p>
+ <p>---</p>
+ <p>--- Tabela 2 ---</p>
+ <p>(Vide Decreto nº 42.247, de 1957)</p>
+ <p>(Vide Decreto nº 79.137, de 1977)</p>
+ <p>(Vide Decreto nº 83.033, de 1979)</p>
+ <p>(Vide Decreto nº 85.877, de 1981) | Cria os Conselhos</p>
+ <p>Federal e Regionais de Química, dispõe sôbre o exercício da profissão de químico, e dá outras providências.</p>
+ <p>--- | ---</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L2800.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.316, DE 17 DE DEZEMBRO DE 1975 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1975" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.316, DE 17 DE DEZEMBRO DE 1975</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:51:30 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/1970-1979/L6316.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 15.186 caracteres | espelho: 15.029 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.316, DE 17 DE DEZEMBRO DE 1975.</p>
+ <p>Cria o Conselho Federal e os Conselhos Regionais de Fisioterapia e Terapia Ocupacional e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
+ <h2>CAPÍTULO I</h2>
+ <p>Dos Conselhos Federal e Regionais de Fisioterapia e Terapia Ocupacional</p>
+ <h3>Art. 1º São criados o Conselho Federal e os Conselhos Regionais de Fisioterapia e Terapia Ocupacional, com a incumbência de fiscalizar o exercício das profissões de Fisioterapeuta e Terapeuta Ocupacional definidas no Decreto-lei n° 938, de 13 de outubro de 1969 .</h3>
+ <h4>§ 1º Os Conselhos Federal e Regionais a que se refere este artigo constituem, em conjunto, uma autarquia federal vinculada ao Ministério do Trabalho.</h4>
+ <h4>§ 2º O Conselho Federal de Fisioterapia e Terapia Ocupacional terá sede e foro no Distrito Federal e jurisdição em todo o País e os Conselhos Regionais em Capitais de Estados ou Territórios.</h4>
+ <h3>Art. 2º O Conselho Federal compor-se-á de 9 (nove) membros efetivos e suplentes, respectivamente, eleitos pela forma estabelecida nesta Lei.</h3>
+ <h4>§ 1º Os membros do Conselho Federal e respectivos suplentes, com mandato de 4 (quatro) anos, serão eleitos por um Colégio Eleitoral integrado de 1 (um) representante de cada Conselho Regional, por este eleito em reunião especialmente convocada.</h4>
+ <h4>§ 2º O Colégio Eleitoral convocado para a composição do Conselho Federal reunir-se-á, preliminarmente, para exame, discussão, aprovação e registro das chapas concorrentes, realizando as eleições 24 (vinte e quatro) horas após a sessão preliminar.</h4>
+ <h4>§ 3º Competirá ao Ministro do Trabalho baixar as instruções reguladoras das eleições nos Conselhos Federal e Regionais de Fisioterapia e Terapia Ocupacional.</h4>
+ <h3>Art. 3º Os membros dos Conselhos Regionais de Fisioterapia e Terapia Ocupacional e os respectivos suplentes, com mandato de 4 (quatro) anos, serão eleitos pelo sistema de eleição direta, através do voto pessoal, secreto e obrigatório, aplicando-se pena de multa em importância não excedente ao valor da anuidade ao membro que deixar de votar sem causa justificada.</h3>
+ <h4>§ 1º O exercício do mandato do membro do Conselho Federal e dos Conselhos Regionais de Fisioterapia e Terapia Ocupacional, assim como a respectiva eleição, mesmo na condição de suplente, ficarão subordinados, além das exigências constantes do artigo 530 da Consolidação das Leis do Trabalho e legislação complementar, ao preenchimento dos seguintes requisitos e condições básicas:</h4>
+ <h5>I - cidadania brasileira;</h5>
+ <h5>II - habilitação profissional na forma da legislação em vigor;</h5>
+ <h5>III - pleno gozo dos direitos profissionais, civis e políticos;</h5>
+ <h5>IV - inexistência de condenação por crime contra a segurança nacional.</h5>
+ <h3>Art. 4º A extinção ou perda de mandato de membro do Conselho Federal ou dos Conselhos Regionais ocorrerá:</h3>
+ <h5>I - por renúncia;</h5>
+ <h5>II - por superveniência de causa de que resulte a inabilitação para o exercício da profissão;</h5>
+ <h5>III - por condenação a pena superior a 2 (dois) anos, em virtude de sentença transitada em julgado;</h5>
+ <h5>IV - por destituição de cargo, função ou emprego, relacionada à prática de ato de improbidade na administração pública ou privada, em virtude de sentença transitada em julgado;</h5>
+ <h5>V - por falta de decoro ou conduta incompatível com a dignidade do órgão;</h5>
+ <h5>VI - por ausência, sem motivo justificado, a 3 (três) sessões consecutivas ou 6 (seis) intercaladas em cada ano.</h5>
+ <h3>Art. 5º Compete ao Conselho Federal:</h3>
+ <h5>I - eleger, dentre os seus membros, por maioria absoluta, o seu Presidente e o Vice-Presidente;</h5>
+ <p>Il - exercer função normativa, baixar atos necessários à interpretação e execução do disposto nesta Lei e à fiscalização do exercício profissional, adotando providências indispensáveis à realização dos objetivos institucionais;</p>
+ <h5>III - supervisionar a fiscalização do exercício profissional em todo o território nacional;</h5>
+ <h5>IV - organizar, instalar, orientar e inspecionar os Conselhos Regionais e examinar suas prestações de contas, neles intervindo desde que indispensável ao restabelecimento da normalidade administrativa ou financeira ou a garantia da efetividade do princípio da hierarquia institucional;</h5>
+ <h5>V - elaborar e aprovar seu Regimento, ad referendum do Ministro do Trabalho;</h5>
+ <h5>VI - examinar e aprovar os Regimentos dos Conselhos Regionais, modificando o que se fizer necessário para assegurar unidade de orientação e uniformidade de ação;</h5>
+ <h5>VII - conhecer e dirimir dúvidas suscitadas pelos Conselhos Regionais e prestar-lhes assistência técnica permanente;</h5>
+ <h5>VIII - apreciar e julgar os recursos de penalidade imposta pelos Conselhos Regionais;</h5>
+ <h5>IX - fixar o valor das anuidades, taxas, emolumentos e multas devidas pelos profissionais e empresas aos Conselhos Regionais a que estejam jurisdicionados;</h5>
+ <h5>X - aprovar sua proposta orçamentária e autorizar a abertura de créditos adicionais, bem como operações referentes a mutações patrimoniais;</h5>
+ <h5>XI - dispor, com a participação de todos os Conselhos Regionais, sobre o Código de Ética Profissional, funcionando como Tribunal Superior de Ética Profissional;</h5>
+ <h5>XII - estimular a exação no exercício da profissão, velando pelo prestígio e bom nome dos que a exercem;</h5>
+ <h5>XIII - instituir o modelo das carteiras e cartões de identidade profissional;</h5>
+ <h5>XIV - autorizar o Presidente a adquirir, onerar ou alienar bens imóveis;</h5>
+ <h5>XV - emitir parecer conclusivo sobre prestação de contas a que esteja obrigado;</h5>
+ <h5>XVI - publicar, anualmente, seu orçamento e respectivos créditos adicionais, ou balanços a execução orçamentária e o relatório de suas atividades.</h5>
+ <h3>Art. 6º Os Conselhos Regionais de Fisioterapia e Terapia Ocupacional serão organizados nos moldes do Conselho Federal.</h3>
+ <h3>Art. 7º Aos Conselhos Regionais, compete:</h3>
+ <h5>I - eleger, dentre os seus membros, por maioria absoluta, o seu Presidente e o Vice-Presidente;</h5>
+ <p>Il - expedir a carteira de identidade profissional e o cartão de identificação aos profissionais registrados;</p>
+ <p>Ill - fiscalizar o exercício profissional na àrea de sua jurisdição, representando, inclusive, às autoridades competentes, sobre os fatos que apurar e cuja solução ou repressão não seja de sua alçada;</p>
+ <h5>IV - cumprir e fazer cumprir as disposições desta Lei, das resoluções e demais normas baixadas pelo Conselho Federal;</h5>
+ <h5>V - funcionar como Tribunal Regional de Ética, conhecendo, processando e decidindo os casos que lhe forem submetidos;</h5>
+ <h5>VI - elaborar a proposta de seu Regimento, bem como as alterações, submetendo-a à aprovação do Conselho Federal;</h5>
+ <h5>VII - propor ao Conselho Federal as medidas necessárias ao aprimoramento dos serviços e do sistema de fiscalização do exercício profissional;</h5>
+ <h5>VIII - aprovar a proposta orçamentária e autorizar a abertura de créditos adicionais e as operações referentes a mutações patrimoniais;</h5>
+ <h5>IX - autorizar o Presidente a adquirir, onerar ou alienar bens imóveis;</h5>
+ <h5>X - arrecadar anuidades, multas, taxas e emolumentos e adotar todas as medidas destinadas a efetivação de sua receita, destacando e entregando ao Conselho Federal as importâncias correspondentes a sua participação legal;</h5>
+ <h5>XI - promover, perante o juízo competente, a cobrança das importâncias correspondentes a anuidades, taxas, emolumentos e multas, esgotados os meios de cobrança amigável;</h5>
+ <h5>XII - estimular a exação no exercício da profissão, velando pelo prestígio e bom conceito dos que a exercem;</h5>
+ <h5>XIII - julgar as infrações e aplicar as penalidades previstas nesta Lei e em normas complementares do Conselho Federal;</h5>
+ <h5>XIV - emitir parecer conclusivo sobre prestação de contas a que esteja obrigado;</h5>
+ <h5>XV - publicar, anualmente, seu orçamento e respectivos créditos adicionais, os balanços, a execução orçamentária, o relatório de suas atividades e a relação dos profissionais registrados.</h5>
+ <h3>Art. 8º Aos Presidentes dos Conselhos Federal e Regionais incumbe a administração e a representação legal dos mesmos facultando-se-lhes suspender o cumprimento de qualquer deliberação de seu Plenário que lhes pareça inconveniente ou contrária aos interesses da instituição, submetendo essa decisão à autoridade competente do Ministério do Trabalho ou ao Conselho Federal, respectivamente.</h3>
+ <h3>Art. 9º Constitui renda do Conselho Federal:</h3>
+ <h5>I - 20% (vinte por cento) do produto da arrecadação de anuidades, taxas, emolumentos e multas de cada Conselho Regional;</h5>
+ <h5>II - legados, doações e subvenções;</h5>
+ <h5>III - rendas patrimoniais.</h5>
+ <h3>Art. 10. Constitui renda dos Conselhos Regionais:</h3>
+ <h5>I - 80% (oitenta por cento) do produto da arrecadação de anuidades, taxas, emolumentos e multas;</h5>
+ <h5>II - legados, doações e subvenções;</h5>
+ <h5>III - rendas patrimoniais.</h5>
+ <h3>Art. 11. A renda dos Conselhos Federal e Regionais só poderá ser aplicada na organização e funcionamento de serviços úteis à fiscalização do exercício profissional, bem como em serviços de caráter assistencial, quando solicitados pelas Entidades Sindicais.</h3>
+ <h2>CAPÍTULO II</h2>
+ <p>Do Exercício Profissional</p>
+ <h3>Art. 12. O livre exercício da profissão de Fisioterapeuta e Terapeuta Ocupacional, em todo território nacional, somente é permitido ao portador de Carteira Profissional expedida por órgão competente.</h3>
+ <h4>Parágrafo único. É obrigatório o registro nos Conselhos Regionais das empresas cujas finalidades estejam ligadas à fisioterapia ou terapia ocupacional, na forma estabelecida em Regulamento.</h4>
+ <h3>Art. 13. Para o exercício da profissão na administração pública direta e indireta, nos estabelecimentos hospitalares, nas clínicas, ambulatórios, creches, asilos ou exercício de cargo, função ou emprego de assessoramento, chefia ou direção será exigida como condição essencial, a apresentação da carteira profissional de Fisioterapeuta ou de Terapeuta Ocupacional.</h3>
+ <h4>Parágrafo único. A inscrição em concurso público dependerá de prévia apresentação da Carteira Profissional ou certidão do Conselho Regional de que o profissional está no exercício de seus direitos.</h4>
+ <h3>Art. 14. O exercício simultâneo, temporário ou definitivo, da profissão em área de jurisdição de dois ou mais Conselhos Regionais submeterá o profissional de que trata esta Lei às exigências e formalidades estabelecidas pelo Conselho Federal.</h3>
+ <h2>CAPÍTULO III</h2>
+ <p>Das Anuidades</p>
+ <h3>Art. 15. O pagamento da anuidade ao Conselho Regional da respectiva jurisdição constitui condição de legitimidade do exercício da profissão.</h3>
+ <h4>Parágrafo único. A anuidade será paga até 31 de março de cada ano, salvo a primeira, que será devida no ato do registro do profissional ou da empresa.</h4>
+ <h2>CAPÍTULO IV</h2>
+ <p>Das Infrações e Penalidades</p>
+ <h3>Art. 16. Constitui infração disciplinar:</h3>
+ <h5>I - transgredir preceito do Código de Ética Profissional;</h5>
+ <h5>II - exercer a profissão quando impedido de fazê-lo, ou facilitar, por qualquer meio, o seu exercício aos não registrados ou aos leigos;</h5>
+ <h5>III - violar sigilo profissional;</h5>
+ <h5>IV - praticar, no exercício da atividade profissional, ato que a Lei defina como crime ou contravenção;</h5>
+ <h5>V - não cumprir, no prazo assinalado, determinação emanada de órgão ou autoridade do Conselho Regional de Fisioterapia e Terapia Ocupacional, em matéria de competência deste, após regularmente notificado;</h5>
+ <h5>VI - deixar de pagar, pontualmente, ao Conselho Regional de Fisioterapia e Terapia Ocupacional, as contribuições a que está obrigado;</h5>
+ <h5>VII - faltar a qualquer dever profissional prescrito nesta Lei;</h5>
+ <h5>VIII - manter conduta incompatível com o exercício da profissão.</h5>
+ <h4>Parágrafo único. As faItas serão apuradas, levando-se em conta a natureza do ato e as circunstâncias de cada caso.</h4>
+ <h3>Art. 17. As penas disciplinares consistem em:</h3>
+ <h5>I - advertência;</h5>
+ <p>Il - repreensão;</p>
+ <h5>III - multa equivalente a até 10 (dez) vezes o valor da anuidade;</h5>
+ <h5>IV - suspensão do exercício profissional pelo prazo de até 3 (três) anos, ressalvada a hipótese prevista no § 7º;</h5>
+ <h5>V - cancelamento do registro profissional.</h5>
+ <h4>§ 1º Salvo os casos de gravidade manifesta ou reincidência, a imposição das penalidades obedecerá à gradação deste artigo, observadas as normas estabelecidas pelo Conselho Federal para disciplina do processo de julgamento das infrações.</h4>
+ <h4>§ 2º Na fixação da pena serão considerados os antecedentes profissionais do infrator, o seu grau de culpa, as circunstâncias atenuantes e agravantes e as conseqüências da infração.</h4>
+ <h4>§ 3º As penas de advertência, repreensão e multa serão comunicadas pelo Conselho Regional, em ofício reservado, não se fazendo constar dos assentamentos do profissional punido, senão em caso de reincidência.</h4>
+ <h4>§ 4º Da imposição de qualquer penalidade caberá recurso com efeito suspensivo, ao Conselho Federal:</h4>
+ <h5>I - voluntário, no prazo de 30 (trinta) dias a contar da ciência da decisão;</h5>
+ <h5>II - "ex officio", nas hipóteses dos incisos IV e V deste artigo, no prazo de 30 (trinta) dias a contar da decisão.</h5>
+ <h4>§ 5º As denúncias somente serão recebidas quando assinadas, declinada a qualificação do denunciante e acompanhada da indicação dos elementos comprobatórios do alegado.</h4>
+ <h4>§ 6º A suspensão por falta de pagamento de anuidades, taxas ou multas só cessará com a satisfação da dívida, podendo ser cancelado o registro profissional, após decorridos 3 (três) anos.</h4>
+ <h4>§ 7º É lícito ao profissional punido requerer, à instância superior, revisão do processo, no prazo de 30 (trinta) dias contados da ciência da punição.</h4>
+ <p><del>§ 8º Das decisões do Conselho Federal ou de seu Presidente, por força de competência privativa, caberá recurso em 30 (trinta) (Revogado pela Lei n° 9.098, de 1995)</del></p>
+ <h4>§ 9º As instâncias recorridas poderão reconsiderar suas próprias decisões.</h4>
+ <p><del>§ 10 (Revogado pela Lei n° 9.098, de 1995)</del></p>
+ <h3>Art. 18. O pagamento da anuidade fora do prazo sujeitará o devedor à multa prevista no ReguIamento.</h3>
+ <h2>CAPÍTULO V</h2>
+ <p>Disposições Gerais</p>
+ <h3>Art. 19. Os membros dos Conselhos farão jus a uma gratificação, por sessão a que comparecerem, na forma estabelecida em legislação própria.</h3>
+ <h3>Art. 20. Aos servidores dos Conselhos de Fisioterapia e Terapia Ocupacional aplica-se o regime jurídico da Consolidação das Leis do Trabalho.</h3>
+ <h3>Art. 21. Os Conselhos de Fisioterapia e Terapia Ocupacional estimularão, por todos os meios, inclusive mediante concessão de auxílio, segundo normas aprovadas pelo Conselho Federal, as realizações de natureza cultural visando ao profissional e à classe.</h3>
+ <h3>Art. 22. Os estabelecimentos de ensino superior, que ministrem cursos de Fisioterapia e Terapia Ocupacional, deverão enviar, até 6 (seis) meses da conclusão dos mesmos, ao Conselho Regional da jurisdição de sua sede, ficha de cada aluno a que conferir diploma ou certificado, contendo seu nome, endereço, filiação, e data da conclusão.</h3>
+ <h2>CAPÍTULO VI</h2>
+ <p>Disposições Transitórias</p>
+ <h3>Art. 23. A carteira profissional de que trata o</h3>
+ <h2>CAPÍTULO II somente será exigível a partir de 180 (cento e oitenta) dias contados da instalação do respectivo Conselho Regional.</h2>
+ <h3>Art. 24. O primeiro Conselho Federal de Fisioterapia e Terapia Ocupacional será constituído pelo Ministro do Trabalho.</h3>
+ <h3>Art. 25. Esta Lei entrará em vigor na data de sua publicação, revogadas as disposições em contrário.</h3>
+ <p>Brasília, 17 de dezembro de 1975; 154º da Independência e 87º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Paulo de Almeida Machado</p>
+ <p>Este texto não substitui o publicado no DOU de 18.12.1975</p>
+ <p>Cria o Conselho Federal e os Conselhos Regionais de Fisioterapia e Terapia</p>
+ <p>Ocupacional e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/1970-1979/L6316.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.433, DE 15 DE JULHO DE 1977 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1977" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.433, DE 15 DE JULHO DE 1977</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 19:56:57 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L6433.htm#art4%C2%A71" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 8.570 caracteres | espelho: 8.653 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.433, DE 15 DE JULHO DE 1977.</p>
+ <p>(Vide Decreto-lei n° 2.195, de 1984)</p>
+ <p>Fixa os valores de retribuição do Grupo-Saúde e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art 1º Aos níveis de classificação dos cargos e empregos integrantes do Grupo-Saúde Pública, criado com fundamento no artigo 4º da Lei n° 5.645, de 10 de dezembro de 1970 , correspondem as referências de vencimento ou salário estabelecidas no Anexo desta Lei .</h3>
+ <h3>Art 2º Os servidores integrantes da Categoria Funcional de Sanitarista farão jus às seguintes vantagens:</h3>
+ <h5>I - Gratificação de Atividades, instituída pelo Decreto-lei n° 1.445, de 13 de fevereiro de 1976 , observados os mesmos requisitos e condições para esse fim estabelecidos;</h5>
+ <h5>II - Incentivo Funcional, correspondente a 20% (vinte por cento) do respectivo vencimento ou salário, pelo desempenho obrigatório das atividades com integral e exclusiva dedicação, vedado o exercício de outras funções públicas ou privadas, na forma a ser estabelecida em regulamento; e (Vide Decreto nº 83.814, de 1979)</h5>
+ <h5>III - Gratificação pelo exercício em determinadas zonas ou locais, nas condições estabelecidas no item VI do Anexo II do Decreto-lei n° 1.341, de 22 de agosto de 1974 .</h5>
+ <h4>Parágrafo único - O servidor que, à data da aposentadoria, estiver percebendo há pelo menos 5 (cinco) anos, o Incentivo Funcional previsto no Item II deste artigo, fará jus ao cômputo da correspondente importância, para efeito de cálculo dos respectivos proventos.</h4>
+ <h3>Art 3º Somente poderão atingir as Classes Especiais, previstas no Anexo desta Lei para as Categorias Funcionais de Sanitarista e de Agente de Saúde Pública, servidores em número não superior a 10% (dez por cento) da lotação global da Categoria, segundo critérios a serem estabelecidos em regulamento.</h3>
+ <h3>Art 4º O concurso para ingresso na Categoria Funcional de Sanitarista será de provas e títulos, realizando-se em duas etapas.</h3>
+ <h4>§ 1º - Somente poderão inscrever-se no concurso brasileiros que possuam diploma de conclusão de um dos cursos superiores, ou habilitação legal equivalente, de Medicina Enfermagem, Odontologia Farmácia e Bioquímica (habilitação em Análises Clínicas e Toxicológicas e Bioquímica de Alimentos), Serviço Social, Psicologia, Pedagogia, Estatística, Administração, Arquitetura e Urbanismo, Direito, Ciências Econômicas, Comunicação Social (Habilitação polivalente, Relações Públicas e Jornalismo), Ciências Sociais (habilitação em Sociologia e Antropologia), Engenharia (habilitação em Engenharia Civil e Engenharia Sanitária), Agronomia, Ciências Biomédicas e Medicina Veterinária, observado o limite máximo de idade legalmente estabelecido. (Vide Lei n° 6.773, de 1980)</h4>
+ <h4>§ 2º - A primeira etapa do concurso visará a selecionar os candidatos a Programa de Treinamento, mediante exame de formação, experiência profissional e conhecimentos, aplicados simultaneamente a todos os inscritos.</h4>
+ <h4>§ 3º - A segunda etapa do concurso consistirá em Programa de Treinamento e visará a identificar a aptidão e a capacidade dos candidatos para as atividades de saúde-saneamento, consistindo em curso teórico e de prática em serviço, perfazendo um total de 360 (trezentos e sessenta) horas, com duração mínima de 3 (três) meses, cujo conteúdo constituirá a programação geral de aperfeiçoamento em área de saúde pública.</h4>
+ <h4>§ 4º - Somente poderão participar do Programa de Treinamento os candidatos que se classificarem na primeira etapa, até o limite de vagas da classe inicial da Categoria Funcional mais 1/3 (um terço), considerando-se habilitados os que concluírem com aproveitamento o programa, observada rigorosamente a ordem de classificação, computados os resultados obtidos na primeira e segunda etapas.</h4>
+ <h4>§ 5º - Constituirá fator de maior peso na avaliação dos títulos, para efeitos de habilitação na primeira etapa do concurso a experiência comprovada na área de saúde-saneamento, adquirida em órgãos ou entidades da Administração Federal, Estadual ou Municipal direta ou indireta bem assim em Fundações, que possuam, em seus quadros atividades organizadas à semelhança da Categoria Funcional de Sanitarista, de que trata esta Lei.</h4>
+ <h3>Art 5º Durante o Programa de Treinamento para o ingresso os aprovados na primeira etapa do concurso e indicados para a segunda etapa perceberão mensalmente importância correspondente a 80%(oitenta por cento) do vencimento ou salário fixado para a primeira Referência da classe inicial da Categoria de Sanitarista incidindo sobre aquela importância as vantagens especificadas no artigo 2º desta Lei.</h3>
+ <h3>Art 6º O candidato que for selecionado para o Programa de Treinamento de ocupante, em caráter efetivo, de cargo ou emprego em órgão da Administração Federal direta ou autarquia, ficará dele afastado com perda do vencimento, salário e vantagens, ressalvado o salário-família, mantido o regime jurídico a que esteja submetido no órgão de origem.</h3>
+ <h4>Parágrafo único - O candidato que, pelo resultado do Programa de Treinamento, não lograr ingresso na Categoria Funcional de Sanitarista será reduzido ao cargo ou emprego, de que se tenha afastado, considerando-se de efetivo exercício o tempo correspondente ao afastamento.</h4>
+ <h3>Art 7º O concurso para ingresso na Categoria de Agente de Saúde Pública será de provas, associadas a processo especial de treinamento, com vistas à capacitação específica do candidato.</h3>
+ <h3>Art 8º A primeira constituição das Categorias Funcionais integrantes do Grupo - Saúde Pública far-se-á:</h3>
+ <h5>I - mediante admissão de candidatos habilitados em concursos públicos realizado para a Categoria Funcional, na conformidade do disposto nesta Lei; e</h5>
+ <h5>II - mediante aproveitamento, com a consequente transposição ou transformação dos cargos ou empregos respectivos, de servidores integrantes dos quadros e tabelas do Ministério da Saúde, inclusive dos da Superintendência de Campanhas de Saúde Pública, possuidores da necessária habilitação profissional, cujas atribuições se identifiquem com as que são próprias da Categoria Funcional e que se habilitarem em processo seletivo específico.</h5>
+ <h4>§ 1º - Para efeito do disposto neste artigo, serão fixados, em regulamento, os limites de lotação destinados a cada uma das hipóteses previstas nos itens I e II.</h4>
+ <h4>§ 2º - O processo seletivo a que se refere o item II deste artigo será disciplinado pelo órgão central do Sistema de Pessoal Civil da Administração Federal em articulação com o Ministério da Saúde.</h4>
+ <h4>§ 3º - A inclusão nas Categorias Funcionais de Sanitarista e de Agente de Saúde Pública do pessoal habilitado no concurso público e no processo seletivo, de que se tratam os itens I e II deste artigo, poderá ocorrer nas diversas classes da Categoria Funcional, exceto a Classe Especial, de acordo com a ordem rigorosa de classificação dos habilitados e nos limites da lotação fixada em função das áreas de formação profissional necessárias ao desenvolvimento das atividades de cada classe.</h4>
+ <h3>Art 9º Ao servidor que mediante transposição ou transformação do respectivo cargo ou emprego, for incluído nas Categorias Funcionais do Grupo de Saúde Pública aplicar-se-á a Referência de valor de vencimento ou salário igual ou superior mais próximo do percebido à data da vigência desta Lei.</h3>
+ <h3>Art 10. Os valores de retribuição fixados nesta Lei serão devidos, na hipótese prevista no item II do artigo 8º, a partir da publicação dos decretos de inclusão de servidores nas Categorias Funcionais do Grupo-Saúde Pública.</h3>
+ <h3>Art 11. A partir do terceiro ano de vigência desta Lei, os ocupantes de cargos ou funções de direção e assessoramento superiores das unidades do ministério, inclusive os da Superintendência de Campanhas de Saúde Pública, relacionadas às atividades de competência do Ministério da Saúde, serão escolhidos obrigatoriamente, entre os integrantes da Categoria Funcional de Sanitarista para atuação a nível estadual e para os demais níveis, em proporção nunca inferior a 70% (setenta por cento) dos referidos cargos ou funções, na forma a ser regulamentada.</h3>
+ <h3>Art 12. As despesas decorrentes da aplicação desta Lei serão atendidas pelos recursos orçamentários próprios do Ministério da Saúde e da Superintendência de Campanha de Saúde Pública.</h3>
+ <h3>Art 13. Esta Lei entrará em vigor na data de sua publicação.</h3>
+ <h3>Art 14. Revogam-se as disposições em contrário.</h3>
+ <p>Brasília, 15 de julho de 1977; 156º da Independência e 89º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Armando Falcão</p>
+ <p>Paulo de Almeida Machado</p>
+ <p>Este texto não substitui o publicado no DOU de 19.7.1977</p>
+ <p>Download para anexo</p>
+ <p>*</p>
+ <p>--- Tabela 1 ---</p>
+ <p>---</p>
+ <p>--- Tabela 2 ---</p>
+ <p>(Vide Decreto-lei n° 2.195, de 1984) | Fixa os valores de retribuição do Grupo-Saúde e dá outras providências.</p>
+ <p>--- | ---</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L6433.htm#art4%C2%A71" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

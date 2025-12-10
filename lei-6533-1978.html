@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 6.533, DE 24 DE MAIO DE 1978 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" content="1978" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 6.533, DE 24 DE MAIO DE 1978</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 09/12/2025 20:17:03 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/L6533.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 16.033 caracteres | espelho: 16.036 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 6.533, DE 24 DE MAIO DE 1978.</p>
+ <p>Regulamento</p>
+ <p>(Vide Lei n° 9.610, de 	1998)</p>
+ <p>Dispõe sobre a regulamentação das profissões de Artistas e de técnico em Espetáculos de Diversões, e dá outras providências.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art. 1º - O exercício das profissões de Artista e de Técnico em Espetáculos de Diversões é regulado pela presente Lei.</h3>
+ <h3>Art. 2º - Para os efeitos desta lei, é considerado:</h3>
+ <h5>I - Artista, o profissional que cria, interpreta ou executa obra de caráter cultural de qualquer natureza, para efeito de exibição ou divulgação pública, através de meios de comunicação de massa ou em locais onde se realizam espetáculos de diversão pública;</h5>
+ <h5>II - Técnico em Espetáculos de Diversões, o profissional que, mesmo em caráter auxiliar, participa, individualmente ou em grupo, de atividade profissional ligada diretamente à elaboração, registro, apresentação ou conservação de programas, espetáculos e produções.</h5>
+ <h4>Parágrafo único - As denominações e descrições das funções em que se desdobram as atividades de Artista e de Técnico em Espetáculos de Diversões constarão do regulamento desta lei.</h4>
+ <h3>Art. 3º - Aplicam-se as disposições desta lei às pessoas físicas ou jurídicas que tiverem a seu serviço os profissionais definidos no artigo anterior, para realização de espetáculos, programas, produções ou mensagens publicitárias.</h3>
+ <h4>Parágrafo único - Aplicam-se, igualmente, as disposições desta Lei às pessoas físicas ou jurídicas que agenciem colocação de mão-de-obra de profissionais definidos no artigo anterior.</h4>
+ <h3>Art. 4º - As pessoas físicas ou jurídicas de que trata o artigo anterior deverão ser previamente inscritas no Ministério do Trabalho.</h3>
+ <h3>Art. 5º - Não se incluem no disposto nesta Lei os Técnicos em Espetáculos de Diversões que prestam serviços a empresa de radiodifusão.</h3>
+ <h3>Art. 6º - O exercício das profissões de Artista e de Técnico em Espetáculos de Diversões requer prévio registro na Delegacia Regional do Trabalho do Ministério do Trabalho, o qual terá validade em todo o território nacional.</h3>
+ <h3>Art 7º - Para registro do Artista ou do Técnico em Espetáculos de Diversões, é necessário a apresentação de:</h3>
+ <h5>I - diploma de curso superior de Diretor de Teatro, Coreógrafo, Professor de Arte Dramática, ou outros cursos semelhantes, reconhecidos na forma da Lei; ou</h5>
+ <h5>II - diploma ou certificado correspondentes às habilitações profissionais de 2º Grau de Ator, Contra-regra, Cenotécnico, Sonoplasta, ou outras semelhantes, reconhecidas na forma da Lei; ou</h5>
+ <h5>III - atestado de capacitação profissional fornecido pelo Sindicato representativo das categorias profissionais e, subsidiariamente, pela Federação respectiva.</h5>
+ <h4>§ 1º - A entidade sindical deverá conceder ou negar o atestado mencionado no item III, no prazo de 3 (três) dias úteis, podendo ser concedido o registro, ainda que provisório, se faltar manifestação da entidade sindical, nesse prazo.</h4>
+ <h4>§ 2º - Da decisão da entidade sindical que negar a concessão do atestado mencionado no item III deste artigo, caberá recurso para o Ministério do Trabalho, até 30 (trinta) dias, a contar da ciência.</h4>
+ <h3>Art. 8º - O registro de que trata o artigo anterior poderá ser concedido a título provisório, pelo prazo máximo de 1 (um) ano, com dispensa do atestado a que se refere o item III do mesmo artigo, mediante indicação conjunta dos Sindicatos de empregadores e de empregados.</h3>
+ <h3>Art. 9º - O exercício das profissões de que trata esta Lei exige contrato de trabalho padronizado, nos termos de instruções a serem expedidas pelo Ministério do trabalho.</h3>
+ <h4>§ 1º - O contrato de trabalho será visado pelo Sindicato representativo da categoria profissional e, subsidiariamente, pela Federação respectiva, como condição para registro no Ministério do Trabalho, até a véspera da sua vigência.</h4>
+ <h4>§ 2º - A entidade sindical deverá visar ou não o contrato, no prazo máximo de 2 (dois) dias úteis, findos os quais ele poderá ser registrado no Ministério do Trabalho, se faltar a manifestação sindical.</h4>
+ <h4>§ 3º - Da decisão da entidade sindical que negar o visto, caberá recurso para o Ministério do Trabalho.</h4>
+ <h3>Art. 10 - O contrato de trabalho conterá, obrigatoriamente:</h3>
+ <h5>I - qualificação das partes contratantes;</h5>
+ <h5>II - prazo de vigência;</h5>
+ <h5>III - natureza da função profissional, com definição das obrigações respectivas;</h5>
+ <h5>IV - título do programa, espetáculo ou produção, ainda que provisório, com indicação do personagem nos casos de contrato por tempo determinado;</h5>
+ <h5>V - locais onde atuará o contratado, inclusive os opcionais;</h5>
+ <h5>VI - jornada de trabalho, com especificação do horário e intervalo de repouso;</h5>
+ <h5>VII - remuneração e sua forma de pagamento;</h5>
+ <h5>VIII - disposição sobre eventual inclusão do nome do contratado no crédito de apresentação, cartazes, impressos e programas;</h5>
+ <h5>IX - dia de folga semanal;</h5>
+ <h5>X - ajuste sobre viagens e deslocamentos;</h5>
+ <h5>XI - período de realização de trabalhos complementares, inclusive dublagem, quando posteriores a execução do trabalho de interpretação objeto do contrato;</h5>
+ <h5>XII - número da Carteira de Trabalho e Previdência Social.</h5>
+ <h4>Parágrafo único - Nos contratos de trabalho por tempo indeterminado deverá constar, ainda, cláusula relativa ao pagamento de adicional, devido em caso de deslocamento para prestação de serviço fora da cidade ajustada no contrato de trabalho.</h4>
+ <h3>Art. 11 - A cláusula de exclusividade não impedirá o Artista ou Técnico em Espetáculos de Diversões de prestar serviços a outro empregador em atividade diversa da ajustada no contrato de trabalho, desde que em outro meio de comunicação, e sem que se caracterize prejuízo para o contratante com o qual foi assinada a cláusula de exclusividade.</h3>
+ <h3>Art. 12 - O empregador poderá utilizar trabalho de profissional, mediante nota contratual, para substituição de Artista ou de Técnico em Espetáculos de Diversões, ou para prestação de serviço caracteristicamente eventual, por prazo não superior a 7 (sete) dias consecutivos, vedada a utilização desse mesmo profissional, nos 60 (sessenta) dias subseqüentes, por essa forma, pelo mesmo empregador.</h3>
+ <h4>Parágrafo único - O Ministério do Trabalho expedirá instruções sobre a utilização da nota contratual e aprovará seu modelo.</h4>
+ <h3>Art. 13 - Não será permitida a cessão ou promessa de cessão de direitos autorais e conexos decorrentes da prestação de serviços profissionais.</h3>
+ <h4>Parágrafo único - Os direitos autorais e conexos dos profissionais serão devidos em decorrência de cada exibição da obra.</h4>
+ <h3>Art. 14 - Nas mensagens publicitárias, feitas para cinema, televisão ou para serem divulgadas por outros veículos, constará do contrato de trabalho, obrigatoriamente:</h3>
+ <h5>I - o nome do produtor, do anunciante e, se houver, da agência de publicidade para quem a mensagem é produzida;</h5>
+ <p>Il - o tempo de exploração comercial da mensagem;</p>
+ <h5>III - o produto a ser promovido;</h5>
+ <h5>IV - os veículos através dos quais a mensagem será exibida;</h5>
+ <h5>V - as praças onde a mensagem será veiculada;</h5>
+ <p>VI o tempo de duração da mensagem e suas características.</p>
+ <h3>Art. 15 - O contrato de trabalho e a nota contratual serão emitidos com numeração sucessiva e em ordem cronológica.</h3>
+ <h4>Parágrafo único - Os documentos de que trata este artigo serão firmados pelo menos em duas vias pelo contratado, ficando uma delas em seu poder.</h4>
+ <h3>Art. 16 - O profissional não poderá recusar-se à auto dublagem, quando couber.</h3>
+ <h4>Parágrafo único - Se o empregador ou tomador de serviços preferir a dublagem por terceiros, ela só poderá ser feita com autorização, por escrito, do profissional, salvo se for realizada em língua estrangeira.</h4>
+ <h3>Art. 17 - A utilização de profissional contratado por agência de locação de mão-de-obra, obrigará o tomador de serviço solidariamente pelo cumprimento das obrigações legais e contratuais, se se caracterizar a tentativa, pelo tomador de serviço, de utilizar a agência para fugir às responsabilidades e obrigações decorrentes desta Lei ou de contrato.</h3>
+ <h3>Art. 18 - O comparecimento do profissional na hora e no lugar da convocação implica a percepção integral do salário, mesmo que o trabalho não se realize por motivo independente de sua vontade.</h3>
+ <h3>Art. 19 - O profissional contratado por prazo determinado não poderá rescindir o contrato de trabalho sem justa causa, sob pena de ser obrigado a indenizar o em pregador dos prejuízos que desse fato lhe resultarem.</h3>
+ <h4>Parágrafo único - A indenização de que trata este artigo não poderá exceder àquela a que teria direito o empregado em idênticas condições.</h4>
+ <h3>Art. 20 Na rescisão sem justa causa, no distrato e na cessação do contrato de trabalho, o empregado poderá ser assistido pelo Sindicato representativo da categoria e, subsidiariamente, pela Federação respectiva, respeitado o disposto no artigo 477 da Consolidação das Leis do Trabalho .</h3>
+ <h3>Art. 21 A jornada normal de trabalho dos profissionais de que trata esta Lei, terá nos setores e atividades respectivos, as seguintes durações:</h3>
+ <h5>I - Radiodifusão, fotografia e gravação: 6 (seis) horas diárias, com limitação de 30 (trinta) horas semanais;</h5>
+ <h5>II - Cinema, inclusive publicitário, quando em estúdio: 6 (seis) horas diárias;</h5>
+ <h5>III - Teatro: a partir de estréia do espetáculo terá a duração das sessões, com 8 (oito) sessões semanais;</h5>
+ <h5>IV - Circo e variedades: 6 (seis) horas diárias, com limitação de 36 (trinta e seis) horas semanais;</h5>
+ <h5>V - Dublagem: 6 (seis) horas diárias, com limitação de 40 (quarenta) horas semanais.</h5>
+ <h4>§ 1º - O trabalho prestado além das limitações diárias ou das sessões semanais previstas neste artigo será considerado extraordinário, aplicando-se-lhe o disposto nos artigos 59 a 61 da Consolidação das Leis do Trabalho .</h4>
+ <h4>§ 2º - A jornada normal será dividida em 2 (dois) turnos, nenhum dos quais poderá exceder de 4 (quatro) horas, respeitado o intervalo previsto na Consolidação das Leis do Trabalho.</h4>
+ <h4>§ 3º - Nos espetáculos teatrais e circenses, desde que sua natureza ou tradição o exijam, o intervalo poderá, em benefício do rendimento artístico, ser superior a 2 (duas) horas.</h4>
+ <h4>§ 4º - Será computado como trabalho efetivo o tempo em que o empregado estiver à disposição do empregador, a contar de sua apresentação no local de trabalho, inclusive o período destinado a ensaios, gravações, dublagem, fotografias, caracterização, e todo àquele que exija a presença do Artista, assim como o destinado a preparação do ambiente, em termos de cenografia, iluminação e montagem de equipamento.</h4>
+ <h4>§ 5º - Para o Artista, integrante de elenco teatral, a jornada de trabalho poderá ser de 8 (oito) horas, durante o período de ensaio, respeitado o intervalo previsto na Consolidação das Leis do Trabalho.</h4>
+ <h3>Art. 22 - Na hipótese de exercício concomitante de funções dentro de uma mesma atividade, será assegurado ao profissional um adicional mínimo de 40% (quarenta por cento), pela função acumulada, tomando-se por base a função melhor remunerada.</h3>
+ <h4>Parágrafo único - E vedada a acumulação de mais de duas funções em decorrência do mesmo contrato de trabalho.</h4>
+ <h3>Art. 23 - Na hipótese de trabalho executado fora do local constante do contrato de trabalho, correrão à conta do empregador, além do salário, as despesas de transporte e de alimentação e hospedagem, até o respectivo retorno.</h3>
+ <h3>Art. 24 - É livre a criação interpretativa do Artista e do Técnico em Espetáculos de Diversões, respeitado o texto da obra.</h3>
+ <h3>Art. 25 - Para contratação de estrangeiro domiciliado no exterior, exigir-se-á prévio recolhimento de importância equivalente a 10% (dez por cento) do valor total do ajuste à Caixa Econômica Federal em nome da entidade sindical da categoria profissional.</h3>
+ <h3>Art. 26 - O fornecimento de guarda-roupa e demais recursos indispensáveis ao cumprimento das tarefas contratuais será de responsabilidade do empregador.</h3>
+ <h3>Art. 27 - Nenhum Artista ou Técnico em Espetáculos de Diversões será obrigado a interpretar ou participar de trabalho possível de pôr em risco sua integridade física ou moral.</h3>
+ <h3>Art. 28 - A contratação de figurante não qualificado profissionalmente, para atuação esporádica, determinada pela necessidade de características artísticas da obra, poderá ser feita pela forma da indicação prevista no artigo 8º.</h3>
+ <h3>Art. 29 - Os filhos dos profissionais de que trata esta Lei, cuja atividade seja itinerante, terão assegurada a transferência da matrícula e conseqüente vaga nas escolas públicas locais de 1º e 2º Graus, e autorizada nas escolas particulares desses níveis, mediante apresentação de certificado da escola de origem.</h3>
+ <h3>Art. 30 - Os textos destinados à memorização, juntamente com o roteiro de gravação ou plano de trabalho, deverão ser entregues ao profissional com antecedência mínima de 72 (setenta e duas) horas, em relação ao início dos trabalhos.</h3>
+ <h3>Art. 31 - Os profissionais de que trata esta Lei têm penhor legal sobre o equipamento e todo o material de propriedade do empregador, utilizado na realização de programa, espetáculo ou produção, pelo valor das obrigações não cumpridas pelo empregador.</h3>
+ <h3>Art. 32 - É assegurado o direito ao atestado de que trata o item III do artigo 7º ao Artista ou Técnico em Espetáculos de Diversões que, até a data da publicação desta Lei tenha exercido, comprovadamente, a respectiva profissão.</h3>
+ <h3>Art. 33 - As infrações ao disposto nesta Lei serão punidas com multa de 2 (duas) a 20 (vinte) vezes o maior valor de referência previsto no artigo 2º, parágrafo único da Lei n° 6.205, de 29 de abril de 1975 , calculada à razão de um valor de referência por empregado em situação irregular.</h3>
+ <h4>Parágrafo único - Em caso de reincidência, embaraço ou resistência à fiscalização, emprego de artifício ou simulação com o objetivo de fraudar a Lei, a multa será aplicada em seu valor máximo.</h4>
+ <h3>Art. 33. As infrações ao disposto nesta Lei acarretarão a aplicação da multa prevista no inciso II do caput do art. 634-A da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 . (Redação dada pela Medida Provisória nº 905, de 2019) (Revogada pela Medida Provisória nº 955, de 2020) encerrada</h3>
+ <h3>Art. 33. As infrações ao disposto nesta Lei acarretarão a aplicação da multa prevista no inciso II do caput do art. 634-A da Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei n° 5.452, de 1º de maio de 1943 . (Redação dada pela Medida Provisória nº 905, de 2019) (Vigência encerrada)</h3>
+ <h3>Art. 33 - As infrações ao disposto nesta Lei serão punidas com multa de 2 (duas) a 20 (vinte) vezes o maior valor de referência previsto no artigo 2º, parágrafo único da Lei n° 6.205, de 29 de abril de 1975 , calculada à razão de um valor de referência por empregado em situação irregular.</h3>
+ <h4>Parágrafo único - Em caso de reincidência, embaraço ou resistência à fiscalização, emprego de artifício ou simulação com o objetivo de fraudar a Lei, a multa s erá aplicada em seu valor máximo.</h4>
+ <h3>Art. 34 - O empregador punido na forma do artigo anterior, enquanto não regularizar a situação que deu causa à autuação, e não recolher, multa aplicada, após esgotados os recursos cabíveis, não poderá:</h3>
+ <h5>I - receber qualquer benefício, incentivo ou subvenção concedidos por órgãos públicos;</h5>
+ <h5>II - obter liberação para exibição de programa, espetáculo, ou produção, pelo órgão ou autoridade competente.</h5>
+ <h3>Art. 35 - Aplicam-se aos Artistas e Técnicos em Espetáculos de Diversões as normas da legislação do trabalho, exceto naquilo que for regulado de forma diferente nesta Lei.</h3>
+ <h3>Art. 36 - O Poder Executivo regulamentará esta Lei no prazo de 60 (sessenta) dias a contar da data de sua publicação.</h3>
+ <h3>Art. 37 - Esta Lei entrará em vigor no dia 19 de agosto de 1978, revogadas as disposições em contrário, especialmente o art. 35 , o § 2º do art. 480 , o Parágrafo único do art. 507 e o art. 509 da Consolidação das Leis do Trabalho , aprovada pelo Decreto-lei n° 5.452, de 1943 , a Lei n° 101, de 1947 , e a Lei n° 301, de 1948.</h3>
+ <p>Brasília, em 24 de maio de 1978; 157º da Independência e 90º da República.</p>
+ <h3>ERNESTO GEISEL</h3>
+ <p>Euclides Quandt de Oliveira</p>
+ <p>Este texto não substitui o publicado no DOU de 26.5.1978 e retificado em 28.6.1978</p>
+ <p>Regulamento(Vide Lei n° 9.610, de</p>
+ <p>1998) | Dispõe sobre a regulamentação das profissões de Artistas e de técnico em Espetáculos de Diversões,</p>
+ <p>e dá outras providências.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/L6533.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
