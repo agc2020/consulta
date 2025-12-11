@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Decreto-Lei N° 9.202/1946 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Decreto-Lei" />
+ <meta data-pagefind-filter="ano[content]" data-pagefind-sort="ano[content]" content="1946" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Decreto-Lei N° 9.202/1946</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 11/12/2025 16:29:05 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/1937-1946/Del9202.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 17.423 caracteres | espelho: 16.797 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>DECRETO-LEI N° 9.202, DE 26 DE ABRIL DE 1946.</p>
+ <p>Dispõe sôbre pessoal do Ministério das Relações Exteriores e dá outras providências.</p>
+ <p>O Presidente da República, usando da atribuição que lhe confere o artigo 180 da Constituição,</p>
+ <p>DECRETA:</p>
+ <h2>CAPÍTULO I</h2>
+ <h3>DA CARREIRA DE “DIPLOMATA”</h3>
+ <h3>Art. 1º O ingresso na carreira de “Diplomata” far-se-á sempre na classe inicial, mediante concurso de provas ou pelo processo de seleção visto no Decreto-lei n. 9.032, de Março de 1946.</h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 2.171, de 1954)</del></p>
+ <h3>Art. 2º O estágio probatório funcionários dos nomeados para a classe inicial da carreira de “Diplomata" deverá ser feito na Secretaria de Estado.</h3>
+ <h3>Art. 3º Os funcionários da classe de “Diplomata” só poderão casar com brasileira nata e mediante autorização do Ministro de Estado.</h3>
+ <h4>§ 1º A transgressão da norma, artigo, devidamente comprovada determinará a exoneração do funcionário.</h4>
+ <h4>§ 2º Quando a esposa fôr servidor público, terá que exonerar-se cargo ou função.</h4>
+ <h3>Art. 4º A Designação dos funcionários da carreira de “Diplomata" para o exercício de funções diplomáticas ou consulantes será feita decreto do Executivo.</h3>
+ <h3>Art. 5º Os Embaixadores serão nomeados em comissão e escolhidos dentre os funcionários da classe N da carreira de “Diplomata”. (Vide Decreto-Lei n° 9.733, de 1946)</h3>
+ <h4>§ 1º Excepcionalmente, a nomeação poderá recair em pessoa estranha carreira de "Diplomata" brasileiro nato, maior de 35 anos, de reconhecido mérito e com relevantes serviços prestados ao Brasil.</h4>
+ <h4>§ 2º A comissão de Embaixador cessará automaticamente com o têrmo do mandata do Presidente da República que houver feito a nomeação.</h4>
+ <h3>Art. 6º Os Enviados Extraordinários e Ministros Plenipotenciários serão o escolhidos dentre os funcionários das classes N e ‘M da carreira de “Diplomata”.</h3>
+ <h4>Parágrafo único. Os funcionários da classe M da carreira de “Diplomata” poderão, quando necessário, ser mandados servir em Embaixadas, caráter de Ministros-Conselheiros.</h4>
+ <h3>Art. 7º As funções de Primeiro, Segundo e Terceiro Secretário das Missões Diplomáticas serão exercidas, respectivamente, por funcionários das classes L, K. e J da carreira de “Diplomata”</h3>
+ <h4>§ 1º Aos funcionários da classe L, da carreira de “Diplomata’ colocados na primeira metade do respectivo quadro que se recomendam por bons serviços, poderá o Ministro de Estado conferir o título de Conselheiro, até o total de doze.</h4>
+ <h4>§ 2º Os Terceiros Secretários serão escolhidos dentre os funcionários da classe J, já, confirmados.</h4>
+ <h3>Art. 8º As funções de Cônsulado Geral e Cônsul serão exercidas respectivamente por funcionários das classes M e L ou K.</h3>
+ <h4>Parágrafo único. Nos Consulado Gerais, poderão servir funcionários classes L ou K com a designação de Cônsules Adjuntos e em qualquer Consulado após confirmação, os da J com a denominação de Vice- Cônsules.</h4>
+ <h3>Art. 9º Os funcionários da carreira de “Diplomata” terão, no Brasil, o título da última função diplomática ou consular que tenham exercido no exterior.</h3>
+ <h4>§ 1º Quando promovidos, os referidos funcionários terão o título da função diplomática ou consular imediatamente superior.</h4>
+ <h4>§ 2º Os funcionários que ainda não tiverem servido no exterior terão o título da função consular correspondente à sua classe.</h4>
+ <h3>Art. 10. Os funcionários das classes L, K e J da carreira de “Diplomata” deverão servir, ofensivamente, no mínimo, dois anos em casa pôsto e, no máximo, seis anos consecutivos no exterior.</h3>
+ <h4>§ 1º A Secretaria de Estado é considerada pôsto para os efeitos dêste artigo.</h4>
+ <h4>§ 2º Excepcionalmente e para determinados postos, poderá o prazo de permanência nos mesmos ser reduzido, a critério do Ministro de Estado, de acôrdo com as possibilidades da administração e a conveniência do serviço.</h4>
+ <h3>Art. 11 As promoções serão feitas de conformidade, com a legislação geral, respeitadas, porém, as seguintes disposições :</h3>
+ <h6>a) os boletins de merecimento dos funcionários da carreira de “Diplomata” serão apreciados, em conjunta por uma comissão composta da Secretário Geral que a presidira, e dos Chefes do Departamento Político e Cultural, do Departamento Econômico e Consular e do Departamento de Administração. Dado que se verifique parcialidade manifesta nas ponderações conferidas, a referida Comissão recorrerá, ex-officio, ao Ministro do Estado, que as poderá alterar;</h6>
+ <h6>b) as promoções A, classe N obedecerão exclusivamente ao critério do merecimento;</h6>
+ <h6>c) as promoções à classe M obedecerão também ao critério do merecimento; só poderão concorrer a elas os funcionários da classe L, colocados na primeira metade do respectivo quadro; a sexta vaga de cada seis que se verificarem na classe M, será, porém, preenchida por antigüidade.</h6>
+ <h6>c) As promoções à classe N obedecerão também ao critério de merecimento, e a cada promoção concorrerão, necessária e incondicionalmente, todos os funcionários da classe anterior, colocados nos dois primeiros terços da lista de antiguidade. (Redação dada pela Lei n° 2.060, de 1953)</h6>
+ <h4>Parágrafo único. A lista de cada promoção à classe N constará dos nomes dos funcionários da classe M, colocados nos dois primeiros terços, por ordem de antiguidade. (Incluído pela Lei n° 2.060, de 1953)</h4>
+ <h3>Art. 12 A aposentadoria compulsória ou por invalidez, dos funcionários da carreira de “Diplomata” será regulada pela lei geral, na base da respectiva remuneração no Brasil.</h3>
+ <h4>§ 1º Serão aposentados compulsóriamente os que atingirem os seguintes limites de idade : Classe N – 65 anos; Classe M – 62 anos; Classe L – 60 anos; Classe K – 55 anos.</h4>
+ <h4>§ 2º Poderão também ser aposentados ex-officio, a critério do Govêrno, os funcionários da carreira de “Diplomata” que hajam completado 35 anos de efetivo exercício de serviço público.</h4>
+ <h3>Art. 13 As férias ordinárias dos funcionários da carreira de “Diplomata” serão reguladas pela legislação geral.</h3>
+ <h4>§ 1º Os funcionários das classes N e M da carreira do “Diplomata”</h4>
+ <p>depois de quatro anos consecutivos de exercício no exterior, terão direito a quatro meses de férias ordinárias, que deverão ser gozadas no Brasil.</p>
+ <h4>§ 2º No ano em que tiverem gozado férias extraordinárias, não terão direito a férias ordinárias.</h4>
+ <h4>§ 3º Os funcionários da carreira de “Diplomata” só poderão gozar férias ordinárias fora do território do país em que servem mediante prévia autorização da Secretaria de Estado.</h4>
+ <h4>§ 4º Nenhum funcionário poderá gozar férias ordinárias ou extraordinárias antes de um período mínimo de um ano de efetivo exercício no pôsto.</h4>
+ <h2>CAPÍTULO II</h2>
+ <h3>DA REMUNERAÇÃO E DAS VANTAGENS</h3>
+ <h3>Art. 14 Os funcionários da carreira de “Diplomata” receberão o vencimento ou a remuneração correspondente aos seus cargos.</h3>
+ <h4>§ 1º A remuneração será constituída pelo vencimento acrescido da representação.</h4>
+ <h3>Art. 15 Perceberão apenas vencimento os que não tenham ainda servido no exterior.</h3>
+ <h3>Art. 15. Os vencimentos dos funcionários da carreira de Diplomata, são os seguintes: (Redação dada pela Lei n° 1.220, de 1950)</h3>
+ <p>Padrão</p>
+ <p>Embaixador, em comissão, e Ministro Plenipotenciário de 1ª classe .............................</p>
+ <h3>O</h3>
+ <p>Ministro Plenipotenciário de 2ª classe e Cônsul Geral...................................................</p>
+ <h3>N</h3>
+ <p>Conselheiro, Primeiro Secretário e Cônsul de 1ª classe.................................................</p>
+ <h3>M</h3>
+ <p>Segundo Secretário e Cônsul de 2ª classe...................................................................</p>
+ <h3>L</h3>
+ <p>Terceiro Secretário e Cônsul de 3ª classe....................................................................</p>
+ <h3>K</h3>
+ <h4>§ 1º Receberão vencimentos e representação os que estejam no estrangeiro, ou ali já, tenham servido por mais de quatro anos.</h4>
+ <h4>§ 1º Os funcionários da carreira de Diplomata, quando em exercício na Secretaria de Estado, receberão uma representação, correspondente a quatro quintos dos vencimentos, os da classe O e, a dois terços, os das classes N, M, L e K. (Redação dada pela Lei n° 1.220, de 1950)</h4>
+ <p><del>§ 2º Os que estiverem servindo no exterior terão representação variável fixada em tabela especial, revista anualmente mediante decreto do Executivo, e estabelecida de conformidade com os índices do custo vida. (Vide Decreto nº 42.996, de 1958)</p>
+ <p>(Vide Decreto-Lei n° 995, de 1969)</p>
+ <p>(Vide Decreto nº 52.587, de 1963) Revogado pela Lei n° 5.809, de 1972</del></p>
+ <h4>§ 3º Os funcionários nas condições do parágrafo anterior ter mais, calculadas sôbre a respectiva representação, as seguintes percentagens: 10% (classes N e M) ou 15 (classes L, K ou J), se forem casados ou servirem de arrimo a mãe viúva; e 5%, por filho menor filha solteira, que vivam em sua companhia, ou cuja subsistência esteja a seu cargo, equiparados, para esse fim, os enteados, os tutelados e curatelas que não possuam recursos próprios.</h4>
+ <p><del>§ 3º Os funcionários nas condições do parágrafo anterior terão mais, calculadas sôbre a respectiva, representação, as seguintes percentagens: 10% (dez por cento), se forem casados ou servirem de arrimo a mãe viúva; e 5% (cinco por cento) por filho menor ou filha solteira, até o máximo de 3 (três), que vivam em sua companhia ou cuja subsistência esteja a seu cargo, equiparados, para êsse fim, os enteados, ou tutelados e curatelados que não possuam recursos próprios. (Redação dada pelo Decreto-Lei n° 9.677, de 1946) Revogado pela Lei n° 5.809, de 1972</del></p>
+ <h4>§ 4º Os funcionários da classe inicial só terão direito à representação, de que trata o § 1º dêste artigo, depois de confirmados. (Incluído pela Lei n° 1.220, de 1950)</h4>
+ <p><del></p>
+ <h3>Art. 16 (Revogado pela Lei n° 1.220, de 1950)</del></h3>
+ <h3>Art. 17. Aos funcionários da carreira de “Diplomata” que vierem Brasil em férias extraordinárias ou chamados a serviço aplicar-se-á o posto no parágrafo 2º do art. 15.</h3>
+ <p><del></p>
+ <h3>Art. 17 – Aos funcionários da carreira de Diplomata que vierem ao Brasil em férias extraordinárias ou chamados a serviço aplicar-se-á o disposto no § 2º do art. 15 (Revogado pela Lei n° 5.809, de 1972)</del></h3>
+ <p><del></p>
+ <h3>Art. 18. Quando no período da função de Encarregado de Negócios ou Encarregado de Repartição Consular os funcionários da carreira de "Diplomata" terão suas respectivas representações acrescidas de um suplemento, que será fixado em tabela especial, revista periodicamente e aprovada por decreto do executivo. (Vide Decreto nº 42.996, de 1958)</h3>
+ <p>(Vide Decreto nº 529-A, de 1962)</p>
+ <p>(Revogado pela Lei n° 5.809, de 1972)</del></p>
+ <p><del></p>
+ <h3>Art. 19 (Revogado pela Lei n° 5.809, de 1972)</del></h3>
+ <h3>Art. 20. Os Cônsules e vice-cônsuis honorários, quando em exercício perceberão, a título de gratificação e na forma fixada em regulamento uma importância proporcional aos emolumentos que arrecadarem.</h3>
+ <h2>CAPÍTULO III</h2>
+ <h3>DISPOSIÇÕES GERAIS</h3>
+ <h3>Art. 21. O Ministro de Estado no desempenho das suas funções terá auxiliares pessoais funcionários Ministério das Relações Exteriores de sua livre escolha.</h3>
+ <h4>Parágrafo único. Em nenhum caso poderá aproveitar em tal serviço pessoas estranhas à Secretaria de Estado.</h4>
+ <h3>Art. 22. O Secretário Geral, os Chefes de Departamento e os Chefes de Divisão da Secretaria de Estado serão escolhidos dentre os funcionários da carreira de “Diplomata e designados por Decreto executivo.</h3>
+ <h4>§ 1º O Secretário Geral, substituto eventual do Ministro de Estado, será escolhido dentre os funcionários da classe N.</h4>
+ <h4>§ 2º Os Chefes de Departamentos serão escolhidos dentre os funcionários das classes N ou M, os de Divisão, dentre os funcionários das classes M ou L; os de serviço dentre os funcionários das classes M ou L da carreira de “diplomata”, ou dentre os funcionários do Quadro Permanente do Ministério das Relações Exteriores e designados por Decreto do Executivo.</h4>
+ <h4>§ 2º Os Chefes de Departamento serão escolhidos dentre os funcionários das classes M ou N; os de Divisão dentre os funcionários das classes M ou L; os de Serviço, dentre os funcionários das classes M ou L da carreira de Diplomata ou dentre o Pessoal permanente do Ministério das Relações Exteriores, e designado por Decreto do Executivo. (Redação dada pelo Decreto-Lei n° 9.589, de 1946)</h4>
+ <h3>Art. 23. Os cargos de Cônsul Privativo serão de provimento efetivo e os seus ocupantes nomeados por Decreto Executivo, mediante proposta do Ministro de Estado das Relações Exteriores devendo a escolha recair em brasileiros natos, de comprovada idoneidade e que estiverem familiarizados com o meio onde irão exercer as atividades.</h3>
+ <h3>Art. 24. Aos ocupantes dos cargos isolados, padrão M , de Cônsul Privativo, não se aplicarão as disposições relativas aos funcionários da carreira de “Diplomata”.</h3>
+ <h4>Parágrafo único. Os referidos funcionários só poderão servir em Consulados Privativos e não poderão ser transferidos para a Carreira de “Diplomata".</h4>
+ <h3>Art. 25. As funções consulares honorárias serão exercidas por cidadãos brasileiros ou, na falta destes, por estrangeiros de comprovada idoneidade e destacada posição social.</h3>
+ <h4>Parágrafo único. Os Cônsules honorários serão nomeados por decreto do Executivo e os Vice-Cônsules honorários por portaria do Ministro de Estado.</h4>
+ <h3>Art. 26. Poderão ser nomeados para os Consulados Honorários, Vice-Cônsules honorários, que substituirão os respectivos titulares em seus impedimentos.</h3>
+ <h3>Art. 27. As funções diplomáticas e consulares são incompatíveis com as de agente, delegado ou representante de qualquer firma ou sociedade comercial, com sede no Brasil ou no exterior.</h3>
+ <h4>§ 1º Essa proibição abrange tôdas as sociedades ou agremiações de propaganda, permanentes ou temporárias, excetuando-se as de caráter exclusivamente cultural ou beneficente.</h4>
+ <h4>§ 2º Excetuam-se dessa proibição os serventuários honorários, que, entretanto, deverão fazer declaração escrita sôbre as organizações comerciais, culturais ou humanitárias de que façam ou venham a fazer parte.</h4>
+ <h3>Art. 28. Os cargos isolados de provimento efetivo de Conselheiros Comerciais, padrão M, do Quadro Permanente do Ministério das Relações Exteriores, são de livre nomeação do Presidente da República e serão exercidos, no exterior, junto às Missões diplomáticas.</h3>
+ <h4>Parágrafo único. Os Conselheiros Comerciais terão as mesmas vantagens pecuniárias concedidas aos funcionários da classe M, da Carreira de Diplomata, designados para exercer as funções de Cônsul Geral, sendo-lhes igualmente extensivos os benefícios assegurados àqueles funcionários pela legislação vigente, na parte relativa a férias e licença, mas não poderão ser transferidos para a carreira de Diplomata.</h4>
+ <h3>Art. 29. Nenhum funcionário da carreira de Diplomata, classe M, poderá ser Chefe de Missão sem que tenha servido, no mínimo, dois anos numa Missão diplomática, dois anos numa Repartição consular e dois anos na Secretaria de Estado.</h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 607, de 1949)</del></p>
+ <p><del></p>
+ <h3>Art. 30 (Revogado pela Lei n° 1.220, de 1950)</del></h3>
+ <p><del>Parágrafo único (Revogado pela Lei n° 1.220, de 1950)</del></p>
+ <h3>Art. 31. Fica restabelecido o uso obrigatório do primeiro uniforme ou fardão, instituído pelo Decreto número 20.041, de 7 de Maio de 1941 .</h3>
+ <h4>Parágrafo único. Para a aquisição do fardão o Ministério das Relações Exteriores adiantará aos funcionários a necessária importância, uma única vez, e a descontará dos seus vencimentos em vinte e quatro prestações mensais.</h4>
+ <h3>Art. 32. Fica revogado o Decreto-lei n° 8.325, de 8 de Dezembro de 1945.</h3>
+ <h3>DISPOSIÇÕES TRANSITÓRIAS</h3>
+ <h3>Art. 1º Nas promoções por antigüidade, para a classe L, da carreira de Diplomata serão contemplados, alternadamente, os funcionários provenientes dos antigos corpos diplomático e consular, de acôrdo com a respectiva classificação.</h3>
+ <h3>Art. 2º Ficam assegurados os direitos dos funcionários beneficiados pelo art. 4º das Disposições Transitórias do Decreto-lei n° 791, de 14 de Outubro de 1938 .</h3>
+ <h3>Art. 3º Continuarão percebendo a representação de que trata o artigo 16, os funcionários que na publicação do presente Decreto-lei se encontrarem em exercício na Secretaria do Estado.</h3>
+ <h3>Art. 4º A primeira vaga que se verificar na classe M depois da publicação dêste Decreto-lei, será, preenchida por antigüidade.</h3>
+ <h3>Art. 5º Os ocupantes de cargos classe inicial da carreira de Diplomata, que na mesma ingressaram independentemente de concurso de prova e sujeitos, ainda, ao estágio probatório, somente serão confirmados após a conclusão do curso de preparação à carreira diplomática do Instituto Rio Branco, no qual serão inscritos ex-officio.</h3>
+ <h3>Art. 6º Êste Decreto-lei entrará em vigor na data da sua publicação revogadas as disposições em contrário.</h3>
+ <p>Rio de Janeiro, em 26 de Abril 1946, 125º da Independência e 68º República.</p>
+ <p>João Neves da Fontoura.</p>
+ <p>Este texto não substitui o publicado no DOU de 27.4.1946 e retificado em 3.5.1946.</p>
+ <p>Dispõe sôbre pessoal do Ministério das Relações Exteriores e dá outras providências.</p>
+ <p>Embaixador, em comissão, e Ministro Plenipotenciário de 1ª classe</p>
+ <p>.............................</p>
+ <p>Plenipotenciário de 2ª classe e Cônsul</p>
+ <p>Geral...................................................</p>
+ <p>Primeiro Secretário e Cônsul de 1ª</p>
+ <p>classe.................................................</p>
+ <p>Secretário e Cônsul de 2ª</p>
+ <p>classe...................................................................</p>
+ <p>Secretário e Cônsul de 3ª</p>
+ <p>classe....................................................................</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/1937-1946/Del9202.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

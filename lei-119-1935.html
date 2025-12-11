@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>LEI N° 119, DE 25 DE NOVEMBRO DE 1935 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Lei" />
+ <meta data-pagefind-filter="ano[content]" data-pagefind-sort="ano[content]" content="1935" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>LEI N° 119, DE 25 DE NOVEMBRO DE 1935</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 11/12/2025 16:31:43 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/1930-1949/L0119.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 10.636 caracteres | espelho: 10.611 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 119, DE 25 DE NOVEMBRO DE 1935.</p>
+ <p>Regula a distribuição de subvenções a Instituições de Assistencia, Educação e Cultura.</p>
+ <p>O Presidente da Republica dos Estados Unidos do Brasil: Faço saber que o Poder Legislativo decreta e eu sancciono a seguinte lei :</p>
+ <h3>Art. 1º A distribuição dos creditos orçamentarios ou addicionaes e do producto de quaesquer contribuições e taxas destinadas a auxilios ou subvenção a instituições, cuja finalidade esteja comprehendida entre os assumptos que se relacionem com a hygiene, educação e culutra, assistencia hospitalar e actividades correlatas, obedecerá aos preceitos da presente lei.</h3>
+ <h3>Art. 2º Só poderão ser contempladas instituições que se destinem a amparar os desvalidos ou enfermos, a maternidade e a infancia, estimular a educação eugenica, soccorrer as familias de prole numerosa, proteger a juventude contra toda exploração, bem como contra o abandono physico, moral e intelleetual ( art. 138, lettras a a e da Constituição Federal ), animar o desenvolvimento das scianeias, das artes, das lettras e da cultura em geral, proteger os objectos de interesse historico e o patrimonio artistico do Paiz e bem assim prestar assistencia ao trabalhador intellectual (art. 148, da Constituição), aos sem trabalho, e incorporar o selvicola á commuhão nacional (art. 5º, XIX, lettra m).</h3>
+ <p>Paragrapho unico. Não serão concedidos auxilios a instituições que limitarem os seus beneficios ao numero restricto dos seus associados.</p>
+ <h3>Art. 3º As instituições interessadas solicitarão no primeiro trimestre de cada anno, em requerimento sellado subscripto por seu representante legal, e dirigido ao ministro da Educação e Saude Publica, o auxilio de que carecem, provando com documentos habeis :</h3>
+ <p>1º, que se acham legalmente constituidas com personalidade juridica e com funccionamento permanente ha mais de um anno;</p>
+ <p>2º, que o seu fim se enquadra em um dos casos previatos no art. 2º;</p>
+ <p>3º, que não recebem outra qualquer subvenção ou auxilio da União, nem dispõem de recursos proprios sufficientes para o custeio das suaa despesas e desenvolvimento dos seus serviços;</p>
+ <p>4º, que prestam serviços gratuitos, segundo os fins a que se destinam, indicando o numero de beneficiados durante o ultimo anno.</p>
+ <h4>§ 1º Além dos documentos acima indicados, deverão as instituições juntar aos respectivos requerimentos: estatutos, relatorios, regulamentos, balancetes relativos ao ultimo someatre do sua actividade e outros quaesquer elementos que comprovem funccionamento regular e util, inclusive attestados das autoridades judiciarias e administrativas, a cuja jurisaicção ou fiscalização estejam directamento subordinadas.</h4>
+ <h4>§ 2º Em se tratando de instituições de protecção a menores, provarão tambem qual o numero de acolhidos no semestre anterior, por solicitação da autoridade judiciaria competente, e os serviços prestados á assistencia official.</h4>
+ <h4>§ 3° As instituições de ensino de qualquer gráo e ramo, provarão mais : matricula, frequencia, aproveitamento do pessoal discente, idoneidade do pessoal docente, annexando exemplares dos programmas, quadros de movimento de todas na suas dependencias e outros quaesquer elementos demonstrativos da efficiencia e normalidade dos seus trabalhos.</h4>
+ <h4>§ 4º Além dos documentos acima indicados, tratando-se de hospital ou de maternidade, deverá ser apresentado um relatorio correspondente no anno anterior do qual constarão: numero de leitos occupados, enfermarias, clinicas e demais elementos de apparelhamento. Tratando-se de ambulatorio e dispensario, o relatorio deverá mencionar: a organização e assistencia das clinicas e o respectivo movimento.</h4>
+ <h4>§ 5º Quanto aos museus, o relatorio deverá indicar numero e natureza das colleccões estudos realizados, permutas de material e trabalhos publicados.</h4>
+ <h4>§ 6º As provas exigidas pelos numeros 1, 3, e 4 podem consistir em attestados, com firmas reconhecidas, de autoridades judiciarias ou administrativas da comarca ou municipio em que tiver séde a instituição, sendo necessario que, para validade desses attestados, taes autoridades não façam parte da directoria da instituição intereasada.</h4>
+ <h4>§ 7º Os relatorios a que se referem os pagraphos 4º e 5º deverão ser visados pelo fiscal competente, ou na sua falta, e successivamente, por autoridade judiciaria ou administrativa da comarca ou municipio, em que tiver séde a instituição.</h4>
+ <h3>Art. 4º Somente para percepção do primeiro auxilio são exigidas as provas a que se referem os ns. 1, 2, 3 e 4 do artigo anterior, bastando, para os demais, as dos ns. 3 e 4 e seus paragraphos.</h3>
+ <h3>Art. 5.º Urn conselho nomcado pelo Presidente da Repu blica e composto de cinco pessoas notoriamente competentes dovotada' as questões dn assistencia social, do director de Saude o Assistencia Medico Social, do director de Assistencia Hospitalar, da Directoria Geral de Educação, do director geral de Protecção á Maternidade e á Infancia. do juiz de Menores do Distrito Federal, do Director Geral de Contabilidade do Ministerio da Educação, e de um delegado de cada um dos Ministerios da Justiça, Agricultura e Trabalho, examiará os processos e emitirá parecer sobre as instituições a serem beneficiadas, indicando, por ordem alphabetica, o nome da instituição, natureza dos seus serviços, Estado e localidade onde tem sua séde, importancia do auxilio requerido e do que deva ser concedido, fundamentando sempre as conclusões e considerando a extensão e importancia social dos beneficios prestados pelas instituições e a sua collaboração com a assistencía official, de modo a que o auxilio ou a subvenção seja proporcional a esses beneficios.</h3>
+ <h4>§ 1º O Conselho poderá subdividir-se em commissões, para mais facil exame dos processos.</h4>
+ <h4>§ 2º Haverá na Capital de cada Estado, no Districto Federal e no Torritorio do Acre. uma commissão especial de assistencia nomeada peio Presidente da Republica e composta de cinco membros, cabendo-lhe o exame preliminar dos processos de pedidos de auxiilo ou prestação de contas, bem como outras attribuições que forem determinadas em regulamento e não offenderem dispositivos desta lei. Emittido o parecer, a Commissão encaminhará os proessos ao Conselho, por intermedio do Ministerio da Educação.</h4>
+ <h3>Art. 6º Tomando conhecimento do parecer do Conselho, o Ministro da Educação organizará a relação definitiva da distribuição dos auxilios, para approvação do Presidente da Republica, que a remettertá á Camara dos Deputados até 30 de junho de cada anno, com o quadro de pedidos examinados,pelo Conselho.</h3>
+ <p>Paragrapho unico. Os processos de hábilitação serão enviados á Camara dos Deputados, sempre que forern requisitados pela Cominissão competente para opinar a respeito.</p>
+ <h3>Art. 7º A proposta do Governo abrangerá as instituições que, em virtude de contracto ou lei anterior, tenham direito a percepção do auxilio, mencionando, explicitamente, a natureza desses compromissos e os actos que os determinarem.</h3>
+ <p>Paragrapho unico. As fundações que pelos seus representantes legaes tenham assignado contractos ou accordos com o Governo para prestação de serviços especiaes ou technicos, poderão receber, além da subvenção que lhes for concedida, quantia estipulada para o cumprimento dos ditos contractos ou accordos.</p>
+ <h3>Art. 8º O Poder Executivo só ordenará pagamento a instituições que se achem habilitadas nos termos da presente lei</h3>
+ <h3>Art. 9º Os pagamentos das subvenções serão feitos em duas prestações semestraes.</h3>
+ <h3>Art. 10. Tio seu pedido de pagamento, a instituição declarará, se este deverá ser feito diretamente pelo Thesouro, ou pela Delegacia Fiscal do Estado em que tiver séde.</h3>
+ <h3>Art. 11. As instituições que em qualquer tempo já tiverem obtido auxilio deverão juntar ao novo pedido os comprovantes da applicação do auxilio anterior.</h3>
+ <h4>§ 1º O pagamento do novo auxilio só poderá ser feito depois de approvadas as contas dessa applicacão.</h4>
+ <h4>§ 2º Se, dentro de tres mezes da apresentação, não tiverem sido approvadas as ditas contas, serão estas consideradas boas para todos os effeitos.</h4>
+ <h3>Art. 12. Na distribuição dos auxilios e suhvenções, dois terços, pelo menos, da sua importancia total caberão a instituições particulares de natureza das indicadas no art. 2º, e nas condições estabelecidas pelo art. 3º podendo o restante ser applicado ás associações civis que se encarreguem do serviços officiaes de assistencia e cultura.</h3>
+ <h3>Art. 13. O Ministerio da Educação e Saude Publica. Tendo em vista o parecer do Conselho, a que se refere o art. 5º e a natureza da instituição beneficiada, fixará annualmente, de accordo com esta, o numero de vagas que devem ser postas á dispocição das autoridaes judiciarias ou administrativas encarregadas dos serviços de assistenecia social, devendo ser para isso levadas em conta a importancia da subvenção concedida e a capacidade do estabelecimento.</h3>
+ <h3>Art. 14. Não será permittido, com os recurso da subvenção federal, o pagamento do pessoal superior da administração do estabelecimento e das despesas feitas com a acquisição de propriedades, apolices, acções, titulos, gratificações retepresentações, festas e homenagens.</h3>
+ <p>Paragrapho unico. Poderão, entretanto, taes recursos ser dispendidos em ampliação ou acquisição de immaveis e material, desde que visem augmentar o numero de beneficiados ou a efficiencia dos serviços prestados pela instituição.</p>
+ <h3>Art. 15. Na regulamentação da presente lei, o Poder Executivo estabelecerá as normas de fiscalização julgadas necessarias á concessão dos auxilios e seu emprego, bem como as relativas ao processo de pagamento dos mesmos subsitituindo até então, em vigor, ás actuaes disposições legaes, regulamentos e instrucções referentes á materia, no em que não contrariarem esta lei.</h3>
+ <h4>§ 1º A falta de inspecção, desde que se não verifique por culpa da instituição beneficiada, não será causa para que Se lhe não conceda ou pague a subvenção.</h4>
+ <h4>§ 2º As despesas com a fiscalização não podem exceder, annualmente, a quantia de 100:000$000.</h4>
+ <h3>Art. 16. Os saldos porventura verificados no fim do exercicio serão transferidos e incorporados ao exercício seguinte ( art. 186 da Constituição Federal .)</h3>
+ <h3>Art. 17. Serão incluidos, na distribuição a ser procedida em 1936, os saldos da Caixa de Subvenções, as rendas da taxa sobre embarcações e das quotas de loteria não applicadas até o exercicio de 1935.</h3>
+ <h3>Art. 18. A distribuição das subvenções e auxilios será, feita em 1936, na forma da lei n. 53, de 18 de maio de 1935 .</h3>
+ <h3>Art. 19. Revogam-se as disposições em contrario.</h3>
+ <p>Rio de Janeiro, 25 de novembro de 1935, 114º da Independência e 47º da Republica.</p>
+ <p>Este texto não substitui o publicado no DOU de 3.12.1935 e retificado em 13.12.1935</p>
+ <p>Regula a distribuição de subvenções a Instituições de Assistencia, Educação e Cultura.</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/1930-1949/L0119.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>

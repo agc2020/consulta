@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <title>Decreto-Lei N° 3.347/1941 – Espelho</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="robots" content="noindex" />
+ <meta name="description" content="Espelho do Ato Normativo - TJPR (espelho técnico para IA)" />
+ <meta data-pagefind-filter="orgao[content]" content="Legislativo" />
+ <meta data-pagefind-filter="tipo[content]" content="Decreto-Lei" />
+ <meta data-pagefind-filter="ano[content]" data-pagefind-sort="ano[content]" content="1941" />
+ <style>
+ /* Variáveis CSS para temas */
+ :root {
+ --primary-color: #0066cc;
+ --text-color: #333;
+ --text-muted: #666;
+ --bg-body: #f8f9fa;
+ --bg-container: white;
+ --bg-meta: #f8f9fa;
+ --border-color: #e9ecef;
+ --border-header: #0066cc;
+ --shadow: 0 0 10px rgba(0,0,0,0.1);
+ --disclaimer-bg: #fff3cd;
+ --disclaimer-border: #ffeaa7;
+ --disclaimer-text: #856404;
+ }
+
+ /* Modo dark */
+ [data-theme="dark"] {
+ --primary-color: #4a9eff;
+ --text-color: #e0e0e0;
+ --text-muted: #a0a0a0;
+ --bg-body: #1a1a1a;
+ --bg-container: #252525;
+ --bg-meta: #2a2a2a;
+ --border-color: #333;
+ --border-header: #4a9eff;
+ --shadow: 0 0 10px rgba(0,0,0,0.5);
+ --disclaimer-bg: #3d3416;
+ --disclaimer-border: #5a4a1f;
+ --disclaimer-text: #f4d06f;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1.6;
+ color: var(--text-color);
+ background-color: var(--bg-body);
+ transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ /* increase horizontal padding to give more breathing room on the left and right */
+ padding: 20px 40px;
+ background-color: var(--bg-container);
+ box-shadow: var(--shadow);
+ min-height: 100vh;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ header {
+ border-bottom: 3px solid var(--border-header);
+ padding-bottom: 20px;
+ margin-bottom: 0;
+ transition: border-color 0.3s ease;
+ }
+
+ header h1 {
+ color: var(--primary-color);
+ font-size: 1.8em;
+ margin-bottom: 10px;
+ font-weight: 600;
+ transition: color 0.3s ease;
+ }
+
+ .subtitle {
+ color: var(--text-muted);
+ font-size: 1.1em;
+ font-style: italic;
+ transition: color 0.3s ease;
+ }
+
+
+ /* Estilos do toggle de tema */
+ .theme-toggle-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 6px;
+ background: transparent;
+ padding: 8px 0;
+ margin-bottom: 8px;
+ border-radius: 0;
+ box-shadow: none;
+ }
+
+ .theme-toggle-label {
+ font-size: 0.65rem;
+ font-weight: 500;
+ color: var(--text-muted);
+ margin-right: 3px;
+ }
+
+ .theme-options {
+ display: flex;
+ gap: 3px;
+ }
+
+ .theme-option {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2px;
+ padding: 2px 5px;
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ background: transparent;
+ color: var(--text-muted);
+ font-size: 0.6rem;
+ cursor: pointer;
+ transition: all .2s ease;
+ white-space: nowrap;
+ opacity: 0.6;
+ }
+
+ .theme-option:hover {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--bg-meta);
+ }
+
+ .theme-option.active {
+ opacity: 1;
+ border-color: var(--primary-color);
+ background: var(--primary-color);
+ color: white;
+ font-weight: 500;
+ }
+
+ .theme-option input[type="radio"] {
+ display: none;
+ }
+
+ .theme-icon {
+ font-size: 0.7rem;
+ }
+
+ .meta {
+ background-color: var(--bg-meta);
+ border: 1px solid var(--border-color);
+ border-radius: 5px;
+ padding: 15px;
+ margin-bottom: 30px;
+ font-size: 0.9em;
+ transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+
+ .meta div {
+ margin-bottom: 5px;
+ font-size: 1.2em;
+ }
+
+ .meta strong {
+ color: var(--text-color);
+ transition: color 0.3s ease;
+ }
+
+ .meta a {
+ color: var(--primary-color);
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+
+ .meta a:hover {
+ text-decoration: underline;
+ }
+
+ article {
+ line-height: 1.8;
+ }
+
+ article h1 {
+ color: var(--primary-color);
+ font-size: 1.4em;
+ margin: 20px 0 12px 0;
+ /* use a real font weight instead of the invalid 'justify' keyword */
+ font-weight: 600;
+ text-align: justify;
+ transition: color 0.3s ease;
+ }
+
+ article h2 {
+ /* Estilo unificado para seções (Capítulos, Seções, Subseções) */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h3 {
+ /* Estilo unificado para artigos e demais níveis normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h4 {
+ /* Aplicar mesmo estilo de h3 para parágrafos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h5 {
+ /* Aplicar mesmo estilo de h3 para incisos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article h6 {
+ /* Aplicar mesmo estilo de h3 para alíneas */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ article p {
+ /* Parágrafos comuns seguem o estilo unificado dos títulos normativos */
+ color: var(--text-color);
+ font-size: 1.4rem;
+ font-weight: normal;
+ text-align: justify;
+ line-height: 1.3;
+ margin: 20px 0 12px 0;
+ }
+
+ /* enlarge the very first paragraph inside the article, which typically contains the document's
+ title (e.g. "INSTRUÇÃO NORMATIVA Nº ..."), making it stand out. */
+ article p:first-of-type {
+ font-size: 1.6em;
+ line-height: 1.4;
+ font-weight: 700;
+ text-align: center;
+ color: var(--primary-color);
+ margin: 24px 0;
+ transition: color 0.3s ease;
+ }
+
+ footer {
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border-color);
+ transition: border-color 0.3s ease;
+ }
+
+ .disclaimer {
+ background-color: var(--disclaimer-bg);
+ border: 1px solid var(--disclaimer-border);
+ padding: 15px;
+ border-radius: 5px;
+ font-size: 1.2em;
+ color: var(--disclaimer-text);
+ text-align: justify;
+ transition: all 0.3s ease;
+ text-align: justify;
+ }
+
+ .disclaimer strong {
+ color: var(--disclaimer-text);
+ transition: color 0.3s ease;
+ }
+
+ .disclaimer a {
+ color: var(--disclaimer-text);
+ text-decoration: underline;
+ transition: color 0.3s ease;
+ }
+
+ @media (max-width: 768px) {
+ .container {
+ padding: 15px;
+ margin: 0;
+ box-shadow: none;
+ }
+ 
+ header h1 {
+ font-size: 1.5em;
+ }
+ 
+ article h1 {
+ font-size: 1.3em;
+ }
+ 
+ .theme-toggle-container {
+ justify-content: center;
+ padding: 10px 0;
+ }
+ 
+ .theme-toggle-label {
+ font-size: 0.7rem;
+ }
+ 
+ .theme-option {
+ padding: 3px 6px;
+ font-size: 0.65rem;
+ }
+ 
+ .theme-icon {
+ font-size: 0.75rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <main class="container">
+ <header>
+ <h1>Decreto-Lei N° 3.347/1941</h1>
+ <p class="subtitle">Legislação Federal: Clique no hiperlink ABAIXO para consultar o conteúdo diretamente na fonte oficial.</p>
+ </header>
+
+ <!-- Toggle de Tema -->
+ <div class="theme-toggle-container">
+ <div class="theme-toggle-label">Tema</div>
+ <div class="theme-options">
+ <label class="theme-option" data-theme="auto">
+ <input type="radio" name="theme" value="auto" checked>
+ <span class="theme-icon">🌓</span>
+ <span>Sistema</span>
+ </label>
+ <label class="theme-option" data-theme="light">
+ <input type="radio" name="theme" value="light">
+ <span class="theme-icon">☀️</span>
+ <span>Claro</span>
+ </label>
+ <label class="theme-option" data-theme="dark">
+ <input type="radio" name="theme" value="dark">
+ <span class="theme-icon">🌙</span>
+ <span>Escuro</span>
+ </label>
+ </div>
+ </div>
+
+ <div class="meta">
+ <div><strong>Última sincronização:</strong> 11/12/2025 14:23:32 (processado via snapshot.py)</div>
+ <div><strong>Fonte oficial:</strong> <a href="https://www.planalto.gov.br/ccivil_03/leis/1950-1969/L3373.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a></div>
+ <div><strong>Método de extração:</strong> snapshot.py (Playwright + BeautifulSoup + Formatação)</div>
+ <div><strong>Tamanho do conteúdo:</strong> origem: 13.099 caracteres | espelho: 13.073 caracteres</div>
+ <div><strong>Observação:</strong> Este espelho existe apenas para facilitar consultas por agentes de IA. Para uso jurídico, sempre consulte a fonte oficial.</div>
+ </div>
+
+ <article>
+ <p>LEI N° 3.373, DE 12 DE MARÇO DE 1958.</p>
+ <p>(Vide Lei n° 1.711, de 1952)</p>
+ <p>Dispõe sôbre o Plano de Assistência ao Funcionário e sua Família, a que se referem os arts. 161 e 256 da Lei n° 1.711, de 28 de outubro de 1952, na parte que diz respeito à Previdência.</p>
+ <p>O PRESIDENTE DA REPÚBLICA , faço saber que o CONGRESSO NACIONAL decreta e eu sanciono a seguinte Lei:</p>
+ <h3>Art 1º O Plano de Previdência tem por objetivo principal possibilitar aos funcionários da União, segurados obrigatórios definidos em leis especiais e peculiares a cada instituição de previdência, meios de proporcionar, depois de sua morte, recursos para a manutenção da respectiva família.</h3>
+ <h3>Art 2º O Plano de Previdência compreende:</h3>
+ <h5>I - Seguro Social obrigatório;</h5>
+ <h5>II - Seguro privado facultativo.</h5>
+ <h3>Art 3º O Seguro Social obrigatório garante os seguintes benefícios:</h3>
+ <h5>I - Pensão vitalícia;</h5>
+ <h5>II - Pensão temporária;</h5>
+ <h5>III - Pecúlio especial.</h5>
+ <h4>§ 1º O pecúlio especial será calculado de acôrdo com o art. 5º do Decreto-lei n° 3.347, de 12 de junho de 1941, não podendo, porém, ser inferior a 3 (três) vêzes o salário-base do contribuinte falecido.</h4>
+ <h4>§ 2º O pecúlio especial será concedido aos beneficiários, obedecida a seguinte ordem:</h4>
+ <h6>a) o cônjuge sobrevivente, exceto o desquitado;</h6>
+ <h6>b) os filhos menores de qualquer condição, ou enteados;</h6>
+ <h6>c) os indicados por livre nomeação do segurado;</h6>
+ <h6>d) os herdeiros, na forma da lei civil.</h6>
+ <h4>§ 3º A declaração dos beneficiários será feita ou alterada, a qualquer tempo, sòmente perante o IPASE, em processo especial, nela se mencionando claramente o critério para a divisão, no caso de serem nomeados diversos beneficiários.</h4>
+ <h3>Art 4º É fixada em 50% (cinqüenta por cento) do salário-base, sôbre o qual incide o desconto mensal compulsório para o IPASE, a soma das pensões à família do contribuinte, entendida como esta o conjunto de seus beneficiários que se habilitarem às pensões vitalícias e temporárias.</h3>
+ <h3>Art 5º Para os efeitos do artigo anterior, considera-se família do segurado: (Vide Lei n° 5.703, de 1971)</h3>
+ <h5>I - Para percepção de pensão vitalícia:</h5>
+ <h6>a) a espôsa, exceto a desquitada que não receba pensão de alimentos;</h6>
+ <h6>b) o marido inválido;</h6>
+ <h6>c) a mãe viúva ou sob dependência econômica preponderante do funcionário, ou pai inválido no caso de ser o segurado solteiro ou viúvo;</h6>
+ <h5>II - Para a percepção de pensões temporárias:</h5>
+ <h6>a) o filho de qualquer condição, ou enteado, até a idade de 21 (vinte e um) anos, ou, se inválido, enquanto durar a invalidez;</h6>
+ <h6>b) o irmão, órfão de pai e sem padrasto, até a idade de 21 (vinte e um) anos, ou, se inválido enquanto durar a invalidez, no caso de ser o segurado solteiro ou viúvo, sem filhos nem enteados.</h6>
+ <h4>Parágrafo único. A filha solteira, maior de 21 (vinte e um) anos, só perderá a pensão temporária quando ocupante de cargo público permanente.</h4>
+ <h3>Art 6º Na distribuição das pensões, serão observadas as seguintes normas: (Vide Lei n° 5.703, de 1971)</h3>
+ <h5>I - Quando ocorrer habilitação à pensão vitalícia, sem beneficiários de pensões temporárias, o valor total das pensões caberá ao titular daquela;</h5>
+ <h5>II - Quando ocorrer habilitação às pensões vitalícias e temporárias, caberá a metade do valor a distribuir ao titular,da pensão vitalícia e a outra metade, em partes iguais, aos titulares das pensões temporárias;</h5>
+ <h5>III - Qundo ocorrer habilitação sòmente às pensões temporárias, o valor a distribuir será pago, em partes iguais, aos que se habilitarem.</h5>
+ <h4>Parágrafo único. Nos processos de habilitação, exigir-se-á o mínimo de documentação necessário, a juízo da autoridade a quem caiba conceder a pensão, e concedida esta, qualquer prova posterior só produzirá efeito da data em que foi oferecida em diante, uma vez que implique a exclusão de beneficiário.</h4>
+ <h3>Art 7º Por morte dos beneficiários ou perda da condição essencial à percepção das pensões, estas reverterão: (Vide Lei n° 5.703, de 1971)</h3>
+ <h5>I - A pensão vitalícia - para os beneficiários das pensões temporárias;</h5>
+ <h5>II - As pensões temporárias - para os seus co-beneficiários, ou, na falta dêstes, para o beneficiário da pensão vitalícia.</h5>
+ <h3>Art 8º A despesa com o pagamento da diferença decorrente da execução do disposto nos artigos 4º e 5º desta Lei, correrá à conta da dotação orçamentária do Ministério da Fazenda, destinada a pensionistas.</h3>
+ <h3>Art 9º Em períodos nunca superiores a um quinqüênio e sempre que as circunstâncias aconselharem, o Instituto de Previdência e Assistência dos Servidores do Estado reajustará as pensões concedidas aos beneficiários de seus segurados, de forma a atender variações de custo de vida, utilizando-se do seu fundo de melhoria de pensão, ou solicitando ao Govêrno recursos adicionais, quando insuficiente o fundo referido.</h3>
+ <h4>Parágrafo único. Da arrecadação proveniente das contribuições de seus segurados obrigatórios, para fins de benefícios de família, não poderá o Instituto dispender em despesas administrativas quantia superior a 20% (vinte por cento).</h4>
+ <h3>Art 10. O Instituto de Previdência e Assistência dos Servidores do Estado, além do seu objetivo primordial de realizar o seguro social do funcionário público civil da União, poderá realizar as diversas operações que sejam julgadas convenientes de seguros privados, capitalização, financiamento para aquisição de casas, empréstimos e outras formas de assistência econômica.</h3>
+ <h4>§ 1º As operações de seguros privados, com caráter individual, pagáveis por morte, quando não sujeitas a exame médico, terão um período de carência individual de 3 (três) anos civis, não podendo, antes de decorrido o prazo mencionado, ser exigido qualquer benefício, a não ser em caso de morte por acidente.</h4>
+ <h4>§ 2º As operações de seguro, quer as do ramo vida, quer as dos ramos elementares, serão reguladas por atos próprios baixados pelo Presidente do Instituto, após aprovação do Conselho Diretor ( art. 18, nº II, alínea a , do Decreto-lei n° 2.865, de 12 de dezembro de 1940).</h4>
+ <h3>Art 11. O Instituto de Previdência e Assistência dos Servidores do Estado empregará suas disponibilidades tendo em vista a melhor remuneração de capital, compatível com a segurança das operações, e o interêsse social, e, assim, entre outras operações de aplicação, poderá fazer:</h3>
+ <h5>I - empréstimos em dinheiro a segurados, mediante garantia de consignação em fôlha e de acôrdo com a legislação vigente;</h5>
+ <p>Il - empréstimos garantidos por caução de valores, facultada a averbação, em fôlha, de juros;</p>
+ <h5>III - construção ou aquisição de imóveis destinados a venda a seus segurados;</h5>
+ <h5>IV - empréstimos hipotecários;</h5>
+ <h5>V - aquisição de imóveis cuja valorização presumível seja compensadora;</h5>
+ <h5>VI - aquisição de títulos de dívida pública;</h5>
+ <h5>VII - outras aplicações, dependentes de aprovação do Govêrno.</h5>
+ <h3>Art 12. A atual Divisão de Seguros Privados e Capitalização do Departamento de Previdência do Instituto de Previdência e Assistência dos Servidores do Estado, fica transformada em Departamento de Seguros Privados e Capitalização (DS), que será dirigido por um Diretor, nomeado, em Comissão, pelo Presidente da República.</h3>
+ <h4>Parágrafo único. A êsse Diretor cabem as mesmas vantagens e prerrogativas conferidas aos mais Diretores dos Departamentos existentes.</h4>
+ <h3>Art 13. As obrigações financeiras da União decorrentes desta lei serão recolhidas ao Instituto de Previdência e Assistência dos Servidores do Estado na forma estabelecida pela Lei n° 2.068, de 9 de novembro de 1953 .</h3>
+ <h3>Art 14. O corpo do art. 47 do Decreto-lei n° 2.865, de 12 de dezembro de 1940 , passa a ter a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 47. A distribuição total dos lucros, apurados como prescrito do artigo anterior, será feita da seguinte forma:</h3>
+ <h6>a) 60% (sessenta por cento) para constituir um fundo especial destinado à melhoria dos benefícios concedidos no seguro social;</h6>
+ <h6>b) 20% (vinte por cento) para constituir uma reserva de contingência, destinada à garantia das reservas técnicas;</h6>
+ <h6>c) 20% (vinte por cento) para refôrço do fundo destinado aos serviços de assistência".</h6>
+ <h3>Art 15. Os arts. 43 e 49 do Decreto-lei n° 2.865, de 12 de dezembro de 1940 , passam a vigorar com a seguinte redação:</h3>
+ <p>"</p>
+ <h3>Art. 43. A realização de qualquer despesa deverá ser precedida de empenho nas dotações próprias e autorização expressa e escrita, que poderá ser dada pelo presidente em qualquer caso, ou por diretor, em casos de interêsse de órgão a êle subordinado.</h3>
+ <h4>Parágrafo único. A tomada de contas se processará normalmente por meio de balancetes mensais e demonstração semanal da execução orçamentária, sendo facultado ao órgão fiscalizador requisitar comprovantes para esclarecimentos".</h4>
+ <p>.............................................................................</p>
+ <p>"</p>
+ <h3>Art. 49. A fiscalização da gestão financeira do IPASE será exercida por um Conselho Fiscal composto de 5 (cinco) membros, nomeados em comissão pelo Presidente da República por 4 (quatro) anos, a contar da data da nomeação, podendo ser reconduzidos, e com as seguintes atribuições:</h3>
+ <h6>a) examinar a proposta orçamentária encaminhada pelo Presidente do Instituto de Previdência e Assitência dos Servidores do Estado, autenticada, para publicação pelo mesmo, depois de verificar estarem obedecidas as disposições dêste Decreto-lei, em caso contrário, devolvendo-a anotada nos pontos em desacôrdo com as devidas alterações;</h6>
+ <h6>b) fiscalizar a execução do orçamento autenticado pelo Conselho ou aprovado pelo Ministro do Trabalho, Indústria e Comércio e autorizar, mediante proposta prévia e oportunamente apresentada pela administracão do IPASE, após examinada a sua conveniência quanto às verbas indicadas, a transferênca de uma a outra verba da dotação de uma consignação e de parte da dotação de uma a outra consignação, respeitando o total orçamentário da seção;</h6>
+ <h6>c) autorizar o refôrço total orçamentário da primeira seção na base da arrecadação efetiva do primeiro semestre, respeitadas as limitações do art. 36 dêste Decreto-lei;</h6>
+ <h6>d) opinar sôbre as operações de seguro, as modalidades de assistência e as aplicações do capital que, além daquelas previstas neste Decreto-lei, convém sejam adotadas;</h6>
+ <h6>e) opinar nos casos de alienação de bens móveis do IPASE;</h6>
+ <h6>f) proceder à tomada de contas da administração do IPASE, através do exame de seus balancetes e demonstrações da execução orçamentária;</h6>
+ <h6>g) tomar conhecimento do balanço e da apuração e distribuição dos resultados, dando parecer que será encaminhado ao Ministro do Trabalho, Indústria e Comércio pelo Presidente do IPASE;</h6>
+ <h6>h) solicitar do Presidente do IPASE as informações e diligências que julgar necessárias ao bom desempenho de suas atribuições, sem prejuízo da inspeção pessoal e direta, por qualquer dos seus membros, dos serviços em geral inclusive dos comprovantes de contabilidade;</h6>
+ <p>i) apresentar ao Ministro do Trabalho, Indústria e Comércio o relatório anual de suas atividades, inclusive a documentação das próprias despesas;</p>
+ <h6>j) elaborar seu regimento interno.</h6>
+ <h4>Parágrafo único. Os membros do Conselho Fiscal do IPASE terão remuneração idêntica à que fôr fixada para os membros dos Conselhos Fiscais dos Institutos de Aposentadoria e Pensões.</h4>
+ <h3>Art 16. Fica revogado o art. 48, e respectivo parágrafo único, do Decreto-lei n° 2.865, de 12 de dezembro de 1940 , continuando, porém, o programa e normas de aplicação das importâncias destinadas aos fundos referidos no art. 47 do mesmo diploma legal a serem aprovados anualmente pelo Conselho Diretor.</h3>
+ <h3>Art 17. O plano a que se refere esta Lei, beneficiará também o extranumerário.</h3>
+ <h3>Art 18. As atuais pensões a cargo do Instituto de Previdência e Assistência dos Servidores do Estado serão reajustadas e redistribuídas de acôrdo com esta Lei, extinguindo-se os aumentos e abonos concedidos pelo Decreto-lei n° 8.768, de 21 de janeiro de 1946 , e pelas Leis números 1.215, de 27 de outubro de 1950 , 1.938, de 10 de agôsto de 1953 , e 2.408, de 24 de janeiro de 1955 .</h3>
+ <h4>Parágrafo único. Quando o valor atual das pensões, computados os aumentos e abonos anteriores, numa unidade familiar, fôr superior ao do reajustamento a que se refere êste artigo, a diferença será mantida e distribuída entre os beneficiários.</h4>
+ <h3>Art 19. Os benefícios de que trata esta Lei, também se aplicam às pensões, atuais e futuras, a cujo pagamento esteja obrigado o Instituto de Previdência e Assistência dos Servidores do Estado como conseqüência da Incorporação da Caixa de Aposentadoria e Pensões da Imprensa Nacional ( Decreto-lei n° 6.209, de 19 de janeiro de 1944) inclusive a viúva e herdeiros dos aposentados nas condições previstas no Decreto-lei n° 8.821, de 24 de janeiro de 1946 , e na Lei n° 2.752, de 10 de abril de 1956 .</h3>
+ <h3>Art 20. Poderão contribuir facultativamente para o IPASE os servidores aposentados antes da vigência do Decreto-lei n° 3.347, de 12 de junho de 1941 .</h3>
+ <h3>Art 21. Esta lei entrará em vigor na data de sua publicação, revogadas as disposições em contrário.</h3>
+ <p>Rio de Janeiro, em 12 de março de 1958; 137º da Independência e 70º da República.</p>
+ <h3>JUSCELINO KUBITSCHEK</h3>
+ <p>Eurico de Aguiar Salles</p>
+ <p>José Carlos de Macedo Soares</p>
+ <p>Este texto não substitui o publicado no DOU de 17.3.1958</p>
+ <p>(Vide Lei n° 1.711, de 1952) | Dispõe sôbre o Plano de Assistência ao Funcionário e sua Família, a que se referem os arts.</p>
+ <p>161 e 256 da Lei n° 1.711, de 28 de outubro de 1952, na parte que diz respeito à</p>
+ </article>
+
+ <footer>
+ <p class="disclaimer">
+ <strong>Aviso Legal:</strong> Este é um espelho não oficial para fins técnicos de ingestão por agentes de IA. 
+ O conteúdo oficial e juridicamente válido está disponível no 
+ <a href="https://www.planalto.gov.br/ccivil_03/leis/1950-1969/L3373.htm" rel="nofollow" target="_blank">Planalto – Legislação (Casa Civil)</a> 
+ e no Diário da Justiça Eletrônico.
+ </p>
+ </footer>
+ </main>
+
+ <!-- Script de Controle de Tema -->
+ <script>
+ (function() {
+ // Função para aplicar o tema
+ function applyTheme(theme) {
+ const root = document.documentElement;
+ 
+ if (theme === 'dark') {
+ root.setAttribute('data-theme', 'dark');
+ } else if (theme === 'light') {
+ root.removeAttribute('data-theme');
+ } else if (theme === 'auto') {
+ // Detecta o tema do sistema
+ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+ if (prefersDark) {
+ root.setAttribute('data-theme', 'dark');
+ } else {
+ root.removeAttribute('data-theme');
+ }
+ }
+ }
+ 
+ // Função para atualizar a UI do toggle
+ function updateToggleUI(theme) {
+ const options = document.querySelectorAll('.theme-option');
+ options.forEach(option => {
+ const input = option.querySelector('input');
+ if (input.value === theme) {
+ option.classList.add('active');
+ input.checked = true;
+ } else {
+ option.classList.remove('active');
+ input.checked = false;
+ }
+ });
+ }
+ 
+ // Carrega a preferência salva ou usa 'auto' como padrão
+ const savedTheme = localStorage.getItem('theme') || 'auto';
+ applyTheme(savedTheme);
+ 
+ // Aguarda o DOM estar pronto para configurar os event listeners
+ document.addEventListener('DOMContentLoaded', function() {
+ updateToggleUI(savedTheme);
+ 
+ // Adiciona listeners aos botões de tema
+ const themeOptions = document.querySelectorAll('.theme-option');
+ themeOptions.forEach(option => {
+ option.addEventListener('click', function() {
+ const input = this.querySelector('input');
+ const theme = input.value;
+ 
+ // Salva a preferência
+ localStorage.setItem('theme', theme);
+ 
+ // Aplica o tema
+ applyTheme(theme);
+ 
+ // Atualiza a UI
+ updateToggleUI(theme);
+ });
+ });
+ 
+ // Observa mudanças no tema do sistema quando 'auto' está selecionado
+ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+ darkModeMediaQuery.addEventListener('change', function(e) {
+ const currentTheme = localStorage.getItem('theme') || 'auto';
+ if (currentTheme === 'auto') {
+ applyTheme('auto');
+ }
+ });
+ });
+ })();
+ </script>
+
+</body>
+</html>
