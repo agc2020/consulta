@@ -158,23 +158,6 @@
     try { return JSON.stringify(obj, Object.keys(obj).sort()); } catch { return ""; }
   }
 
-  // ======= NOVO: Função para detectar a chave de ordenação configurada na página =======
-  function detectSortKey() {
-    // Procura por qualquer meta tag com data-pagefind-sort
-    const metaTags = document.querySelectorAll('[data-pagefind-sort]');
-    
-    if (metaTags.length > 0) {
-      // Retorna a primeira chave de ordenação encontrada
-      const sortKey = metaTags[0].getAttribute('data-pagefind-sort');
-      console.log(`[Pagefind Bridge] Chave de ordenação detectada: ${sortKey}`);
-      return sortKey;
-    }
-    
-    // Fallback para ordenação padrão por ano
-    console.log('[Pagefind Bridge] Nenhuma chave de ordenação detectada, usando padrão: ano');
-    return 'ano';
-  }
-
   // ---------- UI (botão + modal) ----------
   function injectUI(searchInput) {
     const btn = document.createElement("button");
@@ -295,10 +278,7 @@
 
     if (!(await ensurePagefind())) { setBadgeCount(button, 0); return; }
     try {
-      // ======= MODIFICADO: Usar chave de ordenação detectada =======
-      const sortKey = detectSortKey();
-      const sortConfig = { [sortKey]: 'desc' };
-      const result = await window.pagefind.search(query, { filters: activeFilters, sort: sortConfig });
+      const result = await window.pagefind.search(query, { filters: activeFilters, sort: { ordem: 'desc' } });
       setBadgeCount(button, result?.results?.length || 0);
     } catch (e) {
       console.warn("[Pagefind] Erro na contagem de preview:", e);
@@ -382,10 +362,7 @@
     
     body.innerHTML = '<div class="pf-empty">Buscando…</div>';
     try {
-      // ======= MODIFICADO: Usar chave de ordenação detectada =======
-      const sortKey = detectSortKey();
-      const sortConfig = { [sortKey]: 'desc' };
-      const res = await window.pagefind.search(query, { filters: activeFilters, sort: sortConfig });
+      const res = await window.pagefind.search(query, { filters: activeFilters, sort: { ordem: 'desc' } });
       const hits = res?.results || [];
       countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : "— 0 resultados";
 
