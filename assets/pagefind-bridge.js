@@ -278,7 +278,7 @@
 
     if (!(await ensurePagefind())) { setBadgeCount(button, 0); return; }
     try {
-      const result = await window.pagefind.search(query, { filters: activeFilters, sort: { ordem: 'desc' } });
+      const result = await window.pagefind.search(query, { filters: activeFilters, sort: { 'ordem': 'desc' } });
       setBadgeCount(button, result?.results?.length || 0);
     } catch (e) {
       console.warn("[Pagefind] Erro na contagem de preview:", e);
@@ -362,7 +362,7 @@
     
     body.innerHTML = '<div class="pf-empty">Buscando…</div>';
     try {
-      const res = await window.pagefind.search(query, { filters: activeFilters, sort: { ordem: 'desc' } });
+      const res = await window.pagefind.search(query, { filters: activeFilters, sort: { 'ordem': 'desc' } });
       const hits = res?.results || [];
       countElement.textContent = hits.length ? `— ${hits.length} resultado(s)` : "— 0 resultados";
 
